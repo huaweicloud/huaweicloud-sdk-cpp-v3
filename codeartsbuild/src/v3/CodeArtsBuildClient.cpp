@@ -33,6 +33,47 @@ ClientBuilder<CodeArtsBuildClient> CodeArtsBuildClient::newBuilder()
     ClientBuilder<CodeArtsBuildClient> client = ClientBuilder<CodeArtsBuildClient>("");
     return client;
 }
+std::shared_ptr<BatchDeleteBuildJobsResponse> CodeArtsBuildClient::batchDeleteBuildJobs(BatchDeleteBuildJobsRequest &request)
+{
+    std::string localVarPath = "/v1/job/batch-delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForBatchDeleteBuildJobs());
+
+    std::shared_ptr<BatchDeleteBuildJobsResponse> localVarResult = std::make_shared<BatchDeleteBuildJobsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateBuildJobResponse> CodeArtsBuildClient::createBuildJob(CreateBuildJobRequest &request)
 {
     std::string localVarPath = "/v3/jobs/create";
@@ -1054,6 +1095,111 @@ std::shared_ptr<ListRelatedProjectInfoResponse> CodeArtsBuildClient::listRelated
 
     return localVarResult;
 }
+std::shared_ptr<ShowAvailableInnerSpecResponse> CodeArtsBuildClient::showAvailableInnerSpec(ShowAvailableInnerSpecRequest &request)
+{
+    std::string localVarPath = "/v2/resource/spec";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.projectIdIsSet()) {
+        localVarQueryParams["project_id"] = parameterToString(request.getProjectId());
+    }
+    if (request.archIsSet()) {
+        localVarQueryParams["arch"] = parameterToString(request.getArch());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowAvailableInnerSpec());
+
+    std::shared_ptr<ShowAvailableInnerSpecResponse> localVarResult = std::make_shared<ShowAvailableInnerSpecResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDomainStatusResponse> CodeArtsBuildClient::showDomainStatus(ShowDomainStatusRequest &request)
+{
+    std::string localVarPath = "/v1/domain/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowDomainStatus());
+
+    std::shared_ptr<ShowDomainStatusResponse> localVarResult = std::make_shared<ShowDomainStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowPackageSpecCountDownResponse> CodeArtsBuildClient::showPackageSpecCountDown(ShowPackageSpecCountDownRequest &request)
+{
+    std::string localVarPath = "/v2/resource/countdown";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowPackageSpecCountDown());
+
+    std::shared_ptr<ShowPackageSpecCountDownResponse> localVarResult = std::make_shared<ShowPackageSpecCountDownResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ShowProjectPermissionResponse> CodeArtsBuildClient::showProjectPermission(ShowProjectPermissionRequest &request)
 {
     std::string localVarPath = "/v1/domain/user-permission";
@@ -1144,6 +1290,35 @@ std::shared_ptr<ShowSummaryBuildJobInfoResponse> CodeArtsBuildClient::showSummar
 
     return localVarResult;
 }
+std::shared_ptr<ShowUserChargeTypeResponse> CodeArtsBuildClient::showUserChargeType(ShowUserChargeTypeRequest &request)
+{
+    std::string localVarPath = "/v1/domain/charge-type";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowUserChargeType());
+
+    std::shared_ptr<ShowUserChargeTypeResponse> localVarResult = std::make_shared<ShowUserChargeTypeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowUserOverPackageQuotaResponse> CodeArtsBuildClient::showUserOverPackageQuota(ShowUserOverPackageQuotaRequest &request)
 {
     std::string localVarPath = "/v1/domain/package/quota";
@@ -1173,6 +1348,231 @@ std::shared_ptr<ShowUserOverPackageQuotaResponse> CodeArtsBuildClient::showUserO
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CreateJobGroupResponse> CodeArtsBuildClient::createJobGroup(CreateJobGroupRequest &request)
+{
+    std::string localVarPath = "/v1/job/{project_id}/group/create";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForCreateJobGroup());
+
+    std::shared_ptr<CreateJobGroupResponse> localVarResult = std::make_shared<CreateJobGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteGroupResponse> CodeArtsBuildClient::deleteGroup(DeleteGroupRequest &request)
+{
+    std::string localVarPath = "/v1/job/{project_id}/group/delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForDeleteGroup());
+
+    std::shared_ptr<DeleteGroupResponse> localVarResult = std::make_shared<DeleteGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListGroupTreeResponse> CodeArtsBuildClient::listGroupTree(ListGroupTreeRequest &request)
+{
+    std::string localVarPath = "/v1/job/{project_id}/group/tree";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForListGroupTree());
+
+    std::shared_ptr<ListGroupTreeResponse> localVarResult = std::make_shared<ListGroupTreeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<MoveGroupResponse> CodeArtsBuildClient::moveGroup(MoveGroupRequest &request)
+{
+    std::string localVarPath = "/v1/job/{project_id}/group/move";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForMoveGroup());
+
+    std::shared_ptr<MoveGroupResponse> localVarResult = std::make_shared<MoveGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SwitchedPacketResponse> CodeArtsBuildClient::switchedPacket(SwitchedPacketRequest &request)
+{
+    std::string localVarPath = "/v1/job/{project_id}/group/swap";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.sourceGroupIdIsSet()) {
+        localVarQueryParams["source_group_id"] = parameterToString(request.getSourceGroupId());
+    }
+    if (request.targetGroupIdIsSet()) {
+        localVarQueryParams["target_group_id"] = parameterToString(request.getTargetGroupId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForSwitchedPacket());
+
+    std::shared_ptr<SwitchedPacketResponse> localVarResult = std::make_shared<SwitchedPacketResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateJobGroupResponse> CodeArtsBuildClient::updateJobGroup(UpdateJobGroupRequest &request)
+{
+    std::string localVarPath = "/v1/job/{project_id}/group/update";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForUpdateJobGroup());
+
+    std::shared_ptr<UpdateJobGroupResponse> localVarResult = std::make_shared<UpdateJobGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -1237,6 +1637,88 @@ std::shared_ptr<ShowImageTemplateListResponse> CodeArtsBuildClient::showImageTem
 
     return localVarResult;
 }
+std::shared_ptr<ApplyProjectPermissionResponse> CodeArtsBuildClient::applyProjectPermission(ApplyProjectPermissionRequest &request)
+{
+    std::string localVarPath = "/v1/job/project/permission";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForApplyProjectPermission());
+
+    std::shared_ptr<ApplyProjectPermissionResponse> localVarResult = std::make_shared<ApplyProjectPermissionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchUpdateJobRolePermissionResponse> CodeArtsBuildClient::batchUpdateJobRolePermission(BatchUpdateJobRolePermissionRequest &request)
+{
+    std::string localVarPath = "/v1/job/permissions/batch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForBatchUpdateJobRolePermission());
+
+    std::shared_ptr<BatchUpdateJobRolePermissionResponse> localVarResult = std::make_shared<BatchUpdateJobRolePermissionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CheckJobCountIsTopLimitResponse> CodeArtsBuildClient::checkJobCountIsTopLimit(CheckJobCountIsTopLimitRequest &request)
 {
     std::string localVarPath = "/v1/job/check/count";
@@ -1260,6 +1742,35 @@ std::shared_ptr<CheckJobCountIsTopLimitResponse> CodeArtsBuildClient::checkJobCo
         localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForCheckJobCountIsTopLimit());
 
     std::shared_ptr<CheckJobCountIsTopLimitResponse> localVarResult = std::make_shared<CheckJobCountIsTopLimitResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CheckJobInternalResponse> CodeArtsBuildClient::checkJobInternal(CheckJobInternalRequest &request)
+{
+    std::string localVarPath = "/v1/job/permission/internal";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForCheckJobInternal());
+
+    std::shared_ptr<CheckJobInternalResponse> localVarResult = std::make_shared<CheckJobInternalResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1638,6 +2149,42 @@ std::shared_ptr<ListBuildParameterResponse> CodeArtsBuildClient::listBuildParame
 
     return localVarResult;
 }
+std::shared_ptr<ListEndPointsResponse> CodeArtsBuildClient::listEndPoints(ListEndPointsRequest &request)
+{
+    std::string localVarPath = "/v1/job/{project_id}/nexus";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForListEndPoints());
+
+    std::shared_ptr<ListEndPointsResponse> localVarResult = std::make_shared<ListEndPointsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListJobResponse> CodeArtsBuildClient::listJob(ListJobRequest &request)
 {
     std::string localVarPath = "/v1/job/list";
@@ -1901,6 +2448,37 @@ std::shared_ptr<SetKeepTimeResponse> CodeArtsBuildClient::setKeepTime(SetKeepTim
 
     return localVarResult;
 }
+std::shared_ptr<ShowBuildDetailsResponse> CodeArtsBuildClient::showBuildDetails(ShowBuildDetailsRequest &request)
+{
+    std::string localVarPath = "/v1/job/{job_id}/{build_no}/build-info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+    localVarPathParams["build_no"] = parameterToString(request.getBuildNo());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowBuildDetails());
+
+    std::shared_ptr<ShowBuildDetailsResponse> localVarResult = std::make_shared<ShowBuildDetailsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowBuildParamsListResponse> CodeArtsBuildClient::showBuildParamsList(ShowBuildParamsListRequest &request)
 {
     std::string localVarPath = "/v1/job/build-params";
@@ -2051,6 +2629,47 @@ std::shared_ptr<ShowDisableResponse> CodeArtsBuildClient::showDisable(ShowDisabl
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDomainsStatusesResponse> CodeArtsBuildClient::showDomainsStatuses(ShowDomainsStatusesRequest &request)
+{
+    std::string localVarPath = "/v1/domain/domains-statuses";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowDomainsStatuses());
+
+    std::shared_ptr<ShowDomainsStatusesResponse> localVarResult = std::make_shared<ShowDomainsStatusesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -2440,6 +3059,48 @@ std::shared_ptr<UpdateNewJobResponse> CodeArtsBuildClient::updateNewJob(UpdateNe
         localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForUpdateNewJob());
 
     std::shared_ptr<UpdateNewJobResponse> localVarResult = std::make_shared<UpdateNewJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateNewNoticeNewResponse> CodeArtsBuildClient::updateNewNoticeNew(UpdateNewNoticeNewRequest &request)
+{
+    std::string localVarPath = "/v1/job/{job_id}/notice";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForUpdateNewNoticeNew());
+
+    std::shared_ptr<UpdateNewNoticeNewResponse> localVarResult = std::make_shared<UpdateNewNoticeNewResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3555,6 +4216,36 @@ std::shared_ptr<ShowReportSummaryResponse> CodeArtsBuildClient::showReportSummar
 
     return localVarResult;
 }
+std::shared_ptr<AddFavouriteCustomTemplateResponse> CodeArtsBuildClient::addFavouriteCustomTemplate(AddFavouriteCustomTemplateRequest &request)
+{
+    std::string localVarPath = "/v1/template/custom/{uuid}/follow";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["uuid"] = parameterToString(request.getUuid());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForAddFavouriteCustomTemplate());
+
+    std::shared_ptr<AddFavouriteCustomTemplateResponse> localVarResult = std::make_shared<AddFavouriteCustomTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<CreateTemplateResponse> CodeArtsBuildClient::createTemplate(CreateTemplateRequest &request)
 {
     std::string localVarPath = "/v1/template/create";
@@ -3749,6 +4440,36 @@ std::shared_ptr<ListRecommendOfficialTemplateResponse> CodeArtsBuildClient::list
 
     return localVarResult;
 }
+std::shared_ptr<RemoverFavouriteCustomTemplateResponse> CodeArtsBuildClient::removerFavouriteCustomTemplate(RemoverFavouriteCustomTemplateRequest &request)
+{
+    std::string localVarPath = "/v1/template/custom/{uuid}/unfollow";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["uuid"] = parameterToString(request.getUuid());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForRemoverFavouriteCustomTemplate());
+
+    std::shared_ptr<RemoverFavouriteCustomTemplateResponse> localVarResult = std::make_shared<RemoverFavouriteCustomTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<SaveTemplateUsedInfoResponse> CodeArtsBuildClient::saveTemplateUsedInfo(SaveTemplateUsedInfoRequest &request)
 {
     std::string localVarPath = "/v1/template/used-info";
@@ -3787,6 +4508,36 @@ std::shared_ptr<SaveTemplateUsedInfoResponse> CodeArtsBuildClient::saveTemplateU
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTemplateResponse> CodeArtsBuildClient::showTemplate(ShowTemplateRequest &request)
+{
+    std::string localVarPath = "/v1/template/{uuid}/custom";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["uuid"] = parameterToString(request.getUuid());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowTemplate());
+
+    std::shared_ptr<ShowTemplateResponse> localVarResult = std::make_shared<ShowTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

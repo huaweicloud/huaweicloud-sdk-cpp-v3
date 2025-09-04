@@ -84,6 +84,15 @@ public:
     void setUserName(const std::string& value);
 
     /// <summary>
+    /// 用户ID
+    /// </summary>
+
+    std::string getUserId() const;
+    bool userIdIsSet() const;
+    void unsetuserId();
+    void setUserId(const std::string& value);
+
+    /// <summary>
     /// 是否有设置权限
     /// </summary>
 
@@ -113,6 +122,8 @@ protected:
     bool usageIsSet_;
     std::string userName_;
     bool userNameIsSet_;
+    std::string userId_;
+    bool userIdIsSet_;
     bool setting_;
     bool settingIsSet_;
     bool canAbsent_;

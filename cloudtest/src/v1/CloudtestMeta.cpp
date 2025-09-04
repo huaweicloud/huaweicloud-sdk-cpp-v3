@@ -218,6 +218,23 @@ HttpRequestDef CloudtestMeta::genRequestDefForDeleteBasicAwById() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudtestMeta::genRequestDefForDeleteCacheFile() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FilePath")
+                  .withJsonTag("file_path")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Uri")
+                  .withJsonTag("uri")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ParentUri")
+                  .withJsonTag("parent_uri")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BakUp")
+                  .withJsonTag("bak_up")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CloudtestMeta::genRequestDefForDeleteFacotrById() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -242,6 +259,11 @@ HttpRequestDef CloudtestMeta::genRequestDefForDeleteTestCaseComment() {
     reqDefBuilder.withRequestField(FieldDef().withName("VersionUri")
                   .withJsonTag("version_uri")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CloudtestMeta::genRequestDefForDeleteTestReportCustomDetailByUri() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -406,6 +428,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForListIteratorIssueTree() {
 }
 
 HttpRequestDef CloudtestMeta::genRequestDefForListIterators() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CloudtestMeta::genRequestDefForListIteratorsInfo() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -712,6 +743,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForRunTestCase() {
 }
 
 HttpRequestDef CloudtestMeta::genRequestDefForSaveTaskSetting() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CloudtestMeta::genRequestDefForSaveTestReportCustomDetail() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1236,6 +1276,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForUpdateTestCaseResult() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudtestMeta::genRequestDefForUpdateTestReportCustomDetailByUri() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CloudtestMeta::genRequestDefForUpdateUserDnsMapping() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -1251,6 +1300,25 @@ HttpRequestDef CloudtestMeta::genRequestDefForUpdateVersionTestCase() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CloudtestMeta::genRequestDefForUploadCacheFile() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Override")
+                  .withJsonTag("override")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ParentType")
+                  .withJsonTag("parent_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ParentUri")
+                  .withJsonTag("parent_uri")
+                  .withLocationType(Query_));
+    FieldDef formBodyParams;
+    reqDefBuilder.withRequestField(formBodyParams.
+                  withName("").
+                  withName("Body").
+                  withLocationType(Body_));
     return reqDefBuilder;
 }
 

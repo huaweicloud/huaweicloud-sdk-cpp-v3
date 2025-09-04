@@ -9,10 +9,14 @@
 #include <huaweicloud/gaussdb/v3/model/AddDatabasePermissionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/AddDatabasePermissionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ApplyConfigurationRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/AuditLogDownloadLinkRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/BackupEncryptRequest.h>
 #include <huaweicloud/gaussdb/v3/model/BatchOperateInstanceTagRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/BatchTagActionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/BatchTagActionResponse.h>
+#include <huaweicloud/gaussdb/v3/model/BatchUpgradeDatabasesRequest.h>
+#include <huaweicloud/gaussdb/v3/model/BatchUpgradeDatabasesRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/BatchUpgradeDatabasesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CancelGaussMySqlInstanceEipRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CancelGaussMySqlInstanceEipResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CancelScheduleTask.h>
@@ -58,6 +62,8 @@
 #include <huaweicloud/gaussdb/v3/model/CreateLtsConfigs.h>
 #include <huaweicloud/gaussdb/v3/model/CreateLtsConfigsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CreateLtsConfigsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CreateProxyDnsNameRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateProxyDnsNameResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CreateRestoreTablesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CreateRestoreTablesRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/CreateRestoreTablesResponse.h>
@@ -83,6 +89,8 @@
 #include <huaweicloud/gaussdb/v3/model/DeleteLtsConfigsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteLtsConfigsRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteLtsConfigsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteProxyPrivateDnsNameRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteProxyPrivateDnsNameResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteScheduleTasKRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteScheduleTasKRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteScheduleTasKResponse.h>
@@ -108,6 +116,8 @@
 #include <huaweicloud/gaussdb/v3/model/InvokeGaussMySqlInstanceSwitchOverResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListAuditLogDownloadLinkRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListAuditLogDownloadLinkResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListAuditLogsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListAuditLogsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListConfigurationsDifferencesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListConfigurationsDifferencesRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ListConfigurationsDifferencesResponse.h>
@@ -214,6 +224,9 @@
 #include <huaweicloud/gaussdb/v3/model/RestoreOldInstanceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/RestoreOldInstanceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/RestoreRequest.h>
+#include <huaweicloud/gaussdb/v3/model/SetAuditLogPolicyRequest.h>
+#include <huaweicloud/gaussdb/v3/model/SetAuditLogPolicyRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/SetAuditLogPolicyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SetGaussMySqlProxyWeightRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SetGaussMySqlProxyWeightResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SetGaussMySqlQuotasRequest.h>
@@ -224,6 +237,10 @@
 #include <huaweicloud/gaussdb/v3/model/SetRecyclePolicyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SetSqlFilterRuleRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SetSqlFilterRuleResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAuditLogDownloadLinkRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAuditLogDownloadLinkResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAuditLogPolicyRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAuditLogPolicyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAuditLogRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAuditLogResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAutoExpandPolicyRequest.h>
@@ -236,6 +253,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowBackupRestoreTimeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowDedicatedResourceInfoRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowDedicatedResourceInfoResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowErrorLogDownloadLinkRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowErrorLogDownloadLinkResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlBackupListRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlBackupListResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlBackupPolicyRequest.h>
@@ -278,6 +297,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowMultiTenantResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyConfigurationsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyConfigurationsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowProxyFlavorsByAzCodeRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowProxyFlavorsByAzCodeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyIpgroupRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyIpgroupResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyVersionRequest.h>
@@ -297,6 +318,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterControlResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowTableMetaInfoRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowTableMetaInfoResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyResponse.h>
@@ -374,6 +397,9 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyPortRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyPortRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyPortResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateProxyPrivateDnsName.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateProxyPrivateDnsNameRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateProxyPrivateDnsNameResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxySessionConsistenceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxySessionConsistenceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateServerlessPolicy.h>
@@ -452,6 +478,7 @@
 #include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDatabaseUserResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarrocksInstanceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarrocksInstanceResponse.h>
+#include <huaweicloud/gaussdb/v3/model/HtapErrorLogQueryRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseParameterRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseParameterResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseReplicationConfigRequest.h>
@@ -472,6 +499,8 @@
 #include <huaweicloud/gaussdb/v3/model/ListHtapInstanceInfoResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListHtapStorageTypeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListHtapStorageTypeResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListInstanceNodeRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListInstanceNodeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataBasesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataBasesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationConfigByDataBaseRequest.h>
@@ -487,9 +516,14 @@
 #include <huaweicloud/gaussdb/v3/model/ModifyDataSyncConfigRequestV3.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyDataSyncRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyDataSyncResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyStarRocksSecurityGroupReq.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyStarRocksSecurityGroupRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyStarRocksSecurityGroupResponse.h>
 #include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplication.h>
 #include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplicationRequest.h>
 #include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/QueryDataBaseRequestV3.h>
+#include <huaweicloud/gaussdb/v3/model/QueryTableRequestV3.h>
 #include <huaweicloud/gaussdb/v3/model/RebootClickHouseInstanceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/RebootClickHouseInstanceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ResizeClickHouseFlavorRequest.h>
@@ -514,6 +548,14 @@
 #include <huaweicloud/gaussdb/v3/model/ShowClickHouseSlowLogDetailResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowClickHouseSlowLogSensitiveStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowClickHouseSlowLogSensitiveStatusResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowHtapErrorLogDetailRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowHtapErrorLogDetailResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowHtapLtsConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowHtapLtsConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowInstanceDatabasesForHtapRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowInstanceDatabasesForHtapResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowInstanceTablesForHtapRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowInstanceTablesForHtapResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowStarRocksDatabaseUserRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowStarRocksDatabaseUserResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowStarrocksParamsRequest.h>
@@ -589,6 +631,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchTagActionResponse> batchTagAction(
         BatchTagActionRequest &request
+    );
+    // 批量实例小版本升级
+    //
+    // 批量实例小版本升级
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchUpgradeDatabasesResponse> batchUpgradeDatabases(
+        BatchUpgradeDatabasesRequest &request
     );
     // 解绑弹性公网IP
     //
@@ -726,6 +776,14 @@ public:
     std::shared_ptr<CreateLtsConfigsResponse> createLtsConfigs(
         CreateLtsConfigsRequest &request
     );
+    // 开启proxy内网DNS
+    //
+    // 开启proxy内网DNS。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateProxyDnsNameResponse> createProxyDnsName(
+        CreateProxyDnsNameRequest &request
+    );
     // 表级时间点恢复
     //
     // 表级时间点恢复。
@@ -805,6 +863,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteLtsConfigsResponse> deleteLtsConfigs(
         DeleteLtsConfigsRequest &request
+    );
+    // 删除proxy内网dns
+    //
+    // 删除proxy内网dns。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteProxyPrivateDnsNameResponse> deleteProxyPrivateDnsName(
+        DeleteProxyPrivateDnsNameRequest &request
     );
     // 删除定时任务
     //
@@ -886,6 +952,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAuditLogDownloadLinkResponse> listAuditLogDownloadLink(
         ListAuditLogDownloadLinkRequest &request
+    );
+    // 获取审计日志列表
+    //
+    // 获取审计日志列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAuditLogsResponse> listAuditLogs(
+        ListAuditLogsRequest &request
     );
     // 对比参数模板
     //
@@ -1167,6 +1241,14 @@ public:
     std::shared_ptr<RestoreOldInstanceResponse> restoreOldInstance(
         RestoreOldInstanceRequest &request
     );
+    // 设置审计日志策略
+    //
+    // 设置审计日志策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetAuditLogPolicyResponse> setAuditLogPolicy(
+        SetAuditLogPolicyRequest &request
+    );
     // 设置读写分离权重
     //
     // 设置读写分离权重。
@@ -1207,6 +1289,22 @@ public:
     std::shared_ptr<ShowAuditLogResponse> showAuditLog(
         ShowAuditLogRequest &request
     );
+    // 生成审计日志下载链接
+    //
+    // 生成审计日志下载链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAuditLogDownloadLinkResponse> showAuditLogDownloadLink(
+        ShowAuditLogDownloadLinkRequest &request
+    );
+    // 查询审计日志策略
+    //
+    // 查询审计日志策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAuditLogPolicyResponse> showAuditLogPolicy(
+        ShowAuditLogPolicyRequest &request
+    );
     // 查询存储空间自动扩容策略。
     //
     // 查询存储空间自动扩容策略。
@@ -1246,6 +1344,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDedicatedResourceInfoResponse> showDedicatedResourceInfo(
         ShowDedicatedResourceInfoRequest &request
+    );
+    // 错误日志下载
+    //
+    // 错误日志下载。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowErrorLogDownloadLinkResponse> showErrorLogDownloadLink(
+        ShowErrorLogDownloadLinkRequest &request
     );
     // 查询全量备份列表
     //
@@ -1415,6 +1521,14 @@ public:
     std::shared_ptr<ShowProxyConfigurationsResponse> showProxyConfigurations(
         ShowProxyConfigurationsRequest &request
     );
+    // 根据azCode查询数据库代理规格信息
+    //
+    // 根据azCode查询数据库代理规格信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProxyFlavorsByAzCodeResponse> showProxyFlavorsByAzCode(
+        ShowProxyFlavorsByAzCodeRequest &request
+    );
     // 查询代理实例访问控制
     //
     // 查询代理实例访问控制
@@ -1486,6 +1600,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSqlFilterRuleResponse> showSqlFilterRule(
         ShowSqlFilterRuleRequest &request
+    );
+    // 查询实例库表信息
+    //
+    // 查询实例库表信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTableMetaInfoResponse> showTableMetaInfo(
+        ShowTableMetaInfoRequest &request
     );
     // 减少数据库代理节点的数量
     //
@@ -1719,6 +1841,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateProxyPortResponse> updateProxyPort(
         UpdateProxyPortRequest &request
+    );
+    // 修改proxy内网dns
+    //
+    // 修改proxy内网dns
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateProxyPrivateDnsNameResponse> updateProxyPrivateDnsName(
+        UpdateProxyPrivateDnsNameRequest &request
     );
     // 修改代理会话一致性
     //
@@ -2025,6 +2155,14 @@ public:
     std::shared_ptr<ListHtapStorageTypeResponse> listHtapStorageType(
         ListHtapStorageTypeRequest &request
     );
+    // 查询节点信息
+    //
+    // 查询节点信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceNodeResponse> listInstanceNode(
+        ListInstanceNodeRequest &request
+    );
     // 查询StarRocks数据库
     //
     // 查询StarRocks数据库。
@@ -2080,6 +2218,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyDataSyncResponse> modifyDataSync(
         ModifyDataSyncRequest &request
+    );
+    // 修改StarRocks安全组
+    //
+    // 修改StarRocks安全组。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyStarRocksSecurityGroupResponse> modifyStarRocksSecurityGroup(
+        ModifyStarRocksSecurityGroupRequest &request
     );
     // 暂停StarRocks数据同步
     //
@@ -2176,6 +2322,38 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowClickHouseSlowLogSensitiveStatusResponse> showClickHouseSlowLogSensitiveStatus(
         ShowClickHouseSlowLogSensitiveStatusRequest &request
+    );
+    // 查询错误日志
+    //
+    // 获取内核错误日志信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHtapErrorLogDetailResponse> showHtapErrorLogDetail(
+        ShowHtapErrorLogDetailRequest &request
+    );
+    // 查询实例LTS日志配置列表
+    //
+    // 查询实例LTS日志配置列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHtapLtsConfigResponse> showHtapLtsConfig(
+        ShowHtapLtsConfigRequest &request
+    );
+    // 查询HTAP主实例数据库
+    //
+    // 查询HTAP主实例数据库。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceDatabasesForHtapResponse> showInstanceDatabasesForHtap(
+        ShowInstanceDatabasesForHtapRequest &request
+    );
+    // 查询HTAP主实例数据库表列表
+    //
+    // 查询HTAP主实例数据表列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceTablesForHtapResponse> showInstanceTablesForHtap(
+        ShowInstanceTablesForHtapRequest &request
     );
     // 查询数据库账户
     //

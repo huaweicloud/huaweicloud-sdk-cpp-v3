@@ -368,6 +368,11 @@ HttpRequestDef DdsMeta::genRequestDefForListAz2Migrate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForListBackupDownloadPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForListBackups() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
@@ -859,6 +864,15 @@ HttpRequestDef DdsMeta::genRequestDefForRestoreNewInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForSaveBackupDownloadPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForSetAuditlogPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -1160,6 +1174,15 @@ HttpRequestDef DdsMeta::genRequestDefForSwitchSsl() {
 
 HttpRequestDef DdsMeta::genRequestDefForSwitchoverReplicaSet() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForUpdateBackupDownloadPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

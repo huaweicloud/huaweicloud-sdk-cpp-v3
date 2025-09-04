@@ -2361,6 +2361,9 @@ std::shared_ptr<ListInstancesResponse> RdsClient::listInstances(ListInstancesReq
     if (request.tagsIsSet()) {
         localVarQueryParams["tags"] = parameterToString(request.getTags());
     }
+    if (request.groupTypeIsSet()) {
+        localVarQueryParams["group_type"] = parameterToString(request.getGroupType());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }

@@ -102,6 +102,15 @@ public:
     void unsettype();
     void setType(const std::string& value);
 
+    /// <summary>
+    /// 删除标识，false-未删除；true-已删除
+    /// </summary>
+
+    bool isDeleteFlag() const;
+    bool deleteFlagIsSet() const;
+    void unsetdeleteFlag();
+    void setDeleteFlag(bool value);
+
 
 protected:
     std::string id_;
@@ -118,6 +127,8 @@ protected:
     bool updatedAtIsSet_;
     std::string type_;
     bool typeIsSet_;
+    bool deleteFlag_;
+    bool deleteFlagIsSet_;
 
 };
 

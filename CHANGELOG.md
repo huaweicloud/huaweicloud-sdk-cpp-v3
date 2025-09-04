@@ -1,3 +1,224 @@
+# 3.1.153 2025-09-04
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ShowStatsConfigs`
+    - `SetStatsConfig`
+    - `ListDomainClientStats`
+    - `ListCdnDomainTopOriginUrl`
+    - `ListCdnDomainTopIps`
+    - `ListCdnDomainTopUas`
+    - `ListSubscriptionTasks`
+    - `CreateSubscriptionTask`
+    - `UpdateSubscriptionTask`
+    - `DeleteSubscriptionTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Cloudtest
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `UploadCacheFile`
+    - `DeleteCacheFile`
+    - `ListIteratorsInfo`
+    - `SaveTestReportCustomDetail`
+    - `UpdateTestReportCustomDetailByUri`
+    - `DeleteTestReportCustomDetailByUri`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowAvailableInnerSpec`
+    - `ShowPackageSpecCountDown`
+    - `AddFavouriteCustomTemplate`
+    - `RemoverFavouriteCustomTemplate`
+    - `ShowTemplate`
+    - `ApplyProjectPermission`
+    - `BatchUpdateJobRolePermission`
+    - `CheckJobInternal`
+    - `BatchDeleteBuildJobs`
+    - `ListEndPoints`
+    - `UpdateJobGroup`
+    - `ListGroupTree`
+    - `SwitchedPacket`
+    - `MoveGroup`
+    - `DeleteGroup`
+    - `CreateJobGroup`
+    - `ShowBuildDetails`
+    - `ShowDomainStatus`
+    - `ShowDomainsStatuses`
+    - `ShowUserChargeType`
+    - `UpdateNewNoticeNew`
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddKeystorePermission**
+    - changes of request param
+      - `+ user_id`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListBackupDownloadPolicy`, `UpdateBackupDownloadPolicy`, `SaveBackupDownloadPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ExecuteServerRedeploy`
+    - `BatchResizeServers`
+    - `ShowAppendableVolumeQuota`
+    - `BatchDetachVolumes`
+    - `ExecuteServerDump`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EPS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEnterpriseProject**
+    - changes of response param
+      - `+ enterprise_projects.delete_flag`
+  - **CreateEnterpriseProject**
+    - changes of response param
+      - `+ enterprise_project.delete_flag`
+  - **ShowEnterpriseProject**
+    - changes of response param
+      - `+ enterprise_project.delete_flag`
+  - **UpdateEnterpriseProject**
+    - changes of response param
+      - `+ enterprise_project.delete_flag`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowProxyFlavorsByAzCode`
+    - `ShowErrorLogDownloadLink`
+    - `ListAuditLogs`
+    - `ShowAuditLogPolicy`
+    - `SetAuditLogPolicy`
+    - `ShowAuditLogDownloadLink`
+    - `ShowTableMetaInfo`
+    - `BatchUpgradeDatabases`
+    - `ShowInstanceDatabasesForHtap`
+    - `ShowHtapErrorLogDetail`
+    - `ModifyStarRocksSecurityGroup`
+    - `ShowHtapLtsConfig`
+    - `ListInstanceNode`
+    - `ShowInstanceTablesForHtap`
+    - `UpdateProxyPrivateDnsName`
+    - `CreateProxyDnsName`
+    - `DeleteProxyPrivateDnsName`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ExportSlowSql`, `ListSchemaAndTable`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IoTDA
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ListDeviceCertificate`
+    - `ShowDeviceCertificate`
+    - `UpdateDeviceCertificate`
+    - `DeleteDeviceCertificate`
+    - `ListDeviceByDeviceCertificate`
+    - `ListHarmonySoftBus`
+    - `AddHarmonySoftBus`
+    - `ShowHarmonySoftBus`
+    - `DeleteHarmonySoftBus`
+    - `CreateSyncHarmonySoftBus`
+    - `ResetHarmonySoftBusKey`
+    - `ListDeviceAuthenticationTemplates`
+    - `CreateDeviceAuthenticationTemplate`
+    - `ShowDeviceAuthenticationTemplate`
+    - `UpdateDeviceAuthenticationTemplate`
+    - `DeleteDeviceAuthenticationTemplate`
+    - `ListSecurityProfiles`
+    - `CreateSecurityProfile`
+    - `ShowSecurityProfile`
+    - `UpdateSecurityProfile`
+    - `DeleteSecurityProfile`
+    - `DeleteDeviceShadow`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateLogGroup**
+    - changes of request param
+      - `+ enterprise_project_id`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of request param
+      - `+ group_type`
+
 # 3.1.152 2025-08-28
 
 ### HuaweiCloud SDK ECS

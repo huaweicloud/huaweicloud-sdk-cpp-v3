@@ -13,6 +13,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_CODEARTSBUILD_V3_EXPORT  CodeArtsBuildMeta {
 public:
+    static HttpRequestDef genRequestDefForBatchDeleteBuildJobs();
     static HttpRequestDef genRequestDefForCreateBuildJob();
     static HttpRequestDef genRequestDefForCreateTemplates();
     static HttpRequestDef genRequestDefForDeleteBuildJob();
@@ -42,13 +43,26 @@ public:
     static HttpRequestDef genRequestDefForUpdateBuildJob();
     static HttpRequestDef genRequestDefForUpdateNotice();
     static HttpRequestDef genRequestDefForListRelatedProjectInfo();
+    static HttpRequestDef genRequestDefForShowAvailableInnerSpec();
+    static HttpRequestDef genRequestDefForShowDomainStatus();
+    static HttpRequestDef genRequestDefForShowPackageSpecCountDown();
     static HttpRequestDef genRequestDefForShowProjectPermission();
     static HttpRequestDef genRequestDefForShowRelatedProject();
     static HttpRequestDef genRequestDefForShowSummaryBuildJobInfo();
+    static HttpRequestDef genRequestDefForShowUserChargeType();
     static HttpRequestDef genRequestDefForShowUserOverPackageQuota();
+    static HttpRequestDef genRequestDefForCreateJobGroup();
+    static HttpRequestDef genRequestDefForDeleteGroup();
+    static HttpRequestDef genRequestDefForListGroupTree();
+    static HttpRequestDef genRequestDefForMoveGroup();
+    static HttpRequestDef genRequestDefForSwitchedPacket();
+    static HttpRequestDef genRequestDefForUpdateJobGroup();
     static HttpRequestDef genRequestDefForShowDockerfileTemplate();
     static HttpRequestDef genRequestDefForShowImageTemplateList();
+    static HttpRequestDef genRequestDefForApplyProjectPermission();
+    static HttpRequestDef genRequestDefForBatchUpdateJobRolePermission();
     static HttpRequestDef genRequestDefForCheckJobCountIsTopLimit();
+    static HttpRequestDef genRequestDefForCheckJobInternal();
     static HttpRequestDef genRequestDefForCheckJobNameIsExists();
     static HttpRequestDef genRequestDefForCheckWebhookUrl();
     static HttpRequestDef genRequestDefForClearRecyclingJobs();
@@ -59,17 +73,20 @@ public:
     static HttpRequestDef genRequestDefForDisableTheJob();
     static HttpRequestDef genRequestDefForExecuteJob();
     static HttpRequestDef genRequestDefForListBuildParameter();
+    static HttpRequestDef genRequestDefForListEndPoints();
     static HttpRequestDef genRequestDefForListJob();
     static HttpRequestDef genRequestDefForListProjectJobs();
     static HttpRequestDef genRequestDefForListRecyclingJob();
     static HttpRequestDef genRequestDefForListUpdateJobHistory();
     static HttpRequestDef genRequestDefForRestoreRecyclingJobs();
     static HttpRequestDef genRequestDefForSetKeepTime();
+    static HttpRequestDef genRequestDefForShowBuildDetails();
     static HttpRequestDef genRequestDefForShowBuildParamsList();
     static HttpRequestDef genRequestDefForShowCopyName();
     static HttpRequestDef genRequestDefForShowDefaultBuildParameters();
     static HttpRequestDef genRequestDefForShowDefaultProjectPermission();
     static HttpRequestDef genRequestDefForShowDisable();
+    static HttpRequestDef genRequestDefForShowDomainsStatuses();
     static HttpRequestDef genRequestDefForShowJobConfig();
     static HttpRequestDef genRequestDefForShowJobConfigDiff();
     static HttpRequestDef genRequestDefForShowJobInfo();
@@ -82,6 +99,7 @@ public:
     static HttpRequestDef genRequestDefForShowRunningStatus();
     static HttpRequestDef genRequestDefForStopTheJob();
     static HttpRequestDef genRequestDefForUpdateNewJob();
+    static HttpRequestDef genRequestDefForUpdateNewNoticeNew();
     static HttpRequestDef genRequestDefForAddKeystorePermission();
     static HttpRequestDef genRequestDefForDeleteKeystore();
     static HttpRequestDef genRequestDefForDeleteKeystorePermission();
@@ -113,12 +131,15 @@ public:
     static HttpRequestDef genRequestDefForShowJobBuildSuccessRatio();
     static HttpRequestDef genRequestDefForShowJobBuildTime();
     static HttpRequestDef genRequestDefForShowReportSummary();
+    static HttpRequestDef genRequestDefForAddFavouriteCustomTemplate();
     static HttpRequestDef genRequestDefForCreateTemplate();
     static HttpRequestDef genRequestDefForDeleteTemplate();
     static HttpRequestDef genRequestDefForListCustomTemplate();
     static HttpRequestDef genRequestDefForListOfficialTemplate();
     static HttpRequestDef genRequestDefForListRecommendOfficialTemplate();
+    static HttpRequestDef genRequestDefForRemoverFavouriteCustomTemplate();
     static HttpRequestDef genRequestDefForSaveTemplateUsedInfo();
+    static HttpRequestDef genRequestDefForShowTemplate();
     static HttpRequestDef genRequestDefForShowYamlTemplate();
 };
 

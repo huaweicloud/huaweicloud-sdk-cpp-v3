@@ -89,6 +89,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterDataCacheEndRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterDataCacheEndResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterDataCacheStartRequest.h>
@@ -105,6 +106,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterSwitchoverResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudReleaseDisasterRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudReleaseDisasterResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExportSlowSqlRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExportSlowSqlResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExportTableVolumeRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/FlavorErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBUpgradeInstancesVersionRequest.h>
@@ -204,6 +208,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRestoreTimesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListScheduleTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListScheduleTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSchemaAndTableRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSchemaAndTableRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSchemaAndTableResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListStorageTypesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListStorageTypesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSupportKernelPluginsRequest.h>
@@ -705,6 +712,14 @@ public:
     std::shared_ptr<ExecuteCrossCloudReleaseDisasterResponse> executeCrossCloudReleaseDisaster(
         ExecuteCrossCloudReleaseDisasterRequest &request
     );
+    // 表信息导出
+    //
+    // 表信息导出
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExportSlowSqlResponse> exportSlowSql(
+        ExportSlowSqlRequest &request
+    );
     // 安装插件
     //
     // 安装插件
@@ -1065,6 +1080,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListScheduleTaskResponse> listScheduleTask(
         ListScheduleTaskRequest &request
+    );
+    // 识别SQL文本中的表信息
+    //
+    // 识别SQL文本中的表信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSchemaAndTableResponse> listSchemaAndTable(
+        ListSchemaAndTableRequest &request
     );
     // 查询数据库磁盘类型
     //

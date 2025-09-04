@@ -34,6 +34,8 @@ ListInstancesRequest::ListInstancesRequest()
     limitIsSet_ = false;
     tags_ = "";
     tagsIsSet_ = false;
+    groupType_ = "";
+    groupTypeIsSet_ = false;
 }
 
 ListInstancesRequest::~ListInstancesRequest() = default;
@@ -78,6 +80,9 @@ web::json::value ListInstancesRequest::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(groupTypeIsSet_) {
+        val[utility::conversions::to_string_t("group_type")] = ModelBase::toJson(groupType_);
     }
 
     return val;
@@ -183,6 +188,15 @@ bool ListInstancesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupType(refVal);
         }
     }
     return ok;
@@ -418,6 +432,27 @@ bool ListInstancesRequest::tagsIsSet() const
 void ListInstancesRequest::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string ListInstancesRequest::getGroupType() const
+{
+    return groupType_;
+}
+
+void ListInstancesRequest::setGroupType(const std::string& value)
+{
+    groupType_ = value;
+    groupTypeIsSet_ = true;
+}
+
+bool ListInstancesRequest::groupTypeIsSet() const
+{
+    return groupTypeIsSet_;
+}
+
+void ListInstancesRequest::unsetgroupType()
+{
+    groupTypeIsSet_ = false;
 }
 
 }

@@ -23,21 +23,29 @@ public:
     static HttpRequestDef genRequestDefForCreateRefreshTasks();
     static HttpRequestDef genRequestDefForCreateRuleNew();
     static HttpRequestDef genRequestDefForCreateShareCacheGroups();
+    static HttpRequestDef genRequestDefForCreateSubscriptionTask();
     static HttpRequestDef genRequestDefForCreateTags();
     static HttpRequestDef genRequestDefForDeleteDomain();
     static HttpRequestDef genRequestDefForDeleteDomainTemplate();
     static HttpRequestDef genRequestDefForDeleteRuleNew();
     static HttpRequestDef genRequestDefForDeleteShareCacheGroups();
+    static HttpRequestDef genRequestDefForDeleteSubscriptionTask();
     static HttpRequestDef genRequestDefForDisableDomain();
     static HttpRequestDef genRequestDefForDownloadRegionCarrierExcel();
     static HttpRequestDef genRequestDefForDownloadStatisticsExcel();
     static HttpRequestDef genRequestDefForEnableDomain();
+    static HttpRequestDef genRequestDefForListCdnDomainTopIps();
+    static HttpRequestDef genRequestDefForListCdnDomainTopOriginUrl();
     static HttpRequestDef genRequestDefForListCdnDomainTopRefers();
+    static HttpRequestDef genRequestDefForListCdnDomainTopUas();
+    static HttpRequestDef genRequestDefForListDomainClientStats();
     static HttpRequestDef genRequestDefForListDomains();
     static HttpRequestDef genRequestDefForListRuleDetails();
     static HttpRequestDef genRequestDefForListShareCacheGroups();
+    static HttpRequestDef genRequestDefForListSubscriptionTasks();
     static HttpRequestDef genRequestDefForModifyAccountInfo();
     static HttpRequestDef genRequestDefForSetChargeModes();
+    static HttpRequestDef genRequestDefForSetStatsConfig();
     static HttpRequestDef genRequestDefForShowAppliedTemplateRecord();
     static HttpRequestDef genRequestDefForShowBandwidthCalc();
     static HttpRequestDef genRequestDefForShowCertificatesHttpsInfo();
@@ -52,6 +60,7 @@ public:
     static HttpRequestDef genRequestDefForShowIpInfo();
     static HttpRequestDef genRequestDefForShowLogs();
     static HttpRequestDef genRequestDefForShowQuota();
+    static HttpRequestDef genRequestDefForShowStatsConfigs();
     static HttpRequestDef genRequestDefForShowTags();
     static HttpRequestDef genRequestDefForShowTopDomainNames();
     static HttpRequestDef genRequestDefForShowTopUrl();
@@ -64,6 +73,7 @@ public:
     static HttpRequestDef genRequestDefForUpdatePrivateBucketAccess();
     static HttpRequestDef genRequestDefForUpdateRuleNew();
     static HttpRequestDef genRequestDefForUpdateShareCacheGroups();
+    static HttpRequestDef genRequestDefForUpdateSubscriptionTask();
     static HttpRequestDef genRequestDefForVerifyDomainOwner();
 };
 

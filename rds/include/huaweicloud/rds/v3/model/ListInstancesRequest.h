@@ -137,6 +137,15 @@ public:
     void unsettags();
     void setTags(const std::string& value);
 
+    /// <summary>
+    /// 查询flexusrds实例，传flexus。其他场景不传。
+    /// </summary>
+
+    std::string getGroupType() const;
+    bool groupTypeIsSet() const;
+    void unsetgroupType();
+    void setGroupType(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -161,6 +170,8 @@ protected:
     bool limitIsSet_;
     std::string tags_;
     bool tagsIsSet_;
+    std::string groupType_;
+    bool groupTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

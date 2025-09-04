@@ -129,6 +129,15 @@ HttpRequestDef CdnMeta::genRequestDefForCreateShareCacheGroups() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CdnMeta::genRequestDefForCreateSubscriptionTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForCreateTags() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -167,6 +176,11 @@ HttpRequestDef CdnMeta::genRequestDefForDeleteRuleNew() {
 }
 
 HttpRequestDef CdnMeta::genRequestDefForDeleteShareCacheGroups() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForDeleteSubscriptionTask() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -261,6 +275,61 @@ HttpRequestDef CdnMeta::genRequestDefForEnableDomain() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CdnMeta::genRequestDefForListCdnDomainTopIps() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainName")
+                  .withJsonTag("domain_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GroupBy")
+                  .withJsonTag("group_by")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StatType")
+                  .withJsonTag("stat_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ServiceArea")
+                  .withJsonTag("service_area")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IncludeRatio")
+                  .withJsonTag("include_ratio")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForListCdnDomainTopOriginUrl() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainName")
+                  .withJsonTag("domain_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GroupBy")
+                  .withJsonTag("group_by")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StatType")
+                  .withJsonTag("stat_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IncludeRatio")
+                  .withJsonTag("include_ratio")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForListCdnDomainTopRefers() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
@@ -283,6 +352,58 @@ HttpRequestDef CdnMeta::genRequestDefForListCdnDomainTopRefers() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("IncludeRatio")
                   .withJsonTag("include_ratio")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForListCdnDomainTopUas() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainName")
+                  .withJsonTag("domain_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GroupBy")
+                  .withJsonTag("group_by")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StatType")
+                  .withJsonTag("stat_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ServiceArea")
+                  .withJsonTag("service_area")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IncludeRatio")
+                  .withJsonTag("include_ratio")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForListDomainClientStats() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainName")
+                  .withJsonTag("domain_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StatType")
+                  .withJsonTag("stat_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ServiceArea")
+                  .withJsonTag("service_area")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -340,6 +461,17 @@ HttpRequestDef CdnMeta::genRequestDefForListShareCacheGroups() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CdnMeta::genRequestDefForListSubscriptionTasks() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForModifyAccountInfo() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -355,6 +487,15 @@ HttpRequestDef CdnMeta::genRequestDefForModifyAccountInfo() {
 }
 
 HttpRequestDef CdnMeta::genRequestDefForSetChargeModes() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForSetStatsConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -676,6 +817,14 @@ HttpRequestDef CdnMeta::genRequestDefForShowQuota() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CdnMeta::genRequestDefForShowStatsConfigs() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ConfigType")
+                  .withJsonTag("config_type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForShowTags() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ResourceId")
@@ -858,6 +1007,15 @@ HttpRequestDef CdnMeta::genRequestDefForUpdateRuleNew() {
 }
 
 HttpRequestDef CdnMeta::genRequestDefForUpdateShareCacheGroups() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForUpdateSubscriptionTask() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

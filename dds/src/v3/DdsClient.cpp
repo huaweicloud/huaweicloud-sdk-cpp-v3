@@ -1600,6 +1600,35 @@ std::shared_ptr<ListAz2MigrateResponse> DdsClient::listAz2Migrate(ListAz2Migrate
 
     return localVarResult;
 }
+std::shared_ptr<ListBackupDownloadPolicyResponse> DdsClient::listBackupDownloadPolicy(ListBackupDownloadPolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/backups/download-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForListBackupDownloadPolicy());
+
+    std::shared_ptr<ListBackupDownloadPolicyResponse> localVarResult = std::make_shared<ListBackupDownloadPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListBackupsResponse> DdsClient::listBackups(ListBackupsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/backups";
@@ -3026,6 +3055,47 @@ std::shared_ptr<RestoreNewInstanceResponse> DdsClient::restoreNewInstance(Restor
 
     return localVarResult;
 }
+std::shared_ptr<SaveBackupDownloadPolicyResponse> DdsClient::saveBackupDownloadPolicy(SaveBackupDownloadPolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/backups/download-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForSaveBackupDownloadPolicy());
+
+    std::shared_ptr<SaveBackupDownloadPolicyResponse> localVarResult = std::make_shared<SaveBackupDownloadPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<SetAuditlogPolicyResponse> DdsClient::setAuditlogPolicy(SetAuditlogPolicyRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/auditlog-policy";
@@ -4265,6 +4335,47 @@ std::shared_ptr<SwitchoverReplicaSetResponse> DdsClient::switchoverReplicaSet(Sw
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateBackupDownloadPolicyResponse> DdsClient::updateBackupDownloadPolicy(UpdateBackupDownloadPolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/backups/download-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForUpdateBackupDownloadPolicy());
+
+    std::shared_ptr<UpdateBackupDownloadPolicyResponse> localVarResult = std::make_shared<UpdateBackupDownloadPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

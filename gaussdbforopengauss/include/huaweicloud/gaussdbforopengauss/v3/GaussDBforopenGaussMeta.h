@@ -52,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterStartSimulation();
     static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterSwitchover();
     static HttpRequestDef genRequestDefForExecuteCrossCloudReleaseDisaster();
+    static HttpRequestDef genRequestDefForExportSlowSql();
     static HttpRequestDef genRequestDefForInstallKernelPlugin();
     static HttpRequestDef genRequestDefForListApplicableInstances();
     static HttpRequestDef genRequestDefForListAppliedHistories();
@@ -97,6 +98,7 @@ public:
     static HttpRequestDef genRequestDefForListRestorableInstancesDetails();
     static HttpRequestDef genRequestDefForListRestoreTimes();
     static HttpRequestDef genRequestDefForListScheduleTask();
+    static HttpRequestDef genRequestDefForListSchemaAndTable();
     static HttpRequestDef genRequestDefForListStorageTypes();
     static HttpRequestDef genRequestDefForListSupportKernelPlugins();
     static HttpRequestDef genRequestDefForListTasks();

@@ -111,6 +111,9 @@ HttpRequestDef LtsMeta::genRequestDefForCreateLogDumpObs() {
 
 HttpRequestDef LtsMeta::genRequestDefForCreateLogGroup() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
     FieldDef headerParamContentType;
     reqDefBuilder.withRequestField(headerParamContentType
                   .withName("ContentType")

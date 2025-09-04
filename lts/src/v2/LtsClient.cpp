@@ -357,6 +357,9 @@ std::shared_ptr<CreateLogGroupResponse> LtsClient::createLogGroup(CreateLogGroup
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.contentTypeIsSet()) {
         localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
     }

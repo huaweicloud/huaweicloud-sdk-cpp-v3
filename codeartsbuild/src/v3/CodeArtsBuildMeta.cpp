@@ -8,6 +8,15 @@ namespace V3 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForBatchDeleteBuildJobs() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForCreateBuildJob() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -266,6 +275,34 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForListRelatedProjectInfo() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowAvailableInnerSpec() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
+                  .withJsonTag("project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Arch")
+                  .withJsonTag("arch")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowDomainStatus() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowPackageSpecCountDown() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowProjectPermission() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
@@ -284,11 +321,67 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowSummaryBuildJobInfo() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowUserChargeType() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowUserOverPackageQuota() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
                   .withJsonTag("project_id")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForCreateJobGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForDeleteGroup() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForListGroupTree() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForMoveGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForSwitchedPacket() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceGroupId")
+                  .withJsonTag("source_group_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetGroupId")
+                  .withJsonTag("target_group_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForUpdateJobGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -305,7 +398,30 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowImageTemplateList() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForApplyProjectPermission() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForBatchUpdateJobRolePermission() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForCheckJobCountIsTopLimit() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForCheckJobInternal() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -387,6 +503,17 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForExecuteJob() {
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForListBuildParameter() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForListEndPoints() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -491,6 +618,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForSetKeepTime() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowBuildDetails() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowBuildParamsList() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -519,6 +651,15 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowDefaultProjectPermission()
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowDisable() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowDomainsStatuses() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -608,6 +749,15 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForStopTheJob() {
 }
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForUpdateNewJob() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForUpdateNewNoticeNew() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -913,6 +1063,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowReportSummary() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForAddFavouriteCustomTemplate() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForCreateTemplate() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -970,12 +1125,22 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForListRecommendOfficialTemplate(
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForRemoverFavouriteCustomTemplate() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForSaveTemplateUsedInfo() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowTemplate() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

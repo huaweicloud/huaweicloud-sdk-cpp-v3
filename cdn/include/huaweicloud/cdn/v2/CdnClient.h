@@ -33,6 +33,8 @@
 #include <huaweicloud/cdn/v2/model/CreateShareCacheGroupsRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateShareCacheGroupsRequstBody.h>
 #include <huaweicloud/cdn/v2/model/CreateShareCacheGroupsResponse.h>
+#include <huaweicloud/cdn/v2/model/CreateSubscriptionTaskRequest.h>
+#include <huaweicloud/cdn/v2/model/CreateSubscriptionTaskResponse.h>
 #include <huaweicloud/cdn/v2/model/CreateTagsRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateTagsRequestBody.h>
 #include <huaweicloud/cdn/v2/model/CreateTagsResponse.h>
@@ -45,6 +47,8 @@
 #include <huaweicloud/cdn/v2/model/DeleteRuleNewResponse.h>
 #include <huaweicloud/cdn/v2/model/DeleteShareCacheGroupsRequest.h>
 #include <huaweicloud/cdn/v2/model/DeleteShareCacheGroupsResponse.h>
+#include <huaweicloud/cdn/v2/model/DeleteSubscriptionTaskRequest.h>
+#include <huaweicloud/cdn/v2/model/DeleteSubscriptionTaskResponse.h>
 #include <huaweicloud/cdn/v2/model/DeleteTagsRequestBody.h>
 #include <huaweicloud/cdn/v2/model/DisableDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/DisableDomainResponse.h>
@@ -56,14 +60,24 @@
 #include <huaweicloud/cdn/v2/model/EnableDomainResponse.h>
 #include <huaweicloud/cdn/v2/model/ErrRsp.h>
 #include <huaweicloud/cdn/v2/model/FullUpdateRulesRequest.h>
+#include <huaweicloud/cdn/v2/model/ListCdnDomainTopIpsRequest.h>
+#include <huaweicloud/cdn/v2/model/ListCdnDomainTopIpsResponse.h>
+#include <huaweicloud/cdn/v2/model/ListCdnDomainTopOriginUrlRequest.h>
+#include <huaweicloud/cdn/v2/model/ListCdnDomainTopOriginUrlResponse.h>
 #include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersRequest.h>
 #include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersResponse.h>
+#include <huaweicloud/cdn/v2/model/ListCdnDomainTopUasRequest.h>
+#include <huaweicloud/cdn/v2/model/ListCdnDomainTopUasResponse.h>
+#include <huaweicloud/cdn/v2/model/ListDomainClientStatsRequest.h>
+#include <huaweicloud/cdn/v2/model/ListDomainClientStatsResponse.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsRequest.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsResponse.h>
 #include <huaweicloud/cdn/v2/model/ListRuleDetailsRequest.h>
 #include <huaweicloud/cdn/v2/model/ListRuleDetailsResponse.h>
 #include <huaweicloud/cdn/v2/model/ListShareCacheGroupsRequest.h>
 #include <huaweicloud/cdn/v2/model/ListShareCacheGroupsResponse.h>
+#include <huaweicloud/cdn/v2/model/ListSubscriptionTasksRequest.h>
+#include <huaweicloud/cdn/v2/model/ListSubscriptionTasksResponse.h>
 #include <huaweicloud/cdn/v2/model/ModifyAccountInfoRequest.h>
 #include <huaweicloud/cdn/v2/model/ModifyAccountInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/ModifyDomainConfigRequestBody.h>
@@ -72,6 +86,9 @@
 #include <huaweicloud/cdn/v2/model/SetChargeModesBody.h>
 #include <huaweicloud/cdn/v2/model/SetChargeModesRequest.h>
 #include <huaweicloud/cdn/v2/model/SetChargeModesResponse.h>
+#include <huaweicloud/cdn/v2/model/SetStatsConfigBody.h>
+#include <huaweicloud/cdn/v2/model/SetStatsConfigRequest.h>
+#include <huaweicloud/cdn/v2/model/SetStatsConfigResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowAppliedTemplateRecordRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowAppliedTemplateRecordResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowBandwidthCalcRequest.h>
@@ -100,6 +117,8 @@
 #include <huaweicloud/cdn/v2/model/ShowLogsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowQuotaRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowQuotaResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowStatsConfigsRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowStatsConfigsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowTagsRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowTagsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowTopDomainNamesRequest.h>
@@ -110,6 +129,7 @@
 #include <huaweicloud/cdn/v2/model/ShowUrlTaskInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowVerifyDomainOwnerInfoRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowVerifyDomainOwnerInfoResponse.h>
+#include <huaweicloud/cdn/v2/model/SubscriptionTaskVo.h>
 #include <huaweicloud/cdn/v2/model/TemplateApplyRequestBody.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainFullConfigRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainFullConfigResponse.h>
@@ -129,6 +149,8 @@
 #include <huaweicloud/cdn/v2/model/UpdateShareCacheGroupsRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdateShareCacheGroupsRequstBody.h>
 #include <huaweicloud/cdn/v2/model/UpdateShareCacheGroupsResponse.h>
+#include <huaweicloud/cdn/v2/model/UpdateSubscriptionTaskRequest.h>
+#include <huaweicloud/cdn/v2/model/UpdateSubscriptionTaskResponse.h>
 #include <huaweicloud/cdn/v2/model/VerifyDomainOwnerRequest.h>
 #include <huaweicloud/cdn/v2/model/VerifyDomainOwnerRequestBody.h>
 #include <huaweicloud/cdn/v2/model/VerifyDomainOwnerResponse.h>
@@ -243,6 +265,14 @@ public:
     std::shared_ptr<CreateShareCacheGroupsResponse> createShareCacheGroups(
         CreateShareCacheGroupsRequest &request
     );
+    // 创建运营报表订阅任务
+    //
+    // create subscription task
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSubscriptionTaskResponse> createSubscriptionTask(
+        CreateSubscriptionTaskRequest &request
+    );
     // 创建资源标签配置接口
     //
     // 用于创建资源标签。
@@ -284,6 +314,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteShareCacheGroupsResponse> deleteShareCacheGroups(
         DeleteShareCacheGroupsRequest &request
+    );
+    // 删除运营报表订阅任务
+    //
+    // delete subscription task
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSubscriptionTaskResponse> deleteSubscriptionTask(
+        DeleteSubscriptionTaskRequest &request
     );
     // 停用加速域名
     //
@@ -337,6 +375,22 @@ public:
     std::shared_ptr<EnableDomainResponse> enableDomain(
         EnableDomainRequest &request
     );
+    // 查询域名top ip统计分析数据
+    //
+    // - 查询域名top ip统计分析数据
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCdnDomainTopIpsResponse> listCdnDomainTopIps(
+        ListCdnDomainTopIpsRequest &request
+    );
+    // 查询域名top回源URL数据
+    //
+    // - 查询域名top 回源URL数据
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCdnDomainTopOriginUrlResponse> listCdnDomainTopOriginUrl(
+        ListCdnDomainTopOriginUrlRequest &request
+    );
     // 查询统计TOP100 referer数据明细
     //
     // - 查询TOP100 referer数据。
@@ -350,6 +404,27 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCdnDomainTopRefersResponse> listCdnDomainTopRefers(
         ListCdnDomainTopRefersRequest &request
+    );
+    // 查询域名top ua统计分析数据
+    //
+    // - 统计分析TOP UA统计数据
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCdnDomainTopUasResponse> listCdnDomainTopUas(
+        ListCdnDomainTopUasRequest &request
+    );
+    // 按域名维度查询每天客户端访问详情统计
+    //
+    // - 按域名维度查询每天客户端访问详情统计。
+    // - 支持查询90天内的数据。
+    // - ip_num查询跨度只支持1天,uv查询跨度只支持5分钟。
+    // - 起始时间和结束时间，左闭右开，需要同时指定。如查询2022-07-12 00:00:00 到 2022-07-13 00:00:00 的数据，表示取 [2022-07-12 00:00:00, 2022-07-13 00:00:00)的统计数据。
+    // - ip_num开始时间、结束时间必须传毫秒级时间戳，必须为凌晨0点整时刻点，如果传的不是凌晨0点整时刻点，返回数据可能与预期不一致。
+    // - uv必须为5分钟整时刻点，如：0分、5分、10分、15分等，如果传的不是5分钟时刻点，返回数据可能与预期不一致
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDomainClientStatsResponse> listDomainClientStats(
+        ListDomainClientStatsRequest &request
     );
     // 查询加速域名
     //
@@ -376,6 +451,14 @@ public:
     std::shared_ptr<ListShareCacheGroupsResponse> listShareCacheGroups(
         ListShareCacheGroupsRequest &request
     );
+    // 分页查询运营报表订阅任务
+    //
+    // query subscription task
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSubscriptionTasksResponse> listSubscriptionTasks(
+        ListSubscriptionTasksRequest &request
+    );
     // 修改租户配置
     //
     // 修改租户配置，当前仅支持开启OBS和SCM委托授权。
@@ -399,6 +482,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetChargeModesResponse> setChargeModes(
         SetChargeModesRequest &request
+    );
+    // 设置统计配置
+    //
+    // - 设置统计配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetStatsConfigResponse> setStatsConfig(
+        SetStatsConfigRequest &request
     );
     // 查询域名模板应用记录。
     //
@@ -556,6 +647,16 @@ public:
     std::shared_ptr<ShowQuotaResponse> showQuota(
         ShowQuotaRequest &request
     );
+    // 查询统计配置
+    //
+    // - 配置类型：目前支持，
+    // - 0：热点统计。
+    // - 1：ces上报。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatsConfigsResponse> showStatsConfigs(
+        ShowStatsConfigsRequest &request
+    );
     // 查询资源标签列表配置接口
     //
     // 用于查询资源标签列表。
@@ -676,6 +777,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateShareCacheGroupsResponse> updateShareCacheGroups(
         UpdateShareCacheGroupsRequest &request
+    );
+    // 修改运营报表订阅任务
+    //
+    // modify subscription task
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSubscriptionTaskResponse> updateSubscriptionTask(
+        UpdateSubscriptionTaskRequest &request
     );
     // 域名归属校验
     //

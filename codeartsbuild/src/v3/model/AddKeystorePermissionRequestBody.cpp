@@ -22,6 +22,8 @@ AddKeystorePermissionRequestBody::AddKeystorePermissionRequestBody()
     usageIsSet_ = false;
     userName_ = "";
     userNameIsSet_ = false;
+    userId_ = "";
+    userIdIsSet_ = false;
     setting_ = false;
     settingIsSet_ = false;
     canAbsent_ = false;
@@ -52,6 +54,9 @@ web::json::value AddKeystorePermissionRequestBody::toJson() const
     }
     if(userNameIsSet_) {
         val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
+    }
+    if(userIdIsSet_) {
+        val[utility::conversions::to_string_t("user_id")] = ModelBase::toJson(userId_);
     }
     if(settingIsSet_) {
         val[utility::conversions::to_string_t("setting")] = ModelBase::toJson(setting_);
@@ -109,6 +114,15 @@ bool AddKeystorePermissionRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("user_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUserId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("setting"))) {
@@ -236,6 +250,27 @@ bool AddKeystorePermissionRequestBody::userNameIsSet() const
 void AddKeystorePermissionRequestBody::unsetuserName()
 {
     userNameIsSet_ = false;
+}
+
+std::string AddKeystorePermissionRequestBody::getUserId() const
+{
+    return userId_;
+}
+
+void AddKeystorePermissionRequestBody::setUserId(const std::string& value)
+{
+    userId_ = value;
+    userIdIsSet_ = true;
+}
+
+bool AddKeystorePermissionRequestBody::userIdIsSet() const
+{
+    return userIdIsSet_;
+}
+
+void AddKeystorePermissionRequestBody::unsetuserId()
+{
+    userIdIsSet_ = false;
 }
 
 bool AddKeystorePermissionRequestBody::isSetting() const

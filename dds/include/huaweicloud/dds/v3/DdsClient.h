@@ -116,6 +116,8 @@
 #include <huaweicloud/dds/v3/model/ListAuditlogsResponse.h>
 #include <huaweicloud/dds/v3/model/ListAz2MigrateRequest.h>
 #include <huaweicloud/dds/v3/model/ListAz2MigrateResponse.h>
+#include <huaweicloud/dds/v3/model/ListBackupDownloadPolicyRequest.h>
+#include <huaweicloud/dds/v3/model/ListBackupDownloadPolicyResponse.h>
 #include <huaweicloud/dds/v3/model/ListBackupsRequest.h>
 #include <huaweicloud/dds/v3/model/ListBackupsResponse.h>
 #include <huaweicloud/dds/v3/model/ListConfigurationsRequest.h>
@@ -202,6 +204,9 @@
 #include <huaweicloud/dds/v3/model/RestoreNewInstanceRequest.h>
 #include <huaweicloud/dds/v3/model/RestoreNewInstanceRequestBody.h>
 #include <huaweicloud/dds/v3/model/RestoreNewInstanceResponse.h>
+#include <huaweicloud/dds/v3/model/SaveBackupDownloadPolicyRequest.h>
+#include <huaweicloud/dds/v3/model/SaveBackupDownloadPolicyRequestBody.h>
+#include <huaweicloud/dds/v3/model/SaveBackupDownloadPolicyResponse.h>
 #include <huaweicloud/dds/v3/model/SetAuditlogPolicyRequest.h>
 #include <huaweicloud/dds/v3/model/SetAuditlogPolicyRequestBody.h>
 #include <huaweicloud/dds/v3/model/SetAuditlogPolicyResponse.h>
@@ -278,6 +283,9 @@
 #include <huaweicloud/dds/v3/model/SwitchSslResponse.h>
 #include <huaweicloud/dds/v3/model/SwitchoverReplicaSetRequest.h>
 #include <huaweicloud/dds/v3/model/SwitchoverReplicaSetResponse.h>
+#include <huaweicloud/dds/v3/model/UpdateBackupDownloadPolicyRequest.h>
+#include <huaweicloud/dds/v3/model/UpdateBackupDownloadPolicyRequestBody.h>
+#include <huaweicloud/dds/v3/model/UpdateBackupDownloadPolicyResponse.h>
 #include <huaweicloud/dds/v3/model/UpdateClientNetworkRequest.h>
 #include <huaweicloud/dds/v3/model/UpdateClientNetworkResponse.h>
 #include <huaweicloud/dds/v3/model/UpdateConfigurationParameterRequest.h>
@@ -656,6 +664,14 @@ public:
     std::shared_ptr<ListAz2MigrateResponse> listAz2Migrate(
         ListAz2MigrateRequest &request
     );
+    // 查询备份下载策略
+    //
+    // 查询备份下载策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBackupDownloadPolicyResponse> listBackupDownloadPolicy(
+        ListBackupDownloadPolicyRequest &request
+    );
     // 查询备份列表
     //
     // 根据指定条件查询备份列表。
@@ -936,6 +952,14 @@ public:
     std::shared_ptr<RestoreNewInstanceResponse> restoreNewInstance(
         RestoreNewInstanceRequest &request
     );
+    // 创建备份下载策略
+    //
+    // 创建备份下载策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SaveBackupDownloadPolicyResponse> saveBackupDownloadPolicy(
+        SaveBackupDownloadPolicyRequest &request
+    );
     // 设置审计日志策略
     //
     // 设置审计日志策略。
@@ -1215,6 +1239,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchoverReplicaSetResponse> switchoverReplicaSet(
         SwitchoverReplicaSetRequest &request
+    );
+    // 更新备份下载策略
+    //
+    // 更新备份下载策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateBackupDownloadPolicyResponse> updateBackupDownloadPolicy(
+        UpdateBackupDownloadPolicyRequest &request
     );
     // 副本集跨网段访问配置。
     //

@@ -830,6 +830,9 @@ HttpRequestDef RdsMeta::genRequestDefForListInstances() {
     reqDefBuilder.withRequestField(FieldDef().withName("Tags")
                   .withJsonTag("tags")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GroupType")
+                  .withJsonTag("group_type")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

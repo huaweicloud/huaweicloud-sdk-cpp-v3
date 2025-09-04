@@ -22,8 +22,10 @@ public:
     static HttpRequestDef genRequestDefForBatchCreateServerTags();
     static HttpRequestDef genRequestDefForBatchDeleteServerNics();
     static HttpRequestDef genRequestDefForBatchDeleteServerTags();
+    static HttpRequestDef genRequestDefForBatchDetachVolumes();
     static HttpRequestDef genRequestDefForBatchRebootServers();
     static HttpRequestDef genRequestDefForBatchResetServersPassword();
+    static HttpRequestDef genRequestDefForBatchResizeServers();
     static HttpRequestDef genRequestDefForBatchStartServers();
     static HttpRequestDef genRequestDefForBatchStopServers();
     static HttpRequestDef genRequestDefForBatchUpdateServersName();
@@ -45,6 +47,8 @@ public:
     static HttpRequestDef genRequestDefForDeleteServers();
     static HttpRequestDef genRequestDefForDetachServerVolume();
     static HttpRequestDef genRequestDefForDisassociateServerVirtualIp();
+    static HttpRequestDef genRequestDefForExecuteServerDump();
+    static HttpRequestDef genRequestDefForExecuteServerRedeploy();
     static HttpRequestDef genRequestDefForListCloudServers();
     static HttpRequestDef genRequestDefForListFlavorSellPolicies();
     static HttpRequestDef genRequestDefForListFlavors();
@@ -85,6 +89,7 @@ public:
     static HttpRequestDef genRequestDefForResizePostPaidServer();
     static HttpRequestDef genRequestDefForResizeServer();
     static HttpRequestDef genRequestDefForRevertRecycleBinServer();
+    static HttpRequestDef genRequestDefForShowAppendableVolumeQuota();
     static HttpRequestDef genRequestDefForShowMetadataOptions();
     static HttpRequestDef genRequestDefForShowRecycleBin();
     static HttpRequestDef genRequestDefForShowResetPasswordFlag();

@@ -94,6 +94,15 @@ HttpRequestDef EcsMeta::genRequestDefForBatchDeleteServerTags() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForBatchDetachVolumes() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForBatchRebootServers() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -104,6 +113,15 @@ HttpRequestDef EcsMeta::genRequestDefForBatchRebootServers() {
 }
 
 HttpRequestDef EcsMeta::genRequestDefForBatchResetServersPassword() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForBatchResizeServers() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -297,6 +315,16 @@ HttpRequestDef EcsMeta::genRequestDefForDisassociateServerVirtualIp() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForExecuteServerDump() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForExecuteServerRedeploy() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -929,6 +957,11 @@ HttpRequestDef EcsMeta::genRequestDefForResizeServer() {
 }
 
 HttpRequestDef EcsMeta::genRequestDefForRevertRecycleBinServer() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForShowAppendableVolumeQuota() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }

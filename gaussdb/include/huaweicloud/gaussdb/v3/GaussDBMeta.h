@@ -15,6 +15,7 @@ class HUAWEICLOUD_GAUSSDB_V3_EXPORT  GaussDBMeta {
 public:
     static HttpRequestDef genRequestDefForAddDatabasePermission();
     static HttpRequestDef genRequestDefForBatchTagAction();
+    static HttpRequestDef genRequestDefForBatchUpgradeDatabases();
     static HttpRequestDef genRequestDefForCancelGaussMySqlInstanceEip();
     static HttpRequestDef genRequestDefForCancelScheduleTask();
     static HttpRequestDef genRequestDefForChangeGaussMySqlInstanceSpecification();
@@ -32,6 +33,7 @@ public:
     static HttpRequestDef genRequestDefForCreateGaussMySqlReadonlyNode();
     static HttpRequestDef genRequestDefForCreateGaussMysqlDns();
     static HttpRequestDef genRequestDefForCreateLtsConfigs();
+    static HttpRequestDef genRequestDefForCreateProxyDnsName();
     static HttpRequestDef genRequestDefForCreateRestoreTables();
     static HttpRequestDef genRequestDefForDeleteDatabasePermission();
     static HttpRequestDef genRequestDefForDeleteGaussMySqlBackup();
@@ -42,6 +44,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteGaussMySqlProxy();
     static HttpRequestDef genRequestDefForDeleteGaussMySqlReadonlyNode();
     static HttpRequestDef genRequestDefForDeleteLtsConfigs();
+    static HttpRequestDef genRequestDefForDeleteProxyPrivateDnsName();
     static HttpRequestDef genRequestDefForDeleteScheduleTasK();
     static HttpRequestDef genRequestDefForDeleteSqlFilterRule();
     static HttpRequestDef genRequestDefForDeleteTaskRecord();
@@ -52,6 +55,7 @@ public:
     static HttpRequestDef genRequestDefForExpandGaussMySqlProxy();
     static HttpRequestDef genRequestDefForInvokeGaussMySqlInstanceSwitchOver();
     static HttpRequestDef genRequestDefForListAuditLogDownloadLink();
+    static HttpRequestDef genRequestDefForListAuditLogs();
     static HttpRequestDef genRequestDefForListConfigurationsDifferences();
     static HttpRequestDef genRequestDefForListConfigurationsInstances();
     static HttpRequestDef genRequestDefForListEnterpriseProjects();
@@ -87,16 +91,20 @@ public:
     static HttpRequestDef genRequestDefForRestartGaussMySqlNode();
     static HttpRequestDef genRequestDefForRestartProxyInstance();
     static HttpRequestDef genRequestDefForRestoreOldInstance();
+    static HttpRequestDef genRequestDefForSetAuditLogPolicy();
     static HttpRequestDef genRequestDefForSetGaussMySqlProxyWeight();
     static HttpRequestDef genRequestDefForSetGaussMySqlQuotas();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
     static HttpRequestDef genRequestDefForSetSqlFilterRule();
     static HttpRequestDef genRequestDefForShowAuditLog();
+    static HttpRequestDef genRequestDefForShowAuditLogDownloadLink();
+    static HttpRequestDef genRequestDefForShowAuditLogPolicy();
     static HttpRequestDef genRequestDefForShowAutoExpandPolicy();
     static HttpRequestDef genRequestDefForShowAutoScalingHistory();
     static HttpRequestDef genRequestDefForShowAutoScalingPolicy();
     static HttpRequestDef genRequestDefForShowBackupRestoreTime();
     static HttpRequestDef genRequestDefForShowDedicatedResourceInfo();
+    static HttpRequestDef genRequestDefForShowErrorLogDownloadLink();
     static HttpRequestDef genRequestDefForShowGaussMySqlBackupList();
     static HttpRequestDef genRequestDefForShowGaussMySqlBackupPolicy();
     static HttpRequestDef genRequestDefForShowGaussMySqlConfiguration();
@@ -118,6 +126,7 @@ public:
     static HttpRequestDef genRequestDefForShowLtsConfigs();
     static HttpRequestDef genRequestDefForShowMultiTenant();
     static HttpRequestDef genRequestDefForShowProxyConfigurations();
+    static HttpRequestDef genRequestDefForShowProxyFlavorsByAzCode();
     static HttpRequestDef genRequestDefForShowProxyIpgroup();
     static HttpRequestDef genRequestDefForShowProxyVersion();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
@@ -127,6 +136,7 @@ public:
     static HttpRequestDef genRequestDefForShowSlowlogSensitiveStatus();
     static HttpRequestDef genRequestDefForShowSqlFilterControl();
     static HttpRequestDef genRequestDefForShowSqlFilterRule();
+    static HttpRequestDef genRequestDefForShowTableMetaInfo();
     static HttpRequestDef genRequestDefForShrinkGaussMySqlProxy();
     static HttpRequestDef genRequestDefForSwitchAccessControl();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlConfiguration();
@@ -156,6 +166,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateProxyName();
     static HttpRequestDef genRequestDefForUpdateProxyNewConfigurations();
     static HttpRequestDef genRequestDefForUpdateProxyPort();
+    static HttpRequestDef genRequestDefForUpdateProxyPrivateDnsName();
     static HttpRequestDef genRequestDefForUpdateProxySessionConsistence();
     static HttpRequestDef genRequestDefForUpdateServerlessPolicy();
     static HttpRequestDef genRequestDefForUpdateSlowlogSensitiveSwitch();
@@ -194,6 +205,7 @@ public:
     static HttpRequestDef genRequestDefForListHtapFlavor();
     static HttpRequestDef genRequestDefForListHtapInstanceInfo();
     static HttpRequestDef genRequestDefForListHtapStorageType();
+    static HttpRequestDef genRequestDefForListInstanceNode();
     static HttpRequestDef genRequestDefForListStarRocksDataBases();
     static HttpRequestDef genRequestDefForListStarRocksDataReplicationConfig();
     static HttpRequestDef genRequestDefForListStarRocksDataReplicationConfigByDataBase();
@@ -201,6 +213,7 @@ public:
     static HttpRequestDef genRequestDefForListStarRocksDbParameters();
     static HttpRequestDef genRequestDefForListStarrocksInstanceInfo();
     static HttpRequestDef genRequestDefForModifyDataSync();
+    static HttpRequestDef genRequestDefForModifyStarRocksSecurityGroup();
     static HttpRequestDef genRequestDefForPauseStarRocksDataReplication();
     static HttpRequestDef genRequestDefForRebootClickHouseInstance();
     static HttpRequestDef genRequestDefForResizeClickHouseFlavor();
@@ -213,6 +226,10 @@ public:
     static HttpRequestDef genRequestDefForShowClickHouseLtsConfig();
     static HttpRequestDef genRequestDefForShowClickHouseSlowLogDetail();
     static HttpRequestDef genRequestDefForShowClickHouseSlowLogSensitiveStatus();
+    static HttpRequestDef genRequestDefForShowHtapErrorLogDetail();
+    static HttpRequestDef genRequestDefForShowHtapLtsConfig();
+    static HttpRequestDef genRequestDefForShowInstanceDatabasesForHtap();
+    static HttpRequestDef genRequestDefForShowInstanceTablesForHtap();
     static HttpRequestDef genRequestDefForShowStarRocksDatabaseUser();
     static HttpRequestDef genRequestDefForShowStarrocksParams();
     static HttpRequestDef genRequestDefForSyncStarRocksUsers();

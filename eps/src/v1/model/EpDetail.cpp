@@ -26,6 +26,8 @@ EpDetail::EpDetail()
     updatedAtIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
+    deleteFlag_ = false;
+    deleteFlagIsSet_ = false;
 }
 
 EpDetail::~EpDetail() = default;
@@ -58,6 +60,9 @@ web::json::value EpDetail::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(deleteFlagIsSet_) {
+        val[utility::conversions::to_string_t("delete_flag")] = ModelBase::toJson(deleteFlag_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool EpDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delete_flag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delete_flag"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeleteFlag(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool EpDetail::typeIsSet() const
 void EpDetail::unsettype()
 {
     typeIsSet_ = false;
+}
+
+bool EpDetail::isDeleteFlag() const
+{
+    return deleteFlag_;
+}
+
+void EpDetail::setDeleteFlag(bool value)
+{
+    deleteFlag_ = value;
+    deleteFlagIsSet_ = true;
+}
+
+bool EpDetail::deleteFlagIsSet() const
+{
+    return deleteFlagIsSet_;
+}
+
+void EpDetail::unsetdeleteFlag()
+{
+    deleteFlagIsSet_ = false;
 }
 
 }

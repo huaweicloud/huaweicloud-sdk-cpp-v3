@@ -122,6 +122,20 @@
 #include <huaweicloud/iotda/v5/model/DeviceCommandRequest.h>
 #include <string>
 
+#include <huaweicloud/iotda/v5/model/CreateAuthenticationTemplate.h>
+#include <huaweicloud/iotda/v5/model/CreateDeviceAuthenticationTemplateRequest.h>
+#include <huaweicloud/iotda/v5/model/CreateDeviceAuthenticationTemplateResponse.h>
+#include <huaweicloud/iotda/v5/model/DeleteDeviceAuthenticationTemplateRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteDeviceAuthenticationTemplateResponse.h>
+#include <huaweicloud/iotda/v5/model/ListDeviceAuthenticationTemplatesRequest.h>
+#include <huaweicloud/iotda/v5/model/ListDeviceAuthenticationTemplatesResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowDeviceAuthenticationTemplateRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowDeviceAuthenticationTemplateResponse.h>
+#include <huaweicloud/iotda/v5/model/UpdateAuthenticationTemplate.h>
+#include <huaweicloud/iotda/v5/model/UpdateDeviceAuthenticationTemplateRequest.h>
+#include <huaweicloud/iotda/v5/model/UpdateDeviceAuthenticationTemplateResponse.h>
+#include <string>
+
 #include <huaweicloud/iotda/v5/model/CreateDeviceAuthorizer.h>
 #include <huaweicloud/iotda/v5/model/CreateDeviceAuthorizerRequest.h>
 #include <huaweicloud/iotda/v5/model/CreateDeviceAuthorizerResponse.h>
@@ -134,6 +148,20 @@
 #include <huaweicloud/iotda/v5/model/UpdateDeviceAuthorizer.h>
 #include <huaweicloud/iotda/v5/model/UpdateDeviceAuthorizerRequest.h>
 #include <huaweicloud/iotda/v5/model/UpdateDeviceAuthorizerResponse.h>
+#include <string>
+
+#include <huaweicloud/iotda/v5/model/DeleteDeviceCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteDeviceCertificateResponse.h>
+#include <huaweicloud/iotda/v5/model/ListDeviceByDeviceCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/ListDeviceByDeviceCertificateResponse.h>
+#include <huaweicloud/iotda/v5/model/ListDeviceCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/ListDeviceCertificateResponse.h>
+#include <huaweicloud/iotda/v5/model/ListDeviceRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowDeviceCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowDeviceCertificateResponse.h>
+#include <huaweicloud/iotda/v5/model/UpdateDeviceCertificate.h>
+#include <huaweicloud/iotda/v5/model/UpdateDeviceCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/UpdateDeviceCertificateResponse.h>
 #include <string>
 
 #include <huaweicloud/iotda/v5/model/AddDeviceGroupDTO.h>
@@ -200,6 +228,8 @@
 #include <huaweicloud/iotda/v5/model/UpdateDeviceProxyResponse.h>
 #include <string>
 
+#include <huaweicloud/iotda/v5/model/DeleteDeviceShadowRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteDeviceShadowResponse.h>
 #include <huaweicloud/iotda/v5/model/ShowDeviceShadowRequest.h>
 #include <huaweicloud/iotda/v5/model/ShowDeviceShadowResponse.h>
 #include <huaweicloud/iotda/v5/model/UpdateDesireds.h>
@@ -228,6 +258,21 @@
 #include <huaweicloud/iotda/v5/model/FunctionRequestDTO.h>
 #include <huaweicloud/iotda/v5/model/ListFunctionsRequest.h>
 #include <huaweicloud/iotda/v5/model/ListFunctionsResponse.h>
+#include <string>
+
+#include <huaweicloud/iotda/v5/model/AddHarmonySoftBusDTO.h>
+#include <huaweicloud/iotda/v5/model/AddHarmonySoftBusRequest.h>
+#include <huaweicloud/iotda/v5/model/AddHarmonySoftBusResponse.h>
+#include <huaweicloud/iotda/v5/model/CreateSyncHarmonySoftBusRequest.h>
+#include <huaweicloud/iotda/v5/model/CreateSyncHarmonySoftBusResponse.h>
+#include <huaweicloud/iotda/v5/model/DeleteHarmonySoftBusRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteHarmonySoftBusResponse.h>
+#include <huaweicloud/iotda/v5/model/ListHarmonySoftBusRequest.h>
+#include <huaweicloud/iotda/v5/model/ListHarmonySoftBusResponse.h>
+#include <huaweicloud/iotda/v5/model/ResetHarmonySoftBusKeyRequest.h>
+#include <huaweicloud/iotda/v5/model/ResetHarmonySoftBusKeyResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowHarmonySoftBusRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowHarmonySoftBusResponse.h>
 #include <string>
 
 #include <huaweicloud/iotda/v5/model/CreateMessageRequest.h>
@@ -350,6 +395,20 @@
 #include <huaweicloud/iotda/v5/model/ShowRuleResponse.h>
 #include <huaweicloud/iotda/v5/model/UpdateRuleRequest.h>
 #include <huaweicloud/iotda/v5/model/UpdateRuleResponse.h>
+#include <string>
+
+#include <huaweicloud/iotda/v5/model/AddSecurityProfileDTO.h>
+#include <huaweicloud/iotda/v5/model/CreateSecurityProfileRequest.h>
+#include <huaweicloud/iotda/v5/model/CreateSecurityProfileResponse.h>
+#include <huaweicloud/iotda/v5/model/DeleteSecurityProfileRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteSecurityProfileResponse.h>
+#include <huaweicloud/iotda/v5/model/ListSecurityProfilesRequest.h>
+#include <huaweicloud/iotda/v5/model/ListSecurityProfilesResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowSecurityProfileRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowSecurityProfileResponse.h>
+#include <huaweicloud/iotda/v5/model/UpdateSecurityProfileDTO.h>
+#include <huaweicloud/iotda/v5/model/UpdateSecurityProfileRequest.h>
+#include <huaweicloud/iotda/v5/model/UpdateSecurityProfileResponse.h>
 #include <string>
 
 #include <huaweicloud/iotda/v5/model/BindTagsDTO.h>
@@ -733,6 +792,47 @@ public:
         CreateCommandRequest &request
     );
 
+    // 创建设备鉴权模板
+    //
+    // 应用服务器可调用此接口在物联网平台创建一个设备鉴权模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDeviceAuthenticationTemplateResponse> createDeviceAuthenticationTemplate(
+        CreateDeviceAuthenticationTemplateRequest &request
+    );
+    // 删除设备鉴权模板
+    //
+    // 应用服务器可调用此接口在物联网平台上删除指定设备鉴权模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDeviceAuthenticationTemplateResponse> deleteDeviceAuthenticationTemplate(
+        DeleteDeviceAuthenticationTemplateRequest &request
+    );
+    // 查询设备鉴权模板列表
+    //
+    // 应用服务器可调用此接口在物联网平台查询设备鉴权模板列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDeviceAuthenticationTemplatesResponse> listDeviceAuthenticationTemplates(
+        ListDeviceAuthenticationTemplatesRequest &request
+    );
+    // 查询设备鉴权模板详情
+    //
+    // 应用服务器可调用此接口在物联网平台查询指定设备鉴权模板ID的详细信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDeviceAuthenticationTemplateResponse> showDeviceAuthenticationTemplate(
+        ShowDeviceAuthenticationTemplateRequest &request
+    );
+    // 修改设备鉴权模板
+    //
+    // 应用服务器可调用此接口在物联网平台上修改指定设备鉴权模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDeviceAuthenticationTemplateResponse> updateDeviceAuthenticationTemplate(
+        UpdateDeviceAuthenticationTemplateRequest &request
+    );
+
     // 创建自定义鉴权
     //
     // 应用服务器可调用此接口在物联网平台创建一个自定义鉴权。自定义鉴权是指用户可以通过函数服务自定义实现鉴权逻辑，以对接入平台的设备进行身份认证。
@@ -774,6 +874,47 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDeviceAuthorizerResponse> updateDeviceAuthorizer(
         UpdateDeviceAuthorizerRequest &request
+    );
+
+    // 删除设备证书
+    //
+    // 应用服务器可调用此接口在物联网平台删除一个设备证书。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDeviceCertificateResponse> deleteDeviceCertificate(
+        DeleteDeviceCertificateRequest &request
+    );
+    // 查询使用指定设备证书的设备列表
+    //
+    // 应用服务器可调用此接口在物联网平台查询使用指定设备证书的设备列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDeviceByDeviceCertificateResponse> listDeviceByDeviceCertificate(
+        ListDeviceByDeviceCertificateRequest &request
+    );
+    // 查询设备证书列表
+    //
+    // 应用服务器可调用此接口在物联网平台查询设备证书列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDeviceCertificateResponse> listDeviceCertificate(
+        ListDeviceCertificateRequest &request
+    );
+    // 查询设备证书
+    //
+    // 应用服务器可调用此接口在物联网平台更新一个设备证书状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDeviceCertificateResponse> showDeviceCertificate(
+        ShowDeviceCertificateRequest &request
+    );
+    // 更新设备证书
+    //
+    // 应用服务器可调用此接口在物联网平台更新一个设备证书状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDeviceCertificateResponse> updateDeviceCertificate(
+        UpdateDeviceCertificateRequest &request
     );
 
     // 添加设备组
@@ -1098,6 +1239,14 @@ public:
         UpdateDeviceProxyRequest &request
     );
 
+    // 删除设备影子数据
+    //
+    // 应用服务器可调用此接口删除指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）中的所有数据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDeviceShadowResponse> deleteDeviceShadow(
+        DeleteDeviceShadowRequest &request
+    );
     // 查询设备影子数据
     //
     // 应用服务器可调用此接口查询指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）。
@@ -1200,6 +1349,55 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListFunctionsResponse> listFunctions(
         ListFunctionsRequest &request
+    );
+
+    // 创建鸿蒙软总线
+    //
+    // 应用服务器可调用此接口新建鸿蒙软总线。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddHarmonySoftBusResponse> addHarmonySoftBus(
+        AddHarmonySoftBusRequest &request
+    );
+    // 同步鸿蒙软总线信息
+    //
+    // 应用服务器可调用此接口向组内设备同步鸿蒙软总线信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSyncHarmonySoftBusResponse> createSyncHarmonySoftBus(
+        CreateSyncHarmonySoftBusRequest &request
+    );
+    // 删除鸿蒙软总线
+    //
+    // 应用服务器可调用此接口删除指定鸿蒙软总线。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteHarmonySoftBusResponse> deleteHarmonySoftBus(
+        DeleteHarmonySoftBusRequest &request
+    );
+    // 查询鸿蒙软总线列表
+    //
+    // 应用服务器可调用此接口查询鸿蒙软总线列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHarmonySoftBusResponse> listHarmonySoftBus(
+        ListHarmonySoftBusRequest &request
+    );
+    // 重置鸿蒙软总线秘钥
+    //
+    // 应用服务器可调用此接口重置鸿蒙软总线秘钥, 重置后状态变为未同步需要用户调用同步接口想组内设备同步最新秘钥。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResetHarmonySoftBusKeyResponse> resetHarmonySoftBusKey(
+        ResetHarmonySoftBusKeyRequest &request
+    );
+    // 查询鸿蒙软总线
+    //
+    // 应用服务器可调用此接口查询指定ID的鸿蒙软总线。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHarmonySoftBusResponse> showHarmonySoftBus(
+        ShowHarmonySoftBusRequest &request
     );
 
     // 下发设备消息
@@ -1574,6 +1772,69 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateRuleResponse> updateRule(
         UpdateRuleRequest &request
+    );
+
+    // 创建或更新安全态势感知配置
+    //
+    // #### 接口说明
+    // 应用服务器调用该接口创建安全态势感知配置。
+    // #### 限制
+    // #### 目前支持的安全配置项有：
+    // 
+    // | 配置名              | 默认告警级别 |   默认安全级别   | 设备维度 | 平台检测/设备上报 | 配置结构体   | 说明        |
+    // | :------------------ | :----------- | :--------------- | :------- | :---------------- | :----------------- | :-----------|
+    // | DEVICE_MEMORY_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;memory_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备内存泄漏检测，report_period：上报周期单位(小时) 取值范围[1, 24]；memory_threshold内存检测阈值百分比，取值范围：[1, 100] |
+    // | DEVICE_PORT_CHECK   | CRITICAL     | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;safety_ports\&quot;,\&quot;value\&quot;:[80,8080]},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备异常端口检测，report_period：上报周期单位(小时) 取值范围[1, 24]；safety_ports：安全端口白名单，数组，取值范围:[1, 65535] |
+    // | DEVICE_CPU_USAGE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;cpu_usage_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备CPU使用率检测，report_period：上报周期单位(小时) 取值范围[1, 24]；cpu_usage_threshold：CPU检测阈值百分比，取值范围：[1, 100] |
+    // | DEVICE_DISK_SPACE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;disk_space_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备磁盘使用率检测，report_period：上报周期单位(小时) 取值范围[1, 24]；disk_space_threshold：磁盘检测阈值百分比，取值范围：[1, 100] |
+    // | DEVICE_BATTERY_PERCENTAGE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;battery_percentage_threshold\&quot;,\&quot;value\&quot;:20},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备电池电量检测，report_period：上报周期单位(小时) 取值范围[1, 24]；battery_percentage_threshold：电池检测阈值百分比，取值范围：[1, 100] |
+    // | DEVICE_LOGIN_LOCAL_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备本地登录检测 |
+    // | DEVICE_MALICIOUS_IP_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | {\&quot;key\&quot;:\&quot;safety_ips\&quot;,\&quot;value\&quot;:[\&quot;192.168.0.0/16\&quot;]} | 设备恶意ip检测 |
+    // | DEVICE_LOGIN_BRUTE_FORCE_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备暴力破解登录检测 |
+    // | DEVICE_FILE_TAMPER_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备本地文件篡改检测 |
+    // | INSECURE_TLS_PROTOCOL_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备使用不安全的TLS协议接入检测 |
+    // | INSECURE_CIPHER_SUITE_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备使用不安全TLS加密套件接入检测 |
+    // | CONNECT_MULTIPLE_TIMES_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备单位时间内多次建链检测 |
+    // | SECRET_COMPLEXITY_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备弱密码检测 |
+    // | TLS_CONNECT_CHECK | MINOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备是否使用TLS加密通讯协议检测 |
+    // | DEVICE_AUTH_FAIL_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备鉴权失败检测 |
+    // | DEVICE_OFFLINE_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备异常离线检测 |
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSecurityProfileResponse> createSecurityProfile(
+        CreateSecurityProfileRequest &request
+    );
+    // 删除某个具体id的安全态势感知配置信息
+    //
+    // 应用服务器可调用此接口删除某个具体id的安全态势感知配置信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSecurityProfileResponse> deleteSecurityProfile(
+        DeleteSecurityProfileRequest &request
+    );
+    // 查询安全态势感知配置信息列表
+    //
+    // 接口说明：应用服务器调用该接口查询安全态势感知配置列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSecurityProfilesResponse> listSecurityProfiles(
+        ListSecurityProfilesRequest &request
+    );
+    // 查询某个具体id的安全态势感知配置详情
+    //
+    // 应用服务器可调用此接口查询某个具体id的安全态势感知配置详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSecurityProfileResponse> showSecurityProfile(
+        ShowSecurityProfileRequest &request
+    );
+    // 更新某个具体id的安全态势感知配置信息
+    //
+    // 应用服务器可调用此接口更新某个具体id的安全态势感知配置信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSecurityProfileResponse> updateSecurityProfile(
+        UpdateSecurityProfileRequest &request
     );
 
     // 按标签查询资源

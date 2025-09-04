@@ -49,6 +49,15 @@ public:
     void setContentType(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** 企业项目ID。获取方式请参见：[获取企业项目ID]。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** default。
+    /// </summary>
+
+    std::string getEnterpriseProjectId() const;
+    bool enterpriseProjectIdIsSet() const;
+    void unsetenterpriseProjectId();
+    void setEnterpriseProjectId(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -61,6 +70,8 @@ public:
 protected:
     std::string contentType_;
     bool contentTypeIsSet_;
+    std::string enterpriseProjectId_;
+    bool enterpriseProjectIdIsSet_;
     CreateLogGroupParams body_;
     bool bodyIsSet_;
 

@@ -411,6 +411,48 @@ std::shared_ptr<BatchDeleteServerTagsResponse> EcsClient::batchDeleteServerTags(
 
     return localVarResult;
 }
+std::shared_ptr<BatchDetachVolumesResponse> EcsClient::batchDetachVolumes(BatchDetachVolumesRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/batchaction/detachvolumes/{volume_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForBatchDetachVolumes());
+
+    std::shared_ptr<BatchDetachVolumesResponse> localVarResult = std::make_shared<BatchDetachVolumesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchRebootServersResponse> EcsClient::batchRebootServers(BatchRebootServersRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/action";
@@ -481,6 +523,47 @@ std::shared_ptr<BatchResetServersPasswordResponse> EcsClient::batchResetServersP
         localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForBatchResetServersPassword());
 
     std::shared_ptr<BatchResetServersPasswordResponse> localVarResult = std::make_shared<BatchResetServersPasswordResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchResizeServersResponse> EcsClient::batchResizeServers(BatchResizeServersRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/batch-resize";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForBatchResizeServers());
+
+    std::shared_ptr<BatchResizeServersResponse> localVarResult = std::make_shared<BatchResizeServersResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1303,6 +1386,66 @@ std::shared_ptr<DisassociateServerVirtualIpResponse> EcsClient::disassociateServ
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ExecuteServerDumpResponse> EcsClient::executeServerDump(ExecuteServerDumpRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/actions/trigger-crash-dump";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForExecuteServerDump());
+
+    std::shared_ptr<ExecuteServerDumpResponse> localVarResult = std::make_shared<ExecuteServerDumpResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ExecuteServerRedeployResponse> EcsClient::executeServerRedeploy(ExecuteServerRedeployRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/actions/redeploy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForExecuteServerRedeploy());
+
+    std::shared_ptr<ExecuteServerRedeployResponse> localVarResult = std::make_shared<ExecuteServerRedeployResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -2995,6 +3138,36 @@ std::shared_ptr<RevertRecycleBinServerResponse> EcsClient::revertRecycleBinServe
         localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForRevertRecycleBinServer());
 
     std::shared_ptr<RevertRecycleBinServerResponse> localVarResult = std::make_shared<RevertRecycleBinServerResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAppendableVolumeQuotaResponse> EcsClient::showAppendableVolumeQuota(ShowAppendableVolumeQuotaRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/appendvolumequota";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowAppendableVolumeQuota());
+
+    std::shared_ptr<ShowAppendableVolumeQuotaResponse> localVarResult = std::make_shared<ShowAppendableVolumeQuotaResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

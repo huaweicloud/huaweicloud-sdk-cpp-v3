@@ -37,10 +37,12 @@ public:
     static HttpRequestDef genRequestDefForCreateUserDefinedUrlKeyWord();
     static HttpRequestDef genRequestDefForCreateVersionTestCase();
     static HttpRequestDef genRequestDefForDeleteBasicAwById();
+    static HttpRequestDef genRequestDefForDeleteCacheFile();
     static HttpRequestDef genRequestDefForDeleteFacotrById();
     static HttpRequestDef genRequestDefForDeleteRelationsByOneCase();
     static HttpRequestDef genRequestDefForDeleteService();
     static HttpRequestDef genRequestDefForDeleteTestCaseComment();
+    static HttpRequestDef genRequestDefForDeleteTestReportCustomDetailByUri();
     static HttpRequestDef genRequestDefForListAlarmStatisticsUsing();
     static HttpRequestDef genRequestDefForListAlertGroupsByCondition();
     static HttpRequestDef genRequestDefForListAlertTemplates();
@@ -58,6 +60,7 @@ public:
     static HttpRequestDef genRequestDefForListIssueTree();
     static HttpRequestDef genRequestDefForListIteratorIssueTree();
     static HttpRequestDef genRequestDefForListIterators();
+    static HttpRequestDef genRequestDefForListIteratorsInfo();
     static HttpRequestDef genRequestDefForListLinesUsing();
     static HttpRequestDef genRequestDefForListMsgInfosUsing();
     static HttpRequestDef genRequestDefForListOwnTestCases();
@@ -89,6 +92,7 @@ public:
     static HttpRequestDef genRequestDefForRemoveIssuesFromIterator();
     static HttpRequestDef genRequestDefForRunTestCase();
     static HttpRequestDef genRequestDefForSaveTaskSetting();
+    static HttpRequestDef genRequestDefForSaveTestReportCustomDetail();
     static HttpRequestDef genRequestDefForSetTaskResult();
     static HttpRequestDef genRequestDefForShowAllConfigValueByTypeAndKey();
     static HttpRequestDef genRequestDefForShowAllFeatureChildren();
@@ -146,8 +150,10 @@ public:
     static HttpRequestDef genRequestDefForUpdateTestCase();
     static HttpRequestDef genRequestDefForUpdateTestCaseComment();
     static HttpRequestDef genRequestDefForUpdateTestCaseResult();
+    static HttpRequestDef genRequestDefForUpdateTestReportCustomDetailByUri();
     static HttpRequestDef genRequestDefForUpdateUserDnsMapping();
     static HttpRequestDef genRequestDefForUpdateVersionTestCase();
+    static HttpRequestDef genRequestDefForUploadCacheFile();
     static HttpRequestDef genRequestDefForCreateApiTestSuiteByRepoFile();
     static HttpRequestDef genRequestDefForListEnvironments();
     static HttpRequestDef genRequestDefForUploadStepImg();

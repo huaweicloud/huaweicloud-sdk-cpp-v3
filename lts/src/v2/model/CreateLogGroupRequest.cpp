@@ -14,6 +14,8 @@ CreateLogGroupRequest::CreateLogGroupRequest()
 {
     contentType_ = "";
     contentTypeIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -29,6 +31,9 @@ web::json::value CreateLogGroupRequest::toJson() const
 
     if(contentTypeIsSet_) {
         val[utility::conversions::to_string_t("Content-Type")] = ModelBase::toJson(contentType_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -47,6 +52,15 @@ bool CreateLogGroupRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setContentType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -81,6 +95,27 @@ bool CreateLogGroupRequest::contentTypeIsSet() const
 void CreateLogGroupRequest::unsetcontentType()
 {
     contentTypeIsSet_ = false;
+}
+
+std::string CreateLogGroupRequest::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void CreateLogGroupRequest::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool CreateLogGroupRequest::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void CreateLogGroupRequest::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
 }
 
 CreateLogGroupParams CreateLogGroupRequest::getBody() const

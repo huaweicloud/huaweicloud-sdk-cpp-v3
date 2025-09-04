@@ -52,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForListAuditlogLinks();
     static HttpRequestDef genRequestDefForListAuditlogs();
     static HttpRequestDef genRequestDefForListAz2Migrate();
+    static HttpRequestDef genRequestDefForListBackupDownloadPolicy();
     static HttpRequestDef genRequestDefForListBackups();
     static HttpRequestDef genRequestDefForListConfigurations();
     static HttpRequestDef genRequestDefForListDatabaseRoles();
@@ -87,6 +88,7 @@ public:
     static HttpRequestDef genRequestDefForRestoreInstance();
     static HttpRequestDef genRequestDefForRestoreInstanceFromCollection();
     static HttpRequestDef genRequestDefForRestoreNewInstance();
+    static HttpRequestDef genRequestDefForSaveBackupDownloadPolicy();
     static HttpRequestDef genRequestDefForSetAuditlogPolicy();
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicies();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
@@ -122,6 +124,7 @@ public:
     static HttpRequestDef genRequestDefForSwitchSlowlogDesensitization();
     static HttpRequestDef genRequestDefForSwitchSsl();
     static HttpRequestDef genRequestDefForSwitchoverReplicaSet();
+    static HttpRequestDef genRequestDefForUpdateBackupDownloadPolicy();
     static HttpRequestDef genRequestDefForUpdateClientNetwork();
     static HttpRequestDef genRequestDefForUpdateConfigurationParameter();
     static HttpRequestDef genRequestDefForUpdateEntityConfiguration();

@@ -32,12 +32,17 @@
 #include <huaweicloud/ecs/v2/model/BatchDeleteServerTagsRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchDeleteServerTagsRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchDeleteServerTagsResponse.h>
+#include <huaweicloud/ecs/v2/model/BatchDetachVolumesRequest.h>
+#include <huaweicloud/ecs/v2/model/BatchDetachVolumesResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchRebootServersRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchRebootServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchRebootServersResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchResetServersPasswordRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchResetServersPasswordRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchResetServersPasswordResponse.h>
+#include <huaweicloud/ecs/v2/model/BatchResizeServersReq.h>
+#include <huaweicloud/ecs/v2/model/BatchResizeServersRequest.h>
+#include <huaweicloud/ecs/v2/model/BatchResizeServersResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchStartServersRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchStartServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchStartServersResponse.h>
@@ -95,6 +100,10 @@
 #include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpRequest.h>
 #include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpRequestBody.h>
 #include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpResponse.h>
+#include <huaweicloud/ecs/v2/model/ExecuteServerDumpRequest.h>
+#include <huaweicloud/ecs/v2/model/ExecuteServerDumpResponse.h>
+#include <huaweicloud/ecs/v2/model/ExecuteServerRedeployRequest.h>
+#include <huaweicloud/ecs/v2/model/ExecuteServerRedeployResponse.h>
 #include <huaweicloud/ecs/v2/model/ListCloudServersRequest.h>
 #include <huaweicloud/ecs/v2/model/ListCloudServersResponse.h>
 #include <huaweicloud/ecs/v2/model/ListFlavorSellPoliciesRequest.h>
@@ -190,6 +199,8 @@
 #include <huaweicloud/ecs/v2/model/RevertRecycleBinServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ScheduledEventAcceptBody.h>
 #include <huaweicloud/ecs/v2/model/ScheduledEventUpdateBody.h>
+#include <huaweicloud/ecs/v2/model/ShowAppendableVolumeQuotaRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowAppendableVolumeQuotaResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowMetadataOptionsRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowMetadataOptionsResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowRecycleBinRequest.h>
@@ -237,6 +248,7 @@
 #include <huaweicloud/ecs/v2/model/UpdateServerRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerResponse.h>
+#include <huaweicloud/ecs/v2/model/VolumeBatchDetachRequest.h>
 #include <string>
 
 #include <huaweicloud/ecs/v2/model/NovaListVersionsRequest.h>
@@ -354,6 +366,13 @@ public:
     std::shared_ptr<BatchDeleteServerTagsResponse> batchDeleteServerTags(
         BatchDeleteServerTagsRequest &request
     );
+    // 批量卸载卷
+    //
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDetachVolumesResponse> batchDetachVolumes(
+        BatchDetachVolumesRequest &request
+    );
     // 批量重启云服务器
     //
     // 根据给定的云服务器ID列表，批量重启云服务器，一次最多可以重启1000台。
@@ -369,6 +388,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchResetServersPasswordResponse> batchResetServersPassword(
         BatchResetServersPasswordRequest &request
+    );
+    // 批量变更云服务器规格
+    //
+    // 批量变更云服务器规格
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchResizeServersResponse> batchResizeServers(
+        BatchResizeServersRequest &request
     );
     // 批量启动云服务器
     //
@@ -584,6 +611,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociateServerVirtualIpResponse> disassociateServerVirtualIp(
         DisassociateServerVirtualIpRequest &request
+    );
+    // 触发云服务器内核dump
+    //
+    // 触发云服务器内核dump
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteServerDumpResponse> executeServerDump(
+        ExecuteServerDumpRequest &request
+    );
+    // 重部署云服务器
+    //
+    // 重部署云服务器
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteServerRedeployResponse> executeServerRedeploy(
+        ExecuteServerRedeployRequest &request
     );
     // 查询云服务器列表接口
     //
@@ -938,6 +981,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RevertRecycleBinServerResponse> revertRecycleBinServer(
         RevertRecycleBinServerRequest &request
+    );
+    // 查询包周期虚拟机可以追加卷数量
+    //
+    // 查询包周期虚拟机可以追加卷数量
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAppendableVolumeQuotaResponse> showAppendableVolumeQuota(
+        ShowAppendableVolumeQuotaRequest &request
     );
     // 查询云服务器元数据配置
     //

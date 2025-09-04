@@ -1673,6 +1673,205 @@ std::shared_ptr<CreateCommandResponse> IoTDAClient::createCommand(CreateCommandR
 
     return localVarResult;
 }
+std::shared_ptr<CreateDeviceAuthenticationTemplateResponse> IoTDAClient::createDeviceAuthenticationTemplate(CreateDeviceAuthenticationTemplateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-authentication-templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForCreateDeviceAuthenticationTemplate());
+
+    std::shared_ptr<CreateDeviceAuthenticationTemplateResponse> localVarResult = std::make_shared<CreateDeviceAuthenticationTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteDeviceAuthenticationTemplateResponse> IoTDAClient::deleteDeviceAuthenticationTemplate(DeleteDeviceAuthenticationTemplateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-authentication-templates/{template_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["template_id"] = parameterToString(request.getTemplateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForDeleteDeviceAuthenticationTemplate());
+
+    std::shared_ptr<DeleteDeviceAuthenticationTemplateResponse> localVarResult = std::make_shared<DeleteDeviceAuthenticationTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListDeviceAuthenticationTemplatesResponse> IoTDAClient::listDeviceAuthenticationTemplates(ListDeviceAuthenticationTemplatesRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-authentication-templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.templateNameIsSet()) {
+        localVarQueryParams["template_name"] = parameterToString(request.getTemplateName());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForListDeviceAuthenticationTemplates());
+
+    std::shared_ptr<ListDeviceAuthenticationTemplatesResponse> localVarResult = std::make_shared<ListDeviceAuthenticationTemplatesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDeviceAuthenticationTemplateResponse> IoTDAClient::showDeviceAuthenticationTemplate(ShowDeviceAuthenticationTemplateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-authentication-templates/{template_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["template_id"] = parameterToString(request.getTemplateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForShowDeviceAuthenticationTemplate());
+
+    std::shared_ptr<ShowDeviceAuthenticationTemplateResponse> localVarResult = std::make_shared<ShowDeviceAuthenticationTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateDeviceAuthenticationTemplateResponse> IoTDAClient::updateDeviceAuthenticationTemplate(UpdateDeviceAuthenticationTemplateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-authentication-templates/{template_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["template_id"] = parameterToString(request.getTemplateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForUpdateDeviceAuthenticationTemplate());
+
+    std::shared_ptr<UpdateDeviceAuthenticationTemplateResponse> localVarResult = std::make_shared<UpdateDeviceAuthenticationTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateDeviceAuthorizerResponse> IoTDAClient::createDeviceAuthorizer(CreateDeviceAuthorizerRequest &request)
 {
     std::string localVarPath = "/v5/iot/{project_id}/device-authorizers";
@@ -1860,6 +2059,209 @@ std::shared_ptr<UpdateDeviceAuthorizerResponse> IoTDAClient::updateDeviceAuthori
         localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForUpdateDeviceAuthorizer());
 
     std::shared_ptr<UpdateDeviceAuthorizerResponse> localVarResult = std::make_shared<UpdateDeviceAuthorizerResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteDeviceCertificateResponse> IoTDAClient::deleteDeviceCertificate(DeleteDeviceCertificateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-certificates/{certificate_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["certificate_id"] = parameterToString(request.getCertificateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForDeleteDeviceCertificate());
+
+    std::shared_ptr<DeleteDeviceCertificateResponse> localVarResult = std::make_shared<DeleteDeviceCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListDeviceByDeviceCertificateResponse> IoTDAClient::listDeviceByDeviceCertificate(ListDeviceByDeviceCertificateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-certificates/{certificate_id}/list-device";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["certificate_id"] = parameterToString(request.getCertificateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForListDeviceByDeviceCertificate());
+
+    std::shared_ptr<ListDeviceByDeviceCertificateResponse> localVarResult = std::make_shared<ListDeviceByDeviceCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListDeviceCertificateResponse> IoTDAClient::listDeviceCertificate(ListDeviceCertificateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-certificates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.commonNameIsSet()) {
+        localVarQueryParams["common_name"] = parameterToString(request.getCommonName());
+    }
+    if (request.fingerprintIsSet()) {
+        localVarQueryParams["fingerprint"] = parameterToString(request.getFingerprint());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForListDeviceCertificate());
+
+    std::shared_ptr<ListDeviceCertificateResponse> localVarResult = std::make_shared<ListDeviceCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDeviceCertificateResponse> IoTDAClient::showDeviceCertificate(ShowDeviceCertificateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-certificates/{certificate_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["certificate_id"] = parameterToString(request.getCertificateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForShowDeviceCertificate());
+
+    std::shared_ptr<ShowDeviceCertificateResponse> localVarResult = std::make_shared<ShowDeviceCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateDeviceCertificateResponse> IoTDAClient::updateDeviceCertificate(UpdateDeviceCertificateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/device-certificates/{certificate_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["certificate_id"] = parameterToString(request.getCertificateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForUpdateDeviceCertificate());
+
+    std::shared_ptr<UpdateDeviceCertificateResponse> localVarResult = std::make_shared<UpdateDeviceCertificateResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2864,6 +3266,39 @@ std::shared_ptr<UpdateDeviceProxyResponse> IoTDAClient::updateDeviceProxy(Update
 
     return localVarResult;
 }
+std::shared_ptr<DeleteDeviceShadowResponse> IoTDAClient::deleteDeviceShadow(DeleteDeviceShadowRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/devices/{device_id}/shadow";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["device_id"] = parameterToString(request.getDeviceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForDeleteDeviceShadow());
+
+    std::shared_ptr<DeleteDeviceShadowResponse> localVarResult = std::make_shared<DeleteDeviceShadowResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowDeviceShadowResponse> IoTDAClient::showDeviceShadow(ShowDeviceShadowRequest &request)
 {
     std::string localVarPath = "/v5/iot/{project_id}/devices/{device_id}/shadow";
@@ -3256,6 +3691,229 @@ std::shared_ptr<ListFunctionsResponse> IoTDAClient::listFunctions(ListFunctionsR
         localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForListFunctions());
 
     std::shared_ptr<ListFunctionsResponse> localVarResult = std::make_shared<ListFunctionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<AddHarmonySoftBusResponse> IoTDAClient::addHarmonySoftBus(AddHarmonySoftBusRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/harmony-soft-bus";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForAddHarmonySoftBus());
+
+    std::shared_ptr<AddHarmonySoftBusResponse> localVarResult = std::make_shared<AddHarmonySoftBusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateSyncHarmonySoftBusResponse> IoTDAClient::createSyncHarmonySoftBus(CreateSyncHarmonySoftBusRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/harmony-soft-bus/{bus_id}/sync";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["bus_id"] = parameterToString(request.getBusId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForCreateSyncHarmonySoftBus());
+
+    std::shared_ptr<CreateSyncHarmonySoftBusResponse> localVarResult = std::make_shared<CreateSyncHarmonySoftBusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteHarmonySoftBusResponse> IoTDAClient::deleteHarmonySoftBus(DeleteHarmonySoftBusRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/harmony-soft-bus/{bus_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["bus_id"] = parameterToString(request.getBusId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForDeleteHarmonySoftBus());
+
+    std::shared_ptr<DeleteHarmonySoftBusResponse> localVarResult = std::make_shared<DeleteHarmonySoftBusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListHarmonySoftBusResponse> IoTDAClient::listHarmonySoftBus(ListHarmonySoftBusRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/harmony-soft-bus";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.groupIdIsSet()) {
+        localVarQueryParams["group_id"] = parameterToString(request.getGroupId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForListHarmonySoftBus());
+
+    std::shared_ptr<ListHarmonySoftBusResponse> localVarResult = std::make_shared<ListHarmonySoftBusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ResetHarmonySoftBusKeyResponse> IoTDAClient::resetHarmonySoftBusKey(ResetHarmonySoftBusKeyRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/harmony-soft-bus/{bus_id}/reset-bus-key";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["bus_id"] = parameterToString(request.getBusId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForResetHarmonySoftBusKey());
+
+    std::shared_ptr<ResetHarmonySoftBusKeyResponse> localVarResult = std::make_shared<ResetHarmonySoftBusKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowHarmonySoftBusResponse> IoTDAClient::showHarmonySoftBus(ShowHarmonySoftBusRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/harmony-soft-bus/{bus_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["bus_id"] = parameterToString(request.getBusId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForShowHarmonySoftBus());
+
+    std::shared_ptr<ShowHarmonySoftBusResponse> localVarResult = std::make_shared<ShowHarmonySoftBusResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5053,6 +5711,211 @@ std::shared_ptr<UpdateRuleResponse> IoTDAClient::updateRule(UpdateRuleRequest &r
         localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForUpdateRule());
 
     std::shared_ptr<UpdateRuleResponse> localVarResult = std::make_shared<UpdateRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateSecurityProfileResponse> IoTDAClient::createSecurityProfile(CreateSecurityProfileRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/security-profiles";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForCreateSecurityProfile());
+
+    std::shared_ptr<CreateSecurityProfileResponse> localVarResult = std::make_shared<CreateSecurityProfileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteSecurityProfileResponse> IoTDAClient::deleteSecurityProfile(DeleteSecurityProfileRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/security-profiles/{profile_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["profile_id"] = parameterToString(request.getProfileId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForDeleteSecurityProfile());
+
+    std::shared_ptr<DeleteSecurityProfileResponse> localVarResult = std::make_shared<DeleteSecurityProfileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListSecurityProfilesResponse> IoTDAClient::listSecurityProfiles(ListSecurityProfilesRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/security-profiles";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.securityTypeIsSet()) {
+        localVarQueryParams["security_type"] = parameterToString(request.getSecurityType());
+    }
+    if (request.targetTypeIsSet()) {
+        localVarQueryParams["target_type"] = parameterToString(request.getTargetType());
+    }
+    if (request.targetIdIsSet()) {
+        localVarQueryParams["target_id"] = parameterToString(request.getTargetId());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForListSecurityProfiles());
+
+    std::shared_ptr<ListSecurityProfilesResponse> localVarResult = std::make_shared<ListSecurityProfilesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowSecurityProfileResponse> IoTDAClient::showSecurityProfile(ShowSecurityProfileRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/security-profiles/{profile_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["profile_id"] = parameterToString(request.getProfileId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForShowSecurityProfile());
+
+    std::shared_ptr<ShowSecurityProfileResponse> localVarResult = std::make_shared<ShowSecurityProfileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateSecurityProfileResponse> IoTDAClient::updateSecurityProfile(UpdateSecurityProfileRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/security-profiles/{profile_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["profile_id"] = parameterToString(request.getProfileId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForUpdateSecurityProfile());
+
+    std::shared_ptr<UpdateSecurityProfileResponse> localVarResult = std::make_shared<UpdateSecurityProfileResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

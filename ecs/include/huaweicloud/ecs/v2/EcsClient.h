@@ -201,12 +201,16 @@
 #include <huaweicloud/ecs/v2/model/ScheduledEventUpdateBody.h>
 #include <huaweicloud/ecs/v2/model/ShowAppendableVolumeQuotaRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowAppendableVolumeQuotaResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowFlavorCapacityRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowFlavorCapacityResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowMetadataOptionsRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowMetadataOptionsResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowRecycleBinRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowRecycleBinResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowServerAttachableNicNumRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowServerAttachableNicNumResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerGroupRequest.h>
@@ -990,6 +994,14 @@ public:
     std::shared_ptr<ShowAppendableVolumeQuotaResponse> showAppendableVolumeQuota(
         ShowAppendableVolumeQuotaRequest &request
     );
+    // 查询flavor的容量
+    //
+    // 查询flavor的容量
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFlavorCapacityResponse> showFlavorCapacity(
+        ShowFlavorCapacityRequest &request
+    );
     // 查询云服务器元数据配置
     //
     // 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
@@ -1023,6 +1035,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowServerResponse> showServer(
         ShowServerRequest &request
+    );
+    // 查询虚拟机可挂载网卡
+    //
+    // 查询虚拟机可挂载网卡
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowServerAttachableNicNumResponse> showServerAttachableNicNum(
+        ShowServerAttachableNicNumRequest &request
     );
     // 查询弹性云服务器单个磁盘信息
     //

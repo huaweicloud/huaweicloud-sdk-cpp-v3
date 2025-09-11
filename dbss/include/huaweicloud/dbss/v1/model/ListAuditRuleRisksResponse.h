@@ -57,12 +57,23 @@ public:
     void unsettotal();
     void setTotal(int32_t value);
 
+    /// <summary>
+    /// 自定义规则总数
+    /// </summary>
+
+    int32_t getCustomizeTotal() const;
+    bool customizeTotalIsSet() const;
+    void unsetcustomizeTotal();
+    void setCustomizeTotal(int32_t value);
+
 
 protected:
     std::vector<RuleRiskResponse_rules> rules_;
     bool rulesIsSet_;
     int32_t total_;
     bool totalIsSet_;
+    int32_t customizeTotal_;
+    bool customizeTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

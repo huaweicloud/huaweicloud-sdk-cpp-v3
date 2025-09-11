@@ -39,7 +39,7 @@ bool ListDisasterRecoveryRecordResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("records"));
         if(!fieldValue.is_null())
         {
-            std::vector<RecordInfoResponse> refVal;
+            std::vector<RecordInfoResponseResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRecords(refVal);
         }
@@ -48,12 +48,12 @@ bool ListDisasterRecoveryRecordResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<RecordInfoResponse>& ListDisasterRecoveryRecordResponse::getRecords()
+std::vector<RecordInfoResponseResult>& ListDisasterRecoveryRecordResponse::getRecords()
 {
     return records_;
 }
 
-void ListDisasterRecoveryRecordResponse::setRecords(const std::vector<RecordInfoResponse>& value)
+void ListDisasterRecoveryRecordResponse::setRecords(const std::vector<RecordInfoResponseResult>& value)
 {
     records_ = value;
     recordsIsSet_ = true;

@@ -966,6 +966,11 @@ HttpRequestDef EcsMeta::genRequestDefForShowAppendableVolumeQuota() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForShowFlavorCapacity() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForShowMetadataOptions() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -982,6 +987,11 @@ HttpRequestDef EcsMeta::genRequestDefForShowResetPasswordFlag() {
 }
 
 HttpRequestDef EcsMeta::genRequestDefForShowServer() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForShowServerAttachableNicNum() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }

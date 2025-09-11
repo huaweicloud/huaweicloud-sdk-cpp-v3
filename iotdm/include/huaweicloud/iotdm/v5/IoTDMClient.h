@@ -6,6 +6,10 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/iotdm/v5/model/ListInstanceFlavorsRequest.h>
+#include <huaweicloud/iotdm/v5/model/ListInstanceFlavorsResponse.h>
+#include <string>
+
 #include <huaweicloud/iotdm/v5/model/BindInstanceTags.h>
 #include <huaweicloud/iotdm/v5/model/BindInstanceTagsRequest.h>
 #include <huaweicloud/iotdm/v5/model/BindInstanceTagsResponse.h>
@@ -32,6 +36,14 @@
 #include <huaweicloud/iotdm/v5/model/UpdateInstanceResponse.h>
 #include <string>
 
+#include <huaweicloud/iotdm/v5/model/ListInstanceTasksRequest.h>
+#include <huaweicloud/iotdm/v5/model/ListInstanceTasksResponse.h>
+#include <huaweicloud/iotdm/v5/model/RetryInstanceTaskRequest.h>
+#include <huaweicloud/iotdm/v5/model/RetryInstanceTaskResponse.h>
+#include <huaweicloud/iotdm/v5/model/ShowInstanceTaskRequest.h>
+#include <huaweicloud/iotdm/v5/model/ShowInstanceTaskResponse.h>
+#include <string>
+
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Object.h>
@@ -55,6 +67,15 @@ public:
     virtual ~IoTDMClient();
 
     static ClientBuilder<IoTDMClient> newBuilder();
+
+    // 查询实例规格列表
+    //
+    // 用户可以调用此接口查询设备接入服务支持的实例规格列表。支持的实例规格请参见[[产品规格说明](https://support.huaweicloud.com/productdesc-iothub/iot_04_0014.html)](tag:hws)[[产品规格说明](https://support.huaweicloud.com/intl/zh-cn/productdesc-iothub/iot_04_0014.html)](tag:hws_hk)。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceFlavorsResponse> listInstanceFlavors(
+        ListInstanceFlavorsRequest &request
+    );
 
     // 添加实例标签
     //
@@ -132,6 +153,31 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceResponse> updateInstance(
         UpdateInstanceRequest &request
+    );
+
+    // 查询实例任务列表
+    //
+    // 用户可以调用此接口查询设备接入实例任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceTasksResponse> listInstanceTasks(
+        ListInstanceTasksRequest &request
+    );
+    // 重试实例任务
+    //
+    // 用户可以调用此接口对运行失败的实例任务进行重试。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RetryInstanceTaskResponse> retryInstanceTask(
+        RetryInstanceTaskRequest &request
+    );
+    // 查询实例任务详情
+    //
+    // 用户可以调用此接口查询设备接入实例任务详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceTaskResponse> showInstanceTask(
+        ShowInstanceTaskRequest &request
     );
 
 

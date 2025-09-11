@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 数据库表结构及其所属 schema
+/// 
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  DatabaseSchemaTableResult
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// DatabaseSchemaTableResult members
 
     /// <summary>
-    /// 表名称
+    /// **参数解释**: 表名称。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getTableName() const;
@@ -48,7 +48,7 @@ public:
     void setTableName(const std::string& value);
 
     /// <summary>
-    /// schema名称
+    /// **参数解释**: schema名称。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getSchemaName() const;

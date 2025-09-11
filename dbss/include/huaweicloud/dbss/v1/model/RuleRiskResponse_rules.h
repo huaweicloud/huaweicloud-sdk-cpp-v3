@@ -93,7 +93,7 @@ public:
     void setRank(int32_t value);
 
     /// <summary>
-    /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK]
+    /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
     /// </summary>
 
     std::string getRiskLevel() const;

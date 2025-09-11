@@ -13,7 +13,6 @@ namespace Model {
 AlarmLogRequest::AlarmLogRequest()
 {
     timeIsSet_ = false;
-    risk_ = "";
     riskIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
@@ -73,7 +72,7 @@ bool AlarmLogRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("risk"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRisk(refVal);
         }
@@ -139,12 +138,12 @@ void AlarmLogRequest::unsettime()
     timeIsSet_ = false;
 }
 
-std::string AlarmLogRequest::getRisk() const
+std::vector<std::string>& AlarmLogRequest::getRisk()
 {
     return risk_;
 }
 
-void AlarmLogRequest::setRisk(const std::string& value)
+void AlarmLogRequest::setRisk(const std::vector<std::string>& value)
 {
     risk_ = value;
     riskIsSet_ = true;

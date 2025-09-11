@@ -22,12 +22,6 @@ public:
     static HttpRequestDef genRequestDefForCreateAgencyWithRoleType();
     static HttpRequestDef genRequestDefForDeleteAgencyWithRoleType();
     static HttpRequestDef genRequestDefForShowAgency();
-    static HttpRequestDef genRequestDefForCreateAsrVocabulary();
-    static HttpRequestDef genRequestDefForDeleteAsrVocabulary();
-    static HttpRequestDef genRequestDefForListAsrVocabulary();
-    static HttpRequestDef genRequestDefForShowAsrVocabulary();
-    static HttpRequestDef genRequestDefForShowAsrVocabularyAssociation();
-    static HttpRequestDef genRequestDefForUpdateAsrVocabulary();
     static HttpRequestDef genRequestDefForDeleteTask();
     static HttpRequestDef genRequestDefForDownloadResultFile();
     static HttpRequestDef genRequestDefForDownloadTemplate();
@@ -223,6 +217,8 @@ public:
     static HttpRequestDef genRequestDefForCountTenantResources();
     static HttpRequestDef genRequestDefForListTenantResources();
     static HttpRequestDef genRequestDefForShowResourceUsage();
+    static HttpRequestDef genRequestDefForSignAgreement();
+    static HttpRequestDef genRequestDefForSignSpecialAgreement();
     static HttpRequestDef genRequestDefForCommitVoiceTrainingJob();
     static HttpRequestDef genRequestDefForConfirmTrainingSegment();
     static HttpRequestDef genRequestDefForCreateTrainingAdvanceJob();

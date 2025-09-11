@@ -1,3 +1,353 @@
+# 3.1.154 2025-09-11
+
+### HuaweiCloud SDK CPCS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVmMonitor**
+    - changes of response param
+      - `+ average`
+      - `+ max`
+  - **ShowAppAccessKeyList**
+    - changes of response param
+      - `+ total_num`
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `UpdateAuditRiskBucketPath`
+    - `ShowServerVersion`
+    - `UpdateAuditTaskStatus`
+    - `ShowAuditStatistics`
+    - `ShowSqlDetail`
+    - `CountSqlStatistics`
+    - `CountSessionStatistics`
+    - `CountOperationStatistics`
+    - `CountInjectionStatistics`
+    - `CountSqlTrendStatistics`
+    - `CountRiskTrendStatistics`
+    - `CountDbAccountSession`
+    - `CountDbClientSession`
+    - `ShowInstanceMonitorInfo`
+    - `ShowAuditTaskStatus`
+    - `SetAuditInstanceTimeZone`
+    - `ConfirmUpgradeAudit`
+    - `ShowAuditUpgradeStatus`
+    - `ShowSensitiveResultSwitch`
+    - `SetSensitiveResultSwitch`
+    - `ShowSensitiveMaskSwitch`
+    - `SetSensitiveSwitch`
+    - `SetSensitiveMaskRuleSwitch`
+    - `UpdateSensitiveMaskRule`
+    - `DeleteSensitiveRules`
+    - `ListAuditSensitiveMasksNew`
+    - `CreateSensitiveMaskRule`
+    - `DeleteAuditScope`
+    - `UpdateAuditScopeRule`
+    - `BatchDeleteAuditScope`
+    - `SetAuditScopeRuleSwitch`
+    - `ListAuditRuleScopesNew`
+    - `CreateAuditScopeRule`
+    - `ShowInstanceQuota`
+    - `SetRiskRuleRank`
+    - `DeleteAuditRuleRisk`
+    - `ListAuditRuleRisksNew`
+    - `CreateAuditRiskRule`
+    - `UpdateAuditSqlRule`
+    - `DeleteAuditRuleSql`
+    - `SetSqlRuleRank`
+    - `CreateAuditSqlRule`
+    - `SetAuditSqlRuleSwitch`
+    - `CreateAuditDbAgent`
+    - `BatchSetAuditAlarmLogStatus`
+    - `SetAuditAlarmLogStatus`
+    - `DeleteAuditAlarmLog`
+    - `ListAuditBackupRiskTemplates`
+    - `ShowAuditBackRiskTemplate`
+    - `ShowBackupRiskBucketPath`
+    - `SetAuditBackupRiskSwitch`
+    - `ListInstances`
+    - `UpdateDbOmInstanceName`
+    - `UnbindDbOmEip`
+    - `BindDbOmEip`
+    - `ChangeDbOmSecurityGroup`
+    - `ResetDbOmPassword`
+    - `ShowAuditRuleRiskNew`
+    - `SetRiskOperationPolicy`
+    - `RebootDbOmInstance`
+    - `StopDbOmInstance`
+    - `StartDbOmInstance`
+    - `DeleteDbOmInstance`
+    - `CreateDbOmInstancePeriod`
+    - `ListDbEncryptInstances`
+    - `UpdateDbEncryptInstanceName`
+    - `UnbindDbEncryptEip`
+    - `BindDbEncryptEip`
+    - `ChangeDbEncryptSecurityGroup`
+    - `ResetDbEncryptPassword`
+    - `RebootDbEncryptInstance`
+    - `StopDbEncryptInstance`
+    - `StartDbEncryptInstance`
+    - `DeleteDbEncryptInstance`
+    - `CreateDbEncryptInstancePeriod`
+    - `ListAuditBackupInfo`
+    - `SetAuditBackupSwitch`
+    - `ShowAuditBackupStatus`
+    - `RetryAuditBackupTask`
+    - `RestoreAuditBackup`
+    - `ListAuditObsBuckets`
+    - `DeleteAuditBackupTask`
+    - `SetAuditAutoBackupTemplate`
+    - `ListAuditReportTemplates`
+    - `DeleteAuditReport`
+    - `DownloadAuditReport`
+    - `UpdateAuditTopicReportSchedulerConfig`
+    - `ShowAuditTopicReportSchedulerConfig`
+    - `ListAuditReports`
+    - `CreateReport`
+    - `UpdateAuditWhitelist`
+    - `DeleteAuditWhitelist`
+    - `ListWhitelists`
+    - `BatchAddAuditWhitelist`
+    - `ListAuditTags`
+    - `ListAlarmTopicConfigInfoNew`
+    - `SetAlarmTopicConfigInfoNew`
+    - `SwitchRiskRuleNew`
+    - `ListAuditInstancesNew`
+    - `DeleteInstancesNew`
+    - `ShowAuditQuotaNew`
+    - `ListEcsSpecificationNew`
+    - `ListAvailabilityZoneInfosNew`
+    - `ListAuditInstanceJobsNew`
+    - `ListAuditOperateLogsNew`
+    - `ListSqlInjectionRulesNew`
+    - `CreateInstancesPeriodOrderNew`
+    - `UpdateAuditSecurityGroupNew`
+    - `SwitchAgentNew`
+    - `ListAuditDatabasesNew`
+    - `AddAuditDatabaseNew`
+    - `AddRdsDatabaseNew`
+    - `DeleteAuditDatabaseNew`
+    - `UploadAuditDbConfig`
+    - `SwitchAuditDatabaseNew`
+    - `DownloadAuditAgentNew`
+    - `DeleteAuditAgentNew`
+    - `ListAuditTrendHistory`
+    - `StartAuditInstanceNew`
+    - `StopAuditInstanceNew`
+    - `RebootAuditInstanceNew`
+    - `UpdateAuditInstanceNew`
+    - `ListAuditAlarmLogNew`
+    - `ListAuditSqlsNew`
+    - `ListAuditAgentNew`
+    - `AddAuditAgentNew`
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `ListAlarmTopicConfigInfo`
+    - `SetAlarmTopicConfigInfo`
+    - `SwitchRiskRule`
+    - `ShowAuditQuota`
+    - `ListSqlInjectionRules`
+    - `ListAuditRuleRisks`
+    - `ShowAuditRuleRisk`
+    - `ListAuditSensitiveMasks`
+    - `UpdateAuditSecurityGroup`
+    - `AddRdsNoAgentDatabase`
+    - `SwitchAgent`
+    - `AddAuditDatabase`
+    - `AddRdsDatabase`
+    - `DeleteAuditDatabase`
+    - `SwitchAuditDatabase`
+    - `DownloadAuditAgent`
+    - `DeleteAuditAgent`
+    - `StartAuditInstance`
+    - `StopAuditInstance`
+    - `RebootAuditInstance`
+    - `UpdateAuditInstance`
+    - `ListAuditAlarmLog`
+    - `ListAuditSqls`
+    - `ListAuditAgent`
+    - `AddAuditAgent`
+    - `DeleteInstances`
+    - `ListAuditInstances`
+    - `ListEcsSpecification`
+    - `ListAvailabilityZoneInfos`
+    - `ListAuditInstanceJobs`
+    - `ListAuditOperateLogs`
+    - `ListAuditRuleScopes`
+    - `CreateInstancesPeriodOrder`
+    - `ListAuditDatabases`
+  - **ListSqlInjectionRules**
+    - changes of request param
+      - `+ page`
+      - `+ size`
+  - **ListAuditRuleRisks**
+    - changes of response param
+      - `+ customize_total`
+  - **ListRdsDatabases**
+    - changes of request param
+      - `+ db_type: enum value [ORACLE,DAMENG,KINGBASE]`
+  - **ListAuditAlarmLog**
+    - changes of request param
+      - `+ time.time_range: enum value [HOUR,THREE_HOUR,TWELVE_HOUR,DAY,WEEK,MONTH]`
+      - `- time.time_range: enum value [ HOUR, THREE_HOUR, TWELVE_HOUR, DAY, WEEK, MONTH;]`
+      - `* risk: string -> list<string>`
+  - **ListAuditSqls**
+    - changes of request param
+      - `- risk_levels: enum value [HIGH,MEDIUM,LOW,NO_RISK]`
+  - **AddAuditAgent**
+    - changes of request param
+      - `- mode: enum value [0,1]`
+      - `- agent_type: enum value [APP,DB]`
+  - **ListAuditOperateLogs**
+    - changes of request param
+      - `- action: enum value [CREATE,DELETE,DOWNLOAD,UPDATE]`
+      - `- time.time_range: enum value [HALF_HOUR, HOUR, THREE_HOUR, TWELVE_HOUR, DAY, WEEK, MONTH]`
+  - **ListResourceInstanceByTag**
+    - changes of request param
+      - `* sys_tags: object<TagKeyValuesBean> -> list<TagKeyValuesBean>`
+  - **CountResourceInstanceByTag**
+    - changes of request param
+      - `* sys_tags: object<TagKeyValuesBean> -> list<TagKeyValuesBean>`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ShowServerAttachableNicNum`, `ShowFlavorCapacity`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `UpdateRedistributionControl`
+    - `ListTopSqls`
+    - `ListSlowSqls`
+    - `ListSqlExcuteNodes`
+    - `ShowInstanceMetricData`
+    - `StopSession`
+    - `ListTableDefinitions`
+    - `ListEnhanceFullSqlStatistics`
+    - `ShowSessionOverview`
+    - `ListSessionStatistics`
+    - `ListTableDefinition`
+    - `ListHbaInfoHistory`
+    - `ListHbaInfos`
+    - `ModifyHbaConf`
+    - `AddHbaConfs`
+    - `DeleteHbaConfs`
+    - `ListReadonlyNodes`
+    - `CreateReadonlyNodes`
+    - `DeleteReadonlyNodes`
+    - `SwitchReplica`
+    - `ShowMetricNames`
+    - `ShowInstancesStatistics`
+    - `ListLtsConfigs`
+    - `BindLtsConfig`
+    - `UnbindLtsConfig`
+    - `ShowSlowSqlPlan`
+    - `ShowSlowSqlStack`
+    - `ListKeyViewExecuteNode`
+    - `ListSlowSqlDetails`
+    - `ListDatabaseSchemaTables`
+    - `RestoreHbaInfo`
+    - `ListDatabaseVolumeSummary`
+    - `ShowAlarmStatistics`
+    - `ListMetricDatas`
+    - `CollectWdrSnapshot`
+    - `ShowWdrSnapshotStatus`
+    - `SwitchWdrSnapshotStatus`
+    - `CreateWdrSnapshot`
+    - `StopFreeSession`
+    - `ListRealTimeSessions`
+    - `ShowGlobalSlowSqlDetail`
+    - `ListKmsTdeKey`
+    - `SwitchKmsTde`
+    - `ShowKmsKeyDetail`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateDatabase**
+    - changes of request param
+      - `- x-auth-token`
+  - **ExportSlowSql**
+    - changes of request param
+      - `+ sort_key: enum value [table_size,id,table_name,table_owner,database_name,schema_name,is_part_type,is_hash_cluster_key,tuples,create_time,update_time,average_size,max_ratio,min_ratio,skew_size,skew_ratio,skew_stddev]`
+      - `+ sort_order: enum value [ASC,DESC]`
+  - **ListConfigurationsDiff**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListDisasterRecoveryRecord**
+    - changes of response param
+      - `* records: list<RecordInfoResponse> -> list<RecordInfoResponseResult>`
+  - **ShowBatchUpgradeCandidateVersions**
+    - changes of response param
+      - `* hotfix_upgrade_infos: list<HotfixInfo> -> list<HotfixInfoResult>`
+
+### HuaweiCloud SDK IoTDM
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the APIs `ListInstanceTasks`, `ShowInstanceTask`, `RetryInstanceTask`, `ListInstanceFlavors`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK MetaStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `SignAgreement`, `SignSpecialAgreement`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the following APIs:
+    - `ListAsrVocabulary`
+    - `CreateAsrVocabulary`
+    - `ShowAsrVocabulary`
+    - `UpdateAsrVocabulary`
+    - `DeleteAsrVocabulary`
+    - `ShowAsrVocabularyAssociation`
+
+### HuaweiCloud SDK SMN
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ConfirmSubscription`
+    - `UnsubscribeSubscription`
+    - `ListProtocols`
+    - `ListCloudService`
+    - `DownloadHttpCert`
+    - `DeleteSubscriptionsByTopic`
+    - `BatchDeleteSubscriptions`
+    - `BatchDeleteSubscriptionsByTopic`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.153 2025-09-04
 
 ### HuaweiCloud SDK CDN

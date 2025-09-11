@@ -58,12 +58,34 @@ public:
     void unsetmetricName();
     void setMetricName(const std::string& value);
 
+    /// <summary>
+    /// 最大值，未计算默认为0
+    /// </summary>
+
+    double getMax() const;
+    bool maxIsSet() const;
+    void unsetmax();
+    void setMax(double value);
+
+    /// <summary>
+    /// 平均值，未计算默认为0
+    /// </summary>
+
+    double getAverage() const;
+    bool averageIsSet() const;
+    void unsetaverage();
+    void setAverage(double value);
+
 
 protected:
     std::vector<Datapoint> datapoints_;
     bool datapointsIsSet_;
     std::string metricName_;
     bool metricNameIsSet_;
+    double max_;
+    bool maxIsSet_;
+    double average_;
+    bool averageIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

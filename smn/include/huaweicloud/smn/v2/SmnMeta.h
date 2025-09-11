@@ -17,9 +17,12 @@ public:
     static HttpRequestDef genRequestDefForAddSubscriptionFromSubscriptionUser();
     static HttpRequestDef genRequestDefForBatchCreateOrDeleteResourceTags();
     static HttpRequestDef genRequestDefForBatchCreateSubscriptionsFilterPolices();
+    static HttpRequestDef genRequestDefForBatchDeleteSubscriptions();
+    static HttpRequestDef genRequestDefForBatchDeleteSubscriptionsByTopic();
     static HttpRequestDef genRequestDefForBatchDeleteSubscriptionsFilterPolices();
     static HttpRequestDef genRequestDefForBatchUpdateSubscriptionsFilterPolices();
     static HttpRequestDef genRequestDefForCancelSubscription();
+    static HttpRequestDef genRequestDefForConfirmSubscription();
     static HttpRequestDef genRequestDefForCreateLogtank();
     static HttpRequestDef genRequestDefForCreateMessageTemplate();
     static HttpRequestDef genRequestDefForCreateNotifyPolicy();
@@ -29,13 +32,17 @@ public:
     static HttpRequestDef genRequestDefForDeleteMessageTemplate();
     static HttpRequestDef genRequestDefForDeleteNotifyPolicy();
     static HttpRequestDef genRequestDefForDeleteResourceTag();
+    static HttpRequestDef genRequestDefForDeleteSubscriptionsByTopic();
     static HttpRequestDef genRequestDefForDeleteTopic();
     static HttpRequestDef genRequestDefForDeleteTopicAttributeByName();
     static HttpRequestDef genRequestDefForDeleteTopicAttributes();
+    static HttpRequestDef genRequestDefForDownloadHttpCert();
+    static HttpRequestDef genRequestDefForListCloudService();
     static HttpRequestDef genRequestDefForListLogtank();
     static HttpRequestDef genRequestDefForListMessageTemplateDetails();
     static HttpRequestDef genRequestDefForListMessageTemplates();
     static HttpRequestDef genRequestDefForListProjectTags();
+    static HttpRequestDef genRequestDefForListProtocols();
     static HttpRequestDef genRequestDefForListResourceInstances();
     static HttpRequestDef genRequestDefForListResourceTags();
     static HttpRequestDef genRequestDefForListSubscriptions();
@@ -50,6 +57,7 @@ public:
     static HttpRequestDef genRequestDefForPublishMessage();
     static HttpRequestDef genRequestDefForShowHttpDetectResult();
     static HttpRequestDef genRequestDefForShowNotifyPolicy();
+    static HttpRequestDef genRequestDefForUnsubscribeSubscription();
     static HttpRequestDef genRequestDefForUpdateLogtank();
     static HttpRequestDef genRequestDefForUpdateMessageTemplate();
     static HttpRequestDef genRequestDefForUpdateNotifyPolicy();

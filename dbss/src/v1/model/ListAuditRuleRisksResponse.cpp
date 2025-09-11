@@ -15,6 +15,8 @@ ListAuditRuleRisksResponse::ListAuditRuleRisksResponse()
     rulesIsSet_ = false;
     total_ = 0;
     totalIsSet_ = false;
+    customizeTotal_ = 0;
+    customizeTotalIsSet_ = false;
 }
 
 ListAuditRuleRisksResponse::~ListAuditRuleRisksResponse() = default;
@@ -32,6 +34,9 @@ web::json::value ListAuditRuleRisksResponse::toJson() const
     }
     if(totalIsSet_) {
         val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
+    }
+    if(customizeTotalIsSet_) {
+        val[utility::conversions::to_string_t("customize_total")] = ModelBase::toJson(customizeTotal_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool ListAuditRuleRisksResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotal(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("customize_total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("customize_total"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomizeTotal(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool ListAuditRuleRisksResponse::totalIsSet() const
 void ListAuditRuleRisksResponse::unsettotal()
 {
     totalIsSet_ = false;
+}
+
+int32_t ListAuditRuleRisksResponse::getCustomizeTotal() const
+{
+    return customizeTotal_;
+}
+
+void ListAuditRuleRisksResponse::setCustomizeTotal(int32_t value)
+{
+    customizeTotal_ = value;
+    customizeTotalIsSet_ = true;
+}
+
+bool ListAuditRuleRisksResponse::customizeTotalIsSet() const
+{
+    return customizeTotalIsSet_;
+}
+
+void ListAuditRuleRisksResponse::unsetcustomizeTotal()
+{
+    customizeTotalIsSet_ = false;
 }
 
 }

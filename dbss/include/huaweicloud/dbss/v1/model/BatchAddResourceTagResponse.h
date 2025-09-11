@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -38,19 +37,8 @@ public:
     /////////////////////////////////////////////
     /// BatchAddResourceTagResponse members
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    std::string getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const std::string& value);
-
 
 protected:
-    std::string body_;
-    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

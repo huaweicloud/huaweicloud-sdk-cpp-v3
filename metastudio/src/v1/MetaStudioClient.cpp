@@ -431,298 +431,6 @@ std::shared_ptr<ShowAgencyResponse> MetaStudioClient::showAgency(ShowAgencyReque
 
     return localVarResult;
 }
-std::shared_ptr<CreateAsrVocabularyResponse> MetaStudioClient::createAsrVocabulary(CreateAsrVocabularyRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/digital-human-chat/asr-vocabulary";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForCreateAsrVocabulary());
-
-    std::shared_ptr<CreateAsrVocabularyResponse> localVarResult = std::make_shared<CreateAsrVocabularyResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<DeleteAsrVocabularyResponse> MetaStudioClient::deleteAsrVocabulary(DeleteAsrVocabularyRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["asr_vocabulary_id"] = parameterToString(request.getAsrVocabularyId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForDeleteAsrVocabulary());
-
-    std::shared_ptr<DeleteAsrVocabularyResponse> localVarResult = std::make_shared<DeleteAsrVocabularyResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListAsrVocabularyResponse> MetaStudioClient::listAsrVocabulary(ListAsrVocabularyRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/digital-human-chat/asr-vocabulary";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.vocabularyTypeIsSet()) {
-        localVarQueryParams["vocabulary_type"] = parameterToString(request.getVocabularyType());
-    }
-    if (request.languageIsSet()) {
-        localVarQueryParams["language"] = parameterToString(request.getLanguage());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListAsrVocabulary());
-
-    std::shared_ptr<ListAsrVocabularyResponse> localVarResult = std::make_shared<ListAsrVocabularyResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowAsrVocabularyResponse> MetaStudioClient::showAsrVocabulary(ShowAsrVocabularyRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["asr_vocabulary_id"] = parameterToString(request.getAsrVocabularyId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowAsrVocabulary());
-
-    std::shared_ptr<ShowAsrVocabularyResponse> localVarResult = std::make_shared<ShowAsrVocabularyResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowAsrVocabularyAssociationResponse> MetaStudioClient::showAsrVocabularyAssociation(ShowAsrVocabularyAssociationRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/digital-human-chat/asr-vocabulary/association/{asr_vocabulary_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["asr_vocabulary_id"] = parameterToString(request.getAsrVocabularyId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowAsrVocabularyAssociation());
-
-    std::shared_ptr<ShowAsrVocabularyAssociationResponse> localVarResult = std::make_shared<ShowAsrVocabularyAssociationResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<UpdateAsrVocabularyResponse> MetaStudioClient::updateAsrVocabulary(UpdateAsrVocabularyRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["asr_vocabulary_id"] = parameterToString(request.getAsrVocabularyId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForUpdateAsrVocabulary());
-
-    std::shared_ptr<UpdateAsrVocabularyResponse> localVarResult = std::make_shared<UpdateAsrVocabularyResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<DeleteTaskResponse> MetaStudioClient::deleteTask(DeleteTaskRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/ies/task/{id}";
@@ -10567,6 +10275,94 @@ std::shared_ptr<ShowResourceUsageResponse> MetaStudioClient::showResourceUsage(S
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<SignAgreementResponse> MetaStudioClient::signAgreement(SignAgreementRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/service-agreements/signed";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForSignAgreement());
+
+    std::shared_ptr<SignAgreementResponse> localVarResult = std::make_shared<SignAgreementResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<SignSpecialAgreementResponse> MetaStudioClient::signSpecialAgreement(SignSpecialAgreementRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/special-agreements/signed";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForSignSpecialAgreement());
+
+    std::shared_ptr<SignSpecialAgreementResponse> localVarResult = std::make_shared<SignSpecialAgreementResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

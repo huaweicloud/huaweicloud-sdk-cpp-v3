@@ -39,7 +39,7 @@ public:
     /// GaussDBErrorResponseBody members
 
     /// <summary>
-    /// 错误码。
+    /// **参数解释**: 错误码。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getErrorCode() const;
@@ -48,7 +48,7 @@ public:
     void setErrorCode(const std::string& value);
 
     /// <summary>
-    /// 错误消息。
+    /// **参数解释**: 错误消息。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getErrorMsg() const;

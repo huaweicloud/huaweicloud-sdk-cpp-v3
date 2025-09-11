@@ -39,7 +39,7 @@ public:
     /// ListAuditSummaryInfosRequest members
 
     /// <summary>
-    /// 偏移量
+    /// **参数解释**： 分页偏移量，从第一条数据偏移offset条数据后开始查询 **约束限制**： 仅支持大于等于0的整数 **取值范围**： 大于等于0 **默认取值**： 默认值为0 
     /// </summary>
 
     std::string getOffset() const;
@@ -48,7 +48,7 @@ public:
     void setOffset(const std::string& value);
 
     /// <summary>
-    /// 查询记录数
+    /// **参数解释**： 每页查询记录数。 **约束限制**： 仅支持大于0的整数 **取值范围**： 大于0小于等于10000 **默认取值**： 默认值为100 
     /// </summary>
 
     std::string getLimit() const;

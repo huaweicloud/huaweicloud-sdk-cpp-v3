@@ -15,6 +15,10 @@ ShowVmMonitorResponse::ShowVmMonitorResponse()
     datapointsIsSet_ = false;
     metricName_ = "";
     metricNameIsSet_ = false;
+    max_ = 0.0;
+    maxIsSet_ = false;
+    average_ = 0.0;
+    averageIsSet_ = false;
 }
 
 ShowVmMonitorResponse::~ShowVmMonitorResponse() = default;
@@ -32,6 +36,12 @@ web::json::value ShowVmMonitorResponse::toJson() const
     }
     if(metricNameIsSet_) {
         val[utility::conversions::to_string_t("metric_name")] = ModelBase::toJson(metricName_);
+    }
+    if(maxIsSet_) {
+        val[utility::conversions::to_string_t("max")] = ModelBase::toJson(max_);
+    }
+    if(averageIsSet_) {
+        val[utility::conversions::to_string_t("average")] = ModelBase::toJson(average_);
     }
 
     return val;
@@ -56,6 +66,24 @@ bool ShowVmMonitorResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMetricName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("max"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("max"));
+        if(!fieldValue.is_null())
+        {
+            double refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMax(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("average"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("average"));
+        if(!fieldValue.is_null())
+        {
+            double refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAverage(refVal);
         }
     }
     return ok;
@@ -102,6 +130,48 @@ bool ShowVmMonitorResponse::metricNameIsSet() const
 void ShowVmMonitorResponse::unsetmetricName()
 {
     metricNameIsSet_ = false;
+}
+
+double ShowVmMonitorResponse::getMax() const
+{
+    return max_;
+}
+
+void ShowVmMonitorResponse::setMax(double value)
+{
+    max_ = value;
+    maxIsSet_ = true;
+}
+
+bool ShowVmMonitorResponse::maxIsSet() const
+{
+    return maxIsSet_;
+}
+
+void ShowVmMonitorResponse::unsetmax()
+{
+    maxIsSet_ = false;
+}
+
+double ShowVmMonitorResponse::getAverage() const
+{
+    return average_;
+}
+
+void ShowVmMonitorResponse::setAverage(double value)
+{
+    average_ = value;
+    averageIsSet_ = true;
+}
+
+bool ShowVmMonitorResponse::averageIsSet() const
+{
+    return averageIsSet_;
+}
+
+void ShowVmMonitorResponse::unsetaverage()
+{
+    averageIsSet_ = false;
 }
 
 }

@@ -1,0 +1,78 @@
+
+
+#include "huaweicloud/dbss/v1/model/ListAvailabilityZoneInfosNewResponse.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Dbss {
+namespace V1 {
+namespace Model {
+
+
+
+
+ListAvailabilityZoneInfosNewResponse::ListAvailabilityZoneInfosNewResponse()
+{
+    azsIsSet_ = false;
+}
+
+ListAvailabilityZoneInfosNewResponse::~ListAvailabilityZoneInfosNewResponse() = default;
+
+void ListAvailabilityZoneInfosNewResponse::validate()
+{
+}
+
+web::json::value ListAvailabilityZoneInfosNewResponse::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(azsIsSet_) {
+        val[utility::conversions::to_string_t("azs")] = ModelBase::toJson(azs_);
+    }
+
+    return val;
+}
+bool ListAvailabilityZoneInfosNewResponse::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("azs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("azs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AzInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAzs(refVal);
+        }
+    }
+    return ok;
+}
+
+
+std::vector<AzInfo>& ListAvailabilityZoneInfosNewResponse::getAzs()
+{
+    return azs_;
+}
+
+void ListAvailabilityZoneInfosNewResponse::setAzs(const std::vector<AzInfo>& value)
+{
+    azs_ = value;
+    azsIsSet_ = true;
+}
+
+bool ListAvailabilityZoneInfosNewResponse::azsIsSet() const
+{
+    return azsIsSet_;
+}
+
+void ListAvailabilityZoneInfosNewResponse::unsetazs()
+{
+    azsIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

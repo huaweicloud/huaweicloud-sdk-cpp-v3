@@ -118,6 +118,30 @@ public:
             { 
                 "https://smn.ae-ad-1.myhuaweicloud.com"
             });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://smn.cn-south-4.myhuaweicloud.com"
+            });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://smn.cn-east-5.myhuaweicloud.com"
+            });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://smn.cn-east-4.myhuaweicloud.com"
+            });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://smn.cn-north-12.myhuaweicloud.com"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://smn.cn-north-11.myhuaweicloud.com"
+            });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://smn.cn-southwest-3.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

@@ -39,7 +39,7 @@ public:
     /// CcspServiceInfo members
 
     /// <summary>
-    /// 当前租户拥有的专属密码服务集群数量
+    /// 当前租户拥有的密码服务集群数量
     /// </summary>
 
     int32_t getClusterNum() const;
@@ -48,7 +48,7 @@ public:
     void setClusterNum(int32_t value);
 
     /// <summary>
-    /// 当前租户拥有的专属密码服务实例数量
+    /// 当前租户拥有的密码服务实例数量
     /// </summary>
 
     int32_t getInstanceNum() const;
@@ -57,7 +57,7 @@ public:
     void setInstanceNum(int32_t value);
 
     /// <summary>
-    /// 当前租户的可创建的专属密码服务实例配额数
+    /// 当前租户的可创建的密码服务实例配额数
     /// </summary>
 
     int32_t getInstanceQuota() const;

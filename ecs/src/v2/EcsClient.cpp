@@ -3174,6 +3174,36 @@ std::shared_ptr<ShowAppendableVolumeQuotaResponse> EcsClient::showAppendableVolu
 
     return localVarResult;
 }
+std::shared_ptr<ShowFlavorCapacityResponse> EcsClient::showFlavorCapacity(ShowFlavorCapacityRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/flavors/{flavor_id}/resources";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["flavor_id"] = parameterToString(request.getFlavorId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowFlavorCapacity());
+
+    std::shared_ptr<ShowFlavorCapacityResponse> localVarResult = std::make_shared<ShowFlavorCapacityResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowMetadataOptionsResponse> EcsClient::showMetadataOptions(ShowMetadataOptionsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/metadata-options";
@@ -3287,6 +3317,36 @@ std::shared_ptr<ShowServerResponse> EcsClient::showServer(ShowServerRequest &req
         localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowServer());
 
     std::shared_ptr<ShowServerResponse> localVarResult = std::make_shared<ShowServerResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowServerAttachableNicNumResponse> EcsClient::showServerAttachableNicNum(ShowServerAttachableNicNumRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/os-interface_extension";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowServerAttachableNicNum());
+
+    std::shared_ptr<ShowServerAttachableNicNumResponse> localVarResult = std::make_shared<ShowServerAttachableNicNumResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -33,6 +33,47 @@ ClientBuilder<IoTDMClient> IoTDMClient::newBuilder()
     ClientBuilder<IoTDMClient> client = ClientBuilder<IoTDMClient>("BasicCredentials");
     return client;
 }
+std::shared_ptr<ListInstanceFlavorsResponse> IoTDMClient::listInstanceFlavors(ListInstanceFlavorsRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/iotda-instances/flavors";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.instanceTypeIsSet()) {
+        localVarQueryParams["instance_type"] = parameterToString(request.getInstanceType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDMMeta::genRequestDefForListInstanceFlavors());
+
+    std::shared_ptr<ListInstanceFlavorsResponse> localVarResult = std::make_shared<ListInstanceFlavorsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<BindInstanceTagsResponse> IoTDMClient::bindInstanceTags(BindInstanceTagsRequest &request)
 {
     std::string localVarPath = "/v5/iot/{project_id}/iotda-instances/{instance_id}/bind-tags";
@@ -385,6 +426,107 @@ std::shared_ptr<UpdateInstanceResponse> IoTDMClient::updateInstance(UpdateInstan
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ListInstanceTasksResponse> IoTDMClient::listInstanceTasks(ListInstanceTasksRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDMMeta::genRequestDefForListInstanceTasks());
+
+    std::shared_ptr<ListInstanceTasksResponse> localVarResult = std::make_shared<ListInstanceTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<RetryInstanceTaskResponse> IoTDMClient::retryInstanceTask(RetryInstanceTaskRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks/{task_id}/retry";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["task_id"] = parameterToString(request.getTaskId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDMMeta::genRequestDefForRetryInstanceTask());
+
+    std::shared_ptr<RetryInstanceTaskResponse> localVarResult = std::make_shared<RetryInstanceTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowInstanceTaskResponse> IoTDMClient::showInstanceTask(ShowInstanceTaskRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks/{task_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["task_id"] = parameterToString(request.getTaskId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDMMeta::genRequestDefForShowInstanceTask());
+
+    std::shared_ptr<ShowInstanceTaskResponse> localVarResult = std::make_shared<ShowInstanceTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

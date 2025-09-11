@@ -40,7 +40,7 @@ public:
     /// ShowClusterAccessKeyListResponse members
 
     /// <summary>
-    /// 
+    /// 已授权的访问密钥列表
     /// </summary>
 
     std::vector<ShowClusterAccessKeyListResponseBody_result>& getResult();

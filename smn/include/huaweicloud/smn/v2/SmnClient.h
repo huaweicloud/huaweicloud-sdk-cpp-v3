@@ -17,14 +17,21 @@
 #include <huaweicloud/smn/v2/model/BatchCreateOrDeleteResourceTagsResponse.h>
 #include <huaweicloud/smn/v2/model/BatchCreateSubscriptionsFilterPolicesRequest.h>
 #include <huaweicloud/smn/v2/model/BatchCreateSubscriptionsFilterPolicesResponse.h>
+#include <huaweicloud/smn/v2/model/BatchDeleteSubscriptionsByTopicRequest.h>
+#include <huaweicloud/smn/v2/model/BatchDeleteSubscriptionsByTopicResponse.h>
 #include <huaweicloud/smn/v2/model/BatchDeleteSubscriptionsFilterPolicesRequest.h>
 #include <huaweicloud/smn/v2/model/BatchDeleteSubscriptionsFilterPolicesRequestBody.h>
 #include <huaweicloud/smn/v2/model/BatchDeleteSubscriptionsFilterPolicesResponse.h>
+#include <huaweicloud/smn/v2/model/BatchDeleteSubscriptionsRequest.h>
+#include <huaweicloud/smn/v2/model/BatchDeleteSubscriptionsRequestBody.h>
+#include <huaweicloud/smn/v2/model/BatchDeleteSubscriptionsResponse.h>
 #include <huaweicloud/smn/v2/model/BatchSubscriptionsFilterPolicesRequestBody.h>
 #include <huaweicloud/smn/v2/model/BatchUpdateSubscriptionsFilterPolicesRequest.h>
 #include <huaweicloud/smn/v2/model/BatchUpdateSubscriptionsFilterPolicesResponse.h>
 #include <huaweicloud/smn/v2/model/CancelSubscriptionRequest.h>
 #include <huaweicloud/smn/v2/model/CancelSubscriptionResponse.h>
+#include <huaweicloud/smn/v2/model/ConfirmSubscriptionRequest.h>
+#include <huaweicloud/smn/v2/model/ConfirmSubscriptionResponse.h>
 #include <huaweicloud/smn/v2/model/CreateLogtankRequest.h>
 #include <huaweicloud/smn/v2/model/CreateLogtankRequestBody.h>
 #include <huaweicloud/smn/v2/model/CreateLogtankResponse.h>
@@ -47,13 +54,19 @@
 #include <huaweicloud/smn/v2/model/DeleteNotifyPolicyResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteResourceTagRequest.h>
 #include <huaweicloud/smn/v2/model/DeleteResourceTagResponse.h>
+#include <huaweicloud/smn/v2/model/DeleteSubscriptionsByTopicRequest.h>
+#include <huaweicloud/smn/v2/model/DeleteSubscriptionsByTopicResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteTopicAttributeByNameRequest.h>
 #include <huaweicloud/smn/v2/model/DeleteTopicAttributeByNameResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteTopicAttributesRequest.h>
 #include <huaweicloud/smn/v2/model/DeleteTopicAttributesResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteTopicRequest.h>
 #include <huaweicloud/smn/v2/model/DeleteTopicResponse.h>
+#include <huaweicloud/smn/v2/model/DownloadHttpCertRequest.h>
+#include <huaweicloud/smn/v2/model/DownloadHttpCertResponse.h>
 #include <huaweicloud/smn/v2/model/HttpDetectRequestBody.h>
+#include <huaweicloud/smn/v2/model/ListCloudServiceRequest.h>
+#include <huaweicloud/smn/v2/model/ListCloudServiceResponse.h>
 #include <huaweicloud/smn/v2/model/ListInstanceRequestBody.h>
 #include <huaweicloud/smn/v2/model/ListLogtankRequest.h>
 #include <huaweicloud/smn/v2/model/ListLogtankResponse.h>
@@ -63,6 +76,8 @@
 #include <huaweicloud/smn/v2/model/ListMessageTemplatesResponse.h>
 #include <huaweicloud/smn/v2/model/ListProjectTagsRequest.h>
 #include <huaweicloud/smn/v2/model/ListProjectTagsResponse.h>
+#include <huaweicloud/smn/v2/model/ListProtocolsRequest.h>
+#include <huaweicloud/smn/v2/model/ListProtocolsResponse.h>
 #include <huaweicloud/smn/v2/model/ListResourceInstancesRequest.h>
 #include <huaweicloud/smn/v2/model/ListResourceInstancesResponse.h>
 #include <huaweicloud/smn/v2/model/ListResourceTagsRequest.h>
@@ -93,6 +108,8 @@
 #include <huaweicloud/smn/v2/model/ShowHttpDetectResultResponse.h>
 #include <huaweicloud/smn/v2/model/ShowNotifyPolicyRequest.h>
 #include <huaweicloud/smn/v2/model/ShowNotifyPolicyResponse.h>
+#include <huaweicloud/smn/v2/model/UnsubscribeSubscriptionRequest.h>
+#include <huaweicloud/smn/v2/model/UnsubscribeSubscriptionResponse.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankRequest.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankRequestBody.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankResponse.h>
@@ -202,6 +219,22 @@ public:
     std::shared_ptr<BatchCreateSubscriptionsFilterPolicesResponse> batchCreateSubscriptionsFilterPolices(
         BatchCreateSubscriptionsFilterPolicesRequest &request
     );
+    // 批量删除订阅
+    //
+    // 批量删除订阅，每个订阅终端的删除结果在响应体中依次展示。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteSubscriptionsResponse> batchDeleteSubscriptions(
+        BatchDeleteSubscriptionsRequest &request
+    );
+    // 批量删除指定主题的订阅
+    //
+    // 批量删除指定主题的订阅，每个订阅终端的删除结果在响应体中依次展示。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteSubscriptionsByTopicResponse> batchDeleteSubscriptionsByTopic(
+        BatchDeleteSubscriptionsByTopicRequest &request
+    );
     // 批量删除订阅过滤策略
     //
     // 删除订阅者的消息过滤策略。
@@ -225,6 +258,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CancelSubscriptionResponse> cancelSubscription(
         CancelSubscriptionRequest &request
+    );
+    // 确认订阅
+    //
+    // 确认订阅主题消息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ConfirmSubscriptionResponse> confirmSubscription(
+        ConfirmSubscriptionRequest &request
     );
     // 绑定云日志
     //
@@ -300,6 +341,14 @@ public:
     std::shared_ptr<DeleteResourceTagResponse> deleteResourceTag(
         DeleteResourceTagRequest &request
     );
+    // 删除指定主题的订阅
+    //
+    // 删除指定主题的订阅
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSubscriptionsByTopicResponse> deleteSubscriptionsByTopic(
+        DeleteSubscriptionsByTopicRequest &request
+    );
     // 删除主题
     //
     // 删除主题。
@@ -323,6 +372,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTopicAttributesResponse> deleteTopicAttributes(
         DeleteTopicAttributesRequest &request
+    );
+    // 下载证书
+    //
+    // 下载http消息校验证书
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadHttpCertResponse> downloadHttpCert(
+        DownloadHttpCertRequest &request
+    );
+    // 查询授权云服务列表
+    //
+    // 查询授权云服务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCloudServiceResponse> listCloudService(
+        ListCloudServiceRequest &request
     );
     // 查询云日志
     //
@@ -355,6 +420,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListProjectTagsResponse> listProjectTags(
         ListProjectTagsRequest &request
+    );
+    // 查询协议列表
+    //
+    // 查询SMN支持的协议列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListProtocolsResponse> listProtocols(
+        ListProtocolsRequest &request
     );
     // 查询资源实例
     //
@@ -477,6 +550,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowNotifyPolicyResponse> showNotifyPolicy(
         ShowNotifyPolicyRequest &request
+    );
+    // 取消订阅
+    //
+    // 取消订阅主题
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UnsubscribeSubscriptionResponse> unsubscribeSubscription(
+        UnsubscribeSubscriptionRequest &request
     );
     // 更新云日志
     //

@@ -40,7 +40,7 @@ public:
     /// ListSchemaAndTableResponse members
 
     /// <summary>
-    /// 数据库表信息列表
+    /// **参数解释**: 数据库表信息列表。
     /// </summary>
 
     std::vector<DatabaseSchemaTableResult>& getDatabaseTables();

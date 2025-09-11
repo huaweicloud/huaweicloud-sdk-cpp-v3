@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 查询table和schema请求体
+/// 
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ListSchemaAndTableRequestBody
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// ListSchemaAndTableRequestBody members
 
     /// <summary>
-    /// SQL文本
+    /// **参数解释**: SQL文本。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
     /// </summary>
 
     std::string getSqlText() const;
@@ -48,7 +48,7 @@ public:
     void setSqlText(const std::string& value);
 
     /// <summary>
-    /// 实例ID
+    /// **参数解释**: 实例ID。 **约束限制**: 不涉及。 **取值范围**: 只能由英文字母、数字组成，且长度为36个字符。 **默认取值**: 不涉及。
     /// </summary>
 
     std::string getInstanceId() const;

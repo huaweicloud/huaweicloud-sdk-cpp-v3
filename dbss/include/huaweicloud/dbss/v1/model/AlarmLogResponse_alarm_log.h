@@ -102,7 +102,7 @@ public:
     void setAlarmStatus(const std::string& value);
 
     /// <summary>
-    /// 告警风险等级 - LOW - MEDIUM - HIGH
+    /// 告警风险等级 - LOW：低 - MEDIUM：中 - HIGH：高
     /// </summary>
 
     std::string getAlarmRisk() const;

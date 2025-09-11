@@ -13,6 +13,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_IOTDM_V5_EXPORT  IoTDMMeta {
 public:
+    static HttpRequestDef genRequestDefForListInstanceFlavors();
     static HttpRequestDef genRequestDefForBindInstanceTags();
     static HttpRequestDef genRequestDefForChangeInstanceChargeMode();
     static HttpRequestDef genRequestDefForCreateInstance();
@@ -22,6 +23,9 @@ public:
     static HttpRequestDef genRequestDefForShowInstance();
     static HttpRequestDef genRequestDefForUnbindInstanceTags();
     static HttpRequestDef genRequestDefForUpdateInstance();
+    static HttpRequestDef genRequestDefForListInstanceTasks();
+    static HttpRequestDef genRequestDefForRetryInstanceTask();
+    static HttpRequestDef genRequestDefForShowInstanceTask();
 };
 
 }

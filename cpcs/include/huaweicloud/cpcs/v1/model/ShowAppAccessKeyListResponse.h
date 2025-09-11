@@ -48,10 +48,21 @@ public:
     void unsetresult();
     void setResult(const std::vector<AccessKeyInfo>& value);
 
+    /// <summary>
+    /// 满足条件的密钥总数
+    /// </summary>
+
+    int32_t getTotalNum() const;
+    bool totalNumIsSet() const;
+    void unsettotalNum();
+    void setTotalNum(int32_t value);
+
 
 protected:
     std::vector<AccessKeyInfo> result_;
     bool resultIsSet_;
+    int32_t totalNum_;
+    bool totalNumIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/HotfixInfo.h>
 #include <string>
+#include <huaweicloud/gaussdbforopengauss/v3/model/HotfixInfoResult.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeTypeInfo.h>
 #include <vector>
 
@@ -72,19 +72,19 @@ public:
     /// 可以升级的热补丁信息。
     /// </summary>
 
-    std::vector<HotfixInfo>& getHotfixUpgradeInfos();
+    std::vector<HotfixInfoResult>& getHotfixUpgradeInfos();
     bool hotfixUpgradeInfosIsSet() const;
     void unsethotfixUpgradeInfos();
-    void setHotfixUpgradeInfos(const std::vector<HotfixInfo>& value);
+    void setHotfixUpgradeInfos(const std::vector<HotfixInfoResult>& value);
 
     /// <summary>
     /// 可以回滚的热补丁信息。
     /// </summary>
 
-    std::vector<HotfixInfo>& getHotfixRollbackInfos();
+    std::vector<HotfixInfoResult>& getHotfixRollbackInfos();
     bool hotfixRollbackInfosIsSet() const;
     void unsethotfixRollbackInfos();
-    void setHotfixRollbackInfos(const std::vector<HotfixInfo>& value);
+    void setHotfixRollbackInfos(const std::vector<HotfixInfoResult>& value);
 
 
 protected:
@@ -94,9 +94,9 @@ protected:
     bool targetVersionIsSet_;
     std::vector<std::string> upgradeCandidateVersions_;
     bool upgradeCandidateVersionsIsSet_;
-    std::vector<HotfixInfo> hotfixUpgradeInfos_;
+    std::vector<HotfixInfoResult> hotfixUpgradeInfos_;
     bool hotfixUpgradeInfosIsSet_;
-    std::vector<HotfixInfo> hotfixRollbackInfos_;
+    std::vector<HotfixInfoResult> hotfixRollbackInfos_;
     bool hotfixRollbackInfosIsSet_;
 
 #ifdef RTTR_FLAG

@@ -39,6 +39,24 @@ public:
     /// SqlRuleRequest members
 
     /// <summary>
+    /// 当前页
+    /// </summary>
+
+    int32_t getPage() const;
+    bool pageIsSet() const;
+    void unsetpage();
+    void setPage(int32_t value);
+
+    /// <summary>
+    /// 每页大小
+    /// </summary>
+
+    int32_t getSize() const;
+    bool sizeIsSet() const;
+    void unsetsize();
+    void setSize(int32_t value);
+
+    /// <summary>
     /// 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
     /// </summary>
 
@@ -49,6 +67,10 @@ public:
 
 
 protected:
+    int32_t page_;
+    bool pageIsSet_;
+    int32_t size_;
+    bool sizeIsSet_;
     std::string riskLevels_;
     bool riskLevelsIsSet_;
 

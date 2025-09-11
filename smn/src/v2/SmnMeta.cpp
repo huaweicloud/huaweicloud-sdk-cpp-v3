@@ -44,6 +44,24 @@ HttpRequestDef SmnMeta::genRequestDefForBatchCreateSubscriptionsFilterPolices() 
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForBatchDeleteSubscriptions() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForBatchDeleteSubscriptionsByTopic() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForBatchDeleteSubscriptionsFilterPolices() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -64,6 +82,20 @@ HttpRequestDef SmnMeta::genRequestDefForBatchUpdateSubscriptionsFilterPolices() 
 
 HttpRequestDef SmnMeta::genRequestDefForCancelSubscription() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForConfirmSubscription() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TopicUrn")
+                  .withJsonTag("topic_urn")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Endpoint")
+                  .withJsonTag("endpoint")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Token")
+                  .withJsonTag("token")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -132,6 +164,11 @@ HttpRequestDef SmnMeta::genRequestDefForDeleteResourceTag() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForDeleteSubscriptionsByTopic() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForDeleteTopic() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -143,6 +180,21 @@ HttpRequestDef SmnMeta::genRequestDefForDeleteTopicAttributeByName() {
 }
 
 HttpRequestDef SmnMeta::genRequestDefForDeleteTopicAttributes() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForDownloadHttpCert() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("contentType").
+        withJsonTag("content-type").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForListCloudService() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -175,6 +227,11 @@ HttpRequestDef SmnMeta::genRequestDefForListMessageTemplates() {
 }
 
 HttpRequestDef SmnMeta::genRequestDefForListProjectTags() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForListProtocols() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -315,6 +372,14 @@ HttpRequestDef SmnMeta::genRequestDefForShowHttpDetectResult() {
 
 HttpRequestDef SmnMeta::genRequestDefForShowNotifyPolicy() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForUnsubscribeSubscription() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SubscriptionUrn")
+                  .withJsonTag("subscription_urn")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

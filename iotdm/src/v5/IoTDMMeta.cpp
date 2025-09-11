@@ -8,6 +8,23 @@ namespace V5 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef IoTDMMeta::genRequestDefForListInstanceFlavors() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceType")
+                  .withJsonTag("instance_type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef IoTDMMeta::genRequestDefForBindInstanceTags() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -89,6 +106,30 @@ HttpRequestDef IoTDMMeta::genRequestDefForUpdateInstance() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDMMeta::genRequestDefForListInstanceTasks() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDMMeta::genRequestDefForRetryInstanceTask() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDMMeta::genRequestDefForShowInstanceTask() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

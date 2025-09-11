@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/RecordInfoResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/RecordInfoResponseResult.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -40,17 +40,17 @@ public:
     /// ListDisasterRecoveryRecordResponse members
 
     /// <summary>
-    /// 操作记录
+    /// **参数解释**: 操作记录。
     /// </summary>
 
-    std::vector<RecordInfoResponse>& getRecords();
+    std::vector<RecordInfoResponseResult>& getRecords();
     bool recordsIsSet() const;
     void unsetrecords();
-    void setRecords(const std::vector<RecordInfoResponse>& value);
+    void setRecords(const std::vector<RecordInfoResponseResult>& value);
 
 
 protected:
-    std::vector<RecordInfoResponse> records_;
+    std::vector<RecordInfoResponseResult> records_;
     bool recordsIsSet_;
 
 #ifdef RTTR_FLAG

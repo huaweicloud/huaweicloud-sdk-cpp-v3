@@ -86,13 +86,13 @@ public:
     void setNotTagsAny(const std::vector<TagKeyValuesBean>& value);
 
     /// <summary>
-    /// 
+    /// 仅op_service权限可以使用此字段做资源实例过滤条件。 目前TMS调用时只包含一个tag结构体。 key：_sys_enterprise_project_id value：企业项目id列表 目前TMS调用时，key下面只包含一个value。0表示默认企业项目 sys_tags和租户标签过滤条件（without_any_tag 、tags、tags_any、not_tags、not_tags_any）不能同时使用 无sys_tags时按照tag接口处理，无tag过滤条件时返回全量数据
     /// </summary>
 
-    TagKeyValuesBean getSysTags() const;
+    std::vector<TagKeyValuesBean>& getSysTags();
     bool sysTagsIsSet() const;
     void unsetsysTags();
-    void setSysTags(const TagKeyValuesBean& value);
+    void setSysTags(const std::vector<TagKeyValuesBean>& value);
 
     /// <summary>
     /// 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略 “tags”、“tags_any”、“not_tags”、“not_tags_any”字段
@@ -115,7 +115,7 @@ protected:
     bool tagsAnyIsSet_;
     std::vector<TagKeyValuesBean> notTagsAny_;
     bool notTagsAnyIsSet_;
-    TagKeyValuesBean sysTags_;
+    std::vector<TagKeyValuesBean> sysTags_;
     bool sysTagsIsSet_;
     bool withoutAnyTag_;
     bool withoutAnyTagIsSet_;

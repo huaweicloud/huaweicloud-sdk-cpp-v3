@@ -32,22 +32,6 @@
 #include <huaweicloud/metastudio/v1/model/ShowAgencyResponse.h>
 #include <string>
 
-#include <huaweicloud/metastudio/v1/model/CreateAsrVocabularyReq.h>
-#include <huaweicloud/metastudio/v1/model/CreateAsrVocabularyRequest.h>
-#include <huaweicloud/metastudio/v1/model/CreateAsrVocabularyResponse.h>
-#include <huaweicloud/metastudio/v1/model/DeleteAsrVocabularyRequest.h>
-#include <huaweicloud/metastudio/v1/model/DeleteAsrVocabularyResponse.h>
-#include <huaweicloud/metastudio/v1/model/ListAsrVocabularyRequest.h>
-#include <huaweicloud/metastudio/v1/model/ListAsrVocabularyResponse.h>
-#include <huaweicloud/metastudio/v1/model/ShowAsrVocabularyAssociationRequest.h>
-#include <huaweicloud/metastudio/v1/model/ShowAsrVocabularyAssociationResponse.h>
-#include <huaweicloud/metastudio/v1/model/ShowAsrVocabularyRequest.h>
-#include <huaweicloud/metastudio/v1/model/ShowAsrVocabularyResponse.h>
-#include <huaweicloud/metastudio/v1/model/UpdateAsrVocabularyReq.h>
-#include <huaweicloud/metastudio/v1/model/UpdateAsrVocabularyRequest.h>
-#include <huaweicloud/metastudio/v1/model/UpdateAsrVocabularyResponse.h>
-#include <string>
-
 #include <huaweicloud/metastudio/v1/model/DeleteTaskRequest.h>
 #include <huaweicloud/metastudio/v1/model/DeleteTaskResponse.h>
 #include <huaweicloud/metastudio/v1/model/DownloadResultFileRequest.h>
@@ -612,6 +596,11 @@
 #include <huaweicloud/metastudio/v1/model/ListTenantResourcesResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowResourceUsageRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowResourceUsageResponse.h>
+#include <huaweicloud/metastudio/v1/model/SignAgreementRequest.h>
+#include <huaweicloud/metastudio/v1/model/SignAgreementResponse.h>
+#include <huaweicloud/metastudio/v1/model/SignSpecialAgreementRequest.h>
+#include <huaweicloud/metastudio/v1/model/SignSpecialAgreementResponse.h>
+#include <huaweicloud/metastudio/v1/model/SpecialAgreementSignReq.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CommitJobReq.h>
@@ -873,55 +862,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAgencyResponse> showAgency(
         ShowAgencyRequest &request
-    );
-
-    // 创建热词表
-    //
-    // 该接口用于创建热词表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateAsrVocabularyResponse> createAsrVocabulary(
-        CreateAsrVocabularyRequest &request
-    );
-    // 删除热词表
-    //
-    // 该接口用于删除热词表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<DeleteAsrVocabularyResponse> deleteAsrVocabulary(
-        DeleteAsrVocabularyRequest &request
-    );
-    // 查询热词表列表
-    //
-    // 该接口用于查询热词表列表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListAsrVocabularyResponse> listAsrVocabulary(
-        ListAsrVocabularyRequest &request
-    );
-    // 查询热词表详情
-    //
-    // 该接口用于查询热词表详情。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowAsrVocabularyResponse> showAsrVocabulary(
-        ShowAsrVocabularyRequest &request
-    );
-    // 查询热词表关联详情
-    //
-    // 该接口用于查询热词表关联详情。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowAsrVocabularyAssociationResponse> showAsrVocabularyAssociation(
-        ShowAsrVocabularyAssociationRequest &request
-    );
-    // 修改热词表
-    //
-    // 该接口用于修改热词表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdateAsrVocabularyResponse> updateAsrVocabulary(
-        UpdateAsrVocabularyRequest &request
     );
 
     // 删除导入导出任务
@@ -2531,6 +2471,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowResourceUsageResponse> showResourceUsage(
         ShowResourceUsageRequest &request
+    );
+    // 签署云服务声明
+    //
+    // 签署云服务声明。调用此接口前请知悉[[metastudio隐私协议](https://www.huaweicloud.com/declaration/tsa_metastudio.html)](tag:hws)[[metastudio隐私协议](https://www.huaweicloud.com/intl/en-us/declaration-sg/tsa-metastudio.html)](tag:hws_hk)。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SignAgreementResponse> signAgreement(
+        SignAgreementRequest &request
+    );
+    // 签署特殊云服务声明
+    //
+    // 签署特殊云服务声明,目前可签署自动支付协议。开启自动支付协议之后,调用下单接口时，华为云将进行自动扣费。若因账户余额不足导致扣费失败，系统会生成待支付订单，您可前往费用中心-我的订单查看，届时您需手动完成支付。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SignSpecialAgreementResponse> signSpecialAgreement(
+        SignSpecialAgreementRequest &request
     );
 
     // 提交语音训练任务

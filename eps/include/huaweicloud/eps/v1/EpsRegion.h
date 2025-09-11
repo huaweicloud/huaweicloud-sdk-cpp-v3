@@ -38,6 +38,12 @@ public:
 
                 "https://eps.ru-moscow-1.myhuaweicloud.cn"
             });
+        regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
+            { 
+                "https://eps.my-kualalumpur-1.myhuaweicloud.com",
+
+                "https://eps.my-kualalumpur-1.myhuaweicloud.cn"
+            });
         return regions;
     }
 private:

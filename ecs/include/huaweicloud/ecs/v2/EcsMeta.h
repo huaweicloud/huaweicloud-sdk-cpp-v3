@@ -90,10 +90,12 @@ public:
     static HttpRequestDef genRequestDefForResizeServer();
     static HttpRequestDef genRequestDefForRevertRecycleBinServer();
     static HttpRequestDef genRequestDefForShowAppendableVolumeQuota();
+    static HttpRequestDef genRequestDefForShowFlavorCapacity();
     static HttpRequestDef genRequestDefForShowMetadataOptions();
     static HttpRequestDef genRequestDefForShowRecycleBin();
     static HttpRequestDef genRequestDefForShowResetPasswordFlag();
     static HttpRequestDef genRequestDefForShowServer();
+    static HttpRequestDef genRequestDefForShowServerAttachableNicNum();
     static HttpRequestDef genRequestDefForShowServerBlockDevice();
     static HttpRequestDef genRequestDefForShowServerGroup();
     static HttpRequestDef genRequestDefForShowServerLimits();

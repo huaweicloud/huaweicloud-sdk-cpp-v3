@@ -6,6 +6,9 @@
 
 <h1 align="center">华为云开发者 C++ 软件开发工具包（C++ SDK）</h1>
 
+[![GitHub Release](https://img.shields.io/github/v/release/huaweicloud/huaweicloud-sdk-cpp-v3)](https://github.com/huaweicloud/huaweicloud-sdk-cpp-v3/releases)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
+
 欢迎使用华为云 C++ SDK。
 
 华为云 C++ SDK 让您无需关心请求细节即可快速使用弹性云服务器（ECS）、虚拟私有云（VPC）等多个华为云服务。

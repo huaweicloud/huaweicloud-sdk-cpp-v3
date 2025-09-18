@@ -262,7 +262,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHbaConfRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHbaConfRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHbaConfResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceActionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequestBody.h>

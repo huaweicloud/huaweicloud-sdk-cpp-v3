@@ -53,7 +53,7 @@ bool SetAutoEnlargePoliciesRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("policies"));
         if(!fieldValue.is_null())
         {
-            std::vector<DiskAutoExpansionPolicy> refVal;
+            std::vector<DiskSetAutoExpansionPolicy> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPolicies(refVal);
         }
@@ -83,12 +83,12 @@ void SetAutoEnlargePoliciesRequestBody::unsetswitchOption()
     switchOptionIsSet_ = false;
 }
 
-std::vector<DiskAutoExpansionPolicy>& SetAutoEnlargePoliciesRequestBody::getPolicies()
+std::vector<DiskSetAutoExpansionPolicy>& SetAutoEnlargePoliciesRequestBody::getPolicies()
 {
     return policies_;
 }
 
-void SetAutoEnlargePoliciesRequestBody::setPolicies(const std::vector<DiskAutoExpansionPolicy>& value)
+void SetAutoEnlargePoliciesRequestBody::setPolicies(const std::vector<DiskSetAutoExpansionPolicy>& value)
 {
     policies_ = value;
     policiesIsSet_ = true;

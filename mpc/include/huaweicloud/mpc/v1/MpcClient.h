@@ -45,15 +45,6 @@
 #include <huaweicloud/mpc/v1/model/ListEditingJobResponse.h>
 #include <string>
 
-#include <huaweicloud/mpc/v1/model/CreateEncryptReq.h>
-#include <huaweicloud/mpc/v1/model/CreateEncryptTaskRequest.h>
-#include <huaweicloud/mpc/v1/model/CreateEncryptTaskResponse.h>
-#include <huaweicloud/mpc/v1/model/DeleteEncryptTaskRequest.h>
-#include <huaweicloud/mpc/v1/model/DeleteEncryptTaskResponse.h>
-#include <huaweicloud/mpc/v1/model/ListEncryptTaskRequest.h>
-#include <huaweicloud/mpc/v1/model/ListEncryptTaskResponse.h>
-#include <string>
-
 #include <huaweicloud/mpc/v1/model/CreateExtractTaskReq.h>
 #include <huaweicloud/mpc/v1/model/CreateExtractTaskRequest.h>
 #include <huaweicloud/mpc/v1/model/CreateExtractTaskResponse.h>
@@ -325,39 +316,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListEditingJobResponse> listEditingJob(
         ListEditingJobRequest &request
-    );
-
-    // 新建独立加密任务
-    //
-    // 支持独立加密，包括创建、查询、删除独立加密任务。该API已废弃。
-    // 
-    // 约束：
-    //   - 只支持转码后的文件进行加密。
-    //   - 加密的文件必须是m3u8或者mpd结尾的文件。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateEncryptTaskResponse> createEncryptTask(
-        CreateEncryptTaskRequest &request
-    );
-    // 取消独立加密任务
-    //
-    // 取消独立加密任务。该API已废弃。
-    // 
-    // 约束：
-    // 
-    //   只能取消正在任务队列中排队的任务。已开始加密或已完成的加密任务不能取消。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<DeleteEncryptTaskResponse> deleteEncryptTask(
-        DeleteEncryptTaskRequest &request
-    );
-    // 查询独立加密任务
-    //
-    // 查询独立加密任务状态。返回任务执行结果或当前状态。该API已废弃。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListEncryptTaskResponse> listEncryptTask(
-        ListEncryptTaskRequest &request
     );
 
     // 新建视频解析任务

@@ -229,6 +229,17 @@ HttpRequestDef CodeArtsDeployMeta::genRequestDefForUpdateAppInfo() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsDeployMeta::genRequestDefForCheckDeployStatus() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("RecordId")
+                  .withJsonTag("record_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StepState")
+                  .withJsonTag("step_state")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsDeployMeta::genRequestDefForCreateEnvironment() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -320,6 +331,15 @@ HttpRequestDef CodeArtsDeployMeta::genRequestDefForListEnvironmentPermissions() 
 }
 
 HttpRequestDef CodeArtsDeployMeta::genRequestDefForUpdateEnvironmentPermission() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsDeployMeta::genRequestDefForStopDeployTask() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

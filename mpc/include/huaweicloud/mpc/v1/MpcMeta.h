@@ -27,9 +27,6 @@ public:
     static HttpRequestDef genRequestDefForCreateEditingJob();
     static HttpRequestDef genRequestDefForDeleteEditingJob();
     static HttpRequestDef genRequestDefForListEditingJob();
-    static HttpRequestDef genRequestDefForCreateEncryptTask();
-    static HttpRequestDef genRequestDefForDeleteEncryptTask();
-    static HttpRequestDef genRequestDefForListEncryptTask();
     static HttpRequestDef genRequestDefForCreateExtractTask();
     static HttpRequestDef genRequestDefForDeleteExtractTask();
     static HttpRequestDef genRequestDefForListExtractTask();

@@ -41,6 +41,7 @@ QueryTranscodingsTaskResponse::QueryTranscodingsTaskResponse()
     picInfoIsSet_ = false;
     avParametersIsSet_ = false;
     additionalManifestsIsSet_ = false;
+    metadataIsSet_ = false;
 }
 
 QueryTranscodingsTaskResponse::~QueryTranscodingsTaskResponse() = default;
@@ -109,6 +110,9 @@ web::json::value QueryTranscodingsTaskResponse::toJson() const
     }
     if(additionalManifestsIsSet_) {
         val[utility::conversions::to_string_t("additional_manifests")] = ModelBase::toJson(additionalManifests_);
+    }
+    if(metadataIsSet_) {
+        val[utility::conversions::to_string_t("metadata")] = ModelBase::toJson(metadata_);
     }
 
     return val;
@@ -286,6 +290,15 @@ bool QueryTranscodingsTaskResponse::fromJson(const web::json::value& val)
             std::vector<AdditionalManifests> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAdditionalManifests(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("metadata"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("metadata"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<FileMetaData> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMetadata(refVal);
         }
     }
     return ok;
@@ -689,6 +702,27 @@ bool QueryTranscodingsTaskResponse::additionalManifestsIsSet() const
 void QueryTranscodingsTaskResponse::unsetadditionalManifests()
 {
     additionalManifestsIsSet_ = false;
+}
+
+std::vector<FileMetaData>& QueryTranscodingsTaskResponse::getMetadata()
+{
+    return metadata_;
+}
+
+void QueryTranscodingsTaskResponse::setMetadata(const std::vector<FileMetaData>& value)
+{
+    metadata_ = value;
+    metadataIsSet_ = true;
+}
+
+bool QueryTranscodingsTaskResponse::metadataIsSet() const
+{
+    return metadataIsSet_;
+}
+
+void QueryTranscodingsTaskResponse::unsetmetadata()
+{
+    metadataIsSet_ = false;
 }
 
 }

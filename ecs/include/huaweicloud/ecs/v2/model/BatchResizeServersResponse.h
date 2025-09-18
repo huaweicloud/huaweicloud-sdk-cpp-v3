@@ -39,7 +39,7 @@ public:
     /// BatchResizeServersResponse members
 
     /// <summary>
-    /// 订单号，创建包年包月的弹性云服务器时返回该参数。
+    /// 
     /// </summary>
 
     std::string getOrderId() const;
@@ -48,7 +48,7 @@ public:
     void setOrderId(const std::string& value);
 
     /// <summary>
-    /// 任务ID，变更按需的弹性云服务器规格时返回该参数。
+    /// 
     /// </summary>
 
     std::string getJobId() const;

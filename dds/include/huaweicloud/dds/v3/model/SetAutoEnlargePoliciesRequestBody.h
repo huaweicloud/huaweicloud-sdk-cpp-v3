@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/dds/v3/model/DiskAutoExpansionPolicy.h>
 #include <string>
+#include <huaweicloud/dds/v3/model/DiskSetAutoExpansionPolicy.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -41,7 +41,7 @@ public:
     /// SetAutoEnlargePoliciesRequestBody members
 
     /// <summary>
-    /// 自动扩容开关。 - on:开启磁盘自动扩容策略。 - off: 关闭磁盘自动扩容策略。 默认值为on。
+    /// **参数解释：** 自动扩容开关。 **约束限制：** 不涉及。 **取值范围：** - on:开启磁盘自动扩容策略。 - off: 关闭磁盘自动扩容策略。 **默认取值：** on。
     /// </summary>
 
     std::string getSwitchOption() const;
@@ -50,19 +50,19 @@ public:
     void setSwitchOption(const std::string& value);
 
     /// <summary>
-    /// 磁盘自动扩容策略。 最大支持设置10个实例的策略。
+    /// **参数解释：** 磁盘自动扩容策略。 **约束限制：** 最大支持设置10个实例的策略。 **取值范围：** 不涉及。 **默认取值：** 不涉及。 **参数解释：** 不涉及。
     /// </summary>
 
-    std::vector<DiskAutoExpansionPolicy>& getPolicies();
+    std::vector<DiskSetAutoExpansionPolicy>& getPolicies();
     bool policiesIsSet() const;
     void unsetpolicies();
-    void setPolicies(const std::vector<DiskAutoExpansionPolicy>& value);
+    void setPolicies(const std::vector<DiskSetAutoExpansionPolicy>& value);
 
 
 protected:
     std::string switchOption_;
     bool switchOptionIsSet_;
-    std::vector<DiskAutoExpansionPolicy> policies_;
+    std::vector<DiskSetAutoExpansionPolicy> policies_;
     bool policiesIsSet_;
 
 };

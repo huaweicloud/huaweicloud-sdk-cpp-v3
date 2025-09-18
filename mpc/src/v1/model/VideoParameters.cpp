@@ -21,6 +21,8 @@ VideoParameters::VideoParameters()
     maxBitrateIsSet_ = false;
     bitrate_ = 0;
     bitrateIsSet_ = false;
+    bufSize_ = 0;
+    bufSizeIsSet_ = false;
     profile_ = 0;
     profileIsSet_ = false;
     level_ = 0;
@@ -67,6 +69,9 @@ web::json::value VideoParameters::toJson() const
     }
     if(bitrateIsSet_) {
         val[utility::conversions::to_string_t("bitrate")] = ModelBase::toJson(bitrate_);
+    }
+    if(bufSizeIsSet_) {
+        val[utility::conversions::to_string_t("buf_size")] = ModelBase::toJson(bufSize_);
     }
     if(profileIsSet_) {
         val[utility::conversions::to_string_t("profile")] = ModelBase::toJson(profile_);
@@ -148,6 +153,15 @@ bool VideoParameters::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBitrate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("buf_size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("buf_size"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBufSize(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("profile"))) {
@@ -347,6 +361,27 @@ bool VideoParameters::bitrateIsSet() const
 void VideoParameters::unsetbitrate()
 {
     bitrateIsSet_ = false;
+}
+
+int32_t VideoParameters::getBufSize() const
+{
+    return bufSize_;
+}
+
+void VideoParameters::setBufSize(int32_t value)
+{
+    bufSize_ = value;
+    bufSizeIsSet_ = true;
+}
+
+bool VideoParameters::bufSizeIsSet() const
+{
+    return bufSizeIsSet_;
+}
+
+void VideoParameters::unsetbufSize()
+{
+    bufSizeIsSet_ = false;
 }
 
 int32_t VideoParameters::getProfile() const

@@ -18,6 +18,8 @@ DiskAutoExpansionPolicy::DiskAutoExpansionPolicy()
     thresholdIsSet_ = false;
     step_ = 0;
     stepIsSet_ = false;
+    size_ = 0;
+    sizeIsSet_ = false;
 }
 
 DiskAutoExpansionPolicy::~DiskAutoExpansionPolicy() = default;
@@ -38,6 +40,9 @@ web::json::value DiskAutoExpansionPolicy::toJson() const
     }
     if(stepIsSet_) {
         val[utility::conversions::to_string_t("step")] = ModelBase::toJson(step_);
+    }
+    if(sizeIsSet_) {
+        val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool DiskAutoExpansionPolicy::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStep(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSize(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool DiskAutoExpansionPolicy::stepIsSet() const
 void DiskAutoExpansionPolicy::unsetstep()
 {
     stepIsSet_ = false;
+}
+
+int32_t DiskAutoExpansionPolicy::getSize() const
+{
+    return size_;
+}
+
+void DiskAutoExpansionPolicy::setSize(int32_t value)
+{
+    size_ = value;
+    sizeIsSet_ = true;
+}
+
+bool DiskAutoExpansionPolicy::sizeIsSet() const
+{
+    return sizeIsSet_;
+}
+
+void DiskAutoExpansionPolicy::unsetsize()
+{
+    sizeIsSet_ = false;
 }
 
 }

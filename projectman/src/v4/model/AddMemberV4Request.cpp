@@ -1,0 +1,113 @@
+
+
+#include "huaweicloud/projectman/v4/model/AddMemberV4Request.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Projectman {
+namespace V4 {
+namespace Model {
+
+
+
+
+AddMemberV4Request::AddMemberV4Request()
+{
+    projectId_ = "";
+    projectIdIsSet_ = false;
+    bodyIsSet_ = false;
+}
+
+AddMemberV4Request::~AddMemberV4Request() = default;
+
+void AddMemberV4Request::validate()
+{
+}
+
+web::json::value AddMemberV4Request::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    }
+
+    return val;
+}
+bool AddMemberV4Request::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+        if(!fieldValue.is_null())
+        {
+            AddMemberRequestV4 refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBody(refVal);
+        }
+    }
+    return ok;
+}
+
+
+std::string AddMemberV4Request::getProjectId() const
+{
+    return projectId_;
+}
+
+void AddMemberV4Request::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool AddMemberV4Request::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void AddMemberV4Request::unsetprojectId()
+{
+    projectIdIsSet_ = false;
+}
+
+AddMemberRequestV4 AddMemberV4Request::getBody() const
+{
+    return body_;
+}
+
+void AddMemberV4Request::setBody(const AddMemberRequestV4& value)
+{
+    body_ = value;
+    bodyIsSet_ = true;
+}
+
+bool AddMemberV4Request::bodyIsSet() const
+{
+    return bodyIsSet_;
+}
+
+void AddMemberV4Request::unsetbody()
+{
+    bodyIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

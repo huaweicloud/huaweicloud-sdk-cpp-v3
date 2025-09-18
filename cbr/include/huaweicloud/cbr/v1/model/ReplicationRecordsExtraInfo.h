@@ -78,10 +78,10 @@ public:
     /// 目标端的存储库id
     /// </summary>
 
-    std::string getDestinatioVaultId() const;
-    bool destinatioVaultIdIsSet() const;
-    void unsetdestinatioVaultId();
-    void setDestinatioVaultId(const std::string& value);
+    std::string getDestinationVaultId() const;
+    bool destinationVaultIdIsSet() const;
+    void unsetdestinationVaultId();
+    void setDestinationVaultId(const std::string& value);
 
 
 protected:
@@ -93,8 +93,8 @@ protected:
     bool failReasonIsSet_;
     bool autoTrigger_;
     bool autoTriggerIsSet_;
-    std::string destinatioVaultId_;
-    bool destinatioVaultIdIsSet_;
+    std::string destinationVaultId_;
+    bool destinationVaultIdIsSet_;
 
 };
 

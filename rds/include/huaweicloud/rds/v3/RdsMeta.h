@@ -145,6 +145,7 @@ public:
     static HttpRequestDef genRequestDefForShowReplicationStatus();
     static HttpRequestDef genRequestDefForShowSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForShowStorageUsedSpace();
+    static HttpRequestDef genRequestDefForShowTaskDetail();
     static HttpRequestDef genRequestDefForShowTdeStatus();
     static HttpRequestDef genRequestDefForShowTransferPolicy();
     static HttpRequestDef genRequestDefForShowUpgradeDbMajorVersionStatus();
@@ -234,6 +235,7 @@ public:
     static HttpRequestDef genRequestDefForUpdatePostgresqlExtension();
     static HttpRequestDef genRequestDefForUpdatePostgresqlParameterValue();
     static HttpRequestDef genRequestDefForUpdateReadWeight();
+    static HttpRequestDef genRequestDefForListInstancesNoIndexTables();
     static HttpRequestDef genRequestDefForAllowSqlserverDbUserPrivilege();
     static HttpRequestDef genRequestDefForBatchAddMsdtcs();
     static HttpRequestDef genRequestDefForCopyDatabase();

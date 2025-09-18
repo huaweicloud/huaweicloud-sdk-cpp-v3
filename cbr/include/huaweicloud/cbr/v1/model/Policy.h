@@ -105,6 +105,15 @@ public:
     void unsetassociatedVaults();
     void setAssociatedVaults(const std::vector<PolicyAssociateVault>& value);
 
+    /// <summary>
+    /// 策略类型，取值范围如下： - custom_policy：普通用户策略 - organization_policy_v1：老版本组织策略 - organization_policy_v2：新版本组织策略 - organization_policy_removed：退出组织的用户已绑定在存储库上的新版本组织策略（不自动解绑策略与存储库绑定关系，但是不能新绑定存储库）
+    /// </summary>
+
+    std::string getPolicyType() const;
+    bool policyTypeIsSet() const;
+    void unsetpolicyType();
+    void setPolicyType(const std::string& value);
+
 
 protected:
     bool enabled_;
@@ -121,6 +130,8 @@ protected:
     bool triggerIsSet_;
     std::vector<PolicyAssociateVault> associatedVaults_;
     bool associatedVaultsIsSet_;
+    std::string policyType_;
+    bool policyTypeIsSet_;
 
 };
 

@@ -20,8 +20,8 @@ ReplicationRecordsExtraInfo::ReplicationRecordsExtraInfo()
     failReasonIsSet_ = false;
     autoTrigger_ = false;
     autoTriggerIsSet_ = false;
-    destinatioVaultId_ = "";
-    destinatioVaultIdIsSet_ = false;
+    destinationVaultId_ = "";
+    destinationVaultIdIsSet_ = false;
 }
 
 ReplicationRecordsExtraInfo::~ReplicationRecordsExtraInfo() = default;
@@ -46,8 +46,8 @@ web::json::value ReplicationRecordsExtraInfo::toJson() const
     if(autoTriggerIsSet_) {
         val[utility::conversions::to_string_t("auto_trigger")] = ModelBase::toJson(autoTrigger_);
     }
-    if(destinatioVaultIdIsSet_) {
-        val[utility::conversions::to_string_t("destinatio_vault_id")] = ModelBase::toJson(destinatioVaultId_);
+    if(destinationVaultIdIsSet_) {
+        val[utility::conversions::to_string_t("destination_vault_id")] = ModelBase::toJson(destinationVaultId_);
     }
 
     return val;
@@ -92,13 +92,13 @@ bool ReplicationRecordsExtraInfo::fromJson(const web::json::value& val)
             setAutoTrigger(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("destinatio_vault_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destinatio_vault_id"));
+    if(val.has_field(utility::conversions::to_string_t("destination_vault_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination_vault_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDestinatioVaultId(refVal);
+            setDestinationVaultId(refVal);
         }
     }
     return ok;
@@ -189,25 +189,25 @@ void ReplicationRecordsExtraInfo::unsetautoTrigger()
     autoTriggerIsSet_ = false;
 }
 
-std::string ReplicationRecordsExtraInfo::getDestinatioVaultId() const
+std::string ReplicationRecordsExtraInfo::getDestinationVaultId() const
 {
-    return destinatioVaultId_;
+    return destinationVaultId_;
 }
 
-void ReplicationRecordsExtraInfo::setDestinatioVaultId(const std::string& value)
+void ReplicationRecordsExtraInfo::setDestinationVaultId(const std::string& value)
 {
-    destinatioVaultId_ = value;
-    destinatioVaultIdIsSet_ = true;
+    destinationVaultId_ = value;
+    destinationVaultIdIsSet_ = true;
 }
 
-bool ReplicationRecordsExtraInfo::destinatioVaultIdIsSet() const
+bool ReplicationRecordsExtraInfo::destinationVaultIdIsSet() const
 {
-    return destinatioVaultIdIsSet_;
+    return destinationVaultIdIsSet_;
 }
 
-void ReplicationRecordsExtraInfo::unsetdestinatioVaultId()
+void ReplicationRecordsExtraInfo::unsetdestinationVaultId()
 {
-    destinatioVaultIdIsSet_ = false;
+    destinationVaultIdIsSet_ = false;
 }
 
 }

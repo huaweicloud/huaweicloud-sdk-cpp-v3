@@ -18,6 +18,7 @@ MediaDetail::MediaDetail()
     replaceSubIndexIsSet_ = false;
     outputThumbnailParaIsSet_ = false;
     outputWatermarkParasIsSet_ = false;
+    metadataIsSet_ = false;
 }
 
 MediaDetail::~MediaDetail() = default;
@@ -47,6 +48,9 @@ web::json::value MediaDetail::toJson() const
     }
     if(outputWatermarkParasIsSet_) {
         val[utility::conversions::to_string_t("output_watermark_paras")] = ModelBase::toJson(outputWatermarkParas_);
+    }
+    if(metadataIsSet_) {
+        val[utility::conversions::to_string_t("metadata")] = ModelBase::toJson(metadata_);
     }
 
     return val;
@@ -107,6 +111,15 @@ bool MediaDetail::fromJson(const web::json::value& val)
             OutputWatermarkPara refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOutputWatermarkParas(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("metadata"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("metadata"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<FileMetaData> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMetadata(refVal);
         }
     }
     return ok;
@@ -237,6 +250,27 @@ bool MediaDetail::outputWatermarkParasIsSet() const
 void MediaDetail::unsetoutputWatermarkParas()
 {
     outputWatermarkParasIsSet_ = false;
+}
+
+std::vector<FileMetaData>& MediaDetail::getMetadata()
+{
+    return metadata_;
+}
+
+void MediaDetail::setMetadata(const std::vector<FileMetaData>& value)
+{
+    metadata_ = value;
+    metadataIsSet_ = true;
+}
+
+bool MediaDetail::metadataIsSet() const
+{
+    return metadataIsSet_;
+}
+
+void MediaDetail::unsetmetadata()
+{
+    metadataIsSet_ = false;
 }
 
 }

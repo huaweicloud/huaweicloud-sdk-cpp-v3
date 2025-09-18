@@ -40,7 +40,7 @@ public:
     /// SetLogLtsConfigsRequest members
 
     /// <summary>
-    /// 引擎，暂只支持mysql。
+    /// 发动机类型。
     /// </summary>
 
     std::string getEngine() const;

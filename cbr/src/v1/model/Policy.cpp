@@ -23,6 +23,8 @@ Policy::Policy()
     operationTypeIsSet_ = false;
     triggerIsSet_ = false;
     associatedVaultsIsSet_ = false;
+    policyType_ = "";
+    policyTypeIsSet_ = false;
 }
 
 Policy::~Policy() = default;
@@ -55,6 +57,9 @@ web::json::value Policy::toJson() const
     }
     if(associatedVaultsIsSet_) {
         val[utility::conversions::to_string_t("associated_vaults")] = ModelBase::toJson(associatedVaults_);
+    }
+    if(policyTypeIsSet_) {
+        val[utility::conversions::to_string_t("policy_type")] = ModelBase::toJson(policyType_);
     }
 
     return val;
@@ -124,6 +129,15 @@ bool Policy::fromJson(const web::json::value& val)
             std::vector<PolicyAssociateVault> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssociatedVaults(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("policy_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("policy_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPolicyType(refVal);
         }
     }
     return ok;
@@ -275,6 +289,27 @@ bool Policy::associatedVaultsIsSet() const
 void Policy::unsetassociatedVaults()
 {
     associatedVaultsIsSet_ = false;
+}
+
+std::string Policy::getPolicyType() const
+{
+    return policyType_;
+}
+
+void Policy::setPolicyType(const std::string& value)
+{
+    policyType_ = value;
+    policyTypeIsSet_ = true;
+}
+
+bool Policy::policyTypeIsSet() const
+{
+    return policyTypeIsSet_;
+}
+
+void Policy::unsetpolicyType()
+{
+    policyTypeIsSet_ = false;
 }
 
 }

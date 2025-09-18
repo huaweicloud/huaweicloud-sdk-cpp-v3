@@ -1911,6 +1911,20 @@ HttpRequestDef RdsMeta::genRequestDefForShowStorageUsedSpace() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForShowTaskDetail() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForShowTdeStatus() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -3023,6 +3037,17 @@ HttpRequestDef RdsMeta::genRequestDefForUpdateReadWeight() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForListInstancesNoIndexTables() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Newest")
+                  .withJsonTag("newest")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TableType")
+                  .withJsonTag("table_type")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

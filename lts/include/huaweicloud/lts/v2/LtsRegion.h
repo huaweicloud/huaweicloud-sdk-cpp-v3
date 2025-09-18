@@ -126,6 +126,10 @@ public:
             { 
                 "https://lts.ru-moscow-1.myhuaweicloud.com"
             });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://lts.cn-north-12.myhuaweicloud.com"
+            });
         regions["cn-south-4"] = Region("cn-south-4",
             { 
                 "https://lts.cn-south-4.myhuaweicloud.com"

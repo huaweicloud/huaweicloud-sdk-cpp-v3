@@ -159,46 +159,6 @@ HttpRequestDef MpcMeta::genRequestDefForListEditingJob() {
     return reqDefBuilder;
 }
 
-HttpRequestDef MpcMeta::genRequestDefForCreateEncryptTask() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef MpcMeta::genRequestDefForDeleteEncryptTask() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
-                  .withJsonTag("task_id")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef MpcMeta::genRequestDefForListEncryptTask() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
-                  .withJsonTag("task_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Status")
-                  .withJsonTag("status")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
-                  .withJsonTag("start_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
-                  .withJsonTag("end_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Page")
-                  .withJsonTag("page")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Size")
-                  .withJsonTag("size")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef MpcMeta::genRequestDefForCreateExtractTask() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

@@ -337,6 +337,8 @@
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringResponse.h>
 #include <huaweicloud/rds/v3/model/ShowStorageUsedSpaceRequest.h>
 #include <huaweicloud/rds/v3/model/ShowStorageUsedSpaceResponse.h>
+#include <huaweicloud/rds/v3/model/ShowTaskDetailRequest.h>
+#include <huaweicloud/rds/v3/model/ShowTaskDetailResponse.h>
 #include <huaweicloud/rds/v3/model/ShowTdeStatusRequest.h>
 #include <huaweicloud/rds/v3/model/ShowTdeStatusResponse.h>
 #include <huaweicloud/rds/v3/model/ShowTransferPolicyRequest.h>
@@ -374,6 +376,7 @@
 #include <huaweicloud/rds/v3/model/SwitchSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/SwitchSslRequest.h>
 #include <huaweicloud/rds/v3/model/SwitchSslResponse.h>
+#include <huaweicloud/rds/v3/model/TaskDetailRequest.h>
 #include <huaweicloud/rds/v3/model/ToPeriodReq.h>
 #include <huaweicloud/rds/v3/model/TransferBackupRequest.h>
 #include <huaweicloud/rds/v3/model/TransferBackupRequestBody.h>
@@ -571,6 +574,10 @@
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlParameterValueResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateReadWeightRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateReadWeightResponse.h>
+#include <string>
+
+#include <huaweicloud/rds/v3/model/ListInstancesNoIndexTablesRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstancesNoIndexTablesResponse.h>
 #include <string>
 
 #include <huaweicloud/rds/v3/model/AddCopyDatabaseRequestBody.h>
@@ -1719,6 +1726,14 @@ public:
     std::shared_ptr<ShowStorageUsedSpaceResponse> showStorageUsedSpace(
         ShowStorageUsedSpaceRequest &request
     );
+    // 获取任务信息
+    //
+    // 获取任务信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTaskDetailResponse> showTaskDetail(
+        ShowTaskDetailRequest &request
+    );
     // 根据实例id查询sqlserver TDE状态
     //
     // 根据实例id查询sqlserver TDE状态
@@ -2439,6 +2454,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateReadWeightResponse> updateReadWeight(
         UpdateReadWeightRequest &request
+    );
+
+    // 查询无索引表诊断数据
+    //
+    // 查询无索引表诊断数据
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesNoIndexTablesResponse> listInstancesNoIndexTables(
+        ListInstancesNoIndexTablesRequest &request
     );
 
     // 授权数据库帐号

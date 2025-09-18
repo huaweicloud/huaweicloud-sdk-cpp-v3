@@ -11,6 +11,7 @@
 
 #include <huaweicloud/mpc/v1/model/AvParameters.h>
 #include <huaweicloud/mpc/v1/model/ObsObjInfo.h>
+#include <huaweicloud/mpc/v1/model/FileMetaData.h>
 #include <huaweicloud/mpc/v1/model/TranscodeDetail.h>
 #include <string>
 #include <huaweicloud/mpc/v1/model/AdditionalManifests.h>
@@ -215,6 +216,15 @@ public:
     void unsetadditionalManifests();
     void setAdditionalManifests(const std::vector<AdditionalManifests>& value);
 
+    /// <summary>
+    /// 输出文件的metadata信息 
+    /// </summary>
+
+    std::vector<FileMetaData>& getMetadata();
+    bool metadataIsSet() const;
+    void unsetmetadata();
+    void setMetadata(const std::vector<FileMetaData>& value);
+
 
 protected:
     std::string taskId_;
@@ -255,6 +265,8 @@ protected:
     bool avParametersIsSet_;
     std::vector<AdditionalManifests> additionalManifests_;
     bool additionalManifestsIsSet_;
+    std::vector<FileMetaData> metadata_;
+    bool metadataIsSet_;
 
 };
 

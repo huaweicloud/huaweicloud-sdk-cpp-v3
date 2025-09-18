@@ -20,6 +20,8 @@ EnvironmentDetail::EnvironmentDetail()
     descriptionIsSet_ = false;
     os_ = "";
     osIsSet_ = false;
+    projectId_ = "";
+    projectIdIsSet_ = false;
     nickName_ = "";
     nickNameIsSet_ = false;
     deployType_ = 0;
@@ -53,6 +55,9 @@ web::json::value EnvironmentDetail::toJson() const
     }
     if(osIsSet_) {
         val[utility::conversions::to_string_t("os")] = ModelBase::toJson(os_);
+    }
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
     }
     if(nickNameIsSet_) {
         val[utility::conversions::to_string_t("nick_name")] = ModelBase::toJson(nickName_);
@@ -113,6 +118,15 @@ bool EnvironmentDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("nick_name"))) {
@@ -255,6 +269,27 @@ bool EnvironmentDetail::osIsSet() const
 void EnvironmentDetail::unsetos()
 {
     osIsSet_ = false;
+}
+
+std::string EnvironmentDetail::getProjectId() const
+{
+    return projectId_;
+}
+
+void EnvironmentDetail::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool EnvironmentDetail::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void EnvironmentDetail::unsetprojectId()
+{
+    projectIdIsSet_ = false;
 }
 
 std::string EnvironmentDetail::getNickName() const

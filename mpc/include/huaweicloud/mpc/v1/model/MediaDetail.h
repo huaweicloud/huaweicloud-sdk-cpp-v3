@@ -12,6 +12,7 @@
 #include <huaweicloud/mpc/v1/model/OutputThumbnailPara.h>
 #include <huaweicloud/mpc/v1/model/OutputWatermarkPara.h>
 #include <huaweicloud/mpc/v1/model/OriginPara.h>
+#include <huaweicloud/mpc/v1/model/FileMetaData.h>
 #include <string>
 #include <huaweicloud/mpc/v1/model/OutputVideoPara.h>
 #include <vector>
@@ -97,6 +98,15 @@ public:
     void unsetoutputWatermarkParas();
     void setOutputWatermarkParas(const OutputWatermarkPara& value);
 
+    /// <summary>
+    /// 输出文件的metadata信息 
+    /// </summary>
+
+    std::vector<FileMetaData>& getMetadata();
+    bool metadataIsSet() const;
+    void unsetmetadata();
+    void setMetadata(const std::vector<FileMetaData>& value);
+
 
 protected:
     std::vector<std::string> features_;
@@ -111,6 +121,8 @@ protected:
     bool outputThumbnailParaIsSet_;
     OutputWatermarkPara outputWatermarkParas_;
     bool outputWatermarkParasIsSet_;
+    std::vector<FileMetaData> metadata_;
+    bool metadataIsSet_;
 
 };
 

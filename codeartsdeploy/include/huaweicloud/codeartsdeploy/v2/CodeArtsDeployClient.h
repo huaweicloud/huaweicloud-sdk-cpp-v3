@@ -78,6 +78,10 @@
 #include <huaweicloud/codeartsdeploy/v2/model/UpdateAppInfoResponse.h>
 #include <string>
 
+#include <huaweicloud/codeartsdeploy/v2/model/CheckDeployStatusRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CheckDeployStatusResponse.h>
+#include <string>
+
 #include <huaweicloud/codeartsdeploy/v2/model/CreateEnvironmentRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/CreateEnvironmentResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeleteEnvironmentRequest.h>
@@ -105,6 +109,10 @@
 #include <huaweicloud/codeartsdeploy/v2/model/ListEnvironmentPermissionsResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/UpdateEnvironmentPermissionRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/UpdateEnvironmentPermissionResponse.h>
+#include <string>
+
+#include <huaweicloud/codeartsdeploy/v2/model/StopDeployTaskRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/StopDeployTaskResponse.h>
 #include <string>
 
 #include <huaweicloud/codeartsdeploy/v2/model/BatchDeleteHostsRequest.h>
@@ -421,6 +429,15 @@ public:
         UpdateAppInfoRequest &request
     );
 
+    // 获取部署任务状态
+    //
+    // 获取部署任务状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckDeployStatusResponse> checkDeployStatus(
+        CheckDeployStatusRequest &request
+    );
+
     // 应用下创建环境
     //
     // 应用下创建环境。
@@ -501,6 +518,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateEnvironmentPermissionResponse> updateEnvironmentPermission(
         UpdateEnvironmentPermissionRequest &request
+    );
+
+    // 停止部署任务
+    //
+    // 停止部署任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StopDeployTaskResponse> stopDeployTask(
+        StopDeployTaskRequest &request
     );
 
     // 批量删除主机集群下的主机

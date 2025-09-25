@@ -31,6 +31,7 @@ CreateTranscodingReq::CreateTranscodingReq()
     multiAudioIsSet_ = false;
     videoProcessIsSet_ = false;
     audioProcessIsSet_ = false;
+    metadataIsSet_ = false;
 }
 
 CreateTranscodingReq::~CreateTranscodingReq() = default;
@@ -93,6 +94,9 @@ web::json::value CreateTranscodingReq::toJson() const
     }
     if(audioProcessIsSet_) {
         val[utility::conversions::to_string_t("audio_process")] = ModelBase::toJson(audioProcess_);
+    }
+    if(metadataIsSet_) {
+        val[utility::conversions::to_string_t("metadata")] = ModelBase::toJson(metadata_);
     }
 
     return val;
@@ -252,6 +256,15 @@ bool CreateTranscodingReq::fromJson(const web::json::value& val)
             AudioProcess refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAudioProcess(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("metadata"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("metadata"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<FileMetaData> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMetadata(refVal);
         }
     }
     return ok;
@@ -613,6 +626,27 @@ bool CreateTranscodingReq::audioProcessIsSet() const
 void CreateTranscodingReq::unsetaudioProcess()
 {
     audioProcessIsSet_ = false;
+}
+
+std::vector<FileMetaData>& CreateTranscodingReq::getMetadata()
+{
+    return metadata_;
+}
+
+void CreateTranscodingReq::setMetadata(const std::vector<FileMetaData>& value)
+{
+    metadata_ = value;
+    metadataIsSet_ = true;
+}
+
+bool CreateTranscodingReq::metadataIsSet() const
+{
+    return metadataIsSet_;
+}
+
+void CreateTranscodingReq::unsetmetadata()
+{
+    metadataIsSet_ = false;
 }
 
 }

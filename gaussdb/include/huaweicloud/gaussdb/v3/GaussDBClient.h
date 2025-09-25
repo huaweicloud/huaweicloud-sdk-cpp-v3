@@ -309,6 +309,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreAvailableTablesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSlowLogDetailRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSlowLogDetailResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsResponse.h>
@@ -318,6 +320,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterControlResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowStarRocksSlowlogSensitiveStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowStarRocksSlowlogSensitiveStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowTableMetaInfoRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowTableMetaInfoResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequest.h>
@@ -405,6 +409,9 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateServerlessPolicy.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateServerlessPolicyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateServerlessPolicyResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveStatusRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchResponse.h>
@@ -1569,6 +1576,14 @@ public:
     std::shared_ptr<ShowRestoreTablesResponse> showRestoreTables(
         ShowRestoreTablesRequest &request
     );
+    // 获取StarRocks实例内核慢日志信息
+    //
+    // 获取StarRocks实例内核慢日志信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSlowLogDetailResponse> showSlowLogDetail(
+        ShowSlowLogDetailRequest &request
+    );
     // 查询慢日志统计信息
     //
     // 查询慢日志统计信息
@@ -1600,6 +1615,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSqlFilterRuleResponse> showSqlFilterRule(
         ShowSqlFilterRuleRequest &request
+    );
+    // 查询StarRocks实例慢日志脱敏状态
+    //
+    // 查询StarRocks实例慢日志脱敏状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStarRocksSlowlogSensitiveStatusResponse> showStarRocksSlowlogSensitiveStatus(
+        ShowStarRocksSlowlogSensitiveStatusRequest &request
     );
     // 查询实例库表信息
     //
@@ -1865,6 +1888,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateServerlessPolicyResponse> updateServerlessPolicy(
         UpdateServerlessPolicyRequest &request
+    );
+    // 开启或关闭StarRocks实例慢日志脱敏状态
+    //
+    // 开启或关闭StarRocks实例慢日志脱敏状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSlowlogSensitiveStatusResponse> updateSlowlogSensitiveStatus(
+        UpdateSlowlogSensitiveStatusRequest &request
     );
     // 开启或关闭慢日志脱敏状态
     //

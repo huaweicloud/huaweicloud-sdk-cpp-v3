@@ -24,6 +24,8 @@ OrganizationPolicyCreate::OrganizationPolicyCreate()
     policyEnabledIsSet_ = false;
     policyOperationDefinitionIsSet_ = false;
     policyTriggerIsSet_ = false;
+    effectiveScope_ = "";
+    effectiveScopeIsSet_ = false;
 }
 
 OrganizationPolicyCreate::~OrganizationPolicyCreate() = default;
@@ -56,6 +58,9 @@ web::json::value OrganizationPolicyCreate::toJson() const
     }
     if(policyTriggerIsSet_) {
         val[utility::conversions::to_string_t("policy_trigger")] = ModelBase::toJson(policyTrigger_);
+    }
+    if(effectiveScopeIsSet_) {
+        val[utility::conversions::to_string_t("effective_scope")] = ModelBase::toJson(effectiveScope_);
     }
 
     return val;
@@ -125,6 +130,15 @@ bool OrganizationPolicyCreate::fromJson(const web::json::value& val)
             PolicyTriggerReq refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPolicyTrigger(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("effective_scope"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("effective_scope"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEffectiveScope(refVal);
         }
     }
     return ok;
@@ -276,6 +290,27 @@ bool OrganizationPolicyCreate::policyTriggerIsSet() const
 void OrganizationPolicyCreate::unsetpolicyTrigger()
 {
     policyTriggerIsSet_ = false;
+}
+
+std::string OrganizationPolicyCreate::getEffectiveScope() const
+{
+    return effectiveScope_;
+}
+
+void OrganizationPolicyCreate::setEffectiveScope(const std::string& value)
+{
+    effectiveScope_ = value;
+    effectiveScopeIsSet_ = true;
+}
+
+bool OrganizationPolicyCreate::effectiveScopeIsSet() const
+{
+    return effectiveScopeIsSet_;
+}
+
+void OrganizationPolicyCreate::unseteffectiveScope()
+{
+    effectiveScopeIsSet_ = false;
 }
 
 }

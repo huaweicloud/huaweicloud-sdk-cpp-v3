@@ -998,42 +998,6 @@ std::shared_ptr<UpdateAppInfoResponse> CodeArtsDeployClient::updateAppInfo(Updat
 
     return localVarResult;
 }
-std::shared_ptr<CheckDeployStatusResponse> CodeArtsDeployClient::checkDeployStatus(CheckDeployStatusRequest &request)
-{
-    std::string localVarPath = "/v2/tasks/{task_id}/state";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["task_id"] = parameterToString(request.getTaskId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.recordIdIsSet()) {
-        localVarQueryParams["record_id"] = parameterToString(request.getRecordId());
-    }
-    if (request.stepStateIsSet()) {
-        localVarQueryParams["step_state"] = parameterToString(request.isStepState());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeArtsDeployMeta::genRequestDefForCheckDeployStatus());
-
-    std::shared_ptr<CheckDeployStatusResponse> localVarResult = std::make_shared<CheckDeployStatusResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<CreateEnvironmentResponse> CodeArtsDeployClient::createEnvironment(CreateEnvironmentRequest &request)
 {
     std::string localVarPath = "/v1/applications/{application_id}/environments";
@@ -1409,49 +1373,6 @@ std::shared_ptr<UpdateEnvironmentPermissionResponse> CodeArtsDeployClient::updat
         localVarHeaderParams, localVarHttpBody, CodeArtsDeployMeta::genRequestDefForUpdateEnvironmentPermission());
 
     std::shared_ptr<UpdateEnvironmentPermissionResponse> localVarResult = std::make_shared<UpdateEnvironmentPermissionResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<StopDeployTaskResponse> CodeArtsDeployClient::stopDeployTask(StopDeployTaskRequest &request)
-{
-    std::string localVarPath = "/v2/tasks/{task_id}/records/{record_id}/stop";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["task_id"] = parameterToString(request.getTaskId());
-    localVarPathParams["record_id"] = parameterToString(request.getRecordId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeArtsDeployMeta::genRequestDefForStopDeployTask());
-
-    std::shared_ptr<StopDeployTaskResponse> localVarResult = std::make_shared<StopDeployTaskResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

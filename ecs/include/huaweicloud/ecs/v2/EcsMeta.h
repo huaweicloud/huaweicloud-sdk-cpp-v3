@@ -94,6 +94,7 @@ public:
     static HttpRequestDef genRequestDefForShowMetadataOptions();
     static HttpRequestDef genRequestDefForShowRecycleBin();
     static HttpRequestDef genRequestDefForShowResetPasswordFlag();
+    static HttpRequestDef genRequestDefForShowSerialConsoleActions();
     static HttpRequestDef genRequestDefForShowServer();
     static HttpRequestDef genRequestDefForShowServerAttachableNicNum();
     static HttpRequestDef genRequestDefForShowServerBlockDevice();
@@ -106,6 +107,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateRecycleBin();
     static HttpRequestDef genRequestDefForUpdateRecycleBinPolicy();
     static HttpRequestDef genRequestDefForUpdateScheduledEvent();
+    static HttpRequestDef genRequestDefForUpdateSerialConsoleOptions();
     static HttpRequestDef genRequestDefForUpdateServer();
     static HttpRequestDef genRequestDefForUpdateServerAutoTerminateTime();
     static HttpRequestDef genRequestDefForUpdateServerBlockDevice();

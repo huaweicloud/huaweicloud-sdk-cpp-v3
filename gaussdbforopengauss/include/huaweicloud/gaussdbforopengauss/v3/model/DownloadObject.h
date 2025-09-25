@@ -51,10 +51,10 @@ public:
     /// 文件大小。
     /// </summary>
 
-    double getSize() const;
+    int32_t getSize() const;
     bool sizeIsSet() const;
     void unsetsize();
-    void setSize(double value);
+    void setSize(int32_t value);
 
     /// <summary>
     /// 下载链接。
@@ -78,7 +78,7 @@ public:
 protected:
     std::string name_;
     bool nameIsSet_;
-    double size_;
+    int32_t size_;
     bool sizeIsSet_;
     std::string downloadLink_;
     bool downloadLinkIsSet_;

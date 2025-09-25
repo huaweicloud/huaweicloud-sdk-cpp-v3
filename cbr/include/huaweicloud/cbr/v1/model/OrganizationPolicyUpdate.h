@@ -94,6 +94,15 @@ public:
     void unsetpolicyTrigger();
     void setPolicyTrigger(const PolicyTriggerReq& value);
 
+    /// <summary>
+    /// 组织策略生效范围
+    /// </summary>
+
+    std::string getEffectiveScope() const;
+    bool effectiveScopeIsSet() const;
+    void unseteffectiveScope();
+    void setEffectiveScope(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -108,6 +117,8 @@ protected:
     bool policyOperationDefinitionIsSet_;
     PolicyTriggerReq policyTrigger_;
     bool policyTriggerIsSet_;
+    std::string effectiveScope_;
+    bool effectiveScopeIsSet_;
 
 };
 

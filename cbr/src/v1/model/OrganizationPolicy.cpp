@@ -32,6 +32,8 @@ OrganizationPolicy::OrganizationPolicy()
     statusIsSet_ = false;
     domainName_ = "";
     domainNameIsSet_ = false;
+    effectiveScope_ = "";
+    effectiveScopeIsSet_ = false;
 }
 
 OrganizationPolicy::~OrganizationPolicy() = default;
@@ -76,6 +78,9 @@ web::json::value OrganizationPolicy::toJson() const
     }
     if(domainNameIsSet_) {
         val[utility::conversions::to_string_t("domain_name")] = ModelBase::toJson(domainName_);
+    }
+    if(effectiveScopeIsSet_) {
+        val[utility::conversions::to_string_t("effective_scope")] = ModelBase::toJson(effectiveScope_);
     }
 
     return val;
@@ -181,6 +186,15 @@ bool OrganizationPolicy::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomainName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("effective_scope"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("effective_scope"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEffectiveScope(refVal);
         }
     }
     return ok;
@@ -416,6 +430,27 @@ bool OrganizationPolicy::domainNameIsSet() const
 void OrganizationPolicy::unsetdomainName()
 {
     domainNameIsSet_ = false;
+}
+
+std::string OrganizationPolicy::getEffectiveScope() const
+{
+    return effectiveScope_;
+}
+
+void OrganizationPolicy::setEffectiveScope(const std::string& value)
+{
+    effectiveScope_ = value;
+    effectiveScopeIsSet_ = true;
+}
+
+bool OrganizationPolicy::effectiveScopeIsSet() const
+{
+    return effectiveScopeIsSet_;
+}
+
+void OrganizationPolicy::unseteffectiveScope()
+{
+    effectiveScopeIsSet_ = false;
 }
 
 }

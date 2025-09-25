@@ -22,7 +22,7 @@ SlowSQLInfoResult::SlowSQLInfoResult()
     sqlTextIsSet_ = false;
     queryPlan_ = "";
     queryPlanIsSet_ = false;
-    calls_ = "";
+    calls_ = 0;
     callsIsSet_ = false;
     avgExecTime_ = "";
     avgExecTimeIsSet_ = false;
@@ -155,7 +155,7 @@ bool SlowSQLInfoResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("calls"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCalls(refVal);
         }
@@ -350,12 +350,12 @@ void SlowSQLInfoResult::unsetqueryPlan()
     queryPlanIsSet_ = false;
 }
 
-std::string SlowSQLInfoResult::getCalls() const
+int32_t SlowSQLInfoResult::getCalls() const
 {
     return calls_;
 }
 
-void SlowSQLInfoResult::setCalls(const std::string& value)
+void SlowSQLInfoResult::setCalls(int32_t value)
 {
     calls_ = value;
     callsIsSet_ = true;

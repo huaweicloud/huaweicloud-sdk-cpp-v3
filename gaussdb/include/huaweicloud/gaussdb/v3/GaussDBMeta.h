@@ -132,10 +132,12 @@ public:
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowRestoreAvailableTables();
     static HttpRequestDef genRequestDefForShowRestoreTables();
+    static HttpRequestDef genRequestDefForShowSlowLogDetail();
     static HttpRequestDef genRequestDefForShowSlowLogStatistics();
     static HttpRequestDef genRequestDefForShowSlowlogSensitiveStatus();
     static HttpRequestDef genRequestDefForShowSqlFilterControl();
     static HttpRequestDef genRequestDefForShowSqlFilterRule();
+    static HttpRequestDef genRequestDefForShowStarRocksSlowlogSensitiveStatus();
     static HttpRequestDef genRequestDefForShowTableMetaInfo();
     static HttpRequestDef genRequestDefForShrinkGaussMySqlProxy();
     static HttpRequestDef genRequestDefForSwitchAccessControl();
@@ -169,6 +171,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateProxyPrivateDnsName();
     static HttpRequestDef genRequestDefForUpdateProxySessionConsistence();
     static HttpRequestDef genRequestDefForUpdateServerlessPolicy();
+    static HttpRequestDef genRequestDefForUpdateSlowlogSensitiveStatus();
     static HttpRequestDef genRequestDefForUpdateSlowlogSensitiveSwitch();
     static HttpRequestDef genRequestDefForUpdateSqlFilterControl();
     static HttpRequestDef genRequestDefForUpdateTaurusNodeDataIp();

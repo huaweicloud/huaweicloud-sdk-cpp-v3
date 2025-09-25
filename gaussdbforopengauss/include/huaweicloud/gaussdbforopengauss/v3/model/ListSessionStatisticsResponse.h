@@ -52,17 +52,17 @@ public:
     /// **参数解释**: 会话统计列表。
     /// </summary>
 
-    std::vector<DimensionListResult>& getStatistics();
-    bool statisticsIsSet() const;
-    void unsetstatistics();
-    void setStatistics(const std::vector<DimensionListResult>& value);
+    std::vector<DimensionListResult>& getStatisticsList();
+    bool statisticsListIsSet() const;
+    void unsetstatisticsList();
+    void setStatisticsList(const std::vector<DimensionListResult>& value);
 
 
 protected:
     int32_t total_;
     bool totalIsSet_;
-    std::vector<DimensionListResult> statistics_;
-    bool statisticsIsSet_;
+    std::vector<DimensionListResult> statisticsList_;
+    bool statisticsListIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

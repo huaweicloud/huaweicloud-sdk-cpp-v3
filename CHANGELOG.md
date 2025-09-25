@@ -1,3 +1,341 @@
+# 3.1.156 2025-09-25
+
+### HuaweiCloud SDK CBR
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListFeatures`, `ShowFeature`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListOrganizationPolicies**
+    - changes of response param
+      - `+ policies.effective_scope`
+  - **CreateOrganizationPolicy**
+    - changes of request param
+      - `+ policy.effective_scope`
+    - changes of response param
+      - `+ policy.effective_scope`
+  - **ShowOrganizationPolicy**
+    - changes of response param
+      - `+ policy.effective_scope`
+  - **UpdateOrganizationPolicy**
+    - changes of request param
+      - `+ policy.effective_scope`
+    - changes of response param
+      - `+ policy.effective_scope`
+  - **ListVault**
+    - changes of response param
+      - `+ vaults.availability_zone`
+  - **CreateVault**
+    - changes of request param
+      - `+ vault.availability_zone`
+    - changes of response param
+      - `+ orders`
+      - `+ error_code`
+      - `+ retCode`
+      - `+ errText`
+      - `+ vault.availability_zone`
+      - `- vault.errText`
+      - `- vault.retCode`
+      - `- vault.orders`
+  - **ShowVault**
+    - changes of response param
+      - `+ vault.availability_zone`
+  - **UpdateVault**
+    - changes of response param
+      - `+ vault.availability_zone`
+  - **ListExternalVault**
+    - changes of response param
+      - `+ vaults.availability_zone`
+  - **ListProtectable**
+    - changes of response param
+      - `+ instances.protectable.vault.availability_zone`
+  - **ShowProtectable**
+    - changes of response param
+      - `+ instance.protectable.vault.availability_zone`
+  - **ShowVaultResourceInstances**
+    - changes of response param
+      - `+ resources.resource_detail.vault.availability_zone`
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `DownloadBuildRealTimeLog`
+    - `DownloadBuildFullLog`
+    - `ShowActionIInfo`
+    - `AddFavouriteOfficialTemplate`
+    - `RemoverFavouriteOfficialTemplate`
+    - `AddFavouriteTask`
+    - `RemoverFavouriteTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `CheckDeployStatus`, `StopDeployTask`
+  - **ListEnvironments**
+    - changes of response param
+      - `- result.project_id`
+  - **ShowEnvironmentDetail**
+    - changes of response param
+      - `- result.project_id`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `UpdateSerialConsoleOptions`, `ShowSerialConsoleActions`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowSlowLogDetail`, `ShowStarRocksSlowlogSensitiveStatus`, `UpdateSlowlogSensitiveStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `CreateSqlLimitTask`
+    - `ShowSqlLimitTask`
+    - `UpdateSqlLimitTask`
+    - `DeleteSqlLimitTask`
+    - `ListSqlLimitTask`
+    - `DeleteSharding`
+    - `StopFullSql`
+    - `ListEnhanceFullSqls`
+    - `ListFullSqlSwitches`
+    - `StartFullSql`
+    - `ShowAlarmHistoryRecord`
+    - `ListSqlTrace`
+    - `ShowShardDiskMessages`
+    - `ListDatabaseVersions`
+    - `BatchSetBackupPolicy`
+    - `ModifyHotfixes`
+    - `ShowExpansionParameters`
+    - `UpdateInstanceVersions`
+    - `ShowSqlPatch`
+    - `StopTransaction`
+    - `ListTransaction`
+    - `ShowAutoKillTransactionConfig`
+    - `ListWaitEvent`
+    - `ListAspInfos`
+    - `CollectAsp`
+    - `ShowAspStatus`
+    - `SwitchAspStatus`
+    - `UpdateExpansionParameters`
+    - `ShowRedistributionParameters`
+    - `ShowEpsRemainingQuota`
+    - `ListEnterpriseProjects`
+    - `ModifyAutoEnlargePolicy`
+    - `ShrinkCn`
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteInstance**
+    - changes of request param
+      - `- x-auth-token`
+  - **ShowBalanceStatus**
+    - changes of request param
+      - `- x-auth-token`
+  - **ResetPwd**
+    - changes of request param
+      - `- x-auth-token`
+  - **UpdateInstanceName**
+    - changes of request param
+      - `- x-auth-token`
+  - **RestartInstance**
+    - changes of request param
+      - `- x-auth-token`
+  - **DeleteManualBackup**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListRestoreTimes**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListDatastores**
+    - changes of request param
+      - `- x-auth-token`
+  - **CreateDbUser**
+    - changes of request param
+      - `- x-auth-token`
+  - **SetDbUserPwd**
+    - changes of request param
+      - `- x-auth-token`
+  - **ResizeInstanceFlavor**
+    - changes of request param
+      - `- x-auth-token`
+  - **UpgradeInstanceVersion**
+    - changes of request param
+      - `* body: object<OpenGaussUpgradeRequest> -> object<UpgradeRequestBody>`
+  - **ListSessionStatistics**
+    - changes of response param
+      - `+ statistics_list`
+      - `- statistics`
+  - **ListHbaInfoHistory**
+    - changes of response param
+      - `+ hba_histories`
+      - `- hba_confs`
+  - **ListSlowSqls**
+    - changes of response param
+      - `* slow_sql_infos.calls: string -> int32`
+  - **SetRecyclePolicy**
+    - changes of request param
+      - `- x-auth-token`
+  - **UpdateInstanceConfiguration**
+    - changes of request param
+      - `- x-auth-token`
+  - **ShowInstanceConfiguration**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListConfigurations**
+    - changes of request param
+      - `- x-auth-token`
+  - **ShowBackupPolicy**
+    - changes of request param
+      - `- x-auth-token`
+  - **SetBackupPolicy**
+    - changes of request param
+      - `- x-auth-token`
+  - **SetNewBackupPolicy**
+    - changes of request param
+      - `- x-auth-token`
+  - **DeleteDatabaseSchema**
+    - changes of request param
+      - `- x-auth-token`
+  - **CreateDatabaseSchemas**
+    - changes of request param
+      - `- x-auth-token`
+  - **AllowDbPrivileges**
+    - changes of request param
+      - `- x-auth-token`
+  - **AllowDbRolePrivileges**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListDatabases**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListDbUsers**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListDatabaseSchemas**
+    - changes of request param
+      - `- x-auth-token`
+  - **SwitchShard**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListCnInfosBeforeReduce**
+    - changes of request param
+      - `- x-auth-token`
+      - `+ X-Language: enum value [zh-cn,en-us]`
+  - **DownloadBackup**
+    - changes of request param
+      - `- x-auth-token`
+    - changes of response param
+      - `* files.size: number -> int32`
+  - **ListEnhanceFullSqlStatistics**
+    - changes of response param
+      - `+ statistics.total_sql_time`
+      - `+ statistics.avg_sql_time`
+      - `+ statistics.total_db_time`
+      - `+ statistics.total_cpu_time`
+      - `+ statistics.avg_parse_time`
+      - `+ statistics.avg_plan_time`
+      - `+ statistics.total_data_io_time`
+      - `+ statistics.avg_n_returned_rows`
+      - `+ statistics.avg_n_tuples_fetched`
+      - `* statistics.start_time_stamp: string -> int64`
+      - `* statistics.end_time_stamp: string -> int64`
+  - **ModifyHbaConf**
+    - changes of request param
+      - `+ before_conf`
+      - `+ after_conf`
+      - `- before_confs`
+      - `- after_confs`
+  - **ListReadonlyNodes**
+    - changes of response param
+      - `+ nodes`
+      - `- instances`
+  - **ListSlowSqlDetails**
+    - changes of response param
+      - `+ slow_sql_details.db_name`
+      - `+ slow_sql_details.schema_name`
+      - `+ slow_sql_details.sql`
+  - **ListDatabaseVolumeSummary**
+    - changes of response param
+      - `- cn_components.role`
+      - `* cn_components: list<ComponentInfoResult> -> list<CnComponentInfoResult>`
+  - **ShowAlarmStatistics**
+    - changes of response param
+      - `* ring_percentage: number -> double`
+  - **ShowGlobalSlowSqlDetail**
+    - changes of response param
+      - `+ slow_sql_details.db_name`
+      - `+ slow_sql_details.schema_name`
+      - `+ slow_sql_details.sql`
+  - **ShowJobDetail**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListInstances**
+    - changes of request param
+      - `- x-auth-token`
+  - **CreateInstance**
+    - changes of request param
+      - `- x-auth-token`
+  - **RunInstanceAction**
+    - changes of request param
+      - `- x-auth-token`
+  - **CreateManualBackup**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListBackups**
+    - changes of request param
+      - `- x-auth-token`
+  - **CreateRestoreInstance**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListFlavors**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListStorageTypes**
+    - changes of request param
+      - `- x-auth-token`
+  - **CreateDbRole**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListDatabaseRoles**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListComponentInfos**
+    - changes of request param
+      - `- x-auth-token`
+
 # 3.1.155 2025-09-18
 
 ### HuaweiCloud SDK CBR

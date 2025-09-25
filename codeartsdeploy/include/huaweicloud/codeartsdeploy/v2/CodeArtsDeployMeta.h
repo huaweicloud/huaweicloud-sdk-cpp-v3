@@ -39,7 +39,6 @@ public:
     static HttpRequestDef genRequestDefForStartDeployTask();
     static HttpRequestDef genRequestDefForUpdateAppDisableStatus();
     static HttpRequestDef genRequestDefForUpdateAppInfo();
-    static HttpRequestDef genRequestDefForCheckDeployStatus();
     static HttpRequestDef genRequestDefForCreateEnvironment();
     static HttpRequestDef genRequestDefForDeleteEnvironment();
     static HttpRequestDef genRequestDefForDeleteHostFromEnvironment();
@@ -50,7 +49,6 @@ public:
     static HttpRequestDef genRequestDefForUpdateEnvironment();
     static HttpRequestDef genRequestDefForListEnvironmentPermissions();
     static HttpRequestDef genRequestDefForUpdateEnvironmentPermission();
-    static HttpRequestDef genRequestDefForStopDeployTask();
     static HttpRequestDef genRequestDefForBatchDeleteHosts();
     static HttpRequestDef genRequestDefForCopyHostsToTarget();
     static HttpRequestDef genRequestDefForCreateDeploymentHost();

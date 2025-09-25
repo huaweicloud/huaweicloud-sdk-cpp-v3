@@ -67,7 +67,7 @@ bool UpgradeInstanceVersionRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            OpenGaussUpgradeRequest refVal;
+            UpgradeRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -118,12 +118,12 @@ void UpgradeInstanceVersionRequest::unsetinstanceId()
     instanceIdIsSet_ = false;
 }
 
-OpenGaussUpgradeRequest UpgradeInstanceVersionRequest::getBody() const
+UpgradeRequestBody UpgradeInstanceVersionRequest::getBody() const
 {
     return body_;
 }
 
-void UpgradeInstanceVersionRequest::setBody(const OpenGaussUpgradeRequest& value)
+void UpgradeInstanceVersionRequest::setBody(const UpgradeRequestBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;

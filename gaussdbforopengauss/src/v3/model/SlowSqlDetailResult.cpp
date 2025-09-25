@@ -12,6 +12,12 @@ namespace Model {
 
 SlowSqlDetailResult::SlowSqlDetailResult()
 {
+    dbName_ = "";
+    dbNameIsSet_ = false;
+    schemaName_ = "";
+    schemaNameIsSet_ = false;
+    sql_ = "";
+    sqlIsSet_ = false;
     sqlId_ = "";
     sqlIdIsSet_ = false;
     userName_ = "";
@@ -64,6 +70,15 @@ web::json::value SlowSqlDetailResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(dbNameIsSet_) {
+        val[utility::conversions::to_string_t("db_name")] = ModelBase::toJson(dbName_);
+    }
+    if(schemaNameIsSet_) {
+        val[utility::conversions::to_string_t("schema_name")] = ModelBase::toJson(schemaName_);
+    }
+    if(sqlIsSet_) {
+        val[utility::conversions::to_string_t("sql")] = ModelBase::toJson(sql_);
+    }
     if(sqlIdIsSet_) {
         val[utility::conversions::to_string_t("sql_id")] = ModelBase::toJson(sqlId_);
     }
@@ -131,6 +146,33 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("db_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("db_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDbName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("schema_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("schema_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSchemaName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sql"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSql(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("sql_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_id"));
         if(!fieldValue.is_null())
@@ -314,6 +356,69 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string SlowSqlDetailResult::getDbName() const
+{
+    return dbName_;
+}
+
+void SlowSqlDetailResult::setDbName(const std::string& value)
+{
+    dbName_ = value;
+    dbNameIsSet_ = true;
+}
+
+bool SlowSqlDetailResult::dbNameIsSet() const
+{
+    return dbNameIsSet_;
+}
+
+void SlowSqlDetailResult::unsetdbName()
+{
+    dbNameIsSet_ = false;
+}
+
+std::string SlowSqlDetailResult::getSchemaName() const
+{
+    return schemaName_;
+}
+
+void SlowSqlDetailResult::setSchemaName(const std::string& value)
+{
+    schemaName_ = value;
+    schemaNameIsSet_ = true;
+}
+
+bool SlowSqlDetailResult::schemaNameIsSet() const
+{
+    return schemaNameIsSet_;
+}
+
+void SlowSqlDetailResult::unsetschemaName()
+{
+    schemaNameIsSet_ = false;
+}
+
+std::string SlowSqlDetailResult::getSql() const
+{
+    return sql_;
+}
+
+void SlowSqlDetailResult::setSql(const std::string& value)
+{
+    sql_ = value;
+    sqlIsSet_ = true;
+}
+
+bool SlowSqlDetailResult::sqlIsSet() const
+{
+    return sqlIsSet_;
+}
+
+void SlowSqlDetailResult::unsetsql()
+{
+    sqlIsSet_ = false;
+}
 
 std::string SlowSqlDetailResult::getSqlId() const
 {

@@ -1265,6 +1265,41 @@ std::shared_ptr<ListExternalVaultResponse> CbrClient::listExternalVault(ListExte
 
     return localVarResult;
 }
+std::shared_ptr<ListFeaturesResponse> CbrClient::listFeatures(ListFeaturesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/cbr-features";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForListFeatures());
+
+    std::shared_ptr<ListFeaturesResponse> localVarResult = std::make_shared<ListFeaturesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListOpLogsResponse> CbrClient::listOpLogs(ListOpLogsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/operation-logs";
@@ -1981,6 +2016,42 @@ std::shared_ptr<ShowDomainResponse> CbrClient::showDomain(ShowDomainRequest &req
         localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForShowDomain());
 
     std::shared_ptr<ShowDomainResponse> localVarResult = std::make_shared<ShowDomainResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowFeatureResponse> CbrClient::showFeature(ShowFeatureRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/cbr-features/{feature_key}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["feature_key"] = parameterToString(request.getFeatureKey());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForShowFeature());
+
+    std::shared_ptr<ShowFeatureResponse> localVarResult = std::make_shared<ShowFeatureResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

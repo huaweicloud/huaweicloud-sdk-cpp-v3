@@ -41,7 +41,7 @@ public:
     /// ShowInstanceMetricDataResponse members
 
     /// <summary>
-    /// **参数解释**: 实例ID。 **取值范围**: 不涉及。
+    /// **参数解释**: 实例ID。 **取值范围**: 只能由英文字母、数字组成，且长度为36个字符。
     /// </summary>
 
     std::string getInstanceId() const;

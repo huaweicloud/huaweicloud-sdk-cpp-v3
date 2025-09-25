@@ -1,0 +1,105 @@
+
+#ifndef HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ListPluginsRequest_H_
+#define HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ListPluginsRequest_H_
+
+
+#include <huaweicloud/codeartspipeline/v2/CodeArtsPipelineExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+#include <huaweicloud/codeartspipeline/v2/model/AgentPluginInfoQueryDTO.h>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Codeartspipeline {
+namespace V2 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Request Object
+/// </summary>
+class HUAWEICLOUD_CODEARTSPIPELINE_V2_EXPORT  ListPluginsRequest
+    : public ModelBase
+{
+public:
+    ListPluginsRequest();
+    virtual ~ListPluginsRequest();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// ListPluginsRequest members
+
+    /// <summary>
+    /// 租户ID
+    /// </summary>
+
+    std::string getDomainId() const;
+    bool domainIdIsSet() const;
+    void unsetdomainId();
+    void setDomainId(const std::string& value);
+
+    /// <summary>
+    /// 偏移
+    /// </summary>
+
+    std::string getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(const std::string& value);
+
+    /// <summary>
+    /// 大小
+    /// </summary>
+
+    std::string getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    AgentPluginInfoQueryDTO getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const AgentPluginInfoQueryDTO& value);
+
+
+protected:
+    std::string domainId_;
+    bool domainIdIsSet_;
+    std::string offset_;
+    bool offsetIsSet_;
+    std::string limit_;
+    bool limitIsSet_;
+    AgentPluginInfoQueryDTO body_;
+    bool bodyIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+public:
+    ListPluginsRequest& dereference_from_shared_ptr(std::shared_ptr<ListPluginsRequest> ptr) {
+        return *ptr;
+    }
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ListPluginsRequest_H_

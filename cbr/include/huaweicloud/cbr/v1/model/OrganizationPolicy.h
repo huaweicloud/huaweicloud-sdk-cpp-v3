@@ -139,6 +139,15 @@ public:
     void unsetdomainName();
     void setDomainName(const std::string& value);
 
+    /// <summary>
+    /// 组织策略生效范围
+    /// </summary>
+
+    std::string getEffectiveScope() const;
+    bool effectiveScopeIsSet() const;
+    void unseteffectiveScope();
+    void setEffectiveScope(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -163,6 +172,8 @@ protected:
     bool statusIsSet_;
     std::string domainName_;
     bool domainNameIsSet_;
+    std::string effectiveScope_;
+    bool effectiveScopeIsSet_;
 
 };
 

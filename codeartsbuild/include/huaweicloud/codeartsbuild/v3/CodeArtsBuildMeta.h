@@ -59,6 +59,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateJobGroup();
     static HttpRequestDef genRequestDefForShowDockerfileTemplate();
     static HttpRequestDef genRequestDefForShowImageTemplateList();
+    static HttpRequestDef genRequestDefForAddFavouriteTask();
     static HttpRequestDef genRequestDefForApplyProjectPermission();
     static HttpRequestDef genRequestDefForBatchUpdateJobRolePermission();
     static HttpRequestDef genRequestDefForCheckJobCountIsTopLimit();
@@ -78,6 +79,7 @@ public:
     static HttpRequestDef genRequestDefForListProjectJobs();
     static HttpRequestDef genRequestDefForListRecyclingJob();
     static HttpRequestDef genRequestDefForListUpdateJobHistory();
+    static HttpRequestDef genRequestDefForRemoverFavouriteTask();
     static HttpRequestDef genRequestDefForRestoreRecyclingJobs();
     static HttpRequestDef genRequestDefForSetKeepTime();
     static HttpRequestDef genRequestDefForShowBuildDetails();
@@ -110,6 +112,9 @@ public:
     static HttpRequestDef genRequestDefForUpdateKeystore();
     static HttpRequestDef genRequestDefForUpdateKeystorePermission();
     static HttpRequestDef genRequestDefForUploadKeystore();
+    static HttpRequestDef genRequestDefForDownloadBuildFullLog();
+    static HttpRequestDef genRequestDefForDownloadBuildRealTimeLog();
+    static HttpRequestDef genRequestDefForShowActionIInfo();
     static HttpRequestDef genRequestDefForDownloadLogByRecordId();
     static HttpRequestDef genRequestDefForShowFlowGraph();
     static HttpRequestDef genRequestDefForShowRecordInfo();
@@ -132,12 +137,14 @@ public:
     static HttpRequestDef genRequestDefForShowJobBuildTime();
     static HttpRequestDef genRequestDefForShowReportSummary();
     static HttpRequestDef genRequestDefForAddFavouriteCustomTemplate();
+    static HttpRequestDef genRequestDefForAddFavouriteOfficialTemplate();
     static HttpRequestDef genRequestDefForCreateTemplate();
     static HttpRequestDef genRequestDefForDeleteTemplate();
     static HttpRequestDef genRequestDefForListCustomTemplate();
     static HttpRequestDef genRequestDefForListOfficialTemplate();
     static HttpRequestDef genRequestDefForListRecommendOfficialTemplate();
     static HttpRequestDef genRequestDefForRemoverFavouriteCustomTemplate();
+    static HttpRequestDef genRequestDefForRemoverFavouriteOfficialTemplate();
     static HttpRequestDef genRequestDefForSaveTemplateUsedInfo();
     static HttpRequestDef genRequestDefForShowTemplate();
     static HttpRequestDef genRequestDefForShowYamlTemplate();

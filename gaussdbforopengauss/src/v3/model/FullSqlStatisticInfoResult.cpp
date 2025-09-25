@@ -18,6 +18,24 @@ FullSqlStatisticInfoResult::FullSqlStatisticInfoResult()
     sqlIdIsSet_ = false;
     sqlCount_ = 0L;
     sqlCountIsSet_ = false;
+    totalSqlTime_ = 0L;
+    totalSqlTimeIsSet_ = false;
+    avgSqlTime_ = 0L;
+    avgSqlTimeIsSet_ = false;
+    totalDbTime_ = 0L;
+    totalDbTimeIsSet_ = false;
+    totalCpuTime_ = 0L;
+    totalCpuTimeIsSet_ = false;
+    avgParseTime_ = 0L;
+    avgParseTimeIsSet_ = false;
+    avgPlanTime_ = 0L;
+    avgPlanTimeIsSet_ = false;
+    totalDataIoTime_ = 0L;
+    totalDataIoTimeIsSet_ = false;
+    avgNReturnedRows_ = 0L;
+    avgNReturnedRowsIsSet_ = false;
+    avgNTuplesFetched_ = 0L;
+    avgNTuplesFetchedIsSet_ = false;
     avgDbTime_ = 0L;
     avgDbTimeIsSet_ = false;
     avgCpuTime_ = 0L;
@@ -28,9 +46,9 @@ FullSqlStatisticInfoResult::FullSqlStatisticInfoResult()
     avgExecutionTimeIsSet_ = false;
     avgNBlocksHit_ = 0L;
     avgNBlocksHitIsSet_ = false;
-    startTimeStamp_ = "";
+    startTimeStamp_ = 0L;
     startTimeStampIsSet_ = false;
-    endTimeStamp_ = "";
+    endTimeStamp_ = 0L;
     endTimeStampIsSet_ = false;
 }
 
@@ -52,6 +70,33 @@ web::json::value FullSqlStatisticInfoResult::toJson() const
     }
     if(sqlCountIsSet_) {
         val[utility::conversions::to_string_t("sql_count")] = ModelBase::toJson(sqlCount_);
+    }
+    if(totalSqlTimeIsSet_) {
+        val[utility::conversions::to_string_t("total_sql_time")] = ModelBase::toJson(totalSqlTime_);
+    }
+    if(avgSqlTimeIsSet_) {
+        val[utility::conversions::to_string_t("avg_sql_time")] = ModelBase::toJson(avgSqlTime_);
+    }
+    if(totalDbTimeIsSet_) {
+        val[utility::conversions::to_string_t("total_db_time")] = ModelBase::toJson(totalDbTime_);
+    }
+    if(totalCpuTimeIsSet_) {
+        val[utility::conversions::to_string_t("total_cpu_time")] = ModelBase::toJson(totalCpuTime_);
+    }
+    if(avgParseTimeIsSet_) {
+        val[utility::conversions::to_string_t("avg_parse_time")] = ModelBase::toJson(avgParseTime_);
+    }
+    if(avgPlanTimeIsSet_) {
+        val[utility::conversions::to_string_t("avg_plan_time")] = ModelBase::toJson(avgPlanTime_);
+    }
+    if(totalDataIoTimeIsSet_) {
+        val[utility::conversions::to_string_t("total_data_io_time")] = ModelBase::toJson(totalDataIoTime_);
+    }
+    if(avgNReturnedRowsIsSet_) {
+        val[utility::conversions::to_string_t("avg_n_returned_rows")] = ModelBase::toJson(avgNReturnedRows_);
+    }
+    if(avgNTuplesFetchedIsSet_) {
+        val[utility::conversions::to_string_t("avg_n_tuples_fetched")] = ModelBase::toJson(avgNTuplesFetched_);
     }
     if(avgDbTimeIsSet_) {
         val[utility::conversions::to_string_t("avg_db_time")] = ModelBase::toJson(avgDbTime_);
@@ -108,6 +153,87 @@ bool FullSqlStatisticInfoResult::fromJson(const web::json::value& val)
             setSqlCount(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("total_sql_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_sql_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalSqlTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("avg_sql_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("avg_sql_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvgSqlTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_db_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_db_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalDbTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_cpu_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_cpu_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalCpuTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("avg_parse_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("avg_parse_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvgParseTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("avg_plan_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("avg_plan_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvgPlanTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_data_io_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_data_io_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalDataIoTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("avg_n_returned_rows"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("avg_n_returned_rows"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvgNReturnedRows(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("avg_n_tuples_fetched"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("avg_n_tuples_fetched"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvgNTuplesFetched(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("avg_db_time"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("avg_db_time"));
         if(!fieldValue.is_null())
@@ -157,7 +283,7 @@ bool FullSqlStatisticInfoResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time_stamp"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStartTimeStamp(refVal);
         }
@@ -166,7 +292,7 @@ bool FullSqlStatisticInfoResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time_stamp"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTimeStamp(refVal);
         }
@@ -236,6 +362,195 @@ bool FullSqlStatisticInfoResult::sqlCountIsSet() const
 void FullSqlStatisticInfoResult::unsetsqlCount()
 {
     sqlCountIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getTotalSqlTime() const
+{
+    return totalSqlTime_;
+}
+
+void FullSqlStatisticInfoResult::setTotalSqlTime(int64_t value)
+{
+    totalSqlTime_ = value;
+    totalSqlTimeIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::totalSqlTimeIsSet() const
+{
+    return totalSqlTimeIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsettotalSqlTime()
+{
+    totalSqlTimeIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getAvgSqlTime() const
+{
+    return avgSqlTime_;
+}
+
+void FullSqlStatisticInfoResult::setAvgSqlTime(int64_t value)
+{
+    avgSqlTime_ = value;
+    avgSqlTimeIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::avgSqlTimeIsSet() const
+{
+    return avgSqlTimeIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsetavgSqlTime()
+{
+    avgSqlTimeIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getTotalDbTime() const
+{
+    return totalDbTime_;
+}
+
+void FullSqlStatisticInfoResult::setTotalDbTime(int64_t value)
+{
+    totalDbTime_ = value;
+    totalDbTimeIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::totalDbTimeIsSet() const
+{
+    return totalDbTimeIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsettotalDbTime()
+{
+    totalDbTimeIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getTotalCpuTime() const
+{
+    return totalCpuTime_;
+}
+
+void FullSqlStatisticInfoResult::setTotalCpuTime(int64_t value)
+{
+    totalCpuTime_ = value;
+    totalCpuTimeIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::totalCpuTimeIsSet() const
+{
+    return totalCpuTimeIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsettotalCpuTime()
+{
+    totalCpuTimeIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getAvgParseTime() const
+{
+    return avgParseTime_;
+}
+
+void FullSqlStatisticInfoResult::setAvgParseTime(int64_t value)
+{
+    avgParseTime_ = value;
+    avgParseTimeIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::avgParseTimeIsSet() const
+{
+    return avgParseTimeIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsetavgParseTime()
+{
+    avgParseTimeIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getAvgPlanTime() const
+{
+    return avgPlanTime_;
+}
+
+void FullSqlStatisticInfoResult::setAvgPlanTime(int64_t value)
+{
+    avgPlanTime_ = value;
+    avgPlanTimeIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::avgPlanTimeIsSet() const
+{
+    return avgPlanTimeIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsetavgPlanTime()
+{
+    avgPlanTimeIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getTotalDataIoTime() const
+{
+    return totalDataIoTime_;
+}
+
+void FullSqlStatisticInfoResult::setTotalDataIoTime(int64_t value)
+{
+    totalDataIoTime_ = value;
+    totalDataIoTimeIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::totalDataIoTimeIsSet() const
+{
+    return totalDataIoTimeIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsettotalDataIoTime()
+{
+    totalDataIoTimeIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getAvgNReturnedRows() const
+{
+    return avgNReturnedRows_;
+}
+
+void FullSqlStatisticInfoResult::setAvgNReturnedRows(int64_t value)
+{
+    avgNReturnedRows_ = value;
+    avgNReturnedRowsIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::avgNReturnedRowsIsSet() const
+{
+    return avgNReturnedRowsIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsetavgNReturnedRows()
+{
+    avgNReturnedRowsIsSet_ = false;
+}
+
+int64_t FullSqlStatisticInfoResult::getAvgNTuplesFetched() const
+{
+    return avgNTuplesFetched_;
+}
+
+void FullSqlStatisticInfoResult::setAvgNTuplesFetched(int64_t value)
+{
+    avgNTuplesFetched_ = value;
+    avgNTuplesFetchedIsSet_ = true;
+}
+
+bool FullSqlStatisticInfoResult::avgNTuplesFetchedIsSet() const
+{
+    return avgNTuplesFetchedIsSet_;
+}
+
+void FullSqlStatisticInfoResult::unsetavgNTuplesFetched()
+{
+    avgNTuplesFetchedIsSet_ = false;
 }
 
 int64_t FullSqlStatisticInfoResult::getAvgDbTime() const
@@ -343,12 +658,12 @@ void FullSqlStatisticInfoResult::unsetavgNBlocksHit()
     avgNBlocksHitIsSet_ = false;
 }
 
-std::string FullSqlStatisticInfoResult::getStartTimeStamp() const
+int64_t FullSqlStatisticInfoResult::getStartTimeStamp() const
 {
     return startTimeStamp_;
 }
 
-void FullSqlStatisticInfoResult::setStartTimeStamp(const std::string& value)
+void FullSqlStatisticInfoResult::setStartTimeStamp(int64_t value)
 {
     startTimeStamp_ = value;
     startTimeStampIsSet_ = true;
@@ -364,12 +679,12 @@ void FullSqlStatisticInfoResult::unsetstartTimeStamp()
     startTimeStampIsSet_ = false;
 }
 
-std::string FullSqlStatisticInfoResult::getEndTimeStamp() const
+int64_t FullSqlStatisticInfoResult::getEndTimeStamp() const
 {
     return endTimeStamp_;
 }
 
-void FullSqlStatisticInfoResult::setEndTimeStamp(const std::string& value)
+void FullSqlStatisticInfoResult::setEndTimeStamp(int64_t value)
 {
     endTimeStamp_ = value;
     endTimeStampIsSet_ = true;

@@ -39,7 +39,7 @@ public:
     /// CreateLimitTaskNodeOption members
 
     /// <summary>
-    /// 节点id。
+    /// **参数解释**: 节点ID。 **约束限制**: 必须是当前实例的某一个节点ID。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
     /// </summary>
 
     std::string getNodeId() const;
@@ -48,7 +48,7 @@ public:
     void setNodeId(const std::string& value);
 
     /// <summary>
-    /// 该节点执行的sql语句id。如果类型为SQL_ID，必须与limit_type_value值一致。
+    /// **参数解释**: 该节点执行的SQL语句ID。 **约束限制**: 如果“limit_type”为SQL_ID，必须与“limit_type_value”值一致。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
     /// </summary>
 
     std::string getSqlId() const;

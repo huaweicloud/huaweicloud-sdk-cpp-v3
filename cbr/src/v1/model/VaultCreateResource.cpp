@@ -40,11 +40,6 @@ VaultCreateResource::VaultCreateResource()
     smnNotifyIsSet_ = false;
     threshold_ = 0;
     thresholdIsSet_ = false;
-    errText_ = "";
-    errTextIsSet_ = false;
-    retCode_ = "";
-    retCodeIsSet_ = false;
-    ordersIsSet_ = false;
     backupNamePrefix_ = "";
     backupNamePrefixIsSet_ = false;
     demandBilling_ = false;
@@ -57,6 +52,8 @@ VaultCreateResource::VaultCreateResource()
     sysLockSourceServiceIsSet_ = false;
     locked_ = false;
     lockedIsSet_ = false;
+    availabilityZone_ = "";
+    availabilityZoneIsSet_ = false;
 }
 
 VaultCreateResource::~VaultCreateResource() = default;
@@ -117,15 +114,6 @@ web::json::value VaultCreateResource::toJson() const
     if(thresholdIsSet_) {
         val[utility::conversions::to_string_t("threshold")] = ModelBase::toJson(threshold_);
     }
-    if(errTextIsSet_) {
-        val[utility::conversions::to_string_t("errText")] = ModelBase::toJson(errText_);
-    }
-    if(retCodeIsSet_) {
-        val[utility::conversions::to_string_t("retCode")] = ModelBase::toJson(retCode_);
-    }
-    if(ordersIsSet_) {
-        val[utility::conversions::to_string_t("orders")] = ModelBase::toJson(orders_);
-    }
     if(backupNamePrefixIsSet_) {
         val[utility::conversions::to_string_t("backup_name_prefix")] = ModelBase::toJson(backupNamePrefix_);
     }
@@ -143,6 +131,9 @@ web::json::value VaultCreateResource::toJson() const
     }
     if(lockedIsSet_) {
         val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
+    }
+    if(availabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
 
     return val;
@@ -295,33 +286,6 @@ bool VaultCreateResource::fromJson(const web::json::value& val)
             setThreshold(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("errText"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("errText"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setErrText(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("retCode"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("retCode"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRetCode(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("orders"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("orders"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<CbcOrderResult> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOrders(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("backup_name_prefix"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_name_prefix"));
         if(!fieldValue.is_null())
@@ -374,6 +338,15 @@ bool VaultCreateResource::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLocked(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZone(refVal);
         }
     }
     return ok;
@@ -716,69 +689,6 @@ void VaultCreateResource::unsetthreshold()
     thresholdIsSet_ = false;
 }
 
-std::string VaultCreateResource::getErrText() const
-{
-    return errText_;
-}
-
-void VaultCreateResource::setErrText(const std::string& value)
-{
-    errText_ = value;
-    errTextIsSet_ = true;
-}
-
-bool VaultCreateResource::errTextIsSet() const
-{
-    return errTextIsSet_;
-}
-
-void VaultCreateResource::unseterrText()
-{
-    errTextIsSet_ = false;
-}
-
-std::string VaultCreateResource::getRetCode() const
-{
-    return retCode_;
-}
-
-void VaultCreateResource::setRetCode(const std::string& value)
-{
-    retCode_ = value;
-    retCodeIsSet_ = true;
-}
-
-bool VaultCreateResource::retCodeIsSet() const
-{
-    return retCodeIsSet_;
-}
-
-void VaultCreateResource::unsetretCode()
-{
-    retCodeIsSet_ = false;
-}
-
-std::vector<CbcOrderResult>& VaultCreateResource::getOrders()
-{
-    return orders_;
-}
-
-void VaultCreateResource::setOrders(const std::vector<CbcOrderResult>& value)
-{
-    orders_ = value;
-    ordersIsSet_ = true;
-}
-
-bool VaultCreateResource::ordersIsSet() const
-{
-    return ordersIsSet_;
-}
-
-void VaultCreateResource::unsetorders()
-{
-    ordersIsSet_ = false;
-}
-
 std::string VaultCreateResource::getBackupNamePrefix() const
 {
     return backupNamePrefix_;
@@ -903,6 +813,27 @@ bool VaultCreateResource::lockedIsSet() const
 void VaultCreateResource::unsetlocked()
 {
     lockedIsSet_ = false;
+}
+
+std::string VaultCreateResource::getAvailabilityZone() const
+{
+    return availabilityZone_;
+}
+
+void VaultCreateResource::setAvailabilityZone(const std::string& value)
+{
+    availabilityZone_ = value;
+    availabilityZoneIsSet_ = true;
+}
+
+bool VaultCreateResource::availabilityZoneIsSet() const
+{
+    return availabilityZoneIsSet_;
+}
+
+void VaultCreateResource::unsetavailabilityZone()
+{
+    availabilityZoneIsSet_ = false;
 }
 
 }

@@ -39,7 +39,7 @@ public:
     /// SearchAutoEnlargePolicyResponse members
 
     /// <summary>
-    /// 磁盘自动扩容开关。
+    /// **参数解释**: 磁盘自动扩容开关。 **取值范围**: 不涉及。
     /// </summary>
 
     bool isSwitchOption() const;
@@ -48,7 +48,7 @@ public:
     void setSwitchOption(bool value);
 
     /// <summary>
-    /// 存储自动扩容上限。
+    /// **参数解释**: 存储自动扩容上限。 **取值范围**: 不涉及。
     /// </summary>
 
     int32_t getLimitVolumeSize() const;
@@ -57,7 +57,7 @@ public:
     void setLimitVolumeSize(int32_t value);
 
     /// <summary>
-    /// 最小扩容磁盘容量。
+    /// **参数解释**: 最小扩容磁盘容量。 **取值范围**: 不涉及。
     /// </summary>
 
     int32_t getMinVolumeSize() const;
@@ -66,7 +66,7 @@ public:
     void setMinVolumeSize(int32_t value);
 
     /// <summary>
-    /// 最大扩容磁盘容量。
+    /// **参数解释**: 最大扩容磁盘容量。 **取值范围**: 不涉及。
     /// </summary>
 
     int32_t getMaxVolumeSize() const;
@@ -75,7 +75,7 @@ public:
     void setMaxVolumeSize(int32_t value);
 
     /// <summary>
-    /// 可用存储空间率。
+    /// **参数解释**: 可用存储空间率。 **取值范围**: 不涉及。
     /// </summary>
 
     int32_t getTriggerAvailablePercent() const;
@@ -84,7 +84,7 @@ public:
     void setTriggerAvailablePercent(int32_t value);
 
     /// <summary>
-    /// 空间率集合。
+    /// **参数解释**: 空间率集合。 **取值范围**: 不涉及。
     /// </summary>
 
     std::vector<int32_t>& getPercents();
@@ -93,7 +93,7 @@ public:
     void setPercents(std::vector<int32_t> value);
 
     /// <summary>
-    /// 扩容步长，固定大小扩容方式。
+    /// **参数解释**: 扩容步长，固定大小扩容方式。 **取值范围**: 不涉及。
     /// </summary>
 
     int32_t getStepSize() const;
@@ -102,7 +102,7 @@ public:
     void setStepSize(int32_t value);
 
     /// <summary>
-    /// 扩容步长，百分比扩容方式。
+    /// **参数解释**: 扩容步长，百分比扩容方式。 **取值范围**: 不涉及。
     /// </summary>
 
     int32_t getStepPercent() const;

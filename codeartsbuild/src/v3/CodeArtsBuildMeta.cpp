@@ -398,6 +398,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowImageTemplateList() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForAddFavouriteTask() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForApplyProjectPermission() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -597,6 +602,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForListUpdateJobHistory() {
     reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
                   .withJsonTag("page_size")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForRemoverFavouriteTask() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -857,6 +867,54 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForUploadKeystore() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadBuildFullLog() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("LogLevel")
+                  .withJsonTag("log_level")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Compress")
+                  .withJsonTag("compress")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadBuildRealTimeLog() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartOffset")
+                  .withJsonTag("start_offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndOffset")
+                  .withJsonTag("end_offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Sort")
+                  .withJsonTag("sort")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Size")
+                  .withJsonTag("size")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowActionIInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("JobId")
+                  .withJsonTag("job_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BuildNo")
+                  .withJsonTag("build_no")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StartOffset")
+                  .withJsonTag("start_offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndOffset")
+                  .withJsonTag("end_offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Sort")
+                  .withJsonTag("sort")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadLogByRecordId() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -1068,6 +1126,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForAddFavouriteCustomTemplate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForAddFavouriteOfficialTemplate() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForCreateTemplate() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -1126,6 +1189,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForListRecommendOfficialTemplate(
 }
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForRemoverFavouriteCustomTemplate() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForRemoverFavouriteOfficialTemplate() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }

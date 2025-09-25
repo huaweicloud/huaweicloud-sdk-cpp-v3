@@ -40,7 +40,7 @@ public:
     /// DatapointResult members
 
     /// <summary>
-    /// 指标项名，实例指标用实例ID、节点指标用节点名称、组件指标用组件名称。
+    /// **参数解释**: 指标项名，实例指标用实例ID、节点指标用节点名称、组件指标用组件名称。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getDatapointName() const;
@@ -49,7 +49,7 @@ public:
     void setDatapointName(const std::string& value);
 
     /// <summary>
-    /// 指标值集合。
+    /// **参数解释**: 指标值集合。
     /// </summary>
 
     std::vector<std::string>& getDatapointValues();

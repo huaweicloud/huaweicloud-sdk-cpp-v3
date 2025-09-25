@@ -42,26 +42,26 @@ public:
     /// **参数解释**: 需要修改的hba配置信息。 **约束限制**: 不涉及。
     /// </summary>
 
-    Object getBeforeConfs() const;
-    bool beforeConfsIsSet() const;
-    void unsetbeforeConfs();
-    void setBeforeConfs(const Object& value);
+    Object getBeforeConf() const;
+    bool beforeConfIsSet() const;
+    void unsetbeforeConf();
+    void setBeforeConf(const Object& value);
 
     /// <summary>
     /// **参数解释**: 修改后的hba配置信息。 **约束限制**: 不涉及。
     /// </summary>
 
-    Object getAfterConfs() const;
-    bool afterConfsIsSet() const;
-    void unsetafterConfs();
-    void setAfterConfs(const Object& value);
+    Object getAfterConf() const;
+    bool afterConfIsSet() const;
+    void unsetafterConf();
+    void setAfterConf(const Object& value);
 
 
 protected:
-    Object beforeConfs_;
-    bool beforeConfsIsSet_;
-    Object afterConfs_;
-    bool afterConfsIsSet_;
+    Object beforeConf_;
+    bool beforeConfIsSet_;
+    Object afterConf_;
+    bool afterConfIsSet_;
 
 };
 

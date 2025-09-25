@@ -9,8 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/ComponentInfoResult.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DnComponentInfoResult.h>
 #include <string>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CnComponentInfoResult.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -80,19 +81,19 @@ public:
     /// **参数解释**: CN节点信息。
     /// </summary>
 
-    std::vector<ComponentInfoResult>& getCnComponents();
+    std::vector<CnComponentInfoResult>& getCnComponents();
     bool cnComponentsIsSet() const;
     void unsetcnComponents();
-    void setCnComponents(const std::vector<ComponentInfoResult>& value);
+    void setCnComponents(const std::vector<CnComponentInfoResult>& value);
 
     /// <summary>
     /// **参数解释**: DN节点信息。
     /// </summary>
 
-    std::vector<ComponentInfoResult>& getDnComponents();
+    std::vector<DnComponentInfoResult>& getDnComponents();
     bool dnComponentsIsSet() const;
     void unsetdnComponents();
-    void setDnComponents(const std::vector<ComponentInfoResult>& value);
+    void setDnComponents(const std::vector<DnComponentInfoResult>& value);
 
 
 protected:
@@ -104,9 +105,9 @@ protected:
     bool spaceUsageGrowthPerDayIsSet_;
     std::string estimatedRemainingDays_;
     bool estimatedRemainingDaysIsSet_;
-    std::vector<ComponentInfoResult> cnComponents_;
+    std::vector<CnComponentInfoResult> cnComponents_;
     bool cnComponentsIsSet_;
-    std::vector<ComponentInfoResult> dnComponents_;
+    std::vector<DnComponentInfoResult> dnComponents_;
     bool dnComponentsIsSet_;
 
 #ifdef RTTR_FLAG

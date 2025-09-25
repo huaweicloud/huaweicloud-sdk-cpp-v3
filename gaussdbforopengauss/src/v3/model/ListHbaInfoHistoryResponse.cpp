@@ -12,7 +12,7 @@ namespace Model {
 
 ListHbaInfoHistoryResponse::ListHbaInfoHistoryResponse()
 {
-    hbaConfsIsSet_ = false;
+    hbaHistoriesIsSet_ = false;
     totalCount_ = 0L;
     totalCountIsSet_ = false;
 }
@@ -27,8 +27,8 @@ web::json::value ListHbaInfoHistoryResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(hbaConfsIsSet_) {
-        val[utility::conversions::to_string_t("hba_confs")] = ModelBase::toJson(hbaConfs_);
+    if(hbaHistoriesIsSet_) {
+        val[utility::conversions::to_string_t("hba_histories")] = ModelBase::toJson(hbaHistories_);
     }
     if(totalCountIsSet_) {
         val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
@@ -40,13 +40,13 @@ bool ListHbaInfoHistoryResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("hba_confs"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hba_confs"));
+    if(val.has_field(utility::conversions::to_string_t("hba_histories"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hba_histories"));
         if(!fieldValue.is_null())
         {
             std::vector<HbaHistoryResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHbaConfs(refVal);
+            setHbaHistories(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("total_count"))) {
@@ -62,25 +62,25 @@ bool ListHbaInfoHistoryResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<HbaHistoryResult>& ListHbaInfoHistoryResponse::getHbaConfs()
+std::vector<HbaHistoryResult>& ListHbaInfoHistoryResponse::getHbaHistories()
 {
-    return hbaConfs_;
+    return hbaHistories_;
 }
 
-void ListHbaInfoHistoryResponse::setHbaConfs(const std::vector<HbaHistoryResult>& value)
+void ListHbaInfoHistoryResponse::setHbaHistories(const std::vector<HbaHistoryResult>& value)
 {
-    hbaConfs_ = value;
-    hbaConfsIsSet_ = true;
+    hbaHistories_ = value;
+    hbaHistoriesIsSet_ = true;
 }
 
-bool ListHbaInfoHistoryResponse::hbaConfsIsSet() const
+bool ListHbaInfoHistoryResponse::hbaHistoriesIsSet() const
 {
-    return hbaConfsIsSet_;
+    return hbaHistoriesIsSet_;
 }
 
-void ListHbaInfoHistoryResponse::unsethbaConfs()
+void ListHbaInfoHistoryResponse::unsethbaHistories()
 {
-    hbaConfsIsSet_ = false;
+    hbaHistoriesIsSet_ = false;
 }
 
 int64_t ListHbaInfoHistoryResponse::getTotalCount() const

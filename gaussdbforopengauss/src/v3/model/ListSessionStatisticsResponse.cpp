@@ -14,7 +14,7 @@ ListSessionStatisticsResponse::ListSessionStatisticsResponse()
 {
     total_ = 0;
     totalIsSet_ = false;
-    statisticsIsSet_ = false;
+    statisticsListIsSet_ = false;
 }
 
 ListSessionStatisticsResponse::~ListSessionStatisticsResponse() = default;
@@ -30,8 +30,8 @@ web::json::value ListSessionStatisticsResponse::toJson() const
     if(totalIsSet_) {
         val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
     }
-    if(statisticsIsSet_) {
-        val[utility::conversions::to_string_t("statistics")] = ModelBase::toJson(statistics_);
+    if(statisticsListIsSet_) {
+        val[utility::conversions::to_string_t("statistics_list")] = ModelBase::toJson(statisticsList_);
     }
 
     return val;
@@ -49,13 +49,13 @@ bool ListSessionStatisticsResponse::fromJson(const web::json::value& val)
             setTotal(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("statistics"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("statistics"));
+    if(val.has_field(utility::conversions::to_string_t("statistics_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("statistics_list"));
         if(!fieldValue.is_null())
         {
             std::vector<DimensionListResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setStatistics(refVal);
+            setStatisticsList(refVal);
         }
     }
     return ok;
@@ -83,25 +83,25 @@ void ListSessionStatisticsResponse::unsettotal()
     totalIsSet_ = false;
 }
 
-std::vector<DimensionListResult>& ListSessionStatisticsResponse::getStatistics()
+std::vector<DimensionListResult>& ListSessionStatisticsResponse::getStatisticsList()
 {
-    return statistics_;
+    return statisticsList_;
 }
 
-void ListSessionStatisticsResponse::setStatistics(const std::vector<DimensionListResult>& value)
+void ListSessionStatisticsResponse::setStatisticsList(const std::vector<DimensionListResult>& value)
 {
-    statistics_ = value;
-    statisticsIsSet_ = true;
+    statisticsList_ = value;
+    statisticsListIsSet_ = true;
 }
 
-bool ListSessionStatisticsResponse::statisticsIsSet() const
+bool ListSessionStatisticsResponse::statisticsListIsSet() const
 {
-    return statisticsIsSet_;
+    return statisticsListIsSet_;
 }
 
-void ListSessionStatisticsResponse::unsetstatistics()
+void ListSessionStatisticsResponse::unsetstatisticsList()
 {
-    statisticsIsSet_ = false;
+    statisticsListIsSet_ = false;
 }
 
 }

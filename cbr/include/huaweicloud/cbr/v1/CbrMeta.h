@@ -43,6 +43,7 @@ public:
     static HttpRequestDef genRequestDefForListBackups();
     static HttpRequestDef genRequestDefForListDomainProjects();
     static HttpRequestDef genRequestDefForListExternalVault();
+    static HttpRequestDef genRequestDefForListFeatures();
     static HttpRequestDef genRequestDefForListOpLogs();
     static HttpRequestDef genRequestDefForListOrganizationPolicies();
     static HttpRequestDef genRequestDefForListOrganizationPolicyDetail();
@@ -61,6 +62,7 @@ public:
     static HttpRequestDef genRequestDefForShowBackup();
     static HttpRequestDef genRequestDefForShowCheckpoint();
     static HttpRequestDef genRequestDefForShowDomain();
+    static HttpRequestDef genRequestDefForShowFeature();
     static HttpRequestDef genRequestDefForShowMemberDetail();
     static HttpRequestDef genRequestDefForShowMembersDetail();
     static HttpRequestDef genRequestDefForShowMetadata();

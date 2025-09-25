@@ -207,6 +207,15 @@ public:
     void setLocked(bool value);
 
     /// <summary>
+    /// 存储库可用区信息，最大支持32字符。
+    /// </summary>
+
+    std::string getAvailabilityZone() const;
+    bool availabilityZoneIsSet() const;
+    void unsetavailabilityZone();
+    void setAvailabilityZone(const std::string& value);
+
+    /// <summary>
     /// 更新时间,例如:\&quot;2020-02-05T10:38:34.209782\&quot;
     /// </summary>
 
@@ -262,6 +271,8 @@ protected:
     bool sysLockSourceServiceIsSet_;
     bool locked_;
     bool lockedIsSet_;
+    std::string availabilityZone_;
+    bool availabilityZoneIsSet_;
     std::string updatedAt_;
     bool updatedAtIsSet_;
     std::string version_;

@@ -209,6 +209,8 @@
 #include <huaweicloud/ecs/v2/model/ShowRecycleBinResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowSerialConsoleActionsRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowSerialConsoleActionsResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerAttachableNicNumRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerAttachableNicNumResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceRequest.h>
@@ -237,6 +239,9 @@
 #include <huaweicloud/ecs/v2/model/UpdateRecycleBinResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateScheduledEventRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateScheduledEventResponse.h>
+#include <huaweicloud/ecs/v2/model/UpdateSerialConsoleOptionsRequest.h>
+#include <huaweicloud/ecs/v2/model/UpdateSerialConsoleOptionsRequestBody.h>
+#include <huaweicloud/ecs/v2/model/UpdateSerialConsoleOptionsResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeResponse.h>
@@ -1026,6 +1031,14 @@ public:
     std::shared_ptr<ShowResetPasswordFlagResponse> showResetPasswordFlag(
         ShowResetPasswordFlagRequest &request
     );
+    // 获取串口登录地址
+    //
+    // 获取云服务器云主机串口登录地址。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSerialConsoleActionsResponse> showSerialConsoleActions(
+        ShowSerialConsoleActionsRequest &request
+    );
     // 查询云服务器详情
     //
     // 查询弹性云服务器的详细信息。
@@ -1126,6 +1139,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateScheduledEventResponse> updateScheduledEvent(
         UpdateScheduledEventRequest &request
+    );
+    // 设置云服务器云主机串口登录
+    //
+    // 设置云服务器云主机串口登录。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSerialConsoleOptionsResponse> updateSerialConsoleOptions(
+        UpdateSerialConsoleOptionsRequest &request
     );
     // 修改云服务器
     //

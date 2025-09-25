@@ -24,10 +24,10 @@ BackupPolicy::BackupPolicy()
     rateLimitIsSet_ = false;
     prefetchBlock_ = 0;
     prefetchBlockIsSet_ = false;
-    filesplitSize_ = 0;
-    filesplitSizeIsSet_ = false;
     fileSplitSize_ = 0;
     fileSplitSizeIsSet_ = false;
+    filesplitSize_ = 0;
+    filesplitSizeIsSet_ = false;
     enableStandbyBackup_ = false;
     enableStandbyBackupIsSet_ = false;
 }
@@ -60,11 +60,11 @@ web::json::value BackupPolicy::toJson() const
     if(prefetchBlockIsSet_) {
         val[utility::conversions::to_string_t("prefetch_block")] = ModelBase::toJson(prefetchBlock_);
     }
-    if(filesplitSizeIsSet_) {
-        val[utility::conversions::to_string_t("filesplit_size")] = ModelBase::toJson(filesplitSize_);
-    }
     if(fileSplitSizeIsSet_) {
         val[utility::conversions::to_string_t("file_split_size")] = ModelBase::toJson(fileSplitSize_);
+    }
+    if(filesplitSizeIsSet_) {
+        val[utility::conversions::to_string_t("filesplit_size")] = ModelBase::toJson(filesplitSize_);
     }
     if(enableStandbyBackupIsSet_) {
         val[utility::conversions::to_string_t("enable_standby_backup")] = ModelBase::toJson(enableStandbyBackup_);
@@ -130,15 +130,6 @@ bool BackupPolicy::fromJson(const web::json::value& val)
             setPrefetchBlock(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("filesplit_size"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("filesplit_size"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFilesplitSize(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("file_split_size"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_split_size"));
         if(!fieldValue.is_null())
@@ -146,6 +137,15 @@ bool BackupPolicy::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFileSplitSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("filesplit_size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("filesplit_size"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFilesplitSize(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("enable_standby_backup"))) {
@@ -287,27 +287,6 @@ void BackupPolicy::unsetprefetchBlock()
     prefetchBlockIsSet_ = false;
 }
 
-int32_t BackupPolicy::getFilesplitSize() const
-{
-    return filesplitSize_;
-}
-
-void BackupPolicy::setFilesplitSize(int32_t value)
-{
-    filesplitSize_ = value;
-    filesplitSizeIsSet_ = true;
-}
-
-bool BackupPolicy::filesplitSizeIsSet() const
-{
-    return filesplitSizeIsSet_;
-}
-
-void BackupPolicy::unsetfilesplitSize()
-{
-    filesplitSizeIsSet_ = false;
-}
-
 int32_t BackupPolicy::getFileSplitSize() const
 {
     return fileSplitSize_;
@@ -327,6 +306,27 @@ bool BackupPolicy::fileSplitSizeIsSet() const
 void BackupPolicy::unsetfileSplitSize()
 {
     fileSplitSizeIsSet_ = false;
+}
+
+int32_t BackupPolicy::getFilesplitSize() const
+{
+    return filesplitSize_;
+}
+
+void BackupPolicy::setFilesplitSize(int32_t value)
+{
+    filesplitSize_ = value;
+    filesplitSizeIsSet_ = true;
+}
+
+bool BackupPolicy::filesplitSizeIsSet() const
+{
+    return filesplitSizeIsSet_;
+}
+
+void BackupPolicy::unsetfilesplitSize()
+{
+    filesplitSizeIsSet_ = false;
 }
 
 bool BackupPolicy::isEnableStandbyBackup() const

@@ -57,7 +57,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 开始时间，时间戳格式，例如：1756971683303。
+    /// **参数解释**: 开始时间，时间戳格式，例如：1756971683303。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
     /// </summary>
 
     std::string getStartTime() const;
@@ -66,7 +66,7 @@ public:
     void setStartTime(const std::string& value);
 
     /// <summary>
-    /// 结束时间，时间戳格式，例如：1756975283303。
+    /// **参数解释**: 结束时间，时间戳格式，例如：1756975283303。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
     /// </summary>
 
     std::string getEndTime() const;
@@ -75,7 +75,7 @@ public:
     void setEndTime(const std::string& value);
 
     /// <summary>
-    /// 指标ID，可通过“查询指标分组的指标名称”接口获取，例如查询CPU使用率，传值 rds001_cpu_util。
+    /// **参数解释**: 指标ID，可通过“查询指标分组的指标名称”接口获取，例如查询CPU使用率，传值 rds001_cpu_util。 **约束限制**: 不涉及。
     /// </summary>
 
     std::string getMetric() const;
@@ -84,7 +84,7 @@ public:
     void setMetric(const std::string& value);
 
     /// <summary>
-    /// 节点ID。
+    /// **参数解释**: 节点ID。 **约束限制**: 不涉及。
     /// </summary>
 
     std::string getNodeId() const;
@@ -93,7 +93,7 @@ public:
     void setNodeId(const std::string& value);
 
     /// <summary>
-    /// 组件ID，例如dn_6001。
+    /// **参数解释**: 组件ID，例如dn_6001。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
     /// </summary>
 
     std::string getComponentId() const;

@@ -40,6 +40,8 @@ VaultCreate::VaultCreate()
     sysLockSourceServiceIsSet_ = false;
     locked_ = false;
     lockedIsSet_ = false;
+    availabilityZone_ = "";
+    availabilityZoneIsSet_ = false;
 }
 
 VaultCreate::~VaultCreate() = default;
@@ -99,6 +101,9 @@ web::json::value VaultCreate::toJson() const
     }
     if(lockedIsSet_) {
         val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
+    }
+    if(availabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
 
     return val;
@@ -249,6 +254,15 @@ bool VaultCreate::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLocked(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZone(refVal);
         }
     }
     return ok;
@@ -589,6 +603,27 @@ bool VaultCreate::lockedIsSet() const
 void VaultCreate::unsetlocked()
 {
     lockedIsSet_ = false;
+}
+
+std::string VaultCreate::getAvailabilityZone() const
+{
+    return availabilityZone_;
+}
+
+void VaultCreate::setAvailabilityZone(const std::string& value)
+{
+    availabilityZone_ = value;
+    availabilityZoneIsSet_ = true;
+}
+
+bool VaultCreate::availabilityZoneIsSet() const
+{
+    return availabilityZoneIsSet_;
+}
+
+void VaultCreate::unsetavailabilityZone()
+{
+    availabilityZoneIsSet_ = false;
 }
 
 }

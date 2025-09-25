@@ -43,10 +43,10 @@ public:
     /// **参数解释**: hba修改历史信息。
     /// </summary>
 
-    std::vector<HbaHistoryResult>& getHbaConfs();
-    bool hbaConfsIsSet() const;
-    void unsethbaConfs();
-    void setHbaConfs(const std::vector<HbaHistoryResult>& value);
+    std::vector<HbaHistoryResult>& getHbaHistories();
+    bool hbaHistoriesIsSet() const;
+    void unsethbaHistories();
+    void setHbaHistories(const std::vector<HbaHistoryResult>& value);
 
     /// <summary>
     /// **参数解释**: hba配置总数。 **取值范围**: 不涉及。
@@ -59,8 +59,8 @@ public:
 
 
 protected:
-    std::vector<HbaHistoryResult> hbaConfs_;
-    bool hbaConfsIsSet_;
+    std::vector<HbaHistoryResult> hbaHistories_;
+    bool hbaHistoriesIsSet_;
     int64_t totalCount_;
     bool totalCountIsSet_;
 

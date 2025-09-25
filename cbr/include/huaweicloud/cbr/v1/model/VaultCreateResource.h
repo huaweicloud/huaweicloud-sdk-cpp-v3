@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cbr/v1/model/CbcOrderResult.h>
 #include <string>
 #include <huaweicloud/cbr/v1/model/VaultBindRules.h>
 #include <vector>
@@ -189,33 +188,6 @@ public:
     void setThreshold(int32_t value);
 
     /// <summary>
-    /// 包周期创建错误信息
-    /// </summary>
-
-    std::string getErrText() const;
-    bool errTextIsSet() const;
-    void unseterrText();
-    void setErrText(const std::string& value);
-
-    /// <summary>
-    /// 包周期订购结果
-    /// </summary>
-
-    std::string getRetCode() const;
-    bool retCodeIsSet() const;
-    void unsetretCode();
-    void setRetCode(const std::string& value);
-
-    /// <summary>
-    /// 包周期创建订单信息
-    /// </summary>
-
-    std::vector<CbcOrderResult>& getOrders();
-    bool ordersIsSet() const;
-    void unsetorders();
-    void setOrders(const std::vector<CbcOrderResult>& value);
-
-    /// <summary>
     /// 备份名称前缀
     /// </summary>
 
@@ -269,6 +241,15 @@ public:
     void unsetlocked();
     void setLocked(bool value);
 
+    /// <summary>
+    /// 存储库可用区信息，最大支持32字符。
+    /// </summary>
+
+    std::string getAvailabilityZone() const;
+    bool availabilityZoneIsSet() const;
+    void unsetavailabilityZone();
+    void setAvailabilityZone(const std::string& value);
+
 
 protected:
     Billing billing_;
@@ -303,12 +284,6 @@ protected:
     bool smnNotifyIsSet_;
     int32_t threshold_;
     bool thresholdIsSet_;
-    std::string errText_;
-    bool errTextIsSet_;
-    std::string retCode_;
-    bool retCodeIsSet_;
-    std::vector<CbcOrderResult> orders_;
-    bool ordersIsSet_;
     std::string backupNamePrefix_;
     bool backupNamePrefixIsSet_;
     bool demandBilling_;
@@ -321,6 +296,8 @@ protected:
     bool sysLockSourceServiceIsSet_;
     bool locked_;
     bool lockedIsSet_;
+    std::string availabilityZone_;
+    bool availabilityZoneIsSet_;
 
 };
 

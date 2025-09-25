@@ -11,6 +11,7 @@
 
 #include <huaweicloud/mpc/v1/model/Thumbnail.h>
 #include <huaweicloud/mpc/v1/model/VideoProcess.h>
+#include <huaweicloud/mpc/v1/model/FileMetaData.h>
 #include <string>
 #include <vector>
 #include <huaweicloud/mpc/v1/model/WatermarkRequest.h>
@@ -204,6 +205,15 @@ public:
     void unsetaudioProcess();
     void setAudioProcess(const AudioProcess& value);
 
+    /// <summary>
+    /// metadata设置，默认只支持AIGC 
+    /// </summary>
+
+    std::vector<FileMetaData>& getMetadata();
+    bool metadataIsSet() const;
+    void unsetmetadata();
+    void setMetadata(const std::vector<FileMetaData>& value);
+
 
 protected:
     ObsObjInfo input_;
@@ -240,6 +250,8 @@ protected:
     bool videoProcessIsSet_;
     AudioProcess audioProcess_;
     bool audioProcessIsSet_;
+    std::vector<FileMetaData> metadata_;
+    bool metadataIsSet_;
 
 };
 

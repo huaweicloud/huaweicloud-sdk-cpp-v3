@@ -99,7 +99,7 @@ bool ListDatabaseVolumeSummaryResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cn_components"));
         if(!fieldValue.is_null())
         {
-            std::vector<ComponentInfoResult> refVal;
+            std::vector<CnComponentInfoResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCnComponents(refVal);
         }
@@ -108,7 +108,7 @@ bool ListDatabaseVolumeSummaryResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dn_components"));
         if(!fieldValue.is_null())
         {
-            std::vector<ComponentInfoResult> refVal;
+            std::vector<DnComponentInfoResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDnComponents(refVal);
         }
@@ -201,12 +201,12 @@ void ListDatabaseVolumeSummaryResponse::unsetestimatedRemainingDays()
     estimatedRemainingDaysIsSet_ = false;
 }
 
-std::vector<ComponentInfoResult>& ListDatabaseVolumeSummaryResponse::getCnComponents()
+std::vector<CnComponentInfoResult>& ListDatabaseVolumeSummaryResponse::getCnComponents()
 {
     return cnComponents_;
 }
 
-void ListDatabaseVolumeSummaryResponse::setCnComponents(const std::vector<ComponentInfoResult>& value)
+void ListDatabaseVolumeSummaryResponse::setCnComponents(const std::vector<CnComponentInfoResult>& value)
 {
     cnComponents_ = value;
     cnComponentsIsSet_ = true;
@@ -222,12 +222,12 @@ void ListDatabaseVolumeSummaryResponse::unsetcnComponents()
     cnComponentsIsSet_ = false;
 }
 
-std::vector<ComponentInfoResult>& ListDatabaseVolumeSummaryResponse::getDnComponents()
+std::vector<DnComponentInfoResult>& ListDatabaseVolumeSummaryResponse::getDnComponents()
 {
     return dnComponents_;
 }
 
-void ListDatabaseVolumeSummaryResponse::setDnComponents(const std::vector<ComponentInfoResult>& value)
+void ListDatabaseVolumeSummaryResponse::setDnComponents(const std::vector<DnComponentInfoResult>& value)
 {
     dnComponents_ = value;
     dnComponentsIsSet_ = true;

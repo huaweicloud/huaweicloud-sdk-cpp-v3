@@ -14,7 +14,7 @@ DownloadObject::DownloadObject()
 {
     name_ = "";
     nameIsSet_ = false;
-    size_ = 0.0;
+    size_ = 0;
     sizeIsSet_ = false;
     downloadLink_ = "";
     downloadLinkIsSet_ = false;
@@ -64,7 +64,7 @@ bool DownloadObject::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
         if(!fieldValue.is_null())
         {
-            double refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
         }
@@ -112,12 +112,12 @@ void DownloadObject::unsetname()
     nameIsSet_ = false;
 }
 
-double DownloadObject::getSize() const
+int32_t DownloadObject::getSize() const
 {
     return size_;
 }
 
-void DownloadObject::setSize(double value)
+void DownloadObject::setSize(int32_t value)
 {
     size_ = value;
     sizeIsSet_ = true;

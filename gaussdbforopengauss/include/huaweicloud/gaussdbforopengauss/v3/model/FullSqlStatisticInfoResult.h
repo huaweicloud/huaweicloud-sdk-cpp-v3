@@ -66,6 +66,87 @@ public:
     void setSqlCount(int64_t value);
 
     /// <summary>
+    /// **参数解释**: 总SQL耗时（微秒）。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getTotalSqlTime() const;
+    bool totalSqlTimeIsSet() const;
+    void unsettotalSqlTime();
+    void setTotalSqlTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**: 平均SQL耗时（微秒）。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getAvgSqlTime() const;
+    bool avgSqlTimeIsSet() const;
+    void unsetavgSqlTime();
+    void setAvgSqlTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**: 总有效DB耗时（微秒）。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getTotalDbTime() const;
+    bool totalDbTimeIsSet() const;
+    void unsettotalDbTime();
+    void setTotalDbTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**: 总CPU耗时（微秒）。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getTotalCpuTime() const;
+    bool totalCpuTimeIsSet() const;
+    void unsettotalCpuTime();
+    void setTotalCpuTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**: 平均解释器时间（微秒）。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getAvgParseTime() const;
+    bool avgParseTimeIsSet() const;
+    void unsetavgParseTime();
+    void setAvgParseTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**: 平均执行计划时间（微秒）。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getAvgPlanTime() const;
+    bool avgPlanTimeIsSet() const;
+    void unsetavgPlanTime();
+    void setAvgPlanTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**: 总IO耗时（微秒）。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getTotalDataIoTime() const;
+    bool totalDataIoTimeIsSet() const;
+    void unsettotalDataIoTime();
+    void setTotalDataIoTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**: 平均返回行数。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getAvgNReturnedRows() const;
+    bool avgNReturnedRowsIsSet() const;
+    void unsetavgNReturnedRows();
+    void setAvgNReturnedRows(int64_t value);
+
+    /// <summary>
+    /// **参数解释**: 平均扫描行数。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int64_t getAvgNTuplesFetched() const;
+    bool avgNTuplesFetchedIsSet() const;
+    void unsetavgNTuplesFetched();
+    void setAvgNTuplesFetched(int64_t value);
+
+    /// <summary>
     /// **参数解释**: 平均有效DB耗时（微秒）。 **取值范围**: 不涉及。
     /// </summary>
 
@@ -114,19 +195,19 @@ public:
     /// **参数解释**: 开始时间戳。 **取值范围**: 不涉及。
     /// </summary>
 
-    std::string getStartTimeStamp() const;
+    int64_t getStartTimeStamp() const;
     bool startTimeStampIsSet() const;
     void unsetstartTimeStamp();
-    void setStartTimeStamp(const std::string& value);
+    void setStartTimeStamp(int64_t value);
 
     /// <summary>
     /// **参数解释**: 结束时间戳。 **取值范围**: 不涉及。
     /// </summary>
 
-    std::string getEndTimeStamp() const;
+    int64_t getEndTimeStamp() const;
     bool endTimeStampIsSet() const;
     void unsetendTimeStamp();
-    void setEndTimeStamp(const std::string& value);
+    void setEndTimeStamp(int64_t value);
 
 
 protected:
@@ -136,6 +217,24 @@ protected:
     bool sqlIdIsSet_;
     int64_t sqlCount_;
     bool sqlCountIsSet_;
+    int64_t totalSqlTime_;
+    bool totalSqlTimeIsSet_;
+    int64_t avgSqlTime_;
+    bool avgSqlTimeIsSet_;
+    int64_t totalDbTime_;
+    bool totalDbTimeIsSet_;
+    int64_t totalCpuTime_;
+    bool totalCpuTimeIsSet_;
+    int64_t avgParseTime_;
+    bool avgParseTimeIsSet_;
+    int64_t avgPlanTime_;
+    bool avgPlanTimeIsSet_;
+    int64_t totalDataIoTime_;
+    bool totalDataIoTimeIsSet_;
+    int64_t avgNReturnedRows_;
+    bool avgNReturnedRowsIsSet_;
+    int64_t avgNTuplesFetched_;
+    bool avgNTuplesFetchedIsSet_;
     int64_t avgDbTime_;
     bool avgDbTimeIsSet_;
     int64_t avgCpuTime_;
@@ -146,9 +245,9 @@ protected:
     bool avgExecutionTimeIsSet_;
     int64_t avgNBlocksHit_;
     bool avgNBlocksHitIsSet_;
-    std::string startTimeStamp_;
+    int64_t startTimeStamp_;
     bool startTimeStampIsSet_;
-    std::string endTimeStamp_;
+    int64_t endTimeStamp_;
     bool endTimeStampIsSet_;
 
 };

@@ -986,6 +986,11 @@ HttpRequestDef EcsMeta::genRequestDefForShowResetPasswordFlag() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForShowSerialConsoleActions() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForShowServer() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -1068,6 +1073,15 @@ HttpRequestDef EcsMeta::genRequestDefForUpdateScheduledEvent() {
         withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForUpdateSerialConsoleOptions() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

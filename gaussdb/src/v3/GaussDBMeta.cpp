@@ -1769,6 +1769,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowRestoreTables() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForShowSlowLogDetail() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForShowSlowLogStatistics() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1811,6 +1825,16 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowSqlFilterRule() {
     reqDefBuilder.withRequestField(FieldDef().withName("SqlType")
                   .withJsonTag("sql_type")
                   .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForShowStarRocksSlowlogSensitiveStatus() {
+    HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -2270,6 +2294,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForUpdateProxySessionConsistence() {
 }
 
 HttpRequestDef GaussDBMeta::genRequestDefForUpdateServerlessPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForUpdateSlowlogSensitiveStatus() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

@@ -1,0 +1,79 @@
+
+#ifndef HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ShowStepOutputsResponse_H_
+#define HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ShowStepOutputsResponse_H_
+
+
+#include <huaweicloud/codeartspipeline/v2/CodeArtsPipelineExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/codeartspipeline/v2/model/OutputResp_step_outputs.h>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Codeartspipeline {
+namespace V2 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Response Object
+/// </summary>
+class HUAWEICLOUD_CODEARTSPIPELINE_V2_EXPORT  ShowStepOutputsResponse
+    : public ModelBase, public HttpResponse
+{
+public:
+    ShowStepOutputsResponse();
+    virtual ~ShowStepOutputsResponse();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// ShowStepOutputsResponse members
+
+    /// <summary>
+    /// **参数解释**： 步骤输出列表，记录每个步骤输出的ID和结果信息。 **约束限制**： 不涉及。 
+    /// </summary>
+
+    std::vector<OutputResp_step_outputs>& getStepOutputs();
+    bool stepOutputsIsSet() const;
+    void unsetstepOutputs();
+    void setStepOutputs(const std::vector<OutputResp_step_outputs>& value);
+
+    /// <summary>
+    /// **参数解释**： 当前系统时间。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    int64_t getCurrentSystemTime() const;
+    bool currentSystemTimeIsSet() const;
+    void unsetcurrentSystemTime();
+    void setCurrentSystemTime(int64_t value);
+
+
+protected:
+    std::vector<OutputResp_step_outputs> stepOutputs_;
+    bool stepOutputsIsSet_;
+    int64_t currentSystemTime_;
+    bool currentSystemTimeIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ShowStepOutputsResponse_H_

@@ -12,7 +12,7 @@ namespace Model {
 
 ListReadonlyNodesResponse::ListReadonlyNodesResponse()
 {
-    instancesIsSet_ = false;
+    nodesIsSet_ = false;
     maxReadonlyNodeNum_ = 0;
     maxReadonlyNodeNumIsSet_ = false;
 }
@@ -27,8 +27,8 @@ web::json::value ListReadonlyNodesResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(instancesIsSet_) {
-        val[utility::conversions::to_string_t("instances")] = ModelBase::toJson(instances_);
+    if(nodesIsSet_) {
+        val[utility::conversions::to_string_t("nodes")] = ModelBase::toJson(nodes_);
     }
     if(maxReadonlyNodeNumIsSet_) {
         val[utility::conversions::to_string_t("max_readonly_node_num")] = ModelBase::toJson(maxReadonlyNodeNum_);
@@ -40,13 +40,13 @@ bool ListReadonlyNodesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("instances"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instances"));
+    if(val.has_field(utility::conversions::to_string_t("nodes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodes"));
         if(!fieldValue.is_null())
         {
             std::vector<ListReadonlyNodesResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstances(refVal);
+            setNodes(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("max_readonly_node_num"))) {
@@ -62,25 +62,25 @@ bool ListReadonlyNodesResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<ListReadonlyNodesResult>& ListReadonlyNodesResponse::getInstances()
+std::vector<ListReadonlyNodesResult>& ListReadonlyNodesResponse::getNodes()
 {
-    return instances_;
+    return nodes_;
 }
 
-void ListReadonlyNodesResponse::setInstances(const std::vector<ListReadonlyNodesResult>& value)
+void ListReadonlyNodesResponse::setNodes(const std::vector<ListReadonlyNodesResult>& value)
 {
-    instances_ = value;
-    instancesIsSet_ = true;
+    nodes_ = value;
+    nodesIsSet_ = true;
 }
 
-bool ListReadonlyNodesResponse::instancesIsSet() const
+bool ListReadonlyNodesResponse::nodesIsSet() const
 {
-    return instancesIsSet_;
+    return nodesIsSet_;
 }
 
-void ListReadonlyNodesResponse::unsetinstances()
+void ListReadonlyNodesResponse::unsetnodes()
 {
-    instancesIsSet_ = false;
+    nodesIsSet_ = false;
 }
 
 int32_t ListReadonlyNodesResponse::getMaxReadonlyNodeNum() const

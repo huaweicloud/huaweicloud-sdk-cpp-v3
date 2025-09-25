@@ -4928,6 +4928,51 @@ std::shared_ptr<ShowRestoreTablesResponse> GaussDBClient::showRestoreTables(Show
 
     return localVarResult;
 }
+std::shared_ptr<ShowSlowLogDetailResponse> GaussDBClient::showSlowLogDetail(ShowSlowLogDetailRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/starrocks/slow-logs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowSlowLogDetail());
+
+    std::shared_ptr<ShowSlowLogDetailResponse> localVarResult = std::make_shared<ShowSlowLogDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ShowSlowLogStatisticsResponse> GaussDBClient::showSlowLogStatistics(ShowSlowLogStatisticsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/slow-logs/statistics";
@@ -5072,6 +5117,39 @@ std::shared_ptr<ShowSqlFilterRuleResponse> GaussDBClient::showSqlFilterRule(Show
         localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowSqlFilterRule());
 
     std::shared_ptr<ShowSqlFilterRuleResponse> localVarResult = std::make_shared<ShowSqlFilterRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStarRocksSlowlogSensitiveStatusResponse> GaussDBClient::showStarRocksSlowlogSensitiveStatus(ShowStarRocksSlowlogSensitiveStatusRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/starrocks/slowlog-sensitive";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowStarRocksSlowlogSensitiveStatus());
+
+    std::shared_ptr<ShowStarRocksSlowlogSensitiveStatusResponse> localVarResult = std::make_shared<ShowStarRocksSlowlogSensitiveStatusResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -6555,6 +6633,51 @@ std::shared_ptr<UpdateServerlessPolicyResponse> GaussDBClient::updateServerlessP
         localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForUpdateServerlessPolicy());
 
     std::shared_ptr<UpdateServerlessPolicyResponse> localVarResult = std::make_shared<UpdateServerlessPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateSlowlogSensitiveStatusResponse> GaussDBClient::updateSlowlogSensitiveStatus(UpdateSlowlogSensitiveStatusRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/starrocks/slowlog-sensitive";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForUpdateSlowlogSensitiveStatus());
+
+    std::shared_ptr<UpdateSlowlogSensitiveStatusResponse> localVarResult = std::make_shared<UpdateSlowlogSensitiveStatusResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

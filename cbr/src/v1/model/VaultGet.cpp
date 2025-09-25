@@ -44,6 +44,8 @@ VaultGet::VaultGet()
     sysLockSourceServiceIsSet_ = false;
     locked_ = false;
     lockedIsSet_ = false;
+    availabilityZone_ = "";
+    availabilityZoneIsSet_ = false;
     updatedAt_ = "";
     updatedAtIsSet_ = false;
     version_ = "";
@@ -113,6 +115,9 @@ web::json::value VaultGet::toJson() const
     }
     if(lockedIsSet_) {
         val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
+    }
+    if(availabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
@@ -287,6 +292,15 @@ bool VaultGet::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLocked(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZone(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("updated_at"))) {
@@ -687,6 +701,27 @@ bool VaultGet::lockedIsSet() const
 void VaultGet::unsetlocked()
 {
     lockedIsSet_ = false;
+}
+
+std::string VaultGet::getAvailabilityZone() const
+{
+    return availabilityZone_;
+}
+
+void VaultGet::setAvailabilityZone(const std::string& value)
+{
+    availabilityZone_ = value;
+    availabilityZoneIsSet_ = true;
+}
+
+bool VaultGet::availabilityZoneIsSet() const
+{
+    return availabilityZoneIsSet_;
+}
+
+void VaultGet::unsetavailabilityZone()
+{
+    availabilityZoneIsSet_ = false;
 }
 
 std::string VaultGet::getUpdatedAt() const

@@ -43,10 +43,10 @@ public:
     /// **参数解释**: 只读节点列表。 **约束限制**: 不涉及。
     /// </summary>
 
-    std::vector<ListReadonlyNodesResult>& getInstances();
-    bool instancesIsSet() const;
-    void unsetinstances();
-    void setInstances(const std::vector<ListReadonlyNodesResult>& value);
+    std::vector<ListReadonlyNodesResult>& getNodes();
+    bool nodesIsSet() const;
+    void unsetnodes();
+    void setNodes(const std::vector<ListReadonlyNodesResult>& value);
 
     /// <summary>
     /// **参数解释**: 数据库名称。 **取值范围**: 不涉及。
@@ -59,8 +59,8 @@ public:
 
 
 protected:
-    std::vector<ListReadonlyNodesResult> instances_;
-    bool instancesIsSet_;
+    std::vector<ListReadonlyNodesResult> nodes_;
+    bool nodesIsSet_;
     int32_t maxReadonlyNodeNum_;
     bool maxReadonlyNodeNumIsSet_;
 

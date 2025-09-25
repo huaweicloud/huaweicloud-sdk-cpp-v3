@@ -138,6 +138,10 @@ public:
             { 
                 "https://kms.cn-southwest-3.myhuaweicloud.com"
             });
+        regions["af-south-1"] = Region("af-south-1",
+            { 
+                "https://kms.af-south-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

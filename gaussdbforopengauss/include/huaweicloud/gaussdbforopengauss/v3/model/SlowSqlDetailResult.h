@@ -39,6 +39,33 @@ public:
     /// SlowSqlDetailResult members
 
     /// <summary>
+    /// **参数解释**: 数据库名称。 **取值范围**: 不涉及。
+    /// </summary>
+
+    std::string getDbName() const;
+    bool dbNameIsSet() const;
+    void unsetdbName();
+    void setDbName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: SCHEMA名称。 **取值范围**: 不涉及。
+    /// </summary>
+
+    std::string getSchemaName() const;
+    bool schemaNameIsSet() const;
+    void unsetschemaName();
+    void setSchemaName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 变量替换后的完整SQL。当sql_text不返回变量值时，sql返回空字符串。 **取值范围**: 不涉及。
+    /// </summary>
+
+    std::string getSql() const;
+    bool sqlIsSet() const;
+    void unsetsql();
+    void setSql(const std::string& value);
+
+    /// <summary>
     /// **参数解释**: SQL ID。 **取值范围**: 不涉及。
     /// </summary>
 
@@ -220,6 +247,12 @@ public:
 
 
 protected:
+    std::string dbName_;
+    bool dbNameIsSet_;
+    std::string schemaName_;
+    bool schemaNameIsSet_;
+    std::string sql_;
+    bool sqlIsSet_;
     std::string sqlId_;
     bool sqlIdIsSet_;
     std::string userName_;

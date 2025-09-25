@@ -149,6 +149,15 @@ public:
     void setFrameRate(int32_t value);
 
     /// <summary>
+    /// 帧率。  取值范围：0或[5,60]，0表示自适应。  单位：帧每秒。  &gt; 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 
+    /// </summary>
+
+    float getFrameRateFloat() const;
+    bool frameRateFloatIsSet() const;
+    void unsetframeRateFloat();
+    void setFrameRateFloat(float value);
+
+    /// <summary>
     /// 视频宽度（单位：像素）  - H264：范围[32,4096]，必须为2的倍数 - H265：范围[320,4096]，必须是4的倍数 
     /// </summary>
 
@@ -210,6 +219,8 @@ protected:
     bool bframesCountIsSet_;
     int32_t frameRate_;
     bool frameRateIsSet_;
+    float frameRateFloat_;
+    bool frameRateFloatIsSet_;
     int32_t width_;
     bool widthIsSet_;
     int32_t height_;

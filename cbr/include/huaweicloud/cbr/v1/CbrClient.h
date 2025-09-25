@@ -82,6 +82,8 @@
 #include <huaweicloud/cbr/v1/model/ListDomainProjectsResponse.h>
 #include <huaweicloud/cbr/v1/model/ListExternalVaultRequest.h>
 #include <huaweicloud/cbr/v1/model/ListExternalVaultResponse.h>
+#include <huaweicloud/cbr/v1/model/ListFeaturesRequest.h>
+#include <huaweicloud/cbr/v1/model/ListFeaturesResponse.h>
 #include <huaweicloud/cbr/v1/model/ListOpLogsRequest.h>
 #include <huaweicloud/cbr/v1/model/ListOpLogsResponse.h>
 #include <huaweicloud/cbr/v1/model/ListOrganizationPoliciesRequest.h>
@@ -100,6 +102,7 @@
 #include <huaweicloud/cbr/v1/model/MigrateDomainResponse.h>
 #include <huaweicloud/cbr/v1/model/MigrateVaultResourceRequest.h>
 #include <huaweicloud/cbr/v1/model/MigrateVaultResourceResponse.h>
+#include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/cbr/v1/model/OrganizationPolicyCreateReq.h>
 #include <huaweicloud/cbr/v1/model/OrganizationPolicyUpdateReq.h>
 #include <huaweicloud/cbr/v1/model/PolicyCreateReq.h>
@@ -123,6 +126,8 @@
 #include <huaweicloud/cbr/v1/model/ShowCheckpointResponse.h>
 #include <huaweicloud/cbr/v1/model/ShowDomainRequest.h>
 #include <huaweicloud/cbr/v1/model/ShowDomainResponse.h>
+#include <huaweicloud/cbr/v1/model/ShowFeatureRequest.h>
+#include <huaweicloud/cbr/v1/model/ShowFeatureResponse.h>
 #include <huaweicloud/cbr/v1/model/ShowMemberDetailRequest.h>
 #include <huaweicloud/cbr/v1/model/ShowMemberDetailResponse.h>
 #include <huaweicloud/cbr/v1/model/ShowMembersDetailRequest.h>
@@ -459,6 +464,15 @@ public:
     std::shared_ptr<ListExternalVaultResponse> listExternalVault(
         ListExternalVaultRequest &request
     );
+    // 查询服务支持的特性列表
+    //
+    // 查询服务支持的特性列表
+    // &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListFeaturesResponse> listFeatures(
+        ListFeaturesRequest &request
+    );
     // 查询任务列表
     //
     // 查询任务列表
@@ -602,6 +616,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDomainResponse> showDomain(
         ShowDomainRequest &request
+    );
+    // 查询指定特性
+    //
+    // 查询服务指定特性
+    // &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFeatureResponse> showFeature(
+        ShowFeatureRequest &request
     );
     // 获取备份成员详情
     //

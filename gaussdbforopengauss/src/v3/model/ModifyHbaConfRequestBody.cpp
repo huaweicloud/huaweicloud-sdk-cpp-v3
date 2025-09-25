@@ -12,8 +12,8 @@ namespace Model {
 
 ModifyHbaConfRequestBody::ModifyHbaConfRequestBody()
 {
-    beforeConfsIsSet_ = false;
-    afterConfsIsSet_ = false;
+    beforeConfIsSet_ = false;
+    afterConfIsSet_ = false;
 }
 
 ModifyHbaConfRequestBody::~ModifyHbaConfRequestBody() = default;
@@ -26,11 +26,11 @@ web::json::value ModifyHbaConfRequestBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(beforeConfsIsSet_) {
-        val[utility::conversions::to_string_t("before_confs")] = ModelBase::toJson(beforeConfs_);
+    if(beforeConfIsSet_) {
+        val[utility::conversions::to_string_t("before_conf")] = ModelBase::toJson(beforeConf_);
     }
-    if(afterConfsIsSet_) {
-        val[utility::conversions::to_string_t("after_confs")] = ModelBase::toJson(afterConfs_);
+    if(afterConfIsSet_) {
+        val[utility::conversions::to_string_t("after_conf")] = ModelBase::toJson(afterConf_);
     }
 
     return val;
@@ -39,68 +39,68 @@ bool ModifyHbaConfRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("before_confs"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("before_confs"));
+    if(val.has_field(utility::conversions::to_string_t("before_conf"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("before_conf"));
         if(!fieldValue.is_null())
         {
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBeforeConfs(refVal);
+            setBeforeConf(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("after_confs"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("after_confs"));
+    if(val.has_field(utility::conversions::to_string_t("after_conf"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("after_conf"));
         if(!fieldValue.is_null())
         {
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAfterConfs(refVal);
+            setAfterConf(refVal);
         }
     }
     return ok;
 }
 
 
-Object ModifyHbaConfRequestBody::getBeforeConfs() const
+Object ModifyHbaConfRequestBody::getBeforeConf() const
 {
-    return beforeConfs_;
+    return beforeConf_;
 }
 
-void ModifyHbaConfRequestBody::setBeforeConfs(const Object& value)
+void ModifyHbaConfRequestBody::setBeforeConf(const Object& value)
 {
-    beforeConfs_ = value;
-    beforeConfsIsSet_ = true;
+    beforeConf_ = value;
+    beforeConfIsSet_ = true;
 }
 
-bool ModifyHbaConfRequestBody::beforeConfsIsSet() const
+bool ModifyHbaConfRequestBody::beforeConfIsSet() const
 {
-    return beforeConfsIsSet_;
+    return beforeConfIsSet_;
 }
 
-void ModifyHbaConfRequestBody::unsetbeforeConfs()
+void ModifyHbaConfRequestBody::unsetbeforeConf()
 {
-    beforeConfsIsSet_ = false;
+    beforeConfIsSet_ = false;
 }
 
-Object ModifyHbaConfRequestBody::getAfterConfs() const
+Object ModifyHbaConfRequestBody::getAfterConf() const
 {
-    return afterConfs_;
+    return afterConf_;
 }
 
-void ModifyHbaConfRequestBody::setAfterConfs(const Object& value)
+void ModifyHbaConfRequestBody::setAfterConf(const Object& value)
 {
-    afterConfs_ = value;
-    afterConfsIsSet_ = true;
+    afterConf_ = value;
+    afterConfIsSet_ = true;
 }
 
-bool ModifyHbaConfRequestBody::afterConfsIsSet() const
+bool ModifyHbaConfRequestBody::afterConfIsSet() const
 {
-    return afterConfsIsSet_;
+    return afterConfIsSet_;
 }
 
-void ModifyHbaConfRequestBody::unsetafterConfs()
+void ModifyHbaConfRequestBody::unsetafterConf()
 {
-    afterConfsIsSet_ = false;
+    afterConfIsSet_ = false;
 }
 
 }

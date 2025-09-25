@@ -87,10 +87,10 @@ public:
     /// **参数解释**: 执行次数（次）。 **取值范围**: 不涉及。
     /// </summary>
 
-    std::string getCalls() const;
+    int32_t getCalls() const;
     bool callsIsSet() const;
     void unsetcalls();
-    void setCalls(const std::string& value);
+    void setCalls(int32_t value);
 
     /// <summary>
     /// **参数解释**: 平均执行时间（us）。 **取值范围**: 不涉及。
@@ -185,7 +185,7 @@ protected:
     bool sqlTextIsSet_;
     std::string queryPlan_;
     bool queryPlanIsSet_;
-    std::string calls_;
+    int32_t calls_;
     bool callsIsSet_;
     std::string avgExecTime_;
     bool avgExecTimeIsSet_;

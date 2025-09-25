@@ -85,7 +85,7 @@ public:
     void setAzStatus(const Object& value);
 
     /// <summary>
-    /// **参数解释**：  是否支持ipv6。  **取值范围**： - true: 支持ipv6。 - false: 不支持ipv6。
+    /// **参数解释**：  是否支持ipv6。  **取值范围**：  - true: 支持ipv6。 - false: 不支持ipv6。
     /// </summary>
 
     bool isSupportedIpv6() const;

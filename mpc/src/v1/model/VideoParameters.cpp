@@ -35,6 +35,8 @@ VideoParameters::VideoParameters()
     bframesCountIsSet_ = false;
     frameRate_ = 0;
     frameRateIsSet_ = false;
+    frameRateFloat_ = 0.0f;
+    frameRateFloatIsSet_ = false;
     width_ = 0;
     widthIsSet_ = false;
     height_ = 0;
@@ -90,6 +92,9 @@ web::json::value VideoParameters::toJson() const
     }
     if(frameRateIsSet_) {
         val[utility::conversions::to_string_t("frame_rate")] = ModelBase::toJson(frameRate_);
+    }
+    if(frameRateFloatIsSet_) {
+        val[utility::conversions::to_string_t("frame_rate_float")] = ModelBase::toJson(frameRateFloat_);
     }
     if(widthIsSet_) {
         val[utility::conversions::to_string_t("width")] = ModelBase::toJson(width_);
@@ -216,6 +221,15 @@ bool VideoParameters::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrameRate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("frame_rate_float"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("frame_rate_float"));
+        if(!fieldValue.is_null())
+        {
+            float refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFrameRateFloat(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("width"))) {
@@ -508,6 +522,27 @@ bool VideoParameters::frameRateIsSet() const
 void VideoParameters::unsetframeRate()
 {
     frameRateIsSet_ = false;
+}
+
+float VideoParameters::getFrameRateFloat() const
+{
+    return frameRateFloat_;
+}
+
+void VideoParameters::setFrameRateFloat(float value)
+{
+    frameRateFloat_ = value;
+    frameRateFloatIsSet_ = true;
+}
+
+bool VideoParameters::frameRateFloatIsSet() const
+{
+    return frameRateFloatIsSet_;
+}
+
+void VideoParameters::unsetframeRateFloat()
+{
+    frameRateFloatIsSet_ = false;
 }
 
 int32_t VideoParameters::getWidth() const

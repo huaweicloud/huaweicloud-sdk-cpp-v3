@@ -205,6 +205,15 @@ public:
     void unsetlocked();
     void setLocked(bool value);
 
+    /// <summary>
+    /// 存储库可用区信息，最大支持32字符。
+    /// </summary>
+
+    std::string getAvailabilityZone() const;
+    bool availabilityZoneIsSet() const;
+    void unsetavailabilityZone();
+    void setAvailabilityZone(const std::string& value);
+
 
 protected:
     Billing billing_;
@@ -243,6 +252,8 @@ protected:
     bool sysLockSourceServiceIsSet_;
     bool locked_;
     bool lockedIsSet_;
+    std::string availabilityZone_;
+    bool availabilityZoneIsSet_;
 
 };
 

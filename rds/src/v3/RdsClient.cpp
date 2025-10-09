@@ -1701,6 +1701,45 @@ std::shared_ptr<ListCollationsResponse> RdsClient::listCollations(ListCollations
 
     return localVarResult;
 }
+std::shared_ptr<ListConfigurationApplyHistoriesResponse> RdsClient::listConfigurationApplyHistories(ListConfigurationApplyHistoriesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/configurations/{config_id}/apply-histories";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["config_id"] = parameterToString(request.getConfigId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListConfigurationApplyHistories());
+
+    std::shared_ptr<ListConfigurationApplyHistoriesResponse> localVarResult = std::make_shared<ListConfigurationApplyHistoriesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListConfigurationsResponse> RdsClient::listConfigurations(ListConfigurationsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/configurations";
@@ -2374,6 +2413,45 @@ std::shared_ptr<ListInstancesResponse> RdsClient::listInstances(ListInstancesReq
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListInstances());
 
     std::shared_ptr<ListInstancesResponse> localVarResult = std::make_shared<ListInstancesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListInstancesConfigurationsResponse> RdsClient::listInstancesConfigurations(ListInstancesConfigurationsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/configurations/{config_id}/query-instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["config_id"] = parameterToString(request.getConfigId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListInstancesConfigurations());
+
+    std::shared_ptr<ListInstancesConfigurationsResponse> localVarResult = std::make_shared<ListInstancesConfigurationsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

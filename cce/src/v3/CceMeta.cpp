@@ -59,6 +59,15 @@ HttpRequestDef CceMeta::genRequestDefForContinueUpgradeClusterTask() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForCreateAccessPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForCreateAddonInstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -176,6 +185,11 @@ HttpRequestDef CceMeta::genRequestDefForCreateUpgradeWorkFlow() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForDeleteAccessPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForDeleteAddonInstance() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ClusterId")
@@ -267,6 +281,9 @@ HttpRequestDef CceMeta::genRequestDefForDeleteNodePool() {
 
 HttpRequestDef CceMeta::genRequestDefForDeleteRelease() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ShowResources")
+                  .withJsonTag("show_resources")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -275,8 +292,80 @@ HttpRequestDef CceMeta::genRequestDefForDownloadChart() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForGetAccessPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetAvaliableZone() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Locale")
+                  .withJsonTag("locale")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetClusterFlavorSpecs() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ClusterType")
+                  .withJsonTag("clusterType")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetClusterQuota() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetClusterSupportConfiguration() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ClusterType")
+                  .withJsonTag("clusterType")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ClusterVersion")
+                  .withJsonTag("clusterVersion")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ClusterID")
+                  .withJsonTag("clusterID")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("NetworkMode")
+                  .withJsonTag("networkMode")
+                  .withLocationType(Query_));
+    reqDefBuilder.WithResponseField(FieldDef().
+                withName("Body").
+                withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetCustomizeTags() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetLabels() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetResourceTags() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForHibernateCluster() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForListAccessPolicy() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ClusterId")
+                  .withJsonTag("cluster_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -542,27 +631,12 @@ HttpRequestDef CceMeta::genRequestDefForShowClusterEndpoints() {
     return reqDefBuilder;
 }
 
-HttpRequestDef CceMeta::genRequestDefForShowClusterSupportConfiguration() {
+HttpRequestDef CceMeta::genRequestDefForShowClusterUpgradeInfo() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("ClusterId")
-                  .withJsonTag("cluster_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ClusterType")
-                  .withJsonTag("cluster_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ClusterVersion")
-                  .withJsonTag("cluster_version")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("NetworkMode")
-                  .withJsonTag("network_mode")
-                  .withLocationType(Query_));
-    reqDefBuilder.WithResponseField(FieldDef().
-                withName("Body").
-                withLocationType(Body_));
     return reqDefBuilder;
 }
 
-HttpRequestDef CceMeta::genRequestDefForShowClusterUpgradeInfo() {
+HttpRequestDef CceMeta::genRequestDefForShowFeatureGates() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -613,6 +687,9 @@ HttpRequestDef CceMeta::genRequestDefForShowQuotas() {
 
 HttpRequestDef CceMeta::genRequestDefForShowRelease() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ShowResources")
+                  .withJsonTag("show_resources")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -645,6 +722,15 @@ HttpRequestDef CceMeta::genRequestDefForSyncNode() {
 }
 
 HttpRequestDef CceMeta::genRequestDefForUnlockNodepoolNodeScaleDown() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForUpdateAccessPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -727,6 +813,9 @@ HttpRequestDef CceMeta::genRequestDefForUpdatePartition() {
 
 HttpRequestDef CceMeta::genRequestDefForUpdateRelease() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ShowResources")
+                  .withJsonTag("show_resources")
+                  .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

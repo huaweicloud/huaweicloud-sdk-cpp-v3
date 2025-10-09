@@ -21,6 +21,8 @@ NodePoolMetadata::NodePoolMetadata()
     updateTimestampIsSet_ = false;
     creationTimestamp_ = "";
     creationTimestampIsSet_ = false;
+    resourceVersion_ = 0;
+    resourceVersionIsSet_ = false;
 }
 
 NodePoolMetadata::~NodePoolMetadata() = default;
@@ -47,6 +49,9 @@ web::json::value NodePoolMetadata::toJson() const
     }
     if(creationTimestampIsSet_) {
         val[utility::conversions::to_string_t("creationTimestamp")] = ModelBase::toJson(creationTimestamp_);
+    }
+    if(resourceVersionIsSet_) {
+        val[utility::conversions::to_string_t("resourceVersion")] = ModelBase::toJson(resourceVersion_);
     }
 
     return val;
@@ -98,6 +103,15 @@ bool NodePoolMetadata::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreationTimestamp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("resourceVersion"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resourceVersion"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResourceVersion(refVal);
         }
     }
     return ok;
@@ -207,6 +221,27 @@ bool NodePoolMetadata::creationTimestampIsSet() const
 void NodePoolMetadata::unsetcreationTimestamp()
 {
     creationTimestampIsSet_ = false;
+}
+
+int32_t NodePoolMetadata::getResourceVersion() const
+{
+    return resourceVersion_;
+}
+
+void NodePoolMetadata::setResourceVersion(int32_t value)
+{
+    resourceVersion_ = value;
+    resourceVersionIsSet_ = true;
+}
+
+bool NodePoolMetadata::resourceVersionIsSet() const
+{
+    return resourceVersionIsSet_;
+}
+
+void NodePoolMetadata::unsetresourceVersion()
+{
+    resourceVersionIsSet_ = false;
 }
 
 }

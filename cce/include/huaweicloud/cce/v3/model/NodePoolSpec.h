@@ -11,10 +11,10 @@
 
 #include <huaweicloud/cce/v3/model/NodeManagement.h>
 #include <huaweicloud/cce/v3/model/SecurityID.h>
+#include <huaweicloud/cce/v3/model/NodeTemplate.h>
 #include <string>
 #include <huaweicloud/cce/v3/model/NodePoolNodeAutoscaling.h>
 #include <huaweicloud/cce/v3/model/ExtensionScaleGroup.h>
-#include <huaweicloud/cce/v3/model/NodeSpec.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -57,10 +57,10 @@ public:
     /// 
     /// </summary>
 
-    NodeSpec getNodeTemplate() const;
+    NodeTemplate getNodeTemplate() const;
     bool nodeTemplateIsSet() const;
     void unsetnodeTemplate();
-    void setNodeTemplate(const NodeSpec& value);
+    void setNodeTemplate(const NodeTemplate& value);
 
     /// <summary>
     /// 节点池初始化节点个数。查询时为节点池目标节点数量。
@@ -116,11 +116,38 @@ public:
     void unsetcustomSecurityGroups();
     void setCustomSecurityGroups(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// **参数解释**： 存量节点污点同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\&quot;ignore\&quot;后，节点池不再同步更新存量节点的污点。 - refresh：配置为\&quot;refresh\&quot;后，节点池将同步更新存量节点的污点。  **默认取值**： refresh
+    /// </summary>
+
+    std::string getTaintPolicyOnExistingNodes() const;
+    bool taintPolicyOnExistingNodesIsSet() const;
+    void unsettaintPolicyOnExistingNodes();
+    void setTaintPolicyOnExistingNodes(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 存量节点标签同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\&quot;ignore\&quot;后，节点池不再同步更新存量节点的标签。 - refresh：配置为\&quot;refresh\&quot;后，节点池将同步更新存量节点的标签。  **默认取值**： refresh
+    /// </summary>
+
+    std::string getLabelPolicyOnExistingNodes() const;
+    bool labelPolicyOnExistingNodesIsSet() const;
+    void unsetlabelPolicyOnExistingNodes();
+    void setLabelPolicyOnExistingNodes(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 存量节点资源标签同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\&quot;ignore\&quot;后，节点池不再同步更新存量节点的资源标签。 - refresh：配置为\&quot;refresh\&quot;后，节点池将同步更新存量节点的资源标签。  **默认取值**： ignore
+    /// </summary>
+
+    std::string getUserTagsPolicyOnExistingNodes() const;
+    bool userTagsPolicyOnExistingNodesIsSet() const;
+    void unsetuserTagsPolicyOnExistingNodes();
+    void setUserTagsPolicyOnExistingNodes(const std::string& value);
+
 
 protected:
     std::string type_;
     bool typeIsSet_;
-    NodeSpec nodeTemplate_;
+    NodeTemplate nodeTemplate_;
     bool nodeTemplateIsSet_;
     int32_t initialNodeCount_;
     bool initialNodeCountIsSet_;
@@ -134,6 +161,12 @@ protected:
     bool extensionScaleGroupsIsSet_;
     std::vector<std::string> customSecurityGroups_;
     bool customSecurityGroupsIsSet_;
+    std::string taintPolicyOnExistingNodes_;
+    bool taintPolicyOnExistingNodesIsSet_;
+    std::string labelPolicyOnExistingNodes_;
+    bool labelPolicyOnExistingNodesIsSet_;
+    std::string userTagsPolicyOnExistingNodes_;
+    bool userTagsPolicyOnExistingNodesIsSet_;
 
 };
 

@@ -1769,6 +1769,26 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowRestoreTables() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForShowServerlessComputeAbilityPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForShowServerlessScalingPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForShowSlowLogDetail() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1850,6 +1870,22 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowTableMetaInfo() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("TableName")
                   .withJsonTag("table_name")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForShowTaskDetails() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("JobId")
+                  .withJsonTag("job_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobName")
+                  .withJsonTag("job_name")
                   .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -2293,7 +2329,35 @@ HttpRequestDef GaussDBMeta::genRequestDefForUpdateProxySessionConsistence() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForUpdateServerlessComputeAbilityPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForUpdateServerlessPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForUpdateServerlessScalingPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -3019,6 +3083,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForResumeStarRocksDataReplication() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForSetHtapQueryQueuesRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForShowClickHouseDatabaseUser() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
@@ -3118,6 +3196,16 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowHtapLtsConfig() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForShowHtapQueryQueuesRule() {
+    HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -3275,6 +3363,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForUpdateClickHouseLtsConfig() {
 }
 
 HttpRequestDef GaussDBMeta::genRequestDefForUpdateClickHouseSlowLogSensitiveStatus() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForUpdateHtapQueryQueuesControl() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

@@ -14,6 +14,8 @@ ScaleNodePoolOptions::ScaleNodePoolOptions()
 {
     scalableChecking_ = "";
     scalableCheckingIsSet_ = false;
+    scalePolicy_ = "";
+    scalePolicyIsSet_ = false;
     billingConfigOverrideIsSet_ = false;
 }
 
@@ -29,6 +31,9 @@ web::json::value ScaleNodePoolOptions::toJson() const
 
     if(scalableCheckingIsSet_) {
         val[utility::conversions::to_string_t("scalableChecking")] = ModelBase::toJson(scalableChecking_);
+    }
+    if(scalePolicyIsSet_) {
+        val[utility::conversions::to_string_t("scalePolicy")] = ModelBase::toJson(scalePolicy_);
     }
     if(billingConfigOverrideIsSet_) {
         val[utility::conversions::to_string_t("billingConfigOverride")] = ModelBase::toJson(billingConfigOverride_);
@@ -47,6 +52,15 @@ bool ScaleNodePoolOptions::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setScalableChecking(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scalePolicy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scalePolicy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScalePolicy(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("billingConfigOverride"))) {
@@ -81,6 +95,27 @@ bool ScaleNodePoolOptions::scalableCheckingIsSet() const
 void ScaleNodePoolOptions::unsetscalableChecking()
 {
     scalableCheckingIsSet_ = false;
+}
+
+std::string ScaleNodePoolOptions::getScalePolicy() const
+{
+    return scalePolicy_;
+}
+
+void ScaleNodePoolOptions::setScalePolicy(const std::string& value)
+{
+    scalePolicy_ = value;
+    scalePolicyIsSet_ = true;
+}
+
+bool ScaleNodePoolOptions::scalePolicyIsSet() const
+{
+    return scalePolicyIsSet_;
+}
+
+void ScaleNodePoolOptions::unsetscalePolicy()
+{
+    scalePolicyIsSet_ = false;
 }
 
 ScaleUpBillingConfigOverride ScaleNodePoolOptions::getBillingConfigOverride() const

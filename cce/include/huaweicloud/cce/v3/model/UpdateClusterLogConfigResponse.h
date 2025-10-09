@@ -40,7 +40,7 @@ public:
     /// UpdateClusterLogConfigResponse members
 
     /// <summary>
-    /// 存储时长
+    /// **参数解释**： 日志存储时长，单位（天） **取值范围**： 0-30
     /// </summary>
 
     int32_t getTtlInDays() const;
@@ -49,7 +49,7 @@ public:
     void setTtlInDays(int32_t value);
 
     /// <summary>
-    /// 日志配置项
+    /// **参数解释**： 日志配置项详细信息 **约束限制**: 不涉及
     /// </summary>
 
     std::vector<ClusterLogConfig_log_configs>& getLogConfigs();

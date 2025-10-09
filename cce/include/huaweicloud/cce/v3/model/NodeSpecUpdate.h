@@ -51,13 +51,22 @@ public:
     /// NodeSpecUpdate members
 
     /// <summary>
-    /// **参数解释：** 节点的规格。  **约束限制**： 不涉及 **取值范围：** CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。 **默认取值：** 不涉及
+    /// **参数解释：** 节点的规格。  **约束限制**： 节点的规格不允许修改。 &gt; 仅在删除节点池的默认伸缩组场景，允许设置为空字符串。当且仅当 **az** 字段也设置为空字符串时，才能删除默认伸缩组。如果节点池没有扩容伸缩组，默认伸缩组无法删除。  **取值范围：** CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。 **默认取值：** 不涉及
     /// </summary>
 
     std::string getFlavor() const;
     bool flavorIsSet() const;
     void unsetflavor();
     void setFlavor(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 节点所在的可用区，需要指定可用区（AZ）的名称。  **约束限制**： 节点的可用区不允许修改。 &gt; 仅在删除节点池的默认伸缩组场景，允许设置为空字符串。当且仅当 **flavor** 字段也设置为空字符串时，才能删除默认伸缩组。如果节点池没有扩容伸缩组，默认伸缩组无法删除。  **取值范围**： [CCE支持的可用区请参考[地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws_hk) **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getAz() const;
+    bool azIsSet() const;
+    void unsetaz();
+    void setAz(const std::string& value);
 
     /// <summary>
     /// **参数解释**： 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 **约束限制**： - 若当前集群版本不支持该OS类型，则会自动替换为当前集群版本支持的同系列OS类型。 - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 - 该参数缺省时，CCE会根据集群版本自动选择支持的OS版本。 - 创建节点池时，该参数为必选。 - 若创建节点时使用共享磁盘空间，即磁盘初始化配置管理参数使用storage，且StorageGroups中virtualSpaces的name字段指定为share，该参数为必选。  **取值范围**： 不涉及 **默认取值**： 不涉及
@@ -114,7 +123,7 @@ public:
     void setRuntime(const Runtime& value);
 
     /// <summary>
-    /// **参数解释**： 支持给创建出来的节点加Taints来设置反亲和性。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。  示例：  &#x60;&#x60;&#x60; \&quot;taints\&quot;: [{   \&quot;key\&quot;: \&quot;status\&quot;,   \&quot;value\&quot;: \&quot;unavailable\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }, {   \&quot;key\&quot;: \&quot;looks\&quot;,   \&quot;value\&quot;: \&quot;bad\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }] &#x60;&#x60;&#x60;  **约束限制**： - taints配置不超过20条。 - 参数未指定或者为空数组时将删除节点池的自定义Taints。 - 更新节点池时，此字段为非必填字段。
+    /// **参数解释**： 支持给创建出来的节点加Taints来设置反亲和性。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。  示例：  &#x60;&#x60;&#x60; \&quot;taints\&quot;: [{   \&quot;key\&quot;: \&quot;status\&quot;,   \&quot;value\&quot;: \&quot;unavailable\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }, {   \&quot;key\&quot;: \&quot;looks\&quot;,   \&quot;value\&quot;: \&quot;bad\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }] &#x60;&#x60;&#x60;  **约束限制**： - taints配置不超过20条。 - 参数未指定时将不会更新节点池的自定义Taints。 - 参数为空数组时将删除节点池的自定义Taints。
     /// </summary>
 
     std::vector<Taint>& getTaints();
@@ -123,7 +132,16 @@ public:
     void setTaints(const std::vector<Taint>& value);
 
     /// <summary>
-    /// **参数解释**： 格式为key/value键值对。 - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： &#x60;&#x60;&#x60; \&quot;k8sTags\&quot;: {   \&quot;key\&quot;: \&quot;value\&quot; } &#x60;&#x60;&#x60;  **约束限制**： - 键值对个数不超过20条。 - 参数未指定或者为空对象时将删除节点池的自定义K8s标签。 - 更新节点池时，此字段为非必填字段。
+    /// **参数解释：** 该参数用于控制更新节点池时 **post-install脚本执行完成前允许节点调度** 行为。当该参数未设置或者为false时，在kubernetes节点就绪时，容器即可被调度到可用节点。当该参数为true时，在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **约束限制：** 不涉及  **取值范围：** - false：在kubernetes节点就绪时，容器即可被调度到可用节点。           - true：在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **默认取值：** false
+    /// </summary>
+
+    bool isWaitPostInstallFinish() const;
+    bool waitPostInstallFinishIsSet() const;
+    void unsetwaitPostInstallFinish();
+    void setWaitPostInstallFinish(bool value);
+
+    /// <summary>
+    /// **参数解释**： 格式为key/value键值对。 - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： &#x60;&#x60;&#x60; \&quot;k8sTags\&quot;: {   \&quot;key\&quot;: \&quot;value\&quot; } &#x60;&#x60;&#x60;  **约束限制**： - 键值对个数不超过20条。 - 参数未指定时将不会更新节点池的自定义K8s标签。 - 参数为空对象时将删除节点池的自定义K8s标签。
     /// </summary>
 
     std::map<std::string, std::string>& getK8sTags();
@@ -141,7 +159,7 @@ public:
     void setEcsGroupId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 云服务器标签（资源标签）。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 - 参数未指定或者为空数组时将删除节点池的自定义云服务器标签。 - 更新节点池时，此字段为非必填字段。  **取值范围**： 不涉及 **默认取值**： 不涉及
+    /// **参数解释**： 云服务器标签（资源标签）。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 - 参数未指定时将不会更新节点池的自定义云服务器标签。 - 参数为空数组时将删除节点池的自定义云服务器标签。
     /// </summary>
 
     std::vector<UserTag>& getUserTags();
@@ -216,6 +234,8 @@ public:
 protected:
     std::string flavor_;
     bool flavorIsSet_;
+    std::string az_;
+    bool azIsSet_;
     std::string os_;
     bool osIsSet_;
     Login login_;
@@ -230,6 +250,8 @@ protected:
     bool runtimeIsSet_;
     std::vector<Taint> taints_;
     bool taintsIsSet_;
+    bool waitPostInstallFinish_;
+    bool waitPostInstallFinishIsSet_;
     std::map<std::string, std::string> k8sTags_;
     bool k8sTagsIsSet_;
     std::string ecsGroupId_;

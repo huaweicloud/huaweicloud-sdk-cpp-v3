@@ -38,7 +38,7 @@ public:
     /// DeleteStatus members
 
     /// <summary>
-    /// 集群删除时已经存在的集群资源记录总数
+    /// **参数解释：** 节点删除时已经存在的集群资源记录总数。 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getPreviousTotal() const;
@@ -47,7 +47,7 @@ public:
     void setPreviousTotal(int32_t value);
 
     /// <summary>
-    /// 基于当前集群资源记录信息，生成实际最新资源记录总数
+    /// **参数解释：** 基于当前集群资源记录信息，生成实际最新资源记录总数。 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getCurrentTotal() const;
@@ -56,7 +56,7 @@ public:
     void setCurrentTotal(int32_t value);
 
     /// <summary>
-    /// 集群删除时更新的资源记录总数
+    /// **参数解释：** 节点删除时更新的待删除资源记录总数。 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getUpdated() const;
@@ -65,7 +65,7 @@ public:
     void setUpdated(int32_t value);
 
     /// <summary>
-    /// 集群删除时更新的资源记录总数
+    /// **参数解释：** 节点删除时新增的待删除资源记录总数。 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getAdded() const;
@@ -74,7 +74,7 @@ public:
     void setAdded(int32_t value);
 
     /// <summary>
-    /// 集群删除时删除的资源记录总数
+    /// **参数解释：** 节点删除时删除的资源记录总数。 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getDeleted() const;

@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -37,8 +38,19 @@ public:
     /////////////////////////////////////////////
     /// ScaleNodePoolResponse members
 
+    /// <summary>
+    /// **参数解释**： 订单ID，仅扩容包周期节点时返回 **取值范围**： 不涉及
+    /// </summary>
+
+    std::string getOrderID() const;
+    bool orderIDIsSet() const;
+    void unsetorderID();
+    void setOrderID(const std::string& value);
+
 
 protected:
+    std::string orderID_;
+    bool orderIDIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

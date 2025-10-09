@@ -85,6 +85,15 @@ public:
     void unsetcreationTimestamp();
     void setCreationTimestamp(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 节点池最后更新时间的时间戳。 **约束限制**： 创建节点池时自动记录，不支持传入。 **取值范围**： 不涉及 **默认取值**： 不涉及
+    /// </summary>
+
+    int32_t getResourceVersion() const;
+    bool resourceVersionIsSet() const;
+    void unsetresourceVersion();
+    void setResourceVersion(int32_t value);
+
 
 protected:
     std::string name_;
@@ -97,6 +106,8 @@ protected:
     bool updateTimestampIsSet_;
     std::string creationTimestamp_;
     bool creationTimestampIsSet_;
+    int32_t resourceVersion_;
+    bool resourceVersionIsSet_;
 
 };
 

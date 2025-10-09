@@ -22,6 +22,7 @@
 #include <huaweicloud/cce/v3/model/HostnameConfig.h>
 #include <huaweicloud/cce/v3/model/Taint.h>
 #include <map>
+#include <huaweicloud/cce/v3/model/NodeSpec_nodeNameTemplate.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -69,7 +70,7 @@ public:
     void setAz(const std::string& value);
 
     /// <summary>
-    /// [节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](https://support.huaweicloud.com/api-cce/node-os.html)。](tag:hws) [节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](https://support.huaweicloud.com/intl/zh-cn/api-cce/node-os.html)。](tag:hws_hk) &gt; - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 &gt; - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 &gt; - 创建节点池时，该参数为必选。 &gt; - 若创建节点时使用共享磁盘空间，即磁盘初始化配置管理参数使用storage，且StorageGroups中virtualSpaces的name字段指定为share，该参数为必选。 
+    /// **参数解释**： 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 **约束限制**： - 若在创建节点时未指定该配置，CCE会根据集群版本自动选择支持的OS版本。 - 若当前集群版本不支持该OS类型，则会自动替换为当前集群版本支持的同系列OS类型。 - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，节点将使用私有镜像，则该参数为非必选参数。 [- 若在创建节点时指定了extendParam中的securityReinforcementType参数为cybersecurity，节点将开启安全等保加固功能，则节点的操作系统类型必须使用HCE2.0。当用户未配置私有镜像时，该参数必须为“Huawei Cloud EulerOS 2.0”；当用户配置了私有镜像且私有镜像操作系统类型为HCE2.0，则该参数为非必选参数。](tag:hws)  **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getOs() const;
@@ -132,7 +133,7 @@ public:
     void setNodeNicSpec(const NodeNicSpec& value);
 
     /// <summary>
-    /// 批量创建时节点的个数，必须为大于等于1，小于等于最大限额的正整数。作用于节点池时该项可以不填写。
+    /// **参数解释**： 批量创建时节点的个数。 **约束限制**： - 作用于节点池时该项可以不填写。 - 创建、更新节点池场景返回中无该参数。 - 创建节点时该参数为必填参数  **取值范围**： 必须为大于等于1，小于等于最大限额的正整数。 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getCount() const;
@@ -141,7 +142,7 @@ public:
     void setCount(int32_t value);
 
     /// <summary>
-    /// 节点的计费模式： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk) 
+    /// **参数解释**： 节点的计费模式。 **约束限制**： 不涉及 **取值范围**： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk)  **默认取值**： 0 
     /// </summary>
 
     int32_t getBillingMode() const;
@@ -159,6 +160,15 @@ public:
     void setTaints(const std::vector<Taint>& value);
 
     /// <summary>
+    /// **参数解释：** 该参数用于控制创建节点时 **post-install脚本执行完成前允许节点调度** 行为。当该参数未设置或者为false时，在kubernetes节点就绪时，容器即可被调度到可用节点。当该参数为true时，在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **约束限制：** 不涉及  **取值范围：** - false：在kubernetes节点就绪时，容器即可被调度到可用节点。           - true：在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **默认取值：** false
+    /// </summary>
+
+    bool isWaitPostInstallFinish() const;
+    bool waitPostInstallFinishIsSet() const;
+    void unsetwaitPostInstallFinish();
+    void setWaitPostInstallFinish(bool value);
+
+    /// <summary>
     /// 格式为key/value键值对。键值对个数不超过20条。 - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： &#x60;&#x60;&#x60; \&quot;k8sTags\&quot;: {   \&quot;key\&quot;: \&quot;value\&quot; } &#x60;&#x60;&#x60; 
     /// </summary>
 
@@ -168,7 +178,7 @@ public:
     void setK8sTags(const std::map<std::string, std::string>& value);
 
     /// <summary>
-    /// 云服务器组ID，若指定，将节点创建在该云服务器组下 &gt; 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置
+    /// **参数解释**： 云服务器组ID，若指定，将节点创建在该云服务器组下。 **约束限制**： 创建、更新节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getEcsGroupId() const;
@@ -186,7 +196,7 @@ public:
     void setFaultDomain(const std::string& value);
 
     /// <summary>
-    /// 指定DeH主机的ID，将节点调度到自己的DeH上。 &gt;创建节点池添加节点时不支持该参数。 
+    /// **参数解释**： 指定DeH主机的ID，将节点调度到自己的DeH上。 **约束限制**： 创建节点池添加节点时不支持该参数。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDedicatedHostId() const;
@@ -213,7 +223,7 @@ public:
     void setIsStatic(bool value);
 
     /// <summary>
-    /// 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 &gt; 标签键只能包含大写字母.小写字母、数字和特殊字符(-_)以及Unicode字符，长度不超过36个字符。 
+    /// **参数解释**： 云服务器标签（资源标签）。字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。
     /// </summary>
 
     std::vector<UserTag>& getUserTags();
@@ -275,6 +285,15 @@ public:
     void unsetpartition();
     void setPartition(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    NodeSpec_nodeNameTemplate getNodeNameTemplate() const;
+    bool nodeNameTemplateIsSet() const;
+    void unsetnodeNameTemplate();
+    void setNodeNameTemplate(const NodeSpec_nodeNameTemplate& value);
+
 
 protected:
     std::string flavor_;
@@ -301,6 +320,8 @@ protected:
     bool billingModeIsSet_;
     std::vector<Taint> taints_;
     bool taintsIsSet_;
+    bool waitPostInstallFinish_;
+    bool waitPostInstallFinishIsSet_;
     std::map<std::string, std::string> k8sTags_;
     bool k8sTagsIsSet_;
     std::string ecsGroupId_;
@@ -327,6 +348,8 @@ protected:
     bool serverEnterpriseProjectIDIsSet_;
     std::string partition_;
     bool partitionIsSet_;
+    NodeSpec_nodeNameTemplate nodeNameTemplate_;
+    bool nodeNameTemplateIsSet_;
 
 };
 

@@ -20,6 +20,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ApplyConfigurationRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/AttachEipRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/AttachEipResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/AuthorizeBackupDownloadRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/AuthorizeBackupDownloadResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BackupPolicyErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BaseOpsKeyViewRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyRequest.h>
@@ -81,6 +83,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDatabaseSchemaRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDatabaseSchemaRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDatabaseSchemaResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDisasterRecordRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDisasterRecordRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDisasterRecordResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteHbaConfRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteHbaConfsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteHbaConfsResponse.h>
@@ -169,6 +174,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseSchemasResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVersionsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVersionsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVolumeRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVolumeResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVolumeSummaryRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVolumeSummaryResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabasesRequest.h>
@@ -230,6 +237,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginExtensionsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginExtensionsRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginExtensionsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginInfoListRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginInfoListResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPredefinedTagsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPredefinedTagsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListProjectTagsRequest.h>
@@ -281,9 +290,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHbaConfRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHbaConfRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHbaConfResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHotfixesRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHotfixesRequestBody.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ModifyHotfixesResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ModifyInstancePortRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ModifyInstancePortRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ModifyInstancePortResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceActionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequestBody.h>
@@ -653,6 +662,14 @@ public:
     std::shared_ptr<AttachEipResponse> attachEip(
         AttachEipRequest &request
     );
+    // 授权备份文件下载
+    //
+    // 授权租户使用OBS Browser+方式下载备份文件，支持实例级、表级的全量备份及差量备份。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AuthorizeBackupDownloadResponse> authorizeBackupDownload(
+        AuthorizeBackupDownloadRequest &request
+    );
     // 批量设置自动备份策略
     //
     // 批量设置自动备份策略。
@@ -836,6 +853,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDatabaseSchemaResponse> deleteDatabaseSchema(
         DeleteDatabaseSchemaRequest &request
+    );
+    // 删除容灾记录
+    //
+    // 删除容灾记录。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDisasterRecordResponse> deleteDisasterRecord(
+        DeleteDisasterRecordRequest &request
     );
     // 删除客户端接入认证配置
     //
@@ -1109,6 +1134,14 @@ public:
     std::shared_ptr<ListDatabaseVersionsResponse> listDatabaseVersions(
         ListDatabaseVersionsRequest &request
     );
+    // 查询数据库占用空间大小列表
+    //
+    // 查询限流任务详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDatabaseVolumeResponse> listDatabaseVolume(
+        ListDatabaseVolumeRequest &request
+    );
     // 查询数据盘空间概况
     //
     // 查询数据盘空间概况。
@@ -1349,6 +1382,14 @@ public:
     std::shared_ptr<ListPluginExtensionsResponse> listPluginExtensions(
         ListPluginExtensionsRequest &request
     );
+    // 查询插件列表
+    //
+    // 查询插件列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPluginInfoListResponse> listPluginInfoList(
+        ListPluginInfoListRequest &request
+    );
     // 查询预定义标签
     //
     // 查询预预定义标签。
@@ -1526,13 +1567,13 @@ public:
     std::shared_ptr<ModifyHbaConfResponse> modifyHbaConf(
         ModifyHbaConfRequest &request
     );
-    // 修改热补丁属性
+    // 修改指定实例端口号
     //
-    // 修改热补丁属性。
+    // 修改指定实例端口号。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ModifyHotfixesResponse> modifyHotfixes(
-        ModifyHotfixesRequest &request
+    std::shared_ptr<ModifyInstancePortResponse> modifyInstancePort(
+        ModifyInstancePortRequest &request
     );
     // 重置参数模板
     //

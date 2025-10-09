@@ -18,6 +18,8 @@ DatastoreItem::DatastoreItem()
     versionIsSet_ = false;
     patchAvailable_ = false;
     patchAvailableIsSet_ = false;
+    wholeVersion_ = "";
+    wholeVersionIsSet_ = false;
 }
 
 DatastoreItem::~DatastoreItem() = default;
@@ -38,6 +40,9 @@ web::json::value DatastoreItem::toJson() const
     }
     if(patchAvailableIsSet_) {
         val[utility::conversions::to_string_t("patch_available")] = ModelBase::toJson(patchAvailable_);
+    }
+    if(wholeVersionIsSet_) {
+        val[utility::conversions::to_string_t("whole_version")] = ModelBase::toJson(wholeVersion_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool DatastoreItem::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPatchAvailable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("whole_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("whole_version"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWholeVersion(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool DatastoreItem::patchAvailableIsSet() const
 void DatastoreItem::unsetpatchAvailable()
 {
     patchAvailableIsSet_ = false;
+}
+
+std::string DatastoreItem::getWholeVersion() const
+{
+    return wholeVersion_;
+}
+
+void DatastoreItem::setWholeVersion(const std::string& value)
+{
+    wholeVersion_ = value;
+    wholeVersionIsSet_ = true;
+}
+
+bool DatastoreItem::wholeVersionIsSet() const
+{
+    return wholeVersionIsSet_;
+}
+
+void DatastoreItem::unsetwholeVersion()
+{
+    wholeVersionIsSet_ = false;
 }
 
 }

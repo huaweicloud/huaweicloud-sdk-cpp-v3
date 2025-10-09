@@ -555,6 +555,22 @@ HttpRequestDef RdsMeta::genRequestDefForListCollations() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListConfigurationApplyHistories() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListConfigurations() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -832,6 +848,22 @@ HttpRequestDef RdsMeta::genRequestDefForListInstances() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("GroupType")
                   .withJsonTag("group_type")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForListInstancesConfigurations() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

@@ -22,6 +22,8 @@ ClusterSpec::ClusterSpec()
     versionIsSet_ = false;
     platformVersion_ = "";
     platformVersionIsSet_ = false;
+    legacyVersion_ = "";
+    legacyVersionIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     customSanIsSet_ = false;
@@ -55,6 +57,8 @@ ClusterSpec::ClusterSpec()
     deletionProtectionIsSet_ = false;
     configurationsOverrideIsSet_ = false;
     clusterOpsIsSet_ = false;
+    enableAutopilot_ = false;
+    enableAutopilotIsSet_ = false;
     encryptionConfigIsSet_ = false;
 }
 
@@ -82,6 +86,9 @@ web::json::value ClusterSpec::toJson() const
     }
     if(platformVersionIsSet_) {
         val[utility::conversions::to_string_t("platformVersion")] = ModelBase::toJson(platformVersion_);
+    }
+    if(legacyVersionIsSet_) {
+        val[utility::conversions::to_string_t("legacyVersion")] = ModelBase::toJson(legacyVersion_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -149,6 +156,9 @@ web::json::value ClusterSpec::toJson() const
     if(clusterOpsIsSet_) {
         val[utility::conversions::to_string_t("clusterOps")] = ModelBase::toJson(clusterOps_);
     }
+    if(enableAutopilotIsSet_) {
+        val[utility::conversions::to_string_t("enableAutopilot")] = ModelBase::toJson(enableAutopilot_);
+    }
     if(encryptionConfigIsSet_) {
         val[utility::conversions::to_string_t("encryptionConfig")] = ModelBase::toJson(encryptionConfig_);
     }
@@ -202,6 +212,15 @@ bool ClusterSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPlatformVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("legacyVersion"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("legacyVersion"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLegacyVersion(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -402,6 +421,15 @@ bool ClusterSpec::fromJson(const web::json::value& val)
             setClusterOps(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("enableAutopilot"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enableAutopilot"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableAutopilot(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("encryptionConfig"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encryptionConfig"));
         if(!fieldValue.is_null())
@@ -518,6 +546,27 @@ bool ClusterSpec::platformVersionIsSet() const
 void ClusterSpec::unsetplatformVersion()
 {
     platformVersionIsSet_ = false;
+}
+
+std::string ClusterSpec::getLegacyVersion() const
+{
+    return legacyVersion_;
+}
+
+void ClusterSpec::setLegacyVersion(const std::string& value)
+{
+    legacyVersion_ = value;
+    legacyVersionIsSet_ = true;
+}
+
+bool ClusterSpec::legacyVersionIsSet() const
+{
+    return legacyVersionIsSet_;
+}
+
+void ClusterSpec::unsetlegacyVersion()
+{
+    legacyVersionIsSet_ = false;
 }
 
 std::string ClusterSpec::getDescription() const
@@ -980,6 +1029,27 @@ bool ClusterSpec::clusterOpsIsSet() const
 void ClusterSpec::unsetclusterOps()
 {
     clusterOpsIsSet_ = false;
+}
+
+bool ClusterSpec::isEnableAutopilot() const
+{
+    return enableAutopilot_;
+}
+
+void ClusterSpec::setEnableAutopilot(bool value)
+{
+    enableAutopilot_ = value;
+    enableAutopilotIsSet_ = true;
+}
+
+bool ClusterSpec::enableAutopilotIsSet() const
+{
+    return enableAutopilotIsSet_;
+}
+
+void ClusterSpec::unsetenableAutopilot()
+{
+    enableAutopilotIsSet_ = false;
 }
 
 EncryptionConfig ClusterSpec::getEncryptionConfig() const

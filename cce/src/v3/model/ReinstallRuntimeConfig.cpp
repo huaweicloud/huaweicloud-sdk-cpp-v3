@@ -14,6 +14,8 @@ ReinstallRuntimeConfig::ReinstallRuntimeConfig()
 {
     dockerBaseSize_ = 0;
     dockerBaseSizeIsSet_ = false;
+    containerBaseSize_ = 0;
+    containerBaseSizeIsSet_ = false;
     runtimeIsSet_ = false;
 }
 
@@ -29,6 +31,9 @@ web::json::value ReinstallRuntimeConfig::toJson() const
 
     if(dockerBaseSizeIsSet_) {
         val[utility::conversions::to_string_t("dockerBaseSize")] = ModelBase::toJson(dockerBaseSize_);
+    }
+    if(containerBaseSizeIsSet_) {
+        val[utility::conversions::to_string_t("containerBaseSize")] = ModelBase::toJson(containerBaseSize_);
     }
     if(runtimeIsSet_) {
         val[utility::conversions::to_string_t("runtime")] = ModelBase::toJson(runtime_);
@@ -47,6 +52,15 @@ bool ReinstallRuntimeConfig::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDockerBaseSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("containerBaseSize"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("containerBaseSize"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setContainerBaseSize(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("runtime"))) {
@@ -81,6 +95,27 @@ bool ReinstallRuntimeConfig::dockerBaseSizeIsSet() const
 void ReinstallRuntimeConfig::unsetdockerBaseSize()
 {
     dockerBaseSizeIsSet_ = false;
+}
+
+int32_t ReinstallRuntimeConfig::getContainerBaseSize() const
+{
+    return containerBaseSize_;
+}
+
+void ReinstallRuntimeConfig::setContainerBaseSize(int32_t value)
+{
+    containerBaseSize_ = value;
+    containerBaseSizeIsSet_ = true;
+}
+
+bool ReinstallRuntimeConfig::containerBaseSizeIsSet() const
+{
+    return containerBaseSizeIsSet_;
+}
+
+void ReinstallRuntimeConfig::unsetcontainerBaseSize()
+{
+    containerBaseSizeIsSet_ = false;
 }
 
 Runtime ReinstallRuntimeConfig::getRuntime() const

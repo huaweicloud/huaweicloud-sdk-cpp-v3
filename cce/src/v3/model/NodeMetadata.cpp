@@ -121,7 +121,7 @@ bool NodeMetadata::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ownerReference"));
         if(!fieldValue.is_null())
         {
-            NodeOwnerReference refVal;
+            NodeMetadata_ownerReference refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOwnerReference(refVal);
         }
@@ -256,12 +256,12 @@ void NodeMetadata::unsetupdateTimestamp()
     updateTimestampIsSet_ = false;
 }
 
-NodeOwnerReference NodeMetadata::getOwnerReference() const
+NodeMetadata_ownerReference NodeMetadata::getOwnerReference() const
 {
     return ownerReference_;
 }
 
-void NodeMetadata::setOwnerReference(const NodeOwnerReference& value)
+void NodeMetadata::setOwnerReference(const NodeMetadata_ownerReference& value)
 {
     ownerReference_ = value;
     ownerReferenceIsSet_ = true;

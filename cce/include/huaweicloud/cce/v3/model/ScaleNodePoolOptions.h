@@ -49,6 +49,15 @@ public:
     void setScalableChecking(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 扩容的策略，允许为空，该参数scaleGroups传多项时有效。 **约束限制**： 不涉及 **取值范围**： - AZBalance：AZ优先策略，扩容节点池时，系统会使各个AZ间的节点数尽可能的均衡，规格会在所选伸缩组中随机指定。该策略适用于对节点成本和可用区无特殊要求的场景，优点是配置简便、降低单点故障风险。注意：如果某个AZ资源不足，该AZ期望的扩容节点会向其他AZ扩容，可能会使AZ间节点不均衡。如需解决该问题，可在该AZ资源充足时尝试再次扩容。 - Random：随机策略，从下发的规格scaleGroups列表中随机选择伸缩组扩容。  **默认取值**： Random 
+    /// </summary>
+
+    std::string getScalePolicy() const;
+    bool scalePolicyIsSet() const;
+    void unsetscalePolicy();
+    void setScalePolicy(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -61,6 +70,8 @@ public:
 protected:
     std::string scalableChecking_;
     bool scalableCheckingIsSet_;
+    std::string scalePolicy_;
+    bool scalePolicyIsSet_;
     ScaleUpBillingConfigOverride billingConfigOverride_;
     bool billingConfigOverrideIsSet_;
 

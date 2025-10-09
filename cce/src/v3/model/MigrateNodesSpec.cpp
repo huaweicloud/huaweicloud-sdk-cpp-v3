@@ -17,6 +17,7 @@ MigrateNodesSpec::MigrateNodesSpec()
     extendParamIsSet_ = false;
     loginIsSet_ = false;
     runtimeIsSet_ = false;
+    serverConfigIsSet_ = false;
     nodesIsSet_ = false;
 }
 
@@ -41,6 +42,9 @@ web::json::value MigrateNodesSpec::toJson() const
     }
     if(runtimeIsSet_) {
         val[utility::conversions::to_string_t("runtime")] = ModelBase::toJson(runtime_);
+    }
+    if(serverConfigIsSet_) {
+        val[utility::conversions::to_string_t("serverConfig")] = ModelBase::toJson(serverConfig_);
     }
     if(nodesIsSet_) {
         val[utility::conversions::to_string_t("nodes")] = ModelBase::toJson(nodes_);
@@ -86,6 +90,15 @@ bool MigrateNodesSpec::fromJson(const web::json::value& val)
             Runtime refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRuntime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("serverConfig"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serverConfig"));
+        if(!fieldValue.is_null())
+        {
+            MigrateServerConfig refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("nodes"))) {
@@ -183,6 +196,27 @@ bool MigrateNodesSpec::runtimeIsSet() const
 void MigrateNodesSpec::unsetruntime()
 {
     runtimeIsSet_ = false;
+}
+
+MigrateServerConfig MigrateNodesSpec::getServerConfig() const
+{
+    return serverConfig_;
+}
+
+void MigrateNodesSpec::setServerConfig(const MigrateServerConfig& value)
+{
+    serverConfig_ = value;
+    serverConfigIsSet_ = true;
+}
+
+bool MigrateNodesSpec::serverConfigIsSet() const
+{
+    return serverConfigIsSet_;
+}
+
+void MigrateNodesSpec::unsetserverConfig()
+{
+    serverConfigIsSet_ = false;
 }
 
 std::vector<NodeItem>& MigrateNodesSpec::getNodes()

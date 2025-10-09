@@ -6,6 +6,7 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/cce/v3/model/AccessPolicy.h>
 #include <huaweicloud/cce/v3/model/AddNodeList.h>
 #include <huaweicloud/cce/v3/model/AddNodeRequest.h>
 #include <huaweicloud/cce/v3/model/AddNodeResponse.h>
@@ -32,6 +33,8 @@
 #include <huaweicloud/cce/v3/model/ClusterNodeInformation.h>
 #include <huaweicloud/cce/v3/model/ContinueUpgradeClusterTaskRequest.h>
 #include <huaweicloud/cce/v3/model/ContinueUpgradeClusterTaskResponse.h>
+#include <huaweicloud/cce/v3/model/CreateAccessPolicyRequest.h>
+#include <huaweicloud/cce/v3/model/CreateAccessPolicyResponse.h>
 #include <huaweicloud/cce/v3/model/CreateAddonInstanceRequest.h>
 #include <huaweicloud/cce/v3/model/CreateAddonInstanceResponse.h>
 #include <huaweicloud/cce/v3/model/CreateCloudPersistentVolumeClaimsRequest.h>
@@ -58,6 +61,8 @@
 #include <huaweicloud/cce/v3/model/CreateUpgradeWorkFlowRequest.h>
 #include <huaweicloud/cce/v3/model/CreateUpgradeWorkFlowRequestBody.h>
 #include <huaweicloud/cce/v3/model/CreateUpgradeWorkFlowResponse.h>
+#include <huaweicloud/cce/v3/model/DeleteAccessPolicyRequest.h>
+#include <huaweicloud/cce/v3/model/DeleteAccessPolicyResponse.h>
 #include <huaweicloud/cce/v3/model/DeleteAddonInstanceRequest.h>
 #include <huaweicloud/cce/v3/model/DeleteAddonInstanceResponse.h>
 #include <huaweicloud/cce/v3/model/DeleteChartRequest.h>
@@ -74,9 +79,28 @@
 #include <huaweicloud/cce/v3/model/DeleteReleaseResponse.h>
 #include <huaweicloud/cce/v3/model/DownloadChartRequest.h>
 #include <huaweicloud/cce/v3/model/DownloadChartResponse.h>
+#include <huaweicloud/cce/v3/model/GetAccessPolicyRequest.h>
+#include <huaweicloud/cce/v3/model/GetAccessPolicyResponse.h>
+#include <huaweicloud/cce/v3/model/GetAvailableZoneResponseBody.h>
+#include <huaweicloud/cce/v3/model/GetAvaliableZoneRequest.h>
+#include <huaweicloud/cce/v3/model/GetAvaliableZoneResponse.h>
+#include <huaweicloud/cce/v3/model/GetClusterFlavorSpecsRequest.h>
+#include <huaweicloud/cce/v3/model/GetClusterFlavorSpecsResponse.h>
+#include <huaweicloud/cce/v3/model/GetClusterQuotaRequest.h>
+#include <huaweicloud/cce/v3/model/GetClusterQuotaResponse.h>
+#include <huaweicloud/cce/v3/model/GetClusterSupportConfigurationRequest.h>
+#include <huaweicloud/cce/v3/model/GetClusterSupportConfigurationResponse.h>
+#include <huaweicloud/cce/v3/model/GetCustomizeTagsRequest.h>
+#include <huaweicloud/cce/v3/model/GetCustomizeTagsResponse.h>
+#include <huaweicloud/cce/v3/model/GetLabelsRequest.h>
+#include <huaweicloud/cce/v3/model/GetLabelsResponse.h>
+#include <huaweicloud/cce/v3/model/GetResourceTagsRequest.h>
+#include <huaweicloud/cce/v3/model/GetResourceTagsResponse.h>
 #include <huaweicloud/cce/v3/model/HibernateClusterRequest.h>
 #include <huaweicloud/cce/v3/model/HibernateClusterResponse.h>
 #include <huaweicloud/cce/v3/model/InstanceRequest.h>
+#include <huaweicloud/cce/v3/model/ListAccessPolicyRequest.h>
+#include <huaweicloud/cce/v3/model/ListAccessPolicyResponse.h>
 #include <huaweicloud/cce/v3/model/ListAddonInstancesRequest.h>
 #include <huaweicloud/cce/v3/model/ListAddonInstancesResponse.h>
 #include <huaweicloud/cce/v3/model/ListAddonTemplatesRequest.h>
@@ -155,10 +179,10 @@
 #include <huaweicloud/cce/v3/model/ShowClusterEndpointsResponse.h>
 #include <huaweicloud/cce/v3/model/ShowClusterRequest.h>
 #include <huaweicloud/cce/v3/model/ShowClusterResponse.h>
-#include <huaweicloud/cce/v3/model/ShowClusterSupportConfigurationRequest.h>
-#include <huaweicloud/cce/v3/model/ShowClusterSupportConfigurationResponse.h>
 #include <huaweicloud/cce/v3/model/ShowClusterUpgradeInfoRequest.h>
 #include <huaweicloud/cce/v3/model/ShowClusterUpgradeInfoResponse.h>
+#include <huaweicloud/cce/v3/model/ShowFeatureGatesRequest.h>
+#include <huaweicloud/cce/v3/model/ShowFeatureGatesResponse.h>
 #include <huaweicloud/cce/v3/model/ShowNodePoolConfigurationDetailsRequest.h>
 #include <huaweicloud/cce/v3/model/ShowNodePoolConfigurationDetailsResponse.h>
 #include <huaweicloud/cce/v3/model/ShowNodePoolConfigurationsRequest.h>
@@ -188,6 +212,8 @@
 #include <huaweicloud/cce/v3/model/UnlockNodeScaledownRequestBody.h>
 #include <huaweicloud/cce/v3/model/UnlockNodepoolNodeScaleDownRequest.h>
 #include <huaweicloud/cce/v3/model/UnlockNodepoolNodeScaleDownResponse.h>
+#include <huaweicloud/cce/v3/model/UpdateAccessPolicyRequest.h>
+#include <huaweicloud/cce/v3/model/UpdateAccessPolicyResponse.h>
 #include <huaweicloud/cce/v3/model/UpdateAddonInstanceRequest.h>
 #include <huaweicloud/cce/v3/model/UpdateAddonInstanceResponse.h>
 #include <huaweicloud/cce/v3/model/UpdateClusterEipRequest.h>
@@ -433,6 +459,14 @@ public:
     std::shared_ptr<ContinueUpgradeClusterTaskResponse> continueUpgradeClusterTask(
         ContinueUpgradeClusterTaskRequest &request
     );
+    // 创建访问策略
+    //
+    // 该API用于创建访问策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAccessPolicyResponse> createAccessPolicy(
+        CreateAccessPolicyRequest &request
+    );
     // 创建AddonInstance
     //
     // 根据提供的插件模板，安装插件实例。
@@ -546,6 +580,14 @@ public:
     std::shared_ptr<CreateUpgradeWorkFlowResponse> createUpgradeWorkFlow(
         CreateUpgradeWorkFlowRequest &request
     );
+    // 删除访问策略
+    //
+    // 该API用于删除单个访问策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAccessPolicyResponse> deleteAccessPolicy(
+        DeleteAccessPolicyRequest &request
+    );
     // 删除AddonInstance
     //
     // 删除插件实例的功能。
@@ -614,6 +656,71 @@ public:
     std::shared_ptr<DownloadChartResponse> downloadChart(
         DownloadChartRequest &request
     );
+    // 获取访问策略详情
+    //
+    // 该API用于获取单个访问策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetAccessPolicyResponse> getAccessPolicy(
+        GetAccessPolicyRequest &request
+    );
+    // 查询可用区列表
+    //
+    // 该API用于查询可用区列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetAvaliableZoneResponse> getAvaliableZone(
+        GetAvaliableZoneRequest &request
+    );
+    // 查询集群可售卖规格
+    //
+    // 该API用于查询集群可售卖规格
+    // &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetClusterFlavorSpecsResponse> getClusterFlavorSpecs(
+        GetClusterFlavorSpecsRequest &request
+    );
+    // 获取集群配额
+    //
+    // 该API用于获取集群配额
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetClusterQuotaResponse> getClusterQuota(
+        GetClusterQuotaRequest &request
+    );
+    // 获取集群支持的可配置参数列表
+    //
+    // 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetClusterSupportConfigurationResponse> getClusterSupportConfiguration(
+        GetClusterSupportConfigurationRequest &request
+    );
+    // 查询自定义标签
+    //
+    // 该API用于查询自定义标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetCustomizeTagsResponse> getCustomizeTags(
+        GetCustomizeTagsRequest &request
+    );
+    // 获取节点标签
+    //
+    // 该API用于获取集群所有节点的标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetLabelsResponse> getLabels(
+        GetLabelsRequest &request
+    );
+    // 查询资源标签
+    //
+    // 该API用于查询资源标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetResourceTagsResponse> getResourceTags(
+        GetResourceTagsRequest &request
+    );
     // 集群休眠
     //
     // 集群休眠用于将运行中的集群置于休眠状态，休眠后，将不再收取控制节点资源费用。
@@ -621,6 +728,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<HibernateClusterResponse> hibernateCluster(
         HibernateClusterRequest &request
+    );
+    // 获取访问策略列表
+    //
+    // 该API用于获取访问策略列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAccessPolicyResponse> listAccessPolicy(
+        ListAccessPolicyRequest &request
     );
     // 获取AddonInstance列表
     //
@@ -890,14 +1005,6 @@ public:
     std::shared_ptr<ShowClusterEndpointsResponse> showClusterEndpoints(
         ShowClusterEndpointsRequest &request
     );
-    // 根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定
-    //
-    // 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowClusterSupportConfigurationResponse> showClusterSupportConfiguration(
-        ShowClusterSupportConfigurationRequest &request
-    );
     // 获取集群升级相关信息
     //
     // 获取集群升级相关信息
@@ -905,6 +1012,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowClusterUpgradeInfoResponse> showClusterUpgradeInfo(
         ShowClusterUpgradeInfoRequest &request
+    );
+    // 查询特性开关状态
+    //
+    // 该API用于查询特性开关状态
+    // &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFeatureGatesResponse> showFeatureGates(
+        ShowFeatureGatesRequest &request
     );
     // 获取指定的节点
     //
@@ -1021,6 +1137,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UnlockNodepoolNodeScaleDownResponse> unlockNodepoolNodeScaleDown(
         UnlockNodepoolNodeScaleDownRequest &request
+    );
+    // 更新访问策略
+    //
+    // 该API用于更新单个访问策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAccessPolicyResponse> updateAccessPolicy(
+        UpdateAccessPolicyRequest &request
     );
     // 更新AddonInstance
     //

@@ -14,7 +14,6 @@ PersistentVolumeClaimMetadata::PersistentVolumeClaimMetadata()
 {
     name_ = "";
     nameIsSet_ = false;
-    labels_ = "";
     labelsIsSet_ = false;
 }
 
@@ -54,7 +53,7 @@ bool PersistentVolumeClaimMetadata::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("labels"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::map<std::string, std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLabels(refVal);
         }
@@ -84,12 +83,12 @@ void PersistentVolumeClaimMetadata::unsetname()
     nameIsSet_ = false;
 }
 
-std::string PersistentVolumeClaimMetadata::getLabels() const
+std::map<std::string, std::string>& PersistentVolumeClaimMetadata::getLabels()
 {
     return labels_;
 }
 
-void PersistentVolumeClaimMetadata::setLabels(const std::string& value)
+void PersistentVolumeClaimMetadata::setLabels(const std::map<std::string, std::string>& value)
 {
     labels_ = value;
     labelsIsSet_ = true;

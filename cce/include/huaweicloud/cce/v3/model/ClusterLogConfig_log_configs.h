@@ -39,7 +39,7 @@ public:
     /// ClusterLogConfig_log_configs members
 
     /// <summary>
-    /// 日志类型
+    /// **参数解释**： 日志类型 **约束限制**： 必须为 **kube-apiserver**、**kube-controller-manager**、**kube-scheduler**、**audit** 或者系统插件名称 **取值范围**： - kube-apiserver：采集kube-apiserver组件日志 - kube-controller-manager：采集kube-controller-manager日志 - kube-scheduler：采集kube-scheduler日志 - audit：采集审计日志 - 系统插件名称：采集插件日志  **默认取值**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -48,7 +48,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 是否采集
+    /// **参数解释**： 是否采集 **取值范围**： - true：开启日志采集 - false：关闭日志采集
     /// </summary>
 
     bool isEnable() const;
@@ -57,7 +57,7 @@ public:
     void setEnable(bool value);
 
     /// <summary>
-    /// 组件类型
+    /// **参数解释**： 组件类型 , 合法取值为control，audit，system-addon。 **约束限制**： - 仅查询集群日志配置信息接口响应中返回该参数 - 作为**配置集群日志**接口更新参数时不支持配置  **取值范围**： - control: 控制面组件日志。 - audit: 控制面审计日志。 - system-addon: 系统插件日志。 **默认取值**： 不涉及
     /// </summary>
 
     std::string getType() const;

@@ -292,6 +292,47 @@ std::shared_ptr<ContinueUpgradeClusterTaskResponse> CceClient::continueUpgradeCl
 
     return localVarResult;
 }
+std::shared_ptr<CreateAccessPolicyResponse> CceClient::createAccessPolicy(CreateAccessPolicyRequest &request)
+{
+    std::string localVarPath = "/api/v3/access-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForCreateAccessPolicy());
+
+    std::shared_ptr<CreateAccessPolicyResponse> localVarResult = std::make_shared<CreateAccessPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateAddonInstanceResponse> CceClient::createAddonInstance(CreateAddonInstanceRequest &request)
 {
     std::string localVarPath = "/api/v3/addons";
@@ -788,6 +829,36 @@ std::shared_ptr<CreateUpgradeWorkFlowResponse> CceClient::createUpgradeWorkFlow(
 
     return localVarResult;
 }
+std::shared_ptr<DeleteAccessPolicyResponse> CceClient::deleteAccessPolicy(DeleteAccessPolicyRequest &request)
+{
+    std::string localVarPath = "/api/v3/access-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForDeleteAccessPolicy());
+
+    std::shared_ptr<DeleteAccessPolicyResponse> localVarResult = std::make_shared<DeleteAccessPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteAddonInstanceResponse> CceClient::deleteAddonInstance(DeleteAddonInstanceRequest &request)
 {
     std::string localVarPath = "/api/v3/addons/{id}";
@@ -1047,6 +1118,9 @@ std::shared_ptr<DeleteReleaseResponse> CceClient::deleteRelease(DeleteReleaseReq
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.showResourcesIsSet()) {
+        localVarQueryParams["show_resources"] = parameterToString(request.getShowResources());
+    }
 
     std::string localVarHttpBody;
 
@@ -1090,6 +1164,261 @@ std::shared_ptr<DownloadChartResponse> CceClient::downloadChart(DownloadChartReq
 
     return localVarResult;
 }
+std::shared_ptr<GetAccessPolicyResponse> CceClient::getAccessPolicy(GetAccessPolicyRequest &request)
+{
+    std::string localVarPath = "/api/v3/access-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetAccessPolicy());
+
+    std::shared_ptr<GetAccessPolicyResponse> localVarResult = std::make_shared<GetAccessPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetAvaliableZoneResponse> CceClient::getAvaliableZone(GetAvaliableZoneRequest &request)
+{
+    std::string localVarPath = "/api/v2/availabilityZones";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.localeIsSet()) {
+        localVarQueryParams["locale"] = parameterToString(request.getLocale());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetAvaliableZone());
+
+    std::shared_ptr<GetAvaliableZoneResponse> localVarResult = std::make_shared<GetAvaliableZoneResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetClusterFlavorSpecsResponse> CceClient::getClusterFlavorSpecs(GetClusterFlavorSpecsRequest &request)
+{
+    std::string localVarPath = "/api/v2/flavor/specifications";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterTypeIsSet()) {
+        localVarQueryParams["clusterType"] = parameterToString(request.getClusterType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetClusterFlavorSpecs());
+
+    std::shared_ptr<GetClusterFlavorSpecsResponse> localVarResult = std::make_shared<GetClusterFlavorSpecsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetClusterQuotaResponse> CceClient::getClusterQuota(GetClusterQuotaRequest &request)
+{
+    std::string localVarPath = "/cce/v1/projects/{project_id}/quota";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetClusterQuota());
+
+    std::shared_ptr<GetClusterQuotaResponse> localVarResult = std::make_shared<GetClusterQuotaResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetClusterSupportConfigurationResponse> CceClient::getClusterSupportConfiguration(GetClusterSupportConfigurationRequest &request)
+{
+    std::string localVarPath = "/api/v3/clusters/configuration/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterTypeIsSet()) {
+        localVarQueryParams["clusterType"] = parameterToString(request.getClusterType());
+    }
+    if (request.clusterVersionIsSet()) {
+        localVarQueryParams["clusterVersion"] = parameterToString(request.getClusterVersion());
+    }
+    if (request.clusterIDIsSet()) {
+        localVarQueryParams["clusterID"] = parameterToString(request.getClusterID());
+    }
+    if (request.networkModeIsSet()) {
+        localVarQueryParams["networkMode"] = parameterToString(request.getNetworkMode());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetClusterSupportConfiguration());
+
+    std::shared_ptr<GetClusterSupportConfigurationResponse> localVarResult = std::make_shared<GetClusterSupportConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetCustomizeTagsResponse> CceClient::getCustomizeTags(GetCustomizeTagsRequest &request)
+{
+    std::string localVarPath = "/cce/v1/{project_id}/{resource_type}/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["resource_type"] = parameterToString(request.getResourceType());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetCustomizeTags());
+
+    std::shared_ptr<GetCustomizeTagsResponse> localVarResult = std::make_shared<GetCustomizeTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetLabelsResponse> CceClient::getLabels(GetLabelsRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/labels";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetLabels());
+
+    std::shared_ptr<GetLabelsResponse> localVarResult = std::make_shared<GetLabelsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetResourceTagsResponse> CceClient::getResourceTags(GetResourceTagsRequest &request)
+{
+    std::string localVarPath = "/cce/v1/{project_id}/{resource_type}/{resource_id}/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["resource_type"] = parameterToString(request.getResourceType());
+    localVarPathParams["resource_id"] = parameterToString(request.getResourceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetResourceTags());
+
+    std::shared_ptr<GetResourceTagsResponse> localVarResult = std::make_shared<GetResourceTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<HibernateClusterResponse> CceClient::hibernateCluster(HibernateClusterRequest &request)
 {
     std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/hibernate";
@@ -1114,6 +1443,38 @@ std::shared_ptr<HibernateClusterResponse> CceClient::hibernateCluster(HibernateC
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForHibernateCluster());
 
     std::shared_ptr<HibernateClusterResponse> localVarResult = std::make_shared<HibernateClusterResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListAccessPolicyResponse> CceClient::listAccessPolicy(ListAccessPolicyRequest &request)
+{
+    std::string localVarPath = "/api/v3/access-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForListAccessPolicy());
+
+    std::shared_ptr<ListAccessPolicyResponse> localVarResult = std::make_shared<ListAccessPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2208,47 +2569,6 @@ std::shared_ptr<ShowClusterEndpointsResponse> CceClient::showClusterEndpoints(Sh
 
     return localVarResult;
 }
-std::shared_ptr<ShowClusterSupportConfigurationResponse> CceClient::showClusterSupportConfiguration(ShowClusterSupportConfigurationRequest &request)
-{
-    std::string localVarPath = "/api/v3/clusters/configuration/detail";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.clusterIdIsSet()) {
-        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
-    }
-    if (request.clusterTypeIsSet()) {
-        localVarQueryParams["cluster_type"] = parameterToString(request.getClusterType());
-    }
-    if (request.clusterVersionIsSet()) {
-        localVarQueryParams["cluster_version"] = parameterToString(request.getClusterVersion());
-    }
-    if (request.networkModeIsSet()) {
-        localVarQueryParams["network_mode"] = parameterToString(request.getNetworkMode());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForShowClusterSupportConfiguration());
-
-    std::shared_ptr<ShowClusterSupportConfigurationResponse> localVarResult = std::make_shared<ShowClusterSupportConfigurationResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ShowClusterUpgradeInfoResponse> CceClient::showClusterUpgradeInfo(ShowClusterUpgradeInfoRequest &request)
 {
     std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo";
@@ -2273,6 +2593,35 @@ std::shared_ptr<ShowClusterUpgradeInfoResponse> CceClient::showClusterUpgradeInf
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForShowClusterUpgradeInfo());
 
     std::shared_ptr<ShowClusterUpgradeInfoResponse> localVarResult = std::make_shared<ShowClusterUpgradeInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowFeatureGatesResponse> CceClient::showFeatureGates(ShowFeatureGatesRequest &request)
+{
+    std::string localVarPath = "/api/v3.1/feature-gates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForShowFeatureGates());
+
+    std::shared_ptr<ShowFeatureGatesResponse> localVarResult = std::make_shared<ShowFeatureGatesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2519,6 +2868,9 @@ std::shared_ptr<ShowReleaseResponse> CceClient::showRelease(ShowReleaseRequest &
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.showResourcesIsSet()) {
+        localVarQueryParams["show_resources"] = parameterToString(request.getShowResources());
+    }
 
     std::string localVarHttpBody;
 
@@ -2716,6 +3068,48 @@ std::shared_ptr<UnlockNodepoolNodeScaleDownResponse> CceClient::unlockNodepoolNo
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForUnlockNodepoolNodeScaleDown());
 
     std::shared_ptr<UnlockNodepoolNodeScaleDownResponse> localVarResult = std::make_shared<UnlockNodepoolNodeScaleDownResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateAccessPolicyResponse> CceClient::updateAccessPolicy(UpdateAccessPolicyRequest &request)
+{
+    std::string localVarPath = "/api/v3/access-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForUpdateAccessPolicy());
+
+    std::shared_ptr<UpdateAccessPolicyResponse> localVarResult = std::make_shared<UpdateAccessPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3053,6 +3447,9 @@ std::shared_ptr<UpdateReleaseResponse> CceClient::updateRelease(UpdateReleaseReq
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.showResourcesIsSet()) {
+        localVarQueryParams["show_resources"] = parameterToString(request.getShowResources());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

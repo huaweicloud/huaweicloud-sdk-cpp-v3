@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cce/v3/model/MigrateServerConfig.h>
 #include <huaweicloud/cce/v3/model/NodeItem.h>
 #include <string>
 #include <huaweicloud/cce/v3/model/Runtime.h>
@@ -80,6 +81,15 @@ public:
     void setRuntime(const Runtime& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    MigrateServerConfig getServerConfig() const;
+    bool serverConfigIsSet() const;
+    void unsetserverConfig();
+    void setServerConfig(const MigrateServerConfig& value);
+
+    /// <summary>
     /// 待操作节点列表
     /// </summary>
 
@@ -98,6 +108,8 @@ protected:
     bool loginIsSet_;
     Runtime runtime_;
     bool runtimeIsSet_;
+    MigrateServerConfig serverConfig_;
+    bool serverConfigIsSet_;
     std::vector<NodeItem> nodes_;
     bool nodesIsSet_;
 

@@ -65,6 +65,15 @@ public:
     void unsetpatchAvailable();
     void setPatchAvailable(bool value);
 
+    /// <summary>
+    /// 数据库的完整版本号。
+    /// </summary>
+
+    std::string getWholeVersion() const;
+    bool wholeVersionIsSet() const;
+    void unsetwholeVersion();
+    void setWholeVersion(const std::string& value);
+
 
 protected:
     std::string type_;
@@ -73,6 +82,8 @@ protected:
     bool versionIsSet_;
     bool patchAvailable_;
     bool patchAvailableIsSet_;
+    std::string wholeVersion_;
+    bool wholeVersionIsSet_;
 
 };
 

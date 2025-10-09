@@ -15,6 +15,10 @@ Login::Login()
     sshKey_ = "";
     sshKeyIsSet_ = false;
     userPasswordIsSet_ = false;
+    removeUserPassword_ = false;
+    removeUserPasswordIsSet_ = false;
+    removeSSHKey_ = false;
+    removeSSHKeyIsSet_ = false;
 }
 
 Login::~Login() = default;
@@ -32,6 +36,12 @@ web::json::value Login::toJson() const
     }
     if(userPasswordIsSet_) {
         val[utility::conversions::to_string_t("userPassword")] = ModelBase::toJson(userPassword_);
+    }
+    if(removeUserPasswordIsSet_) {
+        val[utility::conversions::to_string_t("removeUserPassword")] = ModelBase::toJson(removeUserPassword_);
+    }
+    if(removeSSHKeyIsSet_) {
+        val[utility::conversions::to_string_t("removeSSHKey")] = ModelBase::toJson(removeSSHKey_);
     }
 
     return val;
@@ -56,6 +66,24 @@ bool Login::fromJson(const web::json::value& val)
             UserPassword refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserPassword(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("removeUserPassword"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("removeUserPassword"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemoveUserPassword(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("removeSSHKey"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("removeSSHKey"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemoveSSHKey(refVal);
         }
     }
     return ok;
@@ -102,6 +130,48 @@ bool Login::userPasswordIsSet() const
 void Login::unsetuserPassword()
 {
     userPasswordIsSet_ = false;
+}
+
+bool Login::isRemoveUserPassword() const
+{
+    return removeUserPassword_;
+}
+
+void Login::setRemoveUserPassword(bool value)
+{
+    removeUserPassword_ = value;
+    removeUserPasswordIsSet_ = true;
+}
+
+bool Login::removeUserPasswordIsSet() const
+{
+    return removeUserPasswordIsSet_;
+}
+
+void Login::unsetremoveUserPassword()
+{
+    removeUserPasswordIsSet_ = false;
+}
+
+bool Login::isRemoveSSHKey() const
+{
+    return removeSSHKey_;
+}
+
+void Login::setRemoveSSHKey(bool value)
+{
+    removeSSHKey_ = value;
+    removeSSHKeyIsSet_ = true;
+}
+
+bool Login::removeSSHKeyIsSet() const
+{
+    return removeSSHKeyIsSet_;
+}
+
+void Login::unsetremoveSSHKey()
+{
+    removeSSHKeyIsSet_ = false;
 }
 
 }

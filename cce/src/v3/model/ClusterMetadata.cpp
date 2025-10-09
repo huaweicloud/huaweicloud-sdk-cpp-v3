@@ -24,6 +24,8 @@ ClusterMetadata::ClusterMetadata()
     creationTimestampIsSet_ = false;
     updateTimestamp_ = "";
     updateTimestampIsSet_ = false;
+    timezone_ = "";
+    timezoneIsSet_ = false;
 }
 
 ClusterMetadata::~ClusterMetadata() = default;
@@ -56,6 +58,9 @@ web::json::value ClusterMetadata::toJson() const
     }
     if(updateTimestampIsSet_) {
         val[utility::conversions::to_string_t("updateTimestamp")] = ModelBase::toJson(updateTimestamp_);
+    }
+    if(timezoneIsSet_) {
+        val[utility::conversions::to_string_t("timezone")] = ModelBase::toJson(timezone_);
     }
 
     return val;
@@ -125,6 +130,15 @@ bool ClusterMetadata::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdateTimestamp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("timezone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("timezone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTimezone(refVal);
         }
     }
     return ok;
@@ -276,6 +290,27 @@ bool ClusterMetadata::updateTimestampIsSet() const
 void ClusterMetadata::unsetupdateTimestamp()
 {
     updateTimestampIsSet_ = false;
+}
+
+std::string ClusterMetadata::getTimezone() const
+{
+    return timezone_;
+}
+
+void ClusterMetadata::setTimezone(const std::string& value)
+{
+    timezone_ = value;
+    timezoneIsSet_ = true;
+}
+
+bool ClusterMetadata::timezoneIsSet() const
+{
+    return timezoneIsSet_;
+}
+
+void ClusterMetadata::unsettimezone()
+{
+    timezoneIsSet_ = false;
 }
 
 }

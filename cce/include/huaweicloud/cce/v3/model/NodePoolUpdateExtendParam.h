@@ -83,6 +83,15 @@ public:
     void unsetsecurityReinforcementType();
     void setSecurityReinforcementType(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 节点自定义镜像ID，从IMS控制台获取，需要使用自定义镜像时用此参数。 **约束限制**： 不涉及 [&gt; - 若指定了extendParam中的securityReinforcementType参数为cybersecurity，节点将开启安全等保加固功能，则节点的操作系统类型必须使用HCE2.0。](tag:hws)  **取值范围**： 不涉及 **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getAlphaCceNodeImageID() const;
+    bool alphaCceNodeImageIDIsSet() const;
+    void unsetalphaCceNodeImageID();
+    void setAlphaCceNodeImageID(const std::string& value);
+
 
 protected:
     std::string agencyName_;
@@ -95,6 +104,8 @@ protected:
     bool spotPriceIsSet_;
     std::string securityReinforcementType_;
     bool securityReinforcementTypeIsSet_;
+    std::string alphaCceNodeImageID_;
+    bool alphaCceNodeImageIDIsSet_;
 
 };
 

@@ -14,6 +14,7 @@ ResizeClusterRequestBody::ResizeClusterRequestBody()
 {
     flavorResize_ = "";
     flavorResizeIsSet_ = false;
+    skippedTasksIsSet_ = false;
     extendParamIsSet_ = false;
 }
 
@@ -29,6 +30,9 @@ web::json::value ResizeClusterRequestBody::toJson() const
 
     if(flavorResizeIsSet_) {
         val[utility::conversions::to_string_t("flavorResize")] = ModelBase::toJson(flavorResize_);
+    }
+    if(skippedTasksIsSet_) {
+        val[utility::conversions::to_string_t("skippedTasks")] = ModelBase::toJson(skippedTasks_);
     }
     if(extendParamIsSet_) {
         val[utility::conversions::to_string_t("extendParam")] = ModelBase::toJson(extendParam_);
@@ -47,6 +51,15 @@ bool ResizeClusterRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFlavorResize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("skippedTasks"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("skippedTasks"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSkippedTasks(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("extendParam"))) {
@@ -81,6 +94,27 @@ bool ResizeClusterRequestBody::flavorResizeIsSet() const
 void ResizeClusterRequestBody::unsetflavorResize()
 {
     flavorResizeIsSet_ = false;
+}
+
+std::vector<std::string>& ResizeClusterRequestBody::getSkippedTasks()
+{
+    return skippedTasks_;
+}
+
+void ResizeClusterRequestBody::setSkippedTasks(const std::vector<std::string>& value)
+{
+    skippedTasks_ = value;
+    skippedTasksIsSet_ = true;
+}
+
+bool ResizeClusterRequestBody::skippedTasksIsSet() const
+{
+    return skippedTasksIsSet_;
+}
+
+void ResizeClusterRequestBody::unsetskippedTasks()
+{
+    skippedTasksIsSet_ = false;
 }
 
 ResizeClusterRequestBody_extendParam ResizeClusterRequestBody::getExtendParam() const

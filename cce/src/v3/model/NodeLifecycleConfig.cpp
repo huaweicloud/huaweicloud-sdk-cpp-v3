@@ -16,6 +16,8 @@ NodeLifecycleConfig::NodeLifecycleConfig()
     preInstallIsSet_ = false;
     postInstall_ = "";
     postInstallIsSet_ = false;
+    waitPostInstallFinish_ = false;
+    waitPostInstallFinishIsSet_ = false;
 }
 
 NodeLifecycleConfig::~NodeLifecycleConfig() = default;
@@ -33,6 +35,9 @@ web::json::value NodeLifecycleConfig::toJson() const
     }
     if(postInstallIsSet_) {
         val[utility::conversions::to_string_t("postInstall")] = ModelBase::toJson(postInstall_);
+    }
+    if(waitPostInstallFinishIsSet_) {
+        val[utility::conversions::to_string_t("waitPostInstallFinish")] = ModelBase::toJson(waitPostInstallFinish_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool NodeLifecycleConfig::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPostInstall(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("waitPostInstallFinish"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("waitPostInstallFinish"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWaitPostInstallFinish(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool NodeLifecycleConfig::postInstallIsSet() const
 void NodeLifecycleConfig::unsetpostInstall()
 {
     postInstallIsSet_ = false;
+}
+
+bool NodeLifecycleConfig::isWaitPostInstallFinish() const
+{
+    return waitPostInstallFinish_;
+}
+
+void NodeLifecycleConfig::setWaitPostInstallFinish(bool value)
+{
+    waitPostInstallFinish_ = value;
+    waitPostInstallFinishIsSet_ = true;
+}
+
+bool NodeLifecycleConfig::waitPostInstallFinishIsSet() const
+{
+    return waitPostInstallFinishIsSet_;
+}
+
+void NodeLifecycleConfig::unsetwaitPostInstallFinish()
+{
+    waitPostInstallFinishIsSet_ = false;
 }
 
 }

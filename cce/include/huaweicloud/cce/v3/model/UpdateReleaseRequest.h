@@ -58,6 +58,15 @@ public:
     void setNamespace(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** 是否展示模板实例的资源信息。 **约束限制：** 不涉及 **取值范围：** 指定为“true”时展示模板实例的资源信息，不指定该参数时默认不展示。 **默认取值：** 无
+    /// </summary>
+
+    std::string getShowResources() const;
+    bool showResourcesIsSet() const;
+    void unsetshowResources();
+    void setShowResources(const std::string& value);
+
+    /// <summary>
     /// 集群ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
     /// </summary>
 
@@ -81,6 +90,8 @@ protected:
     bool nameIsSet_;
     std::string namespace_;
     bool namespaceIsSet_;
+    std::string showResources_;
+    bool showResourcesIsSet_;
     std::string clusterId_;
     bool clusterIdIsSet_;
     UpdateReleaseReqBody body_;

@@ -16,7 +16,6 @@ ImageCacheDetail::ImageCacheDetail()
     nameIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
-    createdAt_ = "";
     createdAtIsSet_ = false;
     imagesIsSet_ = false;
     imageCacheSize_ = 0;
@@ -96,7 +95,7 @@ bool ImageCacheDetail::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_at"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            utility::datetime refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreatedAt(refVal);
         }
@@ -201,12 +200,12 @@ void ImageCacheDetail::unsetid()
     idIsSet_ = false;
 }
 
-std::string ImageCacheDetail::getCreatedAt() const
+utility::datetime ImageCacheDetail::getCreatedAt() const
 {
     return createdAt_;
 }
 
-void ImageCacheDetail::setCreatedAt(const std::string& value)
+void ImageCacheDetail::setCreatedAt(const utility::datetime& value)
 {
     createdAt_ = value;
     createdAtIsSet_ = true;

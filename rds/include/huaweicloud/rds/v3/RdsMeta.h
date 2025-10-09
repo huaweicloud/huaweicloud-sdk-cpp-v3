@@ -52,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForListBackupTransfers();
     static HttpRequestDef genRequestDefForListBackups();
     static HttpRequestDef genRequestDefForListCollations();
+    static HttpRequestDef genRequestDefForListConfigurationApplyHistories();
     static HttpRequestDef genRequestDefForListConfigurations();
     static HttpRequestDef genRequestDefForListDatastores();
     static HttpRequestDef genRequestDefForListDrInfos();
@@ -68,6 +69,7 @@ public:
     static HttpRequestDef genRequestDefForListInstanceParamHistories();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
+    static HttpRequestDef genRequestDefForListInstancesConfigurations();
     static HttpRequestDef genRequestDefForListInstancesInfoDiagnosis();
     static HttpRequestDef genRequestDefForListInstancesSupportFastRestore();
     static HttpRequestDef genRequestDefForListJobInfo();

@@ -11,6 +11,7 @@
 
 #include <huaweicloud/cce/v3/model/ResizeClusterRequestBody_extendParam.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -49,6 +50,15 @@ public:
     void setFlavorResize(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 该参数用于控制集群规格变更时跳过部分任务。 **约束限制**： 无 **取值范围**： - IngressChecker: 集群规格变更时跳过Ingress与ELB配置一致性检查  &gt; - 跳过Ingress与ELB配置一致性检查可能导致业务中断，请谨慎操作！ &gt; - 集群不可用或者过载时，必须跳过Ingress与ELB配置一致性检查，否则会导致集群规格变更失败。[请确保变更集群规格前已按 [ELB Ingress与ELB配置不一致如何处理？](https://support.huaweicloud.com/cce_faq/cce_faq_00493.html) 指南解决一致性问题。](tag:hws)[请确保变更集群规格前已按 [ELB Ingress与ELB配置不一致如何处理？](https://support.huaweicloud.com/intl/zh-cn/cce_faq/cce_faq_00493.html) 指南解决一致性问题。](tag:hws_hk)  **默认取值**： 集群不可用时默认包含IngressChecker
+    /// </summary>
+
+    std::vector<std::string>& getSkippedTasks();
+    bool skippedTasksIsSet() const;
+    void unsetskippedTasks();
+    void setSkippedTasks(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -61,6 +71,8 @@ public:
 protected:
     std::string flavorResize_;
     bool flavorResizeIsSet_;
+    std::vector<std::string> skippedTasks_;
+    bool skippedTasksIsSet_;
     ResizeClusterRequestBody_extendParam extendParam_;
     bool extendParamIsSet_;
 

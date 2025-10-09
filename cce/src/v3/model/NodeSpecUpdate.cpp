@@ -14,6 +14,8 @@ NodeSpecUpdate::NodeSpecUpdate()
 {
     flavor_ = "";
     flavorIsSet_ = false;
+    az_ = "";
+    azIsSet_ = false;
     os_ = "";
     osIsSet_ = false;
     loginIsSet_ = false;
@@ -22,6 +24,8 @@ NodeSpecUpdate::NodeSpecUpdate()
     storageIsSet_ = false;
     runtimeIsSet_ = false;
     taintsIsSet_ = false;
+    waitPostInstallFinish_ = false;
+    waitPostInstallFinishIsSet_ = false;
     k8sTagsIsSet_ = false;
     ecsGroupId_ = "";
     ecsGroupIdIsSet_ = false;
@@ -50,6 +54,9 @@ web::json::value NodeSpecUpdate::toJson() const
     if(flavorIsSet_) {
         val[utility::conversions::to_string_t("flavor")] = ModelBase::toJson(flavor_);
     }
+    if(azIsSet_) {
+        val[utility::conversions::to_string_t("az")] = ModelBase::toJson(az_);
+    }
     if(osIsSet_) {
         val[utility::conversions::to_string_t("os")] = ModelBase::toJson(os_);
     }
@@ -70,6 +77,9 @@ web::json::value NodeSpecUpdate::toJson() const
     }
     if(taintsIsSet_) {
         val[utility::conversions::to_string_t("taints")] = ModelBase::toJson(taints_);
+    }
+    if(waitPostInstallFinishIsSet_) {
+        val[utility::conversions::to_string_t("waitPostInstallFinish")] = ModelBase::toJson(waitPostInstallFinish_);
     }
     if(k8sTagsIsSet_) {
         val[utility::conversions::to_string_t("k8sTags")] = ModelBase::toJson(k8sTags_);
@@ -115,6 +125,15 @@ bool NodeSpecUpdate::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFlavor(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("az"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("az"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAz(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os"))) {
@@ -178,6 +197,15 @@ bool NodeSpecUpdate::fromJson(const web::json::value& val)
             std::vector<Taint> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaints(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("waitPostInstallFinish"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("waitPostInstallFinish"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWaitPostInstallFinish(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("k8sTags"))) {
@@ -293,6 +321,27 @@ bool NodeSpecUpdate::flavorIsSet() const
 void NodeSpecUpdate::unsetflavor()
 {
     flavorIsSet_ = false;
+}
+
+std::string NodeSpecUpdate::getAz() const
+{
+    return az_;
+}
+
+void NodeSpecUpdate::setAz(const std::string& value)
+{
+    az_ = value;
+    azIsSet_ = true;
+}
+
+bool NodeSpecUpdate::azIsSet() const
+{
+    return azIsSet_;
+}
+
+void NodeSpecUpdate::unsetaz()
+{
+    azIsSet_ = false;
 }
 
 std::string NodeSpecUpdate::getOs() const
@@ -440,6 +489,27 @@ bool NodeSpecUpdate::taintsIsSet() const
 void NodeSpecUpdate::unsettaints()
 {
     taintsIsSet_ = false;
+}
+
+bool NodeSpecUpdate::isWaitPostInstallFinish() const
+{
+    return waitPostInstallFinish_;
+}
+
+void NodeSpecUpdate::setWaitPostInstallFinish(bool value)
+{
+    waitPostInstallFinish_ = value;
+    waitPostInstallFinishIsSet_ = true;
+}
+
+bool NodeSpecUpdate::waitPostInstallFinishIsSet() const
+{
+    return waitPostInstallFinishIsSet_;
+}
+
+void NodeSpecUpdate::unsetwaitPostInstallFinish()
+{
+    waitPostInstallFinishIsSet_ = false;
 }
 
 std::map<std::string, std::string>& NodeSpecUpdate::getK8sTags()

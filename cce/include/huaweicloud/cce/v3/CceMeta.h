@@ -20,6 +20,7 @@ public:
     static HttpRequestDef genRequestDefForBatchDeleteClusterTags();
     static HttpRequestDef genRequestDefForBatchSyncNodes();
     static HttpRequestDef genRequestDefForContinueUpgradeClusterTask();
+    static HttpRequestDef genRequestDefForCreateAccessPolicy();
     static HttpRequestDef genRequestDefForCreateAddonInstance();
     static HttpRequestDef genRequestDefForCreateCloudPersistentVolumeClaims();
     static HttpRequestDef genRequestDefForCreateCluster();
@@ -32,6 +33,7 @@ public:
     static HttpRequestDef genRequestDefForCreatePreCheck();
     static HttpRequestDef genRequestDefForCreateRelease();
     static HttpRequestDef genRequestDefForCreateUpgradeWorkFlow();
+    static HttpRequestDef genRequestDefForDeleteAccessPolicy();
     static HttpRequestDef genRequestDefForDeleteAddonInstance();
     static HttpRequestDef genRequestDefForDeleteChart();
     static HttpRequestDef genRequestDefForDeleteCloudPersistentVolumeClaims();
@@ -40,7 +42,16 @@ public:
     static HttpRequestDef genRequestDefForDeleteNodePool();
     static HttpRequestDef genRequestDefForDeleteRelease();
     static HttpRequestDef genRequestDefForDownloadChart();
+    static HttpRequestDef genRequestDefForGetAccessPolicy();
+    static HttpRequestDef genRequestDefForGetAvaliableZone();
+    static HttpRequestDef genRequestDefForGetClusterFlavorSpecs();
+    static HttpRequestDef genRequestDefForGetClusterQuota();
+    static HttpRequestDef genRequestDefForGetClusterSupportConfiguration();
+    static HttpRequestDef genRequestDefForGetCustomizeTags();
+    static HttpRequestDef genRequestDefForGetLabels();
+    static HttpRequestDef genRequestDefForGetResourceTags();
     static HttpRequestDef genRequestDefForHibernateCluster();
+    static HttpRequestDef genRequestDefForListAccessPolicy();
     static HttpRequestDef genRequestDefForListAddonInstances();
     static HttpRequestDef genRequestDefForListAddonTemplates();
     static HttpRequestDef genRequestDefForListCharts();
@@ -72,8 +83,8 @@ public:
     static HttpRequestDef genRequestDefForShowClusterConfig();
     static HttpRequestDef genRequestDefForShowClusterConfigurationDetails();
     static HttpRequestDef genRequestDefForShowClusterEndpoints();
-    static HttpRequestDef genRequestDefForShowClusterSupportConfiguration();
     static HttpRequestDef genRequestDefForShowClusterUpgradeInfo();
+    static HttpRequestDef genRequestDefForShowFeatureGates();
     static HttpRequestDef genRequestDefForShowNode();
     static HttpRequestDef genRequestDefForShowNodePool();
     static HttpRequestDef genRequestDefForShowNodePoolConfigurationDetails();
@@ -88,6 +99,7 @@ public:
     static HttpRequestDef genRequestDefForShowUserChartsQuotas();
     static HttpRequestDef genRequestDefForSyncNode();
     static HttpRequestDef genRequestDefForUnlockNodepoolNodeScaleDown();
+    static HttpRequestDef genRequestDefForUpdateAccessPolicy();
     static HttpRequestDef genRequestDefForUpdateAddonInstance();
     static HttpRequestDef genRequestDefForUpdateCluster();
     static HttpRequestDef genRequestDefForUpdateClusterEip();

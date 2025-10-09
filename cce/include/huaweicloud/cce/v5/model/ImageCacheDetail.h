@@ -11,6 +11,7 @@
 
 #include <huaweicloud/cce/v5/model/ImageCacheBuildingConfig.h>
 #include <string>
+#include <cpprest/details/basic_types.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -62,10 +63,10 @@ public:
     /// 镜像缓存创建时间戳。
     /// </summary>
 
-    std::string getCreatedAt() const;
+    utility::datetime getCreatedAt() const;
     bool createdAtIsSet() const;
     void unsetcreatedAt();
-    void setCreatedAt(const std::string& value);
+    void setCreatedAt(const utility::datetime& value);
 
     /// <summary>
     /// 镜像缓存中的容器镜像列表。
@@ -127,7 +128,7 @@ protected:
     bool nameIsSet_;
     std::string id_;
     bool idIsSet_;
-    std::string createdAt_;
+    utility::datetime createdAt_;
     bool createdAtIsSet_;
     std::vector<std::string> images_;
     bool imagesIsSet_;

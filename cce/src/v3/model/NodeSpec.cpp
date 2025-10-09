@@ -29,6 +29,8 @@ NodeSpec::NodeSpec()
     billingMode_ = 0;
     billingModeIsSet_ = false;
     taintsIsSet_ = false;
+    waitPostInstallFinish_ = false;
+    waitPostInstallFinishIsSet_ = false;
     k8sTagsIsSet_ = false;
     ecsGroupId_ = "";
     ecsGroupIdIsSet_ = false;
@@ -49,6 +51,7 @@ NodeSpec::NodeSpec()
     serverEnterpriseProjectIDIsSet_ = false;
     partition_ = "";
     partitionIsSet_ = false;
+    nodeNameTemplateIsSet_ = false;
 }
 
 NodeSpec::~NodeSpec() = default;
@@ -97,6 +100,9 @@ web::json::value NodeSpec::toJson() const
     if(taintsIsSet_) {
         val[utility::conversions::to_string_t("taints")] = ModelBase::toJson(taints_);
     }
+    if(waitPostInstallFinishIsSet_) {
+        val[utility::conversions::to_string_t("waitPostInstallFinish")] = ModelBase::toJson(waitPostInstallFinish_);
+    }
     if(k8sTagsIsSet_) {
         val[utility::conversions::to_string_t("k8sTags")] = ModelBase::toJson(k8sTags_);
     }
@@ -135,6 +141,9 @@ web::json::value NodeSpec::toJson() const
     }
     if(partitionIsSet_) {
         val[utility::conversions::to_string_t("partition")] = ModelBase::toJson(partition_);
+    }
+    if(nodeNameTemplateIsSet_) {
+        val[utility::conversions::to_string_t("nodeNameTemplate")] = ModelBase::toJson(nodeNameTemplate_);
     }
 
     return val;
@@ -249,6 +258,15 @@ bool NodeSpec::fromJson(const web::json::value& val)
             std::vector<Taint> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaints(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("waitPostInstallFinish"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("waitPostInstallFinish"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWaitPostInstallFinish(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("k8sTags"))) {
@@ -366,6 +384,15 @@ bool NodeSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPartition(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nodeNameTemplate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeNameTemplate"));
+        if(!fieldValue.is_null())
+        {
+            NodeSpec_nodeNameTemplate refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodeNameTemplate(refVal);
         }
     }
     return ok;
@@ -622,6 +649,27 @@ bool NodeSpec::taintsIsSet() const
 void NodeSpec::unsettaints()
 {
     taintsIsSet_ = false;
+}
+
+bool NodeSpec::isWaitPostInstallFinish() const
+{
+    return waitPostInstallFinish_;
+}
+
+void NodeSpec::setWaitPostInstallFinish(bool value)
+{
+    waitPostInstallFinish_ = value;
+    waitPostInstallFinishIsSet_ = true;
+}
+
+bool NodeSpec::waitPostInstallFinishIsSet() const
+{
+    return waitPostInstallFinishIsSet_;
+}
+
+void NodeSpec::unsetwaitPostInstallFinish()
+{
+    waitPostInstallFinishIsSet_ = false;
 }
 
 std::map<std::string, std::string>& NodeSpec::getK8sTags()
@@ -895,6 +943,27 @@ bool NodeSpec::partitionIsSet() const
 void NodeSpec::unsetpartition()
 {
     partitionIsSet_ = false;
+}
+
+NodeSpec_nodeNameTemplate NodeSpec::getNodeNameTemplate() const
+{
+    return nodeNameTemplate_;
+}
+
+void NodeSpec::setNodeNameTemplate(const NodeSpec_nodeNameTemplate& value)
+{
+    nodeNameTemplate_ = value;
+    nodeNameTemplateIsSet_ = true;
+}
+
+bool NodeSpec::nodeNameTemplateIsSet() const
+{
+    return nodeNameTemplateIsSet_;
+}
+
+void NodeSpec::unsetnodeNameTemplate()
+{
+    nodeNameTemplateIsSet_ = false;
 }
 
 }

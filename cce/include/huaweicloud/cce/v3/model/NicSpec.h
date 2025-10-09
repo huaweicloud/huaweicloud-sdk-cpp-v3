@@ -49,7 +49,7 @@ public:
     void setSubnetId(const std::string& value);
 
     /// <summary>
-    /// 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。扩展网卡不支持指定fixedIps。
+    /// **参数解释**： 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。 **约束限制**： - fixedIps或ipBlock同时只能指定一个 - 扩展网卡不支持指定fiexdIps - 创建节点池场景不支持该配置参数
     /// </summary>
 
     std::vector<std::string>& getFixedIps();
@@ -58,7 +58,7 @@ public:
     void setFixedIps(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 主网卡的IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
+    /// **参数解释**： 主网卡的IP段的CIDR格式，创建的节点IP将属于该IP段内。 **约束限制**： - fixedIps或ipBlock同时只能指定一个。 - 创建节点池场景不支持该配置参数  **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getIpBlock() const;

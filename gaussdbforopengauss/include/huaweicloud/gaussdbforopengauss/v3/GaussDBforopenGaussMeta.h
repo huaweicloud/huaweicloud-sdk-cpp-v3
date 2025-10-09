@@ -18,6 +18,7 @@ public:
     static HttpRequestDef genRequestDefForAllowDbPrivileges();
     static HttpRequestDef genRequestDefForAllowDbRolePrivileges();
     static HttpRequestDef genRequestDefForAttachEip();
+    static HttpRequestDef genRequestDefForAuthorizeBackupDownload();
     static HttpRequestDef genRequestDefForBatchSetBackupPolicy();
     static HttpRequestDef genRequestDefForBatchShowUpgradeCandidateVersions();
     static HttpRequestDef genRequestDefForCancelScheduleTask();
@@ -41,6 +42,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteConfiguration();
     static HttpRequestDef genRequestDefForDeleteDatabase();
     static HttpRequestDef genRequestDefForDeleteDatabaseSchema();
+    static HttpRequestDef genRequestDefForDeleteDisasterRecord();
     static HttpRequestDef genRequestDefForDeleteHbaConfs();
     static HttpRequestDef genRequestDefForDeleteInstance();
     static HttpRequestDef genRequestDefForDeleteInstanceTag();
@@ -75,6 +77,7 @@ public:
     static HttpRequestDef genRequestDefForListDatabaseSchemaTables();
     static HttpRequestDef genRequestDefForListDatabaseSchemas();
     static HttpRequestDef genRequestDefForListDatabaseVersions();
+    static HttpRequestDef genRequestDefForListDatabaseVolume();
     static HttpRequestDef genRequestDefForListDatabaseVolumeSummary();
     static HttpRequestDef genRequestDefForListDatabases();
     static HttpRequestDef genRequestDefForListDatastores();
@@ -105,6 +108,7 @@ public:
     static HttpRequestDef genRequestDefForListParamGroupTemplates();
     static HttpRequestDef genRequestDefForListParameterGroupTemplates();
     static HttpRequestDef genRequestDefForListPluginExtensions();
+    static HttpRequestDef genRequestDefForListPluginInfoList();
     static HttpRequestDef genRequestDefForListPredefinedTags();
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListReadonlyNodes();
@@ -127,7 +131,7 @@ public:
     static HttpRequestDef genRequestDefForModifyAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForModifyEpsQuota();
     static HttpRequestDef genRequestDefForModifyHbaConf();
-    static HttpRequestDef genRequestDefForModifyHotfixes();
+    static HttpRequestDef genRequestDefForModifyInstancePort();
     static HttpRequestDef genRequestDefForResetConfiguration();
     static HttpRequestDef genRequestDefForResetDrConfig();
     static HttpRequestDef genRequestDefForResetPwd();

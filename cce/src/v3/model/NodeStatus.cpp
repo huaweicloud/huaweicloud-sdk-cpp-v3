@@ -27,6 +27,8 @@ NodeStatus::NodeStatus()
     publicIP_ = "";
     publicIPIsSet_ = false;
     deleteStatusIsSet_ = false;
+    configurationUpToDate_ = false;
+    configurationUpToDateIsSet_ = false;
 }
 
 NodeStatus::~NodeStatus() = default;
@@ -62,6 +64,9 @@ web::json::value NodeStatus::toJson() const
     }
     if(deleteStatusIsSet_) {
         val[utility::conversions::to_string_t("deleteStatus")] = ModelBase::toJson(deleteStatus_);
+    }
+    if(configurationUpToDateIsSet_) {
+        val[utility::conversions::to_string_t("configurationUpToDate")] = ModelBase::toJson(configurationUpToDate_);
     }
 
     return val;
@@ -140,6 +145,15 @@ bool NodeStatus::fromJson(const web::json::value& val)
             DeleteStatus refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDeleteStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("configurationUpToDate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configurationUpToDate"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfigurationUpToDate(refVal);
         }
     }
     return ok;
@@ -312,6 +326,27 @@ bool NodeStatus::deleteStatusIsSet() const
 void NodeStatus::unsetdeleteStatus()
 {
     deleteStatusIsSet_ = false;
+}
+
+bool NodeStatus::isConfigurationUpToDate() const
+{
+    return configurationUpToDate_;
+}
+
+void NodeStatus::setConfigurationUpToDate(bool value)
+{
+    configurationUpToDate_ = value;
+    configurationUpToDateIsSet_ = true;
+}
+
+bool NodeStatus::configurationUpToDateIsSet() const
+{
+    return configurationUpToDateIsSet_;
+}
+
+void NodeStatus::unsetconfigurationUpToDate()
+{
+    configurationUpToDateIsSet_ = false;
 }
 
 }

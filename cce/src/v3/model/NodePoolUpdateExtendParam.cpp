@@ -22,6 +22,8 @@ NodePoolUpdateExtendParam::NodePoolUpdateExtendParam()
     spotPriceIsSet_ = false;
     securityReinforcementType_ = "";
     securityReinforcementTypeIsSet_ = false;
+    alphaCceNodeImageID_ = "";
+    alphaCceNodeImageIDIsSet_ = false;
 }
 
 NodePoolUpdateExtendParam::~NodePoolUpdateExtendParam() = default;
@@ -48,6 +50,9 @@ web::json::value NodePoolUpdateExtendParam::toJson() const
     }
     if(securityReinforcementTypeIsSet_) {
         val[utility::conversions::to_string_t("securityReinforcementType")] = ModelBase::toJson(securityReinforcementType_);
+    }
+    if(alphaCceNodeImageIDIsSet_) {
+        val[utility::conversions::to_string_t("alpha.cce/NodeImageID")] = ModelBase::toJson(alphaCceNodeImageID_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool NodePoolUpdateExtendParam::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityReinforcementType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alpha.cce/NodeImageID"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alpha.cce/NodeImageID"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlphaCceNodeImageID(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool NodePoolUpdateExtendParam::securityReinforcementTypeIsSet() const
 void NodePoolUpdateExtendParam::unsetsecurityReinforcementType()
 {
     securityReinforcementTypeIsSet_ = false;
+}
+
+std::string NodePoolUpdateExtendParam::getAlphaCceNodeImageID() const
+{
+    return alphaCceNodeImageID_;
+}
+
+void NodePoolUpdateExtendParam::setAlphaCceNodeImageID(const std::string& value)
+{
+    alphaCceNodeImageID_ = value;
+    alphaCceNodeImageIDIsSet_ = true;
+}
+
+bool NodePoolUpdateExtendParam::alphaCceNodeImageIDIsSet() const
+{
+    return alphaCceNodeImageIDIsSet_;
+}
+
+void NodePoolUpdateExtendParam::unsetalphaCceNodeImageID()
+{
+    alphaCceNodeImageIDIsSet_ = false;
 }
 
 }

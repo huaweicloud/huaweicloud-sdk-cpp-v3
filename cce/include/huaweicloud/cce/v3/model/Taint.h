@@ -39,7 +39,7 @@ public:
     /// Taint members
 
     /// <summary>
-    /// 键
+    /// **参数解释**： K8s污点的键。 **约束限制**： 必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getKey() const;
@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 值
+    /// **参数解释**： K8s污点的值。 **约束限制**： 必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getValue() const;
@@ -57,7 +57,7 @@ public:
     void setValue(const std::string& value);
 
     /// <summary>
-    /// 作用效果
+    /// **参数解释**： K8s污点的作用效果。 **约束限制**： 不涉及 **取值范围**： 只可选NoSchedule，PreferNoSchedule或NoExecute。 **默认取值**： 不涉及
     /// </summary>
 
     std::string getEffect() const;

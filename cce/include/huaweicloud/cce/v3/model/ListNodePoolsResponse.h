@@ -59,7 +59,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// /
+    /// **参数解释**： 节点池的信息。
     /// </summary>
 
     std::vector<NodePoolResp>& getItems();

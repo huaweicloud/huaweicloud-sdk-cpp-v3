@@ -22,6 +22,12 @@ NodePoolSpec::NodePoolSpec()
     podSecurityGroupsIsSet_ = false;
     extensionScaleGroupsIsSet_ = false;
     customSecurityGroupsIsSet_ = false;
+    taintPolicyOnExistingNodes_ = "";
+    taintPolicyOnExistingNodesIsSet_ = false;
+    labelPolicyOnExistingNodes_ = "";
+    labelPolicyOnExistingNodesIsSet_ = false;
+    userTagsPolicyOnExistingNodes_ = "";
+    userTagsPolicyOnExistingNodesIsSet_ = false;
 }
 
 NodePoolSpec::~NodePoolSpec() = default;
@@ -58,6 +64,15 @@ web::json::value NodePoolSpec::toJson() const
     if(customSecurityGroupsIsSet_) {
         val[utility::conversions::to_string_t("customSecurityGroups")] = ModelBase::toJson(customSecurityGroups_);
     }
+    if(taintPolicyOnExistingNodesIsSet_) {
+        val[utility::conversions::to_string_t("taintPolicyOnExistingNodes")] = ModelBase::toJson(taintPolicyOnExistingNodes_);
+    }
+    if(labelPolicyOnExistingNodesIsSet_) {
+        val[utility::conversions::to_string_t("labelPolicyOnExistingNodes")] = ModelBase::toJson(labelPolicyOnExistingNodes_);
+    }
+    if(userTagsPolicyOnExistingNodesIsSet_) {
+        val[utility::conversions::to_string_t("userTagsPolicyOnExistingNodes")] = ModelBase::toJson(userTagsPolicyOnExistingNodes_);
+    }
 
     return val;
 }
@@ -78,7 +93,7 @@ bool NodePoolSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeTemplate"));
         if(!fieldValue.is_null())
         {
-            NodeSpec refVal;
+            NodeTemplate refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeTemplate(refVal);
         }
@@ -137,6 +152,33 @@ bool NodePoolSpec::fromJson(const web::json::value& val)
             setCustomSecurityGroups(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("taintPolicyOnExistingNodes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("taintPolicyOnExistingNodes"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaintPolicyOnExistingNodes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("labelPolicyOnExistingNodes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("labelPolicyOnExistingNodes"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLabelPolicyOnExistingNodes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("userTagsPolicyOnExistingNodes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("userTagsPolicyOnExistingNodes"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUserTagsPolicyOnExistingNodes(refVal);
+        }
+    }
     return ok;
 }
 
@@ -162,12 +204,12 @@ void NodePoolSpec::unsettype()
     typeIsSet_ = false;
 }
 
-NodeSpec NodePoolSpec::getNodeTemplate() const
+NodeTemplate NodePoolSpec::getNodeTemplate() const
 {
     return nodeTemplate_;
 }
 
-void NodePoolSpec::setNodeTemplate(const NodeSpec& value)
+void NodePoolSpec::setNodeTemplate(const NodeTemplate& value)
 {
     nodeTemplate_ = value;
     nodeTemplateIsSet_ = true;
@@ -307,6 +349,69 @@ bool NodePoolSpec::customSecurityGroupsIsSet() const
 void NodePoolSpec::unsetcustomSecurityGroups()
 {
     customSecurityGroupsIsSet_ = false;
+}
+
+std::string NodePoolSpec::getTaintPolicyOnExistingNodes() const
+{
+    return taintPolicyOnExistingNodes_;
+}
+
+void NodePoolSpec::setTaintPolicyOnExistingNodes(const std::string& value)
+{
+    taintPolicyOnExistingNodes_ = value;
+    taintPolicyOnExistingNodesIsSet_ = true;
+}
+
+bool NodePoolSpec::taintPolicyOnExistingNodesIsSet() const
+{
+    return taintPolicyOnExistingNodesIsSet_;
+}
+
+void NodePoolSpec::unsettaintPolicyOnExistingNodes()
+{
+    taintPolicyOnExistingNodesIsSet_ = false;
+}
+
+std::string NodePoolSpec::getLabelPolicyOnExistingNodes() const
+{
+    return labelPolicyOnExistingNodes_;
+}
+
+void NodePoolSpec::setLabelPolicyOnExistingNodes(const std::string& value)
+{
+    labelPolicyOnExistingNodes_ = value;
+    labelPolicyOnExistingNodesIsSet_ = true;
+}
+
+bool NodePoolSpec::labelPolicyOnExistingNodesIsSet() const
+{
+    return labelPolicyOnExistingNodesIsSet_;
+}
+
+void NodePoolSpec::unsetlabelPolicyOnExistingNodes()
+{
+    labelPolicyOnExistingNodesIsSet_ = false;
+}
+
+std::string NodePoolSpec::getUserTagsPolicyOnExistingNodes() const
+{
+    return userTagsPolicyOnExistingNodes_;
+}
+
+void NodePoolSpec::setUserTagsPolicyOnExistingNodes(const std::string& value)
+{
+    userTagsPolicyOnExistingNodes_ = value;
+    userTagsPolicyOnExistingNodesIsSet_ = true;
+}
+
+bool NodePoolSpec::userTagsPolicyOnExistingNodesIsSet() const
+{
+    return userTagsPolicyOnExistingNodesIsSet_;
+}
+
+void NodePoolSpec::unsetuserTagsPolicyOnExistingNodes()
+{
+    userTagsPolicyOnExistingNodesIsSet_ = false;
 }
 
 }

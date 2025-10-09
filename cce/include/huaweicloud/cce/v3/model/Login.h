@@ -57,12 +57,34 @@ public:
     void unsetuserPassword();
     void setUserPassword(const UserPassword& value);
 
+    /// <summary>
+    /// **参数解释**： 更新节点池时，移除当前节点池密码方式登录的配置 **约束限制**： 仅更新节点池场景支持该参数，设置为true时不允许设置userPassword **取值范围**： 不涉及 **默认取值**： false
+    /// </summary>
+
+    bool isRemoveUserPassword() const;
+    bool removeUserPasswordIsSet() const;
+    void unsetremoveUserPassword();
+    void setRemoveUserPassword(bool value);
+
+    /// <summary>
+    /// **参数解释**： 更新节点池时，移除当前节点池密钥对方式登录的配置 **约束限制**： 仅更新节点池场景支持该参数，设置为true时不允许设置sshKey **取值范围**： 不涉及 **默认取值**： false
+    /// </summary>
+
+    bool isRemoveSSHKey() const;
+    bool removeSSHKeyIsSet() const;
+    void unsetremoveSSHKey();
+    void setRemoveSSHKey(bool value);
+
 
 protected:
     std::string sshKey_;
     bool sshKeyIsSet_;
     UserPassword userPassword_;
     bool userPasswordIsSet_;
+    bool removeUserPassword_;
+    bool removeUserPasswordIsSet_;
+    bool removeSSHKey_;
+    bool removeSSHKeyIsSet_;
 
 };
 

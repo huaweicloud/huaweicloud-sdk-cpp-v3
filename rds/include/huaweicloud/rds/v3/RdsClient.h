@@ -122,6 +122,8 @@
 #include <huaweicloud/rds/v3/model/ListBackupsResponse.h>
 #include <huaweicloud/rds/v3/model/ListCollationsRequest.h>
 #include <huaweicloud/rds/v3/model/ListCollationsResponse.h>
+#include <huaweicloud/rds/v3/model/ListConfigurationApplyHistoriesRequest.h>
+#include <huaweicloud/rds/v3/model/ListConfigurationApplyHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListConfigurationsRequest.h>
 #include <huaweicloud/rds/v3/model/ListConfigurationsResponse.h>
 #include <huaweicloud/rds/v3/model/ListDatastoresRequest.h>
@@ -152,6 +154,8 @@
 #include <huaweicloud/rds/v3/model/ListInstanceParamHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceTagsRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstanceTagsResponse.h>
+#include <huaweicloud/rds/v3/model/ListInstancesConfigurationsRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstancesConfigurationsResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesInfoDiagnosisRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstancesInfoDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesRequest.h>
@@ -972,6 +976,14 @@ public:
     std::shared_ptr<ListCollationsResponse> listCollations(
         ListCollationsRequest &request
     );
+    // 查询参数组应用历史
+    //
+    // 查询参数组应用历史
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistories(
+        ListConfigurationApplyHistoriesRequest &request
+    );
     // 获取参数模板列表
     //
     // 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -1099,6 +1111,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstancesResponse> listInstances(
         ListInstancesRequest &request
+    );
+    // 查询应用参数模版的实例列表
+    //
+    // 查询应用参数模版的实例列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesConfigurationsResponse> listInstancesConfigurations(
+        ListInstancesConfigurationsRequest &request
     );
     // 获取指定诊断项的诊断结果
     //

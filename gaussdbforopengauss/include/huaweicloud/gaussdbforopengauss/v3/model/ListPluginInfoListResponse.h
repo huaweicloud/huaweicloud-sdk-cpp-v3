@@ -9,7 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CustomerPluginInfoResult.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,51 +40,29 @@ public:
     /// ListPluginInfoListResponse members
 
     /// <summary>
-    /// 插件名称
+    /// **参数解释**: 插件数量。 **取值范围**: 不涉及。 
     /// </summary>
 
-    std::string getPluginName() const;
-    bool pluginNameIsSet() const;
-    void unsetpluginName();
-    void setPluginName(const std::string& value);
+    int32_t getTotalCount() const;
+    bool totalCountIsSet() const;
+    void unsettotalCount();
+    void setTotalCount(int32_t value);
 
     /// <summary>
-    /// 端口
+    /// **参数解释**: 插件详细信息。 
     /// </summary>
 
-    std::string getPort() const;
-    bool portIsSet() const;
-    void unsetport();
-    void setPort(const std::string& value);
-
-    /// <summary>
-    /// 插件版本
-    /// </summary>
-
-    std::string getPluginVersion() const;
-    bool pluginVersionIsSet() const;
-    void unsetpluginVersion();
-    void setPluginVersion(const std::string& value);
-
-    /// <summary>
-    /// 是否已安装
-    /// </summary>
-
-    std::string getInstalled() const;
-    bool installedIsSet() const;
-    void unsetinstalled();
-    void setInstalled(const std::string& value);
+    std::vector<CustomerPluginInfoResult>& getPlugins();
+    bool pluginsIsSet() const;
+    void unsetplugins();
+    void setPlugins(const std::vector<CustomerPluginInfoResult>& value);
 
 
 protected:
-    std::string pluginName_;
-    bool pluginNameIsSet_;
-    std::string port_;
-    bool portIsSet_;
-    std::string pluginVersion_;
-    bool pluginVersionIsSet_;
-    std::string installed_;
-    bool installedIsSet_;
+    int32_t totalCount_;
+    bool totalCountIsSet_;
+    std::vector<CustomerPluginInfoResult> plugins_;
+    bool pluginsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

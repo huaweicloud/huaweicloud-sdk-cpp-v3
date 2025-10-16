@@ -39,6 +39,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteDatabaseRole();
     static HttpRequestDef genRequestDefForDeleteDatabaseUser();
     static HttpRequestDef genRequestDefForDeleteInstance();
+    static HttpRequestDef genRequestDefForDeleteIp();
     static HttpRequestDef genRequestDefForDeleteKillOpRuleList();
     static HttpRequestDef genRequestDefForDeleteLtsConfig();
     static HttpRequestDef genRequestDefForDeleteManualBackup();

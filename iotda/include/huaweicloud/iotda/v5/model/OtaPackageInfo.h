@@ -76,6 +76,24 @@ public:
     void setProductId(const std::string& value);
 
     /// <summary>
+    /// 设备关联的产品名称
+    /// </summary>
+
+    std::string getProductName() const;
+    bool productNameIsSet() const;
+    void unsetproductName();
+    void setProductName(const std::string& value);
+
+    /// <summary>
+    /// **参数说明**：OTA模块名称，产品下唯一且不可修改。 **取值范围**：长度不超过64，号只允许字母、数字、下划线（_）、连接符（-）、英文点（.）的组合。
+    /// </summary>
+
+    std::string getModuleName() const;
+    bool moduleNameIsSet() const;
+    void unsetmoduleName();
+    void setModuleName(const std::string& value);
+
+    /// <summary>
     /// **参数说明**：升级包版本号。 **取值范围**：长度不超过256，只允许字母、数字、下划线（_）、连接符（-）、英文点（.）的组合。
     /// </summary>
 
@@ -130,6 +148,10 @@ protected:
     bool packageTypeIsSet_;
     std::string productId_;
     bool productIdIsSet_;
+    std::string productName_;
+    bool productNameIsSet_;
+    std::string moduleName_;
+    bool moduleNameIsSet_;
     std::string version_;
     bool versionIsSet_;
     std::vector<std::string> supportSourceVersions_;

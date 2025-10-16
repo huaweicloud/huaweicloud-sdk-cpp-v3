@@ -1,0 +1,324 @@
+
+
+#include "huaweicloud/iotda/v5/model/CreateOtaModuleResponse.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Iotda {
+namespace V5 {
+namespace Model {
+
+
+
+
+CreateOtaModuleResponse::CreateOtaModuleResponse()
+{
+    moduleId_ = "";
+    moduleIdIsSet_ = false;
+    appId_ = "";
+    appIdIsSet_ = false;
+    productId_ = "";
+    productIdIsSet_ = false;
+    productName_ = "";
+    productNameIsSet_ = false;
+    moduleName_ = "";
+    moduleNameIsSet_ = false;
+    aliasName_ = "";
+    aliasNameIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
+    createTime_ = "";
+    createTimeIsSet_ = false;
+}
+
+CreateOtaModuleResponse::~CreateOtaModuleResponse() = default;
+
+void CreateOtaModuleResponse::validate()
+{
+}
+
+web::json::value CreateOtaModuleResponse::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(moduleIdIsSet_) {
+        val[utility::conversions::to_string_t("module_id")] = ModelBase::toJson(moduleId_);
+    }
+    if(appIdIsSet_) {
+        val[utility::conversions::to_string_t("app_id")] = ModelBase::toJson(appId_);
+    }
+    if(productIdIsSet_) {
+        val[utility::conversions::to_string_t("product_id")] = ModelBase::toJson(productId_);
+    }
+    if(productNameIsSet_) {
+        val[utility::conversions::to_string_t("product_name")] = ModelBase::toJson(productName_);
+    }
+    if(moduleNameIsSet_) {
+        val[utility::conversions::to_string_t("module_name")] = ModelBase::toJson(moduleName_);
+    }
+    if(aliasNameIsSet_) {
+        val[utility::conversions::to_string_t("alias_name")] = ModelBase::toJson(aliasName_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(createTimeIsSet_) {
+        val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
+    }
+
+    return val;
+}
+bool CreateOtaModuleResponse::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("module_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("module_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModuleId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("app_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("app_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAppId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("product_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProductId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("product_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProductName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("module_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("module_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alias_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alias_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAliasName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("create_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreateTime(refVal);
+        }
+    }
+    return ok;
+}
+
+
+std::string CreateOtaModuleResponse::getModuleId() const
+{
+    return moduleId_;
+}
+
+void CreateOtaModuleResponse::setModuleId(const std::string& value)
+{
+    moduleId_ = value;
+    moduleIdIsSet_ = true;
+}
+
+bool CreateOtaModuleResponse::moduleIdIsSet() const
+{
+    return moduleIdIsSet_;
+}
+
+void CreateOtaModuleResponse::unsetmoduleId()
+{
+    moduleIdIsSet_ = false;
+}
+
+std::string CreateOtaModuleResponse::getAppId() const
+{
+    return appId_;
+}
+
+void CreateOtaModuleResponse::setAppId(const std::string& value)
+{
+    appId_ = value;
+    appIdIsSet_ = true;
+}
+
+bool CreateOtaModuleResponse::appIdIsSet() const
+{
+    return appIdIsSet_;
+}
+
+void CreateOtaModuleResponse::unsetappId()
+{
+    appIdIsSet_ = false;
+}
+
+std::string CreateOtaModuleResponse::getProductId() const
+{
+    return productId_;
+}
+
+void CreateOtaModuleResponse::setProductId(const std::string& value)
+{
+    productId_ = value;
+    productIdIsSet_ = true;
+}
+
+bool CreateOtaModuleResponse::productIdIsSet() const
+{
+    return productIdIsSet_;
+}
+
+void CreateOtaModuleResponse::unsetproductId()
+{
+    productIdIsSet_ = false;
+}
+
+std::string CreateOtaModuleResponse::getProductName() const
+{
+    return productName_;
+}
+
+void CreateOtaModuleResponse::setProductName(const std::string& value)
+{
+    productName_ = value;
+    productNameIsSet_ = true;
+}
+
+bool CreateOtaModuleResponse::productNameIsSet() const
+{
+    return productNameIsSet_;
+}
+
+void CreateOtaModuleResponse::unsetproductName()
+{
+    productNameIsSet_ = false;
+}
+
+std::string CreateOtaModuleResponse::getModuleName() const
+{
+    return moduleName_;
+}
+
+void CreateOtaModuleResponse::setModuleName(const std::string& value)
+{
+    moduleName_ = value;
+    moduleNameIsSet_ = true;
+}
+
+bool CreateOtaModuleResponse::moduleNameIsSet() const
+{
+    return moduleNameIsSet_;
+}
+
+void CreateOtaModuleResponse::unsetmoduleName()
+{
+    moduleNameIsSet_ = false;
+}
+
+std::string CreateOtaModuleResponse::getAliasName() const
+{
+    return aliasName_;
+}
+
+void CreateOtaModuleResponse::setAliasName(const std::string& value)
+{
+    aliasName_ = value;
+    aliasNameIsSet_ = true;
+}
+
+bool CreateOtaModuleResponse::aliasNameIsSet() const
+{
+    return aliasNameIsSet_;
+}
+
+void CreateOtaModuleResponse::unsetaliasName()
+{
+    aliasNameIsSet_ = false;
+}
+
+std::string CreateOtaModuleResponse::getDescription() const
+{
+    return description_;
+}
+
+void CreateOtaModuleResponse::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool CreateOtaModuleResponse::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void CreateOtaModuleResponse::unsetdescription()
+{
+    descriptionIsSet_ = false;
+}
+
+std::string CreateOtaModuleResponse::getCreateTime() const
+{
+    return createTime_;
+}
+
+void CreateOtaModuleResponse::setCreateTime(const std::string& value)
+{
+    createTime_ = value;
+    createTimeIsSet_ = true;
+}
+
+bool CreateOtaModuleResponse::createTimeIsSet() const
+{
+    return createTimeIsSet_;
+}
+
+void CreateOtaModuleResponse::unsetcreateTime()
+{
+    createTimeIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

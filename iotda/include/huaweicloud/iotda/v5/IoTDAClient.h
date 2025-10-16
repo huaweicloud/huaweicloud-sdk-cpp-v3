@@ -286,6 +286,20 @@
 #include <huaweicloud/iotda/v5/model/ShowDeviceMessageResponse.h>
 #include <string>
 
+#include <huaweicloud/iotda/v5/model/CreateOtaModule.h>
+#include <huaweicloud/iotda/v5/model/CreateOtaModuleRequest.h>
+#include <huaweicloud/iotda/v5/model/CreateOtaModuleResponse.h>
+#include <huaweicloud/iotda/v5/model/DeleteOtaModuleRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteOtaModuleResponse.h>
+#include <huaweicloud/iotda/v5/model/ListOtaModulesRequest.h>
+#include <huaweicloud/iotda/v5/model/ListOtaModulesResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowOtaModuleRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowOtaModuleResponse.h>
+#include <huaweicloud/iotda/v5/model/UpdateOtaModule.h>
+#include <huaweicloud/iotda/v5/model/UpdateOtaModuleRequest.h>
+#include <huaweicloud/iotda/v5/model/UpdateOtaModuleResponse.h>
+#include <string>
+
 #include <huaweicloud/iotda/v5/model/CreateOtaPackage.h>
 #include <huaweicloud/iotda/v5/model/CreateOtaPackageRequest.h>
 #include <huaweicloud/iotda/v5/model/CreateOtaPackageResponse.h>
@@ -1434,6 +1448,47 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDeviceMessageResponse> showDeviceMessage(
         ShowDeviceMessageRequest &request
+    );
+
+    // 创建OTA模块
+    //
+    // 用户可调用此接口创建产品的OTA模块,同一产品下最多自定义10个OTA模块。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateOtaModuleResponse> createOtaModule(
+        CreateOtaModuleRequest &request
+    );
+    // 删除OTA模块
+    //
+    // 用户可调用此接口删除产品对应的OTA模块
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteOtaModuleResponse> deleteOtaModule(
+        DeleteOtaModuleRequest &request
+    );
+    // 查询OTA模块列表
+    //
+    // 用户可调用此接口查询指定产品的OTA模块列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListOtaModulesResponse> listOtaModules(
+        ListOtaModulesRequest &request
+    );
+    // 查询OTA模块详情
+    //
+    // 用户可调用此接口查询OTA模块详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowOtaModuleResponse> showOtaModule(
+        ShowOtaModuleRequest &request
+    );
+    // 修改OTA模块
+    //
+    // 用户可调用此接口修改对应的OTA模块的别名和描述。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateOtaModuleResponse> updateOtaModule(
+        UpdateOtaModuleRequest &request
     );
 
     // 创建OTA升级包

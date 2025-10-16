@@ -57,7 +57,7 @@ public:
     void setNodeName(const std::string& value);
 
     /// <summary>
-    /// **参数描述**: 节点角色。 **取值范围**: - master：主节点。 - slave：备节点。 - secondary：日志节点。 - readreplica：只读节点。 
+    /// **参数解释**: 节点角色。 **取值范围**: - master：主节点。 - slave：备节点。 - secondary：日志节点。 - readreplica：只读节点。 
     /// </summary>
 
     std::string getRole() const;
@@ -75,7 +75,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// **参数描述**: 组件类型。 **取值范围**: - CN：CN组件。 - DN：DN组件。 
+    /// **参数解释**: 组件类型。 **取值范围**: - CN：CN组件。 - DN：DN组件。 
     /// </summary>
 
     std::string getComponentType() const;

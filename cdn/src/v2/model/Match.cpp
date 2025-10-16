@@ -53,7 +53,7 @@ bool Match::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("criteria"));
         if(!fieldValue.is_null())
         {
-            std::vector<Criteria> refVal;
+            std::vector<CriteriaItem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCriteria(refVal);
         }
@@ -83,12 +83,12 @@ void Match::unsetlogic()
     logicIsSet_ = false;
 }
 
-std::vector<Criteria>& Match::getCriteria()
+std::vector<CriteriaItem>& Match::getCriteria()
 {
     return criteria_;
 }
 
-void Match::setCriteria(const std::vector<Criteria>& value)
+void Match::setCriteria(const std::vector<CriteriaItem>& value)
 {
     criteria_ = value;
     criteriaIsSet_ = true;

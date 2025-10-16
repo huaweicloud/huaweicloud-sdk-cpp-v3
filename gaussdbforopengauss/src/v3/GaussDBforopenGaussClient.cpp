@@ -4061,6 +4061,12 @@ std::shared_ptr<ListPluginInfoListResponse> GaussDBforopenGaussClient::listPlugi
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
     if (request.pluginNameIsSet()) {
         localVarQueryParams["plugin_name"] = parameterToString(request.getPluginName());
     }
@@ -4532,6 +4538,51 @@ std::shared_ptr<ListSchemaAndTableResponse> GaussDBforopenGaussClient::listSchem
 
     return localVarResult;
 }
+std::shared_ptr<ListSessionMemoryContextResponse> GaussDBforopenGaussClient::listSessionMemoryContext(ListSessionMemoryContextRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/session/memory-context";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.nodeIdIsSet()) {
+        localVarQueryParams["node_id"] = parameterToString(request.getNodeId());
+    }
+    if (request.sessionIdIsSet()) {
+        localVarQueryParams["session_id"] = parameterToString(request.getSessionId());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForListSessionMemoryContext());
+
+    std::shared_ptr<ListSessionMemoryContextResponse> localVarResult = std::make_shared<ListSessionMemoryContextResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSessionStatisticsResponse> GaussDBforopenGaussClient::listSessionStatistics(ListSessionStatisticsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/session-statistics";
@@ -4574,6 +4625,84 @@ std::shared_ptr<ListSessionStatisticsResponse> GaussDBforopenGaussClient::listSe
         localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForListSessionStatistics());
 
     std::shared_ptr<ListSessionStatisticsResponse> localVarResult = std::make_shared<ListSessionStatisticsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListSessionTopSqlStatisticsResponse> GaussDBforopenGaussClient::listSessionTopSqlStatistics(ListSessionTopSqlStatisticsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/session/statistic/top-sql";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForListSessionTopSqlStatistics());
+
+    std::shared_ptr<ListSessionTopSqlStatisticsResponse> localVarResult = std::make_shared<ListSessionTopSqlStatisticsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListSessionWaitEventStatisticsResponse> GaussDBforopenGaussClient::listSessionWaitEventStatistics(ListSessionWaitEventStatisticsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/session/statistic/wait-event";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForListSessionWaitEventStatistics());
+
+    std::shared_ptr<ListSessionWaitEventStatisticsResponse> localVarResult = std::make_shared<ListSessionWaitEventStatisticsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

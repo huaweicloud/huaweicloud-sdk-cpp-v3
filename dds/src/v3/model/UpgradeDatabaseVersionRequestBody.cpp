@@ -14,6 +14,8 @@ UpgradeDatabaseVersionRequestBody::UpgradeDatabaseVersionRequestBody()
 {
     upgradeMode_ = "";
     upgradeModeIsSet_ = false;
+    isDelayed_ = false;
+    isDelayedIsSet_ = false;
 }
 
 UpgradeDatabaseVersionRequestBody::~UpgradeDatabaseVersionRequestBody() = default;
@@ -29,6 +31,9 @@ web::json::value UpgradeDatabaseVersionRequestBody::toJson() const
     if(upgradeModeIsSet_) {
         val[utility::conversions::to_string_t("upgrade_mode")] = ModelBase::toJson(upgradeMode_);
     }
+    if(isDelayedIsSet_) {
+        val[utility::conversions::to_string_t("is_delayed")] = ModelBase::toJson(isDelayed_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool UpgradeDatabaseVersionRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpgradeMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_delayed"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_delayed"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsDelayed(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool UpgradeDatabaseVersionRequestBody::upgradeModeIsSet() const
 void UpgradeDatabaseVersionRequestBody::unsetupgradeMode()
 {
     upgradeModeIsSet_ = false;
+}
+
+bool UpgradeDatabaseVersionRequestBody::isIsDelayed() const
+{
+    return isDelayed_;
+}
+
+void UpgradeDatabaseVersionRequestBody::setIsDelayed(bool value)
+{
+    isDelayed_ = value;
+    isDelayedIsSet_ = true;
+}
+
+bool UpgradeDatabaseVersionRequestBody::isDelayedIsSet() const
+{
+    return isDelayedIsSet_;
+}
+
+void UpgradeDatabaseVersionRequestBody::unsetisDelayed()
+{
+    isDelayedIsSet_ = false;
 }
 
 }

@@ -241,6 +241,15 @@ HttpRequestDef DdsMeta::genRequestDefForDeleteInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForDeleteIp() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForDeleteKillOpRuleList() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

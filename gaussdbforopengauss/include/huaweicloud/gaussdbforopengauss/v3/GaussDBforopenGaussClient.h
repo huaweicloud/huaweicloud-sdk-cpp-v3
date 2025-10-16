@@ -263,8 +263,14 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSchemaAndTableRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSchemaAndTableRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSchemaAndTableResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSessionMemoryContextRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSessionMemoryContextResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSessionStatisticsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSessionStatisticsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSessionTopSqlStatisticsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSessionTopSqlStatisticsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSessionWaitEventStatisticsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSessionWaitEventStatisticsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListStorageTypesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListStorageTypesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSupportKernelPluginsRequest.h>
@@ -588,12 +594,10 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/CollectWdrSnapshotResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateWdrSnapshotRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateWdrSnapshotResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/CreateWdrSnapshotResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowWdrSnapshotStatusRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowWdrSnapshotStatusResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchWdrSnapshotRequestBody.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchWdrSnapshotResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchWdrSnapshotStatusRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchWdrSnapshotStatusResponse.h>
 #include <string>
@@ -1136,7 +1140,7 @@ public:
     );
     // 查询数据库占用空间大小列表
     //
-    // 查询限流任务详情
+    // 查询数据库占用空间大小列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDatabaseVolumeResponse> listDatabaseVolume(
@@ -1479,6 +1483,14 @@ public:
     std::shared_ptr<ListSchemaAndTableResponse> listSchemaAndTable(
         ListSchemaAndTableRequest &request
     );
+    // 查询会话内存上下文列表
+    //
+    // 查询数据库实例节点的会话内存上下文列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSessionMemoryContextResponse> listSessionMemoryContext(
+        ListSessionMemoryContextRequest &request
+    );
     // 查询实时会话统计
     //
     // 查询数据库实例节点的实时会话统计信息。
@@ -1486,6 +1498,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSessionStatisticsResponse> listSessionStatistics(
         ListSessionStatisticsRequest &request
+    );
+    // 查询实时会话Top SQL统计
+    //
+    // 查询实时会话Top SQL统计。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSessionTopSqlStatisticsResponse> listSessionTopSqlStatistics(
+        ListSessionTopSqlStatisticsRequest &request
+    );
+    // 查询实时会话Top等待事件统计
+    //
+    // 查询实时会话Top等待事件统计。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSessionWaitEventStatisticsResponse> listSessionWaitEventStatistics(
+        ListSessionWaitEventStatisticsRequest &request
     );
     // 查询数据库磁盘类型
     //

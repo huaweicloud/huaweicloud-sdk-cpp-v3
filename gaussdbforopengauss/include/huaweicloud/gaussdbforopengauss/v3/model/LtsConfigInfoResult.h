@@ -48,7 +48,7 @@ public:
     void setLogGroupName(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: LTS日志组ID。 **取值范围**: 不涉及。LTS日志组ID
+    /// **参数解释**: LTS日志组ID。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getLogGroupId() const;

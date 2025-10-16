@@ -318,6 +318,31 @@ HttpRequestDef LiveMeta::genRequestDefForListSnapshotData() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForListTranscodeConcurrencyNum() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PublishDomains")
+                  .withJsonTag("publish_domains")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("App")
+                  .withJsonTag("app")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Interval")
+                  .withJsonTag("interval")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForListTranscodeData() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("PublishDomain")

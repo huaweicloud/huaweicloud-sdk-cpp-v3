@@ -66,6 +66,15 @@ public:
     void setObjectKey(const std::string& value);
 
     /// <summary>
+    /// **参数说明**： **取值范围**：只支持SHA256,不携带默认为SHA256。
+    /// </summary>
+
+    std::string getSignMethod() const;
+    bool signMethodIsSet() const;
+    void unsetsignMethod();
+    void setSignMethod(const std::string& value);
+
+    /// <summary>
     /// **参数说明**：SHA256算法计算出的升级包签名值。添加该升级包完成，并创建升级任务后，物联网平台向设备下发升级通知时，会下发该签名给设备。 **取值范围**：长度为64，只允许大小写字母a到f、数字的组合。
     /// </summary>
 
@@ -82,6 +91,8 @@ protected:
     bool bucketNameIsSet_;
     std::string objectKey_;
     bool objectKeyIsSet_;
+    std::string signMethod_;
+    bool signMethodIsSet_;
     std::string sign_;
     bool signIsSet_;
 

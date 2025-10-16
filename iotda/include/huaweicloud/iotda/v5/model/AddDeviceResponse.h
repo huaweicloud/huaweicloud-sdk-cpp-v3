@@ -12,6 +12,7 @@
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/iotda/v5/model/AuthInfoRes.h>
+#include <huaweicloud/iotda/v5/model/ModuleDTO.h>
 #include <huaweicloud/iotda/v5/model/TagV5DTO.h>
 #include <vector>
 
@@ -214,6 +215,15 @@ public:
     void setTags(const std::vector<TagV5DTO>& value);
 
     /// <summary>
+    /// 设备的OTA模块列表。
+    /// </summary>
+
+    std::vector<ModuleDTO>& getModules();
+    bool modulesIsSet() const;
+    void unsetmodules();
+    void setModules(const std::vector<ModuleDTO>& value);
+
+    /// <summary>
     /// 设备扩展信息。用户可以自定义任何想要的扩展信息，如果在创建设备时为子设备指定该字段，将会通过MQTT接口“平台通知网关子设备新增“将该信息通知给网关。
     /// </summary>
 
@@ -262,6 +272,8 @@ protected:
     bool activeTimeIsSet_;
     std::vector<TagV5DTO> tags_;
     bool tagsIsSet_;
+    std::vector<ModuleDTO> modules_;
+    bool modulesIsSet_;
     Object extensionInfo_;
     bool extensionInfoIsSet_;
 

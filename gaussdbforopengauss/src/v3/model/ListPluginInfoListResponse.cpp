@@ -12,14 +12,9 @@ namespace Model {
 
 ListPluginInfoListResponse::ListPluginInfoListResponse()
 {
-    pluginName_ = "";
-    pluginNameIsSet_ = false;
-    port_ = "";
-    portIsSet_ = false;
-    pluginVersion_ = "";
-    pluginVersionIsSet_ = false;
-    installed_ = "";
-    installedIsSet_ = false;
+    totalCount_ = 0;
+    totalCountIsSet_ = false;
+    pluginsIsSet_ = false;
 }
 
 ListPluginInfoListResponse::~ListPluginInfoListResponse() = default;
@@ -32,17 +27,11 @@ web::json::value ListPluginInfoListResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(pluginNameIsSet_) {
-        val[utility::conversions::to_string_t("plugin_name")] = ModelBase::toJson(pluginName_);
+    if(totalCountIsSet_) {
+        val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
     }
-    if(portIsSet_) {
-        val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
-    }
-    if(pluginVersionIsSet_) {
-        val[utility::conversions::to_string_t("plugin_version")] = ModelBase::toJson(pluginVersion_);
-    }
-    if(installedIsSet_) {
-        val[utility::conversions::to_string_t("installed")] = ModelBase::toJson(installed_);
+    if(pluginsIsSet_) {
+        val[utility::conversions::to_string_t("plugins")] = ModelBase::toJson(plugins_);
     }
 
     return val;
@@ -51,128 +40,68 @@ bool ListPluginInfoListResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("plugin_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plugin_name"));
+    if(val.has_field(utility::conversions::to_string_t("total_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPluginName(refVal);
+            setTotalCount(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("port"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("port"));
+    if(val.has_field(utility::conversions::to_string_t("plugins"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plugins"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<CustomerPluginInfoResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPort(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("plugin_version"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plugin_version"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPluginVersion(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("installed"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("installed"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstalled(refVal);
+            setPlugins(refVal);
         }
     }
     return ok;
 }
 
 
-std::string ListPluginInfoListResponse::getPluginName() const
+int32_t ListPluginInfoListResponse::getTotalCount() const
 {
-    return pluginName_;
+    return totalCount_;
 }
 
-void ListPluginInfoListResponse::setPluginName(const std::string& value)
+void ListPluginInfoListResponse::setTotalCount(int32_t value)
 {
-    pluginName_ = value;
-    pluginNameIsSet_ = true;
+    totalCount_ = value;
+    totalCountIsSet_ = true;
 }
 
-bool ListPluginInfoListResponse::pluginNameIsSet() const
+bool ListPluginInfoListResponse::totalCountIsSet() const
 {
-    return pluginNameIsSet_;
+    return totalCountIsSet_;
 }
 
-void ListPluginInfoListResponse::unsetpluginName()
+void ListPluginInfoListResponse::unsettotalCount()
 {
-    pluginNameIsSet_ = false;
+    totalCountIsSet_ = false;
 }
 
-std::string ListPluginInfoListResponse::getPort() const
+std::vector<CustomerPluginInfoResult>& ListPluginInfoListResponse::getPlugins()
 {
-    return port_;
+    return plugins_;
 }
 
-void ListPluginInfoListResponse::setPort(const std::string& value)
+void ListPluginInfoListResponse::setPlugins(const std::vector<CustomerPluginInfoResult>& value)
 {
-    port_ = value;
-    portIsSet_ = true;
+    plugins_ = value;
+    pluginsIsSet_ = true;
 }
 
-bool ListPluginInfoListResponse::portIsSet() const
+bool ListPluginInfoListResponse::pluginsIsSet() const
 {
-    return portIsSet_;
+    return pluginsIsSet_;
 }
 
-void ListPluginInfoListResponse::unsetport()
+void ListPluginInfoListResponse::unsetplugins()
 {
-    portIsSet_ = false;
-}
-
-std::string ListPluginInfoListResponse::getPluginVersion() const
-{
-    return pluginVersion_;
-}
-
-void ListPluginInfoListResponse::setPluginVersion(const std::string& value)
-{
-    pluginVersion_ = value;
-    pluginVersionIsSet_ = true;
-}
-
-bool ListPluginInfoListResponse::pluginVersionIsSet() const
-{
-    return pluginVersionIsSet_;
-}
-
-void ListPluginInfoListResponse::unsetpluginVersion()
-{
-    pluginVersionIsSet_ = false;
-}
-
-std::string ListPluginInfoListResponse::getInstalled() const
-{
-    return installed_;
-}
-
-void ListPluginInfoListResponse::setInstalled(const std::string& value)
-{
-    installed_ = value;
-    installedIsSet_ = true;
-}
-
-bool ListPluginInfoListResponse::installedIsSet() const
-{
-    return installedIsSet_;
-}
-
-void ListPluginInfoListResponse::unsetinstalled()
-{
-    installedIsSet_ = false;
+    pluginsIsSet_ = false;
 }
 
 }

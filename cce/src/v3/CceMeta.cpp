@@ -321,26 +321,6 @@ HttpRequestDef CceMeta::genRequestDefForGetClusterQuota() {
     return reqDefBuilder;
 }
 
-HttpRequestDef CceMeta::genRequestDefForGetClusterSupportConfiguration() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("ClusterType")
-                  .withJsonTag("clusterType")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ClusterVersion")
-                  .withJsonTag("clusterVersion")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ClusterID")
-                  .withJsonTag("clusterID")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("NetworkMode")
-                  .withJsonTag("networkMode")
-                  .withLocationType(Query_));
-    reqDefBuilder.WithResponseField(FieldDef().
-                withName("Body").
-                withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef CceMeta::genRequestDefForGetCustomizeTags() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -628,6 +608,26 @@ HttpRequestDef CceMeta::genRequestDefForShowClusterConfigurationDetails() {
 
 HttpRequestDef CceMeta::genRequestDefForShowClusterEndpoints() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForShowClusterSupportConfiguration() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ClusterType")
+                  .withJsonTag("clusterType")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ClusterVersion")
+                  .withJsonTag("clusterVersion")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ClusterID")
+                  .withJsonTag("clusterID")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("NetworkMode")
+                  .withJsonTag("networkMode")
+                  .withLocationType(Query_));
+    reqDefBuilder.WithResponseField(FieldDef().
+                withName("Body").
+                withLocationType(Body_));
     return reqDefBuilder;
 }
 

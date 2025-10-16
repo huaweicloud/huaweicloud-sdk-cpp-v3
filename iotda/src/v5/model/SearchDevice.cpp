@@ -40,6 +40,7 @@ SearchDevice::SearchDevice()
     status_ = "";
     statusIsSet_ = false;
     tagsIsSet_ = false;
+    modulesIsSet_ = false;
     marker_ = "";
     markerIsSet_ = false;
 }
@@ -98,6 +99,9 @@ web::json::value SearchDevice::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(modulesIsSet_) {
+        val[utility::conversions::to_string_t("modules")] = ModelBase::toJson(modules_);
     }
     if(markerIsSet_) {
         val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
@@ -242,6 +246,15 @@ bool SearchDevice::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("modules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("modules"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ModuleSearchDTO> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModules(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("marker"))) {
@@ -570,6 +583,27 @@ bool SearchDevice::tagsIsSet() const
 void SearchDevice::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::vector<ModuleSearchDTO>& SearchDevice::getModules()
+{
+    return modules_;
+}
+
+void SearchDevice::setModules(const std::vector<ModuleSearchDTO>& value)
+{
+    modules_ = value;
+    modulesIsSet_ = true;
+}
+
+bool SearchDevice::modulesIsSet() const
+{
+    return modulesIsSet_;
+}
+
+void SearchDevice::unsetmodules()
+{
+    modulesIsSet_ = false;
 }
 
 std::string SearchDevice::getMarker() const

@@ -18,6 +18,8 @@ CreateOtaPackage::CreateOtaPackage()
     packageTypeIsSet_ = false;
     productId_ = "";
     productIdIsSet_ = false;
+    moduleName_ = "";
+    moduleNameIsSet_ = false;
     version_ = "";
     versionIsSet_ = false;
     supportSourceVersionsIsSet_ = false;
@@ -46,6 +48,9 @@ web::json::value CreateOtaPackage::toJson() const
     }
     if(productIdIsSet_) {
         val[utility::conversions::to_string_t("product_id")] = ModelBase::toJson(productId_);
+    }
+    if(moduleNameIsSet_) {
+        val[utility::conversions::to_string_t("module_name")] = ModelBase::toJson(moduleName_);
     }
     if(versionIsSet_) {
         val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
@@ -94,6 +99,15 @@ bool CreateOtaPackage::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProductId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("module_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("module_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModuleName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("version"))) {
@@ -206,6 +220,27 @@ bool CreateOtaPackage::productIdIsSet() const
 void CreateOtaPackage::unsetproductId()
 {
     productIdIsSet_ = false;
+}
+
+std::string CreateOtaPackage::getModuleName() const
+{
+    return moduleName_;
+}
+
+void CreateOtaPackage::setModuleName(const std::string& value)
+{
+    moduleName_ = value;
+    moduleNameIsSet_ = true;
+}
+
+bool CreateOtaPackage::moduleNameIsSet() const
+{
+    return moduleNameIsSet_;
+}
+
+void CreateOtaPackage::unsetmoduleName()
+{
+    moduleNameIsSet_ = false;
 }
 
 std::string CreateOtaPackage::getVersion() const

@@ -6,9 +6,12 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/cpcs/v1/model/AddClusterPortRequest.h>
+#include <huaweicloud/cpcs/v1/model/AddClusterPortResponse.h>
 #include <huaweicloud/cpcs/v1/model/AssociateAppsRequest.h>
 #include <huaweicloud/cpcs/v1/model/AssociateAppsRequestBody.h>
 #include <huaweicloud/cpcs/v1/model/AssociateAppsResponse.h>
+#include <huaweicloud/cpcs/v1/model/AuthObject.h>
 #include <huaweicloud/cpcs/v1/model/AuthorizeAccessKeysRequest.h>
 #include <huaweicloud/cpcs/v1/model/AuthorizeAccessKeysRequestBody.h>
 #include <huaweicloud/cpcs/v1/model/AuthorizeAccessKeysResponse.h>
@@ -19,6 +22,8 @@
 #include <huaweicloud/cpcs/v1/model/BatchEnableAccessKeysResponse.h>
 #include <huaweicloud/cpcs/v1/model/CancelAuthorizeAccessKeysRequest.h>
 #include <huaweicloud/cpcs/v1/model/CancelAuthorizeAccessKeysResponse.h>
+#include <huaweicloud/cpcs/v1/model/CheckClusterPortRequest.h>
+#include <huaweicloud/cpcs/v1/model/CheckClusterPortResponse.h>
 #include <huaweicloud/cpcs/v1/model/CreateAppAccessKeyRequest.h>
 #include <huaweicloud/cpcs/v1/model/CreateAppAccessKeyRequestBody.h>
 #include <huaweicloud/cpcs/v1/model/CreateAppAccessKeyResponse.h>
@@ -28,6 +33,7 @@
 #include <huaweicloud/cpcs/v1/model/CreateClusterRequest.h>
 #include <huaweicloud/cpcs/v1/model/CreateClusterRequestBody.h>
 #include <huaweicloud/cpcs/v1/model/CreateClusterResponse.h>
+#include <huaweicloud/cpcs/v1/model/CreateElbClusterPortRequestBody.h>
 #include <huaweicloud/cpcs/v1/model/DeAuthorizeAccessKeysRequestBody.h>
 #include <huaweicloud/cpcs/v1/model/DeleteAccessKeyRequest.h>
 #include <huaweicloud/cpcs/v1/model/DeleteAccessKeyResponse.h>
@@ -35,6 +41,8 @@
 #include <huaweicloud/cpcs/v1/model/DeleteAppResponse.h>
 #include <huaweicloud/cpcs/v1/model/DeleteCcspClusterRequest.h>
 #include <huaweicloud/cpcs/v1/model/DeleteCcspClusterResponse.h>
+#include <huaweicloud/cpcs/v1/model/DeleteClusterPortRequest.h>
+#include <huaweicloud/cpcs/v1/model/DeleteClusterPortResponse.h>
 #include <huaweicloud/cpcs/v1/model/DisAssociateAppsRequestBody.h>
 #include <huaweicloud/cpcs/v1/model/DisableCcspInstanceRequest.h>
 #include <huaweicloud/cpcs/v1/model/DisableCcspInstanceResponse.h>
@@ -44,6 +52,8 @@
 #include <huaweicloud/cpcs/v1/model/EnableCcspInstanceResponse.h>
 #include <huaweicloud/cpcs/v1/model/ListCcspTenantImagesRequest.h>
 #include <huaweicloud/cpcs/v1/model/ListCcspTenantImagesResponse.h>
+#include <huaweicloud/cpcs/v1/model/ListClusterPortRequest.h>
+#include <huaweicloud/cpcs/v1/model/ListClusterPortResponse.h>
 #include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/cpcs/v1/model/ShowAccessKeyRequest.h>
 #include <huaweicloud/cpcs/v1/model/ShowAccessKeyResponse.h>
@@ -53,6 +63,8 @@
 #include <huaweicloud/cpcs/v1/model/ShowAppListResponse.h>
 #include <huaweicloud/cpcs/v1/model/ShowAssociationListRequest.h>
 #include <huaweicloud/cpcs/v1/model/ShowAssociationListResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowAuditLogRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowAuditLogResponse.h>
 #include <huaweicloud/cpcs/v1/model/ShowAvailableAzRequest.h>
 #include <huaweicloud/cpcs/v1/model/ShowAvailableAzResponse.h>
 #include <huaweicloud/cpcs/v1/model/ShowCcspClusterListRequest.h>
@@ -65,10 +77,32 @@
 #include <huaweicloud/cpcs/v1/model/ShowClusterAccessKeyListResponse.h>
 #include <huaweicloud/cpcs/v1/model/ShowClusterUriRequest.h>
 #include <huaweicloud/cpcs/v1/model/ShowClusterUriResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowResourceDetailAccessKeyRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowResourceDetailAccessKeyResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowResourceDetailCertificateRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowResourceDetailCertificateResponse.h>
 #include <huaweicloud/cpcs/v1/model/ShowResourceInfoRequest.h>
 #include <huaweicloud/cpcs/v1/model/ShowResourceInfoResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatisticCertificateRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatisticCertificateResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatisticInterfaceRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatisticInterfaceResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatisticResourceRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatisticResourceResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatisticSecretKeyRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatisticSecretKeyResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatusAppRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatusAppResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatusClusterRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatusClusterResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatusInstanceRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatusInstanceResponse.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatusServiceRequest.h>
+#include <huaweicloud/cpcs/v1/model/ShowStatusServiceResponse.h>
 #include <huaweicloud/cpcs/v1/model/ShowVmMonitorRequest.h>
 #include <huaweicloud/cpcs/v1/model/ShowVmMonitorResponse.h>
+#include <huaweicloud/cpcs/v1/model/SwitchCpcsTokenRequest.h>
+#include <huaweicloud/cpcs/v1/model/SwitchCpcsTokenResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -95,6 +129,14 @@ public:
 
     static ClientBuilder<CpcsClient> newBuilder();
 
+    // 创建集群模式端口
+    //
+    // 创建集群模式端口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddClusterPortResponse> addClusterPort(
+        AddClusterPortRequest &request
+    );
     // 创建密码服务集群与应用绑定关系
     //
     // 创建密码服务集群与应用绑定关系
@@ -136,6 +178,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CancelAuthorizeAccessKeysResponse> cancelAuthorizeAccessKeys(
         CancelAuthorizeAccessKeysRequest &request
+    );
+    // 检测集群模式端口是否正常
+    //
+    // 检测该端口关联的监听器、后端服务器组是否正确无误。
+    // &gt; 该接口调用后会根据实际情况，更新检查结果。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckClusterPortResponse> checkClusterPort(
+        CheckClusterPortRequest &request
     );
     // 创建应用
     //
@@ -189,6 +240,15 @@ public:
     std::shared_ptr<DeleteCcspClusterResponse> deleteCcspCluster(
         DeleteCcspClusterRequest &request
     );
+    // 删除集群模式端口
+    //
+    // 删除集群模式端口。
+    // &gt; 由于端口可能被租户二次修改过，并用于其他业务,所以删除会有几个不同选项，具体查看参数说明。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteClusterPortResponse> deleteClusterPort(
+        DeleteClusterPortRequest &request
+    );
     // 停用密码服务实例的业务功能
     //
     // 停用密码服务实例的业务功能
@@ -223,6 +283,14 @@ public:
     std::shared_ptr<ListCcspTenantImagesResponse> listCcspTenantImages(
         ListCcspTenantImagesRequest &request
     );
+    // 查询集群模式端口列表
+    //
+    // 列出当前集群下的所有集群模式端口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListClusterPortResponse> listClusterPort(
+        ListClusterPortRequest &request
+    );
     // 下载访问密钥
     //
     // 下载访问密钥且只能下载一次。
@@ -254,6 +322,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAssociationListResponse> showAssociationList(
         ShowAssociationListRequest &request
+    );
+    // 查询平台审计日志
+    //
+    // 查询平台审计日志
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAuditLogResponse> showAuditLog(
+        ShowAuditLogRequest &request
     );
     // 查询可创建密码服务集群的可用区列表
     //
@@ -304,6 +380,22 @@ public:
     std::shared_ptr<ShowClusterUriResponse> showClusterUri(
         ShowClusterUriRequest &request
     );
+    // 获取AK详情
+    //
+    // 获取所监控或者统计的AK详情列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowResourceDetailAccessKeyResponse> showResourceDetailAccessKey(
+        ShowResourceDetailAccessKeyRequest &request
+    );
+    // 获取证书详情
+    //
+    // 获取所监控或者统计的证书详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowResourceDetailCertificateResponse> showResourceDetailCertificate(
+        ShowResourceDetailCertificateRequest &request
+    );
     // 查询租户的资源分布信息
     //
     // 查询租户的资源分布信息
@@ -312,6 +404,70 @@ public:
     std::shared_ptr<ShowResourceInfoResponse> showResourceInfo(
         ShowResourceInfoRequest &request
     );
+    // 获取证书分布统计信息
+    //
+    // 获取CPCS中证书分布统计信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatisticCertificateResponse> showStatisticCertificate(
+        ShowStatisticCertificateRequest &request
+    );
+    // 获取接口调用统计信息
+    //
+    // 获取CPCS中接口调用统计信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatisticInterfaceResponse> showStatisticInterface(
+        ShowStatisticInterfaceRequest &request
+    );
+    // 获取资源总量统计信息
+    //
+    // 获取CPCS中\\资源总量统计信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatisticResourceResponse> showStatisticResource(
+        ShowStatisticResourceRequest &request
+    );
+    // 获取密钥分布统计信息
+    //
+    // 获取CPCS中密钥分布统计信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatisticSecretKeyResponse> showStatisticSecretKey(
+        ShowStatisticSecretKeyRequest &request
+    );
+    // 获取应用状态监控
+    //
+    // CPCS服务创建的应用状态监控
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatusAppResponse> showStatusApp(
+        ShowStatusAppRequest &request
+    );
+    // 获取集群监控信息
+    //
+    // CPCS服务创建的集群的状态监控
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatusClusterResponse> showStatusCluster(
+        ShowStatusClusterRequest &request
+    );
+    // 获取实例监控信息
+    //
+    // CPCS服务创建的密码服务实例的状态监控
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatusInstanceResponse> showStatusInstance(
+        ShowStatusInstanceRequest &request
+    );
+    // 获取服务监控信息
+    //
+    // CPCS服务的状态监控
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStatusServiceResponse> showStatusService(
+        ShowStatusServiceRequest &request
+    );
     // 密码资源指标监控
     //
     // 获取密码服务实例与虚拟密码机实例的指标（cpu使用率，内存使用率等指标）。
@@ -319,6 +475,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVmMonitorResponse> showVmMonitor(
         ShowVmMonitorRequest &request
+    );
+    // AK/SK 换取Cpcs token
+    //
+    // 使用aksk换取cpcs token
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchCpcsTokenResponse> switchCpcsToken(
+        SwitchCpcsTokenRequest &request
     );
 
 

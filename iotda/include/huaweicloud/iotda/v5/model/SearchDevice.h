@@ -10,7 +10,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/iotda/v5/model/ModuleSearchDTO.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -175,6 +177,15 @@ public:
     void setTags(const Object& value);
 
     /// <summary>
+    /// 设备的OTA模块列表。
+    /// </summary>
+
+    std::vector<ModuleSearchDTO>& getModules();
+    bool modulesIsSet() const;
+    void unsetmodules();
+    void setModules(const std::vector<ModuleSearchDTO>& value);
+
+    /// <summary>
     /// 搜索结果记录Id。
     /// </summary>
 
@@ -215,6 +226,8 @@ protected:
     bool statusIsSet_;
     Object tags_;
     bool tagsIsSet_;
+    std::vector<ModuleSearchDTO> modules_;
+    bool modulesIsSet_;
     std::string marker_;
     bool markerIsSet_;
 

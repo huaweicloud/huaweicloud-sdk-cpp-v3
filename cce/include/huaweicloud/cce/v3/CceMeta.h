@@ -46,7 +46,6 @@ public:
     static HttpRequestDef genRequestDefForGetAvaliableZone();
     static HttpRequestDef genRequestDefForGetClusterFlavorSpecs();
     static HttpRequestDef genRequestDefForGetClusterQuota();
-    static HttpRequestDef genRequestDefForGetClusterSupportConfiguration();
     static HttpRequestDef genRequestDefForGetCustomizeTags();
     static HttpRequestDef genRequestDefForGetLabels();
     static HttpRequestDef genRequestDefForGetResourceTags();
@@ -83,6 +82,7 @@ public:
     static HttpRequestDef genRequestDefForShowClusterConfig();
     static HttpRequestDef genRequestDefForShowClusterConfigurationDetails();
     static HttpRequestDef genRequestDefForShowClusterEndpoints();
+    static HttpRequestDef genRequestDefForShowClusterSupportConfiguration();
     static HttpRequestDef genRequestDefForShowClusterUpgradeInfo();
     static HttpRequestDef genRequestDefForShowFeatureGates();
     static HttpRequestDef genRequestDefForShowNode();

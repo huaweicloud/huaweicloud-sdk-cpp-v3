@@ -92,6 +92,15 @@ public:
     void unsetneedWordInfo();
     void setNeedWordInfo(const std::string& value);
 
+    /// <summary>
+    /// 表示是否开启普英方自动识别，取值为“yes”和“no”，默认为“no”。
+    /// </summary>
+
+    std::string getAutoLanguageDetect() const;
+    bool autoLanguageDetectIsSet() const;
+    void unsetautoLanguageDetect();
+    void setAutoLanguageDetect(const std::string& value);
+
 
 protected:
     std::string audioFormat_;
@@ -106,6 +115,8 @@ protected:
     bool digitNormIsSet_;
     std::string needWordInfo_;
     bool needWordInfoIsSet_;
+    std::string autoLanguageDetect_;
+    bool autoLanguageDetectIsSet_;
 
 };
 

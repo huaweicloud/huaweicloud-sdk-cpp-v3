@@ -68,6 +68,15 @@ public:
     void setEndTime(const std::string& value);
 
     /// <summary>
+    /// **参数解释**: SQL模板。 **约束限制**: 如果“limit_type”为SQLID，必传。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+    /// </summary>
+
+    std::string getSqlModel() const;
+    bool sqlModelIsSet() const;
+    void unsetsqlModel();
+    void setSqlModel(const std::string& value);
+
+    /// <summary>
     /// **参数解释**: 限流类型。 **约束限制**: 不涉及。 **取值范围**: - 当“task_scope”为SQL时，可选SQL_ID、SQL_TYPE类型。 - 当“task_scope”为SESSION时，可选SESSION_ACTIVE_MAX_COUNT类型。  **默认取值**: 不涉及。
     /// </summary>
 
@@ -156,6 +165,8 @@ protected:
     bool startTimeIsSet_;
     std::string endTime_;
     bool endTimeIsSet_;
+    std::string sqlModel_;
+    bool sqlModelIsSet_;
     std::string limitType_;
     bool limitTypeIsSet_;
     std::string limitTypeValue_;

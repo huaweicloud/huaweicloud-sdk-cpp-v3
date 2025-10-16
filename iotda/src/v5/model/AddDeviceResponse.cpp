@@ -48,6 +48,7 @@ AddDeviceResponse::AddDeviceResponse()
     activeTime_ = "";
     activeTimeIsSet_ = false;
     tagsIsSet_ = false;
+    modulesIsSet_ = false;
     extensionInfoIsSet_ = false;
 }
 
@@ -117,6 +118,9 @@ web::json::value AddDeviceResponse::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(modulesIsSet_) {
+        val[utility::conversions::to_string_t("modules")] = ModelBase::toJson(modules_);
     }
     if(extensionInfoIsSet_) {
         val[utility::conversions::to_string_t("extension_info")] = ModelBase::toJson(extensionInfo_);
@@ -297,6 +301,15 @@ bool AddDeviceResponse::fromJson(const web::json::value& val)
             std::vector<TagV5DTO> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("modules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("modules"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ModuleDTO> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModules(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("extension_info"))) {
@@ -709,6 +722,27 @@ bool AddDeviceResponse::tagsIsSet() const
 void AddDeviceResponse::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::vector<ModuleDTO>& AddDeviceResponse::getModules()
+{
+    return modules_;
+}
+
+void AddDeviceResponse::setModules(const std::vector<ModuleDTO>& value)
+{
+    modules_ = value;
+    modulesIsSet_ = true;
+}
+
+bool AddDeviceResponse::modulesIsSet() const
+{
+    return modulesIsSet_;
+}
+
+void AddDeviceResponse::unsetmodules()
+{
+    modulesIsSet_ = false;
 }
 
 Object AddDeviceResponse::getExtensionInfo() const

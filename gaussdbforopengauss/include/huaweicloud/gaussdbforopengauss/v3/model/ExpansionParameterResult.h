@@ -84,7 +84,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 参数描述。 **取值范围**: 不涉及。
+    /// **参数解释**: 参数解释。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getDescription() const;

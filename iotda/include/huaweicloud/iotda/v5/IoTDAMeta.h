@@ -112,6 +112,11 @@ public:
     static HttpRequestDef genRequestDefForDeleteDeviceMessage();
     static HttpRequestDef genRequestDefForListDeviceMessages();
     static HttpRequestDef genRequestDefForShowDeviceMessage();
+    static HttpRequestDef genRequestDefForCreateOtaModule();
+    static HttpRequestDef genRequestDefForDeleteOtaModule();
+    static HttpRequestDef genRequestDefForListOtaModules();
+    static HttpRequestDef genRequestDefForShowOtaModule();
+    static HttpRequestDef genRequestDefForUpdateOtaModule();
     static HttpRequestDef genRequestDefForCreateOtaPackage();
     static HttpRequestDef genRequestDefForDeleteOtaPackage();
     static HttpRequestDef genRequestDefForListOtaPackageInfo();

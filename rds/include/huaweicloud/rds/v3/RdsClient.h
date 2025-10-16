@@ -596,9 +596,15 @@
 #include <huaweicloud/rds/v3/model/CreateSqlserverDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/CreateSqlserverDbUserRequest.h>
 #include <huaweicloud/rds/v3/model/CreateSqlserverDbUserResponse.h>
+#include <huaweicloud/rds/v3/model/CreateSubscriptionRequest.h>
+#include <huaweicloud/rds/v3/model/CreateSubscriptionRequestBody.h>
+#include <huaweicloud/rds/v3/model/CreateSubscriptionResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostRequestBody.h>
 #include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostResponse.h>
+#include <huaweicloud/rds/v3/model/DeletePublicationRequest.h>
+#include <huaweicloud/rds/v3/model/DeletePublicationRequestBody.h>
+#include <huaweicloud/rds/v3/model/DeletePublicationResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteSqlserverDatabaseExRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteSqlserverDatabaseExResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteSqlserverDatabaseRequest.h>
@@ -611,17 +617,28 @@
 #include <huaweicloud/rds/v3/model/ListAuthorizedSqlserverDbUsersResponse.h>
 #include <huaweicloud/rds/v3/model/ListBusinessPartnersRequest.h>
 #include <huaweicloud/rds/v3/model/ListBusinessPartnersResponse.h>
+#include <huaweicloud/rds/v3/model/ListDistributionRequest.h>
+#include <huaweicloud/rds/v3/model/ListDistributionResponse.h>
+#include <huaweicloud/rds/v3/model/ListDistributorInstancesRequest.h>
+#include <huaweicloud/rds/v3/model/ListDistributorInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListMarketplaceEngineProductsRequest.h>
 #include <huaweicloud/rds/v3/model/ListMarketplaceEngineProductsResponse.h>
 #include <huaweicloud/rds/v3/model/ListMsdtcHostsRequest.h>
 #include <huaweicloud/rds/v3/model/ListMsdtcHostsResponse.h>
+#include <huaweicloud/rds/v3/model/ListPublicationsRequest.h>
+#include <huaweicloud/rds/v3/model/ListPublicationsResponse.h>
 #include <huaweicloud/rds/v3/model/ListSqlserverDatabasesRequest.h>
 #include <huaweicloud/rds/v3/model/ListSqlserverDatabasesResponse.h>
 #include <huaweicloud/rds/v3/model/ListSqlserverDbUsersRequest.h>
 #include <huaweicloud/rds/v3/model/ListSqlserverDbUsersResponse.h>
+#include <huaweicloud/rds/v3/model/ListSubscriberInstancesRequest.h>
+#include <huaweicloud/rds/v3/model/ListSubscriberInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ModifyCollationRequest.h>
 #include <huaweicloud/rds/v3/model/ModifyCollationRequestBody.h>
 #include <huaweicloud/rds/v3/model/ModifyCollationResponse.h>
+#include <huaweicloud/rds/v3/model/ModifyPublicationRequest.h>
+#include <huaweicloud/rds/v3/model/ModifyPublicationResponse.h>
+#include <huaweicloud/rds/v3/model/ModifyPublicationsRequestBody.h>
 #include <huaweicloud/rds/v3/model/RevokeSqlserverDbUserPrivilegeRequest.h>
 #include <huaweicloud/rds/v3/model/RevokeSqlserverDbUserPrivilegeResponse.h>
 #include <huaweicloud/rds/v3/model/SetInstancesDbShrinkRequest.h>
@@ -2525,6 +2542,14 @@ public:
     std::shared_ptr<CreateSqlserverDbUserResponse> createSqlserverDbUser(
         CreateSqlserverDbUserRequest &request
     );
+    // 创建订阅
+    //
+    // 创建订阅
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSubscriptionResponse> createSubscription(
+        CreateSubscriptionRequest &request
+    );
     // 删除MSDTC
     //
     // 删除MSDTC相关主机host地址
@@ -2532,6 +2557,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteMsdtcLocalHostResponse> deleteMsdtcLocalHost(
         DeleteMsdtcLocalHostRequest &request
+    );
+    // 删除发布
+    //
+    // 删除发布
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeletePublicationResponse> deletePublication(
+        DeletePublicationRequest &request
     );
     // 删除数据库
     //
@@ -2573,6 +2606,22 @@ public:
     std::shared_ptr<ListBusinessPartnersResponse> listBusinessPartners(
         ListBusinessPartnersRequest &request
     );
+    // 查询当前实例配置的分发服务器
+    //
+    // 查询当前实例配置的分发服务器
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDistributionResponse> listDistribution(
+        ListDistributionRequest &request
+    );
+    // 查询可配置为当前实例分发服务器的实例列表
+    //
+    // 查询可配置为当前实例分发服务器的实例列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDistributorInstancesResponse> listDistributorInstances(
+        ListDistributorInstancesRequest &request
+    );
     // 查询云市场引擎商品列表
     //
     // 查询云市场引擎商品列表。
@@ -2588,6 +2637,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListMsdtcHostsResponse> listMsdtcHosts(
         ListMsdtcHostsRequest &request
+    );
+    // 查询实例发布信息
+    //
+    // 查询实例发布信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPublicationsResponse> listPublications(
+        ListPublicationsRequest &request
     );
     // 查询数据库列表
     //
@@ -2605,6 +2662,14 @@ public:
     std::shared_ptr<ListSqlserverDbUsersResponse> listSqlserverDbUsers(
         ListSqlserverDbUsersRequest &request
     );
+    // 查询可配置为当前实例订阅服务器的实例列表
+    //
+    // 查询可配置为当前实例订阅服务器的实例列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSubscriberInstancesResponse> listSubscriberInstances(
+        ListSubscriberInstancesRequest &request
+    );
     // 修改实例字符集
     //
     // 修改实例字符集。
@@ -2612,6 +2677,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyCollationResponse> modifyCollation(
         ModifyCollationRequest &request
+    );
+    // 修改发布
+    //
+    // 修改发布
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyPublicationResponse> modifyPublication(
+        ModifyPublicationRequest &request
     );
     // 解除数据库帐号权限
     //

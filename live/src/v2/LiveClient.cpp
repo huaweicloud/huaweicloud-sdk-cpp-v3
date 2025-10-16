@@ -543,6 +543,51 @@ std::shared_ptr<ListSnapshotDataResponse> LiveClient::listSnapshotData(ListSnaps
 
     return localVarResult;
 }
+std::shared_ptr<ListTranscodeConcurrencyNumResponse> LiveClient::listTranscodeConcurrencyNum(ListTranscodeConcurrencyNumRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/stats/transcode/concurrency";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.publishDomainsIsSet()) {
+        localVarQueryParams["publish_domains"] = parameterToString(request.getPublishDomains());
+    }
+    if (request.appIsSet()) {
+        localVarQueryParams["app"] = parameterToString(request.getApp());
+    }
+    if (request.intervalIsSet()) {
+        localVarQueryParams["interval"] = parameterToString(request.getInterval());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListTranscodeConcurrencyNum());
+
+    std::shared_ptr<ListTranscodeConcurrencyNumResponse> localVarResult = std::make_shared<ListTranscodeConcurrencyNumResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListTranscodeDataResponse> LiveClient::listTranscodeData(ListTranscodeDataRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/stats/transcode";

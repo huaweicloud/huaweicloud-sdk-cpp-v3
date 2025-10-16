@@ -23,6 +23,7 @@ public:
     static HttpRequestDef genRequestDefForListQueryHttpCode();
     static HttpRequestDef genRequestDefForListRecordData();
     static HttpRequestDef genRequestDefForListSnapshotData();
+    static HttpRequestDef genRequestDefForListTranscodeConcurrencyNum();
     static HttpRequestDef genRequestDefForListTranscodeData();
     static HttpRequestDef genRequestDefForListUsersOfStream();
     static HttpRequestDef genRequestDefForShowStreamCount();

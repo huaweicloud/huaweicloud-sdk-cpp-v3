@@ -18,6 +18,8 @@ ObsLocation::ObsLocation()
     bucketNameIsSet_ = false;
     objectKey_ = "";
     objectKeyIsSet_ = false;
+    signMethod_ = "";
+    signMethodIsSet_ = false;
     sign_ = "";
     signIsSet_ = false;
 }
@@ -40,6 +42,9 @@ web::json::value ObsLocation::toJson() const
     }
     if(objectKeyIsSet_) {
         val[utility::conversions::to_string_t("object_key")] = ModelBase::toJson(objectKey_);
+    }
+    if(signMethodIsSet_) {
+        val[utility::conversions::to_string_t("sign_method")] = ModelBase::toJson(signMethod_);
     }
     if(signIsSet_) {
         val[utility::conversions::to_string_t("sign")] = ModelBase::toJson(sign_);
@@ -76,6 +81,15 @@ bool ObsLocation::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObjectKey(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sign_method"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sign_method"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSignMethod(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("sign"))) {
@@ -152,6 +166,27 @@ bool ObsLocation::objectKeyIsSet() const
 void ObsLocation::unsetobjectKey()
 {
     objectKeyIsSet_ = false;
+}
+
+std::string ObsLocation::getSignMethod() const
+{
+    return signMethod_;
+}
+
+void ObsLocation::setSignMethod(const std::string& value)
+{
+    signMethod_ = value;
+    signMethodIsSet_ = true;
+}
+
+bool ObsLocation::signMethodIsSet() const
+{
+    return signMethodIsSet_;
+}
+
+void ObsLocation::unsetsignMethod()
+{
+    signMethodIsSet_ = false;
 }
 
 std::string ObsLocation::getSign() const

@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cdn/v2/model/Criteria.h>
+#include <huaweicloud/cdn/v2/model/CriteriaItem.h>
 #include <string>
 #include <vector>
 
@@ -53,16 +53,16 @@ public:
     /// **参数解释：** 匹配条件列表 **约束限制：** 不涉及
     /// </summary>
 
-    std::vector<Criteria>& getCriteria();
+    std::vector<CriteriaItem>& getCriteria();
     bool criteriaIsSet() const;
     void unsetcriteria();
-    void setCriteria(const std::vector<Criteria>& value);
+    void setCriteria(const std::vector<CriteriaItem>& value);
 
 
 protected:
     std::string logic_;
     bool logicIsSet_;
-    std::vector<Criteria> criteria_;
+    std::vector<CriteriaItem> criteria_;
     bool criteriaIsSet_;
 
 };

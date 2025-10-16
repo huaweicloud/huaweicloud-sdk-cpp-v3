@@ -50,7 +50,7 @@ public:
     void setAppId(const std::string& value);
 
     /// <summary>
-    /// **参数说明**：升级包类型。 **取值范围**：软件包必须设置为：softwarePackage，固件包必须设置为：firmwarePackage。
+    /// **参数说明**：升级包类型。 **取值范围**：软件包必须设置为：softwarePackage，固件包必须设置为：firmwarePackage, 模块包必须设置为：modulePackage。
     /// </summary>
 
     std::string getPackageType() const;
@@ -66,6 +66,15 @@ public:
     bool productIdIsSet() const;
     void unsetproductId();
     void setProductId(const std::string& value);
+
+    /// <summary>
+    /// **参数说明**：OTA模块名称，产品下唯一且不可修改。当package_type为modulePackage时，支持该参数 **取值范围**：长度不超过64，只允许英文字母、数字、下划线（_）、连接符（-）、英文点（.）的组合。
+    /// </summary>
+
+    std::string getModuleName() const;
+    bool moduleNameIsSet() const;
+    void unsetmoduleName();
+    void setModuleName(const std::string& value);
 
     /// <summary>
     /// **参数说明**：升级包版本号。 **取值范围**：长度不超过256，只允许字母、数字、下划线（_）、连接符（-）、英文点（.）的组合。
@@ -120,6 +129,8 @@ protected:
     bool packageTypeIsSet_;
     std::string productId_;
     bool productIdIsSet_;
+    std::string moduleName_;
+    bool moduleNameIsSet_;
     std::string version_;
     bool versionIsSet_;
     std::vector<std::string> supportSourceVersions_;

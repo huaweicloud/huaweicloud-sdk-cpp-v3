@@ -88,8 +88,6 @@
 #include <huaweicloud/cce/v3/model/GetClusterFlavorSpecsResponse.h>
 #include <huaweicloud/cce/v3/model/GetClusterQuotaRequest.h>
 #include <huaweicloud/cce/v3/model/GetClusterQuotaResponse.h>
-#include <huaweicloud/cce/v3/model/GetClusterSupportConfigurationRequest.h>
-#include <huaweicloud/cce/v3/model/GetClusterSupportConfigurationResponse.h>
 #include <huaweicloud/cce/v3/model/GetCustomizeTagsRequest.h>
 #include <huaweicloud/cce/v3/model/GetCustomizeTagsResponse.h>
 #include <huaweicloud/cce/v3/model/GetLabelsRequest.h>
@@ -179,6 +177,8 @@
 #include <huaweicloud/cce/v3/model/ShowClusterEndpointsResponse.h>
 #include <huaweicloud/cce/v3/model/ShowClusterRequest.h>
 #include <huaweicloud/cce/v3/model/ShowClusterResponse.h>
+#include <huaweicloud/cce/v3/model/ShowClusterSupportConfigurationRequest.h>
+#include <huaweicloud/cce/v3/model/ShowClusterSupportConfigurationResponse.h>
 #include <huaweicloud/cce/v3/model/ShowClusterUpgradeInfoRequest.h>
 #include <huaweicloud/cce/v3/model/ShowClusterUpgradeInfoResponse.h>
 #include <huaweicloud/cce/v3/model/ShowFeatureGatesRequest.h>
@@ -689,14 +689,6 @@ public:
     std::shared_ptr<GetClusterQuotaResponse> getClusterQuota(
         GetClusterQuotaRequest &request
     );
-    // 获取集群支持的可配置参数列表
-    //
-    // 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<GetClusterSupportConfigurationResponse> getClusterSupportConfiguration(
-        GetClusterSupportConfigurationRequest &request
-    );
     // 查询自定义标签
     //
     // 该API用于查询自定义标签
@@ -1004,6 +996,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowClusterEndpointsResponse> showClusterEndpoints(
         ShowClusterEndpointsRequest &request
+    );
+    // 获取集群支持的可配置参数列表
+    //
+    // 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowClusterSupportConfigurationResponse> showClusterSupportConfiguration(
+        ShowClusterSupportConfigurationRequest &request
     );
     // 获取集群升级相关信息
     //

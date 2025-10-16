@@ -24,6 +24,8 @@ Config::Config()
     digitNormIsSet_ = false;
     needWordInfo_ = "";
     needWordInfoIsSet_ = false;
+    autoLanguageDetect_ = "";
+    autoLanguageDetectIsSet_ = false;
 }
 
 Config::~Config() = default;
@@ -53,6 +55,9 @@ web::json::value Config::toJson() const
     }
     if(needWordInfoIsSet_) {
         val[utility::conversions::to_string_t("need_word_info")] = ModelBase::toJson(needWordInfo_);
+    }
+    if(autoLanguageDetectIsSet_) {
+        val[utility::conversions::to_string_t("auto_language_detect")] = ModelBase::toJson(autoLanguageDetect_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool Config::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNeedWordInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_language_detect"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_language_detect"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoLanguageDetect(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool Config::needWordInfoIsSet() const
 void Config::unsetneedWordInfo()
 {
     needWordInfoIsSet_ = false;
+}
+
+std::string Config::getAutoLanguageDetect() const
+{
+    return autoLanguageDetect_;
+}
+
+void Config::setAutoLanguageDetect(const std::string& value)
+{
+    autoLanguageDetect_ = value;
+    autoLanguageDetectIsSet_ = true;
+}
+
+bool Config::autoLanguageDetectIsSet() const
+{
+    return autoLanguageDetectIsSet_;
+}
+
+void Config::unsetautoLanguageDetect()
+{
+    autoLanguageDetectIsSet_ = false;
 }
 
 }

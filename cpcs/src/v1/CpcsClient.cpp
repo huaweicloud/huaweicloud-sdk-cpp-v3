@@ -33,6 +33,48 @@ ClientBuilder<CpcsClient> CpcsClient::newBuilder()
     ClientBuilder<CpcsClient> client = ClientBuilder<CpcsClient>("");
     return client;
 }
+std::shared_ptr<AddClusterPortResponse> CpcsClient::addClusterPort(AddClusterPortRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForAddClusterPort());
+
+    std::shared_ptr<AddClusterPortResponse> localVarResult = std::make_shared<AddClusterPortResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<AssociateAppsResponse> CpcsClient::associateApps(AssociateAppsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dew/cpcs/associate-apps";
@@ -239,6 +281,37 @@ std::shared_ptr<CancelAuthorizeAccessKeysResponse> CpcsClient::cancelAuthorizeAc
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<CheckClusterPortResponse> CpcsClient::checkClusterPort(CheckClusterPortRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForCheckClusterPort());
+
+    std::shared_ptr<CheckClusterPortResponse> localVarResult = std::make_shared<CheckClusterPortResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -457,6 +530,40 @@ std::shared_ptr<DeleteCcspClusterResponse> CpcsClient::deleteCcspCluster(DeleteC
 
     return localVarResult;
 }
+std::shared_ptr<DeleteClusterPortResponse> CpcsClient::deleteClusterPort(DeleteClusterPortRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForDeleteClusterPort());
+
+    std::shared_ptr<DeleteClusterPortResponse> localVarResult = std::make_shared<DeleteClusterPortResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DisableCcspInstanceResponse> CpcsClient::disableCcspInstance(DisableCcspInstanceRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dew/cpcs/instances/{instance_id}/disable";
@@ -599,6 +706,36 @@ std::shared_ptr<ListCcspTenantImagesResponse> CpcsClient::listCcspTenantImages(L
         localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForListCcspTenantImages());
 
     std::shared_ptr<ListCcspTenantImagesResponse> localVarResult = std::make_shared<ListCcspTenantImagesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListClusterPortResponse> CpcsClient::listClusterPort(ListClusterPortRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForListClusterPort());
+
+    std::shared_ptr<ListClusterPortResponse> localVarResult = std::make_shared<ListClusterPortResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -769,6 +906,47 @@ std::shared_ptr<ShowAssociationListResponse> CpcsClient::showAssociationList(Sho
         localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowAssociationList());
 
     std::shared_ptr<ShowAssociationListResponse> localVarResult = std::make_shared<ShowAssociationListResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAuditLogResponse> CpcsClient::showAuditLog(ShowAuditLogRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/platform/audit-log";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.pageNumIsSet()) {
+        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowAuditLog());
+
+    std::shared_ptr<ShowAuditLogResponse> localVarResult = std::make_shared<ShowAuditLogResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1009,6 +1187,118 @@ std::shared_ptr<ShowClusterUriResponse> CpcsClient::showClusterUri(ShowClusterUr
 
     return localVarResult;
 }
+std::shared_ptr<ShowResourceDetailAccessKeyResponse> CpcsClient::showResourceDetailAccessKey(ShowResourceDetailAccessKeyRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/resource/access-key";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.serviceTypeIsSet()) {
+        localVarQueryParams["service_type"] = parameterToString(request.getServiceType());
+    }
+    if (request.algorithmTypeIsSet()) {
+        localVarQueryParams["algorithm_type"] = parameterToString(request.getAlgorithmType());
+    }
+    if (request.certificateTypeIsSet()) {
+        localVarQueryParams["certificate_type"] = parameterToString(request.getCertificateType());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.pageNumIsSet()) {
+        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowResourceDetailAccessKey());
+
+    std::shared_ptr<ShowResourceDetailAccessKeyResponse> localVarResult = std::make_shared<ShowResourceDetailAccessKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowResourceDetailCertificateResponse> CpcsClient::showResourceDetailCertificate(ShowResourceDetailCertificateRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/resource/certificates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.serviceTypeIsSet()) {
+        localVarQueryParams["service_type"] = parameterToString(request.getServiceType());
+    }
+    if (request.algorithmTypeIsSet()) {
+        localVarQueryParams["algorithm_type"] = parameterToString(request.getAlgorithmType());
+    }
+    if (request.certificateTypeIsSet()) {
+        localVarQueryParams["certificate_type"] = parameterToString(request.getCertificateType());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.pageNumIsSet()) {
+        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowResourceDetailCertificate());
+
+    std::shared_ptr<ShowResourceDetailCertificateResponse> localVarResult = std::make_shared<ShowResourceDetailCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowResourceInfoResponse> CpcsClient::showResourceInfo(ShowResourceInfoRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dew/cpcs/resource-info";
@@ -1032,6 +1322,454 @@ std::shared_ptr<ShowResourceInfoResponse> CpcsClient::showResourceInfo(ShowResou
         localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowResourceInfo());
 
     std::shared_ptr<ShowResourceInfoResponse> localVarResult = std::make_shared<ShowResourceInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStatisticCertificateResponse> CpcsClient::showStatisticCertificate(ShowStatisticCertificateRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/certificate/statistic";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+    if (request.periodIsSet()) {
+        localVarQueryParams["period"] = parameterToString(request.getPeriod());
+    }
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.algorithmIsSet()) {
+        localVarQueryParams["algorithm"] = parameterToString(request.getAlgorithm());
+    }
+    if (request.algorithmTypeIsSet()) {
+        localVarQueryParams["algorithm_type"] = parameterToString(request.getAlgorithmType());
+    }
+    if (request.certificateTypeIsSet()) {
+        localVarQueryParams["certificate_type"] = parameterToString(request.getCertificateType());
+    }
+    if (request.serverTypeIsSet()) {
+        localVarQueryParams["server_type"] = parameterToString(request.getServerType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowStatisticCertificate());
+
+    std::shared_ptr<ShowStatisticCertificateResponse> localVarResult = std::make_shared<ShowStatisticCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStatisticInterfaceResponse> CpcsClient::showStatisticInterface(ShowStatisticInterfaceRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/interface/statistic";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+    if (request.periodIsSet()) {
+        localVarQueryParams["period"] = parameterToString(request.getPeriod());
+    }
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.algorithmIsSet()) {
+        localVarQueryParams["algorithm"] = parameterToString(request.getAlgorithm());
+    }
+    if (request.algorithmTypeIsSet()) {
+        localVarQueryParams["algorithm_type"] = parameterToString(request.getAlgorithmType());
+    }
+    if (request.certificateTypeIsSet()) {
+        localVarQueryParams["certificate_type"] = parameterToString(request.getCertificateType());
+    }
+    if (request.serverTypeIsSet()) {
+        localVarQueryParams["server_type"] = parameterToString(request.getServerType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowStatisticInterface());
+
+    std::shared_ptr<ShowStatisticInterfaceResponse> localVarResult = std::make_shared<ShowStatisticInterfaceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStatisticResourceResponse> CpcsClient::showStatisticResource(ShowStatisticResourceRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/resource/statistic";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+    if (request.periodIsSet()) {
+        localVarQueryParams["period"] = parameterToString(request.getPeriod());
+    }
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.algorithmIsSet()) {
+        localVarQueryParams["algorithm"] = parameterToString(request.getAlgorithm());
+    }
+    if (request.algorithmTypeIsSet()) {
+        localVarQueryParams["algorithm_type"] = parameterToString(request.getAlgorithmType());
+    }
+    if (request.certificateTypeIsSet()) {
+        localVarQueryParams["certificate_type"] = parameterToString(request.getCertificateType());
+    }
+    if (request.serverTypeIsSet()) {
+        localVarQueryParams["server_type"] = parameterToString(request.getServerType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowStatisticResource());
+
+    std::shared_ptr<ShowStatisticResourceResponse> localVarResult = std::make_shared<ShowStatisticResourceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStatisticSecretKeyResponse> CpcsClient::showStatisticSecretKey(ShowStatisticSecretKeyRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/secret-key/statistic";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+    if (request.periodIsSet()) {
+        localVarQueryParams["period"] = parameterToString(request.getPeriod());
+    }
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.algorithmIsSet()) {
+        localVarQueryParams["algorithm"] = parameterToString(request.getAlgorithm());
+    }
+    if (request.algorithmTypeIsSet()) {
+        localVarQueryParams["algorithm_type"] = parameterToString(request.getAlgorithmType());
+    }
+    if (request.certificateTypeIsSet()) {
+        localVarQueryParams["certificate_type"] = parameterToString(request.getCertificateType());
+    }
+    if (request.serverTypeIsSet()) {
+        localVarQueryParams["server_type"] = parameterToString(request.getServerType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowStatisticSecretKey());
+
+    std::shared_ptr<ShowStatisticSecretKeyResponse> localVarResult = std::make_shared<ShowStatisticSecretKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStatusAppResponse> CpcsClient::showStatusApp(ShowStatusAppRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/app/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+    if (request.periodIsSet()) {
+        localVarQueryParams["period"] = parameterToString(request.getPeriod());
+    }
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.serverTypeIsSet()) {
+        localVarQueryParams["server_type"] = parameterToString(request.getServerType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowStatusApp());
+
+    std::shared_ptr<ShowStatusAppResponse> localVarResult = std::make_shared<ShowStatusAppResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStatusClusterResponse> CpcsClient::showStatusCluster(ShowStatusClusterRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/cluster/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+    if (request.periodIsSet()) {
+        localVarQueryParams["period"] = parameterToString(request.getPeriod());
+    }
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.serverTypeIsSet()) {
+        localVarQueryParams["server_type"] = parameterToString(request.getServerType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowStatusCluster());
+
+    std::shared_ptr<ShowStatusClusterResponse> localVarResult = std::make_shared<ShowStatusClusterResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStatusInstanceResponse> CpcsClient::showStatusInstance(ShowStatusInstanceRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/instance/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+    if (request.periodIsSet()) {
+        localVarQueryParams["period"] = parameterToString(request.getPeriod());
+    }
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.serverTypeIsSet()) {
+        localVarQueryParams["server_type"] = parameterToString(request.getServerType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowStatusInstance());
+
+    std::shared_ptr<ShowStatusInstanceResponse> localVarResult = std::make_shared<ShowStatusInstanceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowStatusServiceResponse> CpcsClient::showStatusService(ShowStatusServiceRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/service/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterIdIsSet()) {
+        localVarQueryParams["cluster_id"] = parameterToString(request.getClusterId());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.toIsSet()) {
+        localVarQueryParams["to"] = parameterToString(request.getTo());
+    }
+    if (request.periodIsSet()) {
+        localVarQueryParams["period"] = parameterToString(request.getPeriod());
+    }
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.serverTypeIsSet()) {
+        localVarQueryParams["server_type"] = parameterToString(request.getServerType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForShowStatusService());
+
+    std::shared_ptr<ShowStatusServiceResponse> localVarResult = std::make_shared<ShowStatusServiceResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1088,6 +1826,47 @@ std::shared_ptr<ShowVmMonitorResponse> CpcsClient::showVmMonitor(ShowVmMonitorRe
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<SwitchCpcsTokenResponse> CpcsClient::switchCpcsToken(SwitchCpcsTokenRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dew/cpcs/token/switch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CpcsMeta::genRequestDefForSwitchCpcsToken());
+
+    std::shared_ptr<SwitchCpcsTokenResponse> localVarResult = std::make_shared<SwitchCpcsTokenResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

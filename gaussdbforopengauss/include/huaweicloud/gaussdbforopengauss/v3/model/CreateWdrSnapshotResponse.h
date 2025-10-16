@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -38,19 +37,8 @@ public:
     /////////////////////////////////////////////
     /// CreateWdrSnapshotResponse members
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Object getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const Object& value);
-
 
 protected:
-    Object body_;
-    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

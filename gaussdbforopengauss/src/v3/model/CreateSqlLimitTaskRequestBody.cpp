@@ -18,6 +18,8 @@ CreateSqlLimitTaskRequestBody::CreateSqlLimitTaskRequestBody()
     startTimeIsSet_ = false;
     endTime_ = "";
     endTimeIsSet_ = false;
+    sqlModel_ = "";
+    sqlModelIsSet_ = false;
     limitType_ = "";
     limitTypeIsSet_ = false;
     limitTypeValue_ = "";
@@ -55,6 +57,9 @@ web::json::value CreateSqlLimitTaskRequestBody::toJson() const
     }
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
+    }
+    if(sqlModelIsSet_) {
+        val[utility::conversions::to_string_t("sql_model")] = ModelBase::toJson(sqlModel_);
     }
     if(limitTypeIsSet_) {
         val[utility::conversions::to_string_t("limit_type")] = ModelBase::toJson(limitType_);
@@ -115,6 +120,15 @@ bool CreateSqlLimitTaskRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sql_model"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_model"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSqlModel(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("limit_type"))) {
@@ -263,6 +277,27 @@ bool CreateSqlLimitTaskRequestBody::endTimeIsSet() const
 void CreateSqlLimitTaskRequestBody::unsetendTime()
 {
     endTimeIsSet_ = false;
+}
+
+std::string CreateSqlLimitTaskRequestBody::getSqlModel() const
+{
+    return sqlModel_;
+}
+
+void CreateSqlLimitTaskRequestBody::setSqlModel(const std::string& value)
+{
+    sqlModel_ = value;
+    sqlModelIsSet_ = true;
+}
+
+bool CreateSqlLimitTaskRequestBody::sqlModelIsSet() const
+{
+    return sqlModelIsSet_;
+}
+
+void CreateSqlLimitTaskRequestBody::unsetsqlModel()
+{
+    sqlModelIsSet_ = false;
 }
 
 std::string CreateSqlLimitTaskRequestBody::getLimitType() const

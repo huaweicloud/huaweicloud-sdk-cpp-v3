@@ -76,7 +76,7 @@ public:
     void setEndTime(const utility::datetime& value);
 
     /// <summary>
-    /// **参数描述** 偏移量。 **约束限制**: 不涉及。 **取值范围** 大于等于0。 **默认值** 0 
+    /// **参数解释** 偏移量。 **约束限制**: 不涉及。 **取值范围** 大于等于0。 **默认值** 0 
     /// </summary>
 
     int32_t getOffset() const;
@@ -85,7 +85,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// **参数描述** 每页显示的条目数量。 **约束限制**: 不涉及。 **取值范围** [1, 100] **默认值** 10 
+    /// **参数解释** 每页显示的条目数量。 **约束限制**: 不涉及。 **取值范围** [1, 100] **默认值** 10 
     /// </summary>
 
     int32_t getLimit() const;

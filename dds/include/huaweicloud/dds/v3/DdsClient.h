@@ -79,6 +79,9 @@
 #include <huaweicloud/dds/v3/model/DeleteDatabaseUserResponse.h>
 #include <huaweicloud/dds/v3/model/DeleteInstanceRequest.h>
 #include <huaweicloud/dds/v3/model/DeleteInstanceResponse.h>
+#include <huaweicloud/dds/v3/model/DeleteIpRequest.h>
+#include <huaweicloud/dds/v3/model/DeleteIpRequestBody.h>
+#include <huaweicloud/dds/v3/model/DeleteIpResponse.h>
 #include <huaweicloud/dds/v3/model/DeleteKillOpRuleListRequest.h>
 #include <huaweicloud/dds/v3/model/DeleteKillOpRuleListRequestBody.h>
 #include <huaweicloud/dds/v3/model/DeleteKillOpRuleListResponse.h>
@@ -559,6 +562,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteInstanceResponse> deleteInstance(
         DeleteInstanceRequest &request
+    );
+    // 删除集群的Shard/Config IP
+    //
+    // 删除集群的Shard/Config IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteIpResponse> deleteIp(
+        DeleteIpRequest &request
     );
     // 删除killOp规则
     //

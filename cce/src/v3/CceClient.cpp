@@ -1287,47 +1287,6 @@ std::shared_ptr<GetClusterQuotaResponse> CceClient::getClusterQuota(GetClusterQu
 
     return localVarResult;
 }
-std::shared_ptr<GetClusterSupportConfigurationResponse> CceClient::getClusterSupportConfiguration(GetClusterSupportConfigurationRequest &request)
-{
-    std::string localVarPath = "/api/v3/clusters/configuration/detail";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.clusterTypeIsSet()) {
-        localVarQueryParams["clusterType"] = parameterToString(request.getClusterType());
-    }
-    if (request.clusterVersionIsSet()) {
-        localVarQueryParams["clusterVersion"] = parameterToString(request.getClusterVersion());
-    }
-    if (request.clusterIDIsSet()) {
-        localVarQueryParams["clusterID"] = parameterToString(request.getClusterID());
-    }
-    if (request.networkModeIsSet()) {
-        localVarQueryParams["networkMode"] = parameterToString(request.getNetworkMode());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetClusterSupportConfiguration());
-
-    std::shared_ptr<GetClusterSupportConfigurationResponse> localVarResult = std::make_shared<GetClusterSupportConfigurationResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<GetCustomizeTagsResponse> CceClient::getCustomizeTags(GetCustomizeTagsRequest &request)
 {
     std::string localVarPath = "/cce/v1/{project_id}/{resource_type}/tags";
@@ -2563,6 +2522,47 @@ std::shared_ptr<ShowClusterEndpointsResponse> CceClient::showClusterEndpoints(Sh
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForShowClusterEndpoints());
 
     std::shared_ptr<ShowClusterEndpointsResponse> localVarResult = std::make_shared<ShowClusterEndpointsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowClusterSupportConfigurationResponse> CceClient::showClusterSupportConfiguration(ShowClusterSupportConfigurationRequest &request)
+{
+    std::string localVarPath = "/api/v3/clusters/configuration/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.clusterTypeIsSet()) {
+        localVarQueryParams["clusterType"] = parameterToString(request.getClusterType());
+    }
+    if (request.clusterVersionIsSet()) {
+        localVarQueryParams["clusterVersion"] = parameterToString(request.getClusterVersion());
+    }
+    if (request.clusterIDIsSet()) {
+        localVarQueryParams["clusterID"] = parameterToString(request.getClusterID());
+    }
+    if (request.networkModeIsSet()) {
+        localVarQueryParams["networkMode"] = parameterToString(request.getNetworkMode());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForShowClusterSupportConfiguration());
+
+    std::shared_ptr<ShowClusterSupportConfigurationResponse> localVarResult = std::make_shared<ShowClusterSupportConfigurationResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

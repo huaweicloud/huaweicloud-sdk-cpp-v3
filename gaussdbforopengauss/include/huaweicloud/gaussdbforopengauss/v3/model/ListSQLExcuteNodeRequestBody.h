@@ -39,7 +39,7 @@ public:
     /// ListSQLExcuteNodeRequestBody members
 
     /// <summary>
-    /// **参数描述**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
+    /// **参数解释**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
     /// </summary>
 
     std::string getAction() const;

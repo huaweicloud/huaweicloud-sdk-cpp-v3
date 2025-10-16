@@ -20,6 +20,10 @@ CreateOtaPackageResponse::CreateOtaPackageResponse()
     packageTypeIsSet_ = false;
     productId_ = "";
     productIdIsSet_ = false;
+    productName_ = "";
+    productNameIsSet_ = false;
+    moduleName_ = "";
+    moduleNameIsSet_ = false;
     version_ = "";
     versionIsSet_ = false;
     supportSourceVersionsIsSet_ = false;
@@ -53,6 +57,12 @@ web::json::value CreateOtaPackageResponse::toJson() const
     }
     if(productIdIsSet_) {
         val[utility::conversions::to_string_t("product_id")] = ModelBase::toJson(productId_);
+    }
+    if(productNameIsSet_) {
+        val[utility::conversions::to_string_t("product_name")] = ModelBase::toJson(productName_);
+    }
+    if(moduleNameIsSet_) {
+        val[utility::conversions::to_string_t("module_name")] = ModelBase::toJson(moduleName_);
     }
     if(versionIsSet_) {
         val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
@@ -113,6 +123,24 @@ bool CreateOtaPackageResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProductId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("product_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProductName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("module_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("module_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModuleName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("version"))) {
@@ -255,6 +283,48 @@ bool CreateOtaPackageResponse::productIdIsSet() const
 void CreateOtaPackageResponse::unsetproductId()
 {
     productIdIsSet_ = false;
+}
+
+std::string CreateOtaPackageResponse::getProductName() const
+{
+    return productName_;
+}
+
+void CreateOtaPackageResponse::setProductName(const std::string& value)
+{
+    productName_ = value;
+    productNameIsSet_ = true;
+}
+
+bool CreateOtaPackageResponse::productNameIsSet() const
+{
+    return productNameIsSet_;
+}
+
+void CreateOtaPackageResponse::unsetproductName()
+{
+    productNameIsSet_ = false;
+}
+
+std::string CreateOtaPackageResponse::getModuleName() const
+{
+    return moduleName_;
+}
+
+void CreateOtaPackageResponse::setModuleName(const std::string& value)
+{
+    moduleName_ = value;
+    moduleNameIsSet_ = true;
+}
+
+bool CreateOtaPackageResponse::moduleNameIsSet() const
+{
+    return moduleNameIsSet_;
+}
+
+void CreateOtaPackageResponse::unsetmoduleName()
+{
+    moduleNameIsSet_ = false;
 }
 
 std::string CreateOtaPackageResponse::getVersion() const

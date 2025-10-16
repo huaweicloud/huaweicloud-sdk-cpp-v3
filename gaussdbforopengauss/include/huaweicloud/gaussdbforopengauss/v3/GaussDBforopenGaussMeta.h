@@ -120,7 +120,10 @@ public:
     static HttpRequestDef genRequestDefForListRestoreTimes();
     static HttpRequestDef genRequestDefForListScheduleTask();
     static HttpRequestDef genRequestDefForListSchemaAndTable();
+    static HttpRequestDef genRequestDefForListSessionMemoryContext();
     static HttpRequestDef genRequestDefForListSessionStatistics();
+    static HttpRequestDef genRequestDefForListSessionTopSqlStatistics();
+    static HttpRequestDef genRequestDefForListSessionWaitEventStatistics();
     static HttpRequestDef genRequestDefForListStorageTypes();
     static HttpRequestDef genRequestDefForListSupportKernelPlugins();
     static HttpRequestDef genRequestDefForListTableDefinition();

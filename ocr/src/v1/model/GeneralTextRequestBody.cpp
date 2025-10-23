@@ -28,6 +28,8 @@ GeneralTextRequestBody::GeneralTextRequestBody()
     singleOrientationModeIsSet_ = false;
     pdfPageNumber_ = 0;
     pdfPageNumberIsSet_ = false;
+    returnMarkdownResult_ = false;
+    returnMarkdownResultIsSet_ = false;
 }
 
 GeneralTextRequestBody::~GeneralTextRequestBody() = default;
@@ -63,6 +65,9 @@ web::json::value GeneralTextRequestBody::toJson() const
     }
     if(pdfPageNumberIsSet_) {
         val[utility::conversions::to_string_t("pdf_page_number")] = ModelBase::toJson(pdfPageNumber_);
+    }
+    if(returnMarkdownResultIsSet_) {
+        val[utility::conversions::to_string_t("return_markdown_result")] = ModelBase::toJson(returnMarkdownResult_);
     }
 
     return val;
@@ -141,6 +146,15 @@ bool GeneralTextRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPdfPageNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_markdown_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_markdown_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnMarkdownResult(refVal);
         }
     }
     return ok;
@@ -313,6 +327,27 @@ bool GeneralTextRequestBody::pdfPageNumberIsSet() const
 void GeneralTextRequestBody::unsetpdfPageNumber()
 {
     pdfPageNumberIsSet_ = false;
+}
+
+bool GeneralTextRequestBody::isReturnMarkdownResult() const
+{
+    return returnMarkdownResult_;
+}
+
+void GeneralTextRequestBody::setReturnMarkdownResult(bool value)
+{
+    returnMarkdownResult_ = value;
+    returnMarkdownResultIsSet_ = true;
+}
+
+bool GeneralTextRequestBody::returnMarkdownResultIsSet() const
+{
+    return returnMarkdownResultIsSet_;
+}
+
+void GeneralTextRequestBody::unsetreturnMarkdownResult()
+{
+    returnMarkdownResultIsSet_ = false;
 }
 
 }

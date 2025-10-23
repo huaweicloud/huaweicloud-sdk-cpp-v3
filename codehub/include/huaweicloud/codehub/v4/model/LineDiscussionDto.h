@@ -59,7 +59,7 @@ public:
     void setLine(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 所在的行的类型。 old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
+    /// **参数解释：** 所在的行的类型。 **取值范围：** old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
     /// </summary>
 
     std::string getType() const;

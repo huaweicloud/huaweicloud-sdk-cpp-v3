@@ -77,7 +77,6 @@ public:
     static HttpRequestDef genRequestDefForListDatabaseSchemaTables();
     static HttpRequestDef genRequestDefForListDatabaseSchemas();
     static HttpRequestDef genRequestDefForListDatabaseVersions();
-    static HttpRequestDef genRequestDefForListDatabaseVolume();
     static HttpRequestDef genRequestDefForListDatabaseVolumeSummary();
     static HttpRequestDef genRequestDefForListDatabases();
     static HttpRequestDef genRequestDefForListDatastores();
@@ -200,6 +199,7 @@ public:
     static HttpRequestDef genRequestDefForSwitchShard();
     static HttpRequestDef genRequestDefForUpdateExpansionParameters();
     static HttpRequestDef genRequestDefForUpdateFeatures();
+    static HttpRequestDef genRequestDefForUpdateInstanceAlias();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpdateInstanceVersions();
@@ -229,7 +229,9 @@ public:
     static HttpRequestDef genRequestDefForListSlowSqls();
     static HttpRequestDef genRequestDefForListSqlExcuteNodes();
     static HttpRequestDef genRequestDefForListSqlLimitTask();
+    static HttpRequestDef genRequestDefForListSqlPlanAction();
     static HttpRequestDef genRequestDefForListSqlTrace();
+    static HttpRequestDef genRequestDefForShowFullSql();
     static HttpRequestDef genRequestDefForShowGlobalSlowSqlDetail();
     static HttpRequestDef genRequestDefForShowLimitTask();
     static HttpRequestDef genRequestDefForShowSqlLimitTask();

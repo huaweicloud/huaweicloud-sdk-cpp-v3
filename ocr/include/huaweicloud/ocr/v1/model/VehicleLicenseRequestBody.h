@@ -92,6 +92,15 @@ public:
     void unsetrecognizeElectronicLicense();
     void setRecognizeElectronicLicense(bool value);
 
+    /// <summary>
+    /// 是否返回纸质行驶证图像的告警信息，可选值包括： - true：返回纸质行驶证图像的告警信息 - false：不返回纸质行驶证图像的告警信息 如果无该参数，系统默认不返回告警信息。如果输入参数不是Boolean类型，则会报非法参数错误。 
+    /// </summary>
+
+    bool isAlarm() const;
+    bool alarmIsSet() const;
+    void unsetalarm();
+    void setAlarm(bool value);
+
 
 protected:
     std::string image_;
@@ -106,6 +115,8 @@ protected:
     bool returnTextLocationIsSet_;
     bool recognizeElectronicLicense_;
     bool recognizeElectronicLicenseIsSet_;
+    bool alarm_;
+    bool alarmIsSet_;
 
 };
 

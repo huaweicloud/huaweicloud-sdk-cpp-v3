@@ -66,7 +66,7 @@ public:
     void setUsername(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 用户状态。 **取值范围：** 字符串长度不少于1，不超过1000。
+    /// **参数解释：** 用户状态 active 活跃用户 blocked 锁定禁用用户。
     /// </summary>
 
     std::string getState() const;

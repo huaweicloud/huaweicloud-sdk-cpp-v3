@@ -66,7 +66,7 @@ public:
     void setGpgKeyId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 子秘钥的id。 **取值范围：** 字符串长度不少于1，不超过1000。
+    /// **参数解释：** 子密钥的id。 **取值范围：** 字符串长度不少于1，不超过1000。
     /// </summary>
 
     std::string getKeyid() const;

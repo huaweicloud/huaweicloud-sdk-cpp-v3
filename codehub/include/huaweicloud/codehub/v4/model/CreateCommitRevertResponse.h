@@ -256,6 +256,15 @@ public:
     void unsetrevertBranchName();
     void setRevertBranchName(const std::string& value);
 
+    /// <summary>
+    /// 变更请求 iid,仅变更请求返回
+    /// </summary>
+
+    int32_t getIid() const;
+    bool iidIsSet() const;
+    void unsetiid();
+    void setIid(int32_t value);
+
 
 protected:
     std::string id_;
@@ -306,6 +315,8 @@ protected:
     bool cherryPickBranchNameIsSet_;
     std::string revertBranchName_;
     bool revertBranchNameIsSet_;
+    int32_t iid_;
+    bool iidIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

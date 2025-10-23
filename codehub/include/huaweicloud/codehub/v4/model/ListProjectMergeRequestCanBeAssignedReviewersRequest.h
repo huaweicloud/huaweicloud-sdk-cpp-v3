@@ -47,10 +47,32 @@ public:
     void unsetprojectId();
     void setProjectId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 偏移量，从0开始。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 返回数量。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
 
 protected:
     std::string projectId_;
     bool projectIdIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

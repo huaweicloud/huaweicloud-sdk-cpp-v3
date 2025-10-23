@@ -280,7 +280,7 @@ public:
     void setStats(const CommitStatsDto& value);
 
     /// <summary>
-    /// **参数解释：** 状态。 **取值范围：** 不涉及。
+    /// 流水线状态，pending为排队，running为运行中，success为成功，failed为失败，canceled为取消，skipped为跳过，timedout为超时
     /// </summary>
 
     std::string getStatus() const;

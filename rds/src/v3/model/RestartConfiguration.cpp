@@ -18,6 +18,7 @@ RestartConfiguration::RestartConfiguration()
     forcibleIsSet_ = false;
     delay_ = false;
     delayIsSet_ = false;
+    restartPolicyIsSet_ = false;
 }
 
 RestartConfiguration::~RestartConfiguration() = default;
@@ -38,6 +39,9 @@ web::json::value RestartConfiguration::toJson() const
     }
     if(delayIsSet_) {
         val[utility::conversions::to_string_t("delay")] = ModelBase::toJson(delay_);
+    }
+    if(restartPolicyIsSet_) {
+        val[utility::conversions::to_string_t("restart_policy")] = ModelBase::toJson(restartPolicy_);
     }
 
     return val;
@@ -71,6 +75,15 @@ bool RestartConfiguration::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDelay(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("restart_policy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("restart_policy"));
+        if(!fieldValue.is_null())
+        {
+            RestartPolicy refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRestartPolicy(refVal);
         }
     }
     return ok;
@@ -138,6 +151,27 @@ bool RestartConfiguration::delayIsSet() const
 void RestartConfiguration::unsetdelay()
 {
     delayIsSet_ = false;
+}
+
+RestartPolicy RestartConfiguration::getRestartPolicy() const
+{
+    return restartPolicy_;
+}
+
+void RestartConfiguration::setRestartPolicy(const RestartPolicy& value)
+{
+    restartPolicy_ = value;
+    restartPolicyIsSet_ = true;
+}
+
+bool RestartConfiguration::restartPolicyIsSet() const
+{
+    return restartPolicyIsSet_;
+}
+
+void RestartConfiguration::unsetrestartPolicy()
+{
+    restartPolicyIsSet_ = false;
 }
 
 }

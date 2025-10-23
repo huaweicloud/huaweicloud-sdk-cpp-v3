@@ -40,7 +40,7 @@ public:
     /// ImpersonationToken members
 
     /// <summary>
-    /// **参数解释：** 唯一标示id。
+    /// **参数解释：** 唯一标识id。
     /// </summary>
 
     int32_t getId() const;

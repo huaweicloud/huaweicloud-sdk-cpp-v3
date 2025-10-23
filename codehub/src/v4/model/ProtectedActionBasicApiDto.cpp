@@ -19,6 +19,7 @@ ProtectedActionBasicApiDto::ProtectedActionBasicApiDto()
     userIdsIsSet_ = false;
     userTeamIdsIsSet_ = false;
     relatedRoleIdsIsSet_ = false;
+    additionSwitchersIsSet_ = false;
 }
 
 ProtectedActionBasicApiDto::~ProtectedActionBasicApiDto() = default;
@@ -45,6 +46,9 @@ web::json::value ProtectedActionBasicApiDto::toJson() const
     }
     if(relatedRoleIdsIsSet_) {
         val[utility::conversions::to_string_t("related_role_ids")] = ModelBase::toJson(relatedRoleIds_);
+    }
+    if(additionSwitchersIsSet_) {
+        val[utility::conversions::to_string_t("addition_switchers")] = ModelBase::toJson(additionSwitchers_);
     }
 
     return val;
@@ -96,6 +100,15 @@ bool ProtectedActionBasicApiDto::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRelatedRoleIds(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("addition_switchers"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("addition_switchers"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ForceActionEnableDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionSwitchers(refVal);
         }
     }
     return ok;
@@ -205,6 +218,27 @@ bool ProtectedActionBasicApiDto::relatedRoleIdsIsSet() const
 void ProtectedActionBasicApiDto::unsetrelatedRoleIds()
 {
     relatedRoleIdsIsSet_ = false;
+}
+
+std::vector<ForceActionEnableDto>& ProtectedActionBasicApiDto::getAdditionSwitchers()
+{
+    return additionSwitchers_;
+}
+
+void ProtectedActionBasicApiDto::setAdditionSwitchers(const std::vector<ForceActionEnableDto>& value)
+{
+    additionSwitchers_ = value;
+    additionSwitchersIsSet_ = true;
+}
+
+bool ProtectedActionBasicApiDto::additionSwitchersIsSet() const
+{
+    return additionSwitchersIsSet_;
+}
+
+void ProtectedActionBasicApiDto::unsetadditionSwitchers()
+{
+    additionSwitchersIsSet_ = false;
 }
 
 }

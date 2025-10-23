@@ -40,7 +40,7 @@ public:
     /// ShowProjectSettingsInheritCfgResponse members
 
     /// <summary>
-    /// 
+    /// 项目继承设置列表
     /// </summary>
 
     std::vector<ProjectSettingsInheritCfgDto>& getBody();

@@ -26,6 +26,7 @@ public:
     static HttpRequestDef genRequestDefForChangeFailoverStrategy();
     static HttpRequestDef genRequestDefForChangeOpsWindow();
     static HttpRequestDef genRequestDefForCheckInstanceForUpgrade();
+    static HttpRequestDef genRequestDefForCheckWeakpwd();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateConfiguration();
     static HttpRequestDef genRequestDefForCreateDnsName();
@@ -75,6 +76,7 @@ public:
     static HttpRequestDef genRequestDefForListJobInfo();
     static HttpRequestDef genRequestDefForListJobInfoDetail();
     static HttpRequestDef genRequestDefForListLogLtsConfigs();
+    static HttpRequestDef genRequestDefForListMajorVersionFeature();
     static HttpRequestDef genRequestDefForListOffSiteBackups();
     static HttpRequestDef genRequestDefForListOffSiteInstances();
     static HttpRequestDef genRequestDefForListOffSiteRestoreTimes();
@@ -101,6 +103,7 @@ public:
     static HttpRequestDef genRequestDefForListSslCertDownloadLink();
     static HttpRequestDef genRequestDefForListStorageTypes();
     static HttpRequestDef genRequestDefForListTasks();
+    static HttpRequestDef genRequestDefForListTopSqls();
     static HttpRequestDef genRequestDefForListUpdateBackupEnhancePolicy();
     static HttpRequestDef genRequestDefForListUpgradeHistories();
     static HttpRequestDef genRequestDefForListVolumeInfo();
@@ -108,6 +111,7 @@ public:
     static HttpRequestDef genRequestDefForMigrateFollower();
     static HttpRequestDef genRequestDefForModifyPostgresqlHbaConf();
     static HttpRequestDef genRequestDefForModifyRdSforMySqlProxyRouteMode();
+    static HttpRequestDef genRequestDefForNotifyReplaceNode();
     static HttpRequestDef genRequestDefForRestoreExistInstance();
     static HttpRequestDef genRequestDefForRestoreLogReplayDatabase();
     static HttpRequestDef genRequestDefForRestoreTables();
@@ -145,6 +149,7 @@ public:
     static HttpRequestDef genRequestDefForShowQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowReplicationStatus();
+    static HttpRequestDef genRequestDefForShowRestartPolicy();
     static HttpRequestDef genRequestDefForShowSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForShowStorageUsedSpace();
     static HttpRequestDef genRequestDefForShowTaskDetail();

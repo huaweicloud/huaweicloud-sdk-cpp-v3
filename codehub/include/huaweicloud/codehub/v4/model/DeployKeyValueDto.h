@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 部署秘钥
+/// 部署密钥
 /// </summary>
 class HUAWEICLOUD_CODEHUB_V4_EXPORT  DeployKeyValueDto
     : public ModelBase

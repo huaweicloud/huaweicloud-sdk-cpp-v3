@@ -256,7 +256,7 @@ public:
     void setOnlyAllowMergeIfVoteBiggerThan(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 仅合并人和合并合并请求。
+    /// **参数解释：** 仅合并人可合并合并请求。
     /// </summary>
 
     bool isOnlyAssigneeCanMerge() const;

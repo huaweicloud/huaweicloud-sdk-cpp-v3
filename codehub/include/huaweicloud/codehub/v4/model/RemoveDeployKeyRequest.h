@@ -47,7 +47,7 @@ public:
     void setRepositoryId(int32_t value);
 
     /// <summary>
-    /// **参数解释：**  部署秘钥 ID。
+    /// **参数解释：**  部署密钥 ID。
     /// </summary>
 
     int32_t getKeyId() const;

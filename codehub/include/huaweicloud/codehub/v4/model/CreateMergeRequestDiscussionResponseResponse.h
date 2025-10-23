@@ -50,7 +50,7 @@ public:
     void setId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 类型(普通评论、需要解决的普通评论、需要解决的关联代码行的评论)。
+    /// **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。
     /// </summary>
 
     std::string getType() const;
@@ -122,7 +122,7 @@ public:
     void setNoteableId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 意见类型。
+    /// **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
     /// </summary>
 
     std::string getNoteableType() const;

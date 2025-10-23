@@ -58,7 +58,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 是否是系统模版。 **取值范围：** - true，系统模版。 - false，个人模版。
+    /// **参数解释：** 是否是系统模板。 **取值范围：** - true，系统模板。 - false，个人模板。
     /// </summary>
 
     bool isSystem() const;

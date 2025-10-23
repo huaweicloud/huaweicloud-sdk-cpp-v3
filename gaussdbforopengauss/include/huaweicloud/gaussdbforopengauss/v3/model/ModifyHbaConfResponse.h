@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -38,30 +37,8 @@ public:
     /////////////////////////////////////////////
     /// ModifyHbaConfResponse members
 
-    /// <summary>
-    /// **参数解释**: 结果码。 **取值范围**: 不涉及。
-    /// </summary>
-
-    std::string getCode() const;
-    bool codeIsSet() const;
-    void unsetcode();
-    void setCode(const std::string& value);
-
-    /// <summary>
-    /// **参数解释**: 结果描述。 **取值范围**: 不涉及。
-    /// </summary>
-
-    std::string getMessage() const;
-    bool messageIsSet() const;
-    void unsetmessage();
-    void setMessage(const std::string& value);
-
 
 protected:
-    std::string code_;
-    bool codeIsSet_;
-    std::string message_;
-    bool messageIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

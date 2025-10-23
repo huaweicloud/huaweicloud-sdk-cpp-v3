@@ -65,6 +65,15 @@ public:
     void unsetquery();
     void setQuery(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**: SQL执行数量。 **取值范围**: 大于等于0。 
+    /// </summary>
+
+    int32_t getCount() const;
+    bool countIsSet() const;
+    void unsetcount();
+    void setCount(int32_t value);
+
 
 protected:
     std::string nodeName_;
@@ -73,6 +82,8 @@ protected:
     bool uniqueSqlIdIsSet_;
     std::string query_;
     bool queryIsSet_;
+    int32_t count_;
+    bool countIsSet_;
 
 };
 

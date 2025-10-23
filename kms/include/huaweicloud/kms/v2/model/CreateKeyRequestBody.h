@@ -48,7 +48,7 @@ public:
     void setKeyAlias(const std::string& value);
 
     /// <summary>
-    /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2
+    /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
     /// </summary>
 
     std::string getKeySpec() const;

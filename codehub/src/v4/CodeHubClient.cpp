@@ -33,207 +33,6 @@ ClientBuilder<CodeHubClient> CodeHubClient::newBuilder()
     ClientBuilder<CodeHubClient> client = ClientBuilder<CodeHubClient>("");
     return client;
 }
-std::shared_ptr<CreateBranchResponse> CodeHubClient::createBranch(CreateBranchRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branches";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateBranch());
-
-    std::shared_ptr<CreateBranchResponse> localVarResult = std::make_shared<CreateBranchResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<DeleteBranchResponse> CodeHubClient::deleteBranch(DeleteBranchRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branch";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.branchNameIsSet()) {
-        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteBranch());
-
-    std::shared_ptr<DeleteBranchResponse> localVarResult = std::make_shared<DeleteBranchResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListBranchesResponse> CodeHubClient::listBranches(ListBranchesRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branches";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.branchTypeIsSet()) {
-        localVarQueryParams["branch_type"] = parameterToString(request.getBranchType());
-    }
-    if (request.creatorIsSet()) {
-        localVarQueryParams["creator"] = parameterToString(request.getCreator());
-    }
-    if (request.sortIsSet()) {
-        localVarQueryParams["sort"] = parameterToString(request.getSort());
-    }
-    if (request.queryViewIsSet()) {
-        localVarQueryParams["query_view"] = parameterToString(request.getQueryView());
-    }
-    if (request.viewIsSet()) {
-        localVarQueryParams["view"] = parameterToString(request.getView());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListBranches());
-
-    std::shared_ptr<ListBranchesResponse> localVarResult = std::make_shared<ListBranchesResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowBranchResponse> CodeHubClient::showBranch(ShowBranchRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branch";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.branchNameIsSet()) {
-        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowBranch());
-
-    std::shared_ptr<ShowBranchResponse> localVarResult = std::make_shared<ShowBranchResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<UpdateBranchNameResponse> CodeHubClient::updateBranchName(UpdateBranchNameRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branch";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateBranchName());
-
-    std::shared_ptr<UpdateBranchNameResponse> localVarResult = std::make_shared<UpdateBranchNameResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<CreateCommitResponse> CodeHubClient::createCommit(CreateCommitRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/repository/commits";
@@ -350,6 +149,66 @@ std::shared_ptr<ListCommitAssociatedRefsResponse> CodeHubClient::listCommitAssoc
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListCommitAssociatedRefs());
 
     std::shared_ptr<ListCommitAssociatedRefsResponse> localVarResult = std::make_shared<ListCommitAssociatedRefsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListCommitsResponse> CodeHubClient::listCommits(ListCommitsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/commit-list";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.refNameIsSet()) {
+        localVarQueryParams["ref_name"] = parameterToString(request.getRefName());
+    }
+    if (request.sinceIsSet()) {
+        localVarQueryParams["since"] = parameterToString(request.getSince());
+    }
+    if (request.untilIsSet()) {
+        localVarQueryParams["until"] = parameterToString(request.getUntil());
+    }
+    if (request.pathIsSet()) {
+        localVarQueryParams["path"] = parameterToString(request.getPath());
+    }
+    if (request.messageIsSet()) {
+        localVarQueryParams["message"] = parameterToString(request.getMessage());
+    }
+    if (request.authorIsSet()) {
+        localVarQueryParams["author"] = parameterToString(request.getAuthor());
+    }
+    if (request.orderByDateIsSet()) {
+        localVarQueryParams["order_by_date"] = parameterToString(request.isOrderByDate());
+    }
+    if (request.followIsSet()) {
+        localVarQueryParams["follow"] = parameterToString(request.isFollow());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListCommits());
+
+    std::shared_ptr<ListCommitsResponse> localVarResult = std::make_shared<ListCommitsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -644,6 +503,79 @@ std::shared_ptr<CreateReviewSettingResponse> CodeHubClient::createReviewSetting(
 
     return localVarResult;
 }
+std::shared_ptr<DeleteMergeRequestDiscussionResponse> CodeHubClient::deleteMergeRequestDiscussion(DeleteMergeRequestDiscussionRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/discussions/{discussion_id}/notes/{note_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["merge_request_iid"] = parameterToString(request.getMergeRequestIid());
+    localVarPathParams["discussion_id"] = parameterToString(request.getDiscussionId());
+    localVarPathParams["note_id"] = parameterToString(request.getNoteId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteMergeRequestDiscussion());
+
+    std::shared_ptr<DeleteMergeRequestDiscussionResponse> localVarResult = std::make_shared<DeleteMergeRequestDiscussionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListCommitDiscussionsResponse> CodeHubClient::listCommitDiscussions(ListCommitDiscussionsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/commits/{sha}/discussions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["sha"] = parameterToString(request.getSha());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListCommitDiscussions());
+
+    std::shared_ptr<ListCommitDiscussionsResponse> localVarResult = std::make_shared<ListCommitDiscussionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListDefaultReviewCategoriesResponse> CodeHubClient::listDefaultReviewCategories(ListDefaultReviewCategoriesRequest &request)
 {
     std::string localVarPath = "/v4/default-review-categories";
@@ -713,6 +645,43 @@ std::shared_ptr<ListMergeRequestDiscussionsResponse> CodeHubClient::listMergeReq
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListMergeRequestDiscussions());
 
     std::shared_ptr<ListMergeRequestDiscussionsResponse> localVarResult = std::make_shared<ListMergeRequestDiscussionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListMergeRequestSystemNotesResponse> CodeHubClient::listMergeRequestSystemNotes(ListMergeRequestSystemNotesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/system-notes";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["merge_request_iid"] = parameterToString(request.getMergeRequestIid());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListMergeRequestSystemNotes());
+
+    std::shared_ptr<ListMergeRequestSystemNotesResponse> localVarResult = std::make_shared<ListMergeRequestSystemNotesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1186,6 +1155,50 @@ std::shared_ptr<UpdateMergeRequestDiscussionResponse> CodeHubClient::updateMerge
 
     return localVarResult;
 }
+std::shared_ptr<UpdateMergeRequestDiscussionInfoResponse> CodeHubClient::updateMergeRequestDiscussionInfo(UpdateMergeRequestDiscussionInfoRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/discussions/{discussion_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["merge_request_iid"] = parameterToString(request.getMergeRequestIid());
+    localVarPathParams["discussion_id"] = parameterToString(request.getDiscussionId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateMergeRequestDiscussionInfo());
+
+    std::shared_ptr<UpdateMergeRequestDiscussionInfoResponse> localVarResult = std::make_shared<UpdateMergeRequestDiscussionInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateNoteRequiredAttributesResponse> CodeHubClient::updateNoteRequiredAttributes(UpdateNoteRequiredAttributesRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/setting/note-required-attributes";
@@ -1547,6 +1560,132 @@ std::shared_ptr<ListFilesResponse> CodeHubClient::listFiles(ListFilesRequest &re
 
     return localVarResult;
 }
+std::shared_ptr<ListLogsTreeResponse> CodeHubClient::listLogsTree(ListLogsTreeRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/logs-tree";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.refIsSet()) {
+        localVarQueryParams["ref"] = parameterToString(request.getRef());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListLogsTree());
+
+    std::shared_ptr<ListLogsTreeResponse> localVarResult = std::make_shared<ListLogsTreeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListTreesResponse> CodeHubClient::listTrees(ListTreesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/trees";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.refIsSet()) {
+        localVarQueryParams["ref"] = parameterToString(request.getRef());
+    }
+    if (request.pathIsSet()) {
+        localVarQueryParams["path"] = parameterToString(request.getPath());
+    }
+    if (request.recursiveIsSet()) {
+        localVarQueryParams["recursive"] = parameterToString(request.isRecursive());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListTrees());
+
+    std::shared_ptr<ListTreesResponse> localVarResult = std::make_shared<ListTreesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<RenameFileResponse> CodeHubClient::renameFile(RenameFileRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/rename-file";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForRenameFile());
+
+    std::shared_ptr<RenameFileResponse> localVarResult = std::make_shared<RenameFileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ShowFileResponse> CodeHubClient::showFile(ShowFileRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/repository/file";
@@ -1613,6 +1752,42 @@ std::shared_ptr<ShowFileContentResponse> CodeHubClient::showFileContent(ShowFile
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowFileContent());
 
     std::shared_ptr<ShowFileContentResponse> localVarResult = std::make_shared<ShowFileContentResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowFileRawResponse> CodeHubClient::showFileRaw(ShowFileRawRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/files/raw";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.filePathIsSet()) {
+        localVarQueryParams["file_path"] = parameterToString(request.getFilePath());
+    }
+    if (request.refIsSet()) {
+        localVarQueryParams["ref"] = parameterToString(request.getRef());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowFileRaw());
+
+    std::shared_ptr<ShowFileRawResponse> localVarResult = std::make_shared<ShowFileRawResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1691,171 +1866,6 @@ std::shared_ptr<UpdateFileResponse> CodeHubClient::updateFile(UpdateFileRequest 
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-
-    return localVarResult;
-}
-std::shared_ptr<BatchDeleteRepositoryFilePushPermissionsResponse> CodeHubClient::batchDeleteRepositoryFilePushPermissions(BatchDeleteRepositoryFilePushPermissionsRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/file-push-permissions/batch-delete";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchDeleteRepositoryFilePushPermissions());
-
-    std::shared_ptr<BatchDeleteRepositoryFilePushPermissionsResponse> localVarResult = std::make_shared<BatchDeleteRepositoryFilePushPermissionsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<BatchUpdateRepositoryFilePushPermissionsResponse> CodeHubClient::batchUpdateRepositoryFilePushPermissions(BatchUpdateRepositoryFilePushPermissionsRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/file-push-permissions";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchUpdateRepositoryFilePushPermissions());
-
-    std::shared_ptr<BatchUpdateRepositoryFilePushPermissionsResponse> localVarResult = std::make_shared<BatchUpdateRepositoryFilePushPermissionsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<CreateFilePushPermissionResponse> CodeHubClient::createFilePushPermission(CreateFilePushPermissionRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/file-push-permissions";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateFilePushPermission());
-
-    std::shared_ptr<CreateFilePushPermissionResponse> localVarResult = std::make_shared<CreateFilePushPermissionResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<ListRepositoryFilePushPermissionsResponse> CodeHubClient::listRepositoryFilePushPermissions(ListRepositoryFilePushPermissionsRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/file-push-permissions";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.searchIsSet()) {
-        localVarQueryParams["search"] = parameterToString(request.getSearch());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListRepositoryFilePushPermissions());
-
-    std::shared_ptr<ListRepositoryFilePushPermissionsResponse> localVarResult = std::make_shared<ListRepositoryFilePushPermissionsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -2173,6 +2183,45 @@ std::shared_ptr<ListGroupSubgroupsAndRepositoriesResponse> CodeHubClient::listGr
 
     return localVarResult;
 }
+std::shared_ptr<ListGroupUserGroupsResponse> CodeHubClient::listGroupUserGroups(ListGroupUserGroupsRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/user-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListGroupUserGroups());
+
+    std::shared_ptr<ListGroupUserGroupsResponse> localVarResult = std::make_shared<ListGroupUserGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListGroupsResponse> CodeHubClient::listGroups(ListGroupsRequest &request)
 {
     std::string localVarPath = "/v4/groups/list";
@@ -2226,51 +2275,9 @@ std::shared_ptr<ListGroupsResponse> CodeHubClient::listGroups(ListGroupsRequest 
 
     return localVarResult;
 }
-std::shared_ptr<ListImpersonationTokensResponse> CodeHubClient::listImpersonationTokens(ListImpersonationTokensRequest &request)
+std::shared_ptr<ListManageableGroupsResponse> CodeHubClient::listManageableGroups(ListManageableGroupsRequest &request)
 {
-    std::string localVarPath = "/v4/users/impersonation-tokens";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.stateIsSet()) {
-        localVarQueryParams["state"] = parameterToString(request.getState());
-    }
-    if (request.searchIsSet()) {
-        localVarQueryParams["search"] = parameterToString(request.getSearch());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListImpersonationTokens());
-
-    std::shared_ptr<ListImpersonationTokensResponse> localVarResult = std::make_shared<ListImpersonationTokensResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListProductPermissionResourcesGrantedUsersResponse> CodeHubClient::listProductPermissionResourcesGrantedUsers(ListProductPermissionResourcesGrantedUsersRequest &request)
-{
-    std::string localVarPath = "/v4/projects/{project_id}/members";
+    std::string localVarPath = "/v4/{project_id}/manageable-groups";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -2285,8 +2292,8 @@ std::shared_ptr<ListProductPermissionResourcesGrantedUsersResponse> CodeHubClien
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.queryIsSet()) {
-        localVarQueryParams["query"] = parameterToString(request.getQuery());
+    if (request.scopeIsSet()) {
+        localVarQueryParams["scope"] = parameterToString(request.getScope());
     }
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
@@ -2298,57 +2305,9 @@ std::shared_ptr<ListProductPermissionResourcesGrantedUsersResponse> CodeHubClien
     std::string localVarHttpBody;
 
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProductPermissionResourcesGrantedUsers());
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListManageableGroups());
 
-    std::shared_ptr<ListProductPermissionResourcesGrantedUsersResponse> localVarResult = std::make_shared<ListProductPermissionResourcesGrantedUsersResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListProjectSubgroupsAndRepositoriesResponse> CodeHubClient::listProjectSubgroupsAndRepositories(ListProjectSubgroupsAndRepositoriesRequest &request)
-{
-    std::string localVarPath = "/v4/projects/{project_id}/subgroups-and-repositories";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.filterIsSet()) {
-        localVarQueryParams["filter"] = parameterToString(request.getFilter());
-    }
-    if (request.orderByIsSet()) {
-        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
-    }
-    if (request.sortIsSet()) {
-        localVarQueryParams["sort"] = parameterToString(request.getSort());
-    }
-    if (request.archivedIsSet()) {
-        localVarQueryParams["archived"] = parameterToString(request.isArchived());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectSubgroupsAndRepositories());
-
-    std::shared_ptr<ListProjectSubgroupsAndRepositoriesResponse> localVarResult = std::make_shared<ListProjectSubgroupsAndRepositoriesResponse>();
+    std::shared_ptr<ListManageableGroupsResponse> localVarResult = std::make_shared<ListManageableGroupsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2410,6 +2369,36 @@ std::shared_ptr<ShowGroupGeneralPolicyResponse> CodeHubClient::showGroupGeneralP
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowGroupGeneralPolicy());
 
     std::shared_ptr<ShowGroupGeneralPolicyResponse> localVarResult = std::make_shared<ShowGroupGeneralPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowGroupInheritSettingResponse> CodeHubClient::showGroupInheritSetting(ShowGroupInheritSettingRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/inherit-setting";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowGroupInheritSetting());
+
+    std::shared_ptr<ShowGroupInheritSettingResponse> localVarResult = std::make_shared<ShowGroupInheritSettingResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2506,6 +2495,36 @@ std::shared_ptr<ShowGroupWatermarkResponse> CodeHubClient::showGroupWatermark(Sh
 
     return localVarResult;
 }
+std::shared_ptr<ShowGroupsGeneralPolicyResponse> CodeHubClient::showGroupsGeneralPolicy(ShowGroupsGeneralPolicyRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/general-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowGroupsGeneralPolicy());
+
+    std::shared_ptr<ShowGroupsGeneralPolicyResponse> localVarResult = std::make_shared<ShowGroupsGeneralPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowGroupsInheritResponse> CodeHubClient::showGroupsInherit(ShowGroupsInheritRequest &request)
 {
     std::string localVarPath = "/v4/groups/{group_id}/inherit";
@@ -2533,109 +2552,6 @@ std::shared_ptr<ShowGroupsInheritResponse> CodeHubClient::showGroupsInherit(Show
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowGroupsInherit());
 
     std::shared_ptr<ShowGroupsInheritResponse> localVarResult = std::make_shared<ShowGroupsInheritResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowProjectGeneralPolicyResponse> CodeHubClient::showProjectGeneralPolicy(ShowProjectGeneralPolicyRequest &request)
-{
-    std::string localVarPath = "/v4/projects/{project_id}/policies/general";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowProjectGeneralPolicy());
-
-    std::shared_ptr<ShowProjectGeneralPolicyResponse> localVarResult = std::make_shared<ShowProjectGeneralPolicyResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowProjectMemberSettingResponse> CodeHubClient::showProjectMemberSetting(ShowProjectMemberSettingRequest &request)
-{
-    std::string localVarPath = "/v4/projects/{project_id}/member-setting";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowProjectMemberSetting());
-
-    std::shared_ptr<ShowProjectMemberSettingResponse> localVarResult = std::make_shared<ShowProjectMemberSettingResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowResourcePermissionsResponse> CodeHubClient::showResourcePermissions(ShowResourcePermissionsRequest &request)
-{
-    std::string localVarPath = "/v4/groups/{group_id}/permissions-resources/{resource_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
-    localVarPathParams["resource_id"] = parameterToString(request.getResourceId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowResourcePermissions());
-
-    std::shared_ptr<ShowResourcePermissionsResponse> localVarResult = std::make_shared<ShowResourcePermissionsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2672,6 +2588,48 @@ std::shared_ptr<TransferGroupResponse> CodeHubClient::transferGroup(TransferGrou
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForTransferGroup());
 
     std::shared_ptr<TransferGroupResponse> localVarResult = std::make_shared<TransferGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateGroupGeneralPolicyResponse> CodeHubClient::updateGroupGeneralPolicy(UpdateGroupGeneralPolicyRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/general-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateGroupGeneralPolicy());
+
+    std::shared_ptr<UpdateGroupGeneralPolicyResponse> localVarResult = std::make_shared<UpdateGroupGeneralPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2726,201 +2684,6 @@ std::shared_ptr<UpdateGroupWatermarkResponse> CodeHubClient::updateGroupWatermar
 
     return localVarResult;
 }
-std::shared_ptr<CreateRepositoryLabelResponse> CodeHubClient::createRepositoryLabel(CreateRepositoryLabelRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/labels";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateRepositoryLabel());
-
-    std::shared_ptr<CreateRepositoryLabelResponse> localVarResult = std::make_shared<CreateRepositoryLabelResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<CreateRepositorySystemLabelsResponse> CodeHubClient::createRepositorySystemLabels(CreateRepositorySystemLabelsRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/system-labels";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateRepositorySystemLabels());
-
-    std::shared_ptr<CreateRepositorySystemLabelsResponse> localVarResult = std::make_shared<CreateRepositorySystemLabelsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<DeleteRepositoryLabelResponse> CodeHubClient::deleteRepositoryLabel(DeleteRepositoryLabelRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/label";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.nameIsSet()) {
-        localVarQueryParams["name"] = parameterToString(request.getName());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteRepositoryLabel());
-
-    std::shared_ptr<DeleteRepositoryLabelResponse> localVarResult = std::make_shared<DeleteRepositoryLabelResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListRepositoryLabelsResponse> CodeHubClient::listRepositoryLabels(ListRepositoryLabelsRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/labels";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.searchIsSet()) {
-        localVarQueryParams["search"] = parameterToString(request.getSearch());
-    }
-    if (request.sortIsSet()) {
-        localVarQueryParams["sort"] = parameterToString(request.getSort());
-    }
-    if (request.includeExpiredIsSet()) {
-        localVarQueryParams["include_expired"] = parameterToString(request.isIncludeExpired());
-    }
-    if (request.viewIsSet()) {
-        localVarQueryParams["view"] = parameterToString(request.getView());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListRepositoryLabels());
-
-    std::shared_ptr<ListRepositoryLabelsResponse> localVarResult = std::make_shared<ListRepositoryLabelsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<UpdateRepositoryLabelResponse> CodeHubClient::updateRepositoryLabel(UpdateRepositoryLabelRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/label";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateRepositoryLabel());
-
-    std::shared_ptr<UpdateRepositoryLabelResponse> localVarResult = std::make_shared<UpdateRepositoryLabelResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<AddRepositoryMembersResponse> CodeHubClient::addRepositoryMembers(AddRepositoryMembersRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/members";
@@ -2963,6 +2726,45 @@ std::shared_ptr<AddRepositoryMembersResponse> CodeHubClient::addRepositoryMember
 
     return localVarResult;
 }
+std::shared_ptr<ListGroupProtectedRefsUserGroupsResponse> CodeHubClient::listGroupProtectedRefsUserGroups(ListGroupProtectedRefsUserGroupsRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/protected-refs/user-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListGroupProtectedRefsUserGroups());
+
+    std::shared_ptr<ListGroupProtectedRefsUserGroupsResponse> localVarResult = std::make_shared<ListGroupProtectedRefsUserGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListMembersResponse> CodeHubClient::listMembers(ListMembersRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/members";
@@ -3002,6 +2804,123 @@ std::shared_ptr<ListMembersResponse> CodeHubClient::listMembers(ListMembersReque
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListMembers());
 
     std::shared_ptr<ListMembersResponse> localVarResult = std::make_shared<ListMembersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProductPermissionResourcesGrantedUsersResponse> CodeHubClient::listProductPermissionResourcesGrantedUsers(ListProductPermissionResourcesGrantedUsersRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/members";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.queryIsSet()) {
+        localVarQueryParams["query"] = parameterToString(request.getQuery());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProductPermissionResourcesGrantedUsers());
+
+    std::shared_ptr<ListProductPermissionResourcesGrantedUsersResponse> localVarResult = std::make_shared<ListProductPermissionResourcesGrantedUsersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectProtectedRefsUserGroupsResponse> CodeHubClient::listProjectProtectedRefsUserGroups(ListProjectProtectedRefsUserGroupsRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/protected-refs/user-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectProtectedRefsUserGroups());
+
+    std::shared_ptr<ListProjectProtectedRefsUserGroupsResponse> localVarResult = std::make_shared<ListProjectProtectedRefsUserGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListRepositoryProtectedRefsUserGroupsResponse> CodeHubClient::listRepositoryProtectedRefsUserGroups(ListRepositoryProtectedRefsUserGroupsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/protected-refs/user-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListRepositoryProtectedRefsUserGroups());
+
+    std::shared_ptr<ListRepositoryProtectedRefsUserGroupsResponse> localVarResult = std::make_shared<ListRepositoryProtectedRefsUserGroupsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3090,6 +3009,49 @@ std::shared_ptr<ApprovalMergeRequestResponse> CodeHubClient::approvalMergeReques
 
     return localVarResult;
 }
+std::shared_ptr<CreateCherryPickMergeRequestResponse> CodeHubClient::createCherryPickMergeRequest(CreateCherryPickMergeRequestRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/cherry-pick";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["merge_request_iid"] = parameterToString(request.getMergeRequestIid());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateCherryPickMergeRequest());
+
+    std::shared_ptr<CreateCherryPickMergeRequestResponse> localVarResult = std::make_shared<CreateCherryPickMergeRequestResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateGroupMergeRequestApproverSettingResponse> CodeHubClient::createGroupMergeRequestApproverSetting(CreateGroupMergeRequestApproverSettingRequest &request)
 {
     std::string localVarPath = "/v4/groups/{group_id}/approver-settings";
@@ -3120,6 +3082,48 @@ std::shared_ptr<CreateGroupMergeRequestApproverSettingResponse> CodeHubClient::c
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateGroupMergeRequestApproverSetting());
 
     std::shared_ptr<CreateGroupMergeRequestApproverSettingResponse> localVarResult = std::make_shared<CreateGroupMergeRequestApproverSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateGroupMergeRequestTemplateResponse> CodeHubClient::createGroupMergeRequestTemplate(CreateGroupMergeRequestTemplateRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/merge-requests/templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateGroupMergeRequestTemplate());
+
+    std::shared_ptr<CreateGroupMergeRequestTemplateResponse> localVarResult = std::make_shared<CreateGroupMergeRequestTemplateResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3300,6 +3304,48 @@ std::shared_ptr<CreateProjectMergeRequestApproverSettingResponse> CodeHubClient:
 
     return localVarResult;
 }
+std::shared_ptr<CreateProjectMergeRequestTemplateResponse> CodeHubClient::createProjectMergeRequestTemplate(CreateProjectMergeRequestTemplateRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/merge-requests/templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateProjectMergeRequestTemplate());
+
+    std::shared_ptr<CreateProjectMergeRequestTemplateResponse> localVarResult = std::make_shared<CreateProjectMergeRequestTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteGroupMergeRequestApproverSettingResponse> CodeHubClient::deleteGroupMergeRequestApproverSetting(DeleteGroupMergeRequestApproverSettingRequest &request)
 {
     std::string localVarPath = "/v4/groups/{group_id}/approver-settings/{setting_id}";
@@ -3325,6 +3371,37 @@ std::shared_ptr<DeleteGroupMergeRequestApproverSettingResponse> CodeHubClient::d
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteGroupMergeRequestApproverSetting());
 
     std::shared_ptr<DeleteGroupMergeRequestApproverSettingResponse> localVarResult = std::make_shared<DeleteGroupMergeRequestApproverSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteGroupMergeRequestTemplateResponse> CodeHubClient::deleteGroupMergeRequestTemplate(DeleteGroupMergeRequestTemplateRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/merge-requests/template/{template_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["template_id"] = parameterToString(request.getTemplateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteGroupMergeRequestTemplate());
+
+    std::shared_ptr<DeleteGroupMergeRequestTemplateResponse> localVarResult = std::make_shared<DeleteGroupMergeRequestTemplateResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3455,6 +3532,37 @@ std::shared_ptr<DeleteProjectMergeRequestApproverSettingResponse> CodeHubClient:
 
     return localVarResult;
 }
+std::shared_ptr<DeleteProjectMergeRequestTemplateResponse> CodeHubClient::deleteProjectMergeRequestTemplate(DeleteProjectMergeRequestTemplateRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/merge-requests/template/{template_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["template_id"] = parameterToString(request.getTemplateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteProjectMergeRequestTemplate());
+
+    std::shared_ptr<DeleteProjectMergeRequestTemplateResponse> localVarResult = std::make_shared<DeleteProjectMergeRequestTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ImportMergeRequestResponse> CodeHubClient::importMergeRequest(ImportMergeRequestRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/import-merge-requests";
@@ -3494,6 +3602,43 @@ std::shared_ptr<ImportMergeRequestResponse> CodeHubClient::importMergeRequest(Im
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ListCommitAssociatedMergeRequestsResponse> CodeHubClient::listCommitAssociatedMergeRequests(ListCommitAssociatedMergeRequestsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/commits/{sha}/merge-requests";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["sha"] = parameterToString(request.getSha());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListCommitAssociatedMergeRequests());
+
+    std::shared_ptr<ListCommitAssociatedMergeRequestsResponse> localVarResult = std::make_shared<ListCommitAssociatedMergeRequestsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -3589,6 +3734,12 @@ std::shared_ptr<ListGroupMergeRequestCanBeAssignedReviewersResponse> CodeHubClie
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
 
     std::string localVarHttpBody;
 
@@ -3596,6 +3747,45 @@ std::shared_ptr<ListGroupMergeRequestCanBeAssignedReviewersResponse> CodeHubClie
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListGroupMergeRequestCanBeAssignedReviewers());
 
     std::shared_ptr<ListGroupMergeRequestCanBeAssignedReviewersResponse> localVarResult = std::make_shared<ListGroupMergeRequestCanBeAssignedReviewersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListGroupMergeRequestTemplatesResponse> CodeHubClient::listGroupMergeRequestTemplates(ListGroupMergeRequestTemplatesRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/merge-requests/templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.templateNameIsSet()) {
+        localVarQueryParams["template_name"] = parameterToString(request.getTemplateName());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListGroupMergeRequestTemplates());
+
+    std::shared_ptr<ListGroupMergeRequestTemplatesResponse> localVarResult = std::make_shared<ListGroupMergeRequestTemplatesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3619,6 +3809,12 @@ std::shared_ptr<ListGroupMergeRequestValidAssignedCandidatesResponse> CodeHubCli
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
 
     std::string localVarHttpBody;
 
@@ -3903,6 +4099,74 @@ std::shared_ptr<ListMergeRequestConflictFilesResponse> CodeHubClient::listMergeR
 
     return localVarResult;
 }
+std::shared_ptr<ListMergeRequestEvaluationsResponse> CodeHubClient::listMergeRequestEvaluations(ListMergeRequestEvaluationsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/evaluations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["merge_request_iid"] = parameterToString(request.getMergeRequestIid());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListMergeRequestEvaluations());
+
+    std::shared_ptr<ListMergeRequestEvaluationsResponse> localVarResult = std::make_shared<ListMergeRequestEvaluationsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListMergeRequestParticipantsResponse> CodeHubClient::listMergeRequestParticipants(ListMergeRequestParticipantsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/participants";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["merge_request_iid"] = parameterToString(request.getMergeRequestIid());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListMergeRequestParticipants());
+
+    std::shared_ptr<ListMergeRequestParticipantsResponse> localVarResult = std::make_shared<ListMergeRequestParticipantsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListMergeRequestReviewersResponse> CodeHubClient::listMergeRequestReviewers(ListMergeRequestReviewersRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/approval-reviewers";
@@ -4056,6 +4320,129 @@ std::shared_ptr<ListMergeRequestValidAssignedCandidatesResponse> CodeHubClient::
 
     return localVarResult;
 }
+std::shared_ptr<ListMergeRequestVersionsResponse> CodeHubClient::listMergeRequestVersions(ListMergeRequestVersionsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/versions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["merge_request_iid"] = parameterToString(request.getMergeRequestIid());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListMergeRequestVersions());
+
+    std::shared_ptr<ListMergeRequestVersionsResponse> localVarResult = std::make_shared<ListMergeRequestVersionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListPersonalMergeRequestsResponse> CodeHubClient::listPersonalMergeRequests(ListPersonalMergeRequestsRequest &request)
+{
+    std::string localVarPath = "/v4/merge-requests";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.stateIsSet()) {
+        localVarQueryParams["state"] = parameterToString(request.getState());
+    }
+    if (request.orderByIsSet()) {
+        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.labelsIsSet()) {
+        localVarQueryParams["labels"] = parameterToString(request.getLabels());
+    }
+    if (request.createdBeforeIsSet()) {
+        localVarQueryParams["created_before"] = parameterToString(request.getCreatedBefore());
+    }
+    if (request.createdAfterIsSet()) {
+        localVarQueryParams["created_after"] = parameterToString(request.getCreatedAfter());
+    }
+    if (request.updatedAfterIsSet()) {
+        localVarQueryParams["updated_after"] = parameterToString(request.getUpdatedAfter());
+    }
+    if (request.updatedBeforeIsSet()) {
+        localVarQueryParams["updated_before"] = parameterToString(request.getUpdatedBefore());
+    }
+    if (request.viewIsSet()) {
+        localVarQueryParams["view"] = parameterToString(request.getView());
+    }
+    if (request.authorIdIsSet()) {
+        localVarQueryParams["author_id"] = parameterToString(request.getAuthorId());
+    }
+    if (request.scopeIsSet()) {
+        localVarQueryParams["scope"] = parameterToString(request.getScope());
+    }
+    if (request.sourceBranchIsSet()) {
+        localVarQueryParams["source_branch"] = parameterToString(request.getSourceBranch());
+    }
+    if (request.targetBranchIsSet()) {
+        localVarQueryParams["target_branch"] = parameterToString(request.getTargetBranch());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.wipIsSet()) {
+        localVarQueryParams["wip"] = parameterToString(request.getWip());
+    }
+    if (request.mergedByIsSet()) {
+        localVarQueryParams["merged_by"] = parameterToString(request.getMergedBy());
+    }
+    if (request.mergedAfterIsSet()) {
+        localVarQueryParams["merged_after"] = parameterToString(request.getMergedAfter());
+    }
+    if (request.mergedBeforeIsSet()) {
+        localVarQueryParams["merged_before"] = parameterToString(request.getMergedBefore());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.onlyCountIsSet()) {
+        localVarQueryParams["only_count"] = parameterToString(request.isOnlyCount());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListPersonalMergeRequests());
+
+    std::shared_ptr<ListPersonalMergeRequestsResponse> localVarResult = std::make_shared<ListPersonalMergeRequestsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListProjectMergeRequestApproverSettingsResponse> CodeHubClient::listProjectMergeRequestApproverSettings(ListProjectMergeRequestApproverSettingsRequest &request)
 {
     std::string localVarPath = "/v4/projects/{project_id}/approver-settings";
@@ -4109,6 +4496,12 @@ std::shared_ptr<ListProjectMergeRequestCanBeAssignedReviewersResponse> CodeHubCl
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
 
     std::string localVarHttpBody;
 
@@ -4139,6 +4532,12 @@ std::shared_ptr<ListProjectMergeRequestCanBeAssignedUsersResponse> CodeHubClient
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
 
     std::string localVarHttpBody;
 
@@ -4146,6 +4545,45 @@ std::shared_ptr<ListProjectMergeRequestCanBeAssignedUsersResponse> CodeHubClient
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectMergeRequestCanBeAssignedUsers());
 
     std::shared_ptr<ListProjectMergeRequestCanBeAssignedUsersResponse> localVarResult = std::make_shared<ListProjectMergeRequestCanBeAssignedUsersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectMergeRequestTemplatesResponse> CodeHubClient::listProjectMergeRequestTemplates(ListProjectMergeRequestTemplatesRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/merge-requests/templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.templateNameIsSet()) {
+        localVarQueryParams["template_name"] = parameterToString(request.getTemplateName());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectMergeRequestTemplates());
+
+    std::shared_ptr<ListProjectMergeRequestTemplatesResponse> localVarResult = std::make_shared<ListProjectMergeRequestTemplatesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -4482,6 +4920,37 @@ std::shared_ptr<ShowBranchConflictResponse> CodeHubClient::showBranchConflict(Sh
 
     return localVarResult;
 }
+std::shared_ptr<ShowCommitCommentsByLineResponse> CodeHubClient::showCommitCommentsByLine(ShowCommitCommentsByLineRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/commits/{sha}/comments-by-line";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["sha"] = parameterToString(request.getSha());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowCommitCommentsByLine());
+
+    std::shared_ptr<ShowCommitCommentsByLineResponse> localVarResult = std::make_shared<ShowCommitCommentsByLineResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowGroupMergeRequestSettingResponse> CodeHubClient::showGroupMergeRequestSetting(ShowGroupMergeRequestSettingRequest &request)
 {
     std::string localVarPath = "/v4/groups/{group_id}/merge-requests/setting";
@@ -4748,6 +5217,42 @@ std::shared_ptr<ShowProjectMergeRequestSettingResponse> CodeHubClient::showProje
 
     return localVarResult;
 }
+std::shared_ptr<ShowRepositoryMergeRequestsStatisticResponse> CodeHubClient::showRepositoryMergeRequestsStatistic(ShowRepositoryMergeRequestsStatisticRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/statistic";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.iidsIsSet()) {
+        localVarQueryParams["iids"] = parameterToString(request.getIids());
+    }
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowRepositoryMergeRequestsStatistic());
+
+    std::shared_ptr<ShowRepositoryMergeRequestsStatisticResponse> localVarResult = std::make_shared<ShowRepositoryMergeRequestsStatisticResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateGroupMergeRequestApproverSettingResponse> CodeHubClient::updateGroupMergeRequestApproverSetting(UpdateGroupMergeRequestApproverSettingRequest &request)
 {
     std::string localVarPath = "/v4/groups/{group_id}/approver-settings/{setting_id}";
@@ -4779,6 +5284,49 @@ std::shared_ptr<UpdateGroupMergeRequestApproverSettingResponse> CodeHubClient::u
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateGroupMergeRequestApproverSetting());
 
     std::shared_ptr<UpdateGroupMergeRequestApproverSettingResponse> localVarResult = std::make_shared<UpdateGroupMergeRequestApproverSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateGroupMergeRequestTemplateResponse> CodeHubClient::updateGroupMergeRequestTemplate(UpdateGroupMergeRequestTemplateRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/merge-requests/template/{template_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["template_id"] = parameterToString(request.getTemplateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateGroupMergeRequestTemplate());
+
+    std::shared_ptr<UpdateGroupMergeRequestTemplateResponse> localVarResult = std::make_shared<UpdateGroupMergeRequestTemplateResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5134,9 +5682,52 @@ std::shared_ptr<UpdateProjectMergeRequestApproverSettingResponse> CodeHubClient:
 
     return localVarResult;
 }
-std::shared_ptr<ListCommitAssociatedMergeRequestsResponse> CodeHubClient::listCommitAssociatedMergeRequests(ListCommitAssociatedMergeRequestsRequest &request)
+std::shared_ptr<UpdateProjectMergeRequestTemplateResponse> CodeHubClient::updateProjectMergeRequestTemplate(UpdateProjectMergeRequestTemplateRequest &request)
 {
-    std::string localVarPath = "/v4/repositories/{repository_id}/commits/{sha}/merge-requests";
+    std::string localVarPath = "/v4/projects/{project_id}/merge-requests/template/{template_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["template_id"] = parameterToString(request.getTemplateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateProjectMergeRequestTemplate());
+
+    std::shared_ptr<UpdateProjectMergeRequestTemplateResponse> localVarResult = std::make_shared<UpdateProjectMergeRequestTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchDeleteRepositoryFilePushPermissionsResponse> CodeHubClient::batchDeleteRepositoryFilePushPermissions(BatchDeleteRepositoryFilePushPermissionsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/file-push-permissions/batch-delete";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -5144,7 +5735,172 @@ std::shared_ptr<ListCommitAssociatedMergeRequestsResponse> CodeHubClient::listCo
     std::map<std::string, std::string> localVarPathParams;
 
     localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-    localVarPathParams["sha"] = parameterToString(request.getSha());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchDeleteRepositoryFilePushPermissions());
+
+    std::shared_ptr<BatchDeleteRepositoryFilePushPermissionsResponse> localVarResult = std::make_shared<BatchDeleteRepositoryFilePushPermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchUpdateRepositoryFilePushPermissionsResponse> CodeHubClient::batchUpdateRepositoryFilePushPermissions(BatchUpdateRepositoryFilePushPermissionsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/file-push-permissions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchUpdateRepositoryFilePushPermissions());
+
+    std::shared_ptr<BatchUpdateRepositoryFilePushPermissionsResponse> localVarResult = std::make_shared<BatchUpdateRepositoryFilePushPermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateFilePushPermissionResponse> CodeHubClient::createFilePushPermission(CreateFilePushPermissionRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/file-push-permissions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateFilePushPermission());
+
+    std::shared_ptr<CreateFilePushPermissionResponse> localVarResult = std::make_shared<CreateFilePushPermissionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListRepositoryFilePushPermissionsResponse> CodeHubClient::listRepositoryFilePushPermissions(ListRepositoryFilePushPermissionsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/file-push-permissions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListRepositoryFilePushPermissions());
+
+    std::shared_ptr<ListRepositoryFilePushPermissionsResponse> localVarResult = std::make_shared<ListRepositoryFilePushPermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListRepositoryResourcePermissionsResponse> CodeHubClient::listRepositoryResourcePermissions(ListRepositoryResourcePermissionsRequest &request)
+{
+    std::string localVarPath = "/v4/repository/{repository_id}/permissions/{resource_name}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["resource_name"] = parameterToString(request.getResourceName());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -5162,82 +5918,9 @@ std::shared_ptr<ListCommitAssociatedMergeRequestsResponse> CodeHubClient::listCo
     std::string localVarHttpBody;
 
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListCommitAssociatedMergeRequests());
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListRepositoryResourcePermissions());
 
-    std::shared_ptr<ListCommitAssociatedMergeRequestsResponse> localVarResult = std::make_shared<ListCommitAssociatedMergeRequestsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowRepositoryMergeRequestsStatisticResponse> CodeHubClient::showRepositoryMergeRequestsStatistic(ShowRepositoryMergeRequestsStatisticRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/statistic";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.iidsIsSet()) {
-        localVarQueryParams["iids"] = parameterToString(request.getIids());
-    }
-    if (request.fieldsIsSet()) {
-        localVarQueryParams["fields"] = parameterToString(request.getFields());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowRepositoryMergeRequestsStatistic());
-
-    std::shared_ptr<ShowRepositoryMergeRequestsStatisticResponse> localVarResult = std::make_shared<ShowRepositoryMergeRequestsStatisticResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListMergeRequestParticipantsResponse> CodeHubClient::listMergeRequestParticipants(ListMergeRequestParticipantsRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/participants";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-    localVarPathParams["merge_request_iid"] = parameterToString(request.getMergeRequestIid());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListMergeRequestParticipants());
-
-    std::shared_ptr<ListMergeRequestParticipantsResponse> localVarResult = std::make_shared<ListMergeRequestParticipantsResponse>();
+    std::shared_ptr<ListRepositoryResourcePermissionsResponse> localVarResult = std::make_shared<ListRepositoryResourcePermissionsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5304,6 +5987,49 @@ std::shared_ptr<UpdateRepositoryPermissionInheritEnabledResponse> CodeHubClient:
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateRepositoryPermissionInheritEnabled());
 
     std::shared_ptr<UpdateRepositoryPermissionInheritEnabledResponse> localVarResult = std::make_shared<UpdateRepositoryPermissionInheritEnabledResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateRepositoryResourcePermissionsResponse> CodeHubClient::updateRepositoryResourcePermissions(UpdateRepositoryResourcePermissionsRequest &request)
+{
+    std::string localVarPath = "/v4/repository/{repository_id}/permissions/{resource_name}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["resource_name"] = parameterToString(request.getResourceName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateRepositoryResourcePermissions());
+
+    std::shared_ptr<UpdateRepositoryResourcePermissionsResponse> localVarResult = std::make_shared<UpdateRepositoryResourcePermissionsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5384,6 +6110,160 @@ std::shared_ptr<ListPipelineJobsResponse> CodeHubClient::listPipelineJobs(ListPi
 
     return localVarResult;
 }
+std::shared_ptr<ListItemCommitsResponse> CodeHubClient::listItemCommits(ListItemCommitsRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/items/{item_id}/commits";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["item_id"] = parameterToString(request.getItemId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListItemCommits());
+
+    std::shared_ptr<ListItemCommitsResponse> localVarResult = std::make_shared<ListItemCommitsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectSubgroupsAndRepositoriesResponse> CodeHubClient::listProjectSubgroupsAndRepositories(ListProjectSubgroupsAndRepositoriesRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/subgroups-and-repositories";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.filterIsSet()) {
+        localVarQueryParams["filter"] = parameterToString(request.getFilter());
+    }
+    if (request.orderByIsSet()) {
+        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.archivedIsSet()) {
+        localVarQueryParams["archived"] = parameterToString(request.isArchived());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectSubgroupsAndRepositories());
+
+    std::shared_ptr<ListProjectSubgroupsAndRepositoriesResponse> localVarResult = std::make_shared<ListProjectSubgroupsAndRepositoriesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowProjectGeneralPolicyResponse> CodeHubClient::showProjectGeneralPolicy(ShowProjectGeneralPolicyRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/policies/general";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowProjectGeneralPolicy());
+
+    std::shared_ptr<ShowProjectGeneralPolicyResponse> localVarResult = std::make_shared<ShowProjectGeneralPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowProjectMemberSettingResponse> CodeHubClient::showProjectMemberSetting(ShowProjectMemberSettingRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/member-setting";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowProjectMemberSetting());
+
+    std::shared_ptr<ShowProjectMemberSettingResponse> localVarResult = std::make_shared<ShowProjectMemberSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowProjectSettingsInheritCfgResponse> CodeHubClient::showProjectSettingsInheritCfg(ShowProjectSettingsInheritCfgRequest &request)
 {
     std::string localVarPath = "/v4/projects/{project_id}/settings-inherit-cfg";
@@ -5441,6 +6321,115 @@ std::shared_ptr<ShowProjectWatermarkResponse> CodeHubClient::showProjectWatermar
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowProjectsGeneralPolicyResponse> CodeHubClient::showProjectsGeneralPolicy(ShowProjectsGeneralPolicyRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/general-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowProjectsGeneralPolicy());
+
+    std::shared_ptr<ShowProjectsGeneralPolicyResponse> localVarResult = std::make_shared<ShowProjectsGeneralPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowResourcePermissionsResponse> CodeHubClient::showResourcePermissions(ShowResourcePermissionsRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/permissions-resources/{resource_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["resource_id"] = parameterToString(request.getResourceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowResourcePermissions());
+
+    std::shared_ptr<ShowResourcePermissionsResponse> localVarResult = std::make_shared<ShowResourcePermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateProjectGeneralPolicyResponse> CodeHubClient::updateProjectGeneralPolicy(UpdateProjectGeneralPolicyRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/general-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateProjectGeneralPolicy());
+
+    std::shared_ptr<UpdateProjectGeneralPolicyResponse> localVarResult = std::make_shared<UpdateProjectGeneralPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -5570,327 +6559,6 @@ std::shared_ptr<BatchCreateProtectedBranchResponse> CodeHubClient::batchCreatePr
 
     return localVarResult;
 }
-std::shared_ptr<BatchDeleteProtectedBranchesResponse> CodeHubClient::batchDeleteProtectedBranches(BatchDeleteProtectedBranchesRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branches/bulk-deletion";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchDeleteProtectedBranches());
-
-    std::shared_ptr<BatchDeleteProtectedBranchesResponse> localVarResult = std::make_shared<BatchDeleteProtectedBranchesResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<BatchUpdateProtectedBranchesResponse> CodeHubClient::batchUpdateProtectedBranches(BatchUpdateProtectedBranchesRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branches";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchUpdateProtectedBranches());
-
-    std::shared_ptr<BatchUpdateProtectedBranchesResponse> localVarResult = std::make_shared<BatchUpdateProtectedBranchesResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<CreateProjectProtectedBranchesResponse> CodeHubClient::createProjectProtectedBranches(CreateProjectProtectedBranchesRequest &request)
-{
-    std::string localVarPath = "/v4/projects/{project_id}/protected-branches";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateProjectProtectedBranches());
-
-    std::shared_ptr<CreateProjectProtectedBranchesResponse> localVarResult = std::make_shared<CreateProjectProtectedBranchesResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<DeleteProtectedBranchResponse> CodeHubClient::deleteProtectedBranch(DeleteProtectedBranchRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branch";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.branchNameIsSet()) {
-        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteProtectedBranch());
-
-    std::shared_ptr<DeleteProtectedBranchResponse> localVarResult = std::make_shared<DeleteProtectedBranchResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListProjectProtectedBranchesResponse> CodeHubClient::listProjectProtectedBranches(ListProjectProtectedBranchesRequest &request)
-{
-    std::string localVarPath = "/v4/projects/{project_id}/protected-branches";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.searchIsSet()) {
-        localVarQueryParams["search"] = parameterToString(request.getSearch());
-    }
-    if (request.userActionsIsSet()) {
-        localVarQueryParams["user_actions"] = parameterToString(request.isUserActions());
-    }
-    if (request.viewIsSet()) {
-        localVarQueryParams["view"] = parameterToString(request.getView());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectProtectedBranches());
-
-    std::shared_ptr<ListProjectProtectedBranchesResponse> localVarResult = std::make_shared<ListProjectProtectedBranchesResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListProtectedBranchesResponse> CodeHubClient::listProtectedBranches(ListProtectedBranchesRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branches";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.searchIsSet()) {
-        localVarQueryParams["search"] = parameterToString(request.getSearch());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProtectedBranches());
-
-    std::shared_ptr<ListProtectedBranchesResponse> localVarResult = std::make_shared<ListProtectedBranchesResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowProtectedBranchResponse> CodeHubClient::showProtectedBranch(ShowProtectedBranchRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branch";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.branchNameIsSet()) {
-        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowProtectedBranch());
-
-    std::shared_ptr<ShowProtectedBranchResponse> localVarResult = std::make_shared<ShowProtectedBranchResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<UpdateProtectedBranchResponse> CodeHubClient::updateProtectedBranch(UpdateProtectedBranchRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branch";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.branchNameIsSet()) {
-        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateProtectedBranch());
-
-    std::shared_ptr<UpdateProtectedBranchResponse> localVarResult = std::make_shared<UpdateProtectedBranchResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<BatchCreateProtectedTagsResponse> CodeHubClient::batchCreateProtectedTags(BatchCreateProtectedTagsRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/protected-tags";
@@ -5921,6 +6589,48 @@ std::shared_ptr<BatchCreateProtectedTagsResponse> CodeHubClient::batchCreateProt
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchCreateProtectedTags());
 
     std::shared_ptr<BatchCreateProtectedTagsResponse> localVarResult = std::make_shared<BatchCreateProtectedTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchDeleteProtectedBranchesResponse> CodeHubClient::batchDeleteProtectedBranches(BatchDeleteProtectedBranchesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branches/bulk-deletion";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchDeleteProtectedBranches());
+
+    std::shared_ptr<BatchDeleteProtectedBranchesResponse> localVarResult = std::make_shared<BatchDeleteProtectedBranchesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5975,6 +6685,48 @@ std::shared_ptr<BatchDeleteProtectedTagsResponse> CodeHubClient::batchDeleteProt
 
     return localVarResult;
 }
+std::shared_ptr<BatchUpdateProtectedBranchesResponse> CodeHubClient::batchUpdateProtectedBranches(BatchUpdateProtectedBranchesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branches";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchUpdateProtectedBranches());
+
+    std::shared_ptr<BatchUpdateProtectedBranchesResponse> localVarResult = std::make_shared<BatchUpdateProtectedBranchesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchUpdateProtectedTagsResponse> CodeHubClient::batchUpdateProtectedTags(BatchUpdateProtectedTagsRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/protected-tags";
@@ -6017,6 +6769,123 @@ std::shared_ptr<BatchUpdateProtectedTagsResponse> CodeHubClient::batchUpdateProt
 
     return localVarResult;
 }
+std::shared_ptr<CreateProjectProtectedBranchesResponse> CodeHubClient::createProjectProtectedBranches(CreateProjectProtectedBranchesRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/protected-branches";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateProjectProtectedBranches());
+
+    std::shared_ptr<CreateProjectProtectedBranchesResponse> localVarResult = std::make_shared<CreateProjectProtectedBranchesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateProjectProtectedTagsResponse> CodeHubClient::createProjectProtectedTags(CreateProjectProtectedTagsRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/protected-tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateProjectProtectedTags());
+
+    std::shared_ptr<CreateProjectProtectedTagsResponse> localVarResult = std::make_shared<CreateProjectProtectedTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteProtectedBranchResponse> CodeHubClient::deleteProtectedBranch(DeleteProtectedBranchRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.branchNameIsSet()) {
+        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteProtectedBranch());
+
+    std::shared_ptr<DeleteProtectedBranchResponse> localVarResult = std::make_shared<DeleteProtectedBranchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteProtectedTagResponse> CodeHubClient::deleteProtectedTag(DeleteProtectedTagRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/protected-tag";
@@ -6044,6 +6913,120 @@ std::shared_ptr<DeleteProtectedTagResponse> CodeHubClient::deleteProtectedTag(De
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteProtectedTag());
 
     std::shared_ptr<DeleteProtectedTagResponse> localVarResult = std::make_shared<DeleteProtectedTagResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectProtectedBranchesResponse> CodeHubClient::listProjectProtectedBranches(ListProjectProtectedBranchesRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/protected-branches";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.userActionsIsSet()) {
+        localVarQueryParams["user_actions"] = parameterToString(request.isUserActions());
+    }
+    if (request.viewIsSet()) {
+        localVarQueryParams["view"] = parameterToString(request.getView());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectProtectedBranches());
+
+    std::shared_ptr<ListProjectProtectedBranchesResponse> localVarResult = std::make_shared<ListProjectProtectedBranchesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectProtectedTagsResponse> CodeHubClient::listProjectProtectedTags(ListProjectProtectedTagsRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/protected-tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectProtectedTags());
+
+    std::shared_ptr<ListProjectProtectedTagsResponse> localVarResult = std::make_shared<ListProjectProtectedTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProtectedBranchesResponse> CodeHubClient::listProtectedBranches(ListProtectedBranchesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branches";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProtectedBranches());
+
+    std::shared_ptr<ListProtectedBranchesResponse> localVarResult = std::make_shared<ListProtectedBranchesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -6089,6 +7072,39 @@ std::shared_ptr<ListProtectedTagsResponse> CodeHubClient::listProtectedTags(List
 
     return localVarResult;
 }
+std::shared_ptr<ShowProtectedBranchResponse> CodeHubClient::showProtectedBranch(ShowProtectedBranchRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.branchNameIsSet()) {
+        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowProtectedBranch());
+
+    std::shared_ptr<ShowProtectedBranchResponse> localVarResult = std::make_shared<ShowProtectedBranchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowProtectedTagResponse> CodeHubClient::showProtectedTag(ShowProtectedTagRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/protected-tag";
@@ -6119,6 +7135,51 @@ std::shared_ptr<ShowProtectedTagResponse> CodeHubClient::showProtectedTag(ShowPr
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateProtectedBranchResponse> CodeHubClient::updateProtectedBranch(UpdateProtectedBranchRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/protected-branch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.branchNameIsSet()) {
+        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateProtectedBranch());
+
+    std::shared_ptr<UpdateProtectedBranchResponse> localVarResult = std::make_shared<UpdateProtectedBranchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -6155,6 +7216,450 @@ std::shared_ptr<UpdateProtectedTagResponse> CodeHubClient::updateProtectedTag(Up
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateProtectedTag());
 
     std::shared_ptr<UpdateProtectedTagResponse> localVarResult = std::make_shared<UpdateProtectedTagResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchDeleteBranchResponse> CodeHubClient::batchDeleteBranch(BatchDeleteBranchRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/branches/batch-delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchDeleteBranch());
+
+    std::shared_ptr<BatchDeleteBranchResponse> localVarResult = std::make_shared<BatchDeleteBranchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateBranchResponse> CodeHubClient::createBranch(CreateBranchRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branches";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateBranch());
+
+    std::shared_ptr<CreateBranchResponse> localVarResult = std::make_shared<CreateBranchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateTagResponse> CodeHubClient::createTag(CreateTagRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateTag());
+
+    std::shared_ptr<CreateTagResponse> localVarResult = std::make_shared<CreateTagResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteBranchResponse> CodeHubClient::deleteBranch(DeleteBranchRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.branchNameIsSet()) {
+        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteBranch());
+
+    std::shared_ptr<DeleteBranchResponse> localVarResult = std::make_shared<DeleteBranchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteTagResponse> CodeHubClient::deleteTag(DeleteTagRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/tag";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.tagNameIsSet()) {
+        localVarQueryParams["tag_name"] = parameterToString(request.getTagName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteTag());
+
+    std::shared_ptr<DeleteTagResponse> localVarResult = std::make_shared<DeleteTagResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListBranchesResponse> CodeHubClient::listBranches(ListBranchesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branches";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.branchTypeIsSet()) {
+        localVarQueryParams["branch_type"] = parameterToString(request.getBranchType());
+    }
+    if (request.creatorIsSet()) {
+        localVarQueryParams["creator"] = parameterToString(request.getCreator());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.queryViewIsSet()) {
+        localVarQueryParams["query_view"] = parameterToString(request.getQueryView());
+    }
+    if (request.viewIsSet()) {
+        localVarQueryParams["view"] = parameterToString(request.getView());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListBranches());
+
+    std::shared_ptr<ListBranchesResponse> localVarResult = std::make_shared<ListBranchesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListRefsListResponse> CodeHubClient::listRefsList(ListRefsListRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/refs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListRefsList());
+
+    std::shared_ptr<ListRefsListResponse> localVarResult = std::make_shared<ListRefsListResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListTagsResponse> CodeHubClient::listTags(ListTagsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.creatorIsSet()) {
+        localVarQueryParams["creator"] = parameterToString(request.getCreator());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.orderByIsSet()) {
+        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
+    }
+    if (request.viewIsSet()) {
+        localVarQueryParams["view"] = parameterToString(request.getView());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListTags());
+
+    std::shared_ptr<ListTagsResponse> localVarResult = std::make_shared<ListTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowBranchResponse> CodeHubClient::showBranch(ShowBranchRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.branchNameIsSet()) {
+        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowBranch());
+
+    std::shared_ptr<ShowBranchResponse> localVarResult = std::make_shared<ShowBranchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTagResponse> CodeHubClient::showTag(ShowTagRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/tag";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.tagNameIsSet()) {
+        localVarQueryParams["tag_name"] = parameterToString(request.getTagName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowTag());
+
+    std::shared_ptr<ShowTagResponse> localVarResult = std::make_shared<ShowTagResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateBranchNameResponse> CodeHubClient::updateBranchName(UpdateBranchNameRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/branch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateBranchName());
+
+    std::shared_ptr<UpdateBranchNameResponse> localVarResult = std::make_shared<UpdateBranchNameResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -6325,6 +7830,47 @@ std::shared_ptr<AssociateRepositoryUserGroupResponse> CodeHubClient::associateRe
 
     return localVarResult;
 }
+std::shared_ptr<BatchValidateRepoNamesResponse> CodeHubClient::batchValidateRepoNames(BatchValidateRepoNamesRequest &request)
+{
+    std::string localVarPath = "/v4/repository-names/validations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchValidateRepoNames());
+
+    std::shared_ptr<BatchValidateRepoNamesResponse> localVarResult = std::make_shared<BatchValidateRepoNamesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateDirResponse> CodeHubClient::createDir(CreateDirRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/repository/dir";
@@ -6364,6 +7910,153 @@ std::shared_ptr<CreateDirResponse> CodeHubClient::createDir(CreateDirRequest &re
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateRepositoryCommitRuleResponse> CodeHubClient::createRepositoryCommitRule(CreateRepositoryCommitRuleRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/commit-rules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateRepositoryCommitRule());
+
+    std::shared_ptr<CreateRepositoryCommitRuleResponse> localVarResult = std::make_shared<CreateRepositoryCommitRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateRepositoryLabelResponse> CodeHubClient::createRepositoryLabel(CreateRepositoryLabelRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/labels";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateRepositoryLabel());
+
+    std::shared_ptr<CreateRepositoryLabelResponse> localVarResult = std::make_shared<CreateRepositoryLabelResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateRepositorySystemLabelsResponse> CodeHubClient::createRepositorySystemLabels(CreateRepositorySystemLabelsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/system-labels";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateRepositorySystemLabels());
+
+    std::shared_ptr<CreateRepositorySystemLabelsResponse> localVarResult = std::make_shared<CreateRepositorySystemLabelsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteRepositoryLabelResponse> CodeHubClient::deleteRepositoryLabel(DeleteRepositoryLabelRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/label";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteRepositoryLabel());
+
+    std::shared_ptr<DeleteRepositoryLabelResponse> localVarResult = std::make_shared<DeleteRepositoryLabelResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -6437,9 +8130,9 @@ std::shared_ptr<DownloadArchiveResponse> CodeHubClient::downloadArchive(Download
 
     return localVarResult;
 }
-std::shared_ptr<ListCurrentUserRepositoriesResponse> CodeHubClient::listCurrentUserRepositories(ListCurrentUserRepositoriesRequest &request)
+std::shared_ptr<ExecuteRepositoryStatisticsResponse> CodeHubClient::executeRepositoryStatistics(ExecuteRepositoryStatisticsRequest &request)
 {
-    std::string localVarPath = "/v4/user/repositories";
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/statistics";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -6456,6 +8149,77 @@ std::shared_ptr<ListCurrentUserRepositoriesResponse> CodeHubClient::listCurrentU
 
 
     std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForExecuteRepositoryStatistics());
+
+    std::shared_ptr<ExecuteRepositoryStatisticsResponse> localVarResult = std::make_shared<ExecuteRepositoryStatisticsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListCurrentUserRepositoriesResponse> CodeHubClient::listCurrentUserRepositories(ListCurrentUserRepositoriesRequest &request)
+{
+    std::string localVarPath = "/v4/user/repositories";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.orderByIsSet()) {
+        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.archivedIsSet()) {
+        localVarQueryParams["archived"] = parameterToString(request.isArchived());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.starredIsSet()) {
+        localVarQueryParams["starred"] = parameterToString(request.isStarred());
+    }
+    if (request.membershipIsSet()) {
+        localVarQueryParams["membership"] = parameterToString(request.isMembership());
+    }
+    if (request.userCreatedIsSet()) {
+        localVarQueryParams["user_created"] = parameterToString(request.isUserCreated());
+    }
+    if (request.includeAbnormalIsSet()) {
+        localVarQueryParams["include_abnormal"] = parameterToString(request.isIncludeAbnormal());
+    }
+
+    std::string localVarHttpBody;
 
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListCurrentUserRepositories());
@@ -6467,16 +8231,16 @@ std::shared_ptr<ListCurrentUserRepositoriesResponse> CodeHubClient::listCurrentU
 
     return localVarResult;
 }
-std::shared_ptr<ListManageableGroupsResponse> CodeHubClient::listManageableGroups(ListManageableGroupsRequest &request)
+std::shared_ptr<ListGroupRepositoriesResponse> CodeHubClient::listGroupRepositories(ListGroupRepositoriesRequest &request)
 {
-    std::string localVarPath = "/v4/{project_id}/manageable-groups";
+    std::string localVarPath = "/v4/groups/{group_id}/repositories";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
 
-    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -6484,8 +8248,8 @@ std::shared_ptr<ListManageableGroupsResponse> CodeHubClient::listManageableGroup
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.scopeIsSet()) {
-        localVarQueryParams["scope"] = parameterToString(request.getScope());
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
     }
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
@@ -6493,13 +8257,54 @@ std::shared_ptr<ListManageableGroupsResponse> CodeHubClient::listManageableGroup
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.orderByIsSet()) {
+        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
 
     std::string localVarHttpBody;
 
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListManageableGroups());
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListGroupRepositories());
 
-    std::shared_ptr<ListManageableGroupsResponse> localVarResult = std::make_shared<ListManageableGroupsResponse>();
+    std::shared_ptr<ListGroupRepositoriesResponse> localVarResult = std::make_shared<ListGroupRepositoriesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListPersonalRecentPushEventsResponse> CodeHubClient::listPersonalRecentPushEvents(ListPersonalRecentPushEventsRequest &request)
+{
+    std::string localVarPath = "/v4/user/recent-push-events";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.projectIdIsSet()) {
+        localVarQueryParams["project_id"] = parameterToString(request.getProjectId());
+    }
+    if (request.sizeIsSet()) {
+        localVarQueryParams["size"] = parameterToString(request.getSize());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListPersonalRecentPushEvents());
+
+    std::shared_ptr<ListPersonalRecentPushEventsResponse> localVarResult = std::make_shared<ListPersonalRecentPushEventsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -6562,6 +8367,51 @@ std::shared_ptr<ListPersonalRepositoryImportRecordsResponse> CodeHubClient::list
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListPersonalRepositoryImportRecords());
 
     std::shared_ptr<ListPersonalRepositoryImportRecordsResponse> localVarResult = std::make_shared<ListPersonalRepositoryImportRecordsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectRepositoriesResponse> CodeHubClient::listProjectRepositories(ListProjectRepositoriesRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/repositories";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.orderByIsSet()) {
+        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListProjectRepositories());
+
+    std::shared_ptr<ListProjectRepositoriesResponse> localVarResult = std::make_shared<ListProjectRepositoriesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -6720,6 +8570,12 @@ std::shared_ptr<ListRepositoryForksResponse> CodeHubClient::listRepositoryForks(
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
     if (request.orderByIsSet()) {
         localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
     }
@@ -6736,6 +8592,54 @@ std::shared_ptr<ListRepositoryForksResponse> CodeHubClient::listRepositoryForks(
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListRepositoryForks());
 
     std::shared_ptr<ListRepositoryForksResponse> localVarResult = std::make_shared<ListRepositoryForksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListRepositoryLabelsResponse> CodeHubClient::listRepositoryLabels(ListRepositoryLabelsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/labels";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.includeExpiredIsSet()) {
+        localVarQueryParams["include_expired"] = parameterToString(request.isIncludeExpired());
+    }
+    if (request.viewIsSet()) {
+        localVarQueryParams["view"] = parameterToString(request.getView());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListRepositoryLabels());
+
+    std::shared_ptr<ListRepositoryLabelsResponse> localVarResult = std::make_shared<ListRepositoryLabelsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -6870,51 +8774,6 @@ std::shared_ptr<ListSubmodulesResponse> CodeHubClient::listSubmodules(ListSubmod
 
     return localVarResult;
 }
-std::shared_ptr<ListTreesResponse> CodeHubClient::listTrees(ListTreesRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/trees";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.refIsSet()) {
-        localVarQueryParams["ref"] = parameterToString(request.getRef());
-    }
-    if (request.pathIsSet()) {
-        localVarQueryParams["path"] = parameterToString(request.getPath());
-    }
-    if (request.recursiveIsSet()) {
-        localVarQueryParams["recursive"] = parameterToString(request.isRecursive());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListTrees());
-
-    std::shared_ptr<ListTreesResponse> localVarResult = std::make_shared<ListTreesResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ListTrustedIpAddressesResponse> CodeHubClient::listTrustedIpAddresses(ListTrustedIpAddressesRequest &request)
 {
     std::string localVarPath = "/v4/projects/{id}/trusted-ip-addresses";
@@ -7007,6 +8866,37 @@ std::shared_ptr<RemoveDeployKeyResponse> CodeHubClient::removeDeployKey(RemoveDe
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForRemoveDeployKey());
 
     std::shared_ptr<RemoveDeployKeyResponse> localVarResult = std::make_shared<RemoveDeployKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<RemoveDeployKeyFromSubmodulesResponse> CodeHubClient::removeDeployKeyFromSubmodules(RemoveDeployKeyFromSubmodulesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/deploy-keys/{key_id}/submodules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["key_id"] = parameterToString(request.getKeyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForRemoveDeployKeyFromSubmodules());
+
+    std::shared_ptr<RemoveDeployKeyFromSubmodulesResponse> localVarResult = std::make_shared<RemoveDeployKeyFromSubmodulesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -7592,6 +9482,36 @@ std::shared_ptr<ShowUserRefPermissionResponse> CodeHubClient::showUserRefPermiss
 
     return localVarResult;
 }
+std::shared_ptr<StartHouseKeepingResponse> CodeHubClient::startHouseKeeping(StartHouseKeepingRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/housekeeping";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForStartHouseKeeping());
+
+    std::shared_ptr<StartHouseKeepingResponse> localVarResult = std::make_shared<StartHouseKeepingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<StartRemoteMirrorSynchronizationResponse> CodeHubClient::startRemoteMirrorSynchronization(StartRemoteMirrorSynchronizationRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/remote-mirror";
@@ -7631,6 +9551,37 @@ std::shared_ptr<StartRemoteMirrorSynchronizationResponse> CodeHubClient::startRe
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<SyncDeployKeyToSubmodulesResponse> CodeHubClient::syncDeployKeyToSubmodules(SyncDeployKeyToSubmodulesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/deploy-keys/{key_id}/submodules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["key_id"] = parameterToString(request.getKeyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForSyncDeployKeyToSubmodules());
+
+    std::shared_ptr<SyncDeployKeyToSubmodulesResponse> localVarResult = std::make_shared<SyncDeployKeyToSubmodulesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -7698,6 +9649,91 @@ std::shared_ptr<UpdateNotificationSubscriptionResponse> CodeHubClient::updateNot
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateNotificationSubscription());
 
     std::shared_ptr<UpdateNotificationSubscriptionResponse> localVarResult = std::make_shared<UpdateNotificationSubscriptionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateRepositoryCommitRuleResponse> CodeHubClient::updateRepositoryCommitRule(UpdateRepositoryCommitRuleRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/commit-rules/{commit_rule_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+    localVarPathParams["commit_rule_id"] = parameterToString(request.getCommitRuleId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateRepositoryCommitRule());
+
+    std::shared_ptr<UpdateRepositoryCommitRuleResponse> localVarResult = std::make_shared<UpdateRepositoryCommitRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateRepositoryGeneralCommitRuleResponse> CodeHubClient::updateRepositoryGeneralCommitRule(UpdateRepositoryGeneralCommitRuleRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/general-commit-rule";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateRepositoryGeneralCommitRule());
+
+    std::shared_ptr<UpdateRepositoryGeneralCommitRuleResponse> localVarResult = std::make_shared<UpdateRepositoryGeneralCommitRuleResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -7782,6 +9818,90 @@ std::shared_ptr<UpdateRepositoryInheritSettingResponse> CodeHubClient::updateRep
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateRepositoryInheritSetting());
 
     std::shared_ptr<UpdateRepositoryInheritSettingResponse> localVarResult = std::make_shared<UpdateRepositoryInheritSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateRepositoryLabelResponse> CodeHubClient::updateRepositoryLabel(UpdateRepositoryLabelRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/label";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateRepositoryLabel());
+
+    std::shared_ptr<UpdateRepositoryLabelResponse> localVarResult = std::make_shared<UpdateRepositoryLabelResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateRepositoryRemoteMirrorResponse> CodeHubClient::updateRepositoryRemoteMirror(UpdateRepositoryRemoteMirrorRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/remote-mirror";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForUpdateRepositoryRemoteMirror());
+
+    std::shared_ptr<UpdateRepositoryRemoteMirrorResponse> localVarResult = std::make_shared<UpdateRepositoryRemoteMirrorResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -7879,165 +9999,6 @@ std::shared_ptr<UpdateTrustedIpAddressResponse> CodeHubClient::updateTrustedIpAd
 
     return localVarResult;
 }
-std::shared_ptr<CreateTagResponse> CodeHubClient::createTag(CreateTagRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/tags";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForCreateTag());
-
-    std::shared_ptr<CreateTagResponse> localVarResult = std::make_shared<CreateTagResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<DeleteTagResponse> CodeHubClient::deleteTag(DeleteTagRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/tag";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.tagNameIsSet()) {
-        localVarQueryParams["tag_name"] = parameterToString(request.getTagName());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteTag());
-
-    std::shared_ptr<DeleteTagResponse> localVarResult = std::make_shared<DeleteTagResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListTagsResponse> CodeHubClient::listTags(ListTagsRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/tags";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.creatorIsSet()) {
-        localVarQueryParams["creator"] = parameterToString(request.getCreator());
-    }
-    if (request.sortIsSet()) {
-        localVarQueryParams["sort"] = parameterToString(request.getSort());
-    }
-    if (request.searchIsSet()) {
-        localVarQueryParams["search"] = parameterToString(request.getSearch());
-    }
-    if (request.orderByIsSet()) {
-        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
-    }
-    if (request.viewIsSet()) {
-        localVarQueryParams["view"] = parameterToString(request.getView());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListTags());
-
-    std::shared_ptr<ListTagsResponse> localVarResult = std::make_shared<ListTagsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowTagResponse> CodeHubClient::showTag(ShowTagRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/tag";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.tagNameIsSet()) {
-        localVarQueryParams["tag_name"] = parameterToString(request.getTagName());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowTag());
-
-    std::shared_ptr<ShowTagResponse> localVarResult = std::make_shared<ShowTagResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<AddTenantTrustedIpAddressResponse> CodeHubClient::addTenantTrustedIpAddress(AddTenantTrustedIpAddressRequest &request)
 {
     std::string localVarPath = "/v4/tenant/trusted-ip-addresses";
@@ -8103,6 +10064,106 @@ std::shared_ptr<DeleteTenantTrustedIpAddressResponse> CodeHubClient::deleteTenan
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteTenantTrustedIpAddress());
 
     std::shared_ptr<DeleteTenantTrustedIpAddressResponse> localVarResult = std::make_shared<DeleteTenantTrustedIpAddressResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ExportTenantRepositoriesResponse> CodeHubClient::exportTenantRepositories(ExportTenantRepositoriesRequest &request)
+{
+    std::string localVarPath = "/v4/tenant/repositories/export";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForExportTenantRepositories());
+
+    std::shared_ptr<ExportTenantRepositoriesResponse> localVarResult = std::make_shared<ExportTenantRepositoriesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListTenantRepositoriesResponse> CodeHubClient::listTenantRepositories(ListTenantRepositoriesRequest &request)
+{
+    std::string localVarPath = "/v4/tenant/repositories";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.repositoryNameIsSet()) {
+        localVarQueryParams["repository_name"] = parameterToString(request.getRepositoryName());
+    }
+    if (request.memberNumberIsSet()) {
+        localVarQueryParams["member_number"] = parameterToString(request.getMemberNumber());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.ownerIsSet()) {
+        localVarQueryParams["owner"] = parameterToString(request.getOwner());
+    }
+    if (request.createdAfterIsSet()) {
+        localVarQueryParams["created_after"] = parameterToString(request.getCreatedAfter());
+    }
+    if (request.createdBeforeIsSet()) {
+        localVarQueryParams["created_before"] = parameterToString(request.getCreatedBefore());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.sortFieldIsSet()) {
+        localVarQueryParams["sort_field"] = parameterToString(request.getSortField());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListTenantRepositories());
+
+    std::shared_ptr<ListTenantRepositoriesResponse> localVarResult = std::make_shared<ListTenantRepositoriesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -8459,6 +10520,99 @@ std::shared_ptr<ListRepositoryWorkItemsResponse> CodeHubClient::listRepositoryWo
 
     return localVarResult;
 }
+std::shared_ptr<ShowGroupE2eSettingResponse> CodeHubClient::showGroupE2eSetting(ShowGroupE2eSettingRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/e2e-setting";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowGroupE2eSetting());
+
+    std::shared_ptr<ShowGroupE2eSettingResponse> localVarResult = std::make_shared<ShowGroupE2eSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowProjectE2eSettingResponse> CodeHubClient::showProjectE2eSetting(ShowProjectE2eSettingRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/e2e-setting";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowProjectE2eSetting());
+
+    std::shared_ptr<ShowProjectE2eSettingResponse> localVarResult = std::make_shared<ShowProjectE2eSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowRepositoryE2eSettingResponse> CodeHubClient::showRepositoryE2eSetting(ShowRepositoryE2eSettingRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/e2e-setting";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.takeEffectIsSet()) {
+        localVarQueryParams["take_effect"] = parameterToString(request.isTakeEffect());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForShowRepositoryE2eSetting());
+
+    std::shared_ptr<ShowRepositoryE2eSettingResponse> localVarResult = std::make_shared<ShowRepositoryE2eSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<AddSshKeyResponse> CodeHubClient::addSshKey(AddSshKeyRequest &request)
 {
     std::string localVarPath = "/v4/user/keys";
@@ -8500,6 +10654,47 @@ std::shared_ptr<AddSshKeyResponse> CodeHubClient::addSshKey(AddSshKeyRequest &re
 
     return localVarResult;
 }
+std::shared_ptr<BatchValidateUserGroupPermissionsResponse> CodeHubClient::batchValidateUserGroupPermissions(BatchValidateUserGroupPermissionsRequest &request)
+{
+    std::string localVarPath = "/v4/user/groups/group-permissions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForBatchValidateUserGroupPermissions());
+
+    std::shared_ptr<BatchValidateUserGroupPermissionsResponse> localVarResult = std::make_shared<BatchValidateUserGroupPermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteSshKeyResponse> CodeHubClient::deleteSshKey(DeleteSshKeyRequest &request)
 {
     std::string localVarPath = "/v4/user/keys/{key_id}";
@@ -8524,6 +10719,48 @@ std::shared_ptr<DeleteSshKeyResponse> CodeHubClient::deleteSshKey(DeleteSshKeyRe
         localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForDeleteSshKey());
 
     std::shared_ptr<DeleteSshKeyResponse> localVarResult = std::make_shared<DeleteSshKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListImpersonationTokensResponse> CodeHubClient::listImpersonationTokens(ListImpersonationTokensRequest &request)
+{
+    std::string localVarPath = "/v4/users/impersonation-tokens";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.stateIsSet()) {
+        localVarQueryParams["state"] = parameterToString(request.getState());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeHubMeta::genRequestDefForListImpersonationTokens());
+
+    std::shared_ptr<ListImpersonationTokensResponse> localVarResult = std::make_shared<ListImpersonationTokensResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

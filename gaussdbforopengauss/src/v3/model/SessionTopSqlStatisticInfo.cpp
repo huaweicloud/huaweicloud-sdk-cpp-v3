@@ -18,6 +18,8 @@ SessionTopSqlStatisticInfo::SessionTopSqlStatisticInfo()
     uniqueSqlIdIsSet_ = false;
     query_ = "";
     queryIsSet_ = false;
+    count_ = 0;
+    countIsSet_ = false;
 }
 
 SessionTopSqlStatisticInfo::~SessionTopSqlStatisticInfo() = default;
@@ -38,6 +40,9 @@ web::json::value SessionTopSqlStatisticInfo::toJson() const
     }
     if(queryIsSet_) {
         val[utility::conversions::to_string_t("query")] = ModelBase::toJson(query_);
+    }
+    if(countIsSet_) {
+        val[utility::conversions::to_string_t("count")] = ModelBase::toJson(count_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool SessionTopSqlStatisticInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setQuery(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCount(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool SessionTopSqlStatisticInfo::queryIsSet() const
 void SessionTopSqlStatisticInfo::unsetquery()
 {
     queryIsSet_ = false;
+}
+
+int32_t SessionTopSqlStatisticInfo::getCount() const
+{
+    return count_;
+}
+
+void SessionTopSqlStatisticInfo::setCount(int32_t value)
+{
+    count_ = value;
+    countIsSet_ = true;
+}
+
+bool SessionTopSqlStatisticInfo::countIsSet() const
+{
+    return countIsSet_;
+}
+
+void SessionTopSqlStatisticInfo::unsetcount()
+{
+    countIsSet_ = false;
 }
 
 }

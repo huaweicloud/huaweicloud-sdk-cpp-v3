@@ -48,6 +48,24 @@ public:
     void setRepositoryId(int32_t value);
 
     /// <summary>
+    /// **参数解释：** 偏移量，从0开始。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 返回数量。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
     /// **参数解释：**  排序字段。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - created_at，创建时间。 - updated_at，更新时间。 **默认取值：**  created_at。
     /// </summary>
 
@@ -78,6 +96,10 @@ public:
 protected:
     int32_t repositoryId_;
     bool repositoryIdIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
     std::string orderBy_;
     bool orderByIsSet_;
     std::string sort_;

@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/rds/v3/model/RestartPolicy.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -64,6 +65,15 @@ public:
     void unsetdelay();
     void setDelay(bool value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    RestartPolicy getRestartPolicy() const;
+    bool restartPolicyIsSet() const;
+    void unsetrestartPolicy();
+    void setRestartPolicy(const RestartPolicy& value);
+
 
 protected:
     bool restartServer_;
@@ -72,6 +82,8 @@ protected:
     bool forcibleIsSet_;
     bool delay_;
     bool delayIsSet_;
+    RestartPolicy restartPolicy_;
+    bool restartPolicyIsSet_;
 
 };
 

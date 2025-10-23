@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/codehub/v4/model/UserTeamBasicDto.h>
+#include <huaweicloud/codehub/v4/model/ForceActionEnableDto.h>
 #include <string>
 #include <huaweicloud/codehub/v4/model/RoleBasicDto.h>
 #include <huaweicloud/codehub/v4/model/UserBasicDto.h>
@@ -87,6 +88,15 @@ public:
     void unsetroles();
     void setRoles(const std::vector<RoleBasicDto>& value);
 
+    /// <summary>
+    /// **参数解释：** 操作选择列表。
+    /// </summary>
+
+    std::vector<ForceActionEnableDto>& getAdditionSwitchers();
+    bool additionSwitchersIsSet() const;
+    void unsetadditionSwitchers();
+    void setAdditionSwitchers(const std::vector<ForceActionEnableDto>& value);
+
 
 protected:
     std::string action_;
@@ -99,6 +109,8 @@ protected:
     bool userTeamsIsSet_;
     std::vector<RoleBasicDto> roles_;
     bool rolesIsSet_;
+    std::vector<ForceActionEnableDto> additionSwitchers_;
+    bool additionSwitchersIsSet_;
 
 };
 

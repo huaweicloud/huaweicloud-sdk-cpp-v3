@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 流水线阶段带任务
+/// 流水线阶段的任务
 /// </summary>
 class HUAWEICLOUD_CODEHUB_V4_EXPORT  PipelineStageJobDto
     : public ModelBase

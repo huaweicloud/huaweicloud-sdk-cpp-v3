@@ -39,7 +39,7 @@ bool ListMergeRequestTemplatesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            std::vector<MergeRequestTemplateDto> refVal;
+            std::vector<RepositoryMergeRequestTemplateDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -48,12 +48,12 @@ bool ListMergeRequestTemplatesResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<MergeRequestTemplateDto>& ListMergeRequestTemplatesResponse::getBody()
+std::vector<RepositoryMergeRequestTemplateDto>& ListMergeRequestTemplatesResponse::getBody()
 {
     return body_;
 }
 
-void ListMergeRequestTemplatesResponse::setBody(const std::vector<MergeRequestTemplateDto>& value)
+void ListMergeRequestTemplatesResponse::setBody(const std::vector<RepositoryMergeRequestTemplateDto>& value)
 {
     body_ = value;
     bodyIsSet_ = true;

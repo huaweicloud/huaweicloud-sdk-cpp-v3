@@ -98,6 +98,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListAvailableFlavorInfosRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListAvailableFlavorInfosResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListBackupsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListBackupsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsResponse.h>
@@ -225,6 +227,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/RestartInstanceResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreExistingInstanceRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreExistingInstanceResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisDataRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisDataRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisDataResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisPitrRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisPitrRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisPitrResponse.h>
@@ -672,6 +677,14 @@ public:
     std::shared_ptr<ListAvailableFlavorInfosResponse> listAvailableFlavorInfos(
         ListAvailableFlavorInfosRequest &request
     );
+    // 查询备份列表（推荐）
+    //
+    // 根据指定条件查询备份列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBackupsResponse> listBackups(
+        ListBackupsRequest &request
+    );
     // 查询GeminiDB(for Cassandra)数据库慢日志
     //
     // 查询GeminiDB(for Cassandra)数据库慢日志信息，支持日志关键字搜索。
@@ -1081,6 +1094,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RestoreExistingInstanceResponse> restoreExistingInstance(
         RestoreExistingInstanceRequest &request
+    );
+    // 数据文件导入已有实例
+    //
+    // 数据导入已有实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestoreRedisDataResponse> restoreRedisData(
+        RestoreRedisDataRequest &request
     );
     // 恢复当前Redis实例到指定时间点
     //

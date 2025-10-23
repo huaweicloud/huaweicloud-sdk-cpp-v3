@@ -231,10 +231,10 @@ public:
     /// **参数解释：** 排序id。
     /// </summary>
 
-    int32_t getCrCommentEmplates() const;
-    bool crCommentEmplatesIsSet() const;
-    void unsetcrCommentEmplates();
-    void setCrCommentEmplates(int32_t value);
+    int32_t getCrCommentTemplates() const;
+    bool crCommentTemplatesIsSet() const;
+    void unsetcrCommentTemplates();
+    void setCrCommentTemplates(int32_t value);
 
     /// <summary>
     /// **参数解释：** 排序id。
@@ -264,7 +264,7 @@ public:
     void setRepositorySettings(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 部署秘钥策略。
+    /// **参数解释：** 部署密钥策略。
     /// </summary>
 
     int32_t getDeployKeys() const;
@@ -343,8 +343,8 @@ protected:
     bool pipelineSettingsIsSet_;
     int32_t issueTemplates_;
     bool issueTemplatesIsSet_;
-    int32_t crCommentEmplates_;
-    bool crCommentEmplatesIsSet_;
+    int32_t crCommentTemplates_;
+    bool crCommentTemplatesIsSet_;
     int32_t mergeRequests_;
     bool mergeRequestsIsSet_;
     int32_t mrBranchPolicies_;

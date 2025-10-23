@@ -17,6 +17,8 @@ GeneralTextResult::GeneralTextResult()
     wordsBlockCount_ = 0;
     wordsBlockCountIsSet_ = false;
     wordsBlockListIsSet_ = false;
+    markdownResult_ = "";
+    markdownResultIsSet_ = false;
 }
 
 GeneralTextResult::~GeneralTextResult() = default;
@@ -37,6 +39,9 @@ web::json::value GeneralTextResult::toJson() const
     }
     if(wordsBlockListIsSet_) {
         val[utility::conversions::to_string_t("words_block_list")] = ModelBase::toJson(wordsBlockList_);
+    }
+    if(markdownResultIsSet_) {
+        val[utility::conversions::to_string_t("markdown_result")] = ModelBase::toJson(markdownResult_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool GeneralTextResult::fromJson(const web::json::value& val)
             std::vector<GeneralTextWordsBlockList> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWordsBlockList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("markdown_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("markdown_result"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMarkdownResult(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool GeneralTextResult::wordsBlockListIsSet() const
 void GeneralTextResult::unsetwordsBlockList()
 {
     wordsBlockListIsSet_ = false;
+}
+
+std::string GeneralTextResult::getMarkdownResult() const
+{
+    return markdownResult_;
+}
+
+void GeneralTextResult::setMarkdownResult(const std::string& value)
+{
+    markdownResult_ = value;
+    markdownResultIsSet_ = true;
+}
+
+bool GeneralTextResult::markdownResultIsSet() const
+{
+    return markdownResultIsSet_;
+}
+
+void GeneralTextResult::unsetmarkdownResult()
+{
+    markdownResultIsSet_ = false;
 }
 
 }

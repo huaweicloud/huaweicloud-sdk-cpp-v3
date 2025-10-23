@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ocr/v1/model/GeneralTextWordsBlockList.h>
+#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -66,6 +67,15 @@ public:
     void unsetwordsBlockList();
     void setWordsBlockList(const std::vector<GeneralTextWordsBlockList>& value);
 
+    /// <summary>
+    /// 所有文字块拼接的识别结果，同一行的文字块使用“\\t”拼接，不同行的文字块使用“\\n”拼接。 当return_markdown_result为true时，返回该字段值，否则，不返回该字段。 
+    /// </summary>
+
+    std::string getMarkdownResult() const;
+    bool markdownResultIsSet() const;
+    void unsetmarkdownResult();
+    void setMarkdownResult(const std::string& value);
+
 
 protected:
     float direction_;
@@ -74,6 +84,8 @@ protected:
     bool wordsBlockCountIsSet_;
     std::vector<GeneralTextWordsBlockList> wordsBlockList_;
     bool wordsBlockListIsSet_;
+    std::string markdownResult_;
+    bool markdownResultIsSet_;
 
 };
 

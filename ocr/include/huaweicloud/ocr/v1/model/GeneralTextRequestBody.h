@@ -110,6 +110,15 @@ public:
     void unsetpdfPageNumber();
     void setPdfPageNumber(int32_t value);
 
+    /// <summary>
+    /// 返回文字块拼接结果开关。可选值包括： - true：打开返回文字块拼接结果开关。 - false：关闭返回文字块拼接结果开关。 未传入该参数时默认为false，即默认关闭返回文字块拼接结果开关。 
+    /// </summary>
+
+    bool isReturnMarkdownResult() const;
+    bool returnMarkdownResultIsSet() const;
+    void unsetreturnMarkdownResult();
+    void setReturnMarkdownResult(bool value);
+
 
 protected:
     std::string image_;
@@ -128,6 +137,8 @@ protected:
     bool singleOrientationModeIsSet_;
     int32_t pdfPageNumber_;
     bool pdfPageNumberIsSet_;
+    bool returnMarkdownResult_;
+    bool returnMarkdownResultIsSet_;
 
 };
 

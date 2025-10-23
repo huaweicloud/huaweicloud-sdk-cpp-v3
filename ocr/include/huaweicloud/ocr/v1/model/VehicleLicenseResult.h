@@ -10,8 +10,10 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
-#include <huaweicloud/ocr/v1/model/VehicleLicenseback.h>
+#include <huaweicloud/ocr/v1/model/VehicleLicenseAlarmConfidence.h>
+#include <huaweicloud/ocr/v1/model/VehicleLicenseAlarmResult.h>
 #include <string>
+#include <huaweicloud/ocr/v1/model/VehicleLicenseBack.h>
 #include <huaweicloud/ocr/v1/model/VehicleLicenseFront.h>
 #include <vector>
 
@@ -298,10 +300,28 @@ public:
     /// 
     /// </summary>
 
-    VehicleLicenseback getBack() const;
+    VehicleLicenseBack getBack() const;
     bool backIsSet() const;
     void unsetback();
-    void setBack(const VehicleLicenseback& value);
+    void setBack(const VehicleLicenseBack& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VehicleLicenseAlarmResult getAlarmResult() const;
+    bool alarmResultIsSet() const;
+    void unsetalarmResult();
+    void setAlarmResult(const VehicleLicenseAlarmResult& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VehicleLicenseAlarmConfidence getAlarmConfidence() const;
+    bool alarmConfidenceIsSet() const;
+    void unsetalarmConfidence();
+    void setAlarmConfidence(const VehicleLicenseAlarmConfidence& value);
 
 
 protected:
@@ -361,8 +381,12 @@ protected:
     bool statusIsSet_;
     VehicleLicenseFront front_;
     bool frontIsSet_;
-    VehicleLicenseback back_;
+    VehicleLicenseBack back_;
     bool backIsSet_;
+    VehicleLicenseAlarmResult alarmResult_;
+    bool alarmResultIsSet_;
+    VehicleLicenseAlarmConfidence alarmConfidence_;
+    bool alarmConfidenceIsSet_;
 
 };
 

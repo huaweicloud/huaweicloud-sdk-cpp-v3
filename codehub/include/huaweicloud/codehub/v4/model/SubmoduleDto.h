@@ -120,7 +120,7 @@ public:
     void setSubCommitId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 部署秘钥同步状态。 **取值范围：** - 0，不同步。 - 1，同步。
+    /// **参数解释：** 部署密钥同步状态。 **取值范围：** - 0，不同步。 - 1，同步。
     /// </summary>
 
     int32_t getDeployKeyStatus() const;

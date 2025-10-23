@@ -39,7 +39,7 @@ public:
     /// DeleteTenantTrustedIpAddressResponse members
 
     /// <summary>
-    /// **参数解释：** 状态码。
+    /// **参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。
     /// </summary>
 
     std::string getStatus() const;

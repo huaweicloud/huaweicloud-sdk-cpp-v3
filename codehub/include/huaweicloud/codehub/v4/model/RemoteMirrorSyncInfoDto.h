@@ -39,7 +39,7 @@ public:
     /// RemoteMirrorSyncInfoDto members
 
     /// <summary>
-    /// **参数解释：** 用户名(需要base64加密)。
+    /// **参数解释：** 用户名(需要base64加密)。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及
     /// </summary>
 
     std::string getUsername() const;
@@ -48,7 +48,7 @@ public:
     void setUsername(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 密码(需要base64加密)。
+    /// **参数解释：** 密码(需要base64加密)。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及
     /// </summary>
 
     std::string getPassword() const;
@@ -57,13 +57,22 @@ public:
     void setPassword(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 拓展点uuid。
+    /// **参数解释：** 拓展点uuid。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getEndpointUuid() const;
     bool endpointUuidIsSet() const;
     void unsetendpointUuid();
     void setEndpointUuid(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 允许强制同步。 **约束限制：** 不涉及。 **取值范围：** - true，强制同步。 - false，不强制同步。 **默认取值：** 不涉及。
+    /// </summary>
+
+    bool isForceFetch() const;
+    bool forceFetchIsSet() const;
+    void unsetforceFetch();
+    void setForceFetch(bool value);
 
 
 protected:
@@ -73,6 +82,8 @@ protected:
     bool passwordIsSet_;
     std::string endpointUuid_;
     bool endpointUuidIsSet_;
+    bool forceFetch_;
+    bool forceFetchIsSet_;
 
 };
 

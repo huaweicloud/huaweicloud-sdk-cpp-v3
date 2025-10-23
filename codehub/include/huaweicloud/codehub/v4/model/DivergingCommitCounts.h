@@ -19,7 +19,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 差异提交数量
 /// </summary>
 class HUAWEICLOUD_CODEHUB_V4_EXPORT  DivergingCommitCounts
     : public ModelBase

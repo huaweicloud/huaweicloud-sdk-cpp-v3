@@ -174,8 +174,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseSchemasResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVersionsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVersionsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVolumeRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVolumeResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVolumeSummaryRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseVolumeSummaryResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabasesRequest.h>
@@ -465,6 +463,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceAliasRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceAliasRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceAliasResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceNameRequest.h>
@@ -552,10 +553,15 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlLimitTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlLimitTaskRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlPlanActionRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlPlanActionResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlTraceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlTraceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/NodeExecutionInfoResult.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ParaErrorResponseBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/QuerySqlPlanStateRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowFullSqlRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowFullSqlResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowGlobalSlowSqlDetailRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowGlobalSlowSqlDetailRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowGlobalSlowSqlDetailResponse.h>
@@ -1137,14 +1143,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDatabaseVersionsResponse> listDatabaseVersions(
         ListDatabaseVersionsRequest &request
-    );
-    // 查询数据库占用空间大小列表
-    //
-    // 查询数据库占用空间大小列表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListDatabaseVolumeResponse> listDatabaseVolume(
-        ListDatabaseVolumeRequest &request
     );
     // 查询数据盘空间概况
     //
@@ -2122,6 +2120,14 @@ public:
     std::shared_ptr<UpdateFeaturesResponse> updateFeatures(
         UpdateFeaturesRequest &request
     );
+    // 修改实例别名
+    //
+    // 创建或修改实例备注。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstanceAliasResponse> updateInstanceAlias(
+        UpdateInstanceAliasRequest &request
+    );
     // 修改指定实例的参数
     //
     // 修改指定实例的参数。
@@ -2407,6 +2413,14 @@ public:
     std::shared_ptr<ListSqlLimitTaskResponse> listSqlLimitTask(
         ListSqlLimitTaskRequest &request
     );
+    // 查询SQL执行计划绑定情况
+    //
+    // 查询SQL执行计划绑定情况。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSqlPlanActionResponse> listSqlPlanAction(
+        ListSqlPlanActionRequest &request
+    );
     // 查询GaussDB数据库实例SQL链路
     //
     // 查询GaussDB数据库实例SQL链路，包含实例上对应组件的链路列表，如dn_6001、dn_6002、cn_5001、cn_5002。
@@ -2414,6 +2428,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSqlTraceResponse> listSqlTrace(
         ListSqlTraceRequest &request
+    );
+    // 查询单条SQL详情
+    //
+    // 查询单条SQL详情。对于分布式版实例，可查询对应SQL的完整执行记录，包含CN和DN上SQL语句执行历史。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFullSqlResponse> showFullSql(
+        ShowFullSqlRequest &request
     );
     // 查询全局慢SQL详情
     //

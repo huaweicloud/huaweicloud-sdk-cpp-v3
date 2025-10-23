@@ -59,6 +59,8 @@ CreateCommitRevertResponse::CreateCommitRevertResponse()
     cherryPickBranchNameIsSet_ = false;
     revertBranchName_ = "";
     revertBranchNameIsSet_ = false;
+    iid_ = 0;
+    iidIsSet_ = false;
 }
 
 CreateCommitRevertResponse::~CreateCommitRevertResponse() = default;
@@ -142,6 +144,9 @@ web::json::value CreateCommitRevertResponse::toJson() const
     }
     if(revertBranchNameIsSet_) {
         val[utility::conversions::to_string_t("revert_branch_name")] = ModelBase::toJson(revertBranchName_);
+    }
+    if(iidIsSet_) {
+        val[utility::conversions::to_string_t("iid")] = ModelBase::toJson(iid_);
     }
 
     return val;
@@ -364,6 +369,15 @@ bool CreateCommitRevertResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRevertBranchName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("iid"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("iid"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIid(refVal);
         }
     }
     return ok;
@@ -872,6 +886,27 @@ bool CreateCommitRevertResponse::revertBranchNameIsSet() const
 void CreateCommitRevertResponse::unsetrevertBranchName()
 {
     revertBranchNameIsSet_ = false;
+}
+
+int32_t CreateCommitRevertResponse::getIid() const
+{
+    return iid_;
+}
+
+void CreateCommitRevertResponse::setIid(int32_t value)
+{
+    iid_ = value;
+    iidIsSet_ = true;
+}
+
+bool CreateCommitRevertResponse::iidIsSet() const
+{
+    return iidIsSet_;
+}
+
+void CreateCommitRevertResponse::unsetiid()
+{
+    iidIsSet_ = false;
 }
 
 }

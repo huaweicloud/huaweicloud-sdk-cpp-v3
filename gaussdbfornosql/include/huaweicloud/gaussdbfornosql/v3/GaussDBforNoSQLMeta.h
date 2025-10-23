@@ -47,6 +47,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteRedisDisabledCommands();
     static HttpRequestDef genRequestDefForExpandInstanceNode();
     static HttpRequestDef genRequestDefForListAvailableFlavorInfos();
+    static HttpRequestDef genRequestDefForListBackups();
     static HttpRequestDef genRequestDefForListCassandraSlowLogs();
     static HttpRequestDef genRequestDefForListConfigurationDatastores();
     static HttpRequestDef genRequestDefForListConfigurationTemplates();
@@ -98,6 +99,7 @@ public:
     static HttpRequestDef genRequestDefForResizeInstanceVolume();
     static HttpRequestDef genRequestDefForRestartInstance();
     static HttpRequestDef genRequestDefForRestoreExistingInstance();
+    static HttpRequestDef genRequestDefForRestoreRedisData();
     static HttpRequestDef genRequestDefForRestoreRedisPitr();
     static HttpRequestDef genRequestDefForSaveLtsConfigs();
     static HttpRequestDef genRequestDefForSaveRedisDisabledCommands();

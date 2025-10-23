@@ -11,6 +11,7 @@
 
 #include <string>
 #include <huaweicloud/codehub/v4/model/UserBasicDto.h>
+#include <huaweicloud/codehub/v4/model/MergeRequestTemplateDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -49,7 +50,7 @@ public:
     void setId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 仓库id
+    /// **参数解释：** 仓库id。
     /// </summary>
 
     int32_t getRepositoryId() const;

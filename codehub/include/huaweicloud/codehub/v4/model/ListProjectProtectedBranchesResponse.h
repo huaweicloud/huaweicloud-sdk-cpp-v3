@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 #include <vector>
 #include <huaweicloud/codehub/v4/model/ProjectProtectedBranchApiDto.h>
 
@@ -49,21 +48,10 @@ public:
     void unsetbody();
     void setBody(const std::vector<ProjectProtectedBranchApiDto>& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    std::string getXTotal() const;
-    bool xTotalIsSet() const;
-    void unsetxTotal();
-    void setXTotal(const std::string& value);
-
 
 protected:
     std::vector<ProjectProtectedBranchApiDto> body_;
     bool bodyIsSet_;
-    std::string xTotal_;
-    bool xTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -18,6 +18,8 @@ RemoteMirrorSyncInfoDto::RemoteMirrorSyncInfoDto()
     passwordIsSet_ = false;
     endpointUuid_ = "";
     endpointUuidIsSet_ = false;
+    forceFetch_ = false;
+    forceFetchIsSet_ = false;
 }
 
 RemoteMirrorSyncInfoDto::~RemoteMirrorSyncInfoDto() = default;
@@ -38,6 +40,9 @@ web::json::value RemoteMirrorSyncInfoDto::toJson() const
     }
     if(endpointUuidIsSet_) {
         val[utility::conversions::to_string_t("endpoint_uuid")] = ModelBase::toJson(endpointUuid_);
+    }
+    if(forceFetchIsSet_) {
+        val[utility::conversions::to_string_t("force_fetch")] = ModelBase::toJson(forceFetch_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool RemoteMirrorSyncInfoDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndpointUuid(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("force_fetch"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("force_fetch"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setForceFetch(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool RemoteMirrorSyncInfoDto::endpointUuidIsSet() const
 void RemoteMirrorSyncInfoDto::unsetendpointUuid()
 {
     endpointUuidIsSet_ = false;
+}
+
+bool RemoteMirrorSyncInfoDto::isForceFetch() const
+{
+    return forceFetch_;
+}
+
+void RemoteMirrorSyncInfoDto::setForceFetch(bool value)
+{
+    forceFetch_ = value;
+    forceFetchIsSet_ = true;
+}
+
+bool RemoteMirrorSyncInfoDto::forceFetchIsSet() const
+{
+    return forceFetchIsSet_;
+}
+
+void RemoteMirrorSyncInfoDto::unsetforceFetch()
+{
+    forceFetchIsSet_ = false;
 }
 
 }

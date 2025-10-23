@@ -24,6 +24,8 @@ VehicleLicenseRequestBody::VehicleLicenseRequestBody()
     returnTextLocationIsSet_ = false;
     recognizeElectronicLicense_ = false;
     recognizeElectronicLicenseIsSet_ = false;
+    alarm_ = false;
+    alarmIsSet_ = false;
 }
 
 VehicleLicenseRequestBody::~VehicleLicenseRequestBody() = default;
@@ -53,6 +55,9 @@ web::json::value VehicleLicenseRequestBody::toJson() const
     }
     if(recognizeElectronicLicenseIsSet_) {
         val[utility::conversions::to_string_t("recognize_electronic_license")] = ModelBase::toJson(recognizeElectronicLicense_);
+    }
+    if(alarmIsSet_) {
+        val[utility::conversions::to_string_t("alarm")] = ModelBase::toJson(alarm_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool VehicleLicenseRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRecognizeElectronicLicense(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarm(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool VehicleLicenseRequestBody::recognizeElectronicLicenseIsSet() const
 void VehicleLicenseRequestBody::unsetrecognizeElectronicLicense()
 {
     recognizeElectronicLicenseIsSet_ = false;
+}
+
+bool VehicleLicenseRequestBody::isAlarm() const
+{
+    return alarm_;
+}
+
+void VehicleLicenseRequestBody::setAlarm(bool value)
+{
+    alarm_ = value;
+    alarmIsSet_ = true;
+}
+
+bool VehicleLicenseRequestBody::alarmIsSet() const
+{
+    return alarmIsSet_;
+}
+
+void VehicleLicenseRequestBody::unsetalarm()
+{
+    alarmIsSet_ = false;
 }
 
 }

@@ -34,10 +34,6 @@ RepositorySimpleDto::RepositorySimpleDto()
     sshUrlToRepoIsSet_ = false;
     httpUrlToRepo_ = "";
     httpUrlToRepoIsSet_ = false;
-    webUrl_ = "";
-    webUrlIsSet_ = false;
-    readmeUrl_ = "";
-    readmeUrlIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
     projectName_ = "";
@@ -90,12 +86,6 @@ web::json::value RepositorySimpleDto::toJson() const
     }
     if(httpUrlToRepoIsSet_) {
         val[utility::conversions::to_string_t("http_url_to_repo")] = ModelBase::toJson(httpUrlToRepo_);
-    }
-    if(webUrlIsSet_) {
-        val[utility::conversions::to_string_t("web_url")] = ModelBase::toJson(webUrl_);
-    }
-    if(readmeUrlIsSet_) {
-        val[utility::conversions::to_string_t("readme_url")] = ModelBase::toJson(readmeUrl_);
     }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
@@ -213,24 +203,6 @@ bool RepositorySimpleDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHttpUrlToRepo(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("web_url"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("web_url"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setWebUrl(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("readme_url"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("readme_url"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setReadmeUrl(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("project_id"))) {
@@ -502,48 +474,6 @@ bool RepositorySimpleDto::httpUrlToRepoIsSet() const
 void RepositorySimpleDto::unsethttpUrlToRepo()
 {
     httpUrlToRepoIsSet_ = false;
-}
-
-std::string RepositorySimpleDto::getWebUrl() const
-{
-    return webUrl_;
-}
-
-void RepositorySimpleDto::setWebUrl(const std::string& value)
-{
-    webUrl_ = value;
-    webUrlIsSet_ = true;
-}
-
-bool RepositorySimpleDto::webUrlIsSet() const
-{
-    return webUrlIsSet_;
-}
-
-void RepositorySimpleDto::unsetwebUrl()
-{
-    webUrlIsSet_ = false;
-}
-
-std::string RepositorySimpleDto::getReadmeUrl() const
-{
-    return readmeUrl_;
-}
-
-void RepositorySimpleDto::setReadmeUrl(const std::string& value)
-{
-    readmeUrl_ = value;
-    readmeUrlIsSet_ = true;
-}
-
-bool RepositorySimpleDto::readmeUrlIsSet() const
-{
-    return readmeUrlIsSet_;
-}
-
-void RepositorySimpleDto::unsetreadmeUrl()
-{
-    readmeUrlIsSet_ = false;
 }
 
 std::string RepositorySimpleDto::getProjectId() const

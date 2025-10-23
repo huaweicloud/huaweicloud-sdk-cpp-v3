@@ -66,7 +66,7 @@ public:
     void setContent(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** bolb文件ID。 **约束限制：** 不涉及。
+    /// **参数解释：** blob文件ID。 **约束限制：** 不涉及。
     /// </summary>
 
     std::string getBlobId() const;

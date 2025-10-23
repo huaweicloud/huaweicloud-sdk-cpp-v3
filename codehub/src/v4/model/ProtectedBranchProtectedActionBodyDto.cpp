@@ -19,6 +19,7 @@ ProtectedBranchProtectedActionBodyDto::ProtectedBranchProtectedActionBodyDto()
     relatedRoleIdsIsSet_ = false;
     action_ = "";
     actionIsSet_ = false;
+    additionSwitchersIsSet_ = false;
 }
 
 ProtectedBranchProtectedActionBodyDto::~ProtectedBranchProtectedActionBodyDto() = default;
@@ -45,6 +46,9 @@ web::json::value ProtectedBranchProtectedActionBodyDto::toJson() const
     }
     if(actionIsSet_) {
         val[utility::conversions::to_string_t("action")] = ModelBase::toJson(action_);
+    }
+    if(additionSwitchersIsSet_) {
+        val[utility::conversions::to_string_t("addition_switchers")] = ModelBase::toJson(additionSwitchers_);
     }
 
     return val;
@@ -96,6 +100,15 @@ bool ProtectedBranchProtectedActionBodyDto::fromJson(const web::json::value& val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAction(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("addition_switchers"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("addition_switchers"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ProtectedActionSwitcher> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionSwitchers(refVal);
         }
     }
     return ok;
@@ -205,6 +218,27 @@ bool ProtectedBranchProtectedActionBodyDto::actionIsSet() const
 void ProtectedBranchProtectedActionBodyDto::unsetaction()
 {
     actionIsSet_ = false;
+}
+
+std::vector<ProtectedActionSwitcher>& ProtectedBranchProtectedActionBodyDto::getAdditionSwitchers()
+{
+    return additionSwitchers_;
+}
+
+void ProtectedBranchProtectedActionBodyDto::setAdditionSwitchers(const std::vector<ProtectedActionSwitcher>& value)
+{
+    additionSwitchers_ = value;
+    additionSwitchersIsSet_ = true;
+}
+
+bool ProtectedBranchProtectedActionBodyDto::additionSwitchersIsSet() const
+{
+    return additionSwitchersIsSet_;
+}
+
+void ProtectedBranchProtectedActionBodyDto::unsetadditionSwitchers()
+{
+    additionSwitchersIsSet_ = false;
 }
 
 }

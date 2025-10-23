@@ -48,7 +48,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 秘钥。
+    /// **参数解释：** 密钥。
     /// </summary>
 
     std::string getToken() const;

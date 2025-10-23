@@ -138,24 +138,6 @@ public:
     void setHttpUrlToRepo(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 仓库页面链接。
-    /// </summary>
-
-    std::string getWebUrl() const;
-    bool webUrlIsSet() const;
-    void unsetwebUrl();
-    void setWebUrl(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 仓库readme文件链接。
-    /// </summary>
-
-    std::string getReadmeUrl() const;
-    bool readmeUrlIsSet() const;
-    void unsetreadmeUrl();
-    void setReadmeUrl(const std::string& value);
-
-    /// <summary>
     /// **参数解释：** 仓库所属项目ID。
     /// </summary>
 
@@ -215,10 +197,6 @@ protected:
     bool sshUrlToRepoIsSet_;
     std::string httpUrlToRepo_;
     bool httpUrlToRepoIsSet_;
-    std::string webUrl_;
-    bool webUrlIsSet_;
-    std::string readmeUrl_;
-    bool readmeUrlIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
     std::string projectName_;

@@ -19,6 +19,7 @@ ProjectProtectedActionResultApiDto::ProjectProtectedActionResultApiDto()
     usersIsSet_ = false;
     userTeamsIsSet_ = false;
     rolesIsSet_ = false;
+    additionSwitchersIsSet_ = false;
 }
 
 ProjectProtectedActionResultApiDto::~ProjectProtectedActionResultApiDto() = default;
@@ -45,6 +46,9 @@ web::json::value ProjectProtectedActionResultApiDto::toJson() const
     }
     if(rolesIsSet_) {
         val[utility::conversions::to_string_t("roles")] = ModelBase::toJson(roles_);
+    }
+    if(additionSwitchersIsSet_) {
+        val[utility::conversions::to_string_t("addition_switchers")] = ModelBase::toJson(additionSwitchers_);
     }
 
     return val;
@@ -96,6 +100,15 @@ bool ProjectProtectedActionResultApiDto::fromJson(const web::json::value& val)
             std::vector<RoleBasicDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRoles(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("addition_switchers"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("addition_switchers"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ForceActionEnableDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionSwitchers(refVal);
         }
     }
     return ok;
@@ -205,6 +218,27 @@ bool ProjectProtectedActionResultApiDto::rolesIsSet() const
 void ProjectProtectedActionResultApiDto::unsetroles()
 {
     rolesIsSet_ = false;
+}
+
+std::vector<ForceActionEnableDto>& ProjectProtectedActionResultApiDto::getAdditionSwitchers()
+{
+    return additionSwitchers_;
+}
+
+void ProjectProtectedActionResultApiDto::setAdditionSwitchers(const std::vector<ForceActionEnableDto>& value)
+{
+    additionSwitchers_ = value;
+    additionSwitchersIsSet_ = true;
+}
+
+bool ProjectProtectedActionResultApiDto::additionSwitchersIsSet() const
+{
+    return additionSwitchersIsSet_;
+}
+
+void ProjectProtectedActionResultApiDto::unsetadditionSwitchers()
+{
+    additionSwitchersIsSet_ = false;
 }
 
 }

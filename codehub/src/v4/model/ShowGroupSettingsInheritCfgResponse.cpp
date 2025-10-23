@@ -54,8 +54,8 @@ ShowGroupSettingsInheritCfgResponse::ShowGroupSettingsInheritCfgResponse()
     pipelineSettingsIsSet_ = false;
     issueTemplates_ = 0;
     issueTemplatesIsSet_ = false;
-    crCommentEmplates_ = 0;
-    crCommentEmplatesIsSet_ = false;
+    crCommentTemplates_ = 0;
+    crCommentTemplatesIsSet_ = false;
     mergeRequests_ = 0;
     mergeRequestsIsSet_ = false;
     mrBranchPolicies_ = 0;
@@ -145,8 +145,8 @@ web::json::value ShowGroupSettingsInheritCfgResponse::toJson() const
     if(issueTemplatesIsSet_) {
         val[utility::conversions::to_string_t("issue_templates")] = ModelBase::toJson(issueTemplates_);
     }
-    if(crCommentEmplatesIsSet_) {
-        val[utility::conversions::to_string_t("cr_comment_emplates")] = ModelBase::toJson(crCommentEmplates_);
+    if(crCommentTemplatesIsSet_) {
+        val[utility::conversions::to_string_t("cr_comment_templates")] = ModelBase::toJson(crCommentTemplates_);
     }
     if(mergeRequestsIsSet_) {
         val[utility::conversions::to_string_t("merge_requests")] = ModelBase::toJson(mergeRequests_);
@@ -365,13 +365,13 @@ bool ShowGroupSettingsInheritCfgResponse::fromJson(const web::json::value& val)
             setIssueTemplates(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("cr_comment_emplates"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cr_comment_emplates"));
+    if(val.has_field(utility::conversions::to_string_t("cr_comment_templates"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cr_comment_templates"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCrCommentEmplates(refVal);
+            setCrCommentTemplates(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("merge_requests"))) {
@@ -882,25 +882,25 @@ void ShowGroupSettingsInheritCfgResponse::unsetissueTemplates()
     issueTemplatesIsSet_ = false;
 }
 
-int32_t ShowGroupSettingsInheritCfgResponse::getCrCommentEmplates() const
+int32_t ShowGroupSettingsInheritCfgResponse::getCrCommentTemplates() const
 {
-    return crCommentEmplates_;
+    return crCommentTemplates_;
 }
 
-void ShowGroupSettingsInheritCfgResponse::setCrCommentEmplates(int32_t value)
+void ShowGroupSettingsInheritCfgResponse::setCrCommentTemplates(int32_t value)
 {
-    crCommentEmplates_ = value;
-    crCommentEmplatesIsSet_ = true;
+    crCommentTemplates_ = value;
+    crCommentTemplatesIsSet_ = true;
 }
 
-bool ShowGroupSettingsInheritCfgResponse::crCommentEmplatesIsSet() const
+bool ShowGroupSettingsInheritCfgResponse::crCommentTemplatesIsSet() const
 {
-    return crCommentEmplatesIsSet_;
+    return crCommentTemplatesIsSet_;
 }
 
-void ShowGroupSettingsInheritCfgResponse::unsetcrCommentEmplates()
+void ShowGroupSettingsInheritCfgResponse::unsetcrCommentTemplates()
 {
-    crCommentEmplatesIsSet_ = false;
+    crCommentTemplatesIsSet_ = false;
 }
 
 int32_t ShowGroupSettingsInheritCfgResponse::getMergeRequests() const

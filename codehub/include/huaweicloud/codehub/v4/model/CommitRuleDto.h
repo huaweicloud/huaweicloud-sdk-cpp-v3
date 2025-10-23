@@ -177,24 +177,6 @@ public:
     void setUpdatedAt(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 是否跳过规则检测。 **约束限制：** 不涉及。 **取值范围：** - true，跳过规则检测。 - false，不跳过规则检测。
-    /// </summary>
-
-    bool isSkipRuleCheck() const;
-    bool skipRuleCheckIsSet() const;
-    void unsetskipRuleCheck();
-    void setSkipRuleCheck(bool value);
-
-    /// <summary>
-    /// **参数解释：** 失效时间。
-    /// </summary>
-
-    std::string getSkipRuleEndDate() const;
-    bool skipRuleEndDateIsSet() const;
-    void unsetskipRuleEndDate();
-    void setSkipRuleEndDate(const std::string& value);
-
-    /// <summary>
     /// **参数解释：** 规则名称。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
@@ -220,6 +202,24 @@ public:
     bool createdAtIsSet() const;
     void unsetcreatedAt();
     void setCreatedAt(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 跳过规则检测。 **约束限制：** 仅CR仓库支持此参数。
+    /// </summary>
+
+    bool isSkipRuleCheck() const;
+    bool skipRuleCheckIsSet() const;
+    void unsetskipRuleCheck();
+    void setSkipRuleCheck(bool value);
+
+    /// <summary>
+    /// **参数解释：** 跳过规则检测失效时间， 例如: 2025-8-19。 **约束限制：** 仅CR仓库支持此参数。
+    /// </summary>
+
+    std::string getSkipRuleEndDate() const;
+    bool skipRuleEndDateIsSet() const;
+    void unsetskipRuleEndDate();
+    void setSkipRuleEndDate(const std::string& value);
 
 
 protected:
@@ -253,16 +253,16 @@ protected:
     bool authorRegexIsSet_;
     std::string updatedAt_;
     bool updatedAtIsSet_;
-    bool skipRuleCheck_;
-    bool skipRuleCheckIsSet_;
-    std::string skipRuleEndDate_;
-    bool skipRuleEndDateIsSet_;
     std::string name_;
     bool nameIsSet_;
     std::string branchName_;
     bool branchNameIsSet_;
     std::string createdAt_;
     bool createdAtIsSet_;
+    bool skipRuleCheck_;
+    bool skipRuleCheckIsSet_;
+    std::string skipRuleEndDate_;
+    bool skipRuleEndDateIsSet_;
 
 };
 

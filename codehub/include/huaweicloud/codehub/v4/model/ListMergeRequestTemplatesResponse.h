@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codehub/v4/model/MergeRequestTemplateDto.h>
+#include <huaweicloud/codehub/v4/model/RepositoryMergeRequestTemplateDto.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -43,14 +43,14 @@ public:
     /// 
     /// </summary>
 
-    std::vector<MergeRequestTemplateDto>& getBody();
+    std::vector<RepositoryMergeRequestTemplateDto>& getBody();
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const std::vector<MergeRequestTemplateDto>& value);
+    void setBody(const std::vector<RepositoryMergeRequestTemplateDto>& value);
 
 
 protected:
-    std::vector<MergeRequestTemplateDto> body_;
+    std::vector<RepositoryMergeRequestTemplateDto> body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

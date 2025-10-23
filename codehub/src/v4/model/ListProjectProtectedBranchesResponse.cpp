@@ -13,8 +13,6 @@ namespace Model {
 ListProjectProtectedBranchesResponse::ListProjectProtectedBranchesResponse()
 {
     bodyIsSet_ = false;
-    xTotal_ = "";
-    xTotalIsSet_ = false;
 }
 
 ListProjectProtectedBranchesResponse::~ListProjectProtectedBranchesResponse() = default;
@@ -30,9 +28,6 @@ web::json::value ListProjectProtectedBranchesResponse::toJson() const
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
-    if(xTotalIsSet_) {
-        val[utility::conversions::to_string_t("X-Total")] = ModelBase::toJson(xTotal_);
-    }
 
     return val;
 }
@@ -47,15 +42,6 @@ bool ListProjectProtectedBranchesResponse::fromJson(const web::json::value& val)
             std::vector<ProjectProtectedBranchApiDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("X-Total"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Total"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setXTotal(refVal);
         }
     }
     return ok;
@@ -81,27 +67,6 @@ bool ListProjectProtectedBranchesResponse::bodyIsSet() const
 void ListProjectProtectedBranchesResponse::unsetbody()
 {
     bodyIsSet_ = false;
-}
-
-std::string ListProjectProtectedBranchesResponse::getXTotal() const
-{
-    return xTotal_;
-}
-
-void ListProjectProtectedBranchesResponse::setXTotal(const std::string& value)
-{
-    xTotal_ = value;
-    xTotalIsSet_ = true;
-}
-
-bool ListProjectProtectedBranchesResponse::xTotalIsSet() const
-{
-    return xTotalIsSet_;
-}
-
-void ListProjectProtectedBranchesResponse::unsetxTotal()
-{
-    xTotalIsSet_ = false;
 }
 
 }

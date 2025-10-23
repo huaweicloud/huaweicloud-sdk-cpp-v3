@@ -40,16 +40,16 @@ CommitRuleDto::CommitRuleDto()
     authorRegexIsSet_ = false;
     updatedAt_ = "";
     updatedAtIsSet_ = false;
-    skipRuleCheck_ = false;
-    skipRuleCheckIsSet_ = false;
-    skipRuleEndDate_ = "";
-    skipRuleEndDateIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
     branchName_ = "";
     branchNameIsSet_ = false;
     createdAt_ = "";
     createdAtIsSet_ = false;
+    skipRuleCheck_ = false;
+    skipRuleCheckIsSet_ = false;
+    skipRuleEndDate_ = "";
+    skipRuleEndDateIsSet_ = false;
 }
 
 CommitRuleDto::~CommitRuleDto() = default;
@@ -107,12 +107,6 @@ web::json::value CommitRuleDto::toJson() const
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
     }
-    if(skipRuleCheckIsSet_) {
-        val[utility::conversions::to_string_t("skip_rule_check")] = ModelBase::toJson(skipRuleCheck_);
-    }
-    if(skipRuleEndDateIsSet_) {
-        val[utility::conversions::to_string_t("skip_rule_end_date")] = ModelBase::toJson(skipRuleEndDate_);
-    }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
@@ -121,6 +115,12 @@ web::json::value CommitRuleDto::toJson() const
     }
     if(createdAtIsSet_) {
         val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
+    }
+    if(skipRuleCheckIsSet_) {
+        val[utility::conversions::to_string_t("skip_rule_check")] = ModelBase::toJson(skipRuleCheck_);
+    }
+    if(skipRuleEndDateIsSet_) {
+        val[utility::conversions::to_string_t("skip_rule_end_date")] = ModelBase::toJson(skipRuleEndDate_);
     }
 
     return val;
@@ -264,24 +264,6 @@ bool CommitRuleDto::fromJson(const web::json::value& val)
             setUpdatedAt(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("skip_rule_check"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("skip_rule_check"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSkipRuleCheck(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("skip_rule_end_date"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("skip_rule_end_date"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSkipRuleEndDate(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("name"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
         if(!fieldValue.is_null())
@@ -307,6 +289,24 @@ bool CommitRuleDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("skip_rule_check"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("skip_rule_check"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSkipRuleCheck(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("skip_rule_end_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("skip_rule_end_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSkipRuleEndDate(refVal);
         }
     }
     return ok;
@@ -628,48 +628,6 @@ void CommitRuleDto::unsetupdatedAt()
     updatedAtIsSet_ = false;
 }
 
-bool CommitRuleDto::isSkipRuleCheck() const
-{
-    return skipRuleCheck_;
-}
-
-void CommitRuleDto::setSkipRuleCheck(bool value)
-{
-    skipRuleCheck_ = value;
-    skipRuleCheckIsSet_ = true;
-}
-
-bool CommitRuleDto::skipRuleCheckIsSet() const
-{
-    return skipRuleCheckIsSet_;
-}
-
-void CommitRuleDto::unsetskipRuleCheck()
-{
-    skipRuleCheckIsSet_ = false;
-}
-
-std::string CommitRuleDto::getSkipRuleEndDate() const
-{
-    return skipRuleEndDate_;
-}
-
-void CommitRuleDto::setSkipRuleEndDate(const std::string& value)
-{
-    skipRuleEndDate_ = value;
-    skipRuleEndDateIsSet_ = true;
-}
-
-bool CommitRuleDto::skipRuleEndDateIsSet() const
-{
-    return skipRuleEndDateIsSet_;
-}
-
-void CommitRuleDto::unsetskipRuleEndDate()
-{
-    skipRuleEndDateIsSet_ = false;
-}
-
 std::string CommitRuleDto::getName() const
 {
     return name_;
@@ -731,6 +689,48 @@ bool CommitRuleDto::createdAtIsSet() const
 void CommitRuleDto::unsetcreatedAt()
 {
     createdAtIsSet_ = false;
+}
+
+bool CommitRuleDto::isSkipRuleCheck() const
+{
+    return skipRuleCheck_;
+}
+
+void CommitRuleDto::setSkipRuleCheck(bool value)
+{
+    skipRuleCheck_ = value;
+    skipRuleCheckIsSet_ = true;
+}
+
+bool CommitRuleDto::skipRuleCheckIsSet() const
+{
+    return skipRuleCheckIsSet_;
+}
+
+void CommitRuleDto::unsetskipRuleCheck()
+{
+    skipRuleCheckIsSet_ = false;
+}
+
+std::string CommitRuleDto::getSkipRuleEndDate() const
+{
+    return skipRuleEndDate_;
+}
+
+void CommitRuleDto::setSkipRuleEndDate(const std::string& value)
+{
+    skipRuleEndDate_ = value;
+    skipRuleEndDateIsSet_ = true;
+}
+
+bool CommitRuleDto::skipRuleEndDateIsSet() const
+{
+    return skipRuleEndDateIsSet_;
+}
+
+void CommitRuleDto::unsetskipRuleEndDate()
+{
+    skipRuleEndDateIsSet_ = false;
 }
 
 }

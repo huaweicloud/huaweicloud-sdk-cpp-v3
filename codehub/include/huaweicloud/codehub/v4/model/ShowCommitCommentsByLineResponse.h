@@ -1,0 +1,68 @@
+
+#ifndef HUAWEICLOUD_SDK_CODEHUB_V4_MODEL_ShowCommitCommentsByLineResponse_H_
+#define HUAWEICLOUD_SDK_CODEHUB_V4_MODEL_ShowCommitCommentsByLineResponse_H_
+
+
+#include <huaweicloud/codehub/v4/CodeHubExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/codehub/v4/model/CommentPathDto.h>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Codehub {
+namespace V4 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Response Object
+/// </summary>
+class HUAWEICLOUD_CODEHUB_V4_EXPORT  ShowCommitCommentsByLineResponse
+    : public ModelBase, public HttpResponse
+{
+public:
+    ShowCommitCommentsByLineResponse();
+    virtual ~ShowCommitCommentsByLineResponse();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// ShowCommitCommentsByLineResponse members
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::vector<CommentPathDto>& getBody();
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const std::vector<CommentPathDto>& value);
+
+
+protected:
+    std::vector<CommentPathDto> body_;
+    bool bodyIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_CODEHUB_V4_MODEL_ShowCommitCommentsByLineResponse_H_

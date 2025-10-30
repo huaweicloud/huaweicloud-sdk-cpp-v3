@@ -24,6 +24,8 @@ BackupReplicateReqBody::BackupReplicateReqBody()
     enableAccelerationIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    crossAccountUrn_ = "";
+    crossAccountUrnIsSet_ = false;
 }
 
 BackupReplicateReqBody::~BackupReplicateReqBody() = default;
@@ -53,6 +55,9 @@ web::json::value BackupReplicateReqBody::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(crossAccountUrnIsSet_) {
+        val[utility::conversions::to_string_t("cross_account_urn")] = ModelBase::toJson(crossAccountUrn_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool BackupReplicateReqBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cross_account_urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cross_account_urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCrossAccountUrn(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool BackupReplicateReqBody::nameIsSet() const
 void BackupReplicateReqBody::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string BackupReplicateReqBody::getCrossAccountUrn() const
+{
+    return crossAccountUrn_;
+}
+
+void BackupReplicateReqBody::setCrossAccountUrn(const std::string& value)
+{
+    crossAccountUrn_ = value;
+    crossAccountUrnIsSet_ = true;
+}
+
+bool BackupReplicateReqBody::crossAccountUrnIsSet() const
+{
+    return crossAccountUrnIsSet_;
+}
+
+void BackupReplicateReqBody::unsetcrossAccountUrn()
+{
+    crossAccountUrnIsSet_ = false;
 }
 
 }

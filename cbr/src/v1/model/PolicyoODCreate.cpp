@@ -34,6 +34,8 @@ PolicyoODCreate::PolicyoODCreate()
     yearBackupsIsSet_ = false;
     fullBackupInterval_ = 0;
     fullBackupIntervalIsSet_ = false;
+    crossAccountUrn_ = "";
+    crossAccountUrnIsSet_ = false;
 }
 
 PolicyoODCreate::~PolicyoODCreate() = default;
@@ -78,6 +80,9 @@ web::json::value PolicyoODCreate::toJson() const
     }
     if(fullBackupIntervalIsSet_) {
         val[utility::conversions::to_string_t("full_backup_interval")] = ModelBase::toJson(fullBackupInterval_);
+    }
+    if(crossAccountUrnIsSet_) {
+        val[utility::conversions::to_string_t("cross_account_urn")] = ModelBase::toJson(crossAccountUrn_);
     }
 
     return val;
@@ -183,6 +188,15 @@ bool PolicyoODCreate::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFullBackupInterval(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cross_account_urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cross_account_urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCrossAccountUrn(refVal);
         }
     }
     return ok;
@@ -418,6 +432,27 @@ bool PolicyoODCreate::fullBackupIntervalIsSet() const
 void PolicyoODCreate::unsetfullBackupInterval()
 {
     fullBackupIntervalIsSet_ = false;
+}
+
+std::string PolicyoODCreate::getCrossAccountUrn() const
+{
+    return crossAccountUrn_;
+}
+
+void PolicyoODCreate::setCrossAccountUrn(const std::string& value)
+{
+    crossAccountUrn_ = value;
+    crossAccountUrnIsSet_ = true;
+}
+
+bool PolicyoODCreate::crossAccountUrnIsSet() const
+{
+    return crossAccountUrnIsSet_;
+}
+
+void PolicyoODCreate::unsetcrossAccountUrn()
+{
+    crossAccountUrnIsSet_ = false;
 }
 
 }

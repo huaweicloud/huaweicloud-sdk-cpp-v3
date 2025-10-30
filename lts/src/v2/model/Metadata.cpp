@@ -32,6 +32,8 @@ Metadata::Metadata()
     logGroupNameIsSet_ = false;
     logStreamName_ = "";
     logStreamNameIsSet_ = false;
+    eventSubtype_ = "";
+    eventSubtypeIsSet_ = false;
 }
 
 Metadata::~Metadata() = default;
@@ -73,6 +75,9 @@ web::json::value Metadata::toJson() const
     }
     if(logStreamNameIsSet_) {
         val[utility::conversions::to_string_t("log_stream_name")] = ModelBase::toJson(logStreamName_);
+    }
+    if(eventSubtypeIsSet_) {
+        val[utility::conversions::to_string_t("event_subtype")] = ModelBase::toJson(eventSubtype_);
     }
 
     return val;
@@ -169,6 +174,15 @@ bool Metadata::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogStreamName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("event_subtype"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("event_subtype"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEventSubtype(refVal);
         }
     }
     return ok;
@@ -383,6 +397,27 @@ bool Metadata::logStreamNameIsSet() const
 void Metadata::unsetlogStreamName()
 {
     logStreamNameIsSet_ = false;
+}
+
+std::string Metadata::getEventSubtype() const
+{
+    return eventSubtype_;
+}
+
+void Metadata::setEventSubtype(const std::string& value)
+{
+    eventSubtype_ = value;
+    eventSubtypeIsSet_ = true;
+}
+
+bool Metadata::eventSubtypeIsSet() const
+{
+    return eventSubtypeIsSet_;
+}
+
+void Metadata::unseteventSubtype()
+{
+    eventSubtypeIsSet_ = false;
 }
 
 }

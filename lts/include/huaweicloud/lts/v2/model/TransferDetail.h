@@ -85,15 +85,6 @@ public:
     void setObsTransferPath(const std::string& value);
 
     /// <summary>
-    /// OBS企业项目ID
-    /// </summary>
-
-    std::string getObsEpsId() const;
-    bool obsEpsIdIsSet() const;
-    void unsetobsEpsId();
-    void setObsEpsId(const std::string& value);
-
-    /// <summary>
     /// OBS日志桶名称
     /// </summary>
 
@@ -183,42 +174,6 @@ public:
     void unsettags();
     void setTags(const std::vector<std::string>& value);
 
-    /// <summary>
-    /// dms转储JSON格式选填，可以转储tag字段
-    /// </summary>
-
-    std::vector<std::string>& getLtsTags();
-    bool ltsTagsIsSet() const;
-    void unsetltsTags();
-    void setLtsTags(const std::vector<std::string>& value);
-
-    /// <summary>
-    /// dms转储JSON格式选填，可以转储日志流标签字段
-    /// </summary>
-
-    std::vector<std::string>& getStreamTags();
-    bool streamTagsIsSet() const;
-    void unsetstreamTags();
-    void setStreamTags(const std::vector<std::string>& value);
-
-    /// <summary>
-    /// dms转储JSON格式选填，可以转储结构化字段
-    /// </summary>
-
-    std::vector<std::string>& getStructFields();
-    bool structFieldsIsSet() const;
-    void unsetstructFields();
-    void setStructFields(const std::vector<std::string>& value);
-
-    /// <summary>
-    /// dms转储JSON格式选填，无效字段填充
-    /// </summary>
-
-    std::string getInvalidFieldValue() const;
-    bool invalidFieldValueIsSet() const;
-    void unsetinvalidFieldValue();
-    void setInvalidFieldValue(const std::string& value);
-
 
 protected:
     int32_t obsPeriod_;
@@ -231,8 +186,6 @@ protected:
     bool obsPeriodUnitIsSet_;
     std::string obsTransferPath_;
     bool obsTransferPathIsSet_;
-    std::string obsEpsId_;
-    bool obsEpsIdIsSet_;
     std::string obsBucketName_;
     bool obsBucketNameIsSet_;
     bool obsEncryptedEnable_;
@@ -253,14 +206,6 @@ protected:
     bool obsTimeZoneIdIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
-    std::vector<std::string> ltsTags_;
-    bool ltsTagsIsSet_;
-    std::vector<std::string> streamTags_;
-    bool streamTagsIsSet_;
-    std::vector<std::string> structFields_;
-    bool structFieldsIsSet_;
-    std::string invalidFieldValue_;
-    bool invalidFieldValueIsSet_;
 
 };
 

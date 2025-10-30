@@ -40,7 +40,7 @@ public:
     /// ChildrenJobInfo members
 
     /// <summary>
-    /// 计费字段
+    /// 是否计费字段。
     /// </summary>
 
     bool isBillingTag() const;

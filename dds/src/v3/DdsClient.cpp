@@ -4369,6 +4369,12 @@ std::shared_ptr<SwitchoverReplicaSetResponse> DdsClient::switchoverReplicaSet(Sw
 
 
     std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
 
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
         localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForSwitchoverReplicaSet());
@@ -4377,6 +4383,12 @@ std::shared_ptr<SwitchoverReplicaSetResponse> DdsClient::switchoverReplicaSet(Sw
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

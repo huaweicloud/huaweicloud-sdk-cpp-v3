@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/lts/v2/model/TransferDetail.h>
+#include <huaweicloud/lts/v2/model/Log_transfer_detail.h>
 #include <huaweicloud/lts/v2/model/CreateTransferRequestBody_log_transfer_info_log_agency_transfer.h>
 
 namespace HuaweiCloud {
@@ -89,10 +89,10 @@ public:
     /// 
     /// </summary>
 
-    TransferDetail getLogTransferDetail() const;
+    Log_transfer_detail getLogTransferDetail() const;
     bool logTransferDetailIsSet() const;
     void unsetlogTransferDetail();
-    void setLogTransferDetail(const TransferDetail& value);
+    void setLogTransferDetail(const Log_transfer_detail& value);
 
 
 protected:
@@ -106,7 +106,7 @@ protected:
     bool logTransferStatusIsSet_;
     CreateTransferRequestBody_log_transfer_info_log_agency_transfer logAgencyTransfer_;
     bool logAgencyTransferIsSet_;
-    TransferDetail logTransferDetail_;
+    Log_transfer_detail logTransferDetail_;
     bool logTransferDetailIsSet_;
 
 };

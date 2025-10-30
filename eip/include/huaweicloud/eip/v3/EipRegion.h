@@ -150,6 +150,10 @@ public:
             { 
                 "https://vpc.ap-southeast-5.myhuaweicloud.com"
             });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://vpc.cn-north-12.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

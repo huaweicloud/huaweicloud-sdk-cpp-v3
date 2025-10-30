@@ -35,6 +35,8 @@ ListLogStreamsResponseBody1_log_streams::ListLogStreamsResponseBody1_log_streams
     hotStorageDaysIsSet_ = false;
     logGroupId_ = "";
     logGroupIdIsSet_ = false;
+    isFavorite_ = false;
+    isFavoriteIsSet_ = false;
 }
 
 ListLogStreamsResponseBody1_log_streams::~ListLogStreamsResponseBody1_log_streams() = default;
@@ -82,6 +84,9 @@ web::json::value ListLogStreamsResponseBody1_log_streams::toJson() const
     }
     if(logGroupIdIsSet_) {
         val[utility::conversions::to_string_t("log_group_id")] = ModelBase::toJson(logGroupId_);
+    }
+    if(isFavoriteIsSet_) {
+        val[utility::conversions::to_string_t("is_favorite")] = ModelBase::toJson(isFavorite_);
     }
 
     return val;
@@ -196,6 +201,15 @@ bool ListLogStreamsResponseBody1_log_streams::fromJson(const web::json::value& v
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_favorite"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_favorite"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsFavorite(refVal);
         }
     }
     return ok;
@@ -452,6 +466,27 @@ bool ListLogStreamsResponseBody1_log_streams::logGroupIdIsSet() const
 void ListLogStreamsResponseBody1_log_streams::unsetlogGroupId()
 {
     logGroupIdIsSet_ = false;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::isIsFavorite() const
+{
+    return isFavorite_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::setIsFavorite(bool value)
+{
+    isFavorite_ = value;
+    isFavoriteIsSet_ = true;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::isFavoriteIsSet() const
+{
+    return isFavoriteIsSet_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::unsetisFavorite()
+{
+    isFavoriteIsSet_ = false;
 }
 
 }

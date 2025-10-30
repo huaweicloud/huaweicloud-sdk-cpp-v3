@@ -57,6 +57,9 @@ public:
     static HttpRequestDef genRequestDefForListObejectLevelCompareDetail();
     static HttpRequestDef genRequestDefForListObejectLevelCompareOverview();
     static HttpRequestDef genRequestDefForListUsers();
+    static HttpRequestDef genRequestDefForModifyGroupAndStream();
+    static HttpRequestDef genRequestDefForQueryTuningParams();
+    static HttpRequestDef genRequestDefForSelectGroupAndStream();
     static HttpRequestDef genRequestDefForShowJobList();
     static HttpRequestDef genRequestDefForShowMonitoringData();
     static HttpRequestDef genRequestDefForShowQuotas();

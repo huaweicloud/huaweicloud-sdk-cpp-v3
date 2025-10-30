@@ -1,9 +1,9 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesNoIndexTablesResponse_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesNoIndexTablesResponse_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFORNOSQL_V3_MODEL_ModifyAutoNodeExpansionPolicyResponse_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFORNOSQL_V3_MODEL_ModifyAutoNodeExpansionPolicyResponse_H_
 
 
-#include <huaweicloud/rds/v3/RdsExport.h>
+#include <huaweicloud/gaussdbfornosql/v3/GaussDBforNoSQLExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
@@ -12,7 +12,7 @@
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Rds {
+namespace Gaussdbfornosql {
 namespace V3 {
 namespace Model {
 
@@ -21,12 +21,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  ListInstancesNoIndexTablesResponse
+class HUAWEICLOUD_GAUSSDBFORNOSQL_V3_EXPORT  ModifyAutoNodeExpansionPolicyResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    ListInstancesNoIndexTablesResponse();
-    virtual ~ListInstancesNoIndexTablesResponse();
+    ModifyAutoNodeExpansionPolicyResponse();
+    virtual ~ModifyAutoNodeExpansionPolicyResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -35,7 +35,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ListInstancesNoIndexTablesResponse members
+    /// ModifyAutoNodeExpansionPolicyResponse members
 
 
 protected:
@@ -52,4 +52,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesNoIndexTablesResponse_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFORNOSQL_V3_MODEL_ModifyAutoNodeExpansionPolicyResponse_H_

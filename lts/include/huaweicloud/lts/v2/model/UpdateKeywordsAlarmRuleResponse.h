@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/Topics.h>
+#include <huaweicloud/lts/v2/model/TagsResBody.h>
 #include <huaweicloud/lts/v2/model/KeywordsResBody.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/FrequencyRespBody.h>
@@ -142,15 +142,6 @@ public:
     void setUpdateTime(int64_t value);
 
     /// <summary>
-    /// 邮件附加信息语言
-    /// </summary>
-
-    std::string getLanguage() const;
-    bool languageIsSet() const;
-    void unsetlanguage();
-    void setLanguage(const std::string& value);
-
-    /// <summary>
     /// 项目id
     /// </summary>
 
@@ -160,15 +151,6 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 通知主题
-    /// </summary>
-
-    std::vector<Topics>& getTopics();
-    bool topicsIsSet() const;
-    void unsettopics();
-    void setTopics(const std::vector<Topics>& value);
-
-    /// <summary>
     /// 情况表述
     /// </summary>
 
@@ -176,15 +158,6 @@ public:
     bool conditionExpressionIsSet() const;
     void unsetconditionExpression();
     void setConditionExpression(const std::string& value);
-
-    /// <summary>
-    /// 索引id
-    /// </summary>
-
-    std::string getIndexId() const;
-    bool indexIdIsSet() const;
-    void unsetindexId();
-    void setIndexId(const std::string& value);
 
     /// <summary>
     /// 通知频率,单位(分钟)
@@ -203,6 +176,51 @@ public:
     bool alarmActionRuleNameIsSet() const;
     void unsetalarmActionRuleName();
     void setAlarmActionRuleName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 告警恢复策略周期次数。 配置的最近统计周期次数内，如果不满足触发条件且开启恢复时通知开关，则会发送恢复告警通知。 **取值范围：** - 最小值为1 - 最大值为10
+    /// </summary>
+
+    int32_t getRecoveryPolicy() const;
+    bool recoveryPolicyIsSet() const;
+    void unsetrecoveryPolicy();
+    void setRecoveryPolicy(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。
+    /// </summary>
+
+    std::vector<TagsResBody>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<TagsResBody>& value);
+
+    /// <summary>
+    /// **参数解释：** 告警触发条件：满足条件次数。满足条件次数是指设置的关键词。 在统计周期次数内且满足条件次数时，可触发关键词告警。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getTriggerConditionCount() const;
+    bool triggerConditionCountIsSet() const;
+    void unsettriggerConditionCount();
+    void setTriggerConditionCount(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 告警触发条件：统计周期次数。统计周期次数指高级设置的统计周期。 当在统计周期次数内且满足条件次数时，可触发关键词告警。 **取值范围：** - 最小值为1 - 最大值为10
+    /// </summary>
+
+    int32_t getTriggerConditionFrequency() const;
+    bool triggerConditionFrequencyIsSet() const;
+    void unsettriggerConditionFrequency();
+    void setTriggerConditionFrequency(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 是否配置告警恢复策略。满足该策略时，会发送告警恢复通知。 **取值范围：** true：配置告警恢复策略。 false：不配置告警恢复策略。
+    /// </summary>
+
+    bool isWhetherRecoveryPolicy() const;
+    bool whetherRecoveryPolicyIsSet() const;
+    void unsetwhetherRecoveryPolicy();
+    void setWhetherRecoveryPolicy(bool value);
 
 
 protected:
@@ -228,20 +246,24 @@ protected:
     bool createTimeIsSet_;
     int64_t updateTime_;
     bool updateTimeIsSet_;
-    std::string language_;
-    bool languageIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
-    std::vector<Topics> topics_;
-    bool topicsIsSet_;
     std::string conditionExpression_;
     bool conditionExpressionIsSet_;
-    std::string indexId_;
-    bool indexIdIsSet_;
     int32_t notificationFrequency_;
     bool notificationFrequencyIsSet_;
     std::string alarmActionRuleName_;
     bool alarmActionRuleNameIsSet_;
+    int32_t recoveryPolicy_;
+    bool recoveryPolicyIsSet_;
+    std::vector<TagsResBody> tags_;
+    bool tagsIsSet_;
+    int32_t triggerConditionCount_;
+    bool triggerConditionCountIsSet_;
+    int32_t triggerConditionFrequency_;
+    bool triggerConditionFrequencyIsSet_;
+    bool whetherRecoveryPolicy_;
+    bool whetherRecoveryPolicyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

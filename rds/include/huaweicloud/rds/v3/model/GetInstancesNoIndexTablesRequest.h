@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesNoIndexTablesRequest_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesNoIndexTablesRequest_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_GetInstancesNoIndexTablesRequest_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_GetInstancesNoIndexTablesRequest_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  ListInstancesNoIndexTablesRequest
+class HUAWEICLOUD_RDS_V3_EXPORT  GetInstancesNoIndexTablesRequest
     : public ModelBase
 {
 public:
-    ListInstancesNoIndexTablesRequest();
-    virtual ~ListInstancesNoIndexTablesRequest();
+    GetInstancesNoIndexTablesRequest();
+    virtual ~GetInstancesNoIndexTablesRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ListInstancesNoIndexTablesRequest members
+    /// GetInstancesNoIndexTablesRequest members
 
     /// <summary>
     /// 实例ID
@@ -77,7 +77,7 @@ protected:
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    ListInstancesNoIndexTablesRequest& dereference_from_shared_ptr(std::shared_ptr<ListInstancesNoIndexTablesRequest> ptr) {
+    GetInstancesNoIndexTablesRequest& dereference_from_shared_ptr(std::shared_ptr<GetInstancesNoIndexTablesRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -90,4 +90,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesNoIndexTablesRequest_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_GetInstancesNoIndexTablesRequest_H_

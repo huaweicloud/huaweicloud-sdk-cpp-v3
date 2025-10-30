@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/lts/v2/model/TransferDetail.h>
+#include <huaweicloud/lts/v2/model/Log_transfer_detail.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -61,10 +61,10 @@ public:
     /// 
     /// </summary>
 
-    TransferDetail getLogTransferDetail() const;
+    Log_transfer_detail getLogTransferDetail() const;
     bool logTransferDetailIsSet() const;
     void unsetlogTransferDetail();
-    void setLogTransferDetail(const TransferDetail& value);
+    void setLogTransferDetail(const Log_transfer_detail& value);
 
 
 protected:
@@ -72,7 +72,7 @@ protected:
     bool logStorageFormatIsSet_;
     std::string logTransferStatus_;
     bool logTransferStatusIsSet_;
-    TransferDetail logTransferDetail_;
+    Log_transfer_detail logTransferDetail_;
     bool logTransferDetailIsSet_;
 
 };

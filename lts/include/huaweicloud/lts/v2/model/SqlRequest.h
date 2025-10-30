@@ -39,15 +39,6 @@ public:
     /// SqlRequest members
 
     /// <summary>
-    /// 是时间范围相对
-    /// </summary>
-
-    bool isIsTimeRangeRelative() const;
-    bool isTimeRangeRelativeIsSet() const;
-    void unsetisTimeRangeRelative();
-    void setIsTimeRangeRelative(bool value);
-
-    /// <summary>
     /// 日志流id
     /// </summary>
 
@@ -121,8 +112,6 @@ public:
 
 
 protected:
-    bool isTimeRangeRelative_;
-    bool isTimeRangeRelativeIsSet_;
     std::string logStreamId_;
     bool logStreamIdIsSet_;
     std::string logStreamName_;

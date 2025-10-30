@@ -77,7 +77,7 @@ public:
     void setIncreRelay(const std::vector<TuningParameter>& value);
 
     /// <summary>
-    /// 参数修改是否成功
+    /// 参数修改是否成功，查询参数时不返回该字段。
     /// </summary>
 
     std::string getModifyResult() const;

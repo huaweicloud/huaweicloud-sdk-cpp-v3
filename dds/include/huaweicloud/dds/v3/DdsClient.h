@@ -285,6 +285,7 @@
 #include <huaweicloud/dds/v3/model/SwitchSslRequestBody.h>
 #include <huaweicloud/dds/v3/model/SwitchSslResponse.h>
 #include <huaweicloud/dds/v3/model/SwitchoverReplicaSetRequest.h>
+#include <huaweicloud/dds/v3/model/SwitchoverReplicaSetRequestBody.h>
 #include <huaweicloud/dds/v3/model/SwitchoverReplicaSetResponse.h>
 #include <huaweicloud/dds/v3/model/UpdateBackupDownloadPolicyRequest.h>
 #include <huaweicloud/dds/v3/model/UpdateBackupDownloadPolicyRequestBody.h>
@@ -1243,9 +1244,9 @@ public:
     std::shared_ptr<SwitchSslResponse> switchSsl(
         SwitchSslRequest &request
     );
-    // 切换副本集实例的主备节点
+    // 切换实例的主备节点
     //
-    // 切换副本集实例下的主备节点
+    // 切换实例下的主备节点
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchoverReplicaSetResponse> switchoverReplicaSet(

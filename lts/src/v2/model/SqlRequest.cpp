@@ -12,8 +12,6 @@ namespace Model {
 
 SqlRequest::SqlRequest()
 {
-    isTimeRangeRelative_ = false;
-    isTimeRangeRelativeIsSet_ = false;
     logStreamId_ = "";
     logStreamIdIsSet_ = false;
     logStreamName_ = "";
@@ -42,9 +40,6 @@ web::json::value SqlRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(isTimeRangeRelativeIsSet_) {
-        val[utility::conversions::to_string_t("is_time_range_relative")] = ModelBase::toJson(isTimeRangeRelative_);
-    }
     if(logStreamIdIsSet_) {
         val[utility::conversions::to_string_t("log_stream_id")] = ModelBase::toJson(logStreamId_);
     }
@@ -76,15 +71,6 @@ bool SqlRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("is_time_range_relative"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_time_range_relative"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsTimeRangeRelative(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("log_stream_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_stream_id"));
         if(!fieldValue.is_null())
@@ -160,27 +146,6 @@ bool SqlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-bool SqlRequest::isIsTimeRangeRelative() const
-{
-    return isTimeRangeRelative_;
-}
-
-void SqlRequest::setIsTimeRangeRelative(bool value)
-{
-    isTimeRangeRelative_ = value;
-    isTimeRangeRelativeIsSet_ = true;
-}
-
-bool SqlRequest::isTimeRangeRelativeIsSet() const
-{
-    return isTimeRangeRelativeIsSet_;
-}
-
-void SqlRequest::unsetisTimeRangeRelative()
-{
-    isTimeRangeRelativeIsSet_ = false;
-}
 
 std::string SqlRequest::getLogStreamId() const
 {

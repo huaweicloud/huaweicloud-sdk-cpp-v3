@@ -1183,6 +1183,10 @@ HttpRequestDef DdsMeta::genRequestDefForSwitchSsl() {
 
 HttpRequestDef DdsMeta::genRequestDefForSwitchoverReplicaSet() {
     HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

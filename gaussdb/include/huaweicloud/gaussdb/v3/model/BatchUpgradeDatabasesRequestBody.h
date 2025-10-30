@@ -58,23 +58,12 @@ public:
     void unsetdelay();
     void setDelay(const std::string& value);
 
-    /// <summary>
-    /// 是否跳过校验。
-    /// </summary>
-
-    bool isIsSkipValidate() const;
-    bool isSkipValidateIsSet() const;
-    void unsetisSkipValidate();
-    void setIsSkipValidate(bool value);
-
 
 protected:
     std::vector<UpgradeDatabasesSingleInstance> databasesInstanceInfos_;
     bool databasesInstanceInfosIsSet_;
     std::string delay_;
     bool delayIsSet_;
-    bool isSkipValidate_;
-    bool isSkipValidateIsSet_;
 
 };
 

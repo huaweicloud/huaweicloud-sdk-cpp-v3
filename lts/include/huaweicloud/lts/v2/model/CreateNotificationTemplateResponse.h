@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/lts/v2/model/SubTemplate.h>
+#include <huaweicloud/lts/v2/model/SubTemplateResBody.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -41,7 +41,7 @@ public:
     /// CreateNotificationTemplateResponse members
 
     /// <summary>
-    /// 通知规则名称，必填，只含有汉字、数字、字母、下划线、中划线，不能以下划线等特殊符号开头和结尾，长度为 1 - 100，创建后不可修改
+    /// **参数解释：**  消息模板名称。 **取值范围：**  不涉及。
     /// </summary>
 
     std::string getName() const;
@@ -50,7 +50,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 保留字段，非必填，只支持sms（短信），dingding（钉钉），wechat（企业微信），email（邮件）和webhook（网络钩子）
+    /// **参数解释：**  消息通知方式。 **取值范围：**  - sms - dingding - wechat - webhook - email - voice - feishu - welink
     /// </summary>
 
     std::vector<std::string>& getType();
@@ -59,7 +59,7 @@ public:
     void setType(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 模板描述，必填，只含有汉字、数字、字母、下划线不能以下划线开头和结尾，长度为0--1024
+    /// **参数解释：**  消息模板描述。 **取值范围：**  不涉及。
     /// </summary>
 
     std::string getDesc() const;
@@ -68,7 +68,7 @@ public:
     void setDesc(const std::string& value);
 
     /// <summary>
-    /// 模板来源，目前必填为LTS，否则会筛选不出来
+    /// **参数解释：**  消息模板来源。 **取值范围：**  不涉及。
     /// </summary>
 
     std::string getSource() const;
@@ -77,22 +77,22 @@ public:
     void setSource(const std::string& value);
 
     /// <summary>
-    /// 语言，必填，目前可填zh-cn和en-us
+    /// **参数解释：**  不同通知渠道下消息模板的详细信息。
+    /// </summary>
+
+    std::vector<SubTemplateResBody>& getTemplates();
+    bool templatesIsSet() const;
+    void unsettemplates();
+    void setTemplates(const std::vector<SubTemplateResBody>& value);
+
+    /// <summary>
+    /// **参数解释：**  消息头语言，系统在发送消息时会默认添加消息头，中文如：“尊敬的用户...”；英文如：“Dear User...”。 **取值范围：**  - zh-cn - en-us
     /// </summary>
 
     std::string getLocale() const;
     bool localeIsSet() const;
     void unsetlocale();
     void setLocale(const std::string& value);
-
-    /// <summary>
-    /// 模板正文，为一个数组
-    /// </summary>
-
-    std::vector<SubTemplate>& getTemplates();
-    bool templatesIsSet() const;
-    void unsettemplates();
-    void setTemplates(const std::vector<SubTemplate>& value);
 
 
 protected:
@@ -104,10 +104,10 @@ protected:
     bool descIsSet_;
     std::string source_;
     bool sourceIsSet_;
+    std::vector<SubTemplateResBody> templates_;
+    bool templatesIsSet_;
     std::string locale_;
     bool localeIsSet_;
-    std::vector<SubTemplate> templates_;
-    bool templatesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

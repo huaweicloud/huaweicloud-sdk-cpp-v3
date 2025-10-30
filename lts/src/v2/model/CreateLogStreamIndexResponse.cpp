@@ -18,8 +18,6 @@ CreateLogStreamIndexResponse::CreateLogStreamIndexResponse()
     errorMessageIsSet_ = false;
     result_ = "";
     resultIsSet_ = false;
-    isQueryComplete_ = false;
-    isQueryCompleteIsSet_ = false;
 }
 
 CreateLogStreamIndexResponse::~CreateLogStreamIndexResponse() = default;
@@ -40,9 +38,6 @@ web::json::value CreateLogStreamIndexResponse::toJson() const
     }
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
-    }
-    if(isQueryCompleteIsSet_) {
-        val[utility::conversions::to_string_t("isQueryComplete")] = ModelBase::toJson(isQueryComplete_);
     }
 
     return val;
@@ -76,15 +71,6 @@ bool CreateLogStreamIndexResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("isQueryComplete"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("isQueryComplete"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsQueryComplete(refVal);
         }
     }
     return ok;
@@ -152,27 +138,6 @@ bool CreateLogStreamIndexResponse::resultIsSet() const
 void CreateLogStreamIndexResponse::unsetresult()
 {
     resultIsSet_ = false;
-}
-
-bool CreateLogStreamIndexResponse::isIsQueryComplete() const
-{
-    return isQueryComplete_;
-}
-
-void CreateLogStreamIndexResponse::setIsQueryComplete(bool value)
-{
-    isQueryComplete_ = value;
-    isQueryCompleteIsSet_ = true;
-}
-
-bool CreateLogStreamIndexResponse::isQueryCompleteIsSet() const
-{
-    return isQueryCompleteIsSet_;
-}
-
-void CreateLogStreamIndexResponse::unsetisQueryComplete()
-{
-    isQueryCompleteIsSet_ = false;
 }
 
 }

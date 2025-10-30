@@ -69,15 +69,6 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 任务描述
-    /// </summary>
-
-    std::string getDescription() const;
-    bool descriptionIsSet() const;
-    void unsetdescription();
-    void setDescription(const std::string& value);
-
-    /// <summary>
     /// 任务创建时间
     /// </summary>
 
@@ -85,6 +76,15 @@ public:
     bool createTimeIsSet() const;
     void unsetcreateTime();
     void setCreateTime(const std::string& value);
+
+    /// <summary>
+    /// 任务描述
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
 
     /// <summary>
     /// 引擎类型
@@ -141,7 +141,7 @@ public:
     void setTaskType(const std::string& value);
 
     /// <summary>
-    /// 子任务信息体
+    /// 子任务信息体。
     /// </summary>
 
     std::vector<ChildrenJobInfo>& getChildren();
@@ -150,7 +150,7 @@ public:
     void setChildren(const std::vector<ChildrenJobInfo>& value);
 
     /// <summary>
-    /// 是否新框架
+    /// 是否新框架。
     /// </summary>
 
     bool isNodeNewFramework() const;
@@ -175,10 +175,10 @@ protected:
     bool nameIsSet_;
     std::string status_;
     bool statusIsSet_;
-    std::string description_;
-    bool descriptionIsSet_;
     std::string createTime_;
     bool createTimeIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
     std::string engineType_;
     bool engineTypeIsSet_;
     std::string netType_;

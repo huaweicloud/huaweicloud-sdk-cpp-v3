@@ -65,15 +65,6 @@ public:
     void unsetresult();
     void setResult(const std::string& value);
 
-    /// <summary>
-    /// 是否查询完成
-    /// </summary>
-
-    bool isIsQueryComplete() const;
-    bool isQueryCompleteIsSet() const;
-    void unsetisQueryComplete();
-    void setIsQueryComplete(bool value);
-
 
 protected:
     std::string errorCode_;
@@ -82,8 +73,6 @@ protected:
     bool errorMessageIsSet_;
     std::string result_;
     bool resultIsSet_;
-    bool isQueryComplete_;
-    bool isQueryCompleteIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

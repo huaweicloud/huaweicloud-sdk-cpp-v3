@@ -12,6 +12,7 @@
 #include <huaweicloud/live/v1/model/PackageRequestArgs.h>
 #include <huaweicloud/live/v1/model/StreamSelectionItem.h>
 #include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/live/v1/model/HttpHeader.h>
 #include <string>
 #include <huaweicloud/live/v1/model/Encryption.h>
 #include <vector>
@@ -133,6 +134,78 @@ public:
     void unsetadMarker();
     void setAdMarker(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 当频道mode是ONLY_OS类型时，允许本输出可以直接从源站拉流，默认：false true：允许output访问 false：禁止output访问
+    /// </summary>
+
+    bool isEnableAccess() const;
+    bool enableAccessIsSet() const;
+    void unsetenableAccess();
+    void setEnableAccess(bool value);
+
+    /// <summary>
+    /// 是否放通所有的IP访问，默认：false true：允许所有的IP地址访问，ip_whitelist配置不生效 false：不允许所有的IP地址访问，ip_whitelist生效，仅在ip_whitelist配置的ip地址才能访问
+    /// </summary>
+
+    bool isAllowAllIpAccess() const;
+    bool allowAllIpAccessIsSet() const;
+    void unsetallowAllIpAccess();
+    void setAllowAllIpAccess(bool value);
+
+    /// <summary>
+    /// 当频道类型mode是ONLY_OS类型时，允许直接从源站拉流的IP白名单
+    /// </summary>
+
+    std::string getIpWhitelist() const;
+    bool ipWhitelistIsSet() const;
+    void unsetipWhitelist();
+    void setIpWhitelist(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    HttpHeader getCdnIdentifierHeader() const;
+    bool cdnIdentifierHeaderIsSet() const;
+    void unsetcdnIdentifierHeader();
+    void setCdnIdentifierHeader(const HttpHeader& value);
+
+    /// <summary>
+    /// 源站分发域名-主region 跟CreateOttChannelInfoReq.region一致 满足正则：^(\\[a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.){2,}[a-zA-Z]{2,16}$ 最大长度255
+    /// </summary>
+
+    std::string getOriginDomainMaster() const;
+    bool originDomainMasterIsSet() const;
+    void unsetoriginDomainMaster();
+    void setOriginDomainMaster(const std::string& value);
+
+    /// <summary>
+    /// 源站分发域名-备region 满足正则：^(\\[a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.){2,}[a-zA-Z]{2,16}$ 最大长度255
+    /// </summary>
+
+    std::string getOriginDomainSlave() const;
+    bool originDomainSlaveIsSet() const;
+    void unsetoriginDomainSlave();
+    void setOriginDomainSlave(const std::string& value);
+
+    /// <summary>
+    /// output的索引文件名字 默认：index 长度：0-128 字符集：大小写字母、数字、\&quot;-\&quot;、\&quot;.\&quot;、\&quot;_\&quot;，不能有/路径
+    /// </summary>
+
+    std::string getManifestName() const;
+    bool manifestNameIsSet() const;
+    void unsetmanifestName();
+    void setManifestName(const std::string& value);
+
+    /// <summary>
+    /// 客户自定义的拉流地址，包括方法、域名、路径
+    /// </summary>
+
+    std::string getSlaveUrl() const;
+    bool slaveUrlIsSet() const;
+    void unsetslaveUrl();
+    void setSlaveUrl(const std::string& value);
+
 
 protected:
     std::string url_;
@@ -155,6 +228,22 @@ protected:
     bool requestArgsIsSet_;
     std::vector<std::string> adMarker_;
     bool adMarkerIsSet_;
+    bool enableAccess_;
+    bool enableAccessIsSet_;
+    bool allowAllIpAccess_;
+    bool allowAllIpAccessIsSet_;
+    std::string ipWhitelist_;
+    bool ipWhitelistIsSet_;
+    HttpHeader cdnIdentifierHeader_;
+    bool cdnIdentifierHeaderIsSet_;
+    std::string originDomainMaster_;
+    bool originDomainMasterIsSet_;
+    std::string originDomainSlave_;
+    bool originDomainSlaveIsSet_;
+    std::string manifestName_;
+    bool manifestNameIsSet_;
+    std::string slaveUrl_;
+    bool slaveUrlIsSet_;
 
 };
 

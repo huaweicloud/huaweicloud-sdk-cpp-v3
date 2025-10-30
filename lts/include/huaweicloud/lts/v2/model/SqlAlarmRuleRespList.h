@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/lts/v2/model/TagsResBody.h>
 #include <huaweicloud/lts/v2/model/SqlRequest.h>
 #include <huaweicloud/lts/v2/model/Topics.h>
 #include <string>
@@ -124,15 +125,6 @@ public:
     void setSqlAlarmLevel(const std::string& value);
 
     /// <summary>
-    /// 是否发送
-    /// </summary>
-
-    bool isSqlAlarmSend() const;
-    bool sqlAlarmSendIsSet() const;
-    void unsetsqlAlarmSend();
-    void setSqlAlarmSend(bool value);
-
-    /// <summary>
     /// domainId
     /// </summary>
 
@@ -231,6 +223,15 @@ public:
     void unsetalarmActionRuleName();
     void setAlarmActionRuleName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 告警标签信息。
+    /// </summary>
+
+    std::vector<TagsResBody>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<TagsResBody>& value);
+
 
 protected:
     std::string sqlAlarmRuleName_;
@@ -251,8 +252,6 @@ protected:
     bool topicsIsSet_;
     std::string sqlAlarmLevel_;
     bool sqlAlarmLevelIsSet_;
-    bool sqlAlarmSend_;
-    bool sqlAlarmSendIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
     int64_t createTime_;
@@ -275,6 +274,8 @@ protected:
     bool notificationFrequencyIsSet_;
     std::string alarmActionRuleName_;
     bool alarmActionRuleNameIsSet_;
+    std::vector<TagsResBody> tags_;
+    bool tagsIsSet_;
 
 };
 

@@ -18,10 +18,10 @@ JobInfo::JobInfo()
     nameIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
-    description_ = "";
-    descriptionIsSet_ = false;
     createTime_ = "";
     createTimeIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
     engineType_ = "";
     engineTypeIsSet_ = false;
     netType_ = "";
@@ -59,11 +59,11 @@ web::json::value JobInfo::toJson() const
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
-    if(descriptionIsSet_) {
-        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
-    }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
     if(engineTypeIsSet_) {
         val[utility::conversions::to_string_t("engine_type")] = ModelBase::toJson(engineType_);
@@ -126,15 +126,6 @@ bool JobInfo::fromJson(const web::json::value& val)
             setStatus(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("description"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDescription(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("create_time"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
         if(!fieldValue.is_null())
@@ -142,6 +133,15 @@ bool JobInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("engine_type"))) {
@@ -292,27 +292,6 @@ void JobInfo::unsetstatus()
     statusIsSet_ = false;
 }
 
-std::string JobInfo::getDescription() const
-{
-    return description_;
-}
-
-void JobInfo::setDescription(const std::string& value)
-{
-    description_ = value;
-    descriptionIsSet_ = true;
-}
-
-bool JobInfo::descriptionIsSet() const
-{
-    return descriptionIsSet_;
-}
-
-void JobInfo::unsetdescription()
-{
-    descriptionIsSet_ = false;
-}
-
 std::string JobInfo::getCreateTime() const
 {
     return createTime_;
@@ -332,6 +311,27 @@ bool JobInfo::createTimeIsSet() const
 void JobInfo::unsetcreateTime()
 {
     createTimeIsSet_ = false;
+}
+
+std::string JobInfo::getDescription() const
+{
+    return description_;
+}
+
+void JobInfo::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool JobInfo::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void JobInfo::unsetdescription()
+{
+    descriptionIsSet_ = false;
 }
 
 std::string JobInfo::getEngineType() const

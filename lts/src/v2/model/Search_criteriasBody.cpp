@@ -17,6 +17,8 @@ Search_criteriasBody::Search_criteriasBody()
     logStreamIdIsSet_ = false;
     logStreamName_ = "";
     logStreamNameIsSet_ = false;
+    searchType_ = "";
+    searchTypeIsSet_ = false;
 }
 
 Search_criteriasBody::~Search_criteriasBody() = default;
@@ -37,6 +39,9 @@ web::json::value Search_criteriasBody::toJson() const
     }
     if(logStreamNameIsSet_) {
         val[utility::conversions::to_string_t("log_stream_name")] = ModelBase::toJson(logStreamName_);
+    }
+    if(searchTypeIsSet_) {
+        val[utility::conversions::to_string_t("search_type")] = ModelBase::toJson(searchType_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool Search_criteriasBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogStreamName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("search_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("search_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSearchType(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool Search_criteriasBody::logStreamNameIsSet() const
 void Search_criteriasBody::unsetlogStreamName()
 {
     logStreamNameIsSet_ = false;
+}
+
+std::string Search_criteriasBody::getSearchType() const
+{
+    return searchType_;
+}
+
+void Search_criteriasBody::setSearchType(const std::string& value)
+{
+    searchType_ = value;
+    searchTypeIsSet_ = true;
+}
+
+bool Search_criteriasBody::searchTypeIsSet() const
+{
+    return searchTypeIsSet_;
+}
+
+void Search_criteriasBody::unsetsearchType()
+{
+    searchTypeIsSet_ = false;
 }
 
 }

@@ -3645,6 +3645,45 @@ std::shared_ptr<ListSlowlogStatisticsResponse> RdsClient::listSlowlogStatistics(
 
     return localVarResult;
 }
+std::shared_ptr<ListSmallVersionResponse> RdsClient::listSmallVersion(ListSmallVersionRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/datastores/{database_name}/small-version";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["database_name"] = parameterToString(request.getDatabaseName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.versionIsSet()) {
+        localVarQueryParams["version"] = parameterToString(request.getVersion());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListSmallVersion());
+
+    std::shared_ptr<ListSmallVersionResponse> localVarResult = std::make_shared<ListSmallVersionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSqlLimitResponse> RdsClient::listSqlLimit(ListSqlLimitRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-limit";
@@ -9419,7 +9458,7 @@ std::shared_ptr<UpdateReadWeightResponse> RdsClient::updateReadWeight(UpdateRead
 
     return localVarResult;
 }
-std::shared_ptr<ListInstancesNoIndexTablesResponse> RdsClient::listInstancesNoIndexTables(ListInstancesNoIndexTablesRequest &request)
+std::shared_ptr<GetInstancesNoIndexTablesResponse> RdsClient::getInstancesNoIndexTables(GetInstancesNoIndexTablesRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/no-index-tables";
 
@@ -9446,9 +9485,9 @@ std::shared_ptr<ListInstancesNoIndexTablesResponse> RdsClient::listInstancesNoIn
     std::string localVarHttpBody;
 
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListInstancesNoIndexTables());
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForGetInstancesNoIndexTables());
 
-    std::shared_ptr<ListInstancesNoIndexTablesResponse> localVarResult = std::make_shared<ListInstancesNoIndexTablesResponse>();
+    std::shared_ptr<GetInstancesNoIndexTablesResponse> localVarResult = std::make_shared<GetInstancesNoIndexTablesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

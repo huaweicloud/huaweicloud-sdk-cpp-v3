@@ -103,6 +103,24 @@ public:
     void unsetupdateTime();
     void setUpdateTime(int64_t value);
 
+    /// <summary>
+    /// **参数解释：** 主机组类型。分别为IP、LABEL类型。 **取值范围：** - IP。 - LABEL。
+    /// </summary>
+
+    std::string getAgentAccessType() const;
+    bool agentAccessTypeIsSet() const;
+    void unsetagentAccessType();
+    void setAgentAccessType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 主机组自定义标识。
+    /// </summary>
+
+    std::vector<std::string>& getLabels();
+    bool labelsIsSet() const;
+    void unsetlabels();
+    void setLabels(const std::vector<std::string>& value);
+
 
 protected:
     std::string hostGroupId_;
@@ -119,6 +137,10 @@ protected:
     bool createTimeIsSet_;
     int64_t updateTime_;
     bool updateTimeIsSet_;
+    std::string agentAccessType_;
+    bool agentAccessTypeIsSet_;
+    std::vector<std::string> labels_;
+    bool labelsIsSet_;
 
 };
 

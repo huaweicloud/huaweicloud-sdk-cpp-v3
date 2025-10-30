@@ -1352,6 +1352,20 @@ HttpRequestDef RdsMeta::genRequestDefForListSlowlogStatistics() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListSmallVersion() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Version")
+                  .withJsonTag("version")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListSqlLimit() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("DbName")
@@ -3148,7 +3162,7 @@ HttpRequestDef RdsMeta::genRequestDefForUpdateReadWeight() {
     return reqDefBuilder;
 }
 
-HttpRequestDef RdsMeta::genRequestDefForListInstancesNoIndexTables() {
+HttpRequestDef RdsMeta::genRequestDefForGetInstancesNoIndexTables() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Newest")
                   .withJsonTag("newest")

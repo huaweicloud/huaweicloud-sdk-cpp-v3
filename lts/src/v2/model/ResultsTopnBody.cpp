@@ -22,10 +22,14 @@ ResultsTopnBody::ResultsTopnBody()
     logGroupIdIsSet_ = false;
     logGroupName_ = "";
     logGroupNameIsSet_ = false;
+    logGroupNameAlias_ = "";
+    logGroupNameAliasIsSet_ = false;
     logStreamId_ = "";
     logStreamIdIsSet_ = false;
     logStreamName_ = "";
     logStreamNameIsSet_ = false;
+    logStreamNameAlias_ = "";
+    logStreamNameAliasIsSet_ = false;
     basicTransfer_ = 0.0;
     basicTransferIsSet_ = false;
     seniorTransfer_ = 0.0;
@@ -61,11 +65,17 @@ web::json::value ResultsTopnBody::toJson() const
     if(logGroupNameIsSet_) {
         val[utility::conversions::to_string_t("log_group_name")] = ModelBase::toJson(logGroupName_);
     }
+    if(logGroupNameAliasIsSet_) {
+        val[utility::conversions::to_string_t("log_group_name_alias")] = ModelBase::toJson(logGroupNameAlias_);
+    }
     if(logStreamIdIsSet_) {
         val[utility::conversions::to_string_t("log_stream_id")] = ModelBase::toJson(logStreamId_);
     }
     if(logStreamNameIsSet_) {
         val[utility::conversions::to_string_t("log_stream_name")] = ModelBase::toJson(logStreamName_);
+    }
+    if(logStreamNameAliasIsSet_) {
+        val[utility::conversions::to_string_t("log_stream_name_alias")] = ModelBase::toJson(logStreamNameAlias_);
     }
     if(basicTransferIsSet_) {
         val[utility::conversions::to_string_t("basic_transfer")] = ModelBase::toJson(basicTransfer_);
@@ -131,6 +141,15 @@ bool ResultsTopnBody::fromJson(const web::json::value& val)
             setLogGroupName(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("log_group_name_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_group_name_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogGroupNameAlias(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("log_stream_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_stream_id"));
         if(!fieldValue.is_null())
@@ -147,6 +166,15 @@ bool ResultsTopnBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogStreamName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_stream_name_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_stream_name_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogStreamNameAlias(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("basic_transfer"))) {
@@ -294,6 +322,27 @@ void ResultsTopnBody::unsetlogGroupName()
     logGroupNameIsSet_ = false;
 }
 
+std::string ResultsTopnBody::getLogGroupNameAlias() const
+{
+    return logGroupNameAlias_;
+}
+
+void ResultsTopnBody::setLogGroupNameAlias(const std::string& value)
+{
+    logGroupNameAlias_ = value;
+    logGroupNameAliasIsSet_ = true;
+}
+
+bool ResultsTopnBody::logGroupNameAliasIsSet() const
+{
+    return logGroupNameAliasIsSet_;
+}
+
+void ResultsTopnBody::unsetlogGroupNameAlias()
+{
+    logGroupNameAliasIsSet_ = false;
+}
+
 std::string ResultsTopnBody::getLogStreamId() const
 {
     return logStreamId_;
@@ -334,6 +383,27 @@ bool ResultsTopnBody::logStreamNameIsSet() const
 void ResultsTopnBody::unsetlogStreamName()
 {
     logStreamNameIsSet_ = false;
+}
+
+std::string ResultsTopnBody::getLogStreamNameAlias() const
+{
+    return logStreamNameAlias_;
+}
+
+void ResultsTopnBody::setLogStreamNameAlias(const std::string& value)
+{
+    logStreamNameAlias_ = value;
+    logStreamNameAliasIsSet_ = true;
+}
+
+bool ResultsTopnBody::logStreamNameAliasIsSet() const
+{
+    return logStreamNameAliasIsSet_;
+}
+
+void ResultsTopnBody::unsetlogStreamNameAlias()
+{
+    logStreamNameAliasIsSet_ = false;
 }
 
 double ResultsTopnBody::getBasicTransfer() const

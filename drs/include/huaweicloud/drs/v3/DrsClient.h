@@ -123,11 +123,18 @@
 #include <huaweicloud/drs/v3/model/ListObejectLevelCompareOverviewResponse.h>
 #include <huaweicloud/drs/v3/model/ListUsersRequest.h>
 #include <huaweicloud/drs/v3/model/ListUsersResponse.h>
+#include <huaweicloud/drs/v3/model/LtsInfo.h>
+#include <huaweicloud/drs/v3/model/ModifyGroupAndStreamRequest.h>
+#include <huaweicloud/drs/v3/model/ModifyGroupAndStreamResponse.h>
 #include <huaweicloud/drs/v3/model/ModifyTargetParamsReq.h>
 #include <huaweicloud/drs/v3/model/ModifyTuningParamsReq.h>
 #include <huaweicloud/drs/v3/model/QueryAvailableNodeTypeReq.h>
 #include <huaweicloud/drs/v3/model/QueryCompareResultReq.h>
 #include <huaweicloud/drs/v3/model/QueryJobsReq.h>
+#include <huaweicloud/drs/v3/model/QueryTuningParamsRequest.h>
+#include <huaweicloud/drs/v3/model/QueryTuningParamsResponse.h>
+#include <huaweicloud/drs/v3/model/SelectGroupAndStreamRequest.h>
+#include <huaweicloud/drs/v3/model/SelectGroupAndStreamResponse.h>
 #include <huaweicloud/drs/v3/model/ShowJobListRequest.h>
 #include <huaweicloud/drs/v3/model/ShowJobListResponse.h>
 #include <huaweicloud/drs/v3/model/ShowMonitoringDataRequest.h>
@@ -524,6 +531,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListUsersResponse> listUsers(
         ListUsersRequest &request
+    );
+    // 更新LTS配置
+    //
+    // 更新任务的LTS配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyGroupAndStreamResponse> modifyGroupAndStream(
+        ModifyGroupAndStreamRequest &request
+    );
+    // 查询高级设置参数
+    //
+    // 查询高级设置参数。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<QueryTuningParamsResponse> queryTuningParams(
+        QueryTuningParamsRequest &request
+    );
+    // 查询LTS配置
+    //
+    // 查询任务的LTS配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SelectGroupAndStreamResponse> selectGroupAndStream(
+        SelectGroupAndStreamRequest &request
     );
     // 查询租户任务列表
     //

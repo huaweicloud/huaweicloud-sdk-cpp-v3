@@ -176,6 +176,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRestoreTimeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListSlowLogsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListSlowLogsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ModifyAutoNodeExpansionPolicyRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ModifyAutoNodeExpansionPolicyRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ModifyAutoNodeExpansionPolicyResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ModifyDbUserPrivilegeRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ModifyDbUserPrivilegeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ModifyEpsQuotasRequest.h>
@@ -267,6 +270,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowApplyHistoryResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowAutoEnlargePolicyRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowAutoEnlargePolicyResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowAutoNodeExpansionPolicyRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowAutoNodeExpansionPolicyResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowBackupPoliciesRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowBackupPoliciesResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowBackupPolicyRequest.h>
@@ -965,6 +970,14 @@ public:
     std::shared_ptr<ListSlowLogsResponse> listSlowLogs(
         ListSlowLogsRequest &request
     );
+    // 设置节点自动扩容策略
+    //
+    // 设置节点自动扩容策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyAutoNodeExpansionPolicyResponse> modifyAutoNodeExpansionPolicy(
+        ModifyAutoNodeExpansionPolicyRequest &request
+    );
     // 修改Redis数据库帐号权限
     //
     // 修改Redis数据库帐号权限。
@@ -1216,6 +1229,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAutoEnlargePolicyResponse> showAutoEnlargePolicy(
         ShowAutoEnlargePolicyRequest &request
+    );
+    // 查询节点自动扩容策略
+    //
+    // 查询节点自动扩容策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoNodeExpansionPolicyResponse> showAutoNodeExpansionPolicy(
+        ShowAutoNodeExpansionPolicyRequest &request
     );
     // 查询自动备份策略
     //

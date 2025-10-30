@@ -84,6 +84,15 @@ public:
     void setLogGroupName(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** 日志组名称别名。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getLogGroupNameAlias() const;
+    bool logGroupNameAliasIsSet() const;
+    void unsetlogGroupNameAlias();
+    void setLogGroupNameAlias(const std::string& value);
+
+    /// <summary>
     /// 日志流id，资源类型为日志流时返回
     /// </summary>
 
@@ -100,6 +109,15 @@ public:
     bool logStreamNameIsSet() const;
     void unsetlogStreamName();
     void setLogStreamName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 日志流名称别名。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getLogStreamNameAlias() const;
+    bool logStreamNameAliasIsSet() const;
+    void unsetlogStreamNameAlias();
+    void setLogStreamNameAlias(const std::string& value);
 
     /// <summary>
     /// 基础转储流量，byte, 查询数据类型中包含basicTransfer时返回
@@ -149,10 +167,14 @@ protected:
     bool logGroupIdIsSet_;
     std::string logGroupName_;
     bool logGroupNameIsSet_;
+    std::string logGroupNameAlias_;
+    bool logGroupNameAliasIsSet_;
     std::string logStreamId_;
     bool logStreamIdIsSet_;
     std::string logStreamName_;
     bool logStreamNameIsSet_;
+    std::string logStreamNameAlias_;
+    bool logStreamNameAliasIsSet_;
     double basicTransfer_;
     bool basicTransferIsSet_;
     double seniorTransfer_;

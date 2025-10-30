@@ -48,6 +48,15 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
+    /// 是否支持只初始化任务。
+    /// </summary>
+
+    bool isIsOnlyInitTask() const;
+    bool isOnlyInitTaskIsSet() const;
+    void unsetisOnlyInitTask();
+    void setIsOnlyInitTask(bool value);
+
+    /// <summary>
     /// 任务启动时间，时间戳格式精确到毫秒，例如：1679966489593，取值为空代表立即启动。
     /// </summary>
 
@@ -60,6 +69,8 @@ public:
 protected:
     std::string jobId_;
     bool jobIdIsSet_;
+    bool isOnlyInitTask_;
+    bool isOnlyInitTaskIsSet_;
     std::string startTime_;
     bool startTimeIsSet_;
 

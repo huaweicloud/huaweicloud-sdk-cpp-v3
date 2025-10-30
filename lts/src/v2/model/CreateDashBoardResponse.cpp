@@ -26,6 +26,9 @@ CreateDashBoardResponse::CreateDashBoardResponse()
     titleIsSet_ = false;
     useSystemTemplate_ = false;
     useSystemTemplateIsSet_ = false;
+    conciseModeEnable_ = false;
+    conciseModeEnableIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 CreateDashBoardResponse::~CreateDashBoardResponse() = default;
@@ -61,6 +64,12 @@ web::json::value CreateDashBoardResponse::toJson() const
     }
     if(useSystemTemplateIsSet_) {
         val[utility::conversions::to_string_t("useSystemTemplate")] = ModelBase::toJson(useSystemTemplate_);
+    }
+    if(conciseModeEnableIsSet_) {
+        val[utility::conversions::to_string_t("concise_mode_enable")] = ModelBase::toJson(conciseModeEnable_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -139,6 +148,24 @@ bool CreateDashBoardResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUseSystemTemplate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("concise_mode_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("concise_mode_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConciseModeEnable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ResourceTag> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -311,6 +338,48 @@ bool CreateDashBoardResponse::useSystemTemplateIsSet() const
 void CreateDashBoardResponse::unsetuseSystemTemplate()
 {
     useSystemTemplateIsSet_ = false;
+}
+
+bool CreateDashBoardResponse::isConciseModeEnable() const
+{
+    return conciseModeEnable_;
+}
+
+void CreateDashBoardResponse::setConciseModeEnable(bool value)
+{
+    conciseModeEnable_ = value;
+    conciseModeEnableIsSet_ = true;
+}
+
+bool CreateDashBoardResponse::conciseModeEnableIsSet() const
+{
+    return conciseModeEnableIsSet_;
+}
+
+void CreateDashBoardResponse::unsetconciseModeEnable()
+{
+    conciseModeEnableIsSet_ = false;
+}
+
+std::vector<ResourceTag>& CreateDashBoardResponse::getTags()
+{
+    return tags_;
+}
+
+void CreateDashBoardResponse::setTags(const std::vector<ResourceTag>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool CreateDashBoardResponse::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void CreateDashBoardResponse::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

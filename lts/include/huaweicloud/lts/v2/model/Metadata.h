@@ -128,6 +128,15 @@ public:
     void unsetlogStreamName();
     void setLogStreamName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 告警类型。 **取值范围：** - sql： sql告警 - keywords：关键词告警
+    /// </summary>
+
+    std::string getEventSubtype() const;
+    bool eventSubtypeIsSet() const;
+    void unseteventSubtype();
+    void setEventSubtype(const std::string& value);
+
 
 protected:
     std::string eventType_;
@@ -150,6 +159,8 @@ protected:
     bool logGroupNameIsSet_;
     std::string logStreamName_;
     bool logStreamNameIsSet_;
+    std::string eventSubtype_;
+    bool eventSubtypeIsSet_;
 
 };
 

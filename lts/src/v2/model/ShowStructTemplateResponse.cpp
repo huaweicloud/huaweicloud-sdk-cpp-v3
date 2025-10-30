@@ -32,6 +32,11 @@ ShowStructTemplateResponse::ShowStructTemplateResponse()
     templateNameIsSet_ = false;
     regex_ = "";
     regexIsSet_ = false;
+    customTimeInfoIsSet_ = false;
+    uploadOriginalLog_ = false;
+    uploadOriginalLogIsSet_ = false;
+    uploadParseFailedLog_ = false;
+    uploadParseFailedLogIsSet_ = false;
 }
 
 ShowStructTemplateResponse::~ShowStructTemplateResponse() = default;
@@ -79,6 +84,15 @@ web::json::value ShowStructTemplateResponse::toJson() const
     }
     if(regexIsSet_) {
         val[utility::conversions::to_string_t("regex")] = ModelBase::toJson(regex_);
+    }
+    if(customTimeInfoIsSet_) {
+        val[utility::conversions::to_string_t("custom_time_info")] = ModelBase::toJson(customTimeInfo_);
+    }
+    if(uploadOriginalLogIsSet_) {
+        val[utility::conversions::to_string_t("uploadOriginalLog")] = ModelBase::toJson(uploadOriginalLog_);
+    }
+    if(uploadParseFailedLogIsSet_) {
+        val[utility::conversions::to_string_t("uploadParseFailedLog")] = ModelBase::toJson(uploadParseFailedLog_);
     }
 
     return val;
@@ -193,6 +207,33 @@ bool ShowStructTemplateResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRegex(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("custom_time_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("custom_time_info"));
+        if(!fieldValue.is_null())
+        {
+            CustomTimeInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomTimeInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("uploadOriginalLog"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("uploadOriginalLog"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUploadOriginalLog(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("uploadParseFailedLog"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("uploadParseFailedLog"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUploadParseFailedLog(refVal);
         }
     }
     return ok;
@@ -449,6 +490,69 @@ bool ShowStructTemplateResponse::regexIsSet() const
 void ShowStructTemplateResponse::unsetregex()
 {
     regexIsSet_ = false;
+}
+
+CustomTimeInfo ShowStructTemplateResponse::getCustomTimeInfo() const
+{
+    return customTimeInfo_;
+}
+
+void ShowStructTemplateResponse::setCustomTimeInfo(const CustomTimeInfo& value)
+{
+    customTimeInfo_ = value;
+    customTimeInfoIsSet_ = true;
+}
+
+bool ShowStructTemplateResponse::customTimeInfoIsSet() const
+{
+    return customTimeInfoIsSet_;
+}
+
+void ShowStructTemplateResponse::unsetcustomTimeInfo()
+{
+    customTimeInfoIsSet_ = false;
+}
+
+bool ShowStructTemplateResponse::isUploadOriginalLog() const
+{
+    return uploadOriginalLog_;
+}
+
+void ShowStructTemplateResponse::setUploadOriginalLog(bool value)
+{
+    uploadOriginalLog_ = value;
+    uploadOriginalLogIsSet_ = true;
+}
+
+bool ShowStructTemplateResponse::uploadOriginalLogIsSet() const
+{
+    return uploadOriginalLogIsSet_;
+}
+
+void ShowStructTemplateResponse::unsetuploadOriginalLog()
+{
+    uploadOriginalLogIsSet_ = false;
+}
+
+bool ShowStructTemplateResponse::isUploadParseFailedLog() const
+{
+    return uploadParseFailedLog_;
+}
+
+void ShowStructTemplateResponse::setUploadParseFailedLog(bool value)
+{
+    uploadParseFailedLog_ = value;
+    uploadParseFailedLogIsSet_ = true;
+}
+
+bool ShowStructTemplateResponse::uploadParseFailedLogIsSet() const
+{
+    return uploadParseFailedLogIsSet_;
+}
+
+void ShowStructTemplateResponse::unsetuploadParseFailedLog()
+{
+    uploadParseFailedLogIsSet_ = false;
 }
 
 }

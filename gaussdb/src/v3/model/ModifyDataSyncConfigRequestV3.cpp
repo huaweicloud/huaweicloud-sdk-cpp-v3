@@ -25,6 +25,12 @@ ModifyDataSyncConfigRequestV3::ModifyDataSyncConfigRequestV3()
     tableReplConfigIsSet_ = false;
     targetDatabaseName_ = "";
     targetDatabaseNameIsSet_ = false;
+    isInstanceLevelSync_ = "";
+    isInstanceLevelSyncIsSet_ = false;
+    databaseReplScope_ = "";
+    databaseReplScopeIsSet_ = false;
+    isSupportRegExp_ = "";
+    isSupportRegExpIsSet_ = false;
 }
 
 ModifyDataSyncConfigRequestV3::~ModifyDataSyncConfigRequestV3() = default;
@@ -60,6 +66,15 @@ web::json::value ModifyDataSyncConfigRequestV3::toJson() const
     }
     if(targetDatabaseNameIsSet_) {
         val[utility::conversions::to_string_t("target_database_name")] = ModelBase::toJson(targetDatabaseName_);
+    }
+    if(isInstanceLevelSyncIsSet_) {
+        val[utility::conversions::to_string_t("is_instance_level_sync")] = ModelBase::toJson(isInstanceLevelSync_);
+    }
+    if(databaseReplScopeIsSet_) {
+        val[utility::conversions::to_string_t("database_repl_scope")] = ModelBase::toJson(databaseReplScope_);
+    }
+    if(isSupportRegExpIsSet_) {
+        val[utility::conversions::to_string_t("is_support_reg_exp")] = ModelBase::toJson(isSupportRegExp_);
     }
 
     return val;
@@ -138,6 +153,33 @@ bool ModifyDataSyncConfigRequestV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTargetDatabaseName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_instance_level_sync"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_instance_level_sync"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsInstanceLevelSync(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("database_repl_scope"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("database_repl_scope"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDatabaseReplScope(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_support_reg_exp"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_support_reg_exp"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsSupportRegExp(refVal);
         }
     }
     return ok;
@@ -310,6 +352,69 @@ bool ModifyDataSyncConfigRequestV3::targetDatabaseNameIsSet() const
 void ModifyDataSyncConfigRequestV3::unsettargetDatabaseName()
 {
     targetDatabaseNameIsSet_ = false;
+}
+
+std::string ModifyDataSyncConfigRequestV3::getIsInstanceLevelSync() const
+{
+    return isInstanceLevelSync_;
+}
+
+void ModifyDataSyncConfigRequestV3::setIsInstanceLevelSync(const std::string& value)
+{
+    isInstanceLevelSync_ = value;
+    isInstanceLevelSyncIsSet_ = true;
+}
+
+bool ModifyDataSyncConfigRequestV3::isInstanceLevelSyncIsSet() const
+{
+    return isInstanceLevelSyncIsSet_;
+}
+
+void ModifyDataSyncConfigRequestV3::unsetisInstanceLevelSync()
+{
+    isInstanceLevelSyncIsSet_ = false;
+}
+
+std::string ModifyDataSyncConfigRequestV3::getDatabaseReplScope() const
+{
+    return databaseReplScope_;
+}
+
+void ModifyDataSyncConfigRequestV3::setDatabaseReplScope(const std::string& value)
+{
+    databaseReplScope_ = value;
+    databaseReplScopeIsSet_ = true;
+}
+
+bool ModifyDataSyncConfigRequestV3::databaseReplScopeIsSet() const
+{
+    return databaseReplScopeIsSet_;
+}
+
+void ModifyDataSyncConfigRequestV3::unsetdatabaseReplScope()
+{
+    databaseReplScopeIsSet_ = false;
+}
+
+std::string ModifyDataSyncConfigRequestV3::getIsSupportRegExp() const
+{
+    return isSupportRegExp_;
+}
+
+void ModifyDataSyncConfigRequestV3::setIsSupportRegExp(const std::string& value)
+{
+    isSupportRegExp_ = value;
+    isSupportRegExpIsSet_ = true;
+}
+
+bool ModifyDataSyncConfigRequestV3::isSupportRegExpIsSet() const
+{
+    return isSupportRegExpIsSet_;
+}
+
+void ModifyDataSyncConfigRequestV3::unsetisSupportRegExp()
+{
+    isSupportRegExpIsSet_ = false;
 }
 
 }

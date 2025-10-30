@@ -218,6 +218,150 @@ public:
     void unsetsqlNum();
     void setSqlNum(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 客户端用于与后台通讯的TCP端口号，如果使用Unix套接字，则为-1。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getClientPort() const;
+    bool clientPortIsSet() const;
+    void unsetclientPort();
+    void setClientPort(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 会话执行的sql数。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getQueryId() const;
+    bool queryIdIsSet() const;
+    void unsetqueryId();
+    void setQueryId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 当前用户上一次执行的事务持续时间。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getTransactionTimeCost() const;
+    bool transactionTimeCostIsSet() const;
+    void unsettransactionTimeCost();
+    void setTransactionTimeCost(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 驱动传入的trace id，用于标识应用的一次请求。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getTraceId() const;
+    bool traceIdIsSet() const;
+    void unsettraceId();
+    void setTraceId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 当前用户上次执行的全局会话ID。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getGlobalSessionId() const;
+    bool globalSessionIdIsSet() const;
+    void unsetglobalSessionId();
+    void setGlobalSessionId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 当前用户上次执行的顶层事务ID。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getTopTransactionId() const;
+    bool topTransactionIdIsSet() const;
+    void unsettopTransactionId();
+    void setTopTransactionId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 当前用户上次执行的事务ID。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getCurrentTransactionId() const;
+    bool currentTransactionIdIsSet() const;
+    void unsetcurrentTransactionId();
+    void setCurrentTransactionId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 当前用户上次执行的事务使用的XLOG量，易读格式。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getXlogQuantityPretty() const;
+    bool xlogQuantityPrettyIsSet() const;
+    void unsetxlogQuantityPretty();
+    void setXlogQuantityPretty(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 实例线程等待状态。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getWaitStatus() const;
+    bool waitStatusIsSet() const;
+    void unsetwaitStatus();
+    void setWaitStatus(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 实例线程的轻量级线程号。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getLwtId() const;
+    bool lwtIdIsSet() const;
+    void unsetlwtId();
+    void setLwtId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 实例线程名。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getThreadName() const;
+    bool threadNameIsSet() const;
+    void unsetthreadName();
+    void setThreadName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 实例等锁模式。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getLockMode() const;
+    bool lockModeIsSet() const;
+    void unsetlockMode();
+    void setLockMode(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 实例父会话ID。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getParentSessionId() const;
+    bool parentSessionIdIsSet() const;
+    void unsetparentSessionId();
+    void setParentSessionId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 实例并行线程的ID。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getSmpId() const;
+    bool smpIdIsSet() const;
+    void unsetsmpId();
+    void setSmpId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 实例线程正等待获取的锁的信息。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getLockTag() const;
+    bool lockTagIsSet() const;
+    void unsetlockTag();
+    void setLockTag(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 组件名称。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getComponentName() const;
+    bool componentNameIsSet() const;
+    void unsetcomponentName();
+    void setComponentName(const std::string& value);
+
 
 protected:
     std::string sessionId_;
@@ -260,6 +404,38 @@ protected:
     bool rollbackNumIsSet_;
     std::string sqlNum_;
     bool sqlNumIsSet_;
+    std::string clientPort_;
+    bool clientPortIsSet_;
+    std::string queryId_;
+    bool queryIdIsSet_;
+    std::string transactionTimeCost_;
+    bool transactionTimeCostIsSet_;
+    std::string traceId_;
+    bool traceIdIsSet_;
+    std::string globalSessionId_;
+    bool globalSessionIdIsSet_;
+    std::string topTransactionId_;
+    bool topTransactionIdIsSet_;
+    std::string currentTransactionId_;
+    bool currentTransactionIdIsSet_;
+    std::string xlogQuantityPretty_;
+    bool xlogQuantityPrettyIsSet_;
+    std::string waitStatus_;
+    bool waitStatusIsSet_;
+    std::string lwtId_;
+    bool lwtIdIsSet_;
+    std::string threadName_;
+    bool threadNameIsSet_;
+    std::string lockMode_;
+    bool lockModeIsSet_;
+    std::string parentSessionId_;
+    bool parentSessionIdIsSet_;
+    std::string smpId_;
+    bool smpIdIsSet_;
+    std::string lockTag_;
+    bool lockTagIsSet_;
+    std::string componentName_;
+    bool componentNameIsSet_;
 
 };
 

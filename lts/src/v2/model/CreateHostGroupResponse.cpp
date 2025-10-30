@@ -24,6 +24,9 @@ CreateHostGroupResponse::CreateHostGroupResponse()
     createTimeIsSet_ = false;
     updateTime_ = 0L;
     updateTimeIsSet_ = false;
+    agentAccessType_ = "";
+    agentAccessTypeIsSet_ = false;
+    labelsIsSet_ = false;
 }
 
 CreateHostGroupResponse::~CreateHostGroupResponse() = default;
@@ -56,6 +59,12 @@ web::json::value CreateHostGroupResponse::toJson() const
     }
     if(updateTimeIsSet_) {
         val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
+    }
+    if(agentAccessTypeIsSet_) {
+        val[utility::conversions::to_string_t("agent_access_type")] = ModelBase::toJson(agentAccessType_);
+    }
+    if(labelsIsSet_) {
+        val[utility::conversions::to_string_t("labels")] = ModelBase::toJson(labels_);
     }
 
     return val;
@@ -125,6 +134,24 @@ bool CreateHostGroupResponse::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agent_access_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agent_access_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgentAccessType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("labels"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("labels"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLabels(refVal);
         }
     }
     return ok;
@@ -276,6 +303,48 @@ bool CreateHostGroupResponse::updateTimeIsSet() const
 void CreateHostGroupResponse::unsetupdateTime()
 {
     updateTimeIsSet_ = false;
+}
+
+std::string CreateHostGroupResponse::getAgentAccessType() const
+{
+    return agentAccessType_;
+}
+
+void CreateHostGroupResponse::setAgentAccessType(const std::string& value)
+{
+    agentAccessType_ = value;
+    agentAccessTypeIsSet_ = true;
+}
+
+bool CreateHostGroupResponse::agentAccessTypeIsSet() const
+{
+    return agentAccessTypeIsSet_;
+}
+
+void CreateHostGroupResponse::unsetagentAccessType()
+{
+    agentAccessTypeIsSet_ = false;
+}
+
+std::vector<std::string>& CreateHostGroupResponse::getLabels()
+{
+    return labels_;
+}
+
+void CreateHostGroupResponse::setLabels(const std::vector<std::string>& value)
+{
+    labels_ = value;
+    labelsIsSet_ = true;
+}
+
+bool CreateHostGroupResponse::labelsIsSet() const
+{
+    return labelsIsSet_;
+}
+
+void CreateHostGroupResponse::unsetlabels()
+{
+    labelsIsSet_ = false;
 }
 
 }

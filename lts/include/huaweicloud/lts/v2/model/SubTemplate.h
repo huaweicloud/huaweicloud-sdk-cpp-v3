@@ -65,6 +65,24 @@ public:
     void unsettopic();
     void setTopic(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：**  当消息模板类型为webhook时生效，决定该消息的渲染方式。 **取值范围：**  - HTML - JSON
+    /// </summary>
+
+    std::string getSendType() const;
+    bool sendTypeIsSet() const;
+    void unsetsendType();
+    void setSendType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：**  消息模板的适用版本。 **取值范围：**   v1：标识为LTS的消息模板。
+    /// </summary>
+
+    std::string getVersion() const;
+    bool versionIsSet() const;
+    void unsetversion();
+    void setVersion(const std::string& value);
+
 
 protected:
     std::string subType_;
@@ -73,6 +91,10 @@ protected:
     bool contentIsSet_;
     std::string topic_;
     bool topicIsSet_;
+    std::string sendType_;
+    bool sendTypeIsSet_;
+    std::string version_;
+    bool versionIsSet_;
 
 };
 

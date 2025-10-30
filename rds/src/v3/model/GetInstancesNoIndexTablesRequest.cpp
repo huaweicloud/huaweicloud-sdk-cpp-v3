@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/ListInstancesNoIndexTablesRequest.h"
+#include "huaweicloud/rds/v3/model/GetInstancesNoIndexTablesRequest.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-ListInstancesNoIndexTablesRequest::ListInstancesNoIndexTablesRequest()
+GetInstancesNoIndexTablesRequest::GetInstancesNoIndexTablesRequest()
 {
     instanceId_ = "";
     instanceIdIsSet_ = false;
@@ -20,13 +20,13 @@ ListInstancesNoIndexTablesRequest::ListInstancesNoIndexTablesRequest()
     tableTypeIsSet_ = false;
 }
 
-ListInstancesNoIndexTablesRequest::~ListInstancesNoIndexTablesRequest() = default;
+GetInstancesNoIndexTablesRequest::~GetInstancesNoIndexTablesRequest() = default;
 
-void ListInstancesNoIndexTablesRequest::validate()
+void GetInstancesNoIndexTablesRequest::validate()
 {
 }
 
-web::json::value ListInstancesNoIndexTablesRequest::toJson() const
+web::json::value GetInstancesNoIndexTablesRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -42,7 +42,7 @@ web::json::value ListInstancesNoIndexTablesRequest::toJson() const
 
     return val;
 }
-bool ListInstancesNoIndexTablesRequest::fromJson(const web::json::value& val)
+bool GetInstancesNoIndexTablesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -77,65 +77,65 @@ bool ListInstancesNoIndexTablesRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string ListInstancesNoIndexTablesRequest::getInstanceId() const
+std::string GetInstancesNoIndexTablesRequest::getInstanceId() const
 {
     return instanceId_;
 }
 
-void ListInstancesNoIndexTablesRequest::setInstanceId(const std::string& value)
+void GetInstancesNoIndexTablesRequest::setInstanceId(const std::string& value)
 {
     instanceId_ = value;
     instanceIdIsSet_ = true;
 }
 
-bool ListInstancesNoIndexTablesRequest::instanceIdIsSet() const
+bool GetInstancesNoIndexTablesRequest::instanceIdIsSet() const
 {
     return instanceIdIsSet_;
 }
 
-void ListInstancesNoIndexTablesRequest::unsetinstanceId()
+void GetInstancesNoIndexTablesRequest::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
 }
 
-bool ListInstancesNoIndexTablesRequest::isNewest() const
+bool GetInstancesNoIndexTablesRequest::isNewest() const
 {
     return newest_;
 }
 
-void ListInstancesNoIndexTablesRequest::setNewest(bool value)
+void GetInstancesNoIndexTablesRequest::setNewest(bool value)
 {
     newest_ = value;
     newestIsSet_ = true;
 }
 
-bool ListInstancesNoIndexTablesRequest::newestIsSet() const
+bool GetInstancesNoIndexTablesRequest::newestIsSet() const
 {
     return newestIsSet_;
 }
 
-void ListInstancesNoIndexTablesRequest::unsetnewest()
+void GetInstancesNoIndexTablesRequest::unsetnewest()
 {
     newestIsSet_ = false;
 }
 
-std::string ListInstancesNoIndexTablesRequest::getTableType() const
+std::string GetInstancesNoIndexTablesRequest::getTableType() const
 {
     return tableType_;
 }
 
-void ListInstancesNoIndexTablesRequest::setTableType(const std::string& value)
+void GetInstancesNoIndexTablesRequest::setTableType(const std::string& value)
 {
     tableType_ = value;
     tableTypeIsSet_ = true;
 }
 
-bool ListInstancesNoIndexTablesRequest::tableTypeIsSet() const
+bool GetInstancesNoIndexTablesRequest::tableTypeIsSet() const
 {
     return tableTypeIsSet_;
 }
 
-void ListInstancesNoIndexTablesRequest::unsettableType()
+void GetInstancesNoIndexTablesRequest::unsettableType()
 {
     tableTypeIsSet_ = false;
 }

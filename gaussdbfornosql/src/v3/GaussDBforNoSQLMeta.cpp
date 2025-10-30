@@ -822,6 +822,20 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListSlowLogs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForModifyAutoNodeExpansionPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForModifyDbUserPrivilege() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -1142,6 +1156,16 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowApplyHistory() {
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowAutoEnlargePolicy() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowAutoNodeExpansionPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 

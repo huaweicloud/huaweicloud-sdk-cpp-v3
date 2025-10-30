@@ -27,6 +27,8 @@ public:
     static HttpRequestDef genRequestDefForCreateStreamForbiddenOnce();
     static HttpRequestDef genRequestDefForCreateTranscodingsTemplate();
     static HttpRequestDef genRequestDefForCreateUrlAuthchain();
+    static HttpRequestDef genRequestDefForCreateWatermarkRule();
+    static HttpRequestDef genRequestDefForCreateWatermarkTemplate();
     static HttpRequestDef genRequestDefForDeleteDomain();
     static HttpRequestDef genRequestDefForDeleteDomainKeyChain();
     static HttpRequestDef genRequestDefForDeleteDomainMapping();
@@ -40,6 +42,8 @@ public:
     static HttpRequestDef genRequestDefForDeleteSnapshotConfig();
     static HttpRequestDef genRequestDefForDeleteStreamForbidden();
     static HttpRequestDef genRequestDefForDeleteTranscodingsTemplate();
+    static HttpRequestDef genRequestDefForDeleteWatermarkRule();
+    static HttpRequestDef genRequestDefForDeleteWatermarkTemplate();
     static HttpRequestDef genRequestDefForListDelayConfig();
     static HttpRequestDef genRequestDefForListFlows();
     static HttpRequestDef genRequestDefForListGeoBlockingConfig();
@@ -54,6 +58,8 @@ public:
     static HttpRequestDef genRequestDefForListScheduleRecordTasks();
     static HttpRequestDef genRequestDefForListSnapshotConfigs();
     static HttpRequestDef genRequestDefForListStreamForbidden();
+    static HttpRequestDef genRequestDefForListWatermarkRule();
+    static HttpRequestDef genRequestDefForListWatermarkTemplate();
     static HttpRequestDef genRequestDefForModifyFlowOutput();
     static HttpRequestDef genRequestDefForModifyFlowSources();
     static HttpRequestDef genRequestDefForModifyFlowStart();
@@ -69,6 +75,8 @@ public:
     static HttpRequestDef genRequestDefForShowRecordRule();
     static HttpRequestDef genRequestDefForShowRefererChain();
     static HttpRequestDef genRequestDefForShowTranscodingsTemplate();
+    static HttpRequestDef genRequestDefForShowWatermarkRule();
+    static HttpRequestDef genRequestDefForShowWatermarkTemplate();
     static HttpRequestDef genRequestDefForUpdateDelayConfig();
     static HttpRequestDef genRequestDefForUpdateDomain();
     static HttpRequestDef genRequestDefForUpdateDomainIp6Switch();
@@ -83,6 +91,8 @@ public:
     static HttpRequestDef genRequestDefForUpdateSnapshotConfig();
     static HttpRequestDef genRequestDefForUpdateStreamForbidden();
     static HttpRequestDef genRequestDefForUpdateTranscodingsTemplate();
+    static HttpRequestDef genRequestDefForUpdateWatermarkRule();
+    static HttpRequestDef genRequestDefForUpdateWatermarkTemplate();
     static HttpRequestDef genRequestDefForListCesDimsInfo();
     static HttpRequestDef genRequestDefForListCesInstance();
     static HttpRequestDef genRequestDefForDeleteDomainHttpsCert();

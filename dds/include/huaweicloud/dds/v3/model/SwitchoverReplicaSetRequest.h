@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/dds/v3/model/SwitchoverReplicaSetRequestBody.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -47,10 +48,21 @@ public:
     void unsetinstanceId();
     void setInstanceId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    SwitchoverReplicaSetRequestBody getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const SwitchoverReplicaSetRequestBody& value);
+
 
 protected:
     std::string instanceId_;
     bool instanceIdIsSet_;
+    SwitchoverReplicaSetRequestBody body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

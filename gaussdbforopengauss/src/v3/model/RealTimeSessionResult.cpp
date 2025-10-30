@@ -52,6 +52,38 @@ RealTimeSessionResult::RealTimeSessionResult()
     rollbackNumIsSet_ = false;
     sqlNum_ = "";
     sqlNumIsSet_ = false;
+    clientPort_ = "";
+    clientPortIsSet_ = false;
+    queryId_ = "";
+    queryIdIsSet_ = false;
+    transactionTimeCost_ = "";
+    transactionTimeCostIsSet_ = false;
+    traceId_ = "";
+    traceIdIsSet_ = false;
+    globalSessionId_ = "";
+    globalSessionIdIsSet_ = false;
+    topTransactionId_ = "";
+    topTransactionIdIsSet_ = false;
+    currentTransactionId_ = "";
+    currentTransactionIdIsSet_ = false;
+    xlogQuantityPretty_ = "";
+    xlogQuantityPrettyIsSet_ = false;
+    waitStatus_ = "";
+    waitStatusIsSet_ = false;
+    lwtId_ = "";
+    lwtIdIsSet_ = false;
+    threadName_ = "";
+    threadNameIsSet_ = false;
+    lockMode_ = "";
+    lockModeIsSet_ = false;
+    parentSessionId_ = "";
+    parentSessionIdIsSet_ = false;
+    smpId_ = "";
+    smpIdIsSet_ = false;
+    lockTag_ = "";
+    lockTagIsSet_ = false;
+    componentName_ = "";
+    componentNameIsSet_ = false;
 }
 
 RealTimeSessionResult::~RealTimeSessionResult() = default;
@@ -123,6 +155,54 @@ web::json::value RealTimeSessionResult::toJson() const
     }
     if(sqlNumIsSet_) {
         val[utility::conversions::to_string_t("sql_num")] = ModelBase::toJson(sqlNum_);
+    }
+    if(clientPortIsSet_) {
+        val[utility::conversions::to_string_t("client_port")] = ModelBase::toJson(clientPort_);
+    }
+    if(queryIdIsSet_) {
+        val[utility::conversions::to_string_t("query_id")] = ModelBase::toJson(queryId_);
+    }
+    if(transactionTimeCostIsSet_) {
+        val[utility::conversions::to_string_t("transaction_time_cost")] = ModelBase::toJson(transactionTimeCost_);
+    }
+    if(traceIdIsSet_) {
+        val[utility::conversions::to_string_t("trace_id")] = ModelBase::toJson(traceId_);
+    }
+    if(globalSessionIdIsSet_) {
+        val[utility::conversions::to_string_t("global_session_id")] = ModelBase::toJson(globalSessionId_);
+    }
+    if(topTransactionIdIsSet_) {
+        val[utility::conversions::to_string_t("top_transaction_id")] = ModelBase::toJson(topTransactionId_);
+    }
+    if(currentTransactionIdIsSet_) {
+        val[utility::conversions::to_string_t("current_transaction_id")] = ModelBase::toJson(currentTransactionId_);
+    }
+    if(xlogQuantityPrettyIsSet_) {
+        val[utility::conversions::to_string_t("xlog_quantity_pretty")] = ModelBase::toJson(xlogQuantityPretty_);
+    }
+    if(waitStatusIsSet_) {
+        val[utility::conversions::to_string_t("wait_status")] = ModelBase::toJson(waitStatus_);
+    }
+    if(lwtIdIsSet_) {
+        val[utility::conversions::to_string_t("lwt_id")] = ModelBase::toJson(lwtId_);
+    }
+    if(threadNameIsSet_) {
+        val[utility::conversions::to_string_t("thread_name")] = ModelBase::toJson(threadName_);
+    }
+    if(lockModeIsSet_) {
+        val[utility::conversions::to_string_t("lock_mode")] = ModelBase::toJson(lockMode_);
+    }
+    if(parentSessionIdIsSet_) {
+        val[utility::conversions::to_string_t("parent_session_id")] = ModelBase::toJson(parentSessionId_);
+    }
+    if(smpIdIsSet_) {
+        val[utility::conversions::to_string_t("smp_id")] = ModelBase::toJson(smpId_);
+    }
+    if(lockTagIsSet_) {
+        val[utility::conversions::to_string_t("lock_tag")] = ModelBase::toJson(lockTag_);
+    }
+    if(componentNameIsSet_) {
+        val[utility::conversions::to_string_t("component_name")] = ModelBase::toJson(componentName_);
     }
 
     return val;
@@ -309,6 +389,150 @@ bool RealTimeSessionResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSqlNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("client_port"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("client_port"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClientPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("query_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("query_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQueryId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("transaction_time_cost"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("transaction_time_cost"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTransactionTimeCost(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("trace_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trace_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTraceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("global_session_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("global_session_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGlobalSessionId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("top_transaction_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("top_transaction_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTopTransactionId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("current_transaction_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("current_transaction_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCurrentTransactionId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("xlog_quantity_pretty"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("xlog_quantity_pretty"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXlogQuantityPretty(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("wait_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("wait_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWaitStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("lwt_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lwt_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLwtId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("thread_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("thread_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setThreadName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("lock_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lock_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLockMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("parent_session_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("parent_session_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setParentSessionId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("smp_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("smp_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSmpId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("lock_tag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lock_tag"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLockTag(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("component_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("component_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setComponentName(refVal);
         }
     }
     return ok;
@@ -733,6 +957,342 @@ bool RealTimeSessionResult::sqlNumIsSet() const
 void RealTimeSessionResult::unsetsqlNum()
 {
     sqlNumIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getClientPort() const
+{
+    return clientPort_;
+}
+
+void RealTimeSessionResult::setClientPort(const std::string& value)
+{
+    clientPort_ = value;
+    clientPortIsSet_ = true;
+}
+
+bool RealTimeSessionResult::clientPortIsSet() const
+{
+    return clientPortIsSet_;
+}
+
+void RealTimeSessionResult::unsetclientPort()
+{
+    clientPortIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getQueryId() const
+{
+    return queryId_;
+}
+
+void RealTimeSessionResult::setQueryId(const std::string& value)
+{
+    queryId_ = value;
+    queryIdIsSet_ = true;
+}
+
+bool RealTimeSessionResult::queryIdIsSet() const
+{
+    return queryIdIsSet_;
+}
+
+void RealTimeSessionResult::unsetqueryId()
+{
+    queryIdIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getTransactionTimeCost() const
+{
+    return transactionTimeCost_;
+}
+
+void RealTimeSessionResult::setTransactionTimeCost(const std::string& value)
+{
+    transactionTimeCost_ = value;
+    transactionTimeCostIsSet_ = true;
+}
+
+bool RealTimeSessionResult::transactionTimeCostIsSet() const
+{
+    return transactionTimeCostIsSet_;
+}
+
+void RealTimeSessionResult::unsettransactionTimeCost()
+{
+    transactionTimeCostIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getTraceId() const
+{
+    return traceId_;
+}
+
+void RealTimeSessionResult::setTraceId(const std::string& value)
+{
+    traceId_ = value;
+    traceIdIsSet_ = true;
+}
+
+bool RealTimeSessionResult::traceIdIsSet() const
+{
+    return traceIdIsSet_;
+}
+
+void RealTimeSessionResult::unsettraceId()
+{
+    traceIdIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getGlobalSessionId() const
+{
+    return globalSessionId_;
+}
+
+void RealTimeSessionResult::setGlobalSessionId(const std::string& value)
+{
+    globalSessionId_ = value;
+    globalSessionIdIsSet_ = true;
+}
+
+bool RealTimeSessionResult::globalSessionIdIsSet() const
+{
+    return globalSessionIdIsSet_;
+}
+
+void RealTimeSessionResult::unsetglobalSessionId()
+{
+    globalSessionIdIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getTopTransactionId() const
+{
+    return topTransactionId_;
+}
+
+void RealTimeSessionResult::setTopTransactionId(const std::string& value)
+{
+    topTransactionId_ = value;
+    topTransactionIdIsSet_ = true;
+}
+
+bool RealTimeSessionResult::topTransactionIdIsSet() const
+{
+    return topTransactionIdIsSet_;
+}
+
+void RealTimeSessionResult::unsettopTransactionId()
+{
+    topTransactionIdIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getCurrentTransactionId() const
+{
+    return currentTransactionId_;
+}
+
+void RealTimeSessionResult::setCurrentTransactionId(const std::string& value)
+{
+    currentTransactionId_ = value;
+    currentTransactionIdIsSet_ = true;
+}
+
+bool RealTimeSessionResult::currentTransactionIdIsSet() const
+{
+    return currentTransactionIdIsSet_;
+}
+
+void RealTimeSessionResult::unsetcurrentTransactionId()
+{
+    currentTransactionIdIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getXlogQuantityPretty() const
+{
+    return xlogQuantityPretty_;
+}
+
+void RealTimeSessionResult::setXlogQuantityPretty(const std::string& value)
+{
+    xlogQuantityPretty_ = value;
+    xlogQuantityPrettyIsSet_ = true;
+}
+
+bool RealTimeSessionResult::xlogQuantityPrettyIsSet() const
+{
+    return xlogQuantityPrettyIsSet_;
+}
+
+void RealTimeSessionResult::unsetxlogQuantityPretty()
+{
+    xlogQuantityPrettyIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getWaitStatus() const
+{
+    return waitStatus_;
+}
+
+void RealTimeSessionResult::setWaitStatus(const std::string& value)
+{
+    waitStatus_ = value;
+    waitStatusIsSet_ = true;
+}
+
+bool RealTimeSessionResult::waitStatusIsSet() const
+{
+    return waitStatusIsSet_;
+}
+
+void RealTimeSessionResult::unsetwaitStatus()
+{
+    waitStatusIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getLwtId() const
+{
+    return lwtId_;
+}
+
+void RealTimeSessionResult::setLwtId(const std::string& value)
+{
+    lwtId_ = value;
+    lwtIdIsSet_ = true;
+}
+
+bool RealTimeSessionResult::lwtIdIsSet() const
+{
+    return lwtIdIsSet_;
+}
+
+void RealTimeSessionResult::unsetlwtId()
+{
+    lwtIdIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getThreadName() const
+{
+    return threadName_;
+}
+
+void RealTimeSessionResult::setThreadName(const std::string& value)
+{
+    threadName_ = value;
+    threadNameIsSet_ = true;
+}
+
+bool RealTimeSessionResult::threadNameIsSet() const
+{
+    return threadNameIsSet_;
+}
+
+void RealTimeSessionResult::unsetthreadName()
+{
+    threadNameIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getLockMode() const
+{
+    return lockMode_;
+}
+
+void RealTimeSessionResult::setLockMode(const std::string& value)
+{
+    lockMode_ = value;
+    lockModeIsSet_ = true;
+}
+
+bool RealTimeSessionResult::lockModeIsSet() const
+{
+    return lockModeIsSet_;
+}
+
+void RealTimeSessionResult::unsetlockMode()
+{
+    lockModeIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getParentSessionId() const
+{
+    return parentSessionId_;
+}
+
+void RealTimeSessionResult::setParentSessionId(const std::string& value)
+{
+    parentSessionId_ = value;
+    parentSessionIdIsSet_ = true;
+}
+
+bool RealTimeSessionResult::parentSessionIdIsSet() const
+{
+    return parentSessionIdIsSet_;
+}
+
+void RealTimeSessionResult::unsetparentSessionId()
+{
+    parentSessionIdIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getSmpId() const
+{
+    return smpId_;
+}
+
+void RealTimeSessionResult::setSmpId(const std::string& value)
+{
+    smpId_ = value;
+    smpIdIsSet_ = true;
+}
+
+bool RealTimeSessionResult::smpIdIsSet() const
+{
+    return smpIdIsSet_;
+}
+
+void RealTimeSessionResult::unsetsmpId()
+{
+    smpIdIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getLockTag() const
+{
+    return lockTag_;
+}
+
+void RealTimeSessionResult::setLockTag(const std::string& value)
+{
+    lockTag_ = value;
+    lockTagIsSet_ = true;
+}
+
+bool RealTimeSessionResult::lockTagIsSet() const
+{
+    return lockTagIsSet_;
+}
+
+void RealTimeSessionResult::unsetlockTag()
+{
+    lockTagIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getComponentName() const
+{
+    return componentName_;
+}
+
+void RealTimeSessionResult::setComponentName(const std::string& value)
+{
+    componentName_ = value;
+    componentNameIsSet_ = true;
+}
+
+bool RealTimeSessionResult::componentNameIsSet() const
+{
+    return componentNameIsSet_;
+}
+
+void RealTimeSessionResult::unsetcomponentName()
+{
+    componentNameIsSet_ = false;
 }
 
 }

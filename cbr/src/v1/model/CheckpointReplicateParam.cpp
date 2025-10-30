@@ -24,6 +24,8 @@ CheckpointReplicateParam::CheckpointReplicateParam()
     enableAccelerationIsSet_ = false;
     vaultId_ = "";
     vaultIdIsSet_ = false;
+    crossAccountUrn_ = "";
+    crossAccountUrnIsSet_ = false;
 }
 
 CheckpointReplicateParam::~CheckpointReplicateParam() = default;
@@ -53,6 +55,9 @@ web::json::value CheckpointReplicateParam::toJson() const
     }
     if(vaultIdIsSet_) {
         val[utility::conversions::to_string_t("vault_id")] = ModelBase::toJson(vaultId_);
+    }
+    if(crossAccountUrnIsSet_) {
+        val[utility::conversions::to_string_t("cross_account_urn")] = ModelBase::toJson(crossAccountUrn_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool CheckpointReplicateParam::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVaultId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cross_account_urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cross_account_urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCrossAccountUrn(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool CheckpointReplicateParam::vaultIdIsSet() const
 void CheckpointReplicateParam::unsetvaultId()
 {
     vaultIdIsSet_ = false;
+}
+
+std::string CheckpointReplicateParam::getCrossAccountUrn() const
+{
+    return crossAccountUrn_;
+}
+
+void CheckpointReplicateParam::setCrossAccountUrn(const std::string& value)
+{
+    crossAccountUrn_ = value;
+    crossAccountUrnIsSet_ = true;
+}
+
+bool CheckpointReplicateParam::crossAccountUrnIsSet() const
+{
+    return crossAccountUrnIsSet_;
+}
+
+void CheckpointReplicateParam::unsetcrossAccountUrn()
+{
+    crossAccountUrnIsSet_ = false;
 }
 
 }

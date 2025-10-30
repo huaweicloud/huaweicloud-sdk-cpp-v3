@@ -199,6 +199,33 @@ public:
     void setProcessors(const std::vector<Processor>& value);
 
     /// <summary>
+    /// **参数解释：** 拆分日志大小。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getLogSplitSize() const;
+    bool logSplitSizeIsSet() const;
+    void unsetlogSplitSize();
+    void setLogSplitSize(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 采集路径递归最大深度。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getRecursiveDepth() const;
+    bool recursiveDepthIsSet() const;
+    void unsetrecursiveDepth();
+    void setRecursiveDepth(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 日志接入自建软件来源。 **取值范围：** - ECS - CCE - BMS - K8S - ServiceStageHost - ServiceStage
+    /// </summary>
+
+    std::string getAccessConfigTypeSource() const;
+    bool accessConfigTypeSourceIsSet() const;
+    void unsetaccessConfigTypeSource();
+    void setAccessConfigTypeSource(const std::string& value);
+
+    /// <summary>
     /// ServiceStage应用ID
     /// </summary>
 
@@ -261,6 +288,12 @@ protected:
     bool demoFieldsIsSet_;
     std::vector<Processor> processors_;
     bool processorsIsSet_;
+    int32_t logSplitSize_;
+    bool logSplitSizeIsSet_;
+    int32_t recursiveDepth_;
+    bool recursiveDepthIsSet_;
+    std::string accessConfigTypeSource_;
+    bool accessConfigTypeSourceIsSet_;
     std::string applicationId_;
     bool applicationIdIsSet_;
     std::string environmentId_;

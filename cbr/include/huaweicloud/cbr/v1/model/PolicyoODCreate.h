@@ -137,6 +137,15 @@ public:
     void unsetfullBackupInterval();
     void setFullBackupInterval(int32_t value);
 
+    /// <summary>
+    /// 跨账户复制策略所关联的跨账户复制存储库标识
+    /// </summary>
+
+    std::string getCrossAccountUrn() const;
+    bool crossAccountUrnIsSet() const;
+    void unsetcrossAccountUrn();
+    void setCrossAccountUrn(const std::string& value);
+
 
 protected:
     int32_t dayBackups_;
@@ -161,6 +170,8 @@ protected:
     bool yearBackupsIsSet_;
     int32_t fullBackupInterval_;
     bool fullBackupIntervalIsSet_;
+    std::string crossAccountUrn_;
+    bool crossAccountUrnIsSet_;
 
 };
 

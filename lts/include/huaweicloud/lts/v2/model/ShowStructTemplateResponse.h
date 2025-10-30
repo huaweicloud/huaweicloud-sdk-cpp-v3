@@ -11,6 +11,7 @@
 
 #include <huaweicloud/lts/v2/model/ShowStructTemplateRule.h>
 #include <huaweicloud/lts/v2/model/StructFieldInfoReturn.h>
+#include <huaweicloud/lts/v2/model/CustomTimeInfo.h>
 #include <huaweicloud/lts/v2/model/TagFieldsInfo.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/ShowStructTemplateclusterInfo.h>
@@ -151,6 +152,33 @@ public:
     void unsetregex();
     void setRegex(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CustomTimeInfo getCustomTimeInfo() const;
+    bool customTimeInfoIsSet() const;
+    void unsetcustomTimeInfo();
+    void setCustomTimeInfo(const CustomTimeInfo& value);
+
+    /// <summary>
+    /// **参数解释：** 是否上传原始日志。 **取值范围：** - true - fasle
+    /// </summary>
+
+    bool isUploadOriginalLog() const;
+    bool uploadOriginalLogIsSet() const;
+    void unsetuploadOriginalLog();
+    void setUploadOriginalLog(bool value);
+
+    /// <summary>
+    /// **参数解释：** 是否将解析失败的原始上传到指定系统字段日志。 **取值范围：** - true - fasle
+    /// </summary>
+
+    bool isUploadParseFailedLog() const;
+    bool uploadParseFailedLogIsSet() const;
+    void unsetuploadParseFailedLog();
+    void setUploadParseFailedLog(bool value);
+
 
 protected:
     std::vector<StructFieldInfoReturn> demoFields_;
@@ -177,6 +205,12 @@ protected:
     bool templateNameIsSet_;
     std::string regex_;
     bool regexIsSet_;
+    CustomTimeInfo customTimeInfo_;
+    bool customTimeInfoIsSet_;
+    bool uploadOriginalLog_;
+    bool uploadOriginalLogIsSet_;
+    bool uploadParseFailedLog_;
+    bool uploadParseFailedLogIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

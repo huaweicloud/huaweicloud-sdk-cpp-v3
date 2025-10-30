@@ -92,6 +92,15 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// 跨账户复制所需的目标账户的跨账户复制存储库标识
+    /// </summary>
+
+    std::string getCrossAccountUrn() const;
+    bool crossAccountUrnIsSet() const;
+    void unsetcrossAccountUrn();
+    void setCrossAccountUrn(const std::string& value);
+
 
 protected:
     std::string description_;
@@ -106,6 +115,8 @@ protected:
     bool enableAccelerationIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string crossAccountUrn_;
+    bool crossAccountUrnIsSet_;
 
 };
 

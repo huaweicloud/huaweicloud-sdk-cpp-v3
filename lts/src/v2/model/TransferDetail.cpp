@@ -22,8 +22,6 @@ TransferDetail::TransferDetail()
     obsPeriodUnitIsSet_ = false;
     obsTransferPath_ = "";
     obsTransferPathIsSet_ = false;
-    obsEpsId_ = "";
-    obsEpsIdIsSet_ = false;
     obsBucketName_ = "";
     obsBucketNameIsSet_ = false;
     obsEncryptedEnable_ = false;
@@ -43,11 +41,6 @@ TransferDetail::TransferDetail()
     obsTimeZoneId_ = "";
     obsTimeZoneIdIsSet_ = false;
     tagsIsSet_ = false;
-    ltsTagsIsSet_ = false;
-    streamTagsIsSet_ = false;
-    structFieldsIsSet_ = false;
-    invalidFieldValue_ = "";
-    invalidFieldValueIsSet_ = false;
 }
 
 TransferDetail::~TransferDetail() = default;
@@ -74,9 +67,6 @@ web::json::value TransferDetail::toJson() const
     }
     if(obsTransferPathIsSet_) {
         val[utility::conversions::to_string_t("obs_transfer_path")] = ModelBase::toJson(obsTransferPath_);
-    }
-    if(obsEpsIdIsSet_) {
-        val[utility::conversions::to_string_t("obs_eps_id")] = ModelBase::toJson(obsEpsId_);
     }
     if(obsBucketNameIsSet_) {
         val[utility::conversions::to_string_t("obs_bucket_name")] = ModelBase::toJson(obsBucketName_);
@@ -107,18 +97,6 @@ web::json::value TransferDetail::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
-    }
-    if(ltsTagsIsSet_) {
-        val[utility::conversions::to_string_t("lts_tags")] = ModelBase::toJson(ltsTags_);
-    }
-    if(streamTagsIsSet_) {
-        val[utility::conversions::to_string_t("stream_tags")] = ModelBase::toJson(streamTags_);
-    }
-    if(structFieldsIsSet_) {
-        val[utility::conversions::to_string_t("struct_fields")] = ModelBase::toJson(structFields_);
-    }
-    if(invalidFieldValueIsSet_) {
-        val[utility::conversions::to_string_t("invalid_field_value")] = ModelBase::toJson(invalidFieldValue_);
     }
 
     return val;
@@ -170,15 +148,6 @@ bool TransferDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObsTransferPath(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("obs_eps_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("obs_eps_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObsEpsId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("obs_bucket_name"))) {
@@ -269,42 +238,6 @@ bool TransferDetail::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("lts_tags"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lts_tags"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLtsTags(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("stream_tags"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("stream_tags"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setStreamTags(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("struct_fields"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("struct_fields"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setStructFields(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("invalid_field_value"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("invalid_field_value"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInvalidFieldValue(refVal);
         }
     }
     return ok;
@@ -414,27 +347,6 @@ bool TransferDetail::obsTransferPathIsSet() const
 void TransferDetail::unsetobsTransferPath()
 {
     obsTransferPathIsSet_ = false;
-}
-
-std::string TransferDetail::getObsEpsId() const
-{
-    return obsEpsId_;
-}
-
-void TransferDetail::setObsEpsId(const std::string& value)
-{
-    obsEpsId_ = value;
-    obsEpsIdIsSet_ = true;
-}
-
-bool TransferDetail::obsEpsIdIsSet() const
-{
-    return obsEpsIdIsSet_;
-}
-
-void TransferDetail::unsetobsEpsId()
-{
-    obsEpsIdIsSet_ = false;
 }
 
 std::string TransferDetail::getObsBucketName() const
@@ -645,90 +557,6 @@ bool TransferDetail::tagsIsSet() const
 void TransferDetail::unsettags()
 {
     tagsIsSet_ = false;
-}
-
-std::vector<std::string>& TransferDetail::getLtsTags()
-{
-    return ltsTags_;
-}
-
-void TransferDetail::setLtsTags(const std::vector<std::string>& value)
-{
-    ltsTags_ = value;
-    ltsTagsIsSet_ = true;
-}
-
-bool TransferDetail::ltsTagsIsSet() const
-{
-    return ltsTagsIsSet_;
-}
-
-void TransferDetail::unsetltsTags()
-{
-    ltsTagsIsSet_ = false;
-}
-
-std::vector<std::string>& TransferDetail::getStreamTags()
-{
-    return streamTags_;
-}
-
-void TransferDetail::setStreamTags(const std::vector<std::string>& value)
-{
-    streamTags_ = value;
-    streamTagsIsSet_ = true;
-}
-
-bool TransferDetail::streamTagsIsSet() const
-{
-    return streamTagsIsSet_;
-}
-
-void TransferDetail::unsetstreamTags()
-{
-    streamTagsIsSet_ = false;
-}
-
-std::vector<std::string>& TransferDetail::getStructFields()
-{
-    return structFields_;
-}
-
-void TransferDetail::setStructFields(const std::vector<std::string>& value)
-{
-    structFields_ = value;
-    structFieldsIsSet_ = true;
-}
-
-bool TransferDetail::structFieldsIsSet() const
-{
-    return structFieldsIsSet_;
-}
-
-void TransferDetail::unsetstructFields()
-{
-    structFieldsIsSet_ = false;
-}
-
-std::string TransferDetail::getInvalidFieldValue() const
-{
-    return invalidFieldValue_;
-}
-
-void TransferDetail::setInvalidFieldValue(const std::string& value)
-{
-    invalidFieldValue_ = value;
-    invalidFieldValueIsSet_ = true;
-}
-
-bool TransferDetail::invalidFieldValueIsSet() const
-{
-    return invalidFieldValueIsSet_;
-}
-
-void TransferDetail::unsetinvalidFieldValue()
-{
-    invalidFieldValueIsSet_ = false;
 }
 
 }

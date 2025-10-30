@@ -14,6 +14,7 @@ SwitchoverReplicaSetRequest::SwitchoverReplicaSetRequest()
 {
     instanceId_ = "";
     instanceIdIsSet_ = false;
+    bodyIsSet_ = false;
 }
 
 SwitchoverReplicaSetRequest::~SwitchoverReplicaSetRequest() = default;
@@ -29,6 +30,9 @@ web::json::value SwitchoverReplicaSetRequest::toJson() const
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    }
 
     return val;
 }
@@ -43,6 +47,15 @@ bool SwitchoverReplicaSetRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+        if(!fieldValue.is_null())
+        {
+            SwitchoverReplicaSetRequestBody refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBody(refVal);
         }
     }
     return ok;
@@ -68,6 +81,27 @@ bool SwitchoverReplicaSetRequest::instanceIdIsSet() const
 void SwitchoverReplicaSetRequest::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
+}
+
+SwitchoverReplicaSetRequestBody SwitchoverReplicaSetRequest::getBody() const
+{
+    return body_;
+}
+
+void SwitchoverReplicaSetRequest::setBody(const SwitchoverReplicaSetRequestBody& value)
+{
+    body_ = value;
+    bodyIsSet_ = true;
+}
+
+bool SwitchoverReplicaSetRequest::bodyIsSet() const
+{
+    return bodyIsSet_;
+}
+
+void SwitchoverReplicaSetRequest::unsetbody()
+{
+    bodyIsSet_ = false;
 }
 
 }

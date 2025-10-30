@@ -26,6 +26,21 @@ HlsPackageItem::HlsPackageItem()
     extArgsIsSet_ = false;
     requestArgsIsSet_ = false;
     adMarkerIsSet_ = false;
+    enableAccess_ = false;
+    enableAccessIsSet_ = false;
+    allowAllIpAccess_ = false;
+    allowAllIpAccessIsSet_ = false;
+    ipWhitelist_ = "";
+    ipWhitelistIsSet_ = false;
+    cdnIdentifierHeaderIsSet_ = false;
+    originDomainMaster_ = "";
+    originDomainMasterIsSet_ = false;
+    originDomainSlave_ = "";
+    originDomainSlaveIsSet_ = false;
+    manifestName_ = "";
+    manifestNameIsSet_ = false;
+    slaveUrl_ = "";
+    slaveUrlIsSet_ = false;
 }
 
 HlsPackageItem::~HlsPackageItem() = default;
@@ -67,6 +82,30 @@ web::json::value HlsPackageItem::toJson() const
     }
     if(adMarkerIsSet_) {
         val[utility::conversions::to_string_t("ad_marker")] = ModelBase::toJson(adMarker_);
+    }
+    if(enableAccessIsSet_) {
+        val[utility::conversions::to_string_t("enable_access")] = ModelBase::toJson(enableAccess_);
+    }
+    if(allowAllIpAccessIsSet_) {
+        val[utility::conversions::to_string_t("allow_all_ip_access")] = ModelBase::toJson(allowAllIpAccess_);
+    }
+    if(ipWhitelistIsSet_) {
+        val[utility::conversions::to_string_t("ip_whitelist")] = ModelBase::toJson(ipWhitelist_);
+    }
+    if(cdnIdentifierHeaderIsSet_) {
+        val[utility::conversions::to_string_t("cdn_identifier_header")] = ModelBase::toJson(cdnIdentifierHeader_);
+    }
+    if(originDomainMasterIsSet_) {
+        val[utility::conversions::to_string_t("origin_domain_master")] = ModelBase::toJson(originDomainMaster_);
+    }
+    if(originDomainSlaveIsSet_) {
+        val[utility::conversions::to_string_t("origin_domain_slave")] = ModelBase::toJson(originDomainSlave_);
+    }
+    if(manifestNameIsSet_) {
+        val[utility::conversions::to_string_t("manifest_name")] = ModelBase::toJson(manifestName_);
+    }
+    if(slaveUrlIsSet_) {
+        val[utility::conversions::to_string_t("slave_url")] = ModelBase::toJson(slaveUrl_);
     }
 
     return val;
@@ -163,6 +202,78 @@ bool HlsPackageItem::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAdMarker(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_access"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_access"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableAccess(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("allow_all_ip_access"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allow_all_ip_access"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAllowAllIpAccess(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ip_whitelist"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip_whitelist"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpWhitelist(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cdn_identifier_header"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cdn_identifier_header"));
+        if(!fieldValue.is_null())
+        {
+            HttpHeader refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCdnIdentifierHeader(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("origin_domain_master"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_domain_master"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginDomainMaster(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("origin_domain_slave"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_domain_slave"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginDomainSlave(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("manifest_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("manifest_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setManifestName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("slave_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("slave_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSlaveUrl(refVal);
         }
     }
     return ok;
@@ -377,6 +488,174 @@ bool HlsPackageItem::adMarkerIsSet() const
 void HlsPackageItem::unsetadMarker()
 {
     adMarkerIsSet_ = false;
+}
+
+bool HlsPackageItem::isEnableAccess() const
+{
+    return enableAccess_;
+}
+
+void HlsPackageItem::setEnableAccess(bool value)
+{
+    enableAccess_ = value;
+    enableAccessIsSet_ = true;
+}
+
+bool HlsPackageItem::enableAccessIsSet() const
+{
+    return enableAccessIsSet_;
+}
+
+void HlsPackageItem::unsetenableAccess()
+{
+    enableAccessIsSet_ = false;
+}
+
+bool HlsPackageItem::isAllowAllIpAccess() const
+{
+    return allowAllIpAccess_;
+}
+
+void HlsPackageItem::setAllowAllIpAccess(bool value)
+{
+    allowAllIpAccess_ = value;
+    allowAllIpAccessIsSet_ = true;
+}
+
+bool HlsPackageItem::allowAllIpAccessIsSet() const
+{
+    return allowAllIpAccessIsSet_;
+}
+
+void HlsPackageItem::unsetallowAllIpAccess()
+{
+    allowAllIpAccessIsSet_ = false;
+}
+
+std::string HlsPackageItem::getIpWhitelist() const
+{
+    return ipWhitelist_;
+}
+
+void HlsPackageItem::setIpWhitelist(const std::string& value)
+{
+    ipWhitelist_ = value;
+    ipWhitelistIsSet_ = true;
+}
+
+bool HlsPackageItem::ipWhitelistIsSet() const
+{
+    return ipWhitelistIsSet_;
+}
+
+void HlsPackageItem::unsetipWhitelist()
+{
+    ipWhitelistIsSet_ = false;
+}
+
+HttpHeader HlsPackageItem::getCdnIdentifierHeader() const
+{
+    return cdnIdentifierHeader_;
+}
+
+void HlsPackageItem::setCdnIdentifierHeader(const HttpHeader& value)
+{
+    cdnIdentifierHeader_ = value;
+    cdnIdentifierHeaderIsSet_ = true;
+}
+
+bool HlsPackageItem::cdnIdentifierHeaderIsSet() const
+{
+    return cdnIdentifierHeaderIsSet_;
+}
+
+void HlsPackageItem::unsetcdnIdentifierHeader()
+{
+    cdnIdentifierHeaderIsSet_ = false;
+}
+
+std::string HlsPackageItem::getOriginDomainMaster() const
+{
+    return originDomainMaster_;
+}
+
+void HlsPackageItem::setOriginDomainMaster(const std::string& value)
+{
+    originDomainMaster_ = value;
+    originDomainMasterIsSet_ = true;
+}
+
+bool HlsPackageItem::originDomainMasterIsSet() const
+{
+    return originDomainMasterIsSet_;
+}
+
+void HlsPackageItem::unsetoriginDomainMaster()
+{
+    originDomainMasterIsSet_ = false;
+}
+
+std::string HlsPackageItem::getOriginDomainSlave() const
+{
+    return originDomainSlave_;
+}
+
+void HlsPackageItem::setOriginDomainSlave(const std::string& value)
+{
+    originDomainSlave_ = value;
+    originDomainSlaveIsSet_ = true;
+}
+
+bool HlsPackageItem::originDomainSlaveIsSet() const
+{
+    return originDomainSlaveIsSet_;
+}
+
+void HlsPackageItem::unsetoriginDomainSlave()
+{
+    originDomainSlaveIsSet_ = false;
+}
+
+std::string HlsPackageItem::getManifestName() const
+{
+    return manifestName_;
+}
+
+void HlsPackageItem::setManifestName(const std::string& value)
+{
+    manifestName_ = value;
+    manifestNameIsSet_ = true;
+}
+
+bool HlsPackageItem::manifestNameIsSet() const
+{
+    return manifestNameIsSet_;
+}
+
+void HlsPackageItem::unsetmanifestName()
+{
+    manifestNameIsSet_ = false;
+}
+
+std::string HlsPackageItem::getSlaveUrl() const
+{
+    return slaveUrl_;
+}
+
+void HlsPackageItem::setSlaveUrl(const std::string& value)
+{
+    slaveUrl_ = value;
+    slaveUrlIsSet_ = true;
+}
+
+bool HlsPackageItem::slaveUrlIsSet() const
+{
+    return slaveUrlIsSet_;
+}
+
+void HlsPackageItem::unsetslaveUrl()
+{
+    slaveUrlIsSet_ = false;
 }
 
 }

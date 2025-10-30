@@ -67,6 +67,15 @@ public:
     void unsetlogStreamName();
     void setLogStreamName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 快速查询类型。 **取值范围：** - ORIGINALLOG：原始日志 - VISUALIZATION：可视化日志
+    /// </summary>
+
+    std::string getSearchType() const;
+    bool searchTypeIsSet() const;
+    void unsetsearchType();
+    void setSearchType(const std::string& value);
+
 
 protected:
     std::vector<GetQuerySearchCriteriasBody> criterias_;
@@ -75,6 +84,8 @@ protected:
     bool logStreamIdIsSet_;
     std::string logStreamName_;
     bool logStreamNameIsSet_;
+    std::string searchType_;
+    bool searchTypeIsSet_;
 
 };
 

@@ -83,6 +83,7 @@ public:
     static HttpRequestDef genRequestDefForListRestoreTables();
     static HttpRequestDef genRequestDefForListRestoreTime();
     static HttpRequestDef genRequestDefForListSlowLogs();
+    static HttpRequestDef genRequestDefForModifyAutoNodeExpansionPolicy();
     static HttpRequestDef genRequestDefForModifyDbUserPrivilege();
     static HttpRequestDef genRequestDefForModifyEpsQuotas();
     static HttpRequestDef genRequestDefForModifyInstanceMaintenanceWindow();
@@ -114,6 +115,7 @@ public:
     static HttpRequestDef genRequestDefForShowApplicableInstances();
     static HttpRequestDef genRequestDefForShowApplyHistory();
     static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
+    static HttpRequestDef genRequestDefForShowAutoNodeExpansionPolicy();
     static HttpRequestDef genRequestDefForShowBackupPolicies();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
     static HttpRequestDef genRequestDefForShowConfigurationDetail();

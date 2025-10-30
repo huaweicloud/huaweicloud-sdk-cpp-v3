@@ -39,7 +39,7 @@ public:
     /// TuningParameter members
 
     /// <summary>
-    /// 参数名称
+    /// 参数名称。
     /// </summary>
 
     std::string getParamName() const;
@@ -48,7 +48,7 @@ public:
     void setParamName(const std::string& value);
 
     /// <summary>
-    /// 参数取值
+    /// 参数取值。
     /// </summary>
 
     std::string getParamValue() const;
@@ -57,13 +57,22 @@ public:
     void setParamValue(const std::string& value);
 
     /// <summary>
-    /// 是否可用
+    /// 是否可用。
     /// </summary>
 
     std::string getAvailability() const;
     bool availabilityIsSet() const;
     void unsetavailability();
     void setAvailability(const std::string& value);
+
+    /// <summary>
+    /// 参数取值范围。
+    /// </summary>
+
+    std::string getRange() const;
+    bool rangeIsSet() const;
+    void unsetrange();
+    void setRange(const std::string& value);
 
 
 protected:
@@ -73,6 +82,8 @@ protected:
     bool paramValueIsSet_;
     std::string availability_;
     bool availabilityIsSet_;
+    std::string range_;
+    bool rangeIsSet_;
 
 };
 

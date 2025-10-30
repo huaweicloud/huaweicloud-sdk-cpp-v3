@@ -148,6 +148,15 @@ public:
     void unsetlogGroupId();
     void setLogGroupId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 是否收藏日志流。 **取值范围：** - true：收藏日志流。 - false：不收藏日志流。
+    /// </summary>
+
+    bool isIsFavorite() const;
+    bool isFavoriteIsSet() const;
+    void unsetisFavorite();
+    void setIsFavorite(bool value);
+
 
 protected:
     int64_t creationTime_;
@@ -174,6 +183,8 @@ protected:
     bool hotStorageDaysIsSet_;
     std::string logGroupId_;
     bool logGroupIdIsSet_;
+    bool isFavorite_;
+    bool isFavoriteIsSet_;
 
 };
 

@@ -114,6 +114,33 @@ public:
     void unsettargetDatabaseName();
     void setTargetDatabaseName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  是否支持实例级同步。  **约束限制**：  不涉及。  **取值范围**：  - true：是。 - false：否。  **默认取值**：  false。
+    /// </summary>
+
+    std::string getIsInstanceLevelSync() const;
+    bool isInstanceLevelSyncIsSet() const;
+    void unsetisInstanceLevelSync();
+    void setIsInstanceLevelSync(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：  库同步范围。  **约束限制**：  不涉及。  **取值范围**：  - all：同步全部库。 - part：同步部分库。  **默认取值**：  part。
+    /// </summary>
+
+    std::string getDatabaseReplScope() const;
+    bool databaseReplScopeIsSet() const;
+    void unsetdatabaseReplScope();
+    void setDatabaseReplScope(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：  是否支持通配符。  **约束限制**：  不涉及。  **取值范围**：  - true：支持通配符。 - false：不支持通配符。  **默认取值**：  false。
+    /// </summary>
+
+    std::string getIsSupportRegExp() const;
+    bool isSupportRegExpIsSet() const;
+    void unsetisSupportRegExp();
+    void setIsSupportRegExp(const std::string& value);
+
 
 protected:
     std::string sourceInstanceId_;
@@ -132,6 +159,12 @@ protected:
     bool tableReplConfigIsSet_;
     std::string targetDatabaseName_;
     bool targetDatabaseNameIsSet_;
+    std::string isInstanceLevelSync_;
+    bool isInstanceLevelSyncIsSet_;
+    std::string databaseReplScope_;
+    bool databaseReplScopeIsSet_;
+    std::string isSupportRegExp_;
+    bool isSupportRegExpIsSet_;
 
 };
 

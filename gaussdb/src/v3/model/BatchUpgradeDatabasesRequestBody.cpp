@@ -15,8 +15,6 @@ BatchUpgradeDatabasesRequestBody::BatchUpgradeDatabasesRequestBody()
     databasesInstanceInfosIsSet_ = false;
     delay_ = "";
     delayIsSet_ = false;
-    isSkipValidate_ = false;
-    isSkipValidateIsSet_ = false;
 }
 
 BatchUpgradeDatabasesRequestBody::~BatchUpgradeDatabasesRequestBody() = default;
@@ -34,9 +32,6 @@ web::json::value BatchUpgradeDatabasesRequestBody::toJson() const
     }
     if(delayIsSet_) {
         val[utility::conversions::to_string_t("delay")] = ModelBase::toJson(delay_);
-    }
-    if(isSkipValidateIsSet_) {
-        val[utility::conversions::to_string_t("is_skip_validate")] = ModelBase::toJson(isSkipValidate_);
     }
 
     return val;
@@ -61,15 +56,6 @@ bool BatchUpgradeDatabasesRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDelay(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("is_skip_validate"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_skip_validate"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsSkipValidate(refVal);
         }
     }
     return ok;
@@ -116,27 +102,6 @@ bool BatchUpgradeDatabasesRequestBody::delayIsSet() const
 void BatchUpgradeDatabasesRequestBody::unsetdelay()
 {
     delayIsSet_ = false;
-}
-
-bool BatchUpgradeDatabasesRequestBody::isIsSkipValidate() const
-{
-    return isSkipValidate_;
-}
-
-void BatchUpgradeDatabasesRequestBody::setIsSkipValidate(bool value)
-{
-    isSkipValidate_ = value;
-    isSkipValidateIsSet_ = true;
-}
-
-bool BatchUpgradeDatabasesRequestBody::isSkipValidateIsSet() const
-{
-    return isSkipValidateIsSet_;
-}
-
-void BatchUpgradeDatabasesRequestBody::unsetisSkipValidate()
-{
-    isSkipValidateIsSet_ = false;
 }
 
 }

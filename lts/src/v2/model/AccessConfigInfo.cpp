@@ -40,6 +40,12 @@ AccessConfigInfo::AccessConfigInfo()
     demoLogIsSet_ = false;
     demoFieldsIsSet_ = false;
     processorsIsSet_ = false;
+    logSplitSize_ = 0;
+    logSplitSizeIsSet_ = false;
+    recursiveDepth_ = 0;
+    recursiveDepthIsSet_ = false;
+    accessConfigTypeSource_ = "";
+    accessConfigTypeSourceIsSet_ = false;
     applicationId_ = "";
     applicationIdIsSet_ = false;
     environmentId_ = "";
@@ -107,6 +113,15 @@ web::json::value AccessConfigInfo::toJson() const
     }
     if(processorsIsSet_) {
         val[utility::conversions::to_string_t("processors")] = ModelBase::toJson(processors_);
+    }
+    if(logSplitSizeIsSet_) {
+        val[utility::conversions::to_string_t("log_split_size")] = ModelBase::toJson(logSplitSize_);
+    }
+    if(recursiveDepthIsSet_) {
+        val[utility::conversions::to_string_t("recursive_depth")] = ModelBase::toJson(recursiveDepth_);
+    }
+    if(accessConfigTypeSourceIsSet_) {
+        val[utility::conversions::to_string_t("access_config_type_source")] = ModelBase::toJson(accessConfigTypeSource_);
     }
     if(applicationIdIsSet_) {
         val[utility::conversions::to_string_t("application_id")] = ModelBase::toJson(applicationId_);
@@ -275,6 +290,33 @@ bool AccessConfigInfo::fromJson(const web::json::value& val)
             std::vector<Processor> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProcessors(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_split_size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_split_size"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogSplitSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("recursive_depth"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("recursive_depth"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRecursiveDepth(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("access_config_type_source"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("access_config_type_source"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAccessConfigTypeSource(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("application_id"))) {
@@ -663,6 +705,69 @@ bool AccessConfigInfo::processorsIsSet() const
 void AccessConfigInfo::unsetprocessors()
 {
     processorsIsSet_ = false;
+}
+
+int32_t AccessConfigInfo::getLogSplitSize() const
+{
+    return logSplitSize_;
+}
+
+void AccessConfigInfo::setLogSplitSize(int32_t value)
+{
+    logSplitSize_ = value;
+    logSplitSizeIsSet_ = true;
+}
+
+bool AccessConfigInfo::logSplitSizeIsSet() const
+{
+    return logSplitSizeIsSet_;
+}
+
+void AccessConfigInfo::unsetlogSplitSize()
+{
+    logSplitSizeIsSet_ = false;
+}
+
+int32_t AccessConfigInfo::getRecursiveDepth() const
+{
+    return recursiveDepth_;
+}
+
+void AccessConfigInfo::setRecursiveDepth(int32_t value)
+{
+    recursiveDepth_ = value;
+    recursiveDepthIsSet_ = true;
+}
+
+bool AccessConfigInfo::recursiveDepthIsSet() const
+{
+    return recursiveDepthIsSet_;
+}
+
+void AccessConfigInfo::unsetrecursiveDepth()
+{
+    recursiveDepthIsSet_ = false;
+}
+
+std::string AccessConfigInfo::getAccessConfigTypeSource() const
+{
+    return accessConfigTypeSource_;
+}
+
+void AccessConfigInfo::setAccessConfigTypeSource(const std::string& value)
+{
+    accessConfigTypeSource_ = value;
+    accessConfigTypeSourceIsSet_ = true;
+}
+
+bool AccessConfigInfo::accessConfigTypeSourceIsSet() const
+{
+    return accessConfigTypeSourceIsSet_;
+}
+
+void AccessConfigInfo::unsetaccessConfigTypeSource()
+{
+    accessConfigTypeSourceIsSet_ = false;
 }
 
 std::string AccessConfigInfo::getApplicationId() const

@@ -11,6 +11,7 @@
 
 #include <string>
 #include <vector>
+#include <huaweicloud/lts/v2/model/ResourceTag.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -111,6 +112,24 @@ public:
     void unsetuseSystemTemplate();
     void setUseSystemTemplate(bool value);
 
+    /// <summary>
+    /// 纯净模式开关
+    /// </summary>
+
+    bool isConciseModeEnable() const;
+    bool conciseModeEnableIsSet() const;
+    void unsetconciseModeEnable();
+    void setConciseModeEnable(bool value);
+
+    /// <summary>
+    /// 仪表盘标签
+    /// </summary>
+
+    std::vector<ResourceTag>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<ResourceTag>& value);
+
 
 protected:
     std::vector<std::string> charts_;
@@ -129,6 +148,10 @@ protected:
     bool titleIsSet_;
     bool useSystemTemplate_;
     bool useSystemTemplateIsSet_;
+    bool conciseModeEnable_;
+    bool conciseModeEnableIsSet_;
+    std::vector<ResourceTag> tags_;
+    bool tagsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

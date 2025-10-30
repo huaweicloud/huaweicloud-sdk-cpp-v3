@@ -146,6 +146,34 @@ HttpRequestDef LiveMeta::genRequestDefForCreateUrlAuthchain() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForCreateWatermarkRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForCreateWatermarkTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForDeleteDomain() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
@@ -264,6 +292,26 @@ HttpRequestDef LiveMeta::genRequestDefForDeleteTranscodingsTemplate() {
     reqDefBuilder.withRequestField(FieldDef().withName("AppName")
                   .withJsonTag("app_name")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForDeleteWatermarkRule() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForDeleteWatermarkTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -507,6 +555,59 @@ HttpRequestDef LiveMeta::genRequestDefForListStreamForbidden() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForListWatermarkRule() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TemplateId")
+                  .withJsonTag("template_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("App")
+                  .withJsonTag("app")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChannelId")
+                  .withJsonTag("channel_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Stream")
+                  .withJsonTag("stream")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListWatermarkTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Scene")
+                  .withJsonTag("scene")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForModifyFlowOutput() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
@@ -663,6 +764,26 @@ HttpRequestDef LiveMeta::genRequestDefForShowTranscodingsTemplate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForShowWatermarkRule() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForShowWatermarkTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForUpdateDelayConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -805,6 +926,34 @@ HttpRequestDef LiveMeta::genRequestDefForUpdateTranscodingsTemplate() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForUpdateWatermarkRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForUpdateWatermarkTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 

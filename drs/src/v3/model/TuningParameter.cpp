@@ -18,6 +18,8 @@ TuningParameter::TuningParameter()
     paramValueIsSet_ = false;
     availability_ = "";
     availabilityIsSet_ = false;
+    range_ = "";
+    rangeIsSet_ = false;
 }
 
 TuningParameter::~TuningParameter() = default;
@@ -38,6 +40,9 @@ web::json::value TuningParameter::toJson() const
     }
     if(availabilityIsSet_) {
         val[utility::conversions::to_string_t("availability")] = ModelBase::toJson(availability_);
+    }
+    if(rangeIsSet_) {
+        val[utility::conversions::to_string_t("range")] = ModelBase::toJson(range_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool TuningParameter::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailability(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("range"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("range"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRange(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool TuningParameter::availabilityIsSet() const
 void TuningParameter::unsetavailability()
 {
     availabilityIsSet_ = false;
+}
+
+std::string TuningParameter::getRange() const
+{
+    return range_;
+}
+
+void TuningParameter::setRange(const std::string& value)
+{
+    range_ = value;
+    rangeIsSet_ = true;
+}
+
+bool TuningParameter::rangeIsSet() const
+{
+    return rangeIsSet_;
+}
+
+void TuningParameter::unsetrange()
+{
+    rangeIsSet_ = false;
 }
 
 }

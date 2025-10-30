@@ -218,6 +218,8 @@
 #include <huaweicloud/rds/v3/model/ListSlowlogForLtsResponse.h>
 #include <huaweicloud/rds/v3/model/ListSlowlogStatisticsRequest.h>
 #include <huaweicloud/rds/v3/model/ListSlowlogStatisticsResponse.h>
+#include <huaweicloud/rds/v3/model/ListSmallVersionRequest.h>
+#include <huaweicloud/rds/v3/model/ListSmallVersionResponse.h>
 #include <huaweicloud/rds/v3/model/ListSqlLimitRequest.h>
 #include <huaweicloud/rds/v3/model/ListSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/ListSslCertDownloadLinkRequest.h>
@@ -592,8 +594,8 @@
 #include <huaweicloud/rds/v3/model/UpdateReadWeightResponse.h>
 #include <string>
 
-#include <huaweicloud/rds/v3/model/ListInstancesNoIndexTablesRequest.h>
-#include <huaweicloud/rds/v3/model/ListInstancesNoIndexTablesResponse.h>
+#include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesRequest.h>
+#include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesResponse.h>
 #include <string>
 
 #include <huaweicloud/rds/v3/model/AddCopyDatabaseRequestBody.h>
@@ -1385,6 +1387,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSlowlogStatisticsResponse> listSlowlogStatistics(
         ListSlowlogStatisticsRequest &request
+    );
+    // 查询小版本号
+    //
+    // 查询小版本号
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSmallVersionResponse> listSmallVersion(
+        ListSmallVersionRequest &request
     );
     // 查询SQL限流列表
     //
@@ -2550,8 +2560,8 @@ public:
     // 查询无索引表诊断数据
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListInstancesNoIndexTablesResponse> listInstancesNoIndexTables(
-        ListInstancesNoIndexTablesRequest &request
+    std::shared_ptr<GetInstancesNoIndexTablesResponse> getInstancesNoIndexTables(
+        GetInstancesNoIndexTablesRequest &request
     );
 
     // 授权数据库帐号

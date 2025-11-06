@@ -1,0 +1,184 @@
+
+
+#include "huaweicloud/codeartsrepo/v4/model/ListPipelineJobsRequest.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Codeartsrepo {
+namespace V4 {
+namespace Model {
+
+
+
+
+ListPipelineJobsRequest::ListPipelineJobsRequest()
+{
+    repositoryId_ = 0;
+    repositoryIdIsSet_ = false;
+    pipelineId_ = 0;
+    pipelineIdIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
+}
+
+ListPipelineJobsRequest::~ListPipelineJobsRequest() = default;
+
+void ListPipelineJobsRequest::validate()
+{
+}
+
+web::json::value ListPipelineJobsRequest::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(repositoryIdIsSet_) {
+        val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
+    }
+    if(pipelineIdIsSet_) {
+        val[utility::conversions::to_string_t("pipeline_id")] = ModelBase::toJson(pipelineId_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
+    }
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+
+    return val;
+}
+bool ListPipelineJobsRequest::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("repository_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepositoryId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pipeline_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pipeline_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPipelineId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLimit(refVal);
+        }
+    }
+    return ok;
+}
+
+
+int32_t ListPipelineJobsRequest::getRepositoryId() const
+{
+    return repositoryId_;
+}
+
+void ListPipelineJobsRequest::setRepositoryId(int32_t value)
+{
+    repositoryId_ = value;
+    repositoryIdIsSet_ = true;
+}
+
+bool ListPipelineJobsRequest::repositoryIdIsSet() const
+{
+    return repositoryIdIsSet_;
+}
+
+void ListPipelineJobsRequest::unsetrepositoryId()
+{
+    repositoryIdIsSet_ = false;
+}
+
+int32_t ListPipelineJobsRequest::getPipelineId() const
+{
+    return pipelineId_;
+}
+
+void ListPipelineJobsRequest::setPipelineId(int32_t value)
+{
+    pipelineId_ = value;
+    pipelineIdIsSet_ = true;
+}
+
+bool ListPipelineJobsRequest::pipelineIdIsSet() const
+{
+    return pipelineIdIsSet_;
+}
+
+void ListPipelineJobsRequest::unsetpipelineId()
+{
+    pipelineIdIsSet_ = false;
+}
+
+int32_t ListPipelineJobsRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ListPipelineJobsRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ListPipelineJobsRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ListPipelineJobsRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
+}
+
+int32_t ListPipelineJobsRequest::getLimit() const
+{
+    return limit_;
+}
+
+void ListPipelineJobsRequest::setLimit(int32_t value)
+{
+    limit_ = value;
+    limitIsSet_ = true;
+}
+
+bool ListPipelineJobsRequest::limitIsSet() const
+{
+    return limitIsSet_;
+}
+
+void ListPipelineJobsRequest::unsetlimit()
+{
+    limitIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

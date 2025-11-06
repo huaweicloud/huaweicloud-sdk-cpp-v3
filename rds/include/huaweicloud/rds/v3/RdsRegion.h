@@ -146,6 +146,18 @@ public:
             { 
                 "https://rds.cn-north-12.myhuaweicloud.com"
             });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://rds.cn-south-4.myhuaweicloud.com"
+            });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://rds.cn-southwest-3.myhuaweicloud.com"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://rds.cn-north-11.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

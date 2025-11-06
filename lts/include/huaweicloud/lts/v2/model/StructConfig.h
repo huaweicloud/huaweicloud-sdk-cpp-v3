@@ -9,9 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/FieldModel.h>
 #include <string>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -85,33 +83,6 @@ public:
     void unsettemplateType();
     void setTemplateType(const std::string& value);
 
-    /// <summary>
-    /// 示例字段数组，只需要填写与模板中is_analysis状态不同的字段
-    /// </summary>
-
-    std::vector<FieldModel>& getDemoFields();
-    bool demoFieldsIsSet() const;
-    void unsetdemoFields();
-    void setDemoFields(const std::vector<FieldModel>& value);
-
-    /// <summary>
-    /// Tag字段数组，只需要填写与模板中is_analysis状态不同的字段
-    /// </summary>
-
-    std::vector<FieldModel>& getTagFields();
-    bool tagFieldsIsSet() const;
-    void unsettagFields();
-    void setTagFields(const std::vector<FieldModel>& value);
-
-    /// <summary>
-    /// 是否开启demo_fields和tag_fields快速分析,为true时，所有的demo_fields和tag_fields全部字段均打开快速分析;不填或者为false，以模板中的demo_fields和tag_fields中的is_analysis决定是否开启快速分析。
-    /// </summary>
-
-    bool isQuickAnalysis() const;
-    bool quickAnalysisIsSet() const;
-    void unsetquickAnalysis();
-    void setQuickAnalysis(bool value);
-
 
 protected:
     std::string logGroupId_;
@@ -124,12 +95,6 @@ protected:
     bool templateNameIsSet_;
     std::string templateType_;
     bool templateTypeIsSet_;
-    std::vector<FieldModel> demoFields_;
-    bool demoFieldsIsSet_;
-    std::vector<FieldModel> tagFields_;
-    bool tagFieldsIsSet_;
-    bool quickAnalysis_;
-    bool quickAnalysisIsSet_;
 
 };
 

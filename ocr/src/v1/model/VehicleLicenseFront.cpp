@@ -35,6 +35,8 @@ VehicleLicenseFront::VehicleLicenseFront()
     issuingAuthority_ = "";
     issuingAuthorityIsSet_ = false;
     textLocationIsSet_ = false;
+    alarmResultIsSet_ = false;
+    alarmConfidenceIsSet_ = false;
 }
 
 VehicleLicenseFront::~VehicleLicenseFront() = default;
@@ -82,6 +84,12 @@ web::json::value VehicleLicenseFront::toJson() const
     }
     if(textLocationIsSet_) {
         val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
+    }
+    if(alarmResultIsSet_) {
+        val[utility::conversions::to_string_t("alarm_result")] = ModelBase::toJson(alarmResult_);
+    }
+    if(alarmConfidenceIsSet_) {
+        val[utility::conversions::to_string_t("alarm_confidence")] = ModelBase::toJson(alarmConfidence_);
     }
 
     return val;
@@ -196,6 +204,24 @@ bool VehicleLicenseFront::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTextLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_result"));
+        if(!fieldValue.is_null())
+        {
+            VehicleLicenseAlarmResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_confidence"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_confidence"));
+        if(!fieldValue.is_null())
+        {
+            VehicleLicenseAlarmConfidence refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmConfidence(refVal);
         }
     }
     return ok;
@@ -452,6 +478,48 @@ bool VehicleLicenseFront::textLocationIsSet() const
 void VehicleLicenseFront::unsettextLocation()
 {
     textLocationIsSet_ = false;
+}
+
+VehicleLicenseAlarmResult VehicleLicenseFront::getAlarmResult() const
+{
+    return alarmResult_;
+}
+
+void VehicleLicenseFront::setAlarmResult(const VehicleLicenseAlarmResult& value)
+{
+    alarmResult_ = value;
+    alarmResultIsSet_ = true;
+}
+
+bool VehicleLicenseFront::alarmResultIsSet() const
+{
+    return alarmResultIsSet_;
+}
+
+void VehicleLicenseFront::unsetalarmResult()
+{
+    alarmResultIsSet_ = false;
+}
+
+VehicleLicenseAlarmConfidence VehicleLicenseFront::getAlarmConfidence() const
+{
+    return alarmConfidence_;
+}
+
+void VehicleLicenseFront::setAlarmConfidence(const VehicleLicenseAlarmConfidence& value)
+{
+    alarmConfidence_ = value;
+    alarmConfidenceIsSet_ = true;
+}
+
+bool VehicleLicenseFront::alarmConfidenceIsSet() const
+{
+    return alarmConfidenceIsSet_;
+}
+
+void VehicleLicenseFront::unsetalarmConfidence()
+{
+    alarmConfidenceIsSet_ = false;
 }
 
 }

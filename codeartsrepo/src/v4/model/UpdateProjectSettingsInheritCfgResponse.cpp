@@ -1,0 +1,78 @@
+
+
+#include "huaweicloud/codeartsrepo/v4/model/UpdateProjectSettingsInheritCfgResponse.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Codeartsrepo {
+namespace V4 {
+namespace Model {
+
+
+
+
+UpdateProjectSettingsInheritCfgResponse::UpdateProjectSettingsInheritCfgResponse()
+{
+    bodyIsSet_ = false;
+}
+
+UpdateProjectSettingsInheritCfgResponse::~UpdateProjectSettingsInheritCfgResponse() = default;
+
+void UpdateProjectSettingsInheritCfgResponse::validate()
+{
+}
+
+web::json::value UpdateProjectSettingsInheritCfgResponse::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    }
+
+    return val;
+}
+bool UpdateProjectSettingsInheritCfgResponse::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ProjectSettingsInheritCfgDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBody(refVal);
+        }
+    }
+    return ok;
+}
+
+
+std::vector<ProjectSettingsInheritCfgDto>& UpdateProjectSettingsInheritCfgResponse::getBody()
+{
+    return body_;
+}
+
+void UpdateProjectSettingsInheritCfgResponse::setBody(const std::vector<ProjectSettingsInheritCfgDto>& value)
+{
+    body_ = value;
+    bodyIsSet_ = true;
+}
+
+bool UpdateProjectSettingsInheritCfgResponse::bodyIsSet() const
+{
+    return bodyIsSet_;
+}
+
+void UpdateProjectSettingsInheritCfgResponse::unsetbody()
+{
+    bodyIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

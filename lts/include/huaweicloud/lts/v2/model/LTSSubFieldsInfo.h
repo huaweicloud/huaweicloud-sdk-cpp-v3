@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -58,33 +57,6 @@ public:
     void setFieldName(const std::string& value);
 
     /// <summary>
-    /// 是否大小写敏感
-    /// </summary>
-
-    bool isCaseSensitive() const;
-    bool caseSensitiveIsSet() const;
-    void unsetcaseSensitive();
-    void setCaseSensitive(bool value);
-
-    /// <summary>
-    /// 是否包含中文
-    /// </summary>
-
-    bool isIncludeChinese() const;
-    bool includeChineseIsSet() const;
-    void unsetincludeChinese();
-    void setIncludeChinese(bool value);
-
-    /// <summary>
-    /// 分词符
-    /// </summary>
-
-    std::string getTokenizer() const;
-    bool tokenizerIsSet() const;
-    void unsettokenizer();
-    void setTokenizer(const std::string& value);
-
-    /// <summary>
     /// 是否快速分析
     /// </summary>
 
@@ -94,13 +66,13 @@ public:
     void setQuickAnalysis(bool value);
 
     /// <summary>
-    /// 特殊分词符
+    /// **参数解释：** 别名，设置别名后，只支持使用别名进行SQL搜索分析，不支持使用别名进行关键字搜索。 **约束限制：** 不涉及。 **取值范围：** 长度不能大于256。 **默认取值：** 不涉及。
     /// </summary>
 
-    std::vector<std::string>& getAscii();
-    bool asciiIsSet() const;
-    void unsetascii();
-    void setAscii(const std::vector<std::string>& value);
+    std::string getFieldAnalysisAlias() const;
+    bool fieldAnalysisAliasIsSet() const;
+    void unsetfieldAnalysisAlias();
+    void setFieldAnalysisAlias(const std::string& value);
 
 
 protected:
@@ -108,16 +80,10 @@ protected:
     bool fieldTypeIsSet_;
     std::string fieldName_;
     bool fieldNameIsSet_;
-    bool caseSensitive_;
-    bool caseSensitiveIsSet_;
-    bool includeChinese_;
-    bool includeChineseIsSet_;
-    std::string tokenizer_;
-    bool tokenizerIsSet_;
     bool quickAnalysis_;
     bool quickAnalysisIsSet_;
-    std::vector<std::string> ascii_;
-    bool asciiIsSet_;
+    std::string fieldAnalysisAlias_;
+    bool fieldAnalysisAliasIsSet_;
 
 };
 

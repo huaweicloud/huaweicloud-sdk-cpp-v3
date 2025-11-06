@@ -18,6 +18,8 @@ LTSIndexConfigInfo::LTSIndexConfigInfo()
     sqlAnalysisEnableIsSet_ = false;
     logStreamId_ = "";
     logStreamIdIsSet_ = false;
+    fastAnalysisSampleCount_ = 0L;
+    fastAnalysisSampleCountIsSet_ = false;
 }
 
 LTSIndexConfigInfo::~LTSIndexConfigInfo() = default;
@@ -41,6 +43,9 @@ web::json::value LTSIndexConfigInfo::toJson() const
     }
     if(logStreamIdIsSet_) {
         val[utility::conversions::to_string_t("logStreamId")] = ModelBase::toJson(logStreamId_);
+    }
+    if(fastAnalysisSampleCountIsSet_) {
+        val[utility::conversions::to_string_t("fastAnalysisSampleCount")] = ModelBase::toJson(fastAnalysisSampleCount_);
     }
 
     return val;
@@ -83,6 +88,15 @@ bool LTSIndexConfigInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogStreamId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fastAnalysisSampleCount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fastAnalysisSampleCount"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFastAnalysisSampleCount(refVal);
         }
     }
     return ok;
@@ -171,6 +185,27 @@ bool LTSIndexConfigInfo::logStreamIdIsSet() const
 void LTSIndexConfigInfo::unsetlogStreamId()
 {
     logStreamIdIsSet_ = false;
+}
+
+int64_t LTSIndexConfigInfo::getFastAnalysisSampleCount() const
+{
+    return fastAnalysisSampleCount_;
+}
+
+void LTSIndexConfigInfo::setFastAnalysisSampleCount(int64_t value)
+{
+    fastAnalysisSampleCount_ = value;
+    fastAnalysisSampleCountIsSet_ = true;
+}
+
+bool LTSIndexConfigInfo::fastAnalysisSampleCountIsSet() const
+{
+    return fastAnalysisSampleCountIsSet_;
+}
+
+void LTSIndexConfigInfo::unsetfastAnalysisSampleCount()
+{
+    fastAnalysisSampleCountIsSet_ = false;
 }
 
 }

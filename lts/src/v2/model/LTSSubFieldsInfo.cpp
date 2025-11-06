@@ -16,15 +16,10 @@ LTSSubFieldsInfo::LTSSubFieldsInfo()
     fieldTypeIsSet_ = false;
     fieldName_ = "";
     fieldNameIsSet_ = false;
-    caseSensitive_ = false;
-    caseSensitiveIsSet_ = false;
-    includeChinese_ = false;
-    includeChineseIsSet_ = false;
-    tokenizer_ = "";
-    tokenizerIsSet_ = false;
     quickAnalysis_ = false;
     quickAnalysisIsSet_ = false;
-    asciiIsSet_ = false;
+    fieldAnalysisAlias_ = "";
+    fieldAnalysisAliasIsSet_ = false;
 }
 
 LTSSubFieldsInfo::~LTSSubFieldsInfo() = default;
@@ -43,20 +38,11 @@ web::json::value LTSSubFieldsInfo::toJson() const
     if(fieldNameIsSet_) {
         val[utility::conversions::to_string_t("fieldName")] = ModelBase::toJson(fieldName_);
     }
-    if(caseSensitiveIsSet_) {
-        val[utility::conversions::to_string_t("caseSensitive")] = ModelBase::toJson(caseSensitive_);
-    }
-    if(includeChineseIsSet_) {
-        val[utility::conversions::to_string_t("includeChinese")] = ModelBase::toJson(includeChinese_);
-    }
-    if(tokenizerIsSet_) {
-        val[utility::conversions::to_string_t("tokenizer")] = ModelBase::toJson(tokenizer_);
-    }
     if(quickAnalysisIsSet_) {
         val[utility::conversions::to_string_t("quickAnalysis")] = ModelBase::toJson(quickAnalysis_);
     }
-    if(asciiIsSet_) {
-        val[utility::conversions::to_string_t("ascii")] = ModelBase::toJson(ascii_);
+    if(fieldAnalysisAliasIsSet_) {
+        val[utility::conversions::to_string_t("fieldAnalysisAlias")] = ModelBase::toJson(fieldAnalysisAlias_);
     }
 
     return val;
@@ -83,33 +69,6 @@ bool LTSSubFieldsInfo::fromJson(const web::json::value& val)
             setFieldName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("caseSensitive"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("caseSensitive"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCaseSensitive(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("includeChinese"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("includeChinese"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIncludeChinese(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("tokenizer"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tokenizer"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTokenizer(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("quickAnalysis"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quickAnalysis"));
         if(!fieldValue.is_null())
@@ -119,13 +78,13 @@ bool LTSSubFieldsInfo::fromJson(const web::json::value& val)
             setQuickAnalysis(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("ascii"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ascii"));
+    if(val.has_field(utility::conversions::to_string_t("fieldAnalysisAlias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fieldAnalysisAlias"));
         if(!fieldValue.is_null())
         {
-            std::vector<std::string> refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAscii(refVal);
+            setFieldAnalysisAlias(refVal);
         }
     }
     return ok;
@@ -174,69 +133,6 @@ void LTSSubFieldsInfo::unsetfieldName()
     fieldNameIsSet_ = false;
 }
 
-bool LTSSubFieldsInfo::isCaseSensitive() const
-{
-    return caseSensitive_;
-}
-
-void LTSSubFieldsInfo::setCaseSensitive(bool value)
-{
-    caseSensitive_ = value;
-    caseSensitiveIsSet_ = true;
-}
-
-bool LTSSubFieldsInfo::caseSensitiveIsSet() const
-{
-    return caseSensitiveIsSet_;
-}
-
-void LTSSubFieldsInfo::unsetcaseSensitive()
-{
-    caseSensitiveIsSet_ = false;
-}
-
-bool LTSSubFieldsInfo::isIncludeChinese() const
-{
-    return includeChinese_;
-}
-
-void LTSSubFieldsInfo::setIncludeChinese(bool value)
-{
-    includeChinese_ = value;
-    includeChineseIsSet_ = true;
-}
-
-bool LTSSubFieldsInfo::includeChineseIsSet() const
-{
-    return includeChineseIsSet_;
-}
-
-void LTSSubFieldsInfo::unsetincludeChinese()
-{
-    includeChineseIsSet_ = false;
-}
-
-std::string LTSSubFieldsInfo::getTokenizer() const
-{
-    return tokenizer_;
-}
-
-void LTSSubFieldsInfo::setTokenizer(const std::string& value)
-{
-    tokenizer_ = value;
-    tokenizerIsSet_ = true;
-}
-
-bool LTSSubFieldsInfo::tokenizerIsSet() const
-{
-    return tokenizerIsSet_;
-}
-
-void LTSSubFieldsInfo::unsettokenizer()
-{
-    tokenizerIsSet_ = false;
-}
-
 bool LTSSubFieldsInfo::isQuickAnalysis() const
 {
     return quickAnalysis_;
@@ -258,25 +154,25 @@ void LTSSubFieldsInfo::unsetquickAnalysis()
     quickAnalysisIsSet_ = false;
 }
 
-std::vector<std::string>& LTSSubFieldsInfo::getAscii()
+std::string LTSSubFieldsInfo::getFieldAnalysisAlias() const
 {
-    return ascii_;
+    return fieldAnalysisAlias_;
 }
 
-void LTSSubFieldsInfo::setAscii(const std::vector<std::string>& value)
+void LTSSubFieldsInfo::setFieldAnalysisAlias(const std::string& value)
 {
-    ascii_ = value;
-    asciiIsSet_ = true;
+    fieldAnalysisAlias_ = value;
+    fieldAnalysisAliasIsSet_ = true;
 }
 
-bool LTSSubFieldsInfo::asciiIsSet() const
+bool LTSSubFieldsInfo::fieldAnalysisAliasIsSet() const
 {
-    return asciiIsSet_;
+    return fieldAnalysisAliasIsSet_;
 }
 
-void LTSSubFieldsInfo::unsetascii()
+void LTSSubFieldsInfo::unsetfieldAnalysisAlias()
 {
-    asciiIsSet_ = false;
+    fieldAnalysisAliasIsSet_ = false;
 }
 
 }

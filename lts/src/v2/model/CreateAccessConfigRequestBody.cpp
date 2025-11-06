@@ -43,6 +43,8 @@ CreateAccessConfigRequestBody::CreateAccessConfigRequestBody()
     componentIdIsSet_ = false;
     accessConfigTypeSource_ = "";
     accessConfigTypeSourceIsSet_ = false;
+    recursiveDepth_ = 0;
+    recursiveDepthIsSet_ = false;
 }
 
 CreateAccessConfigRequestBody::~CreateAccessConfigRequestBody() = default;
@@ -111,6 +113,9 @@ web::json::value CreateAccessConfigRequestBody::toJson() const
     }
     if(accessConfigTypeSourceIsSet_) {
         val[utility::conversions::to_string_t("access_config_type_source")] = ModelBase::toJson(accessConfigTypeSource_);
+    }
+    if(recursiveDepthIsSet_) {
+        val[utility::conversions::to_string_t("recursive_depth")] = ModelBase::toJson(recursiveDepth_);
     }
 
     return val;
@@ -288,6 +293,15 @@ bool CreateAccessConfigRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccessConfigTypeSource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("recursive_depth"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("recursive_depth"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRecursiveDepth(refVal);
         }
     }
     return ok;
@@ -691,6 +705,27 @@ bool CreateAccessConfigRequestBody::accessConfigTypeSourceIsSet() const
 void CreateAccessConfigRequestBody::unsetaccessConfigTypeSource()
 {
     accessConfigTypeSourceIsSet_ = false;
+}
+
+int32_t CreateAccessConfigRequestBody::getRecursiveDepth() const
+{
+    return recursiveDepth_;
+}
+
+void CreateAccessConfigRequestBody::setRecursiveDepth(int32_t value)
+{
+    recursiveDepth_ = value;
+    recursiveDepthIsSet_ = true;
+}
+
+bool CreateAccessConfigRequestBody::recursiveDepthIsSet() const
+{
+    return recursiveDepthIsSet_;
+}
+
+void CreateAccessConfigRequestBody::unsetrecursiveDepth()
+{
+    recursiveDepthIsSet_ = false;
 }
 
 }

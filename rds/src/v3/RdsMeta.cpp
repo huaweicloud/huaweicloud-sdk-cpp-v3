@@ -488,6 +488,16 @@ HttpRequestDef RdsMeta::genRequestDefForListAuditlogs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListAutoScalingPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListBackupTransfers() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
@@ -3162,6 +3172,15 @@ HttpRequestDef RdsMeta::genRequestDefForUpdateReadWeight() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForCreateIntelligentKillSession() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForGetInstancesNoIndexTables() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Newest")
@@ -3169,6 +3188,23 @@ HttpRequestDef RdsMeta::genRequestDefForGetInstancesNoIndexTables() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("TableType")
                   .withJsonTag("table_type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForShowIntelligentKillSessionHistory() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
+                  .withJsonTag("page_num")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
+                  .withJsonTag("page_size")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

@@ -28,13 +28,8 @@ UpdateSqlAlarmRuleRequestBody::UpdateSqlAlarmRuleRequestBody()
     conditionExpressionIsSet_ = false;
     sqlAlarmLevel_ = "";
     sqlAlarmLevelIsSet_ = false;
-    sqlAlarmSend_ = false;
-    sqlAlarmSendIsSet_ = false;
-    sqlAlarmSendCode_ = 0;
-    sqlAlarmSendCodeIsSet_ = false;
     domainId_ = "";
     domainIdIsSet_ = false;
-    notificationSaveRuleIsSet_ = false;
     triggerConditionCount_ = 0;
     triggerConditionCountIsSet_ = false;
     triggerConditionFrequency_ = 0;
@@ -47,6 +42,7 @@ UpdateSqlAlarmRuleRequestBody::UpdateSqlAlarmRuleRequestBody()
     notificationFrequencyIsSet_ = false;
     alarmActionRuleName_ = "";
     alarmActionRuleNameIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 UpdateSqlAlarmRuleRequestBody::~UpdateSqlAlarmRuleRequestBody() = default;
@@ -86,17 +82,8 @@ web::json::value UpdateSqlAlarmRuleRequestBody::toJson() const
     if(sqlAlarmLevelIsSet_) {
         val[utility::conversions::to_string_t("sql_alarm_level")] = ModelBase::toJson(sqlAlarmLevel_);
     }
-    if(sqlAlarmSendIsSet_) {
-        val[utility::conversions::to_string_t("sql_alarm_send")] = ModelBase::toJson(sqlAlarmSend_);
-    }
-    if(sqlAlarmSendCodeIsSet_) {
-        val[utility::conversions::to_string_t("sql_alarm_send_code")] = ModelBase::toJson(sqlAlarmSendCode_);
-    }
     if(domainIdIsSet_) {
         val[utility::conversions::to_string_t("domain_id")] = ModelBase::toJson(domainId_);
-    }
-    if(notificationSaveRuleIsSet_) {
-        val[utility::conversions::to_string_t("notification_save_rule")] = ModelBase::toJson(notificationSaveRule_);
     }
     if(triggerConditionCountIsSet_) {
         val[utility::conversions::to_string_t("trigger_condition_count")] = ModelBase::toJson(triggerConditionCount_);
@@ -115,6 +102,9 @@ web::json::value UpdateSqlAlarmRuleRequestBody::toJson() const
     }
     if(alarmActionRuleNameIsSet_) {
         val[utility::conversions::to_string_t("alarm_action_rule_name")] = ModelBase::toJson(alarmActionRuleName_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -204,24 +194,6 @@ bool UpdateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
             setSqlAlarmLevel(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("sql_alarm_send"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_alarm_send"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSqlAlarmSend(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("sql_alarm_send_code"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_alarm_send_code"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSqlAlarmSendCode(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("domain_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain_id"));
         if(!fieldValue.is_null())
@@ -229,15 +201,6 @@ bool UpdateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomainId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("notification_save_rule"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_save_rule"));
-        if(!fieldValue.is_null())
-        {
-            SqlNotificationSaveRule refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNotificationSaveRule(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("trigger_condition_count"))) {
@@ -292,6 +255,15 @@ bool UpdateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAlarmActionRuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<TagsRequestBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -487,48 +459,6 @@ void UpdateSqlAlarmRuleRequestBody::unsetsqlAlarmLevel()
     sqlAlarmLevelIsSet_ = false;
 }
 
-bool UpdateSqlAlarmRuleRequestBody::isSqlAlarmSend() const
-{
-    return sqlAlarmSend_;
-}
-
-void UpdateSqlAlarmRuleRequestBody::setSqlAlarmSend(bool value)
-{
-    sqlAlarmSend_ = value;
-    sqlAlarmSendIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleRequestBody::sqlAlarmSendIsSet() const
-{
-    return sqlAlarmSendIsSet_;
-}
-
-void UpdateSqlAlarmRuleRequestBody::unsetsqlAlarmSend()
-{
-    sqlAlarmSendIsSet_ = false;
-}
-
-int32_t UpdateSqlAlarmRuleRequestBody::getSqlAlarmSendCode() const
-{
-    return sqlAlarmSendCode_;
-}
-
-void UpdateSqlAlarmRuleRequestBody::setSqlAlarmSendCode(int32_t value)
-{
-    sqlAlarmSendCode_ = value;
-    sqlAlarmSendCodeIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleRequestBody::sqlAlarmSendCodeIsSet() const
-{
-    return sqlAlarmSendCodeIsSet_;
-}
-
-void UpdateSqlAlarmRuleRequestBody::unsetsqlAlarmSendCode()
-{
-    sqlAlarmSendCodeIsSet_ = false;
-}
-
 std::string UpdateSqlAlarmRuleRequestBody::getDomainId() const
 {
     return domainId_;
@@ -548,27 +478,6 @@ bool UpdateSqlAlarmRuleRequestBody::domainIdIsSet() const
 void UpdateSqlAlarmRuleRequestBody::unsetdomainId()
 {
     domainIdIsSet_ = false;
-}
-
-SqlNotificationSaveRule UpdateSqlAlarmRuleRequestBody::getNotificationSaveRule() const
-{
-    return notificationSaveRule_;
-}
-
-void UpdateSqlAlarmRuleRequestBody::setNotificationSaveRule(const SqlNotificationSaveRule& value)
-{
-    notificationSaveRule_ = value;
-    notificationSaveRuleIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleRequestBody::notificationSaveRuleIsSet() const
-{
-    return notificationSaveRuleIsSet_;
-}
-
-void UpdateSqlAlarmRuleRequestBody::unsetnotificationSaveRule()
-{
-    notificationSaveRuleIsSet_ = false;
 }
 
 int32_t UpdateSqlAlarmRuleRequestBody::getTriggerConditionCount() const
@@ -695,6 +604,27 @@ bool UpdateSqlAlarmRuleRequestBody::alarmActionRuleNameIsSet() const
 void UpdateSqlAlarmRuleRequestBody::unsetalarmActionRuleName()
 {
     alarmActionRuleNameIsSet_ = false;
+}
+
+std::vector<TagsRequestBody>& UpdateSqlAlarmRuleRequestBody::getTags()
+{
+    return tags_;
+}
+
+void UpdateSqlAlarmRuleRequestBody::setTags(const std::vector<TagsRequestBody>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleRequestBody::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void UpdateSqlAlarmRuleRequestBody::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

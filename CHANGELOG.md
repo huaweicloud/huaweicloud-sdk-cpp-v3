@@ -1,3 +1,98 @@
+# 3.1.161 2025-11-06
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateStructConfig**
+    - changes of request param
+      - `- demo_fields`
+      - `- tag_fields`
+      - `- quick_analysis`
+  - **CreateStructConfig**
+    - changes of request param
+      - `- demo_fields`
+      - `- tag_fields`
+      - `- quick_analysis`
+  - **UpdateSqlAlarmRule**
+    - changes of request param
+      - `+ tags`
+      - `- sql_alarm_send`
+      - `- sql_alarm_send_code`
+      - `- notification_save_rule`
+  - **CreateSqlAlarmRule**
+    - changes of request param
+      - `+ tags`
+      - `- sql_alarm_send`
+      - `- notification_save_rule`
+  - **UpdateKeywordsAlarmRule**
+    - changes of request param
+      - `+ tags`
+      - `- keywords_alarm_send`
+      - `- keywords_alarm_send_code`
+      - `- notification_save_rule`
+  - **CreateKeywordsAlarmRule**
+    - changes of request param
+      - `+ tags`
+      - `- keywords_alarm_send`
+      - `- notification_save_rule`
+  - **UpdateTransfer**
+    - changes of request param
+      - `+ log_group_id`
+      - `+ log_streams`
+  - **ListLogStreamIndex**
+    - changes of response param
+      - `+ fields.fieldAnalysisAlias`
+      - `+ fields.ltsSubFieldsInfoList.fieldAnalysisAlias`
+      - `- fields.ltsSubFieldsInfoList.caseSensitive`
+      - `- fields.ltsSubFieldsInfoList.includeChinese`
+      - `- fields.ltsSubFieldsInfoList.tokenizer`
+      - `- fields.ltsSubFieldsInfoList.ascii`
+  - **CreateLogStreamIndex**
+    - changes of request param
+      - `+ fastAnalysisSampleCount`
+      - `+ fields.fieldAnalysisAlias`
+      - `+ fields.ltsSubFieldsInfoList.fieldAnalysisAlias`
+      - `- fields.ltsSubFieldsInfoList.caseSensitive`
+      - `- fields.ltsSubFieldsInfoList.includeChinese`
+      - `- fields.ltsSubFieldsInfoList.tokenizer`
+      - `- fields.ltsSubFieldsInfoList.ascii`
+  - **CreateAccessConfig**
+    - changes of request param
+      - `+ recursive_depth`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeVehicleLicense**
+    - changes of response param
+      - `+ result.front.alarm_result`
+      - `+ result.front.alarm_confidence`
+      - `+ result.back.alarm_result`
+      - `+ result.back.alarm_confidence`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `CreateIntelligentKillSession`, `ShowIntelligentKillSessionHistory`, `ListAutoScalingPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.160 2025-10-30
 
 ### HuaweiCloud SDK CBR

@@ -77,6 +77,15 @@ public:
     void unsetlogStreamId();
     void setLogStreamId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 快速分析采样日志条数。 **约束限制：** 不涉及。 **取值范围：** 最小值：100000 最大值：10000000 **默认取值：** 100000
+    /// </summary>
+
+    int64_t getFastAnalysisSampleCount() const;
+    bool fastAnalysisSampleCountIsSet() const;
+    void unsetfastAnalysisSampleCount();
+    void setFastAnalysisSampleCount(int64_t value);
+
 
 protected:
     LTSFullTextIndexInfo fullTextIndex_;
@@ -87,6 +96,8 @@ protected:
     bool sqlAnalysisEnableIsSet_;
     std::string logStreamId_;
     bool logStreamIdIsSet_;
+    int64_t fastAnalysisSampleCount_;
+    bool fastAnalysisSampleCountIsSet_;
 
 };
 

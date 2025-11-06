@@ -10,8 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/lts/v2/model/CreateSqlAlarmRuleFrequency.h>
+#include <huaweicloud/lts/v2/model/TagsRequestBody.h>
 #include <huaweicloud/lts/v2/model/SqlRequest.h>
-#include <huaweicloud/lts/v2/model/SqlNotificationSaveRule.h>
 #include <string>
 #include <vector>
 
@@ -124,24 +124,6 @@ public:
     void setSqlAlarmLevel(const std::string& value);
 
     /// <summary>
-    /// 是否发送
-    /// </summary>
-
-    bool isSqlAlarmSend() const;
-    bool sqlAlarmSendIsSet() const;
-    void unsetsqlAlarmSend();
-    void setSqlAlarmSend(bool value);
-
-    /// <summary>
-    /// 发送主题 0:不变 1:新增 2:修改 3:删除
-    /// </summary>
-
-    int32_t getSqlAlarmSendCode() const;
-    bool sqlAlarmSendCodeIsSet() const;
-    void unsetsqlAlarmSendCode();
-    void setSqlAlarmSendCode(int32_t value);
-
-    /// <summary>
     /// domainId
     /// </summary>
 
@@ -149,15 +131,6 @@ public:
     bool domainIdIsSet() const;
     void unsetdomainId();
     void setDomainId(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    SqlNotificationSaveRule getNotificationSaveRule() const;
-    bool notificationSaveRuleIsSet() const;
-    void unsetnotificationSaveRule();
-    void setNotificationSaveRule(const SqlNotificationSaveRule& value);
 
     /// <summary>
     /// 触发条件：触发次数;默认为1
@@ -213,6 +186,15 @@ public:
     void unsetalarmActionRuleName();
     void setAlarmActionRuleName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::vector<TagsRequestBody>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<TagsRequestBody>& value);
+
 
 protected:
     std::string sqlAlarmRuleId_;
@@ -233,14 +215,8 @@ protected:
     bool conditionExpressionIsSet_;
     std::string sqlAlarmLevel_;
     bool sqlAlarmLevelIsSet_;
-    bool sqlAlarmSend_;
-    bool sqlAlarmSendIsSet_;
-    int32_t sqlAlarmSendCode_;
-    bool sqlAlarmSendCodeIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
-    SqlNotificationSaveRule notificationSaveRule_;
-    bool notificationSaveRuleIsSet_;
     int32_t triggerConditionCount_;
     bool triggerConditionCountIsSet_;
     int32_t triggerConditionFrequency_;
@@ -253,6 +229,8 @@ protected:
     bool notificationFrequencyIsSet_;
     std::string alarmActionRuleName_;
     bool alarmActionRuleNameIsSet_;
+    std::vector<TagsRequestBody> tags_;
+    bool tagsIsSet_;
 
 };
 

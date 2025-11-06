@@ -50,6 +50,7 @@ public:
     static HttpRequestDef genRequestDefForDownloadSlowlog();
     static HttpRequestDef genRequestDefForEnableConfiguration();
     static HttpRequestDef genRequestDefForListAuditlogs();
+    static HttpRequestDef genRequestDefForListAutoScalingPolicy();
     static HttpRequestDef genRequestDefForListBackupTransfers();
     static HttpRequestDef genRequestDefForListBackups();
     static HttpRequestDef genRequestDefForListCollations();
@@ -243,7 +244,9 @@ public:
     static HttpRequestDef genRequestDefForUpdatePostgresqlExtension();
     static HttpRequestDef genRequestDefForUpdatePostgresqlParameterValue();
     static HttpRequestDef genRequestDefForUpdateReadWeight();
+    static HttpRequestDef genRequestDefForCreateIntelligentKillSession();
     static HttpRequestDef genRequestDefForGetInstancesNoIndexTables();
+    static HttpRequestDef genRequestDefForShowIntelligentKillSessionHistory();
     static HttpRequestDef genRequestDefForAllowSqlserverDbUserPrivilege();
     static HttpRequestDef genRequestDefForBatchAddMsdtcs();
     static HttpRequestDef genRequestDefForCopyDatabase();

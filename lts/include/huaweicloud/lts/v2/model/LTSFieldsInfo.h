@@ -112,6 +112,15 @@ public:
     void unsetltsSubFieldsInfoList();
     void setLtsSubFieldsInfoList(const std::vector<LTSSubFieldsInfo>& value);
 
+    /// <summary>
+    /// **参数解释：** 别名，设置别名后，只支持使用别名进行SQL搜索分析，不支持使用别名进行关键字搜索。 **约束限制：**  不涉及。 **取值范围：** 长度不能大于256。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getFieldAnalysisAlias() const;
+    bool fieldAnalysisAliasIsSet() const;
+    void unsetfieldAnalysisAlias();
+    void setFieldAnalysisAlias(const std::string& value);
+
 
 protected:
     std::string fieldType_;
@@ -130,6 +139,8 @@ protected:
     bool asciiIsSet_;
     std::vector<LTSSubFieldsInfo> ltsSubFieldsInfoList_;
     bool ltsSubFieldsInfoListIsSet_;
+    std::string fieldAnalysisAlias_;
+    bool fieldAnalysisAliasIsSet_;
 
 };
 

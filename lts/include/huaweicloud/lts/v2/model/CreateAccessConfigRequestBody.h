@@ -216,6 +216,15 @@ public:
     void unsetaccessConfigTypeSource();
     void setAccessConfigTypeSource(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 采集路径递归最大深度。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getRecursiveDepth() const;
+    bool recursiveDepthIsSet() const;
+    void unsetrecursiveDepth();
+    void setRecursiveDepth(int32_t value);
+
 
 protected:
     std::string accessConfigName_;
@@ -256,6 +265,8 @@ protected:
     bool componentIdIsSet_;
     std::string accessConfigTypeSource_;
     bool accessConfigTypeSourceIsSet_;
+    int32_t recursiveDepth_;
+    bool recursiveDepthIsSet_;
 
 };
 

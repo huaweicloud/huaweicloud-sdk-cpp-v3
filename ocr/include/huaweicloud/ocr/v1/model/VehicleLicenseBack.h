@@ -10,6 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/ocr/v1/model/VehicleLicenseAlarmConfidence.h>
+#include <huaweicloud/ocr/v1/model/VehicleLicenseAlarmResult.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -156,6 +158,24 @@ public:
     void unsettextLocation();
     void setTextLocation(const Object& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VehicleLicenseAlarmResult getAlarmResult() const;
+    bool alarmResultIsSet() const;
+    void unsetalarmResult();
+    void setAlarmResult(const VehicleLicenseAlarmResult& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VehicleLicenseAlarmConfidence getAlarmConfidence() const;
+    bool alarmConfidenceIsSet() const;
+    void unsetalarmConfidence();
+    void setAlarmConfidence(const VehicleLicenseAlarmConfidence& value);
+
 
 protected:
     std::string number_;
@@ -184,6 +204,10 @@ protected:
     bool energyTypeIsSet_;
     Object textLocation_;
     bool textLocationIsSet_;
+    VehicleLicenseAlarmResult alarmResult_;
+    bool alarmResultIsSet_;
+    VehicleLicenseAlarmConfidence alarmConfidence_;
+    bool alarmConfidenceIsSet_;
 
 };
 

@@ -9,8 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/lts/v2/model/LogStreams.h>
 #include <huaweicloud/lts/v2/model/UpdateTransferRequestBody_log_transfer_info.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -49,6 +51,15 @@ public:
     void setLogTransferId(const std::string& value);
 
     /// <summary>
+    /// 日志组ID
+    /// </summary>
+
+    std::string getLogGroupId() const;
+    bool logGroupIdIsSet() const;
+    void unsetlogGroupId();
+    void setLogGroupId(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -57,12 +68,25 @@ public:
     void unsetlogTransferInfo();
     void setLogTransferInfo(const UpdateTransferRequestBody_log_transfer_info& value);
 
+    /// <summary>
+    /// 日志流信息
+    /// </summary>
+
+    std::vector<LogStreams>& getLogStreams();
+    bool logStreamsIsSet() const;
+    void unsetlogStreams();
+    void setLogStreams(const std::vector<LogStreams>& value);
+
 
 protected:
     std::string logTransferId_;
     bool logTransferIdIsSet_;
+    std::string logGroupId_;
+    bool logGroupIdIsSet_;
     UpdateTransferRequestBody_log_transfer_info logTransferInfo_;
     bool logTransferInfoIsSet_;
+    std::vector<LogStreams> logStreams_;
+    bool logStreamsIsSet_;
 
 };
 

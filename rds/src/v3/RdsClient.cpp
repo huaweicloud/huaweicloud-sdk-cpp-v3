@@ -1598,6 +1598,39 @@ std::shared_ptr<ListAuditlogsResponse> RdsClient::listAuditlogs(ListAuditlogsReq
 
     return localVarResult;
 }
+std::shared_ptr<ListAutoScalingPolicyResponse> RdsClient::listAutoScalingPolicy(ListAutoScalingPolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/auto-scaling/policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListAutoScalingPolicy());
+
+    std::shared_ptr<ListAutoScalingPolicyResponse> localVarResult = std::make_shared<ListAutoScalingPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListBackupTransfersResponse> RdsClient::listBackupTransfers(ListBackupTransfersRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/transfer-info";
@@ -9458,6 +9491,48 @@ std::shared_ptr<UpdateReadWeightResponse> RdsClient::updateReadWeight(UpdateRead
 
     return localVarResult;
 }
+std::shared_ptr<CreateIntelligentKillSessionResponse> RdsClient::createIntelligentKillSession(CreateIntelligentKillSessionRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForCreateIntelligentKillSession());
+
+    std::shared_ptr<CreateIntelligentKillSessionResponse> localVarResult = std::make_shared<CreateIntelligentKillSessionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<GetInstancesNoIndexTablesResponse> RdsClient::getInstancesNoIndexTables(GetInstancesNoIndexTablesRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/no-index-tables";
@@ -9488,6 +9563,48 @@ std::shared_ptr<GetInstancesNoIndexTablesResponse> RdsClient::getInstancesNoInde
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForGetInstancesNoIndexTables());
 
     std::shared_ptr<GetInstancesNoIndexTablesResponse> localVarResult = std::make_shared<GetInstancesNoIndexTablesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowIntelligentKillSessionHistoryResponse> RdsClient::showIntelligentKillSessionHistory(ShowIntelligentKillSessionHistoryRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session/history";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.pageNumIsSet()) {
+        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForShowIntelligentKillSessionHistory());
+
+    std::shared_ptr<ShowIntelligentKillSessionHistoryResponse> localVarResult = std::make_shared<ShowIntelligentKillSessionHistoryResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

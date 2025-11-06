@@ -26,6 +26,8 @@ LTSFieldsInfo::LTSFieldsInfo()
     quickAnalysisIsSet_ = false;
     asciiIsSet_ = false;
     ltsSubFieldsInfoListIsSet_ = false;
+    fieldAnalysisAlias_ = "";
+    fieldAnalysisAliasIsSet_ = false;
 }
 
 LTSFieldsInfo::~LTSFieldsInfo() = default;
@@ -61,6 +63,9 @@ web::json::value LTSFieldsInfo::toJson() const
     }
     if(ltsSubFieldsInfoListIsSet_) {
         val[utility::conversions::to_string_t("ltsSubFieldsInfoList")] = ModelBase::toJson(ltsSubFieldsInfoList_);
+    }
+    if(fieldAnalysisAliasIsSet_) {
+        val[utility::conversions::to_string_t("fieldAnalysisAlias")] = ModelBase::toJson(fieldAnalysisAlias_);
     }
 
     return val;
@@ -139,6 +144,15 @@ bool LTSFieldsInfo::fromJson(const web::json::value& val)
             std::vector<LTSSubFieldsInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLtsSubFieldsInfoList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fieldAnalysisAlias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fieldAnalysisAlias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFieldAnalysisAlias(refVal);
         }
     }
     return ok;
@@ -311,6 +325,27 @@ bool LTSFieldsInfo::ltsSubFieldsInfoListIsSet() const
 void LTSFieldsInfo::unsetltsSubFieldsInfoList()
 {
     ltsSubFieldsInfoListIsSet_ = false;
+}
+
+std::string LTSFieldsInfo::getFieldAnalysisAlias() const
+{
+    return fieldAnalysisAlias_;
+}
+
+void LTSFieldsInfo::setFieldAnalysisAlias(const std::string& value)
+{
+    fieldAnalysisAlias_ = value;
+    fieldAnalysisAliasIsSet_ = true;
+}
+
+bool LTSFieldsInfo::fieldAnalysisAliasIsSet() const
+{
+    return fieldAnalysisAliasIsSet_;
+}
+
+void LTSFieldsInfo::unsetfieldAnalysisAlias()
+{
+    fieldAnalysisAliasIsSet_ = false;
 }
 
 }

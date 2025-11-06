@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/SqlNotificationSaveRule.h>
+#include <huaweicloud/lts/v2/model/TagsRequestBody.h>
 #include <huaweicloud/lts/v2/model/KeywordsRequest.h>
 #include <string>
 #include <vector>
@@ -88,15 +88,6 @@ public:
     void setKeywordsAlarmLevel(const std::string& value);
 
     /// <summary>
-    /// 是否发送
-    /// </summary>
-
-    bool isKeywordsAlarmSend() const;
-    bool keywordsAlarmSendIsSet() const;
-    void unsetkeywordsAlarmSend();
-    void setKeywordsAlarmSend(bool value);
-
-    /// <summary>
     /// domainId
     /// </summary>
 
@@ -104,15 +95,6 @@ public:
     bool domainIdIsSet() const;
     void unsetdomainId();
     void setDomainId(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    SqlNotificationSaveRule getNotificationSaveRule() const;
-    bool notificationSaveRuleIsSet() const;
-    void unsetnotificationSaveRule();
-    void setNotificationSaveRule(const SqlNotificationSaveRule& value);
 
     /// <summary>
     /// 触发条件：触发次数;默认为1
@@ -168,6 +150,15 @@ public:
     void unsetalarmActionRuleName();
     void setAlarmActionRuleName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::vector<TagsRequestBody>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<TagsRequestBody>& value);
+
 
 protected:
     std::string keywordsAlarmRuleName_;
@@ -180,12 +171,8 @@ protected:
     bool frequencyIsSet_;
     std::string keywordsAlarmLevel_;
     bool keywordsAlarmLevelIsSet_;
-    bool keywordsAlarmSend_;
-    bool keywordsAlarmSendIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
-    SqlNotificationSaveRule notificationSaveRule_;
-    bool notificationSaveRuleIsSet_;
     int32_t triggerConditionCount_;
     bool triggerConditionCountIsSet_;
     int32_t triggerConditionFrequency_;
@@ -198,6 +185,8 @@ protected:
     bool notificationFrequencyIsSet_;
     std::string alarmActionRuleName_;
     bool alarmActionRuleNameIsSet_;
+    std::vector<TagsRequestBody> tags_;
+    bool tagsIsSet_;
 
 };
 

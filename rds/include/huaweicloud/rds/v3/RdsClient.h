@@ -119,6 +119,8 @@
 #include <huaweicloud/rds/v3/model/InstanceRestartRequsetBody.h>
 #include <huaweicloud/rds/v3/model/ListAuditlogsRequest.h>
 #include <huaweicloud/rds/v3/model/ListAuditlogsResponse.h>
+#include <huaweicloud/rds/v3/model/ListAutoScalingPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/ListAutoScalingPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ListBackupTransfersRequest.h>
 #include <huaweicloud/rds/v3/model/ListBackupTransfersResponse.h>
 #include <huaweicloud/rds/v3/model/ListBackupsRequest.h>
@@ -594,8 +596,13 @@
 #include <huaweicloud/rds/v3/model/UpdateReadWeightResponse.h>
 #include <string>
 
+#include <huaweicloud/rds/v3/model/CreateIntelligentKillSessionRequest.h>
+#include <huaweicloud/rds/v3/model/CreateIntelligentKillSessionResponse.h>
 #include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesRequest.h>
 #include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesResponse.h>
+#include <huaweicloud/rds/v3/model/IntelligentKillSessionReq.h>
+#include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionHistoryRequest.h>
+#include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionHistoryResponse.h>
 #include <string>
 
 #include <huaweicloud/rds/v3/model/AddCopyDatabaseRequestBody.h>
@@ -990,6 +997,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAuditlogsResponse> listAuditlogs(
         ListAuditlogsRequest &request
+    );
+    // 查询自动变配策略
+    //
+    // 查询自动变配策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAutoScalingPolicyResponse> listAutoScalingPolicy(
+        ListAutoScalingPolicyRequest &request
     );
     // 查询转储任务列表
     //
@@ -2555,6 +2570,14 @@ public:
         UpdateReadWeightRequest &request
     );
 
+    // 一键kill会话
+    //
+    // 一键kill会话
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateIntelligentKillSessionResponse> createIntelligentKillSession(
+        CreateIntelligentKillSessionRequest &request
+    );
     // 查询无索引表诊断数据
     //
     // 查询无索引表诊断数据
@@ -2562,6 +2585,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<GetInstancesNoIndexTablesResponse> getInstancesNoIndexTables(
         GetInstancesNoIndexTablesRequest &request
+    );
+    // 查询一键kill会话历史
+    //
+    // 查询一键kill会话历史
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIntelligentKillSessionHistoryResponse> showIntelligentKillSessionHistory(
+        ShowIntelligentKillSessionHistoryRequest &request
     );
 
     // 授权数据库帐号

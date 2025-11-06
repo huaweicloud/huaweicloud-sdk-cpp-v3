@@ -20,11 +20,8 @@ CreateKeywordsAlarmRuleRequestBody::CreateKeywordsAlarmRuleRequestBody()
     frequencyIsSet_ = false;
     keywordsAlarmLevel_ = "";
     keywordsAlarmLevelIsSet_ = false;
-    keywordsAlarmSend_ = false;
-    keywordsAlarmSendIsSet_ = false;
     domainId_ = "";
     domainIdIsSet_ = false;
-    notificationSaveRuleIsSet_ = false;
     triggerConditionCount_ = 0;
     triggerConditionCountIsSet_ = false;
     triggerConditionFrequency_ = 0;
@@ -37,6 +34,7 @@ CreateKeywordsAlarmRuleRequestBody::CreateKeywordsAlarmRuleRequestBody()
     notificationFrequencyIsSet_ = false;
     alarmActionRuleName_ = "";
     alarmActionRuleNameIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 CreateKeywordsAlarmRuleRequestBody::~CreateKeywordsAlarmRuleRequestBody() = default;
@@ -64,14 +62,8 @@ web::json::value CreateKeywordsAlarmRuleRequestBody::toJson() const
     if(keywordsAlarmLevelIsSet_) {
         val[utility::conversions::to_string_t("keywords_alarm_level")] = ModelBase::toJson(keywordsAlarmLevel_);
     }
-    if(keywordsAlarmSendIsSet_) {
-        val[utility::conversions::to_string_t("keywords_alarm_send")] = ModelBase::toJson(keywordsAlarmSend_);
-    }
     if(domainIdIsSet_) {
         val[utility::conversions::to_string_t("domain_id")] = ModelBase::toJson(domainId_);
-    }
-    if(notificationSaveRuleIsSet_) {
-        val[utility::conversions::to_string_t("notification_save_rule")] = ModelBase::toJson(notificationSaveRule_);
     }
     if(triggerConditionCountIsSet_) {
         val[utility::conversions::to_string_t("trigger_condition_count")] = ModelBase::toJson(triggerConditionCount_);
@@ -90,6 +82,9 @@ web::json::value CreateKeywordsAlarmRuleRequestBody::toJson() const
     }
     if(alarmActionRuleNameIsSet_) {
         val[utility::conversions::to_string_t("alarm_action_rule_name")] = ModelBase::toJson(alarmActionRuleName_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -143,15 +138,6 @@ bool CreateKeywordsAlarmRuleRequestBody::fromJson(const web::json::value& val)
             setKeywordsAlarmLevel(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("keywords_alarm_send"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("keywords_alarm_send"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setKeywordsAlarmSend(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("domain_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain_id"));
         if(!fieldValue.is_null())
@@ -159,15 +145,6 @@ bool CreateKeywordsAlarmRuleRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomainId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("notification_save_rule"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_save_rule"));
-        if(!fieldValue.is_null())
-        {
-            SqlNotificationSaveRule refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNotificationSaveRule(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("trigger_condition_count"))) {
@@ -222,6 +199,15 @@ bool CreateKeywordsAlarmRuleRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAlarmActionRuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<TagsRequestBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -333,27 +319,6 @@ void CreateKeywordsAlarmRuleRequestBody::unsetkeywordsAlarmLevel()
     keywordsAlarmLevelIsSet_ = false;
 }
 
-bool CreateKeywordsAlarmRuleRequestBody::isKeywordsAlarmSend() const
-{
-    return keywordsAlarmSend_;
-}
-
-void CreateKeywordsAlarmRuleRequestBody::setKeywordsAlarmSend(bool value)
-{
-    keywordsAlarmSend_ = value;
-    keywordsAlarmSendIsSet_ = true;
-}
-
-bool CreateKeywordsAlarmRuleRequestBody::keywordsAlarmSendIsSet() const
-{
-    return keywordsAlarmSendIsSet_;
-}
-
-void CreateKeywordsAlarmRuleRequestBody::unsetkeywordsAlarmSend()
-{
-    keywordsAlarmSendIsSet_ = false;
-}
-
 std::string CreateKeywordsAlarmRuleRequestBody::getDomainId() const
 {
     return domainId_;
@@ -373,27 +338,6 @@ bool CreateKeywordsAlarmRuleRequestBody::domainIdIsSet() const
 void CreateKeywordsAlarmRuleRequestBody::unsetdomainId()
 {
     domainIdIsSet_ = false;
-}
-
-SqlNotificationSaveRule CreateKeywordsAlarmRuleRequestBody::getNotificationSaveRule() const
-{
-    return notificationSaveRule_;
-}
-
-void CreateKeywordsAlarmRuleRequestBody::setNotificationSaveRule(const SqlNotificationSaveRule& value)
-{
-    notificationSaveRule_ = value;
-    notificationSaveRuleIsSet_ = true;
-}
-
-bool CreateKeywordsAlarmRuleRequestBody::notificationSaveRuleIsSet() const
-{
-    return notificationSaveRuleIsSet_;
-}
-
-void CreateKeywordsAlarmRuleRequestBody::unsetnotificationSaveRule()
-{
-    notificationSaveRuleIsSet_ = false;
 }
 
 int32_t CreateKeywordsAlarmRuleRequestBody::getTriggerConditionCount() const
@@ -520,6 +464,27 @@ bool CreateKeywordsAlarmRuleRequestBody::alarmActionRuleNameIsSet() const
 void CreateKeywordsAlarmRuleRequestBody::unsetalarmActionRuleName()
 {
     alarmActionRuleNameIsSet_ = false;
+}
+
+std::vector<TagsRequestBody>& CreateKeywordsAlarmRuleRequestBody::getTags()
+{
+    return tags_;
+}
+
+void CreateKeywordsAlarmRuleRequestBody::setTags(const std::vector<TagsRequestBody>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool CreateKeywordsAlarmRuleRequestBody::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void CreateKeywordsAlarmRuleRequestBody::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

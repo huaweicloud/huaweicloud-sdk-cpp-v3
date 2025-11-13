@@ -195,6 +195,15 @@ public:
     void unsettags();
     void setTags(const std::vector<TagsRequestBody>& value);
 
+    /// <summary>
+    /// **参数解释：** 企业项目id信息。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::string getEnterpriseProjectId() const;
+    bool enterpriseProjectIdIsSet() const;
+    void unsetenterpriseProjectId();
+    void setEnterpriseProjectId(const std::string& value);
+
 
 protected:
     std::string sqlAlarmRuleId_;
@@ -231,6 +240,8 @@ protected:
     bool alarmActionRuleNameIsSet_;
     std::vector<TagsRequestBody> tags_;
     bool tagsIsSet_;
+    std::string enterpriseProjectId_;
+    bool enterpriseProjectIdIsSet_;
 
 };
 

@@ -16,6 +16,8 @@ HtapLTSConfigResponse_instance::HtapLTSConfigResponse_instance()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    mode_ = "";
+    modeIsSet_ = false;
     engineName_ = "";
     engineNameIsSet_ = false;
     engineVersion_ = "";
@@ -43,6 +45,9 @@ web::json::value HtapLTSConfigResponse_instance::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(modeIsSet_) {
+        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
     }
     if(engineNameIsSet_) {
         val[utility::conversions::to_string_t("engine_name")] = ModelBase::toJson(engineName_);
@@ -82,6 +87,15 @@ bool HtapLTSConfigResponse_instance::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("engine_name"))) {
@@ -173,6 +187,27 @@ bool HtapLTSConfigResponse_instance::nameIsSet() const
 void HtapLTSConfigResponse_instance::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string HtapLTSConfigResponse_instance::getMode() const
+{
+    return mode_;
+}
+
+void HtapLTSConfigResponse_instance::setMode(const std::string& value)
+{
+    mode_ = value;
+    modeIsSet_ = true;
+}
+
+bool HtapLTSConfigResponse_instance::modeIsSet() const
+{
+    return modeIsSet_;
+}
+
+void HtapLTSConfigResponse_instance::unsetmode()
+{
+    modeIsSet_ = false;
 }
 
 std::string HtapLTSConfigResponse_instance::getEngineName() const

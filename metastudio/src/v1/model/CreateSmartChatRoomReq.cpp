@@ -41,6 +41,8 @@ CreateSmartChatRoomReq::CreateSmartChatRoomReq()
     chatVideoTypeIsSet_ = false;
     exitMuteThreshold_ = 0;
     exitMuteThresholdIsSet_ = false;
+    enableSemanticAction_ = false;
+    enableSemanticActionIsSet_ = false;
     chatResourceConfigIsSet_ = false;
 }
 
@@ -107,6 +109,9 @@ web::json::value CreateSmartChatRoomReq::toJson() const
     }
     if(exitMuteThresholdIsSet_) {
         val[utility::conversions::to_string_t("exit_mute_threshold")] = ModelBase::toJson(exitMuteThreshold_);
+    }
+    if(enableSemanticActionIsSet_) {
+        val[utility::conversions::to_string_t("enable_semantic_action")] = ModelBase::toJson(enableSemanticAction_);
     }
     if(chatResourceConfigIsSet_) {
         val[utility::conversions::to_string_t("chat_resource_config")] = ModelBase::toJson(chatResourceConfig_);
@@ -278,6 +283,15 @@ bool CreateSmartChatRoomReq::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExitMuteThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_semantic_action"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_semantic_action"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableSemanticAction(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("chat_resource_config"))) {
@@ -669,6 +683,27 @@ bool CreateSmartChatRoomReq::exitMuteThresholdIsSet() const
 void CreateSmartChatRoomReq::unsetexitMuteThreshold()
 {
     exitMuteThresholdIsSet_ = false;
+}
+
+bool CreateSmartChatRoomReq::isEnableSemanticAction() const
+{
+    return enableSemanticAction_;
+}
+
+void CreateSmartChatRoomReq::setEnableSemanticAction(bool value)
+{
+    enableSemanticAction_ = value;
+    enableSemanticActionIsSet_ = true;
+}
+
+bool CreateSmartChatRoomReq::enableSemanticActionIsSet() const
+{
+    return enableSemanticActionIsSet_;
+}
+
+void CreateSmartChatRoomReq::unsetenableSemanticAction()
+{
+    enableSemanticActionIsSet_ = false;
 }
 
 std::vector<ChatResourceConfig>& CreateSmartChatRoomReq::getChatResourceConfig()

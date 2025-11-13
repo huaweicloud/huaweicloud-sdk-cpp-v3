@@ -1208,6 +1208,38 @@ std::shared_ptr<ShowAlarmConfigResponse> AadClient::showAlarmConfig(ShowAlarmCon
 
     return localVarResult;
 }
+std::shared_ptr<ShowLtsConfigResponse> AadClient::showLtsConfig(ShowLtsConfigRequest &request)
+{
+    std::string localVarPath = "/v1/cnad/config/lts";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForShowLtsConfig());
+
+    std::shared_ptr<ShowLtsConfigResponse> localVarResult = std::make_shared<ShowLtsConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowPolicyResponse> AadClient::showPolicy(ShowPolicyRequest &request)
 {
     std::string localVarPath = "/v1/cnad/policies/{policy_id}";
@@ -1353,6 +1385,50 @@ std::shared_ptr<UpdateInstanceIpRuleResponse> AadClient::updateInstanceIpRule(Up
         localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForUpdateInstanceIpRule());
 
     std::shared_ptr<UpdateInstanceIpRuleResponse> localVarResult = std::make_shared<UpdateInstanceIpRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateLtsConfigResponse> AadClient::updateLtsConfig(UpdateLtsConfigRequest &request)
+{
+    std::string localVarPath = "/v1/cnad/config/lts";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForUpdateLtsConfig());
+
+    std::shared_ptr<UpdateLtsConfigResponse> localVarResult = std::make_shared<UpdateLtsConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

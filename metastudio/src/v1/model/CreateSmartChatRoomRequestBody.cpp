@@ -41,6 +41,8 @@ CreateSmartChatRoomRequestBody::CreateSmartChatRoomRequestBody()
     chatVideoTypeIsSet_ = false;
     exitMuteThreshold_ = 0;
     exitMuteThresholdIsSet_ = false;
+    enableSemanticAction_ = false;
+    enableSemanticActionIsSet_ = false;
 }
 
 CreateSmartChatRoomRequestBody::~CreateSmartChatRoomRequestBody() = default;
@@ -106,6 +108,9 @@ web::json::value CreateSmartChatRoomRequestBody::toJson() const
     }
     if(exitMuteThresholdIsSet_) {
         val[utility::conversions::to_string_t("exit_mute_threshold")] = ModelBase::toJson(exitMuteThreshold_);
+    }
+    if(enableSemanticActionIsSet_) {
+        val[utility::conversions::to_string_t("enable_semantic_action")] = ModelBase::toJson(enableSemanticAction_);
     }
 
     return val;
@@ -274,6 +279,15 @@ bool CreateSmartChatRoomRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExitMuteThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_semantic_action"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_semantic_action"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableSemanticAction(refVal);
         }
     }
     return ok;
@@ -656,6 +670,27 @@ bool CreateSmartChatRoomRequestBody::exitMuteThresholdIsSet() const
 void CreateSmartChatRoomRequestBody::unsetexitMuteThreshold()
 {
     exitMuteThresholdIsSet_ = false;
+}
+
+bool CreateSmartChatRoomRequestBody::isEnableSemanticAction() const
+{
+    return enableSemanticAction_;
+}
+
+void CreateSmartChatRoomRequestBody::setEnableSemanticAction(bool value)
+{
+    enableSemanticAction_ = value;
+    enableSemanticActionIsSet_ = true;
+}
+
+bool CreateSmartChatRoomRequestBody::enableSemanticActionIsSet() const
+{
+    return enableSemanticActionIsSet_;
+}
+
+void CreateSmartChatRoomRequestBody::unsetenableSemanticAction()
+{
+    enableSemanticActionIsSet_ = false;
 }
 
 }

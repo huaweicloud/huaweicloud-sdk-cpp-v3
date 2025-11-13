@@ -31,6 +31,10 @@ Vpc::Vpc()
     createdAtIsSet_ = false;
     updatedAt_ = utility::datetime();
     updatedAtIsSet_ = false;
+    blockServiceEndpointStates_ = "";
+    blockServiceEndpointStatesIsSet_ = false;
+    enableNetworkAddressUsageMetrics_ = false;
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 Vpc::~Vpc() = default;
@@ -72,6 +76,12 @@ web::json::value Vpc::toJson() const
     }
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
+    }
+    if(blockServiceEndpointStatesIsSet_) {
+        val[utility::conversions::to_string_t("block_service_endpoint_states")] = ModelBase::toJson(blockServiceEndpointStates_);
+    }
+    if(enableNetworkAddressUsageMetricsIsSet_) {
+        val[utility::conversions::to_string_t("enable_network_address_usage_metrics")] = ModelBase::toJson(enableNetworkAddressUsageMetrics_);
     }
 
     return val;
@@ -168,6 +178,24 @@ bool Vpc::fromJson(const web::json::value& val)
             utility::datetime refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("block_service_endpoint_states"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("block_service_endpoint_states"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBlockServiceEndpointStates(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_network_address_usage_metrics"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_network_address_usage_metrics"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableNetworkAddressUsageMetrics(refVal);
         }
     }
     return ok;
@@ -382,6 +410,48 @@ bool Vpc::updatedAtIsSet() const
 void Vpc::unsetupdatedAt()
 {
     updatedAtIsSet_ = false;
+}
+
+std::string Vpc::getBlockServiceEndpointStates() const
+{
+    return blockServiceEndpointStates_;
+}
+
+void Vpc::setBlockServiceEndpointStates(const std::string& value)
+{
+    blockServiceEndpointStates_ = value;
+    blockServiceEndpointStatesIsSet_ = true;
+}
+
+bool Vpc::blockServiceEndpointStatesIsSet() const
+{
+    return blockServiceEndpointStatesIsSet_;
+}
+
+void Vpc::unsetblockServiceEndpointStates()
+{
+    blockServiceEndpointStatesIsSet_ = false;
+}
+
+bool Vpc::isEnableNetworkAddressUsageMetrics() const
+{
+    return enableNetworkAddressUsageMetrics_;
+}
+
+void Vpc::setEnableNetworkAddressUsageMetrics(bool value)
+{
+    enableNetworkAddressUsageMetrics_ = value;
+    enableNetworkAddressUsageMetricsIsSet_ = true;
+}
+
+bool Vpc::enableNetworkAddressUsageMetricsIsSet() const
+{
+    return enableNetworkAddressUsageMetricsIsSet_;
+}
+
+void Vpc::unsetenableNetworkAddressUsageMetrics()
+{
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 }

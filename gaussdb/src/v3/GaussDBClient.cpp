@@ -7992,6 +7992,42 @@ std::shared_ptr<DeleteStarrocksInstanceResponse> GaussDBClient::deleteStarrocksI
 
     return localVarResult;
 }
+std::shared_ptr<DownloadImportExcelTemplateResponse> GaussDBClient::downloadImportExcelTemplate(DownloadImportExcelTemplateRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/htap/template";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.templateTypeIsSet()) {
+        localVarQueryParams["template_type"] = parameterToString(request.getTemplateType());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForDownloadImportExcelTemplate());
+
+    std::shared_ptr<DownloadImportExcelTemplateResponse> localVarResult = std::make_shared<DownloadImportExcelTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListClickHouseDataBaseResponse> GaussDBClient::listClickHouseDataBase(ListClickHouseDataBaseRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/clickhouse/databases";
@@ -10039,6 +10075,51 @@ std::shared_ptr<UpgradeSrKernelVersionResponse> GaussDBClient::upgradeSrKernelVe
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<UploadImportExcelTemplateResponse> GaussDBClient::uploadImportExcelTemplate(UploadImportExcelTemplateRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/htap/template";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+    if (request.IsSet()) {
+        localVarFormParams["template_type"] = parameterToString(request.getTemplateType());
+    }
+    if (request.IsSet()) {
+        localVarFormParams["is_instance_level"] = parameterToString(request.getIsInstanceLevel());
+    }
+    if (request.IsSet()) {
+        localVarFormParams["selected_dbs"] = parameterToString(request.getSelectedDbs());
+    }
+    if (request.IsSet()) {
+        localVarFormParams["is_support_regexp"] = parameterToString(request.getIsSupportRegexp());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForUploadImportExcelTemplate());
+
+    std::shared_ptr<UploadImportExcelTemplateResponse> localVarResult = std::make_shared<UploadImportExcelTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

@@ -32,6 +32,18 @@
 #include <huaweicloud/metastudio/v1/model/ShowAgencyResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CreateAudioRecordConfigReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateAudioRecordConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateAudioRecordConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteAudioRecordConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteAudioRecordConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowAudioRecordConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowAudioRecordConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateAudioRecordConfigReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateAudioRecordConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateAudioRecordConfigResponse.h>
+#include <string>
+
 #include <huaweicloud/metastudio/v1/model/DeleteTaskRequest.h>
 #include <huaweicloud/metastudio/v1/model/DeleteTaskResponse.h>
 #include <huaweicloud/metastudio/v1/model/DownloadResultFileRequest.h>
@@ -48,6 +60,12 @@
 #include <huaweicloud/metastudio/v1/model/SearchTaskResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowTaskRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowTaskResponse.h>
+#include <string>
+
+#include <huaweicloud/metastudio/v1/model/ShowSummaryUsageDataRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowSummaryUsageDataResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowUsageDataRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowUsageDataResponse.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlReq.h>
@@ -256,18 +274,33 @@
 
 #include <huaweicloud/metastudio/v1/model/CreateInteractionRuleGroupRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateInteractionRuleGroupResponse.h>
+#include <huaweicloud/metastudio/v1/model/CreateInteractionRuleReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateInteractionRuleRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateInteractionRuleResponse.h>
 #include <huaweicloud/metastudio/v1/model/DeleteInteractionRuleGroupRequest.h>
 #include <huaweicloud/metastudio/v1/model/DeleteInteractionRuleGroupResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteInteractionRuleRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteInteractionRuleResponse.h>
 #include <huaweicloud/metastudio/v1/model/InteractionRuleGroup.h>
 #include <huaweicloud/metastudio/v1/model/ListInteractionRuleGroupsRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListInteractionRuleGroupsResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListInteractionRuleGroupsSummaryRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListInteractionRuleGroupsSummaryResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowInteractionRuleGroupRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowInteractionRuleGroupResponse.h>
 #include <huaweicloud/metastudio/v1/model/UpdateInteractionRuleGroupRequest.h>
 #include <huaweicloud/metastudio/v1/model/UpdateInteractionRuleGroupResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateInteractionRuleRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateInteractionRuleResponse.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CreateInteractiveChatReq.h>
 #include <huaweicloud/metastudio/v1/model/CreateInteractiveChatRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateInteractiveChatResponse.h>
+#include <string>
+
+#include <huaweicloud/metastudio/v1/model/ShowEncryptFileRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowEncryptFileResponse.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CreateIntentAndQuestionReq.h>
@@ -354,6 +387,8 @@
 #include <huaweicloud/metastudio/v1/model/ListLivePlatformProductsResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListLivePlatformsRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListLivePlatformsResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowLivePlatformAccessTypeRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowLivePlatformAccessTypeResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowLivePlatformRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowLivePlatformResponse.h>
 #include <huaweicloud/metastudio/v1/model/UpdateLivePlatformReq.h>
@@ -491,6 +526,10 @@
 #include <string>
 #include <vector>
 
+#include <huaweicloud/metastudio/v1/model/ShowVoiceTrainingQuotasRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowVoiceTrainingQuotasResponse.h>
+#include <string>
+
 #include <huaweicloud/metastudio/v1/model/CreateRobotReq.h>
 #include <huaweicloud/metastudio/v1/model/CreateRobotRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateRobotResponse.h>
@@ -537,12 +576,19 @@
 #include <huaweicloud/metastudio/v1/model/UpdateSmartChatRoomResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/UpdateSmartLiveUserConfigReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateSmartLiveUserConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateSmartLiveUserConfigResponse.h>
+#include <string>
+
 #include <huaweicloud/metastudio/v1/model/BatchConfirmLiveCommandsReq.h>
 #include <huaweicloud/metastudio/v1/model/BatchConfirmLiveCommandsRequest.h>
 #include <huaweicloud/metastudio/v1/model/BatchConfirmLiveCommandsResponse.h>
 #include <huaweicloud/metastudio/v1/model/ControlSmartLiveReq.h>
 #include <huaweicloud/metastudio/v1/model/ExecuteSmartLiveCommandRequest.h>
 #include <huaweicloud/metastudio/v1/model/ExecuteSmartLiveCommandResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListInsertCommandsRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListInsertCommandsResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListSmartLiveJobsRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListSmartLiveJobsResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListSmartLiveRequest.h>
@@ -573,6 +619,8 @@
 #include <huaweicloud/metastudio/v1/model/DeleteSmartLiveRoomResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListSmartLiveRoomsRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListSmartLiveRoomsResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowLiveWarningInfoRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowLiveWarningInfoResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowSmartLiveRoomRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowSmartLiveRoomResponse.h>
 #include <huaweicloud/metastudio/v1/model/UpdateSmartLiveRoomRequest.h>
@@ -604,10 +652,15 @@
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CommitJobReq.h>
+#include <huaweicloud/metastudio/v1/model/CommitShortJobRequest.h>
+#include <huaweicloud/metastudio/v1/model/CommitShortJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/CommitVoiceTrainingJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/CommitVoiceTrainingJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/ConfirmTrainingSegmentRequest.h>
 #include <huaweicloud/metastudio/v1/model/ConfirmTrainingSegmentResponse.h>
+#include <huaweicloud/metastudio/v1/model/CreateShortJobReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateShortJobRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateShortJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/CreateTrainingAdvanceJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateTrainingAdvanceJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/CreateTrainingBasicJobRequest.h>
@@ -615,6 +668,8 @@
 #include <huaweicloud/metastudio/v1/model/CreateTrainingJobReq.h>
 #include <huaweicloud/metastudio/v1/model/CreateTrainingMiddleJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateTrainingMiddleJobResponse.h>
+#include <huaweicloud/metastudio/v1/model/CreateTrainingThirdPartyJobRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateTrainingThirdPartyJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/DeleteVoiceTrainingJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/DeleteVoiceTrainingJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListJobOperationLogRequest.h>
@@ -628,10 +683,14 @@
 #include <huaweicloud/metastudio/v1/model/ShowJobAuditResultResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowJobUploadingAddressRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowJobUploadingAddressResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowShortJobRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowShortJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowTenantDurationCfgRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowTenantDurationCfgResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowTrainingSegmentInfoRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowTrainingSegmentInfoResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowUserReviewAttachmentUploadingAddressRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowUserReviewAttachmentUploadingAddressResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowVoiceTrainingJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowVoiceTrainingJobResponse.h>
 #include <string>
@@ -864,6 +923,39 @@ public:
         ShowAgencyRequest &request
     );
 
+    // 创建语音录制配置
+    //
+    // 该接口用于创建语音录制配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAudioRecordConfigResponse> createAudioRecordConfig(
+        CreateAudioRecordConfigRequest &request
+    );
+    // 删除语音录制配置
+    //
+    // 该接口用于删除语音录制配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAudioRecordConfigResponse> deleteAudioRecordConfig(
+        DeleteAudioRecordConfigRequest &request
+    );
+    // 查询语音录制配置
+    //
+    // 该接口用于查询语音录制配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAudioRecordConfigResponse> showAudioRecordConfig(
+        ShowAudioRecordConfigRequest &request
+    );
+    // 修改语音录制配置
+    //
+    // 该接口用于修改语音录制配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAudioRecordConfigResponse> updateAudioRecordConfig(
+        UpdateAudioRecordConfigRequest &request
+    );
+
     // 删除导入导出任务
     //
     // 删除导入导出任务
@@ -919,6 +1011,23 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTaskResponse> showTask(
         ShowTaskRequest &request
+    );
+
+    // 查询用户数据概览
+    //
+    // 获取周期内用户的资源使用情况概览
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSummaryUsageDataResponse> showSummaryUsageData(
+        ShowSummaryUsageDataRequest &request
+    );
+    // 查询用户数据详情
+    //
+    // 获取周期内用户的资源使用情况
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowUsageDataResponse> showUsageData(
+        ShowUsageDataRequest &request
     );
 
     // 创建对话链接
@@ -1500,6 +1609,14 @@ public:
         UpdateInstructionRequest &request
     );
 
+    // 互动规则库增加规则
+    //
+    // 该接口用于互动规则库增加规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateInteractionRuleResponse> createInteractionRule(
+        CreateInteractionRuleRequest &request
+    );
     // 创建智能直播间互动规则库
     //
     // 该接口用于创建智能直播间互动规则库。
@@ -1507,6 +1624,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateInteractionRuleGroupResponse> createInteractionRuleGroup(
         CreateInteractionRuleGroupRequest &request
+    );
+    // 互动规则库删除某条规则
+    //
+    // 该接口用于互动规则库修改删除规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteInteractionRuleResponse> deleteInteractionRule(
+        DeleteInteractionRuleRequest &request
     );
     // 删除智能直播间互动规则库
     //
@@ -1524,6 +1649,30 @@ public:
     std::shared_ptr<ListInteractionRuleGroupsResponse> listInteractionRuleGroups(
         ListInteractionRuleGroupsRequest &request
     );
+    // 查询智能直播间互动规则库概要列表
+    //
+    // 该接口用于智能直播间互动规则库概要列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInteractionRuleGroupsSummaryResponse> listInteractionRuleGroupsSummary(
+        ListInteractionRuleGroupsSummaryRequest &request
+    );
+    // 查询智能直播间互动规则库详情
+    //
+    // 该接口用于查询智能直播间互动规则库详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInteractionRuleGroupResponse> showInteractionRuleGroup(
+        ShowInteractionRuleGroupRequest &request
+    );
+    // 互动规则库修改某条规则
+    //
+    // 该接口用于互动规则库修改某条规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInteractionRuleResponse> updateInteractionRule(
+        UpdateInteractionRuleRequest &request
+    );
     // 更新智能直播间互动规则库
     //
     // 该接口用于更新智能直播间互动规则库。
@@ -1540,6 +1689,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateInteractiveChatResponse> createInteractiveChat(
         CreateInteractiveChatRequest &request
+    );
+
+    // 下载加密文件
+    //
+    // 下载加密文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowEncryptFileResponse> showEncryptFile(
+        ShowEncryptFileRequest &request
     );
 
     // 创建知识库意图和问法
@@ -1785,6 +1943,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowLivePlatformResponse> showLivePlatform(
         ShowLivePlatformRequest &request
+    );
+    // 查询直播平台对接方式
+    //
+    // 该接口用于直播平台对接方式。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLivePlatformAccessTypeResponse> showLivePlatformAccessType(
+        ShowLivePlatformAccessTypeRequest &request
     );
     // 更新第三方直播平台信息
     //
@@ -2157,6 +2323,15 @@ public:
         UpdateQuestionAnswerRequest &request
     );
 
+    // 查询声音训练资源
+    //
+    // 查询声音训练资源。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowVoiceTrainingQuotasResponse> showVoiceTrainingQuotas(
+        ShowVoiceTrainingQuotasRequest &request
+    );
+
     // 创建应用
     //
     // 该接口用于创建应用。
@@ -2288,6 +2463,15 @@ public:
         UpdateSmartChatRoomRequest &request
     );
 
+    // 租户设置直播租户级配置
+    //
+    // 该接口用于租户设置直播租户级配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSmartLiveUserConfigResponse> updateSmartLiveUserConfig(
+        UpdateSmartLiveUserConfigRequest &request
+    );
+
     // 批量确认命令
     //
     // 该接口用于批量确认命令列表
@@ -2303,6 +2487,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ExecuteSmartLiveCommandResponse> executeSmartLiveCommand(
         ExecuteSmartLiveCommandRequest &request
+    );
+    // 查询数字人直播插入命令列表
+    //
+    // 该接口用于查询数字人直播插入命令列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInsertCommandsResponse> listInsertCommands(
+        ListInsertCommandsRequest &request
     );
     // 查询某个智能直播间下直播任务列表
     //
@@ -2401,6 +2593,14 @@ public:
     std::shared_ptr<ListSmartLiveRoomsResponse> listSmartLiveRooms(
         ListSmartLiveRoomsRequest &request
     );
+    // 查询直播建配置风险信息
+    //
+    // 该接口用查询直播建配置风险信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLiveWarningInfoResponse> showLiveWarningInfo(
+        ShowLiveWarningInfoRequest &request
+    );
     // 查询智能直播间剧本详情
     //
     // 该接口用于查询智能直播间剧本详情。
@@ -2489,6 +2689,14 @@ public:
         SignSpecialAgreementRequest &request
     );
 
+    // 提交短任务
+    //
+    // 提交短任务，执行改接口后，任务会正式开始执行。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CommitShortJobResponse> commitShortJob(
+        CommitShortJobRequest &request
+    );
     // 提交语音训练任务
     //
     // 提交训练任务,执行该接口后,任务会进入审核状态,审核完成后会等待训练。
@@ -2504,6 +2712,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ConfirmTrainingSegmentResponse> confirmTrainingSegment(
         ConfirmTrainingSegmentRequest &request
+    );
+    // 创建短任务
+    //
+    // 用户创建短任务（音频质量检测等），该接口会返回一个obs上传地址，用于上传语音文件。
+    // 文件上传后，调用“提交短任务”接口，启动短任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateShortJobResponse> createShortJob(
+        CreateShortJobRequest &request
     );
     // 创建高级版语音训练任务
     //
@@ -2544,6 +2761,18 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateTrainingMiddleJobResponse> createTrainingMiddleJob(
         CreateTrainingMiddleJobRequest &request
+    );
+    // 创建第三方平台语音训练任务
+    //
+    // 用户创建第三方平台语音训练任务,该接口会返回一个obs上传地址，用于上传语音文件。
+    // 仅支持zip包方式上传语音文件：
+    // * 语音文件打包成zip上传：上传的训练数据为一个zip格式压缩文件,其中包含一段wav格式的长音频文件。
+    // 
+    // &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTrainingThirdPartyJobResponse> createTrainingThirdPartyJob(
+        CreateTrainingThirdPartyJobRequest &request
     );
     // 删除语音训练任务
     //
@@ -2594,6 +2823,14 @@ public:
     std::shared_ptr<ShowJobUploadingAddressResponse> showJobUploadingAddress(
         ShowJobUploadingAddressRequest &request
     );
+    // 查询短任务详情
+    //
+    // 查询短任务详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowShortJobResponse> showShortJob(
+        ShowShortJobRequest &request
+    );
     // 查询用户配置的个性化音频时长
     //
     // 查询用户配置的个性化音频时长
@@ -2609,6 +2846,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTrainingSegmentInfoResponse> showTrainingSegmentInfo(
         ShowTrainingSegmentInfoRequest &request
+    );
+    // 用户获取附件上传url
+    //
+    // 用户获取附件上传url
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowUserReviewAttachmentUploadingAddressResponse> showUserReviewAttachmentUploadingAddress(
+        ShowUserReviewAttachmentUploadingAddressRequest &request
     );
     // 查询语音训练任务详情
     //
@@ -2910,6 +3155,7 @@ public:
     // 复制视频制作剧本
     //
     // 该接口用于复制视频制作剧本。
+    // &gt; - 复制的剧本不包含预览字幕信息。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CopyVideoScriptsResponse> copyVideoScripts(

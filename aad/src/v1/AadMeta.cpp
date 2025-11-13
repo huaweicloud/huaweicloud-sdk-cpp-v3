@@ -273,6 +273,14 @@ HttpRequestDef AadMeta::genRequestDefForShowAlarmConfig() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForShowLtsConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForShowPolicy() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -298,6 +306,18 @@ HttpRequestDef AadMeta::genRequestDefForUpdateDomain() {
 
 HttpRequestDef AadMeta::genRequestDefForUpdateInstanceIpRule() {
     HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForUpdateLtsConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

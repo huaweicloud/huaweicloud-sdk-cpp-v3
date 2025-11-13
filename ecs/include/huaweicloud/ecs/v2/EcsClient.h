@@ -17,6 +17,9 @@
 #include <huaweicloud/ecs/v2/model/AttachServerVolumeRequest.h>
 #include <huaweicloud/ecs/v2/model/AttachServerVolumeRequestBody.h>
 #include <huaweicloud/ecs/v2/model/AttachServerVolumeResponse.h>
+#include <huaweicloud/ecs/v2/model/BatchAddServerGroupMemberReq.h>
+#include <huaweicloud/ecs/v2/model/BatchAddServerGroupMemberRequest.h>
+#include <huaweicloud/ecs/v2/model/BatchAddServerGroupMemberResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchAddServerNicsRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchAddServerNicsRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchAddServerNicsResponse.h>
@@ -26,6 +29,9 @@
 #include <huaweicloud/ecs/v2/model/BatchCreateServerTagsRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchCreateServerTagsRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchCreateServerTagsResponse.h>
+#include <huaweicloud/ecs/v2/model/BatchDeleteServerGroupMemberReq.h>
+#include <huaweicloud/ecs/v2/model/BatchDeleteServerGroupMemberRequest.h>
+#include <huaweicloud/ecs/v2/model/BatchDeleteServerGroupMemberResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchDeleteServerNicsRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchDeleteServerNicsRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchDeleteServerNicsResponse.h>
@@ -331,6 +337,14 @@ public:
     std::shared_ptr<AttachServerVolumeResponse> attachServerVolume(
         AttachServerVolumeRequest &request
     );
+    // 云服务器组批量添加成员
+    //
+    // 将云服务器加入云服务器组。添加成功后，该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchAddServerGroupMemberResponse> batchAddServerGroupMember(
+        BatchAddServerGroupMemberRequest &request
+    );
     // 批量添加云服务器网卡
     //
     // 给云服务器添加一张或多张网卡。
@@ -356,6 +370,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateServerTagsResponse> batchCreateServerTags(
         BatchCreateServerTagsRequest &request
+    );
+    // 云服务器组批量删除成员
+    //
+    // 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteServerGroupMemberResponse> batchDeleteServerGroupMember(
+        BatchDeleteServerGroupMemberRequest &request
     );
     // 批量删除云服务器网卡
     //

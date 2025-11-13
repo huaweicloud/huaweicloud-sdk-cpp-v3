@@ -90,6 +90,24 @@ public:
     void setState(const std::string& value);
 
     /// <summary>
+    /// 频道模式 ADD_CDN：一站式服务，源站和CDN绑在一起（默认） ONLY_OS：独立源站服务，CDN和源站解耦
+    /// </summary>
+
+    std::string getMode() const;
+    bool modeIsSet() const;
+    void unsetmode();
+    void setMode(const std::string& value);
+
+    /// <summary>
+    /// 当mode是ONLY_OS时，该字段生效，表示频道所在Region
+    /// </summary>
+
+    std::string getRegion() const;
+    bool regionIsSet() const;
+    void unsetregion();
+    void setRegion(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -146,6 +164,10 @@ protected:
     bool nameIsSet_;
     std::string state_;
     bool stateIsSet_;
+    std::string mode_;
+    bool modeIsSet_;
+    std::string region_;
+    bool regionIsSet_;
     InputStreamInfo input_;
     bool inputIsSet_;
     std::vector<ModifyOttChannelEncoderSettings_encoder_settings> encoderSettings_;

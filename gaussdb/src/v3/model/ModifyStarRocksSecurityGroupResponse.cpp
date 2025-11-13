@@ -12,8 +12,8 @@ namespace Model {
 
 ModifyStarRocksSecurityGroupResponse::ModifyStarRocksSecurityGroupResponse()
 {
-    workflowId_ = "";
-    workflowIdIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
 }
 
 ModifyStarRocksSecurityGroupResponse::~ModifyStarRocksSecurityGroupResponse() = default;
@@ -26,8 +26,8 @@ web::json::value ModifyStarRocksSecurityGroupResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(workflowIdIsSet_) {
-        val[utility::conversions::to_string_t("workflow_id")] = ModelBase::toJson(workflowId_);
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -36,38 +36,38 @@ bool ModifyStarRocksSecurityGroupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("workflow_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("workflow_id"));
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setWorkflowId(refVal);
+            setJobId(refVal);
         }
     }
     return ok;
 }
 
 
-std::string ModifyStarRocksSecurityGroupResponse::getWorkflowId() const
+std::string ModifyStarRocksSecurityGroupResponse::getJobId() const
 {
-    return workflowId_;
+    return jobId_;
 }
 
-void ModifyStarRocksSecurityGroupResponse::setWorkflowId(const std::string& value)
+void ModifyStarRocksSecurityGroupResponse::setJobId(const std::string& value)
 {
-    workflowId_ = value;
-    workflowIdIsSet_ = true;
+    jobId_ = value;
+    jobIdIsSet_ = true;
 }
 
-bool ModifyStarRocksSecurityGroupResponse::workflowIdIsSet() const
+bool ModifyStarRocksSecurityGroupResponse::jobIdIsSet() const
 {
-    return workflowIdIsSet_;
+    return jobIdIsSet_;
 }
 
-void ModifyStarRocksSecurityGroupResponse::unsetworkflowId()
+void ModifyStarRocksSecurityGroupResponse::unsetjobId()
 {
-    workflowIdIsSet_ = false;
+    jobIdIsSet_ = false;
 }
 
 }

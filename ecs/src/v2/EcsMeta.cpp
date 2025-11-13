@@ -49,6 +49,15 @@ HttpRequestDef EcsMeta::genRequestDefForAttachServerVolume() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForBatchAddServerGroupMember() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForBatchAddServerNics() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -68,6 +77,15 @@ HttpRequestDef EcsMeta::genRequestDefForBatchAttachSharableVolumes() {
 }
 
 HttpRequestDef EcsMeta::genRequestDefForBatchCreateServerTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForBatchDeleteServerGroupMember() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

@@ -157,6 +157,15 @@ public:
     void unsettags();
     void setTags(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 功能说明：是否开启当前子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+    /// </summary>
+
+    bool isEnableNetworkAddressUsageMetrics() const;
+    bool enableNetworkAddressUsageMetricsIsSet() const;
+    void unsetenableNetworkAddressUsageMetrics();
+    void setEnableNetworkAddressUsageMetrics(bool value);
+
 
 protected:
     std::string name_;
@@ -185,6 +194,8 @@ protected:
     bool extraDhcpOptsIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
+    bool enableNetworkAddressUsageMetrics_;
+    bool enableNetworkAddressUsageMetricsIsSet_;
 
 };
 

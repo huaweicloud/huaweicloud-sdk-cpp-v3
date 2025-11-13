@@ -85,6 +85,8 @@
 #include <huaweicloud/aad/v1/model/SetCertForDomainResponse.h>
 #include <huaweicloud/aad/v1/model/ShowAlarmConfigRequest.h>
 #include <huaweicloud/aad/v1/model/ShowAlarmConfigResponse.h>
+#include <huaweicloud/aad/v1/model/ShowLtsConfigRequest.h>
+#include <huaweicloud/aad/v1/model/ShowLtsConfigResponse.h>
 #include <huaweicloud/aad/v1/model/ShowPolicyRequest.h>
 #include <huaweicloud/aad/v1/model/ShowPolicyResponse.h>
 #include <huaweicloud/aad/v1/model/TransferRuleBody.h>
@@ -94,6 +96,9 @@
 #include <huaweicloud/aad/v1/model/UpdateDomainResponse.h>
 #include <huaweicloud/aad/v1/model/UpdateInstanceIpRuleRequest.h>
 #include <huaweicloud/aad/v1/model/UpdateInstanceIpRuleResponse.h>
+#include <huaweicloud/aad/v1/model/UpdateLtsConfigRequest.h>
+#include <huaweicloud/aad/v1/model/UpdateLtsConfigRequestBody.h>
+#include <huaweicloud/aad/v1/model/UpdateLtsConfigResponse.h>
 #include <huaweicloud/aad/v1/model/UpdatePackageIpRequest.h>
 #include <huaweicloud/aad/v1/model/UpdatePackageIpRequestBody.h>
 #include <huaweicloud/aad/v1/model/UpdatePackageIpResponse.h>
@@ -389,6 +394,14 @@ public:
     std::shared_ptr<ShowAlarmConfigResponse> showAlarmConfig(
         ShowAlarmConfigRequest &request
     );
+    // 查询日志配置
+    //
+    // 查询日志配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLtsConfigResponse> showLtsConfig(
+        ShowLtsConfigRequest &request
+    );
     // 查询策略详情
     //
     // 查询策略详情
@@ -420,6 +433,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceIpRuleResponse> updateInstanceIpRule(
         UpdateInstanceIpRuleRequest &request
+    );
+    // 设置日志配置
+    //
+    // 设置日志配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLtsConfigResponse> updateLtsConfig(
+        UpdateLtsConfigRequest &request
     );
     // 更新实例绑定的全量防护对象
     //

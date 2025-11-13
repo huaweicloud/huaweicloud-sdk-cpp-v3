@@ -18,8 +18,6 @@ UpdateSqlAlarmRuleResponse::UpdateSqlAlarmRuleResponse()
     alarmRuleAliasIsSet_ = false;
     isCssSql_ = false;
     isCssSqlIsSet_ = false;
-    indexId_ = "";
-    indexIdIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
     sqlAlarmRuleId_ = "";
@@ -36,19 +34,19 @@ UpdateSqlAlarmRuleResponse::UpdateSqlAlarmRuleResponse()
     sqlAlarmSendIsSet_ = false;
     domainId_ = "";
     domainIdIsSet_ = false;
-    createTime_ = 0L;
-    createTimeIsSet_ = false;
-    updateTime_ = 0L;
-    updateTimeIsSet_ = false;
-    topicsIsSet_ = false;
-    language_ = "";
-    languageIsSet_ = false;
-    id_ = "";
-    idIsSet_ = false;
     notificationFrequency_ = 0;
     notificationFrequencyIsSet_ = false;
     alarmActionRuleName_ = "";
     alarmActionRuleNameIsSet_ = false;
+    triggerConditionCount_ = 0;
+    triggerConditionCountIsSet_ = false;
+    triggerConditionFrequency_ = 0;
+    triggerConditionFrequencyIsSet_ = false;
+    whetherRecoveryPolicy_ = false;
+    whetherRecoveryPolicyIsSet_ = false;
+    recoveryPolicy_ = 0;
+    recoveryPolicyIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 UpdateSqlAlarmRuleResponse::~UpdateSqlAlarmRuleResponse() = default;
@@ -69,9 +67,6 @@ web::json::value UpdateSqlAlarmRuleResponse::toJson() const
     }
     if(isCssSqlIsSet_) {
         val[utility::conversions::to_string_t("is_css_sql")] = ModelBase::toJson(isCssSql_);
-    }
-    if(indexIdIsSet_) {
-        val[utility::conversions::to_string_t("indexId")] = ModelBase::toJson(indexId_);
     }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("projectId")] = ModelBase::toJson(projectId_);
@@ -100,26 +95,26 @@ web::json::value UpdateSqlAlarmRuleResponse::toJson() const
     if(domainIdIsSet_) {
         val[utility::conversions::to_string_t("domain_id")] = ModelBase::toJson(domainId_);
     }
-    if(createTimeIsSet_) {
-        val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
-    }
-    if(updateTimeIsSet_) {
-        val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
-    }
-    if(topicsIsSet_) {
-        val[utility::conversions::to_string_t("topics")] = ModelBase::toJson(topics_);
-    }
-    if(languageIsSet_) {
-        val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
-    }
-    if(idIsSet_) {
-        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
-    }
     if(notificationFrequencyIsSet_) {
         val[utility::conversions::to_string_t("notification_frequency")] = ModelBase::toJson(notificationFrequency_);
     }
     if(alarmActionRuleNameIsSet_) {
         val[utility::conversions::to_string_t("alarm_action_rule_name")] = ModelBase::toJson(alarmActionRuleName_);
+    }
+    if(triggerConditionCountIsSet_) {
+        val[utility::conversions::to_string_t("trigger_condition_count")] = ModelBase::toJson(triggerConditionCount_);
+    }
+    if(triggerConditionFrequencyIsSet_) {
+        val[utility::conversions::to_string_t("trigger_condition_frequency")] = ModelBase::toJson(triggerConditionFrequency_);
+    }
+    if(whetherRecoveryPolicyIsSet_) {
+        val[utility::conversions::to_string_t("whether_recovery_policy")] = ModelBase::toJson(whetherRecoveryPolicy_);
+    }
+    if(recoveryPolicyIsSet_) {
+        val[utility::conversions::to_string_t("recovery_policy")] = ModelBase::toJson(recoveryPolicy_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -155,15 +150,6 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
             setIsCssSql(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("indexId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("indexId"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIndexId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("projectId"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("projectId"));
         if(!fieldValue.is_null())
@@ -195,7 +181,7 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_requests"));
         if(!fieldValue.is_null())
         {
-            std::vector<SqlRequest> refVal;
+            std::vector<SqlRequestResponse> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSqlRequests(refVal);
         }
@@ -245,51 +231,6 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
             setDomainId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("create_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
-        if(!fieldValue.is_null())
-        {
-            int64_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCreateTime(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("update_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_time"));
-        if(!fieldValue.is_null())
-        {
-            int64_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUpdateTime(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("topics"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("topics"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<Topics> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTopics(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("language"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("language"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLanguage(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("notification_frequency"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_frequency"));
         if(!fieldValue.is_null())
@@ -306,6 +247,51 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAlarmActionRuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("trigger_condition_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trigger_condition_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTriggerConditionCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("trigger_condition_frequency"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trigger_condition_frequency"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTriggerConditionFrequency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("whether_recovery_policy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("whether_recovery_policy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWhetherRecoveryPolicy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("recovery_policy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("recovery_policy"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRecoveryPolicy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<TagsResBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -375,27 +361,6 @@ void UpdateSqlAlarmRuleResponse::unsetisCssSql()
     isCssSqlIsSet_ = false;
 }
 
-std::string UpdateSqlAlarmRuleResponse::getIndexId() const
-{
-    return indexId_;
-}
-
-void UpdateSqlAlarmRuleResponse::setIndexId(const std::string& value)
-{
-    indexId_ = value;
-    indexIdIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleResponse::indexIdIsSet() const
-{
-    return indexIdIsSet_;
-}
-
-void UpdateSqlAlarmRuleResponse::unsetindexId()
-{
-    indexIdIsSet_ = false;
-}
-
 std::string UpdateSqlAlarmRuleResponse::getProjectId() const
 {
     return projectId_;
@@ -459,12 +424,12 @@ void UpdateSqlAlarmRuleResponse::unsetsqlAlarmRuleDescription()
     sqlAlarmRuleDescriptionIsSet_ = false;
 }
 
-std::vector<SqlRequest>& UpdateSqlAlarmRuleResponse::getSqlRequests()
+std::vector<SqlRequestResponse>& UpdateSqlAlarmRuleResponse::getSqlRequests()
 {
     return sqlRequests_;
 }
 
-void UpdateSqlAlarmRuleResponse::setSqlRequests(const std::vector<SqlRequest>& value)
+void UpdateSqlAlarmRuleResponse::setSqlRequests(const std::vector<SqlRequestResponse>& value)
 {
     sqlRequests_ = value;
     sqlRequestsIsSet_ = true;
@@ -585,111 +550,6 @@ void UpdateSqlAlarmRuleResponse::unsetdomainId()
     domainIdIsSet_ = false;
 }
 
-int64_t UpdateSqlAlarmRuleResponse::getCreateTime() const
-{
-    return createTime_;
-}
-
-void UpdateSqlAlarmRuleResponse::setCreateTime(int64_t value)
-{
-    createTime_ = value;
-    createTimeIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleResponse::createTimeIsSet() const
-{
-    return createTimeIsSet_;
-}
-
-void UpdateSqlAlarmRuleResponse::unsetcreateTime()
-{
-    createTimeIsSet_ = false;
-}
-
-int64_t UpdateSqlAlarmRuleResponse::getUpdateTime() const
-{
-    return updateTime_;
-}
-
-void UpdateSqlAlarmRuleResponse::setUpdateTime(int64_t value)
-{
-    updateTime_ = value;
-    updateTimeIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleResponse::updateTimeIsSet() const
-{
-    return updateTimeIsSet_;
-}
-
-void UpdateSqlAlarmRuleResponse::unsetupdateTime()
-{
-    updateTimeIsSet_ = false;
-}
-
-std::vector<Topics>& UpdateSqlAlarmRuleResponse::getTopics()
-{
-    return topics_;
-}
-
-void UpdateSqlAlarmRuleResponse::setTopics(const std::vector<Topics>& value)
-{
-    topics_ = value;
-    topicsIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleResponse::topicsIsSet() const
-{
-    return topicsIsSet_;
-}
-
-void UpdateSqlAlarmRuleResponse::unsettopics()
-{
-    topicsIsSet_ = false;
-}
-
-std::string UpdateSqlAlarmRuleResponse::getLanguage() const
-{
-    return language_;
-}
-
-void UpdateSqlAlarmRuleResponse::setLanguage(const std::string& value)
-{
-    language_ = value;
-    languageIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleResponse::languageIsSet() const
-{
-    return languageIsSet_;
-}
-
-void UpdateSqlAlarmRuleResponse::unsetlanguage()
-{
-    languageIsSet_ = false;
-}
-
-std::string UpdateSqlAlarmRuleResponse::getId() const
-{
-    return id_;
-}
-
-void UpdateSqlAlarmRuleResponse::setId(const std::string& value)
-{
-    id_ = value;
-    idIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleResponse::idIsSet() const
-{
-    return idIsSet_;
-}
-
-void UpdateSqlAlarmRuleResponse::unsetid()
-{
-    idIsSet_ = false;
-}
-
 int32_t UpdateSqlAlarmRuleResponse::getNotificationFrequency() const
 {
     return notificationFrequency_;
@@ -730,6 +590,111 @@ bool UpdateSqlAlarmRuleResponse::alarmActionRuleNameIsSet() const
 void UpdateSqlAlarmRuleResponse::unsetalarmActionRuleName()
 {
     alarmActionRuleNameIsSet_ = false;
+}
+
+int32_t UpdateSqlAlarmRuleResponse::getTriggerConditionCount() const
+{
+    return triggerConditionCount_;
+}
+
+void UpdateSqlAlarmRuleResponse::setTriggerConditionCount(int32_t value)
+{
+    triggerConditionCount_ = value;
+    triggerConditionCountIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::triggerConditionCountIsSet() const
+{
+    return triggerConditionCountIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsettriggerConditionCount()
+{
+    triggerConditionCountIsSet_ = false;
+}
+
+int32_t UpdateSqlAlarmRuleResponse::getTriggerConditionFrequency() const
+{
+    return triggerConditionFrequency_;
+}
+
+void UpdateSqlAlarmRuleResponse::setTriggerConditionFrequency(int32_t value)
+{
+    triggerConditionFrequency_ = value;
+    triggerConditionFrequencyIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::triggerConditionFrequencyIsSet() const
+{
+    return triggerConditionFrequencyIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsettriggerConditionFrequency()
+{
+    triggerConditionFrequencyIsSet_ = false;
+}
+
+bool UpdateSqlAlarmRuleResponse::isWhetherRecoveryPolicy() const
+{
+    return whetherRecoveryPolicy_;
+}
+
+void UpdateSqlAlarmRuleResponse::setWhetherRecoveryPolicy(bool value)
+{
+    whetherRecoveryPolicy_ = value;
+    whetherRecoveryPolicyIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::whetherRecoveryPolicyIsSet() const
+{
+    return whetherRecoveryPolicyIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetwhetherRecoveryPolicy()
+{
+    whetherRecoveryPolicyIsSet_ = false;
+}
+
+int32_t UpdateSqlAlarmRuleResponse::getRecoveryPolicy() const
+{
+    return recoveryPolicy_;
+}
+
+void UpdateSqlAlarmRuleResponse::setRecoveryPolicy(int32_t value)
+{
+    recoveryPolicy_ = value;
+    recoveryPolicyIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::recoveryPolicyIsSet() const
+{
+    return recoveryPolicyIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetrecoveryPolicy()
+{
+    recoveryPolicyIsSet_ = false;
+}
+
+std::vector<TagsResBody>& UpdateSqlAlarmRuleResponse::getTags()
+{
+    return tags_;
+}
+
+void UpdateSqlAlarmRuleResponse::setTags(const std::vector<TagsResBody>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

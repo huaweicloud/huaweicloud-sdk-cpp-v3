@@ -22,6 +22,7 @@ SubtitleFileDetail::SubtitleFileDetail()
     subtitleFileUploadUrlIsSet_ = false;
     generateTime_ = "";
     generateTimeIsSet_ = false;
+    errorInfoIsSet_ = false;
 }
 
 SubtitleFileDetail::~SubtitleFileDetail() = default;
@@ -48,6 +49,9 @@ web::json::value SubtitleFileDetail::toJson() const
     }
     if(generateTimeIsSet_) {
         val[utility::conversions::to_string_t("generate_time")] = ModelBase::toJson(generateTime_);
+    }
+    if(errorInfoIsSet_) {
+        val[utility::conversions::to_string_t("error_info")] = ModelBase::toJson(errorInfo_);
     }
 
     return val;
@@ -99,6 +103,15 @@ bool SubtitleFileDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setGenerateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("error_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_info"));
+        if(!fieldValue.is_null())
+        {
+            ErrorResponse refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setErrorInfo(refVal);
         }
     }
     return ok;
@@ -208,6 +221,27 @@ bool SubtitleFileDetail::generateTimeIsSet() const
 void SubtitleFileDetail::unsetgenerateTime()
 {
     generateTimeIsSet_ = false;
+}
+
+ErrorResponse SubtitleFileDetail::getErrorInfo() const
+{
+    return errorInfo_;
+}
+
+void SubtitleFileDetail::setErrorInfo(const ErrorResponse& value)
+{
+    errorInfo_ = value;
+    errorInfoIsSet_ = true;
+}
+
+bool SubtitleFileDetail::errorInfoIsSet() const
+{
+    return errorInfoIsSet_;
+}
+
+void SubtitleFileDetail::unseterrorInfo()
+{
+    errorInfoIsSet_ = false;
 }
 
 }

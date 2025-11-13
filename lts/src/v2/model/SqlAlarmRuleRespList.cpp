@@ -172,7 +172,7 @@ bool SqlAlarmRuleRespList::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_requests"));
         if(!fieldValue.is_null())
         {
-            std::vector<SqlRequest> refVal;
+            std::vector<SqlRequestResponse> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSqlRequests(refVal);
         }
@@ -409,12 +409,12 @@ void SqlAlarmRuleRespList::unsetsqlAlarmRuleDescription()
     sqlAlarmRuleDescriptionIsSet_ = false;
 }
 
-std::vector<SqlRequest>& SqlAlarmRuleRespList::getSqlRequests()
+std::vector<SqlRequestResponse>& SqlAlarmRuleRespList::getSqlRequests()
 {
     return sqlRequests_;
 }
 
-void SqlAlarmRuleRespList::setSqlRequests(const std::vector<SqlRequest>& value)
+void SqlAlarmRuleRespList::setSqlRequests(const std::vector<SqlRequestResponse>& value)
 {
     sqlRequests_ = value;
     sqlRequestsIsSet_ = true;

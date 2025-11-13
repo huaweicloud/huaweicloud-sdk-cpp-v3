@@ -41,6 +41,8 @@ ShowSmartChatRoomResponse::ShowSmartChatRoomResponse()
     chatVideoTypeIsSet_ = false;
     exitMuteThreshold_ = 0;
     exitMuteThresholdIsSet_ = false;
+    enableSemanticAction_ = false;
+    enableSemanticActionIsSet_ = false;
     roomId_ = "";
     roomIdIsSet_ = false;
     createTime_ = "";
@@ -119,6 +121,9 @@ web::json::value ShowSmartChatRoomResponse::toJson() const
     }
     if(exitMuteThresholdIsSet_) {
         val[utility::conversions::to_string_t("exit_mute_threshold")] = ModelBase::toJson(exitMuteThreshold_);
+    }
+    if(enableSemanticActionIsSet_) {
+        val[utility::conversions::to_string_t("enable_semantic_action")] = ModelBase::toJson(enableSemanticAction_);
     }
     if(roomIdIsSet_) {
         val[utility::conversions::to_string_t("room_id")] = ModelBase::toJson(roomId_);
@@ -308,6 +313,15 @@ bool ShowSmartChatRoomResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExitMuteThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_semantic_action"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_semantic_action"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableSemanticAction(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("room_id"))) {
@@ -753,6 +767,27 @@ bool ShowSmartChatRoomResponse::exitMuteThresholdIsSet() const
 void ShowSmartChatRoomResponse::unsetexitMuteThreshold()
 {
     exitMuteThresholdIsSet_ = false;
+}
+
+bool ShowSmartChatRoomResponse::isEnableSemanticAction() const
+{
+    return enableSemanticAction_;
+}
+
+void ShowSmartChatRoomResponse::setEnableSemanticAction(bool value)
+{
+    enableSemanticAction_ = value;
+    enableSemanticActionIsSet_ = true;
+}
+
+bool ShowSmartChatRoomResponse::enableSemanticActionIsSet() const
+{
+    return enableSemanticActionIsSet_;
+}
+
+void ShowSmartChatRoomResponse::unsetenableSemanticAction()
+{
+    enableSemanticActionIsSet_ = false;
 }
 
 std::string ShowSmartChatRoomResponse::getRoomId() const

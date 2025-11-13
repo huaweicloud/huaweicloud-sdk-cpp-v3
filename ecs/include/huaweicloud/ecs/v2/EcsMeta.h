@@ -17,9 +17,11 @@ public:
     static HttpRequestDef genRequestDefForAddServerGroupMember();
     static HttpRequestDef genRequestDefForAssociateServerVirtualIp();
     static HttpRequestDef genRequestDefForAttachServerVolume();
+    static HttpRequestDef genRequestDefForBatchAddServerGroupMember();
     static HttpRequestDef genRequestDefForBatchAddServerNics();
     static HttpRequestDef genRequestDefForBatchAttachSharableVolumes();
     static HttpRequestDef genRequestDefForBatchCreateServerTags();
+    static HttpRequestDef genRequestDefForBatchDeleteServerGroupMember();
     static HttpRequestDef genRequestDefForBatchDeleteServerNics();
     static HttpRequestDef genRequestDefForBatchDeleteServerTags();
     static HttpRequestDef genRequestDefForBatchDetachVolumes();

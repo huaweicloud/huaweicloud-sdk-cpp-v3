@@ -1372,6 +1372,12 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestConflictFiles()
 
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestEvaluations() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -1480,6 +1486,12 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestValidAssignedCa
 
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestVersions() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

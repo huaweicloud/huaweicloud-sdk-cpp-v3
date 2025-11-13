@@ -35,6 +35,8 @@ CreateSubnetOption::CreateSubnetOption()
     availabilityZoneIsSet_ = false;
     extraDhcpOptsIsSet_ = false;
     tagsIsSet_ = false;
+    enableNetworkAddressUsageMetrics_ = false;
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 CreateSubnetOption::~CreateSubnetOption() = default;
@@ -85,6 +87,9 @@ web::json::value CreateSubnetOption::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(enableNetworkAddressUsageMetricsIsSet_) {
+        val[utility::conversions::to_string_t("enable_network_address_usage_metrics")] = ModelBase::toJson(enableNetworkAddressUsageMetrics_);
     }
 
     return val;
@@ -208,6 +213,15 @@ bool CreateSubnetOption::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_network_address_usage_metrics"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_network_address_usage_metrics"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableNetworkAddressUsageMetrics(refVal);
         }
     }
     return ok;
@@ -485,6 +499,27 @@ bool CreateSubnetOption::tagsIsSet() const
 void CreateSubnetOption::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+bool CreateSubnetOption::isEnableNetworkAddressUsageMetrics() const
+{
+    return enableNetworkAddressUsageMetrics_;
+}
+
+void CreateSubnetOption::setEnableNetworkAddressUsageMetrics(bool value)
+{
+    enableNetworkAddressUsageMetrics_ = value;
+    enableNetworkAddressUsageMetricsIsSet_ = true;
+}
+
+bool CreateSubnetOption::enableNetworkAddressUsageMetricsIsSet() const
+{
+    return enableNetworkAddressUsageMetricsIsSet_;
+}
+
+void CreateSubnetOption::unsetenableNetworkAddressUsageMetrics()
+{
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 }

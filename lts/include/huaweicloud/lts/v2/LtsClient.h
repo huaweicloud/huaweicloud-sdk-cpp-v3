@@ -188,6 +188,7 @@
 #include <huaweicloud/lts/v2/model/UpdateLogStreamRequest.h>
 #include <huaweicloud/lts/v2/model/UpdateLogStreamResponse.h>
 #include <huaweicloud/lts/v2/model/UpdateNotificationTemplateRequest.h>
+#include <huaweicloud/lts/v2/model/UpdateNotificationTemplateRequestBody.h>
 #include <huaweicloud/lts/v2/model/UpdateNotificationTemplateResponse.h>
 #include <huaweicloud/lts/v2/model/UpdateStructConfigRequest.h>
 #include <huaweicloud/lts/v2/model/UpdateStructConfigResponse.h>

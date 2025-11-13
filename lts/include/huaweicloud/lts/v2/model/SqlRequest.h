@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/lts/v2/model/CustomDate.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -84,15 +85,6 @@ public:
     void setSql(const std::string& value);
 
     /// <summary>
-    /// 图表名称
-    /// </summary>
-
-    std::string getSqlRequestTitle() const;
-    bool sqlRequestTitleIsSet() const;
-    void unsetsqlRequestTitle();
-    void setSqlRequestTitle(const std::string& value);
-
-    /// <summary>
     /// 查询执行任务时最近数据的时间范围(当search_time_range_unit为minute，则最大值为60;当search_time_range_unit为hour，则最大值为24)
     /// </summary>
 
@@ -110,6 +102,24 @@ public:
     void unsetsearchTimeRangeUnit();
     void setSearchTimeRangeUnit(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CustomDate getCustomDate() const;
+    bool customDateIsSet() const;
+    void unsetcustomDate();
+    void setCustomDate(const CustomDate& value);
+
+    /// <summary>
+    /// **参数解释：** 告警查询日志的时间区间为相对时间还是整点时间。（暂不开放，后续aom上线该功能后一起开放） **约束限制：** 不涉及。 **取值范围：** - true: 相对时间。 - false: 整点时间。 **默认取值：** true
+    /// </summary>
+
+    bool isIsTimeRangeRelative() const;
+    bool isTimeRangeRelativeIsSet() const;
+    void unsetisTimeRangeRelative();
+    void setIsTimeRangeRelative(bool value);
+
 
 protected:
     std::string logStreamId_;
@@ -122,12 +132,14 @@ protected:
     bool logGroupNameIsSet_;
     std::string sql_;
     bool sqlIsSet_;
-    std::string sqlRequestTitle_;
-    bool sqlRequestTitleIsSet_;
     int32_t searchTimeRange_;
     bool searchTimeRangeIsSet_;
     std::string searchTimeRangeUnit_;
     bool searchTimeRangeUnitIsSet_;
+    CustomDate customDate_;
+    bool customDateIsSet_;
+    bool isTimeRangeRelative_;
+    bool isTimeRangeRelativeIsSet_;
 
 };
 

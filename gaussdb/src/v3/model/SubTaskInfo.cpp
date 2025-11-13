@@ -16,6 +16,8 @@ SubTaskInfo::SubTaskInfo()
     subTaskNameIsSet_ = false;
     percent_ = "";
     percentIsSet_ = false;
+    status_ = "";
+    statusIsSet_ = false;
     remainingTime_ = "";
     remainingTimeIsSet_ = false;
 }
@@ -35,6 +37,9 @@ web::json::value SubTaskInfo::toJson() const
     }
     if(percentIsSet_) {
         val[utility::conversions::to_string_t("percent")] = ModelBase::toJson(percent_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
     if(remainingTimeIsSet_) {
         val[utility::conversions::to_string_t("remaining_time")] = ModelBase::toJson(remainingTime_);
@@ -62,6 +67,15 @@ bool SubTaskInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPercent(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("remaining_time"))) {
@@ -117,6 +131,27 @@ bool SubTaskInfo::percentIsSet() const
 void SubTaskInfo::unsetpercent()
 {
     percentIsSet_ = false;
+}
+
+std::string SubTaskInfo::getStatus() const
+{
+    return status_;
+}
+
+void SubTaskInfo::setStatus(const std::string& value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool SubTaskInfo::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void SubTaskInfo::unsetstatus()
+{
+    statusIsSet_ = false;
 }
 
 std::string SubTaskInfo::getRemainingTime() const

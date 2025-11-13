@@ -26,17 +26,12 @@ KeywordsAlarmRuleRespList::KeywordsAlarmRuleRespList()
     frequencyIsSet_ = false;
     keywordsAlarmLevel_ = "";
     keywordsAlarmLevelIsSet_ = false;
-    keywordsAlarmSend_ = false;
-    keywordsAlarmSendIsSet_ = false;
     domainId_ = "";
     domainIdIsSet_ = false;
     createTime_ = 0L;
     createTimeIsSet_ = false;
     updateTime_ = 0L;
     updateTimeIsSet_ = false;
-    topicsIsSet_ = false;
-    templateName_ = "";
-    templateNameIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     triggerConditionCount_ = 0;
@@ -51,6 +46,7 @@ KeywordsAlarmRuleRespList::KeywordsAlarmRuleRespList()
     notificationFrequencyIsSet_ = false;
     alarmActionRuleName_ = "";
     alarmActionRuleNameIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 KeywordsAlarmRuleRespList::~KeywordsAlarmRuleRespList() = default;
@@ -87,9 +83,6 @@ web::json::value KeywordsAlarmRuleRespList::toJson() const
     if(keywordsAlarmLevelIsSet_) {
         val[utility::conversions::to_string_t("keywords_alarm_level")] = ModelBase::toJson(keywordsAlarmLevel_);
     }
-    if(keywordsAlarmSendIsSet_) {
-        val[utility::conversions::to_string_t("keywords_alarm_send")] = ModelBase::toJson(keywordsAlarmSend_);
-    }
     if(domainIdIsSet_) {
         val[utility::conversions::to_string_t("domain_id")] = ModelBase::toJson(domainId_);
     }
@@ -98,12 +91,6 @@ web::json::value KeywordsAlarmRuleRespList::toJson() const
     }
     if(updateTimeIsSet_) {
         val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
-    }
-    if(topicsIsSet_) {
-        val[utility::conversions::to_string_t("topics")] = ModelBase::toJson(topics_);
-    }
-    if(templateNameIsSet_) {
-        val[utility::conversions::to_string_t("template_name")] = ModelBase::toJson(templateName_);
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
@@ -125,6 +112,9 @@ web::json::value KeywordsAlarmRuleRespList::toJson() const
     }
     if(alarmActionRuleNameIsSet_) {
         val[utility::conversions::to_string_t("alarm_action_rule_name")] = ModelBase::toJson(alarmActionRuleName_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -182,7 +172,7 @@ bool KeywordsAlarmRuleRespList::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("keywords_requests"));
         if(!fieldValue.is_null())
         {
-            std::vector<KeywordsRequest> refVal;
+            std::vector<KeywordsRequestResponse> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeywordsRequests(refVal);
         }
@@ -203,15 +193,6 @@ bool KeywordsAlarmRuleRespList::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeywordsAlarmLevel(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("keywords_alarm_send"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("keywords_alarm_send"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setKeywordsAlarmSend(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("domain_id"))) {
@@ -239,24 +220,6 @@ bool KeywordsAlarmRuleRespList::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdateTime(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("topics"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("topics"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<Topics> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTopics(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("template_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("template_name"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTemplateName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
@@ -320,6 +283,15 @@ bool KeywordsAlarmRuleRespList::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAlarmActionRuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<TagsResBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -431,12 +403,12 @@ void KeywordsAlarmRuleRespList::unsetconditionExpression()
     conditionExpressionIsSet_ = false;
 }
 
-std::vector<KeywordsRequest>& KeywordsAlarmRuleRespList::getKeywordsRequests()
+std::vector<KeywordsRequestResponse>& KeywordsAlarmRuleRespList::getKeywordsRequests()
 {
     return keywordsRequests_;
 }
 
-void KeywordsAlarmRuleRespList::setKeywordsRequests(const std::vector<KeywordsRequest>& value)
+void KeywordsAlarmRuleRespList::setKeywordsRequests(const std::vector<KeywordsRequestResponse>& value)
 {
     keywordsRequests_ = value;
     keywordsRequestsIsSet_ = true;
@@ -492,27 +464,6 @@ bool KeywordsAlarmRuleRespList::keywordsAlarmLevelIsSet() const
 void KeywordsAlarmRuleRespList::unsetkeywordsAlarmLevel()
 {
     keywordsAlarmLevelIsSet_ = false;
-}
-
-bool KeywordsAlarmRuleRespList::isKeywordsAlarmSend() const
-{
-    return keywordsAlarmSend_;
-}
-
-void KeywordsAlarmRuleRespList::setKeywordsAlarmSend(bool value)
-{
-    keywordsAlarmSend_ = value;
-    keywordsAlarmSendIsSet_ = true;
-}
-
-bool KeywordsAlarmRuleRespList::keywordsAlarmSendIsSet() const
-{
-    return keywordsAlarmSendIsSet_;
-}
-
-void KeywordsAlarmRuleRespList::unsetkeywordsAlarmSend()
-{
-    keywordsAlarmSendIsSet_ = false;
 }
 
 std::string KeywordsAlarmRuleRespList::getDomainId() const
@@ -576,48 +527,6 @@ bool KeywordsAlarmRuleRespList::updateTimeIsSet() const
 void KeywordsAlarmRuleRespList::unsetupdateTime()
 {
     updateTimeIsSet_ = false;
-}
-
-std::vector<Topics>& KeywordsAlarmRuleRespList::getTopics()
-{
-    return topics_;
-}
-
-void KeywordsAlarmRuleRespList::setTopics(const std::vector<Topics>& value)
-{
-    topics_ = value;
-    topicsIsSet_ = true;
-}
-
-bool KeywordsAlarmRuleRespList::topicsIsSet() const
-{
-    return topicsIsSet_;
-}
-
-void KeywordsAlarmRuleRespList::unsettopics()
-{
-    topicsIsSet_ = false;
-}
-
-std::string KeywordsAlarmRuleRespList::getTemplateName() const
-{
-    return templateName_;
-}
-
-void KeywordsAlarmRuleRespList::setTemplateName(const std::string& value)
-{
-    templateName_ = value;
-    templateNameIsSet_ = true;
-}
-
-bool KeywordsAlarmRuleRespList::templateNameIsSet() const
-{
-    return templateNameIsSet_;
-}
-
-void KeywordsAlarmRuleRespList::unsettemplateName()
-{
-    templateNameIsSet_ = false;
 }
 
 std::string KeywordsAlarmRuleRespList::getStatus() const
@@ -765,6 +674,27 @@ bool KeywordsAlarmRuleRespList::alarmActionRuleNameIsSet() const
 void KeywordsAlarmRuleRespList::unsetalarmActionRuleName()
 {
     alarmActionRuleNameIsSet_ = false;
+}
+
+std::vector<TagsResBody>& KeywordsAlarmRuleRespList::getTags()
+{
+    return tags_;
+}
+
+void KeywordsAlarmRuleRespList::setTags(const std::vector<TagsResBody>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool KeywordsAlarmRuleRespList::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void KeywordsAlarmRuleRespList::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

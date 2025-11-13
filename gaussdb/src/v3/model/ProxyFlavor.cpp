@@ -12,6 +12,8 @@ namespace Model {
 
 ProxyFlavor::ProxyFlavor()
 {
+    id_ = "";
+    idIsSet_ = false;
     specCode_ = "";
     specCodeIsSet_ = false;
     vcpus_ = "";
@@ -35,6 +37,9 @@ web::json::value ProxyFlavor::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
     if(specCodeIsSet_) {
         val[utility::conversions::to_string_t("spec_code")] = ModelBase::toJson(specCode_);
     }
@@ -60,6 +65,15 @@ bool ProxyFlavor::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("spec_code"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spec_code"));
         if(!fieldValue.is_null())
@@ -117,6 +131,27 @@ bool ProxyFlavor::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ProxyFlavor::getId() const
+{
+    return id_;
+}
+
+void ProxyFlavor::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool ProxyFlavor::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void ProxyFlavor::unsetid()
+{
+    idIsSet_ = false;
+}
 
 std::string ProxyFlavor::getSpecCode() const
 {

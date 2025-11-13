@@ -22,6 +22,10 @@ CreateOttChannelInfoReq::CreateOttChannelInfoReq()
     nameIsSet_ = false;
     state_ = "";
     stateIsSet_ = false;
+    mode_ = "";
+    modeIsSet_ = false;
+    region_ = "";
+    regionIsSet_ = false;
     inputIsSet_ = false;
     encoderSettingsIsSet_ = false;
     recordSettingsIsSet_ = false;
@@ -53,6 +57,12 @@ web::json::value CreateOttChannelInfoReq::toJson() const
     }
     if(stateIsSet_) {
         val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
+    }
+    if(modeIsSet_) {
+        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(regionIsSet_) {
+        val[utility::conversions::to_string_t("region")] = ModelBase::toJson(region_);
     }
     if(inputIsSet_) {
         val[utility::conversions::to_string_t("input")] = ModelBase::toJson(input_);
@@ -119,6 +129,24 @@ bool CreateOttChannelInfoReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("region"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegion(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("input"))) {
@@ -273,6 +301,48 @@ bool CreateOttChannelInfoReq::stateIsSet() const
 void CreateOttChannelInfoReq::unsetstate()
 {
     stateIsSet_ = false;
+}
+
+std::string CreateOttChannelInfoReq::getMode() const
+{
+    return mode_;
+}
+
+void CreateOttChannelInfoReq::setMode(const std::string& value)
+{
+    mode_ = value;
+    modeIsSet_ = true;
+}
+
+bool CreateOttChannelInfoReq::modeIsSet() const
+{
+    return modeIsSet_;
+}
+
+void CreateOttChannelInfoReq::unsetmode()
+{
+    modeIsSet_ = false;
+}
+
+std::string CreateOttChannelInfoReq::getRegion() const
+{
+    return region_;
+}
+
+void CreateOttChannelInfoReq::setRegion(const std::string& value)
+{
+    region_ = value;
+    regionIsSet_ = true;
+}
+
+bool CreateOttChannelInfoReq::regionIsSet() const
+{
+    return regionIsSet_;
+}
+
+void CreateOttChannelInfoReq::unsetregion()
+{
+    regionIsSet_ = false;
 }
 
 InputStreamInfo CreateOttChannelInfoReq::getInput() const

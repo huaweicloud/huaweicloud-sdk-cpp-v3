@@ -211,6 +211,15 @@ public:
     void setExitMuteThreshold(int32_t value);
 
     /// <summary>
+    /// 是否优先级加载模型资产
+    /// </summary>
+
+    bool isEnableSemanticAction() const;
+    bool enableSemanticActionIsSet() const;
+    void unsetenableSemanticAction();
+    void setEnableSemanticAction(bool value);
+
+    /// <summary>
     /// 对话ID。
     /// </summary>
 
@@ -311,6 +320,8 @@ protected:
     bool chatVideoTypeIsSet_;
     int32_t exitMuteThreshold_;
     bool exitMuteThresholdIsSet_;
+    bool enableSemanticAction_;
+    bool enableSemanticActionIsSet_;
     std::string roomId_;
     bool roomIdIsSet_;
     std::string createTime_;

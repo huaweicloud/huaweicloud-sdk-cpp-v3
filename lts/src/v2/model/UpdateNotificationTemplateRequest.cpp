@@ -67,7 +67,7 @@ bool UpdateNotificationTemplateRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            CreateNotificationTemplateRequestBody refVal;
+            UpdateNotificationTemplateRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -118,12 +118,12 @@ void UpdateNotificationTemplateRequest::unsetcontentType()
     contentTypeIsSet_ = false;
 }
 
-CreateNotificationTemplateRequestBody UpdateNotificationTemplateRequest::getBody() const
+UpdateNotificationTemplateRequestBody UpdateNotificationTemplateRequest::getBody() const
 {
     return body_;
 }
 
-void UpdateNotificationTemplateRequest::setBody(const CreateNotificationTemplateRequestBody& value)
+void UpdateNotificationTemplateRequest::setBody(const UpdateNotificationTemplateRequestBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;

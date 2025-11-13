@@ -22,12 +22,13 @@ SqlRequest::SqlRequest()
     logGroupNameIsSet_ = false;
     sql_ = "";
     sqlIsSet_ = false;
-    sqlRequestTitle_ = "";
-    sqlRequestTitleIsSet_ = false;
     searchTimeRange_ = 0;
     searchTimeRangeIsSet_ = false;
     searchTimeRangeUnit_ = "";
     searchTimeRangeUnitIsSet_ = false;
+    customDateIsSet_ = false;
+    isTimeRangeRelative_ = false;
+    isTimeRangeRelativeIsSet_ = false;
 }
 
 SqlRequest::~SqlRequest() = default;
@@ -55,14 +56,17 @@ web::json::value SqlRequest::toJson() const
     if(sqlIsSet_) {
         val[utility::conversions::to_string_t("sql")] = ModelBase::toJson(sql_);
     }
-    if(sqlRequestTitleIsSet_) {
-        val[utility::conversions::to_string_t("sql_request_title")] = ModelBase::toJson(sqlRequestTitle_);
-    }
     if(searchTimeRangeIsSet_) {
         val[utility::conversions::to_string_t("search_time_range")] = ModelBase::toJson(searchTimeRange_);
     }
     if(searchTimeRangeUnitIsSet_) {
         val[utility::conversions::to_string_t("search_time_range_unit")] = ModelBase::toJson(searchTimeRangeUnit_);
+    }
+    if(customDateIsSet_) {
+        val[utility::conversions::to_string_t("custom_date")] = ModelBase::toJson(customDate_);
+    }
+    if(isTimeRangeRelativeIsSet_) {
+        val[utility::conversions::to_string_t("is_time_range_relative")] = ModelBase::toJson(isTimeRangeRelative_);
     }
 
     return val;
@@ -116,15 +120,6 @@ bool SqlRequest::fromJson(const web::json::value& val)
             setSql(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("sql_request_title"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_request_title"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSqlRequestTitle(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("search_time_range"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("search_time_range"));
         if(!fieldValue.is_null())
@@ -141,6 +136,24 @@ bool SqlRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSearchTimeRangeUnit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("custom_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("custom_date"));
+        if(!fieldValue.is_null())
+        {
+            CustomDate refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_time_range_relative"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_time_range_relative"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsTimeRangeRelative(refVal);
         }
     }
     return ok;
@@ -252,27 +265,6 @@ void SqlRequest::unsetsql()
     sqlIsSet_ = false;
 }
 
-std::string SqlRequest::getSqlRequestTitle() const
-{
-    return sqlRequestTitle_;
-}
-
-void SqlRequest::setSqlRequestTitle(const std::string& value)
-{
-    sqlRequestTitle_ = value;
-    sqlRequestTitleIsSet_ = true;
-}
-
-bool SqlRequest::sqlRequestTitleIsSet() const
-{
-    return sqlRequestTitleIsSet_;
-}
-
-void SqlRequest::unsetsqlRequestTitle()
-{
-    sqlRequestTitleIsSet_ = false;
-}
-
 int32_t SqlRequest::getSearchTimeRange() const
 {
     return searchTimeRange_;
@@ -313,6 +305,48 @@ bool SqlRequest::searchTimeRangeUnitIsSet() const
 void SqlRequest::unsetsearchTimeRangeUnit()
 {
     searchTimeRangeUnitIsSet_ = false;
+}
+
+CustomDate SqlRequest::getCustomDate() const
+{
+    return customDate_;
+}
+
+void SqlRequest::setCustomDate(const CustomDate& value)
+{
+    customDate_ = value;
+    customDateIsSet_ = true;
+}
+
+bool SqlRequest::customDateIsSet() const
+{
+    return customDateIsSet_;
+}
+
+void SqlRequest::unsetcustomDate()
+{
+    customDateIsSet_ = false;
+}
+
+bool SqlRequest::isIsTimeRangeRelative() const
+{
+    return isTimeRangeRelative_;
+}
+
+void SqlRequest::setIsTimeRangeRelative(bool value)
+{
+    isTimeRangeRelative_ = value;
+    isTimeRangeRelativeIsSet_ = true;
+}
+
+bool SqlRequest::isTimeRangeRelativeIsSet() const
+{
+    return isTimeRangeRelativeIsSet_;
+}
+
+void SqlRequest::unsetisTimeRangeRelative()
+{
+    isTimeRangeRelativeIsSet_ = false;
 }
 
 }

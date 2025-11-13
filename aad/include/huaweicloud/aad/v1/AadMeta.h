@@ -45,10 +45,12 @@ public:
     static HttpRequestDef genRequestDefForModifyDomainWebSwitch();
     static HttpRequestDef genRequestDefForSetCertForDomain();
     static HttpRequestDef genRequestDefForShowAlarmConfig();
+    static HttpRequestDef genRequestDefForShowLtsConfig();
     static HttpRequestDef genRequestDefForShowPolicy();
     static HttpRequestDef genRequestDefForUpdateAlarmConfig();
     static HttpRequestDef genRequestDefForUpdateDomain();
     static HttpRequestDef genRequestDefForUpdateInstanceIpRule();
+    static HttpRequestDef genRequestDefForUpdateLtsConfig();
     static HttpRequestDef genRequestDefForUpdatePackageIp();
     static HttpRequestDef genRequestDefForUpdatePackageName();
     static HttpRequestDef genRequestDefForUpdatePolicy();

@@ -84,6 +84,24 @@ public:
     void unsettags();
     void setTags(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 功能说明：默认情况下，VPC中的资源可以通过内网访问服务终结点。开启该项后，VPC将无法通过内网访问服务终结点，请谨慎操作。 无法访问以下云服务：容器镜像服务SWR、云日志服务LTS、企业主机安全HSS、应用运维管理AOM、应用性能管理APM、对象存储服务OBS、API网关APIG。 取值范围： off：代表禁用。 on：代表开启。
+    /// </summary>
+
+    std::string getBlockServiceEndpointStates() const;
+    bool blockServiceEndpointStatesIsSet() const;
+    void unsetblockServiceEndpointStates();
+    void setBlockServiceEndpointStates(const std::string& value);
+
+    /// <summary>
+    /// 功能说明：是否开启VPC内所有子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+    /// </summary>
+
+    bool isEnableNetworkAddressUsageMetrics() const;
+    bool enableNetworkAddressUsageMetricsIsSet() const;
+    void unsetenableNetworkAddressUsageMetrics();
+    void setEnableNetworkAddressUsageMetrics(bool value);
+
 
 protected:
     std::string cidr_;
@@ -96,6 +114,10 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
+    std::string blockServiceEndpointStates_;
+    bool blockServiceEndpointStatesIsSet_;
+    bool enableNetworkAddressUsageMetrics_;
+    bool enableNetworkAddressUsageMetricsIsSet_;
 
 };
 

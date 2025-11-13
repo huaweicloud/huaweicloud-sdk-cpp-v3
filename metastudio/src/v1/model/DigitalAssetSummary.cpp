@@ -20,6 +20,8 @@ DigitalAssetSummary::DigitalAssetSummary()
     assetStateIsSet_ = false;
     assetType_ = "";
     assetTypeIsSet_ = false;
+    blockReasonCode_ = "";
+    blockReasonCodeIsSet_ = false;
     coverUrl_ = "";
     coverUrlIsSet_ = false;
     thumbnailUrl_ = "";
@@ -47,6 +49,9 @@ web::json::value DigitalAssetSummary::toJson() const
     }
     if(assetTypeIsSet_) {
         val[utility::conversions::to_string_t("asset_type")] = ModelBase::toJson(assetType_);
+    }
+    if(blockReasonCodeIsSet_) {
+        val[utility::conversions::to_string_t("block_reason_code")] = ModelBase::toJson(blockReasonCode_);
     }
     if(coverUrlIsSet_) {
         val[utility::conversions::to_string_t("cover_url")] = ModelBase::toJson(coverUrl_);
@@ -95,6 +100,15 @@ bool DigitalAssetSummary::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssetType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("block_reason_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("block_reason_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBlockReasonCode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cover_url"))) {
@@ -201,6 +215,27 @@ bool DigitalAssetSummary::assetTypeIsSet() const
 void DigitalAssetSummary::unsetassetType()
 {
     assetTypeIsSet_ = false;
+}
+
+std::string DigitalAssetSummary::getBlockReasonCode() const
+{
+    return blockReasonCode_;
+}
+
+void DigitalAssetSummary::setBlockReasonCode(const std::string& value)
+{
+    blockReasonCode_ = value;
+    blockReasonCodeIsSet_ = true;
+}
+
+bool DigitalAssetSummary::blockReasonCodeIsSet() const
+{
+    return blockReasonCodeIsSet_;
+}
+
+void DigitalAssetSummary::unsetblockReasonCode()
+{
+    blockReasonCodeIsSet_ = false;
 }
 
 std::string DigitalAssetSummary::getCoverUrl() const

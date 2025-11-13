@@ -57,6 +57,15 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：  HTAP标准版实例模式。  **取值范围**：  - Cluster：集群模式。 - Single：单机模式。
+    /// </summary>
+
+    std::string getMode() const;
+    bool modeIsSet() const;
+    void unsetmode();
+    void setMode(const std::string& value);
+
+    /// <summary>
     /// **参数解释**： 引擎类型。  **取值范围**：  不涉及。
     /// </summary>
 
@@ -107,6 +116,8 @@ protected:
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string mode_;
+    bool modeIsSet_;
     std::string engineName_;
     bool engineNameIsSet_;
     std::string engineVersion_;

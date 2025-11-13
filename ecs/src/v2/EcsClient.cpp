@@ -201,6 +201,48 @@ std::shared_ptr<AttachServerVolumeResponse> EcsClient::attachServerVolume(Attach
 
     return localVarResult;
 }
+std::shared_ptr<BatchAddServerGroupMemberResponse> EcsClient::batchAddServerGroupMember(BatchAddServerGroupMemberRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/add_members";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_group_id"] = parameterToString(request.getServerGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForBatchAddServerGroupMember());
+
+    std::shared_ptr<BatchAddServerGroupMemberResponse> localVarResult = std::make_shared<BatchAddServerGroupMemberResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchAddServerNicsResponse> EcsClient::batchAddServerNics(BatchAddServerNicsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/nics";
@@ -315,6 +357,48 @@ std::shared_ptr<BatchCreateServerTagsResponse> EcsClient::batchCreateServerTags(
         localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForBatchCreateServerTags());
 
     std::shared_ptr<BatchCreateServerTagsResponse> localVarResult = std::make_shared<BatchCreateServerTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchDeleteServerGroupMemberResponse> EcsClient::batchDeleteServerGroupMember(BatchDeleteServerGroupMemberRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/remove_members";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_group_id"] = parameterToString(request.getServerGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForBatchDeleteServerGroupMember());
+
+    std::shared_ptr<BatchDeleteServerGroupMemberResponse> localVarResult = std::make_shared<BatchDeleteServerGroupMemberResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

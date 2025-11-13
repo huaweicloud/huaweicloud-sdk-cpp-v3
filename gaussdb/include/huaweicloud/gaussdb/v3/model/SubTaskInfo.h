@@ -57,6 +57,15 @@ public:
     void setPercent(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：  子任务状态。  **取值范围**：  - Pending：表示待执行。 - Running：表示运行中。 - Completed：表示已完成。
+    /// </summary>
+
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
+
+    /// <summary>
     /// **参数解释**：  剩余时间，单位为秒。  **取值范围**：  不涉及。
     /// </summary>
 
@@ -71,6 +80,8 @@ protected:
     bool subTaskNameIsSet_;
     std::string percent_;
     bool percentIsSet_;
+    std::string status_;
+    bool statusIsSet_;
     std::string remainingTime_;
     bool remainingTimeIsSet_;
 

@@ -56,6 +56,10 @@ Subnet::Subnet()
     createdAtIsSet_ = false;
     updatedAt_ = utility::datetime();
     updatedAtIsSet_ = false;
+    enableNetworkAddressUsageMetrics_ = false;
+    enableNetworkAddressUsageMetricsIsSet_ = false;
+    availableIpAddressCount_ = 0;
+    availableIpAddressCountIsSet_ = false;
 }
 
 Subnet::~Subnet() = default;
@@ -136,6 +140,12 @@ web::json::value Subnet::toJson() const
     }
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
+    }
+    if(enableNetworkAddressUsageMetricsIsSet_) {
+        val[utility::conversions::to_string_t("enable_network_address_usage_metrics")] = ModelBase::toJson(enableNetworkAddressUsageMetrics_);
+    }
+    if(availableIpAddressCountIsSet_) {
+        val[utility::conversions::to_string_t("available_ip_address_count")] = ModelBase::toJson(availableIpAddressCount_);
     }
 
     return val;
@@ -349,6 +359,24 @@ bool Subnet::fromJson(const web::json::value& val)
             utility::datetime refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_network_address_usage_metrics"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_network_address_usage_metrics"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableNetworkAddressUsageMetrics(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("available_ip_address_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("available_ip_address_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailableIpAddressCount(refVal);
         }
     }
     return ok;
@@ -836,6 +864,48 @@ bool Subnet::updatedAtIsSet() const
 void Subnet::unsetupdatedAt()
 {
     updatedAtIsSet_ = false;
+}
+
+bool Subnet::isEnableNetworkAddressUsageMetrics() const
+{
+    return enableNetworkAddressUsageMetrics_;
+}
+
+void Subnet::setEnableNetworkAddressUsageMetrics(bool value)
+{
+    enableNetworkAddressUsageMetrics_ = value;
+    enableNetworkAddressUsageMetricsIsSet_ = true;
+}
+
+bool Subnet::enableNetworkAddressUsageMetricsIsSet() const
+{
+    return enableNetworkAddressUsageMetricsIsSet_;
+}
+
+void Subnet::unsetenableNetworkAddressUsageMetrics()
+{
+    enableNetworkAddressUsageMetricsIsSet_ = false;
+}
+
+int32_t Subnet::getAvailableIpAddressCount() const
+{
+    return availableIpAddressCount_;
+}
+
+void Subnet::setAvailableIpAddressCount(int32_t value)
+{
+    availableIpAddressCount_ = value;
+    availableIpAddressCountIsSet_ = true;
+}
+
+bool Subnet::availableIpAddressCountIsSet() const
+{
+    return availableIpAddressCountIsSet_;
+}
+
+void Subnet::unsetavailableIpAddressCount()
+{
+    availableIpAddressCountIsSet_ = false;
 }
 
 }

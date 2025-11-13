@@ -130,6 +130,12 @@ public:
             { 
                 "https://cfw.cn-east-5.myhuaweicloud.com"
             });
+        regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
+            { 
+                "https://cfw.my-kualalumpur-1.myhuaweicloud.com",
+
+                "https://cfw.my-kualalumpur-1.myhuaweicloud.cn"
+            });
         return regions;
     }
 private:

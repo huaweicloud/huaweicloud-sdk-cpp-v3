@@ -58,7 +58,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 操作者,USER(用户),ADMIN(管理员),SYSTEM(用户)
+    /// 操作者,USER(用户),ADMIN(管理员),SYSTEM(系统用户)
     /// </summary>
 
     std::string getOperator() const;

@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/metastudio/v1/model/ErrorResponse.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -83,6 +84,15 @@ public:
     void unsetgenerateTime();
     void setGenerateTime(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ErrorResponse getErrorInfo() const;
+    bool errorInfoIsSet() const;
+    void unseterrorInfo();
+    void setErrorInfo(const ErrorResponse& value);
+
 
 protected:
     int32_t sequenceNo_;
@@ -95,6 +105,8 @@ protected:
     bool subtitleFileUploadUrlIsSet_;
     std::string generateTime_;
     bool generateTimeIsSet_;
+    ErrorResponse errorInfo_;
+    bool errorInfoIsSet_;
 
 };
 

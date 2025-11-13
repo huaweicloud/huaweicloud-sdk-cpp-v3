@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/lts/v2/model/UpdateNotificationTemplateRequestBody.h>
 #include <string>
-#include <huaweicloud/lts/v2/model/CreateNotificationTemplateRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -61,10 +61,10 @@ public:
     /// 
     /// </summary>
 
-    CreateNotificationTemplateRequestBody getBody() const;
+    UpdateNotificationTemplateRequestBody getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const CreateNotificationTemplateRequestBody& value);
+    void setBody(const UpdateNotificationTemplateRequestBody& value);
 
 
 protected:
@@ -72,7 +72,7 @@ protected:
     bool domainIdIsSet_;
     std::string contentType_;
     bool contentTypeIsSet_;
-    CreateNotificationTemplateRequestBody body_;
+    UpdateNotificationTemplateRequestBody body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

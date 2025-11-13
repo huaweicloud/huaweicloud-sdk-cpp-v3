@@ -16,6 +16,8 @@ NodeSqlFilterRulePattern::NodeSqlFilterRulePattern()
     patternIsSet_ = false;
     maxConcurrency_ = 0;
     maxConcurrencyIsSet_ = false;
+    expireAt_ = 0L;
+    expireAtIsSet_ = false;
 }
 
 NodeSqlFilterRulePattern::~NodeSqlFilterRulePattern() = default;
@@ -33,6 +35,9 @@ web::json::value NodeSqlFilterRulePattern::toJson() const
     }
     if(maxConcurrencyIsSet_) {
         val[utility::conversions::to_string_t("max_concurrency")] = ModelBase::toJson(maxConcurrency_);
+    }
+    if(expireAtIsSet_) {
+        val[utility::conversions::to_string_t("expire_at")] = ModelBase::toJson(expireAt_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool NodeSqlFilterRulePattern::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMaxConcurrency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("expire_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expire_at"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpireAt(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool NodeSqlFilterRulePattern::maxConcurrencyIsSet() const
 void NodeSqlFilterRulePattern::unsetmaxConcurrency()
 {
     maxConcurrencyIsSet_ = false;
+}
+
+int64_t NodeSqlFilterRulePattern::getExpireAt() const
+{
+    return expireAt_;
+}
+
+void NodeSqlFilterRulePattern::setExpireAt(int64_t value)
+{
+    expireAt_ = value;
+    expireAtIsSet_ = true;
+}
+
+bool NodeSqlFilterRulePattern::expireAtIsSet() const
+{
+    return expireAtIsSet_;
+}
+
+void NodeSqlFilterRulePattern::unsetexpireAt()
+{
+    expireAtIsSet_ = false;
 }
 
 }

@@ -18,10 +18,6 @@ SubTemplate::SubTemplate()
     contentIsSet_ = false;
     topic_ = "";
     topicIsSet_ = false;
-    sendType_ = "";
-    sendTypeIsSet_ = false;
-    version_ = "";
-    versionIsSet_ = false;
 }
 
 SubTemplate::~SubTemplate() = default;
@@ -42,12 +38,6 @@ web::json::value SubTemplate::toJson() const
     }
     if(topicIsSet_) {
         val[utility::conversions::to_string_t("topic")] = ModelBase::toJson(topic_);
-    }
-    if(sendTypeIsSet_) {
-        val[utility::conversions::to_string_t("sendType")] = ModelBase::toJson(sendType_);
-    }
-    if(versionIsSet_) {
-        val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
     }
 
     return val;
@@ -81,24 +71,6 @@ bool SubTemplate::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTopic(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("sendType"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sendType"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSendType(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("version"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setVersion(refVal);
         }
     }
     return ok;
@@ -166,48 +138,6 @@ bool SubTemplate::topicIsSet() const
 void SubTemplate::unsettopic()
 {
     topicIsSet_ = false;
-}
-
-std::string SubTemplate::getSendType() const
-{
-    return sendType_;
-}
-
-void SubTemplate::setSendType(const std::string& value)
-{
-    sendType_ = value;
-    sendTypeIsSet_ = true;
-}
-
-bool SubTemplate::sendTypeIsSet() const
-{
-    return sendTypeIsSet_;
-}
-
-void SubTemplate::unsetsendType()
-{
-    sendTypeIsSet_ = false;
-}
-
-std::string SubTemplate::getVersion() const
-{
-    return version_;
-}
-
-void SubTemplate::setVersion(const std::string& value)
-{
-    version_ = value;
-    versionIsSet_ = true;
-}
-
-bool SubTemplate::versionIsSet() const
-{
-    return versionIsSet_;
-}
-
-void SubTemplate::unsetversion()
-{
-    versionIsSet_ = false;
 }
 
 }

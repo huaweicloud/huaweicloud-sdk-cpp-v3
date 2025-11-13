@@ -21,6 +21,10 @@ CreateVpcOption::CreateVpcOption()
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
     tagsIsSet_ = false;
+    blockServiceEndpointStates_ = "";
+    blockServiceEndpointStatesIsSet_ = false;
+    enableNetworkAddressUsageMetrics_ = false;
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 CreateVpcOption::~CreateVpcOption() = default;
@@ -47,6 +51,12 @@ web::json::value CreateVpcOption::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(blockServiceEndpointStatesIsSet_) {
+        val[utility::conversions::to_string_t("block_service_endpoint_states")] = ModelBase::toJson(blockServiceEndpointStates_);
+    }
+    if(enableNetworkAddressUsageMetricsIsSet_) {
+        val[utility::conversions::to_string_t("enable_network_address_usage_metrics")] = ModelBase::toJson(enableNetworkAddressUsageMetrics_);
     }
 
     return val;
@@ -98,6 +108,24 @@ bool CreateVpcOption::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("block_service_endpoint_states"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("block_service_endpoint_states"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBlockServiceEndpointStates(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_network_address_usage_metrics"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_network_address_usage_metrics"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableNetworkAddressUsageMetrics(refVal);
         }
     }
     return ok;
@@ -207,6 +235,48 @@ bool CreateVpcOption::tagsIsSet() const
 void CreateVpcOption::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string CreateVpcOption::getBlockServiceEndpointStates() const
+{
+    return blockServiceEndpointStates_;
+}
+
+void CreateVpcOption::setBlockServiceEndpointStates(const std::string& value)
+{
+    blockServiceEndpointStates_ = value;
+    blockServiceEndpointStatesIsSet_ = true;
+}
+
+bool CreateVpcOption::blockServiceEndpointStatesIsSet() const
+{
+    return blockServiceEndpointStatesIsSet_;
+}
+
+void CreateVpcOption::unsetblockServiceEndpointStates()
+{
+    blockServiceEndpointStatesIsSet_ = false;
+}
+
+bool CreateVpcOption::isEnableNetworkAddressUsageMetrics() const
+{
+    return enableNetworkAddressUsageMetrics_;
+}
+
+void CreateVpcOption::setEnableNetworkAddressUsageMetrics(bool value)
+{
+    enableNetworkAddressUsageMetrics_ = value;
+    enableNetworkAddressUsageMetricsIsSet_ = true;
+}
+
+bool CreateVpcOption::enableNetworkAddressUsageMetricsIsSet() const
+{
+    return enableNetworkAddressUsageMetricsIsSet_;
+}
+
+void CreateVpcOption::unsetenableNetworkAddressUsageMetrics()
+{
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 }

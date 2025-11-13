@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/lts/v2/model/CustomDate.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -119,6 +120,24 @@ public:
     void unsetsearchTimeRangeUnit();
     void setSearchTimeRangeUnit(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CustomDate getCustomDate() const;
+    bool customDateIsSet() const;
+    void unsetcustomDate();
+    void setCustomDate(const CustomDate& value);
+
+    /// <summary>
+    /// **参数解释：** 是否是相对时间。（暂不开放，后续aom上线该功能后一起开放） **约束限制：** 不涉及。 **取值范围：** - true - false **默认取值：** true
+    /// </summary>
+
+    bool isIsTimeRangeRelative() const;
+    bool isTimeRangeRelativeIsSet() const;
+    void unsetisTimeRangeRelative();
+    void setIsTimeRangeRelative(bool value);
+
 
 protected:
     std::string logStreamId_;
@@ -139,6 +158,10 @@ protected:
     bool searchTimeRangeIsSet_;
     std::string searchTimeRangeUnit_;
     bool searchTimeRangeUnitIsSet_;
+    CustomDate customDate_;
+    bool customDateIsSet_;
+    bool isTimeRangeRelative_;
+    bool isTimeRangeRelativeIsSet_;
 
 };
 

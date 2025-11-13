@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/Topics.h>
-#include <huaweicloud/lts/v2/model/KeywordsRequest.h>
+#include <huaweicloud/lts/v2/model/TagsResBody.h>
+#include <huaweicloud/lts/v2/model/KeywordsRequestResponse.h>
 #include <string>
 #include <vector>
 #include <huaweicloud/lts/v2/model/Frequency.h>
@@ -91,10 +91,10 @@ public:
     /// 关键词详细信息
     /// </summary>
 
-    std::vector<KeywordsRequest>& getKeywordsRequests();
+    std::vector<KeywordsRequestResponse>& getKeywordsRequests();
     bool keywordsRequestsIsSet() const;
     void unsetkeywordsRequests();
-    void setKeywordsRequests(const std::vector<KeywordsRequest>& value);
+    void setKeywordsRequests(const std::vector<KeywordsRequestResponse>& value);
 
     /// <summary>
     /// 
@@ -113,15 +113,6 @@ public:
     bool keywordsAlarmLevelIsSet() const;
     void unsetkeywordsAlarmLevel();
     void setKeywordsAlarmLevel(const std::string& value);
-
-    /// <summary>
-    /// 是否发送
-    /// </summary>
-
-    bool isKeywordsAlarmSend() const;
-    bool keywordsAlarmSendIsSet() const;
-    void unsetkeywordsAlarmSend();
-    void setKeywordsAlarmSend(bool value);
 
     /// <summary>
     /// domainId
@@ -149,24 +140,6 @@ public:
     bool updateTimeIsSet() const;
     void unsetupdateTime();
     void setUpdateTime(int64_t value);
-
-    /// <summary>
-    /// 通知主题
-    /// </summary>
-
-    std::vector<Topics>& getTopics();
-    bool topicsIsSet() const;
-    void unsettopics();
-    void setTopics(const std::vector<Topics>& value);
-
-    /// <summary>
-    /// 消息模板名称
-    /// </summary>
-
-    std::string getTemplateName() const;
-    bool templateNameIsSet() const;
-    void unsettemplateName();
-    void setTemplateName(const std::string& value);
 
     /// <summary>
     /// 告警状态
@@ -231,6 +204,15 @@ public:
     void unsetalarmActionRuleName();
     void setAlarmActionRuleName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。
+    /// </summary>
+
+    std::vector<TagsResBody>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<TagsResBody>& value);
+
 
 protected:
     std::string projectId_;
@@ -243,24 +225,18 @@ protected:
     bool keywordsAlarmRuleDescriptionIsSet_;
     std::string conditionExpression_;
     bool conditionExpressionIsSet_;
-    std::vector<KeywordsRequest> keywordsRequests_;
+    std::vector<KeywordsRequestResponse> keywordsRequests_;
     bool keywordsRequestsIsSet_;
     Frequency frequency_;
     bool frequencyIsSet_;
     std::string keywordsAlarmLevel_;
     bool keywordsAlarmLevelIsSet_;
-    bool keywordsAlarmSend_;
-    bool keywordsAlarmSendIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
     int64_t createTime_;
     bool createTimeIsSet_;
     int64_t updateTime_;
     bool updateTimeIsSet_;
-    std::vector<Topics> topics_;
-    bool topicsIsSet_;
-    std::string templateName_;
-    bool templateNameIsSet_;
     std::string status_;
     bool statusIsSet_;
     int32_t triggerConditionCount_;
@@ -275,6 +251,8 @@ protected:
     bool notificationFrequencyIsSet_;
     std::string alarmActionRuleName_;
     bool alarmActionRuleNameIsSet_;
+    std::vector<TagsResBody> tags_;
+    bool tagsIsSet_;
 
 };
 

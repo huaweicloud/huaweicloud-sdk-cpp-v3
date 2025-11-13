@@ -10,10 +10,10 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/lts/v2/model/TagsResBody.h>
-#include <huaweicloud/lts/v2/model/SqlRequest.h>
 #include <huaweicloud/lts/v2/model/Topics.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/FrequencyRespBody.h>
+#include <huaweicloud/lts/v2/model/SqlRequestResponse.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -83,10 +83,10 @@ public:
     /// SQL详细信息
     /// </summary>
 
-    std::vector<SqlRequest>& getSqlRequests();
+    std::vector<SqlRequestResponse>& getSqlRequests();
     bool sqlRequestsIsSet() const;
     void unsetsqlRequests();
-    void setSqlRequests(const std::vector<SqlRequest>& value);
+    void setSqlRequests(const std::vector<SqlRequestResponse>& value);
 
     /// <summary>
     /// 
@@ -242,7 +242,7 @@ protected:
     bool sqlAlarmRuleIdIsSet_;
     std::string sqlAlarmRuleDescription_;
     bool sqlAlarmRuleDescriptionIsSet_;
-    std::vector<SqlRequest> sqlRequests_;
+    std::vector<SqlRequestResponse> sqlRequests_;
     bool sqlRequestsIsSet_;
     FrequencyRespBody frequency_;
     bool frequencyIsSet_;

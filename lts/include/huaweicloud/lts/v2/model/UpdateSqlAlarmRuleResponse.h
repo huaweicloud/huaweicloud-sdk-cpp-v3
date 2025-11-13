@@ -9,10 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/SqlRequest.h>
-#include <huaweicloud/lts/v2/model/Topics.h>
+#include <huaweicloud/lts/v2/model/TagsResBody.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/FrequencyRespBody.h>
+#include <huaweicloud/lts/v2/model/SqlRequestResponse.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -70,15 +70,6 @@ public:
     void setIsCssSql(bool value);
 
     /// <summary>
-    /// 索引id
-    /// </summary>
-
-    std::string getIndexId() const;
-    bool indexIdIsSet() const;
-    void unsetindexId();
-    void setIndexId(const std::string& value);
-
-    /// <summary>
     /// 项目id
     /// </summary>
 
@@ -109,10 +100,10 @@ public:
     /// SQL详细信息
     /// </summary>
 
-    std::vector<SqlRequest>& getSqlRequests();
+    std::vector<SqlRequestResponse>& getSqlRequests();
     bool sqlRequestsIsSet() const;
     void unsetsqlRequests();
-    void setSqlRequests(const std::vector<SqlRequest>& value);
+    void setSqlRequests(const std::vector<SqlRequestResponse>& value);
 
     /// <summary>
     /// 
@@ -160,51 +151,6 @@ public:
     void setDomainId(const std::string& value);
 
     /// <summary>
-    /// 创建时间（毫秒时间戳）
-    /// </summary>
-
-    int64_t getCreateTime() const;
-    bool createTimeIsSet() const;
-    void unsetcreateTime();
-    void setCreateTime(int64_t value);
-
-    /// <summary>
-    /// 更新时间（毫秒时间戳）
-    /// </summary>
-
-    int64_t getUpdateTime() const;
-    bool updateTimeIsSet() const;
-    void unsetupdateTime();
-    void setUpdateTime(int64_t value);
-
-    /// <summary>
-    /// 主题
-    /// </summary>
-
-    std::vector<Topics>& getTopics();
-    bool topicsIsSet() const;
-    void unsettopics();
-    void setTopics(const std::vector<Topics>& value);
-
-    /// <summary>
-    /// 邮件附加信息语言
-    /// </summary>
-
-    std::string getLanguage() const;
-    bool languageIsSet() const;
-    void unsetlanguage();
-    void setLanguage(const std::string& value);
-
-    /// <summary>
-    /// 规则ID。
-    /// </summary>
-
-    std::string getId() const;
-    bool idIsSet() const;
-    void unsetid();
-    void setId(const std::string& value);
-
-    /// <summary>
     /// 通知频率,单位(分钟)
     /// </summary>
 
@@ -222,6 +168,51 @@ public:
     void unsetalarmActionRuleName();
     void setAlarmActionRuleName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 告警触发条件：满足条件次数。满足条件次数是指设置的SQL语句。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getTriggerConditionCount() const;
+    bool triggerConditionCountIsSet() const;
+    void unsettriggerConditionCount();
+    void setTriggerConditionCount(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 触发条件：触发周期。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getTriggerConditionFrequency() const;
+    bool triggerConditionFrequencyIsSet() const;
+    void unsettriggerConditionFrequency();
+    void setTriggerConditionFrequency(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 是否打开恢复通知。 **取值范围：** - true：配置告警恢复策略。 - false：不配置告警恢复策略。
+    /// </summary>
+
+    bool isWhetherRecoveryPolicy() const;
+    bool whetherRecoveryPolicyIsSet() const;
+    void unsetwhetherRecoveryPolicy();
+    void setWhetherRecoveryPolicy(bool value);
+
+    /// <summary>
+    /// **参数解释：** 恢复策略周期。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getRecoveryPolicy() const;
+    bool recoveryPolicyIsSet() const;
+    void unsetrecoveryPolicy();
+    void setRecoveryPolicy(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。
+    /// </summary>
+
+    std::vector<TagsResBody>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<TagsResBody>& value);
+
 
 protected:
     std::string sqlAlarmRuleName_;
@@ -230,15 +221,13 @@ protected:
     bool alarmRuleAliasIsSet_;
     bool isCssSql_;
     bool isCssSqlIsSet_;
-    std::string indexId_;
-    bool indexIdIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
     std::string sqlAlarmRuleId_;
     bool sqlAlarmRuleIdIsSet_;
     std::string sqlAlarmRuleDescription_;
     bool sqlAlarmRuleDescriptionIsSet_;
-    std::vector<SqlRequest> sqlRequests_;
+    std::vector<SqlRequestResponse> sqlRequests_;
     bool sqlRequestsIsSet_;
     FrequencyRespBody frequency_;
     bool frequencyIsSet_;
@@ -250,20 +239,20 @@ protected:
     bool sqlAlarmSendIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
-    int64_t createTime_;
-    bool createTimeIsSet_;
-    int64_t updateTime_;
-    bool updateTimeIsSet_;
-    std::vector<Topics> topics_;
-    bool topicsIsSet_;
-    std::string language_;
-    bool languageIsSet_;
-    std::string id_;
-    bool idIsSet_;
     int32_t notificationFrequency_;
     bool notificationFrequencyIsSet_;
     std::string alarmActionRuleName_;
     bool alarmActionRuleNameIsSet_;
+    int32_t triggerConditionCount_;
+    bool triggerConditionCountIsSet_;
+    int32_t triggerConditionFrequency_;
+    bool triggerConditionFrequencyIsSet_;
+    bool whetherRecoveryPolicy_;
+    bool whetherRecoveryPolicyIsSet_;
+    int32_t recoveryPolicy_;
+    bool recoveryPolicyIsSet_;
+    std::vector<TagsResBody> tags_;
+    bool tagsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

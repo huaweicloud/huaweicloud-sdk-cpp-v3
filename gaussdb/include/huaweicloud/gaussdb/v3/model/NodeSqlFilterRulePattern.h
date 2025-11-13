@@ -56,12 +56,23 @@ public:
     void unsetmaxConcurrency();
     void setMaxConcurrency(int32_t value);
 
+    /// <summary>
+    /// **参数解释**：  SQL限流失效时间，标准秒级时间戳，永久生效SQL限流规则该字段为null。  **约束限制**：  不涉及。  **取值范围**：  0 - 9223372036854775807。  **默认取值**：  不涉及。
+    /// </summary>
+
+    int64_t getExpireAt() const;
+    bool expireAtIsSet() const;
+    void unsetexpireAt();
+    void setExpireAt(int64_t value);
+
 
 protected:
     std::string pattern_;
     bool patternIsSet_;
     int32_t maxConcurrency_;
     bool maxConcurrencyIsSet_;
+    int64_t expireAt_;
+    bool expireAtIsSet_;
 
 };
 

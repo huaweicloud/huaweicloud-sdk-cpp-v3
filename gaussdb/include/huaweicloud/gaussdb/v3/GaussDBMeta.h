@@ -203,6 +203,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteStarRocksDataReplication();
     static HttpRequestDef genRequestDefForDeleteStarRocksDatabaseUser();
     static HttpRequestDef genRequestDefForDeleteStarrocksInstance();
+    static HttpRequestDef genRequestDefForDownloadImportExcelTemplate();
     static HttpRequestDef genRequestDefForListClickHouseDataBase();
     static HttpRequestDef genRequestDefForListClickHouseDataBaseParameter();
     static HttpRequestDef genRequestDefForListClickHouseDataBaseReplication();
@@ -253,6 +254,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPermission();
     static HttpRequestDef genRequestDefForUpdateStarrocksParams();
     static HttpRequestDef genRequestDefForUpgradeSrKernelVersion();
+    static HttpRequestDef genRequestDefForUploadImportExcelTemplate();
 };
 
 }

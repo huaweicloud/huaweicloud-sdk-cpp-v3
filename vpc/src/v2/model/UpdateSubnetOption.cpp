@@ -26,6 +26,8 @@ UpdateSubnetOption::UpdateSubnetOption()
     secondaryDnsIsSet_ = false;
     dnsListIsSet_ = false;
     extraDhcpOptsIsSet_ = false;
+    enableNetworkAddressUsageMetrics_ = false;
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 UpdateSubnetOption::~UpdateSubnetOption() = default;
@@ -61,6 +63,9 @@ web::json::value UpdateSubnetOption::toJson() const
     }
     if(extraDhcpOptsIsSet_) {
         val[utility::conversions::to_string_t("extra_dhcp_opts")] = ModelBase::toJson(extraDhcpOpts_);
+    }
+    if(enableNetworkAddressUsageMetricsIsSet_) {
+        val[utility::conversions::to_string_t("enable_network_address_usage_metrics")] = ModelBase::toJson(enableNetworkAddressUsageMetrics_);
     }
 
     return val;
@@ -139,6 +144,15 @@ bool UpdateSubnetOption::fromJson(const web::json::value& val)
             std::vector<ExtraDhcpOption> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtraDhcpOpts(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_network_address_usage_metrics"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_network_address_usage_metrics"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableNetworkAddressUsageMetrics(refVal);
         }
     }
     return ok;
@@ -311,6 +325,27 @@ bool UpdateSubnetOption::extraDhcpOptsIsSet() const
 void UpdateSubnetOption::unsetextraDhcpOpts()
 {
     extraDhcpOptsIsSet_ = false;
+}
+
+bool UpdateSubnetOption::isEnableNetworkAddressUsageMetrics() const
+{
+    return enableNetworkAddressUsageMetrics_;
+}
+
+void UpdateSubnetOption::setEnableNetworkAddressUsageMetrics(bool value)
+{
+    enableNetworkAddressUsageMetrics_ = value;
+    enableNetworkAddressUsageMetricsIsSet_ = true;
+}
+
+bool UpdateSubnetOption::enableNetworkAddressUsageMetricsIsSet() const
+{
+    return enableNetworkAddressUsageMetricsIsSet_;
+}
+
+void UpdateSubnetOption::unsetenableNetworkAddressUsageMetrics()
+{
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 }

@@ -76,6 +76,15 @@ public:
     void unsetroutes();
     void setRoutes(const std::vector<Route>& value);
 
+    /// <summary>
+    /// 功能说明：是否开启VPC内所有子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+    /// </summary>
+
+    bool isEnableNetworkAddressUsageMetrics() const;
+    bool enableNetworkAddressUsageMetricsIsSet() const;
+    void unsetenableNetworkAddressUsageMetrics();
+    void setEnableNetworkAddressUsageMetrics(bool value);
+
 
 protected:
     std::string name_;
@@ -86,6 +95,8 @@ protected:
     bool cidrIsSet_;
     std::vector<Route> routes_;
     bool routesIsSet_;
+    bool enableNetworkAddressUsageMetrics_;
+    bool enableNetworkAddressUsageMetricsIsSet_;
 
 };
 

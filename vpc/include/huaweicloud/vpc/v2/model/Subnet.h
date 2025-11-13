@@ -248,6 +248,24 @@ public:
     void unsetupdatedAt();
     void setUpdatedAt(const utility::datetime& value);
 
+    /// <summary>
+    /// 功能说明：是否开启当前子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+    /// </summary>
+
+    bool isEnableNetworkAddressUsageMetrics() const;
+    bool enableNetworkAddressUsageMetricsIsSet() const;
+    void unsetenableNetworkAddressUsageMetrics();
+    void setEnableNetworkAddressUsageMetrics(bool value);
+
+    /// <summary>
+    /// 功能说明：子网内剩余可用的IPv4地址数量。
+    /// </summary>
+
+    int32_t getAvailableIpAddressCount() const;
+    bool availableIpAddressCountIsSet() const;
+    void unsetavailableIpAddressCount();
+    void setAvailableIpAddressCount(int32_t value);
+
 
 protected:
     std::string id_;
@@ -296,6 +314,10 @@ protected:
     bool createdAtIsSet_;
     utility::datetime updatedAt_;
     bool updatedAtIsSet_;
+    bool enableNetworkAddressUsageMetrics_;
+    bool enableNetworkAddressUsageMetricsIsSet_;
+    int32_t availableIpAddressCount_;
+    bool availableIpAddressCountIsSet_;
 
 };
 

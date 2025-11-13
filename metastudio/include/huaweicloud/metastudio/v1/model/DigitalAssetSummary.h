@@ -75,6 +75,15 @@ public:
     void setAssetType(const std::string& value);
 
     /// <summary>
+    /// 冻结原因编号。
+    /// </summary>
+
+    std::string getBlockReasonCode() const;
+    bool blockReasonCodeIsSet() const;
+    void unsetblockReasonCode();
+    void setBlockReasonCode(const std::string& value);
+
+    /// <summary>
     /// 封面图片路径。
     /// </summary>
 
@@ -102,6 +111,8 @@ protected:
     bool assetStateIsSet_;
     std::string assetType_;
     bool assetTypeIsSet_;
+    std::string blockReasonCode_;
+    bool blockReasonCodeIsSet_;
     std::string coverUrl_;
     bool coverUrlIsSet_;
     std::string thumbnailUrl_;

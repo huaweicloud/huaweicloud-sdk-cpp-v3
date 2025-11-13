@@ -4117,6 +4117,12 @@ std::shared_ptr<ListMergeRequestEvaluationsResponse> CodeArtsRepoClient::listMer
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
 
     std::string localVarHttpBody;
 
@@ -4338,6 +4344,12 @@ std::shared_ptr<ListMergeRequestVersionsResponse> CodeArtsRepoClient::listMergeR
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
 
     std::string localVarHttpBody;
 

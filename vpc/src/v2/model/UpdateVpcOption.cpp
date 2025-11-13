@@ -19,6 +19,8 @@ UpdateVpcOption::UpdateVpcOption()
     cidr_ = "";
     cidrIsSet_ = false;
     routesIsSet_ = false;
+    enableNetworkAddressUsageMetrics_ = false;
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 UpdateVpcOption::~UpdateVpcOption() = default;
@@ -42,6 +44,9 @@ web::json::value UpdateVpcOption::toJson() const
     }
     if(routesIsSet_) {
         val[utility::conversions::to_string_t("routes")] = ModelBase::toJson(routes_);
+    }
+    if(enableNetworkAddressUsageMetricsIsSet_) {
+        val[utility::conversions::to_string_t("enable_network_address_usage_metrics")] = ModelBase::toJson(enableNetworkAddressUsageMetrics_);
     }
 
     return val;
@@ -84,6 +89,15 @@ bool UpdateVpcOption::fromJson(const web::json::value& val)
             std::vector<Route> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRoutes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_network_address_usage_metrics"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_network_address_usage_metrics"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableNetworkAddressUsageMetrics(refVal);
         }
     }
     return ok;
@@ -172,6 +186,27 @@ bool UpdateVpcOption::routesIsSet() const
 void UpdateVpcOption::unsetroutes()
 {
     routesIsSet_ = false;
+}
+
+bool UpdateVpcOption::isEnableNetworkAddressUsageMetrics() const
+{
+    return enableNetworkAddressUsageMetrics_;
+}
+
+void UpdateVpcOption::setEnableNetworkAddressUsageMetrics(bool value)
+{
+    enableNetworkAddressUsageMetrics_ = value;
+    enableNetworkAddressUsageMetricsIsSet_ = true;
+}
+
+bool UpdateVpcOption::enableNetworkAddressUsageMetricsIsSet() const
+{
+    return enableNetworkAddressUsageMetricsIsSet_;
+}
+
+void UpdateVpcOption::unsetenableNetworkAddressUsageMetrics()
+{
+    enableNetworkAddressUsageMetricsIsSet_ = false;
 }
 
 }

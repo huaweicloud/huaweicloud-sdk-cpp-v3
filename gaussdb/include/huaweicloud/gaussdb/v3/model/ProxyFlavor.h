@@ -40,6 +40,15 @@ public:
     /// ProxyFlavor members
 
     /// <summary>
+    /// **参数解释**：  规格ID。  **取值范围**：  不涉及。
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
+    /// <summary>
     /// **参数解释**：  规格码。  **取值范围**：  不涉及。
     /// </summary>
 
@@ -95,6 +104,8 @@ public:
 
 
 protected:
+    std::string id_;
+    bool idIsSet_;
     std::string specCode_;
     bool specCodeIsSet_;
     std::string vcpus_;

@@ -30,6 +30,9 @@ KeywordsResBody::KeywordsResBody()
     searchTimeRangeIsSet_ = false;
     searchTimeRangeUnit_ = "";
     searchTimeRangeUnitIsSet_ = false;
+    customDateIsSet_ = false;
+    isTimeRangeRelative_ = false;
+    isTimeRangeRelativeIsSet_ = false;
 }
 
 KeywordsResBody::~KeywordsResBody() = default;
@@ -68,6 +71,12 @@ web::json::value KeywordsResBody::toJson() const
     }
     if(searchTimeRangeUnitIsSet_) {
         val[utility::conversions::to_string_t("search_time_range_unit")] = ModelBase::toJson(searchTimeRangeUnit_);
+    }
+    if(customDateIsSet_) {
+        val[utility::conversions::to_string_t("custom_date")] = ModelBase::toJson(customDate_);
+    }
+    if(isTimeRangeRelativeIsSet_) {
+        val[utility::conversions::to_string_t("is_time_range_relative")] = ModelBase::toJson(isTimeRangeRelative_);
     }
 
     return val;
@@ -155,6 +164,24 @@ bool KeywordsResBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSearchTimeRangeUnit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("custom_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("custom_date"));
+        if(!fieldValue.is_null())
+        {
+            CustomDate refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_time_range_relative"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_time_range_relative"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsTimeRangeRelative(refVal);
         }
     }
     return ok;
@@ -348,6 +375,48 @@ bool KeywordsResBody::searchTimeRangeUnitIsSet() const
 void KeywordsResBody::unsetsearchTimeRangeUnit()
 {
     searchTimeRangeUnitIsSet_ = false;
+}
+
+CustomDate KeywordsResBody::getCustomDate() const
+{
+    return customDate_;
+}
+
+void KeywordsResBody::setCustomDate(const CustomDate& value)
+{
+    customDate_ = value;
+    customDateIsSet_ = true;
+}
+
+bool KeywordsResBody::customDateIsSet() const
+{
+    return customDateIsSet_;
+}
+
+void KeywordsResBody::unsetcustomDate()
+{
+    customDateIsSet_ = false;
+}
+
+bool KeywordsResBody::isIsTimeRangeRelative() const
+{
+    return isTimeRangeRelative_;
+}
+
+void KeywordsResBody::setIsTimeRangeRelative(bool value)
+{
+    isTimeRangeRelative_ = value;
+    isTimeRangeRelativeIsSet_ = true;
+}
+
+bool KeywordsResBody::isTimeRangeRelativeIsSet() const
+{
+    return isTimeRangeRelativeIsSet_;
+}
+
+void KeywordsResBody::unsetisTimeRangeRelative()
+{
+    isTimeRangeRelativeIsSet_ = false;
 }
 
 }

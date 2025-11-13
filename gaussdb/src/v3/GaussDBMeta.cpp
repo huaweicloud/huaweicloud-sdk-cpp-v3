@@ -2731,6 +2731,19 @@ HttpRequestDef GaussDBMeta::genRequestDefForDeleteStarrocksInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForDownloadImportExcelTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TemplateType")
+                  .withJsonTag("template_type")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForListClickHouseDataBase() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
@@ -3443,6 +3456,21 @@ HttpRequestDef GaussDBMeta::genRequestDefForUpgradeSrKernelVersion() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForUploadImportExcelTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef formBodyParams;
+    reqDefBuilder.withRequestField(formBodyParams.
+                  withName("").
+                  withName("Body").
+                  withLocationType(Body_));
     return reqDefBuilder;
 }
 

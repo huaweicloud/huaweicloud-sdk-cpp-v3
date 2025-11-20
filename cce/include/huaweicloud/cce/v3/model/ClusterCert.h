@@ -39,7 +39,7 @@ public:
     /// ClusterCert members
 
     /// <summary>
-    /// 服务器地址。
+    /// **参数解释**： 上下文user信息 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getServer() const;
@@ -48,7 +48,7 @@ public:
     void setServer(const std::string& value);
 
     /// <summary>
-    /// 证书授权数据。
+    /// **参数解释**： 证书授权数据 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getCertificateAuthorityData() const;
@@ -57,7 +57,7 @@ public:
     void setCertificateAuthorityData(const std::string& value);
 
     /// <summary>
-    /// 不校验服务端证书，在 cluster 类型为 externalCluster 时，该值为 true。
+    /// **参数解释**： 不校验服务端证书 **约束限制**： 不涉及 **取值范围**： - true：跳过校验服务端证书 - false：校验服务端证书  **默认取值**： 在 cluster 类型为 externalCluster 时，该值为 true。 
     /// </summary>
 
     bool isInsecureSkipTlsVerify() const;

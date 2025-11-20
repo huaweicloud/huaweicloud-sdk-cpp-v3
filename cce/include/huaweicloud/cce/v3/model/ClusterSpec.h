@@ -60,6 +60,15 @@ public:
     void setCategory(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** 指定集群使用的委托。该委托用于生成集群中组件使用的临时访问凭证，在集群中自动创建其他相关云服务的资源时会使用该委托权限。当不传或为空时，集群将自动选择使用CCE的系统委托cce_admin_trust或cce_cluster_agency。  [ &gt; 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0556.html)](tag:hws) [ &gt; 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0556.html)](tag:hws_hk)  **约束限制：** 仅1.27及以上版本集群支持该参数  **取值范围：** 不涉及 **默认取值：** 空 
+    /// </summary>
+
+    std::string getAgencyName() const;
+    bool agencyNameIsSet() const;
+    void unsetagencyName();
+    void setAgencyName(const std::string& value);
+
+    /// <summary>
     /// **参数解释：** 集群Master节点架构 **约束限制：** 不涉及 **取值范围：** - VirtualMachine：Master节点为x86架构服务器 - [ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs)  **默认取值：** VirtualMachine[，如若VirtualMachine资源不足，取值为ARM64](tag:hws,hws_hk,hcs) 
     /// </summary>
 
@@ -312,6 +321,15 @@ public:
     void setEnableAutopilot(bool value);
 
     /// <summary>
+    /// **参数解释：** 是否启用CCE Standard/Turbo集群自动升配功能。 **约束限制：** 当前集群自动升配功能受限开放。 集群支持范围： - 版本范围：v1.27及以上 - 规格范围：cce.s2.*规格的集群支持启用自动升配  **取值范围：** - true: 启用自动升配能力 - false: 禁用自动升配能力  **默认取值：** 默认false 
+    /// </summary>
+
+    bool isEnableAutoResizing() const;
+    bool enableAutoResizingIsSet() const;
+    void unsetenableAutoResizing();
+    void setEnableAutoResizing(bool value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -324,6 +342,8 @@ public:
 protected:
     std::string category_;
     bool categoryIsSet_;
+    std::string agencyName_;
+    bool agencyNameIsSet_;
     std::string type_;
     bool typeIsSet_;
     std::string flavor_;
@@ -380,6 +400,8 @@ protected:
     bool clusterOpsIsSet_;
     bool enableAutopilot_;
     bool enableAutopilotIsSet_;
+    bool enableAutoResizing_;
+    bool enableAutoResizingIsSet_;
     EncryptionConfig encryptionConfig_;
     bool encryptionConfigIsSet_;
 

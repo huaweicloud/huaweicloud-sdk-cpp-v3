@@ -41,7 +41,7 @@ public:
     /// ReinstallServerConfig members
 
     /// <summary>
-    /// **参数解释**： 云服务器标签（资源标签）。 **约束限制**： 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。
+    /// **参数解释**： 云服务器标签（资源标签），键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 **约束限制**： 不涉及 
     /// </summary>
 
     std::vector<UserTag>& getUserTags();

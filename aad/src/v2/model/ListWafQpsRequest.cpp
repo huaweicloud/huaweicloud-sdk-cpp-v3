@@ -24,6 +24,10 @@ ListWafQpsRequest::ListWafQpsRequest()
     recentIsSet_ = false;
     overseasType_ = 0;
     overseasTypeIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
 }
 
 ListWafQpsRequest::~ListWafQpsRequest() = default;
@@ -53,6 +57,12 @@ web::json::value ListWafQpsRequest::toJson() const
     }
     if(overseasTypeIsSet_) {
         val[utility::conversions::to_string_t("overseas_type")] = ModelBase::toJson(overseasType_);
+    }
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
 
     return val;
@@ -113,6 +123,24 @@ bool ListWafQpsRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOverseasType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
         }
     }
     return ok;
@@ -243,6 +271,48 @@ bool ListWafQpsRequest::overseasTypeIsSet() const
 void ListWafQpsRequest::unsetoverseasType()
 {
     overseasTypeIsSet_ = false;
+}
+
+int32_t ListWafQpsRequest::getLimit() const
+{
+    return limit_;
+}
+
+void ListWafQpsRequest::setLimit(int32_t value)
+{
+    limit_ = value;
+    limitIsSet_ = true;
+}
+
+bool ListWafQpsRequest::limitIsSet() const
+{
+    return limitIsSet_;
+}
+
+void ListWafQpsRequest::unsetlimit()
+{
+    limitIsSet_ = false;
+}
+
+int32_t ListWafQpsRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ListWafQpsRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ListWafQpsRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ListWafQpsRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
 }
 
 }

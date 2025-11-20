@@ -365,6 +365,28 @@ HttpRequestDef LiveMeta::genRequestDefForListTranscodeData() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForListTranscodeTaskDetail() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StreamNameList")
+                  .withJsonTag("stream_name_list")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForListUsersOfStream() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("PlayDomain")

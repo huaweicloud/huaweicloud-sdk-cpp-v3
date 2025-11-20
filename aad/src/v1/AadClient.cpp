@@ -454,7 +454,7 @@ std::shared_ptr<BatchDeleteInstanceIpRuleResponse> AadClient::batchDeleteInstanc
 
     return localVarResult;
 }
-std::shared_ptr<CreateAadDomainResponse> AadClient::createAadDomain(CreateAadDomainRequest &request)
+std::shared_ptr<CreateDomainResponse> AadClient::createDomain(CreateDomainRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/aad/external/domains";
 
@@ -480,9 +480,9 @@ std::shared_ptr<CreateAadDomainResponse> AadClient::createAadDomain(CreateAadDom
     }
 
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForCreateAadDomain());
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForCreateDomain());
 
-    std::shared_ptr<CreateAadDomainResponse> localVarResult = std::make_shared<CreateAadDomainResponse>();
+    std::shared_ptr<CreateDomainResponse> localVarResult = std::make_shared<CreateDomainResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -778,6 +778,12 @@ std::shared_ptr<ListDomainResponse> AadClient::listDomain(ListDomainRequest &req
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
 
     std::string localVarHttpBody;
 
@@ -868,6 +874,12 @@ std::shared_ptr<ListInstanceIpRuleResponse> AadClient::listInstanceIpRule(ListIn
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
 
     std::string localVarHttpBody;
 

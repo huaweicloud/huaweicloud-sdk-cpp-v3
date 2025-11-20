@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/metastudio/v1/model/VoiceProperties.h>
 #include <huaweicloud/metastudio/v1/model/SupportedServiceEnum.h>
 #include <string>
 #include <huaweicloud/metastudio/v1/model/ActionBasicSampleInfo.h>
@@ -114,6 +115,15 @@ public:
     void setTags(const std::vector<std::string>& value);
 
     /// <summary>
+    /// 是否极速版flexus
+    /// </summary>
+
+    bool isIsFastFlexus() const;
+    bool isFastFlexusIsSet() const;
+    void unsetisFastFlexus();
+    void setIsFastFlexus(bool value);
+
+    /// <summary>
     /// 动作视频样例可修改信息。
     /// </summary>
 
@@ -121,6 +131,15 @@ public:
     bool samplesBasicInfoIsSet() const;
     void unsetsamplesBasicInfo();
     void setSamplesBasicInfo(const std::vector<ActionBasicSampleInfo>& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VoiceProperties getVoiceProperties() const;
+    bool voicePropertiesIsSet() const;
+    void unsetvoiceProperties();
+    void setVoiceProperties(const VoiceProperties& value);
 
     /// <summary>
     /// 该任务所生成的模型支持的业务类型，可多选。  Flexus版数字人仅支持选择“VIDEO_2D”。
@@ -158,8 +177,12 @@ protected:
     bool batchNameIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
+    bool isFastFlexus_;
+    bool isFastFlexusIsSet_;
     std::vector<ActionBasicSampleInfo> samplesBasicInfo_;
     bool samplesBasicInfoIsSet_;
+    VoiceProperties voiceProperties_;
+    bool voicePropertiesIsSet_;
     std::vector<SupportedServiceEnum> supportedService_;
     bool supportedServiceIsSet_;
     std::string audioSourceType_;

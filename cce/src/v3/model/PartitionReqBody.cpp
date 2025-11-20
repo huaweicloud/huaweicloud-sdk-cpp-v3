@@ -80,7 +80,7 @@ bool PartitionReqBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spec"));
         if(!fieldValue.is_null())
         {
-            Partition_spec refVal;
+            PartitionReqBody_spec refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSpec(refVal);
         }
@@ -152,12 +152,12 @@ void PartitionReqBody::unsetmetadata()
     metadataIsSet_ = false;
 }
 
-Partition_spec PartitionReqBody::getSpec() const
+PartitionReqBody_spec PartitionReqBody::getSpec() const
 {
     return spec_;
 }
 
-void PartitionReqBody::setSpec(const Partition_spec& value)
+void PartitionReqBody::setSpec(const PartitionReqBody_spec& value)
 {
     spec_ = value;
     specIsSet_ = true;

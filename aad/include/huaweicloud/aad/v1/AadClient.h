@@ -38,8 +38,8 @@
 #include <huaweicloud/aad/v1/model/BlackWhiteIpRequestBody.h>
 #include <huaweicloud/aad/v1/model/CadDomainSwitchRequest.h>
 #include <huaweicloud/aad/v1/model/CertificateBody.h>
-#include <huaweicloud/aad/v1/model/CreateAadDomainRequest.h>
-#include <huaweicloud/aad/v1/model/CreateAadDomainResponse.h>
+#include <huaweicloud/aad/v1/model/CreateDomainRequest.h>
+#include <huaweicloud/aad/v1/model/CreateDomainResponse.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyRequest.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyRequestBody.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyResponse.h>
@@ -231,8 +231,8 @@ public:
     // 创建防护域名
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateAadDomainResponse> createAadDomain(
-        CreateAadDomainRequest &request
+    std::shared_ptr<CreateDomainResponse> createDomain(
+        CreateDomainRequest &request
     );
     // 创建策略
     //

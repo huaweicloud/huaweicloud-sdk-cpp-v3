@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 带宽信息
+/// **参数解释**： 带宽信息 **约束限制**： 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  EipSpec_bandwidth
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// EipSpec_bandwidth members
 
     /// <summary>
-    /// 带宽大小
+    /// **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     int32_t getSize() const;
@@ -48,7 +48,7 @@ public:
     void setSize(int32_t value);
 
     /// <summary>
-    /// 带宽类型
+    /// **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getSharetype() const;

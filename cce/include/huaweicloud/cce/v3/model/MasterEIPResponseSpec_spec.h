@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 待绑定的弹性IP配置属性
+/// **参数解释**： 待绑定的弹性IP配置属性 **约束限制**： 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  MasterEIPResponseSpec_spec
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// MasterEIPResponseSpec_spec members
 
     /// <summary>
-    /// 弹性网卡ID
+    /// **参数解释**： 弹性网卡ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getId() const;
@@ -58,7 +58,7 @@ public:
     void setEip(const EipSpec& value);
 
     /// <summary>
-    /// 是否动态创建
+    /// **参数解释**： 是否动态创建 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     bool isIsDynamic() const;

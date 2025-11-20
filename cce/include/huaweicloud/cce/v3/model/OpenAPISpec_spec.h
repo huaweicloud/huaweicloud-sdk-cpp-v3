@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 集群访问的地址
+/// **参数解释**： 集群访问的地址 **约束限制**： 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  OpenAPISpec_spec
     : public ModelBase
@@ -48,7 +48,7 @@ public:
     void setEip(const EipSpec& value);
 
     /// <summary>
-    /// 是否动态创建
+    /// **参数解释**： 是否动态创建 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     bool isIsDynamic() const;

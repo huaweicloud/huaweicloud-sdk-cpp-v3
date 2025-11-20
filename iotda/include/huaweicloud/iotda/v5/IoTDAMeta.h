@@ -94,6 +94,11 @@ public:
     static HttpRequestDef genRequestDefForDeleteDeviceShadow();
     static HttpRequestDef genRequestDefForShowDeviceShadow();
     static HttpRequestDef genRequestDefForUpdateDeviceShadowDesiredData();
+    static HttpRequestDef genRequestDefForCreateDomainConfiguration();
+    static HttpRequestDef genRequestDefForDeleteDomainConfiguration();
+    static HttpRequestDef genRequestDefForListDomainConfigurations();
+    static HttpRequestDef genRequestDefForShowDomainConfiguration();
+    static HttpRequestDef genRequestDefForUpdateDomainConfiguration();
     static HttpRequestDef genRequestDefForCreateRoutingFlowControlPolicy();
     static HttpRequestDef genRequestDefForDeleteRoutingFlowControlPolicy();
     static HttpRequestDef genRequestDefForListRoutingFlowControlPolicy();
@@ -162,6 +167,10 @@ public:
     static HttpRequestDef genRequestDefForListSecurityProfiles();
     static HttpRequestDef genRequestDefForShowSecurityProfile();
     static HttpRequestDef genRequestDefForUpdateSecurityProfile();
+    static HttpRequestDef genRequestDefForCreateServerCertificate();
+    static HttpRequestDef genRequestDefForDeleteServerCertificate();
+    static HttpRequestDef genRequestDefForListServerCertificate();
+    static HttpRequestDef genRequestDefForShowServerCertificate();
     static HttpRequestDef genRequestDefForListResourcesByTags();
     static HttpRequestDef genRequestDefForTagDevice();
     static HttpRequestDef genRequestDefForUntagDevice();

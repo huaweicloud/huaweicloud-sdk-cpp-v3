@@ -18,10 +18,13 @@ public:
     static HttpRequestDef genRequestDefForDeleteDomain();
     static HttpRequestDef genRequestDefForDeleteWafWhiteIpRule();
     static HttpRequestDef genRequestDefForListDDoSAttackEvent();
+    static HttpRequestDef genRequestDefForListDDoSBlackHoleEvent();
     static HttpRequestDef genRequestDefForListDDoSConnectionNumber();
     static HttpRequestDef genRequestDefForListDDoSFlow();
     static HttpRequestDef genRequestDefForListFrequencyControlRule();
+    static HttpRequestDef genRequestDefForListGlobalConfig();
     static HttpRequestDef genRequestDefForListInstanceDomains();
+    static HttpRequestDef genRequestDefForListSourceIp();
     static HttpRequestDef genRequestDefForListWafAttackEvent();
     static HttpRequestDef genRequestDefForListWafBandwidth();
     static HttpRequestDef genRequestDefForListWafCustomRule();
@@ -29,10 +32,17 @@ public:
     static HttpRequestDef genRequestDefForListWafQps();
     static HttpRequestDef genRequestDefForListWafWhiteIpRule();
     static HttpRequestDef genRequestDefForListWhiteBlackIpRule();
+    static HttpRequestDef genRequestDefForShowAlarmConfig();
+    static HttpRequestDef genRequestDefForShowDDoSPeak();
     static HttpRequestDef genRequestDefForShowDomainCertificate();
+    static HttpRequestDef genRequestDefForShowDomainDetail();
+    static HttpRequestDef genRequestDefForShowDomainNameConfig();
     static HttpRequestDef genRequestDefForShowFlowBlock();
+    static HttpRequestDef genRequestDefForShowInstanceByInstanceId();
     static HttpRequestDef genRequestDefForShowWafPolicy();
     static HttpRequestDef genRequestDefForShowWafQps();
+    static HttpRequestDef genRequestDefForUpdateDomainConfig();
+    static HttpRequestDef genRequestDefForUpdateForwardRule();
     static HttpRequestDef genRequestDefForUpgradeInstanceSpec();
 };
 

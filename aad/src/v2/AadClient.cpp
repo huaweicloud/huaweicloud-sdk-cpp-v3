@@ -239,6 +239,44 @@ std::shared_ptr<ListDDoSAttackEventResponse> AadClient::listDDoSAttackEvent(List
 
     return localVarResult;
 }
+std::shared_ptr<ListDDoSBlackHoleEventResponse> AadClient::listDDoSBlackHoleEvent(ListDDoSBlackHoleEventRequest &request)
+{
+    std::string localVarPath = "/v2/aad/instances/ddos-info/attack/blackhole-event";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.ipIsSet()) {
+        localVarQueryParams["ip"] = parameterToString(request.getIp());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForListDDoSBlackHoleEvent());
+
+    std::shared_ptr<ListDDoSBlackHoleEventResponse> localVarResult = std::make_shared<ListDDoSBlackHoleEventResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListDDoSConnectionNumberResponse> AadClient::listDDoSConnectionNumber(ListDDoSConnectionNumberRequest &request)
 {
     std::string localVarPath = "/v2/aad/instances/{instance_id}/ddos-info/flow/connection-numbers";
@@ -264,6 +302,12 @@ std::shared_ptr<ListDDoSConnectionNumberResponse> AadClient::listDDoSConnectionN
     }
     if (request.ipIsSet()) {
         localVarQueryParams["ip"] = parameterToString(request.getIp());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
 
     std::string localVarHttpBody;
@@ -352,6 +396,35 @@ std::shared_ptr<ListFrequencyControlRuleResponse> AadClient::listFrequencyContro
 
     return localVarResult;
 }
+std::shared_ptr<ListGlobalConfigResponse> AadClient::listGlobalConfig(ListGlobalConfigRequest &request)
+{
+    std::string localVarPath = "/v2/aad/domains/global-config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForListGlobalConfig());
+
+    std::shared_ptr<ListGlobalConfigResponse> localVarResult = std::make_shared<ListGlobalConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListInstanceDomainsResponse> AadClient::listInstanceDomains(ListInstanceDomainsRequest &request)
 {
     std::string localVarPath = "/v2/aad/instances/{instance_id}/domains";
@@ -369,6 +442,12 @@ std::shared_ptr<ListInstanceDomainsResponse> AadClient::listInstanceDomains(List
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
 
     std::string localVarHttpBody;
 
@@ -376,6 +455,35 @@ std::shared_ptr<ListInstanceDomainsResponse> AadClient::listInstanceDomains(List
         localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForListInstanceDomains());
 
     std::shared_ptr<ListInstanceDomainsResponse> localVarResult = std::make_shared<ListInstanceDomainsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListSourceIpResponse> AadClient::listSourceIp(ListSourceIpRequest &request)
+{
+    std::string localVarPath = "/v2/aad/source-ip";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForListSourceIp());
+
+    std::shared_ptr<ListSourceIpResponse> localVarResult = std::make_shared<ListSourceIpResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -586,6 +694,12 @@ std::shared_ptr<ListWafQpsResponse> AadClient::listWafQps(ListWafQpsRequest &req
     if (request.overseasTypeIsSet()) {
         localVarQueryParams["overseas_type"] = parameterToString(request.getOverseasType());
     }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
 
     std::string localVarHttpBody;
 
@@ -669,6 +783,74 @@ std::shared_ptr<ListWhiteBlackIpRuleResponse> AadClient::listWhiteBlackIpRule(Li
 
     return localVarResult;
 }
+std::shared_ptr<ShowAlarmConfigResponse> AadClient::showAlarmConfig(ShowAlarmConfigRequest &request)
+{
+    std::string localVarPath = "/v2/aad/alarm";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForShowAlarmConfig());
+
+    std::shared_ptr<ShowAlarmConfigResponse> localVarResult = std::make_shared<ShowAlarmConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDDoSPeakResponse> AadClient::showDDoSPeak(ShowDDoSPeakRequest &request)
+{
+    std::string localVarPath = "/v2/aad/instances/{instance_id}/ddos-info/flow/peak";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.ipIsSet()) {
+        localVarQueryParams["ip"] = parameterToString(request.getIp());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForShowDDoSPeak());
+
+    std::shared_ptr<ShowDDoSPeakResponse> localVarResult = std::make_shared<ShowDDoSPeakResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowDomainCertificateResponse> AadClient::showDomainCertificate(ShowDomainCertificateRequest &request)
 {
     std::string localVarPath = "/v2/aad/domains/{domain_id}/certificate";
@@ -693,6 +875,69 @@ std::shared_ptr<ShowDomainCertificateResponse> AadClient::showDomainCertificate(
         localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForShowDomainCertificate());
 
     std::shared_ptr<ShowDomainCertificateResponse> localVarResult = std::make_shared<ShowDomainCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDomainDetailResponse> AadClient::showDomainDetail(ShowDomainDetailRequest &request)
+{
+    std::string localVarPath = "/v2/aad/domains/{domain_id}/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForShowDomainDetail());
+
+    std::shared_ptr<ShowDomainDetailResponse> localVarResult = std::make_shared<ShowDomainDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDomainNameConfigResponse> AadClient::showDomainNameConfig(ShowDomainNameConfigRequest &request)
+{
+    std::string localVarPath = "/v2/aad/domains/{domain_id}/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForShowDomainNameConfig());
+
+    std::shared_ptr<ShowDomainNameConfigResponse> localVarResult = std::make_shared<ShowDomainNameConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -725,6 +970,36 @@ std::shared_ptr<ShowFlowBlockResponse> AadClient::showFlowBlock(ShowFlowBlockReq
         localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForShowFlowBlock());
 
     std::shared_ptr<ShowFlowBlockResponse> localVarResult = std::make_shared<ShowFlowBlockResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowInstanceByInstanceIdResponse> AadClient::showInstanceByInstanceId(ShowInstanceByInstanceIdRequest &request)
+{
+    std::string localVarPath = "/v2/aad/instances/{instance_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForShowInstanceByInstanceId());
+
+    std::shared_ptr<ShowInstanceByInstanceIdResponse> localVarResult = std::make_shared<ShowInstanceByInstanceIdResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -807,6 +1082,92 @@ std::shared_ptr<ShowWafQpsResponse> AadClient::showWafQps(ShowWafQpsRequest &req
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateDomainConfigResponse> AadClient::updateDomainConfig(UpdateDomainConfigRequest &request)
+{
+    std::string localVarPath = "/v2/aad/domains/{domain_id}/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForUpdateDomainConfig());
+
+    std::shared_ptr<UpdateDomainConfigResponse> localVarResult = std::make_shared<UpdateDomainConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateForwardRuleResponse> AadClient::updateForwardRule(UpdateForwardRuleRequest &request)
+{
+    std::string localVarPath = "/v2/aad/forward-rules/{instance_id}/{ip}/{rule_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["rule_id"] = parameterToString(request.getRuleId());
+    localVarPathParams["ip"] = parameterToString(request.getIp());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForUpdateForwardRule());
+
+    std::shared_ptr<UpdateForwardRuleResponse> localVarResult = std::make_shared<UpdateForwardRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

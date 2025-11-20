@@ -16,6 +16,10 @@ NodeMetadata_ownerReference::NodeMetadata_ownerReference()
     nodepoolNameIsSet_ = false;
     nodepoolID_ = "";
     nodepoolIDIsSet_ = false;
+    hyperNodeName_ = "";
+    hyperNodeNameIsSet_ = false;
+    hyperNodeID_ = "";
+    hyperNodeIDIsSet_ = false;
 }
 
 NodeMetadata_ownerReference::~NodeMetadata_ownerReference() = default;
@@ -33,6 +37,12 @@ web::json::value NodeMetadata_ownerReference::toJson() const
     }
     if(nodepoolIDIsSet_) {
         val[utility::conversions::to_string_t("nodepoolID")] = ModelBase::toJson(nodepoolID_);
+    }
+    if(hyperNodeNameIsSet_) {
+        val[utility::conversions::to_string_t("hyperNodeName")] = ModelBase::toJson(hyperNodeName_);
+    }
+    if(hyperNodeIDIsSet_) {
+        val[utility::conversions::to_string_t("hyperNodeID")] = ModelBase::toJson(hyperNodeID_);
     }
 
     return val;
@@ -57,6 +67,24 @@ bool NodeMetadata_ownerReference::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodepoolID(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hyperNodeName"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hyperNodeName"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHyperNodeName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hyperNodeID"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hyperNodeID"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHyperNodeID(refVal);
         }
     }
     return ok;
@@ -103,6 +131,48 @@ bool NodeMetadata_ownerReference::nodepoolIDIsSet() const
 void NodeMetadata_ownerReference::unsetnodepoolID()
 {
     nodepoolIDIsSet_ = false;
+}
+
+std::string NodeMetadata_ownerReference::getHyperNodeName() const
+{
+    return hyperNodeName_;
+}
+
+void NodeMetadata_ownerReference::setHyperNodeName(const std::string& value)
+{
+    hyperNodeName_ = value;
+    hyperNodeNameIsSet_ = true;
+}
+
+bool NodeMetadata_ownerReference::hyperNodeNameIsSet() const
+{
+    return hyperNodeNameIsSet_;
+}
+
+void NodeMetadata_ownerReference::unsethyperNodeName()
+{
+    hyperNodeNameIsSet_ = false;
+}
+
+std::string NodeMetadata_ownerReference::getHyperNodeID() const
+{
+    return hyperNodeID_;
+}
+
+void NodeMetadata_ownerReference::setHyperNodeID(const std::string& value)
+{
+    hyperNodeID_ = value;
+    hyperNodeIDIsSet_ = true;
+}
+
+bool NodeMetadata_ownerReference::hyperNodeIDIsSet() const
+{
+    return hyperNodeIDIsSet_;
+}
+
+void NodeMetadata_ownerReference::unsethyperNodeID()
+{
+    hyperNodeIDIsSet_ = false;
 }
 
 }

@@ -40,7 +40,7 @@ public:
     /// MasterEIPRequestSpec members
 
     /// <summary>
-    /// 绑定或解绑动作，必选参数。 - 绑定：固定值为{\&quot;action\&quot;:\&quot;bind\&quot;} - 解绑：固定值为{\&quot;action\&quot;:\&quot;unbind\&quot;} 
+    /// **参数解释**： 绑定或解绑动作 **约束限制**： 不涉及 **取值范围**： - bind：绑定 - unbind：解绑 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getAction() const;
@@ -58,7 +58,7 @@ public:
     void setSpec(const MasterEIPRequestSpec_spec& value);
 
     /// <summary>
-    /// 带宽(字段已失效，暂不推荐使用)
+    /// **参数解释**： 带宽(字段已失效，暂不推荐使用) **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getBandwidth() const;
@@ -67,7 +67,7 @@ public:
     void setBandwidth(const std::string& value);
 
     /// <summary>
-    /// 弹性网卡IP(字段已失效，暂不推荐使用)
+    /// **参数解释**： 弹性网卡IP(字段已失效，暂不推荐使用) **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getElasticIp() const;

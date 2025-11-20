@@ -30,6 +30,8 @@
 #include <huaweicloud/live/v2/model/ListTranscodeConcurrencyNumResponse.h>
 #include <huaweicloud/live/v2/model/ListTranscodeDataRequest.h>
 #include <huaweicloud/live/v2/model/ListTranscodeDataResponse.h>
+#include <huaweicloud/live/v2/model/ListTranscodeTaskDetailRequest.h>
+#include <huaweicloud/live/v2/model/ListTranscodeTaskDetailResponse.h>
 #include <huaweicloud/live/v2/model/ListUsersOfStreamRequest.h>
 #include <huaweicloud/live/v2/model/ListUsersOfStreamResponse.h>
 #include <huaweicloud/live/v2/model/ShowStreamCountRequest.h>
@@ -208,6 +210,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTranscodeDataResponse> listTranscodeData(
         ListTranscodeDataRequest &request
+    );
+    // 查询转码明细
+    //
+    // 查询流粒度转码明细，包含流名、模版、格式、时长。
+    // 最大查询跨度1天，最大查询周期14天。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTranscodeTaskDetailResponse> listTranscodeTaskDetail(
+        ListTranscodeTaskDetailRequest &request
     );
     // 查询观众趋势接口
     //

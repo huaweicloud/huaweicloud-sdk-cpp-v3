@@ -11,6 +11,7 @@
 
 #include <huaweicloud/metastudio/v1/model/MultipartUploadInfo.h>
 #include <string>
+#include <huaweicloud/metastudio/v1/model/ErrorResponse.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -80,6 +81,15 @@ public:
     /// 
     /// </summary>
 
+    ErrorResponse getErrorInfo() const;
+    bool errorInfoIsSet() const;
+    void unseterrorInfo();
+    void setErrorInfo(const ErrorResponse& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
     std::string getXRequestId() const;
     bool xRequestIdIsSet() const;
     void unsetxRequestId();
@@ -95,6 +105,8 @@ protected:
     bool multipartDataIsSet_;
     std::string excuteFailedMsg_;
     bool excuteFailedMsgIsSet_;
+    ErrorResponse errorInfo_;
+    bool errorInfoIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

@@ -12,6 +12,8 @@ namespace Model {
 
 ClusterInformationSpec::ClusterInformationSpec()
 {
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     customSanIsSet_ = false;
@@ -20,6 +22,8 @@ ClusterInformationSpec::ClusterInformationSpec()
     hostNetworkIsSet_ = false;
     deletionProtection_ = false;
     deletionProtectionIsSet_ = false;
+    enableAutoResizing_ = false;
+    enableAutoResizingIsSet_ = false;
 }
 
 ClusterInformationSpec::~ClusterInformationSpec() = default;
@@ -32,6 +36,9 @@ web::json::value ClusterInformationSpec::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agencyName")] = ModelBase::toJson(agencyName_);
+    }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
@@ -50,6 +57,9 @@ web::json::value ClusterInformationSpec::toJson() const
     if(deletionProtectionIsSet_) {
         val[utility::conversions::to_string_t("deletionProtection")] = ModelBase::toJson(deletionProtection_);
     }
+    if(enableAutoResizingIsSet_) {
+        val[utility::conversions::to_string_t("enableAutoResizing")] = ModelBase::toJson(enableAutoResizing_);
+    }
 
     return val;
 }
@@ -57,6 +67,15 @@ bool ClusterInformationSpec::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("agencyName"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agencyName"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
         if(!fieldValue.is_null())
@@ -111,9 +130,39 @@ bool ClusterInformationSpec::fromJson(const web::json::value& val)
             setDeletionProtection(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("enableAutoResizing"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enableAutoResizing"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableAutoResizing(refVal);
+        }
+    }
     return ok;
 }
 
+
+std::string ClusterInformationSpec::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void ClusterInformationSpec::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool ClusterInformationSpec::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void ClusterInformationSpec::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
+}
 
 std::string ClusterInformationSpec::getDescription() const
 {
@@ -239,6 +288,27 @@ bool ClusterInformationSpec::deletionProtectionIsSet() const
 void ClusterInformationSpec::unsetdeletionProtection()
 {
     deletionProtectionIsSet_ = false;
+}
+
+bool ClusterInformationSpec::isEnableAutoResizing() const
+{
+    return enableAutoResizing_;
+}
+
+void ClusterInformationSpec::setEnableAutoResizing(bool value)
+{
+    enableAutoResizing_ = value;
+    enableAutoResizingIsSet_ = true;
+}
+
+bool ClusterInformationSpec::enableAutoResizingIsSet() const
+{
+    return enableAutoResizingIsSet_;
+}
+
+void ClusterInformationSpec::unsetenableAutoResizing()
+{
+    enableAutoResizingIsSet_ = false;
 }
 
 }

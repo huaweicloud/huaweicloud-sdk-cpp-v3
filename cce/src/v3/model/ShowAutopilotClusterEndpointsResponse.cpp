@@ -65,7 +65,7 @@ bool ShowAutopilotClusterEndpointsResponse::fromJson(const web::json::value& val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
         {
-            MasterEIPResponse_status refVal;
+            OpenAPIResponse_status refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
         }
@@ -116,12 +116,12 @@ void ShowAutopilotClusterEndpointsResponse::unsetspec()
     specIsSet_ = false;
 }
 
-MasterEIPResponse_status ShowAutopilotClusterEndpointsResponse::getStatus() const
+OpenAPIResponse_status ShowAutopilotClusterEndpointsResponse::getStatus() const
 {
     return status_;
 }
 
-void ShowAutopilotClusterEndpointsResponse::setStatus(const MasterEIPResponse_status& value)
+void ShowAutopilotClusterEndpointsResponse::setStatus(const OpenAPIResponse_status& value)
 {
     status_ = value;
     statusIsSet_ = true;

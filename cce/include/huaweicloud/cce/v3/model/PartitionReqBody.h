@@ -11,7 +11,7 @@
 
 #include <string>
 #include <huaweicloud/cce/v3/model/PartitionReqBody_metadata.h>
-#include <huaweicloud/cce/v3/model/Partition_spec.h>
+#include <huaweicloud/cce/v3/model/PartitionReqBody_spec.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -41,7 +41,7 @@ public:
     /// PartitionReqBody members
 
     /// <summary>
-    /// 资源类型
+    /// **参数解释**： API类型 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： Partition 
     /// </summary>
 
     std::string getKind() const;
@@ -50,7 +50,7 @@ public:
     void setKind(const std::string& value);
 
     /// <summary>
-    /// API版本
+    /// **参数解释**： API版本 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： v3 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -71,10 +71,10 @@ public:
     /// 
     /// </summary>
 
-    Partition_spec getSpec() const;
+    PartitionReqBody_spec getSpec() const;
     bool specIsSet() const;
     void unsetspec();
-    void setSpec(const Partition_spec& value);
+    void setSpec(const PartitionReqBody_spec& value);
 
 
 protected:
@@ -84,7 +84,7 @@ protected:
     bool apiVersionIsSet_;
     PartitionReqBody_metadata metadata_;
     bool metadataIsSet_;
-    Partition_spec spec_;
+    PartitionReqBody_spec spec_;
     bool specIsSet_;
 
 };

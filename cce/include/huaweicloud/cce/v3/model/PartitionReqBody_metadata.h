@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 分区的元数据信息
+/// **参数解释**： 分区的元数据信息 **约束限制**： 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  PartitionReqBody_metadata
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// PartitionReqBody_metadata members
 
     /// <summary>
-    /// 分区名称
+    /// **参数解释**： 分区名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getName() const;

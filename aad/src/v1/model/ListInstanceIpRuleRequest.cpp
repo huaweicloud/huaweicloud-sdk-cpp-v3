@@ -16,6 +16,10 @@ ListInstanceIpRuleRequest::ListInstanceIpRuleRequest()
     instanceIdIsSet_ = false;
     ip_ = "";
     ipIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
 }
 
 ListInstanceIpRuleRequest::~ListInstanceIpRuleRequest() = default;
@@ -33,6 +37,12 @@ web::json::value ListInstanceIpRuleRequest::toJson() const
     }
     if(ipIsSet_) {
         val[utility::conversions::to_string_t("ip")] = ModelBase::toJson(ip_);
+    }
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
 
     return val;
@@ -57,6 +67,24 @@ bool ListInstanceIpRuleRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
         }
     }
     return ok;
@@ -103,6 +131,48 @@ bool ListInstanceIpRuleRequest::ipIsSet() const
 void ListInstanceIpRuleRequest::unsetip()
 {
     ipIsSet_ = false;
+}
+
+int32_t ListInstanceIpRuleRequest::getLimit() const
+{
+    return limit_;
+}
+
+void ListInstanceIpRuleRequest::setLimit(int32_t value)
+{
+    limit_ = value;
+    limitIsSet_ = true;
+}
+
+bool ListInstanceIpRuleRequest::limitIsSet() const
+{
+    return limitIsSet_;
+}
+
+void ListInstanceIpRuleRequest::unsetlimit()
+{
+    limitIsSet_ = false;
+}
+
+int32_t ListInstanceIpRuleRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ListInstanceIpRuleRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ListInstanceIpRuleRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ListInstanceIpRuleRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
 }
 
 }

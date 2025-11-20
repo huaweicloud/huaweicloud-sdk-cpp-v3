@@ -14,6 +14,8 @@ ReduceVolumeObject::ReduceVolumeObject()
 {
     size_ = 0;
     sizeIsSet_ = false;
+    isDelay_ = false;
+    isDelayIsSet_ = false;
     iops_ = 0;
     iopsIsSet_ = false;
     throughput_ = 0;
@@ -32,6 +34,9 @@ web::json::value ReduceVolumeObject::toJson() const
 
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
+    }
+    if(isDelayIsSet_) {
+        val[utility::conversions::to_string_t("is_delay")] = ModelBase::toJson(isDelay_);
     }
     if(iopsIsSet_) {
         val[utility::conversions::to_string_t("iops")] = ModelBase::toJson(iops_);
@@ -53,6 +58,15 @@ bool ReduceVolumeObject::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_delay"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_delay"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsDelay(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("iops"))) {
@@ -96,6 +110,27 @@ bool ReduceVolumeObject::sizeIsSet() const
 void ReduceVolumeObject::unsetsize()
 {
     sizeIsSet_ = false;
+}
+
+bool ReduceVolumeObject::isIsDelay() const
+{
+    return isDelay_;
+}
+
+void ReduceVolumeObject::setIsDelay(bool value)
+{
+    isDelay_ = value;
+    isDelayIsSet_ = true;
+}
+
+bool ReduceVolumeObject::isDelayIsSet() const
+{
+    return isDelayIsSet_;
+}
+
+void ReduceVolumeObject::unsetisDelay()
+{
+    isDelayIsSet_ = false;
 }
 
 int32_t ReduceVolumeObject::getIops() const

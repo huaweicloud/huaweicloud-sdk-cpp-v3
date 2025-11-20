@@ -51,7 +51,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 分身数字人训练任务创建者的手机号。
+    /// 分身数字人训练任务创建者的手机号
     /// </summary>
 
     std::string getContact() const;
@@ -114,13 +114,22 @@ public:
     void setTags(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 &gt; * V3和V2版本已废弃不用
+    /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus训练用的模型 &gt; * V3和V2版本已废弃不用
     /// </summary>
 
     std::string getModelVersion() const;
     bool modelVersionIsSet() const;
     void unsetmodelVersion();
     void setModelVersion(const std::string& value);
+
+    /// <summary>
+    /// 分身数字人训练任务类型 true 按需任务 false 普通任务
+    /// </summary>
+
+    bool isIsOndemandResource() const;
+    bool isOndemandResourceIsSet() const;
+    void unsetisOndemandResource();
+    void setIsOndemandResource(bool value);
 
     /// <summary>
     /// 是否是基础版的形象训练
@@ -130,6 +139,24 @@ public:
     bool isFlexusIsSet() const;
     void unsetisFlexus();
     void setIsFlexus(bool value);
+
+    /// <summary>
+    /// 是否极速版flexus
+    /// </summary>
+
+    bool isIsFastFlexus() const;
+    bool isFastFlexusIsSet() const;
+    void unsetisFastFlexus();
+    void setIsFastFlexus(bool value);
+
+    /// <summary>
+    /// 是否是直播间复刻任务
+    /// </summary>
+
+    bool isIsLiveCopy() const;
+    bool isLiveCopyIsSet() const;
+    void unsetisLiveCopy();
+    void setIsLiveCopy(bool value);
 
     /// <summary>
     /// 是否只训练形象模型，不训练声音模型。仅Flexus版本时有效，默认false。
@@ -187,8 +214,14 @@ protected:
     bool tagsIsSet_;
     std::string modelVersion_;
     bool modelVersionIsSet_;
+    bool isOndemandResource_;
+    bool isOndemandResourceIsSet_;
     bool isFlexus_;
     bool isFlexusIsSet_;
+    bool isFastFlexus_;
+    bool isFastFlexusIsSet_;
+    bool isLiveCopy_;
+    bool isLiveCopyIsSet_;
     bool isOnlyHumanModel_;
     bool isOnlyHumanModelIsSet_;
     std::string audioSourceType_;

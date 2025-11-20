@@ -40,7 +40,7 @@ public:
     /// ShowClusterConfigResponse members
 
     /// <summary>
-    /// **参数解释**： 日志存储时长，单位（天） **取值范围**： 0-30
+    /// **参数解释**：  存储时长，单位：天。  **约束限制**：  不涉及  **取值范围**： 0-30  **默认取值**： 不涉及
     /// </summary>
 
     int32_t getTtlInDays() const;

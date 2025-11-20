@@ -39,7 +39,7 @@ public:
     /// CertRevokeConfigRequestBody members
 
     /// <summary>
-    /// 用户ID
+    /// **参数解释**： 用户ID，获取方式参见本接口的接口约束 **约束限制**： 与agencyId互斥，二选一填写 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getUserId() const;
@@ -48,7 +48,7 @@ public:
     void setUserId(const std::string& value);
 
     /// <summary>
-    /// 委托用户ID
+    /// **参数解释**： 用户ID，获取方式参见[如何获取用户ID](cce_02_0249.xml#section1) **约束限制**： 与agencyId互斥，二选一填写 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getAgencyId() const;

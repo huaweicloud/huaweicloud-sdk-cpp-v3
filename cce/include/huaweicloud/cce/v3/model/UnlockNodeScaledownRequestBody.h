@@ -40,7 +40,7 @@ public:
     /// UnlockNodeScaledownRequestBody members
 
     /// <summary>
-    /// **参数解释**： API版本，固定值“v3”。 **约束限制**： 不涉及 **取值范围**： 只能为固定值“v3”。 **默认取值**： 不涉及
+    /// **参数解释**： API版本 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： v3 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -49,7 +49,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： API版本，固定值“List”。 **约束限制**： 不涉及 **取值范围**： 只能为固定值“v3”。 **默认取值**： 不涉及
+    /// **参数解释**： API类型 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： List 
     /// </summary>
 
     std::string getKind() const;
@@ -58,7 +58,7 @@ public:
     void setKind(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 需要关闭缩容保护的节点ID列表，节点ID获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 **约束限制**： 不涉及
+    /// **参数解释**： 需要关闭缩容保护的节点ID列表，节点ID获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::vector<std::string>& getNodeList();

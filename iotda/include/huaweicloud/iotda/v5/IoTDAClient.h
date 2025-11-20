@@ -237,6 +237,20 @@
 #include <huaweicloud/iotda/v5/model/UpdateDeviceShadowDesiredDataResponse.h>
 #include <string>
 
+#include <huaweicloud/iotda/v5/model/CreateDomainConfigurationDTO.h>
+#include <huaweicloud/iotda/v5/model/CreateDomainConfigurationRequest.h>
+#include <huaweicloud/iotda/v5/model/CreateDomainConfigurationResponse.h>
+#include <huaweicloud/iotda/v5/model/DeleteDomainConfigurationRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteDomainConfigurationResponse.h>
+#include <huaweicloud/iotda/v5/model/ListDomainConfigurationsRequest.h>
+#include <huaweicloud/iotda/v5/model/ListDomainConfigurationsResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowDomainConfigurationRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowDomainConfigurationResponse.h>
+#include <huaweicloud/iotda/v5/model/UpdateDomainConfigurationDTO.h>
+#include <huaweicloud/iotda/v5/model/UpdateDomainConfigurationRequest.h>
+#include <huaweicloud/iotda/v5/model/UpdateDomainConfigurationResponse.h>
+#include <string>
+
 #include <huaweicloud/iotda/v5/model/AddFlowControlPolicy.h>
 #include <huaweicloud/iotda/v5/model/CreateRoutingFlowControlPolicyRequest.h>
 #include <huaweicloud/iotda/v5/model/CreateRoutingFlowControlPolicyResponse.h>
@@ -423,6 +437,17 @@
 #include <huaweicloud/iotda/v5/model/UpdateSecurityProfileDTO.h>
 #include <huaweicloud/iotda/v5/model/UpdateSecurityProfileRequest.h>
 #include <huaweicloud/iotda/v5/model/UpdateSecurityProfileResponse.h>
+#include <string>
+
+#include <huaweicloud/iotda/v5/model/CreateServerCertificateDTO.h>
+#include <huaweicloud/iotda/v5/model/CreateServerCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/CreateServerCertificateResponse.h>
+#include <huaweicloud/iotda/v5/model/DeleteServerCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteServerCertificateResponse.h>
+#include <huaweicloud/iotda/v5/model/ListServerCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/ListServerCertificateResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowServerCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowServerCertificateResponse.h>
 #include <string>
 
 #include <huaweicloud/iotda/v5/model/BindTagsDTO.h>
@@ -1299,6 +1324,47 @@ public:
         UpdateDeviceShadowDesiredDataRequest &request
     );
 
+    // 添加域配置
+    //
+    // 应用服务器可调用此接口在物联网平台上添加域配置，域配置配额上限为：1个。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDomainConfigurationResponse> createDomainConfiguration(
+        CreateDomainConfigurationRequest &request
+    );
+    // 删除域配置
+    //
+    // 应用服务器可调用此接口在物联网平台删除域配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDomainConfigurationResponse> deleteDomainConfiguration(
+        DeleteDomainConfigurationRequest &request
+    );
+    // 获取域配置列表
+    //
+    // 应用服务器可调用此接口在物联网平台获取域配置列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDomainConfigurationsResponse> listDomainConfigurations(
+        ListDomainConfigurationsRequest &request
+    );
+    // 查询域配置
+    //
+    // 应用服务器可调用此接口在物联网平台查询域配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDomainConfigurationResponse> showDomainConfiguration(
+        ShowDomainConfigurationRequest &request
+    );
+    // 更新域配置
+    //
+    // 应用服务器可调用此接口在物联网平台上更新域配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDomainConfigurationResponse> updateDomainConfiguration(
+        UpdateDomainConfigurationRequest &request
+    );
+
     // 新建数据流转流控策略
     //
     // 应用服务器可调用此接口在物联网平台创建数据流转流控策略。
@@ -1890,6 +1956,39 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSecurityProfileResponse> updateSecurityProfile(
         UpdateSecurityProfileRequest &request
+    );
+
+    // 添加服务器证书
+    //
+    // 应用服务器可调用此接口在物联网平台上添加服务器证书，服务器证书配额限制为：2个。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateServerCertificateResponse> createServerCertificate(
+        CreateServerCertificateRequest &request
+    );
+    // 删除服务端证书
+    //
+    // 应用服务器可调用此接口在物联网平台删除服务器证书
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteServerCertificateResponse> deleteServerCertificate(
+        DeleteServerCertificateRequest &request
+    );
+    // 获取服务器证书列表
+    //
+    // 应用服务器可调用此接口在物联网平台上获取服务器证书列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListServerCertificateResponse> listServerCertificate(
+        ListServerCertificateRequest &request
+    );
+    // 查询服务器证书
+    //
+    // 应用服务器可调用此接口在物联网平台查询服务器证书
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowServerCertificateResponse> showServerCertificate(
+        ShowServerCertificateRequest &request
     );
 
     // 按标签查询资源

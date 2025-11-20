@@ -47,6 +47,15 @@ public:
     void setSize(int32_t value);
 
     /// <summary>
+    /// 是否定时变更。 - true，为定时在运维时间窗做变更。 - false，为立即变更，默认该方式。
+    /// </summary>
+
+    bool isIsDelay() const;
+    bool isDelayIsSet() const;
+    void unsetisDelay();
+    void setIsDelay(bool value);
+
+    /// <summary>
     /// 该参数只有磁盘类型为Flexible SSD（GPSSD2）和极速型SSDV2（ESSD2）的磁盘必填。 对于Flexible SSD类型的磁盘，IOPS值配置的范围为3000~128000，具体可配置值受磁盘大小限制，需要小于等于500*磁盘容量。 对于极速型SSDV2类型的磁盘，IOPS值配置的范围为100~256000，具体可配置值受磁盘大小限制，需要小于等于1000*磁盘容量。
     /// </summary>
 
@@ -68,6 +77,8 @@ public:
 protected:
     int32_t size_;
     bool sizeIsSet_;
+    bool isDelay_;
+    bool isDelayIsSet_;
     int32_t iops_;
     bool iopsIsSet_;
     int32_t throughput_;

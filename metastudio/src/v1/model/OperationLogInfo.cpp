@@ -22,6 +22,7 @@ OperationLogInfo::OperationLogInfo()
     operateUserIsSet_ = false;
     errorCode_ = "";
     errorCodeIsSet_ = false;
+    redoReasonsIsSet_ = false;
 }
 
 OperationLogInfo::~OperationLogInfo() = default;
@@ -48,6 +49,9 @@ web::json::value OperationLogInfo::toJson() const
     }
     if(errorCodeIsSet_) {
         val[utility::conversions::to_string_t("error_code")] = ModelBase::toJson(errorCode_);
+    }
+    if(redoReasonsIsSet_) {
+        val[utility::conversions::to_string_t("redo_reasons")] = ModelBase::toJson(redoReasons_);
     }
 
     return val;
@@ -99,6 +103,15 @@ bool OperationLogInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("redo_reasons"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("redo_reasons"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRedoReasons(refVal);
         }
     }
     return ok;
@@ -208,6 +221,27 @@ bool OperationLogInfo::errorCodeIsSet() const
 void OperationLogInfo::unseterrorCode()
 {
     errorCodeIsSet_ = false;
+}
+
+std::vector<std::string>& OperationLogInfo::getRedoReasons()
+{
+    return redoReasons_;
+}
+
+void OperationLogInfo::setRedoReasons(const std::vector<std::string>& value)
+{
+    redoReasons_ = value;
+    redoReasonsIsSet_ = true;
+}
+
+bool OperationLogInfo::redoReasonsIsSet() const
+{
+    return redoReasonsIsSet_;
+}
+
+void OperationLogInfo::unsetredoReasons()
+{
+    redoReasonsIsSet_ = false;
 }
 
 }

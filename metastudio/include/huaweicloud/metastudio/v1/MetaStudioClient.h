@@ -104,11 +104,15 @@
 #include <huaweicloud/metastudio/v1/model/CreateDigitalAssetResponse.h>
 #include <huaweicloud/metastudio/v1/model/DeleteAssetRequest.h>
 #include <huaweicloud/metastudio/v1/model/DeleteAssetResponse.h>
+#include <huaweicloud/metastudio/v1/model/ExecuteTransferAssetActionRequest.h>
+#include <huaweicloud/metastudio/v1/model/ExecuteTransferAssetActionResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListAssetSummaryRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListAssetSummaryResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListAssetSummarysReq.h>
 #include <huaweicloud/metastudio/v1/model/ListAssetsRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListAssetsResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListTransferAssetJobsRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListTransferAssetJobsResponse.h>
 #include <huaweicloud/metastudio/v1/model/ReplicationAssetInfo.h>
 #include <huaweicloud/metastudio/v1/model/RestoreAssetRequest.h>
 #include <huaweicloud/metastudio/v1/model/RestoreAssetResponse.h>
@@ -116,6 +120,12 @@
 #include <huaweicloud/metastudio/v1/model/ShowAssetReplicationInfoResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowAssetRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowAssetResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTransferAssetJobRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTransferAssetJobResponse.h>
+#include <huaweicloud/metastudio/v1/model/TransJobRejectBody.h>
+#include <huaweicloud/metastudio/v1/model/TransferAssetReq.h>
+#include <huaweicloud/metastudio/v1/model/TransferAssetRequest.h>
+#include <huaweicloud/metastudio/v1/model/TransferAssetResponse.h>
 #include <huaweicloud/metastudio/v1/model/UpdateDigitalAssetRequest.h>
 #include <huaweicloud/metastudio/v1/model/UpdateDigitalAssetRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/UpdateDigitalAssetResponse.h>
@@ -297,10 +307,6 @@
 #include <huaweicloud/metastudio/v1/model/CreateInteractiveChatReq.h>
 #include <huaweicloud/metastudio/v1/model/CreateInteractiveChatRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateInteractiveChatResponse.h>
-#include <string>
-
-#include <huaweicloud/metastudio/v1/model/ShowEncryptFileRequest.h>
-#include <huaweicloud/metastudio/v1/model/ShowEncryptFileResponse.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CreateIntentAndQuestionReq.h>
@@ -576,6 +582,8 @@
 #include <huaweicloud/metastudio/v1/model/UpdateSmartChatRoomResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/ShowSmartLiveUserConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowSmartLiveUserConfigResponse.h>
 #include <huaweicloud/metastudio/v1/model/UpdateSmartLiveUserConfigReq.h>
 #include <huaweicloud/metastudio/v1/model/UpdateSmartLiveUserConfigRequest.h>
 #include <huaweicloud/metastudio/v1/model/UpdateSmartLiveUserConfigResponse.h>
@@ -638,17 +646,50 @@
 #include <huaweicloud/metastudio/v1/model/ShowSubtitleFileResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/BindAssetResourceReq.h>
+#include <huaweicloud/metastudio/v1/model/BindUserAssetResourceRequest.h>
+#include <huaweicloud/metastudio/v1/model/BindUserAssetResourceResponse.h>
 #include <huaweicloud/metastudio/v1/model/CountTenantResourcesRequest.h>
 #include <huaweicloud/metastudio/v1/model/CountTenantResourcesResponse.h>
+#include <huaweicloud/metastudio/v1/model/CreateUserQuotaInfo.h>
+#include <huaweicloud/metastudio/v1/model/CreateUserQuotasRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateUserQuotasResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteTenantUserConfigurationReq.h>
+#include <huaweicloud/metastudio/v1/model/DeleteTenantUserConfigurationRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteTenantUserConfigurationResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteUserQuotasRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteUserQuotasResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListTenantResourcesRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListTenantResourcesResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListUserQuotasRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListUserQuotasResponse.h>
+#include <huaweicloud/metastudio/v1/model/SetTenantNoticeConfigurationReq.h>
+#include <huaweicloud/metastudio/v1/model/SetTenantNoticeConfigurationRequest.h>
+#include <huaweicloud/metastudio/v1/model/SetTenantNoticeConfigurationResponse.h>
+#include <huaweicloud/metastudio/v1/model/SetTenantUserConfigurationReq.h>
+#include <huaweicloud/metastudio/v1/model/SetTenantUserConfigurationRequest.h>
+#include <huaweicloud/metastudio/v1/model/SetTenantUserConfigurationResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowResourceUsageRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowResourceUsageResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTenantAssginRecordRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTenantAssginRecordResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTenantNoticeConfigurationRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTenantNoticeConfigurationResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTenantServiceConfigsRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTenantServiceConfigsResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTenantUserConfigurationRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTenantUserConfigurationResponse.h>
 #include <huaweicloud/metastudio/v1/model/SignAgreementRequest.h>
 #include <huaweicloud/metastudio/v1/model/SignAgreementResponse.h>
 #include <huaweicloud/metastudio/v1/model/SignSpecialAgreementRequest.h>
 #include <huaweicloud/metastudio/v1/model/SignSpecialAgreementResponse.h>
 #include <huaweicloud/metastudio/v1/model/SpecialAgreementSignReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateTenantServiceConfigsReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateTenantServiceConfigsRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateTenantServiceConfigsResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateUserQuotaInfo.h>
+#include <huaweicloud/metastudio/v1/model/UpdateUserQuotasRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateUserQuotasResponse.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CommitJobReq.h>
@@ -679,6 +720,8 @@
 #include <huaweicloud/metastudio/v1/model/SetJobBatchNameReq.h>
 #include <huaweicloud/metastudio/v1/model/SetJobBatchNameRequest.h>
 #include <huaweicloud/metastudio/v1/model/SetJobBatchNameResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowEncryptFileRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowEncryptFileResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowJobAuditResultRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowJobAuditResultResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowJobUploadingAddressRequest.h>
@@ -700,6 +743,8 @@
 #include <huaweicloud/metastudio/v1/model/Create2dModelTrainingJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/Delete2dModelTrainingJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/Delete2dModelTrainingJobResponse.h>
+#include <huaweicloud/metastudio/v1/model/Download2dModelTraningEncryptFileRequest.h>
+#include <huaweicloud/metastudio/v1/model/Download2dModelTraningEncryptFileResponse.h>
 #include <huaweicloud/metastudio/v1/model/Execute2dModelTrainingCommandByUserReq.h>
 #include <huaweicloud/metastudio/v1/model/Execute2dModelTrainingCommandByUserRequest.h>
 #include <huaweicloud/metastudio/v1/model/Execute2dModelTrainingCommandByUserResponse.h>
@@ -710,20 +755,6 @@
 #include <huaweicloud/metastudio/v1/model/Update2dModelTrainingJobReq.h>
 #include <huaweicloud/metastudio/v1/model/Update2dModelTrainingJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/Update2dModelTrainingJobResponse.h>
-#include <string>
-
-#include <huaweicloud/metastudio/v1/model/CreateFASReq.h>
-#include <huaweicloud/metastudio/v1/model/CreateFacialAnimationsRequest.h>
-#include <huaweicloud/metastudio/v1/model/CreateFacialAnimationsResponse.h>
-#include <huaweicloud/metastudio/v1/model/CreateTTSAReq.h>
-#include <huaweicloud/metastudio/v1/model/CreateTtsaRequest.h>
-#include <huaweicloud/metastudio/v1/model/CreateTtsaResponse.h>
-#include <huaweicloud/metastudio/v1/model/ListFacialAnimationsDataRequest.h>
-#include <huaweicloud/metastudio/v1/model/ListFacialAnimationsDataResponse.h>
-#include <huaweicloud/metastudio/v1/model/ListTtsaDataRequest.h>
-#include <huaweicloud/metastudio/v1/model/ListTtsaDataResponse.h>
-#include <huaweicloud/metastudio/v1/model/ListTtsaJobsRequest.h>
-#include <huaweicloud/metastudio/v1/model/ListTtsaJobsResponse.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CheckVoiceAssetRequest.h>
@@ -746,6 +777,8 @@
 #include <huaweicloud/metastudio/v1/model/ShowTtsAuditionFileResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CreateTtsOnceCodeRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateTtsOnceCodeResponse.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyConfigsRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyConfigsResponse.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyGroupsRequest.h>
@@ -1140,6 +1173,14 @@ public:
     std::shared_ptr<DeleteAssetResponse> deleteAsset(
         DeleteAssetRequest &request
     );
+    // 转移资产任务控制
+    //
+    // 转移资产任务控制
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteTransferAssetActionResponse> executeTransferAssetAction(
+        ExecuteTransferAssetActionRequest &request
+    );
     // 查询资产概要
     //
     // 该接口用于查询媒体资产库中指定的多个资产的概要信息。
@@ -1155,6 +1196,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAssetsResponse> listAssets(
         ListAssetsRequest &request
+    );
+    // 资产转移任务列表
+    //
+    // 资产转移任务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTransferAssetJobsResponse> listTransferAssetJobs(
+        ListTransferAssetJobsRequest &request
     );
     // 恢复被删除的资产
     //
@@ -1179,6 +1228,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAssetReplicationInfoResponse> showAssetReplicationInfo(
         ShowAssetReplicationInfoRequest &request
+    );
+    // 查询转移资产任务详情
+    //
+    // 查询转移资产任务详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTransferAssetJobResponse> showTransferAssetJob(
+        ShowTransferAssetJobRequest &request
+    );
+    // 转移资产给其他用户
+    //
+    // 转移资产给其他用户
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<TransferAssetResponse> transferAsset(
+        TransferAssetRequest &request
     );
     // 更新资产
     //
@@ -1689,15 +1754,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateInteractiveChatResponse> createInteractiveChat(
         CreateInteractiveChatRequest &request
-    );
-
-    // 下载加密文件
-    //
-    // 下载加密文件
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowEncryptFileResponse> showEncryptFile(
-        ShowEncryptFileRequest &request
     );
 
     // 创建知识库意图和问法
@@ -2463,6 +2519,14 @@ public:
         UpdateSmartChatRoomRequest &request
     );
 
+    // 租户查询直播租户级配置
+    //
+    // 该接口用于租户设置直播租户级配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSmartLiveUserConfigResponse> showSmartLiveUserConfig(
+        ShowSmartLiveUserConfigRequest &request
+    );
     // 租户设置直播租户级配置
     //
     // 该接口用于租户设置直播租户级配置。
@@ -2644,6 +2708,14 @@ public:
         ShowSubtitleFileRequest &request
     );
 
+    // 资源绑定接口
+    //
+    // 资源绑定接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BindUserAssetResourceResponse> bindUserAssetResource(
+        BindUserAssetResourceRequest &request
+    );
     // 统计时间段内过期的资源数量
     //
     // 统计指定时间段内即将过期的包周期与一次性资源数量。
@@ -2651,6 +2723,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CountTenantResourcesResponse> countTenantResources(
         CountTenantResourcesRequest &request
+    );
+    // 创建子账户配额
+    //
+    // 创建子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可创建。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateUserQuotasResponse> createUserQuotas(
+        CreateUserQuotasRequest &request
+    );
+    // 删除租户个性化配置
+    //
+    // 删除租户个性化配置。由租户下用户操作设置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTenantUserConfigurationResponse> deleteTenantUserConfiguration(
+        DeleteTenantUserConfigurationRequest &request
+    );
+    // 删除子账户配额
+    //
+    // 删除子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可删除。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteUserQuotasResponse> deleteUserQuotas(
+        DeleteUserQuotasRequest &request
     );
     // 查看租户资源列表
     //
@@ -2662,6 +2758,30 @@ public:
     std::shared_ptr<ListTenantResourcesResponse> listTenantResources(
         ListTenantResourcesRequest &request
     );
+    // 查询子账户配额
+    //
+    // 查询子账户（IAM用户）配额。只有根账户可查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUserQuotasResponse> listUserQuotas(
+        ListUserQuotasRequest &request
+    );
+    // 设置租户个性化通知配置
+    //
+    // 设置租户个性化通知配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetTenantNoticeConfigurationResponse> setTenantNoticeConfiguration(
+        SetTenantNoticeConfigurationRequest &request
+    );
+    // 设置租户个性化配置
+    //
+    // 设置租户个性化配置。由租户下用户操作设置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetTenantUserConfigurationResponse> setTenantUserConfiguration(
+        SetTenantUserConfigurationRequest &request
+    );
     // 查看租户资源用量信息
     //
     // 查询租户一次性和包周期（包年/包月）资源用量信息。
@@ -2671,6 +2791,38 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowResourceUsageResponse> showResourceUsage(
         ShowResourceUsageRequest &request
+    );
+    // 查询租户下分配的资源详情
+    //
+    // 该接口用于普通租户查询租户下的资源详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTenantAssginRecordResponse> showTenantAssginRecord(
+        ShowTenantAssginRecordRequest &request
+    );
+    // 查询租户个性化通知配置
+    //
+    // 查询租户个性化通知配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTenantNoticeConfigurationResponse> showTenantNoticeConfiguration(
+        ShowTenantNoticeConfigurationRequest &request
+    );
+    // 查看租户服务业务配置
+    //
+    // 查看租户服务业务配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTenantServiceConfigsResponse> showTenantServiceConfigs(
+        ShowTenantServiceConfigsRequest &request
+    );
+    // 查询租户个性化配置
+    //
+    // 查询租户个性化配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTenantUserConfigurationResponse> showTenantUserConfiguration(
+        ShowTenantUserConfigurationRequest &request
     );
     // 签署云服务声明
     //
@@ -2687,6 +2839,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SignSpecialAgreementResponse> signSpecialAgreement(
         SignSpecialAgreementRequest &request
+    );
+    // 设置租户服务配置
+    //
+    // 设置租户服务业务配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTenantServiceConfigsResponse> updateTenantServiceConfigs(
+        UpdateTenantServiceConfigsRequest &request
+    );
+    // 设置子账户配额
+    //
+    // 设置子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可修改。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateUserQuotasResponse> updateUserQuotas(
+        UpdateUserQuotasRequest &request
     );
 
     // 提交短任务
@@ -2807,6 +2975,14 @@ public:
     std::shared_ptr<SetJobBatchNameResponse> setJobBatchName(
         SetJobBatchNameRequest &request
     );
+    // 下载加密文件
+    //
+    // 下载加密文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowEncryptFileResponse> showEncryptFile(
+        ShowEncryptFileRequest &request
+    );
     // 获取语音训练任务审核结果
     //
     // 获取语音训练任务审核结果。
@@ -2881,6 +3057,14 @@ public:
     std::shared_ptr<Delete2dModelTrainingJobResponse> delete2dModelTrainingJob(
         Delete2dModelTrainingJobRequest &request
     );
+    // 下载加密文件
+    //
+    // 下载加密文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<Download2dModelTraningEncryptFileResponse> download2dModelTraningEncryptFile(
+        Download2dModelTraningEncryptFileRequest &request
+    );
     // 租户执行分身数字人模型训练任务命令
     //
     // 该接口用于租户执行分身数字人模型训练任务命令，如提交训练审核等。
@@ -2913,47 +3097,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<Update2dModelTrainingJobResponse> update2dModelTrainingJob(
         Update2dModelTrainingJobRequest &request
-    );
-
-    // 创建语音驱动表情动画任务
-    //
-    // 该接口用于创建驱动数字人表情的任务。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateFacialAnimationsResponse> createFacialAnimations(
-        CreateFacialAnimationsRequest &request
-    );
-    // 创建语音驱动任务
-    //
-    // 该接口用于创建驱动数字人表情、动作及语音的任务。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateTtsaResponse> createTtsa(
-        CreateTtsaRequest &request
-    );
-    // 获取语音驱动表情数据
-    //
-    // 该接口用于获取生成的数字人表情驱动数据
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListFacialAnimationsDataResponse> listFacialAnimationsData(
-        ListFacialAnimationsDataRequest &request
-    );
-    // 获取语音驱动数据
-    //
-    // 该接口用于获取生成的数字人驱动数据，包括语音、表情、动作等。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListTtsaDataResponse> listTtsaData(
-        ListTtsaDataRequest &request
-    );
-    // 获取语音驱动任务列表
-    //
-    // 该接口用于查询驱动数字人表情、动作及语音的任务列表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListTtsaJobsResponse> listTtsaJobs(
-        ListTtsaJobsRequest &request
     );
 
     // 校验音色模型是否可用（自研和第三方音色）
@@ -3022,6 +3165,14 @@ public:
         ShowTtsAuditionFileRequest &request
     );
 
+    // 外部接口-获取TTS一次性token
+    //
+    // 该接口用于获取TTS租户级一次性token。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTtsOnceCodeResponse> createTtsOnceCode(
+        CreateTtsOnceCodeRequest &request
+    );
     // 设置TTS租户级自定义读法配置
     //
     // 该接口用于设置TTS租户级自定义读法配置。

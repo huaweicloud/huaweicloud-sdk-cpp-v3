@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/cce/v3/model/CertDuration.h>
+#include <huaweicloud/cce/v3/model/ClusterCertDuration.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -52,16 +52,16 @@ public:
     /// 
     /// </summary>
 
-    CertDuration getBody() const;
+    ClusterCertDuration getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const CertDuration& value);
+    void setBody(const ClusterCertDuration& value);
 
 
 protected:
     std::string clusterId_;
     bool clusterIdIsSet_;
-    CertDuration body_;
+    ClusterCertDuration body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

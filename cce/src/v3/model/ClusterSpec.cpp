@@ -14,6 +14,8 @@ ClusterSpec::ClusterSpec()
 {
     category_ = "";
     categoryIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
     flavor_ = "";
@@ -59,6 +61,8 @@ ClusterSpec::ClusterSpec()
     clusterOpsIsSet_ = false;
     enableAutopilot_ = false;
     enableAutopilotIsSet_ = false;
+    enableAutoResizing_ = false;
+    enableAutoResizingIsSet_ = false;
     encryptionConfigIsSet_ = false;
 }
 
@@ -74,6 +78,9 @@ web::json::value ClusterSpec::toJson() const
 
     if(categoryIsSet_) {
         val[utility::conversions::to_string_t("category")] = ModelBase::toJson(category_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agencyName")] = ModelBase::toJson(agencyName_);
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
@@ -159,6 +166,9 @@ web::json::value ClusterSpec::toJson() const
     if(enableAutopilotIsSet_) {
         val[utility::conversions::to_string_t("enableAutopilot")] = ModelBase::toJson(enableAutopilot_);
     }
+    if(enableAutoResizingIsSet_) {
+        val[utility::conversions::to_string_t("enableAutoResizing")] = ModelBase::toJson(enableAutoResizing_);
+    }
     if(encryptionConfigIsSet_) {
         val[utility::conversions::to_string_t("encryptionConfig")] = ModelBase::toJson(encryptionConfig_);
     }
@@ -176,6 +186,15 @@ bool ClusterSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCategory(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agencyName"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agencyName"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("type"))) {
@@ -430,6 +449,15 @@ bool ClusterSpec::fromJson(const web::json::value& val)
             setEnableAutopilot(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("enableAutoResizing"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enableAutoResizing"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableAutoResizing(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("encryptionConfig"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encryptionConfig"));
         if(!fieldValue.is_null())
@@ -462,6 +490,27 @@ bool ClusterSpec::categoryIsSet() const
 void ClusterSpec::unsetcategory()
 {
     categoryIsSet_ = false;
+}
+
+std::string ClusterSpec::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void ClusterSpec::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool ClusterSpec::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void ClusterSpec::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 std::string ClusterSpec::getType() const
@@ -1050,6 +1099,27 @@ bool ClusterSpec::enableAutopilotIsSet() const
 void ClusterSpec::unsetenableAutopilot()
 {
     enableAutopilotIsSet_ = false;
+}
+
+bool ClusterSpec::isEnableAutoResizing() const
+{
+    return enableAutoResizing_;
+}
+
+void ClusterSpec::setEnableAutoResizing(bool value)
+{
+    enableAutoResizing_ = value;
+    enableAutoResizingIsSet_ = true;
+}
+
+bool ClusterSpec::enableAutoResizingIsSet() const
+{
+    return enableAutoResizingIsSet_;
+}
+
+void ClusterSpec::unsetenableAutoResizing()
+{
+    enableAutoResizingIsSet_ = false;
 }
 
 EncryptionConfig ClusterSpec::getEncryptionConfig() const

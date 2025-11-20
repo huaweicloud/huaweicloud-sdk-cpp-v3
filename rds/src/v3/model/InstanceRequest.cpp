@@ -61,6 +61,7 @@ InstanceRequest::InstanceRequest()
     serverlessInfoIsSet_ = false;
     isAutoUpgrade_ = false;
     isAutoUpgradeIsSet_ = false;
+    autoEnlargeStrategyIsSet_ = false;
 }
 
 InstanceRequest::~InstanceRequest() = default;
@@ -159,6 +160,9 @@ web::json::value InstanceRequest::toJson() const
     }
     if(isAutoUpgradeIsSet_) {
         val[utility::conversions::to_string_t("is_auto_upgrade")] = ModelBase::toJson(isAutoUpgrade_);
+    }
+    if(autoEnlargeStrategyIsSet_) {
+        val[utility::conversions::to_string_t("auto_enlarge_strategy")] = ModelBase::toJson(autoEnlargeStrategy_);
     }
 
     return val;
@@ -426,6 +430,15 @@ bool InstanceRequest::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAutoUpgrade(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_enlarge_strategy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_enlarge_strategy"));
+        if(!fieldValue.is_null())
+        {
+            AutoEnlargeStrategyForConsoleApi refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoEnlargeStrategy(refVal);
         }
     }
     return ok;
@@ -1039,6 +1052,27 @@ bool InstanceRequest::isAutoUpgradeIsSet() const
 void InstanceRequest::unsetisAutoUpgrade()
 {
     isAutoUpgradeIsSet_ = false;
+}
+
+AutoEnlargeStrategyForConsoleApi InstanceRequest::getAutoEnlargeStrategy() const
+{
+    return autoEnlargeStrategy_;
+}
+
+void InstanceRequest::setAutoEnlargeStrategy(const AutoEnlargeStrategyForConsoleApi& value)
+{
+    autoEnlargeStrategy_ = value;
+    autoEnlargeStrategyIsSet_ = true;
+}
+
+bool InstanceRequest::autoEnlargeStrategyIsSet() const
+{
+    return autoEnlargeStrategyIsSet_;
+}
+
+void InstanceRequest::unsetautoEnlargeStrategy()
+{
+    autoEnlargeStrategyIsSet_ = false;
 }
 
 }

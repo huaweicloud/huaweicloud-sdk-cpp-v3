@@ -27,7 +27,10 @@ Update2dModelTrainingJobReq::Update2dModelTrainingJobReq()
     batchName_ = "";
     batchNameIsSet_ = false;
     tagsIsSet_ = false;
+    isFastFlexus_ = false;
+    isFastFlexusIsSet_ = false;
     samplesBasicInfoIsSet_ = false;
+    voicePropertiesIsSet_ = false;
     supportedServiceIsSet_ = false;
     audioSourceType_ = "";
     audioSourceTypeIsSet_ = false;
@@ -67,8 +70,14 @@ web::json::value Update2dModelTrainingJobReq::toJson() const
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
+    if(isFastFlexusIsSet_) {
+        val[utility::conversions::to_string_t("is_fast_flexus")] = ModelBase::toJson(isFastFlexus_);
+    }
     if(samplesBasicInfoIsSet_) {
         val[utility::conversions::to_string_t("samples_basic_info")] = ModelBase::toJson(samplesBasicInfo_);
+    }
+    if(voicePropertiesIsSet_) {
+        val[utility::conversions::to_string_t("voice_properties")] = ModelBase::toJson(voiceProperties_);
     }
     if(supportedServiceIsSet_) {
         val[utility::conversions::to_string_t("supported_service")] = ModelBase::toJson(supportedService_);
@@ -155,6 +164,15 @@ bool Update2dModelTrainingJobReq::fromJson(const web::json::value& val)
             setTags(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("is_fast_flexus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_fast_flexus"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsFastFlexus(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("samples_basic_info"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("samples_basic_info"));
         if(!fieldValue.is_null())
@@ -162,6 +180,15 @@ bool Update2dModelTrainingJobReq::fromJson(const web::json::value& val)
             std::vector<ActionBasicSampleInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSamplesBasicInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("voice_properties"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("voice_properties"));
+        if(!fieldValue.is_null())
+        {
+            VoiceProperties refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVoiceProperties(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("supported_service"))) {
@@ -354,6 +381,27 @@ void Update2dModelTrainingJobReq::unsettags()
     tagsIsSet_ = false;
 }
 
+bool Update2dModelTrainingJobReq::isIsFastFlexus() const
+{
+    return isFastFlexus_;
+}
+
+void Update2dModelTrainingJobReq::setIsFastFlexus(bool value)
+{
+    isFastFlexus_ = value;
+    isFastFlexusIsSet_ = true;
+}
+
+bool Update2dModelTrainingJobReq::isFastFlexusIsSet() const
+{
+    return isFastFlexusIsSet_;
+}
+
+void Update2dModelTrainingJobReq::unsetisFastFlexus()
+{
+    isFastFlexusIsSet_ = false;
+}
+
 std::vector<ActionBasicSampleInfo>& Update2dModelTrainingJobReq::getSamplesBasicInfo()
 {
     return samplesBasicInfo_;
@@ -373,6 +421,27 @@ bool Update2dModelTrainingJobReq::samplesBasicInfoIsSet() const
 void Update2dModelTrainingJobReq::unsetsamplesBasicInfo()
 {
     samplesBasicInfoIsSet_ = false;
+}
+
+VoiceProperties Update2dModelTrainingJobReq::getVoiceProperties() const
+{
+    return voiceProperties_;
+}
+
+void Update2dModelTrainingJobReq::setVoiceProperties(const VoiceProperties& value)
+{
+    voiceProperties_ = value;
+    voicePropertiesIsSet_ = true;
+}
+
+bool Update2dModelTrainingJobReq::voicePropertiesIsSet() const
+{
+    return voicePropertiesIsSet_;
+}
+
+void Update2dModelTrainingJobReq::unsetvoiceProperties()
+{
+    voicePropertiesIsSet_ = false;
 }
 
 std::vector<SupportedServiceEnum>& Update2dModelTrainingJobReq::getSupportedService()

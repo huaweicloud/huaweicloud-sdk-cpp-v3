@@ -25,6 +25,7 @@ public:
     static HttpRequestDef genRequestDefForListSnapshotData();
     static HttpRequestDef genRequestDefForListTranscodeConcurrencyNum();
     static HttpRequestDef genRequestDefForListTranscodeData();
+    static HttpRequestDef genRequestDefForListTranscodeTaskDetail();
     static HttpRequestDef genRequestDefForListUsersOfStream();
     static HttpRequestDef genRequestDefForShowStreamCount();
     static HttpRequestDef genRequestDefForShowStreamPortrait();

@@ -265,6 +265,8 @@ public:
     static HttpRequestDef genRequestDefForDeleteSubscription();
     static HttpRequestDef genRequestDefForListAuthorizedSqlserverDbUsers();
     static HttpRequestDef genRequestDefForListBusinessPartners();
+    static HttpRequestDef genRequestDefForListDbAgentJobHistorySteps();
+    static HttpRequestDef genRequestDefForListDbAgentJobHistorys();
     static HttpRequestDef genRequestDefForListDbAgentJobs();
     static HttpRequestDef genRequestDefForListDistribution();
     static HttpRequestDef genRequestDefForListDistributorInstances();
@@ -279,9 +281,12 @@ public:
     static HttpRequestDef genRequestDefForListSubscriptions();
     static HttpRequestDef genRequestDefForModifyCollation();
     static HttpRequestDef genRequestDefForModifyPublication();
+    static HttpRequestDef genRequestDefForRefreshPublicationSnapshot();
+    static HttpRequestDef genRequestDefForRefreshSubscription();
     static HttpRequestDef genRequestDefForRevokeSqlserverDbUserPrivilege();
     static HttpRequestDef genRequestDefForSetInstancesDbShrink();
     static HttpRequestDef genRequestDefForSetInstancesNewDbShrink();
+    static HttpRequestDef genRequestDefForSyncReplicationMetadata();
     static HttpRequestDef genRequestDefForValidateInstanceConnection();
     static HttpRequestDef genRequestDefForListSqlStatistics();
     static HttpRequestDef genRequestDefForResetViewSqlStatistics();

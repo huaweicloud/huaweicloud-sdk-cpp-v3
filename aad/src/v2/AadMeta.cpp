@@ -53,6 +53,20 @@ HttpRequestDef AadMeta::genRequestDefForListDDoSAttackEvent() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForListDDoSBlackHoleEvent() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Ip")
+                  .withJsonTag("ip")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForListDDoSConnectionNumber() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
@@ -63,6 +77,12 @@ HttpRequestDef AadMeta::genRequestDefForListDDoSConnectionNumber() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Ip")
                   .withJsonTag("ip")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -92,7 +112,23 @@ HttpRequestDef AadMeta::genRequestDefForListFrequencyControlRule() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForListGlobalConfig() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForListInstanceDomains() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForListSourceIp() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -191,6 +227,12 @@ HttpRequestDef AadMeta::genRequestDefForListWafQps() {
     reqDefBuilder.withRequestField(FieldDef().withName("OverseasType")
                   .withJsonTag("overseas_type")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -216,8 +258,40 @@ HttpRequestDef AadMeta::genRequestDefForListWhiteBlackIpRule() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForShowAlarmConfig() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForShowDDoSPeak() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Ip")
+                  .withJsonTag("ip")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForShowDomainCertificate() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForShowDomainDetail() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForShowDomainNameConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -226,6 +300,11 @@ HttpRequestDef AadMeta::genRequestDefForShowFlowBlock() {
     reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
                   .withJsonTag("instance_id")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForShowInstanceByInstanceId() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -257,6 +336,24 @@ HttpRequestDef AadMeta::genRequestDefForShowWafQps() {
     reqDefBuilder.withRequestField(FieldDef().withName("OverseasType")
                   .withJsonTag("overseas_type")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForUpdateDomainConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForUpdateForwardRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

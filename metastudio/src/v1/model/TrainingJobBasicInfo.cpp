@@ -43,8 +43,17 @@ TrainingJobBasicInfo::TrainingJobBasicInfo()
     appUserIdIsSet_ = false;
     isFlexus_ = false;
     isFlexusIsSet_ = false;
+    isLiveCopy_ = false;
+    isLiveCopyIsSet_ = false;
+    isFastFlexus_ = false;
+    isFastFlexusIsSet_ = false;
     isOnlyHumanModel_ = false;
     isOnlyHumanModelIsSet_ = false;
+    optionalTrainingLocationIsSet_ = false;
+    isBackgroundReplacement_ = false;
+    isBackgroundReplacementIsSet_ = false;
+    isOndemandResource_ = false;
+    isOndemandResourceIsSet_ = false;
 }
 
 TrainingJobBasicInfo::~TrainingJobBasicInfo() = default;
@@ -105,8 +114,23 @@ web::json::value TrainingJobBasicInfo::toJson() const
     if(isFlexusIsSet_) {
         val[utility::conversions::to_string_t("is_flexus")] = ModelBase::toJson(isFlexus_);
     }
+    if(isLiveCopyIsSet_) {
+        val[utility::conversions::to_string_t("is_live_copy")] = ModelBase::toJson(isLiveCopy_);
+    }
+    if(isFastFlexusIsSet_) {
+        val[utility::conversions::to_string_t("is_fast_flexus")] = ModelBase::toJson(isFastFlexus_);
+    }
     if(isOnlyHumanModelIsSet_) {
         val[utility::conversions::to_string_t("is_only_human_model")] = ModelBase::toJson(isOnlyHumanModel_);
+    }
+    if(optionalTrainingLocationIsSet_) {
+        val[utility::conversions::to_string_t("optional_training_location")] = ModelBase::toJson(optionalTrainingLocation_);
+    }
+    if(isBackgroundReplacementIsSet_) {
+        val[utility::conversions::to_string_t("is_background_replacement")] = ModelBase::toJson(isBackgroundReplacement_);
+    }
+    if(isOndemandResourceIsSet_) {
+        val[utility::conversions::to_string_t("is_ondemand_resource")] = ModelBase::toJson(isOndemandResource_);
     }
 
     return val;
@@ -259,6 +283,24 @@ bool TrainingJobBasicInfo::fromJson(const web::json::value& val)
             setIsFlexus(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("is_live_copy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_live_copy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsLiveCopy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_fast_flexus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_fast_flexus"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsFastFlexus(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("is_only_human_model"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_only_human_model"));
         if(!fieldValue.is_null())
@@ -266,6 +308,33 @@ bool TrainingJobBasicInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOnlyHumanModel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("optional_training_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("optional_training_location"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOptionalTrainingLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_background_replacement"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_background_replacement"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsBackgroundReplacement(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_ondemand_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ondemand_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOndemandResource(refVal);
         }
     }
     return ok;
@@ -608,6 +677,48 @@ void TrainingJobBasicInfo::unsetisFlexus()
     isFlexusIsSet_ = false;
 }
 
+bool TrainingJobBasicInfo::isIsLiveCopy() const
+{
+    return isLiveCopy_;
+}
+
+void TrainingJobBasicInfo::setIsLiveCopy(bool value)
+{
+    isLiveCopy_ = value;
+    isLiveCopyIsSet_ = true;
+}
+
+bool TrainingJobBasicInfo::isLiveCopyIsSet() const
+{
+    return isLiveCopyIsSet_;
+}
+
+void TrainingJobBasicInfo::unsetisLiveCopy()
+{
+    isLiveCopyIsSet_ = false;
+}
+
+bool TrainingJobBasicInfo::isIsFastFlexus() const
+{
+    return isFastFlexus_;
+}
+
+void TrainingJobBasicInfo::setIsFastFlexus(bool value)
+{
+    isFastFlexus_ = value;
+    isFastFlexusIsSet_ = true;
+}
+
+bool TrainingJobBasicInfo::isFastFlexusIsSet() const
+{
+    return isFastFlexusIsSet_;
+}
+
+void TrainingJobBasicInfo::unsetisFastFlexus()
+{
+    isFastFlexusIsSet_ = false;
+}
+
 bool TrainingJobBasicInfo::isIsOnlyHumanModel() const
 {
     return isOnlyHumanModel_;
@@ -627,6 +738,69 @@ bool TrainingJobBasicInfo::isOnlyHumanModelIsSet() const
 void TrainingJobBasicInfo::unsetisOnlyHumanModel()
 {
     isOnlyHumanModelIsSet_ = false;
+}
+
+std::vector<std::string>& TrainingJobBasicInfo::getOptionalTrainingLocation()
+{
+    return optionalTrainingLocation_;
+}
+
+void TrainingJobBasicInfo::setOptionalTrainingLocation(const std::vector<std::string>& value)
+{
+    optionalTrainingLocation_ = value;
+    optionalTrainingLocationIsSet_ = true;
+}
+
+bool TrainingJobBasicInfo::optionalTrainingLocationIsSet() const
+{
+    return optionalTrainingLocationIsSet_;
+}
+
+void TrainingJobBasicInfo::unsetoptionalTrainingLocation()
+{
+    optionalTrainingLocationIsSet_ = false;
+}
+
+bool TrainingJobBasicInfo::isIsBackgroundReplacement() const
+{
+    return isBackgroundReplacement_;
+}
+
+void TrainingJobBasicInfo::setIsBackgroundReplacement(bool value)
+{
+    isBackgroundReplacement_ = value;
+    isBackgroundReplacementIsSet_ = true;
+}
+
+bool TrainingJobBasicInfo::isBackgroundReplacementIsSet() const
+{
+    return isBackgroundReplacementIsSet_;
+}
+
+void TrainingJobBasicInfo::unsetisBackgroundReplacement()
+{
+    isBackgroundReplacementIsSet_ = false;
+}
+
+bool TrainingJobBasicInfo::isIsOndemandResource() const
+{
+    return isOndemandResource_;
+}
+
+void TrainingJobBasicInfo::setIsOndemandResource(bool value)
+{
+    isOndemandResource_ = value;
+    isOndemandResourceIsSet_ = true;
+}
+
+bool TrainingJobBasicInfo::isOndemandResourceIsSet() const
+{
+    return isOndemandResourceIsSet_;
+}
+
+void TrainingJobBasicInfo::unsetisOndemandResource()
+{
+    isOndemandResourceIsSet_ = false;
 }
 
 }

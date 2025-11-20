@@ -40,7 +40,7 @@ public:
     /// MasterEIPResponseSpec members
 
     /// <summary>
-    /// 绑定动作
+    /// **参数解释**： 绑定动作 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getAction() const;
@@ -58,7 +58,7 @@ public:
     void setSpec(const MasterEIPResponseSpec_spec& value);
 
     /// <summary>
-    /// 弹性公网IP
+    /// **参数解释**： 弹性公网IP **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getElasticIp() const;

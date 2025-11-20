@@ -1657,6 +1657,58 @@ std::shared_ptr<DeleteAssetResponse> MetaStudioClient::deleteAsset(DeleteAssetRe
 
     return localVarResult;
 }
+std::shared_ptr<ExecuteTransferAssetActionResponse> MetaStudioClient::executeTransferAssetAction(ExecuteTransferAssetActionRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/digital-assets-action/transfers/{job_id}/{action}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+    localVarPathParams["action"] = parameterToString(request.getAction());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForExecuteTransferAssetAction());
+
+    std::shared_ptr<ExecuteTransferAssetActionResponse> localVarResult = std::make_shared<ExecuteTransferAssetActionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ListAssetSummaryResponse> MetaStudioClient::listAssetSummary(ListAssetSummaryRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/digital-assets/summarys";
@@ -1832,6 +1884,59 @@ std::shared_ptr<ListAssetsResponse> MetaStudioClient::listAssets(ListAssetsReque
 
     return localVarResult;
 }
+std::shared_ptr<ListTransferAssetJobsResponse> MetaStudioClient::listTransferAssetJobs(ListTransferAssetJobsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/digital-assets-action/transfers";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.roleIsSet()) {
+        localVarQueryParams["role"] = parameterToString(request.getRole());
+    }
+    if (request.stateIsSet()) {
+        localVarQueryParams["state"] = parameterToString(request.getState());
+    }
+    if (request.transferTypeIsSet()) {
+        localVarQueryParams["transfer_type"] = parameterToString(request.getTransferType());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListTransferAssetJobs());
+
+    std::shared_ptr<ListTransferAssetJobsResponse> localVarResult = std::make_shared<ListTransferAssetJobsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<RestoreAssetResponse> MetaStudioClient::restoreAsset(RestoreAssetRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/digital-assets/{asset_id}/restore";
@@ -1946,6 +2051,95 @@ std::shared_ptr<ShowAssetReplicationInfoResponse> MetaStudioClient::showAssetRep
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTransferAssetJobResponse> MetaStudioClient::showTransferAssetJob(ShowTransferAssetJobRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/digital-assets-action/transfers/{job_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowTransferAssetJob());
+
+    std::shared_ptr<ShowTransferAssetJobResponse> localVarResult = std::make_shared<ShowTransferAssetJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<TransferAssetResponse> MetaStudioClient::transferAsset(TransferAssetRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/digital-assets-action/transfers";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForTransferAsset());
+
+    std::shared_ptr<TransferAssetResponse> localVarResult = std::make_shared<TransferAssetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -5066,44 +5260,6 @@ std::shared_ptr<CreateInteractiveChatResponse> MetaStudioClient::createInteracti
 
     return localVarResult;
 }
-std::shared_ptr<ShowEncryptFileResponse> MetaStudioClient::showEncryptFile(ShowEncryptFileRequest &request)
-{
-    std::string localVarPath = "/v1/voice-training-manage/common/encrypt-file-download";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.tenantIdIsSet()) {
-        localVarQueryParams["tenant_id"] = parameterToString(request.getTenantId());
-    }
-    if (request.jobIdIsSet()) {
-        localVarQueryParams["job_id"] = parameterToString(request.getJobId());
-    }
-    if (request.onceTokenIsSet()) {
-        localVarQueryParams["once_token"] = parameterToString(request.getOnceToken());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowEncryptFile());
-
-    std::shared_ptr<ShowEncryptFileResponse> localVarResult = std::make_shared<ShowEncryptFileResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<CreateIntentAndQuestionResponse> MetaStudioClient::createIntentAndQuestion(CreateIntentAndQuestionRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/digital-human-chat/knowledge/intent-question";
@@ -6622,6 +6778,12 @@ std::shared_ptr<ShowLivePlatformAccessTypeResponse> MetaStudioClient::showLivePl
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
     if (request.usedIsSet()) {
         localVarQueryParams["used"] = parameterToString(request.isUsed());
     }
@@ -9768,6 +9930,44 @@ std::shared_ptr<UpdateSmartChatRoomResponse> MetaStudioClient::updateSmartChatRo
 
     return localVarResult;
 }
+std::shared_ptr<ShowSmartLiveUserConfigResponse> MetaStudioClient::showSmartLiveUserConfig(ShowSmartLiveUserConfigRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/smart-live-configs/user-config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowSmartLiveUserConfig());
+
+    std::shared_ptr<ShowSmartLiveUserConfigResponse> localVarResult = std::make_shared<ShowSmartLiveUserConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateSmartLiveUserConfigResponse> MetaStudioClient::updateSmartLiveUserConfig(UpdateSmartLiveUserConfigRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/smart-live-configs/user-config";
@@ -10933,6 +11133,56 @@ std::shared_ptr<ShowSubtitleFileResponse> MetaStudioClient::showSubtitleFile(Sho
 
     return localVarResult;
 }
+std::shared_ptr<BindUserAssetResourceResponse> MetaStudioClient::bindUserAssetResource(BindUserAssetResourceRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/bind-resource";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForBindUserAssetResource());
+
+    std::shared_ptr<BindUserAssetResourceResponse> localVarResult = std::make_shared<BindUserAssetResourceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CountTenantResourcesResponse> MetaStudioClient::countTenantResources(CountTenantResourcesRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/tenants/resources-count";
@@ -10974,6 +11224,145 @@ std::shared_ptr<CountTenantResourcesResponse> MetaStudioClient::countTenantResou
         localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForCountTenantResources());
 
     std::shared_ptr<CountTenantResourcesResponse> localVarResult = std::make_shared<CountTenantResourcesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CreateUserQuotasResponse> MetaStudioClient::createUserQuotas(CreateUserQuotasRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/user/quotas";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForCreateUserQuotas());
+
+    std::shared_ptr<CreateUserQuotasResponse> localVarResult = std::make_shared<CreateUserQuotasResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteTenantUserConfigurationResponse> MetaStudioClient::deleteTenantUserConfiguration(DeleteTenantUserConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/user-configurations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForDeleteTenantUserConfiguration());
+
+    std::shared_ptr<DeleteTenantUserConfigurationResponse> localVarResult = std::make_shared<DeleteTenantUserConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteUserQuotasResponse> MetaStudioClient::deleteUserQuotas(DeleteUserQuotasRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/user/quotas/{user_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["user_id"] = parameterToString(request.getUserId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForDeleteUserQuotas());
+
+    std::shared_ptr<DeleteUserQuotasResponse> localVarResult = std::make_shared<DeleteUserQuotasResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -11054,6 +11443,153 @@ std::shared_ptr<ListTenantResourcesResponse> MetaStudioClient::listTenantResourc
 
     return localVarResult;
 }
+std::shared_ptr<ListUserQuotasResponse> MetaStudioClient::listUserQuotas(ListUserQuotasRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/user/quotas";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.userIdIsSet()) {
+        localVarQueryParams["user_id"] = parameterToString(request.getUserId());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListUserQuotas());
+
+    std::shared_ptr<ListUserQuotasResponse> localVarResult = std::make_shared<ListUserQuotasResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<SetTenantNoticeConfigurationResponse> MetaStudioClient::setTenantNoticeConfiguration(SetTenantNoticeConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/notice-configurations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForSetTenantNoticeConfiguration());
+
+    std::shared_ptr<SetTenantNoticeConfigurationResponse> localVarResult = std::make_shared<SetTenantNoticeConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SetTenantUserConfigurationResponse> MetaStudioClient::setTenantUserConfiguration(SetTenantUserConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/user-configurations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForSetTenantUserConfiguration());
+
+    std::shared_ptr<SetTenantUserConfigurationResponse> localVarResult = std::make_shared<SetTenantUserConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ShowResourceUsageResponse> MetaStudioClient::showResourceUsage(ShowResourceUsageRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/tenants/resources-usage";
@@ -11092,6 +11628,170 @@ std::shared_ptr<ShowResourceUsageResponse> MetaStudioClient::showResourceUsage(S
         localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowResourceUsage());
 
     std::shared_ptr<ShowResourceUsageResponse> localVarResult = std::make_shared<ShowResourceUsageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTenantAssginRecordResponse> MetaStudioClient::showTenantAssginRecord(ShowTenantAssginRecordRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/resource/assignrecourd";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowTenantAssginRecord());
+
+    std::shared_ptr<ShowTenantAssginRecordResponse> localVarResult = std::make_shared<ShowTenantAssginRecordResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTenantNoticeConfigurationResponse> MetaStudioClient::showTenantNoticeConfiguration(ShowTenantNoticeConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/notice-configurations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowTenantNoticeConfiguration());
+
+    std::shared_ptr<ShowTenantNoticeConfigurationResponse> localVarResult = std::make_shared<ShowTenantNoticeConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTenantServiceConfigsResponse> MetaStudioClient::showTenantServiceConfigs(ShowTenantServiceConfigsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/service-configs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowTenantServiceConfigs());
+
+    std::shared_ptr<ShowTenantServiceConfigsResponse> localVarResult = std::make_shared<ShowTenantServiceConfigsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTenantUserConfigurationResponse> MetaStudioClient::showTenantUserConfiguration(ShowTenantUserConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/user-configurations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowTenantUserConfiguration());
+
+    std::shared_ptr<ShowTenantUserConfigurationResponse> localVarResult = std::make_shared<ShowTenantUserConfigurationResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -11174,6 +11874,107 @@ std::shared_ptr<SignSpecialAgreementResponse> MetaStudioClient::signSpecialAgree
         localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForSignSpecialAgreement());
 
     std::shared_ptr<SignSpecialAgreementResponse> localVarResult = std::make_shared<SignSpecialAgreementResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateTenantServiceConfigsResponse> MetaStudioClient::updateTenantServiceConfigs(UpdateTenantServiceConfigsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/tenants/service-configs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForUpdateTenantServiceConfigs());
+
+    std::shared_ptr<UpdateTenantServiceConfigsResponse> localVarResult = std::make_shared<UpdateTenantServiceConfigsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateUserQuotasResponse> MetaStudioClient::updateUserQuotas(UpdateUserQuotasRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/user/quotas/{user_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["user_id"] = parameterToString(request.getUserId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForUpdateUserQuotas());
+
+    std::shared_ptr<UpdateUserQuotasResponse> localVarResult = std::make_shared<UpdateUserQuotasResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -11763,6 +12564,44 @@ std::shared_ptr<SetJobBatchNameResponse> MetaStudioClient::setJobBatchName(SetJo
 
     return localVarResult;
 }
+std::shared_ptr<ShowEncryptFileResponse> MetaStudioClient::showEncryptFile(ShowEncryptFileRequest &request)
+{
+    std::string localVarPath = "/v1/voice-training-manage/common/encrypt-file-download";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.tenantIdIsSet()) {
+        localVarQueryParams["tenant_id"] = parameterToString(request.getTenantId());
+    }
+    if (request.jobIdIsSet()) {
+        localVarQueryParams["job_id"] = parameterToString(request.getJobId());
+    }
+    if (request.onceTokenIsSet()) {
+        localVarQueryParams["once_token"] = parameterToString(request.getOnceToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowEncryptFile());
+
+    std::shared_ptr<ShowEncryptFileResponse> localVarResult = std::make_shared<ShowEncryptFileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowJobAuditResultResponse> MetaStudioClient::showJobAuditResult(ShowJobAuditResultRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/audit-result";
@@ -12099,6 +12938,44 @@ std::shared_ptr<Delete2dModelTrainingJobResponse> MetaStudioClient::delete2dMode
 
     return localVarResult;
 }
+std::shared_ptr<Download2dModelTraningEncryptFileResponse> MetaStudioClient::download2dModelTraningEncryptFile(Download2dModelTraningEncryptFileRequest &request)
+{
+    std::string localVarPath = "/v1/digital-human-training-manage/user/encrypt-file-download";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.tenantIdIsSet()) {
+        localVarQueryParams["tenant_id"] = parameterToString(request.getTenantId());
+    }
+    if (request.jobIdIsSet()) {
+        localVarQueryParams["job_id"] = parameterToString(request.getJobId());
+    }
+    if (request.onceTokenIsSet()) {
+        localVarQueryParams["once_token"] = parameterToString(request.getOnceToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForDownload2dModelTraningEncryptFile());
+
+    std::shared_ptr<Download2dModelTraningEncryptFileResponse> localVarResult = std::make_shared<Download2dModelTraningEncryptFileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<Execute2dModelTrainingCommandByUserResponse> MetaStudioClient::execute2dModelTrainingCommandByUser(Execute2dModelTrainingCommandByUserRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}/command";
@@ -12175,6 +13052,9 @@ std::shared_ptr<List2dModelTrainingJobResponse> MetaStudioClient::list2dModelTra
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.stateIsSet()) {
+        localVarQueryParams["state"] = parameterToString(request.getState());
+    }
     if (request.sortKeyIsSet()) {
         localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
     }
@@ -12187,11 +13067,14 @@ std::shared_ptr<List2dModelTrainingJobResponse> MetaStudioClient::list2dModelTra
     if (request.createSinceIsSet()) {
         localVarQueryParams["create_since"] = parameterToString(request.getCreateSince());
     }
-    if (request.stateIsSet()) {
-        localVarQueryParams["state"] = parameterToString(request.getState());
-    }
     if (request.queryProjectIdIsSet()) {
         localVarQueryParams["query_project_id"] = parameterToString(request.getQueryProjectId());
+    }
+    if (request.updateSinceIsSet()) {
+        localVarQueryParams["update_since"] = parameterToString(request.getUpdateSince());
+    }
+    if (request.updateUntilIsSet()) {
+        localVarQueryParams["update_until"] = parameterToString(request.getUpdateUntil());
     }
     if (request.batchNameIsSet()) {
         localVarQueryParams["batch_name"] = parameterToString(request.getBatchName());
@@ -12210,6 +13093,15 @@ std::shared_ptr<List2dModelTrainingJobResponse> MetaStudioClient::list2dModelTra
     }
     if (request.isFlexusIsSet()) {
         localVarQueryParams["is_flexus"] = parameterToString(request.isIsFlexus());
+    }
+    if (request.isLiveCopyIsSet()) {
+        localVarQueryParams["is_live_copy"] = parameterToString(request.isIsLiveCopy());
+    }
+    if (request.trainLocationIsSet()) {
+        localVarQueryParams["train_location"] = parameterToString(request.getTrainLocation());
+    }
+    if (request.isOndemandResourceIsSet()) {
+        localVarQueryParams["is_ondemand_resource"] = parameterToString(request.isIsOndemandResource());
     }
     if (request.authorizationIsSet()) {
         localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
@@ -12329,219 +13221,6 @@ std::shared_ptr<Update2dModelTrainingJobResponse> MetaStudioClient::update2dMode
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-
-    return localVarResult;
-}
-std::shared_ptr<CreateFacialAnimationsResponse> MetaStudioClient::createFacialAnimations(CreateFacialAnimationsRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/ttsa/fas";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json;charset=utf-8", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForCreateFacialAnimations());
-
-    std::shared_ptr<CreateFacialAnimationsResponse> localVarResult = std::make_shared<CreateFacialAnimationsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<CreateTtsaResponse> MetaStudioClient::createTtsa(CreateTtsaRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/ttsa-jobs";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForCreateTtsa());
-
-    std::shared_ptr<CreateTtsaResponse> localVarResult = std::make_shared<CreateTtsaResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<ListFacialAnimationsDataResponse> MetaStudioClient::listFacialAnimationsData(ListFacialAnimationsDataRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/fas-jobs/{job_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["job_id"] = parameterToString(request.getJobId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListFacialAnimationsData());
-
-    std::shared_ptr<ListFacialAnimationsDataResponse> localVarResult = std::make_shared<ListFacialAnimationsDataResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListTtsaDataResponse> MetaStudioClient::listTtsaData(ListTtsaDataRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/ttsa-jobs/{job_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["job_id"] = parameterToString(request.getJobId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListTtsaData());
-
-    std::shared_ptr<ListTtsaDataResponse> localVarResult = std::make_shared<ListTtsaDataResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListTtsaJobsResponse> MetaStudioClient::listTtsaJobs(ListTtsaJobsRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/ttsa-jobs";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListTtsaJobs());
-
-    std::shared_ptr<ListTtsaJobsResponse> localVarResult = std::make_shared<ListTtsaJobsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -12895,6 +13574,50 @@ std::shared_ptr<ShowTtsAuditionFileResponse> MetaStudioClient::showTtsAuditionFi
         localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForShowTtsAuditionFile());
 
     std::shared_ptr<ShowTtsAuditionFileResponse> localVarResult = std::make_shared<ShowTtsAuditionFileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CreateTtsOnceCodeResponse> MetaStudioClient::createTtsOnceCode(CreateTtsOnceCodeRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ttsc/once-code";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xRequestIdIsSet()) {
+        localVarHeaderParams["X-Request-Id"] = parameterToString(request.getXRequestId());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForCreateTtsOnceCode());
+
+    std::shared_ptr<CreateTtsOnceCodeResponse> localVarResult = std::make_shared<CreateTtsOnceCodeResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

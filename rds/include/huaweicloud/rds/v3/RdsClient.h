@@ -649,6 +649,10 @@
 #include <huaweicloud/rds/v3/model/ListAuthorizedSqlserverDbUsersResponse.h>
 #include <huaweicloud/rds/v3/model/ListBusinessPartnersRequest.h>
 #include <huaweicloud/rds/v3/model/ListBusinessPartnersResponse.h>
+#include <huaweicloud/rds/v3/model/ListDbAgentJobHistoryStepsRequest.h>
+#include <huaweicloud/rds/v3/model/ListDbAgentJobHistoryStepsResponse.h>
+#include <huaweicloud/rds/v3/model/ListDbAgentJobHistorysRequest.h>
+#include <huaweicloud/rds/v3/model/ListDbAgentJobHistorysResponse.h>
 #include <huaweicloud/rds/v3/model/ListDbAgentJobsRequest.h>
 #include <huaweicloud/rds/v3/model/ListDbAgentJobsResponse.h>
 #include <huaweicloud/rds/v3/model/ListDistributionRequest.h>
@@ -681,6 +685,10 @@
 #include <huaweicloud/rds/v3/model/ModifyPublicationResponse.h>
 #include <huaweicloud/rds/v3/model/ModifyPublicationsRequestBody.h>
 #include <huaweicloud/rds/v3/model/ModifySubscriptionsRequestBody.h>
+#include <huaweicloud/rds/v3/model/RefreshPublicationSnapshotRequest.h>
+#include <huaweicloud/rds/v3/model/RefreshPublicationSnapshotResponse.h>
+#include <huaweicloud/rds/v3/model/RefreshSubscriptionRequest.h>
+#include <huaweicloud/rds/v3/model/RefreshSubscriptionResponse.h>
 #include <huaweicloud/rds/v3/model/RevokeSqlserverDbUserPrivilegeRequest.h>
 #include <huaweicloud/rds/v3/model/RevokeSqlserverDbUserPrivilegeResponse.h>
 #include <huaweicloud/rds/v3/model/SetInstancesDbShrinkRequest.h>
@@ -691,6 +699,8 @@
 #include <huaweicloud/rds/v3/model/SqlserverGrantRequest.h>
 #include <huaweicloud/rds/v3/model/SqlserverRevokeRequest.h>
 #include <huaweicloud/rds/v3/model/SqlserverUserForCreation.h>
+#include <huaweicloud/rds/v3/model/SyncReplicationMetadataRequest.h>
+#include <huaweicloud/rds/v3/model/SyncReplicationMetadataResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateDBShrinkRequestBody.h>
 #include <huaweicloud/rds/v3/model/ValidateInstanceConnectionRequest.h>
 #include <huaweicloud/rds/v3/model/ValidateInstanceConnectionRequestBody.h>
@@ -2763,6 +2773,22 @@ public:
     std::shared_ptr<ListBusinessPartnersResponse> listBusinessPartners(
         ListBusinessPartnersRequest &request
     );
+    // 查询数据库代理作业执行历史步骤
+    //
+    // 查询数据库代理作业执行历史步骤。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDbAgentJobHistoryStepsResponse> listDbAgentJobHistorySteps(
+        ListDbAgentJobHistoryStepsRequest &request
+    );
+    // 查询数据库代理作业执行历史
+    //
+    // 查询数据库代理作业执行历史。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDbAgentJobHistorysResponse> listDbAgentJobHistorys(
+        ListDbAgentJobHistorysRequest &request
+    );
     // 查询数据库代理作业列表
     //
     // 查询数据库代理作业列表。
@@ -2875,6 +2901,22 @@ public:
     std::shared_ptr<ModifyPublicationResponse> modifyPublication(
         ModifyPublicationRequest &request
     );
+    // 重新生成发布快照
+    //
+    // 重新生成发布快照。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RefreshPublicationSnapshotResponse> refreshPublicationSnapshot(
+        RefreshPublicationSnapshotRequest &request
+    );
+    // 重新生成订阅
+    //
+    // 重新生成订阅。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RefreshSubscriptionResponse> refreshSubscription(
+        RefreshSubscriptionRequest &request
+    );
     // 解除数据库帐号权限
     //
     // 解除数据库帐号权限。
@@ -2898,6 +2940,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetInstancesNewDbShrinkResponse> setInstancesNewDbShrink(
         SetInstancesNewDbShrinkRequest &request
+    );
+    // 同步发布订阅元数据
+    //
+    // 同步发布订阅元数据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SyncReplicationMetadataResponse> syncReplicationMetadata(
+        SyncReplicationMetadataRequest &request
     );
     // 登录测试
     //

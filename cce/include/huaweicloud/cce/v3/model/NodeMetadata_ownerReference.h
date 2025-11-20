@@ -48,7 +48,7 @@ public:
     void setNodepoolName(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 节点池UID **约束限制**： 创建成功后自动生成，填写无效。 **取值范围**： 不涉及 **默认取值**： 不涉及
+    /// **参数解释**： 节点池ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 **约束限制**： 创建成功后自动生成，填写无效。 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getNodepoolID() const;
@@ -56,12 +56,34 @@ public:
     void unsetnodepoolID();
     void setNodepoolID(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 超节点名称。如果节点不属于超节点，此字段不展示。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+    /// </summary>
+
+    std::string getHyperNodeName() const;
+    bool hyperNodeNameIsSet() const;
+    void unsethyperNodeName();
+    void setHyperNodeName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 超节点ID。如果节点不属于超节点，此字段不展示。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+    /// </summary>
+
+    std::string getHyperNodeID() const;
+    bool hyperNodeIDIsSet() const;
+    void unsethyperNodeID();
+    void setHyperNodeID(const std::string& value);
+
 
 protected:
     std::string nodepoolName_;
     bool nodepoolNameIsSet_;
     std::string nodepoolID_;
     bool nodepoolIDIsSet_;
+    std::string hyperNodeName_;
+    bool hyperNodeNameIsSet_;
+    std::string hyperNodeID_;
+    bool hyperNodeIDIsSet_;
 
 };
 

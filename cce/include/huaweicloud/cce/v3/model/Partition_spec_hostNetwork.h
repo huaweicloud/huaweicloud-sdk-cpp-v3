@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 分区子网
+/// **参数解释**： 分区子网 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  Partition_spec_hostNetwork
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// Partition_spec_hostNetwork members
 
     /// <summary>
-    /// 子网ID
+    /// **参数解释**： 子网ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getSubnetID() const;

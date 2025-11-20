@@ -29,8 +29,14 @@ Create2dModelTrainingJobReq::Create2dModelTrainingJobReq()
     tagsIsSet_ = false;
     modelVersion_ = "";
     modelVersionIsSet_ = false;
+    isOndemandResource_ = false;
+    isOndemandResourceIsSet_ = false;
     isFlexus_ = false;
     isFlexusIsSet_ = false;
+    isFastFlexus_ = false;
+    isFastFlexusIsSet_ = false;
+    isLiveCopy_ = false;
+    isLiveCopyIsSet_ = false;
     isOnlyHumanModel_ = false;
     isOnlyHumanModelIsSet_ = false;
     audioSourceType_ = "";
@@ -76,8 +82,17 @@ web::json::value Create2dModelTrainingJobReq::toJson() const
     if(modelVersionIsSet_) {
         val[utility::conversions::to_string_t("model_version")] = ModelBase::toJson(modelVersion_);
     }
+    if(isOndemandResourceIsSet_) {
+        val[utility::conversions::to_string_t("is_ondemand_resource")] = ModelBase::toJson(isOndemandResource_);
+    }
     if(isFlexusIsSet_) {
         val[utility::conversions::to_string_t("is_flexus")] = ModelBase::toJson(isFlexus_);
+    }
+    if(isFastFlexusIsSet_) {
+        val[utility::conversions::to_string_t("is_fast_flexus")] = ModelBase::toJson(isFastFlexus_);
+    }
+    if(isLiveCopyIsSet_) {
+        val[utility::conversions::to_string_t("is_live_copy")] = ModelBase::toJson(isLiveCopy_);
     }
     if(isOnlyHumanModelIsSet_) {
         val[utility::conversions::to_string_t("is_only_human_model")] = ModelBase::toJson(isOnlyHumanModel_);
@@ -179,6 +194,15 @@ bool Create2dModelTrainingJobReq::fromJson(const web::json::value& val)
             setModelVersion(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("is_ondemand_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ondemand_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOndemandResource(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("is_flexus"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_flexus"));
         if(!fieldValue.is_null())
@@ -186,6 +210,24 @@ bool Create2dModelTrainingJobReq::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsFlexus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_fast_flexus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_fast_flexus"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsFastFlexus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_live_copy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_live_copy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsLiveCopy(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_only_human_model"))) {
@@ -417,6 +459,27 @@ void Create2dModelTrainingJobReq::unsetmodelVersion()
     modelVersionIsSet_ = false;
 }
 
+bool Create2dModelTrainingJobReq::isIsOndemandResource() const
+{
+    return isOndemandResource_;
+}
+
+void Create2dModelTrainingJobReq::setIsOndemandResource(bool value)
+{
+    isOndemandResource_ = value;
+    isOndemandResourceIsSet_ = true;
+}
+
+bool Create2dModelTrainingJobReq::isOndemandResourceIsSet() const
+{
+    return isOndemandResourceIsSet_;
+}
+
+void Create2dModelTrainingJobReq::unsetisOndemandResource()
+{
+    isOndemandResourceIsSet_ = false;
+}
+
 bool Create2dModelTrainingJobReq::isIsFlexus() const
 {
     return isFlexus_;
@@ -436,6 +499,48 @@ bool Create2dModelTrainingJobReq::isFlexusIsSet() const
 void Create2dModelTrainingJobReq::unsetisFlexus()
 {
     isFlexusIsSet_ = false;
+}
+
+bool Create2dModelTrainingJobReq::isIsFastFlexus() const
+{
+    return isFastFlexus_;
+}
+
+void Create2dModelTrainingJobReq::setIsFastFlexus(bool value)
+{
+    isFastFlexus_ = value;
+    isFastFlexusIsSet_ = true;
+}
+
+bool Create2dModelTrainingJobReq::isFastFlexusIsSet() const
+{
+    return isFastFlexusIsSet_;
+}
+
+void Create2dModelTrainingJobReq::unsetisFastFlexus()
+{
+    isFastFlexusIsSet_ = false;
+}
+
+bool Create2dModelTrainingJobReq::isIsLiveCopy() const
+{
+    return isLiveCopy_;
+}
+
+void Create2dModelTrainingJobReq::setIsLiveCopy(bool value)
+{
+    isLiveCopy_ = value;
+    isLiveCopyIsSet_ = true;
+}
+
+bool Create2dModelTrainingJobReq::isLiveCopyIsSet() const
+{
+    return isLiveCopyIsSet_;
+}
+
+void Create2dModelTrainingJobReq::unsetisLiveCopy()
+{
+    isLiveCopyIsSet_ = false;
 }
 
 bool Create2dModelTrainingJobReq::isIsOnlyHumanModel() const

@@ -41,7 +41,7 @@ public:
     /// ListNodesResponse members
 
     /// <summary>
-    /// API类型，固定值“List”
+    /// **参数解释**： API类型 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： List 
     /// </summary>
 
     std::string getKind() const;
@@ -50,7 +50,7 @@ public:
     void setKind(const std::string& value);
 
     /// <summary>
-    /// API版本，固定值“v3”
+    /// **参数解释**： API版本 **约束限制**： 固定值,不允许修改 **取值范围**： 不涉及 **默认取值**： v3 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -59,7 +59,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 节点对象列表，包含了当前集群下所有节点的详细信息。可通过items.metadata.name下的值来找到对应的节点。
+    /// **参数解释**： 节点对象列表，包含了当前集群下所有节点的详细信息。可通过items.metadata.name下的值来找到对应的节点。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::vector<Node>& getItems();

@@ -42,7 +42,7 @@ public:
     /// ShowNodeResponse members
 
     /// <summary>
-    /// **参数解释**： API类型，固定值“Node”。 **取值范围**： 只能为固定值“Node”。 
+    /// **参数解释**： API类型 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： Node 
     /// </summary>
 
     std::string getKind() const;
@@ -51,7 +51,7 @@ public:
     void setKind(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： API版本，固定值“v3”。 **取值范围**： 只能为固定值“v3”。
+    /// **参数解释**： API类型 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： Node 
     /// </summary>
 
     std::string getApiVersion() const;

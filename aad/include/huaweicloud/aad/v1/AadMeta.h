@@ -24,7 +24,7 @@ public:
     static HttpRequestDef genRequestDefForAssociateIpToPolicyAndPackage();
     static HttpRequestDef genRequestDefForBatchCreateInstanceIpRule();
     static HttpRequestDef genRequestDefForBatchDeleteInstanceIpRule();
-    static HttpRequestDef genRequestDefForCreateAadDomain();
+    static HttpRequestDef genRequestDefForCreateDomain();
     static HttpRequestDef genRequestDefForCreatePolicy();
     static HttpRequestDef genRequestDefForDeleteAlarmConfig();
     static HttpRequestDef genRequestDefForDeleteBlackWhiteIpList();

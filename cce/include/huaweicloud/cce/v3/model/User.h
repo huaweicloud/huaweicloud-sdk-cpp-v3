@@ -39,7 +39,7 @@ public:
     /// User members
 
     /// <summary>
-    /// 客户端证书。 
+    /// **参数解释**： 客户端证书。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getClientCertificateData() const;
@@ -48,7 +48,7 @@ public:
     void setClientCertificateData(const std::string& value);
 
     /// <summary>
-    /// 包含来自TLS客户端密钥文件的PEM编码数据。 
+    /// **参数解释**： 包含来自TLS客户端密钥文件的PEM编码数据。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getClientKeyData() const;

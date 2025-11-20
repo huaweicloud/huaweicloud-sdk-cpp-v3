@@ -24,6 +24,8 @@ List2dModelTrainingJobRequest::List2dModelTrainingJobRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    state_ = "";
+    stateIsSet_ = false;
     sortKey_ = "";
     sortKeyIsSet_ = false;
     sortDir_ = "";
@@ -32,10 +34,12 @@ List2dModelTrainingJobRequest::List2dModelTrainingJobRequest()
     createUntilIsSet_ = false;
     createSince_ = "";
     createSinceIsSet_ = false;
-    state_ = "";
-    stateIsSet_ = false;
     queryProjectId_ = "";
     queryProjectIdIsSet_ = false;
+    updateSince_ = "";
+    updateSinceIsSet_ = false;
+    updateUntil_ = "";
+    updateUntilIsSet_ = false;
     batchName_ = "";
     batchNameIsSet_ = false;
     tag_ = "";
@@ -48,6 +52,12 @@ List2dModelTrainingJobRequest::List2dModelTrainingJobRequest()
     modelResolutionIsSet_ = false;
     isFlexus_ = false;
     isFlexusIsSet_ = false;
+    isLiveCopy_ = false;
+    isLiveCopyIsSet_ = false;
+    trainLocation_ = "";
+    trainLocationIsSet_ = false;
+    isOndemandResource_ = false;
+    isOndemandResourceIsSet_ = false;
 }
 
 List2dModelTrainingJobRequest::~List2dModelTrainingJobRequest() = default;
@@ -78,6 +88,9 @@ web::json::value List2dModelTrainingJobRequest::toJson() const
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
+    if(stateIsSet_) {
+        val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
+    }
     if(sortKeyIsSet_) {
         val[utility::conversions::to_string_t("sort_key")] = ModelBase::toJson(sortKey_);
     }
@@ -90,11 +103,14 @@ web::json::value List2dModelTrainingJobRequest::toJson() const
     if(createSinceIsSet_) {
         val[utility::conversions::to_string_t("create_since")] = ModelBase::toJson(createSince_);
     }
-    if(stateIsSet_) {
-        val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
-    }
     if(queryProjectIdIsSet_) {
         val[utility::conversions::to_string_t("query_project_id")] = ModelBase::toJson(queryProjectId_);
+    }
+    if(updateSinceIsSet_) {
+        val[utility::conversions::to_string_t("update_since")] = ModelBase::toJson(updateSince_);
+    }
+    if(updateUntilIsSet_) {
+        val[utility::conversions::to_string_t("update_until")] = ModelBase::toJson(updateUntil_);
     }
     if(batchNameIsSet_) {
         val[utility::conversions::to_string_t("batch_name")] = ModelBase::toJson(batchName_);
@@ -113,6 +129,15 @@ web::json::value List2dModelTrainingJobRequest::toJson() const
     }
     if(isFlexusIsSet_) {
         val[utility::conversions::to_string_t("is_flexus")] = ModelBase::toJson(isFlexus_);
+    }
+    if(isLiveCopyIsSet_) {
+        val[utility::conversions::to_string_t("is_live_copy")] = ModelBase::toJson(isLiveCopy_);
+    }
+    if(trainLocationIsSet_) {
+        val[utility::conversions::to_string_t("train_location")] = ModelBase::toJson(trainLocation_);
+    }
+    if(isOndemandResourceIsSet_) {
+        val[utility::conversions::to_string_t("is_ondemand_resource")] = ModelBase::toJson(isOndemandResource_);
     }
 
     return val;
@@ -175,6 +200,15 @@ bool List2dModelTrainingJobRequest::fromJson(const web::json::value& val)
             setLimit(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("state"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("state"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setState(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("sort_key"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sort_key"));
         if(!fieldValue.is_null())
@@ -211,15 +245,6 @@ bool List2dModelTrainingJobRequest::fromJson(const web::json::value& val)
             setCreateSince(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("state"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("state"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setState(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("query_project_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("query_project_id"));
         if(!fieldValue.is_null())
@@ -227,6 +252,24 @@ bool List2dModelTrainingJobRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setQueryProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("update_since"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_since"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdateSince(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("update_until"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_until"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdateUntil(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("batch_name"))) {
@@ -281,6 +324,33 @@ bool List2dModelTrainingJobRequest::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsFlexus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_live_copy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_live_copy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsLiveCopy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("train_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("train_location"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTrainLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_ondemand_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ondemand_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOndemandResource(refVal);
         }
     }
     return ok;
@@ -413,6 +483,27 @@ void List2dModelTrainingJobRequest::unsetlimit()
     limitIsSet_ = false;
 }
 
+std::string List2dModelTrainingJobRequest::getState() const
+{
+    return state_;
+}
+
+void List2dModelTrainingJobRequest::setState(const std::string& value)
+{
+    state_ = value;
+    stateIsSet_ = true;
+}
+
+bool List2dModelTrainingJobRequest::stateIsSet() const
+{
+    return stateIsSet_;
+}
+
+void List2dModelTrainingJobRequest::unsetstate()
+{
+    stateIsSet_ = false;
+}
+
 std::string List2dModelTrainingJobRequest::getSortKey() const
 {
     return sortKey_;
@@ -497,27 +588,6 @@ void List2dModelTrainingJobRequest::unsetcreateSince()
     createSinceIsSet_ = false;
 }
 
-std::string List2dModelTrainingJobRequest::getState() const
-{
-    return state_;
-}
-
-void List2dModelTrainingJobRequest::setState(const std::string& value)
-{
-    state_ = value;
-    stateIsSet_ = true;
-}
-
-bool List2dModelTrainingJobRequest::stateIsSet() const
-{
-    return stateIsSet_;
-}
-
-void List2dModelTrainingJobRequest::unsetstate()
-{
-    stateIsSet_ = false;
-}
-
 std::string List2dModelTrainingJobRequest::getQueryProjectId() const
 {
     return queryProjectId_;
@@ -537,6 +607,48 @@ bool List2dModelTrainingJobRequest::queryProjectIdIsSet() const
 void List2dModelTrainingJobRequest::unsetqueryProjectId()
 {
     queryProjectIdIsSet_ = false;
+}
+
+std::string List2dModelTrainingJobRequest::getUpdateSince() const
+{
+    return updateSince_;
+}
+
+void List2dModelTrainingJobRequest::setUpdateSince(const std::string& value)
+{
+    updateSince_ = value;
+    updateSinceIsSet_ = true;
+}
+
+bool List2dModelTrainingJobRequest::updateSinceIsSet() const
+{
+    return updateSinceIsSet_;
+}
+
+void List2dModelTrainingJobRequest::unsetupdateSince()
+{
+    updateSinceIsSet_ = false;
+}
+
+std::string List2dModelTrainingJobRequest::getUpdateUntil() const
+{
+    return updateUntil_;
+}
+
+void List2dModelTrainingJobRequest::setUpdateUntil(const std::string& value)
+{
+    updateUntil_ = value;
+    updateUntilIsSet_ = true;
+}
+
+bool List2dModelTrainingJobRequest::updateUntilIsSet() const
+{
+    return updateUntilIsSet_;
+}
+
+void List2dModelTrainingJobRequest::unsetupdateUntil()
+{
+    updateUntilIsSet_ = false;
 }
 
 std::string List2dModelTrainingJobRequest::getBatchName() const
@@ -663,6 +775,69 @@ bool List2dModelTrainingJobRequest::isFlexusIsSet() const
 void List2dModelTrainingJobRequest::unsetisFlexus()
 {
     isFlexusIsSet_ = false;
+}
+
+bool List2dModelTrainingJobRequest::isIsLiveCopy() const
+{
+    return isLiveCopy_;
+}
+
+void List2dModelTrainingJobRequest::setIsLiveCopy(bool value)
+{
+    isLiveCopy_ = value;
+    isLiveCopyIsSet_ = true;
+}
+
+bool List2dModelTrainingJobRequest::isLiveCopyIsSet() const
+{
+    return isLiveCopyIsSet_;
+}
+
+void List2dModelTrainingJobRequest::unsetisLiveCopy()
+{
+    isLiveCopyIsSet_ = false;
+}
+
+std::string List2dModelTrainingJobRequest::getTrainLocation() const
+{
+    return trainLocation_;
+}
+
+void List2dModelTrainingJobRequest::setTrainLocation(const std::string& value)
+{
+    trainLocation_ = value;
+    trainLocationIsSet_ = true;
+}
+
+bool List2dModelTrainingJobRequest::trainLocationIsSet() const
+{
+    return trainLocationIsSet_;
+}
+
+void List2dModelTrainingJobRequest::unsettrainLocation()
+{
+    trainLocationIsSet_ = false;
+}
+
+bool List2dModelTrainingJobRequest::isIsOndemandResource() const
+{
+    return isOndemandResource_;
+}
+
+void List2dModelTrainingJobRequest::setIsOndemandResource(bool value)
+{
+    isOndemandResource_ = value;
+    isOndemandResourceIsSet_ = true;
+}
+
+bool List2dModelTrainingJobRequest::isOndemandResourceIsSet() const
+{
+    return isOndemandResourceIsSet_;
+}
+
+void List2dModelTrainingJobRequest::unsetisOndemandResource()
+{
+    isOndemandResourceIsSet_ = false;
 }
 
 }

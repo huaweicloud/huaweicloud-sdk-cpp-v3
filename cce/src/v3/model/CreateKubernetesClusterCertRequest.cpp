@@ -53,7 +53,7 @@ bool CreateKubernetesClusterCertRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            CertDuration refVal;
+            ClusterCertDuration refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -83,12 +83,12 @@ void CreateKubernetesClusterCertRequest::unsetclusterId()
     clusterIdIsSet_ = false;
 }
 
-CertDuration CreateKubernetesClusterCertRequest::getBody() const
+ClusterCertDuration CreateKubernetesClusterCertRequest::getBody() const
 {
     return body_;
 }
 
-void CreateKubernetesClusterCertRequest::setBody(const CertDuration& value)
+void CreateKubernetesClusterCertRequest::setBody(const ClusterCertDuration& value)
 {
     body_ = value;
     bodyIsSet_ = true;

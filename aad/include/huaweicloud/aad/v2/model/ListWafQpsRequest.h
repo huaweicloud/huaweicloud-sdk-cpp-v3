@@ -92,6 +92,24 @@ public:
     void unsetoverseasType();
     void setOverseasType(int32_t value);
 
+    /// <summary>
+    /// 限制条数
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// 偏移量
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
 
 protected:
     std::string domains_;
@@ -106,6 +124,10 @@ protected:
     bool recentIsSet_;
     int32_t overseasType_;
     bool overseasTypeIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

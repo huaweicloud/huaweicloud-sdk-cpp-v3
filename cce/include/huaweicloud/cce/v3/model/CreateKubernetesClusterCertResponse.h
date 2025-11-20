@@ -44,7 +44,7 @@ public:
     /// CreateKubernetesClusterCertResponse members
 
     /// <summary>
-    /// API类型，固定值“Config”，该值不可修改。 
+    /// **参数解释**： API类型 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： Config 
     /// </summary>
 
     std::string getKind() const;
@@ -53,7 +53,7 @@ public:
     void setKind(const std::string& value);
 
     /// <summary>
-    /// API版本，固定值“v1”。
+    /// **参数解释**： API版本 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： v1 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -62,7 +62,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 当前未使用该字段，当前默认为空。
+    /// **参数解释**： 当前未使用该字段 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 默认为空 
     /// </summary>
 
     Object getPreferences() const;
@@ -71,7 +71,7 @@ public:
     void setPreferences(const Object& value);
 
     /// <summary>
-    /// 集群列表。
+    /// **参数解释**： 集群列表。 **约束限制**： 不涉及 
     /// </summary>
 
     std::vector<Clusters>& getClusters();
@@ -80,7 +80,7 @@ public:
     void setClusters(const std::vector<Clusters>& value);
 
     /// <summary>
-    /// 存放了指定用户的一些证书信息和ClientKey信息。
+    /// **参数解释**： 存放了指定用户的一些证书信息和ClientKey信息。 **约束限制**： 不涉及 
     /// </summary>
 
     std::vector<Users>& getUsers();
@@ -89,7 +89,7 @@ public:
     void setUsers(const std::vector<Users>& value);
 
     /// <summary>
-    /// 上下文列表。
+    /// **参数解释**： 上下文列表。 **约束限制**： 不涉及 
     /// </summary>
 
     std::vector<Contexts>& getContexts();
@@ -98,7 +98,7 @@ public:
     void setContexts(const std::vector<Contexts>& value);
 
     /// <summary>
-    /// 当前上下文，若存在publicIp（虚拟机弹性IP）时为 external; 若不存在publicIp为 internal。
+    /// **参数解释**： 当前上下文 **约束限制**： 不涉及 **取值范围**： - external：公网访问  - internal：私网访问  **默认取值**： - 若存在publicIp（虚拟机弹性IP）时为 external。 - 若不存在publicIp为 internal。 
     /// </summary>
 
     std::string getCurrentContext() const;

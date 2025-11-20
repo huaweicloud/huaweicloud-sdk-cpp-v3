@@ -22,14 +22,20 @@
 #include <huaweicloud/aad/v2/model/ListDDoSAttackEventRequest.h>
 #include <huaweicloud/aad/v2/model/ListDDoSAttackEventRequestBody.h>
 #include <huaweicloud/aad/v2/model/ListDDoSAttackEventResponse.h>
+#include <huaweicloud/aad/v2/model/ListDDoSBlackHoleEventRequest.h>
+#include <huaweicloud/aad/v2/model/ListDDoSBlackHoleEventResponse.h>
 #include <huaweicloud/aad/v2/model/ListDDoSConnectionNumberRequest.h>
 #include <huaweicloud/aad/v2/model/ListDDoSConnectionNumberResponse.h>
 #include <huaweicloud/aad/v2/model/ListDDoSFlowRequest.h>
 #include <huaweicloud/aad/v2/model/ListDDoSFlowResponse.h>
 #include <huaweicloud/aad/v2/model/ListFrequencyControlRuleRequest.h>
 #include <huaweicloud/aad/v2/model/ListFrequencyControlRuleResponse.h>
+#include <huaweicloud/aad/v2/model/ListGlobalConfigRequest.h>
+#include <huaweicloud/aad/v2/model/ListGlobalConfigResponse.h>
 #include <huaweicloud/aad/v2/model/ListInstanceDomainsRequest.h>
 #include <huaweicloud/aad/v2/model/ListInstanceDomainsResponse.h>
+#include <huaweicloud/aad/v2/model/ListSourceIpRequest.h>
+#include <huaweicloud/aad/v2/model/ListSourceIpResponse.h>
 #include <huaweicloud/aad/v2/model/ListWafAttackEventRequest.h>
 #include <huaweicloud/aad/v2/model/ListWafAttackEventResponse.h>
 #include <huaweicloud/aad/v2/model/ListWafBandwidthRequest.h>
@@ -44,14 +50,30 @@
 #include <huaweicloud/aad/v2/model/ListWafWhiteIpRuleResponse.h>
 #include <huaweicloud/aad/v2/model/ListWhiteBlackIpRuleRequest.h>
 #include <huaweicloud/aad/v2/model/ListWhiteBlackIpRuleResponse.h>
+#include <huaweicloud/aad/v2/model/ShowAlarmConfigRequest.h>
+#include <huaweicloud/aad/v2/model/ShowAlarmConfigResponse.h>
+#include <huaweicloud/aad/v2/model/ShowDDoSPeakRequest.h>
+#include <huaweicloud/aad/v2/model/ShowDDoSPeakResponse.h>
 #include <huaweicloud/aad/v2/model/ShowDomainCertificateRequest.h>
 #include <huaweicloud/aad/v2/model/ShowDomainCertificateResponse.h>
+#include <huaweicloud/aad/v2/model/ShowDomainDetailRequest.h>
+#include <huaweicloud/aad/v2/model/ShowDomainDetailResponse.h>
+#include <huaweicloud/aad/v2/model/ShowDomainNameConfigRequest.h>
+#include <huaweicloud/aad/v2/model/ShowDomainNameConfigResponse.h>
 #include <huaweicloud/aad/v2/model/ShowFlowBlockRequest.h>
 #include <huaweicloud/aad/v2/model/ShowFlowBlockResponse.h>
+#include <huaweicloud/aad/v2/model/ShowInstanceByInstanceIdRequest.h>
+#include <huaweicloud/aad/v2/model/ShowInstanceByInstanceIdResponse.h>
 #include <huaweicloud/aad/v2/model/ShowWafPolicyRequest.h>
 #include <huaweicloud/aad/v2/model/ShowWafPolicyResponse.h>
 #include <huaweicloud/aad/v2/model/ShowWafQpsRequest.h>
 #include <huaweicloud/aad/v2/model/ShowWafQpsResponse.h>
+#include <huaweicloud/aad/v2/model/UpdateDomainConfigRequest.h>
+#include <huaweicloud/aad/v2/model/UpdateDomainConfigRequestBody.h>
+#include <huaweicloud/aad/v2/model/UpdateDomainConfigResponse.h>
+#include <huaweicloud/aad/v2/model/UpdateForwardRuleRequest.h>
+#include <huaweicloud/aad/v2/model/UpdateForwardRuleRequestBody.h>
+#include <huaweicloud/aad/v2/model/UpdateForwardRuleResponse.h>
 #include <huaweicloud/aad/v2/model/UpgradeInstanceSpecRequest.h>
 #include <huaweicloud/aad/v2/model/UpgradeInstanceSpecResponse.h>
 #include <huaweicloud/aad/v2/model/UpgradeInstanceSpecV2RequestBody.h>
@@ -121,6 +143,14 @@ public:
     std::shared_ptr<ListDDoSAttackEventResponse> listDDoSAttackEvent(
         ListDDoSAttackEventRequest &request
     );
+    // 黑洞事件列表
+    //
+    // 黑洞事件列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDDoSBlackHoleEventResponse> listDDoSBlackHoleEvent(
+        ListDDoSBlackHoleEventRequest &request
+    );
     // 查询新建连接数和并发连接数
     //
     // 查询新建连接数和并发连接数
@@ -145,6 +175,14 @@ public:
     std::shared_ptr<ListFrequencyControlRuleResponse> listFrequencyControlRule(
         ListFrequencyControlRuleRequest &request
     );
+    // 查询控制台WAF全局配置
+    //
+    // 查询控制台WAF全局配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListGlobalConfigResponse> listGlobalConfig(
+        ListGlobalConfigRequest &request
+    );
     // 查询实例关联的域名信息
     //
     // 查询实例关联的域名信息
@@ -152,6 +190,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstanceDomainsResponse> listInstanceDomains(
         ListInstanceDomainsRequest &request
+    );
+    // 查询回源ip列表
+    //
+    // 查询回源ip列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSourceIpResponse> listSourceIp(
+        ListSourceIpRequest &request
     );
     // 查询攻击事件列表
     //
@@ -209,6 +255,22 @@ public:
     std::shared_ptr<ListWhiteBlackIpRuleResponse> listWhiteBlackIpRule(
         ListWhiteBlackIpRuleRequest &request
     );
+    // 查询告警设置
+    //
+    // 查询告警设置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAlarmConfigResponse> showAlarmConfig(
+        ShowAlarmConfigRequest &request
+    );
+    // 查询高防入流量峰值、攻击流量峰值、DDoS攻击次数
+    //
+    // 查询高防入流量峰值、攻击流量峰值、DDoS攻击次数
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDDoSPeakResponse> showDDoSPeak(
+        ShowDDoSPeakRequest &request
+    );
     // 查询域名关联的证书信息
     //
     // 查询域名关联的证书信息
@@ -217,6 +279,22 @@ public:
     std::shared_ptr<ShowDomainCertificateResponse> showDomainCertificate(
         ShowDomainCertificateRequest &request
     );
+    // 查询域名详情
+    //
+    // 查询域名详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDomainDetailResponse> showDomainDetail(
+        ShowDomainDetailRequest &request
+    );
+    // 查看域名配置
+    //
+    // 查看域名配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDomainNameConfigResponse> showDomainNameConfig(
+        ShowDomainNameConfigRequest &request
+    );
     // 查询流量封禁信息
     //
     // 查询流量封禁信息
@@ -224,6 +302,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowFlowBlockResponse> showFlowBlock(
         ShowFlowBlockRequest &request
+    );
+    // 查询实例详情
+    //
+    // 查询实例详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceByInstanceIdResponse> showInstanceByInstanceId(
+        ShowInstanceByInstanceIdRequest &request
     );
     // 查询WEB防护策略配置
     //
@@ -240,6 +326,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowWafQpsResponse> showWafQps(
         ShowWafQpsRequest &request
+    );
+    // 修改域名配置
+    //
+    // 修改域名配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDomainConfigResponse> updateDomainConfig(
+        UpdateDomainConfigRequest &request
+    );
+    // 修改转发规则中的源站IP
+    //
+    // 修改转发规则中的源站IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateForwardRuleResponse> updateForwardRule(
+        UpdateForwardRuleRequest &request
     );
     // 修改实例规格
     //

@@ -75,6 +75,24 @@ public:
     void setXAppUserId(const std::string& value);
 
     /// <summary>
+    /// 偏移量，表示从此偏移量开始查询。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// 每页显示的条目数量。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
     /// 是否已使用
     /// </summary>
 
@@ -93,6 +111,10 @@ protected:
     bool xProjectIdIsSet_;
     std::string xAppUserId_;
     bool xAppUserIdIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
     bool used_;
     bool usedIsSet_;
 

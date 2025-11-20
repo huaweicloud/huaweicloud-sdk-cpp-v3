@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cce/v3/model/Metadata.h>
-#include <huaweicloud/cce/v3/model/MasterEIPResponse_status.h>
+#include <huaweicloud/cce/v3/model/OpenAPIResponse_status.h>
 #include <huaweicloud/cce/v3/model/OpenAPISpec.h>
 
 namespace HuaweiCloud {
@@ -62,10 +62,10 @@ public:
     /// 
     /// </summary>
 
-    MasterEIPResponse_status getStatus() const;
+    OpenAPIResponse_status getStatus() const;
     bool statusIsSet() const;
     void unsetstatus();
-    void setStatus(const MasterEIPResponse_status& value);
+    void setStatus(const OpenAPIResponse_status& value);
 
 
 protected:
@@ -73,7 +73,7 @@ protected:
     bool metadataIsSet_;
     OpenAPISpec spec_;
     bool specIsSet_;
-    MasterEIPResponse_status status_;
+    OpenAPIResponse_status status_;
     bool statusIsSet_;
 
 #ifdef RTTR_FLAG

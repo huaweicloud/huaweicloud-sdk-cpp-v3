@@ -630,6 +630,48 @@ std::shared_ptr<ListTranscodeDataResponse> LiveClient::listTranscodeData(ListTra
 
     return localVarResult;
 }
+std::shared_ptr<ListTranscodeTaskDetailResponse> LiveClient::listTranscodeTaskDetail(ListTranscodeTaskDetailRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/stats/transcode/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.domainIsSet()) {
+        localVarQueryParams["domain"] = parameterToString(request.getDomain());
+    }
+    if (request.streamNameListIsSet()) {
+        localVarQueryParams["stream_name_list"] = parameterToString(request.getStreamNameList());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListTranscodeTaskDetail());
+
+    std::shared_ptr<ListTranscodeTaskDetailResponse> localVarResult = std::make_shared<ListTranscodeTaskDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListUsersOfStreamResponse> LiveClient::listUsersOfStream(ListUsersOfStreamRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/stats/user";

@@ -93,6 +93,15 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
+    /// 任务状态，默认所有状态。  可多个状态查询，使用英文逗号分隔。  如state&#x3D;CREATING,PUBLISHED
+    /// </summary>
+
+    std::string getState() const;
+    bool stateIsSet() const;
+    void unsetstate();
+    void setState(const std::string& value);
+
+    /// <summary>
     /// 排序字段，支持的排序方式有： - 按创建时间排序：create_time - 按更新时间排序：update_time - 按资产排序：asset_order
     /// </summary>
 
@@ -129,15 +138,6 @@ public:
     void setCreateSince(const std::string& value);
 
     /// <summary>
-    /// 任务状态，默认所有状态。  可多个状态查询，使用英文逗号分隔。  如state&#x3D;CREATING,PUBLISHED
-    /// </summary>
-
-    std::string getState() const;
-    bool stateIsSet() const;
-    void unsetstate();
-    void setState(const std::string& value);
-
-    /// <summary>
     /// 查询租户id。
     /// </summary>
 
@@ -145,6 +145,24 @@ public:
     bool queryProjectIdIsSet() const;
     void unsetqueryProjectId();
     void setQueryProjectId(const std::string& value);
+
+    /// <summary>
+    /// 过滤更新时间&gt;&#x3D;输入时间的记录。
+    /// </summary>
+
+    std::string getUpdateSince() const;
+    bool updateSinceIsSet() const;
+    void unsetupdateSince();
+    void setUpdateSince(const std::string& value);
+
+    /// <summary>
+    /// 过滤更新时间&gt;&#x3D;输入时间的记录。
+    /// </summary>
+
+    std::string getUpdateUntil() const;
+    bool updateUntilIsSet() const;
+    void unsetupdateUntil();
+    void setUpdateUntil(const std::string& value);
 
     /// <summary>
     /// 任务批次名称。
@@ -200,6 +218,33 @@ public:
     void unsetisFlexus();
     void setIsFlexus(bool value);
 
+    /// <summary>
+    /// 是否是直播间复刻任务
+    /// </summary>
+
+    bool isIsLiveCopy() const;
+    bool isLiveCopyIsSet() const;
+    void unsetisLiveCopy();
+    void setIsLiveCopy(bool value);
+
+    /// <summary>
+    /// 训练region
+    /// </summary>
+
+    std::string getTrainLocation() const;
+    bool trainLocationIsSet() const;
+    void unsettrainLocation();
+    void setTrainLocation(const std::string& value);
+
+    /// <summary>
+    /// 是否测试版
+    /// </summary>
+
+    bool isIsOndemandResource() const;
+    bool isOndemandResourceIsSet() const;
+    void unsetisOndemandResource();
+    void setIsOndemandResource(bool value);
+
 
 protected:
     std::string authorization_;
@@ -214,6 +259,8 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string state_;
+    bool stateIsSet_;
     std::string sortKey_;
     bool sortKeyIsSet_;
     std::string sortDir_;
@@ -222,10 +269,12 @@ protected:
     bool createUntilIsSet_;
     std::string createSince_;
     bool createSinceIsSet_;
-    std::string state_;
-    bool stateIsSet_;
     std::string queryProjectId_;
     bool queryProjectIdIsSet_;
+    std::string updateSince_;
+    bool updateSinceIsSet_;
+    std::string updateUntil_;
+    bool updateUntilIsSet_;
     std::string batchName_;
     bool batchNameIsSet_;
     std::string tag_;
@@ -238,6 +287,12 @@ protected:
     bool modelResolutionIsSet_;
     bool isFlexus_;
     bool isFlexusIsSet_;
+    bool isLiveCopy_;
+    bool isLiveCopyIsSet_;
+    std::string trainLocation_;
+    bool trainLocationIsSet_;
+    bool isOndemandResource_;
+    bool isOndemandResourceIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -48,7 +48,7 @@ public:
     void setResourceId(const std::string& value);
 
     /// <summary>
-    /// 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。
+    /// 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。 * ON_DEMAND: 按需
     /// </summary>
 
     std::string getChargeMode() const;

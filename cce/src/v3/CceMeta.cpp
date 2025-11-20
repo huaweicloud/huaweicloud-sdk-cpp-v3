@@ -360,6 +360,20 @@ HttpRequestDef CceMeta::genRequestDefForListAddonInstances() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForListAddonPrecheckTasks() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
+                  .withJsonTag("task_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AddonInstanceId")
+                  .withJsonTag("addon_instance_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForListAddonTemplates() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("AddonTemplateName")
@@ -419,6 +433,17 @@ HttpRequestDef CceMeta::genRequestDefForListClusters() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Version")
                   .withJsonTag("version")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForListHyperNodes() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

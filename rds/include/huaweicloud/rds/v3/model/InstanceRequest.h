@@ -19,6 +19,7 @@
 #include <huaweicloud/rds/v3/model/UnchangeableParam.h>
 #include <huaweicloud/rds/v3/model/Datastore.h>
 #include <vector>
+#include <huaweicloud/rds/v3/model/AutoEnlargeStrategyForConsoleApi.h>
 #include <huaweicloud/rds/v3/model/ChargeInfo.h>
 
 namespace HuaweiCloud {
@@ -309,6 +310,15 @@ public:
     void unsetisAutoUpgrade();
     void setIsAutoUpgrade(bool value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    AutoEnlargeStrategyForConsoleApi getAutoEnlargeStrategy() const;
+    bool autoEnlargeStrategyIsSet() const;
+    void unsetautoEnlargeStrategy();
+    void setAutoEnlargeStrategy(const AutoEnlargeStrategyForConsoleApi& value);
+
 
 protected:
     std::string name_;
@@ -369,6 +379,8 @@ protected:
     bool serverlessInfoIsSet_;
     bool isAutoUpgrade_;
     bool isAutoUpgradeIsSet_;
+    AutoEnlargeStrategyForConsoleApi autoEnlargeStrategy_;
+    bool autoEnlargeStrategyIsSet_;
 
 };
 

@@ -52,12 +52,14 @@ public:
     static HttpRequestDef genRequestDefForHibernateCluster();
     static HttpRequestDef genRequestDefForListAccessPolicy();
     static HttpRequestDef genRequestDefForListAddonInstances();
+    static HttpRequestDef genRequestDefForListAddonPrecheckTasks();
     static HttpRequestDef genRequestDefForListAddonTemplates();
     static HttpRequestDef genRequestDefForListCharts();
     static HttpRequestDef genRequestDefForListClusterMasterSnapshotTasks();
     static HttpRequestDef genRequestDefForListClusterUpgradeFeatureGates();
     static HttpRequestDef genRequestDefForListClusterUpgradePaths();
     static HttpRequestDef genRequestDefForListClusters();
+    static HttpRequestDef genRequestDefForListHyperNodes();
     static HttpRequestDef genRequestDefForListNodePools();
     static HttpRequestDef genRequestDefForListNodes();
     static HttpRequestDef genRequestDefForListPartitions();

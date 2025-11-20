@@ -39,7 +39,7 @@ public:
     /// ExtensionScaleGroupMetadata members
 
     /// <summary>
-    /// 扩展伸缩组的uuid，由系统自动生成
+    /// **参数解释**： 扩展伸缩组的uuid **约束限制**： - 创建节点池时自动生成，填写无效。 - 更新节点池时，如果填写则更新指定伸缩组。 - 更新节点池时，如果不填写则删除当前绑定的伸缩组，并创建新的伸缩组。  **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getUid() const;

@@ -19,9 +19,9 @@ UpdateNotificationTemplateResponse::UpdateNotificationTemplateResponse()
     descIsSet_ = false;
     source_ = "";
     sourceIsSet_ = false;
+    templatesIsSet_ = false;
     locale_ = "";
     localeIsSet_ = false;
-    templatesIsSet_ = false;
 }
 
 UpdateNotificationTemplateResponse::~UpdateNotificationTemplateResponse() = default;
@@ -46,11 +46,11 @@ web::json::value UpdateNotificationTemplateResponse::toJson() const
     if(sourceIsSet_) {
         val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
     }
-    if(localeIsSet_) {
-        val[utility::conversions::to_string_t("locale")] = ModelBase::toJson(locale_);
-    }
     if(templatesIsSet_) {
         val[utility::conversions::to_string_t("templates")] = ModelBase::toJson(templates_);
+    }
+    if(localeIsSet_) {
+        val[utility::conversions::to_string_t("locale")] = ModelBase::toJson(locale_);
     }
 
     return val;
@@ -95,6 +95,15 @@ bool UpdateNotificationTemplateResponse::fromJson(const web::json::value& val)
             setSource(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("templates"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("templates"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<SubTemplateResBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTemplates(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("locale"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locale"));
         if(!fieldValue.is_null())
@@ -102,15 +111,6 @@ bool UpdateNotificationTemplateResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLocale(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("templates"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("templates"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<SubTemplate> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTemplates(refVal);
         }
     }
     return ok;
@@ -201,6 +201,27 @@ void UpdateNotificationTemplateResponse::unsetsource()
     sourceIsSet_ = false;
 }
 
+std::vector<SubTemplateResBody>& UpdateNotificationTemplateResponse::getTemplates()
+{
+    return templates_;
+}
+
+void UpdateNotificationTemplateResponse::setTemplates(const std::vector<SubTemplateResBody>& value)
+{
+    templates_ = value;
+    templatesIsSet_ = true;
+}
+
+bool UpdateNotificationTemplateResponse::templatesIsSet() const
+{
+    return templatesIsSet_;
+}
+
+void UpdateNotificationTemplateResponse::unsettemplates()
+{
+    templatesIsSet_ = false;
+}
+
 std::string UpdateNotificationTemplateResponse::getLocale() const
 {
     return locale_;
@@ -220,27 +241,6 @@ bool UpdateNotificationTemplateResponse::localeIsSet() const
 void UpdateNotificationTemplateResponse::unsetlocale()
 {
     localeIsSet_ = false;
-}
-
-std::vector<SubTemplate>& UpdateNotificationTemplateResponse::getTemplates()
-{
-    return templates_;
-}
-
-void UpdateNotificationTemplateResponse::setTemplates(const std::vector<SubTemplate>& value)
-{
-    templates_ = value;
-    templatesIsSet_ = true;
-}
-
-bool UpdateNotificationTemplateResponse::templatesIsSet() const
-{
-    return templatesIsSet_;
-}
-
-void UpdateNotificationTemplateResponse::unsettemplates()
-{
-    templatesIsSet_ = false;
 }
 
 }

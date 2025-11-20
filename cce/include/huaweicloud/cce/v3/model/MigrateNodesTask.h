@@ -41,7 +41,7 @@ public:
     /// MigrateNodesTask members
 
     /// <summary>
-    /// API版本，固定值“v3”。
+    /// **参数解释**： API版本 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： v3 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -50,7 +50,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// API类型，固定值“MigrateNodesTask”。
+    /// **参数解释**： API类型 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： MigrateNodesTask 
     /// </summary>
 
     std::string getKind() const;

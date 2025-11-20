@@ -40,7 +40,7 @@ public:
     /// GetAvaliableZoneResponse members
 
     /// <summary>
-    /// **参数解释**: 可用区列表信息
+    /// **参数解释**: 可用区列表信息 **约束限制**： 不涉及
     /// </summary>
 
     std::vector<GetAvailableZoneResponseBody>& getBody();

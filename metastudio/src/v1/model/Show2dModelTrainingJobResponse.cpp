@@ -43,8 +43,17 @@ Show2dModelTrainingJobResponse::Show2dModelTrainingJobResponse()
     appUserIdIsSet_ = false;
     isFlexus_ = false;
     isFlexusIsSet_ = false;
+    isLiveCopy_ = false;
+    isLiveCopyIsSet_ = false;
+    isFastFlexus_ = false;
+    isFastFlexusIsSet_ = false;
     isOnlyHumanModel_ = false;
     isOnlyHumanModelIsSet_ = false;
+    optionalTrainingLocationIsSet_ = false;
+    isBackgroundReplacement_ = false;
+    isBackgroundReplacementIsSet_ = false;
+    isOndemandResource_ = false;
+    isOndemandResourceIsSet_ = false;
     trainingVideoDownloadUrl_ = "";
     trainingVideoDownloadUrlIsSet_ = false;
     idCardImage1DownloadUrl_ = "";
@@ -55,12 +64,18 @@ Show2dModelTrainingJobResponse::Show2dModelTrainingJobResponse()
     grantFileDownloadUrlIsSet_ = false;
     preBeautyImageDownloadUrl_ = "";
     preBeautyImageDownloadUrlIsSet_ = false;
+    externalActionJsonDataDownloadUrl_ = "";
+    externalActionJsonDataDownloadUrlIsSet_ = false;
     actionVideoDownloadUrl_ = "";
     actionVideoDownloadUrlIsSet_ = false;
     postBeautyImageDownloadUrl_ = "";
     postBeautyImageDownloadUrlIsSet_ = false;
     audioFileDownloadUrl_ = "";
     audioFileDownloadUrlIsSet_ = false;
+    actionMarkFileDownloadUrl_ = "";
+    actionMarkFileDownloadUrlIsSet_ = false;
+    actionMarkFileUploadUrl_ = "";
+    actionMarkFileUploadUrlIsSet_ = false;
     operationLogsIsSet_ = false;
     verifyVideoMattingInfoIsSet_ = false;
     commentLogsIsSet_ = false;
@@ -73,13 +88,14 @@ Show2dModelTrainingJobResponse::Show2dModelTrainingJobResponse()
     verifyVideoDownloadUrlIsSet_ = false;
     markableVideoDownloadUrl_ = "";
     markableVideoDownloadUrlIsSet_ = false;
+    markableActionVideoDownloadUrl_ = "";
+    markableActionVideoDownloadUrlIsSet_ = false;
     traningVideoMarkInfoIsSet_ = false;
     inferenceDataProcessVideoMarkInfoIsSet_ = false;
+    voicePropertiesIsSet_ = false;
     inferenceDataProcessActionMarkInfoIsSet_ = false;
     inferenceDataProcessChatActionMarkInfoIsSet_ = false;
     inferenceDataProcessEyeCorrectionMarkInfoIsSet_ = false;
-    isBackgroundReplacement_ = false;
-    isBackgroundReplacementIsSet_ = false;
     workerTypeIsSet_ = false;
     voiceTrainJobId_ = "";
     voiceTrainJobIdIsSet_ = false;
@@ -89,6 +105,11 @@ Show2dModelTrainingJobResponse::Show2dModelTrainingJobResponse()
     audioSourceTypeIsSet_ = false;
     supportedServiceIsSet_ = false;
     allocatedResourceIsSet_ = false;
+    trainVideoRotationState_ = "";
+    trainVideoRotationStateIsSet_ = false;
+    actionVideoRotationState_ = "";
+    actionVideoRotationStateIsSet_ = false;
+    subTrainingJobInfoIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -151,8 +172,23 @@ web::json::value Show2dModelTrainingJobResponse::toJson() const
     if(isFlexusIsSet_) {
         val[utility::conversions::to_string_t("is_flexus")] = ModelBase::toJson(isFlexus_);
     }
+    if(isLiveCopyIsSet_) {
+        val[utility::conversions::to_string_t("is_live_copy")] = ModelBase::toJson(isLiveCopy_);
+    }
+    if(isFastFlexusIsSet_) {
+        val[utility::conversions::to_string_t("is_fast_flexus")] = ModelBase::toJson(isFastFlexus_);
+    }
     if(isOnlyHumanModelIsSet_) {
         val[utility::conversions::to_string_t("is_only_human_model")] = ModelBase::toJson(isOnlyHumanModel_);
+    }
+    if(optionalTrainingLocationIsSet_) {
+        val[utility::conversions::to_string_t("optional_training_location")] = ModelBase::toJson(optionalTrainingLocation_);
+    }
+    if(isBackgroundReplacementIsSet_) {
+        val[utility::conversions::to_string_t("is_background_replacement")] = ModelBase::toJson(isBackgroundReplacement_);
+    }
+    if(isOndemandResourceIsSet_) {
+        val[utility::conversions::to_string_t("is_ondemand_resource")] = ModelBase::toJson(isOndemandResource_);
     }
     if(trainingVideoDownloadUrlIsSet_) {
         val[utility::conversions::to_string_t("training_video_download_url")] = ModelBase::toJson(trainingVideoDownloadUrl_);
@@ -169,6 +205,9 @@ web::json::value Show2dModelTrainingJobResponse::toJson() const
     if(preBeautyImageDownloadUrlIsSet_) {
         val[utility::conversions::to_string_t("pre_beauty_image_download_url")] = ModelBase::toJson(preBeautyImageDownloadUrl_);
     }
+    if(externalActionJsonDataDownloadUrlIsSet_) {
+        val[utility::conversions::to_string_t("external_action_json_data_download_url")] = ModelBase::toJson(externalActionJsonDataDownloadUrl_);
+    }
     if(actionVideoDownloadUrlIsSet_) {
         val[utility::conversions::to_string_t("action_video_download_url")] = ModelBase::toJson(actionVideoDownloadUrl_);
     }
@@ -177,6 +216,12 @@ web::json::value Show2dModelTrainingJobResponse::toJson() const
     }
     if(audioFileDownloadUrlIsSet_) {
         val[utility::conversions::to_string_t("audio_file_download_url")] = ModelBase::toJson(audioFileDownloadUrl_);
+    }
+    if(actionMarkFileDownloadUrlIsSet_) {
+        val[utility::conversions::to_string_t("action_mark_file_download_url")] = ModelBase::toJson(actionMarkFileDownloadUrl_);
+    }
+    if(actionMarkFileUploadUrlIsSet_) {
+        val[utility::conversions::to_string_t("action_mark_file_upload_url")] = ModelBase::toJson(actionMarkFileUploadUrl_);
     }
     if(operationLogsIsSet_) {
         val[utility::conversions::to_string_t("operation_logs")] = ModelBase::toJson(operationLogs_);
@@ -202,11 +247,17 @@ web::json::value Show2dModelTrainingJobResponse::toJson() const
     if(markableVideoDownloadUrlIsSet_) {
         val[utility::conversions::to_string_t("markable_video_download_url")] = ModelBase::toJson(markableVideoDownloadUrl_);
     }
+    if(markableActionVideoDownloadUrlIsSet_) {
+        val[utility::conversions::to_string_t("markable_action_video_download_url")] = ModelBase::toJson(markableActionVideoDownloadUrl_);
+    }
     if(traningVideoMarkInfoIsSet_) {
         val[utility::conversions::to_string_t("traning_video_mark_info")] = ModelBase::toJson(traningVideoMarkInfo_);
     }
     if(inferenceDataProcessVideoMarkInfoIsSet_) {
         val[utility::conversions::to_string_t("inference_data_process_video_mark_info")] = ModelBase::toJson(inferenceDataProcessVideoMarkInfo_);
+    }
+    if(voicePropertiesIsSet_) {
+        val[utility::conversions::to_string_t("voice_properties")] = ModelBase::toJson(voiceProperties_);
     }
     if(inferenceDataProcessActionMarkInfoIsSet_) {
         val[utility::conversions::to_string_t("inference_data_process_action_mark_info")] = ModelBase::toJson(inferenceDataProcessActionMarkInfo_);
@@ -216,9 +267,6 @@ web::json::value Show2dModelTrainingJobResponse::toJson() const
     }
     if(inferenceDataProcessEyeCorrectionMarkInfoIsSet_) {
         val[utility::conversions::to_string_t("inference_data_process_eye_correction_mark_info")] = ModelBase::toJson(inferenceDataProcessEyeCorrectionMarkInfo_);
-    }
-    if(isBackgroundReplacementIsSet_) {
-        val[utility::conversions::to_string_t("is_background_replacement")] = ModelBase::toJson(isBackgroundReplacement_);
     }
     if(workerTypeIsSet_) {
         val[utility::conversions::to_string_t("worker_type")] = ModelBase::toJson(workerType_);
@@ -237,6 +285,15 @@ web::json::value Show2dModelTrainingJobResponse::toJson() const
     }
     if(allocatedResourceIsSet_) {
         val[utility::conversions::to_string_t("allocated_resource")] = ModelBase::toJson(allocatedResource_);
+    }
+    if(trainVideoRotationStateIsSet_) {
+        val[utility::conversions::to_string_t("train_video_rotation_state")] = ModelBase::toJson(trainVideoRotationState_);
+    }
+    if(actionVideoRotationStateIsSet_) {
+        val[utility::conversions::to_string_t("action_video_rotation_state")] = ModelBase::toJson(actionVideoRotationState_);
+    }
+    if(subTrainingJobInfoIsSet_) {
+        val[utility::conversions::to_string_t("sub_training_job_info")] = ModelBase::toJson(subTrainingJobInfo_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -392,6 +449,24 @@ bool Show2dModelTrainingJobResponse::fromJson(const web::json::value& val)
             setIsFlexus(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("is_live_copy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_live_copy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsLiveCopy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_fast_flexus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_fast_flexus"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsFastFlexus(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("is_only_human_model"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_only_human_model"));
         if(!fieldValue.is_null())
@@ -399,6 +474,33 @@ bool Show2dModelTrainingJobResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOnlyHumanModel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("optional_training_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("optional_training_location"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOptionalTrainingLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_background_replacement"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_background_replacement"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsBackgroundReplacement(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_ondemand_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ondemand_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOndemandResource(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("training_video_download_url"))) {
@@ -446,6 +548,15 @@ bool Show2dModelTrainingJobResponse::fromJson(const web::json::value& val)
             setPreBeautyImageDownloadUrl(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("external_action_json_data_download_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("external_action_json_data_download_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExternalActionJsonDataDownloadUrl(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("action_video_download_url"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action_video_download_url"));
         if(!fieldValue.is_null())
@@ -471,6 +582,24 @@ bool Show2dModelTrainingJobResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAudioFileDownloadUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("action_mark_file_download_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action_mark_file_download_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActionMarkFileDownloadUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("action_mark_file_upload_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action_mark_file_upload_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActionMarkFileUploadUrl(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("operation_logs"))) {
@@ -545,6 +674,15 @@ bool Show2dModelTrainingJobResponse::fromJson(const web::json::value& val)
             setMarkableVideoDownloadUrl(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("markable_action_video_download_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("markable_action_video_download_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMarkableActionVideoDownloadUrl(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("traning_video_mark_info"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("traning_video_mark_info"));
         if(!fieldValue.is_null())
@@ -561,6 +699,15 @@ bool Show2dModelTrainingJobResponse::fromJson(const web::json::value& val)
             InferenceVideoMarkInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInferenceDataProcessVideoMarkInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("voice_properties"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("voice_properties"));
+        if(!fieldValue.is_null())
+        {
+            VoiceProperties refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVoiceProperties(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("inference_data_process_action_mark_info"))) {
@@ -588,15 +735,6 @@ bool Show2dModelTrainingJobResponse::fromJson(const web::json::value& val)
             InferenceEyeCorrectionMarkInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInferenceDataProcessEyeCorrectionMarkInfo(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("is_background_replacement"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_background_replacement"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsBackgroundReplacement(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("worker_type"))) {
@@ -651,6 +789,33 @@ bool Show2dModelTrainingJobResponse::fromJson(const web::json::value& val)
             TrainingAllocatedResource refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllocatedResource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("train_video_rotation_state"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("train_video_rotation_state"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTrainVideoRotationState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("action_video_rotation_state"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action_video_rotation_state"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActionVideoRotationState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sub_training_job_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sub_training_job_info"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<SubTrainingJobInfoDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubTrainingJobInfo(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -1002,6 +1167,48 @@ void Show2dModelTrainingJobResponse::unsetisFlexus()
     isFlexusIsSet_ = false;
 }
 
+bool Show2dModelTrainingJobResponse::isIsLiveCopy() const
+{
+    return isLiveCopy_;
+}
+
+void Show2dModelTrainingJobResponse::setIsLiveCopy(bool value)
+{
+    isLiveCopy_ = value;
+    isLiveCopyIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::isLiveCopyIsSet() const
+{
+    return isLiveCopyIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetisLiveCopy()
+{
+    isLiveCopyIsSet_ = false;
+}
+
+bool Show2dModelTrainingJobResponse::isIsFastFlexus() const
+{
+    return isFastFlexus_;
+}
+
+void Show2dModelTrainingJobResponse::setIsFastFlexus(bool value)
+{
+    isFastFlexus_ = value;
+    isFastFlexusIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::isFastFlexusIsSet() const
+{
+    return isFastFlexusIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetisFastFlexus()
+{
+    isFastFlexusIsSet_ = false;
+}
+
 bool Show2dModelTrainingJobResponse::isIsOnlyHumanModel() const
 {
     return isOnlyHumanModel_;
@@ -1021,6 +1228,69 @@ bool Show2dModelTrainingJobResponse::isOnlyHumanModelIsSet() const
 void Show2dModelTrainingJobResponse::unsetisOnlyHumanModel()
 {
     isOnlyHumanModelIsSet_ = false;
+}
+
+std::vector<std::string>& Show2dModelTrainingJobResponse::getOptionalTrainingLocation()
+{
+    return optionalTrainingLocation_;
+}
+
+void Show2dModelTrainingJobResponse::setOptionalTrainingLocation(const std::vector<std::string>& value)
+{
+    optionalTrainingLocation_ = value;
+    optionalTrainingLocationIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::optionalTrainingLocationIsSet() const
+{
+    return optionalTrainingLocationIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetoptionalTrainingLocation()
+{
+    optionalTrainingLocationIsSet_ = false;
+}
+
+bool Show2dModelTrainingJobResponse::isIsBackgroundReplacement() const
+{
+    return isBackgroundReplacement_;
+}
+
+void Show2dModelTrainingJobResponse::setIsBackgroundReplacement(bool value)
+{
+    isBackgroundReplacement_ = value;
+    isBackgroundReplacementIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::isBackgroundReplacementIsSet() const
+{
+    return isBackgroundReplacementIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetisBackgroundReplacement()
+{
+    isBackgroundReplacementIsSet_ = false;
+}
+
+bool Show2dModelTrainingJobResponse::isIsOndemandResource() const
+{
+    return isOndemandResource_;
+}
+
+void Show2dModelTrainingJobResponse::setIsOndemandResource(bool value)
+{
+    isOndemandResource_ = value;
+    isOndemandResourceIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::isOndemandResourceIsSet() const
+{
+    return isOndemandResourceIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetisOndemandResource()
+{
+    isOndemandResourceIsSet_ = false;
 }
 
 std::string Show2dModelTrainingJobResponse::getTrainingVideoDownloadUrl() const
@@ -1128,6 +1398,27 @@ void Show2dModelTrainingJobResponse::unsetpreBeautyImageDownloadUrl()
     preBeautyImageDownloadUrlIsSet_ = false;
 }
 
+std::string Show2dModelTrainingJobResponse::getExternalActionJsonDataDownloadUrl() const
+{
+    return externalActionJsonDataDownloadUrl_;
+}
+
+void Show2dModelTrainingJobResponse::setExternalActionJsonDataDownloadUrl(const std::string& value)
+{
+    externalActionJsonDataDownloadUrl_ = value;
+    externalActionJsonDataDownloadUrlIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::externalActionJsonDataDownloadUrlIsSet() const
+{
+    return externalActionJsonDataDownloadUrlIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetexternalActionJsonDataDownloadUrl()
+{
+    externalActionJsonDataDownloadUrlIsSet_ = false;
+}
+
 std::string Show2dModelTrainingJobResponse::getActionVideoDownloadUrl() const
 {
     return actionVideoDownloadUrl_;
@@ -1189,6 +1480,48 @@ bool Show2dModelTrainingJobResponse::audioFileDownloadUrlIsSet() const
 void Show2dModelTrainingJobResponse::unsetaudioFileDownloadUrl()
 {
     audioFileDownloadUrlIsSet_ = false;
+}
+
+std::string Show2dModelTrainingJobResponse::getActionMarkFileDownloadUrl() const
+{
+    return actionMarkFileDownloadUrl_;
+}
+
+void Show2dModelTrainingJobResponse::setActionMarkFileDownloadUrl(const std::string& value)
+{
+    actionMarkFileDownloadUrl_ = value;
+    actionMarkFileDownloadUrlIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::actionMarkFileDownloadUrlIsSet() const
+{
+    return actionMarkFileDownloadUrlIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetactionMarkFileDownloadUrl()
+{
+    actionMarkFileDownloadUrlIsSet_ = false;
+}
+
+std::string Show2dModelTrainingJobResponse::getActionMarkFileUploadUrl() const
+{
+    return actionMarkFileUploadUrl_;
+}
+
+void Show2dModelTrainingJobResponse::setActionMarkFileUploadUrl(const std::string& value)
+{
+    actionMarkFileUploadUrl_ = value;
+    actionMarkFileUploadUrlIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::actionMarkFileUploadUrlIsSet() const
+{
+    return actionMarkFileUploadUrlIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetactionMarkFileUploadUrl()
+{
+    actionMarkFileUploadUrlIsSet_ = false;
 }
 
 std::vector<OperationLogInfo>& Show2dModelTrainingJobResponse::getOperationLogs()
@@ -1359,6 +1692,27 @@ void Show2dModelTrainingJobResponse::unsetmarkableVideoDownloadUrl()
     markableVideoDownloadUrlIsSet_ = false;
 }
 
+std::string Show2dModelTrainingJobResponse::getMarkableActionVideoDownloadUrl() const
+{
+    return markableActionVideoDownloadUrl_;
+}
+
+void Show2dModelTrainingJobResponse::setMarkableActionVideoDownloadUrl(const std::string& value)
+{
+    markableActionVideoDownloadUrl_ = value;
+    markableActionVideoDownloadUrlIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::markableActionVideoDownloadUrlIsSet() const
+{
+    return markableActionVideoDownloadUrlIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetmarkableActionVideoDownloadUrl()
+{
+    markableActionVideoDownloadUrlIsSet_ = false;
+}
+
 TrainingVideoMarkInfo Show2dModelTrainingJobResponse::getTraningVideoMarkInfo() const
 {
     return traningVideoMarkInfo_;
@@ -1399,6 +1753,27 @@ bool Show2dModelTrainingJobResponse::inferenceDataProcessVideoMarkInfoIsSet() co
 void Show2dModelTrainingJobResponse::unsetinferenceDataProcessVideoMarkInfo()
 {
     inferenceDataProcessVideoMarkInfoIsSet_ = false;
+}
+
+VoiceProperties Show2dModelTrainingJobResponse::getVoiceProperties() const
+{
+    return voiceProperties_;
+}
+
+void Show2dModelTrainingJobResponse::setVoiceProperties(const VoiceProperties& value)
+{
+    voiceProperties_ = value;
+    voicePropertiesIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::voicePropertiesIsSet() const
+{
+    return voicePropertiesIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetvoiceProperties()
+{
+    voicePropertiesIsSet_ = false;
 }
 
 InferenceActionMarkInfo Show2dModelTrainingJobResponse::getInferenceDataProcessActionMarkInfo() const
@@ -1462,27 +1837,6 @@ bool Show2dModelTrainingJobResponse::inferenceDataProcessEyeCorrectionMarkInfoIs
 void Show2dModelTrainingJobResponse::unsetinferenceDataProcessEyeCorrectionMarkInfo()
 {
     inferenceDataProcessEyeCorrectionMarkInfoIsSet_ = false;
-}
-
-bool Show2dModelTrainingJobResponse::isIsBackgroundReplacement() const
-{
-    return isBackgroundReplacement_;
-}
-
-void Show2dModelTrainingJobResponse::setIsBackgroundReplacement(bool value)
-{
-    isBackgroundReplacement_ = value;
-    isBackgroundReplacementIsSet_ = true;
-}
-
-bool Show2dModelTrainingJobResponse::isBackgroundReplacementIsSet() const
-{
-    return isBackgroundReplacementIsSet_;
-}
-
-void Show2dModelTrainingJobResponse::unsetisBackgroundReplacement()
-{
-    isBackgroundReplacementIsSet_ = false;
 }
 
 std::vector<std::string>& Show2dModelTrainingJobResponse::getWorkerType()
@@ -1609,6 +1963,69 @@ bool Show2dModelTrainingJobResponse::allocatedResourceIsSet() const
 void Show2dModelTrainingJobResponse::unsetallocatedResource()
 {
     allocatedResourceIsSet_ = false;
+}
+
+std::string Show2dModelTrainingJobResponse::getTrainVideoRotationState() const
+{
+    return trainVideoRotationState_;
+}
+
+void Show2dModelTrainingJobResponse::setTrainVideoRotationState(const std::string& value)
+{
+    trainVideoRotationState_ = value;
+    trainVideoRotationStateIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::trainVideoRotationStateIsSet() const
+{
+    return trainVideoRotationStateIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsettrainVideoRotationState()
+{
+    trainVideoRotationStateIsSet_ = false;
+}
+
+std::string Show2dModelTrainingJobResponse::getActionVideoRotationState() const
+{
+    return actionVideoRotationState_;
+}
+
+void Show2dModelTrainingJobResponse::setActionVideoRotationState(const std::string& value)
+{
+    actionVideoRotationState_ = value;
+    actionVideoRotationStateIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::actionVideoRotationStateIsSet() const
+{
+    return actionVideoRotationStateIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetactionVideoRotationState()
+{
+    actionVideoRotationStateIsSet_ = false;
+}
+
+std::vector<SubTrainingJobInfoDto>& Show2dModelTrainingJobResponse::getSubTrainingJobInfo()
+{
+    return subTrainingJobInfo_;
+}
+
+void Show2dModelTrainingJobResponse::setSubTrainingJobInfo(const std::vector<SubTrainingJobInfoDto>& value)
+{
+    subTrainingJobInfo_ = value;
+    subTrainingJobInfoIsSet_ = true;
+}
+
+bool Show2dModelTrainingJobResponse::subTrainingJobInfoIsSet() const
+{
+    return subTrainingJobInfoIsSet_;
+}
+
+void Show2dModelTrainingJobResponse::unsetsubTrainingJobInfo()
+{
+    subTrainingJobInfoIsSet_ = false;
 }
 
 std::string Show2dModelTrainingJobResponse::getXRequestId() const

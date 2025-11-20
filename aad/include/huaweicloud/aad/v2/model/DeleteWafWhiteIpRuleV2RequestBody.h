@@ -58,7 +58,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 防护区域
+    /// 防护区域,0-大陆,1-海外
     /// </summary>
 
     int32_t getOverseasType() const;

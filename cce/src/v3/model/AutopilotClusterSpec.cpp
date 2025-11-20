@@ -48,6 +48,12 @@ AutopilotClusterSpec::AutopilotClusterSpec()
     az_ = "";
     azIsSet_ = false;
     extendParamIsSet_ = false;
+    enableMasterVolumeEncryption_ = false;
+    enableMasterVolumeEncryptionIsSet_ = false;
+    enableDistMgt_ = false;
+    enableDistMgtIsSet_ = false;
+    deletionProtection_ = false;
+    deletionProtectionIsSet_ = false;
     configurationsOverrideIsSet_ = false;
 }
 
@@ -126,6 +132,15 @@ web::json::value AutopilotClusterSpec::toJson() const
     }
     if(extendParamIsSet_) {
         val[utility::conversions::to_string_t("extendParam")] = ModelBase::toJson(extendParam_);
+    }
+    if(enableMasterVolumeEncryptionIsSet_) {
+        val[utility::conversions::to_string_t("enableMasterVolumeEncryption")] = ModelBase::toJson(enableMasterVolumeEncryption_);
+    }
+    if(enableDistMgtIsSet_) {
+        val[utility::conversions::to_string_t("enableDistMgt")] = ModelBase::toJson(enableDistMgt_);
+    }
+    if(deletionProtectionIsSet_) {
+        val[utility::conversions::to_string_t("deletionProtection")] = ModelBase::toJson(deletionProtection_);
     }
     if(configurationsOverrideIsSet_) {
         val[utility::conversions::to_string_t("configurationsOverride")] = ModelBase::toJson(configurationsOverride_);
@@ -333,6 +348,33 @@ bool AutopilotClusterSpec::fromJson(const web::json::value& val)
             AutopilotClusterExtendParam refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtendParam(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enableMasterVolumeEncryption"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enableMasterVolumeEncryption"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableMasterVolumeEncryption(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enableDistMgt"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enableDistMgt"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableDistMgt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("deletionProtection"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deletionProtection"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeletionProtection(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("configurationsOverride"))) {
@@ -808,6 +850,69 @@ bool AutopilotClusterSpec::extendParamIsSet() const
 void AutopilotClusterSpec::unsetextendParam()
 {
     extendParamIsSet_ = false;
+}
+
+bool AutopilotClusterSpec::isEnableMasterVolumeEncryption() const
+{
+    return enableMasterVolumeEncryption_;
+}
+
+void AutopilotClusterSpec::setEnableMasterVolumeEncryption(bool value)
+{
+    enableMasterVolumeEncryption_ = value;
+    enableMasterVolumeEncryptionIsSet_ = true;
+}
+
+bool AutopilotClusterSpec::enableMasterVolumeEncryptionIsSet() const
+{
+    return enableMasterVolumeEncryptionIsSet_;
+}
+
+void AutopilotClusterSpec::unsetenableMasterVolumeEncryption()
+{
+    enableMasterVolumeEncryptionIsSet_ = false;
+}
+
+bool AutopilotClusterSpec::isEnableDistMgt() const
+{
+    return enableDistMgt_;
+}
+
+void AutopilotClusterSpec::setEnableDistMgt(bool value)
+{
+    enableDistMgt_ = value;
+    enableDistMgtIsSet_ = true;
+}
+
+bool AutopilotClusterSpec::enableDistMgtIsSet() const
+{
+    return enableDistMgtIsSet_;
+}
+
+void AutopilotClusterSpec::unsetenableDistMgt()
+{
+    enableDistMgtIsSet_ = false;
+}
+
+bool AutopilotClusterSpec::isDeletionProtection() const
+{
+    return deletionProtection_;
+}
+
+void AutopilotClusterSpec::setDeletionProtection(bool value)
+{
+    deletionProtection_ = value;
+    deletionProtectionIsSet_ = true;
+}
+
+bool AutopilotClusterSpec::deletionProtectionIsSet() const
+{
+    return deletionProtectionIsSet_;
+}
+
+void AutopilotClusterSpec::unsetdeletionProtection()
+{
+    deletionProtectionIsSet_ = false;
 }
 
 std::vector<AutopilotPackageConfiguration>& AutopilotClusterSpec::getConfigurationsOverride()

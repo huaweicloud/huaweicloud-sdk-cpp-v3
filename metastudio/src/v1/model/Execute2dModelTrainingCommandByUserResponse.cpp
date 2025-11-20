@@ -18,6 +18,7 @@ Execute2dModelTrainingCommandByUserResponse::Execute2dModelTrainingCommandByUser
     multipartDataIsSet_ = false;
     excuteFailedMsg_ = "";
     excuteFailedMsgIsSet_ = false;
+    errorInfoIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -43,6 +44,9 @@ web::json::value Execute2dModelTrainingCommandByUserResponse::toJson() const
     }
     if(excuteFailedMsgIsSet_) {
         val[utility::conversions::to_string_t("excute_failed_msg")] = ModelBase::toJson(excuteFailedMsg_);
+    }
+    if(errorInfoIsSet_) {
+        val[utility::conversions::to_string_t("error_info")] = ModelBase::toJson(errorInfo_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -88,6 +92,15 @@ bool Execute2dModelTrainingCommandByUserResponse::fromJson(const web::json::valu
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExcuteFailedMsg(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("error_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_info"));
+        if(!fieldValue.is_null())
+        {
+            ErrorResponse refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setErrorInfo(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -185,6 +198,27 @@ bool Execute2dModelTrainingCommandByUserResponse::excuteFailedMsgIsSet() const
 void Execute2dModelTrainingCommandByUserResponse::unsetexcuteFailedMsg()
 {
     excuteFailedMsgIsSet_ = false;
+}
+
+ErrorResponse Execute2dModelTrainingCommandByUserResponse::getErrorInfo() const
+{
+    return errorInfo_;
+}
+
+void Execute2dModelTrainingCommandByUserResponse::setErrorInfo(const ErrorResponse& value)
+{
+    errorInfo_ = value;
+    errorInfoIsSet_ = true;
+}
+
+bool Execute2dModelTrainingCommandByUserResponse::errorInfoIsSet() const
+{
+    return errorInfoIsSet_;
+}
+
+void Execute2dModelTrainingCommandByUserResponse::unseterrorInfo()
+{
+    errorInfoIsSet_ = false;
 }
 
 std::string Execute2dModelTrainingCommandByUserResponse::getXRequestId() const

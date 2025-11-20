@@ -3437,6 +3437,41 @@ HttpRequestDef RdsMeta::genRequestDefForListBusinessPartners() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListDbAgentJobHistorySteps() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForListDbAgentJobHistorys() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("RunStatus")
+                  .withJsonTag("run_status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListDbAgentJobs() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("JobType")
@@ -3686,6 +3721,26 @@ HttpRequestDef RdsMeta::genRequestDefForModifyPublication() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForRefreshPublicationSnapshot() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForRefreshSubscription() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForRevokeSqlserverDbUserPrivilege() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -3715,6 +3770,16 @@ HttpRequestDef RdsMeta::genRequestDefForSetInstancesNewDbShrink() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForSyncReplicationMetadata() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 

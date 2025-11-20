@@ -1475,6 +1475,45 @@ std::shared_ptr<ListAddonInstancesResponse> CceClient::listAddonInstances(ListAd
 
     return localVarResult;
 }
+std::shared_ptr<ListAddonPrecheckTasksResponse> CceClient::listAddonPrecheckTasks(ListAddonPrecheckTasksRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/addons/precheck/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.taskIdIsSet()) {
+        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    }
+    if (request.addonInstanceIdIsSet()) {
+        localVarQueryParams["addon_instance_id"] = parameterToString(request.getAddonInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForListAddonPrecheckTasks());
+
+    std::shared_ptr<ListAddonPrecheckTasksResponse> localVarResult = std::make_shared<ListAddonPrecheckTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListAddonTemplatesResponse> CceClient::listAddonTemplates(ListAddonTemplatesRequest &request)
 {
     std::string localVarPath = "/api/v3/addontemplates";
@@ -1674,6 +1713,42 @@ std::shared_ptr<ListClustersResponse> CceClient::listClusters(ListClustersReques
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForListClusters());
 
     std::shared_ptr<ListClustersResponse> localVarResult = std::make_shared<ListClustersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListHyperNodesResponse> CceClient::listHyperNodes(ListHyperNodesRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/hypernodes";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForListHyperNodes());
+
+    std::shared_ptr<ListHyperNodesResponse> localVarResult = std::make_shared<ListHyperNodesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

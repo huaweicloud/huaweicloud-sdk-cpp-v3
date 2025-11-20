@@ -20,6 +20,10 @@ ShowLivePlatformAccessTypeRequest::ShowLivePlatformAccessTypeRequest()
     xProjectIdIsSet_ = false;
     xAppUserId_ = "";
     xAppUserIdIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
     used_ = false;
     usedIsSet_ = false;
 }
@@ -45,6 +49,12 @@ web::json::value ShowLivePlatformAccessTypeRequest::toJson() const
     }
     if(xAppUserIdIsSet_) {
         val[utility::conversions::to_string_t("X-App-UserId")] = ModelBase::toJson(xAppUserId_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
+    }
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
     if(usedIsSet_) {
         val[utility::conversions::to_string_t("used")] = ModelBase::toJson(used_);
@@ -90,6 +100,24 @@ bool ShowLivePlatformAccessTypeRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setXAppUserId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLimit(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("used"))) {
@@ -187,6 +215,48 @@ bool ShowLivePlatformAccessTypeRequest::xAppUserIdIsSet() const
 void ShowLivePlatformAccessTypeRequest::unsetxAppUserId()
 {
     xAppUserIdIsSet_ = false;
+}
+
+int32_t ShowLivePlatformAccessTypeRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ShowLivePlatformAccessTypeRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ShowLivePlatformAccessTypeRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ShowLivePlatformAccessTypeRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
+}
+
+int32_t ShowLivePlatformAccessTypeRequest::getLimit() const
+{
+    return limit_;
+}
+
+void ShowLivePlatformAccessTypeRequest::setLimit(int32_t value)
+{
+    limit_ = value;
+    limitIsSet_ = true;
+}
+
+bool ShowLivePlatformAccessTypeRequest::limitIsSet() const
+{
+    return limitIsSet_;
+}
+
+void ShowLivePlatformAccessTypeRequest::unsetlimit()
+{
+    limitIsSet_ = false;
 }
 
 bool ShowLivePlatformAccessTypeRequest::isUsed() const

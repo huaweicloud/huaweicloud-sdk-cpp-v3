@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 状态信息
+/// **参数解释**： 状态信息 **约束限制**： 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  MasterEIPResponse_status
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// MasterEIPResponse_status members
 
     /// <summary>
-    /// 集群访问的PrivateIP(HA集群返回VIP)
+    /// **参数解释**： 集群访问的PrivateIP(HA集群返回VIP) **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getPrivateEndpoint() const;
@@ -48,7 +48,7 @@ public:
     void setPrivateEndpoint(const std::string& value);
 
     /// <summary>
-    /// 集群访问的PublicIP
+    /// **参数解释**： 集群访问的PublicIP **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
 
     std::string getPublicEndpoint() const;

@@ -40,7 +40,7 @@ public:
     /// Users members
 
     /// <summary>
-    /// 当前为固定值“user“。
+    /// **参数解释**： 名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： user 
     /// </summary>
 
     std::string getName() const;

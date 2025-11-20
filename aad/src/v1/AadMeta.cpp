@@ -97,7 +97,7 @@ HttpRequestDef AadMeta::genRequestDefForBatchDeleteInstanceIpRule() {
     return reqDefBuilder;
 }
 
-HttpRequestDef AadMeta::genRequestDefForCreateAadDomain() {
+HttpRequestDef AadMeta::genRequestDefForCreateDomain() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -163,6 +163,12 @@ HttpRequestDef AadMeta::genRequestDefForDisassociateIpFromPolicyAndPackage() {
 
 HttpRequestDef AadMeta::genRequestDefForListDomain() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -178,6 +184,12 @@ HttpRequestDef AadMeta::genRequestDefForListInstanceId() {
 
 HttpRequestDef AadMeta::genRequestDefForListInstanceIpRule() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

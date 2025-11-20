@@ -74,6 +74,24 @@ public:
     void unsetip();
     void setIp(const std::string& value);
 
+    /// <summary>
+    /// 限制条数
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// 偏移量
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
 
 protected:
     std::string startTime_;
@@ -84,6 +102,10 @@ protected:
     bool instanceIdIsSet_;
     std::string ip_;
     bool ipIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

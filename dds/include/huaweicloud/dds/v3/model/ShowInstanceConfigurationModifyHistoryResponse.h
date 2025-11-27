@@ -48,10 +48,21 @@ public:
     void unsethistories();
     void setHistories(const std::vector<ConfigurationModifyHistoryInfo>& value);
 
+    /// <summary>
+    /// 总数。
+    /// </summary>
+
+    int32_t getTotalCount() const;
+    bool totalCountIsSet() const;
+    void unsettotalCount();
+    void setTotalCount(int32_t value);
+
 
 protected:
     std::vector<ConfigurationModifyHistoryInfo> histories_;
     bool historiesIsSet_;
+    int32_t totalCount_;
+    bool totalCountIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

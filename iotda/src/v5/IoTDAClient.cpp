@@ -1583,6 +1583,45 @@ std::shared_ptr<ListCertificatesResponse> IoTDAClient::listCertificates(ListCert
 
     return localVarResult;
 }
+std::shared_ptr<ShowCertificateResponse> IoTDAClient::showCertificate(ShowCertificateRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/certificates/{certificate_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["certificate_id"] = parameterToString(request.getCertificateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.spAuthTokenIsSet()) {
+        localVarHeaderParams["Sp-Auth-Token"] = parameterToString(request.getSpAuthToken());
+    }
+    if (request.stageAuthTokenIsSet()) {
+        localVarHeaderParams["Stage-Auth-Token"] = parameterToString(request.getStageAuthToken());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForShowCertificate());
+
+    std::shared_ptr<ShowCertificateResponse> localVarResult = std::make_shared<ShowCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateCertificateResponse> IoTDAClient::updateCertificate(UpdateCertificateRequest &request)
 {
     std::string localVarPath = "/v5/iot/{project_id}/certificates/{certificate_id}";
@@ -3379,7 +3418,7 @@ std::shared_ptr<UpdateDeviceShadowDesiredDataResponse> IoTDAClient::updateDevice
 }
 std::shared_ptr<CreateDomainConfigurationResponse> IoTDAClient::createDomainConfiguration(CreateDomainConfigurationRequest &request)
 {
-    std::string localVarPath = "/{project_id}/domain-configurations";
+    std::string localVarPath = "/v5/iot/{project_id}/domain-configurations";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -3423,7 +3462,7 @@ std::shared_ptr<CreateDomainConfigurationResponse> IoTDAClient::createDomainConf
 }
 std::shared_ptr<DeleteDomainConfigurationResponse> IoTDAClient::deleteDomainConfiguration(DeleteDomainConfigurationRequest &request)
 {
-    std::string localVarPath = "/{project_id}/domain-configurations/{configuration_id}";
+    std::string localVarPath = "/v5/iot/{project_id}/domain-configurations/{configuration_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -3456,7 +3495,7 @@ std::shared_ptr<DeleteDomainConfigurationResponse> IoTDAClient::deleteDomainConf
 }
 std::shared_ptr<ListDomainConfigurationsResponse> IoTDAClient::listDomainConfigurations(ListDomainConfigurationsRequest &request)
 {
-    std::string localVarPath = "/{project_id}/domain-configurations";
+    std::string localVarPath = "/v5/iot/{project_id}/domain-configurations";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -3497,7 +3536,7 @@ std::shared_ptr<ListDomainConfigurationsResponse> IoTDAClient::listDomainConfigu
 }
 std::shared_ptr<ShowDomainConfigurationResponse> IoTDAClient::showDomainConfiguration(ShowDomainConfigurationRequest &request)
 {
-    std::string localVarPath = "/{project_id}/domain-configurations/{configuration_id}";
+    std::string localVarPath = "/v5/iot/{project_id}/domain-configurations/{configuration_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -3530,7 +3569,7 @@ std::shared_ptr<ShowDomainConfigurationResponse> IoTDAClient::showDomainConfigur
 }
 std::shared_ptr<UpdateDomainConfigurationResponse> IoTDAClient::updateDomainConfiguration(UpdateDomainConfigurationRequest &request)
 {
-    std::string localVarPath = "/{project_id}/domain-configurations/{configuration_id}";
+    std::string localVarPath = "/v5/iot/{project_id}/domain-configurations/{configuration_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -3570,6 +3609,169 @@ std::shared_ptr<UpdateDomainConfigurationResponse> IoTDAClient::updateDomainConf
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateExportTaskResponse> IoTDAClient::createExportTask(CreateExportTaskRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/export-tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForCreateExportTask());
+
+    std::shared_ptr<CreateExportTaskResponse> localVarResult = std::make_shared<CreateExportTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteExportTaskResponse> IoTDAClient::deleteExportTask(DeleteExportTaskRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/export-tasks/{export_task_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["export_task_id"] = parameterToString(request.getExportTaskId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForDeleteExportTask());
+
+    std::shared_ptr<DeleteExportTaskResponse> localVarResult = std::make_shared<DeleteExportTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListExportTasksResponse> IoTDAClient::listExportTasks(ListExportTasksRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/export-tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.resourceTypeIsSet()) {
+        localVarQueryParams["resource_type"] = parameterToString(request.getResourceType());
+    }
+    if (request.resourceConditionIsSet()) {
+        localVarQueryParams["resource_condition"] = parameterToString(request.getResourceCondition());
+    }
+    if (request.appTypeIsSet()) {
+        localVarQueryParams["app_type"] = parameterToString(request.getAppType());
+    }
+    if (request.appIdIsSet()) {
+        localVarQueryParams["app_id"] = parameterToString(request.getAppId());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForListExportTasks());
+
+    std::shared_ptr<ListExportTasksResponse> localVarResult = std::make_shared<ListExportTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowExportTaskResponse> IoTDAClient::showExportTask(ShowExportTaskRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/export-tasks/{export_task_id}/file";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["export_task_id"] = parameterToString(request.getExportTaskId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForShowExportTask());
+
+    std::shared_ptr<ShowExportTaskResponse> localVarResult = std::make_shared<ShowExportTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -6328,7 +6530,7 @@ std::shared_ptr<UpdateSecurityProfileResponse> IoTDAClient::updateSecurityProfil
 }
 std::shared_ptr<CreateServerCertificateResponse> IoTDAClient::createServerCertificate(CreateServerCertificateRequest &request)
 {
-    std::string localVarPath = "/{project_id}/server-certificates";
+    std::string localVarPath = "/v5/iot/{project_id}/server-certificates";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -6372,7 +6574,7 @@ std::shared_ptr<CreateServerCertificateResponse> IoTDAClient::createServerCertif
 }
 std::shared_ptr<DeleteServerCertificateResponse> IoTDAClient::deleteServerCertificate(DeleteServerCertificateRequest &request)
 {
-    std::string localVarPath = "/{project_id}/server-certificates/{server_certificate_id}";
+    std::string localVarPath = "/v5/iot/{project_id}/server-certificates/{server_certificate_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -6405,7 +6607,7 @@ std::shared_ptr<DeleteServerCertificateResponse> IoTDAClient::deleteServerCertif
 }
 std::shared_ptr<ListServerCertificateResponse> IoTDAClient::listServerCertificate(ListServerCertificateRequest &request)
 {
-    std::string localVarPath = "/{project_id}/server-certificates";
+    std::string localVarPath = "/v5/iot/{project_id}/server-certificates";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -6446,7 +6648,7 @@ std::shared_ptr<ListServerCertificateResponse> IoTDAClient::listServerCertificat
 }
 std::shared_ptr<ShowServerCertificateResponse> IoTDAClient::showServerCertificate(ShowServerCertificateRequest &request)
 {
-    std::string localVarPath = "/{project_id}/server-certificates/{server_certificate_id}";
+    std::string localVarPath = "/v5/iot/{project_id}/server-certificates/{server_certificate_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;

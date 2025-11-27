@@ -20,6 +20,10 @@
 #include <huaweicloud/ga/v1/model/UpdateAcceleratorResponse.h>
 #include <string>
 
+#include <huaweicloud/ga/v1/model/ListByoipPoolsRequest.h>
+#include <huaweicloud/ga/v1/model/ListByoipPoolsResponse.h>
+#include <string>
+
 #include <huaweicloud/ga/v1/model/CreateEndpointRequest.h>
 #include <huaweicloud/ga/v1/model/CreateEndpointRequestBody.h>
 #include <huaweicloud/ga/v1/model/CreateEndpointResponse.h>
@@ -190,6 +194,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateAcceleratorResponse> updateAccelerator(
         UpdateAcceleratorRequest &request
+    );
+
+    // 查询自带IP地址池列表
+    //
+    // 查询自带IP地址池列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListByoipPoolsResponse> listByoipPools(
+        ListByoipPoolsRequest &request
     );
 
     // 创建终端节点

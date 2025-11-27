@@ -2808,6 +2808,16 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSwitchKmsTde() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSwitchLogCollectionStatus() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSwitchReplica() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

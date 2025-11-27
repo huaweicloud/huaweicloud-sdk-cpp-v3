@@ -83,6 +83,7 @@ public:
     static HttpRequestDef genRequestDefForListRestoreTables();
     static HttpRequestDef genRequestDefForListRestoreTime();
     static HttpRequestDef genRequestDefForListSlowLogs();
+    static HttpRequestDef genRequestDefForListSslCertDownloadAddresses();
     static HttpRequestDef genRequestDefForModifyAutoNodeExpansionPolicy();
     static HttpRequestDef genRequestDefForModifyDbUserPrivilege();
     static HttpRequestDef genRequestDefForModifyEpsQuotas();

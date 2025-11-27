@@ -822,6 +822,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListSlowLogs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListSslCertDownloadAddresses() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForModifyAutoNodeExpansionPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

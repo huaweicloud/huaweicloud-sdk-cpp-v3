@@ -195,6 +195,7 @@ public:
     static HttpRequestDef genRequestDefForStopTransaction();
     static HttpRequestDef genRequestDefForSwitchConfiguration();
     static HttpRequestDef genRequestDefForSwitchKmsTde();
+    static HttpRequestDef genRequestDefForSwitchLogCollectionStatus();
     static HttpRequestDef genRequestDefForSwitchReplica();
     static HttpRequestDef genRequestDefForSwitchShard();
     static HttpRequestDef genRequestDefForUpdateExpansionParameters();

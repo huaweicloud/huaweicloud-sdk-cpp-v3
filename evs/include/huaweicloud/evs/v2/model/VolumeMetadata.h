@@ -57,15 +57,6 @@ public:
     void setSystemEncrypted(const std::string& value);
 
     /// <summary>
-    /// 从快照创建云硬盘时的创建方式。 * 0表示使用链接克隆方式。 * 1表示使用全量克隆方式。
-    /// </summary>
-
-    std::string getFullClone() const;
-    bool fullCloneIsSet() const;
-    void unsetfullClone();
-    void setFullClone(const std::string& value);
-
-    /// <summary>
     /// * true表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令。 * false表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，即为默认类型，VBD只能支持简单的SCSI读写命令。 * 该字段不存在时，云硬盘默认为VBD类型。
     /// </summary>
 
@@ -89,8 +80,6 @@ protected:
     bool systemCmkidIsSet_;
     std::string systemEncrypted_;
     bool systemEncryptedIsSet_;
-    std::string fullClone_;
-    bool fullCloneIsSet_;
     std::string hwPassthrough_;
     bool hwPassthroughIsSet_;
     std::string orderID_;

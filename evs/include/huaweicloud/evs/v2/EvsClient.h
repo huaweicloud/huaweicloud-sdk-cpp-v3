@@ -41,6 +41,8 @@
 #include <huaweicloud/evs/v2/model/CreateVolumeResponse.h>
 #include <huaweicloud/evs/v2/model/DeleteSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/DeleteSnapshotResponse.h>
+#include <huaweicloud/evs/v2/model/DeleteVolumeInRecycleRequest.h>
+#include <huaweicloud/evs/v2/model/DeleteVolumeInRecycleResponse.h>
 #include <huaweicloud/evs/v2/model/DeleteVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/DeleteVolumeResponse.h>
 #include <huaweicloud/evs/v2/model/ListSnapshotsRequest.h>
@@ -50,8 +52,11 @@
 #include <huaweicloud/evs/v2/model/ListVolumesByTagsRequest.h>
 #include <huaweicloud/evs/v2/model/ListVolumesByTagsRequestBody.h>
 #include <huaweicloud/evs/v2/model/ListVolumesByTagsResponse.h>
+#include <huaweicloud/evs/v2/model/ListVolumesInRecycleRequest.h>
+#include <huaweicloud/evs/v2/model/ListVolumesInRecycleResponse.h>
 #include <huaweicloud/evs/v2/model/ListVolumesRequest.h>
 #include <huaweicloud/evs/v2/model/ListVolumesResponse.h>
+#include <huaweicloud/evs/v2/model/ModifyRecycleBinPolicyRequestBody.h>
 #include <huaweicloud/evs/v2/model/ModifyVolumeQoSRequest.h>
 #include <huaweicloud/evs/v2/model/ModifyVolumeQoSRequestBody.h>
 #include <huaweicloud/evs/v2/model/ModifyVolumeQoSResponse.h>
@@ -61,13 +66,19 @@
 #include <huaweicloud/evs/v2/model/RetypeVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/RetypeVolumeRequestBody.h>
 #include <huaweicloud/evs/v2/model/RetypeVolumeResponse.h>
+#include <huaweicloud/evs/v2/model/RevertVolumeInRecycleRequest.h>
+#include <huaweicloud/evs/v2/model/RevertVolumeInRecycleResponse.h>
 #include <huaweicloud/evs/v2/model/RollbackSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/RollbackSnapshotRequestBody.h>
 #include <huaweicloud/evs/v2/model/RollbackSnapshotResponse.h>
 #include <huaweicloud/evs/v2/model/ShowJobRequest.h>
 #include <huaweicloud/evs/v2/model/ShowJobResponse.h>
+#include <huaweicloud/evs/v2/model/ShowRecyclePolicyRequest.h>
+#include <huaweicloud/evs/v2/model/ShowRecyclePolicyResponse.h>
 #include <huaweicloud/evs/v2/model/ShowSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/ShowSnapshotResponse.h>
+#include <huaweicloud/evs/v2/model/ShowVolumeInRecycleRequest.h>
+#include <huaweicloud/evs/v2/model/ShowVolumeInRecycleResponse.h>
 #include <huaweicloud/evs/v2/model/ShowVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/ShowVolumeResponse.h>
 #include <huaweicloud/evs/v2/model/ShowVolumeTagsRequest.h>
@@ -76,6 +87,8 @@
 #include <huaweicloud/evs/v2/model/UnsubscribePostpaidVolumeResponse.h>
 #include <huaweicloud/evs/v2/model/UnsubscribeVolumeRequestBody.h>
 #include <huaweicloud/evs/v2/model/UnsubscribeVolumeResponseBody.h>
+#include <huaweicloud/evs/v2/model/UpdateRecyclePolicyRequest.h>
+#include <huaweicloud/evs/v2/model/UpdateRecyclePolicyResponse.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotRequestBody.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotResponse.h>
@@ -247,6 +260,14 @@ public:
     std::shared_ptr<DeleteVolumeResponse> deleteVolume(
         DeleteVolumeRequest &request
     );
+    // 删除回收站中单个云硬盘
+    //
+    // 删除回收站中单个云硬盘。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteVolumeInRecycleResponse> deleteVolumeInRecycle(
+        DeleteVolumeInRecycleRequest &request
+    );
     // 查询云硬盘快照详情列表
     //
     // 查询云硬盘快照详细列表信息。
@@ -278,6 +299,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListVolumesByTagsResponse> listVolumesByTags(
         ListVolumesByTagsRequest &request
+    );
+    // 查询回收站中所有云硬盘详情
+    //
+    // 查询回收站中所有云硬盘的详细信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListVolumesInRecycleResponse> listVolumesInRecycle(
+        ListVolumesInRecycleRequest &request
     );
     // 修改云硬盘QoS
     //
@@ -313,6 +342,14 @@ public:
     std::shared_ptr<RetypeVolumeResponse> retypeVolume(
         RetypeVolumeRequest &request
     );
+    // 还原回收站中单个云硬盘
+    //
+    // 还原回收站中单个云硬盘。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RevertVolumeInRecycleResponse> revertVolumeInRecycle(
+        RevertVolumeInRecycleRequest &request
+    );
     // 回滚快照到云硬盘
     //
     // 将快照数据回滚到云硬盘。支持企业项目授权功能。
@@ -330,6 +367,14 @@ public:
     std::shared_ptr<ShowJobResponse> showJob(
         ShowJobRequest &request
     );
+    // 查询回收站策略
+    //
+    // 查询回收站策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRecyclePolicyResponse> showRecyclePolicy(
+        ShowRecyclePolicyRequest &request
+    );
     // 查询单个云硬盘快照详情
     //
     // 查询单个云硬盘快照信息。支持企业项目授权功能。
@@ -345,6 +390,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVolumeResponse> showVolume(
         ShowVolumeRequest &request
+    );
+    // 查询回收站中单个云硬盘详情
+    //
+    // 查询回收站中单个云硬盘的详细信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowVolumeInRecycleResponse> showVolumeInRecycle(
+        ShowVolumeInRecycleRequest &request
     );
     // 查询云硬盘标签
     //
@@ -363,6 +416,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UnsubscribePostpaidVolumeResponse> unsubscribePostpaidVolume(
         UnsubscribePostpaidVolumeRequest &request
+    );
+    // 更新回收站策略
+    //
+    // 更新回收站策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateRecyclePolicyResponse> updateRecyclePolicy(
+        UpdateRecyclePolicyRequest &request
     );
     // 更新云硬盘快照
     //

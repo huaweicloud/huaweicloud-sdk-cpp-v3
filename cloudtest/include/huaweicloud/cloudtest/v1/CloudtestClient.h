@@ -31,6 +31,8 @@
 #include <huaweicloud/cloudtest/v1/model/BatchDeleteTestReportResponse.h>
 #include <huaweicloud/cloudtest/v1/model/BatchRemoveTestCasesFromIteratorRequest.h>
 #include <huaweicloud/cloudtest/v1/model/BatchRemoveTestCasesFromIteratorResponse.h>
+#include <huaweicloud/cloudtest/v1/model/BatchUpdateTestCasesInDiffVersionRequest.h>
+#include <huaweicloud/cloudtest/v1/model/BatchUpdateTestCasesInDiffVersionResponse.h>
 #include <huaweicloud/cloudtest/v1/model/BatchUpdateVersionTestCasesRequest.h>
 #include <huaweicloud/cloudtest/v1/model/BatchUpdateVersionTestCasesResponse.h>
 #include <huaweicloud/cloudtest/v1/model/BranchVersionInfo.h>
@@ -541,6 +543,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchRemoveTestCasesFromIteratorResponse> batchRemoveTestCasesFromIterator(
         BatchRemoveTestCasesFromIteratorRequest &request
+    );
+    // 在不同分支或者迭代下批量修改用例
+    //
+    // 在不同分支或者迭代下批量修改用例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchUpdateTestCasesInDiffVersionResponse> batchUpdateTestCasesInDiffVersion(
+        BatchUpdateTestCasesInDiffVersionRequest &request
     );
     // 批量更新用例属性
     //

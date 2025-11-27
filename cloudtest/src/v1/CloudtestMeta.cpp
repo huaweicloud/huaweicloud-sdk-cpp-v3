@@ -92,6 +92,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForBatchRemoveTestCasesFromIterator()
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudtestMeta::genRequestDefForBatchUpdateTestCasesInDiffVersion() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CloudtestMeta::genRequestDefForBatchUpdateVersionTestCases() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

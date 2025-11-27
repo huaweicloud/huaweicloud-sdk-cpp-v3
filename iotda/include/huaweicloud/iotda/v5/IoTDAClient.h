@@ -111,6 +111,8 @@
 #include <huaweicloud/iotda/v5/model/DeleteCertificateResponse.h>
 #include <huaweicloud/iotda/v5/model/ListCertificatesRequest.h>
 #include <huaweicloud/iotda/v5/model/ListCertificatesResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowCertificateRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowCertificateResponse.h>
 #include <huaweicloud/iotda/v5/model/UpdateCertificateDTO.h>
 #include <huaweicloud/iotda/v5/model/UpdateCertificateRequest.h>
 #include <huaweicloud/iotda/v5/model/UpdateCertificateResponse.h>
@@ -249,6 +251,17 @@
 #include <huaweicloud/iotda/v5/model/UpdateDomainConfigurationDTO.h>
 #include <huaweicloud/iotda/v5/model/UpdateDomainConfigurationRequest.h>
 #include <huaweicloud/iotda/v5/model/UpdateDomainConfigurationResponse.h>
+#include <string>
+
+#include <huaweicloud/iotda/v5/model/AddExportTask.h>
+#include <huaweicloud/iotda/v5/model/CreateExportTaskRequest.h>
+#include <huaweicloud/iotda/v5/model/CreateExportTaskResponse.h>
+#include <huaweicloud/iotda/v5/model/DeleteExportTaskRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteExportTaskResponse.h>
+#include <huaweicloud/iotda/v5/model/ListExportTasksRequest.h>
+#include <huaweicloud/iotda/v5/model/ListExportTasksResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowExportTaskRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowExportTaskResponse.h>
 #include <string>
 
 #include <huaweicloud/iotda/v5/model/AddFlowControlPolicy.h>
@@ -810,6 +823,14 @@ public:
     std::shared_ptr<ListCertificatesResponse> listCertificates(
         ListCertificatesRequest &request
     );
+    // 查询CA证书
+    //
+    // 应用服务器可调用此接口在物联网平台查询CA证书
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowCertificateResponse> showCertificate(
+        ShowCertificateRequest &request
+    );
     // 更新CA证书
     //
     // 应用服务器可调用此接口在物联网平台上更新CA证书。仅标准版实例、企业版实例支持该接口调用，基础版不支持。
@@ -1363,6 +1384,39 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDomainConfigurationResponse> updateDomainConfiguration(
         UpdateDomainConfigurationRequest &request
+    );
+
+    // 创建导出任务
+    //
+    // 应用服务器可调用此接口创建资源导出任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateExportTaskResponse> createExportTask(
+        CreateExportTaskRequest &request
+    );
+    // 删除导出任务
+    //
+    // 应用服务器可调用此接口删除在平台创建的导出任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteExportTaskResponse> deleteExportTask(
+        DeleteExportTaskRequest &request
+    );
+    // 查询导出任务列表
+    //
+    // 应用服务器可调用此接口查询已创建的导出任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListExportTasksResponse> listExportTasks(
+        ListExportTasksRequest &request
+    );
+    // 下载导出文件
+    //
+    // 应用服务器可调用此接口下载已经完成的导出任务生成的文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowExportTaskResponse> showExportTask(
+        ShowExportTaskRequest &request
     );
 
     // 新建数据流转流控策略

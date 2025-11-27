@@ -23,6 +23,7 @@ ChannelDetail::ChannelDetail()
     functiongraphForwardingIsSet_ = false;
     mrsKafkaForwardingIsSet_ = false;
     dmsRocketmqForwardingIsSet_ = false;
+    mqttDeviceForwardingIsSet_ = false;
 }
 
 ChannelDetail::~ChannelDetail() = default;
@@ -67,6 +68,9 @@ web::json::value ChannelDetail::toJson() const
     }
     if(dmsRocketmqForwardingIsSet_) {
         val[utility::conversions::to_string_t("dms_rocketmq_forwarding")] = ModelBase::toJson(dmsRocketmqForwarding_);
+    }
+    if(mqttDeviceForwardingIsSet_) {
+        val[utility::conversions::to_string_t("mqtt_device_forwarding")] = ModelBase::toJson(mqttDeviceForwarding_);
     }
 
     return val;
@@ -172,6 +176,15 @@ bool ChannelDetail::fromJson(const web::json::value& val)
             DmsRocketMQForwarding refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDmsRocketmqForwarding(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mqtt_device_forwarding"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mqtt_device_forwarding"));
+        if(!fieldValue.is_null())
+        {
+            MqttDeviceForwarding refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMqttDeviceForwarding(refVal);
         }
     }
     return ok;
@@ -407,6 +420,27 @@ bool ChannelDetail::dmsRocketmqForwardingIsSet() const
 void ChannelDetail::unsetdmsRocketmqForwarding()
 {
     dmsRocketmqForwardingIsSet_ = false;
+}
+
+MqttDeviceForwarding ChannelDetail::getMqttDeviceForwarding() const
+{
+    return mqttDeviceForwarding_;
+}
+
+void ChannelDetail::setMqttDeviceForwarding(const MqttDeviceForwarding& value)
+{
+    mqttDeviceForwarding_ = value;
+    mqttDeviceForwardingIsSet_ = true;
+}
+
+bool ChannelDetail::mqttDeviceForwardingIsSet() const
+{
+    return mqttDeviceForwardingIsSet_;
+}
+
+void ChannelDetail::unsetmqttDeviceForwarding()
+{
+    mqttDeviceForwardingIsSet_ = false;
 }
 
 }

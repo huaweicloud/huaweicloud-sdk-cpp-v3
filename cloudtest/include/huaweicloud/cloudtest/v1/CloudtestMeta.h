@@ -22,6 +22,7 @@ public:
     static HttpRequestDef genRequestDefForBatchDeleteTestCases();
     static HttpRequestDef genRequestDefForBatchDeleteTestReport();
     static HttpRequestDef genRequestDefForBatchRemoveTestCasesFromIterator();
+    static HttpRequestDef genRequestDefForBatchUpdateTestCasesInDiffVersion();
     static HttpRequestDef genRequestDefForBatchUpdateVersionTestCases();
     static HttpRequestDef genRequestDefForCheckPermission();
     static HttpRequestDef genRequestDefForCreateIterator();

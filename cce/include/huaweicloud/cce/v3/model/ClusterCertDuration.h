@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <cpprest/details/basic_types.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -51,16 +51,16 @@ public:
     /// **参数解释：** 集群证书到期时间。 **约束限制：** duration和expire_at参数至少需要指定一个，若同时指定则以expire_at参数为准。 **取值范围：** 证书到期时间须在当前时间后15分钟至5年之间，参数格式为：2025-01-01 16:00:00 +0000 UTC。 **默认取值：** 不涉及
     /// </summary>
 
-    utility::datetime getExpireAt() const;
+    std::string getExpireAt() const;
     bool expireAtIsSet() const;
     void unsetexpireAt();
-    void setExpireAt(const utility::datetime& value);
+    void setExpireAt(const std::string& value);
 
 
 protected:
     int32_t duration_;
     bool durationIsSet_;
-    utility::datetime expireAt_;
+    std::string expireAt_;
     bool expireAtIsSet_;
 
 };

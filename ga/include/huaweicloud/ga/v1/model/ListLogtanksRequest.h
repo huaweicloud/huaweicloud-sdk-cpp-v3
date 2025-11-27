@@ -85,7 +85,7 @@ public:
     void setResourceIds(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 关联云日志的资源类型。
+    /// 云日志的资源类型。 取值范围： LISTENER：监听器
     /// </summary>
 
     std::string getResourceType() const;

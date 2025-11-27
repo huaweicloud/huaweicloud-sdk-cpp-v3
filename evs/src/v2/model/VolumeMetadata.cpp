@@ -16,8 +16,6 @@ VolumeMetadata::VolumeMetadata()
     systemCmkidIsSet_ = false;
     systemEncrypted_ = "";
     systemEncryptedIsSet_ = false;
-    fullClone_ = "";
-    fullCloneIsSet_ = false;
     hwPassthrough_ = "";
     hwPassthroughIsSet_ = false;
     orderID_ = "";
@@ -39,9 +37,6 @@ web::json::value VolumeMetadata::toJson() const
     }
     if(systemEncryptedIsSet_) {
         val[utility::conversions::to_string_t("__system__encrypted")] = ModelBase::toJson(systemEncrypted_);
-    }
-    if(fullCloneIsSet_) {
-        val[utility::conversions::to_string_t("full_clone")] = ModelBase::toJson(fullClone_);
     }
     if(hwPassthroughIsSet_) {
         val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwPassthrough_);
@@ -72,15 +67,6 @@ bool VolumeMetadata::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSystemEncrypted(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("full_clone"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("full_clone"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFullClone(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("hw:passthrough"))) {
@@ -145,27 +131,6 @@ bool VolumeMetadata::systemEncryptedIsSet() const
 void VolumeMetadata::unsetsystemEncrypted()
 {
     systemEncryptedIsSet_ = false;
-}
-
-std::string VolumeMetadata::getFullClone() const
-{
-    return fullClone_;
-}
-
-void VolumeMetadata::setFullClone(const std::string& value)
-{
-    fullClone_ = value;
-    fullCloneIsSet_ = true;
-}
-
-bool VolumeMetadata::fullCloneIsSet() const
-{
-    return fullCloneIsSet_;
-}
-
-void VolumeMetadata::unsetfullClone()
-{
-    fullCloneIsSet_ = false;
 }
 
 std::string VolumeMetadata::getHwPassthrough() const

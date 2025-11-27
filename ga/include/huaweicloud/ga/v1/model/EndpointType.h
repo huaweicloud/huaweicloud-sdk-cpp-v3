@@ -36,6 +36,11 @@ public:
     enum class eEndpointType 
     {
         EndpointType_EIP,
+        EndpointType_ECS,
+        EndpointType_ELB,
+        EndpointType_CUSTOM_IP,
+        EndpointType_CUSTOM_DOMAIN_NAME,
+        EndpointType_CUSTOM_EIP,
     };
 
     eEndpointType getValue() const;

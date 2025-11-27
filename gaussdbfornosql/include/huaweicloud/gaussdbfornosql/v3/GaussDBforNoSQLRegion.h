@@ -122,6 +122,10 @@ public:
             { 
                 "https://gaussdb-nosql.eu-west-101.myhuaweicloud.eu"
             });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://gaussdb-nosql.cn-north-11.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

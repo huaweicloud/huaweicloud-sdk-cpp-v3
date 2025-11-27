@@ -572,6 +572,36 @@ std::shared_ptr<DeleteVolumeResponse> EvsClient::deleteVolume(DeleteVolumeReques
 
     return localVarResult;
 }
+std::shared_ptr<DeleteVolumeInRecycleResponse> EvsClient::deleteVolumeInRecycle(DeleteVolumeInRecycleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/recycle-bin-volumes/{volume_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForDeleteVolumeInRecycle());
+
+    std::shared_ptr<DeleteVolumeInRecycleResponse> localVarResult = std::make_shared<DeleteVolumeInRecycleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSnapshotsResponse> EvsClient::listSnapshots(ListSnapshotsRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/cloudsnapshots/detail";
@@ -790,6 +820,53 @@ std::shared_ptr<ListVolumesByTagsResponse> EvsClient::listVolumesByTags(ListVolu
 
     return localVarResult;
 }
+std::shared_ptr<ListVolumesInRecycleResponse> EvsClient::listVolumesInRecycle(ListVolumesInRecycleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/recycle-bin-volumes/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.availabilityZoneIsSet()) {
+        localVarQueryParams["availability_zone"] = parameterToString(request.getAvailabilityZone());
+    }
+    if (request.serviceTypeIsSet()) {
+        localVarQueryParams["service_type"] = parameterToString(request.getServiceType());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForListVolumesInRecycle());
+
+    std::shared_ptr<ListVolumesInRecycleResponse> localVarResult = std::make_shared<ListVolumesInRecycleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ModifyVolumeQoSResponse> EvsClient::modifyVolumeQoS(ModifyVolumeQoSRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/cloudvolumes/{volume_id}/qos";
@@ -916,6 +993,36 @@ std::shared_ptr<RetypeVolumeResponse> EvsClient::retypeVolume(RetypeVolumeReques
 
     return localVarResult;
 }
+std::shared_ptr<RevertVolumeInRecycleResponse> EvsClient::revertVolumeInRecycle(RevertVolumeInRecycleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/recycle-bin-volumes/{volume_id}/revert";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForRevertVolumeInRecycle());
+
+    std::shared_ptr<RevertVolumeInRecycleResponse> localVarResult = std::make_shared<RevertVolumeInRecycleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<RollbackSnapshotResponse> EvsClient::rollbackSnapshot(RollbackSnapshotRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/cloudsnapshots/{snapshot_id}/rollback";
@@ -988,6 +1095,35 @@ std::shared_ptr<ShowJobResponse> EvsClient::showJob(ShowJobRequest &request)
 
     return localVarResult;
 }
+std::shared_ptr<ShowRecyclePolicyResponse> EvsClient::showRecyclePolicy(ShowRecyclePolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/recycle-bin-volumes/policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForShowRecyclePolicy());
+
+    std::shared_ptr<ShowRecyclePolicyResponse> localVarResult = std::make_shared<ShowRecyclePolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowSnapshotResponse> EvsClient::showSnapshot(ShowSnapshotRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/cloudsnapshots/{snapshot_id}";
@@ -1042,6 +1178,36 @@ std::shared_ptr<ShowVolumeResponse> EvsClient::showVolume(ShowVolumeRequest &req
         localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForShowVolume());
 
     std::shared_ptr<ShowVolumeResponse> localVarResult = std::make_shared<ShowVolumeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowVolumeInRecycleResponse> EvsClient::showVolumeInRecycle(ShowVolumeInRecycleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/recycle-bin-volumes/{volume_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForShowVolumeInRecycle());
+
+    std::shared_ptr<ShowVolumeInRecycleResponse> localVarResult = std::make_shared<ShowVolumeInRecycleResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1107,6 +1273,47 @@ std::shared_ptr<UnsubscribePostpaidVolumeResponse> EvsClient::unsubscribePostpai
         localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForUnsubscribePostpaidVolume());
 
     std::shared_ptr<UnsubscribePostpaidVolumeResponse> localVarResult = std::make_shared<UnsubscribePostpaidVolumeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateRecyclePolicyResponse> EvsClient::updateRecyclePolicy(UpdateRecyclePolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/recycle-bin-volumes/policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForUpdateRecyclePolicy());
+
+    std::shared_ptr<UpdateRecyclePolicyResponse> localVarResult = std::make_shared<UpdateRecyclePolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

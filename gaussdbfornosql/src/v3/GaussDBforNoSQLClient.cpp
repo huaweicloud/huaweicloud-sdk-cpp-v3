@@ -2824,6 +2824,36 @@ std::shared_ptr<ListSlowLogsResponse> GaussDBforNoSQLClient::listSlowLogs(ListSl
 
     return localVarResult;
 }
+std::shared_ptr<ListSslCertDownloadAddressesResponse> GaussDBforNoSQLClient::listSslCertDownloadAddresses(ListSslCertDownloadAddressesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforNoSQLMeta::genRequestDefForListSslCertDownloadAddresses());
+
+    std::shared_ptr<ListSslCertDownloadAddressesResponse> localVarResult = std::make_shared<ListSslCertDownloadAddressesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ModifyAutoNodeExpansionPolicyResponse> GaussDBforNoSQLClient::modifyAutoNodeExpansionPolicy(ModifyAutoNodeExpansionPolicyRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy";

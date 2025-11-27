@@ -40,7 +40,7 @@ public:
     /// AccelerateIp members
 
     /// <summary>
-    /// IP地址类型。
+    /// IP地址类型。 取值范围：IPV4、IPV6
     /// </summary>
 
     std::string getIpType() const;

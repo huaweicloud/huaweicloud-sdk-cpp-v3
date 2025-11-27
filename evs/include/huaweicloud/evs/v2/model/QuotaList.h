@@ -10,8 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/evs/v2/model/QuotaDetailBackupGigabytes.h>
-#include <huaweicloud/evs/v2/model/QuotaDetailSnapshotsESSD.h>
-#include <huaweicloud/evs/v2/model/QuotaDetailGigabytesGPSSD.h>
 #include <huaweicloud/evs/v2/model/QuotaDetailPerVolumeGigabytes.h>
 #include <string>
 #include <huaweicloud/evs/v2/model/QuotaDetailGigabytes.h>
@@ -27,10 +25,6 @@
 #include <huaweicloud/evs/v2/model/QuotaDetailGigabytesSSD.h>
 #include <huaweicloud/evs/v2/model/QuotaDetailSnapshotsSAS.h>
 #include <huaweicloud/evs/v2/model/QuotaDetailSnapshots.h>
-#include <huaweicloud/evs/v2/model/QuotaDetailSnapshotsGPSSD.h>
-#include <huaweicloud/evs/v2/model/QuotaDetailVolumesGPSSD.h>
-#include <huaweicloud/evs/v2/model/QuotaDetailGigabytesESSD.h>
-#include <huaweicloud/evs/v2/model/QuotaDetailVolumesESSD.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -198,60 +192,6 @@ public:
     /// 
     /// </summary>
 
-    QuotaDetailGigabytesESSD getGigabytesESSD() const;
-    bool gigabytesESSDIsSet() const;
-    void unsetgigabytesESSD();
-    void setGigabytesESSD(const QuotaDetailGigabytesESSD& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    QuotaDetailSnapshotsESSD getSnapshotsESSD() const;
-    bool snapshotsESSDIsSet() const;
-    void unsetsnapshotsESSD();
-    void setSnapshotsESSD(const QuotaDetailSnapshotsESSD& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    QuotaDetailVolumesESSD getVolumesESSD() const;
-    bool volumesESSDIsSet() const;
-    void unsetvolumesESSD();
-    void setVolumesESSD(const QuotaDetailVolumesESSD& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    QuotaDetailGigabytesGPSSD getGigabytesGPSSD() const;
-    bool gigabytesGPSSDIsSet() const;
-    void unsetgigabytesGPSSD();
-    void setGigabytesGPSSD(const QuotaDetailGigabytesGPSSD& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    QuotaDetailSnapshotsGPSSD getSnapshotsGPSSD() const;
-    bool snapshotsGPSSDIsSet() const;
-    void unsetsnapshotsGPSSD();
-    void setSnapshotsGPSSD(const QuotaDetailSnapshotsGPSSD& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    QuotaDetailVolumesGPSSD getVolumesGPSSD() const;
-    bool volumesGPSSDIsSet() const;
-    void unsetvolumesGPSSD();
-    void setVolumesGPSSD(const QuotaDetailVolumesGPSSD& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
     QuotaDetailPerVolumeGigabytes getPerVolumeGigabytes() const;
     bool perVolumeGigabytesIsSet() const;
     void unsetperVolumeGigabytes();
@@ -289,18 +229,6 @@ protected:
     bool snapshotsSSDIsSet_;
     QuotaDetailVolumesSSD volumesSSD_;
     bool volumesSSDIsSet_;
-    QuotaDetailGigabytesESSD gigabytesESSD_;
-    bool gigabytesESSDIsSet_;
-    QuotaDetailSnapshotsESSD snapshotsESSD_;
-    bool snapshotsESSDIsSet_;
-    QuotaDetailVolumesESSD volumesESSD_;
-    bool volumesESSDIsSet_;
-    QuotaDetailGigabytesGPSSD gigabytesGPSSD_;
-    bool gigabytesGPSSDIsSet_;
-    QuotaDetailSnapshotsGPSSD snapshotsGPSSD_;
-    bool snapshotsGPSSDIsSet_;
-    QuotaDetailVolumesGPSSD volumesGPSSD_;
-    bool volumesGPSSDIsSet_;
     QuotaDetailPerVolumeGigabytes perVolumeGigabytes_;
     bool perVolumeGigabytesIsSet_;
 

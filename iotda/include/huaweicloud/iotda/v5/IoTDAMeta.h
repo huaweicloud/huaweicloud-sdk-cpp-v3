@@ -50,6 +50,7 @@ public:
     static HttpRequestDef genRequestDefForCheckCertificate();
     static HttpRequestDef genRequestDefForDeleteCertificate();
     static HttpRequestDef genRequestDefForListCertificates();
+    static HttpRequestDef genRequestDefForShowCertificate();
     static HttpRequestDef genRequestDefForUpdateCertificate();
     static HttpRequestDef genRequestDefForCreateCommand();
     static HttpRequestDef genRequestDefForCreateDeviceAuthenticationTemplate();
@@ -99,6 +100,10 @@ public:
     static HttpRequestDef genRequestDefForListDomainConfigurations();
     static HttpRequestDef genRequestDefForShowDomainConfiguration();
     static HttpRequestDef genRequestDefForUpdateDomainConfiguration();
+    static HttpRequestDef genRequestDefForCreateExportTask();
+    static HttpRequestDef genRequestDefForDeleteExportTask();
+    static HttpRequestDef genRequestDefForListExportTasks();
+    static HttpRequestDef genRequestDefForShowExportTask();
     static HttpRequestDef genRequestDefForCreateRoutingFlowControlPolicy();
     static HttpRequestDef genRequestDefForDeleteRoutingFlowControlPolicy();
     static HttpRequestDef genRequestDefForListRoutingFlowControlPolicy();

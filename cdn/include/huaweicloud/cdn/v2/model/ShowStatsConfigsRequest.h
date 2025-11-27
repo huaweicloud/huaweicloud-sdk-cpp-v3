@@ -46,10 +46,32 @@ public:
     void unsetconfigType();
     void setConfigType(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 分页查询每页的数量 **约束限制：** 不涉及 **取值范围：** 1-1000 **默认取值：** 10
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 查询偏移量，表示跳过多少个数据开始查询 **约束限制：** 不涉及 **取值范围：** 0-65535 **默认取值：** 0
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
 
 protected:
     int32_t configType_;
     bool configTypeIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

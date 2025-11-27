@@ -13,6 +13,8 @@ namespace Model {
 ShowInstanceConfigurationModifyHistoryResponse::ShowInstanceConfigurationModifyHistoryResponse()
 {
     historiesIsSet_ = false;
+    totalCount_ = 0;
+    totalCountIsSet_ = false;
 }
 
 ShowInstanceConfigurationModifyHistoryResponse::~ShowInstanceConfigurationModifyHistoryResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ShowInstanceConfigurationModifyHistoryResponse::toJson() const
     if(historiesIsSet_) {
         val[utility::conversions::to_string_t("histories")] = ModelBase::toJson(histories_);
     }
+    if(totalCountIsSet_) {
+        val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ShowInstanceConfigurationModifyHistoryResponse::fromJson(const web::json::v
             std::vector<ConfigurationModifyHistoryInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHistories(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalCount(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ShowInstanceConfigurationModifyHistoryResponse::historiesIsSet() const
 void ShowInstanceConfigurationModifyHistoryResponse::unsethistories()
 {
     historiesIsSet_ = false;
+}
+
+int32_t ShowInstanceConfigurationModifyHistoryResponse::getTotalCount() const
+{
+    return totalCount_;
+}
+
+void ShowInstanceConfigurationModifyHistoryResponse::setTotalCount(int32_t value)
+{
+    totalCount_ = value;
+    totalCountIsSet_ = true;
+}
+
+bool ShowInstanceConfigurationModifyHistoryResponse::totalCountIsSet() const
+{
+    return totalCountIsSet_;
+}
+
+void ShowInstanceConfigurationModifyHistoryResponse::unsettotalCount()
+{
+    totalCountIsSet_ = false;
 }
 
 }

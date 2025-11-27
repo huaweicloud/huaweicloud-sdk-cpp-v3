@@ -36,6 +36,7 @@ public:
     enum class eHealthCheckProtocol 
     {
         HealthCheckProtocol_TCP,
+        HealthCheckProtocol_UDP,
     };
 
     eHealthCheckProtocol getValue() const;

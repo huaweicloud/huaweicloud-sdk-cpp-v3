@@ -176,6 +176,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRestoreTimeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListSlowLogsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListSlowLogsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListSslCertDownloadAddressesRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListSslCertDownloadAddressesResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ModifyAutoNodeExpansionPolicyRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ModifyAutoNodeExpansionPolicyRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ModifyAutoNodeExpansionPolicyResponse.h>
@@ -969,6 +971,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSlowLogsResponse> listSlowLogs(
         ListSlowLogsRequest &request
+    );
+    // 获取SSL证书下载地址
+    //
+    // 获取SSL证书下载地址。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSslCertDownloadAddressesResponse> listSslCertDownloadAddresses(
+        ListSslCertDownloadAddressesRequest &request
     );
     // 设置节点自动扩容策略
     //

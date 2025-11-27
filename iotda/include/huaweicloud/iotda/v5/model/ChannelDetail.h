@@ -18,6 +18,7 @@
 #include <huaweicloud/iotda/v5/model/DmsRocketMQForwarding.h>
 #include <huaweicloud/iotda/v5/model/InfluxDBForwarding.h>
 #include <huaweicloud/iotda/v5/model/ObsForwarding.h>
+#include <huaweicloud/iotda/v5/model/MqttDeviceForwarding.h>
 #include <huaweicloud/iotda/v5/model/DisForwarding.h>
 #include <huaweicloud/iotda/v5/model/RomaForwarding.h>
 
@@ -147,6 +148,15 @@ public:
     void unsetdmsRocketmqForwarding();
     void setDmsRocketmqForwarding(const DmsRocketMQForwarding& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    MqttDeviceForwarding getMqttDeviceForwarding() const;
+    bool mqttDeviceForwardingIsSet() const;
+    void unsetmqttDeviceForwarding();
+    void setMqttDeviceForwarding(const MqttDeviceForwarding& value);
+
 
 protected:
     HttpForwarding httpForwarding_;
@@ -171,6 +181,8 @@ protected:
     bool mrsKafkaForwardingIsSet_;
     DmsRocketMQForwarding dmsRocketmqForwarding_;
     bool dmsRocketmqForwardingIsSet_;
+    MqttDeviceForwarding mqttDeviceForwarding_;
+    bool mqttDeviceForwardingIsSet_;
 
 };
 

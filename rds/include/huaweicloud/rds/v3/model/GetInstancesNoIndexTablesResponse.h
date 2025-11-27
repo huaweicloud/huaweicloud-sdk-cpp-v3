@@ -9,6 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/rds/v3/model/Table.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -37,8 +39,19 @@ public:
     /////////////////////////////////////////////
     /// GetInstancesNoIndexTablesResponse members
 
+    /// <summary>
+    /// 特殊表格列表。
+    /// </summary>
+
+    std::vector<Table>& getTables();
+    bool tablesIsSet() const;
+    void unsettables();
+    void setTables(const std::vector<Table>& value);
+
 
 protected:
+    std::vector<Table> tables_;
+    bool tablesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

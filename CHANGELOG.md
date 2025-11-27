@@ -1,3 +1,243 @@
+# 3.1.164 2025-11-27
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateKubernetesClusterCert**
+    - changes of request param
+      - `* expire_at: date -> string`
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ListExportTasks`
+    - `CreateExportTask`
+    - `ShowSpecialUser`
+    - `ExportStatsOpen`
+    - `ListCdnDomainTopPath`
+    - `ShowDomainCountryStat`
+    - `CreateAccessControlTask`
+    - `ListAccessControlTask`
+    - `ListBanUrl`
+    - `ListDomainConfigs`
+    - `ListSpecialConfiguration`
+    - `CreateDomainByDuplicate`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowStatsConfigs**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+
+### HuaweiCloud SDK Cloudtest
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `BatchUpdateTestCasesInDiffVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `RestoreNewInstance`, `ListInstances`
+  - **ShowBackupDownloadLink**
+    - changes of request param
+      - `- X-Language`
+    - changes of response param
+      - `+ group_id`
+      - `+ group_name`
+  - **RestoreNewInstance**
+    - changes of request param
+      - `+ restore_point`
+      - `- datastore`
+      - `- region`
+      - `- port`
+      - `- mode`
+      - `- tags`
+      - `- flavor.storage`
+      - `* flavor: list<CreateInstanceFlavorOption> -> list<RestoreNewInstanceFlavorOption>`
+      - `* body: object<CreateInstanceRequestBody> -> object<RestoreNewInstanceRequestBody>`
+    - changes of response param
+      - `- tags`
+      - `- port`
+      - `- flavor.storage`
+      - `* flavor: list<CreateInstanceFlavorOption> -> list<RestoreNewInstanceFlavorOption>`
+  - **ShowInstanceConfigurationModifyHistory**
+    - changes of response param
+      - `+ total_count`
+
+### HuaweiCloud SDK EVS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ListVolumesInRecycle`
+    - `ShowVolumeInRecycle`
+    - `DeleteVolumeInRecycle`
+    - `RevertVolumeInRecycle`
+    - `ShowRecyclePolicy`
+    - `UpdateRecyclePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateVolume**
+    - changes of response param
+      - `- metadata.full_clone`
+  - **ListVolumesByTags**
+    - changes of response param
+      - `- resources.resource_detail.metadata.full_clone`
+
+### HuaweiCloud SDK GA
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ListByoipPools`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEndpoints**
+    - changes of response param
+      - `+ endpoints.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+  - **CreateEndpoint**
+    - changes of request param
+      - `+ endpoint.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+    - changes of response param
+      - `+ endpoint.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+  - **ShowEndpoint**
+    - changes of response param
+      - `+ endpoint.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+  - **UpdateEndpoint**
+    - changes of response param
+      - `+ endpoint.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+  - **ListHealthChecks**
+    - changes of response param
+      - `+ health_checks.protocol: enum value [UDP]`
+  - **CreateHealthCheck**
+    - changes of request param
+      - `+ health_check.protocol: enum value [UDP]`
+    - changes of response param
+      - `+ health_check.protocol: enum value [UDP]`
+  - **ShowHealthCheck**
+    - changes of response param
+      - `+ health_check.protocol: enum value [UDP]`
+  - **UpdateHealthCheck**
+    - changes of request param
+      - `+ health_check.protocol: enum value [UDP]`
+    - changes of response param
+      - `+ health_check.protocol: enum value [UDP]`
+  - **ListAccelerators**
+    - changes of response param
+      - `+ accelerators.ip_sets.ip_type: enum value [IPV6]`
+  - **CreateAccelerator**
+    - changes of response param
+      - `+ accelerator.ip_sets.ip_type: enum value [IPV6]`
+  - **ShowAccelerator**
+    - changes of response param
+      - `+ accelerator.ip_sets.ip_type: enum value [IPV6]`
+  - **UpdateAccelerator**
+    - changes of response param
+      - `+ accelerator.ip_sets.ip_type: enum value [IPV6]`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListSslCertDownloadAddresses`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `SwitchLogCollectionStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowErrorLogSwitchStatus**
+    - changes of request param
+      - `+ X-Language: enum value [zh-cn,en-us]`
+
+### HuaweiCloud SDK IoTDA
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ListExportTasks`
+    - `CreateExportTask`
+    - `DeleteExportTask`
+    - `ShowExportTask`
+    - `ShowCertificate`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowRuleAction**
+    - changes of response param
+      - `+ channel_detail.mqtt_device_forwarding`
+  - **UpdateRuleAction**
+    - changes of request param
+      - `+ channel_detail.mqtt_device_forwarding`
+    - changes of response param
+      - `+ channel_detail.mqtt_device_forwarding`
+  - **CreateRuleAction**
+    - changes of request param
+      - `+ channel_detail.mqtt_device_forwarding`
+    - changes of response param
+      - `+ channel_detail.mqtt_device_forwarding`
+  - **ListRuleActions**
+    - changes of response param
+      - `+ actions.channel_detail.mqtt_device_forwarding`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListRemoteDb`
+    - `ListReplicationErrors`
+    - `UpdateStatistics`
+    - `RestartDbAgentJob`
+    - `ModifyDbAgentJob`
+    - `SwitchDbAgentJob`
+    - `CreateDistribution`
+    - `BatchModifyPublication`
+    - `CreatePublication`
+- _Bug Fix_
+  - None
+- _Change_
+  - **GetInstancesNoIndexTables**
+    - changes of request param
+      - `+ offset`
+      - `+ limit`
+
 # 3.1.163 2025-11-20
 
 ### HuaweiCloud SDK AAD

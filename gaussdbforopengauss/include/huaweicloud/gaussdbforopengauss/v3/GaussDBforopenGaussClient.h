@@ -323,7 +323,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResetPwdResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResizeInstanceFlavorRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResizeInstanceFlavorResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ResourceErrorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ResourceErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestartInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestartInstanceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestoreDisasterReq.h>
@@ -451,6 +451,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchKmsTdeRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchKmsTdeRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchKmsTdeResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLogCollectionStatusRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLogCollectionStatusResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchReplicaRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchReplicaRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchReplicaResponse.h>
@@ -2087,6 +2089,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchKmsTdeResponse> switchKmsTde(
         SwitchKmsTdeRequest &request
+    );
+    // 修改错误日志采集开关状态
+    //
+    // 打开或者关闭数据库错误日志采集的开关。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchLogCollectionStatusResponse> switchLogCollectionStatus(
+        SwitchLogCollectionStatusRequest &request
     );
     // 分布式实例一主一备一日志形态切换到一主两备形态
     //

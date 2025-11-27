@@ -125,6 +125,11 @@ HttpRequestDef EvsMeta::genRequestDefForDeleteVolume() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EvsMeta::genRequestDefForDeleteVolumeInRecycle() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EvsMeta::genRequestDefForListSnapshots() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -239,6 +244,29 @@ HttpRequestDef EvsMeta::genRequestDefForListVolumesByTags() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EvsMeta::genRequestDefForListVolumesInRecycle() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AvailabilityZone")
+                  .withJsonTag("availability_zone")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ServiceType")
+                  .withJsonTag("service_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EvsMeta::genRequestDefForModifyVolumeQoS() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -266,6 +294,11 @@ HttpRequestDef EvsMeta::genRequestDefForRetypeVolume() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EvsMeta::genRequestDefForRevertVolumeInRecycle() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EvsMeta::genRequestDefForRollbackSnapshot() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -280,12 +313,22 @@ HttpRequestDef EvsMeta::genRequestDefForShowJob() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EvsMeta::genRequestDefForShowRecyclePolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EvsMeta::genRequestDefForShowSnapshot() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
 HttpRequestDef EvsMeta::genRequestDefForShowVolume() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef EvsMeta::genRequestDefForShowVolumeInRecycle() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -304,6 +347,15 @@ HttpRequestDef EvsMeta::genRequestDefForUnsubscribePostpaidVolume() {
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EvsMeta::genRequestDefForUpdateRecyclePolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

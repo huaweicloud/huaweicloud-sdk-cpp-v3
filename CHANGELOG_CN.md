@@ -1,3 +1,243 @@
+# 3.1.164 2025-11-27
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateKubernetesClusterCert**
+    - 请求参数变更
+      - `* expire_at: date -> string`
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ListExportTasks`
+    - `CreateExportTask`
+    - `ShowSpecialUser`
+    - `ExportStatsOpen`
+    - `ListCdnDomainTopPath`
+    - `ShowDomainCountryStat`
+    - `CreateAccessControlTask`
+    - `ListAccessControlTask`
+    - `ListBanUrl`
+    - `ListDomainConfigs`
+    - `ListSpecialConfiguration`
+    - `CreateDomainByDuplicate`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowStatsConfigs**
+    - 请求参数变更
+      - `+ limit`
+      - `+ offset`
+
+### HuaweiCloud SDK Cloudtest
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`BatchUpdateTestCasesInDiffVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`RestoreNewInstance`、`ListInstances`
+  - **ShowBackupDownloadLink**
+    - 请求参数变更
+      - `- X-Language`
+    - 响应参数变更
+      - `+ group_id`
+      - `+ group_name`
+  - **RestoreNewInstance**
+    - 请求参数变更
+      - `+ restore_point`
+      - `- datastore`
+      - `- region`
+      - `- port`
+      - `- mode`
+      - `- tags`
+      - `- flavor.storage`
+      - `* flavor: list<CreateInstanceFlavorOption> -> list<RestoreNewInstanceFlavorOption>`
+      - `* body: object<CreateInstanceRequestBody> -> object<RestoreNewInstanceRequestBody>`
+    - 响应参数变更
+      - `- tags`
+      - `- port`
+      - `- flavor.storage`
+      - `* flavor: list<CreateInstanceFlavorOption> -> list<RestoreNewInstanceFlavorOption>`
+  - **ShowInstanceConfigurationModifyHistory**
+    - 响应参数变更
+      - `+ total_count`
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ListVolumesInRecycle`
+    - `ShowVolumeInRecycle`
+    - `DeleteVolumeInRecycle`
+    - `RevertVolumeInRecycle`
+    - `ShowRecyclePolicy`
+    - `UpdateRecyclePolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateVolume**
+    - 响应参数变更
+      - `- metadata.full_clone`
+  - **ListVolumesByTags**
+    - 响应参数变更
+      - `- resources.resource_detail.metadata.full_clone`
+
+### HuaweiCloud SDK GA
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListByoipPools`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEndpoints**
+    - 响应参数变更
+      - `+ endpoints.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+  - **CreateEndpoint**
+    - 请求参数变更
+      - `+ endpoint.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+    - 响应参数变更
+      - `+ endpoint.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+  - **ShowEndpoint**
+    - 响应参数变更
+      - `+ endpoint.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+  - **UpdateEndpoint**
+    - 响应参数变更
+      - `+ endpoint.resource_type: enum value [ECS,ELB,CUSTOM_IP,CUSTOM_DOMAIN_NAME,CUSTOM_EIP]`
+  - **ListHealthChecks**
+    - 响应参数变更
+      - `+ health_checks.protocol: enum value [UDP]`
+  - **CreateHealthCheck**
+    - 请求参数变更
+      - `+ health_check.protocol: enum value [UDP]`
+    - 响应参数变更
+      - `+ health_check.protocol: enum value [UDP]`
+  - **ShowHealthCheck**
+    - 响应参数变更
+      - `+ health_check.protocol: enum value [UDP]`
+  - **UpdateHealthCheck**
+    - 请求参数变更
+      - `+ health_check.protocol: enum value [UDP]`
+    - 响应参数变更
+      - `+ health_check.protocol: enum value [UDP]`
+  - **ListAccelerators**
+    - 响应参数变更
+      - `+ accelerators.ip_sets.ip_type: enum value [IPV6]`
+  - **CreateAccelerator**
+    - 响应参数变更
+      - `+ accelerator.ip_sets.ip_type: enum value [IPV6]`
+  - **ShowAccelerator**
+    - 响应参数变更
+      - `+ accelerator.ip_sets.ip_type: enum value [IPV6]`
+  - **UpdateAccelerator**
+    - 响应参数变更
+      - `+ accelerator.ip_sets.ip_type: enum value [IPV6]`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListSslCertDownloadAddresses`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`SwitchLogCollectionStatus`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowErrorLogSwitchStatus**
+    - 请求参数变更
+      - `+ X-Language: enum value [zh-cn,en-us]`
+
+### HuaweiCloud SDK IoTDA
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持以下接口：
+    - `ListExportTasks`
+    - `CreateExportTask`
+    - `DeleteExportTask`
+    - `ShowExportTask`
+    - `ShowCertificate`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowRuleAction**
+    - 响应参数变更
+      - `+ channel_detail.mqtt_device_forwarding`
+  - **UpdateRuleAction**
+    - 请求参数变更
+      - `+ channel_detail.mqtt_device_forwarding`
+    - 响应参数变更
+      - `+ channel_detail.mqtt_device_forwarding`
+  - **CreateRuleAction**
+    - 请求参数变更
+      - `+ channel_detail.mqtt_device_forwarding`
+    - 响应参数变更
+      - `+ channel_detail.mqtt_device_forwarding`
+  - **ListRuleActions**
+    - 响应参数变更
+      - `+ actions.channel_detail.mqtt_device_forwarding`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListRemoteDb`
+    - `ListReplicationErrors`
+    - `UpdateStatistics`
+    - `RestartDbAgentJob`
+    - `ModifyDbAgentJob`
+    - `SwitchDbAgentJob`
+    - `CreateDistribution`
+    - `BatchModifyPublication`
+    - `CreatePublication`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **GetInstancesNoIndexTables**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+
 # 3.1.163 2025-11-20
 
 ### HuaweiCloud SDK AAD

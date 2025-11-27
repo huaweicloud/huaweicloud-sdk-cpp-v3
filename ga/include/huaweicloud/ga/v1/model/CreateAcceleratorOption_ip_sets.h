@@ -40,7 +40,7 @@ public:
     /// CreateAcceleratorOption_ip_sets members
 
     /// <summary>
-    /// IP地址类型，取值：IPV4，IPV6
+    /// IP地址类型。 约束限制： 支持单独配置IPV4或同时配置IPV4和IPV6。 取值范围：IPV4、IPV6
     /// </summary>
 
     std::string getIpType() const;

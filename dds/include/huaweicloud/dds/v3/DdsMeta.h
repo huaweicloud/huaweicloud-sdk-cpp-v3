@@ -30,7 +30,6 @@ public:
     static HttpRequestDef genRequestDefForCreateConfiguration();
     static HttpRequestDef genRequestDefForCreateDatabaseRole();
     static HttpRequestDef genRequestDefForCreateDatabaseUser();
-    static HttpRequestDef genRequestDefForCreateInstance();
     static HttpRequestDef genRequestDefForCreateIp();
     static HttpRequestDef genRequestDefForCreateKillOpRule();
     static HttpRequestDef genRequestDefForCreateManualBackup();
@@ -64,7 +63,6 @@ public:
     static HttpRequestDef genRequestDefForListFlavorInfos();
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListInstanceTags();
-    static HttpRequestDef genRequestDefForListInstances();
     static HttpRequestDef genRequestDefForListInstancesByTags();
     static HttpRequestDef genRequestDefForListLtsConfigs();
     static HttpRequestDef genRequestDefForListLtsErrorLogs();

@@ -65,6 +65,24 @@ public:
     void unsettableType();
     void setTableType(const std::string& value);
 
+    /// <summary>
+    /// 索引位置，偏移量。
+    /// </summary>
+
+    std::string getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(const std::string& value);
+
+    /// <summary>
+    /// 查询记录数。
+    /// </summary>
+
+    std::string getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(const std::string& value);
+
 
 protected:
     std::string instanceId_;
@@ -73,6 +91,10 @@ protected:
     bool newestIsSet_;
     std::string tableType_;
     bool tableTypeIsSet_;
+    std::string offset_;
+    bool offsetIsSet_;
+    std::string limit_;
+    bool limitIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

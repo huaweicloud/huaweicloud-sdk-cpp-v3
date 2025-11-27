@@ -616,6 +616,26 @@ HttpRequestDef IoTDAMeta::genRequestDefForListCertificates() {
     return reqDefBuilder;
 }
 
+HttpRequestDef IoTDAMeta::genRequestDefForShowCertificate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamSpAuthToken;
+    reqDefBuilder.withRequestField(headerParamSpAuthToken
+                  .withName("SpAuthToken")
+                  .withJsonTag("Sp-Auth-Token")
+                  .withLocationType(Header_));
+    FieldDef headerParamStageAuthToken;
+    reqDefBuilder.withRequestField(headerParamStageAuthToken
+                  .withName("StageAuthToken")
+                  .withJsonTag("Stage-Auth-Token")
+                  .withLocationType(Header_));
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef IoTDAMeta::genRequestDefForUpdateCertificate() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamInstanceId;
@@ -1322,6 +1342,71 @@ HttpRequestDef IoTDAMeta::genRequestDefForUpdateDomainConfiguration() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDAMeta::genRequestDefForCreateExportTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDAMeta::genRequestDefForDeleteExportTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDAMeta::genRequestDefForListExportTasks() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ResourceType")
+                  .withJsonTag("resource_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ResourceCondition")
+                  .withJsonTag("resource_condition")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AppType")
+                  .withJsonTag("app_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AppId")
+                  .withJsonTag("app_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDAMeta::genRequestDefForShowExportTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 

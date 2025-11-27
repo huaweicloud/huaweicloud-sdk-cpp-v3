@@ -226,6 +226,41 @@ std::shared_ptr<UpdateAcceleratorResponse> GaClient::updateAccelerator(UpdateAcc
 
     return localVarResult;
 }
+std::shared_ptr<ListByoipPoolsResponse> GaClient::listByoipPools(ListByoipPoolsRequest &request)
+{
+    std::string localVarPath = "/v1/byoip-pools";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaMeta::genRequestDefForListByoipPools());
+
+    std::shared_ptr<ListByoipPoolsResponse> localVarResult = std::make_shared<ListByoipPoolsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<CreateEndpointResponse> GaClient::createEndpoint(CreateEndpointRequest &request)
 {
     std::string localVarPath = "/v1/endpoint-groups/{endpoint_group_id}/endpoints";

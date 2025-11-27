@@ -146,6 +146,10 @@ public:
             { 
                 "https://dds.ap-southeast-5.myhuaweicloud.com"
             });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://dds.cn-north-11.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

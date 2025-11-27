@@ -724,47 +724,6 @@ std::shared_ptr<CreateDatabaseUserResponse> DdsClient::createDatabaseUser(Create
 
     return localVarResult;
 }
-std::shared_ptr<CreateInstanceResponse> DdsClient::createInstance(CreateInstanceRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForCreateInstance());
-
-    std::shared_ptr<CreateInstanceResponse> localVarResult = std::make_shared<CreateInstanceResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<CreateIpResponse> DdsClient::createIp(CreateIpRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/create-ip";
@@ -2057,62 +2016,6 @@ std::shared_ptr<ListInstanceTagsResponse> DdsClient::listInstanceTags(ListInstan
         localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForListInstanceTags());
 
     std::shared_ptr<ListInstanceTagsResponse> localVarResult = std::make_shared<ListInstanceTagsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListInstancesResponse> DdsClient::listInstances(ListInstancesRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.idIsSet()) {
-        localVarQueryParams["id"] = parameterToString(request.getId());
-    }
-    if (request.nameIsSet()) {
-        localVarQueryParams["name"] = parameterToString(request.getName());
-    }
-    if (request.modeIsSet()) {
-        localVarQueryParams["mode"] = parameterToString(request.getMode());
-    }
-    if (request.datastoreTypeIsSet()) {
-        localVarQueryParams["datastore_type"] = parameterToString(request.getDatastoreType());
-    }
-    if (request.vpcIdIsSet()) {
-        localVarQueryParams["vpc_id"] = parameterToString(request.getVpcId());
-    }
-    if (request.subnetIdIsSet()) {
-        localVarQueryParams["subnet_id"] = parameterToString(request.getSubnetId());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.tagsIsSet()) {
-        localVarQueryParams["tags"] = parameterToString(request.getTags());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForListInstances());
-
-    std::shared_ptr<ListInstancesResponse> localVarResult = std::make_shared<ListInstancesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3461,9 +3364,6 @@ std::shared_ptr<ShowBackupDownloadLinkResponse> DdsClient::showBackupDownloadLin
     }
     if (request.backupIdIsSet()) {
         localVarQueryParams["backup_id"] = parameterToString(request.getBackupId());
-    }
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
 
     std::string localVarHttpBody;

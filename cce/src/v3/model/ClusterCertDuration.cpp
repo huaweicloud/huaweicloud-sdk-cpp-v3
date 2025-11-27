@@ -14,6 +14,7 @@ ClusterCertDuration::ClusterCertDuration()
 {
     duration_ = 0;
     durationIsSet_ = false;
+    expireAt_ = "";
     expireAtIsSet_ = false;
 }
 
@@ -53,7 +54,7 @@ bool ClusterCertDuration::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expire_at"));
         if(!fieldValue.is_null())
         {
-            utility::datetime refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExpireAt(refVal);
         }
@@ -83,12 +84,12 @@ void ClusterCertDuration::unsetduration()
     durationIsSet_ = false;
 }
 
-utility::datetime ClusterCertDuration::getExpireAt() const
+std::string ClusterCertDuration::getExpireAt() const
 {
     return expireAt_;
 }
 
-void ClusterCertDuration::setExpireAt(const utility::datetime& value)
+void ClusterCertDuration::setExpireAt(const std::string& value)
 {
     expireAt_ = value;
     expireAtIsSet_ = true;

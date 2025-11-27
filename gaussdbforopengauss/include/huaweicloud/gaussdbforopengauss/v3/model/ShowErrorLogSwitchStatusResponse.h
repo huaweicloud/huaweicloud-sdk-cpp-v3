@@ -39,7 +39,7 @@ public:
     /// ShowErrorLogSwitchStatusResponse members
 
     /// <summary>
-    /// 采集状态
+    /// **参数解释**: 采集状态。 **取值范围**: - ON：开启采集 - OFF：关闭采集
     /// </summary>
 
     std::string getStatus() const;

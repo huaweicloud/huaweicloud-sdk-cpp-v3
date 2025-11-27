@@ -18,6 +18,7 @@ public:
     static HttpRequestDef genRequestDefForListAccelerators();
     static HttpRequestDef genRequestDefForShowAccelerator();
     static HttpRequestDef genRequestDefForUpdateAccelerator();
+    static HttpRequestDef genRequestDefForListByoipPools();
     static HttpRequestDef genRequestDefForCreateEndpoint();
     static HttpRequestDef genRequestDefForDeleteEndpoint();
     static HttpRequestDef genRequestDefForListEndpoints();

@@ -142,6 +142,18 @@ public:
             { 
                 "https://smn.cn-southwest-3.myhuaweicloud.com"
             });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://smn.ap-southeast-5.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://smn.af-north-1.myhuaweicloud.com"
+            });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://smn.me-east-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

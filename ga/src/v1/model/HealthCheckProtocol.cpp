@@ -27,6 +27,7 @@ web::json::value HealthCheckProtocol::toJson() const
 
     
     if (value_ == eHealthCheckProtocol::HealthCheckProtocol_TCP) val = web::json::value::string(U("TCP"));
+    if (value_ == eHealthCheckProtocol::HealthCheckProtocol_UDP) val = web::json::value::string(U("UDP"));
 
     return val;
 }
@@ -37,6 +38,7 @@ bool HealthCheckProtocol::fromJson(const web::json::value& val)
 
     
     if (s == utility::conversions::to_string_t("TCP")) value_ = eHealthCheckProtocol::HealthCheckProtocol_TCP;
+    if (s == utility::conversions::to_string_t("UDP")) value_ = eHealthCheckProtocol::HealthCheckProtocol_UDP;
     return true;
 }
 

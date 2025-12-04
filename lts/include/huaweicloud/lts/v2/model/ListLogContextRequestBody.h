@@ -74,6 +74,15 @@ public:
     void unsetforwardsSize();
     void setForwardsSize(int32_t value);
 
+    /// <summary>
+    /// 分页查询时，若上次查询的返回结果中包含该字段，需要增加该字段参与分页查询。
+    /// </summary>
+
+    std::string getScrollId() const;
+    bool scrollIdIsSet() const;
+    void unsetscrollId();
+    void setScrollId(const std::string& value);
+
 
 protected:
     std::string lineNum_;
@@ -84,6 +93,8 @@ protected:
     bool backwardsSizeIsSet_;
     int32_t forwardsSize_;
     bool forwardsSizeIsSet_;
+    std::string scrollId_;
+    bool scrollIdIsSet_;
 
 };
 

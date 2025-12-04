@@ -18,6 +18,8 @@ CreateLlmConfigReq::CreateLlmConfigReq()
     llmUrlIsSet_ = false;
     apiKey_ = "";
     apiKeyIsSet_ = false;
+    model_ = "";
+    modelIsSet_ = false;
 }
 
 CreateLlmConfigReq::~CreateLlmConfigReq() = default;
@@ -38,6 +40,9 @@ web::json::value CreateLlmConfigReq::toJson() const
     }
     if(apiKeyIsSet_) {
         val[utility::conversions::to_string_t("api_key")] = ModelBase::toJson(apiKey_);
+    }
+    if(modelIsSet_) {
+        val[utility::conversions::to_string_t("model")] = ModelBase::toJson(model_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool CreateLlmConfigReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setApiKey(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("model"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("model"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModel(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool CreateLlmConfigReq::apiKeyIsSet() const
 void CreateLlmConfigReq::unsetapiKey()
 {
     apiKeyIsSet_ = false;
+}
+
+std::string CreateLlmConfigReq::getModel() const
+{
+    return model_;
+}
+
+void CreateLlmConfigReq::setModel(const std::string& value)
+{
+    model_ = value;
+    modelIsSet_ = true;
+}
+
+bool CreateLlmConfigReq::modelIsSet() const
+{
+    return modelIsSet_;
+}
+
+void CreateLlmConfigReq::unsetmodel()
+{
+    modelIsSet_ = false;
 }
 
 }

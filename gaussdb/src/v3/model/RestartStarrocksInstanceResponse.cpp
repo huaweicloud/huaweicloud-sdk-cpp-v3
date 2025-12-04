@@ -12,8 +12,8 @@ namespace Model {
 
 RestartStarrocksInstanceResponse::RestartStarrocksInstanceResponse()
 {
-    jobId_ = "";
-    jobIdIsSet_ = false;
+    workflowId_ = "";
+    workflowIdIsSet_ = false;
 }
 
 RestartStarrocksInstanceResponse::~RestartStarrocksInstanceResponse() = default;
@@ -26,8 +26,8 @@ web::json::value RestartStarrocksInstanceResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(jobIdIsSet_) {
-        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    if(workflowIdIsSet_) {
+        val[utility::conversions::to_string_t("workflow_id")] = ModelBase::toJson(workflowId_);
     }
 
     return val;
@@ -36,38 +36,38 @@ bool RestartStarrocksInstanceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+    if(val.has_field(utility::conversions::to_string_t("workflow_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("workflow_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setJobId(refVal);
+            setWorkflowId(refVal);
         }
     }
     return ok;
 }
 
 
-std::string RestartStarrocksInstanceResponse::getJobId() const
+std::string RestartStarrocksInstanceResponse::getWorkflowId() const
 {
-    return jobId_;
+    return workflowId_;
 }
 
-void RestartStarrocksInstanceResponse::setJobId(const std::string& value)
+void RestartStarrocksInstanceResponse::setWorkflowId(const std::string& value)
 {
-    jobId_ = value;
-    jobIdIsSet_ = true;
+    workflowId_ = value;
+    workflowIdIsSet_ = true;
 }
 
-bool RestartStarrocksInstanceResponse::jobIdIsSet() const
+bool RestartStarrocksInstanceResponse::workflowIdIsSet() const
 {
-    return jobIdIsSet_;
+    return workflowIdIsSet_;
 }
 
-void RestartStarrocksInstanceResponse::unsetjobId()
+void RestartStarrocksInstanceResponse::unsetworkflowId()
 {
-    jobIdIsSet_ = false;
+    workflowIdIsSet_ = false;
 }
 
 }

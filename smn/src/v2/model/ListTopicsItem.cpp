@@ -24,6 +24,10 @@ ListTopicsItem::ListTopicsItem()
     enterpriseProjectIdIsSet_ = false;
     topicId_ = "";
     topicIdIsSet_ = false;
+    createTime_ = "";
+    createTimeIsSet_ = false;
+    updateTime_ = "";
+    updateTimeIsSet_ = false;
 }
 
 ListTopicsItem::~ListTopicsItem() = default;
@@ -53,6 +57,12 @@ web::json::value ListTopicsItem::toJson() const
     }
     if(topicIdIsSet_) {
         val[utility::conversions::to_string_t("topic_id")] = ModelBase::toJson(topicId_);
+    }
+    if(createTimeIsSet_) {
+        val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
+    }
+    if(updateTimeIsSet_) {
+        val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
     }
 
     return val;
@@ -113,6 +123,24 @@ bool ListTopicsItem::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTopicId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("create_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("update_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdateTime(refVal);
         }
     }
     return ok;
@@ -243,6 +271,48 @@ bool ListTopicsItem::topicIdIsSet() const
 void ListTopicsItem::unsettopicId()
 {
     topicIdIsSet_ = false;
+}
+
+std::string ListTopicsItem::getCreateTime() const
+{
+    return createTime_;
+}
+
+void ListTopicsItem::setCreateTime(const std::string& value)
+{
+    createTime_ = value;
+    createTimeIsSet_ = true;
+}
+
+bool ListTopicsItem::createTimeIsSet() const
+{
+    return createTimeIsSet_;
+}
+
+void ListTopicsItem::unsetcreateTime()
+{
+    createTimeIsSet_ = false;
+}
+
+std::string ListTopicsItem::getUpdateTime() const
+{
+    return updateTime_;
+}
+
+void ListTopicsItem::setUpdateTime(const std::string& value)
+{
+    updateTime_ = value;
+    updateTimeIsSet_ = true;
+}
+
+bool ListTopicsItem::updateTimeIsSet() const
+{
+    return updateTimeIsSet_;
+}
+
+void ListTopicsItem::unsetupdateTime()
+{
+    updateTimeIsSet_ = false;
 }
 
 }

@@ -505,6 +505,25 @@ HttpRequestDef LiveMeta::genRequestDefForShowUpBandwidth() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForListCarouselTaskDetail() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("CarouselTaskId")
+                  .withJsonTag("carousel_task_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForListSingleStreamBitrate() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")

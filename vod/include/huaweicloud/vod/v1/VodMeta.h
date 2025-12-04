@@ -46,6 +46,7 @@ public:
     static HttpRequestDef genRequestDefForListAssetCategory();
     static HttpRequestDef genRequestDefForListAssetDailySummaryLog();
     static HttpRequestDef genRequestDefForListAssetList();
+    static HttpRequestDef genRequestDefForListCdnStatistics();
     static HttpRequestDef genRequestDefForListDomainLogs();
     static HttpRequestDef genRequestDefForListTemplateGroup();
     static HttpRequestDef genRequestDefForListTemplateGroupCollection();

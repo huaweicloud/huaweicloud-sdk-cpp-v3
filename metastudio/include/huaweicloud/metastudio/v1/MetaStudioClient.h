@@ -808,20 +808,6 @@
 #include <huaweicloud/metastudio/v1/model/UpdateTtscVocabularyGroupsResponse.h>
 #include <string>
 
-#include <huaweicloud/metastudio/v1/model/ControlDigitalHumanLiveReq.h>
-#include <huaweicloud/metastudio/v1/model/CreateVideoMotionCaptureJobRequest.h>
-#include <huaweicloud/metastudio/v1/model/CreateVideoMotionCaptureJobResponse.h>
-#include <huaweicloud/metastudio/v1/model/ExecuteVideoMotionCaptureCommandRequest.h>
-#include <huaweicloud/metastudio/v1/model/ExecuteVideoMotionCaptureCommandResponse.h>
-#include <huaweicloud/metastudio/v1/model/ListVideoMotionCaptureJobsRequest.h>
-#include <huaweicloud/metastudio/v1/model/ListVideoMotionCaptureJobsResponse.h>
-#include <huaweicloud/metastudio/v1/model/ShowVideoMotionCaptureJobRequest.h>
-#include <huaweicloud/metastudio/v1/model/ShowVideoMotionCaptureJobResponse.h>
-#include <huaweicloud/metastudio/v1/model/StopVideoMotionCaptureJobRequest.h>
-#include <huaweicloud/metastudio/v1/model/StopVideoMotionCaptureJobResponse.h>
-#include <huaweicloud/metastudio/v1/model/VideoMotionCaptureJobReq.h>
-#include <string>
-
 #include <huaweicloud/metastudio/v1/model/CopyVideoScriptsRequest.h>
 #include <huaweicloud/metastudio/v1/model/CopyVideoScriptsResponse.h>
 #include <huaweicloud/metastudio/v1/model/CreateVideoScriptsReq.h>
@@ -3260,47 +3246,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateTtscVocabularyGroupsResponse> updateTtscVocabularyGroups(
         UpdateTtscVocabularyGroupsRequest &request
-    );
-
-    // 创建视频驱动任务
-    //
-    // 该接口用于创建视频驱动任务。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateVideoMotionCaptureJobResponse> createVideoMotionCaptureJob(
-        CreateVideoMotionCaptureJobRequest &request
-    );
-    // 控制数字人驱动
-    //
-    // 该接口用于控制数字人驱动。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ExecuteVideoMotionCaptureCommandResponse> executeVideoMotionCaptureCommand(
-        ExecuteVideoMotionCaptureCommandRequest &request
-    );
-    // 查询视频驱动任务列表
-    //
-    // 该接口用于查询视频驱动任务列表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListVideoMotionCaptureJobsResponse> listVideoMotionCaptureJobs(
-        ListVideoMotionCaptureJobsRequest &request
-    );
-    // 查询视频驱动任务详情
-    //
-    // 该接口用于查询视频驱动任务详情。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowVideoMotionCaptureJobResponse> showVideoMotionCaptureJob(
-        ShowVideoMotionCaptureJobRequest &request
-    );
-    // 停止视频驱动任务
-    //
-    // 该接口用于停止视频驱动任务。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<StopVideoMotionCaptureJobResponse> stopVideoMotionCaptureJob(
-        StopVideoMotionCaptureJobRequest &request
     );
 
     // 复制视频制作剧本

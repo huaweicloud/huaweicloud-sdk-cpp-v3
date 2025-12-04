@@ -6,6 +6,7 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/smn/v2/model/AddKmsKeyRequestBody.h>
 #include <huaweicloud/smn/v2/model/AddSubscriptionFromSubscriptionUserRequest.h>
 #include <huaweicloud/smn/v2/model/AddSubscriptionFromSubscriptionUserRequestBody.h>
 #include <huaweicloud/smn/v2/model/AddSubscriptionFromSubscriptionUserResponse.h>
@@ -32,6 +33,8 @@
 #include <huaweicloud/smn/v2/model/CancelSubscriptionResponse.h>
 #include <huaweicloud/smn/v2/model/ConfirmSubscriptionRequest.h>
 #include <huaweicloud/smn/v2/model/ConfirmSubscriptionResponse.h>
+#include <huaweicloud/smn/v2/model/CreateKmsKeyRequest.h>
+#include <huaweicloud/smn/v2/model/CreateKmsKeyResponse.h>
 #include <huaweicloud/smn/v2/model/CreateLogtankRequest.h>
 #include <huaweicloud/smn/v2/model/CreateLogtankRequestBody.h>
 #include <huaweicloud/smn/v2/model/CreateLogtankResponse.h>
@@ -46,6 +49,8 @@
 #include <huaweicloud/smn/v2/model/CreateTopicRequest.h>
 #include <huaweicloud/smn/v2/model/CreateTopicRequestBody.h>
 #include <huaweicloud/smn/v2/model/CreateTopicResponse.h>
+#include <huaweicloud/smn/v2/model/DeleteKmsKeyRequest.h>
+#include <huaweicloud/smn/v2/model/DeleteKmsKeyResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteLogtankRequest.h>
 #include <huaweicloud/smn/v2/model/DeleteLogtankResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteMessageTemplateRequest.h>
@@ -64,9 +69,13 @@
 #include <huaweicloud/smn/v2/model/DeleteTopicResponse.h>
 #include <huaweicloud/smn/v2/model/DownloadHttpCertRequest.h>
 #include <huaweicloud/smn/v2/model/DownloadHttpCertResponse.h>
+#include <huaweicloud/smn/v2/model/DownloadHttpSignCertRequest.h>
+#include <huaweicloud/smn/v2/model/DownloadHttpSignCertResponse.h>
 #include <huaweicloud/smn/v2/model/HttpDetectRequestBody.h>
 #include <huaweicloud/smn/v2/model/ListCloudServiceRequest.h>
 #include <huaweicloud/smn/v2/model/ListCloudServiceResponse.h>
+#include <huaweicloud/smn/v2/model/ListCloudServicesRequest.h>
+#include <huaweicloud/smn/v2/model/ListCloudServicesResponse.h>
 #include <huaweicloud/smn/v2/model/ListInstanceRequestBody.h>
 #include <huaweicloud/smn/v2/model/ListLogtankRequest.h>
 #include <huaweicloud/smn/v2/model/ListLogtankResponse.h>
@@ -94,6 +103,8 @@
 #include <huaweicloud/smn/v2/model/ListTopicMessageStatisticsResponse.h>
 #include <huaweicloud/smn/v2/model/ListTopicsRequest.h>
 #include <huaweicloud/smn/v2/model/ListTopicsResponse.h>
+#include <huaweicloud/smn/v2/model/ListTopicsWithAssociatedResourcesRequest.h>
+#include <huaweicloud/smn/v2/model/ListTopicsWithAssociatedResourcesResponse.h>
 #include <huaweicloud/smn/v2/model/ListVersionRequest.h>
 #include <huaweicloud/smn/v2/model/ListVersionResponse.h>
 #include <huaweicloud/smn/v2/model/ListVersionsRequest.h>
@@ -106,10 +117,19 @@
 #include <huaweicloud/smn/v2/model/PublishMessageResponse.h>
 #include <huaweicloud/smn/v2/model/ShowHttpDetectResultRequest.h>
 #include <huaweicloud/smn/v2/model/ShowHttpDetectResultResponse.h>
+#include <huaweicloud/smn/v2/model/ShowKmsKeyRequest.h>
+#include <huaweicloud/smn/v2/model/ShowKmsKeyResponse.h>
 #include <huaweicloud/smn/v2/model/ShowNotifyPolicyRequest.h>
 #include <huaweicloud/smn/v2/model/ShowNotifyPolicyResponse.h>
+#include <huaweicloud/smn/v2/model/SubscribeTopicRequest.h>
+#include <huaweicloud/smn/v2/model/SubscribeTopicResponse.h>
 #include <huaweicloud/smn/v2/model/UnsubscribeSubscriptionRequest.h>
 #include <huaweicloud/smn/v2/model/UnsubscribeSubscriptionResponse.h>
+#include <huaweicloud/smn/v2/model/UnsubscribeTopicRequest.h>
+#include <huaweicloud/smn/v2/model/UnsubscribeTopicResponse.h>
+#include <huaweicloud/smn/v2/model/UpdateKmsKeyRequest.h>
+#include <huaweicloud/smn/v2/model/UpdateKmsKeyRequestBody.h>
+#include <huaweicloud/smn/v2/model/UpdateKmsKeyResponse.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankRequest.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankRequestBody.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankResponse.h>
@@ -267,6 +287,14 @@ public:
     std::shared_ptr<ConfirmSubscriptionResponse> confirmSubscription(
         ConfirmSubscriptionRequest &request
     );
+    // 主题绑定KMS密钥
+    //
+    // 为主题绑定KMS密钥。KMS密钥于绑定后五分钟生效，生效后该主题下发布的消息（确认订阅消息、取消订阅消息、主题消息）均使用指定密钥的数据密钥进行加解密，并将消息内容在SMN服务内部加密传输。执行绑定KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。SMN会使用该委托进行创建数据密钥操作。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateKmsKeyResponse> createKmsKey(
+        CreateKmsKeyRequest &request
+    );
     // 绑定云日志
     //
     // 为指定Topic绑定一个云日志，用于记录主题消息发送状态等信息。
@@ -308,6 +336,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateTopicResponse> createTopic(
         CreateTopicRequest &request
+    );
+    // 删除主题下KMS密钥
+    //
+    // 删除主题绑定的密钥。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteKmsKeyResponse> deleteKmsKey(
+        DeleteKmsKeyRequest &request
     );
     // 解绑云日志
     //
@@ -381,6 +417,14 @@ public:
     std::shared_ptr<DownloadHttpCertResponse> downloadHttpCert(
         DownloadHttpCertRequest &request
     );
+    // 下载HTTP签名证书
+    //
+    // 下载HTTP签名证书
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadHttpSignCertResponse> downloadHttpSignCert(
+        DownloadHttpSignCertRequest &request
+    );
     // 查询授权云服务列表
     //
     // 查询授权云服务列表。
@@ -388,6 +432,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCloudServiceResponse> listCloudService(
         ListCloudServiceRequest &request
+    );
+    // 查询授权服务列表
+    //
+    // 查询授权服务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCloudServicesResponse> listCloudServices(
+        ListCloudServicesRequest &request
     );
     // 查询云日志
     //
@@ -493,6 +545,14 @@ public:
     std::shared_ptr<ListTopicsResponse> listTopics(
         ListTopicsRequest &request
     );
+    // 查询主题列表及主题关联资源信息
+    //
+    // 查询Topic及Topic关联资源信息列表，关联资源信息随业务演进会持续扩展。Topic列表默认按照创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在Topic，则返回空列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTopicsWithAssociatedResourcesResponse> listTopicsWithAssociatedResources(
+        ListTopicsWithAssociatedResourcesRequest &request
+    );
     // 查询SMN API V2版本信息
     //
     // 查询SMN API V2版本信息。
@@ -530,6 +590,7 @@ public:
     // 
     // 只需要设置其中一个，如果同时设置，生效的优先级为
     // message_structure &gt; message_template_name &gt; message。
+    // 若发布消息的主题下绑定了KMS密钥，请确保发布消息前，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。当发布消息时，SMN会使用该委托进行创建数据密钥和解密数据密钥操作。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<PublishMessageResponse> publishMessage(
@@ -543,6 +604,14 @@ public:
     std::shared_ptr<ShowHttpDetectResultResponse> showHttpDetectResult(
         ShowHttpDetectResultRequest &request
     );
+    // 查询主题下KMS密钥
+    //
+    // 查询主题下密钥ID。执行绑定KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。SMN会使用该委托进行查询密钥信息操作。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowKmsKeyResponse> showKmsKey(
+        ShowKmsKeyRequest &request
+    );
     // 查询通知策略
     //
     // 查询通知策略
@@ -551,6 +620,14 @@ public:
     std::shared_ptr<ShowNotifyPolicyResponse> showNotifyPolicy(
         ShowNotifyPolicyRequest &request
     );
+    // 订阅主题
+    //
+    // 订阅终端确认订阅主题消息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SubscribeTopicResponse> subscribeTopic(
+        SubscribeTopicRequest &request
+    );
     // 取消订阅
     //
     // 取消订阅主题
@@ -558,6 +635,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UnsubscribeSubscriptionResponse> unsubscribeSubscription(
         UnsubscribeSubscriptionRequest &request
+    );
+    // 取消订阅主题
+    //
+    // 订阅终端取消订阅主题消息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UnsubscribeTopicResponse> unsubscribeTopic(
+        UnsubscribeTopicRequest &request
+    );
+    // 更新主题下KMS密钥
+    //
+    // 更新密钥ID。执行更新KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将对应的资源操作权限授权给SMN服务。SMN会使用该委托进行查询密钥状态和创建数据密钥操作。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateKmsKeyResponse> updateKmsKey(
+        UpdateKmsKeyRequest &request
     );
     // 更新云日志
     //

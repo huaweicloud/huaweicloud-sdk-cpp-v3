@@ -870,6 +870,45 @@ std::shared_ptr<ShowUpBandwidthResponse> LiveClient::showUpBandwidth(ShowUpBandw
 
     return localVarResult;
 }
+std::shared_ptr<ListCarouselTaskDetailResponse> LiveClient::listCarouselTaskDetail(ListCarouselTaskDetailRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/stats/carousel-task/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.carouselTaskIdIsSet()) {
+        localVarQueryParams["carousel_task_id"] = parameterToString(request.getCarouselTaskId());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListCarouselTaskDetail());
+
+    std::shared_ptr<ListCarouselTaskDetailResponse> localVarResult = std::make_shared<ListCarouselTaskDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSingleStreamBitrateResponse> LiveClient::listSingleStreamBitrate(ListSingleStreamBitrateRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/stats/stream/bitrate";

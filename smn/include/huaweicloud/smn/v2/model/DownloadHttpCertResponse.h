@@ -42,15 +42,6 @@ public:
     /// 
     /// </summary>
 
-    std::string getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
     std::string getContentType() const;
     bool contentTypeIsSet() const;
     void unsetcontentType();
@@ -58,8 +49,6 @@ public:
 
 
 protected:
-    std::string body_;
-    bool bodyIsSet_;
     std::string contentType_;
     bool contentTypeIsSet_;
 

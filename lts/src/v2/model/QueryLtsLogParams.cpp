@@ -27,6 +27,8 @@ QueryLtsLogParams::QueryLtsLogParams()
     timeIsSet_ = false;
     isDesc_ = false;
     isDescIsSet_ = false;
+    scrollId_ = "";
+    scrollIdIsSet_ = false;
     searchType_ = "";
     searchTypeIsSet_ = false;
     limit_ = 0;
@@ -74,6 +76,9 @@ web::json::value QueryLtsLogParams::toJson() const
     }
     if(isDescIsSet_) {
         val[utility::conversions::to_string_t("is_desc")] = ModelBase::toJson(isDesc_);
+    }
+    if(scrollIdIsSet_) {
+        val[utility::conversions::to_string_t("scroll_id")] = ModelBase::toJson(scrollId_);
     }
     if(searchTypeIsSet_) {
         val[utility::conversions::to_string_t("search_type")] = ModelBase::toJson(searchType_);
@@ -170,6 +175,15 @@ bool QueryLtsLogParams::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsDesc(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scroll_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scroll_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScrollId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("search_type"))) {
@@ -396,6 +410,27 @@ bool QueryLtsLogParams::isDescIsSet() const
 void QueryLtsLogParams::unsetisDesc()
 {
     isDescIsSet_ = false;
+}
+
+std::string QueryLtsLogParams::getScrollId() const
+{
+    return scrollId_;
+}
+
+void QueryLtsLogParams::setScrollId(const std::string& value)
+{
+    scrollId_ = value;
+    scrollIdIsSet_ = true;
+}
+
+bool QueryLtsLogParams::scrollIdIsSet() const
+{
+    return scrollIdIsSet_;
+}
+
+void QueryLtsLogParams::unsetscrollId()
+{
+    scrollIdIsSet_ = false;
 }
 
 std::string QueryLtsLogParams::getSearchType() const

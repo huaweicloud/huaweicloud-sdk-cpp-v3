@@ -434,6 +434,48 @@ std::shared_ptr<ConfirmSubscriptionResponse> SmnClient::confirmSubscription(Conf
 
     return localVarResult;
 }
+std::shared_ptr<CreateKmsKeyResponse> SmnClient::createKmsKey(CreateKmsKeyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/kms";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForCreateKmsKey());
+
+    std::shared_ptr<CreateKmsKeyResponse> localVarResult = std::make_shared<CreateKmsKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateLogtankResponse> SmnClient::createLogtank(CreateLogtankRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/logtanks";
@@ -640,6 +682,37 @@ std::shared_ptr<CreateTopicResponse> SmnClient::createTopic(CreateTopicRequest &
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteKmsKeyResponse> SmnClient::deleteKmsKey(DeleteKmsKeyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/kms/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForDeleteKmsKey());
+
+    std::shared_ptr<DeleteKmsKeyResponse> localVarResult = std::make_shared<DeleteKmsKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -919,6 +992,36 @@ std::shared_ptr<DownloadHttpCertResponse> SmnClient::downloadHttpCert(DownloadHt
 
     return localVarResult;
 }
+std::shared_ptr<DownloadHttpSignCertResponse> SmnClient::downloadHttpSignCert(DownloadHttpSignCertRequest &request)
+{
+    std::string localVarPath = "/v2/notifications/certifications/download/{certificate_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["certificate_id"] = parameterToString(request.getCertificateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForDownloadHttpSignCert());
+
+    std::shared_ptr<DownloadHttpSignCertResponse> localVarResult = std::make_shared<DownloadHttpSignCertResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListCloudServiceResponse> SmnClient::listCloudService(ListCloudServiceRequest &request)
 {
     std::string localVarPath = "/v2/notifications/cloud_service";
@@ -942,6 +1045,35 @@ std::shared_ptr<ListCloudServiceResponse> SmnClient::listCloudService(ListCloudS
         localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForListCloudService());
 
     std::shared_ptr<ListCloudServiceResponse> localVarResult = std::make_shared<ListCloudServiceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListCloudServicesResponse> SmnClient::listCloudServices(ListCloudServicesRequest &request)
+{
+    std::string localVarPath = "/v2/notifications/cloud-services";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForListCloudServices());
+
+    std::shared_ptr<ListCloudServicesResponse> localVarResult = std::make_shared<ListCloudServicesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1416,6 +1548,56 @@ std::shared_ptr<ListTopicsResponse> SmnClient::listTopics(ListTopicsRequest &req
 
     return localVarResult;
 }
+std::shared_ptr<ListTopicsWithAssociatedResourcesResponse> SmnClient::listTopicsWithAssociatedResources(ListTopicsWithAssociatedResourcesRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics-with-associated-resources";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.topicIdIsSet()) {
+        localVarQueryParams["topic_id"] = parameterToString(request.getTopicId());
+    }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.fuzzyNameIsSet()) {
+        localVarQueryParams["fuzzy_name"] = parameterToString(request.getFuzzyName());
+    }
+    if (request.fuzzyDisplayNameIsSet()) {
+        localVarQueryParams["fuzzy_display_name"] = parameterToString(request.getFuzzyDisplayName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForListTopicsWithAssociatedResources());
+
+    std::shared_ptr<ListTopicsWithAssociatedResourcesResponse> localVarResult = std::make_shared<ListTopicsWithAssociatedResourcesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListVersionResponse> SmnClient::listVersion(ListVersionRequest &request)
 {
     std::string localVarPath = "/v2";
@@ -1589,6 +1771,36 @@ std::shared_ptr<ShowHttpDetectResultResponse> SmnClient::showHttpDetectResult(Sh
 
     return localVarResult;
 }
+std::shared_ptr<ShowKmsKeyResponse> SmnClient::showKmsKey(ShowKmsKeyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/kms";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForShowKmsKey());
+
+    std::shared_ptr<ShowKmsKeyResponse> localVarResult = std::make_shared<ShowKmsKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowNotifyPolicyResponse> SmnClient::showNotifyPolicy(ShowNotifyPolicyRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy";
@@ -1613,6 +1825,44 @@ std::shared_ptr<ShowNotifyPolicyResponse> SmnClient::showNotifyPolicy(ShowNotify
         localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForShowNotifyPolicy());
 
     std::shared_ptr<ShowNotifyPolicyResponse> localVarResult = std::make_shared<ShowNotifyPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<SubscribeTopicResponse> SmnClient::subscribeTopic(SubscribeTopicRequest &request)
+{
+    std::string localVarPath = "/v2/notifications/subscriptions/subscribe";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.topicUrnIsSet()) {
+        localVarQueryParams["topic_urn"] = parameterToString(request.getTopicUrn());
+    }
+    if (request.endpointIsSet()) {
+        localVarQueryParams["endpoint"] = parameterToString(request.getEndpoint());
+    }
+    if (request.tokenIsSet()) {
+        localVarQueryParams["token"] = parameterToString(request.getToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForSubscribeTopic());
+
+    std::shared_ptr<SubscribeTopicResponse> localVarResult = std::make_shared<SubscribeTopicResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1648,6 +1898,81 @@ std::shared_ptr<UnsubscribeSubscriptionResponse> SmnClient::unsubscribeSubscript
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UnsubscribeTopicResponse> SmnClient::unsubscribeTopic(UnsubscribeTopicRequest &request)
+{
+    std::string localVarPath = "/v2/notifications/subscriptions/unsubscribe";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.subscriptionUrnIsSet()) {
+        localVarQueryParams["subscription_urn"] = parameterToString(request.getSubscriptionUrn());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForUnsubscribeTopic());
+
+    std::shared_ptr<UnsubscribeTopicResponse> localVarResult = std::make_shared<UnsubscribeTopicResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateKmsKeyResponse> SmnClient::updateKmsKey(UpdateKmsKeyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/kms/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForUpdateKmsKey());
+
+    std::shared_ptr<UpdateKmsKeyResponse> localVarResult = std::make_shared<UpdateKmsKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

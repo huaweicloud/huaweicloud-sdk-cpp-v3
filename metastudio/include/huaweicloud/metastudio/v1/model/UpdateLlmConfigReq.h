@@ -65,6 +65,15 @@ public:
     void unsetapiKey();
     void setApiKey(const std::string& value);
 
+    /// <summary>
+    /// model参数
+    /// </summary>
+
+    std::string getModel() const;
+    bool modelIsSet() const;
+    void unsetmodel();
+    void setModel(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -73,6 +82,8 @@ protected:
     bool llmUrlIsSet_;
     std::string apiKey_;
     bool apiKeyIsSet_;
+    std::string model_;
+    bool modelIsSet_;
 
 };
 

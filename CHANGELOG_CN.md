@@ -1,3 +1,181 @@
+# 3.1.165 2025-12-04
+
+### HuaweiCloud SDK AAD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateLtsConfig**
+    - 请求参数变更
+      - `* enterprise_project_id: optional -> required`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`RestoreNewInstance`、`ListInstances`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ datastore`
+      - `+ region`
+      - `+ port`
+      - `+ mode`
+      - `+ tags`
+      - `- restore_point`
+      - `+ flavor.storage`
+      - `* flavor: list<RestoreNewInstanceFlavorOption> -> list<CreateInstanceFlavorOption>`
+      - `* body: object<RestoreNewInstanceRequestBody> -> object<CreateInstanceRequestBody>`
+    - 响应参数变更
+      - `+ tags`
+      - `+ port`
+      - `+ flavor.storage`
+      - `* flavor: list<RestoreNewInstanceFlavorOption> -> list<CreateInstanceFlavorOption>`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RestartStarrocksInstance**
+    - 响应参数变更
+      - `+ workflow_id`
+      - `- job_id`
+  - **RestartStarrocksNode**
+    - 响应参数变更
+      - `+ workflow_id`
+      - `- job_id`
+  - **DeleteStarrocksInstance**
+    - 响应参数变更
+      - `+ workflow_id`
+      - `- job_id`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListCarouselTaskDetail`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK LTS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListLogs**
+    - 请求参数变更
+      - `+ scroll_id`
+  - **ListLogContext**
+    - 请求参数变更
+      - `+ scroll_id`
+
+### HuaweiCloud SDK MetaStudio
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除以下接口：
+    - `ListVideoMotionCaptureJobs`
+    - `CreateVideoMotionCaptureJob`
+    - `ShowVideoMotionCaptureJob`
+    - `StopVideoMotionCaptureJob`
+    - `ExecuteVideoMotionCaptureCommand`
+  - **ShowLlmConfig**
+    - 响应参数变更
+      - `+ model`
+  - **UpdateLlmConfig**
+    - 请求参数变更
+      - `+ model`
+  - **CreateLlmConfig**
+    - 请求参数变更
+      - `+ model`
+  - **ListLlmConfig**
+    - 响应参数变更
+      - `+ model`
+      - `+ data.model`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `BatchDeleteInstance`
+    - `ShowIntelligentKillSessionStatistic`
+    - `ListPackLogInfos`
+    - `CompareConfiguration`
+    - `ResetConfiguration`
+    - `ShowAutoCesAlarm`
+    - `ListScheduleEvents`
+    - `BatchExecuteEvents`
+    - `ShowRebuildSlaveStatus`
+    - `CreateRebuildSlave`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SMN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ShowKmsKey`
+    - `CreateKmsKey`
+    - `UpdateKmsKey`
+    - `DeleteKmsKey`
+    - `ListTopicsWithAssociatedResources`
+    - `SubscribeTopic`
+    - `UnsubscribeTopic`
+    - `ListCloudServices`
+    - `DownloadHttpSignCert`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTopics**
+    - 响应参数变更
+      - `+ topics.create_time`
+      - `+ topics.update_time`
+  - **ListTopicAttributes**
+    - 响应参数变更
+      - `+ attributes.create_time`
+      - `+ attributes.update_time`
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListCdnStatistics`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.164 2025-11-27
 
 ### HuaweiCloud SDK CCE

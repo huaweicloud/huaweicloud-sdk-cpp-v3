@@ -42,15 +42,15 @@ public:
     /// 工作流ID。
     /// </summary>
 
-    std::string getJobId() const;
-    bool jobIdIsSet() const;
-    void unsetjobId();
-    void setJobId(const std::string& value);
+    std::string getWorkflowId() const;
+    bool workflowIdIsSet() const;
+    void unsetworkflowId();
+    void setWorkflowId(const std::string& value);
 
 
 protected:
-    std::string jobId_;
-    bool jobIdIsSet_;
+    std::string workflowId_;
+    bool workflowIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

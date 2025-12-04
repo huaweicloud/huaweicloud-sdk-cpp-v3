@@ -54,6 +54,9 @@
 #include <huaweicloud/dds/v3/model/CreateDatabaseUserRequest.h>
 #include <huaweicloud/dds/v3/model/CreateDatabaseUserRequestBody.h>
 #include <huaweicloud/dds/v3/model/CreateDatabaseUserResponse.h>
+#include <huaweicloud/dds/v3/model/CreateInstanceRequest.h>
+#include <huaweicloud/dds/v3/model/CreateInstanceRequestBody.h>
+#include <huaweicloud/dds/v3/model/CreateInstanceResponse.h>
 #include <huaweicloud/dds/v3/model/CreateIpRequest.h>
 #include <huaweicloud/dds/v3/model/CreateIpRequestBody.h>
 #include <huaweicloud/dds/v3/model/CreateIpResponse.h>
@@ -141,6 +144,8 @@
 #include <huaweicloud/dds/v3/model/ListInstancesByTagsRequest.h>
 #include <huaweicloud/dds/v3/model/ListInstancesByTagsRequestBody.h>
 #include <huaweicloud/dds/v3/model/ListInstancesByTagsResponse.h>
+#include <huaweicloud/dds/v3/model/ListInstancesRequest.h>
+#include <huaweicloud/dds/v3/model/ListInstancesResponse.h>
 #include <huaweicloud/dds/v3/model/ListLtsConfigsRequest.h>
 #include <huaweicloud/dds/v3/model/ListLtsConfigsResponse.h>
 #include <huaweicloud/dds/v3/model/ListLtsErrorLogsRequest.h>
@@ -487,6 +492,14 @@ public:
     std::shared_ptr<CreateDatabaseUserResponse> createDatabaseUser(
         CreateDatabaseUserRequest &request
     );
+    // 创建实例
+    //
+    // 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateInstanceResponse> createInstance(
+        CreateInstanceRequest &request
+    );
     // 创建集群的Shard/Config IP
     //
     // 创建集群的Shard/Config IP
@@ -750,6 +763,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstanceTagsResponse> listInstanceTags(
         ListInstanceTagsRequest &request
+    );
+    // 查询实例列表和详情
+    //
+    // 根据指定条件查询实例列表和详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesResponse> listInstances(
+        ListInstancesRequest &request
     );
     // 查询资源实例
     //

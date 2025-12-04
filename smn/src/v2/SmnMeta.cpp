@@ -99,6 +99,15 @@ HttpRequestDef SmnMeta::genRequestDefForConfirmSubscription() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForCreateKmsKey() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForCreateLogtank() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -141,6 +150,11 @@ HttpRequestDef SmnMeta::genRequestDefForCreateTopic() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForDeleteKmsKey() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -194,7 +208,22 @@ HttpRequestDef SmnMeta::genRequestDefForDownloadHttpCert() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForDownloadHttpSignCert() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("contentType").
+        withJsonTag("content-type").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForListCloudService() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForListCloudServices() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -337,6 +366,32 @@ HttpRequestDef SmnMeta::genRequestDefForListTopics() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForListTopicsWithAssociatedResources() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TopicId")
+                  .withJsonTag("topic_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FuzzyName")
+                  .withJsonTag("fuzzy_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FuzzyDisplayName")
+                  .withJsonTag("fuzzy_display_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForListVersion() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -370,8 +425,27 @@ HttpRequestDef SmnMeta::genRequestDefForShowHttpDetectResult() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForShowKmsKey() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForShowNotifyPolicy() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForSubscribeTopic() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TopicUrn")
+                  .withJsonTag("topic_urn")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Endpoint")
+                  .withJsonTag("endpoint")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Token")
+                  .withJsonTag("token")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -380,6 +454,23 @@ HttpRequestDef SmnMeta::genRequestDefForUnsubscribeSubscription() {
     reqDefBuilder.withRequestField(FieldDef().withName("SubscriptionUrn")
                   .withJsonTag("subscription_urn")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForUnsubscribeTopic() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SubscriptionUrn")
+                  .withJsonTag("subscription_urn")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForUpdateKmsKey() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

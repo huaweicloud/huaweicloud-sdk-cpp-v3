@@ -1416,6 +1416,53 @@ std::shared_ptr<ListAssetListResponse> VodClient::listAssetList(ListAssetListReq
 
     return localVarResult;
 }
+std::shared_ptr<ListCdnStatisticsResponse> VodClient::listCdnStatistics(ListCdnStatisticsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/asset/cdn-statistics";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.statTypeIsSet()) {
+        localVarQueryParams["stat_type"] = parameterToString(request.getStatType());
+    }
+    if (request.domainIsSet()) {
+        localVarQueryParams["domain"] = parameterToString(request.getDomain());
+    }
+    if (request.intervalIsSet()) {
+        localVarQueryParams["interval"] = parameterToString(request.getInterval());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForListCdnStatistics());
+
+    std::shared_ptr<ListCdnStatisticsResponse> localVarResult = std::make_shared<ListCdnStatisticsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListDomainLogsResponse> VodClient::listDomainLogs(ListDomainLogsRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/vod/cdn/logs";

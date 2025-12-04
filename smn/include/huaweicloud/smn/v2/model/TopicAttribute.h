@@ -48,6 +48,24 @@ public:
     void setAccessPolicy(const std::string& value);
 
     /// <summary>
+    /// topic的访问策略创建时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+    /// </summary>
+
+    std::string getCreateTime() const;
+    bool createTimeIsSet() const;
+    void unsetcreateTime();
+    void setCreateTime(const std::string& value);
+
+    /// <summary>
+    /// topic的访问策略更新时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+    /// </summary>
+
+    std::string getUpdateTime() const;
+    bool updateTimeIsSet() const;
+    void unsetupdateTime();
+    void setUpdateTime(const std::string& value);
+
+    /// <summary>
     /// topic的简介
     /// </summary>
 
@@ -60,6 +78,10 @@ public:
 protected:
     std::string accessPolicy_;
     bool accessPolicyIsSet_;
+    std::string createTime_;
+    bool createTimeIsSet_;
+    std::string updateTime_;
+    bool updateTimeIsSet_;
     std::string introduction_;
     bool introductionIsSet_;
 

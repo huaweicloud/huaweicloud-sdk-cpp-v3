@@ -504,6 +504,31 @@ HttpRequestDef VodMeta::genRequestDefForListAssetList() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForListCdnStatistics() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StatType")
+                  .withJsonTag("stat_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Interval")
+                  .withJsonTag("interval")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForListDomainLogs() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("DomainName")

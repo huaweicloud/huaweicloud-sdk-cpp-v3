@@ -18,6 +18,8 @@ ShowLlmConfigResponse::ShowLlmConfigResponse()
     nameIsSet_ = false;
     llmUrl_ = "";
     llmUrlIsSet_ = false;
+    model_ = "";
+    modelIsSet_ = false;
     createTime_ = "";
     createTimeIsSet_ = false;
     updateTime_ = "";
@@ -44,6 +46,9 @@ web::json::value ShowLlmConfigResponse::toJson() const
     }
     if(llmUrlIsSet_) {
         val[utility::conversions::to_string_t("llm_url")] = ModelBase::toJson(llmUrl_);
+    }
+    if(modelIsSet_) {
+        val[utility::conversions::to_string_t("model")] = ModelBase::toJson(model_);
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
@@ -86,6 +91,15 @@ bool ShowLlmConfigResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLlmUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("model"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("model"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModel(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("create_time"))) {
@@ -180,6 +194,27 @@ bool ShowLlmConfigResponse::llmUrlIsSet() const
 void ShowLlmConfigResponse::unsetllmUrl()
 {
     llmUrlIsSet_ = false;
+}
+
+std::string ShowLlmConfigResponse::getModel() const
+{
+    return model_;
+}
+
+void ShowLlmConfigResponse::setModel(const std::string& value)
+{
+    model_ = value;
+    modelIsSet_ = true;
+}
+
+bool ShowLlmConfigResponse::modelIsSet() const
+{
+    return modelIsSet_;
+}
+
+void ShowLlmConfigResponse::unsetmodel()
+{
+    modelIsSet_ = false;
 }
 
 std::string ShowLlmConfigResponse::getCreateTime() const

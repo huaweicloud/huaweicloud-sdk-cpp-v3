@@ -15,8 +15,12 @@
 #include <huaweicloud/rds/v3/model/AttachEipRequest.h>
 #include <huaweicloud/rds/v3/model/AttachEipResponse.h>
 #include <huaweicloud/rds/v3/model/BatchDeleteBackupRequestBody.h>
+#include <huaweicloud/rds/v3/model/BatchDeleteInstanceRequest.h>
+#include <huaweicloud/rds/v3/model/BatchDeleteInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/BatchDeleteManualBackupRequest.h>
 #include <huaweicloud/rds/v3/model/BatchDeleteManualBackupResponse.h>
+#include <huaweicloud/rds/v3/model/BatchExecuteEventsRequest.h>
+#include <huaweicloud/rds/v3/model/BatchExecuteEventsResponse.h>
 #include <huaweicloud/rds/v3/model/BatchRestoreDatabaseRequest.h>
 #include <huaweicloud/rds/v3/model/BatchRestoreDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/BatchRestorePostgreSqlTablesRequest.h>
@@ -43,6 +47,9 @@
 #include <huaweicloud/rds/v3/model/CheckWeakPasswordRequest.h>
 #include <huaweicloud/rds/v3/model/CheckWeakpwdRequest.h>
 #include <huaweicloud/rds/v3/model/CheckWeakpwdResponse.h>
+#include <huaweicloud/rds/v3/model/CompareConfigurationRequest.h>
+#include <huaweicloud/rds/v3/model/CompareConfigurationRequestBody.h>
+#include <huaweicloud/rds/v3/model/CompareConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/ConfigurationCopyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ConfigurationForCreation.h>
 #include <huaweicloud/rds/v3/model/ConfigurationForUpdate.h>
@@ -63,6 +70,8 @@
 #include <huaweicloud/rds/v3/model/CreateMysqlMultiProxyRequest.h>
 #include <huaweicloud/rds/v3/model/CreateRdSforMySqlProxyRequest.h>
 #include <huaweicloud/rds/v3/model/CreateRdSforMySqlProxyResponse.h>
+#include <huaweicloud/rds/v3/model/CreateRebuildSlaveRequest.h>
+#include <huaweicloud/rds/v3/model/CreateRebuildSlaveResponse.h>
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceResponse.h>
@@ -182,6 +191,8 @@
 #include <huaweicloud/rds/v3/model/ListOffSiteInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteRestoreTimesRequest.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteRestoreTimesResponse.h>
+#include <huaweicloud/rds/v3/model/ListPackLogInfosRequest.h>
+#include <huaweicloud/rds/v3/model/ListPackLogInfosResponse.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoHistoryRequest.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoHistoryResponse.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoRequest.h>
@@ -202,6 +213,8 @@
 #include <huaweicloud/rds/v3/model/ListRecycleInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListRestoreTimesRequest.h>
 #include <huaweicloud/rds/v3/model/ListRestoreTimesResponse.h>
+#include <huaweicloud/rds/v3/model/ListScheduleEventsRequest.h>
+#include <huaweicloud/rds/v3/model/ListScheduleEventsResponse.h>
 #include <huaweicloud/rds/v3/model/ListScheduleTasksRequest.h>
 #include <huaweicloud/rds/v3/model/ListScheduleTasksResponse.h>
 #include <huaweicloud/rds/v3/model/ListShareBackupsRequest.h>
@@ -250,9 +263,11 @@
 #include <huaweicloud/rds/v3/model/ModifyPostgresqlHbaConfResponse.h>
 #include <huaweicloud/rds/v3/model/ModifyRdSforMySqlProxyRouteModeRequest.h>
 #include <huaweicloud/rds/v3/model/ModifyRdSforMySqlProxyRouteModeResponse.h>
+#include <huaweicloud/rds/v3/model/MultipleDeleteInsReq.h>
 #include <huaweicloud/rds/v3/model/NotifyReplaceNodeRequest.h>
 #include <huaweicloud/rds/v3/model/NotifyReplaceNodeResponse.h>
 #include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/rds/v3/model/OperateEventReq.h>
 #include <huaweicloud/rds/v3/model/OpsWindowRequest.h>
 #include <huaweicloud/rds/v3/model/PostgreSQLHistoryDatabaseRequest.h>
 #include <huaweicloud/rds/v3/model/PostgreSQLHistoryTableRequest.h>
@@ -266,6 +281,8 @@
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ReduceVolumeRequestBody.h>
 #include <huaweicloud/rds/v3/model/ReplaceNodeRequest.h>
+#include <huaweicloud/rds/v3/model/ResetConfigurationRequest.h>
+#include <huaweicloud/rds/v3/model/ResetConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/ResizeFlavorRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceResponse.h>
@@ -347,6 +364,8 @@
 #include <huaweicloud/rds/v3/model/ShowPrecheckResultResponse.h>
 #include <huaweicloud/rds/v3/model/ShowQuotasRequest.h>
 #include <huaweicloud/rds/v3/model/ShowQuotasResponse.h>
+#include <huaweicloud/rds/v3/model/ShowRebuildSlaveStatusRequest.h>
+#include <huaweicloud/rds/v3/model/ShowRebuildSlaveStatusResponse.h>
 #include <huaweicloud/rds/v3/model/ShowRecyclePolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowRecyclePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowReplicationStatusRequest.h>
@@ -602,8 +621,12 @@
 #include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesRequest.h>
 #include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesResponse.h>
 #include <huaweicloud/rds/v3/model/IntelligentKillSessionReq.h>
+#include <huaweicloud/rds/v3/model/ShowAutoCesAlarmRequest.h>
+#include <huaweicloud/rds/v3/model/ShowAutoCesAlarmResponse.h>
 #include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionHistoryRequest.h>
 #include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionHistoryResponse.h>
+#include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionStatisticRequest.h>
+#include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionStatisticResponse.h>
 #include <string>
 
 #include <huaweicloud/rds/v3/model/AddCopyDatabaseRequestBody.h>
@@ -786,6 +809,14 @@ public:
     std::shared_ptr<AttachEipResponse> attachEip(
         AttachEipRequest &request
     );
+    // 批量删除实例
+    //
+    // 批量删除数据库实例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteInstanceResponse> batchDeleteInstance(
+        BatchDeleteInstanceRequest &request
+    );
     // 批量删除手动备份
     //
     // 批量删除手动备份。
@@ -793,6 +824,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteManualBackupResponse> batchDeleteManualBackup(
         BatchDeleteManualBackupRequest &request
+    );
+    // 操作EG事件中心通知的事件
+    //
+    // 操作EG事件中心通知的事件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchExecuteEventsResponse> batchExecuteEvents(
+        BatchExecuteEventsRequest &request
     );
     // 库级时间点恢复
     //
@@ -874,6 +913,14 @@ public:
     std::shared_ptr<CheckWeakpwdResponse> checkWeakpwd(
         CheckWeakpwdRequest &request
     );
+    // 比较参数模板
+    //
+    // 比较参数模板
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CompareConfigurationResponse> compareConfiguration(
+        CompareConfigurationRequest &request
+    );
     // 复制参数模板
     //
     // 复制参数模板
@@ -929,6 +976,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateRdSforMySqlProxyResponse> createRdSforMySqlProxy(
         CreateRdSforMySqlProxyRequest &request
+    );
+    // 重建从机
+    //
+    // 重建从机，消除复制延迟
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateRebuildSlaveResponse> createRebuildSlave(
+        CreateRebuildSlaveRequest &request
     );
     // 恢复到新实例
     //
@@ -1308,6 +1363,14 @@ public:
     std::shared_ptr<ListOffSiteRestoreTimesResponse> listOffSiteRestoreTimes(
         ListOffSiteRestoreTimesRequest &request
     );
+    // 查询binlog合并下载文件
+    //
+    // 查询binlog合并下载文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPackLogInfosResponse> listPackLogInfos(
+        ListPackLogInfosRequest &request
+    );
     // 查询实例的pg_hba.conf文件配置
     //
     // 查询实例的pg_hba.conf文件配置
@@ -1388,6 +1451,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRestoreTimesResponse> listRestoreTimes(
         ListRestoreTimesRequest &request
+    );
+    // 查询事件列表
+    //
+    // 查询事件列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListScheduleEventsResponse> listScheduleEvents(
+        ListScheduleEventsRequest &request
     );
     // 查询定时任务列表
     //
@@ -1574,6 +1645,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NotifyReplaceNodeResponse> notifyReplaceNode(
         NotifyReplaceNodeRequest &request
+    );
+    // 重置自定义参数模板
+    //
+    // 重置自定义参数模板
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResetConfigurationResponse> resetConfiguration(
+        ResetConfigurationRequest &request
     );
     // 恢复到已有实例
     //
@@ -1858,6 +1937,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowQuotasResponse> showQuotas(
         ShowQuotasRequest &request
+    );
+    // 查询重建从机状态
+    //
+    // 查询重建从机的状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRebuildSlaveStatusResponse> showRebuildSlaveStatus(
+        ShowRebuildSlaveStatusRequest &request
     );
     // 查询回收站的回收策略。
     //
@@ -2645,6 +2732,14 @@ public:
     std::shared_ptr<GetInstancesNoIndexTablesResponse> getInstancesNoIndexTables(
         GetInstancesNoIndexTablesRequest &request
     );
+    // 查询当前用户自动告警配置
+    //
+    // 查询当前用户自动告警配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoCesAlarmResponse> showAutoCesAlarm(
+        ShowAutoCesAlarmRequest &request
+    );
     // 查询一键kill会话历史
     //
     // 查询一键kill会话历史
@@ -2652,6 +2747,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowIntelligentKillSessionHistoryResponse> showIntelligentKillSessionHistory(
         ShowIntelligentKillSessionHistoryRequest &request
+    );
+    // 查询一键kill会话实时统计信息
+    //
+    // 查询一键kill会话实时统计信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIntelligentKillSessionStatisticResponse> showIntelligentKillSessionStatistic(
+        ShowIntelligentKillSessionStatisticRequest &request
     );
 
     // 授权数据库帐号

@@ -92,6 +92,24 @@ public:
     void unsettopicId();
     void setTopicId(const std::string& value);
 
+    /// <summary>
+    /// 创建时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+    /// </summary>
+
+    std::string getCreateTime() const;
+    bool createTimeIsSet() const;
+    void unsetcreateTime();
+    void setCreateTime(const std::string& value);
+
+    /// <summary>
+    /// 更新时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+    /// </summary>
+
+    std::string getUpdateTime() const;
+    bool updateTimeIsSet() const;
+    void unsetupdateTime();
+    void setUpdateTime(const std::string& value);
+
 
 protected:
     std::string topicUrn_;
@@ -106,6 +124,10 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string topicId_;
     bool topicIdIsSet_;
+    std::string createTime_;
+    bool createTimeIsSet_;
+    std::string updateTime_;
+    bool updateTimeIsSet_;
 
 };
 

@@ -57,7 +57,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 实例ID
+    /// 订阅实例ID
     /// </summary>
 
     std::string getSubscriberInstanceId() const;
@@ -66,7 +66,7 @@ public:
     void setSubscriberInstanceId(const std::string& value);
 
     /// <summary>
-    /// 实例名
+    /// 订阅实例名
     /// </summary>
 
     std::string getSubscriberInstanceName() const;

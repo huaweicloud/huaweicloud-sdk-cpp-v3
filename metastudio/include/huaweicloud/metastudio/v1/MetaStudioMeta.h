@@ -299,11 +299,6 @@ public:
     static HttpRequestDef genRequestDefForSetTtscGroupAssets();
     static HttpRequestDef genRequestDefForShowVocabularySwitchConfigs();
     static HttpRequestDef genRequestDefForUpdateTtscVocabularyGroups();
-    static HttpRequestDef genRequestDefForCreateVideoMotionCaptureJob();
-    static HttpRequestDef genRequestDefForExecuteVideoMotionCaptureCommand();
-    static HttpRequestDef genRequestDefForListVideoMotionCaptureJobs();
-    static HttpRequestDef genRequestDefForShowVideoMotionCaptureJob();
-    static HttpRequestDef genRequestDefForStopVideoMotionCaptureJob();
     static HttpRequestDef genRequestDefForCopyVideoScripts();
     static HttpRequestDef genRequestDefForCreateVideoScripts();
     static HttpRequestDef genRequestDefForDeleteVideoScript();

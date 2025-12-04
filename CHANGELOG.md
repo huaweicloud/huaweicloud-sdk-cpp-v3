@@ -1,3 +1,181 @@
+# 3.1.165 2025-12-04
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateLtsConfig**
+    - changes of request param
+      - `* enterprise_project_id: optional -> required`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `RestoreNewInstance`, `ListInstances`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstance**
+    - changes of request param
+      - `+ datastore`
+      - `+ region`
+      - `+ port`
+      - `+ mode`
+      - `+ tags`
+      - `- restore_point`
+      - `+ flavor.storage`
+      - `* flavor: list<RestoreNewInstanceFlavorOption> -> list<CreateInstanceFlavorOption>`
+      - `* body: object<RestoreNewInstanceRequestBody> -> object<CreateInstanceRequestBody>`
+    - changes of response param
+      - `+ tags`
+      - `+ port`
+      - `+ flavor.storage`
+      - `* flavor: list<RestoreNewInstanceFlavorOption> -> list<CreateInstanceFlavorOption>`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RestartStarrocksInstance**
+    - changes of response param
+      - `+ workflow_id`
+      - `- job_id`
+  - **RestartStarrocksNode**
+    - changes of response param
+      - `+ workflow_id`
+      - `- job_id`
+  - **DeleteStarrocksInstance**
+    - changes of response param
+      - `+ workflow_id`
+      - `- job_id`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListCarouselTaskDetail`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLogs**
+    - changes of request param
+      - `+ scroll_id`
+  - **ListLogContext**
+    - changes of request param
+      - `+ scroll_id`
+
+### HuaweiCloud SDK MetaStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the following APIs:
+    - `ListVideoMotionCaptureJobs`
+    - `CreateVideoMotionCaptureJob`
+    - `ShowVideoMotionCaptureJob`
+    - `StopVideoMotionCaptureJob`
+    - `ExecuteVideoMotionCaptureCommand`
+  - **ShowLlmConfig**
+    - changes of response param
+      - `+ model`
+  - **UpdateLlmConfig**
+    - changes of request param
+      - `+ model`
+  - **CreateLlmConfig**
+    - changes of request param
+      - `+ model`
+  - **ListLlmConfig**
+    - changes of response param
+      - `+ model`
+      - `+ data.model`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `BatchDeleteInstance`
+    - `ShowIntelligentKillSessionStatistic`
+    - `ListPackLogInfos`
+    - `CompareConfiguration`
+    - `ResetConfiguration`
+    - `ShowAutoCesAlarm`
+    - `ListScheduleEvents`
+    - `BatchExecuteEvents`
+    - `ShowRebuildSlaveStatus`
+    - `CreateRebuildSlave`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SMN
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ShowKmsKey`
+    - `CreateKmsKey`
+    - `UpdateKmsKey`
+    - `DeleteKmsKey`
+    - `ListTopicsWithAssociatedResources`
+    - `SubscribeTopic`
+    - `UnsubscribeTopic`
+    - `ListCloudServices`
+    - `DownloadHttpSignCert`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTopics**
+    - changes of response param
+      - `+ topics.create_time`
+      - `+ topics.update_time`
+  - **ListTopicAttributes**
+    - changes of response param
+      - `+ attributes.create_time`
+      - `+ attributes.update_time`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ListCdnStatistics`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.164 2025-11-27
 
 ### HuaweiCloud SDK CCE

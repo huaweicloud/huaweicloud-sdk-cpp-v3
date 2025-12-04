@@ -20,6 +20,8 @@ ListLogContextRequestBody::ListLogContextRequestBody()
     backwardsSizeIsSet_ = false;
     forwardsSize_ = 0;
     forwardsSizeIsSet_ = false;
+    scrollId_ = "";
+    scrollIdIsSet_ = false;
 }
 
 ListLogContextRequestBody::~ListLogContextRequestBody() = default;
@@ -43,6 +45,9 @@ web::json::value ListLogContextRequestBody::toJson() const
     }
     if(forwardsSizeIsSet_) {
         val[utility::conversions::to_string_t("forwards_size")] = ModelBase::toJson(forwardsSize_);
+    }
+    if(scrollIdIsSet_) {
+        val[utility::conversions::to_string_t("scroll_id")] = ModelBase::toJson(scrollId_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool ListLogContextRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setForwardsSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scroll_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scroll_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScrollId(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool ListLogContextRequestBody::forwardsSizeIsSet() const
 void ListLogContextRequestBody::unsetforwardsSize()
 {
     forwardsSizeIsSet_ = false;
+}
+
+std::string ListLogContextRequestBody::getScrollId() const
+{
+    return scrollId_;
+}
+
+void ListLogContextRequestBody::setScrollId(const std::string& value)
+{
+    scrollId_ = value;
+    scrollIdIsSet_ = true;
+}
+
+bool ListLogContextRequestBody::scrollIdIsSet() const
+{
+    return scrollIdIsSet_;
+}
+
+void ListLogContextRequestBody::unsetscrollId()
+{
+    scrollIdIsSet_ = false;
 }
 
 }

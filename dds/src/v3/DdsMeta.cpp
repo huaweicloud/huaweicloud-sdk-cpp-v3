@@ -163,6 +163,15 @@ HttpRequestDef DdsMeta::genRequestDefForCreateDatabaseUser() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForCreateInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForCreateIp() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -516,6 +525,38 @@ HttpRequestDef DdsMeta::genRequestDefForListFlavors() {
 
 HttpRequestDef DdsMeta::genRequestDefForListInstanceTags() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForListInstances() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Mode")
+                  .withJsonTag("mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
+                  .withJsonTag("datastore_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
+                  .withJsonTag("vpc_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SubnetId")
+                  .withJsonTag("subnet_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

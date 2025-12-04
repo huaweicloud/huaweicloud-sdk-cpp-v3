@@ -16,7 +16,9 @@ public:
     static HttpRequestDef genRequestDefForAddPostgresqlHbaConf();
     static HttpRequestDef genRequestDefForApplyConfigurationAsync();
     static HttpRequestDef genRequestDefForAttachEip();
+    static HttpRequestDef genRequestDefForBatchDeleteInstance();
     static HttpRequestDef genRequestDefForBatchDeleteManualBackup();
+    static HttpRequestDef genRequestDefForBatchExecuteEvents();
     static HttpRequestDef genRequestDefForBatchRestoreDatabase();
     static HttpRequestDef genRequestDefForBatchRestorePostgreSqlTables();
     static HttpRequestDef genRequestDefForBatchStopInstance();
@@ -27,6 +29,7 @@ public:
     static HttpRequestDef genRequestDefForChangeOpsWindow();
     static HttpRequestDef genRequestDefForCheckInstanceForUpgrade();
     static HttpRequestDef genRequestDefForCheckWeakpwd();
+    static HttpRequestDef genRequestDefForCompareConfiguration();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateConfiguration();
     static HttpRequestDef genRequestDefForCreateDnsName();
@@ -34,6 +37,7 @@ public:
     static HttpRequestDef genRequestDefForCreateInstanceIam5();
     static HttpRequestDef genRequestDefForCreateManualBackup();
     static HttpRequestDef genRequestDefForCreateRdSforMySqlProxy();
+    static HttpRequestDef genRequestDefForCreateRebuildSlave();
     static HttpRequestDef genRequestDefForCreateRestoreInstance();
     static HttpRequestDef genRequestDefForCreateSqlLimit();
     static HttpRequestDef genRequestDefForCreateXelLogDownload();
@@ -81,6 +85,7 @@ public:
     static HttpRequestDef genRequestDefForListOffSiteBackups();
     static HttpRequestDef genRequestDefForListOffSiteInstances();
     static HttpRequestDef genRequestDefForListOffSiteRestoreTimes();
+    static HttpRequestDef genRequestDefForListPackLogInfos();
     static HttpRequestDef genRequestDefForListPostgresqlHbaInfo();
     static HttpRequestDef genRequestDefForListPostgresqlHbaInfoHistory();
     static HttpRequestDef genRequestDefForListPostgresqlListHistoryTables();
@@ -91,6 +96,7 @@ public:
     static HttpRequestDef genRequestDefForListReadOnlyReplayDatabase();
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListRestoreTimes();
+    static HttpRequestDef genRequestDefForListScheduleEvents();
     static HttpRequestDef genRequestDefForListScheduleTasks();
     static HttpRequestDef genRequestDefForListShareBackups();
     static HttpRequestDef genRequestDefForListSimplifiedInstances();
@@ -114,6 +120,7 @@ public:
     static HttpRequestDef genRequestDefForModifyPostgresqlHbaConf();
     static HttpRequestDef genRequestDefForModifyRdSforMySqlProxyRouteMode();
     static HttpRequestDef genRequestDefForNotifyReplaceNode();
+    static HttpRequestDef genRequestDefForResetConfiguration();
     static HttpRequestDef genRequestDefForRestoreExistInstance();
     static HttpRequestDef genRequestDefForRestoreLogReplayDatabase();
     static HttpRequestDef genRequestDefForRestoreTables();
@@ -149,6 +156,7 @@ public:
     static HttpRequestDef genRequestDefForShowOffSiteBackupPolicy();
     static HttpRequestDef genRequestDefForShowPrecheckResult();
     static HttpRequestDef genRequestDefForShowQuotas();
+    static HttpRequestDef genRequestDefForShowRebuildSlaveStatus();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowReplicationStatus();
     static HttpRequestDef genRequestDefForShowRestartPolicy();
@@ -246,7 +254,9 @@ public:
     static HttpRequestDef genRequestDefForUpdateReadWeight();
     static HttpRequestDef genRequestDefForCreateIntelligentKillSession();
     static HttpRequestDef genRequestDefForGetInstancesNoIndexTables();
+    static HttpRequestDef genRequestDefForShowAutoCesAlarm();
     static HttpRequestDef genRequestDefForShowIntelligentKillSessionHistory();
+    static HttpRequestDef genRequestDefForShowIntelligentKillSessionStatistic();
     static HttpRequestDef genRequestDefForAllowSqlserverDbUserPrivilege();
     static HttpRequestDef genRequestDefForBatchAddMsdtcs();
     static HttpRequestDef genRequestDefForBatchModifyPublication();

@@ -14,6 +14,10 @@ TopicAttribute::TopicAttribute()
 {
     accessPolicy_ = "";
     accessPolicyIsSet_ = false;
+    createTime_ = "";
+    createTimeIsSet_ = false;
+    updateTime_ = "";
+    updateTimeIsSet_ = false;
     introduction_ = "";
     introductionIsSet_ = false;
 }
@@ -30,6 +34,12 @@ web::json::value TopicAttribute::toJson() const
 
     if(accessPolicyIsSet_) {
         val[utility::conversions::to_string_t("access_policy")] = ModelBase::toJson(accessPolicy_);
+    }
+    if(createTimeIsSet_) {
+        val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
+    }
+    if(updateTimeIsSet_) {
+        val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
     }
     if(introductionIsSet_) {
         val[utility::conversions::to_string_t("introduction")] = ModelBase::toJson(introduction_);
@@ -48,6 +58,24 @@ bool TopicAttribute::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccessPolicy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("create_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("update_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdateTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("introduction"))) {
@@ -82,6 +110,48 @@ bool TopicAttribute::accessPolicyIsSet() const
 void TopicAttribute::unsetaccessPolicy()
 {
     accessPolicyIsSet_ = false;
+}
+
+std::string TopicAttribute::getCreateTime() const
+{
+    return createTime_;
+}
+
+void TopicAttribute::setCreateTime(const std::string& value)
+{
+    createTime_ = value;
+    createTimeIsSet_ = true;
+}
+
+bool TopicAttribute::createTimeIsSet() const
+{
+    return createTimeIsSet_;
+}
+
+void TopicAttribute::unsetcreateTime()
+{
+    createTimeIsSet_ = false;
+}
+
+std::string TopicAttribute::getUpdateTime() const
+{
+    return updateTime_;
+}
+
+void TopicAttribute::setUpdateTime(const std::string& value)
+{
+    updateTime_ = value;
+    updateTimeIsSet_ = true;
+}
+
+bool TopicAttribute::updateTimeIsSet() const
+{
+    return updateTimeIsSet_;
+}
+
+void TopicAttribute::unsetupdateTime()
+{
+    updateTimeIsSet_ = false;
 }
 
 std::string TopicAttribute::getIntroduction() const

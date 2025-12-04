@@ -113,6 +113,15 @@ public:
     void setIsDesc(bool value);
 
     /// <summary>
+    /// **参数解释：** 分页查询时，若上次查询的返回结果中包含该字段，需要增加该字段参与分页查询。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getScrollId() const;
+    bool scrollIdIsSet() const;
+    void unsetscrollId();
+    void setScrollId(const std::string& value);
+
+    /// <summary>
     /// 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
     /// </summary>
 
@@ -184,6 +193,8 @@ protected:
     bool timeIsSet_;
     bool isDesc_;
     bool isDescIsSet_;
+    std::string scrollId_;
+    bool scrollIdIsSet_;
     std::string searchType_;
     bool searchTypeIsSet_;
     int32_t limit_;

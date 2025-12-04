@@ -88,6 +88,8 @@
 #include <huaweicloud/vod/v1/model/ListAssetDailySummaryLogResponse.h>
 #include <huaweicloud/vod/v1/model/ListAssetListRequest.h>
 #include <huaweicloud/vod/v1/model/ListAssetListResponse.h>
+#include <huaweicloud/vod/v1/model/ListCdnStatisticsRequest.h>
+#include <huaweicloud/vod/v1/model/ListCdnStatisticsResponse.h>
 #include <huaweicloud/vod/v1/model/ListDomainLogsRequest.h>
 #include <huaweicloud/vod/v1/model/ListDomainLogsResponse.h>
 #include <huaweicloud/vod/v1/model/ListTemplateGroupCollectionRequest.h>
@@ -497,6 +499,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAssetListResponse> listAssetList(
         ListAssetListRequest &request
+    );
+    // 查询CDN统计信息
+    //
+    // 查询CDN的统计数据，包括流量、峰值带宽、请求总数、请求命中率、流量命中率。查询存在1小时误差。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCdnStatisticsResponse> listCdnStatistics(
+        ListCdnStatisticsRequest &request
     );
     // 查询域名播放日志
     //

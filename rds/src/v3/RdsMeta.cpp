@@ -45,7 +45,35 @@ HttpRequestDef RdsMeta::genRequestDefForAttachEip() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForBatchDeleteInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForBatchDeleteManualBackup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForBatchExecuteEvents() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -194,6 +222,20 @@ HttpRequestDef RdsMeta::genRequestDefForCheckWeakpwd() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForCompareConfiguration() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForCopyConfiguration() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -294,6 +336,11 @@ HttpRequestDef RdsMeta::genRequestDefForCreateRdSforMySqlProxy() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForCreateRebuildSlave() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -1064,6 +1111,22 @@ HttpRequestDef RdsMeta::genRequestDefForListOffSiteRestoreTimes() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListPackLogInfos() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListPostgresqlHbaInfo() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withResponseField(FieldDef().
@@ -1177,6 +1240,38 @@ HttpRequestDef RdsMeta::genRequestDefForListRestoreTimes() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForListScheduleEvents() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Level")
+                  .withJsonTag("level")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortField")
+                  .withJsonTag("sort_field")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Order")
+                  .withJsonTag("order")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -1574,6 +1669,16 @@ HttpRequestDef RdsMeta::genRequestDefForNotifyReplaceNode() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForResetConfiguration() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1995,6 +2100,11 @@ HttpRequestDef RdsMeta::genRequestDefForShowQuotas() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForShowRebuildSlaveStatus() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -3198,6 +3308,19 @@ HttpRequestDef RdsMeta::genRequestDefForGetInstancesNoIndexTables() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForShowAutoCesAlarm() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Engine")
+                  .withJsonTag("engine")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForShowIntelligentKillSessionHistory() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
@@ -3212,6 +3335,19 @@ HttpRequestDef RdsMeta::genRequestDefForShowIntelligentKillSessionHistory() {
     reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
                   .withJsonTag("page_size")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForShowIntelligentKillSessionStatistic() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("NodeId")
+                  .withJsonTag("node_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 

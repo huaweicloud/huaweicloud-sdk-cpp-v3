@@ -66,6 +66,15 @@ public:
     void setLlmUrl(const std::string& value);
 
     /// <summary>
+    /// model参数
+    /// </summary>
+
+    std::string getModel() const;
+    bool modelIsSet() const;
+    void unsetmodel();
+    void setModel(const std::string& value);
+
+    /// <summary>
     /// 创建时间，格式遵循：RFC 3339 如\&quot;2021-01-10T08:43:17Z\&quot;。
     /// </summary>
 
@@ -100,6 +109,8 @@ protected:
     bool nameIsSet_;
     std::string llmUrl_;
     bool llmUrlIsSet_;
+    std::string model_;
+    bool modelIsSet_;
     std::string createTime_;
     bool createTimeIsSet_;
     std::string updateTime_;

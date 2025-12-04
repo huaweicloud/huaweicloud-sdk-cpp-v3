@@ -18,6 +18,8 @@ LlmConfigInfo::LlmConfigInfo()
     nameIsSet_ = false;
     llmUrl_ = "";
     llmUrlIsSet_ = false;
+    model_ = "";
+    modelIsSet_ = false;
     createTime_ = "";
     createTimeIsSet_ = false;
     updateTime_ = "";
@@ -42,6 +44,9 @@ web::json::value LlmConfigInfo::toJson() const
     }
     if(llmUrlIsSet_) {
         val[utility::conversions::to_string_t("llm_url")] = ModelBase::toJson(llmUrl_);
+    }
+    if(modelIsSet_) {
+        val[utility::conversions::to_string_t("model")] = ModelBase::toJson(model_);
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
@@ -81,6 +86,15 @@ bool LlmConfigInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLlmUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("model"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("model"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModel(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("create_time"))) {
@@ -166,6 +180,27 @@ bool LlmConfigInfo::llmUrlIsSet() const
 void LlmConfigInfo::unsetllmUrl()
 {
     llmUrlIsSet_ = false;
+}
+
+std::string LlmConfigInfo::getModel() const
+{
+    return model_;
+}
+
+void LlmConfigInfo::setModel(const std::string& value)
+{
+    model_ = value;
+    modelIsSet_ = true;
+}
+
+bool LlmConfigInfo::modelIsSet() const
+{
+    return modelIsSet_;
+}
+
+void LlmConfigInfo::unsetmodel()
+{
+    modelIsSet_ = false;
 }
 
 std::string LlmConfigInfo::getCreateTime() const

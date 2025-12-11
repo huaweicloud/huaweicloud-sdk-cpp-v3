@@ -88,6 +88,20 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForAuthorizeBackupDownload(
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForBatchDeleteInstanceTag() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForBatchSetBackupPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1681,6 +1695,18 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListRestorableInstancesD
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupRestoreType")
+                  .withJsonTag("backup_restore_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceBackupSchema")
+                  .withJsonTag("source_backup_schema")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetInstanceId")
+                  .withJsonTag("target_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceName")
+                  .withJsonTag("instance_name")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -2344,6 +2370,15 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowDeploymentForm() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
                   .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Consistency")
+                  .withJsonTag("consistency")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ConsistencyProtocol")
+                  .withJsonTag("consistency_protocol")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EngineVersion")
+                  .withJsonTag("engine_version")
                   .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

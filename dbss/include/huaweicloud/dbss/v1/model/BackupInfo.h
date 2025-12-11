@@ -85,7 +85,7 @@ public:
     void setFileSize(int64_t value);
 
     /// <summary>
-    /// 文件大小单位 - Byte - KB - MB - GB
+    /// 文件大小单位 - Byte：Byte - KB：kb - MB: mb - GB: gb
     /// </summary>
 
     std::string getFileSizeUnit() const;

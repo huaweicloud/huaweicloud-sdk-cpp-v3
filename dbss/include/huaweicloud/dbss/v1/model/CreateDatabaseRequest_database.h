@@ -39,7 +39,7 @@ public:
     /// CreateDatabaseRequest_database members
 
     /// <summary>
-    /// 数据库分类 - RDS: RDS数据库 - ECS:自建数据库
+    /// 数据库分类 - RDS: RDS数据库 - ECS: 自建数据库
     /// </summary>
 
     std::string getDbClassification() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - GAUSSDBOPENGAUSS - GREENPLUM - HIGHGO - SHENTONG - GBASE8A - GBASE8S - GBASEXDM - MONGODB - DDS
+    /// 数据库类型 - MYSQL: MySQL - ORACLE: Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SQL Server - DAMENG： DAMENG - TAURUS: Taurus DB - DWS: GaussDB(DWS) - KINGBASE: Kingbase - GAUSSDBOPENGAUSS：GaussDB/openGauss - GREENPLUM： Greenplum - HIGHGO: HIGHGO - SHENTONG： ShenTong - GBASE8A: GBase 8a - GBASE8S： GBase 8s - GBASEXDM： GBase XDM - MONGODB: MongoDB - DDS： DDS(MongoDB)
     /// </summary>
 
     std::string getType() const;
@@ -75,7 +75,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 字符集。 - GBK - UTF8
+    /// 字符集。 - GBK： GBK - UTF8：UTF8
     /// </summary>
 
     std::string getCharset() const;
@@ -102,7 +102,7 @@ public:
     void setPort(const std::string& value);
 
     /// <summary>
-    /// 数据库操作系统 - LINUX64 - WINDOWS64 - UNIX
+    /// 数据库操作系统 - LINUX64：LINUX64 - WINDOWS64：WINDOWS64 - UNIX：UNIX
     /// </summary>
 
     std::string getOs() const;

@@ -93,7 +93,7 @@ public:
     void setInstanceName(const std::string& value);
 
     /// <summary>
-    /// 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS
+    /// 数据库类型 - MYSQL: MySql - ORACLE: Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SQL Server - DAMENG: DAMENG - TAURUS: TaurusDB - DWS: GaussDB DWS - KINGBASE: KINGBASE - MARIADB: MariaDB - GAUSSDBOPENGAUSS: GaussDB/openGauss
     /// </summary>
 
     std::string getType() const;

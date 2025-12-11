@@ -60,10 +60,10 @@ public:
     /// 由SQL的语法解析树计算出的内部哈希码。
     /// </summary>
 
-    int64_t getQueryId() const;
+    std::string getQueryId() const;
     bool queryIdIsSet() const;
     void unsetqueryId();
-    void setQueryId(int64_t value);
+    void setQueryId(const std::string& value);
 
     /// <summary>
     /// 调用次数
@@ -107,7 +107,7 @@ protected:
     bool userNameIsSet_;
     std::string database_;
     bool databaseIsSet_;
-    int64_t queryId_;
+    std::string queryId_;
     bool queryIdIsSet_;
     int64_t calls_;
     bool callsIsSet_;

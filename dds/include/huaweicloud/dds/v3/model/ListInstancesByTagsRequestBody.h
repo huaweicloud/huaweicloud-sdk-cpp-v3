@@ -42,7 +42,7 @@ public:
     /// ListInstancesByTagsRequestBody members
 
     /// <summary>
-    /// 索引位置偏移量，表示从第一条数据偏移offset条数据后开始查询。 - “action”值为“count”时，不传该参数。 - “action”值为“filter”时，取值必须为数字，不能为负数。默认取0值，表示从第一条数据开始查询。&#39;
+    /// **参数解释：** 索引位置偏移量，表示从第一条数据偏移offset条数据后开始查询。 **约束限制：**   - “action”值为“count”时，不传该参数。   - “action”值为“filter”时，取值必须为数字，不能为负数。 **取值范围：** 不涉及。 **默认取值：** 默认取0值，表示从第一条数据开始查询。
     /// </summary>
 
     std::string getOffset() const;
@@ -51,7 +51,7 @@ public:
     void setOffset(const std::string& value);
 
     /// <summary>
-    /// 查询记录数。   - “action”值为“count”时，不传该参数。   - “action”值为“filter”时，取值范围：1~100。不传该参数时，默认查询前100条实例信息。
+    /// **参数解释：** 查询记录数。 **约束限制：**   - “action”值为“count”时，不传该参数。   - “action”值为“filter”时，取值范围：1~100。不传该参数时，默认查询前100条实例信息。 **取值范围：** 1~100 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getLimit() const;
@@ -60,7 +60,7 @@ public:
     void setLimit(const std::string& value);
 
     /// <summary>
-    /// 操作标识。   - 取值为“filter”，表示根据标签过滤条件查询实例。   - 取值为“count”，表示仅返回总记录数，禁止返回其他字段。
+    /// **参数解释：** 操作标识。 **约束限制：** - 取值为“count”，表示仅返回总记录数，禁止返回其他字段。 - 取值为“filter”，表示根据标签过滤条件查询实例。 **取值范围：** count和filter **默认取值：** 不涉及。
     /// </summary>
 
     std::string getAction() const;
@@ -69,7 +69,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 搜索字段。   - 该字段值为空，表示不按照实例名称或实例ID查询。   - 该字段值不为空
+    /// **参数解释：** 搜索字段。 **约束限制：**   - 该字段值为空，表示不按照实例名称或实例ID查询。   - 该字段值不为空， **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::vector<QueryMatchItem>& getMatches();
@@ -78,7 +78,7 @@ public:
     void setMatches(const std::vector<QueryMatchItem>& value);
 
     /// <summary>
-    /// 包含标签，最多包含10个key。
+    /// **参数解释：** 包含标签。 **约束限制：** 最多包含10个key。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::vector<QueryTagItem>& getTags();

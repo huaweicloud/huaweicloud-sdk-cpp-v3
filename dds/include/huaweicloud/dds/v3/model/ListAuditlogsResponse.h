@@ -49,6 +49,15 @@ public:
     void setTotalRecord(int32_t value);
 
     /// <summary>
+    /// 当前实例审计日志使用总量，单位：byte。
+    /// </summary>
+
+    int64_t getTotalSize() const;
+    bool totalSizeIsSet() const;
+    void unsettotalSize();
+    void setTotalSize(int64_t value);
+
+    /// <summary>
     /// 审计日志具体信息。
     /// </summary>
 
@@ -61,6 +70,8 @@ public:
 protected:
     int32_t totalRecord_;
     bool totalRecordIsSet_;
+    int64_t totalSize_;
+    bool totalSizeIsSet_;
     std::vector<ListAuditlogsResult> auditLogs_;
     bool auditLogsIsSet_;
 

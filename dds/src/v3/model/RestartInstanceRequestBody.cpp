@@ -16,6 +16,10 @@ RestartInstanceRequestBody::RestartInstanceRequestBody()
     targetTypeIsSet_ = false;
     targetId_ = "";
     targetIdIsSet_ = false;
+    isSerial_ = false;
+    isSerialIsSet_ = false;
+    isForce_ = false;
+    isForceIsSet_ = false;
 }
 
 RestartInstanceRequestBody::~RestartInstanceRequestBody() = default;
@@ -33,6 +37,12 @@ web::json::value RestartInstanceRequestBody::toJson() const
     }
     if(targetIdIsSet_) {
         val[utility::conversions::to_string_t("target_id")] = ModelBase::toJson(targetId_);
+    }
+    if(isSerialIsSet_) {
+        val[utility::conversions::to_string_t("is_serial")] = ModelBase::toJson(isSerial_);
+    }
+    if(isForceIsSet_) {
+        val[utility::conversions::to_string_t("is_force")] = ModelBase::toJson(isForce_);
     }
 
     return val;
@@ -57,6 +67,24 @@ bool RestartInstanceRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTargetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_serial"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_serial"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsSerial(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_force"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_force"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsForce(refVal);
         }
     }
     return ok;
@@ -103,6 +131,48 @@ bool RestartInstanceRequestBody::targetIdIsSet() const
 void RestartInstanceRequestBody::unsettargetId()
 {
     targetIdIsSet_ = false;
+}
+
+bool RestartInstanceRequestBody::isIsSerial() const
+{
+    return isSerial_;
+}
+
+void RestartInstanceRequestBody::setIsSerial(bool value)
+{
+    isSerial_ = value;
+    isSerialIsSet_ = true;
+}
+
+bool RestartInstanceRequestBody::isSerialIsSet() const
+{
+    return isSerialIsSet_;
+}
+
+void RestartInstanceRequestBody::unsetisSerial()
+{
+    isSerialIsSet_ = false;
+}
+
+bool RestartInstanceRequestBody::isIsForce() const
+{
+    return isForce_;
+}
+
+void RestartInstanceRequestBody::setIsForce(bool value)
+{
+    isForce_ = value;
+    isForceIsSet_ = true;
+}
+
+bool RestartInstanceRequestBody::isForceIsSet() const
+{
+    return isForceIsSet_;
+}
+
+void RestartInstanceRequestBody::unsetisForce()
+{
+    isForceIsSet_ = false;
 }
 
 }

@@ -10,6 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/gaussdb/v3/model/RecycleBackupV3.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -96,19 +98,19 @@ public:
     /// 创建时间。
     /// </summary>
 
-    int32_t getCreateAt() const;
+    int64_t getCreateAt() const;
     bool createAtIsSet() const;
     void unsetcreateAt();
-    void setCreateAt(int32_t value);
+    void setCreateAt(int64_t value);
 
     /// <summary>
     /// 删除时间。
     /// </summary>
 
-    int32_t getDeletedAt() const;
+    int64_t getDeletedAt() const;
     bool deletedAtIsSet() const;
     void unsetdeletedAt();
-    void setDeletedAt(int32_t value);
+    void setDeletedAt(int64_t value);
 
     /// <summary>
     /// 磁盘类型。
@@ -191,6 +193,15 @@ public:
     void unsetrecycleStatus();
     void setRecycleStatus(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  实例所有的回收站备份列表。
+    /// </summary>
+
+    std::vector<RecycleBackupV3>& getRecycleBakcups();
+    bool recycleBakcupsIsSet() const;
+    void unsetrecycleBakcups();
+    void setRecycleBakcups(const std::vector<RecycleBackupV3>& value);
+
 
 protected:
     std::string id_;
@@ -205,9 +216,9 @@ protected:
     bool engineVersionIsSet_;
     std::string payModel_;
     bool payModelIsSet_;
-    int32_t createAt_;
+    int64_t createAt_;
     bool createAtIsSet_;
-    int32_t deletedAt_;
+    int64_t deletedAt_;
     bool deletedAtIsSet_;
     std::string volumeType_;
     bool volumeTypeIsSet_;
@@ -227,6 +238,8 @@ protected:
     bool recycleBackupIdIsSet_;
     std::string recycleStatus_;
     bool recycleStatusIsSet_;
+    std::vector<RecycleBackupV3> recycleBakcups_;
+    bool recycleBakcupsIsSet_;
 
 };
 

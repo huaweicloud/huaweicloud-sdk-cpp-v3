@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 告警状态 - ON - OFF
+    /// 告警状态 - ON：持续中 - OFF：已关闭
     /// </summary>
 
     std::string getAlarmLife() const;

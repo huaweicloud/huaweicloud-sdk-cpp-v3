@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 规则类型
+    /// 规则类型 - BUILD_IN：系统内置 - USER_DEFINE：自定义
     /// </summary>
 
     std::string getType() const;
@@ -84,7 +84,7 @@ public:
     void setMaskValue(const std::string& value);
 
     /// <summary>
-    /// 规则状态
+    /// 规则状态 - ON：启用 - OFF：禁用
     /// </summary>
 
     std::string getStatus() const;

@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+    /// 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
     /// </summary>
 
     std::string getRiskLevels() const;

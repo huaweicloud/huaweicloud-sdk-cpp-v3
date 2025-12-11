@@ -58,7 +58,7 @@ public:
     void setUserName(const std::string& value);
 
     /// <summary>
-    /// 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
+    /// 动作名称 - CREATE：创建 - DELETE：删除 - DOWNLOAD：下载 - UPDATE：更新
     /// </summary>
 
     std::string getAction() const;
@@ -67,7 +67,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 执行结果 - success - fail
+    /// 执行结果 - success：成功 - fail：失败
     /// </summary>
 
     std::string getResult() const;

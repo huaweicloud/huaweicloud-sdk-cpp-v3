@@ -140,6 +140,42 @@ public:
     void setNodeNum(int32_t value);
 
     /// <summary>
+    /// **参数解释**：  数据库代理读写模式。  **取值范围**：  - readwrite：读写模式 - readonly：只读模式 
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
+    /// <summary>
+    /// 数据库代理创建时间。
+    /// </summary>
+
+    std::string getCreatedAt() const;
+    bool createdAtIsSet() const;
+    void unsetcreatedAt();
+    void setCreatedAt(const std::string& value);
+
+    /// <summary>
+    /// 数据库代更新时间。
+    /// </summary>
+
+    std::string getUpdatedAt() const;
+    bool updatedAtIsSet() const;
+    void unsetupdatedAt();
+    void setUpdatedAt(const std::string& value);
+
+    /// <summary>
+    /// 是否支持HTAP节点。
+    /// </summary>
+
+    bool isSupportApNode() const;
+    bool supportApNodeIsSet() const;
+    void unsetsupportApNode();
+    void setSupportApNode(bool value);
+
+    /// <summary>
     /// Proxy主备模式，取值范围：Cluster。
     /// </summary>
 
@@ -289,6 +325,14 @@ protected:
     bool ramIsSet_;
     int32_t nodeNum_;
     bool nodeNumIsSet_;
+    std::string type_;
+    bool typeIsSet_;
+    std::string createdAt_;
+    bool createdAtIsSet_;
+    std::string updatedAt_;
+    bool updatedAtIsSet_;
+    bool supportApNode_;
+    bool supportApNodeIsSet_;
     std::string mode_;
     bool modeIsSet_;
     std::vector<MysqlProxyNodes> nodes_;

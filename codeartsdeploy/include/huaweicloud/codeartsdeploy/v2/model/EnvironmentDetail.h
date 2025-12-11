@@ -77,6 +77,15 @@ public:
     void setOs(const std::string& value);
 
     /// <summary>
+    /// 项目ID
+    /// </summary>
+
+    std::string getProjectId() const;
+    bool projectIdIsSet() const;
+    void unsetprojectId();
+    void setProjectId(const std::string& value);
+
+    /// <summary>
     /// 用户昵称
     /// </summary>
 
@@ -140,6 +149,8 @@ protected:
     bool descriptionIsSet_;
     std::string os_;
     bool osIsSet_;
+    std::string projectId_;
+    bool projectIdIsSet_;
     std::string nickName_;
     bool nickNameIsSet_;
     int32_t deployType_;

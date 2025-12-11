@@ -48,7 +48,7 @@ public:
     void setAgentId(const std::string& value);
 
     /// <summary>
-    /// agent 类型
+    /// agent 类型 - DB: 数据库端 - APP: 应用端
     /// </summary>
 
     std::string getAgentType() const;
@@ -93,7 +93,7 @@ public:
     void setCpuThreshold(int32_t value);
 
     /// <summary>
-    /// agent状态
+    /// agent状态 - 1：开启 - 0：关闭
     /// </summary>
 
     int32_t getStatus() const;
@@ -120,7 +120,7 @@ public:
     void setDbName(const std::string& value);
 
     /// <summary>
-    /// 数据流量抓取状态
+    /// 数据流量抓取状态 - 1：运行中 - 2：休眠中 - 3：已停止 - 4：异常
     /// </summary>
 
     int32_t getDatacapStatus() const;

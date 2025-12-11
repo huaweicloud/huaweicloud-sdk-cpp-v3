@@ -1,3 +1,187 @@
+# 3.1.166 2025-12-11
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEnvironments**
+    - 响应参数变更
+      - `+ result.project_id`
+  - **ShowEnvironmentDetail**
+    - 响应参数变更
+      - `+ result.project_id`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RestartInstance**
+    - 请求参数变更
+      - `+ is_serial`
+      - `+ is_force`
+  - **ListAuditlogs**
+    - 响应参数变更
+      - `+ total_size`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ShowHistoricalSqlFilterRule`
+    - `SetAutoSqlLimiting`
+    - `ShowSqlAutoSqlLimiting`
+    - `ShowAutoSqlLimitingLog`
+    - `BatchDeleteBackup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowProxyVersion**
+    - 响应参数变更
+      - `+ risk`
+  - **SwitchGaussMySqlConfiguration**
+    - 响应参数变更
+      - `+ param_group_name`
+  - **ShowInstanceMonitorExtend**
+    - 响应参数变更
+      - `+ allow`
+  - **ListRecycleInstances**
+    - 响应参数变更
+      - `* total_count: string -> int32`
+      - `+ instances.recycle_bakcups`
+      - `* instances.create_at: int32 -> int64`
+      - `* instances.deleted_at: int32 -> int64`
+  - **ListScheduleJobs**
+    - 请求参数变更
+      - `+ instance_id`
+    - 响应参数变更
+      - `+ schedules.proxy_id`
+      - `+ schedules.proxy_name`
+  - **ShowBackupRestoreTime**
+    - 请求参数变更
+      - `+ date`
+      - `+ start_time`
+      - `+ end_time`
+  - **ShowGaussMySqlIncrementalBackupList**
+    - 请求参数变更
+      - `+ display_offsite_backup`
+    - 响应参数变更
+      - `+ backups.backup_type`
+  - **ShowGaussMySqlProxyFlavors**
+    - 请求参数变更
+      - `+ query_type`
+      - `+ proxy_id`
+  - **ShowGaussMySqlProxyList**
+    - 响应参数变更
+      - `+ proxy_list.htap_nodes`
+      - `+ proxy_list.proxy.type`
+      - `+ proxy_list.proxy.created_at`
+      - `+ proxy_list.proxy.updated_at`
+      - `+ proxy_list.proxy.support_ap_node`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateConfiguration**
+    - 请求参数变更
+      - `+ instance_id`
+  - **ShowApplyHistory**
+    - 响应参数变更
+      - `+ total_count`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`BatchDeleteInstanceTag`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDeploymentForm**
+    - 请求参数变更
+      - `+ consistency`
+      - `+ consistency_protocol`
+      - `+ engine_version`
+    - 响应参数变更
+      - `+ max_shard_count`
+      - `+ each_shard_num`
+      - `+ each_expand_nodes`
+  - **ListRestorableInstancesDetails**
+    - 请求参数变更
+      - `+ backup_restore_type`
+      - `+ source_backup_schema`
+      - `+ target_instance_id`
+      - `+ instance_name`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeSmartDocumentRecognizer**
+    - 请求参数变更
+      - `+ image_layout`
+      - `+ character_mode`
+    - 响应参数变更
+      - `+ result.ocr_result.words_block_list.char_list`
+      - `+ result.layout_result.layout_block_list.formula_id`
+      - `+ result.formula_result.formula_list.type`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSqlStatistics**
+    - 响应参数变更
+      - `+ list.canUse`
+      - `- list.can_use`
+      - `* list.query_id: int64 -> string`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListVirsubnetCidrReservations`
+    - `CreateVirsubnetCidrReservation`
+    - `ShowVirsubnetCidrReservation`
+    - `UpdateVirsubnetCidrReservation`
+    - `DeleteVirsubnetCidrReservation`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFirewall**
+    - 响应参数变更
+      - `+ firewalls.type`
+
 # 3.1.165 2025-12-04
 
 ### HuaweiCloud SDK AAD

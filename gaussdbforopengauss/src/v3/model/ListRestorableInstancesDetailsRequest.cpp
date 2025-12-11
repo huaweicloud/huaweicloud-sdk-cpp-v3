@@ -24,6 +24,14 @@ ListRestorableInstancesDetailsRequest::ListRestorableInstancesDetailsRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    backupRestoreType_ = "";
+    backupRestoreTypeIsSet_ = false;
+    sourceBackupSchema_ = "";
+    sourceBackupSchemaIsSet_ = false;
+    targetInstanceId_ = "";
+    targetInstanceIdIsSet_ = false;
+    instanceName_ = "";
+    instanceNameIsSet_ = false;
 }
 
 ListRestorableInstancesDetailsRequest::~ListRestorableInstancesDetailsRequest() = default;
@@ -53,6 +61,18 @@ web::json::value ListRestorableInstancesDetailsRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(backupRestoreTypeIsSet_) {
+        val[utility::conversions::to_string_t("backup_restore_type")] = ModelBase::toJson(backupRestoreType_);
+    }
+    if(sourceBackupSchemaIsSet_) {
+        val[utility::conversions::to_string_t("source_backup_schema")] = ModelBase::toJson(sourceBackupSchema_);
+    }
+    if(targetInstanceIdIsSet_) {
+        val[utility::conversions::to_string_t("target_instance_id")] = ModelBase::toJson(targetInstanceId_);
+    }
+    if(instanceNameIsSet_) {
+        val[utility::conversions::to_string_t("instance_name")] = ModelBase::toJson(instanceName_);
     }
 
     return val;
@@ -113,6 +133,42 @@ bool ListRestorableInstancesDetailsRequest::fromJson(const web::json::value& val
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_restore_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_restore_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupRestoreType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("source_backup_schema"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source_backup_schema"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSourceBackupSchema(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("target_instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_instance_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTargetInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceName(refVal);
         }
     }
     return ok;
@@ -243,6 +299,90 @@ bool ListRestorableInstancesDetailsRequest::limitIsSet() const
 void ListRestorableInstancesDetailsRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ListRestorableInstancesDetailsRequest::getBackupRestoreType() const
+{
+    return backupRestoreType_;
+}
+
+void ListRestorableInstancesDetailsRequest::setBackupRestoreType(const std::string& value)
+{
+    backupRestoreType_ = value;
+    backupRestoreTypeIsSet_ = true;
+}
+
+bool ListRestorableInstancesDetailsRequest::backupRestoreTypeIsSet() const
+{
+    return backupRestoreTypeIsSet_;
+}
+
+void ListRestorableInstancesDetailsRequest::unsetbackupRestoreType()
+{
+    backupRestoreTypeIsSet_ = false;
+}
+
+std::string ListRestorableInstancesDetailsRequest::getSourceBackupSchema() const
+{
+    return sourceBackupSchema_;
+}
+
+void ListRestorableInstancesDetailsRequest::setSourceBackupSchema(const std::string& value)
+{
+    sourceBackupSchema_ = value;
+    sourceBackupSchemaIsSet_ = true;
+}
+
+bool ListRestorableInstancesDetailsRequest::sourceBackupSchemaIsSet() const
+{
+    return sourceBackupSchemaIsSet_;
+}
+
+void ListRestorableInstancesDetailsRequest::unsetsourceBackupSchema()
+{
+    sourceBackupSchemaIsSet_ = false;
+}
+
+std::string ListRestorableInstancesDetailsRequest::getTargetInstanceId() const
+{
+    return targetInstanceId_;
+}
+
+void ListRestorableInstancesDetailsRequest::setTargetInstanceId(const std::string& value)
+{
+    targetInstanceId_ = value;
+    targetInstanceIdIsSet_ = true;
+}
+
+bool ListRestorableInstancesDetailsRequest::targetInstanceIdIsSet() const
+{
+    return targetInstanceIdIsSet_;
+}
+
+void ListRestorableInstancesDetailsRequest::unsettargetInstanceId()
+{
+    targetInstanceIdIsSet_ = false;
+}
+
+std::string ListRestorableInstancesDetailsRequest::getInstanceName() const
+{
+    return instanceName_;
+}
+
+void ListRestorableInstancesDetailsRequest::setInstanceName(const std::string& value)
+{
+    instanceName_ = value;
+    instanceNameIsSet_ = true;
+}
+
+bool ListRestorableInstancesDetailsRequest::instanceNameIsSet() const
+{
+    return instanceNameIsSet_;
+}
+
+void ListRestorableInstancesDetailsRequest::unsetinstanceName()
+{
+    instanceNameIsSet_ = false;
 }
 
 }

@@ -39,7 +39,7 @@ public:
     /// ExpandReplicasetNodeResponse members
 
     /// <summary>
-    /// 任务ID，仅按需实例返回该参数。
+    /// **参数解释：** 任务ID，仅按需实例返回该参数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getJobId() const;
@@ -48,7 +48,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 订单ID，仅包周期实例返回该参数。
+    /// **参数解释：** 订单ID，仅包周期实例返回该参数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getOrderId() const;

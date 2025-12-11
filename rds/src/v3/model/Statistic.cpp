@@ -16,7 +16,7 @@ Statistic::Statistic()
     userNameIsSet_ = false;
     database_ = "";
     databaseIsSet_ = false;
-    queryId_ = 0L;
+    queryId_ = "";
     queryIdIsSet_ = false;
     calls_ = 0L;
     callsIsSet_ = false;
@@ -57,7 +57,7 @@ web::json::value Statistic::toJson() const
         val[utility::conversions::to_string_t("rows")] = ModelBase::toJson(rows_);
     }
     if(canUseIsSet_) {
-        val[utility::conversions::to_string_t("can_use")] = ModelBase::toJson(canUse_);
+        val[utility::conversions::to_string_t("canUse")] = ModelBase::toJson(canUse_);
     }
 
     return val;
@@ -88,7 +88,7 @@ bool Statistic::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("query_id"));
         if(!fieldValue.is_null())
         {
-            int64_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setQueryId(refVal);
         }
@@ -120,8 +120,8 @@ bool Statistic::fromJson(const web::json::value& val)
             setRows(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("can_use"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("can_use"));
+    if(val.has_field(utility::conversions::to_string_t("canUse"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("canUse"));
         if(!fieldValue.is_null())
         {
             double refVal;
@@ -175,12 +175,12 @@ void Statistic::unsetdatabase()
     databaseIsSet_ = false;
 }
 
-int64_t Statistic::getQueryId() const
+std::string Statistic::getQueryId() const
 {
     return queryId_;
 }
 
-void Statistic::setQueryId(int64_t value)
+void Statistic::setQueryId(const std::string& value)
 {
     queryId_ = value;
     queryIdIsSet_ = true;

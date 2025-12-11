@@ -25,6 +25,19 @@
 
 - 华为云 C++ SDK 支持 **C++ 14** 及以上版本，要求安装 **CMake 3.10** 及以上版本。
 
+## 隐私声明
+
+- 收集信息：
+  为完成华为云服务开放API调用的必要校验，SDK需要使用由华为云控制台下载的用户访问密钥（AK）进行签名，该过程不会上传您的私有密钥（SK）。
+
+- 数据处理方式：当您使用本工具提供的服务开放API功能时，您的相关数据（如上传的文件、提交的文本内容）将通过加密传输通道（HTTPS） 直接发送至华为云服务端进行处理。
+
+- 该过程由华为云服务端完成计算、存储或分析，数据不会在本应用客户端本地处理或持久化存储。
+
+- 华为云将根据其服务协议和隐私政策作为数据处理方独立处理这些数据，我们仅作为控制方发起API请求。数据处理结果将返回至本工具供您使用。
+
+- 华为云官方隐私声明：https://www.huaweicloud.com/declaration/sa_prp.html
+
 ## SDK 获取和安装
 
 您可以通过 [SDK中心](https://console.huaweicloud.com/apiexplorer/#/sdkcenter?language=C%2B%2B) 或 [Github Releases](https://github.com/huaweicloud/huaweicloud-sdk-cpp-v3/releases?page=1) 查询SDK版本信息。

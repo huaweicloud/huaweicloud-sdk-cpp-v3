@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 状态 - SUCCESS - FAILED
+    /// 状态 - SUCCESS: 成功 - FAILED： 失败
     /// </summary>
 
     std::string getRetStatus() const;

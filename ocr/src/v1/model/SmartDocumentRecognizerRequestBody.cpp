@@ -32,12 +32,16 @@ SmartDocumentRecognizerRequestBody::SmartDocumentRecognizerRequestBody()
     formIsSet_ = false;
     formula_ = false;
     formulaIsSet_ = false;
+    imageLayout_ = false;
+    imageLayoutIsSet_ = false;
     kvMap_ = "";
     kvMapIsSet_ = false;
     eraseSeal_ = false;
     eraseSealIsSet_ = false;
     pdfPageNumber_ = 0;
     pdfPageNumberIsSet_ = false;
+    characterMode_ = false;
+    characterModeIsSet_ = false;
 }
 
 SmartDocumentRecognizerRequestBody::~SmartDocumentRecognizerRequestBody() = default;
@@ -80,6 +84,9 @@ web::json::value SmartDocumentRecognizerRequestBody::toJson() const
     if(formulaIsSet_) {
         val[utility::conversions::to_string_t("formula")] = ModelBase::toJson(formula_);
     }
+    if(imageLayoutIsSet_) {
+        val[utility::conversions::to_string_t("image_layout")] = ModelBase::toJson(imageLayout_);
+    }
     if(kvMapIsSet_) {
         val[utility::conversions::to_string_t("kv_map")] = ModelBase::toJson(kvMap_);
     }
@@ -88,6 +95,9 @@ web::json::value SmartDocumentRecognizerRequestBody::toJson() const
     }
     if(pdfPageNumberIsSet_) {
         val[utility::conversions::to_string_t("pdf_page_number")] = ModelBase::toJson(pdfPageNumber_);
+    }
+    if(characterModeIsSet_) {
+        val[utility::conversions::to_string_t("character_mode")] = ModelBase::toJson(characterMode_);
     }
 
     return val;
@@ -186,6 +196,15 @@ bool SmartDocumentRecognizerRequestBody::fromJson(const web::json::value& val)
             setFormula(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("image_layout"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_layout"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageLayout(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("kv_map"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("kv_map"));
         if(!fieldValue.is_null())
@@ -211,6 +230,15 @@ bool SmartDocumentRecognizerRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPdfPageNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("character_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("character_mode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCharacterMode(refVal);
         }
     }
     return ok;
@@ -427,6 +455,27 @@ void SmartDocumentRecognizerRequestBody::unsetformula()
     formulaIsSet_ = false;
 }
 
+bool SmartDocumentRecognizerRequestBody::isImageLayout() const
+{
+    return imageLayout_;
+}
+
+void SmartDocumentRecognizerRequestBody::setImageLayout(bool value)
+{
+    imageLayout_ = value;
+    imageLayoutIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::imageLayoutIsSet() const
+{
+    return imageLayoutIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unsetimageLayout()
+{
+    imageLayoutIsSet_ = false;
+}
+
 std::string SmartDocumentRecognizerRequestBody::getKvMap() const
 {
     return kvMap_;
@@ -488,6 +537,27 @@ bool SmartDocumentRecognizerRequestBody::pdfPageNumberIsSet() const
 void SmartDocumentRecognizerRequestBody::unsetpdfPageNumber()
 {
     pdfPageNumberIsSet_ = false;
+}
+
+bool SmartDocumentRecognizerRequestBody::isCharacterMode() const
+{
+    return characterMode_;
+}
+
+void SmartDocumentRecognizerRequestBody::setCharacterMode(bool value)
+{
+    characterMode_ = value;
+    characterModeIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::characterModeIsSet() const
+{
+    return characterModeIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unsetcharacterMode()
+{
+    characterModeIsSet_ = false;
 }
 
 }

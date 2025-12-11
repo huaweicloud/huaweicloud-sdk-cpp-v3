@@ -102,7 +102,7 @@ public:
     void setStartTime(const std::string& value);
 
     /// <summary>
-    /// 模板状态
+    /// 模板状态 - ON: 开启 - OFF：关闭
     /// </summary>
 
     std::string getStatus() const;

@@ -55,12 +55,23 @@ public:
     void unsetperiod();
     void setPeriod(int32_t value);
 
+    /// <summary>
+    /// **参数解释**：  能否开启秒级监控。  **取值范围**： - true: 可以开启。 - false：不能开启，8vcpu以下规格不允许开启秒级监控。
+    /// </summary>
+
+    bool isAllow() const;
+    bool allowIsSet() const;
+    void unsetallow();
+    void setAllow(bool value);
+
 
 protected:
     bool monitorSwitch_;
     bool monitorSwitchIsSet_;
     int32_t period_;
     bool periodIsSet_;
+    bool allow_;
+    bool allowIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

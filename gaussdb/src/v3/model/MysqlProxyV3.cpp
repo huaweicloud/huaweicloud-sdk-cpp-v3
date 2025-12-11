@@ -34,6 +34,14 @@ MysqlProxyV3::MysqlProxyV3()
     ramIsSet_ = false;
     nodeNum_ = 0;
     nodeNumIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
+    createdAt_ = "";
+    createdAtIsSet_ = false;
+    updatedAt_ = "";
+    updatedAtIsSet_ = false;
+    supportApNode_ = false;
+    supportApNodeIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
     nodesIsSet_ = false;
@@ -105,6 +113,18 @@ web::json::value MysqlProxyV3::toJson() const
     }
     if(nodeNumIsSet_) {
         val[utility::conversions::to_string_t("node_num")] = ModelBase::toJson(nodeNum_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(createdAtIsSet_) {
+        val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
+    }
+    if(updatedAtIsSet_) {
+        val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
+    }
+    if(supportApNodeIsSet_) {
+        val[utility::conversions::to_string_t("support_ap_node")] = ModelBase::toJson(supportApNode_);
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
@@ -252,6 +272,42 @@ bool MysqlProxyV3::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("created_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_at"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("updated_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("updated_at"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("support_ap_node"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("support_ap_node"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportApNode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("mode"))) {
@@ -613,6 +669,90 @@ bool MysqlProxyV3::nodeNumIsSet() const
 void MysqlProxyV3::unsetnodeNum()
 {
     nodeNumIsSet_ = false;
+}
+
+std::string MysqlProxyV3::getType() const
+{
+    return type_;
+}
+
+void MysqlProxyV3::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool MysqlProxyV3::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void MysqlProxyV3::unsettype()
+{
+    typeIsSet_ = false;
+}
+
+std::string MysqlProxyV3::getCreatedAt() const
+{
+    return createdAt_;
+}
+
+void MysqlProxyV3::setCreatedAt(const std::string& value)
+{
+    createdAt_ = value;
+    createdAtIsSet_ = true;
+}
+
+bool MysqlProxyV3::createdAtIsSet() const
+{
+    return createdAtIsSet_;
+}
+
+void MysqlProxyV3::unsetcreatedAt()
+{
+    createdAtIsSet_ = false;
+}
+
+std::string MysqlProxyV3::getUpdatedAt() const
+{
+    return updatedAt_;
+}
+
+void MysqlProxyV3::setUpdatedAt(const std::string& value)
+{
+    updatedAt_ = value;
+    updatedAtIsSet_ = true;
+}
+
+bool MysqlProxyV3::updatedAtIsSet() const
+{
+    return updatedAtIsSet_;
+}
+
+void MysqlProxyV3::unsetupdatedAt()
+{
+    updatedAtIsSet_ = false;
+}
+
+bool MysqlProxyV3::isSupportApNode() const
+{
+    return supportApNode_;
+}
+
+void MysqlProxyV3::setSupportApNode(bool value)
+{
+    supportApNode_ = value;
+    supportApNodeIsSet_ = true;
+}
+
+bool MysqlProxyV3::supportApNodeIsSet() const
+{
+    return supportApNodeIsSet_;
+}
+
+void MysqlProxyV3::unsetsupportApNode()
+{
+    supportApNodeIsSet_ = false;
 }
 
 std::string MysqlProxyV3::getMode() const

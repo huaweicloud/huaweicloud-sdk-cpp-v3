@@ -56,12 +56,34 @@ public:
     void unsetinstanceId();
     void setInstanceId(const std::string& value);
 
+    /// <summary>
+    /// 查询的场景
+    /// </summary>
+
+    std::string getQueryType() const;
+    bool queryTypeIsSet() const;
+    void unsetqueryType();
+    void setQueryType(const std::string& value);
+
+    /// <summary>
+    /// 数据代理的ID, 规格变更场景需要传该参数，过滤掉无法变更的目标规格
+    /// </summary>
+
+    std::string getProxyId() const;
+    bool proxyIdIsSet() const;
+    void unsetproxyId();
+    void setProxyId(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
     bool xLanguageIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
+    std::string queryType_;
+    bool queryTypeIsSet_;
+    std::string proxyId_;
+    bool proxyIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

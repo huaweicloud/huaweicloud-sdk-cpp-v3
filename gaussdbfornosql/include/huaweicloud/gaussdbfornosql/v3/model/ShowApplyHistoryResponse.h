@@ -40,7 +40,16 @@ public:
     /// ShowApplyHistoryResponse members
 
     /// <summary>
-    /// 参数组模板应用历史列表
+    /// **参数解释：** 总记录数。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getTotalCount() const;
+    bool totalCountIsSet() const;
+    void unsettotalCount();
+    void setTotalCount(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 参数组模板应用历史列表。 **取值范围：** 不涉及。
     /// </summary>
 
     std::vector<ApplyHistoryRsp>& getHistories();
@@ -50,6 +59,8 @@ public:
 
 
 protected:
+    int32_t totalCount_;
+    bool totalCountIsSet_;
     std::vector<ApplyHistoryRsp> histories_;
     bool historiesIsSet_;
 

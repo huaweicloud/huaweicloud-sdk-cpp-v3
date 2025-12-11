@@ -12,7 +12,7 @@ namespace Model {
 
 ListRecycleInstancesResponse::ListRecycleInstancesResponse()
 {
-    totalCount_ = "";
+    totalCount_ = 0;
     totalCountIsSet_ = false;
     instancesIsSet_ = false;
 }
@@ -44,7 +44,7 @@ bool ListRecycleInstancesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
         }
@@ -62,12 +62,12 @@ bool ListRecycleInstancesResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string ListRecycleInstancesResponse::getTotalCount() const
+int32_t ListRecycleInstancesResponse::getTotalCount() const
 {
     return totalCount_;
 }
 
-void ListRecycleInstancesResponse::setTotalCount(const std::string& value)
+void ListRecycleInstancesResponse::setTotalCount(int32_t value)
 {
     totalCount_ = value;
     totalCountIsSet_ = true;

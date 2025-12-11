@@ -65,6 +65,33 @@ public:
     void unsetinstanceId();
     void setInstanceId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**: 事务一致性类型。 **约束限制**: 不涉及。 **取值范围**: - strong - eventual **默认取值**: 不涉及。
+    /// </summary>
+
+    std::string getConsistency() const;
+    bool consistencyIsSet() const;
+    void unsetconsistency();
+    void setConsistency(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 副本一致性协议类型。 **约束限制**: 不涉及。 **取值范围**: - quorum - paxos **默认取值**: 不涉及。
+    /// </summary>
+
+    std::string getConsistencyProtocol() const;
+    bool consistencyProtocolIsSet() const;
+    void unsetconsistencyProtocol();
+    void setConsistencyProtocol(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 引擎版本号。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+    /// </summary>
+
+    std::string getEngineVersion() const;
+    bool engineVersionIsSet() const;
+    void unsetengineVersion();
+    void setEngineVersion(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -73,6 +100,12 @@ protected:
     bool solutionIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
+    std::string consistency_;
+    bool consistencyIsSet_;
+    std::string consistencyProtocol_;
+    bool consistencyProtocolIsSet_;
+    std::string engineVersion_;
+    bool engineVersionIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

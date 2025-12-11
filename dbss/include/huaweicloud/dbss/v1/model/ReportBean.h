@@ -120,7 +120,7 @@ public:
     void setStartTime(const std::string& value);
 
     /// <summary>
-    /// 报表类型 - PDF - ZIP
+    /// 报表类型 - PDF: pdf - ZIP: zip
     /// </summary>
 
     std::string getTemplateType() const;

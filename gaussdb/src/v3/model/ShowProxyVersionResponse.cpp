@@ -18,6 +18,7 @@ ShowProxyVersionResponse::ShowProxyVersionResponse()
     latestVersionIsSet_ = false;
     canUpgrade_ = false;
     canUpgradeIsSet_ = false;
+    riskIsSet_ = false;
 }
 
 ShowProxyVersionResponse::~ShowProxyVersionResponse() = default;
@@ -38,6 +39,9 @@ web::json::value ShowProxyVersionResponse::toJson() const
     }
     if(canUpgradeIsSet_) {
         val[utility::conversions::to_string_t("can_upgrade")] = ModelBase::toJson(canUpgrade_);
+    }
+    if(riskIsSet_) {
+        val[utility::conversions::to_string_t("risk")] = ModelBase::toJson(risk_);
     }
 
     return val;
@@ -71,6 +75,15 @@ bool ShowProxyVersionResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCanUpgrade(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("risk"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("risk"));
+        if(!fieldValue.is_null())
+        {
+            ProxyEngineRisk refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRisk(refVal);
         }
     }
     return ok;
@@ -138,6 +151,27 @@ bool ShowProxyVersionResponse::canUpgradeIsSet() const
 void ShowProxyVersionResponse::unsetcanUpgrade()
 {
     canUpgradeIsSet_ = false;
+}
+
+ProxyEngineRisk ShowProxyVersionResponse::getRisk() const
+{
+    return risk_;
+}
+
+void ShowProxyVersionResponse::setRisk(const ProxyEngineRisk& value)
+{
+    risk_ = value;
+    riskIsSet_ = true;
+}
+
+bool ShowProxyVersionResponse::riskIsSet() const
+{
+    return riskIsSet_;
+}
+
+void ShowProxyVersionResponse::unsetrisk()
+{
+    riskIsSet_ = false;
 }
 
 }

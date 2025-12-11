@@ -84,6 +84,15 @@ public:
     void setSize(double value);
 
     /// <summary>
+    /// **参数解释**：  增量备份类型。  **取值范围**：  - Log: 同区域增量备份。 - OffSiteLog：跨区域增量备份。
+    /// </summary>
+
+    std::string getBackupType() const;
+    bool backupTypeIsSet() const;
+    void unsetbackupType();
+    void setBackupType(const std::string& value);
+
+    /// <summary>
     /// 实例ID。
     /// </summary>
 
@@ -104,6 +113,8 @@ protected:
     bool endTimeIsSet_;
     double size_;
     bool sizeIsSet_;
+    std::string backupType_;
+    bool backupTypeIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
 

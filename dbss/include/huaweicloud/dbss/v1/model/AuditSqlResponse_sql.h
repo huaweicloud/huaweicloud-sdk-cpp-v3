@@ -95,7 +95,7 @@ public:
     void setDbUser(const std::string& value);
 
     /// <summary>
-    /// 查询类型 LOGIN,CREATE_TABLE,CREATE_TABLESPACE,DROP_TABLE, DROP_TABLESPACE,DELETE,INSERT,INSERT_SELECT,SELECT,SELECT_FOR_UPDATE, UPDATE,CREATE_USER,DROP_USER,GRANT,OPERATE ALL
+    /// 查询类型 - LOGIN: LOGIN - CREATE_TABLE: CREATE TABLE - CREATE_TABLESPACE: CREATE TABLESPACE - DROP_TABLE: DROP TABLE - DROP_TABLESPACE: DROP TABLESPACE - DELETE: DELETE - INSERT: INSERT - INSERT_SELECT: INSERT SELECT - SELECT: SELECT - SELECT_FOR_UPDATE: SELECT FOR UPDATE - UPDATE: UPDATE - CREATE_USER: CREATE USER - DROP_USER: DROP USER - GRANT: GRANT - OPERATE: OPERATE - ALL: ALL
     /// </summary>
 
     std::string getQueryType() const;
@@ -122,7 +122,7 @@ public:
     void setRuleName(const std::string& value);
 
     /// <summary>
-    /// 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
+    /// 风险级别 - HIGH：高 - MEDIUM：中 - LOW：低 - NO_RISK：无风险
     /// </summary>
 
     std::string getRiskLevel() const;
@@ -140,7 +140,7 @@ public:
     void setStartTime(const std::string& value);
 
     /// <summary>
-    /// 响应结果 - SUCCESS - FAILED
+    /// 响应结果 - SUCCESS：成功 - FAILED：失败
     /// </summary>
 
     std::string getSqlResponse() const;

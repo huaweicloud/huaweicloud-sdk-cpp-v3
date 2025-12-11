@@ -48,7 +48,7 @@ public:
     void setProductId(const std::string& value);
 
     /// <summary>
-    /// 服务类型： - hws.service.type.dbss
+    /// 服务类型： - hws.service.type.dbss: 数据库审计
     /// </summary>
 
     std::string getCloudServiceType() const;
@@ -57,7 +57,7 @@ public:
     void setCloudServiceType(const std::string& value);
 
     /// <summary>
-    /// 资源类型: - hws.resource.type.dbss
+    /// 资源类型: - hws.resource.type.dbss：数据库审计
     /// </summary>
 
     std::string getResourceType() const;
@@ -66,7 +66,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 资源规格： - dbss.bypassaudit.low - dbss.bypassaudit.medium - dbss.bypassaudit.high
+    /// 资源规格： - dbss.bypassaudit.low：基础版 - dbss.bypassaudit.medium：高级版 - dbss.bypassaudit.high：专业版
     /// </summary>
 
     std::string getResourceSpecCode() const;

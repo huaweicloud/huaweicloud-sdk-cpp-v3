@@ -39,7 +39,7 @@ public:
     /// SwitchGaussMySqlConfigurationResponse members
 
     /// <summary>
-    /// 应用参数模板的任务ID。
+    /// **参数解释**：  应用参数模板的任务ID。  **取值范围**：  不涉及。
     /// </summary>
 
     std::string getJobId() const;
@@ -47,10 +47,21 @@ public:
     void unsetjobId();
     void setJobId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  参数模板的名称。  **取值范围**：  支持Default-TaurusDB V2.0和用户自定义参数模板，其中Default-TaurusDB V2.0表示TaurusDB系统默认参数模板。
+    /// </summary>
+
+    std::string getParamGroupName() const;
+    bool paramGroupNameIsSet() const;
+    void unsetparamGroupName();
+    void setParamGroupName(const std::string& value);
+
 
 protected:
     std::string jobId_;
     bool jobIdIsSet_;
+    std::string paramGroupName_;
+    bool paramGroupNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

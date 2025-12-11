@@ -67,6 +67,15 @@ public:
     void unsetreadonlyNodes();
     void setReadonlyNodes(const std::vector<MysqlProxyNodeV3>& value);
 
+    /// <summary>
+    /// **参数解释**：  HTAP节点信息。 
+    /// </summary>
+
+    std::vector<MysqlProxyNodeV3>& getHtapNodes();
+    bool htapNodesIsSet() const;
+    void unsethtapNodes();
+    void setHtapNodes(const std::vector<MysqlProxyNodeV3>& value);
+
 
 protected:
     MysqlProxyV3 proxy_;
@@ -75,6 +84,8 @@ protected:
     bool masterNodeIsSet_;
     std::vector<MysqlProxyNodeV3> readonlyNodes_;
     bool readonlyNodesIsSet_;
+    std::vector<MysqlProxyNodeV3> htapNodes_;
+    bool htapNodesIsSet_;
 
 };
 

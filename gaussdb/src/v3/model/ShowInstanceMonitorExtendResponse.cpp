@@ -16,6 +16,8 @@ ShowInstanceMonitorExtendResponse::ShowInstanceMonitorExtendResponse()
     monitorSwitchIsSet_ = false;
     period_ = 0;
     periodIsSet_ = false;
+    allow_ = false;
+    allowIsSet_ = false;
 }
 
 ShowInstanceMonitorExtendResponse::~ShowInstanceMonitorExtendResponse() = default;
@@ -33,6 +35,9 @@ web::json::value ShowInstanceMonitorExtendResponse::toJson() const
     }
     if(periodIsSet_) {
         val[utility::conversions::to_string_t("period")] = ModelBase::toJson(period_);
+    }
+    if(allowIsSet_) {
+        val[utility::conversions::to_string_t("allow")] = ModelBase::toJson(allow_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ShowInstanceMonitorExtendResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPeriod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("allow"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allow"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAllow(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ShowInstanceMonitorExtendResponse::periodIsSet() const
 void ShowInstanceMonitorExtendResponse::unsetperiod()
 {
     periodIsSet_ = false;
+}
+
+bool ShowInstanceMonitorExtendResponse::isAllow() const
+{
+    return allow_;
+}
+
+void ShowInstanceMonitorExtendResponse::setAllow(bool value)
+{
+    allow_ = value;
+    allowIsSet_ = true;
+}
+
+bool ShowInstanceMonitorExtendResponse::allowIsSet() const
+{
+    return allowIsSet_;
+}
+
+void ShowInstanceMonitorExtendResponse::unsetallow()
+{
+    allowIsSet_ = false;
 }
 
 }

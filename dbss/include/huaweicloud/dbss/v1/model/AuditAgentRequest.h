@@ -75,7 +75,7 @@ public:
     void setAgentType(const std::string& value);
 
     /// <summary>
-    /// agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64
+    /// agent OS类型: - LINUX64_X86：LINUX64_X86 - LINUX64_ARM：LINUX64_ARM - WINDOWS64：WINDOWS64
     /// </summary>
 
     std::string getAgentOs() const;

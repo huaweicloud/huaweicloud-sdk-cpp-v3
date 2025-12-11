@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/gaussdb/v3/model/ProxyEngineRisk.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -65,6 +66,15 @@ public:
     void unsetcanUpgrade();
     void setCanUpgrade(bool value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ProxyEngineRisk getRisk() const;
+    bool riskIsSet() const;
+    void unsetrisk();
+    void setRisk(const ProxyEngineRisk& value);
+
 
 protected:
     std::string currentVersion_;
@@ -73,6 +83,8 @@ protected:
     bool latestVersionIsSet_;
     bool canUpgrade_;
     bool canUpgradeIsSet_;
+    ProxyEngineRisk risk_;
+    bool riskIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

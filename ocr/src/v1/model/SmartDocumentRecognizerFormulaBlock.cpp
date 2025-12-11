@@ -15,6 +15,8 @@ SmartDocumentRecognizerFormulaBlock::SmartDocumentRecognizerFormulaBlock()
     formula_ = "";
     formulaIsSet_ = false;
     locationIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
 }
 
 SmartDocumentRecognizerFormulaBlock::~SmartDocumentRecognizerFormulaBlock() = default;
@@ -32,6 +34,9 @@ web::json::value SmartDocumentRecognizerFormulaBlock::toJson() const
     }
     if(locationIsSet_) {
         val[utility::conversions::to_string_t("location")] = ModelBase::toJson(location_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool SmartDocumentRecognizerFormulaBlock::fromJson(const web::json::value& val)
             std::vector<std::vector<int32_t>> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool SmartDocumentRecognizerFormulaBlock::locationIsSet() const
 void SmartDocumentRecognizerFormulaBlock::unsetlocation()
 {
     locationIsSet_ = false;
+}
+
+std::string SmartDocumentRecognizerFormulaBlock::getType() const
+{
+    return type_;
+}
+
+void SmartDocumentRecognizerFormulaBlock::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerFormulaBlock::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void SmartDocumentRecognizerFormulaBlock::unsettype()
+{
+    typeIsSet_ = false;
 }
 
 }

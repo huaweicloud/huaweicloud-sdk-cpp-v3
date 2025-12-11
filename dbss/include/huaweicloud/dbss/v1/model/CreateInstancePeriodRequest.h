@@ -125,7 +125,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// 服务类型： - hws.service.type.dbss
+    /// 服务类型： - hws.service.type.dbss: 数据库审计
     /// </summary>
 
     std::string getCloudServiceType() const;

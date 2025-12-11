@@ -24,6 +24,8 @@ ShowGaussMySqlIncrementalBackupListRequest::ShowGaussMySqlIncrementalBackupListR
     beginTimeIsSet_ = false;
     endTime_ = "";
     endTimeIsSet_ = false;
+    displayOffsiteBackup_ = false;
+    displayOffsiteBackupIsSet_ = false;
 }
 
 ShowGaussMySqlIncrementalBackupListRequest::~ShowGaussMySqlIncrementalBackupListRequest() = default;
@@ -53,6 +55,9 @@ web::json::value ShowGaussMySqlIncrementalBackupListRequest::toJson() const
     }
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
+    }
+    if(displayOffsiteBackupIsSet_) {
+        val[utility::conversions::to_string_t("display_offsite_backup")] = ModelBase::toJson(displayOffsiteBackup_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool ShowGaussMySqlIncrementalBackupListRequest::fromJson(const web::json::value
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("display_offsite_backup"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("display_offsite_backup"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDisplayOffsiteBackup(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool ShowGaussMySqlIncrementalBackupListRequest::endTimeIsSet() const
 void ShowGaussMySqlIncrementalBackupListRequest::unsetendTime()
 {
     endTimeIsSet_ = false;
+}
+
+bool ShowGaussMySqlIncrementalBackupListRequest::isDisplayOffsiteBackup() const
+{
+    return displayOffsiteBackup_;
+}
+
+void ShowGaussMySqlIncrementalBackupListRequest::setDisplayOffsiteBackup(bool value)
+{
+    displayOffsiteBackup_ = value;
+    displayOffsiteBackupIsSet_ = true;
+}
+
+bool ShowGaussMySqlIncrementalBackupListRequest::displayOffsiteBackupIsSet() const
+{
+    return displayOffsiteBackupIsSet_;
+}
+
+void ShowGaussMySqlIncrementalBackupListRequest::unsetdisplayOffsiteBackup()
+{
+    displayOffsiteBackupIsSet_ = false;
 }
 
 }

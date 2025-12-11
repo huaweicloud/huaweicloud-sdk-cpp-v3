@@ -57,7 +57,7 @@ public:
     void setZoneNumber(int32_t value);
 
     /// <summary>
-    /// 可用区类型
+    /// 可用区类型 - DEDICATED: 大网 - DEC: 边缘小站 - EDGE: 专属
     /// </summary>
 
     std::string getAzType() const;

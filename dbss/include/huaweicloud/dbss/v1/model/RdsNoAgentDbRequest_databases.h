@@ -57,7 +57,7 @@ public:
     void setDbName(const std::string& value);
 
     /// <summary>
-    /// 数据库状态
+    /// 数据库状态 - ON：启用 - OFF：关闭
     /// </summary>
 
     std::string getStatus() const;
@@ -102,7 +102,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 数据库类型
+    /// 数据库类型 - MYSQL: MySQL - ORACLE: Oracle - POSTGRESQL: PostgreSQL - TAURUS: Taurus DB - DWS: GaussDB(DWS) - GAUSSDBOPENGAUSS：GaussDB/openGauss - DDS： DDS(MongoDB)
     /// </summary>
 
     std::string getType() const;

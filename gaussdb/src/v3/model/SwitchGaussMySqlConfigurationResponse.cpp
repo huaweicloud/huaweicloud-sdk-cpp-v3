@@ -14,6 +14,8 @@ SwitchGaussMySqlConfigurationResponse::SwitchGaussMySqlConfigurationResponse()
 {
     jobId_ = "";
     jobIdIsSet_ = false;
+    paramGroupName_ = "";
+    paramGroupNameIsSet_ = false;
 }
 
 SwitchGaussMySqlConfigurationResponse::~SwitchGaussMySqlConfigurationResponse() = default;
@@ -29,6 +31,9 @@ web::json::value SwitchGaussMySqlConfigurationResponse::toJson() const
     if(jobIdIsSet_) {
         val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
+    if(paramGroupNameIsSet_) {
+        val[utility::conversions::to_string_t("param_group_name")] = ModelBase::toJson(paramGroupName_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool SwitchGaussMySqlConfigurationResponse::fromJson(const web::json::value& val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setJobId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("param_group_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("param_group_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setParamGroupName(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool SwitchGaussMySqlConfigurationResponse::jobIdIsSet() const
 void SwitchGaussMySqlConfigurationResponse::unsetjobId()
 {
     jobIdIsSet_ = false;
+}
+
+std::string SwitchGaussMySqlConfigurationResponse::getParamGroupName() const
+{
+    return paramGroupName_;
+}
+
+void SwitchGaussMySqlConfigurationResponse::setParamGroupName(const std::string& value)
+{
+    paramGroupName_ = value;
+    paramGroupNameIsSet_ = true;
+}
+
+bool SwitchGaussMySqlConfigurationResponse::paramGroupNameIsSet() const
+{
+    return paramGroupNameIsSet_;
+}
+
+void SwitchGaussMySqlConfigurationResponse::unsetparamGroupName()
+{
+    paramGroupNameIsSet_ = false;
 }
 
 }

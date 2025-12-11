@@ -129,6 +129,15 @@ public:
     void setFormula(bool value);
 
     /// <summary>
+    /// 是否对文档中的图片进行二次版面分析。若是，结果会在“layout_result”中返回，并带有“image_layout”的关键字。 
+    /// </summary>
+
+    bool isImageLayout() const;
+    bool imageLayoutIsSet() const;
+    void unsetimageLayout();
+    void setImageLayout(bool value);
+
+    /// <summary>
     /// 需要传入字典的json序列化后字符串，用于对kv_result中的特定key值进行归一化映射。例如，kv_result中包含{\&quot;名称\&quot;：\&quot;小明\&quot;}的键值对，若传入{\&quot;名称\&quot;：\&quot;姓名\&quot;}的kv_map，则返回结果为{“姓名”：“小明”}。  &gt; 参数传入示例： - \&quot;kv_map\&quot;:\&quot;{\\\&quot;名称\\\&quot;:\\\&quot;姓名\\\&quot;}\&quot; 
     /// </summary>
 
@@ -155,6 +164,15 @@ public:
     void unsetpdfPageNumber();
     void setPdfPageNumber(int32_t value);
 
+    /// <summary>
+    /// 是否返回单字符信息。开启后，单字符识别结果将会在“ocr_result”中的“char_list”返回单字符信息。如果不传入该参数，则默认不返回单字符信息。 
+    /// </summary>
+
+    bool isCharacterMode() const;
+    bool characterModeIsSet() const;
+    void unsetcharacterMode();
+    void setCharacterMode(bool value);
+
 
 protected:
     std::string data_;
@@ -177,12 +195,16 @@ protected:
     bool formIsSet_;
     bool formula_;
     bool formulaIsSet_;
+    bool imageLayout_;
+    bool imageLayoutIsSet_;
     std::string kvMap_;
     bool kvMapIsSet_;
     bool eraseSeal_;
     bool eraseSealIsSet_;
     int32_t pdfPageNumber_;
     bool pdfPageNumberIsSet_;
+    bool characterMode_;
+    bool characterModeIsSet_;
 
 };
 

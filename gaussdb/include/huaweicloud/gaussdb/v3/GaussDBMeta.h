@@ -14,6 +14,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_GAUSSDB_V3_EXPORT  GaussDBMeta {
 public:
     static HttpRequestDef genRequestDefForAddDatabasePermission();
+    static HttpRequestDef genRequestDefForBatchDeleteBackup();
     static HttpRequestDef genRequestDefForBatchTagAction();
     static HttpRequestDef genRequestDefForBatchUpgradeDatabases();
     static HttpRequestDef genRequestDefForCancelGaussMySqlInstanceEip();
@@ -92,6 +93,7 @@ public:
     static HttpRequestDef genRequestDefForRestartProxyInstance();
     static HttpRequestDef genRequestDefForRestoreOldInstance();
     static HttpRequestDef genRequestDefForSetAuditLogPolicy();
+    static HttpRequestDef genRequestDefForSetAutoSqlLimiting();
     static HttpRequestDef genRequestDefForSetGaussMySqlProxyWeight();
     static HttpRequestDef genRequestDefForSetGaussMySqlQuotas();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
@@ -102,6 +104,7 @@ public:
     static HttpRequestDef genRequestDefForShowAutoExpandPolicy();
     static HttpRequestDef genRequestDefForShowAutoScalingHistory();
     static HttpRequestDef genRequestDefForShowAutoScalingPolicy();
+    static HttpRequestDef genRequestDefForShowAutoSqlLimitingLog();
     static HttpRequestDef genRequestDefForShowBackupRestoreTime();
     static HttpRequestDef genRequestDefForShowDedicatedResourceInfo();
     static HttpRequestDef genRequestDefForShowErrorLogDownloadLink();
@@ -118,6 +121,7 @@ public:
     static HttpRequestDef genRequestDefForShowGaussMySqlProxyFlavors();
     static HttpRequestDef genRequestDefForShowGaussMySqlProxyList();
     static HttpRequestDef genRequestDefForShowGaussMySqlQuotas();
+    static HttpRequestDef genRequestDefForShowHistoricalSqlFilterRule();
     static HttpRequestDef genRequestDefForShowInstanceDatabaseVersion();
     static HttpRequestDef genRequestDefForShowInstanceEip();
     static HttpRequestDef genRequestDefForShowInstanceMonitorExtend();
@@ -137,6 +141,7 @@ public:
     static HttpRequestDef genRequestDefForShowSlowLogDetail();
     static HttpRequestDef genRequestDefForShowSlowLogStatistics();
     static HttpRequestDef genRequestDefForShowSlowlogSensitiveStatus();
+    static HttpRequestDef genRequestDefForShowSqlAutoSqlLimiting();
     static HttpRequestDef genRequestDefForShowSqlFilterControl();
     static HttpRequestDef genRequestDefForShowSqlFilterRule();
     static HttpRequestDef genRequestDefForShowStarRocksSlowlogSensitiveStatus();

@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdb/v3/model/RecycleInstanceV3.h>
-#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -44,10 +43,10 @@ public:
     /// 数据总数
     /// </summary>
 
-    std::string getTotalCount() const;
+    int32_t getTotalCount() const;
     bool totalCountIsSet() const;
     void unsettotalCount();
-    void setTotalCount(const std::string& value);
+    void setTotalCount(int32_t value);
 
     /// <summary>
     /// 回收站实例信息
@@ -60,7 +59,7 @@ public:
 
 
 protected:
-    std::string totalCount_;
+    int32_t totalCount_;
     bool totalCountIsSet_;
     std::vector<RecycleInstanceV3> instances_;
     bool instancesIsSet_;

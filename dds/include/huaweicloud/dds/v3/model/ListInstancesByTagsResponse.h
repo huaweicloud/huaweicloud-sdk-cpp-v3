@@ -40,7 +40,7 @@ public:
     /// ListInstancesByTagsResponse members
 
     /// <summary>
-    /// 实例列表。
+    /// **参数解释：** 实例列表。 **取值范围：** 不涉及。
     /// </summary>
 
     std::vector<InstanceItem>& getInstances();
@@ -49,7 +49,7 @@ public:
     void setInstances(const std::vector<InstanceItem>& value);
 
     /// <summary>
-    /// 总记录数。
+    /// **参数解释：** 总记录数。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getTotalCount() const;

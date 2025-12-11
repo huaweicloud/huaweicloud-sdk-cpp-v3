@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/ocr/v1/model/SmartDocumentRecognizerCharList.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -58,13 +59,22 @@ public:
     void setLocation(const std::vector<std::vector<int32_t>>& value);
 
     /// <summary>
-    /// 文字块识别结果的置信度。  
+    /// 文字块识别结果的置信度。 
     /// </summary>
 
     float getConfidence() const;
     bool confidenceIsSet() const;
     void unsetconfidence();
     void setConfidence(float value);
+
+    /// <summary>
+    /// 当入参character_mode为True时返回该字段，表示当前文字块对应的单字符识别列表，输出顺序从左到右，先上后下。 
+    /// </summary>
+
+    std::vector<SmartDocumentRecognizerCharList>& getCharList();
+    bool charListIsSet() const;
+    void unsetcharList();
+    void setCharList(const std::vector<SmartDocumentRecognizerCharList>& value);
 
 
 protected:
@@ -74,6 +84,8 @@ protected:
     bool locationIsSet_;
     float confidence_;
     bool confidenceIsSet_;
+    std::vector<SmartDocumentRecognizerCharList> charList_;
+    bool charListIsSet_;
 
 };
 

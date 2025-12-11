@@ -110,6 +110,15 @@ public:
     void unsetjobName();
     void setJobName(const std::string& value);
 
+    /// <summary>
+    /// 实例ID，此参数是实例的唯一标识。
+    /// </summary>
+
+    std::string getInstanceId() const;
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -128,6 +137,8 @@ protected:
     bool jobIdIsSet_;
     std::string jobName_;
     bool jobNameIsSet_;
+    std::string instanceId_;
+    bool instanceIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -20,6 +20,12 @@ ShowDeploymentFormResponse::ShowDeploymentFormResponse()
     shardNumIsSet_ = false;
     replicaNum_ = 0;
     replicaNumIsSet_ = false;
+    eachExpandNodes_ = 0;
+    eachExpandNodesIsSet_ = false;
+    maxShardCount_ = 0;
+    maxShardCountIsSet_ = false;
+    eachShardNum_ = 0;
+    eachShardNumIsSet_ = false;
 }
 
 ShowDeploymentFormResponse::~ShowDeploymentFormResponse() = default;
@@ -43,6 +49,15 @@ web::json::value ShowDeploymentFormResponse::toJson() const
     }
     if(replicaNumIsSet_) {
         val[utility::conversions::to_string_t("replica_num")] = ModelBase::toJson(replicaNum_);
+    }
+    if(eachExpandNodesIsSet_) {
+        val[utility::conversions::to_string_t("each_expand_nodes")] = ModelBase::toJson(eachExpandNodes_);
+    }
+    if(maxShardCountIsSet_) {
+        val[utility::conversions::to_string_t("max_shard_count")] = ModelBase::toJson(maxShardCount_);
+    }
+    if(eachShardNumIsSet_) {
+        val[utility::conversions::to_string_t("each_shard_num")] = ModelBase::toJson(eachShardNum_);
     }
 
     return val;
@@ -85,6 +100,33 @@ bool ShowDeploymentFormResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReplicaNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("each_expand_nodes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("each_expand_nodes"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEachExpandNodes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("max_shard_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("max_shard_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMaxShardCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("each_shard_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("each_shard_num"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEachShardNum(refVal);
         }
     }
     return ok;
@@ -173,6 +215,69 @@ bool ShowDeploymentFormResponse::replicaNumIsSet() const
 void ShowDeploymentFormResponse::unsetreplicaNum()
 {
     replicaNumIsSet_ = false;
+}
+
+int32_t ShowDeploymentFormResponse::getEachExpandNodes() const
+{
+    return eachExpandNodes_;
+}
+
+void ShowDeploymentFormResponse::setEachExpandNodes(int32_t value)
+{
+    eachExpandNodes_ = value;
+    eachExpandNodesIsSet_ = true;
+}
+
+bool ShowDeploymentFormResponse::eachExpandNodesIsSet() const
+{
+    return eachExpandNodesIsSet_;
+}
+
+void ShowDeploymentFormResponse::unseteachExpandNodes()
+{
+    eachExpandNodesIsSet_ = false;
+}
+
+int32_t ShowDeploymentFormResponse::getMaxShardCount() const
+{
+    return maxShardCount_;
+}
+
+void ShowDeploymentFormResponse::setMaxShardCount(int32_t value)
+{
+    maxShardCount_ = value;
+    maxShardCountIsSet_ = true;
+}
+
+bool ShowDeploymentFormResponse::maxShardCountIsSet() const
+{
+    return maxShardCountIsSet_;
+}
+
+void ShowDeploymentFormResponse::unsetmaxShardCount()
+{
+    maxShardCountIsSet_ = false;
+}
+
+int32_t ShowDeploymentFormResponse::getEachShardNum() const
+{
+    return eachShardNum_;
+}
+
+void ShowDeploymentFormResponse::setEachShardNum(int32_t value)
+{
+    eachShardNum_ = value;
+    eachShardNumIsSet_ = true;
+}
+
+bool ShowDeploymentFormResponse::eachShardNumIsSet() const
+{
+    return eachShardNumIsSet_;
+}
+
+void ShowDeploymentFormResponse::unseteachShardNum()
+{
+    eachShardNumIsSet_ = false;
 }
 
 }

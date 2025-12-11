@@ -103,7 +103,7 @@ public:
     void setResourceSpecCode(const std::string& value);
 
     /// <summary>
-    /// 资源类型
+    /// 资源类型: - hws.resource.type.dbss：数据库审计
     /// </summary>
 
     std::string getResourceType() const;

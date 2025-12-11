@@ -11,6 +11,9 @@
 #include <huaweicloud/gaussdb/v3/model/ApplyConfigurationRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/AuditLogDownloadLinkRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/BackupEncryptRequest.h>
+#include <huaweicloud/gaussdb/v3/model/BatchDeleteBackupRequest.h>
+#include <huaweicloud/gaussdb/v3/model/BatchDeleteBackupRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/BatchDeleteBackupResponse.h>
 #include <huaweicloud/gaussdb/v3/model/BatchOperateInstanceTagRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/BatchTagActionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/BatchTagActionResponse.h>
@@ -228,6 +231,9 @@
 #include <huaweicloud/gaussdb/v3/model/SetAuditLogPolicyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SetAuditLogPolicyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/SetAuditLogPolicyResponse.h>
+#include <huaweicloud/gaussdb/v3/model/SetAutoSqlLimitingReq.h>
+#include <huaweicloud/gaussdb/v3/model/SetAutoSqlLimitingRequest.h>
+#include <huaweicloud/gaussdb/v3/model/SetAutoSqlLimitingResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SetGaussMySqlProxyWeightRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SetGaussMySqlProxyWeightResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SetGaussMySqlQuotasRequest.h>
@@ -250,6 +256,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowAutoScalingHistoryResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAutoScalingPolicyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAutoScalingPolicyResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAutoSqlLimitingLogRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAutoSqlLimitingLogResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowBackupRestoreTimeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowBackupRestoreTimeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowDedicatedResourceInfoRequest.h>
@@ -282,6 +290,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlProxyListResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlQuotasRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlQuotasResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowHistoricalSqlFilterRuleRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowHistoricalSqlFilterRuleResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowInstanceDatabaseVersionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowInstanceDatabaseVersionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowInstanceEipRequest.h>
@@ -321,6 +331,9 @@
 #include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowlogSensitiveStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowlogSensitiveStatusResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSqlAutoSqlLimitingReq.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSqlAutoSqlLimitingRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSqlAutoSqlLimitingResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterControlRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterControlResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleRequest.h>
@@ -656,6 +669,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AddDatabasePermissionResponse> addDatabasePermission(
         AddDatabasePermissionRequest &request
+    );
+    // 批量删除手动备份
+    //
+    // 批量删除手动备份。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteBackupResponse> batchDeleteBackup(
+        BatchDeleteBackupRequest &request
     );
     // 批量添加或删除标签
     //
@@ -1282,6 +1303,14 @@ public:
     std::shared_ptr<SetAuditLogPolicyResponse> setAuditLogPolicy(
         SetAuditLogPolicyRequest &request
     );
+    // 开启自治限流
+    //
+    // 开启自治限流。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetAutoSqlLimitingResponse> setAutoSqlLimiting(
+        SetAutoSqlLimitingRequest &request
+    );
     // 设置读写分离权重
     //
     // 设置读写分离权重。
@@ -1361,6 +1390,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAutoScalingPolicyResponse> showAutoScalingPolicy(
         ShowAutoScalingPolicyRequest &request
+    );
+    // 查询自治限流执行记录
+    //
+    // 查询自治限流执行记录。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoSqlLimitingLogResponse> showAutoSqlLimitingLog(
+        ShowAutoSqlLimitingLogRequest &request
     );
     // 查询可恢复时间段
     //
@@ -1489,6 +1526,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowGaussMySqlQuotasResponse> showGaussMySqlQuotas(
         ShowGaussMySqlQuotasRequest &request
+    );
+    // 查询历史SQL限流规则
+    //
+    // 查询历史SQL限流规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHistoricalSqlFilterRuleResponse> showHistoricalSqlFilterRule(
+        ShowHistoricalSqlFilterRuleRequest &request
     );
     // 查询内核版本信息
     //
@@ -1641,6 +1686,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSlowlogSensitiveStatusResponse> showSlowlogSensitiveStatus(
         ShowSlowlogSensitiveStatusRequest &request
+    );
+    // 查询自治限流规则
+    //
+    // 查询自治限流规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSqlAutoSqlLimitingResponse> showSqlAutoSqlLimiting(
+        ShowSqlAutoSqlLimitingRequest &request
     );
     // 查询SQL限流开关状态
     //

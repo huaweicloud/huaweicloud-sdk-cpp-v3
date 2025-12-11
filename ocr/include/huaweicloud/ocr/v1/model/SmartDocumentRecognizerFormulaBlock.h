@@ -57,12 +57,23 @@ public:
     void unsetlocation();
     void setLocation(const std::vector<std::vector<int32_t>>& value);
 
+    /// <summary>
+    /// 公式类别，取值包含formula、embedded_formula。 formula: 独立公式 embedded_formula: 行内公式 
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
 
 protected:
     std::string formula_;
     bool formulaIsSet_;
     std::vector<std::vector<int32_t>> location_;
     bool locationIsSet_;
+    std::string type_;
+    bool typeIsSet_;
 
 };
 

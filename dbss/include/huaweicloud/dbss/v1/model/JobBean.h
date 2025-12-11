@@ -48,7 +48,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 任务状态 - SUCCESS - RUNNING - FAIL - INIT - READY
+    /// 任务状态 - SUCCESS: 成功 - RUNNING：运行中 - FAIL：失败 - INIT：初始化 - READY：就绪
     /// </summary>
 
     std::string getStatus() const;
@@ -57,7 +57,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 类型
+    /// 类型[废弃，未使用]
     /// </summary>
 
     std::string getJobType() const;
@@ -111,7 +111,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// 计费模式 - Period:包周期计费 - Demand:按需计费
+    /// 计费模式 - Period: 包周期计费 - Demand: 按需计费
     /// </summary>
 
     std::string getChargeMode() const;

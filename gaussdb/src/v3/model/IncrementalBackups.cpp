@@ -22,6 +22,8 @@ IncrementalBackups::IncrementalBackups()
     endTimeIsSet_ = false;
     size_ = 0.0;
     sizeIsSet_ = false;
+    backupType_ = "";
+    backupTypeIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
 }
@@ -50,6 +52,9 @@ web::json::value IncrementalBackups::toJson() const
     }
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
+    }
+    if(backupTypeIsSet_) {
+        val[utility::conversions::to_string_t("backup_type")] = ModelBase::toJson(backupType_);
     }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
@@ -104,6 +109,15 @@ bool IncrementalBackups::fromJson(const web::json::value& val)
             double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
@@ -222,6 +236,27 @@ bool IncrementalBackups::sizeIsSet() const
 void IncrementalBackups::unsetsize()
 {
     sizeIsSet_ = false;
+}
+
+std::string IncrementalBackups::getBackupType() const
+{
+    return backupType_;
+}
+
+void IncrementalBackups::setBackupType(const std::string& value)
+{
+    backupType_ = value;
+    backupTypeIsSet_ = true;
+}
+
+bool IncrementalBackups::backupTypeIsSet() const
+{
+    return backupTypeIsSet_;
+}
+
+void IncrementalBackups::unsetbackupType()
+{
+    backupTypeIsSet_ = false;
 }
 
 std::string IncrementalBackups::getInstanceId() const

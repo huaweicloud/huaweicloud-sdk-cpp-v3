@@ -18,6 +18,10 @@ ShowBackupRestoreTimeRequest::ShowBackupRestoreTimeRequest()
     instanceIdIsSet_ = false;
     date_ = "";
     dateIsSet_ = false;
+    startTime_ = "";
+    startTimeIsSet_ = false;
+    endTime_ = "";
+    endTimeIsSet_ = false;
 }
 
 ShowBackupRestoreTimeRequest::~ShowBackupRestoreTimeRequest() = default;
@@ -38,6 +42,12 @@ web::json::value ShowBackupRestoreTimeRequest::toJson() const
     }
     if(dateIsSet_) {
         val[utility::conversions::to_string_t("date")] = ModelBase::toJson(date_);
+    }
+    if(startTimeIsSet_) {
+        val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
+    }
+    if(endTimeIsSet_) {
+        val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
     }
 
     return val;
@@ -71,6 +81,24 @@ bool ShowBackupRestoreTimeRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("start_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStartTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("end_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEndTime(refVal);
         }
     }
     return ok;
@@ -138,6 +166,48 @@ bool ShowBackupRestoreTimeRequest::dateIsSet() const
 void ShowBackupRestoreTimeRequest::unsetdate()
 {
     dateIsSet_ = false;
+}
+
+std::string ShowBackupRestoreTimeRequest::getStartTime() const
+{
+    return startTime_;
+}
+
+void ShowBackupRestoreTimeRequest::setStartTime(const std::string& value)
+{
+    startTime_ = value;
+    startTimeIsSet_ = true;
+}
+
+bool ShowBackupRestoreTimeRequest::startTimeIsSet() const
+{
+    return startTimeIsSet_;
+}
+
+void ShowBackupRestoreTimeRequest::unsetstartTime()
+{
+    startTimeIsSet_ = false;
+}
+
+std::string ShowBackupRestoreTimeRequest::getEndTime() const
+{
+    return endTime_;
+}
+
+void ShowBackupRestoreTimeRequest::setEndTime(const std::string& value)
+{
+    endTime_ = value;
+    endTimeIsSet_ = true;
+}
+
+bool ShowBackupRestoreTimeRequest::endTimeIsSet() const
+{
+    return endTimeIsSet_;
+}
+
+void ShowBackupRestoreTimeRequest::unsetendTime()
+{
+    endTimeIsSet_ = false;
 }
 
 }

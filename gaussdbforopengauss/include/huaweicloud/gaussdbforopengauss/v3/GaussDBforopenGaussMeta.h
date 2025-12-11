@@ -19,6 +19,7 @@ public:
     static HttpRequestDef genRequestDefForAllowDbRolePrivileges();
     static HttpRequestDef genRequestDefForAttachEip();
     static HttpRequestDef genRequestDefForAuthorizeBackupDownload();
+    static HttpRequestDef genRequestDefForBatchDeleteInstanceTag();
     static HttpRequestDef genRequestDefForBatchSetBackupPolicy();
     static HttpRequestDef genRequestDefForBatchShowUpgradeCandidateVersions();
     static HttpRequestDef genRequestDefForCancelScheduleTask();

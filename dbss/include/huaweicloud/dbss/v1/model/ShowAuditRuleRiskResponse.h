@@ -59,7 +59,7 @@ public:
     void setRuleName(const std::string& value);
 
     /// <summary>
-    /// 风险规则状态 - OFF - ON
+    /// 风险规则状态 - OFF：禁用 - ON：启用
     /// </summary>
 
     std::string getStatus() const;
@@ -104,7 +104,7 @@ public:
     void setIgnoreCase(bool value);
 
     /// <summary>
-    /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+    /// 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
     /// </summary>
 
     std::string getRiskLevel() const;
@@ -122,7 +122,7 @@ public:
     void setDbIds(const std::string& value);
 
     /// <summary>
-    /// 执行时长对执行时长阈值的关系 - GREATER - EQUAL - LESS - GREATER_EQUAL - LESS_EQUAL - NO_MATCH
+    /// 执行时长对执行时长阈值的关系 - GREATER：大于 - EQUAL：等于 - LESS：小于 - GREATER_EQUAL：大于等于 - LESS_EQUAL：小于等于 - NO_MATCH：不匹配
     /// </summary>
 
     std::string getExecutionSymbol() const;
@@ -140,7 +140,7 @@ public:
     void setExecutionTime(int32_t value);
 
     /// <summary>
-    /// 影响行数对行数阈值的关系：  - GREATER - EQUAL - LESS - GREATER_EQUAL - LESS_EQUAL - NO_MATCH
+    /// 影响行数对行数阈值的关系：  - GREATER：大于 - EQUAL：等于 - LESS：小于 - GREATER_EQUAL：大于等于 - LESS_EQUAL：小于等于 - NO_MATCH：不匹配
     /// </summary>
 
     std::string getAffectSymbol() const;

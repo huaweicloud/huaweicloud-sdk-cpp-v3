@@ -35,6 +35,10 @@ ScheduleTask::ScheduleTask()
     datastoreType_ = "";
     datastoreTypeIsSet_ = false;
     targetConfigIsSet_ = false;
+    proxyId_ = "";
+    proxyIdIsSet_ = false;
+    proxyName_ = "";
+    proxyNameIsSet_ = false;
 }
 
 ScheduleTask::~ScheduleTask() = default;
@@ -82,6 +86,12 @@ web::json::value ScheduleTask::toJson() const
     }
     if(targetConfigIsSet_) {
         val[utility::conversions::to_string_t("target_config")] = ModelBase::toJson(targetConfig_);
+    }
+    if(proxyIdIsSet_) {
+        val[utility::conversions::to_string_t("proxy_id")] = ModelBase::toJson(proxyId_);
+    }
+    if(proxyNameIsSet_) {
+        val[utility::conversions::to_string_t("proxy_name")] = ModelBase::toJson(proxyName_);
     }
 
     return val;
@@ -196,6 +206,24 @@ bool ScheduleTask::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTargetConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyName(refVal);
         }
     }
     return ok;
@@ -452,6 +480,48 @@ bool ScheduleTask::targetConfigIsSet() const
 void ScheduleTask::unsettargetConfig()
 {
     targetConfigIsSet_ = false;
+}
+
+std::string ScheduleTask::getProxyId() const
+{
+    return proxyId_;
+}
+
+void ScheduleTask::setProxyId(const std::string& value)
+{
+    proxyId_ = value;
+    proxyIdIsSet_ = true;
+}
+
+bool ScheduleTask::proxyIdIsSet() const
+{
+    return proxyIdIsSet_;
+}
+
+void ScheduleTask::unsetproxyId()
+{
+    proxyIdIsSet_ = false;
+}
+
+std::string ScheduleTask::getProxyName() const
+{
+    return proxyName_;
+}
+
+void ScheduleTask::setProxyName(const std::string& value)
+{
+    proxyName_ = value;
+    proxyNameIsSet_ = true;
+}
+
+bool ScheduleTask::proxyNameIsSet() const
+{
+    return proxyNameIsSet_;
+}
+
+void ScheduleTask::unsetproxyName()
+{
+    proxyNameIsSet_ = false;
 }
 
 }

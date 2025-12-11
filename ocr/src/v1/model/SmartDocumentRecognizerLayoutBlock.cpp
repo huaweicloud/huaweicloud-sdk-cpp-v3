@@ -22,6 +22,8 @@ SmartDocumentRecognizerLayoutBlock::SmartDocumentRecognizerLayoutBlock()
     tableIdIsSet_ = false;
     formId_ = 0;
     formIdIsSet_ = false;
+    formulaId_ = 0;
+    formulaIdIsSet_ = false;
 }
 
 SmartDocumentRecognizerLayoutBlock::~SmartDocumentRecognizerLayoutBlock() = default;
@@ -51,6 +53,9 @@ web::json::value SmartDocumentRecognizerLayoutBlock::toJson() const
     }
     if(formIdIsSet_) {
         val[utility::conversions::to_string_t("form_id")] = ModelBase::toJson(formId_);
+    }
+    if(formulaIdIsSet_) {
+        val[utility::conversions::to_string_t("formula_id")] = ModelBase::toJson(formulaId_);
     }
 
     return val;
@@ -111,6 +116,15 @@ bool SmartDocumentRecognizerLayoutBlock::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFormId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("formula_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("formula_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFormulaId(refVal);
         }
     }
     return ok;
@@ -241,6 +255,27 @@ bool SmartDocumentRecognizerLayoutBlock::formIdIsSet() const
 void SmartDocumentRecognizerLayoutBlock::unsetformId()
 {
     formIdIsSet_ = false;
+}
+
+int32_t SmartDocumentRecognizerLayoutBlock::getFormulaId() const
+{
+    return formulaId_;
+}
+
+void SmartDocumentRecognizerLayoutBlock::setFormulaId(int32_t value)
+{
+    formulaId_ = value;
+    formulaIdIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerLayoutBlock::formulaIdIsSet() const
+{
+    return formulaIdIsSet_;
+}
+
+void SmartDocumentRecognizerLayoutBlock::unsetformulaId()
+{
+    formulaIdIsSet_ = false;
 }
 
 }

@@ -92,6 +92,15 @@ public:
     void unsetendTime();
     void setEndTime(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  是否展示跨区域增量备份。  **约束限制**：  不涉及。  **取值范围**：  - true：展示同区域和跨区域增量备份。 - false：仅展示同区域增量备份。  **默认取值**：  false。
+    /// </summary>
+
+    bool isDisplayOffsiteBackup() const;
+    bool displayOffsiteBackupIsSet() const;
+    void unsetdisplayOffsiteBackup();
+    void setDisplayOffsiteBackup(bool value);
+
 
 protected:
     std::string xLanguage_;
@@ -106,6 +115,8 @@ protected:
     bool beginTimeIsSet_;
     std::string endTime_;
     bool endTimeIsSet_;
+    bool displayOffsiteBackup_;
+    bool displayOffsiteBackupIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

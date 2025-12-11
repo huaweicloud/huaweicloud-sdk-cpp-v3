@@ -15,6 +15,7 @@ MysqlShowProxyResponseV3::MysqlShowProxyResponseV3()
     proxyIsSet_ = false;
     masterNodeIsSet_ = false;
     readonlyNodesIsSet_ = false;
+    htapNodesIsSet_ = false;
 }
 
 MysqlShowProxyResponseV3::~MysqlShowProxyResponseV3() = default;
@@ -35,6 +36,9 @@ web::json::value MysqlShowProxyResponseV3::toJson() const
     }
     if(readonlyNodesIsSet_) {
         val[utility::conversions::to_string_t("readonly_nodes")] = ModelBase::toJson(readonlyNodes_);
+    }
+    if(htapNodesIsSet_) {
+        val[utility::conversions::to_string_t("htap_nodes")] = ModelBase::toJson(htapNodes_);
     }
 
     return val;
@@ -68,6 +72,15 @@ bool MysqlShowProxyResponseV3::fromJson(const web::json::value& val)
             std::vector<MysqlProxyNodeV3> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReadonlyNodes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("htap_nodes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("htap_nodes"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<MysqlProxyNodeV3> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHtapNodes(refVal);
         }
     }
     return ok;
@@ -135,6 +148,27 @@ bool MysqlShowProxyResponseV3::readonlyNodesIsSet() const
 void MysqlShowProxyResponseV3::unsetreadonlyNodes()
 {
     readonlyNodesIsSet_ = false;
+}
+
+std::vector<MysqlProxyNodeV3>& MysqlShowProxyResponseV3::getHtapNodes()
+{
+    return htapNodes_;
+}
+
+void MysqlShowProxyResponseV3::setHtapNodes(const std::vector<MysqlProxyNodeV3>& value)
+{
+    htapNodes_ = value;
+    htapNodesIsSet_ = true;
+}
+
+bool MysqlShowProxyResponseV3::htapNodesIsSet() const
+{
+    return htapNodesIsSet_;
+}
+
+void MysqlShowProxyResponseV3::unsethtapNodes()
+{
+    htapNodesIsSet_ = false;
 }
 
 }

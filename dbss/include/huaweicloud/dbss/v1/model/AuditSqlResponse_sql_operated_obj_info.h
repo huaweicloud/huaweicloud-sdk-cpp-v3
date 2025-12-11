@@ -48,7 +48,7 @@ public:
     void setColumnName(const std::string& value);
 
     /// <summary>
-    /// 操作对象类型
+    /// 操作对象类型 - VARIABLE: 变量 - \&quot;\&quot;: 空
     /// </summary>
 
     std::string getObjectType() const;
@@ -66,7 +66,7 @@ public:
     void setSchemaName(const std::string& value);
 
     /// <summary>
-    /// sql类型
+    /// sql类型 - LOGIN: LOGIN - CREATE_TABLE: CREATE TABLE - CREATE_TABLESPACE: CREATE TABLESPACE - DROP_TABLE: DROP TABLE - DROP_TABLESPACE: DROP TABLESPACE - DELETE: DELETE - INSERT: INSERT - INSERT_SELECT: INSERT SELECT - SELECT: SELECT - SELECT_FOR_UPDATE: SELECT FOR UPDATE - UPDATE: UPDATE - CREATE_USER: CREATE USER - DROP_USER: DROP USER - GRANT: GRANT - OPERATE: OPERATE - ALL: ALL
     /// </summary>
 
     std::string getSqlType() const;

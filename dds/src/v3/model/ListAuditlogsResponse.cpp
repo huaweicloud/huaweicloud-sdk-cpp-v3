@@ -14,6 +14,8 @@ ListAuditlogsResponse::ListAuditlogsResponse()
 {
     totalRecord_ = 0;
     totalRecordIsSet_ = false;
+    totalSize_ = 0L;
+    totalSizeIsSet_ = false;
     auditLogsIsSet_ = false;
 }
 
@@ -29,6 +31,9 @@ web::json::value ListAuditlogsResponse::toJson() const
 
     if(totalRecordIsSet_) {
         val[utility::conversions::to_string_t("total_record")] = ModelBase::toJson(totalRecord_);
+    }
+    if(totalSizeIsSet_) {
+        val[utility::conversions::to_string_t("total_size")] = ModelBase::toJson(totalSize_);
     }
     if(auditLogsIsSet_) {
         val[utility::conversions::to_string_t("audit_logs")] = ModelBase::toJson(auditLogs_);
@@ -47,6 +52,15 @@ bool ListAuditlogsResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalRecord(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_size"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalSize(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("audit_logs"))) {
@@ -81,6 +95,27 @@ bool ListAuditlogsResponse::totalRecordIsSet() const
 void ListAuditlogsResponse::unsettotalRecord()
 {
     totalRecordIsSet_ = false;
+}
+
+int64_t ListAuditlogsResponse::getTotalSize() const
+{
+    return totalSize_;
+}
+
+void ListAuditlogsResponse::setTotalSize(int64_t value)
+{
+    totalSize_ = value;
+    totalSizeIsSet_ = true;
+}
+
+bool ListAuditlogsResponse::totalSizeIsSet() const
+{
+    return totalSizeIsSet_;
+}
+
+void ListAuditlogsResponse::unsettotalSize()
+{
+    totalSizeIsSet_ = false;
 }
 
 std::vector<ListAuditlogsResult>& ListAuditlogsResponse::getAuditLogs()

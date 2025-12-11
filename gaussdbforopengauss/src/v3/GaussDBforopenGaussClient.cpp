@@ -292,6 +292,51 @@ std::shared_ptr<AuthorizeBackupDownloadResponse> GaussDBforopenGaussClient::auth
 
     return localVarResult;
 }
+std::shared_ptr<BatchDeleteInstanceTagResponse> GaussDBforopenGaussClient::batchDeleteInstanceTag(BatchDeleteInstanceTagRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForBatchDeleteInstanceTag());
+
+    std::shared_ptr<BatchDeleteInstanceTagResponse> localVarResult = std::make_shared<BatchDeleteInstanceTagResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchSetBackupPolicyResponse> GaussDBforopenGaussClient::batchSetBackupPolicy(BatchSetBackupPolicyRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/backups/policy";
@@ -4340,6 +4385,18 @@ std::shared_ptr<ListRestorableInstancesDetailsResponse> GaussDBforopenGaussClien
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.backupRestoreTypeIsSet()) {
+        localVarQueryParams["backup_restore_type"] = parameterToString(request.getBackupRestoreType());
+    }
+    if (request.sourceBackupSchemaIsSet()) {
+        localVarQueryParams["source_backup_schema"] = parameterToString(request.getSourceBackupSchema());
+    }
+    if (request.targetInstanceIdIsSet()) {
+        localVarQueryParams["target_instance_id"] = parameterToString(request.getTargetInstanceId());
+    }
+    if (request.instanceNameIsSet()) {
+        localVarQueryParams["instance_name"] = parameterToString(request.getInstanceName());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
@@ -6139,6 +6196,15 @@ std::shared_ptr<ShowDeploymentFormResponse> GaussDBforopenGaussClient::showDeplo
     }
     if (request.instanceIdIsSet()) {
         localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.consistencyIsSet()) {
+        localVarQueryParams["consistency"] = parameterToString(request.getConsistency());
+    }
+    if (request.consistencyProtocolIsSet()) {
+        localVarQueryParams["consistency_protocol"] = parameterToString(request.getConsistencyProtocol());
+    }
+    if (request.engineVersionIsSet()) {
+        localVarQueryParams["engine_version"] = parameterToString(request.getEngineVersion());
     }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());

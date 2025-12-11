@@ -17,6 +17,7 @@ SmartDocumentRecognizerWordsBlockList::SmartDocumentRecognizerWordsBlockList()
     locationIsSet_ = false;
     confidence_ = 0.0f;
     confidenceIsSet_ = false;
+    charListIsSet_ = false;
 }
 
 SmartDocumentRecognizerWordsBlockList::~SmartDocumentRecognizerWordsBlockList() = default;
@@ -37,6 +38,9 @@ web::json::value SmartDocumentRecognizerWordsBlockList::toJson() const
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
+    }
+    if(charListIsSet_) {
+        val[utility::conversions::to_string_t("char_list")] = ModelBase::toJson(charList_);
     }
 
     return val;
@@ -70,6 +74,15 @@ bool SmartDocumentRecognizerWordsBlockList::fromJson(const web::json::value& val
             float refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfidence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("char_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("char_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<SmartDocumentRecognizerCharList> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCharList(refVal);
         }
     }
     return ok;
@@ -137,6 +150,27 @@ bool SmartDocumentRecognizerWordsBlockList::confidenceIsSet() const
 void SmartDocumentRecognizerWordsBlockList::unsetconfidence()
 {
     confidenceIsSet_ = false;
+}
+
+std::vector<SmartDocumentRecognizerCharList>& SmartDocumentRecognizerWordsBlockList::getCharList()
+{
+    return charList_;
+}
+
+void SmartDocumentRecognizerWordsBlockList::setCharList(const std::vector<SmartDocumentRecognizerCharList>& value)
+{
+    charList_ = value;
+    charListIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerWordsBlockList::charListIsSet() const
+{
+    return charListIsSet_;
+}
+
+void SmartDocumentRecognizerWordsBlockList::unsetcharList()
+{
+    charListIsSet_ = false;
 }
 
 }

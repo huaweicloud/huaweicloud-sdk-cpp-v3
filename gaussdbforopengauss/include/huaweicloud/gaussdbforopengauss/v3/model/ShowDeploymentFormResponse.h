@@ -74,6 +74,33 @@ public:
     void unsetreplicaNum();
     void setReplicaNum(int32_t value);
 
+    /// <summary>
+    /// **参数解释**: 每次扩容的最小节点数。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int32_t getEachExpandNodes() const;
+    bool eachExpandNodesIsSet() const;
+    void unseteachExpandNodes();
+    void setEachExpandNodes(int32_t value);
+
+    /// <summary>
+    /// **参数解释**: 最大分片数。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int32_t getMaxShardCount() const;
+    bool maxShardCountIsSet() const;
+    void unsetmaxShardCount();
+    void setMaxShardCount(int32_t value);
+
+    /// <summary>
+    /// **参数解释**: 每分片节点数。 **取值范围**: 不涉及。
+    /// </summary>
+
+    int32_t getEachShardNum() const;
+    bool eachShardNumIsSet() const;
+    void unseteachShardNum();
+    void setEachShardNum(int32_t value);
+
 
 protected:
     int32_t initialNodeNum_;
@@ -84,6 +111,12 @@ protected:
     bool shardNumIsSet_;
     int32_t replicaNum_;
     bool replicaNumIsSet_;
+    int32_t eachExpandNodes_;
+    bool eachExpandNodesIsSet_;
+    int32_t maxShardCount_;
+    bool maxShardCountIsSet_;
+    int32_t eachShardNum_;
+    bool eachShardNumIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

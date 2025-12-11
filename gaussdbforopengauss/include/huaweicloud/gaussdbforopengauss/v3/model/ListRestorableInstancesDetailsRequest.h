@@ -92,6 +92,42 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// **参数解释**: 查备份恢复的粒度。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE   - DATABASE **默认取值**: INSTANCE
+    /// </summary>
+
+    std::string getBackupRestoreType() const;
+    bool backupRestoreTypeIsSet() const;
+    void unsetbackupRestoreType();
+    void setBackupRestoreType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 源实例的备份类型。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE **默认取值**: INSTANCE
+    /// </summary>
+
+    std::string getSourceBackupSchema() const;
+    bool sourceBackupSchemaIsSet() const;
+    void unsetsourceBackupSchema();
+    void setSourceBackupSchema(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 目标实例ID，通过此参数过滤实例列表。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+    /// </summary>
+
+    std::string getTargetInstanceId() const;
+    bool targetInstanceIdIsSet() const;
+    void unsettargetInstanceId();
+    void setTargetInstanceId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 目标实例名称，通过此参数过滤实例列表。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+    /// </summary>
+
+    std::string getInstanceName() const;
+    bool instanceNameIsSet() const;
+    void unsetinstanceName();
+    void setInstanceName(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -106,6 +142,14 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string backupRestoreType_;
+    bool backupRestoreTypeIsSet_;
+    std::string sourceBackupSchema_;
+    bool sourceBackupSchemaIsSet_;
+    std::string targetInstanceId_;
+    bool targetInstanceIdIsSet_;
+    std::string instanceName_;
+    bool instanceNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

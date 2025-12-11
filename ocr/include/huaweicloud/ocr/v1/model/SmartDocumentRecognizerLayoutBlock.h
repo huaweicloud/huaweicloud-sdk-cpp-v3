@@ -49,7 +49,7 @@ public:
     void setLocation(const std::vector<std::vector<int32_t>>& value);
 
     /// <summary>
-    /// 文档区域类别，包含text、title、sub_title、image、image_caption、form、table、table_caption、header、footer、page_number、reference、formula、stamp、directory共15个类别。     
+    /// 文档区域类别，包含text、title、sub_title、image、image_caption、form、table、table_caption、header、footer、page_number、reference、formula、stamp、directory、footnote共16个类别。 
     /// </summary>
 
     std::string getType() const;
@@ -93,6 +93,15 @@ public:
     void unsetformId();
     void setFormId(int32_t value);
 
+    /// <summary>
+    /// 仅当type为\&quot;formula\&quot;且入参formula为True时返回该字段，表示当前公式识别区域对应formula_result中哪一项识别结果。 
+    /// </summary>
+
+    int32_t getFormulaId() const;
+    bool formulaIdIsSet() const;
+    void unsetformulaId();
+    void setFormulaId(int32_t value);
+
 
 protected:
     std::vector<std::vector<int32_t>> location_;
@@ -107,6 +116,8 @@ protected:
     bool tableIdIsSet_;
     int32_t formId_;
     bool formIdIsSet_;
+    int32_t formulaId_;
+    bool formulaIdIsSet_;
 
 };
 

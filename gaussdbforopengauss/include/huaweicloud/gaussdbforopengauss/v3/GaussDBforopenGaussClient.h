@@ -24,6 +24,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/AuthorizeBackupDownloadResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BackupPolicyErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BaseOpsKeyViewRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BatchDeleteInstanceTagRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BatchDeleteInstanceTagRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BatchDeleteInstanceTagResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyResponse.h>
@@ -681,6 +684,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AuthorizeBackupDownloadResponse> authorizeBackupDownload(
         AuthorizeBackupDownloadRequest &request
+    );
+    // 批量删除实例标签
+    //
+    // 批量删除实例标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteInstanceTagResponse> batchDeleteInstanceTag(
+        BatchDeleteInstanceTagRequest &request
     );
     // 批量设置自动备份策略
     //

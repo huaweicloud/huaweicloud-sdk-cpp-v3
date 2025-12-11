@@ -18,6 +18,8 @@ CreateConfigurationRequestBody::CreateConfigurationRequestBody()
     descriptionIsSet_ = false;
     datastoreIsSet_ = false;
     valuesIsSet_ = false;
+    instanceId_ = "";
+    instanceIdIsSet_ = false;
 }
 
 CreateConfigurationRequestBody::~CreateConfigurationRequestBody() = default;
@@ -41,6 +43,9 @@ web::json::value CreateConfigurationRequestBody::toJson() const
     }
     if(valuesIsSet_) {
         val[utility::conversions::to_string_t("values")] = ModelBase::toJson(values_);
+    }
+    if(instanceIdIsSet_) {
+        val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
 
     return val;
@@ -83,6 +88,15 @@ bool CreateConfigurationRequestBody::fromJson(const web::json::value& val)
             std::map<std::string, std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValues(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceId(refVal);
         }
     }
     return ok;
@@ -171,6 +185,27 @@ bool CreateConfigurationRequestBody::valuesIsSet() const
 void CreateConfigurationRequestBody::unsetvalues()
 {
     valuesIsSet_ = false;
+}
+
+std::string CreateConfigurationRequestBody::getInstanceId() const
+{
+    return instanceId_;
+}
+
+void CreateConfigurationRequestBody::setInstanceId(const std::string& value)
+{
+    instanceId_ = value;
+    instanceIdIsSet_ = true;
+}
+
+bool CreateConfigurationRequestBody::instanceIdIsSet() const
+{
+    return instanceIdIsSet_;
+}
+
+void CreateConfigurationRequestBody::unsetinstanceId()
+{
+    instanceIdIsSet_ = false;
 }
 
 }

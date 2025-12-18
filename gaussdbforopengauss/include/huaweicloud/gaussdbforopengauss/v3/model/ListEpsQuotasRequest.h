@@ -74,6 +74,15 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// 企业项目名称。
+    /// </summary>
+
+    std::string getEnterpriseProjectName() const;
+    bool enterpriseProjectNameIsSet() const;
+    void unsetenterpriseProjectName();
+    void setEnterpriseProjectName(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -84,6 +93,8 @@ protected:
     bool limitIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string enterpriseProjectName_;
+    bool enterpriseProjectNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

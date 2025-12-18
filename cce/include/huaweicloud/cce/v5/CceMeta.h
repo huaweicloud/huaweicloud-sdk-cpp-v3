@@ -16,7 +16,9 @@ public:
     static HttpRequestDef genRequestDefForCreateImageCache();
     static HttpRequestDef genRequestDefForDeleteImageCache();
     static HttpRequestDef genRequestDefForListImageCaches();
+    static HttpRequestDef genRequestDefForListPackageProducts();
     static HttpRequestDef genRequestDefForShowImageCache();
+    static HttpRequestDef genRequestDefForSubscribePackageProducts();
 };
 
 }

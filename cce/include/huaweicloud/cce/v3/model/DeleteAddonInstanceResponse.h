@@ -9,7 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cce/v3/model/AddonMetadata.h>
+#include <huaweicloud/cce/v3/model/InstanceSpec.h>
 #include <string>
+#include <huaweicloud/cce/v3/model/AddonInstanceStatus.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,18 +42,62 @@ public:
     /// DeleteAddonInstanceResponse members
 
     /// <summary>
+    /// API类型，固定值“Addon”，该值不可修改。
+    /// </summary>
+
+    std::string getKind() const;
+    bool kindIsSet() const;
+    void unsetkind();
+    void setKind(const std::string& value);
+
+    /// <summary>
+    /// API版本，固定值“v3”，该值不可修改。
+    /// </summary>
+
+    std::string getApiVersion() const;
+    bool apiVersionIsSet() const;
+    void unsetapiVersion();
+    void setApiVersion(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
-    std::string getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const std::string& value);
+    AddonMetadata getMetadata() const;
+    bool metadataIsSet() const;
+    void unsetmetadata();
+    void setMetadata(const AddonMetadata& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    InstanceSpec getSpec() const;
+    bool specIsSet() const;
+    void unsetspec();
+    void setSpec(const InstanceSpec& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    AddonInstanceStatus getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const AddonInstanceStatus& value);
 
 
 protected:
-    std::string body_;
-    bool bodyIsSet_;
+    std::string kind_;
+    bool kindIsSet_;
+    std::string apiVersion_;
+    bool apiVersionIsSet_;
+    AddonMetadata metadata_;
+    bool metadataIsSet_;
+    InstanceSpec spec_;
+    bool specIsSet_;
+    AddonInstanceStatus status_;
+    bool statusIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

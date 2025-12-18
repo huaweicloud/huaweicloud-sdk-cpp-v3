@@ -16,6 +16,7 @@ NoSqlCreateBackupRequestBody::NoSqlCreateBackupRequestBody()
     nameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    databaseTablesIsSet_ = false;
 }
 
 NoSqlCreateBackupRequestBody::~NoSqlCreateBackupRequestBody() = default;
@@ -33,6 +34,9 @@ web::json::value NoSqlCreateBackupRequestBody::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(databaseTablesIsSet_) {
+        val[utility::conversions::to_string_t("database_tables")] = ModelBase::toJson(databaseTables_);
     }
 
     return val;
@@ -57,6 +61,15 @@ bool NoSqlCreateBackupRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("database_tables"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("database_tables"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<DatabaseTable> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDatabaseTables(refVal);
         }
     }
     return ok;
@@ -103,6 +116,27 @@ bool NoSqlCreateBackupRequestBody::descriptionIsSet() const
 void NoSqlCreateBackupRequestBody::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+std::vector<DatabaseTable>& NoSqlCreateBackupRequestBody::getDatabaseTables()
+{
+    return databaseTables_;
+}
+
+void NoSqlCreateBackupRequestBody::setDatabaseTables(const std::vector<DatabaseTable>& value)
+{
+    databaseTables_ = value;
+    databaseTablesIsSet_ = true;
+}
+
+bool NoSqlCreateBackupRequestBody::databaseTablesIsSet() const
+{
+    return databaseTablesIsSet_;
+}
+
+void NoSqlCreateBackupRequestBody::unsetdatabaseTables()
+{
+    databaseTablesIsSet_ = false;
 }
 
 }

@@ -13,9 +13,12 @@
 #include <huaweicloud/cce/v3/model/AddNodesToNodePoolList.h>
 #include <huaweicloud/cce/v3/model/AddNodesToNodePoolRequest.h>
 #include <huaweicloud/cce/v3/model/AddNodesToNodePoolResponse.h>
+#include <huaweicloud/cce/v3/model/AddonCheckRequest.h>
 #include <huaweicloud/cce/v3/model/AddonInstanceRollbackRequest.h>
 #include <huaweicloud/cce/v3/model/AwakeClusterRequest.h>
 #include <huaweicloud/cce/v3/model/AwakeClusterResponse.h>
+#include <huaweicloud/cce/v3/model/BatchCreateAddonPrecheckRequest.h>
+#include <huaweicloud/cce/v3/model/BatchCreateAddonPrecheckResponse.h>
 #include <huaweicloud/cce/v3/model/BatchCreateClusterTagsRequest.h>
 #include <huaweicloud/cce/v3/model/BatchCreateClusterTagsRequestBody.h>
 #include <huaweicloud/cce/v3/model/BatchCreateClusterTagsResponse.h>
@@ -86,12 +89,16 @@
 #include <huaweicloud/cce/v3/model/GetAvaliableZoneResponse.h>
 #include <huaweicloud/cce/v3/model/GetClusterFlavorSpecsRequest.h>
 #include <huaweicloud/cce/v3/model/GetClusterFlavorSpecsResponse.h>
+#include <huaweicloud/cce/v3/model/GetClusterLongAkskConfigRequest.h>
+#include <huaweicloud/cce/v3/model/GetClusterLongAkskConfigResponse.h>
 #include <huaweicloud/cce/v3/model/GetClusterQuotaRequest.h>
 #include <huaweicloud/cce/v3/model/GetClusterQuotaResponse.h>
 #include <huaweicloud/cce/v3/model/GetCustomizeTagsRequest.h>
 #include <huaweicloud/cce/v3/model/GetCustomizeTagsResponse.h>
 #include <huaweicloud/cce/v3/model/GetLabelsRequest.h>
 #include <huaweicloud/cce/v3/model/GetLabelsResponse.h>
+#include <huaweicloud/cce/v3/model/GetLongAkskConfigRequest.h>
+#include <huaweicloud/cce/v3/model/GetLongAkskConfigResponse.h>
 #include <huaweicloud/cce/v3/model/GetResourceTagsRequest.h>
 #include <huaweicloud/cce/v3/model/GetResourceTagsResponse.h>
 #include <huaweicloud/cce/v3/model/HibernateClusterRequest.h>
@@ -138,6 +145,9 @@
 #include <huaweicloud/cce/v3/model/MigrateNodeRequest.h>
 #include <huaweicloud/cce/v3/model/MigrateNodeResponse.h>
 #include <huaweicloud/cce/v3/model/MigrateNodesTask.h>
+#include <huaweicloud/cce/v3/model/MigrateNodesToNodePoolList.h>
+#include <huaweicloud/cce/v3/model/MigrateToNodePoolRequest.h>
+#include <huaweicloud/cce/v3/model/MigrateToNodePoolResponse.h>
 #include <huaweicloud/cce/v3/model/NodeCreateRequest.h>
 #include <huaweicloud/cce/v3/model/NodePool.h>
 #include <huaweicloud/cce/v3/model/NodePoolUpdate.h>
@@ -224,8 +234,14 @@
 #include <huaweicloud/cce/v3/model/UpdateClusterEipResponse.h>
 #include <huaweicloud/cce/v3/model/UpdateClusterLogConfigRequest.h>
 #include <huaweicloud/cce/v3/model/UpdateClusterLogConfigResponse.h>
+#include <huaweicloud/cce/v3/model/UpdateClusterLongAKSKConfigRequestBody.h>
+#include <huaweicloud/cce/v3/model/UpdateClusterLongAkskConfigRequest.h>
+#include <huaweicloud/cce/v3/model/UpdateClusterLongAkskConfigResponse.h>
 #include <huaweicloud/cce/v3/model/UpdateClusterRequest.h>
 #include <huaweicloud/cce/v3/model/UpdateClusterResponse.h>
+#include <huaweicloud/cce/v3/model/UpdateLongAKSKConfigRequestBody.h>
+#include <huaweicloud/cce/v3/model/UpdateLongAkskConfigRequest.h>
+#include <huaweicloud/cce/v3/model/UpdateLongAkskConfigResponse.h>
 #include <huaweicloud/cce/v3/model/UpdateNodePoolRequest.h>
 #include <huaweicloud/cce/v3/model/UpdateNodePoolResponse.h>
 #include <huaweicloud/cce/v3/model/UpdateNodeRequest.h>
@@ -333,12 +349,16 @@
 #include <huaweicloud/cce/v3/model/ShowAutopilotChartResponse.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotChartValuesRequest.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotChartValuesResponse.h>
+#include <huaweicloud/cce/v3/model/ShowAutopilotClusterConfigRequest.h>
+#include <huaweicloud/cce/v3/model/ShowAutopilotClusterConfigResponse.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotClusterEndpointsRequest.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotClusterEndpointsResponse.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotClusterRequest.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotClusterResponse.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotClusterUpgradeInfoRequest.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotClusterUpgradeInfoResponse.h>
+#include <huaweicloud/cce/v3/model/ShowAutopilotFeatureGatesRequest.h>
+#include <huaweicloud/cce/v3/model/ShowAutopilotFeatureGatesResponse.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotMaintenanceWindowRequest.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotMaintenanceWindowResponse.h>
 #include <huaweicloud/cce/v3/model/ShowAutopilotPreCheckRequest.h>
@@ -374,6 +394,15 @@
 #include <huaweicloud/cce/v3/model/UpgradeAutopilotWorkFlowUpdateResponse.h>
 #include <huaweicloud/cce/v3/model/UpgradeClusterRequestBody.h>
 #include <huaweicloud/cce/v3/model/UpgradeWorkFlowUpdateRequestBody.h>
+#include <string>
+
+#include <huaweicloud/cce/v3/model/DeleteAutopilotJobRequest.h>
+#include <huaweicloud/cce/v3/model/DeleteAutopilotJobResponse.h>
+#include <huaweicloud/cce/v3/model/GetAutopilotOneJobRequest.h>
+#include <huaweicloud/cce/v3/model/GetAutopilotOneJobResponse.h>
+#include <huaweicloud/cce/v3/model/ListAutopilotJobsRequest.h>
+#include <huaweicloud/cce/v3/model/ListAutopilotJobsResponse.h>
+#include <huaweicloud/cce/v3/model/V2Job.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -425,6 +454,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AwakeClusterResponse> awakeCluster(
         AwakeClusterRequest &request
+    );
+    // 批量创建插件检查任务
+    //
+    // 该API用于在指定集群下批量创建插件检查任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreateAddonPrecheckResponse> batchCreateAddonPrecheck(
+        BatchCreateAddonPrecheckRequest &request
     );
     // 批量添加指定集群的资源标签
     //
@@ -685,6 +722,14 @@ public:
     std::shared_ptr<GetClusterFlavorSpecsResponse> getClusterFlavorSpecs(
         GetClusterFlavorSpecsRequest &request
     );
+    // 获取集群LongAKSK配置
+    //
+    // 该API用于获取集群longaksk的配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetClusterLongAkskConfigResponse> getClusterLongAkskConfig(
+        GetClusterLongAkskConfigRequest &request
+    );
     // 获取集群配额
     //
     // 该API用于获取集群配额
@@ -708,6 +753,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<GetLabelsResponse> getLabels(
         GetLabelsRequest &request
+    );
+    // 获取项目LongAKSK配置
+    //
+    // 该API用于获取项目LongAKSK的配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetLongAkskConfigResponse> getLongAkskConfig(
+        GetLongAkskConfigRequest &request
     );
     // 查询资源标签
     //
@@ -881,6 +934,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<MigrateNodeResponse> migrateNode(
         MigrateNodeRequest &request
+    );
+    // 节点迁移到自定义节点池。
+    //
+    // 该API用于将节点迁移到自定义节点池，仅default节点池下节点支持迁移。迁移过程节点无重置无重启，原节点密码将保留。
+    // &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<MigrateToNodePoolResponse> migrateToNodePool(
+        MigrateToNodePoolRequest &request
     );
     // 暂停集群升级任务
     //
@@ -1200,6 +1262,22 @@ public:
     std::shared_ptr<UpdateClusterLogConfigResponse> updateClusterLogConfig(
         UpdateClusterLogConfigRequest &request
     );
+    // 更新集群LongAKSK配置
+    //
+    // 该API用于更新集群LongAKSK的配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateClusterLongAkskConfigResponse> updateClusterLongAkskConfig(
+        UpdateClusterLongAkskConfigRequest &request
+    );
+    // 更新项目LongAKSK配置
+    //
+    // 该API用于更新项目longaksk的配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLongAkskConfigResponse> updateLongAkskConfig(
+        UpdateLongAkskConfigRequest &request
+    );
     // 更新指定的节点
     //
     // 该API用于更新指定的节点。
@@ -1252,6 +1330,7 @@ public:
     // 同步节点池
     //
     // 该API用于同步节点池中已有节点的配置
+    // &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeNodePoolResponse> upgradeNodePool(
@@ -1568,6 +1647,14 @@ public:
     std::shared_ptr<ShowAutopilotClusterResponse> showAutopilotCluster(
         ShowAutopilotClusterRequest &request
     );
+    // 查询集群日志配置信息
+    //
+    // 获取集群组件上报的LTS的配置信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutopilotClusterConfigResponse> showAutopilotClusterConfig(
+        ShowAutopilotClusterConfigRequest &request
+    );
     // 获取集群访问的地址
     //
     // 该API用于通过集群ID获取集群访问的地址，包括PrivateIP(HA集群返回VIP)与PublicIP
@@ -1584,6 +1671,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAutopilotClusterUpgradeInfoResponse> showAutopilotClusterUpgradeInfo(
         ShowAutopilotClusterUpgradeInfoRequest &request
+    );
+    // 查询特性开关状态
+    //
+    // 该API用于查询特性开关状态
+    // &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutopilotFeatureGatesResponse> showAutopilotFeatureGates(
+        ShowAutopilotFeatureGatesRequest &request
     );
     // 获取集群维护窗口
     //
@@ -1719,6 +1815,31 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeAutopilotWorkFlowUpdateResponse> upgradeAutopilotWorkFlowUpdate(
         UpgradeAutopilotWorkFlowUpdateRequest &request
+    );
+
+    // 删除Job
+    //
+    // 该API用于删除指定项目下的Job。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAutopilotJobResponse> deleteAutopilotJob(
+        DeleteAutopilotJobRequest &request
+    );
+    // 获取Job详情
+    //
+    // 该API用于获取指定项目下的Job详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetAutopilotOneJobResponse> getAutopilotOneJob(
+        GetAutopilotOneJobRequest &request
+    );
+    // 获取Job列表
+    //
+    // 该API用于获取指定项目下的所有jobs。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAutopilotJobsResponse> listAutopilotJobs(
+        ListAutopilotJobsRequest &request
     );
 
 

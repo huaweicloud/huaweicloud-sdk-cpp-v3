@@ -48,6 +48,10 @@ NodeExtendParam::NodeExtendParam()
     nicThresholdIsSet_ = false;
     chargingMode_ = 0;
     chargingModeIsSet_ = false;
+    marketType_ = "";
+    marketTypeIsSet_ = false;
+    spotPrice_ = "";
+    spotPriceIsSet_ = false;
     agencyName_ = "";
     agencyNameIsSet_ = false;
     kubeReservedMem_ = 0;
@@ -123,6 +127,12 @@ web::json::value NodeExtendParam::toJson() const
     }
     if(chargingModeIsSet_) {
         val[utility::conversions::to_string_t("chargingMode")] = ModelBase::toJson(chargingMode_);
+    }
+    if(marketTypeIsSet_) {
+        val[utility::conversions::to_string_t("marketType")] = ModelBase::toJson(marketType_);
+    }
+    if(spotPriceIsSet_) {
+        val[utility::conversions::to_string_t("spotPrice")] = ModelBase::toJson(spotPrice_);
     }
     if(agencyNameIsSet_) {
         val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
@@ -306,6 +316,24 @@ bool NodeExtendParam::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setChargingMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("marketType"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("marketType"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMarketType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("spotPrice"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spotPrice"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSpotPrice(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
@@ -733,6 +761,48 @@ bool NodeExtendParam::chargingModeIsSet() const
 void NodeExtendParam::unsetchargingMode()
 {
     chargingModeIsSet_ = false;
+}
+
+std::string NodeExtendParam::getMarketType() const
+{
+    return marketType_;
+}
+
+void NodeExtendParam::setMarketType(const std::string& value)
+{
+    marketType_ = value;
+    marketTypeIsSet_ = true;
+}
+
+bool NodeExtendParam::marketTypeIsSet() const
+{
+    return marketTypeIsSet_;
+}
+
+void NodeExtendParam::unsetmarketType()
+{
+    marketTypeIsSet_ = false;
+}
+
+std::string NodeExtendParam::getSpotPrice() const
+{
+    return spotPrice_;
+}
+
+void NodeExtendParam::setSpotPrice(const std::string& value)
+{
+    spotPrice_ = value;
+    spotPriceIsSet_ = true;
+}
+
+bool NodeExtendParam::spotPriceIsSet() const
+{
+    return spotPriceIsSet_;
+}
+
+void NodeExtendParam::unsetspotPrice()
+{
+    spotPriceIsSet_ = false;
 }
 
 std::string NodeExtendParam::getAgencyName() const

@@ -1,3 +1,187 @@
+# 3.1.167 2025-12-18
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEnvironments**
+    - changes of response param
+      - `+ result.project_id`
+  - **ShowEnvironmentDetail**
+    - changes of response param
+      - `+ result.project_id`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RestartInstance**
+    - changes of request param
+      - `+ is_serial`
+      - `+ is_force`
+  - **ListAuditlogs**
+    - changes of response param
+      - `+ total_size`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowHistoricalSqlFilterRule`
+    - `SetAutoSqlLimiting`
+    - `ShowSqlAutoSqlLimiting`
+    - `ShowAutoSqlLimitingLog`
+    - `BatchDeleteBackup`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowProxyVersion**
+    - changes of response param
+      - `+ risk`
+  - **SwitchGaussMySqlConfiguration**
+    - changes of response param
+      - `+ param_group_name`
+  - **ShowInstanceMonitorExtend**
+    - changes of response param
+      - `+ allow`
+  - **ListRecycleInstances**
+    - changes of response param
+      - `* total_count: string -> int32`
+      - `+ instances.recycle_bakcups`
+      - `* instances.create_at: int32 -> int64`
+      - `* instances.deleted_at: int32 -> int64`
+  - **ListScheduleJobs**
+    - changes of request param
+      - `+ instance_id`
+    - changes of response param
+      - `+ schedules.proxy_id`
+      - `+ schedules.proxy_name`
+  - **ShowBackupRestoreTime**
+    - changes of request param
+      - `+ date`
+      - `+ start_time`
+      - `+ end_time`
+  - **ShowGaussMySqlIncrementalBackupList**
+    - changes of request param
+      - `+ display_offsite_backup`
+    - changes of response param
+      - `+ backups.backup_type`
+  - **ShowGaussMySqlProxyFlavors**
+    - changes of request param
+      - `+ query_type`
+      - `+ proxy_id`
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.htap_nodes`
+      - `+ proxy_list.proxy.type`
+      - `+ proxy_list.proxy.created_at`
+      - `+ proxy_list.proxy.updated_at`
+      - `+ proxy_list.proxy.support_ap_node`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateConfiguration**
+    - changes of request param
+      - `+ instance_id`
+  - **ShowApplyHistory**
+    - changes of response param
+      - `+ total_count`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `BatchDeleteInstanceTag`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDeploymentForm**
+    - changes of request param
+      - `+ consistency`
+      - `+ consistency_protocol`
+      - `+ engine_version`
+    - changes of response param
+      - `+ max_shard_count`
+      - `+ each_shard_num`
+      - `+ each_expand_nodes`
+  - **ListRestorableInstancesDetails**
+    - changes of request param
+      - `+ backup_restore_type`
+      - `+ source_backup_schema`
+      - `+ target_instance_id`
+      - `+ instance_name`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeSmartDocumentRecognizer**
+    - changes of request param
+      - `+ image_layout`
+      - `+ character_mode`
+    - changes of response param
+      - `+ result.ocr_result.words_block_list.char_list`
+      - `+ result.layout_result.layout_block_list.formula_id`
+      - `+ result.formula_result.formula_list.type`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSqlStatistics**
+    - changes of response param
+      - `+ list.canUse`
+      - `- list.can_use`
+      - `* list.query_id: int64 -> string`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListVirsubnetCidrReservations`
+    - `CreateVirsubnetCidrReservation`
+    - `ShowVirsubnetCidrReservation`
+    - `UpdateVirsubnetCidrReservation`
+    - `DeleteVirsubnetCidrReservation`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFirewall**
+    - changes of response param
+      - `+ firewalls.type`
+
 # 3.1.166 2025-12-11
 
 ### HuaweiCloud SDK CodeArtsDeploy

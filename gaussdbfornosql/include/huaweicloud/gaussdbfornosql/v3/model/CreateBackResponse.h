@@ -39,7 +39,7 @@ public:
     /// CreateBackResponse members
 
     /// <summary>
-    /// 任务ID。
+    /// **参数解释：** 任务ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getJobId() const;
@@ -48,7 +48,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 备份ID。
+    /// **参数解释：** 备份ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getBackupId() const;

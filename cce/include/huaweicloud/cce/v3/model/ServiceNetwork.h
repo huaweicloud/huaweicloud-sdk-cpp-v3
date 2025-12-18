@@ -39,7 +39,7 @@ public:
     /// ServiceNetwork members
 
     /// <summary>
-    /// kubernetes clusterIP IPv4 CIDR取值范围。创建集群时若未传参，默认为\&quot;10.247.0.0/16\&quot;。
+    /// **参数解释：** kubernetes clusterIP IPv4 CIDR取值范围。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 默认为\&quot;10.247.0.0/16\&quot;。 
     /// </summary>
 
     std::string getIPv4CIDR() const;
@@ -47,10 +47,21 @@ public:
     void unsetiPv4CIDR();
     void setIPv4CIDR(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** kubernetes clusterIP IPv6 CIDR取值范围。 **约束限制：** 仅开启IPV6双栈的Turbo集群支持配置IPv6服务网段。 **取值范围：** 不涉及 **默认取值：** Turbo集群默认为\&quot;fc00::/112\&quot; CCE集群默认为\&quot;fd00:1234::/120\&quot; 
+    /// </summary>
+
+    std::string getIPv6CIDR() const;
+    bool iPv6CIDRIsSet() const;
+    void unsetiPv6CIDR();
+    void setIPv6CIDR(const std::string& value);
+
 
 protected:
     std::string iPv4CIDR_;
     bool iPv4CIDRIsSet_;
+    std::string iPv6CIDR_;
+    bool iPv6CIDRIsSet_;
 
 };
 

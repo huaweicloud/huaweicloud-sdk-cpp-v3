@@ -9,10 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cce/v3/model/NodeMetadata_ownerReference.h>
 #include <string>
 #include <map>
 #include <vector>
+#include <huaweicloud/cce/v3/model/NodeMetadata_ownerReferences.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -99,10 +99,10 @@ public:
     /// 
     /// </summary>
 
-    NodeMetadata_ownerReference getOwnerReference() const;
-    bool ownerReferenceIsSet() const;
-    void unsetownerReference();
-    void setOwnerReference(const NodeMetadata_ownerReference& value);
+    NodeMetadata_ownerReferences getOwnerReferences() const;
+    bool ownerReferencesIsSet() const;
+    void unsetownerReferences();
+    void setOwnerReferences(const NodeMetadata_ownerReferences& value);
 
 
 protected:
@@ -118,8 +118,8 @@ protected:
     bool creationTimestampIsSet_;
     std::string updateTimestamp_;
     bool updateTimestampIsSet_;
-    NodeMetadata_ownerReference ownerReference_;
-    bool ownerReferenceIsSet_;
+    NodeMetadata_ownerReferences ownerReferences_;
+    bool ownerReferencesIsSet_;
 
 };
 

@@ -3275,6 +3275,12 @@ std::shared_ptr<ShowFlavorCapacityResponse> EcsClient::showFlavorCapacity(ShowFl
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.countIsSet()) {
+        localVarQueryParams["count"] = parameterToString(request.getCount());
+    }
+    if (request.regionIdsIsSet()) {
+        localVarQueryParams["region_ids"] = parameterToString(request.getRegionIds());
+    }
 
     std::string localVarHttpBody;
 

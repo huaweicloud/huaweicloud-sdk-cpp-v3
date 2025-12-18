@@ -74,6 +74,24 @@ public:
     void unsetlinkExpiredTime();
     void setLinkExpiredTime(const std::string& value);
 
+    /// <summary>
+    /// 组ID。
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
+    /// 组名。
+    /// </summary>
+
+    std::string getGroupName() const;
+    bool groupNameIsSet() const;
+    void unsetgroupName();
+    void setGroupName(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -84,6 +102,10 @@ protected:
     bool downloadLinkIsSet_;
     std::string linkExpiredTime_;
     bool linkExpiredTimeIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
+    std::string groupName_;
+    bool groupNameIsSet_;
 
 };
 

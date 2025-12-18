@@ -18,6 +18,8 @@ HostNetwork::HostNetwork()
     subnetIsSet_ = false;
     securityGroup_ = "";
     securityGroupIsSet_ = false;
+    controlPlaneSecurityGroup_ = "";
+    controlPlaneSecurityGroupIsSet_ = false;
 }
 
 HostNetwork::~HostNetwork() = default;
@@ -38,6 +40,9 @@ web::json::value HostNetwork::toJson() const
     }
     if(securityGroupIsSet_) {
         val[utility::conversions::to_string_t("SecurityGroup")] = ModelBase::toJson(securityGroup_);
+    }
+    if(controlPlaneSecurityGroupIsSet_) {
+        val[utility::conversions::to_string_t("controlPlaneSecurityGroup")] = ModelBase::toJson(controlPlaneSecurityGroup_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool HostNetwork::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityGroup(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("controlPlaneSecurityGroup"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("controlPlaneSecurityGroup"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setControlPlaneSecurityGroup(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool HostNetwork::securityGroupIsSet() const
 void HostNetwork::unsetsecurityGroup()
 {
     securityGroupIsSet_ = false;
+}
+
+std::string HostNetwork::getControlPlaneSecurityGroup() const
+{
+    return controlPlaneSecurityGroup_;
+}
+
+void HostNetwork::setControlPlaneSecurityGroup(const std::string& value)
+{
+    controlPlaneSecurityGroup_ = value;
+    controlPlaneSecurityGroupIsSet_ = true;
+}
+
+bool HostNetwork::controlPlaneSecurityGroupIsSet() const
+{
+    return controlPlaneSecurityGroupIsSet_;
+}
+
+void HostNetwork::unsetcontrolPlaneSecurityGroup()
+{
+    controlPlaneSecurityGroupIsSet_ = false;
 }
 
 }

@@ -20,6 +20,8 @@ ListEpsQuotasRequest::ListEpsQuotasRequest()
     limitIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    enterpriseProjectName_ = "";
+    enterpriseProjectNameIsSet_ = false;
 }
 
 ListEpsQuotasRequest::~ListEpsQuotasRequest() = default;
@@ -43,6 +45,9 @@ web::json::value ListEpsQuotasRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(enterpriseProjectNameIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_name")] = ModelBase::toJson(enterpriseProjectName_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool ListEpsQuotasRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectName(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool ListEpsQuotasRequest::enterpriseProjectIdIsSet() const
 void ListEpsQuotasRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string ListEpsQuotasRequest::getEnterpriseProjectName() const
+{
+    return enterpriseProjectName_;
+}
+
+void ListEpsQuotasRequest::setEnterpriseProjectName(const std::string& value)
+{
+    enterpriseProjectName_ = value;
+    enterpriseProjectNameIsSet_ = true;
+}
+
+bool ListEpsQuotasRequest::enterpriseProjectNameIsSet() const
+{
+    return enterpriseProjectNameIsSet_;
+}
+
+void ListEpsQuotasRequest::unsetenterpriseProjectName()
+{
+    enterpriseProjectNameIsSet_ = false;
 }
 
 }

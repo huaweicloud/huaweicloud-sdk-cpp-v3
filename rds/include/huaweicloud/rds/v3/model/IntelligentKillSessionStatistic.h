@@ -52,10 +52,10 @@ public:
     /// **参数解释**：  随机选取符合sql限流关键字的用户某条sql样例。  **约束限制**：  不涉及。
     /// </summary>
 
-    std::string getRawSql() const;
-    bool rawSqlIsSet() const;
-    void unsetrawSql();
-    void setRawSql(const std::string& value);
+    std::string getRawSqlText() const;
+    bool rawSqlTextIsSet() const;
+    void unsetrawSqlText();
+    void setRawSqlText(const std::string& value);
 
     /// <summary>
     /// **参数解释**：  符合该统计维度的线程id。  **约束限制**：  不涉及。
@@ -133,8 +133,8 @@ public:
 protected:
     std::string keyword_;
     bool keywordIsSet_;
-    std::string rawSql_;
-    bool rawSqlIsSet_;
+    std::string rawSqlText_;
+    bool rawSqlTextIsSet_;
     std::vector<int64_t> ids_;
     bool idsIsSet_;
     int32_t count_;

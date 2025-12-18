@@ -13,9 +13,14 @@
 #include <huaweicloud/cce/v5/model/DeleteImageCacheResponse.h>
 #include <huaweicloud/cce/v5/model/ListImageCachesRequest.h>
 #include <huaweicloud/cce/v5/model/ListImageCachesResponse.h>
+#include <huaweicloud/cce/v5/model/ListPackageProductsRequest.h>
+#include <huaweicloud/cce/v5/model/ListPackageProductsResponse.h>
 #include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/cce/v5/model/ShowImageCacheRequest.h>
 #include <huaweicloud/cce/v5/model/ShowImageCacheResponse.h>
+#include <huaweicloud/cce/v5/model/SubscribePackageProductsRequest.h>
+#include <huaweicloud/cce/v5/model/SubscribePackageProductsRequestBody.h>
+#include <huaweicloud/cce/v5/model/SubscribePackageProductsResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -66,6 +71,14 @@ public:
     std::shared_ptr<ListImageCachesResponse> listImageCaches(
         ListImageCachesRequest &request
     );
+    // 查询套餐包列表
+    //
+    // 查询套餐包列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPackageProductsResponse> listPackageProducts(
+        ListPackageProductsRequest &request
+    );
     // 查询镜像缓存详情
     //
     // 查询镜像缓存详情
@@ -73,6 +86,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowImageCacheResponse> showImageCache(
         ShowImageCacheRequest &request
+    );
+    // 订购套餐包
+    //
+    // 订购套餐包
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SubscribePackageProductsResponse> subscribePackageProducts(
+        SubscribePackageProductsRequest &request
     );
 
 

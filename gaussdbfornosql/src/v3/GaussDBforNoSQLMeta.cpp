@@ -1270,6 +1270,9 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowIpNumRequirement() {
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowModifyHistory() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ParameterName")
+                  .withJsonTag("parameter_name")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
@@ -1512,6 +1515,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateInstanceConfiguration(
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateInstanceConfigurations() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateInstanceLb() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

@@ -14,9 +14,11 @@ ShowModifyHistoryRequest::ShowModifyHistoryRequest()
 {
     instanceId_ = "";
     instanceIdIsSet_ = false;
-    offset_ = 0;
+    parameterName_ = "";
+    parameterNameIsSet_ = false;
+    offset_ = "";
     offsetIsSet_ = false;
-    limit_ = 0;
+    limit_ = "";
     limitIsSet_ = false;
 }
 
@@ -32,6 +34,9 @@ web::json::value ShowModifyHistoryRequest::toJson() const
 
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
+    }
+    if(parameterNameIsSet_) {
+        val[utility::conversions::to_string_t("parameter_name")] = ModelBase::toJson(parameterName_);
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
@@ -55,11 +60,20 @@ bool ShowModifyHistoryRequest::fromJson(const web::json::value& val)
             setInstanceId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("parameter_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("parameter_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setParameterName(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOffset(refVal);
         }
@@ -68,7 +82,7 @@ bool ShowModifyHistoryRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
         }
@@ -98,12 +112,33 @@ void ShowModifyHistoryRequest::unsetinstanceId()
     instanceIdIsSet_ = false;
 }
 
-int32_t ShowModifyHistoryRequest::getOffset() const
+std::string ShowModifyHistoryRequest::getParameterName() const
+{
+    return parameterName_;
+}
+
+void ShowModifyHistoryRequest::setParameterName(const std::string& value)
+{
+    parameterName_ = value;
+    parameterNameIsSet_ = true;
+}
+
+bool ShowModifyHistoryRequest::parameterNameIsSet() const
+{
+    return parameterNameIsSet_;
+}
+
+void ShowModifyHistoryRequest::unsetparameterName()
+{
+    parameterNameIsSet_ = false;
+}
+
+std::string ShowModifyHistoryRequest::getOffset() const
 {
     return offset_;
 }
 
-void ShowModifyHistoryRequest::setOffset(int32_t value)
+void ShowModifyHistoryRequest::setOffset(const std::string& value)
 {
     offset_ = value;
     offsetIsSet_ = true;
@@ -119,12 +154,12 @@ void ShowModifyHistoryRequest::unsetoffset()
     offsetIsSet_ = false;
 }
 
-int32_t ShowModifyHistoryRequest::getLimit() const
+std::string ShowModifyHistoryRequest::getLimit() const
 {
     return limit_;
 }
 
-void ShowModifyHistoryRequest::setLimit(int32_t value)
+void ShowModifyHistoryRequest::setLimit(const std::string& value)
 {
     limit_ = value;
     limitIsSet_ = true;

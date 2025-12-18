@@ -18,6 +18,7 @@
 #include <vector>
 #include <huaweicloud/cce/v3/model/ContainerNetwork.h>
 #include <huaweicloud/cce/v3/model/ClusterExtendParam.h>
+#include <huaweicloud/cce/v3/model/PublicAccess.h>
 #include <huaweicloud/cce/v3/model/EncryptionConfig.h>
 #include <huaweicloud/cce/v3/model/ResourceTag.h>
 #include <huaweicloud/cce/v3/model/EniNetwork.h>
@@ -193,6 +194,15 @@ public:
     bool authenticationIsSet() const;
     void unsetauthentication();
     void setAuthentication(const Authentication& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    PublicAccess getPublicAccess() const;
+    bool publicAccessIsSet() const;
+    void unsetpublicAccess();
+    void setPublicAccess(const PublicAccess& value);
 
     /// <summary>
     /// 集群的计费方式。 - 0: 按需计费 [- 1: 包周期](tag:hws,hws_hk)  默认为“按需计费”。 
@@ -372,6 +382,8 @@ protected:
     bool serviceNetworkIsSet_;
     Authentication authentication_;
     bool authenticationIsSet_;
+    PublicAccess publicAccess_;
+    bool publicAccessIsSet_;
     int32_t billingMode_;
     bool billingModeIsSet_;
     std::vector<MasterSpec> masters_;

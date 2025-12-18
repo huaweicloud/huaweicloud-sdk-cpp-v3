@@ -368,6 +368,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceConfigurationsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceConfigurationsRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceConfigurationsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceLBRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceLbRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceLbResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceNameRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceNameRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceNameResponse.h>
@@ -1336,9 +1339,9 @@ public:
     std::shared_ptr<ShowIpNumRequirementResponse> showIpNumRequirement(
         ShowIpNumRequirementRequest &request
     );
-    // 查询实例参数的修改历史
+    // 查询参数组修改历史。
     //
-    // 查询实例参数的修改历史
+    // 查询指定实例的参数组修改历史记录，支持分页查询，支持参数搜索。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowModifyHistoryResponse> showModifyHistory(
@@ -1567,6 +1570,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceConfigurationsResponse> updateInstanceConfigurations(
         UpdateInstanceConfigurationsRequest &request
+    );
+    // 修改负载均衡地址
+    //
+    // 修改负载均衡地址。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstanceLbResponse> updateInstanceLb(
+        UpdateInstanceLbRequest &request
     );
     // 修改实例名称
     //

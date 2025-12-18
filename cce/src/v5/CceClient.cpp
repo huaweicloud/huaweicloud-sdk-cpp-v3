@@ -136,6 +136,38 @@ std::shared_ptr<ListImageCachesResponse> CceClient::listImageCaches(ListImageCac
 
     return localVarResult;
 }
+std::shared_ptr<ListPackageProductsResponse> CceClient::listPackageProducts(ListPackageProductsRequest &request)
+{
+    std::string localVarPath = "/v5/package-products";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.localeIsSet()) {
+        localVarQueryParams["locale"] = parameterToString(request.getLocale());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForListPackageProducts());
+
+    std::shared_ptr<ListPackageProductsResponse> localVarResult = std::make_shared<ListPackageProductsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowImageCacheResponse> CceClient::showImageCache(ShowImageCacheRequest &request)
 {
     std::string localVarPath = "/v5/imagecaches/{image_cache_id}";
@@ -163,6 +195,47 @@ std::shared_ptr<ShowImageCacheResponse> CceClient::showImageCache(ShowImageCache
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<SubscribePackageProductsResponse> CceClient::subscribePackageProducts(SubscribePackageProductsRequest &request)
+{
+    std::string localVarPath = "/v5/package-products/subscribe";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForSubscribePackageProducts());
+
+    std::shared_ptr<SubscribePackageProductsResponse> localVarResult = std::make_shared<SubscribePackageProductsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

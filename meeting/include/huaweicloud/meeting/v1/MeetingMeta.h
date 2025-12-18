@@ -1,0 +1,222 @@
+#ifndef HUAWEICLOUD_SDK_MEETING_V1_MeetingMeta_H_
+#define HUAWEICLOUD_SDK_MEETING_V1_MeetingMeta_H_
+
+#include <huaweicloud/core/http/HttpRequestDef.h>
+#include <huaweicloud/meeting/v1/MeetingExport.h>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Meeting {
+namespace V1 {
+
+using namespace HuaweiCloud::Sdk::Core::Http;
+
+class HUAWEICLOUD_MEETING_V1_EXPORT  MeetingMeta {
+public:
+    static HttpRequestDef genRequestDefForAddAppId();
+    static HttpRequestDef genRequestDefForAddCorp();
+    static HttpRequestDef genRequestDefForAddCorpAdmin();
+    static HttpRequestDef genRequestDefForAddDepartment();
+    static HttpRequestDef genRequestDefForAddDevice();
+    static HttpRequestDef genRequestDefForAddMaterial();
+    static HttpRequestDef genRequestDefForAddProgram();
+    static HttpRequestDef genRequestDefForAddPublication();
+    static HttpRequestDef genRequestDefForAddResource();
+    static HttpRequestDef genRequestDefForAddToPersonalSpace();
+    static HttpRequestDef genRequestDefForAddUser();
+    static HttpRequestDef genRequestDefForAllowAudienceJoin();
+    static HttpRequestDef genRequestDefForAllowClientRecord();
+    static HttpRequestDef genRequestDefForAllowGuestUnmute();
+    static HttpRequestDef genRequestDefForAllowWaitingParticipant();
+    static HttpRequestDef genRequestDefForAssociateVmr();
+    static HttpRequestDef genRequestDefForBatchDeleteCorpAdmins();
+    static HttpRequestDef genRequestDefForBatchDeleteDevices();
+    static HttpRequestDef genRequestDefForBatchDeleteMaterials();
+    static HttpRequestDef genRequestDefForBatchDeletePrograms();
+    static HttpRequestDef genRequestDefForBatchDeletePublications();
+    static HttpRequestDef genRequestDefForBatchDeleteUsers();
+    static HttpRequestDef genRequestDefForBatchHand();
+    static HttpRequestDef genRequestDefForBatchMoveToWaitingRoom();
+    static HttpRequestDef genRequestDefForBatchSearchAppId();
+    static HttpRequestDef genRequestDefForBatchShowUserDetails();
+    static HttpRequestDef genRequestDefForBatchUpdateDevicesStatus();
+    static HttpRequestDef genRequestDefForBatchUpdateUserStatus();
+    static HttpRequestDef genRequestDefForBroadcastParticipant();
+    static HttpRequestDef genRequestDefForCancelBroadcast();
+    static HttpRequestDef genRequestDefForCancelMeeting();
+    static HttpRequestDef genRequestDefForCancelRecurringMeeting();
+    static HttpRequestDef genRequestDefForCancelRecurringSubMeeting();
+    static HttpRequestDef genRequestDefForCheckCallNumberInConf();
+    static HttpRequestDef genRequestDefForCheckSlideVerifyCode();
+    static HttpRequestDef genRequestDefForCheckToken();
+    static HttpRequestDef genRequestDefForCheckVeriCodeForUpdateUserInfo();
+    static HttpRequestDef genRequestDefForCheckVerifyCode();
+    static HttpRequestDef genRequestDefForCreateAnonymousAuthRandom();
+    static HttpRequestDef genRequestDefForCreateAuthRandom();
+    static HttpRequestDef genRequestDefForCreateConfToken();
+    static HttpRequestDef genRequestDefForCreateMeeting();
+    static HttpRequestDef genRequestDefForCreatePortalRefNonce();
+    static HttpRequestDef genRequestDefForCreateRecurringMeeting();
+    static HttpRequestDef genRequestDefForCreateVisionActiveCode();
+    static HttpRequestDef genRequestDefForCreateWebSocketToken();
+    static HttpRequestDef genRequestDefForCreateWebinar();
+    static HttpRequestDef genRequestDefForDeleteAppId();
+    static HttpRequestDef genRequestDefForDeleteAttendees();
+    static HttpRequestDef genRequestDefForDeleteCorp();
+    static HttpRequestDef genRequestDefForDeleteCorpVmr();
+    static HttpRequestDef genRequestDefForDeleteDepartment();
+    static HttpRequestDef genRequestDefForDeleteLayout();
+    static HttpRequestDef genRequestDefForDeleteRecordings();
+    static HttpRequestDef genRequestDefForDeleteResource();
+    static HttpRequestDef genRequestDefForDeleteToken();
+    static HttpRequestDef genRequestDefForDeleteVisionActiveCode();
+    static HttpRequestDef genRequestDefForDeleteWebHookConfig();
+    static HttpRequestDef genRequestDefForDeleteWebinar();
+    static HttpRequestDef genRequestDefForDisassociateVmr();
+    static HttpRequestDef genRequestDefForHand();
+    static HttpRequestDef genRequestDefForHangUp();
+    static HttpRequestDef genRequestDefForInviteOperateVideo();
+    static HttpRequestDef genRequestDefForInviteParticipant();
+    static HttpRequestDef genRequestDefForInviteShare();
+    static HttpRequestDef genRequestDefForInviteUser();
+    static HttpRequestDef genRequestDefForInviteWithPwd();
+    static HttpRequestDef genRequestDefForListHistoryWebinars();
+    static HttpRequestDef genRequestDefForListNetworkQuality();
+    static HttpRequestDef genRequestDefForListOngoingWebinars();
+    static HttpRequestDef genRequestDefForListOnlineConfAttendee();
+    static HttpRequestDef genRequestDefForListUpComingWebinars();
+    static HttpRequestDef genRequestDefForLive();
+    static HttpRequestDef genRequestDefForLockMeeting();
+    static HttpRequestDef genRequestDefForLockView();
+    static HttpRequestDef genRequestDefForMoveToWaitingRoom();
+    static HttpRequestDef genRequestDefForMuteMeeting();
+    static HttpRequestDef genRequestDefForMuteParticipant();
+    static HttpRequestDef genRequestDefForPauseConference();
+    static HttpRequestDef genRequestDefForProlongMeeting();
+    static HttpRequestDef genRequestDefForRecord();
+    static HttpRequestDef genRequestDefForRenameParticipant();
+    static HttpRequestDef genRequestDefForResetActivecode();
+    static HttpRequestDef genRequestDefForResetAppKey();
+    static HttpRequestDef genRequestDefForResetPwd();
+    static HttpRequestDef genRequestDefForResetPwdByAdmin();
+    static HttpRequestDef genRequestDefForResetVisionActiveCode();
+    static HttpRequestDef genRequestDefForResumeSimultaneousInterpretation();
+    static HttpRequestDef genRequestDefForRollcallParticipant();
+    static HttpRequestDef genRequestDefForSaveLayout();
+    static HttpRequestDef genRequestDefForSearchAttendanceRecordsOfHisMeeting();
+    static HttpRequestDef genRequestDefForSearchCorp();
+    static HttpRequestDef genRequestDefForSearchCorpAdmins();
+    static HttpRequestDef genRequestDefForSearchCorpDir();
+    static HttpRequestDef genRequestDefForSearchCorpExternalDir();
+    static HttpRequestDef genRequestDefForSearchCorpResources();
+    static HttpRequestDef genRequestDefForSearchCorpVmr();
+    static HttpRequestDef genRequestDefForSearchCtlRecordsOfHisMeeting();
+    static HttpRequestDef genRequestDefForSearchDepartmentByName();
+    static HttpRequestDef genRequestDefForSearchDevices();
+    static HttpRequestDef genRequestDefForSearchHisMeetings();
+    static HttpRequestDef genRequestDefForSearchMaterials();
+    static HttpRequestDef genRequestDefForSearchMeetingFileList();
+    static HttpRequestDef genRequestDefForSearchMeetings();
+    static HttpRequestDef genRequestDefForSearchMemberVmr();
+    static HttpRequestDef genRequestDefForSearchOnlineMeetings();
+    static HttpRequestDef genRequestDefForSearchPrograms();
+    static HttpRequestDef genRequestDefForSearchPublications();
+    static HttpRequestDef genRequestDefForSearchRecordings();
+    static HttpRequestDef genRequestDefForSearchResource();
+    static HttpRequestDef genRequestDefForSearchResourceOpRecord();
+    static HttpRequestDef genRequestDefForSearchUsers();
+    static HttpRequestDef genRequestDefForSearchVisionActiveCode();
+    static HttpRequestDef genRequestDefForSendSlideVerifyCode();
+    static HttpRequestDef genRequestDefForSendVeriCodeForChangePwd();
+    static HttpRequestDef genRequestDefForSendVeriCodeForUpdateUserInfo();
+    static HttpRequestDef genRequestDefForSetAttendeeLanChannel();
+    static HttpRequestDef genRequestDefForSetCohost();
+    static HttpRequestDef genRequestDefForSetCustomMultiPicture();
+    static HttpRequestDef genRequestDefForSetHostView();
+    static HttpRequestDef genRequestDefForSetInterpreterGroup();
+    static HttpRequestDef genRequestDefForSetMmrLive();
+    static HttpRequestDef genRequestDefForSetMmrRecord();
+    static HttpRequestDef genRequestDefForSetMultiPicture();
+    static HttpRequestDef genRequestDefForSetParticipantView();
+    static HttpRequestDef genRequestDefForSetProfileImage();
+    static HttpRequestDef genRequestDefForSetRole();
+    static HttpRequestDef genRequestDefForSetSsoConfig();
+    static HttpRequestDef genRequestDefForSetUserProfileImage();
+    static HttpRequestDef genRequestDefForSetWebHookConfig();
+    static HttpRequestDef genRequestDefForShowConfOrg();
+    static HttpRequestDef genRequestDefForShowCorp();
+    static HttpRequestDef genRequestDefForShowCorpAdmin();
+    static HttpRequestDef genRequestDefForShowCorpBasicInfo();
+    static HttpRequestDef genRequestDefForShowCorpResource();
+    static HttpRequestDef genRequestDefForShowDepartment();
+    static HttpRequestDef genRequestDefForShowDeptAndChildDept();
+    static HttpRequestDef genRequestDefForShowDeviceDetail();
+    static HttpRequestDef genRequestDefForShowDeviceStatus();
+    static HttpRequestDef genRequestDefForShowDeviceTypes();
+    static HttpRequestDef genRequestDefForShowHisMeetingDetail();
+    static HttpRequestDef genRequestDefForShowLayout();
+    static HttpRequestDef genRequestDefForShowMeetingDetail();
+    static HttpRequestDef genRequestDefForShowMeetingFile();
+    static HttpRequestDef genRequestDefForShowMeetingFileList();
+    static HttpRequestDef genRequestDefForShowMgmtSiteStatus();
+    static HttpRequestDef genRequestDefForShowMyInfo();
+    static HttpRequestDef genRequestDefForShowOnlineMeetingDetail();
+    static HttpRequestDef genRequestDefForShowOrgRes();
+    static HttpRequestDef genRequestDefForShowProgram();
+    static HttpRequestDef genRequestDefForShowPublication();
+    static HttpRequestDef genRequestDefForShowRealTimeInfoOfMeeting();
+    static HttpRequestDef genRequestDefForShowRecordInfo();
+    static HttpRequestDef genRequestDefForShowRecordingDetail();
+    static HttpRequestDef genRequestDefForShowRecordingFileDownloadUrls();
+    static HttpRequestDef genRequestDefForShowRegionInfoOfMeeting();
+    static HttpRequestDef genRequestDefForShowRoomSetting();
+    static HttpRequestDef genRequestDefForShowSpRes();
+    static HttpRequestDef genRequestDefForShowSpResource();
+    static HttpRequestDef genRequestDefForShowSsoConfig();
+    static HttpRequestDef genRequestDefForShowUserDetail();
+    static HttpRequestDef genRequestDefForShowWebHookConfig();
+    static HttpRequestDef genRequestDefForShowWebinar();
+    static HttpRequestDef genRequestDefForStartMeeting();
+    static HttpRequestDef genRequestDefForStopMeeting();
+    static HttpRequestDef genRequestDefForSwitchMode();
+    static HttpRequestDef genRequestDefForUpdateAppId();
+    static HttpRequestDef genRequestDefForUpdateContact();
+    static HttpRequestDef genRequestDefForUpdateCorp();
+    static HttpRequestDef genRequestDefForUpdateCorpBasicInfo();
+    static HttpRequestDef genRequestDefForUpdateDepartment();
+    static HttpRequestDef genRequestDefForUpdateDevice();
+    static HttpRequestDef genRequestDefForUpdateMaterial();
+    static HttpRequestDef genRequestDefForUpdateMeeting();
+    static HttpRequestDef genRequestDefForUpdateMemberVmr();
+    static HttpRequestDef genRequestDefForUpdateMyInfo();
+    static HttpRequestDef genRequestDefForUpdateProgram();
+    static HttpRequestDef genRequestDefForUpdatePublication();
+    static HttpRequestDef genRequestDefForUpdatePwd();
+    static HttpRequestDef genRequestDefForUpdateRecurringMeeting();
+    static HttpRequestDef genRequestDefForUpdateRecurringSubMeeting();
+    static HttpRequestDef genRequestDefForUpdateResource();
+    static HttpRequestDef genRequestDefForUpdateRoomSetting();
+    static HttpRequestDef genRequestDefForUpdateStartedConfConfig();
+    static HttpRequestDef genRequestDefForUpdateToken();
+    static HttpRequestDef genRequestDefForUpdateUser();
+    static HttpRequestDef genRequestDefForUpdateWebHookConfigStatus();
+    static HttpRequestDef genRequestDefForUpdateWebinar();
+    static HttpRequestDef genRequestDefForUploadFile();
+    static HttpRequestDef genRequestDefForSearchQosHistoryMeetings();
+    static HttpRequestDef genRequestDefForSearchQosOnlineMeetings();
+    static HttpRequestDef genRequestDefForSearchQosParticipantDetail();
+    static HttpRequestDef genRequestDefForSearchQosParticipants();
+    static HttpRequestDef genRequestDefForSetQosThreshold();
+    static HttpRequestDef genRequestDefForShowQosThreshold();
+    static HttpRequestDef genRequestDefForSearchStatisticConferenceInfo();
+    static HttpRequestDef genRequestDefForSearchStatisticConferenceParticipant();
+    static HttpRequestDef genRequestDefForSearchStatisticResourceInfo();
+    static HttpRequestDef genRequestDefForSearchStatisticUserInfo();
+};
+
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_MEETING_V1_MeetingMeta_H_

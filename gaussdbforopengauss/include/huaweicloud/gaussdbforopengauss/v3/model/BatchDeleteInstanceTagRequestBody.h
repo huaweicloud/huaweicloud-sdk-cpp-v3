@@ -40,7 +40,7 @@ public:
     /// BatchDeleteInstanceTagRequestBody members
 
     /// <summary>
-    /// 需要删除的标签列表
+    /// **参数解释**: 需要删除的标签列表。
     /// </summary>
 
     std::vector<std::string>& getKeys();

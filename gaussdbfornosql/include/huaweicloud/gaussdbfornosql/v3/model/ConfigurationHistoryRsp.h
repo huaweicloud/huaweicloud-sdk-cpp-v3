@@ -39,7 +39,7 @@ public:
     /// ConfigurationHistoryRsp members
 
     /// <summary>
-    /// 参数名称。
+    /// **参数解释：** 参数名称。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getParameterName() const;
@@ -48,7 +48,7 @@ public:
     void setParameterName(const std::string& value);
 
     /// <summary>
-    /// 参数旧值
+    /// **参数解释：** 参数旧值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getOldValue() const;
@@ -57,7 +57,7 @@ public:
     void setOldValue(const std::string& value);
 
     /// <summary>
-    /// 参数新值
+    /// **参数解释：** 参数新值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getNewValue() const;
@@ -66,7 +66,7 @@ public:
     void setNewValue(const std::string& value);
 
     /// <summary>
-    /// 更新结果
+    /// **参数解释：** 更新结果。 **约束限制：** 不涉及。 **取值范围：** - SUCCESS：成功。 - FAILED：失败。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getUpdateResult() const;
@@ -75,16 +75,16 @@ public:
     void setUpdateResult(const std::string& value);
 
     /// <summary>
-    /// - true:已生效 - false:未生效
+    /// **参数解释：** 是否生效。 **约束限制：** 不涉及。 **取值范围：** - true:已生效。 - false:未生效。 **默认取值：** 不涉及。
     /// </summary>
 
-    bool isApplied() const;
+    std::string getApplied() const;
     bool appliedIsSet() const;
     void unsetapplied();
-    void setApplied(bool value);
+    void setApplied(const std::string& value);
 
     /// <summary>
-    /// 更新时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。  [其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。](tag:hc)  [其中，T指某个时间的开始；Z指时区偏移量。](tag:hk)
+    /// **参数解释：** 更新时间。 **约束限制：** 不涉及。 **取值范围：** 格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getUpdatedAt() const;
@@ -93,7 +93,7 @@ public:
     void setUpdatedAt(const std::string& value);
 
     /// <summary>
-    /// 生效时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。  [其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。](tag:hc)  [其中，T指某个时间的开始；Z指时区偏移量。](tag:hk)
+    /// **参数解释：** 生效时间。 **约束限制：** 不涉及。 **取值范围：** 格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getAppliedAt() const;
@@ -111,7 +111,7 @@ protected:
     bool newValueIsSet_;
     std::string updateResult_;
     bool updateResultIsSet_;
-    bool applied_;
+    std::string applied_;
     bool appliedIsSet_;
     std::string updatedAt_;
     bool updatedAtIsSet_;

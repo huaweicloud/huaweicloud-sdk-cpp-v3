@@ -1,0 +1,672 @@
+
+
+#include "huaweicloud/meeting/v1/model/UpdateTokenResponse.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Meeting {
+namespace V1 {
+namespace Model {
+
+
+
+
+UpdateTokenResponse::UpdateTokenResponse()
+{
+    accessToken_ = "";
+    accessTokenIsSet_ = false;
+    tokenIp_ = "";
+    tokenIpIsSet_ = false;
+    validPeriod_ = 0L;
+    validPeriodIsSet_ = false;
+    expireTime_ = 0L;
+    expireTimeIsSet_ = false;
+    createTime_ = 0L;
+    createTimeIsSet_ = false;
+    userIsSet_ = false;
+    clientType_ = 0;
+    clientTypeIsSet_ = false;
+    forceLoginInd_ = 0;
+    forceLoginIndIsSet_ = false;
+    firstLogin_ = false;
+    firstLoginIsSet_ = false;
+    pwdExpired_ = false;
+    pwdExpiredIsSet_ = false;
+    daysPwdAvailable_ = 0;
+    daysPwdAvailableIsSet_ = false;
+    proxyTokenIsSet_ = false;
+    delayDelete_ = false;
+    delayDeleteIsSet_ = false;
+    tokenType_ = 0;
+    tokenTypeIsSet_ = false;
+    refreshToken_ = "";
+    refreshTokenIsSet_ = false;
+    refreshValidPeriod_ = 0L;
+    refreshValidPeriodIsSet_ = false;
+    refreshExpireTime_ = 0L;
+    refreshExpireTimeIsSet_ = false;
+    refreshCreateTime_ = 0L;
+    refreshCreateTimeIsSet_ = false;
+}
+
+UpdateTokenResponse::~UpdateTokenResponse() = default;
+
+void UpdateTokenResponse::validate()
+{
+}
+
+web::json::value UpdateTokenResponse::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(accessTokenIsSet_) {
+        val[utility::conversions::to_string_t("accessToken")] = ModelBase::toJson(accessToken_);
+    }
+    if(tokenIpIsSet_) {
+        val[utility::conversions::to_string_t("tokenIp")] = ModelBase::toJson(tokenIp_);
+    }
+    if(validPeriodIsSet_) {
+        val[utility::conversions::to_string_t("validPeriod")] = ModelBase::toJson(validPeriod_);
+    }
+    if(expireTimeIsSet_) {
+        val[utility::conversions::to_string_t("expireTime")] = ModelBase::toJson(expireTime_);
+    }
+    if(createTimeIsSet_) {
+        val[utility::conversions::to_string_t("createTime")] = ModelBase::toJson(createTime_);
+    }
+    if(userIsSet_) {
+        val[utility::conversions::to_string_t("user")] = ModelBase::toJson(user_);
+    }
+    if(clientTypeIsSet_) {
+        val[utility::conversions::to_string_t("clientType")] = ModelBase::toJson(clientType_);
+    }
+    if(forceLoginIndIsSet_) {
+        val[utility::conversions::to_string_t("forceLoginInd")] = ModelBase::toJson(forceLoginInd_);
+    }
+    if(firstLoginIsSet_) {
+        val[utility::conversions::to_string_t("firstLogin")] = ModelBase::toJson(firstLogin_);
+    }
+    if(pwdExpiredIsSet_) {
+        val[utility::conversions::to_string_t("pwdExpired")] = ModelBase::toJson(pwdExpired_);
+    }
+    if(daysPwdAvailableIsSet_) {
+        val[utility::conversions::to_string_t("daysPwdAvailable")] = ModelBase::toJson(daysPwdAvailable_);
+    }
+    if(proxyTokenIsSet_) {
+        val[utility::conversions::to_string_t("proxyToken")] = ModelBase::toJson(proxyToken_);
+    }
+    if(delayDeleteIsSet_) {
+        val[utility::conversions::to_string_t("delayDelete")] = ModelBase::toJson(delayDelete_);
+    }
+    if(tokenTypeIsSet_) {
+        val[utility::conversions::to_string_t("tokenType")] = ModelBase::toJson(tokenType_);
+    }
+    if(refreshTokenIsSet_) {
+        val[utility::conversions::to_string_t("refreshToken")] = ModelBase::toJson(refreshToken_);
+    }
+    if(refreshValidPeriodIsSet_) {
+        val[utility::conversions::to_string_t("refreshValidPeriod")] = ModelBase::toJson(refreshValidPeriod_);
+    }
+    if(refreshExpireTimeIsSet_) {
+        val[utility::conversions::to_string_t("refreshExpireTime")] = ModelBase::toJson(refreshExpireTime_);
+    }
+    if(refreshCreateTimeIsSet_) {
+        val[utility::conversions::to_string_t("refreshCreateTime")] = ModelBase::toJson(refreshCreateTime_);
+    }
+
+    return val;
+}
+bool UpdateTokenResponse::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("accessToken"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("accessToken"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAccessToken(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tokenIp"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tokenIp"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTokenIp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("validPeriod"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("validPeriod"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setValidPeriod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("expireTime"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expireTime"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpireTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("createTime"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("createTime"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("user"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user"));
+        if(!fieldValue.is_null())
+        {
+            UserInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUser(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("clientType"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("clientType"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClientType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("forceLoginInd"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("forceLoginInd"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setForceLoginInd(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("firstLogin"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("firstLogin"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFirstLogin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pwdExpired"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pwdExpired"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPwdExpired(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("daysPwdAvailable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("daysPwdAvailable"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDaysPwdAvailable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxyToken"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxyToken"));
+        if(!fieldValue.is_null())
+        {
+            ProxyTokenDTO refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyToken(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delayDelete"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delayDelete"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDelayDelete(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tokenType"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tokenType"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTokenType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("refreshToken"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("refreshToken"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRefreshToken(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("refreshValidPeriod"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("refreshValidPeriod"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRefreshValidPeriod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("refreshExpireTime"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("refreshExpireTime"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRefreshExpireTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("refreshCreateTime"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("refreshCreateTime"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRefreshCreateTime(refVal);
+        }
+    }
+    return ok;
+}
+
+
+std::string UpdateTokenResponse::getAccessToken() const
+{
+    return accessToken_;
+}
+
+void UpdateTokenResponse::setAccessToken(const std::string& value)
+{
+    accessToken_ = value;
+    accessTokenIsSet_ = true;
+}
+
+bool UpdateTokenResponse::accessTokenIsSet() const
+{
+    return accessTokenIsSet_;
+}
+
+void UpdateTokenResponse::unsetaccessToken()
+{
+    accessTokenIsSet_ = false;
+}
+
+std::string UpdateTokenResponse::getTokenIp() const
+{
+    return tokenIp_;
+}
+
+void UpdateTokenResponse::setTokenIp(const std::string& value)
+{
+    tokenIp_ = value;
+    tokenIpIsSet_ = true;
+}
+
+bool UpdateTokenResponse::tokenIpIsSet() const
+{
+    return tokenIpIsSet_;
+}
+
+void UpdateTokenResponse::unsettokenIp()
+{
+    tokenIpIsSet_ = false;
+}
+
+int64_t UpdateTokenResponse::getValidPeriod() const
+{
+    return validPeriod_;
+}
+
+void UpdateTokenResponse::setValidPeriod(int64_t value)
+{
+    validPeriod_ = value;
+    validPeriodIsSet_ = true;
+}
+
+bool UpdateTokenResponse::validPeriodIsSet() const
+{
+    return validPeriodIsSet_;
+}
+
+void UpdateTokenResponse::unsetvalidPeriod()
+{
+    validPeriodIsSet_ = false;
+}
+
+int64_t UpdateTokenResponse::getExpireTime() const
+{
+    return expireTime_;
+}
+
+void UpdateTokenResponse::setExpireTime(int64_t value)
+{
+    expireTime_ = value;
+    expireTimeIsSet_ = true;
+}
+
+bool UpdateTokenResponse::expireTimeIsSet() const
+{
+    return expireTimeIsSet_;
+}
+
+void UpdateTokenResponse::unsetexpireTime()
+{
+    expireTimeIsSet_ = false;
+}
+
+int64_t UpdateTokenResponse::getCreateTime() const
+{
+    return createTime_;
+}
+
+void UpdateTokenResponse::setCreateTime(int64_t value)
+{
+    createTime_ = value;
+    createTimeIsSet_ = true;
+}
+
+bool UpdateTokenResponse::createTimeIsSet() const
+{
+    return createTimeIsSet_;
+}
+
+void UpdateTokenResponse::unsetcreateTime()
+{
+    createTimeIsSet_ = false;
+}
+
+UserInfo UpdateTokenResponse::getUser() const
+{
+    return user_;
+}
+
+void UpdateTokenResponse::setUser(const UserInfo& value)
+{
+    user_ = value;
+    userIsSet_ = true;
+}
+
+bool UpdateTokenResponse::userIsSet() const
+{
+    return userIsSet_;
+}
+
+void UpdateTokenResponse::unsetuser()
+{
+    userIsSet_ = false;
+}
+
+int32_t UpdateTokenResponse::getClientType() const
+{
+    return clientType_;
+}
+
+void UpdateTokenResponse::setClientType(int32_t value)
+{
+    clientType_ = value;
+    clientTypeIsSet_ = true;
+}
+
+bool UpdateTokenResponse::clientTypeIsSet() const
+{
+    return clientTypeIsSet_;
+}
+
+void UpdateTokenResponse::unsetclientType()
+{
+    clientTypeIsSet_ = false;
+}
+
+int32_t UpdateTokenResponse::getForceLoginInd() const
+{
+    return forceLoginInd_;
+}
+
+void UpdateTokenResponse::setForceLoginInd(int32_t value)
+{
+    forceLoginInd_ = value;
+    forceLoginIndIsSet_ = true;
+}
+
+bool UpdateTokenResponse::forceLoginIndIsSet() const
+{
+    return forceLoginIndIsSet_;
+}
+
+void UpdateTokenResponse::unsetforceLoginInd()
+{
+    forceLoginIndIsSet_ = false;
+}
+
+bool UpdateTokenResponse::isFirstLogin() const
+{
+    return firstLogin_;
+}
+
+void UpdateTokenResponse::setFirstLogin(bool value)
+{
+    firstLogin_ = value;
+    firstLoginIsSet_ = true;
+}
+
+bool UpdateTokenResponse::firstLoginIsSet() const
+{
+    return firstLoginIsSet_;
+}
+
+void UpdateTokenResponse::unsetfirstLogin()
+{
+    firstLoginIsSet_ = false;
+}
+
+bool UpdateTokenResponse::isPwdExpired() const
+{
+    return pwdExpired_;
+}
+
+void UpdateTokenResponse::setPwdExpired(bool value)
+{
+    pwdExpired_ = value;
+    pwdExpiredIsSet_ = true;
+}
+
+bool UpdateTokenResponse::pwdExpiredIsSet() const
+{
+    return pwdExpiredIsSet_;
+}
+
+void UpdateTokenResponse::unsetpwdExpired()
+{
+    pwdExpiredIsSet_ = false;
+}
+
+int32_t UpdateTokenResponse::getDaysPwdAvailable() const
+{
+    return daysPwdAvailable_;
+}
+
+void UpdateTokenResponse::setDaysPwdAvailable(int32_t value)
+{
+    daysPwdAvailable_ = value;
+    daysPwdAvailableIsSet_ = true;
+}
+
+bool UpdateTokenResponse::daysPwdAvailableIsSet() const
+{
+    return daysPwdAvailableIsSet_;
+}
+
+void UpdateTokenResponse::unsetdaysPwdAvailable()
+{
+    daysPwdAvailableIsSet_ = false;
+}
+
+ProxyTokenDTO UpdateTokenResponse::getProxyToken() const
+{
+    return proxyToken_;
+}
+
+void UpdateTokenResponse::setProxyToken(const ProxyTokenDTO& value)
+{
+    proxyToken_ = value;
+    proxyTokenIsSet_ = true;
+}
+
+bool UpdateTokenResponse::proxyTokenIsSet() const
+{
+    return proxyTokenIsSet_;
+}
+
+void UpdateTokenResponse::unsetproxyToken()
+{
+    proxyTokenIsSet_ = false;
+}
+
+bool UpdateTokenResponse::isDelayDelete() const
+{
+    return delayDelete_;
+}
+
+void UpdateTokenResponse::setDelayDelete(bool value)
+{
+    delayDelete_ = value;
+    delayDeleteIsSet_ = true;
+}
+
+bool UpdateTokenResponse::delayDeleteIsSet() const
+{
+    return delayDeleteIsSet_;
+}
+
+void UpdateTokenResponse::unsetdelayDelete()
+{
+    delayDeleteIsSet_ = false;
+}
+
+int32_t UpdateTokenResponse::getTokenType() const
+{
+    return tokenType_;
+}
+
+void UpdateTokenResponse::setTokenType(int32_t value)
+{
+    tokenType_ = value;
+    tokenTypeIsSet_ = true;
+}
+
+bool UpdateTokenResponse::tokenTypeIsSet() const
+{
+    return tokenTypeIsSet_;
+}
+
+void UpdateTokenResponse::unsettokenType()
+{
+    tokenTypeIsSet_ = false;
+}
+
+std::string UpdateTokenResponse::getRefreshToken() const
+{
+    return refreshToken_;
+}
+
+void UpdateTokenResponse::setRefreshToken(const std::string& value)
+{
+    refreshToken_ = value;
+    refreshTokenIsSet_ = true;
+}
+
+bool UpdateTokenResponse::refreshTokenIsSet() const
+{
+    return refreshTokenIsSet_;
+}
+
+void UpdateTokenResponse::unsetrefreshToken()
+{
+    refreshTokenIsSet_ = false;
+}
+
+int64_t UpdateTokenResponse::getRefreshValidPeriod() const
+{
+    return refreshValidPeriod_;
+}
+
+void UpdateTokenResponse::setRefreshValidPeriod(int64_t value)
+{
+    refreshValidPeriod_ = value;
+    refreshValidPeriodIsSet_ = true;
+}
+
+bool UpdateTokenResponse::refreshValidPeriodIsSet() const
+{
+    return refreshValidPeriodIsSet_;
+}
+
+void UpdateTokenResponse::unsetrefreshValidPeriod()
+{
+    refreshValidPeriodIsSet_ = false;
+}
+
+int64_t UpdateTokenResponse::getRefreshExpireTime() const
+{
+    return refreshExpireTime_;
+}
+
+void UpdateTokenResponse::setRefreshExpireTime(int64_t value)
+{
+    refreshExpireTime_ = value;
+    refreshExpireTimeIsSet_ = true;
+}
+
+bool UpdateTokenResponse::refreshExpireTimeIsSet() const
+{
+    return refreshExpireTimeIsSet_;
+}
+
+void UpdateTokenResponse::unsetrefreshExpireTime()
+{
+    refreshExpireTimeIsSet_ = false;
+}
+
+int64_t UpdateTokenResponse::getRefreshCreateTime() const
+{
+    return refreshCreateTime_;
+}
+
+void UpdateTokenResponse::setRefreshCreateTime(int64_t value)
+{
+    refreshCreateTime_ = value;
+    refreshCreateTimeIsSet_ = true;
+}
+
+bool UpdateTokenResponse::refreshCreateTimeIsSet() const
+{
+    return refreshCreateTimeIsSet_;
+}
+
+void UpdateTokenResponse::unsetrefreshCreateTime()
+{
+    refreshCreateTimeIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

@@ -30,8 +30,25 @@ HttpRequestDef CceMeta::genRequestDefForListImageCaches() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForListPackageProducts() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Locale")
+                  .withJsonTag("locale")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForShowImageCache() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForSubscribePackageProducts() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -46,10 +47,21 @@ public:
     void unsetuserDefinedStep();
     void setUserDefinedStep(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 节点升级批次作用域 **约束限制：** 不涉及 **取值范围：** \&quot;Cluster\&quot;：节点升级批次配置应用到整个集群，整个升级过程不重置升级批次 \&quot;NodePool\&quot;：节点升级批次配置应用到节点池，升级每个节点池都会重置升级批次 **默认取值：** \&quot;Cluster\&quot; 
+    /// </summary>
+
+    std::string getScope() const;
+    bool scopeIsSet() const;
+    void unsetscope();
+    void setScope(const std::string& value);
+
 
 protected:
     int32_t userDefinedStep_;
     bool userDefinedStepIsSet_;
+    std::string scope_;
+    bool scopeIsSet_;
 
 };
 

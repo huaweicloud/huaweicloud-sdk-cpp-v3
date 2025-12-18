@@ -20,6 +20,10 @@ GetBackupDownloadLinkResponseBody_files::GetBackupDownloadLinkResponseBody_files
     downloadLinkIsSet_ = false;
     linkExpiredTime_ = "";
     linkExpiredTimeIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
+    groupName_ = "";
+    groupNameIsSet_ = false;
 }
 
 GetBackupDownloadLinkResponseBody_files::~GetBackupDownloadLinkResponseBody_files() = default;
@@ -43,6 +47,12 @@ web::json::value GetBackupDownloadLinkResponseBody_files::toJson() const
     }
     if(linkExpiredTimeIsSet_) {
         val[utility::conversions::to_string_t("link_expired_time")] = ModelBase::toJson(linkExpiredTime_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
+    }
+    if(groupNameIsSet_) {
+        val[utility::conversions::to_string_t("group_name")] = ModelBase::toJson(groupName_);
     }
 
     return val;
@@ -85,6 +95,24 @@ bool GetBackupDownloadLinkResponseBody_files::fromJson(const web::json::value& v
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLinkExpiredTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupName(refVal);
         }
     }
     return ok;
@@ -173,6 +201,48 @@ bool GetBackupDownloadLinkResponseBody_files::linkExpiredTimeIsSet() const
 void GetBackupDownloadLinkResponseBody_files::unsetlinkExpiredTime()
 {
     linkExpiredTimeIsSet_ = false;
+}
+
+std::string GetBackupDownloadLinkResponseBody_files::getGroupId() const
+{
+    return groupId_;
+}
+
+void GetBackupDownloadLinkResponseBody_files::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool GetBackupDownloadLinkResponseBody_files::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void GetBackupDownloadLinkResponseBody_files::unsetgroupId()
+{
+    groupIdIsSet_ = false;
+}
+
+std::string GetBackupDownloadLinkResponseBody_files::getGroupName() const
+{
+    return groupName_;
+}
+
+void GetBackupDownloadLinkResponseBody_files::setGroupName(const std::string& value)
+{
+    groupName_ = value;
+    groupNameIsSet_ = true;
+}
+
+bool GetBackupDownloadLinkResponseBody_files::groupNameIsSet() const
+{
+    return groupNameIsSet_;
+}
+
+void GetBackupDownloadLinkResponseBody_files::unsetgroupName()
+{
+    groupNameIsSet_ = false;
 }
 
 }

@@ -201,6 +201,24 @@ public:
     void setChargingMode(int32_t value);
 
     /// <summary>
+    /// **参数解释**： 创建竞价实例时，需指定该参数的值为“spot”。 **约束限制**： 仅当billingMode&#x3D;0时此参数生效 **取值范围**： 不涉及 **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getMarketType() const;
+    bool marketTypeIsSet() const;
+    void unsetmarketType();
+    void setMarketType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 用户愿意为竞价实例每小时支付的最高价格。 **约束限制**： - 仅当billingMode&#x3D;0且marketType&#x3D;spot时，该参数设置后生效。 - 当billingMode&#x3D;0且marketType&#x3D;spot时，如果不传递spotPrice，默认使用按需购买的价格作为竞价。 - spotPrice需要小于等于按需价格并大于等于云服务器市场价格。  **取值范围**： 不涉及 **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getSpotPrice() const;
+    bool spotPriceIsSet() const;
+    void unsetspotPrice();
+    void setSpotPrice(const std::string& value);
+
+    /// <summary>
     /// 委托的名称。  委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为CCE节点提供访问云服务器的临时凭证。 作为响应参数仅在创建节点传入时返回该字段。 
     /// </summary>
 
@@ -283,6 +301,10 @@ protected:
     bool nicThresholdIsSet_;
     int32_t chargingMode_;
     bool chargingModeIsSet_;
+    std::string marketType_;
+    bool marketTypeIsSet_;
+    std::string spotPrice_;
+    bool spotPriceIsSet_;
     std::string agencyName_;
     bool agencyNameIsSet_;
     int32_t kubeReservedMem_;

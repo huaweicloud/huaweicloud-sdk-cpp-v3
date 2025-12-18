@@ -16,6 +16,8 @@ SqlserverUserForCreation::SqlserverUserForCreation()
     nameIsSet_ = false;
     password_ = "";
     passwordIsSet_ = false;
+    instanceReadonly_ = false;
+    instanceReadonlyIsSet_ = false;
 }
 
 SqlserverUserForCreation::~SqlserverUserForCreation() = default;
@@ -33,6 +35,9 @@ web::json::value SqlserverUserForCreation::toJson() const
     }
     if(passwordIsSet_) {
         val[utility::conversions::to_string_t("password")] = ModelBase::toJson(password_);
+    }
+    if(instanceReadonlyIsSet_) {
+        val[utility::conversions::to_string_t("instance_readonly")] = ModelBase::toJson(instanceReadonly_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool SqlserverUserForCreation::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPassword(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_readonly"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_readonly"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceReadonly(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool SqlserverUserForCreation::passwordIsSet() const
 void SqlserverUserForCreation::unsetpassword()
 {
     passwordIsSet_ = false;
+}
+
+bool SqlserverUserForCreation::isInstanceReadonly() const
+{
+    return instanceReadonly_;
+}
+
+void SqlserverUserForCreation::setInstanceReadonly(bool value)
+{
+    instanceReadonly_ = value;
+    instanceReadonlyIsSet_ = true;
+}
+
+bool SqlserverUserForCreation::instanceReadonlyIsSet() const
+{
+    return instanceReadonlyIsSet_;
+}
+
+void SqlserverUserForCreation::unsetinstanceReadonly()
+{
+    instanceReadonlyIsSet_ = false;
 }
 
 }

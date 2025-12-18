@@ -31,6 +31,15 @@ HttpRequestDef CceMeta::genRequestDefForAwakeCluster() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForBatchCreateAddonPrecheck() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForBatchCreateClusterTags() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -316,6 +325,11 @@ HttpRequestDef CceMeta::genRequestDefForGetClusterFlavorSpecs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForGetClusterLongAkskConfig() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForGetClusterQuota() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -327,6 +341,11 @@ HttpRequestDef CceMeta::genRequestDefForGetCustomizeTags() {
 }
 
 HttpRequestDef CceMeta::genRequestDefForGetLabels() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetLongAkskConfig() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -511,6 +530,15 @@ HttpRequestDef CceMeta::genRequestDefForLockNodepoolNodeScaleDown() {
 }
 
 HttpRequestDef CceMeta::genRequestDefForMigrateNode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForMigrateToNodePool() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -795,6 +823,24 @@ HttpRequestDef CceMeta::genRequestDefForUpdateClusterEip() {
 }
 
 HttpRequestDef CceMeta::genRequestDefForUpdateClusterLogConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForUpdateClusterLongAkskConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForUpdateLongAkskConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1185,12 +1231,25 @@ HttpRequestDef CceMeta::genRequestDefForShowAutopilotCluster() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForShowAutopilotClusterConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForShowAutopilotClusterEndpoints() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
 HttpRequestDef CceMeta::genRequestDefForShowAutopilotClusterUpgradeInfo() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForShowAutopilotFeatureGates() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -1310,6 +1369,24 @@ HttpRequestDef CceMeta::genRequestDefForUpgradeAutopilotWorkFlowUpdate() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForDeleteAutopilotJob() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForGetAutopilotOneJob() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForListAutopilotJobs() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
     return reqDefBuilder;
 }
 

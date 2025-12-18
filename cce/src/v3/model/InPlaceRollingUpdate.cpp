@@ -14,6 +14,8 @@ InPlaceRollingUpdate::InPlaceRollingUpdate()
 {
     userDefinedStep_ = 0;
     userDefinedStepIsSet_ = false;
+    scope_ = "";
+    scopeIsSet_ = false;
 }
 
 InPlaceRollingUpdate::~InPlaceRollingUpdate() = default;
@@ -29,6 +31,9 @@ web::json::value InPlaceRollingUpdate::toJson() const
     if(userDefinedStepIsSet_) {
         val[utility::conversions::to_string_t("userDefinedStep")] = ModelBase::toJson(userDefinedStep_);
     }
+    if(scopeIsSet_) {
+        val[utility::conversions::to_string_t("scope")] = ModelBase::toJson(scope_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool InPlaceRollingUpdate::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserDefinedStep(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scope"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scope"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScope(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool InPlaceRollingUpdate::userDefinedStepIsSet() const
 void InPlaceRollingUpdate::unsetuserDefinedStep()
 {
     userDefinedStepIsSet_ = false;
+}
+
+std::string InPlaceRollingUpdate::getScope() const
+{
+    return scope_;
+}
+
+void InPlaceRollingUpdate::setScope(const std::string& value)
+{
+    scope_ = value;
+    scopeIsSet_ = true;
+}
+
+bool InPlaceRollingUpdate::scopeIsSet() const
+{
+    return scopeIsSet_;
+}
+
+void InPlaceRollingUpdate::unsetscope()
+{
+    scopeIsSet_ = false;
 }
 
 }

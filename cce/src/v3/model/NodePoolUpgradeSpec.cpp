@@ -12,17 +12,19 @@ namespace Model {
 
 NodePoolUpgradeSpec::NodePoolUpgradeSpec()
 {
-    nodePoolID_ = "";
-    nodePoolIDIsSet_ = false;
-    nodeIDsIsSet_ = false;
-    force_ = false;
-    forceIsSet_ = false;
-    nodeTemplateIsSet_ = false;
     maxUnavailable_ = 0;
     maxUnavailableIsSet_ = false;
+    force_ = false;
+    forceIsSet_ = false;
     retryTimes_ = 0;
     retryTimesIsSet_ = false;
     skippedNodesIsSet_ = false;
+    nodeIDsIsSet_ = false;
+    nodePoolID_ = "";
+    nodePoolIDIsSet_ = false;
+    nodeTemplateIsSet_ = false;
+    validateStorage_ = false;
+    validateStorageIsSet_ = false;
 }
 
 NodePoolUpgradeSpec::~NodePoolUpgradeSpec() = default;
@@ -35,26 +37,29 @@ web::json::value NodePoolUpgradeSpec::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(nodePoolIDIsSet_) {
-        val[utility::conversions::to_string_t("nodePoolID")] = ModelBase::toJson(nodePoolID_);
-    }
-    if(nodeIDsIsSet_) {
-        val[utility::conversions::to_string_t("nodeIDs")] = ModelBase::toJson(nodeIDs_);
+    if(maxUnavailableIsSet_) {
+        val[utility::conversions::to_string_t("maxUnavailable")] = ModelBase::toJson(maxUnavailable_);
     }
     if(forceIsSet_) {
         val[utility::conversions::to_string_t("force")] = ModelBase::toJson(force_);
-    }
-    if(nodeTemplateIsSet_) {
-        val[utility::conversions::to_string_t("nodeTemplate")] = ModelBase::toJson(nodeTemplate_);
-    }
-    if(maxUnavailableIsSet_) {
-        val[utility::conversions::to_string_t("maxUnavailable")] = ModelBase::toJson(maxUnavailable_);
     }
     if(retryTimesIsSet_) {
         val[utility::conversions::to_string_t("retryTimes")] = ModelBase::toJson(retryTimes_);
     }
     if(skippedNodesIsSet_) {
         val[utility::conversions::to_string_t("skippedNodes")] = ModelBase::toJson(skippedNodes_);
+    }
+    if(nodeIDsIsSet_) {
+        val[utility::conversions::to_string_t("nodeIDs")] = ModelBase::toJson(nodeIDs_);
+    }
+    if(nodePoolIDIsSet_) {
+        val[utility::conversions::to_string_t("nodePoolID")] = ModelBase::toJson(nodePoolID_);
+    }
+    if(nodeTemplateIsSet_) {
+        val[utility::conversions::to_string_t("nodeTemplate")] = ModelBase::toJson(nodeTemplate_);
+    }
+    if(validateStorageIsSet_) {
+        val[utility::conversions::to_string_t("validateStorage")] = ModelBase::toJson(validateStorage_);
     }
 
     return val;
@@ -63,22 +68,13 @@ bool NodePoolUpgradeSpec::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("nodePoolID"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodePoolID"));
+    if(val.has_field(utility::conversions::to_string_t("maxUnavailable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("maxUnavailable"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNodePoolID(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("nodeIDs"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeIDs"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNodeIDs(refVal);
+            setMaxUnavailable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("force"))) {
@@ -88,24 +84,6 @@ bool NodePoolUpgradeSpec::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setForce(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("nodeTemplate"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeTemplate"));
-        if(!fieldValue.is_null())
-        {
-            NodeTemplate refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNodeTemplate(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("maxUnavailable"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("maxUnavailable"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setMaxUnavailable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("retryTimes"))) {
@@ -126,50 +104,65 @@ bool NodePoolUpgradeSpec::fromJson(const web::json::value& val)
             setSkippedNodes(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("nodeIDs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeIDs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodeIDs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nodePoolID"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodePoolID"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodePoolID(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nodeTemplate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeTemplate"));
+        if(!fieldValue.is_null())
+        {
+            NodeTemplate refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodeTemplate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("validateStorage"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("validateStorage"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setValidateStorage(refVal);
+        }
+    }
     return ok;
 }
 
 
-std::string NodePoolUpgradeSpec::getNodePoolID() const
+int32_t NodePoolUpgradeSpec::getMaxUnavailable() const
 {
-    return nodePoolID_;
+    return maxUnavailable_;
 }
 
-void NodePoolUpgradeSpec::setNodePoolID(const std::string& value)
+void NodePoolUpgradeSpec::setMaxUnavailable(int32_t value)
 {
-    nodePoolID_ = value;
-    nodePoolIDIsSet_ = true;
+    maxUnavailable_ = value;
+    maxUnavailableIsSet_ = true;
 }
 
-bool NodePoolUpgradeSpec::nodePoolIDIsSet() const
+bool NodePoolUpgradeSpec::maxUnavailableIsSet() const
 {
-    return nodePoolIDIsSet_;
+    return maxUnavailableIsSet_;
 }
 
-void NodePoolUpgradeSpec::unsetnodePoolID()
+void NodePoolUpgradeSpec::unsetmaxUnavailable()
 {
-    nodePoolIDIsSet_ = false;
-}
-
-std::vector<std::string>& NodePoolUpgradeSpec::getNodeIDs()
-{
-    return nodeIDs_;
-}
-
-void NodePoolUpgradeSpec::setNodeIDs(const std::vector<std::string>& value)
-{
-    nodeIDs_ = value;
-    nodeIDsIsSet_ = true;
-}
-
-bool NodePoolUpgradeSpec::nodeIDsIsSet() const
-{
-    return nodeIDsIsSet_;
-}
-
-void NodePoolUpgradeSpec::unsetnodeIDs()
-{
-    nodeIDsIsSet_ = false;
+    maxUnavailableIsSet_ = false;
 }
 
 bool NodePoolUpgradeSpec::isForce() const
@@ -191,48 +184,6 @@ bool NodePoolUpgradeSpec::forceIsSet() const
 void NodePoolUpgradeSpec::unsetforce()
 {
     forceIsSet_ = false;
-}
-
-NodeTemplate NodePoolUpgradeSpec::getNodeTemplate() const
-{
-    return nodeTemplate_;
-}
-
-void NodePoolUpgradeSpec::setNodeTemplate(const NodeTemplate& value)
-{
-    nodeTemplate_ = value;
-    nodeTemplateIsSet_ = true;
-}
-
-bool NodePoolUpgradeSpec::nodeTemplateIsSet() const
-{
-    return nodeTemplateIsSet_;
-}
-
-void NodePoolUpgradeSpec::unsetnodeTemplate()
-{
-    nodeTemplateIsSet_ = false;
-}
-
-int32_t NodePoolUpgradeSpec::getMaxUnavailable() const
-{
-    return maxUnavailable_;
-}
-
-void NodePoolUpgradeSpec::setMaxUnavailable(int32_t value)
-{
-    maxUnavailable_ = value;
-    maxUnavailableIsSet_ = true;
-}
-
-bool NodePoolUpgradeSpec::maxUnavailableIsSet() const
-{
-    return maxUnavailableIsSet_;
-}
-
-void NodePoolUpgradeSpec::unsetmaxUnavailable()
-{
-    maxUnavailableIsSet_ = false;
 }
 
 int32_t NodePoolUpgradeSpec::getRetryTimes() const
@@ -275,6 +226,90 @@ bool NodePoolUpgradeSpec::skippedNodesIsSet() const
 void NodePoolUpgradeSpec::unsetskippedNodes()
 {
     skippedNodesIsSet_ = false;
+}
+
+std::vector<std::string>& NodePoolUpgradeSpec::getNodeIDs()
+{
+    return nodeIDs_;
+}
+
+void NodePoolUpgradeSpec::setNodeIDs(const std::vector<std::string>& value)
+{
+    nodeIDs_ = value;
+    nodeIDsIsSet_ = true;
+}
+
+bool NodePoolUpgradeSpec::nodeIDsIsSet() const
+{
+    return nodeIDsIsSet_;
+}
+
+void NodePoolUpgradeSpec::unsetnodeIDs()
+{
+    nodeIDsIsSet_ = false;
+}
+
+std::string NodePoolUpgradeSpec::getNodePoolID() const
+{
+    return nodePoolID_;
+}
+
+void NodePoolUpgradeSpec::setNodePoolID(const std::string& value)
+{
+    nodePoolID_ = value;
+    nodePoolIDIsSet_ = true;
+}
+
+bool NodePoolUpgradeSpec::nodePoolIDIsSet() const
+{
+    return nodePoolIDIsSet_;
+}
+
+void NodePoolUpgradeSpec::unsetnodePoolID()
+{
+    nodePoolIDIsSet_ = false;
+}
+
+NodeTemplate NodePoolUpgradeSpec::getNodeTemplate() const
+{
+    return nodeTemplate_;
+}
+
+void NodePoolUpgradeSpec::setNodeTemplate(const NodeTemplate& value)
+{
+    nodeTemplate_ = value;
+    nodeTemplateIsSet_ = true;
+}
+
+bool NodePoolUpgradeSpec::nodeTemplateIsSet() const
+{
+    return nodeTemplateIsSet_;
+}
+
+void NodePoolUpgradeSpec::unsetnodeTemplate()
+{
+    nodeTemplateIsSet_ = false;
+}
+
+bool NodePoolUpgradeSpec::isValidateStorage() const
+{
+    return validateStorage_;
+}
+
+void NodePoolUpgradeSpec::setValidateStorage(bool value)
+{
+    validateStorage_ = value;
+    validateStorageIsSet_ = true;
+}
+
+bool NodePoolUpgradeSpec::validateStorageIsSet() const
+{
+    return validateStorageIsSet_;
+}
+
+void NodePoolUpgradeSpec::unsetvalidateStorage()
+{
+    validateStorageIsSet_ = false;
 }
 
 }

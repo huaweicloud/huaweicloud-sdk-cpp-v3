@@ -65,6 +65,15 @@ public:
     void unsetsecurityGroup();
     void setSecurityGroup(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 集群控制面节点安全组ID。 **约束限制：** 创建成功后自动生成，填写无效。 **取值范围：** 不涉及 **默认取值：** 不涉及 
+    /// </summary>
+
+    std::string getControlPlaneSecurityGroup() const;
+    bool controlPlaneSecurityGroupIsSet() const;
+    void unsetcontrolPlaneSecurityGroup();
+    void setControlPlaneSecurityGroup(const std::string& value);
+
 
 protected:
     std::string vpc_;
@@ -73,6 +82,8 @@ protected:
     bool subnetIsSet_;
     std::string securityGroup_;
     bool securityGroupIsSet_;
+    std::string controlPlaneSecurityGroup_;
+    bool controlPlaneSecurityGroupIsSet_;
 
 };
 

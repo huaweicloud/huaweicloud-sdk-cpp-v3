@@ -157,6 +157,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateHighRiskCommands();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceConfigurations();
+    static HttpRequestDef genRequestDefForUpdateInstanceLb();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpdatePasswordlessConfig();
     static HttpRequestDef genRequestDefForUpdateSecurityGroup();

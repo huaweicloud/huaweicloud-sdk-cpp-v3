@@ -16,6 +16,7 @@ public:
     static HttpRequestDef genRequestDefForAddNode();
     static HttpRequestDef genRequestDefForAddNodesToNodePool();
     static HttpRequestDef genRequestDefForAwakeCluster();
+    static HttpRequestDef genRequestDefForBatchCreateAddonPrecheck();
     static HttpRequestDef genRequestDefForBatchCreateClusterTags();
     static HttpRequestDef genRequestDefForBatchDeleteClusterTags();
     static HttpRequestDef genRequestDefForBatchSyncNodes();
@@ -45,9 +46,11 @@ public:
     static HttpRequestDef genRequestDefForGetAccessPolicy();
     static HttpRequestDef genRequestDefForGetAvaliableZone();
     static HttpRequestDef genRequestDefForGetClusterFlavorSpecs();
+    static HttpRequestDef genRequestDefForGetClusterLongAkskConfig();
     static HttpRequestDef genRequestDefForGetClusterQuota();
     static HttpRequestDef genRequestDefForGetCustomizeTags();
     static HttpRequestDef genRequestDefForGetLabels();
+    static HttpRequestDef genRequestDefForGetLongAkskConfig();
     static HttpRequestDef genRequestDefForGetResourceTags();
     static HttpRequestDef genRequestDefForHibernateCluster();
     static HttpRequestDef genRequestDefForListAccessPolicy();
@@ -69,6 +72,7 @@ public:
     static HttpRequestDef genRequestDefForListUpgradeWorkFlows();
     static HttpRequestDef genRequestDefForLockNodepoolNodeScaleDown();
     static HttpRequestDef genRequestDefForMigrateNode();
+    static HttpRequestDef genRequestDefForMigrateToNodePool();
     static HttpRequestDef genRequestDefForPauseUpgradeClusterTask();
     static HttpRequestDef genRequestDefForRemoveNode();
     static HttpRequestDef genRequestDefForResetNode();
@@ -106,6 +110,8 @@ public:
     static HttpRequestDef genRequestDefForUpdateCluster();
     static HttpRequestDef genRequestDefForUpdateClusterEip();
     static HttpRequestDef genRequestDefForUpdateClusterLogConfig();
+    static HttpRequestDef genRequestDefForUpdateClusterLongAkskConfig();
+    static HttpRequestDef genRequestDefForUpdateLongAkskConfig();
     static HttpRequestDef genRequestDefForUpdateNode();
     static HttpRequestDef genRequestDefForUpdateNodePool();
     static HttpRequestDef genRequestDefForUpdatePartition();
@@ -149,8 +155,10 @@ public:
     static HttpRequestDef genRequestDefForShowAutopilotChart();
     static HttpRequestDef genRequestDefForShowAutopilotChartValues();
     static HttpRequestDef genRequestDefForShowAutopilotCluster();
+    static HttpRequestDef genRequestDefForShowAutopilotClusterConfig();
     static HttpRequestDef genRequestDefForShowAutopilotClusterEndpoints();
     static HttpRequestDef genRequestDefForShowAutopilotClusterUpgradeInfo();
+    static HttpRequestDef genRequestDefForShowAutopilotFeatureGates();
     static HttpRequestDef genRequestDefForShowAutopilotMaintenanceWindow();
     static HttpRequestDef genRequestDefForShowAutopilotPreCheck();
     static HttpRequestDef genRequestDefForShowAutopilotQuotas();
@@ -167,6 +175,9 @@ public:
     static HttpRequestDef genRequestDefForUpdateAutopilotUpgradePlan();
     static HttpRequestDef genRequestDefForUpgradeAutopilotCluster();
     static HttpRequestDef genRequestDefForUpgradeAutopilotWorkFlowUpdate();
+    static HttpRequestDef genRequestDefForDeleteAutopilotJob();
+    static HttpRequestDef genRequestDefForGetAutopilotOneJob();
+    static HttpRequestDef genRequestDefForListAutopilotJobs();
 };
 
 }

@@ -39,7 +39,7 @@ public:
     /// ScaleUpBillingConfigOverride members
 
     /// <summary>
-    /// 节点计费类型，0(按需)，1(包周期)
+    /// **参数解释**： 节点计费类型 **约束限制**： 选填参数，不填表示使用节点池默认计费配置 **取值范围**： - 0：按需 - 1：包周期 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getBillingMode() const;

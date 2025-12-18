@@ -38,6 +38,7 @@ ClusterSpec::ClusterSpec()
     eniNetworkIsSet_ = false;
     serviceNetworkIsSet_ = false;
     authenticationIsSet_ = false;
+    publicAccessIsSet_ = false;
     billingMode_ = 0;
     billingModeIsSet_ = false;
     mastersIsSet_ = false;
@@ -123,6 +124,9 @@ web::json::value ClusterSpec::toJson() const
     }
     if(authenticationIsSet_) {
         val[utility::conversions::to_string_t("authentication")] = ModelBase::toJson(authentication_);
+    }
+    if(publicAccessIsSet_) {
+        val[utility::conversions::to_string_t("publicAccess")] = ModelBase::toJson(publicAccess_);
     }
     if(billingModeIsSet_) {
         val[utility::conversions::to_string_t("billingMode")] = ModelBase::toJson(billingMode_);
@@ -321,6 +325,15 @@ bool ClusterSpec::fromJson(const web::json::value& val)
             Authentication refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAuthentication(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("publicAccess"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("publicAccess"));
+        if(!fieldValue.is_null())
+        {
+            PublicAccess refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicAccess(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("billingMode"))) {
@@ -805,6 +818,27 @@ bool ClusterSpec::authenticationIsSet() const
 void ClusterSpec::unsetauthentication()
 {
     authenticationIsSet_ = false;
+}
+
+PublicAccess ClusterSpec::getPublicAccess() const
+{
+    return publicAccess_;
+}
+
+void ClusterSpec::setPublicAccess(const PublicAccess& value)
+{
+    publicAccess_ = value;
+    publicAccessIsSet_ = true;
+}
+
+bool ClusterSpec::publicAccessIsSet() const
+{
+    return publicAccessIsSet_;
+}
+
+void ClusterSpec::unsetpublicAccess()
+{
+    publicAccessIsSet_ = false;
 }
 
 int32_t ClusterSpec::getBillingMode() const

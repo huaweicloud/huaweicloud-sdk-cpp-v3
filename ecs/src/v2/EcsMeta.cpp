@@ -986,6 +986,12 @@ HttpRequestDef EcsMeta::genRequestDefForShowAppendableVolumeQuota() {
 
 HttpRequestDef EcsMeta::genRequestDefForShowFlavorCapacity() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Count")
+                  .withJsonTag("count")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RegionIds")
+                  .withJsonTag("region_ids")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

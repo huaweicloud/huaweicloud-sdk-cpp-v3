@@ -22,7 +22,7 @@ NodeMetadata::NodeMetadata()
     creationTimestampIsSet_ = false;
     updateTimestamp_ = "";
     updateTimestampIsSet_ = false;
-    ownerReferenceIsSet_ = false;
+    ownerReferencesIsSet_ = false;
 }
 
 NodeMetadata::~NodeMetadata() = default;
@@ -53,8 +53,8 @@ web::json::value NodeMetadata::toJson() const
     if(updateTimestampIsSet_) {
         val[utility::conversions::to_string_t("updateTimestamp")] = ModelBase::toJson(updateTimestamp_);
     }
-    if(ownerReferenceIsSet_) {
-        val[utility::conversions::to_string_t("ownerReference")] = ModelBase::toJson(ownerReference_);
+    if(ownerReferencesIsSet_) {
+        val[utility::conversions::to_string_t("ownerReferences")] = ModelBase::toJson(ownerReferences_);
     }
 
     return val;
@@ -117,13 +117,13 @@ bool NodeMetadata::fromJson(const web::json::value& val)
             setUpdateTimestamp(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("ownerReference"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ownerReference"));
+    if(val.has_field(utility::conversions::to_string_t("ownerReferences"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ownerReferences"));
         if(!fieldValue.is_null())
         {
-            NodeMetadata_ownerReference refVal;
+            NodeMetadata_ownerReferences refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOwnerReference(refVal);
+            setOwnerReferences(refVal);
         }
     }
     return ok;
@@ -256,25 +256,25 @@ void NodeMetadata::unsetupdateTimestamp()
     updateTimestampIsSet_ = false;
 }
 
-NodeMetadata_ownerReference NodeMetadata::getOwnerReference() const
+NodeMetadata_ownerReferences NodeMetadata::getOwnerReferences() const
 {
-    return ownerReference_;
+    return ownerReferences_;
 }
 
-void NodeMetadata::setOwnerReference(const NodeMetadata_ownerReference& value)
+void NodeMetadata::setOwnerReferences(const NodeMetadata_ownerReferences& value)
 {
-    ownerReference_ = value;
-    ownerReferenceIsSet_ = true;
+    ownerReferences_ = value;
+    ownerReferencesIsSet_ = true;
 }
 
-bool NodeMetadata::ownerReferenceIsSet() const
+bool NodeMetadata::ownerReferencesIsSet() const
 {
-    return ownerReferenceIsSet_;
+    return ownerReferencesIsSet_;
 }
 
-void NodeMetadata::unsetownerReference()
+void NodeMetadata::unsetownerReferences()
 {
-    ownerReferenceIsSet_ = false;
+    ownerReferencesIsSet_ = false;
 }
 
 }

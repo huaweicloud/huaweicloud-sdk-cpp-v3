@@ -56,12 +56,23 @@ public:
     void unsetpassword();
     void setPassword(const std::string& value);
 
+    /// <summary>
+    /// 是否创建实例级只读账号。
+    /// </summary>
+
+    bool isInstanceReadonly() const;
+    bool instanceReadonlyIsSet() const;
+    void unsetinstanceReadonly();
+    void setInstanceReadonly(bool value);
+
 
 protected:
     std::string name_;
     bool nameIsSet_;
     std::string password_;
     bool passwordIsSet_;
+    bool instanceReadonly_;
+    bool instanceReadonlyIsSet_;
 
 };
 

@@ -40,7 +40,7 @@ public:
     /// ShowModifyHistoryResponse members
 
     /// <summary>
-    /// 实例参数的修改历史列表
+    /// 实例参数的修改历史列表。
     /// </summary>
 
     std::vector<ConfigurationHistoryRsp>& getHistories();
@@ -48,10 +48,21 @@ public:
     void unsethistories();
     void setHistories(const std::vector<ConfigurationHistoryRsp>& value);
 
+    /// <summary>
+    /// **参数解释：** 参数修改历史记录总条数。 **约束限制：** 默认返回参数历史修改记录总条数。若为参数名搜索，返回符合要求的记录总条数。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+    /// </summary>
+
+    int32_t getTotalCount() const;
+    bool totalCountIsSet() const;
+    void unsettotalCount();
+    void setTotalCount(int32_t value);
+
 
 protected:
     std::vector<ConfigurationHistoryRsp> histories_;
     bool historiesIsSet_;
+    int32_t totalCount_;
+    bool totalCountIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

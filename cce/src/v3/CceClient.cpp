@@ -148,6 +148,48 @@ std::shared_ptr<AwakeClusterResponse> CceClient::awakeCluster(AwakeClusterReques
 
     return localVarResult;
 }
+std::shared_ptr<BatchCreateAddonPrecheckResponse> CceClient::batchCreateAddonPrecheck(BatchCreateAddonPrecheckRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/addons/precheck";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForBatchCreateAddonPrecheck());
+
+    std::shared_ptr<BatchCreateAddonPrecheckResponse> localVarResult = std::make_shared<BatchCreateAddonPrecheckResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchCreateClusterTagsResponse> CceClient::batchCreateClusterTags(BatchCreateClusterTagsRequest &request)
 {
     std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/create";
@@ -1258,6 +1300,36 @@ std::shared_ptr<GetClusterFlavorSpecsResponse> CceClient::getClusterFlavorSpecs(
 
     return localVarResult;
 }
+std::shared_ptr<GetClusterLongAkskConfigResponse> CceClient::getClusterLongAkskConfig(GetClusterLongAkskConfigRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/longaksk/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetClusterLongAkskConfig());
+
+    std::shared_ptr<GetClusterLongAkskConfigResponse> localVarResult = std::make_shared<GetClusterLongAkskConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<GetClusterQuotaResponse> CceClient::getClusterQuota(GetClusterQuotaRequest &request)
 {
     std::string localVarPath = "/cce/v1/projects/{project_id}/quota";
@@ -1341,6 +1413,35 @@ std::shared_ptr<GetLabelsResponse> CceClient::getLabels(GetLabelsRequest &reques
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetLabels());
 
     std::shared_ptr<GetLabelsResponse> localVarResult = std::make_shared<GetLabelsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetLongAkskConfigResponse> CceClient::getLongAkskConfig(GetLongAkskConfigRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/longaksk/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetLongAkskConfig());
+
+    std::shared_ptr<GetLongAkskConfigResponse> localVarResult = std::make_shared<GetLongAkskConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2053,6 +2154,49 @@ std::shared_ptr<MigrateNodeResponse> CceClient::migrateNode(MigrateNodeRequest &
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForMigrateNode());
 
     std::shared_ptr<MigrateNodeResponse> localVarResult = std::make_shared<MigrateNodeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<MigrateToNodePoolResponse> CceClient::migrateToNodePool(MigrateToNodePoolRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/nodes/migrate";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+    localVarPathParams["nodepool_id"] = parameterToString(request.getNodepoolId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForMigrateToNodePool());
+
+    std::shared_ptr<MigrateToNodePoolResponse> localVarResult = std::make_shared<MigrateToNodePoolResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3356,6 +3500,89 @@ std::shared_ptr<UpdateClusterLogConfigResponse> CceClient::updateClusterLogConfi
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForUpdateClusterLogConfig());
 
     std::shared_ptr<UpdateClusterLogConfigResponse> localVarResult = std::make_shared<UpdateClusterLogConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateClusterLongAkskConfigResponse> CceClient::updateClusterLongAkskConfig(UpdateClusterLongAkskConfigRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/longaksk/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForUpdateClusterLongAkskConfig());
+
+    std::shared_ptr<UpdateClusterLongAkskConfigResponse> localVarResult = std::make_shared<UpdateClusterLongAkskConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateLongAkskConfigResponse> CceClient::updateLongAkskConfig(UpdateLongAkskConfigRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/longaksk/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForUpdateLongAkskConfig());
+
+    std::shared_ptr<UpdateLongAkskConfigResponse> localVarResult = std::make_shared<UpdateLongAkskConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -4958,6 +5185,39 @@ std::shared_ptr<ShowAutopilotClusterResponse> CceClient::showAutopilotCluster(Sh
 
     return localVarResult;
 }
+std::shared_ptr<ShowAutopilotClusterConfigResponse> CceClient::showAutopilotClusterConfig(ShowAutopilotClusterConfigRequest &request)
+{
+    std::string localVarPath = "/autopilot/v3/projects/{project_id}/cluster/{cluster_id}/log-configs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForShowAutopilotClusterConfig());
+
+    std::shared_ptr<ShowAutopilotClusterConfigResponse> localVarResult = std::make_shared<ShowAutopilotClusterConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowAutopilotClusterEndpointsResponse> CceClient::showAutopilotClusterEndpoints(ShowAutopilotClusterEndpointsRequest &request)
 {
     std::string localVarPath = "/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/openapi";
@@ -5012,6 +5272,35 @@ std::shared_ptr<ShowAutopilotClusterUpgradeInfoResponse> CceClient::showAutopilo
         localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForShowAutopilotClusterUpgradeInfo());
 
     std::shared_ptr<ShowAutopilotClusterUpgradeInfoResponse> localVarResult = std::make_shared<ShowAutopilotClusterUpgradeInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAutopilotFeatureGatesResponse> CceClient::showAutopilotFeatureGates(ShowAutopilotFeatureGatesRequest &request)
+{
+    std::string localVarPath = "/autopilot/v3.1/feature-gates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForShowAutopilotFeatureGates());
+
+    std::shared_ptr<ShowAutopilotFeatureGatesResponse> localVarResult = std::make_shared<ShowAutopilotFeatureGatesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5603,6 +5892,95 @@ std::shared_ptr<UpgradeAutopilotWorkFlowUpdateResponse> CceClient::upgradeAutopi
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteAutopilotJobResponse> CceClient::deleteAutopilotJob(DeleteAutopilotJobRequest &request)
+{
+    std::string localVarPath = "/autopilot/v2/projects/{project_id}/jobs/{job_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForDeleteAutopilotJob());
+
+    std::shared_ptr<DeleteAutopilotJobResponse> localVarResult = std::make_shared<DeleteAutopilotJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetAutopilotOneJobResponse> CceClient::getAutopilotOneJob(GetAutopilotOneJobRequest &request)
+{
+    std::string localVarPath = "/autopilot/v2/projects/{project_id}/jobs/{job_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForGetAutopilotOneJob());
+
+    std::shared_ptr<GetAutopilotOneJobResponse> localVarResult = std::make_shared<GetAutopilotOneJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListAutopilotJobsResponse> CceClient::listAutopilotJobs(ListAutopilotJobsRequest &request)
+{
+    std::string localVarPath = "/autopilot/v2/projects/{project_id}/jobs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForListAutopilotJobs());
+
+    std::shared_ptr<ListAutopilotJobsResponse> localVarResult = std::make_shared<ListAutopilotJobsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

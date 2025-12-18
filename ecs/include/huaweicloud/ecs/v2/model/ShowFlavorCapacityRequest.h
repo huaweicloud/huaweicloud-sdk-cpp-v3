@@ -47,10 +47,32 @@ public:
     void unsetflavorId();
     void setFlavorId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getCount() const;
+    bool countIsSet() const;
+    void unsetcount();
+    void setCount(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getRegionIds() const;
+    bool regionIdsIsSet() const;
+    void unsetregionIds();
+    void setRegionIds(const std::string& value);
+
 
 protected:
     std::string flavorId_;
     bool flavorIdIsSet_;
+    std::string count_;
+    bool countIsSet_;
+    std::string regionIds_;
+    bool regionIdsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

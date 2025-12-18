@@ -14,8 +14,8 @@ IntelligentKillSessionStatistic::IntelligentKillSessionStatistic()
 {
     keyword_ = "";
     keywordIsSet_ = false;
-    rawSql_ = "";
-    rawSqlIsSet_ = false;
+    rawSqlText_ = "";
+    rawSqlTextIsSet_ = false;
     idsIsSet_ = false;
     count_ = 0;
     countIsSet_ = false;
@@ -46,8 +46,8 @@ web::json::value IntelligentKillSessionStatistic::toJson() const
     if(keywordIsSet_) {
         val[utility::conversions::to_string_t("keyword")] = ModelBase::toJson(keyword_);
     }
-    if(rawSqlIsSet_) {
-        val[utility::conversions::to_string_t("raw_sql")] = ModelBase::toJson(rawSql_);
+    if(rawSqlTextIsSet_) {
+        val[utility::conversions::to_string_t("raw_sql_text")] = ModelBase::toJson(rawSqlText_);
     }
     if(idsIsSet_) {
         val[utility::conversions::to_string_t("ids")] = ModelBase::toJson(ids_);
@@ -89,13 +89,13 @@ bool IntelligentKillSessionStatistic::fromJson(const web::json::value& val)
             setKeyword(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("raw_sql"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("raw_sql"));
+    if(val.has_field(utility::conversions::to_string_t("raw_sql_text"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("raw_sql_text"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRawSql(refVal);
+            setRawSqlText(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ids"))) {
@@ -195,25 +195,25 @@ void IntelligentKillSessionStatistic::unsetkeyword()
     keywordIsSet_ = false;
 }
 
-std::string IntelligentKillSessionStatistic::getRawSql() const
+std::string IntelligentKillSessionStatistic::getRawSqlText() const
 {
-    return rawSql_;
+    return rawSqlText_;
 }
 
-void IntelligentKillSessionStatistic::setRawSql(const std::string& value)
+void IntelligentKillSessionStatistic::setRawSqlText(const std::string& value)
 {
-    rawSql_ = value;
-    rawSqlIsSet_ = true;
+    rawSqlText_ = value;
+    rawSqlTextIsSet_ = true;
 }
 
-bool IntelligentKillSessionStatistic::rawSqlIsSet() const
+bool IntelligentKillSessionStatistic::rawSqlTextIsSet() const
 {
-    return rawSqlIsSet_;
+    return rawSqlTextIsSet_;
 }
 
-void IntelligentKillSessionStatistic::unsetrawSql()
+void IntelligentKillSessionStatistic::unsetrawSqlText()
 {
-    rawSqlIsSet_ = false;
+    rawSqlTextIsSet_ = false;
 }
 
 std::vector<int64_t>& IntelligentKillSessionStatistic::getIds()

@@ -67,7 +67,7 @@ bool ShowStorageResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            StorageMap refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ShowStorageResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ShowStorageResponse::getResult() const
+StorageMap ShowStorageResponse::getResult() const
 {
     return result_;
 }
 
-void ShowStorageResponse::setResult(const Object& value)
+void ShowStorageResponse::setResult(const StorageMap& value)
 {
     result_ = value;
     resultIsSet_ = true;

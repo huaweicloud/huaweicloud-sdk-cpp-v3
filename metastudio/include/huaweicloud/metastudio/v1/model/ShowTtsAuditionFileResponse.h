@@ -50,6 +50,15 @@ public:
     void setIsFileComplete(bool value);
 
     /// <summary>
+    /// 返回码。
+    /// </summary>
+
+    std::string getCode() const;
+    bool codeIsSet() const;
+    void unsetcode();
+    void setCode(const std::string& value);
+
+    /// <summary>
     /// 异常信息。
     /// </summary>
 
@@ -71,6 +80,8 @@ public:
 protected:
     bool isFileComplete_;
     bool isFileCompleteIsSet_;
+    std::string code_;
+    bool codeIsSet_;
     std::string message_;
     bool messageIsSet_;
     std::vector<AuditionFile> files_;

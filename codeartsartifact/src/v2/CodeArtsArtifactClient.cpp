@@ -361,6 +361,47 @@ std::shared_ptr<DeleteArtifactFileResponse> CodeArtsArtifactClient::deleteArtifa
 
     return localVarResult;
 }
+std::shared_ptr<DeleteCompletelyUpdateFileStateResponse> CodeArtsArtifactClient::deleteCompletelyUpdateFileState(DeleteCompletelyUpdateFileStateRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/files/compeletion";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForDeleteCompletelyUpdateFileState());
+
+    std::shared_ptr<DeleteCompletelyUpdateFileStateResponse> localVarResult = std::make_shared<DeleteCompletelyUpdateFileStateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteRepositoryResponse> CodeArtsArtifactClient::deleteRepository(DeleteRepositoryRequest &request)
 {
     std::string localVarPath = "/cloudartifact/v5/repositories";
@@ -582,6 +623,453 @@ std::shared_ptr<ListAttentionsResponse> CodeArtsArtifactClient::listAttentions(L
 
     return localVarResult;
 }
+std::shared_ptr<ListCapacityMessageSettingResponse> CodeArtsArtifactClient::listCapacityMessageSetting(ListCapacityMessageSettingRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/capacity-notice/settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListCapacityMessageSetting());
+
+    std::shared_ptr<ListCapacityMessageSettingResponse> localVarResult = std::make_shared<ListCapacityMessageSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListChildProxyRepositoriesListResponse> CodeArtsArtifactClient::listChildProxyRepositoriesList(ListChildProxyRepositoriesListRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/repositories/proxy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.repoIdIsSet()) {
+        localVarQueryParams["repo_id"] = parameterToString(request.getRepoId());
+    }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListChildProxyRepositoriesList());
+
+    std::shared_ptr<ListChildProxyRepositoriesListResponse> localVarResult = std::make_shared<ListChildProxyRepositoriesListResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListDomainIpConfigResponse> CodeArtsArtifactClient::listDomainIpConfig(ListDomainIpConfigRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/domain/ipconfig";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.pageNoIsSet()) {
+        localVarQueryParams["page_no"] = parameterToString(request.getPageNo());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListDomainIpConfig());
+
+    std::shared_ptr<ListDomainIpConfigResponse> localVarResult = std::make_shared<ListDomainIpConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListFileBuildArchivesResponse> CodeArtsArtifactClient::listFileBuildArchives(ListFileBuildArchivesRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/files/archives";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.parentIdIsSet()) {
+        localVarQueryParams["parent_id"] = parameterToString(request.getParentId());
+    }
+    if (request.buildIdIsSet()) {
+        localVarQueryParams["build_id"] = parameterToString(request.getBuildId());
+    }
+    if (request.buildNoIsSet()) {
+        localVarQueryParams["build_no"] = parameterToString(request.getBuildNo());
+    }
+    if (request.pageNoIsSet()) {
+        localVarQueryParams["page_no"] = parameterToString(request.getPageNo());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.repoBranchIsSet()) {
+        localVarQueryParams["repo_branch"] = parameterToString(request.getRepoBranch());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListFileBuildArchives());
+
+    std::shared_ptr<ListFileBuildArchivesResponse> localVarResult = std::make_shared<ListFileBuildArchivesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListFilesResponse> CodeArtsArtifactClient::listFiles(ListFilesRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/files/list";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListFiles());
+
+    std::shared_ptr<ListFilesResponse> localVarResult = std::make_shared<ListFilesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListLatestVersionFilesResponse> CodeArtsArtifactClient::listLatestVersionFiles(ListLatestVersionFilesRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/{project_id}/files/version";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.sortByIsSet()) {
+        localVarQueryParams["sort_by"] = parameterToString(request.getSortBy());
+    }
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListLatestVersionFiles());
+
+    std::shared_ptr<ListLatestVersionFilesResponse> localVarResult = std::make_shared<ListLatestVersionFilesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListMavenListResponse> CodeArtsArtifactClient::listMavenList(ListMavenListRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/maven/list";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.defaultIsSet()) {
+        localVarQueryParams["default"] = parameterToString(request.isDefault());
+    }
+    if (request.policyIsSet()) {
+        localVarQueryParams["policy"] = parameterToString(request.getPolicy());
+    }
+    if (request.repoIdsIsSet()) {
+        localVarQueryParams["repo_ids"] = parameterToString(request.getRepoIds());
+    }
+    if (request.accessIsSet()) {
+        localVarQueryParams["access"] = parameterToString(request.getAccess());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListMavenList());
+
+    std::shared_ptr<ListMavenListResponse> localVarResult = std::make_shared<ListMavenListResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListMavenUserResponse> CodeArtsArtifactClient::listMavenUser(ListMavenUserRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/repositories/users";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.userNameIsSet()) {
+        localVarQueryParams["user_name"] = parameterToString(request.getUserName());
+    }
+    if (request.pageNoIsSet()) {
+        localVarQueryParams["page_no"] = parameterToString(request.getPageNo());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListMavenUser());
+
+    std::shared_ptr<ListMavenUserResponse> localVarResult = std::make_shared<ListMavenUserResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListNetProxyResponse> CodeArtsArtifactClient::listNetProxy(ListNetProxyRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/tree/net/proxy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListNetProxy());
+
+    std::shared_ptr<ListNetProxyResponse> localVarResult = std::make_shared<ListNetProxyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectRolePermissionsResponse> CodeArtsArtifactClient::listProjectRolePermissions(ListProjectRolePermissionsRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/project-role/permissions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListProjectRolePermissions());
+
+    std::shared_ptr<ListProjectRolePermissionsResponse> localVarResult = std::make_shared<ListProjectRolePermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectUsersResponse> CodeArtsArtifactClient::listProjectUsers(ListProjectUsersRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/projects/{project_id}/users";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.repoIdIsSet()) {
+        localVarQueryParams["repo_id"] = parameterToString(request.getRepoId());
+    }
+    if (request.sceneIsSet()) {
+        localVarQueryParams["scene"] = parameterToString(request.getScene());
+    }
+    if (request.pageNoIsSet()) {
+        localVarQueryParams["page_no"] = parameterToString(request.getPageNo());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListProjectUsers());
+
+    std::shared_ptr<ListProjectUsersResponse> localVarResult = std::make_shared<ListProjectUsersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListSecGuardListResponse> CodeArtsArtifactClient::listSecGuardList(ListSecGuardListRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/sec-guard/task/list";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.dateIsSet()) {
+        localVarQueryParams["date"] = parameterToString(request.getDate());
+    }
+    if (request.pageNoIsSet()) {
+        localVarQueryParams["page_no"] = parameterToString(request.getPageNo());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForListSecGuardList());
+
+    std::shared_ptr<ListSecGuardListResponse> localVarResult = std::make_shared<ListSecGuardListResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ModifyRepositoryResponse> CodeArtsArtifactClient::modifyRepository(ModifyRepositoryRequest &request)
 {
     std::string localVarPath = "/cloudartifact/v5/repositories/tab/{tab_id}";
@@ -782,6 +1270,126 @@ std::shared_ptr<ShowAuditResponse> CodeArtsArtifactClient::showAudit(ShowAuditRe
 
     return localVarResult;
 }
+std::shared_ptr<ShowAutoDeleteJobSettingsResponse> CodeArtsArtifactClient::showAutoDeleteJobSettings(ShowAutoDeleteJobSettingsRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/release/{project_id}/auto-deletion/settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowAutoDeleteJobSettings());
+
+    std::shared_ptr<ShowAutoDeleteJobSettingsResponse> localVarResult = std::make_shared<ShowAutoDeleteJobSettingsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDomainReleaseRepoStorageResponse> CodeArtsArtifactClient::showDomainReleaseRepoStorage(ShowDomainReleaseRepoStorageRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/storage";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowDomainReleaseRepoStorage());
+
+    std::shared_ptr<ShowDomainReleaseRepoStorageResponse> localVarResult = std::make_shared<ShowDomainReleaseRepoStorageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowFileDetailResponse> CodeArtsArtifactClient::showFileDetail(ShowFileDetailRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/files/{id}/info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowFileDetail());
+
+    std::shared_ptr<ShowFileDetailResponse> localVarResult = std::make_shared<ShowFileDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowFileDetailByFullNameResponse> CodeArtsArtifactClient::showFileDetailByFullName(ShowFileDetailByFullNameRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/files/info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.fileNameIsSet()) {
+        localVarQueryParams["file_name"] = parameterToString(request.getFileName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowFileDetailByFullName());
+
+    std::shared_ptr<ShowFileDetailByFullNameResponse> localVarResult = std::make_shared<ShowFileDetailByFullNameResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowFileTreeResponse> CodeArtsArtifactClient::showFileTree(ShowFileTreeRequest &request)
 {
     std::string localVarPath = "/cloudartifact/v5/{tenant_id}/{project_id}/{repo_name}/file-tree";
@@ -816,6 +1424,38 @@ std::shared_ptr<ShowFileTreeResponse> CodeArtsArtifactClient::showFileTree(ShowF
         localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowFileTree());
 
     std::shared_ptr<ShowFileTreeResponse> localVarResult = std::make_shared<ShowFileTreeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowLatestVersionFilesCountResponse> CodeArtsArtifactClient::showLatestVersionFilesCount(ShowLatestVersionFilesCountRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/{project_id}/files/version/count";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowLatestVersionFilesCount());
+
+    std::shared_ptr<ShowLatestVersionFilesCountResponse> localVarResult = std::make_shared<ShowLatestVersionFilesCountResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -857,6 +1497,122 @@ std::shared_ptr<ShowMavenInfoResponse> CodeArtsArtifactClient::showMavenInfo(Sho
         localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowMavenInfo());
 
     std::shared_ptr<ShowMavenInfoResponse> localVarResult = std::make_shared<ShowMavenInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowMultiRolesUserPermissionsResponse> CodeArtsArtifactClient::showMultiRolesUserPermissions(ShowMultiRolesUserPermissionsRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/user/permissions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowMultiRolesUserPermissions());
+
+    std::shared_ptr<ShowMultiRolesUserPermissionsResponse> localVarResult = std::make_shared<ShowMultiRolesUserPermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowOpenSourceEnabledResponse> CodeArtsArtifactClient::showOpenSourceEnabled(ShowOpenSourceEnabledRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/opensource/enabled";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowOpenSourceEnabled());
+
+    std::shared_ptr<ShowOpenSourceEnabledResponse> localVarResult = std::make_shared<ShowOpenSourceEnabledResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowPackageDataDetailResponse> CodeArtsArtifactClient::showPackageDataDetail(ShowPackageDataDetailRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/data/package";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowPackageDataDetail());
+
+    std::shared_ptr<ShowPackageDataDetailResponse> localVarResult = std::make_shared<ShowPackageDataDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowPackageInfoResponse> CodeArtsArtifactClient::showPackageInfo(ShowPackageInfoRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/data/package/info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowPackageInfo());
+
+    std::shared_ptr<ShowPackageInfoResponse> localVarResult = std::make_shared<ShowPackageInfoResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -930,6 +1686,38 @@ std::shared_ptr<ShowProjectReleaseFilesResponse> CodeArtsArtifactClient::showPro
 
     return localVarResult;
 }
+std::shared_ptr<ShowProjectStorageInfoResponse> CodeArtsArtifactClient::showProjectStorageInfo(ShowProjectStorageInfoRequest &request)
+{
+    std::string localVarPath = "/devreposerver/v5/{project_id}/storage";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.parentIdIsSet()) {
+        localVarQueryParams["parent_id"] = parameterToString(request.getParentId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowProjectStorageInfo());
+
+    std::shared_ptr<ShowProjectStorageInfoResponse> localVarResult = std::make_shared<ShowProjectStorageInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowReleaseProjectFilesResponse> CodeArtsArtifactClient::showReleaseProjectFiles(ShowReleaseProjectFilesRequest &request)
 {
     std::string localVarPath = "/devreposerver/v2/release/{project_id}/files";
@@ -962,6 +1750,35 @@ std::shared_ptr<ShowReleaseProjectFilesResponse> CodeArtsArtifactClient::showRel
         localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowReleaseProjectFiles());
 
     std::shared_ptr<ShowReleaseProjectFilesResponse> localVarResult = std::make_shared<ShowReleaseProjectFilesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowRepoUserInfoResponse> CodeArtsArtifactClient::showRepoUserInfo(ShowRepoUserInfoRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/repositories/user/info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowRepoUserInfo());
+
+    std::shared_ptr<ShowRepoUserInfoResponse> localVarResult = std::make_shared<ShowRepoUserInfoResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1090,6 +1907,35 @@ std::shared_ptr<ShowUserPrivilegesResponse> CodeArtsArtifactClient::showUserPriv
         localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowUserPrivileges());
 
     std::shared_ptr<ShowUserPrivilegesResponse> localVarResult = std::make_shared<ShowUserPrivilegesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowUserTicketResponse> CodeArtsArtifactClient::showUserTicket(ShowUserTicketRequest &request)
+{
+    std::string localVarPath = "/cloudartifact/v5/ticket";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsArtifactMeta::genRequestDefForShowUserTicket());
+
+    std::shared_ptr<ShowUserTicketResponse> localVarResult = std::make_shared<ShowUserTicketResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -67,7 +67,7 @@ bool CreateArtifactoryResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            CreateArtifactoryResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void CreateArtifactoryResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object CreateArtifactoryResponse::getResult() const
+CreateArtifactoryResult CreateArtifactoryResponse::getResult() const
 {
     return result_;
 }
 
-void CreateArtifactoryResponse::setResult(const Object& value)
+void CreateArtifactoryResponse::setResult(const CreateArtifactoryResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

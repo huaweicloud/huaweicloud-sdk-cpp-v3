@@ -18,6 +18,8 @@ CreateConfigurationRequestBody::CreateConfigurationRequestBody()
     descriptionIsSet_ = false;
     parameterValuesIsSet_ = false;
     datastoreIsSet_ = false;
+    entityId_ = "";
+    entityIdIsSet_ = false;
 }
 
 CreateConfigurationRequestBody::~CreateConfigurationRequestBody() = default;
@@ -41,6 +43,9 @@ web::json::value CreateConfigurationRequestBody::toJson() const
     }
     if(datastoreIsSet_) {
         val[utility::conversions::to_string_t("datastore")] = ModelBase::toJson(datastore_);
+    }
+    if(entityIdIsSet_) {
+        val[utility::conversions::to_string_t("entity_id")] = ModelBase::toJson(entityId_);
     }
 
     return val;
@@ -83,6 +88,15 @@ bool CreateConfigurationRequestBody::fromJson(const web::json::value& val)
             DatastoreResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastore(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("entity_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("entity_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEntityId(refVal);
         }
     }
     return ok;
@@ -171,6 +185,27 @@ bool CreateConfigurationRequestBody::datastoreIsSet() const
 void CreateConfigurationRequestBody::unsetdatastore()
 {
     datastoreIsSet_ = false;
+}
+
+std::string CreateConfigurationRequestBody::getEntityId() const
+{
+    return entityId_;
+}
+
+void CreateConfigurationRequestBody::setEntityId(const std::string& value)
+{
+    entityId_ = value;
+    entityIdIsSet_ = true;
+}
+
+bool CreateConfigurationRequestBody::entityIdIsSet() const
+{
+    return entityIdIsSet_;
+}
+
+void CreateConfigurationRequestBody::unsetentityId()
+{
+    entityIdIsSet_ = false;
 }
 
 }

@@ -20,6 +20,8 @@ ListSingleStreamBitrateRequest::ListSingleStreamBitrateRequest()
     appIsSet_ = false;
     stream_ = "";
     streamIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
     startTime_ = "";
     startTimeIsSet_ = false;
     endTime_ = "";
@@ -47,6 +49,9 @@ web::json::value ListSingleStreamBitrateRequest::toJson() const
     }
     if(streamIsSet_) {
         val[utility::conversions::to_string_t("stream")] = ModelBase::toJson(stream_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
@@ -95,6 +100,15 @@ bool ListSingleStreamBitrateRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStream(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("start_time"))) {
@@ -201,6 +215,27 @@ bool ListSingleStreamBitrateRequest::streamIsSet() const
 void ListSingleStreamBitrateRequest::unsetstream()
 {
     streamIsSet_ = false;
+}
+
+std::string ListSingleStreamBitrateRequest::getType() const
+{
+    return type_;
+}
+
+void ListSingleStreamBitrateRequest::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool ListSingleStreamBitrateRequest::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void ListSingleStreamBitrateRequest::unsettype()
+{
+    typeIsSet_ = false;
 }
 
 std::string ListSingleStreamBitrateRequest::getStartTime() const

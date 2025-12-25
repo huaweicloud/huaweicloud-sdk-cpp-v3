@@ -14,8 +14,8 @@ TrashArtifactModelForDelete::TrashArtifactModelForDelete()
 {
     id_ = "";
     idIsSet_ = false;
-    fomat_ = "";
-    fomatIsSet_ = false;
+    format_ = "";
+    formatIsSet_ = false;
     uri_ = "";
     uriIsSet_ = false;
     status_ = "";
@@ -37,8 +37,8 @@ web::json::value TrashArtifactModelForDelete::toJson() const
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
     }
-    if(fomatIsSet_) {
-        val[utility::conversions::to_string_t("fomat")] = ModelBase::toJson(fomat_);
+    if(formatIsSet_) {
+        val[utility::conversions::to_string_t("format")] = ModelBase::toJson(format_);
     }
     if(uriIsSet_) {
         val[utility::conversions::to_string_t("uri")] = ModelBase::toJson(uri_);
@@ -65,13 +65,13 @@ bool TrashArtifactModelForDelete::fromJson(const web::json::value& val)
             setId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("fomat"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fomat"));
+    if(val.has_field(utility::conversions::to_string_t("format"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("format"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFomat(refVal);
+            setFormat(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("uri"))) {
@@ -126,25 +126,25 @@ void TrashArtifactModelForDelete::unsetid()
     idIsSet_ = false;
 }
 
-std::string TrashArtifactModelForDelete::getFomat() const
+std::string TrashArtifactModelForDelete::getFormat() const
 {
-    return fomat_;
+    return format_;
 }
 
-void TrashArtifactModelForDelete::setFomat(const std::string& value)
+void TrashArtifactModelForDelete::setFormat(const std::string& value)
 {
-    fomat_ = value;
-    fomatIsSet_ = true;
+    format_ = value;
+    formatIsSet_ = true;
 }
 
-bool TrashArtifactModelForDelete::fomatIsSet() const
+bool TrashArtifactModelForDelete::formatIsSet() const
 {
-    return fomatIsSet_;
+    return formatIsSet_;
 }
 
-void TrashArtifactModelForDelete::unsetfomat()
+void TrashArtifactModelForDelete::unsetformat()
 {
-    fomatIsSet_ = false;
+    formatIsSet_ = false;
 }
 
 std::string TrashArtifactModelForDelete::getUri() const

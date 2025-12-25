@@ -60,19 +60,19 @@ public:
     /// **参数解释：** 索引位置，偏移量。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 **约束限制：** 取值必须为数字，不能为负数。 **取值范围：** 非负整数。 **默认取值：** 0
     /// </summary>
 
-    std::string getOffset() const;
+    int32_t getOffset() const;
     bool offsetIsSet() const;
     void unsetoffset();
-    void setOffset(const std::string& value);
+    void setOffset(int32_t value);
 
     /// <summary>
     /// **参数解释：** 查询个数上限值。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。不传该参数时，默认查询前100条信息。
     /// </summary>
 
-    std::string getLimit() const;
+    int32_t getLimit() const;
     bool limitIsSet() const;
     void unsetlimit();
-    void setLimit(const std::string& value);
+    void setLimit(int32_t value);
 
 
 protected:
@@ -80,9 +80,9 @@ protected:
     bool instanceIdIsSet_;
     std::string parameterName_;
     bool parameterNameIsSet_;
-    std::string offset_;
+    int32_t offset_;
     bool offsetIsSet_;
-    std::string limit_;
+    int32_t limit_;
     bool limitIsSet_;
 
 #ifdef RTTR_FLAG

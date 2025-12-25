@@ -9,8 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/codeartsartifact/v2/model/RepositoryBasicDO.h>
+#include <huaweicloud/codeartsartifact/v2/model/StandarBaseResponseV5.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,7 +41,7 @@ public:
     /// ShowRepositoryResponse members
 
     /// <summary>
-    /// 结果状态
+    /// **参数解释**： 请求成功或失败状态。 **取值范围**： - success：请求成功。 - error：请求失败。
     /// </summary>
 
     std::string getStatus() const;
@@ -49,7 +50,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 请求id
+    /// **参数解释**： 请求ID，当前请求唯一标识。 **取值范围**： 数字及中划线（-）组成的字符串。
     /// </summary>
 
     std::string getTraceId() const;
@@ -58,13 +59,13 @@ public:
     void setTraceId(const std::string& value);
 
     /// <summary>
-    /// 请求返回结果，接口不同，返回不同
+    /// 
     /// </summary>
 
-    Object getResult() const;
+    RepositoryBasicDO getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const Object& value);
+    void setResult(const RepositoryBasicDO& value);
 
 
 protected:
@@ -72,7 +73,7 @@ protected:
     bool statusIsSet_;
     std::string traceId_;
     bool traceIdIsSet_;
-    Object result_;
+    RepositoryBasicDO result_;
     bool resultIsSet_;
 
 #ifdef RTTR_FLAG

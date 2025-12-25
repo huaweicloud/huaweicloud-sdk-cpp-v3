@@ -51,6 +51,7 @@ NodeTemplate::NodeTemplate()
     serverEnterpriseProjectIDIsSet_ = false;
     partition_ = "";
     partitionIsSet_ = false;
+    configurationsOverrideIsSet_ = false;
     nodeNameTemplateIsSet_ = false;
 }
 
@@ -141,6 +142,9 @@ web::json::value NodeTemplate::toJson() const
     }
     if(partitionIsSet_) {
         val[utility::conversions::to_string_t("partition")] = ModelBase::toJson(partition_);
+    }
+    if(configurationsOverrideIsSet_) {
+        val[utility::conversions::to_string_t("configurationsOverride")] = ModelBase::toJson(configurationsOverride_);
     }
     if(nodeNameTemplateIsSet_) {
         val[utility::conversions::to_string_t("nodeNameTemplate")] = ModelBase::toJson(nodeNameTemplate_);
@@ -384,6 +388,15 @@ bool NodeTemplate::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPartition(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("configurationsOverride"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configurationsOverride"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<PackageConfiguration> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfigurationsOverride(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("nodeNameTemplate"))) {
@@ -943,6 +956,27 @@ bool NodeTemplate::partitionIsSet() const
 void NodeTemplate::unsetpartition()
 {
     partitionIsSet_ = false;
+}
+
+std::vector<PackageConfiguration>& NodeTemplate::getConfigurationsOverride()
+{
+    return configurationsOverride_;
+}
+
+void NodeTemplate::setConfigurationsOverride(const std::vector<PackageConfiguration>& value)
+{
+    configurationsOverride_ = value;
+    configurationsOverrideIsSet_ = true;
+}
+
+bool NodeTemplate::configurationsOverrideIsSet() const
+{
+    return configurationsOverrideIsSet_;
+}
+
+void NodeTemplate::unsetconfigurationsOverride()
+{
+    configurationsOverrideIsSet_ = false;
 }
 
 NodeSpec_nodeNameTemplate NodeTemplate::getNodeNameTemplate() const

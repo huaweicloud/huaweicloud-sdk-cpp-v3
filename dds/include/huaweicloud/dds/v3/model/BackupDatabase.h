@@ -39,7 +39,7 @@ public:
     /// BackupDatabase members
 
     /// <summary>
-    /// 数据库引擎。 取值：DDS-Community。
+    /// **参数解释：** 数据库引擎 **取值范围：** DDS-Community。
     /// </summary>
 
     std::string getType() const;
@@ -48,7 +48,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 数据库版本。取值：“3.4”、“4.0”、“4.2”、“4.4”、“5.0”。
+    /// **参数解释：** 数据库版本。 **取值范围：** 取值为“5.0”、“4.4”、“4.2”、“4.0”、“3.4”。
     /// </summary>
 
     std::string getVersion() const;

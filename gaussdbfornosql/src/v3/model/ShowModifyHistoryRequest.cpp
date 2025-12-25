@@ -16,9 +16,9 @@ ShowModifyHistoryRequest::ShowModifyHistoryRequest()
     instanceIdIsSet_ = false;
     parameterName_ = "";
     parameterNameIsSet_ = false;
-    offset_ = "";
+    offset_ = 0;
     offsetIsSet_ = false;
-    limit_ = "";
+    limit_ = 0;
     limitIsSet_ = false;
 }
 
@@ -73,7 +73,7 @@ bool ShowModifyHistoryRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOffset(refVal);
         }
@@ -82,7 +82,7 @@ bool ShowModifyHistoryRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
         }
@@ -133,12 +133,12 @@ void ShowModifyHistoryRequest::unsetparameterName()
     parameterNameIsSet_ = false;
 }
 
-std::string ShowModifyHistoryRequest::getOffset() const
+int32_t ShowModifyHistoryRequest::getOffset() const
 {
     return offset_;
 }
 
-void ShowModifyHistoryRequest::setOffset(const std::string& value)
+void ShowModifyHistoryRequest::setOffset(int32_t value)
 {
     offset_ = value;
     offsetIsSet_ = true;
@@ -154,12 +154,12 @@ void ShowModifyHistoryRequest::unsetoffset()
     offsetIsSet_ = false;
 }
 
-std::string ShowModifyHistoryRequest::getLimit() const
+int32_t ShowModifyHistoryRequest::getLimit() const
 {
     return limit_;
 }
 
-void ShowModifyHistoryRequest::setLimit(const std::string& value)
+void ShowModifyHistoryRequest::setLimit(int32_t value)
 {
     limit_ = value;
     limitIsSet_ = true;

@@ -28,6 +28,18 @@ ListBackupsRequest::ListBackupsRequest()
     endTimeIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
+    orderField_ = "";
+    orderFieldIsSet_ = false;
+    orderRule_ = "";
+    orderRuleIsSet_ = false;
+    backupStatus_ = "";
+    backupStatusIsSet_ = false;
+    backupName_ = "";
+    backupNameIsSet_ = false;
+    backupDescription_ = "";
+    backupDescriptionIsSet_ = false;
+    instanceName_ = "";
+    instanceNameIsSet_ = false;
 }
 
 ListBackupsRequest::~ListBackupsRequest() = default;
@@ -63,6 +75,24 @@ web::json::value ListBackupsRequest::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(orderFieldIsSet_) {
+        val[utility::conversions::to_string_t("order_field")] = ModelBase::toJson(orderField_);
+    }
+    if(orderRuleIsSet_) {
+        val[utility::conversions::to_string_t("order_rule")] = ModelBase::toJson(orderRule_);
+    }
+    if(backupStatusIsSet_) {
+        val[utility::conversions::to_string_t("backup_status")] = ModelBase::toJson(backupStatus_);
+    }
+    if(backupNameIsSet_) {
+        val[utility::conversions::to_string_t("backup_name")] = ModelBase::toJson(backupName_);
+    }
+    if(backupDescriptionIsSet_) {
+        val[utility::conversions::to_string_t("backup_description")] = ModelBase::toJson(backupDescription_);
+    }
+    if(instanceNameIsSet_) {
+        val[utility::conversions::to_string_t("instance_name")] = ModelBase::toJson(instanceName_);
     }
 
     return val;
@@ -141,6 +171,60 @@ bool ListBackupsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("order_field"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("order_field"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOrderField(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("order_rule"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("order_rule"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOrderRule(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceName(refVal);
         }
     }
     return ok;
@@ -313,6 +397,132 @@ bool ListBackupsRequest::modeIsSet() const
 void ListBackupsRequest::unsetmode()
 {
     modeIsSet_ = false;
+}
+
+std::string ListBackupsRequest::getOrderField() const
+{
+    return orderField_;
+}
+
+void ListBackupsRequest::setOrderField(const std::string& value)
+{
+    orderField_ = value;
+    orderFieldIsSet_ = true;
+}
+
+bool ListBackupsRequest::orderFieldIsSet() const
+{
+    return orderFieldIsSet_;
+}
+
+void ListBackupsRequest::unsetorderField()
+{
+    orderFieldIsSet_ = false;
+}
+
+std::string ListBackupsRequest::getOrderRule() const
+{
+    return orderRule_;
+}
+
+void ListBackupsRequest::setOrderRule(const std::string& value)
+{
+    orderRule_ = value;
+    orderRuleIsSet_ = true;
+}
+
+bool ListBackupsRequest::orderRuleIsSet() const
+{
+    return orderRuleIsSet_;
+}
+
+void ListBackupsRequest::unsetorderRule()
+{
+    orderRuleIsSet_ = false;
+}
+
+std::string ListBackupsRequest::getBackupStatus() const
+{
+    return backupStatus_;
+}
+
+void ListBackupsRequest::setBackupStatus(const std::string& value)
+{
+    backupStatus_ = value;
+    backupStatusIsSet_ = true;
+}
+
+bool ListBackupsRequest::backupStatusIsSet() const
+{
+    return backupStatusIsSet_;
+}
+
+void ListBackupsRequest::unsetbackupStatus()
+{
+    backupStatusIsSet_ = false;
+}
+
+std::string ListBackupsRequest::getBackupName() const
+{
+    return backupName_;
+}
+
+void ListBackupsRequest::setBackupName(const std::string& value)
+{
+    backupName_ = value;
+    backupNameIsSet_ = true;
+}
+
+bool ListBackupsRequest::backupNameIsSet() const
+{
+    return backupNameIsSet_;
+}
+
+void ListBackupsRequest::unsetbackupName()
+{
+    backupNameIsSet_ = false;
+}
+
+std::string ListBackupsRequest::getBackupDescription() const
+{
+    return backupDescription_;
+}
+
+void ListBackupsRequest::setBackupDescription(const std::string& value)
+{
+    backupDescription_ = value;
+    backupDescriptionIsSet_ = true;
+}
+
+bool ListBackupsRequest::backupDescriptionIsSet() const
+{
+    return backupDescriptionIsSet_;
+}
+
+void ListBackupsRequest::unsetbackupDescription()
+{
+    backupDescriptionIsSet_ = false;
+}
+
+std::string ListBackupsRequest::getInstanceName() const
+{
+    return instanceName_;
+}
+
+void ListBackupsRequest::setInstanceName(const std::string& value)
+{
+    instanceName_ = value;
+    instanceNameIsSet_ = true;
+}
+
+bool ListBackupsRequest::instanceNameIsSet() const
+{
+    return instanceNameIsSet_;
+}
+
+void ListBackupsRequest::unsetinstanceName()
+{
+    instanceNameIsSet_ = false;
 }
 
 }

@@ -67,7 +67,7 @@ bool ModifyRepositoryResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            MavenTabRepo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ModifyRepositoryResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ModifyRepositoryResponse::getResult() const
+MavenTabRepo ModifyRepositoryResponse::getResult() const
 {
     return result_;
 }
 
-void ModifyRepositoryResponse::setResult(const Object& value)
+void ModifyRepositoryResponse::setResult(const MavenTabRepo& value)
 {
     result_ = value;
     resultIsSet_ = true;

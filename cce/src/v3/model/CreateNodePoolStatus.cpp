@@ -18,6 +18,8 @@ CreateNodePoolStatus::CreateNodePoolStatus()
     creatingNodeIsSet_ = false;
     deletingNode_ = 0;
     deletingNodeIsSet_ = false;
+    configurationSyncedNodeCount_ = 0;
+    configurationSyncedNodeCountIsSet_ = false;
     phase_ = "";
     phaseIsSet_ = false;
     conditionsIsSet_ = false;
@@ -42,6 +44,9 @@ web::json::value CreateNodePoolStatus::toJson() const
     }
     if(deletingNodeIsSet_) {
         val[utility::conversions::to_string_t("deletingNode")] = ModelBase::toJson(deletingNode_);
+    }
+    if(configurationSyncedNodeCountIsSet_) {
+        val[utility::conversions::to_string_t("configurationSyncedNodeCount")] = ModelBase::toJson(configurationSyncedNodeCount_);
     }
     if(phaseIsSet_) {
         val[utility::conversions::to_string_t("phase")] = ModelBase::toJson(phase_);
@@ -84,6 +89,15 @@ bool CreateNodePoolStatus::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDeletingNode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("configurationSyncedNodeCount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configurationSyncedNodeCount"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfigurationSyncedNodeCount(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("phase"))) {
@@ -178,6 +192,27 @@ bool CreateNodePoolStatus::deletingNodeIsSet() const
 void CreateNodePoolStatus::unsetdeletingNode()
 {
     deletingNodeIsSet_ = false;
+}
+
+int32_t CreateNodePoolStatus::getConfigurationSyncedNodeCount() const
+{
+    return configurationSyncedNodeCount_;
+}
+
+void CreateNodePoolStatus::setConfigurationSyncedNodeCount(int32_t value)
+{
+    configurationSyncedNodeCount_ = value;
+    configurationSyncedNodeCountIsSet_ = true;
+}
+
+bool CreateNodePoolStatus::configurationSyncedNodeCountIsSet() const
+{
+    return configurationSyncedNodeCountIsSet_;
+}
+
+void CreateNodePoolStatus::unsetconfigurationSyncedNodeCount()
+{
+    configurationSyncedNodeCountIsSet_ = false;
 }
 
 std::string CreateNodePoolStatus::getPhase() const

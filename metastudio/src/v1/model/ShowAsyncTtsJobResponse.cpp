@@ -14,6 +14,10 @@ ShowAsyncTtsJobResponse::ShowAsyncTtsJobResponse()
 {
     state_ = "";
     stateIsSet_ = false;
+    code_ = "";
+    codeIsSet_ = false;
+    message_ = "";
+    messageIsSet_ = false;
     audioFileUrl_ = "";
     audioFileUrlIsSet_ = false;
     audioInfoFileUrl_ = "";
@@ -36,6 +40,12 @@ web::json::value ShowAsyncTtsJobResponse::toJson() const
 
     if(stateIsSet_) {
         val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
+    }
+    if(codeIsSet_) {
+        val[utility::conversions::to_string_t("code")] = ModelBase::toJson(code_);
+    }
+    if(messageIsSet_) {
+        val[utility::conversions::to_string_t("message")] = ModelBase::toJson(message_);
     }
     if(audioFileUrlIsSet_) {
         val[utility::conversions::to_string_t("audio_file_url")] = ModelBase::toJson(audioFileUrl_);
@@ -63,6 +73,24 @@ bool ShowAsyncTtsJobResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("message"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("message"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMessage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("audio_file_url"))) {
@@ -124,6 +152,48 @@ bool ShowAsyncTtsJobResponse::stateIsSet() const
 void ShowAsyncTtsJobResponse::unsetstate()
 {
     stateIsSet_ = false;
+}
+
+std::string ShowAsyncTtsJobResponse::getCode() const
+{
+    return code_;
+}
+
+void ShowAsyncTtsJobResponse::setCode(const std::string& value)
+{
+    code_ = value;
+    codeIsSet_ = true;
+}
+
+bool ShowAsyncTtsJobResponse::codeIsSet() const
+{
+    return codeIsSet_;
+}
+
+void ShowAsyncTtsJobResponse::unsetcode()
+{
+    codeIsSet_ = false;
+}
+
+std::string ShowAsyncTtsJobResponse::getMessage() const
+{
+    return message_;
+}
+
+void ShowAsyncTtsJobResponse::setMessage(const std::string& value)
+{
+    message_ = value;
+    messageIsSet_ = true;
+}
+
+bool ShowAsyncTtsJobResponse::messageIsSet() const
+{
+    return messageIsSet_;
+}
+
+void ShowAsyncTtsJobResponse::unsetmessage()
+{
+    messageIsSet_ = false;
 }
 
 std::string ShowAsyncTtsJobResponse::getAudioFileUrl() const

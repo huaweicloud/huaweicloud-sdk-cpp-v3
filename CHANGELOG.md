@@ -1,3 +1,402 @@
+# 3.1.168 2025-12-25
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowCluster**
+    - changes of response param
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+  - **UpdateCluster**
+    - changes of request param
+      - `+ spec.containerNetwork.containercidrs`
+    - changes of response param
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+  - **DeleteCluster**
+    - changes of response param
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+  - **CreateCluster**
+    - changes of request param
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+    - changes of response param
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+  - **ListClusters**
+    - changes of response param
+      - `+ items.spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ items.spec.containerNetwork.enableContainerCIDRsReservation`
+  - **ShowNode**
+    - changes of response param
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+  - **UpdateNode**
+    - changes of response param
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+  - **DeleteNode**
+    - changes of response param
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+  - **CreateNode**
+    - changes of request param
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+    - changes of response param
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.spec.extendParam.containerBaseSize`
+      - `+ items.spec.extendParam.kubeReservedCpu`
+      - `+ items.spec.extendParam.systemReservedCpu`
+      - `+ items.spec.extendParam.kubeReservedPid`
+      - `+ items.spec.extendParam.systemReservedPid`
+      - `+ items.spec.extendParam.kubeReservedStorage`
+      - `+ items.spec.extendParam.systemReservedStorage`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **UpdateNodePool**
+    - changes of response param
+      - `+ status.configurationSyncedNodeCount`
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **UpgradeNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+    - changes of response param
+      - `+ status.configurationSyncedNodeCount`
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.nodeTemplate.configurationsOverride`
+      - `+ items.spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ items.spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ items.spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ items.spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ items.spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ items.spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ items.spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **ListHyperNodes**
+    - changes of response param
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.systemReservedStorage`
+
+### HuaweiCloud SDK CodeArtsArtifact
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ShowPackageDataDetail`
+    - `ShowPackageInfo`
+    - `ShowAutoDeleteJobSettings`
+    - `DeleteCompletelyUpdateFileState`
+    - `ListFileBuildArchives`
+    - `ListMavenList`
+    - `ListProjectUsers`
+    - `ListChildProxyRepositoriesList`
+    - `ListNetProxy`
+    - `ListDomainIpConfig`
+    - `ListSecGuardList`
+    - `ShowOpenSourceEnabled`
+    - `ShowRepoUserInfo`
+    - `ListMavenUser`
+    - `ShowUserTicket`
+    - `ListProjectRolePermissions`
+    - `ShowMultiRolesUserPermissions`
+    - `ListCapacityMessageSetting`
+    - `ListFiles`
+    - `ShowLatestVersionFilesCount`
+    - `ListLatestVersionFiles`
+    - `ShowFileDetail`
+    - `ShowFileDetailByFullName`
+    - `ShowDomainReleaseRepoStorage`
+    - `ShowProjectStorageInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchDeleteTrashes**
+    - changes of request param
+      - `+ format`
+      - `- fomat`
+  - **SearchArtifacts**
+    - changes of request param
+      - `* in_project: string -> boolean`
+  - **UpdateArtifactory**
+    - changes of request param
+      - `+ project_id`
+
+### HuaweiCloud SDK CodeArtsRepo
+
+- _API Version_
+  - V4
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTenantRepositories**
+    - changes of response param
+      - `+ status: enum value [0,3,4,5,7]`
+  - **BatchUpdateRepositoryFilePushPermissions**
+    - changes of request param
+      - `* permissions.actions.user_ids: list<null> -> list<integer>`
+  - **CreateFilePushPermission**
+    - changes of request param
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **BatchUpdateProtectedBranches**
+    - changes of request param
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **BatchCreateProtectedBranch**
+    - changes of request param
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **UpdateProtectedBranch**
+    - changes of request param
+      - `* user_ids: list<null> -> list<integer>`
+  - **BatchUpdateProtectedTags**
+    - changes of request param
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **BatchCreateProtectedTags**
+    - changes of request param
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **UpdateProtectedTag**
+    - changes of request param
+      - `* user_ids: list<null> -> list<integer>`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateConfiguration**
+    - changes of request param
+      - `+ entity_id`
+  - **ShowConfigurationAppliedHistory**
+    - changes of response param
+      - `+ total_count`
+  - **ListBackups**
+    - changes of request param
+      - `+ order_field`
+      - `+ order_rule`
+      - `+ backup_status`
+      - `+ backup_name`
+      - `+ backup_description`
+      - `+ instance_name`
+    - changes of response param
+      - `+ backups.instance_status`
+      - `+ backups.instance_mode`
+      - `+ backups.is_instance_restoring`
+      - `+ backups.backup_method`
+      - `+ backups.kms_enable`
+      - `+ backups.deletable`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowModifyHistory**
+    - changes of request param
+      - `* offset: string -> int32`
+      - `* limit: string -> int32`
+    - changes of response param
+      - `* histories.applied: string -> boolean`
+
+### HuaweiCloud SDK IMS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListImageMembers**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+    - changes of response param
+      - `+ page_info`
+  - **GlanceListImageMembers**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+    - changes of response param
+      - `+ page_info`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSingleStreamBitrate**
+    - changes of request param
+      - `+ type`
+  - **ListHistoryStreams**
+    - changes of request param
+      - `* domain: string -> list<string>`
+
+### HuaweiCloud SDK MetaStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAsyncTtsJob**
+    - changes of response param
+      - `+ code`
+      - `+ message`
+  - **ShowPacifyWordsSwitch**
+    - changes of request param
+      - `+ language: enum value [fr]`
+  - **ShowPacifyWordsTriggerTime**
+    - changes of request param
+      - `+ language: enum value [fr]`
+  - **ShowWelcomeSpeechSwitch**
+    - changes of request param
+      - `+ language: enum value [fr]`
+  - **ShowTtsAuditionFile**
+    - changes of response param
+      - `+ code`
+  - **ListSmartChatJob**
+    - changes of response param
+      - `+ smart_chat_jobs.default_language: enum value [fr]`
+      - `+ smart_chat_jobs.voice_config_list.language: enum value [fr]`
+  - **StartSmartChatJob**
+    - changes of response param
+      - `+ default_language: enum value [fr]`
+      - `+ voice_config_list.language: enum value [fr]`
+  - **ShowSmartChatJob**
+    - changes of response param
+      - `+ default_language: enum value [fr]`
+      - `+ voice_config_list.language: enum value [fr]`
+  - **ListHotWords**
+    - changes of request param
+      - `+ language: enum value [fr]`
+  - **ListPacifyWords**
+    - changes of request param
+      - `+ language: enum value [fr]`
+  - **ListWelcomeSpeech**
+    - changes of request param
+      - `+ language: enum value [fr]`
+  - **CreateDigitalHumanBusinessCard**
+    - changes of request param
+      - `+ card_image_config.id_card_image1`
+      - `+ card_image_config.id_card_image2`
+      - `+ card_image_config.authorize_use_human_image`
+  - **UpdateDigitalHumanBusinessCard**
+    - changes of request param
+      - `+ card_image_config.id_card_image1`
+      - `+ card_image_config.id_card_image2`
+      - `+ card_image_config.authorize_use_human_image`
+  - **CreatePhotoDigitalHumanVideo**
+    - changes of request param
+      - `+ id_card_image1`
+      - `+ id_card_image2`
+      - `+ authorize_use_human_image`
+
 # 3.1.167 2025-12-18
 
 ### HuaweiCloud SDK CodeArtsDeploy

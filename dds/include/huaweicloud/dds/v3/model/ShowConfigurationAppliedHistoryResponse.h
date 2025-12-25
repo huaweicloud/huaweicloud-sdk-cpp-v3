@@ -40,7 +40,7 @@ public:
     /// ShowConfigurationAppliedHistoryResponse members
 
     /// <summary>
-    /// 参数模板应用历史列表
+    /// 参数模板应用历史列表。
     /// </summary>
 
     std::vector<ApplyHistoryInfo>& getHistories();
@@ -48,10 +48,21 @@ public:
     void unsethistories();
     void setHistories(const std::vector<ApplyHistoryInfo>& value);
 
+    /// <summary>
+    /// 总记录数。
+    /// </summary>
+
+    int32_t getTotalCount() const;
+    bool totalCountIsSet() const;
+    void unsettotalCount();
+    void setTotalCount(int32_t value);
+
 
 protected:
     std::vector<ApplyHistoryInfo> histories_;
     bool historiesIsSet_;
+    int32_t totalCount_;
+    bool totalCountIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

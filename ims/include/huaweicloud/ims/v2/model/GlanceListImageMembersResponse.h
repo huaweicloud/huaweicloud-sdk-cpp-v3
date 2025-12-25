@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ims/v2/model/GlancePageInfo.h>
 #include <string>
 #include <huaweicloud/ims/v2/model/GlanceImageMembers.h>
 #include <vector>
@@ -58,12 +59,23 @@ public:
     void unsetschema();
     void setSchema(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    GlancePageInfo getPageInfo() const;
+    bool pageInfoIsSet() const;
+    void unsetpageInfo();
+    void setPageInfo(const GlancePageInfo& value);
+
 
 protected:
     std::vector<GlanceImageMembers> members_;
     bool membersIsSet_;
     std::string schema_;
     bool schemaIsSet_;
+    GlancePageInfo pageInfo_;
+    bool pageInfoIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

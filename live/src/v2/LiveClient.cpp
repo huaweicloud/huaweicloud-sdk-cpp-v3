@@ -935,6 +935,9 @@ std::shared_ptr<ListSingleStreamBitrateResponse> LiveClient::listSingleStreamBit
     if (request.streamIsSet()) {
         localVarQueryParams["stream"] = parameterToString(request.getStream());
     }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
     if (request.startTimeIsSet()) {
         localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
     }

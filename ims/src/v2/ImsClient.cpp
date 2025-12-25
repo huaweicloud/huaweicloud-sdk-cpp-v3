@@ -909,6 +909,12 @@ std::shared_ptr<ListImageMembersResponse> ImsClient::listImageMembers(ListImageM
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
 
     std::string localVarHttpBody;
 
@@ -1754,6 +1760,12 @@ std::shared_ptr<GlanceListImageMembersResponse> ImsClient::glanceListImageMember
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
 
     std::string localVarHttpBody;
 

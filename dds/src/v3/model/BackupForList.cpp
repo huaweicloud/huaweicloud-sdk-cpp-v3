@@ -33,6 +33,18 @@ BackupForList::BackupForList()
     sizeIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    instanceStatus_ = "";
+    instanceStatusIsSet_ = false;
+    instanceMode_ = "";
+    instanceModeIsSet_ = false;
+    isInstanceRestoring_ = false;
+    isInstanceRestoringIsSet_ = false;
+    backupMethod_ = "";
+    backupMethodIsSet_ = false;
+    kmsEnable_ = false;
+    kmsEnableIsSet_ = false;
+    deletable_ = false;
+    deletableIsSet_ = false;
 }
 
 BackupForList::~BackupForList() = default;
@@ -77,6 +89,24 @@ web::json::value BackupForList::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(instanceStatusIsSet_) {
+        val[utility::conversions::to_string_t("instance_status")] = ModelBase::toJson(instanceStatus_);
+    }
+    if(instanceModeIsSet_) {
+        val[utility::conversions::to_string_t("instance_mode")] = ModelBase::toJson(instanceMode_);
+    }
+    if(isInstanceRestoringIsSet_) {
+        val[utility::conversions::to_string_t("is_instance_restoring")] = ModelBase::toJson(isInstanceRestoring_);
+    }
+    if(backupMethodIsSet_) {
+        val[utility::conversions::to_string_t("backup_method")] = ModelBase::toJson(backupMethod_);
+    }
+    if(kmsEnableIsSet_) {
+        val[utility::conversions::to_string_t("kms_enable")] = ModelBase::toJson(kmsEnable_);
+    }
+    if(deletableIsSet_) {
+        val[utility::conversions::to_string_t("deletable")] = ModelBase::toJson(deletable_);
     }
 
     return val;
@@ -182,6 +212,60 @@ bool BackupForList::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_instance_restoring"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_instance_restoring"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsInstanceRestoring(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_method"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_method"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupMethod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("kms_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("kms_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setKmsEnable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("deletable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deletable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeletable(refVal);
         }
     }
     return ok;
@@ -417,6 +501,132 @@ bool BackupForList::descriptionIsSet() const
 void BackupForList::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+std::string BackupForList::getInstanceStatus() const
+{
+    return instanceStatus_;
+}
+
+void BackupForList::setInstanceStatus(const std::string& value)
+{
+    instanceStatus_ = value;
+    instanceStatusIsSet_ = true;
+}
+
+bool BackupForList::instanceStatusIsSet() const
+{
+    return instanceStatusIsSet_;
+}
+
+void BackupForList::unsetinstanceStatus()
+{
+    instanceStatusIsSet_ = false;
+}
+
+std::string BackupForList::getInstanceMode() const
+{
+    return instanceMode_;
+}
+
+void BackupForList::setInstanceMode(const std::string& value)
+{
+    instanceMode_ = value;
+    instanceModeIsSet_ = true;
+}
+
+bool BackupForList::instanceModeIsSet() const
+{
+    return instanceModeIsSet_;
+}
+
+void BackupForList::unsetinstanceMode()
+{
+    instanceModeIsSet_ = false;
+}
+
+bool BackupForList::isIsInstanceRestoring() const
+{
+    return isInstanceRestoring_;
+}
+
+void BackupForList::setIsInstanceRestoring(bool value)
+{
+    isInstanceRestoring_ = value;
+    isInstanceRestoringIsSet_ = true;
+}
+
+bool BackupForList::isInstanceRestoringIsSet() const
+{
+    return isInstanceRestoringIsSet_;
+}
+
+void BackupForList::unsetisInstanceRestoring()
+{
+    isInstanceRestoringIsSet_ = false;
+}
+
+std::string BackupForList::getBackupMethod() const
+{
+    return backupMethod_;
+}
+
+void BackupForList::setBackupMethod(const std::string& value)
+{
+    backupMethod_ = value;
+    backupMethodIsSet_ = true;
+}
+
+bool BackupForList::backupMethodIsSet() const
+{
+    return backupMethodIsSet_;
+}
+
+void BackupForList::unsetbackupMethod()
+{
+    backupMethodIsSet_ = false;
+}
+
+bool BackupForList::isKmsEnable() const
+{
+    return kmsEnable_;
+}
+
+void BackupForList::setKmsEnable(bool value)
+{
+    kmsEnable_ = value;
+    kmsEnableIsSet_ = true;
+}
+
+bool BackupForList::kmsEnableIsSet() const
+{
+    return kmsEnableIsSet_;
+}
+
+void BackupForList::unsetkmsEnable()
+{
+    kmsEnableIsSet_ = false;
+}
+
+bool BackupForList::isDeletable() const
+{
+    return deletable_;
+}
+
+void BackupForList::setDeletable(bool value)
+{
+    deletable_ = value;
+    deletableIsSet_ = true;
+}
+
+bool BackupForList::deletableIsSet() const
+{
+    return deletableIsSet_;
+}
+
+void BackupForList::unsetdeletable()
+{
+    deletableIsSet_ = false;
 }
 
 }

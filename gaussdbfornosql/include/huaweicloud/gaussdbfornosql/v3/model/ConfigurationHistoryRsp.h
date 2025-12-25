@@ -78,10 +78,10 @@ public:
     /// **参数解释：** 是否生效。 **约束限制：** 不涉及。 **取值范围：** - true:已生效。 - false:未生效。 **默认取值：** 不涉及。
     /// </summary>
 
-    std::string getApplied() const;
+    bool isApplied() const;
     bool appliedIsSet() const;
     void unsetapplied();
-    void setApplied(const std::string& value);
+    void setApplied(bool value);
 
     /// <summary>
     /// **参数解释：** 更新时间。 **约束限制：** 不涉及。 **取值范围：** 格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值：** 不涉及。
@@ -111,7 +111,7 @@ protected:
     bool newValueIsSet_;
     std::string updateResult_;
     bool updateResultIsSet_;
-    std::string applied_;
+    bool applied_;
     bool appliedIsSet_;
     std::string updatedAt_;
     bool updatedAtIsSet_;

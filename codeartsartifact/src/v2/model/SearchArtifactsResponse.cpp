@@ -67,7 +67,7 @@ bool SearchArtifactsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            SearchArtifactsResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void SearchArtifactsResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object SearchArtifactsResponse::getResult() const
+SearchArtifactsResult SearchArtifactsResponse::getResult() const
 {
     return result_;
 }
 
-void SearchArtifactsResponse::setResult(const Object& value)
+void SearchArtifactsResponse::setResult(const SearchArtifactsResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

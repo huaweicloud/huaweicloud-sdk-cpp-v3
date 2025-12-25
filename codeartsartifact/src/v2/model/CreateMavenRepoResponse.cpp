@@ -67,7 +67,7 @@ bool CreateMavenRepoResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            CreateMavenRepoResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void CreateMavenRepoResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object CreateMavenRepoResponse::getResult() const
+CreateMavenRepoResult CreateMavenRepoResponse::getResult() const
 {
     return result_;
 }
 
-void CreateMavenRepoResponse::setResult(const Object& value)
+void CreateMavenRepoResponse::setResult(const CreateMavenRepoResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

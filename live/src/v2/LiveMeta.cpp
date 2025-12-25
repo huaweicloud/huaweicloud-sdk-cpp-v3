@@ -535,6 +535,9 @@ HttpRequestDef LiveMeta::genRequestDefForListSingleStreamBitrate() {
     reqDefBuilder.withRequestField(FieldDef().withName("Stream")
                   .withJsonTag("stream")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
                   .withJsonTag("start_time")
                   .withLocationType(Query_));

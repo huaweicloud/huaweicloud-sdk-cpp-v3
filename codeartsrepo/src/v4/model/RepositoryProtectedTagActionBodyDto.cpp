@@ -66,7 +66,7 @@ bool RepositoryProtectedTagActionBodyDto::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_ids"));
         if(!fieldValue.is_null())
         {
-            std::vector<Object> refVal;
+            std::vector<int32_t> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserIds(refVal);
         }
@@ -123,12 +123,12 @@ void RepositoryProtectedTagActionBodyDto::unsetenable()
     enableIsSet_ = false;
 }
 
-std::vector<Object>& RepositoryProtectedTagActionBodyDto::getUserIds()
+std::vector<int32_t>& RepositoryProtectedTagActionBodyDto::getUserIds()
 {
     return userIds_;
 }
 
-void RepositoryProtectedTagActionBodyDto::setUserIds(const std::vector<Object>& value)
+void RepositoryProtectedTagActionBodyDto::setUserIds(std::vector<int32_t> value)
 {
     userIds_ = value;
     userIdsIsSet_ = true;

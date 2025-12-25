@@ -14,6 +14,8 @@ ShowTtsAuditionFileResponse::ShowTtsAuditionFileResponse()
 {
     isFileComplete_ = false;
     isFileCompleteIsSet_ = false;
+    code_ = "";
+    codeIsSet_ = false;
     message_ = "";
     messageIsSet_ = false;
     filesIsSet_ = false;
@@ -31,6 +33,9 @@ web::json::value ShowTtsAuditionFileResponse::toJson() const
 
     if(isFileCompleteIsSet_) {
         val[utility::conversions::to_string_t("is_file_complete")] = ModelBase::toJson(isFileComplete_);
+    }
+    if(codeIsSet_) {
+        val[utility::conversions::to_string_t("code")] = ModelBase::toJson(code_);
     }
     if(messageIsSet_) {
         val[utility::conversions::to_string_t("message")] = ModelBase::toJson(message_);
@@ -52,6 +57,15 @@ bool ShowTtsAuditionFileResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsFileComplete(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("message"))) {
@@ -95,6 +109,27 @@ bool ShowTtsAuditionFileResponse::isFileCompleteIsSet() const
 void ShowTtsAuditionFileResponse::unsetisFileComplete()
 {
     isFileCompleteIsSet_ = false;
+}
+
+std::string ShowTtsAuditionFileResponse::getCode() const
+{
+    return code_;
+}
+
+void ShowTtsAuditionFileResponse::setCode(const std::string& value)
+{
+    code_ = value;
+    codeIsSet_ = true;
+}
+
+bool ShowTtsAuditionFileResponse::codeIsSet() const
+{
+    return codeIsSet_;
+}
+
+void ShowTtsAuditionFileResponse::unsetcode()
+{
+    codeIsSet_ = false;
 }
 
 std::string ShowTtsAuditionFileResponse::getMessage() const

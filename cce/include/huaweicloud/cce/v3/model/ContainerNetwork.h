@@ -67,6 +67,15 @@ public:
     void unsetcidrs();
     void setCidrs(const std::vector<ContainerCIDR>& value);
 
+    /// <summary>
+    /// **参数解释**： VPC容器网段预留。在VPC的默认路由表中添加容器网段路由，避免创建与容器网段冲突的子网。支持的集群版本如下： - v1.28.15-r70及以上版本 - v1.29.15-r30及以上版本 - v1.30.14-r30及以上版本 - v1.31.10-r30及以上版本 - v1.32.6-r30及以上版本 - v1.33.5-r20及以上版本  **约束限制**： 仅支持VPC网络模型集群。不支持集群设置不生效。 **取值范围**： - false：不开启VPC容器网段预留 - true：开启VPC容器网段预留  **默认取值**： false
+    /// </summary>
+
+    bool isEnableContainerCIDRsReservation() const;
+    bool enableContainerCIDRsReservationIsSet() const;
+    void unsetenableContainerCIDRsReservation();
+    void setEnableContainerCIDRsReservation(bool value);
+
 
 protected:
     std::string mode_;
@@ -75,6 +84,8 @@ protected:
     bool cidrIsSet_;
     std::vector<ContainerCIDR> cidrs_;
     bool cidrsIsSet_;
+    bool enableContainerCIDRsReservation_;
+    bool enableContainerCIDRsReservationIsSet_;
 
 };
 

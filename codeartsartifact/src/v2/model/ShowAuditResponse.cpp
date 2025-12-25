@@ -67,7 +67,7 @@ bool ShowAuditResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            AuditResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ShowAuditResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ShowAuditResponse::getResult() const
+AuditResult ShowAuditResponse::getResult() const
 {
     return result_;
 }
 
-void ShowAuditResponse::setResult(const Object& value)
+void ShowAuditResponse::setResult(const AuditResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

@@ -67,7 +67,7 @@ bool ShowProjectListResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::vector<ShowProjectListResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ShowProjectListResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ShowProjectListResponse::getResult() const
+std::vector<ShowProjectListResult>& ShowProjectListResponse::getResult()
 {
     return result_;
 }
 
-void ShowProjectListResponse::setResult(const Object& value)
+void ShowProjectListResponse::setResult(const std::vector<ShowProjectListResult>& value)
 {
     result_ = value;
     resultIsSet_ = true;

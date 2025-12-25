@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/codeartsrepo/v4/model/RepositoryProtectedActionBasicBodyDto.h>
 #include <vector>
@@ -54,10 +53,10 @@ public:
     /// **参数解释：** 用户ID列表。 **约束限制：** 不涉及。 **取值范围：** Integer **默认取值：** 不涉及。
     /// </summary>
 
-    std::vector<Object>& getUserIds();
+    std::vector<int32_t>& getUserIds();
     bool userIdsIsSet() const;
     void unsetuserIds();
-    void setUserIds(const std::vector<Object>& value);
+    void setUserIds(std::vector<int32_t> value);
 
     /// <summary>
     /// **参数解释：** 成员组ID列表。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
@@ -90,7 +89,7 @@ public:
 protected:
     bool enable_;
     bool enableIsSet_;
-    std::vector<Object> userIds_;
+    std::vector<int32_t> userIds_;
     bool userIdsIsSet_;
     std::vector<int32_t> userTeamIds_;
     bool userTeamIdsIsSet_;

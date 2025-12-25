@@ -31,6 +31,8 @@ UpdateNotMavenRepoDO::UpdateNotMavenRepoDO()
     maxUniqueSnapshotsIsSet_ = false;
     allowAnonymous_ = false;
     allowAnonymousIsSet_ = false;
+    projectId_ = "";
+    projectIdIsSet_ = false;
 }
 
 UpdateNotMavenRepoDO::~UpdateNotMavenRepoDO() = default;
@@ -72,6 +74,9 @@ web::json::value UpdateNotMavenRepoDO::toJson() const
     }
     if(allowAnonymousIsSet_) {
         val[utility::conversions::to_string_t("allow_anonymous")] = ModelBase::toJson(allowAnonymous_);
+    }
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
     }
 
     return val;
@@ -168,6 +173,15 @@ bool UpdateNotMavenRepoDO::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllowAnonymous(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
         }
     }
     return ok;
@@ -382,6 +396,27 @@ bool UpdateNotMavenRepoDO::allowAnonymousIsSet() const
 void UpdateNotMavenRepoDO::unsetallowAnonymous()
 {
     allowAnonymousIsSet_ = false;
+}
+
+std::string UpdateNotMavenRepoDO::getProjectId() const
+{
+    return projectId_;
+}
+
+void UpdateNotMavenRepoDO::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool UpdateNotMavenRepoDO::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void UpdateNotMavenRepoDO::unsetprojectId()
+{
+    projectIdIsSet_ = false;
 }
 
 }

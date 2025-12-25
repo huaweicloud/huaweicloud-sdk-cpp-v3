@@ -17,6 +17,8 @@ ContainerNetwork::ContainerNetwork()
     cidr_ = "";
     cidrIsSet_ = false;
     cidrsIsSet_ = false;
+    enableContainerCIDRsReservation_ = false;
+    enableContainerCIDRsReservationIsSet_ = false;
 }
 
 ContainerNetwork::~ContainerNetwork() = default;
@@ -37,6 +39,9 @@ web::json::value ContainerNetwork::toJson() const
     }
     if(cidrsIsSet_) {
         val[utility::conversions::to_string_t("cidrs")] = ModelBase::toJson(cidrs_);
+    }
+    if(enableContainerCIDRsReservationIsSet_) {
+        val[utility::conversions::to_string_t("enableContainerCIDRsReservation")] = ModelBase::toJson(enableContainerCIDRsReservation_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool ContainerNetwork::fromJson(const web::json::value& val)
             std::vector<ContainerCIDR> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCidrs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enableContainerCIDRsReservation"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enableContainerCIDRsReservation"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableContainerCIDRsReservation(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool ContainerNetwork::cidrsIsSet() const
 void ContainerNetwork::unsetcidrs()
 {
     cidrsIsSet_ = false;
+}
+
+bool ContainerNetwork::isEnableContainerCIDRsReservation() const
+{
+    return enableContainerCIDRsReservation_;
+}
+
+void ContainerNetwork::setEnableContainerCIDRsReservation(bool value)
+{
+    enableContainerCIDRsReservation_ = value;
+    enableContainerCIDRsReservationIsSet_ = true;
+}
+
+bool ContainerNetwork::enableContainerCIDRsReservationIsSet() const
+{
+    return enableContainerCIDRsReservationIsSet_;
+}
+
+void ContainerNetwork::unsetenableContainerCIDRsReservation()
+{
+    enableContainerCIDRsReservationIsSet_ = false;
 }
 
 }

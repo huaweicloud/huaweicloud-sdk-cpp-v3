@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/cce/v3/model/AutoGenerateSecurityGroupHardeningConfigSpec.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -74,6 +75,15 @@ public:
     void unsetcontrolPlaneSecurityGroup();
     void setControlPlaneSecurityGroup(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    AutoGenerateSecurityGroupHardeningConfigSpec getAutoGenerateSecurityGroupHardeningConfig() const;
+    bool autoGenerateSecurityGroupHardeningConfigIsSet() const;
+    void unsetautoGenerateSecurityGroupHardeningConfig();
+    void setAutoGenerateSecurityGroupHardeningConfig(const AutoGenerateSecurityGroupHardeningConfigSpec& value);
+
 
 protected:
     std::string vpc_;
@@ -84,6 +94,8 @@ protected:
     bool securityGroupIsSet_;
     std::string controlPlaneSecurityGroup_;
     bool controlPlaneSecurityGroupIsSet_;
+    AutoGenerateSecurityGroupHardeningConfigSpec autoGenerateSecurityGroupHardeningConfig_;
+    bool autoGenerateSecurityGroupHardeningConfigIsSet_;
 
 };
 

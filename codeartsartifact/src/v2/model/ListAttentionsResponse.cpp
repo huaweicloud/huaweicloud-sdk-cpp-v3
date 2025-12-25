@@ -67,7 +67,7 @@ bool ListAttentionsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ListAttentionPageResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ListAttentionsResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ListAttentionsResponse::getResult() const
+ListAttentionPageResult ListAttentionsResponse::getResult() const
 {
     return result_;
 }
 
-void ListAttentionsResponse::setResult(const Object& value)
+void ListAttentionsResponse::setResult(const ListAttentionPageResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

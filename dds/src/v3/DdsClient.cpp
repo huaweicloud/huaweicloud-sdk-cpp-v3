@@ -1711,6 +1711,24 @@ std::shared_ptr<ListBackupsResponse> DdsClient::listBackups(ListBackupsRequest &
     if (request.modeIsSet()) {
         localVarQueryParams["mode"] = parameterToString(request.getMode());
     }
+    if (request.orderFieldIsSet()) {
+        localVarQueryParams["order_field"] = parameterToString(request.getOrderField());
+    }
+    if (request.orderRuleIsSet()) {
+        localVarQueryParams["order_rule"] = parameterToString(request.getOrderRule());
+    }
+    if (request.backupStatusIsSet()) {
+        localVarQueryParams["backup_status"] = parameterToString(request.getBackupStatus());
+    }
+    if (request.backupNameIsSet()) {
+        localVarQueryParams["backup_name"] = parameterToString(request.getBackupName());
+    }
+    if (request.backupDescriptionIsSet()) {
+        localVarQueryParams["backup_description"] = parameterToString(request.getBackupDescription());
+    }
+    if (request.instanceNameIsSet()) {
+        localVarQueryParams["instance_name"] = parameterToString(request.getInstanceName());
+    }
 
     std::string localVarHttpBody;
 

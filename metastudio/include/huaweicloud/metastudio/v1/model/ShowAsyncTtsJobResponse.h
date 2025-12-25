@@ -48,6 +48,24 @@ public:
     void setState(const std::string& value);
 
     /// <summary>
+    /// 返回码。
+    /// </summary>
+
+    std::string getCode() const;
+    bool codeIsSet() const;
+    void unsetcode();
+    void setCode(const std::string& value);
+
+    /// <summary>
+    /// 异常信息。
+    /// </summary>
+
+    std::string getMessage() const;
+    bool messageIsSet() const;
+    void unsetmessage();
+    void setMessage(const std::string& value);
+
+    /// <summary>
     /// 音频文件下载链接，有效期为1个小时。
     /// </summary>
 
@@ -87,6 +105,10 @@ public:
 protected:
     std::string state_;
     bool stateIsSet_;
+    std::string code_;
+    bool codeIsSet_;
+    std::string message_;
+    bool messageIsSet_;
     std::string audioFileUrl_;
     bool audioFileUrlIsSet_;
     std::string audioInfoFileUrl_;

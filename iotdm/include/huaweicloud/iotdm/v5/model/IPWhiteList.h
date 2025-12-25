@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// IP白名单 约束：只有企业版实例的APP_HTTPS协议支持配置IP白名单。 
+/// IP白名单 约束：只有企业版实例的APP_HTTPS/APP_AMQP/APP_MQTT协议支持配置IP白名单。 
 /// </summary>
 class HUAWEICLOUD_IOTDM_V5_EXPORT  IPWhiteList
     : public ModelBase

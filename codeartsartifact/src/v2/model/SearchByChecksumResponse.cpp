@@ -67,7 +67,7 @@ bool SearchByChecksumResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::vector<ArtifactSearchResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void SearchByChecksumResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object SearchByChecksumResponse::getResult() const
+std::vector<ArtifactSearchResult>& SearchByChecksumResponse::getResult()
 {
     return result_;
 }
 
-void SearchByChecksumResponse::setResult(const Object& value)
+void SearchByChecksumResponse::setResult(const std::vector<ArtifactSearchResult>& value)
 {
     result_ = value;
     resultIsSet_ = true;

@@ -39,7 +39,7 @@ public:
     /// SmartChatJobsReq members
 
     /// <summary>
-    /// 扩展参数，按照Json格式携带。 * city：所在城市 * client_id：客户端ID
+    /// 扩展参数，按照Json格式携带。 * city：所在城市 * client_id：客户端ID * extra_json_param：自定义参数
     /// </summary>
 
     std::string getExtendParam() const;

@@ -58,7 +58,7 @@ public:
     void setChunkSize(int32_t value);
 
     /// <summary>
-    /// 分段策略，多个策略之间用逗号分割。 &gt; title:标题分割；separator:分隔符分割
+    /// 分段策略，如果添加多个策略用逗号隔开。 取值示例： - title：用标题把一段话分割为多个段落。 - separator：用分隔符把一段话分割为多个段落。
     /// </summary>
 
     std::string getChunkType() const;

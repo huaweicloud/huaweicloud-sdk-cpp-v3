@@ -13,6 +13,7 @@ namespace Model {
 ContainerNetworkUpdate::ContainerNetworkUpdate()
 {
     cidrsIsSet_ = false;
+    containercidrsIsSet_ = false;
 }
 
 ContainerNetworkUpdate::~ContainerNetworkUpdate() = default;
@@ -28,6 +29,9 @@ web::json::value ContainerNetworkUpdate::toJson() const
     if(cidrsIsSet_) {
         val[utility::conversions::to_string_t("cidrs")] = ModelBase::toJson(cidrs_);
     }
+    if(containercidrsIsSet_) {
+        val[utility::conversions::to_string_t("containercidrs")] = ModelBase::toJson(containercidrs_);
+    }
 
     return val;
 }
@@ -42,6 +46,15 @@ bool ContainerNetworkUpdate::fromJson(const web::json::value& val)
             std::vector<ContainerCIDR> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCidrs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("containercidrs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("containercidrs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setContainercidrs(refVal);
         }
     }
     return ok;
@@ -67,6 +80,27 @@ bool ContainerNetworkUpdate::cidrsIsSet() const
 void ContainerNetworkUpdate::unsetcidrs()
 {
     cidrsIsSet_ = false;
+}
+
+std::vector<std::string>& ContainerNetworkUpdate::getContainercidrs()
+{
+    return containercidrs_;
+}
+
+void ContainerNetworkUpdate::setContainercidrs(const std::vector<std::string>& value)
+{
+    containercidrs_ = value;
+    containercidrsIsSet_ = true;
+}
+
+bool ContainerNetworkUpdate::containercidrsIsSet() const
+{
+    return containercidrsIsSet_;
+}
+
+void ContainerNetworkUpdate::unsetcontainercidrs()
+{
+    containercidrsIsSet_ = false;
 }
 
 }

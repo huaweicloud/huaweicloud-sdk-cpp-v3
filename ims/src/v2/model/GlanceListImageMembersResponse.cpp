@@ -15,6 +15,7 @@ GlanceListImageMembersResponse::GlanceListImageMembersResponse()
     membersIsSet_ = false;
     schema_ = "";
     schemaIsSet_ = false;
+    pageInfoIsSet_ = false;
 }
 
 GlanceListImageMembersResponse::~GlanceListImageMembersResponse() = default;
@@ -32,6 +33,9 @@ web::json::value GlanceListImageMembersResponse::toJson() const
     }
     if(schemaIsSet_) {
         val[utility::conversions::to_string_t("schema")] = ModelBase::toJson(schema_);
+    }
+    if(pageInfoIsSet_) {
+        val[utility::conversions::to_string_t("page_info")] = ModelBase::toJson(pageInfo_);
     }
 
     return val;
@@ -56,6 +60,15 @@ bool GlanceListImageMembersResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSchema(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("page_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_info"));
+        if(!fieldValue.is_null())
+        {
+            GlancePageInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPageInfo(refVal);
         }
     }
     return ok;
@@ -102,6 +115,27 @@ bool GlanceListImageMembersResponse::schemaIsSet() const
 void GlanceListImageMembersResponse::unsetschema()
 {
     schemaIsSet_ = false;
+}
+
+GlancePageInfo GlanceListImageMembersResponse::getPageInfo() const
+{
+    return pageInfo_;
+}
+
+void GlanceListImageMembersResponse::setPageInfo(const GlancePageInfo& value)
+{
+    pageInfo_ = value;
+    pageInfoIsSet_ = true;
+}
+
+bool GlanceListImageMembersResponse::pageInfoIsSet() const
+{
+    return pageInfoIsSet_;
+}
+
+void GlanceListImageMembersResponse::unsetpageInfo()
+{
+    pageInfoIsSet_ = false;
 }
 
 }

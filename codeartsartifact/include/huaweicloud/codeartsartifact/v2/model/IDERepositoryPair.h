@@ -39,7 +39,7 @@ public:
     /// IDERepositoryPair members
 
     /// <summary>
-    /// 仓库名称
+    /// **参数解释**: 仓库名称。 **约束限制**: 长度1-20。 **取值范围**: 不涉及。 **默认取值**: 无。
     /// </summary>
 
     std::string getRepoName() const;
@@ -48,7 +48,7 @@ public:
     void setRepoName(const std::string& value);
 
     /// <summary>
-    /// 路径
+    /// **参数解释**: 路径包含规则。 **约束限制**: 最大长度512。 **取值范围**: 不涉及。 **默认取值**: 无。
     /// </summary>
 
     std::string getIncludesPattern() const;
@@ -57,7 +57,7 @@ public:
     void setIncludesPattern(const std::string& value);
 
     /// <summary>
-    /// 项目id
+    /// **参数解释**: 项目ID，可以从调用API处获取，也可以从控制台获取。获取方式请参考[获取项目ID](CloudArtifact_api_0015.xml)。 **约束限制**: 只能由英文字母、数字组成，且长度为32个字符。 **取值范围**: 不涉及。 **默认取值**: 无。
     /// </summary>
 
     std::string getProjectId() const;
@@ -66,7 +66,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 描述
+    /// **参数解释**: 仓库描述。 **约束限制**: 最大长度200。 **取值范围**: 不涉及。 **默认取值**: 无。
     /// </summary>
 
     std::string getDescription() const;
@@ -75,7 +75,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// snapshot仓库名称
+    /// **参数解释**: snapshot仓库名称。 **约束限制**: 长度1-20。 **取值范围**: 不涉及。 **默认取值**: 无。
     /// </summary>
 
     std::string getSnapshot() const;
@@ -84,7 +84,7 @@ public:
     void setSnapshot(const std::string& value);
 
     /// <summary>
-    /// release仓库名称
+    /// **参数解释**: release仓库名称。 **约束限制**: 长度1-20。 **取值范围**: 不涉及。 **默认取值**: 无。
     /// </summary>
 
     std::string getRelease() const;

@@ -67,7 +67,7 @@ bool ListArtifactoryStorageStatisticResponse::fromJson(const web::json::value& v
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::vector<StorageStatisticDO> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ListArtifactoryStorageStatisticResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ListArtifactoryStorageStatisticResponse::getResult() const
+std::vector<StorageStatisticDO>& ListArtifactoryStorageStatisticResponse::getResult()
 {
     return result_;
 }
 
-void ListArtifactoryStorageStatisticResponse::setResult(const Object& value)
+void ListArtifactoryStorageStatisticResponse::setResult(const std::vector<StorageStatisticDO>& value)
 {
     result_ = value;
     resultIsSet_ = true;

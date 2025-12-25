@@ -67,7 +67,7 @@ bool ShowMavenInfoResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::vector<RepositoryBuildVO> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ShowMavenInfoResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ShowMavenInfoResponse::getResult() const
+std::vector<RepositoryBuildVO>& ShowMavenInfoResponse::getResult()
 {
     return result_;
 }
 
-void ShowMavenInfoResponse::setResult(const Object& value)
+void ShowMavenInfoResponse::setResult(const std::vector<RepositoryBuildVO>& value)
 {
     result_ = value;
     resultIsSet_ = true;

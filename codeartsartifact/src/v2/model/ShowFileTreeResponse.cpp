@@ -67,7 +67,7 @@ bool ShowFileTreeResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ShowFileTreeResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ShowFileTreeResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ShowFileTreeResponse::getResult() const
+ShowFileTreeResult ShowFileTreeResponse::getResult() const
 {
     return result_;
 }
 
-void ShowFileTreeResponse::setResult(const Object& value)
+void ShowFileTreeResponse::setResult(const ShowFileTreeResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

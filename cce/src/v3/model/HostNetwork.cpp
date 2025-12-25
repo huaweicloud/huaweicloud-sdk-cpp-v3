@@ -20,6 +20,7 @@ HostNetwork::HostNetwork()
     securityGroupIsSet_ = false;
     controlPlaneSecurityGroup_ = "";
     controlPlaneSecurityGroupIsSet_ = false;
+    autoGenerateSecurityGroupHardeningConfigIsSet_ = false;
 }
 
 HostNetwork::~HostNetwork() = default;
@@ -43,6 +44,9 @@ web::json::value HostNetwork::toJson() const
     }
     if(controlPlaneSecurityGroupIsSet_) {
         val[utility::conversions::to_string_t("controlPlaneSecurityGroup")] = ModelBase::toJson(controlPlaneSecurityGroup_);
+    }
+    if(autoGenerateSecurityGroupHardeningConfigIsSet_) {
+        val[utility::conversions::to_string_t("autoGenerateSecurityGroupHardeningConfig")] = ModelBase::toJson(autoGenerateSecurityGroupHardeningConfig_);
     }
 
     return val;
@@ -85,6 +89,15 @@ bool HostNetwork::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setControlPlaneSecurityGroup(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("autoGenerateSecurityGroupHardeningConfig"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("autoGenerateSecurityGroupHardeningConfig"));
+        if(!fieldValue.is_null())
+        {
+            AutoGenerateSecurityGroupHardeningConfigSpec refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoGenerateSecurityGroupHardeningConfig(refVal);
         }
     }
     return ok;
@@ -173,6 +186,27 @@ bool HostNetwork::controlPlaneSecurityGroupIsSet() const
 void HostNetwork::unsetcontrolPlaneSecurityGroup()
 {
     controlPlaneSecurityGroupIsSet_ = false;
+}
+
+AutoGenerateSecurityGroupHardeningConfigSpec HostNetwork::getAutoGenerateSecurityGroupHardeningConfig() const
+{
+    return autoGenerateSecurityGroupHardeningConfig_;
+}
+
+void HostNetwork::setAutoGenerateSecurityGroupHardeningConfig(const AutoGenerateSecurityGroupHardeningConfigSpec& value)
+{
+    autoGenerateSecurityGroupHardeningConfig_ = value;
+    autoGenerateSecurityGroupHardeningConfigIsSet_ = true;
+}
+
+bool HostNetwork::autoGenerateSecurityGroupHardeningConfigIsSet() const
+{
+    return autoGenerateSecurityGroupHardeningConfigIsSet_;
+}
+
+void HostNetwork::unsetautoGenerateSecurityGroupHardeningConfig()
+{
+    autoGenerateSecurityGroupHardeningConfigIsSet_ = false;
 }
 
 }

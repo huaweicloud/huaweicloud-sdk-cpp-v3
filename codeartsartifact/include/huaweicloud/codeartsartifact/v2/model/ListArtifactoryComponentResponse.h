@@ -11,6 +11,7 @@
 
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/codeartsartifact/v2/model/StandarBaseResponseV5.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,7 +41,7 @@ public:
     /// ListArtifactoryComponentResponse members
 
     /// <summary>
-    /// 结果状态
+    /// **参数解释**： 请求成功或失败状态。 **取值范围**： - success：请求成功。 - error：请求失败。
     /// </summary>
 
     std::string getStatus() const;
@@ -49,7 +50,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 请求id
+    /// **参数解释**： 请求ID，当前请求唯一标识。 **取值范围**： 数字及中划线（-）组成的字符串。
     /// </summary>
 
     std::string getTraceId() const;
@@ -58,7 +59,7 @@ public:
     void setTraceId(const std::string& value);
 
     /// <summary>
-    /// 请求返回结果，接口不同，返回不同
+    /// **参数解释**:  文件详情。 **取值范围**: 不涉及。
     /// </summary>
 
     Object getResult() const;

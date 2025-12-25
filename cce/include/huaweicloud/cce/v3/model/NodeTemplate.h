@@ -13,6 +13,7 @@
 #include <string>
 #include <huaweicloud/cce/v3/model/Runtime.h>
 #include <huaweicloud/cce/v3/model/Login.h>
+#include <huaweicloud/cce/v3/model/PackageConfiguration.h>
 #include <huaweicloud/cce/v3/model/NodeNicSpec.h>
 #include <vector>
 #include <huaweicloud/cce/v3/model/UserTag.h>
@@ -286,6 +287,15 @@ public:
     void setPartition(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** 覆盖节点默认组件配置。  [当前支持的可配置组件及其参数详见[配置管理](https://support.huaweicloud.com/usermanual-cce/cce_10_0652.htmll)。](tag:hws) [当前支持的可配置组件及其参数详见[配置管理](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0652.html)。](tag:hws_hk) **约束限制：** 若指定了不支持的组件或组件不支持的参数，该配置项将被忽略。 
+    /// </summary>
+
+    std::vector<PackageConfiguration>& getConfigurationsOverride();
+    bool configurationsOverrideIsSet() const;
+    void unsetconfigurationsOverride();
+    void setConfigurationsOverride(const std::vector<PackageConfiguration>& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -348,6 +358,8 @@ protected:
     bool serverEnterpriseProjectIDIsSet_;
     std::string partition_;
     bool partitionIsSet_;
+    std::vector<PackageConfiguration> configurationsOverride_;
+    bool configurationsOverrideIsSet_;
     NodeSpec_nodeNameTemplate nodeNameTemplate_;
     bool nodeNameTemplateIsSet_;
 

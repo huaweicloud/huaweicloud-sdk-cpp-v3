@@ -20,7 +20,7 @@ ConfigurationHistoryRsp::ConfigurationHistoryRsp()
     newValueIsSet_ = false;
     updateResult_ = "";
     updateResultIsSet_ = false;
-    applied_ = "";
+    applied_ = false;
     appliedIsSet_ = false;
     updatedAt_ = "";
     updatedAtIsSet_ = false;
@@ -106,7 +106,7 @@ bool ConfigurationHistoryRsp::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("applied"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setApplied(refVal);
         }
@@ -217,12 +217,12 @@ void ConfigurationHistoryRsp::unsetupdateResult()
     updateResultIsSet_ = false;
 }
 
-std::string ConfigurationHistoryRsp::getApplied() const
+bool ConfigurationHistoryRsp::isApplied() const
 {
     return applied_;
 }
 
-void ConfigurationHistoryRsp::setApplied(const std::string& value)
+void ConfigurationHistoryRsp::setApplied(bool value)
 {
     applied_ = value;
     appliedIsSet_ = true;

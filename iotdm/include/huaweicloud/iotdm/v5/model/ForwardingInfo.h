@@ -39,7 +39,7 @@ public:
     /// ForwardingInfo members
 
     /// <summary>
-    /// **参数说明**：NAT网关绑定的EIP 
+    /// **参数说明**：NAT网关绑定的EIP。 
     /// </summary>
 
     std::string getEip() const;

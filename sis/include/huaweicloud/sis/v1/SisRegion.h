@@ -30,6 +30,14 @@ public:
             { 
                 "https://sis-ext.cn-east-3.myhuaweicloud.com"
             });
+        regions["ap-southeast-3"] = Region("ap-southeast-3",
+            { 
+                "https://sis-ext.ap-southeast-3.myhuaweicloud.com"
+            });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://sis-ext.me-east-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

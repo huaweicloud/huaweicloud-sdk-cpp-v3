@@ -23,6 +23,12 @@ CreatePhotoDigitalHumanVideoReq::CreatePhotoDigitalHumanVideoReq()
     backgroundMusicConfigIsSet_ = false;
     reviewConfigIsSet_ = false;
     callbackConfigIsSet_ = false;
+    idCardImage1_ = "";
+    idCardImage1IsSet_ = false;
+    idCardImage2_ = "";
+    idCardImage2IsSet_ = false;
+    authorizeUseHumanImage_ = false;
+    authorizeUseHumanImageIsSet_ = false;
 }
 
 CreatePhotoDigitalHumanVideoReq::~CreatePhotoDigitalHumanVideoReq() = default;
@@ -61,6 +67,15 @@ web::json::value CreatePhotoDigitalHumanVideoReq::toJson() const
     }
     if(callbackConfigIsSet_) {
         val[utility::conversions::to_string_t("callback_config")] = ModelBase::toJson(callbackConfig_);
+    }
+    if(idCardImage1IsSet_) {
+        val[utility::conversions::to_string_t("id_card_image1")] = ModelBase::toJson(idCardImage1_);
+    }
+    if(idCardImage2IsSet_) {
+        val[utility::conversions::to_string_t("id_card_image2")] = ModelBase::toJson(idCardImage2_);
+    }
+    if(authorizeUseHumanImageIsSet_) {
+        val[utility::conversions::to_string_t("authorize_use_human_image")] = ModelBase::toJson(authorizeUseHumanImage_);
     }
 
     return val;
@@ -148,6 +163,33 @@ bool CreatePhotoDigitalHumanVideoReq::fromJson(const web::json::value& val)
             CallBackConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCallbackConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("id_card_image1"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id_card_image1"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIdCardImage1(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("id_card_image2"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id_card_image2"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIdCardImage2(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("authorize_use_human_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("authorize_use_human_image"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuthorizeUseHumanImage(refVal);
         }
     }
     return ok;
@@ -341,6 +383,69 @@ bool CreatePhotoDigitalHumanVideoReq::callbackConfigIsSet() const
 void CreatePhotoDigitalHumanVideoReq::unsetcallbackConfig()
 {
     callbackConfigIsSet_ = false;
+}
+
+std::string CreatePhotoDigitalHumanVideoReq::getIdCardImage1() const
+{
+    return idCardImage1_;
+}
+
+void CreatePhotoDigitalHumanVideoReq::setIdCardImage1(const std::string& value)
+{
+    idCardImage1_ = value;
+    idCardImage1IsSet_ = true;
+}
+
+bool CreatePhotoDigitalHumanVideoReq::idCardImage1IsSet() const
+{
+    return idCardImage1IsSet_;
+}
+
+void CreatePhotoDigitalHumanVideoReq::unsetidCardImage1()
+{
+    idCardImage1IsSet_ = false;
+}
+
+std::string CreatePhotoDigitalHumanVideoReq::getIdCardImage2() const
+{
+    return idCardImage2_;
+}
+
+void CreatePhotoDigitalHumanVideoReq::setIdCardImage2(const std::string& value)
+{
+    idCardImage2_ = value;
+    idCardImage2IsSet_ = true;
+}
+
+bool CreatePhotoDigitalHumanVideoReq::idCardImage2IsSet() const
+{
+    return idCardImage2IsSet_;
+}
+
+void CreatePhotoDigitalHumanVideoReq::unsetidCardImage2()
+{
+    idCardImage2IsSet_ = false;
+}
+
+bool CreatePhotoDigitalHumanVideoReq::isAuthorizeUseHumanImage() const
+{
+    return authorizeUseHumanImage_;
+}
+
+void CreatePhotoDigitalHumanVideoReq::setAuthorizeUseHumanImage(bool value)
+{
+    authorizeUseHumanImage_ = value;
+    authorizeUseHumanImageIsSet_ = true;
+}
+
+bool CreatePhotoDigitalHumanVideoReq::authorizeUseHumanImageIsSet() const
+{
+    return authorizeUseHumanImageIsSet_;
+}
+
+void CreatePhotoDigitalHumanVideoReq::unsetauthorizeUseHumanImage()
+{
+    authorizeUseHumanImageIsSet_ = false;
 }
 
 }

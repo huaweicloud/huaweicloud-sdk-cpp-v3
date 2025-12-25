@@ -61,7 +61,7 @@ bool RepositoryProtectedActionBasicBodyDto::fromJson(const web::json::value& val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_ids"));
         if(!fieldValue.is_null())
         {
-            std::vector<Object> refVal;
+            std::vector<int32_t> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserIds(refVal);
         }
@@ -109,12 +109,12 @@ void RepositoryProtectedActionBasicBodyDto::unsetenable()
     enableIsSet_ = false;
 }
 
-std::vector<Object>& RepositoryProtectedActionBasicBodyDto::getUserIds()
+std::vector<int32_t>& RepositoryProtectedActionBasicBodyDto::getUserIds()
 {
     return userIds_;
 }
 
-void RepositoryProtectedActionBasicBodyDto::setUserIds(const std::vector<Object>& value)
+void RepositoryProtectedActionBasicBodyDto::setUserIds(std::vector<int32_t> value)
 {
     userIds_ = value;
     userIdsIsSet_ = true;

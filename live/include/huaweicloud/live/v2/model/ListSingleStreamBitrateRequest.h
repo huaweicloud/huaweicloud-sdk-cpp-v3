@@ -75,6 +75,15 @@ public:
     void setStream(const std::string& value);
 
     /// <summary>
+    /// 数据类型，取值如下：  - VIDEO ：视频码率  - AUDIO ：音频码率   不填写默认查询视频码率的数据。 
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
+    /// <summary>
     /// 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期1个月。  若参数为空，默认查询最近1小时数据。 
     /// </summary>
 
@@ -102,6 +111,8 @@ protected:
     bool appIsSet_;
     std::string stream_;
     bool streamIsSet_;
+    std::string type_;
+    bool typeIsSet_;
     std::string startTime_;
     bool startTimeIsSet_;
     std::string endTime_;

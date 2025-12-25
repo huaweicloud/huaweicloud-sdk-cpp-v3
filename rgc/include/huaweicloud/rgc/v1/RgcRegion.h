@@ -66,6 +66,18 @@ public:
             { 
                 "https://rgc.sa-brazil-1.myhuaweicloud.com"
             });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://rgc.ap-southeast-5.myhuaweicloud.com"
+            });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://rgc.me-east-1.myhuaweicloud.com"
+            });
+        regions["tr-west-1"] = Region("tr-west-1",
+            { 
+                "https://rgc.tr-west-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

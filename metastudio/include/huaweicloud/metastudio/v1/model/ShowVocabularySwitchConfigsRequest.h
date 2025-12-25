@@ -102,7 +102,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 类型 租户级自定义读法全局开关:vocabulary
+    /// 类型。 * 租户级自定义读法全局开关，示例vocabulary。
     /// </summary>
 
     std::string getKey() const;

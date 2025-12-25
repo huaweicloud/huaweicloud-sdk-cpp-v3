@@ -82,6 +82,10 @@ public:
             { 
                 "https://repo.af-north-1.myhuaweicloud.com"
             });
+        regions["eu-west-101"] = Region("eu-west-101",
+            { 
+                "https://codeartsrepo-ext.eu-west-101.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

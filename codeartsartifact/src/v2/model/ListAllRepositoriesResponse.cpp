@@ -67,7 +67,7 @@ bool ListAllRepositoriesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ListAllRepositoriesResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ListAllRepositoriesResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ListAllRepositoriesResponse::getResult() const
+ListAllRepositoriesResult ListAllRepositoriesResponse::getResult() const
 {
     return result_;
 }
 
-void ListAllRepositoriesResponse::setResult(const Object& value)
+void ListAllRepositoriesResponse::setResult(const ListAllRepositoriesResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

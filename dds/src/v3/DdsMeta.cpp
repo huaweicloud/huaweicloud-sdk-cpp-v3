@@ -408,6 +408,24 @@ HttpRequestDef DdsMeta::genRequestDefForListBackups() {
     reqDefBuilder.withRequestField(FieldDef().withName("Mode")
                   .withJsonTag("mode")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OrderField")
+                  .withJsonTag("order_field")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OrderRule")
+                  .withJsonTag("order_rule")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupStatus")
+                  .withJsonTag("backup_status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupName")
+                  .withJsonTag("backup_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupDescription")
+                  .withJsonTag("backup_description")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceName")
+                  .withJsonTag("instance_name")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

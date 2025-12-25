@@ -1,3 +1,402 @@
+# 3.1.168 2025-12-25
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowCluster**
+    - 响应参数变更
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+  - **UpdateCluster**
+    - 请求参数变更
+      - `+ spec.containerNetwork.containercidrs`
+    - 响应参数变更
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+  - **DeleteCluster**
+    - 响应参数变更
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+  - **CreateCluster**
+    - 请求参数变更
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+    - 响应参数变更
+      - `+ spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ spec.containerNetwork.enableContainerCIDRsReservation`
+  - **ListClusters**
+    - 响应参数变更
+      - `+ items.spec.hostNetwork.autoGenerateSecurityGroupHardeningConfig`
+      - `+ items.spec.containerNetwork.enableContainerCIDRsReservation`
+  - **ShowNode**
+    - 响应参数变更
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+  - **CreateNode**
+    - 请求参数变更
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+    - 响应参数变更
+      - `+ spec.extendParam.containerBaseSize`
+      - `+ spec.extendParam.kubeReservedCpu`
+      - `+ spec.extendParam.systemReservedCpu`
+      - `+ spec.extendParam.kubeReservedPid`
+      - `+ spec.extendParam.systemReservedPid`
+      - `+ spec.extendParam.kubeReservedStorage`
+      - `+ spec.extendParam.systemReservedStorage`
+  - **ListNodes**
+    - 响应参数变更
+      - `+ items.spec.extendParam.containerBaseSize`
+      - `+ items.spec.extendParam.kubeReservedCpu`
+      - `+ items.spec.extendParam.systemReservedCpu`
+      - `+ items.spec.extendParam.kubeReservedPid`
+      - `+ items.spec.extendParam.systemReservedPid`
+      - `+ items.spec.extendParam.kubeReservedStorage`
+      - `+ items.spec.extendParam.systemReservedStorage`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **UpdateNodePool**
+    - 响应参数变更
+      - `+ status.configurationSyncedNodeCount`
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **UpgradeNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+    - 响应参数变更
+      - `+ status.configurationSyncedNodeCount`
+      - `+ spec.nodeTemplate.configurationsOverride`
+      - `+ spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **ListNodePools**
+    - 响应参数变更
+      - `+ items.spec.nodeTemplate.configurationsOverride`
+      - `+ items.spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ items.spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ items.spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ items.spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ items.spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ items.spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ items.spec.nodeTemplate.extendParam.systemReservedStorage`
+  - **ListHyperNodes**
+    - 响应参数变更
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.containerBaseSize`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.kubeReservedCpu`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.systemReservedCpu`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.kubeReservedPid`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.systemReservedPid`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.kubeReservedStorage`
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.systemReservedStorage`
+
+### HuaweiCloud SDK CodeArtsArtifact
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ShowPackageDataDetail`
+    - `ShowPackageInfo`
+    - `ShowAutoDeleteJobSettings`
+    - `DeleteCompletelyUpdateFileState`
+    - `ListFileBuildArchives`
+    - `ListMavenList`
+    - `ListProjectUsers`
+    - `ListChildProxyRepositoriesList`
+    - `ListNetProxy`
+    - `ListDomainIpConfig`
+    - `ListSecGuardList`
+    - `ShowOpenSourceEnabled`
+    - `ShowRepoUserInfo`
+    - `ListMavenUser`
+    - `ShowUserTicket`
+    - `ListProjectRolePermissions`
+    - `ShowMultiRolesUserPermissions`
+    - `ListCapacityMessageSetting`
+    - `ListFiles`
+    - `ShowLatestVersionFilesCount`
+    - `ListLatestVersionFiles`
+    - `ShowFileDetail`
+    - `ShowFileDetailByFullName`
+    - `ShowDomainReleaseRepoStorage`
+    - `ShowProjectStorageInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchDeleteTrashes**
+    - 请求参数变更
+      - `+ format`
+      - `- fomat`
+  - **SearchArtifacts**
+    - 请求参数变更
+      - `* in_project: string -> boolean`
+  - **UpdateArtifactory**
+    - 请求参数变更
+      - `+ project_id`
+
+### HuaweiCloud SDK CodeArtsRepo
+
+- _接口版本_
+  - V4
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTenantRepositories**
+    - 响应参数变更
+      - `+ status: enum value [0,3,4,5,7]`
+  - **BatchUpdateRepositoryFilePushPermissions**
+    - 请求参数变更
+      - `* permissions.actions.user_ids: list<null> -> list<integer>`
+  - **CreateFilePushPermission**
+    - 请求参数变更
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **BatchUpdateProtectedBranches**
+    - 请求参数变更
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **BatchCreateProtectedBranch**
+    - 请求参数变更
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **UpdateProtectedBranch**
+    - 请求参数变更
+      - `* user_ids: list<null> -> list<integer>`
+  - **BatchUpdateProtectedTags**
+    - 请求参数变更
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **BatchCreateProtectedTags**
+    - 请求参数变更
+      - `* actions.user_ids: list<null> -> list<integer>`
+  - **UpdateProtectedTag**
+    - 请求参数变更
+      - `* user_ids: list<null> -> list<integer>`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateConfiguration**
+    - 请求参数变更
+      - `+ entity_id`
+  - **ShowConfigurationAppliedHistory**
+    - 响应参数变更
+      - `+ total_count`
+  - **ListBackups**
+    - 请求参数变更
+      - `+ order_field`
+      - `+ order_rule`
+      - `+ backup_status`
+      - `+ backup_name`
+      - `+ backup_description`
+      - `+ instance_name`
+    - 响应参数变更
+      - `+ backups.instance_status`
+      - `+ backups.instance_mode`
+      - `+ backups.is_instance_restoring`
+      - `+ backups.backup_method`
+      - `+ backups.kms_enable`
+      - `+ backups.deletable`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowModifyHistory**
+    - 请求参数变更
+      - `* offset: string -> int32`
+      - `* limit: string -> int32`
+    - 响应参数变更
+      - `* histories.applied: string -> boolean`
+
+### HuaweiCloud SDK IMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListImageMembers**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+    - 响应参数变更
+      - `+ page_info`
+  - **GlanceListImageMembers**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+    - 响应参数变更
+      - `+ page_info`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSingleStreamBitrate**
+    - 请求参数变更
+      - `+ type`
+  - **ListHistoryStreams**
+    - 请求参数变更
+      - `* domain: string -> list<string>`
+
+### HuaweiCloud SDK MetaStudio
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAsyncTtsJob**
+    - 响应参数变更
+      - `+ code`
+      - `+ message`
+  - **ShowPacifyWordsSwitch**
+    - 请求参数变更
+      - `+ language: enum value [fr]`
+  - **ShowPacifyWordsTriggerTime**
+    - 请求参数变更
+      - `+ language: enum value [fr]`
+  - **ShowWelcomeSpeechSwitch**
+    - 请求参数变更
+      - `+ language: enum value [fr]`
+  - **ShowTtsAuditionFile**
+    - 响应参数变更
+      - `+ code`
+  - **ListSmartChatJob**
+    - 响应参数变更
+      - `+ smart_chat_jobs.default_language: enum value [fr]`
+      - `+ smart_chat_jobs.voice_config_list.language: enum value [fr]`
+  - **StartSmartChatJob**
+    - 响应参数变更
+      - `+ default_language: enum value [fr]`
+      - `+ voice_config_list.language: enum value [fr]`
+  - **ShowSmartChatJob**
+    - 响应参数变更
+      - `+ default_language: enum value [fr]`
+      - `+ voice_config_list.language: enum value [fr]`
+  - **ListHotWords**
+    - 请求参数变更
+      - `+ language: enum value [fr]`
+  - **ListPacifyWords**
+    - 请求参数变更
+      - `+ language: enum value [fr]`
+  - **ListWelcomeSpeech**
+    - 请求参数变更
+      - `+ language: enum value [fr]`
+  - **CreateDigitalHumanBusinessCard**
+    - 请求参数变更
+      - `+ card_image_config.id_card_image1`
+      - `+ card_image_config.id_card_image2`
+      - `+ card_image_config.authorize_use_human_image`
+  - **UpdateDigitalHumanBusinessCard**
+    - 请求参数变更
+      - `+ card_image_config.id_card_image1`
+      - `+ card_image_config.id_card_image2`
+      - `+ card_image_config.authorize_use_human_image`
+  - **CreatePhotoDigitalHumanVideo**
+    - 请求参数变更
+      - `+ id_card_image1`
+      - `+ id_card_image2`
+      - `+ authorize_use_human_image`
+
 # 3.1.167 2025-12-18
 
 ### HuaweiCloud SDK CodeArtsDeploy

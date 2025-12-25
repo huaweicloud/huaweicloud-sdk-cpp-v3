@@ -14,7 +14,6 @@ ListHistoryStreamsRequest::ListHistoryStreamsRequest()
 {
     projectId_ = "";
     projectIdIsSet_ = false;
-    domain_ = "";
     domainIsSet_ = false;
     app_ = "";
     appIsSet_ = false;
@@ -84,7 +83,7 @@ bool ListHistoryStreamsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomain(refVal);
         }
@@ -168,12 +167,12 @@ void ListHistoryStreamsRequest::unsetprojectId()
     projectIdIsSet_ = false;
 }
 
-std::string ListHistoryStreamsRequest::getDomain() const
+std::vector<std::string>& ListHistoryStreamsRequest::getDomain()
 {
     return domain_;
 }
 
-void ListHistoryStreamsRequest::setDomain(const std::string& value)
+void ListHistoryStreamsRequest::setDomain(const std::vector<std::string>& value)
 {
     domain_ = value;
     domainIsSet_ = true;

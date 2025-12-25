@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -48,13 +49,13 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 推流域名。 
+    /// 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔。  若查询多个域名，则返回的是多个域名合并数据。 
     /// </summary>
 
-    std::string getDomain() const;
+    std::vector<std::string>& getDomain();
     bool domainIsSet() const;
     void unsetdomain();
-    void setDomain(const std::string& value);
+    void setDomain(const std::vector<std::string>& value);
 
     /// <summary>
     /// 应用名称。
@@ -114,7 +115,7 @@ public:
 protected:
     std::string projectId_;
     bool projectIdIsSet_;
-    std::string domain_;
+    std::vector<std::string> domain_;
     bool domainIsSet_;
     std::string app_;
     bool appIsSet_;

@@ -87,10 +87,10 @@ public:
     /// 是否在项目中
     /// </summary>
 
-    std::string getInProject() const;
+    bool isInProject() const;
     bool inProjectIsSet() const;
     void unsetinProject();
-    void setInProject(const std::string& value);
+    void setInProject(bool value);
 
 
 protected:
@@ -104,7 +104,7 @@ protected:
     bool pageSizeIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
-    std::string inProject_;
+    bool inProject_;
     bool inProjectIsSet_;
 
 };

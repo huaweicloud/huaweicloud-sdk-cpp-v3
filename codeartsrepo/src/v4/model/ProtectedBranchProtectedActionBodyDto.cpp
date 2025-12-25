@@ -70,7 +70,7 @@ bool ProtectedBranchProtectedActionBodyDto::fromJson(const web::json::value& val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_ids"));
         if(!fieldValue.is_null())
         {
-            std::vector<Object> refVal;
+            std::vector<int32_t> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserIds(refVal);
         }
@@ -136,12 +136,12 @@ void ProtectedBranchProtectedActionBodyDto::unsetenable()
     enableIsSet_ = false;
 }
 
-std::vector<Object>& ProtectedBranchProtectedActionBodyDto::getUserIds()
+std::vector<int32_t>& ProtectedBranchProtectedActionBodyDto::getUserIds()
 {
     return userIds_;
 }
 
-void ProtectedBranchProtectedActionBodyDto::setUserIds(const std::vector<Object>& value)
+void ProtectedBranchProtectedActionBodyDto::setUserIds(std::vector<int32_t> value)
 {
     userIds_ = value;
     userIdsIsSet_ = true;

@@ -51,10 +51,10 @@ public:
     /// 仓库类型
     /// </summary>
 
-    std::string getFomat() const;
-    bool fomatIsSet() const;
-    void unsetfomat();
-    void setFomat(const std::string& value);
+    std::string getFormat() const;
+    bool formatIsSet() const;
+    void unsetformat();
+    void setFormat(const std::string& value);
 
     /// <summary>
     /// URI
@@ -87,8 +87,8 @@ public:
 protected:
     std::string id_;
     bool idIsSet_;
-    std::string fomat_;
-    bool fomatIsSet_;
+    std::string format_;
+    bool formatIsSet_;
     std::string uri_;
     bool uriIsSet_;
     std::string status_;

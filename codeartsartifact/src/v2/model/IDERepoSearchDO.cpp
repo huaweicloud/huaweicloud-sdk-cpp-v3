@@ -22,7 +22,7 @@ IDERepoSearchDO::IDERepoSearchDO()
     pageSizeIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
-    inProject_ = "";
+    inProject_ = false;
     inProjectIsSet_ = false;
 }
 
@@ -110,7 +110,7 @@ bool IDERepoSearchDO::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("in_project"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInProject(refVal);
         }
@@ -224,12 +224,12 @@ void IDERepoSearchDO::unsetprojectId()
     projectIdIsSet_ = false;
 }
 
-std::string IDERepoSearchDO::getInProject() const
+bool IDERepoSearchDO::isInProject() const
 {
     return inProject_;
 }
 
-void IDERepoSearchDO::setInProject(const std::string& value)
+void IDERepoSearchDO::setInProject(bool value)
 {
     inProject_ = value;
     inProjectIsSet_ = true;

@@ -67,7 +67,7 @@ bool BatchDeleteTrashesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            TrashcanResultData refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void BatchDeleteTrashesResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object BatchDeleteTrashesResponse::getResult() const
+TrashcanResultData BatchDeleteTrashesResponse::getResult() const
 {
     return result_;
 }
 
-void BatchDeleteTrashesResponse::setResult(const Object& value)
+void BatchDeleteTrashesResponse::setResult(const TrashcanResultData& value)
 {
     result_ = value;
     resultIsSet_ = true;

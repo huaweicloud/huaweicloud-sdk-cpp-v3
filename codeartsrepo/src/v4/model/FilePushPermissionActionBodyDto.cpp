@@ -66,7 +66,7 @@ bool FilePushPermissionActionBodyDto::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_ids"));
         if(!fieldValue.is_null())
         {
-            std::vector<Object> refVal;
+            std::vector<int32_t> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserIds(refVal);
         }
@@ -123,12 +123,12 @@ void FilePushPermissionActionBodyDto::unsetenable()
     enableIsSet_ = false;
 }
 
-std::vector<Object>& FilePushPermissionActionBodyDto::getUserIds()
+std::vector<int32_t>& FilePushPermissionActionBodyDto::getUserIds()
 {
     return userIds_;
 }
 
-void FilePushPermissionActionBodyDto::setUserIds(const std::vector<Object>& value)
+void FilePushPermissionActionBodyDto::setUserIds(std::vector<int32_t> value)
 {
     userIds_ = value;
     userIdsIsSet_ = true;

@@ -67,7 +67,7 @@ bool ShowRepositoryResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            RepositoryBasicDO refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -118,12 +118,12 @@ void ShowRepositoryResponse::unsettraceId()
     traceIdIsSet_ = false;
 }
 
-Object ShowRepositoryResponse::getResult() const
+RepositoryBasicDO ShowRepositoryResponse::getResult() const
 {
     return result_;
 }
 
-void ShowRepositoryResponse::setResult(const Object& value)
+void ShowRepositoryResponse::setResult(const RepositoryBasicDO& value)
 {
     result_ = value;
     resultIsSet_ = true;

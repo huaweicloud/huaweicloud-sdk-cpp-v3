@@ -195,6 +195,12 @@ HttpRequestDef ImsMeta::genRequestDefForListImageByTags() {
 
 HttpRequestDef ImsMeta::genRequestDefForListImageMembers() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -484,6 +490,12 @@ HttpRequestDef ImsMeta::genRequestDefForGlanceListImageMemberSchemas() {
 
 HttpRequestDef ImsMeta::genRequestDefForGlanceListImageMembers() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

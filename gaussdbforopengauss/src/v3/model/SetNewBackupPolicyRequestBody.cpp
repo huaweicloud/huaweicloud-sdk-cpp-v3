@@ -39,7 +39,7 @@ bool SetNewBackupPolicyRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_policy"));
         if(!fieldValue.is_null())
         {
-            BackupPolicyInfo refVal;
+            BackupPolicyInfoOption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBackupPolicy(refVal);
         }
@@ -48,12 +48,12 @@ bool SetNewBackupPolicyRequestBody::fromJson(const web::json::value& val)
 }
 
 
-BackupPolicyInfo SetNewBackupPolicyRequestBody::getBackupPolicy() const
+BackupPolicyInfoOption SetNewBackupPolicyRequestBody::getBackupPolicy() const
 {
     return backupPolicy_;
 }
 
-void SetNewBackupPolicyRequestBody::setBackupPolicy(const BackupPolicyInfo& value)
+void SetNewBackupPolicyRequestBody::setBackupPolicy(const BackupPolicyInfoOption& value)
 {
     backupPolicy_ = value;
     backupPolicyIsSet_ = true;

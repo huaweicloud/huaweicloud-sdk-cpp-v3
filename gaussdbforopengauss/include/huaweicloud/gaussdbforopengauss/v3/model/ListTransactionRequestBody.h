@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListTransactionRequestBody_transaction_query_option.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListTransactionRequestBody_transaction_query_info.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -79,10 +79,10 @@ public:
     /// 
     /// </summary>
 
-    ListTransactionRequestBody_transaction_query_option getTransactionQueryOption() const;
-    bool transactionQueryOptionIsSet() const;
-    void unsettransactionQueryOption();
-    void setTransactionQueryOption(const ListTransactionRequestBody_transaction_query_option& value);
+    ListTransactionRequestBody_transaction_query_info getTransactionQueryInfo() const;
+    bool transactionQueryInfoIsSet() const;
+    void unsettransactionQueryInfo();
+    void setTransactionQueryInfo(const ListTransactionRequestBody_transaction_query_info& value);
 
 
 protected:
@@ -94,8 +94,8 @@ protected:
     bool limitIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
-    ListTransactionRequestBody_transaction_query_option transactionQueryOption_;
-    bool transactionQueryOptionIsSet_;
+    ListTransactionRequestBody_transaction_query_info transactionQueryInfo_;
+    bool transactionQueryInfoIsSet_;
 
 };
 

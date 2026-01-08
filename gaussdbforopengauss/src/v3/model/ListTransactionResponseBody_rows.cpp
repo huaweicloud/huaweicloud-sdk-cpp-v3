@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/gaussdbforopengauss/v3/model/ListTransactionResponseBody_rows_info.h"
+#include "huaweicloud/gaussdbforopengauss/v3/model/ListTransactionResponseBody_rows.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-ListTransactionResponseBody_rows_info::ListTransactionResponseBody_rows_info()
+ListTransactionResponseBody_rows::ListTransactionResponseBody_rows()
 {
     sessionid_ = 0;
     sessionidIsSet_ = false;
@@ -54,13 +54,13 @@ ListTransactionResponseBody_rows_info::ListTransactionResponseBody_rows_info()
     xlogQuantityIsSet_ = false;
 }
 
-ListTransactionResponseBody_rows_info::~ListTransactionResponseBody_rows_info() = default;
+ListTransactionResponseBody_rows::~ListTransactionResponseBody_rows() = default;
 
-void ListTransactionResponseBody_rows_info::validate()
+void ListTransactionResponseBody_rows::validate()
 {
 }
 
-web::json::value ListTransactionResponseBody_rows_info::toJson() const
+web::json::value ListTransactionResponseBody_rows::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -127,7 +127,7 @@ web::json::value ListTransactionResponseBody_rows_info::toJson() const
 
     return val;
 }
-bool ListTransactionResponseBody_rows_info::fromJson(const web::json::value& val)
+bool ListTransactionResponseBody_rows::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -315,422 +315,422 @@ bool ListTransactionResponseBody_rows_info::fromJson(const web::json::value& val
 }
 
 
-int32_t ListTransactionResponseBody_rows_info::getSessionid() const
+int32_t ListTransactionResponseBody_rows::getSessionid() const
 {
     return sessionid_;
 }
 
-void ListTransactionResponseBody_rows_info::setSessionid(int32_t value)
+void ListTransactionResponseBody_rows::setSessionid(int32_t value)
 {
     sessionid_ = value;
     sessionidIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::sessionidIsSet() const
+bool ListTransactionResponseBody_rows::sessionidIsSet() const
 {
     return sessionidIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetsessionid()
+void ListTransactionResponseBody_rows::unsetsessionid()
 {
     sessionidIsSet_ = false;
 }
 
-int32_t ListTransactionResponseBody_rows_info::getPid() const
+int32_t ListTransactionResponseBody_rows::getPid() const
 {
     return pid_;
 }
 
-void ListTransactionResponseBody_rows_info::setPid(int32_t value)
+void ListTransactionResponseBody_rows::setPid(int32_t value)
 {
     pid_ = value;
     pidIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::pidIsSet() const
+bool ListTransactionResponseBody_rows::pidIsSet() const
 {
     return pidIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetpid()
+void ListTransactionResponseBody_rows::unsetpid()
 {
     pidIsSet_ = false;
 }
 
-int32_t ListTransactionResponseBody_rows_info::getQueryId() const
+int32_t ListTransactionResponseBody_rows::getQueryId() const
 {
     return queryId_;
 }
 
-void ListTransactionResponseBody_rows_info::setQueryId(int32_t value)
+void ListTransactionResponseBody_rows::setQueryId(int32_t value)
 {
     queryId_ = value;
     queryIdIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::queryIdIsSet() const
+bool ListTransactionResponseBody_rows::queryIdIsSet() const
 {
     return queryIdIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetqueryId()
+void ListTransactionResponseBody_rows::unsetqueryId()
 {
     queryIdIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getDatname() const
+std::string ListTransactionResponseBody_rows::getDatname() const
 {
     return datname_;
 }
 
-void ListTransactionResponseBody_rows_info::setDatname(const std::string& value)
+void ListTransactionResponseBody_rows::setDatname(const std::string& value)
 {
     datname_ = value;
     datnameIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::datnameIsSet() const
+bool ListTransactionResponseBody_rows::datnameIsSet() const
 {
     return datnameIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetdatname()
+void ListTransactionResponseBody_rows::unsetdatname()
 {
     datnameIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getClientAddr() const
+std::string ListTransactionResponseBody_rows::getClientAddr() const
 {
     return clientAddr_;
 }
 
-void ListTransactionResponseBody_rows_info::setClientAddr(const std::string& value)
+void ListTransactionResponseBody_rows::setClientAddr(const std::string& value)
 {
     clientAddr_ = value;
     clientAddrIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::clientAddrIsSet() const
+bool ListTransactionResponseBody_rows::clientAddrIsSet() const
 {
     return clientAddrIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetclientAddr()
+void ListTransactionResponseBody_rows::unsetclientAddr()
 {
     clientAddrIsSet_ = false;
 }
 
-int32_t ListTransactionResponseBody_rows_info::getClientPort() const
+int32_t ListTransactionResponseBody_rows::getClientPort() const
 {
     return clientPort_;
 }
 
-void ListTransactionResponseBody_rows_info::setClientPort(int32_t value)
+void ListTransactionResponseBody_rows::setClientPort(int32_t value)
 {
     clientPort_ = value;
     clientPortIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::clientPortIsSet() const
+bool ListTransactionResponseBody_rows::clientPortIsSet() const
 {
     return clientPortIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetclientPort()
+void ListTransactionResponseBody_rows::unsetclientPort()
 {
     clientPortIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getUsename() const
+std::string ListTransactionResponseBody_rows::getUsename() const
 {
     return usename_;
 }
 
-void ListTransactionResponseBody_rows_info::setUsename(const std::string& value)
+void ListTransactionResponseBody_rows::setUsename(const std::string& value)
 {
     usename_ = value;
     usenameIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::usenameIsSet() const
+bool ListTransactionResponseBody_rows::usenameIsSet() const
 {
     return usenameIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetusename()
+void ListTransactionResponseBody_rows::unsetusename()
 {
     usenameIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getQuery() const
+std::string ListTransactionResponseBody_rows::getQuery() const
 {
     return query_;
 }
 
-void ListTransactionResponseBody_rows_info::setQuery(const std::string& value)
+void ListTransactionResponseBody_rows::setQuery(const std::string& value)
 {
     query_ = value;
     queryIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::queryIsSet() const
+bool ListTransactionResponseBody_rows::queryIsSet() const
 {
     return queryIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetquery()
+void ListTransactionResponseBody_rows::unsetquery()
 {
     queryIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getBackendStart() const
+std::string ListTransactionResponseBody_rows::getBackendStart() const
 {
     return backendStart_;
 }
 
-void ListTransactionResponseBody_rows_info::setBackendStart(const std::string& value)
+void ListTransactionResponseBody_rows::setBackendStart(const std::string& value)
 {
     backendStart_ = value;
     backendStartIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::backendStartIsSet() const
+bool ListTransactionResponseBody_rows::backendStartIsSet() const
 {
     return backendStartIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetbackendStart()
+void ListTransactionResponseBody_rows::unsetbackendStart()
 {
     backendStartIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getXactStart() const
+std::string ListTransactionResponseBody_rows::getXactStart() const
 {
     return xactStart_;
 }
 
-void ListTransactionResponseBody_rows_info::setXactStart(const std::string& value)
+void ListTransactionResponseBody_rows::setXactStart(const std::string& value)
 {
     xactStart_ = value;
     xactStartIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::xactStartIsSet() const
+bool ListTransactionResponseBody_rows::xactStartIsSet() const
 {
     return xactStartIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetxactStart()
+void ListTransactionResponseBody_rows::unsetxactStart()
 {
     xactStartIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getApplicationName() const
+std::string ListTransactionResponseBody_rows::getApplicationName() const
 {
     return applicationName_;
 }
 
-void ListTransactionResponseBody_rows_info::setApplicationName(const std::string& value)
+void ListTransactionResponseBody_rows::setApplicationName(const std::string& value)
 {
     applicationName_ = value;
     applicationNameIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::applicationNameIsSet() const
+bool ListTransactionResponseBody_rows::applicationNameIsSet() const
 {
     return applicationNameIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetapplicationName()
+void ListTransactionResponseBody_rows::unsetapplicationName()
 {
     applicationNameIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getState() const
+std::string ListTransactionResponseBody_rows::getState() const
 {
     return state_;
 }
 
-void ListTransactionResponseBody_rows_info::setState(const std::string& value)
+void ListTransactionResponseBody_rows::setState(const std::string& value)
 {
     state_ = value;
     stateIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::stateIsSet() const
+bool ListTransactionResponseBody_rows::stateIsSet() const
 {
     return stateIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetstate()
+void ListTransactionResponseBody_rows::unsetstate()
 {
     stateIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getStateChange() const
+std::string ListTransactionResponseBody_rows::getStateChange() const
 {
     return stateChange_;
 }
 
-void ListTransactionResponseBody_rows_info::setStateChange(const std::string& value)
+void ListTransactionResponseBody_rows::setStateChange(const std::string& value)
 {
     stateChange_ = value;
     stateChangeIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::stateChangeIsSet() const
+bool ListTransactionResponseBody_rows::stateChangeIsSet() const
 {
     return stateChangeIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetstateChange()
+void ListTransactionResponseBody_rows::unsetstateChange()
 {
     stateChangeIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getQueryStart() const
+std::string ListTransactionResponseBody_rows::getQueryStart() const
 {
     return queryStart_;
 }
 
-void ListTransactionResponseBody_rows_info::setQueryStart(const std::string& value)
+void ListTransactionResponseBody_rows::setQueryStart(const std::string& value)
 {
     queryStart_ = value;
     queryStartIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::queryStartIsSet() const
+bool ListTransactionResponseBody_rows::queryStartIsSet() const
 {
     return queryStartIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetqueryStart()
+void ListTransactionResponseBody_rows::unsetqueryStart()
 {
     queryStartIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getWaiting() const
+std::string ListTransactionResponseBody_rows::getWaiting() const
 {
     return waiting_;
 }
 
-void ListTransactionResponseBody_rows_info::setWaiting(const std::string& value)
+void ListTransactionResponseBody_rows::setWaiting(const std::string& value)
 {
     waiting_ = value;
     waitingIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::waitingIsSet() const
+bool ListTransactionResponseBody_rows::waitingIsSet() const
 {
     return waitingIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetwaiting()
+void ListTransactionResponseBody_rows::unsetwaiting()
 {
     waitingIsSet_ = false;
 }
 
-int32_t ListTransactionResponseBody_rows_info::getUniqueSqlId() const
+int32_t ListTransactionResponseBody_rows::getUniqueSqlId() const
 {
     return uniqueSqlId_;
 }
 
-void ListTransactionResponseBody_rows_info::setUniqueSqlId(int32_t value)
+void ListTransactionResponseBody_rows::setUniqueSqlId(int32_t value)
 {
     uniqueSqlId_ = value;
     uniqueSqlIdIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::uniqueSqlIdIsSet() const
+bool ListTransactionResponseBody_rows::uniqueSqlIdIsSet() const
 {
     return uniqueSqlIdIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetuniqueSqlId()
+void ListTransactionResponseBody_rows::unsetuniqueSqlId()
 {
     uniqueSqlIdIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getTopXid() const
+std::string ListTransactionResponseBody_rows::getTopXid() const
 {
     return topXid_;
 }
 
-void ListTransactionResponseBody_rows_info::setTopXid(const std::string& value)
+void ListTransactionResponseBody_rows::setTopXid(const std::string& value)
 {
     topXid_ = value;
     topXidIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::topXidIsSet() const
+bool ListTransactionResponseBody_rows::topXidIsSet() const
 {
     return topXidIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsettopXid()
+void ListTransactionResponseBody_rows::unsettopXid()
 {
     topXidIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getCurrentXid() const
+std::string ListTransactionResponseBody_rows::getCurrentXid() const
 {
     return currentXid_;
 }
 
-void ListTransactionResponseBody_rows_info::setCurrentXid(const std::string& value)
+void ListTransactionResponseBody_rows::setCurrentXid(const std::string& value)
 {
     currentXid_ = value;
     currentXidIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::currentXidIsSet() const
+bool ListTransactionResponseBody_rows::currentXidIsSet() const
 {
     return currentXidIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetcurrentXid()
+void ListTransactionResponseBody_rows::unsetcurrentXid()
 {
     currentXidIsSet_ = false;
 }
 
-std::string ListTransactionResponseBody_rows_info::getExecTime() const
+std::string ListTransactionResponseBody_rows::getExecTime() const
 {
     return execTime_;
 }
 
-void ListTransactionResponseBody_rows_info::setExecTime(const std::string& value)
+void ListTransactionResponseBody_rows::setExecTime(const std::string& value)
 {
     execTime_ = value;
     execTimeIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::execTimeIsSet() const
+bool ListTransactionResponseBody_rows::execTimeIsSet() const
 {
     return execTimeIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetexecTime()
+void ListTransactionResponseBody_rows::unsetexecTime()
 {
     execTimeIsSet_ = false;
 }
 
-int32_t ListTransactionResponseBody_rows_info::getXlogQuantity() const
+int32_t ListTransactionResponseBody_rows::getXlogQuantity() const
 {
     return xlogQuantity_;
 }
 
-void ListTransactionResponseBody_rows_info::setXlogQuantity(int32_t value)
+void ListTransactionResponseBody_rows::setXlogQuantity(int32_t value)
 {
     xlogQuantity_ = value;
     xlogQuantityIsSet_ = true;
 }
 
-bool ListTransactionResponseBody_rows_info::xlogQuantityIsSet() const
+bool ListTransactionResponseBody_rows::xlogQuantityIsSet() const
 {
     return xlogQuantityIsSet_;
 }
 
-void ListTransactionResponseBody_rows_info::unsetxlogQuantity()
+void ListTransactionResponseBody_rows::unsetxlogQuantity()
 {
     xlogQuantityIsSet_ = false;
 }

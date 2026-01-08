@@ -32,6 +32,8 @@ BackupForList::BackupForList()
     datastoreIsSet_ = false;
     associatedWithDdm_ = false;
     associatedWithDdmIsSet_ = false;
+    minDataVolumeCapacityForRestore_ = 0;
+    minDataVolumeCapacityForRestoreIsSet_ = false;
 }
 
 BackupForList::~BackupForList() = default;
@@ -76,6 +78,9 @@ web::json::value BackupForList::toJson() const
     }
     if(associatedWithDdmIsSet_) {
         val[utility::conversions::to_string_t("associated_with_ddm")] = ModelBase::toJson(associatedWithDdm_);
+    }
+    if(minDataVolumeCapacityForRestoreIsSet_) {
+        val[utility::conversions::to_string_t("min_data_volume_capacity_for_restore")] = ModelBase::toJson(minDataVolumeCapacityForRestore_);
     }
 
     return val;
@@ -181,6 +186,15 @@ bool BackupForList::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssociatedWithDdm(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("min_data_volume_capacity_for_restore"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("min_data_volume_capacity_for_restore"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMinDataVolumeCapacityForRestore(refVal);
         }
     }
     return ok;
@@ -416,6 +430,27 @@ bool BackupForList::associatedWithDdmIsSet() const
 void BackupForList::unsetassociatedWithDdm()
 {
     associatedWithDdmIsSet_ = false;
+}
+
+int32_t BackupForList::getMinDataVolumeCapacityForRestore() const
+{
+    return minDataVolumeCapacityForRestore_;
+}
+
+void BackupForList::setMinDataVolumeCapacityForRestore(int32_t value)
+{
+    minDataVolumeCapacityForRestore_ = value;
+    minDataVolumeCapacityForRestoreIsSet_ = true;
+}
+
+bool BackupForList::minDataVolumeCapacityForRestoreIsSet() const
+{
+    return minDataVolumeCapacityForRestoreIsSet_;
+}
+
+void BackupForList::unsetminDataVolumeCapacityForRestore()
+{
+    minDataVolumeCapacityForRestoreIsSet_ = false;
 }
 
 }

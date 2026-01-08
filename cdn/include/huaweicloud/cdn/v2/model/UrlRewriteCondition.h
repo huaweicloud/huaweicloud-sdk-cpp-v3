@@ -39,7 +39,7 @@ public:
     /// UrlRewriteCondition members
 
     /// <summary>
-    /// 匹配类型。   - catalog：指定目录下的文件需执行访问URL重写规则，   - full_path：某个完整路径下的文件需执行访问URL重写规则。
+    /// **参数解释：** 匹配类型 **约束限制：** 不涉及 **取值范围：** - catalog: 指定目录下的文件需执行访问URL重写规则 - full_path: 某个完整路径下的文件需执行访问URL重写规则 - home_page: 访问域名首页时需执行访问URL重写规则 - regex: 客户端请求URL中的字符匹配正则表达式时需要执行访问URL重写规则 **默认取值：** 不涉及
     /// </summary>
 
     std::string getMatchType() const;

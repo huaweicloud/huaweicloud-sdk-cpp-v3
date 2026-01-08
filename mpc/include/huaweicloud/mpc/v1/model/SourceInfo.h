@@ -87,6 +87,15 @@ public:
     void setManifestName(const std::string& value);
 
     /// <summary>
+    /// 视频的 md5 值。 
+    /// </summary>
+
+    std::string getMd5() const;
+    bool md5IsSet() const;
+    void unsetmd5();
+    void setMd5(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -116,6 +125,8 @@ protected:
     bool sizeIsSet_;
     std::string manifestName_;
     bool manifestNameIsSet_;
+    std::string md5_;
+    bool md5IsSet_;
     VideoInfo videoInfo_;
     bool videoInfoIsSet_;
     std::vector<AudioInfo> audioInfo_;

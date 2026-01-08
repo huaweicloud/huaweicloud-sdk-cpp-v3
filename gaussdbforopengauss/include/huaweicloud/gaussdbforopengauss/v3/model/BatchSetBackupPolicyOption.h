@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_BackupPolicyInfo_H_
-#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_BackupPolicyInfo_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_BatchSetBackupPolicyOption_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_BatchSetBackupPolicyOption_H_
 
 
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 备份策略信息
+/// 批量备份策略信息
 /// </summary>
-class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  BackupPolicyInfo
+class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  BatchSetBackupPolicyOption
     : public ModelBase
 {
 public:
-    BackupPolicyInfo();
-    virtual ~BackupPolicyInfo();
+    BatchSetBackupPolicyOption();
+    virtual ~BatchSetBackupPolicyOption();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// BackupPolicyInfo members
+    /// BatchSetBackupPolicyOption members
 
     /// <summary>
     /// **参数解释**: 备份文件可以保存的天数。 **约束限制**: 不涉及。 **取值范围**: 1-732天。如果需要延长保留时间请联系客服人员申请，自动备份最长可以保留36500天。 **默认取值**: 不涉及。
@@ -138,4 +138,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_BackupPolicyInfo_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_BatchSetBackupPolicyOption_H_

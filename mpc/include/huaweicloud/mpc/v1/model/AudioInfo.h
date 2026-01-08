@@ -83,6 +83,24 @@ public:
     void unsetbitrateBps();
     void setBitrateBps(int64_t value);
 
+    /// <summary>
+    /// 音频流时长，单位：秒
+    /// </summary>
+
+    std::string getDuration() const;
+    bool durationIsSet() const;
+    void unsetduration();
+    void setDuration(const std::string& value);
+
+    /// <summary>
+    /// 音频流时长，单位：毫秒
+    /// </summary>
+
+    std::string getDurationMs() const;
+    bool durationMsIsSet() const;
+    void unsetdurationMs();
+    void setDurationMs(const std::string& value);
+
 
 protected:
     std::string codec_;
@@ -95,6 +113,10 @@ protected:
     bool bitrateIsSet_;
     int64_t bitrateBps_;
     bool bitrateBpsIsSet_;
+    std::string duration_;
+    bool durationIsSet_;
+    std::string durationMs_;
+    bool durationMsIsSet_;
 
 };
 

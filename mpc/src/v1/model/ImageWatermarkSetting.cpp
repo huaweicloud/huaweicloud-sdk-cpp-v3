@@ -22,6 +22,10 @@ ImageWatermarkSetting::ImageWatermarkSetting()
     timelineStartIsSet_ = false;
     timelineDuration_ = "";
     timelineDurationIsSet_ = false;
+    randomTimeMin_ = "";
+    randomTimeMinIsSet_ = false;
+    randomTimeMax_ = "";
+    randomTimeMaxIsSet_ = false;
     overlayInput_ = "";
     overlayInputIsSet_ = false;
     inputIsSet_ = false;
@@ -53,6 +57,12 @@ web::json::value ImageWatermarkSetting::toJson() const
     }
     if(timelineDurationIsSet_) {
         val[utility::conversions::to_string_t("timeline_duration")] = ModelBase::toJson(timelineDuration_);
+    }
+    if(randomTimeMinIsSet_) {
+        val[utility::conversions::to_string_t("random_time_min")] = ModelBase::toJson(randomTimeMin_);
+    }
+    if(randomTimeMaxIsSet_) {
+        val[utility::conversions::to_string_t("random_time_max")] = ModelBase::toJson(randomTimeMax_);
     }
     if(overlayInputIsSet_) {
         val[utility::conversions::to_string_t("overlay_input")] = ModelBase::toJson(overlayInput_);
@@ -113,6 +123,24 @@ bool ImageWatermarkSetting::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimelineDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("random_time_min"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("random_time_min"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRandomTimeMin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("random_time_max"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("random_time_max"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRandomTimeMax(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("overlay_input"))) {
@@ -249,6 +277,48 @@ bool ImageWatermarkSetting::timelineDurationIsSet() const
 void ImageWatermarkSetting::unsettimelineDuration()
 {
     timelineDurationIsSet_ = false;
+}
+
+std::string ImageWatermarkSetting::getRandomTimeMin() const
+{
+    return randomTimeMin_;
+}
+
+void ImageWatermarkSetting::setRandomTimeMin(const std::string& value)
+{
+    randomTimeMin_ = value;
+    randomTimeMinIsSet_ = true;
+}
+
+bool ImageWatermarkSetting::randomTimeMinIsSet() const
+{
+    return randomTimeMinIsSet_;
+}
+
+void ImageWatermarkSetting::unsetrandomTimeMin()
+{
+    randomTimeMinIsSet_ = false;
+}
+
+std::string ImageWatermarkSetting::getRandomTimeMax() const
+{
+    return randomTimeMax_;
+}
+
+void ImageWatermarkSetting::setRandomTimeMax(const std::string& value)
+{
+    randomTimeMax_ = value;
+    randomTimeMaxIsSet_ = true;
+}
+
+bool ImageWatermarkSetting::randomTimeMaxIsSet() const
+{
+    return randomTimeMaxIsSet_;
+}
+
+void ImageWatermarkSetting::unsetrandomTimeMax()
+{
+    randomTimeMaxIsSet_ = false;
 }
 
 std::string ImageWatermarkSetting::getOverlayInput() const

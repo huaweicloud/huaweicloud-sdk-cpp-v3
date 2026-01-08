@@ -15,6 +15,7 @@ CreateTranscodingReq::CreateTranscodingReq()
     inputIsSet_ = false;
     outputIsSet_ = false;
     transTemplateIdIsSet_ = false;
+    transTemplateListIsSet_ = false;
     avParametersIsSet_ = false;
     additionalManifestsIsSet_ = false;
     outputFilenamesIsSet_ = false;
@@ -22,6 +23,10 @@ CreateTranscodingReq::CreateTranscodingReq()
     userDataIsSet_ = false;
     watermarksIsSet_ = false;
     thumbnailIsSet_ = false;
+    thumbnailsIsSet_ = false;
+    imageSpritesIsSet_ = false;
+    pipelineId_ = "";
+    pipelineIdIsSet_ = false;
     priority_ = 0;
     priorityIsSet_ = false;
     subtitleIsSet_ = false;
@@ -53,6 +58,9 @@ web::json::value CreateTranscodingReq::toJson() const
     if(transTemplateIdIsSet_) {
         val[utility::conversions::to_string_t("trans_template_id")] = ModelBase::toJson(transTemplateId_);
     }
+    if(transTemplateListIsSet_) {
+        val[utility::conversions::to_string_t("trans_template_list")] = ModelBase::toJson(transTemplateList_);
+    }
     if(avParametersIsSet_) {
         val[utility::conversions::to_string_t("av_parameters")] = ModelBase::toJson(avParameters_);
     }
@@ -70,6 +78,15 @@ web::json::value CreateTranscodingReq::toJson() const
     }
     if(thumbnailIsSet_) {
         val[utility::conversions::to_string_t("thumbnail")] = ModelBase::toJson(thumbnail_);
+    }
+    if(thumbnailsIsSet_) {
+        val[utility::conversions::to_string_t("thumbnails")] = ModelBase::toJson(thumbnails_);
+    }
+    if(imageSpritesIsSet_) {
+        val[utility::conversions::to_string_t("image_sprites")] = ModelBase::toJson(imageSprites_);
+    }
+    if(pipelineIdIsSet_) {
+        val[utility::conversions::to_string_t("pipeline_id")] = ModelBase::toJson(pipelineId_);
     }
     if(priorityIsSet_) {
         val[utility::conversions::to_string_t("priority")] = ModelBase::toJson(priority_);
@@ -132,6 +149,15 @@ bool CreateTranscodingReq::fromJson(const web::json::value& val)
             setTransTemplateId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("trans_template_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trans_template_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<TransIdTemplate> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTransTemplateList(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("av_parameters"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("av_parameters"));
         if(!fieldValue.is_null())
@@ -184,6 +210,33 @@ bool CreateTranscodingReq::fromJson(const web::json::value& val)
             Thumbnail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setThumbnail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("thumbnails"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("thumbnails"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<Thumbnail> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setThumbnails(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("image_sprites"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_sprites"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ImageSprite> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageSprites(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pipeline_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pipeline_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPipelineId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("priority"))) {
@@ -334,6 +387,27 @@ void CreateTranscodingReq::unsettransTemplateId()
     transTemplateIdIsSet_ = false;
 }
 
+std::vector<TransIdTemplate>& CreateTranscodingReq::getTransTemplateList()
+{
+    return transTemplateList_;
+}
+
+void CreateTranscodingReq::setTransTemplateList(const std::vector<TransIdTemplate>& value)
+{
+    transTemplateList_ = value;
+    transTemplateListIsSet_ = true;
+}
+
+bool CreateTranscodingReq::transTemplateListIsSet() const
+{
+    return transTemplateListIsSet_;
+}
+
+void CreateTranscodingReq::unsettransTemplateList()
+{
+    transTemplateListIsSet_ = false;
+}
+
 std::vector<AvParameters>& CreateTranscodingReq::getAvParameters()
 {
     return avParameters_;
@@ -458,6 +532,69 @@ bool CreateTranscodingReq::thumbnailIsSet() const
 void CreateTranscodingReq::unsetthumbnail()
 {
     thumbnailIsSet_ = false;
+}
+
+std::vector<Thumbnail>& CreateTranscodingReq::getThumbnails()
+{
+    return thumbnails_;
+}
+
+void CreateTranscodingReq::setThumbnails(const std::vector<Thumbnail>& value)
+{
+    thumbnails_ = value;
+    thumbnailsIsSet_ = true;
+}
+
+bool CreateTranscodingReq::thumbnailsIsSet() const
+{
+    return thumbnailsIsSet_;
+}
+
+void CreateTranscodingReq::unsetthumbnails()
+{
+    thumbnailsIsSet_ = false;
+}
+
+std::vector<ImageSprite>& CreateTranscodingReq::getImageSprites()
+{
+    return imageSprites_;
+}
+
+void CreateTranscodingReq::setImageSprites(const std::vector<ImageSprite>& value)
+{
+    imageSprites_ = value;
+    imageSpritesIsSet_ = true;
+}
+
+bool CreateTranscodingReq::imageSpritesIsSet() const
+{
+    return imageSpritesIsSet_;
+}
+
+void CreateTranscodingReq::unsetimageSprites()
+{
+    imageSpritesIsSet_ = false;
+}
+
+std::string CreateTranscodingReq::getPipelineId() const
+{
+    return pipelineId_;
+}
+
+void CreateTranscodingReq::setPipelineId(const std::string& value)
+{
+    pipelineId_ = value;
+    pipelineIdIsSet_ = true;
+}
+
+bool CreateTranscodingReq::pipelineIdIsSet() const
+{
+    return pipelineIdIsSet_;
+}
+
+void CreateTranscodingReq::unsetpipelineId()
+{
+    pipelineIdIsSet_ = false;
 }
 
 int32_t CreateTranscodingReq::getPriority() const

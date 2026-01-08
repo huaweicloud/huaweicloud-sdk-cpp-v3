@@ -1,3 +1,314 @@
+# 3.1.169 2026-01-08
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowNode**
+    - changes of response param
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+  - **UpdateNode**
+    - changes of response param
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+  - **DeleteNode**
+    - changes of response param
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+  - **CreateNode**
+    - changes of request param
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+    - changes of response param
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.spec.extendParam.serverMetadataHttpTokens`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **UpdateNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **UpgradeNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **ListHyperNodes**
+    - changes of response param
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainStats**
+    - changes of response param
+      - `+ start_time`
+      - `+ stat_type`
+      - `+ end_time`
+      - `+ action`
+      - `+ interval`
+
+### HuaweiCloud SDK Cloudtest
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `DownloadStepImageNew`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTransaction**
+    - changes of request param
+      - `+ transaction_query_info`
+      - `- transaction_query_option`
+    - changes of response param
+      - `+ rows`
+      - `- rows_info`
+  - **ShowRedistributionParameters**
+    - changes of response param
+      - `+ expansion_parameters`
+      - `- redistribution_parameters`
+  - **ShowEpsRemainingQuota**
+    - changes of response param
+      - `+ eps_remaining_quotas`
+      - `- eps_quota_remaining`
+  - **ListSqlLimitTask**
+    - changes of response param
+      - `* limit_task_list.instance_id: object -> string`
+  - **ListEnhanceFullSqls**
+    - changes of request param
+      - `+ node_id`
+  - **ExportFullSqlList**
+    - changes of request param
+      - `+ node_id`
+  - **ListFullSqlSwitches**
+    - changes of response param
+      - `+ full_sql_switches`
+      - `- full_sql_switchs`
+      - `+ allowed_sql_types.category`
+      - `+ allowed_sql_types.prefixes`
+      - `+ allowed_sql_types.is_preset`
+      - `- allowed_sql_types.is_open`
+      - `- allowed_sql_types.begin_time`
+  - **ListSlowSqls**
+    - changes of response param
+      - `+ slow_sql_infos.db_name`
+      - `+ slow_sql_infos.schema_name`
+  - **ModifyHbaConf**
+    - changes of request param
+      - `+ before_conf.type`
+      - `+ before_conf.database`
+      - `+ before_conf.user`
+      - `+ before_conf.address`
+      - `+ before_conf.method`
+      - `* before_conf: object -> object<BeforeHbaConfOption>`
+      - `+ after_conf.type`
+      - `+ after_conf.database`
+      - `+ after_conf.user`
+      - `+ after_conf.address`
+      - `+ after_conf.method`
+      - `* after_conf: object -> object<AfterHbaConfOption>`
+  - **BatchSetBackupPolicy**
+    - changes of request param
+      - `* backup_policy: object<BackupPolicyInfo> -> object<BatchSetBackupPolicyOption>`
+  - **ListWaitEvent**
+    - changes of response param
+      - `* rows: object<WaitEventResult> -> list<WaitEventResult>`
+  - **ListHbaInfoHistory**
+    - changes of response param
+      - `+ hba_histories.id`
+  - **ListMetricDatas**
+    - changes of response param
+      - `+ instances.nodes.role`
+
+### HuaweiCloud SDK MPC
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateThumbnailsTask**
+    - changes of request param
+      - `+ thumbnail_para.amount`
+      - `+ thumbnail_para.threshold`
+  - **UpdateWatermarkTemplate**
+    - changes of request param
+      - `+ random_time_min`
+      - `+ random_time_max`
+  - **CreateWatermarkTemplate**
+    - changes of request param
+      - `+ random_time_min`
+      - `+ random_time_max`
+  - **ListWatermarkTemplate**
+    - changes of response param
+      - `+ templates.random_time_min`
+      - `+ templates.random_time_max`
+  - **ListRemuxTask**
+    - changes of response param
+      - `+ tasks.output_metadata.md5`
+      - `+ tasks.output_metadata.video.duration`
+      - `+ tasks.output_metadata.video.duration_ms`
+      - `+ tasks.output_metadata.video.rotate`
+      - `+ tasks.output_metadata.audio.duration`
+      - `+ tasks.output_metadata.audio.duration_ms`
+  - **CreateExtractTask**
+    - changes of response param
+      - `+ metadata.md5`
+      - `+ metadata.video.duration`
+      - `+ metadata.video.duration_ms`
+      - `+ metadata.video.rotate`
+      - `+ metadata.audio.duration`
+      - `+ metadata.audio.duration_ms`
+  - **ListExtractTask**
+    - changes of response param
+      - `+ tasks.metadata.md5`
+      - `+ tasks.metadata.video.duration`
+      - `+ tasks.metadata.video.duration_ms`
+      - `+ tasks.metadata.video.rotate`
+      - `+ tasks.metadata.audio.duration`
+      - `+ tasks.metadata.audio.duration_ms`
+  - **CreateMbTasksReport**
+    - changes of request param
+      - `+ parameter.metadata.md5`
+      - `+ parameter.metadata.video.duration`
+      - `+ parameter.metadata.video.duration_ms`
+      - `+ parameter.metadata.video.rotate`
+      - `+ parameter.metadata.audio.duration`
+      - `+ parameter.metadata.audio.duration_ms`
+  - **CreateTranscodingTask**
+    - changes of request param
+      - `+ trans_template_list`
+      - `+ thumbnails`
+      - `+ image_sprites`
+      - `+ pipeline_id`
+      - `+ av_parameters.output`
+      - `+ av_parameters.output_filename`
+      - `+ watermarks.image_watermark.random_time_min`
+      - `+ watermarks.image_watermark.random_time_max`
+      - `+ watermarks.text_watermark.random_time_min`
+      - `+ watermarks.text_watermark.random_time_max`
+      - `+ thumbnail.params.amount`
+      - `+ thumbnail.params.threshold`
+      - `+ video_process.fill_type`
+  - **ListTranscodingTask**
+    - changes of response param
+      - `+ task_array.thumbnails_info`
+      - `+ task_array.image_sprite_info`
+      - `+ task_array.av_parameters.output`
+      - `+ task_array.av_parameters.output_filename`
+      - `+ task_array.transcode_detail.input_file.md5`
+      - `+ task_array.transcode_detail.input_file.video_info.duration`
+      - `+ task_array.transcode_detail.input_file.video_info.duration_ms`
+      - `+ task_array.transcode_detail.input_file.video_info.rotate`
+      - `+ task_array.transcode_detail.input_file.audio_info.duration`
+      - `+ task_array.transcode_detail.input_file.audio_info.duration_ms`
+  - **ListTranscodeDetail**
+    - changes of response param
+      - `+ task_array.media_detail.origin_para.video.duration`
+      - `+ task_array.media_detail.origin_para.video.duration_ms`
+      - `+ task_array.media_detail.origin_para.video.rotate`
+      - `+ task_array.media_detail.origin_para.audio.duration`
+      - `+ task_array.media_detail.origin_para.audio.duration_ms`
+  - **CreateEditingJob**
+    - changes of request param
+      - `+ image_watermark_settings.random_time_min`
+      - `+ image_watermark_settings.random_time_max`
+      - `+ concats.av_parameters.output`
+      - `+ concats.av_parameters.output_filename`
+  - **ListEditingJob**
+    - changes of response param
+      - `+ jobs.output_file_info.meta_data.md5`
+      - `+ jobs.output_file_info.meta_data.video_info.duration`
+      - `+ jobs.output_file_info.meta_data.video_info.duration_ms`
+      - `+ jobs.output_file_info.meta_data.video_info.rotate`
+      - `+ jobs.output_file_info.meta_data.audio_info.duration`
+      - `+ jobs.output_file_info.meta_data.audio_info.duration_ms`
+      - `+ jobs.edit_task_req.image_watermark_settings.random_time_min`
+      - `+ jobs.edit_task_req.image_watermark_settings.random_time_max`
+      - `+ jobs.edit_task_req.concats.av_parameters.output`
+      - `+ jobs.edit_task_req.concats.av_parameters.output_filename`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `UpdateTimeZone`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListBackups**
+    - changes of response param
+      - `+ backups.min_data_volume_capacity_for_restore`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListCategoryInfo`, `ListAssetTaskInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListAddressGroupsDependency`
+    - `ListPorts`
+    - `ShowPort`
+    - `ListVirsubnets`
+    - `ShowVirsubnet`
+    - `ShowQuota`
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddSecurityGroups**
+    - changes of response param
+      - `* port.extra_dhcp_opts: list<ExtraDhcpOpt> -> list<PortExtraDhcpOpt>`
+      - `* port.tags: list<ResourceTag> -> list<ResponseTag>`
+  - **RemoveSecurityGroups**
+    - changes of response param
+      - `* port.extra_dhcp_opts: list<ExtraDhcpOpt> -> list<PortExtraDhcpOpt>`
+      - `* port.tags: list<ResourceTag> -> list<ResponseTag>`
+
 # 3.1.168 2025-12-25
 
 ### HuaweiCloud SDK CCE

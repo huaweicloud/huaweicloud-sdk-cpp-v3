@@ -140,6 +140,15 @@ public:
     void unsetassociatedWithDdm();
     void setAssociatedWithDdm(bool value);
 
+    /// <summary>
+    /// 该备份源文件大小，用于该备份文件恢复到新实例时需要的最小磁盘空间大小。
+    /// </summary>
+
+    int32_t getMinDataVolumeCapacityForRestore() const;
+    bool minDataVolumeCapacityForRestoreIsSet() const;
+    void unsetminDataVolumeCapacityForRestore();
+    void setMinDataVolumeCapacityForRestore(int32_t value);
+
 
 protected:
     std::string id_;
@@ -164,6 +173,8 @@ protected:
     bool datastoreIsSet_;
     bool associatedWithDdm_;
     bool associatedWithDdmIsSet_;
+    int32_t minDataVolumeCapacityForRestore_;
+    bool minDataVolumeCapacityForRestoreIsSet_;
 
 };
 

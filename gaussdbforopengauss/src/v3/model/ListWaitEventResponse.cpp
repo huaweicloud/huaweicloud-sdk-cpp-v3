@@ -53,7 +53,7 @@ bool ListWaitEventResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rows"));
         if(!fieldValue.is_null())
         {
-            WaitEventResult refVal;
+            std::vector<WaitEventResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRows(refVal);
         }
@@ -83,12 +83,12 @@ void ListWaitEventResponse::unsettotal()
     totalIsSet_ = false;
 }
 
-WaitEventResult ListWaitEventResponse::getRows() const
+std::vector<WaitEventResult>& ListWaitEventResponse::getRows()
 {
     return rows_;
 }
 
-void ListWaitEventResponse::setRows(const WaitEventResult& value)
+void ListWaitEventResponse::setRows(const std::vector<WaitEventResult>& value)
 {
     rows_ = value;
     rowsIsSet_ = true;

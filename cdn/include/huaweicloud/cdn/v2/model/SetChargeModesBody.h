@@ -48,7 +48,7 @@ public:
     void setChargeMode(const std::string& value);
 
     /// <summary>
-    /// 产品模式，仅支持base（基础加速）
+    /// 产品模式。取值意义： - base：基础加速
     /// </summary>
 
     std::string getProductType() const;

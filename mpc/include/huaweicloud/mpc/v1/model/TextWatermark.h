@@ -85,6 +85,24 @@ public:
     void setTimelineDuration(const std::string& value);
 
     /// <summary>
+    /// 轮转间隔时间最小值，单位：秒 
+    /// </summary>
+
+    std::string getRandomTimeMin() const;
+    bool randomTimeMinIsSet() const;
+    void unsetrandomTimeMin();
+    void setRandomTimeMin(const std::string& value);
+
+    /// <summary>
+    /// 轮转间隔时间最大值，单位：秒 
+    /// </summary>
+
+    std::string getRandomTimeMax() const;
+    bool randomTimeMaxIsSet() const;
+    void unsetrandomTimeMax();
+    void setRandomTimeMax(const std::string& value);
+
+    /// <summary>
     /// 字体，当前支持fzyouh 
     /// </summary>
 
@@ -132,6 +150,10 @@ protected:
     bool timelineStartIsSet_;
     std::string timelineDuration_;
     bool timelineDurationIsSet_;
+    std::string randomTimeMin_;
+    bool randomTimeMinIsSet_;
+    std::string randomTimeMax_;
+    bool randomTimeMaxIsSet_;
     std::string fontName_;
     bool fontNameIsSet_;
     int32_t fontSize_;

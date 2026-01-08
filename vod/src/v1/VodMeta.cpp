@@ -504,6 +504,59 @@ HttpRequestDef VodMeta::genRequestDefForListAssetList() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForListAssetTaskInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetId")
+                  .withJsonTag("asset_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("CreateTimeAfter")
+                  .withJsonTag("create_time_after")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("CreateTimeBefore")
+                  .withJsonTag("create_time_before")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTimeAfter")
+                  .withJsonTag("end_time_after")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTimeBefore")
+                  .withJsonTag("end_time_before")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef VodMeta::genRequestDefForListCategoryInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForListCdnStatistics() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")

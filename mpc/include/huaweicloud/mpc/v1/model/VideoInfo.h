@@ -92,6 +92,33 @@ public:
     void unsetcodec();
     void setCodec(const std::string& value);
 
+    /// <summary>
+    /// 视频流时长，单位：秒
+    /// </summary>
+
+    std::string getDuration() const;
+    bool durationIsSet() const;
+    void unsetduration();
+    void setDuration(const std::string& value);
+
+    /// <summary>
+    /// 视频流时长，单位：毫秒
+    /// </summary>
+
+    std::string getDurationMs() const;
+    bool durationMsIsSet() const;
+    void unsetdurationMs();
+    void setDurationMs(const std::string& value);
+
+    /// <summary>
+    /// 视频拍摄时的选择角度，单位：度。 
+    /// </summary>
+
+    float getRotate() const;
+    bool rotateIsSet() const;
+    void unsetrotate();
+    void setRotate(float value);
+
 
 protected:
     int32_t width_;
@@ -106,6 +133,12 @@ protected:
     bool frameRateIsSet_;
     std::string codec_;
     bool codecIsSet_;
+    std::string duration_;
+    bool durationIsSet_;
+    std::string durationMs_;
+    bool durationMsIsSet_;
+    float rotate_;
+    bool rotateIsSet_;
 
 };
 

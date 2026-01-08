@@ -12,10 +12,12 @@ namespace Model {
 
 SqlTypeRangeConfigResult::SqlTypeRangeConfigResult()
 {
-    isOpen_ = false;
-    isOpenIsSet_ = false;
-    beginTime_ = "";
-    beginTimeIsSet_ = false;
+    category_ = "";
+    categoryIsSet_ = false;
+    prefixes_ = "";
+    prefixesIsSet_ = false;
+    isPreset_ = false;
+    isPresetIsSet_ = false;
 }
 
 SqlTypeRangeConfigResult::~SqlTypeRangeConfigResult() = default;
@@ -28,11 +30,14 @@ web::json::value SqlTypeRangeConfigResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(isOpenIsSet_) {
-        val[utility::conversions::to_string_t("is_open")] = ModelBase::toJson(isOpen_);
+    if(categoryIsSet_) {
+        val[utility::conversions::to_string_t("category")] = ModelBase::toJson(category_);
     }
-    if(beginTimeIsSet_) {
-        val[utility::conversions::to_string_t("begin_time")] = ModelBase::toJson(beginTime_);
+    if(prefixesIsSet_) {
+        val[utility::conversions::to_string_t("prefixes")] = ModelBase::toJson(prefixes_);
+    }
+    if(isPresetIsSet_) {
+        val[utility::conversions::to_string_t("is_preset")] = ModelBase::toJson(isPreset_);
     }
 
     return val;
@@ -41,68 +46,98 @@ bool SqlTypeRangeConfigResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("is_open"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_open"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsOpen(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("begin_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("begin_time"));
+    if(val.has_field(utility::conversions::to_string_t("category"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("category"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBeginTime(refVal);
+            setCategory(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("prefixes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("prefixes"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPrefixes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_preset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_preset"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsPreset(refVal);
         }
     }
     return ok;
 }
 
 
-bool SqlTypeRangeConfigResult::isIsOpen() const
+std::string SqlTypeRangeConfigResult::getCategory() const
 {
-    return isOpen_;
+    return category_;
 }
 
-void SqlTypeRangeConfigResult::setIsOpen(bool value)
+void SqlTypeRangeConfigResult::setCategory(const std::string& value)
 {
-    isOpen_ = value;
-    isOpenIsSet_ = true;
+    category_ = value;
+    categoryIsSet_ = true;
 }
 
-bool SqlTypeRangeConfigResult::isOpenIsSet() const
+bool SqlTypeRangeConfigResult::categoryIsSet() const
 {
-    return isOpenIsSet_;
+    return categoryIsSet_;
 }
 
-void SqlTypeRangeConfigResult::unsetisOpen()
+void SqlTypeRangeConfigResult::unsetcategory()
 {
-    isOpenIsSet_ = false;
+    categoryIsSet_ = false;
 }
 
-std::string SqlTypeRangeConfigResult::getBeginTime() const
+std::string SqlTypeRangeConfigResult::getPrefixes() const
 {
-    return beginTime_;
+    return prefixes_;
 }
 
-void SqlTypeRangeConfigResult::setBeginTime(const std::string& value)
+void SqlTypeRangeConfigResult::setPrefixes(const std::string& value)
 {
-    beginTime_ = value;
-    beginTimeIsSet_ = true;
+    prefixes_ = value;
+    prefixesIsSet_ = true;
 }
 
-bool SqlTypeRangeConfigResult::beginTimeIsSet() const
+bool SqlTypeRangeConfigResult::prefixesIsSet() const
 {
-    return beginTimeIsSet_;
+    return prefixesIsSet_;
 }
 
-void SqlTypeRangeConfigResult::unsetbeginTime()
+void SqlTypeRangeConfigResult::unsetprefixes()
 {
-    beginTimeIsSet_ = false;
+    prefixesIsSet_ = false;
+}
+
+bool SqlTypeRangeConfigResult::isIsPreset() const
+{
+    return isPreset_;
+}
+
+void SqlTypeRangeConfigResult::setIsPreset(bool value)
+{
+    isPreset_ = value;
+    isPresetIsSet_ = true;
+}
+
+bool SqlTypeRangeConfigResult::isPresetIsSet() const
+{
+    return isPresetIsSet_;
+}
+
+void SqlTypeRangeConfigResult::unsetisPreset()
+{
+    isPresetIsSet_ = false;
 }
 
 }

@@ -44,10 +44,10 @@ public:
     /// **参数解释**: 剩余企业项目配额组。
     /// </summary>
 
-    std::vector<EpsRemainingQuotaResult>& getEpsQuotaRemaining();
-    bool epsQuotaRemainingIsSet() const;
-    void unsetepsQuotaRemaining();
-    void setEpsQuotaRemaining(const std::vector<EpsRemainingQuotaResult>& value);
+    std::vector<EpsRemainingQuotaResult>& getEpsRemainingQuotas();
+    bool epsRemainingQuotasIsSet() const;
+    void unsetepsRemainingQuotas();
+    void setEpsRemainingQuotas(const std::vector<EpsRemainingQuotaResult>& value);
 
     /// <summary>
     /// **参数解释**: 任务ID。 **取值范围**: 不涉及。
@@ -69,8 +69,8 @@ public:
 
 
 protected:
-    std::vector<EpsRemainingQuotaResult> epsQuotaRemaining_;
-    bool epsQuotaRemainingIsSet_;
+    std::vector<EpsRemainingQuotaResult> epsRemainingQuotas_;
+    bool epsRemainingQuotasIsSet_;
     std::string jobId_;
     bool jobIdIsSet_;
     int32_t totalCount_;

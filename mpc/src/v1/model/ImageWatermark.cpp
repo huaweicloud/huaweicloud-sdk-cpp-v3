@@ -22,6 +22,10 @@ ImageWatermark::ImageWatermark()
     timelineStartIsSet_ = false;
     timelineDuration_ = "";
     timelineDurationIsSet_ = false;
+    randomTimeMin_ = "";
+    randomTimeMinIsSet_ = false;
+    randomTimeMax_ = "";
+    randomTimeMaxIsSet_ = false;
     imageProcess_ = "";
     imageProcessIsSet_ = false;
     width_ = "";
@@ -56,6 +60,12 @@ web::json::value ImageWatermark::toJson() const
     }
     if(timelineDurationIsSet_) {
         val[utility::conversions::to_string_t("timeline_duration")] = ModelBase::toJson(timelineDuration_);
+    }
+    if(randomTimeMinIsSet_) {
+        val[utility::conversions::to_string_t("random_time_min")] = ModelBase::toJson(randomTimeMin_);
+    }
+    if(randomTimeMaxIsSet_) {
+        val[utility::conversions::to_string_t("random_time_max")] = ModelBase::toJson(randomTimeMax_);
     }
     if(imageProcessIsSet_) {
         val[utility::conversions::to_string_t("image_process")] = ModelBase::toJson(imageProcess_);
@@ -119,6 +129,24 @@ bool ImageWatermark::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimelineDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("random_time_min"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("random_time_min"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRandomTimeMin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("random_time_max"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("random_time_max"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRandomTimeMax(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("image_process"))) {
@@ -264,6 +292,48 @@ bool ImageWatermark::timelineDurationIsSet() const
 void ImageWatermark::unsettimelineDuration()
 {
     timelineDurationIsSet_ = false;
+}
+
+std::string ImageWatermark::getRandomTimeMin() const
+{
+    return randomTimeMin_;
+}
+
+void ImageWatermark::setRandomTimeMin(const std::string& value)
+{
+    randomTimeMin_ = value;
+    randomTimeMinIsSet_ = true;
+}
+
+bool ImageWatermark::randomTimeMinIsSet() const
+{
+    return randomTimeMinIsSet_;
+}
+
+void ImageWatermark::unsetrandomTimeMin()
+{
+    randomTimeMinIsSet_ = false;
+}
+
+std::string ImageWatermark::getRandomTimeMax() const
+{
+    return randomTimeMax_;
+}
+
+void ImageWatermark::setRandomTimeMax(const std::string& value)
+{
+    randomTimeMax_ = value;
+    randomTimeMaxIsSet_ = true;
+}
+
+bool ImageWatermark::randomTimeMaxIsSet() const
+{
+    return randomTimeMaxIsSet_;
+}
+
+void ImageWatermark::unsetrandomTimeMax()
+{
+    randomTimeMaxIsSet_ = false;
 }
 
 std::string ImageWatermark::getImageProcess() const

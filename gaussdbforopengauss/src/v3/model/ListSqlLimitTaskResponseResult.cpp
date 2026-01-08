@@ -28,6 +28,7 @@ ListSqlLimitTaskResponseResult::ListSqlLimitTaskResponseResult()
     keyWordsIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    instanceId_ = "";
     instanceIdIsSet_ = false;
     ruleName_ = "";
     ruleNameIsSet_ = false;
@@ -181,7 +182,7 @@ bool ListSqlLimitTaskResponseResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceId(refVal);
         }
@@ -412,12 +413,12 @@ void ListSqlLimitTaskResponseResult::unsetstatus()
     statusIsSet_ = false;
 }
 
-Object ListSqlLimitTaskResponseResult::getInstanceId() const
+std::string ListSqlLimitTaskResponseResult::getInstanceId() const
 {
     return instanceId_;
 }
 
-void ListSqlLimitTaskResponseResult::setInstanceId(const Object& value)
+void ListSqlLimitTaskResponseResult::setInstanceId(const std::string& value)
 {
     instanceId_ = value;
     instanceIdIsSet_ = true;

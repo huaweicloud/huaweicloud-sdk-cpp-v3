@@ -14,7 +14,7 @@ ListTransactionResponse::ListTransactionResponse()
 {
     total_ = 0;
     totalIsSet_ = false;
-    rowsInfoIsSet_ = false;
+    rowsIsSet_ = false;
 }
 
 ListTransactionResponse::~ListTransactionResponse() = default;
@@ -30,8 +30,8 @@ web::json::value ListTransactionResponse::toJson() const
     if(totalIsSet_) {
         val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
     }
-    if(rowsInfoIsSet_) {
-        val[utility::conversions::to_string_t("rows_info")] = ModelBase::toJson(rowsInfo_);
+    if(rowsIsSet_) {
+        val[utility::conversions::to_string_t("rows")] = ModelBase::toJson(rows_);
     }
 
     return val;
@@ -49,13 +49,13 @@ bool ListTransactionResponse::fromJson(const web::json::value& val)
             setTotal(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("rows_info"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rows_info"));
+    if(val.has_field(utility::conversions::to_string_t("rows"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rows"));
         if(!fieldValue.is_null())
         {
-            std::vector<ListTransactionResponseBody_rows_info> refVal;
+            std::vector<ListTransactionResponseBody_rows> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRowsInfo(refVal);
+            setRows(refVal);
         }
     }
     return ok;
@@ -83,25 +83,25 @@ void ListTransactionResponse::unsettotal()
     totalIsSet_ = false;
 }
 
-std::vector<ListTransactionResponseBody_rows_info>& ListTransactionResponse::getRowsInfo()
+std::vector<ListTransactionResponseBody_rows>& ListTransactionResponse::getRows()
 {
-    return rowsInfo_;
+    return rows_;
 }
 
-void ListTransactionResponse::setRowsInfo(const std::vector<ListTransactionResponseBody_rows_info>& value)
+void ListTransactionResponse::setRows(const std::vector<ListTransactionResponseBody_rows>& value)
 {
-    rowsInfo_ = value;
-    rowsInfoIsSet_ = true;
+    rows_ = value;
+    rowsIsSet_ = true;
 }
 
-bool ListTransactionResponse::rowsInfoIsSet() const
+bool ListTransactionResponse::rowsIsSet() const
 {
-    return rowsInfoIsSet_;
+    return rowsIsSet_;
 }
 
-void ListTransactionResponse::unsetrowsInfo()
+void ListTransactionResponse::unsetrows()
 {
-    rowsInfoIsSet_ = false;
+    rowsIsSet_ = false;
 }
 
 }

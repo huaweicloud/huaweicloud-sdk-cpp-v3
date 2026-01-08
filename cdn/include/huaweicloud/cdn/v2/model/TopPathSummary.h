@@ -39,7 +39,7 @@ public:
     /// TopPathSummary members
 
     /// <summary>
-    /// path值。
+    /// top100 path访问路径
     /// </summary>
 
     std::string getPath() const;
@@ -48,7 +48,7 @@ public:
     void setPath(const std::string& value);
 
     /// <summary>
-    /// 对应查询类型的值。（流量单位：Byte）
+    /// top100path访问次数
     /// </summary>
 
     int64_t getValue() const;

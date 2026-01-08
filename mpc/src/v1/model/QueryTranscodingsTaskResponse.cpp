@@ -39,6 +39,8 @@ QueryTranscodingsTaskResponse::QueryTranscodingsTaskResponse()
     thumbnailOutputname_ = "";
     thumbnailOutputnameIsSet_ = false;
     picInfoIsSet_ = false;
+    thumbnailsInfoIsSet_ = false;
+    imageSpriteInfoIsSet_ = false;
     avParametersIsSet_ = false;
     additionalManifestsIsSet_ = false;
     metadataIsSet_ = false;
@@ -104,6 +106,12 @@ web::json::value QueryTranscodingsTaskResponse::toJson() const
     }
     if(picInfoIsSet_) {
         val[utility::conversions::to_string_t("pic_info")] = ModelBase::toJson(picInfo_);
+    }
+    if(thumbnailsInfoIsSet_) {
+        val[utility::conversions::to_string_t("thumbnails_info")] = ModelBase::toJson(thumbnailsInfo_);
+    }
+    if(imageSpriteInfoIsSet_) {
+        val[utility::conversions::to_string_t("image_sprite_info")] = ModelBase::toJson(imageSpriteInfo_);
     }
     if(avParametersIsSet_) {
         val[utility::conversions::to_string_t("av_parameters")] = ModelBase::toJson(avParameters_);
@@ -272,6 +280,24 @@ bool QueryTranscodingsTaskResponse::fromJson(const web::json::value& val)
             std::vector<PicInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPicInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("thumbnails_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("thumbnails_info"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ThumbnailsInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setThumbnailsInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("image_sprite_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_sprite_info"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ImageSpriteInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageSpriteInfo(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("av_parameters"))) {
@@ -660,6 +686,48 @@ bool QueryTranscodingsTaskResponse::picInfoIsSet() const
 void QueryTranscodingsTaskResponse::unsetpicInfo()
 {
     picInfoIsSet_ = false;
+}
+
+std::vector<ThumbnailsInfo>& QueryTranscodingsTaskResponse::getThumbnailsInfo()
+{
+    return thumbnailsInfo_;
+}
+
+void QueryTranscodingsTaskResponse::setThumbnailsInfo(const std::vector<ThumbnailsInfo>& value)
+{
+    thumbnailsInfo_ = value;
+    thumbnailsInfoIsSet_ = true;
+}
+
+bool QueryTranscodingsTaskResponse::thumbnailsInfoIsSet() const
+{
+    return thumbnailsInfoIsSet_;
+}
+
+void QueryTranscodingsTaskResponse::unsetthumbnailsInfo()
+{
+    thumbnailsInfoIsSet_ = false;
+}
+
+std::vector<ImageSpriteInfo>& QueryTranscodingsTaskResponse::getImageSpriteInfo()
+{
+    return imageSpriteInfo_;
+}
+
+void QueryTranscodingsTaskResponse::setImageSpriteInfo(const std::vector<ImageSpriteInfo>& value)
+{
+    imageSpriteInfo_ = value;
+    imageSpriteInfoIsSet_ = true;
+}
+
+bool QueryTranscodingsTaskResponse::imageSpriteInfoIsSet() const
+{
+    return imageSpriteInfoIsSet_;
+}
+
+void QueryTranscodingsTaskResponse::unsetimageSpriteInfo()
+{
+    imageSpriteInfoIsSet_ = false;
 }
 
 std::vector<AvParameters>& QueryTranscodingsTaskResponse::getAvParameters()

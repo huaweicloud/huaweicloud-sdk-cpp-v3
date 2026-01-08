@@ -11,7 +11,9 @@
 
 #include <huaweicloud/mpc/v1/model/Common.h>
 #include <huaweicloud/mpc/v1/model/VideoParameters.h>
+#include <huaweicloud/mpc/v1/model/ObsObjInfo.h>
 #include <huaweicloud/mpc/v1/model/Audio.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -67,6 +69,24 @@ public:
     void unsetcommon();
     void setCommon(const Common& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ObsObjInfo getOutput() const;
+    bool outputIsSet() const;
+    void unsetoutput();
+    void setOutput(const ObsObjInfo& value);
+
+    /// <summary>
+    /// 输出文件名 
+    /// </summary>
+
+    std::string getOutputFilename() const;
+    bool outputFilenameIsSet() const;
+    void unsetoutputFilename();
+    void setOutputFilename(const std::string& value);
+
 
 protected:
     VideoParameters video_;
@@ -75,6 +95,10 @@ protected:
     bool audioIsSet_;
     Common common_;
     bool commonIsSet_;
+    ObsObjInfo output_;
+    bool outputIsSet_;
+    std::string outputFilename_;
+    bool outputFilenameIsSet_;
 
 };
 

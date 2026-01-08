@@ -53,10 +53,10 @@ public:
     /// **参数解释**: 开关记录列表。
     /// </summary>
 
-    std::vector<FullSqlSwitchResult>& getFullSqlSwitchs();
-    bool fullSqlSwitchsIsSet() const;
-    void unsetfullSqlSwitchs();
-    void setFullSqlSwitchs(const std::vector<FullSqlSwitchResult>& value);
+    std::vector<FullSqlSwitchResult>& getFullSqlSwitches();
+    bool fullSqlSwitchesIsSet() const;
+    void unsetfullSqlSwitches();
+    void setFullSqlSwitches(const std::vector<FullSqlSwitchResult>& value);
 
     /// <summary>
     /// **参数解释**: 可选择的SQL采集类别清单列表。供开启全量SQL时做配置下发参考。
@@ -71,8 +71,8 @@ public:
 protected:
     int64_t totalCount_;
     bool totalCountIsSet_;
-    std::vector<FullSqlSwitchResult> fullSqlSwitchs_;
-    bool fullSqlSwitchsIsSet_;
+    std::vector<FullSqlSwitchResult> fullSqlSwitches_;
+    bool fullSqlSwitchesIsSet_;
     std::vector<SqlTypeRangeConfigResult> allowedSqlTypes_;
     bool allowedSqlTypesIsSet_;
 

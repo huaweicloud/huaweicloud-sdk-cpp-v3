@@ -326,6 +326,15 @@ public:
     void unsetsecurityReinforcementType();
     void setSecurityReinforcementType(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 是否要求携带token，默认optional。 **约束限制**： 不涉及 **取值范围**： - optional：不要求携带token。 - required：要求必须携带token，即IMDS服务禁用v1版本，启用v2版本。  **默认取值**： optional
+    /// </summary>
+
+    std::string getServerMetadataHttpTokens() const;
+    bool serverMetadataHttpTokensIsSet() const;
+    void unsetserverMetadataHttpTokens();
+    void setServerMetadataHttpTokens(const std::string& value);
+
 
 protected:
     std::string ecsPerformancetype_;
@@ -392,6 +401,8 @@ protected:
     bool initNodePasswordIsSet_;
     std::string securityReinforcementType_;
     bool securityReinforcementTypeIsSet_;
+    std::string serverMetadataHttpTokens_;
+    bool serverMetadataHttpTokensIsSet_;
 
 };
 

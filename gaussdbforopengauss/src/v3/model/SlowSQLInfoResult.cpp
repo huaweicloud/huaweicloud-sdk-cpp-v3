@@ -12,6 +12,10 @@ namespace Model {
 
 SlowSQLInfoResult::SlowSQLInfoResult()
 {
+    dbName_ = "";
+    dbNameIsSet_ = false;
+    schemaName_ = "";
+    schemaNameIsSet_ = false;
     sql_ = "";
     sqlIsSet_ = false;
     sqlId_ = "";
@@ -54,6 +58,12 @@ web::json::value SlowSQLInfoResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(dbNameIsSet_) {
+        val[utility::conversions::to_string_t("db_name")] = ModelBase::toJson(dbName_);
+    }
+    if(schemaNameIsSet_) {
+        val[utility::conversions::to_string_t("schema_name")] = ModelBase::toJson(schemaName_);
+    }
     if(sqlIsSet_) {
         val[utility::conversions::to_string_t("sql")] = ModelBase::toJson(sql_);
     }
@@ -106,6 +116,24 @@ bool SlowSQLInfoResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("db_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("db_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDbName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("schema_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("schema_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSchemaName(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("sql"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql"));
         if(!fieldValue.is_null())
@@ -244,6 +272,48 @@ bool SlowSQLInfoResult::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string SlowSQLInfoResult::getDbName() const
+{
+    return dbName_;
+}
+
+void SlowSQLInfoResult::setDbName(const std::string& value)
+{
+    dbName_ = value;
+    dbNameIsSet_ = true;
+}
+
+bool SlowSQLInfoResult::dbNameIsSet() const
+{
+    return dbNameIsSet_;
+}
+
+void SlowSQLInfoResult::unsetdbName()
+{
+    dbNameIsSet_ = false;
+}
+
+std::string SlowSQLInfoResult::getSchemaName() const
+{
+    return schemaName_;
+}
+
+void SlowSQLInfoResult::setSchemaName(const std::string& value)
+{
+    schemaName_ = value;
+    schemaNameIsSet_ = true;
+}
+
+bool SlowSQLInfoResult::schemaNameIsSet() const
+{
+    return schemaNameIsSet_;
+}
+
+void SlowSQLInfoResult::unsetschemaName()
+{
+    schemaNameIsSet_ = false;
+}
 
 std::string SlowSQLInfoResult::getSql() const
 {

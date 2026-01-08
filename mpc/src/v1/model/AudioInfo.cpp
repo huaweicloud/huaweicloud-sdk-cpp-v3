@@ -22,6 +22,10 @@ AudioInfo::AudioInfo()
     bitrateIsSet_ = false;
     bitrateBps_ = 0L;
     bitrateBpsIsSet_ = false;
+    duration_ = "";
+    durationIsSet_ = false;
+    durationMs_ = "";
+    durationMsIsSet_ = false;
 }
 
 AudioInfo::~AudioInfo() = default;
@@ -48,6 +52,12 @@ web::json::value AudioInfo::toJson() const
     }
     if(bitrateBpsIsSet_) {
         val[utility::conversions::to_string_t("bitrate_bps")] = ModelBase::toJson(bitrateBps_);
+    }
+    if(durationIsSet_) {
+        val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
+    }
+    if(durationMsIsSet_) {
+        val[utility::conversions::to_string_t("duration_ms")] = ModelBase::toJson(durationMs_);
     }
 
     return val;
@@ -99,6 +109,24 @@ bool AudioInfo::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBitrateBps(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("duration"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("duration_ms"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration_ms"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDurationMs(refVal);
         }
     }
     return ok;
@@ -208,6 +236,48 @@ bool AudioInfo::bitrateBpsIsSet() const
 void AudioInfo::unsetbitrateBps()
 {
     bitrateBpsIsSet_ = false;
+}
+
+std::string AudioInfo::getDuration() const
+{
+    return duration_;
+}
+
+void AudioInfo::setDuration(const std::string& value)
+{
+    duration_ = value;
+    durationIsSet_ = true;
+}
+
+bool AudioInfo::durationIsSet() const
+{
+    return durationIsSet_;
+}
+
+void AudioInfo::unsetduration()
+{
+    durationIsSet_ = false;
+}
+
+std::string AudioInfo::getDurationMs() const
+{
+    return durationMs_;
+}
+
+void AudioInfo::setDurationMs(const std::string& value)
+{
+    durationMs_ = value;
+    durationMsIsSet_ = true;
+}
+
+bool AudioInfo::durationMsIsSet() const
+{
+    return durationMsIsSet_;
+}
+
+void AudioInfo::unsetdurationMs()
+{
+    durationMsIsSet_ = false;
 }
 
 }

@@ -49,7 +49,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 配置UA黑白名单，当type&#x3D;off时，非必传。最多配置10条规则，单条规则不超过100个字符，多条规则用“,”分割。
+    /// 配置UA黑白名单，当type&#x3D;off时，非必传。最多配置50条规则，单条规则不超过100个字符，多条规则用“,”分割。
     /// </summary>
 
     std::string getValue() const;

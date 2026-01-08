@@ -40,7 +40,7 @@ public:
     /// ShowVerifyDomainOwnerInfoResponse members
 
     /// <summary>
-    /// DNS解析类型。
+    /// DNS解析类型。取值意义： - TXT：TXT记录
     /// </summary>
 
     std::string getDnsVerifyType() const;

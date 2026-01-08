@@ -20,7 +20,7 @@ ListTransactionRequestBody::ListTransactionRequestBody()
     limitIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
-    transactionQueryOptionIsSet_ = false;
+    transactionQueryInfoIsSet_ = false;
 }
 
 ListTransactionRequestBody::~ListTransactionRequestBody() = default;
@@ -45,8 +45,8 @@ web::json::value ListTransactionRequestBody::toJson() const
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
-    if(transactionQueryOptionIsSet_) {
-        val[utility::conversions::to_string_t("transaction_query_option")] = ModelBase::toJson(transactionQueryOption_);
+    if(transactionQueryInfoIsSet_) {
+        val[utility::conversions::to_string_t("transaction_query_info")] = ModelBase::toJson(transactionQueryInfo_);
     }
 
     return val;
@@ -91,13 +91,13 @@ bool ListTransactionRequestBody::fromJson(const web::json::value& val)
             setOffset(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("transaction_query_option"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("transaction_query_option"));
+    if(val.has_field(utility::conversions::to_string_t("transaction_query_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("transaction_query_info"));
         if(!fieldValue.is_null())
         {
-            ListTransactionRequestBody_transaction_query_option refVal;
+            ListTransactionRequestBody_transaction_query_info refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTransactionQueryOption(refVal);
+            setTransactionQueryInfo(refVal);
         }
     }
     return ok;
@@ -188,25 +188,25 @@ void ListTransactionRequestBody::unsetoffset()
     offsetIsSet_ = false;
 }
 
-ListTransactionRequestBody_transaction_query_option ListTransactionRequestBody::getTransactionQueryOption() const
+ListTransactionRequestBody_transaction_query_info ListTransactionRequestBody::getTransactionQueryInfo() const
 {
-    return transactionQueryOption_;
+    return transactionQueryInfo_;
 }
 
-void ListTransactionRequestBody::setTransactionQueryOption(const ListTransactionRequestBody_transaction_query_option& value)
+void ListTransactionRequestBody::setTransactionQueryInfo(const ListTransactionRequestBody_transaction_query_info& value)
 {
-    transactionQueryOption_ = value;
-    transactionQueryOptionIsSet_ = true;
+    transactionQueryInfo_ = value;
+    transactionQueryInfoIsSet_ = true;
 }
 
-bool ListTransactionRequestBody::transactionQueryOptionIsSet() const
+bool ListTransactionRequestBody::transactionQueryInfoIsSet() const
 {
-    return transactionQueryOptionIsSet_;
+    return transactionQueryInfoIsSet_;
 }
 
-void ListTransactionRequestBody::unsettransactionQueryOption()
+void ListTransactionRequestBody::unsettransactionQueryInfo()
 {
-    transactionQueryOptionIsSet_ = false;
+    transactionQueryInfoIsSet_ = false;
 }
 
 }

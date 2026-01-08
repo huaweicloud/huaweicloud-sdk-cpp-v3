@@ -22,6 +22,10 @@ BasicWatermark::BasicWatermark()
     timelineStartIsSet_ = false;
     timelineDuration_ = "";
     timelineDurationIsSet_ = false;
+    randomTimeMin_ = "";
+    randomTimeMinIsSet_ = false;
+    randomTimeMax_ = "";
+    randomTimeMaxIsSet_ = false;
 }
 
 BasicWatermark::~BasicWatermark() = default;
@@ -48,6 +52,12 @@ web::json::value BasicWatermark::toJson() const
     }
     if(timelineDurationIsSet_) {
         val[utility::conversions::to_string_t("timeline_duration")] = ModelBase::toJson(timelineDuration_);
+    }
+    if(randomTimeMinIsSet_) {
+        val[utility::conversions::to_string_t("random_time_min")] = ModelBase::toJson(randomTimeMin_);
+    }
+    if(randomTimeMaxIsSet_) {
+        val[utility::conversions::to_string_t("random_time_max")] = ModelBase::toJson(randomTimeMax_);
     }
 
     return val;
@@ -99,6 +109,24 @@ bool BasicWatermark::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimelineDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("random_time_min"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("random_time_min"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRandomTimeMin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("random_time_max"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("random_time_max"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRandomTimeMax(refVal);
         }
     }
     return ok;
@@ -208,6 +236,48 @@ bool BasicWatermark::timelineDurationIsSet() const
 void BasicWatermark::unsettimelineDuration()
 {
     timelineDurationIsSet_ = false;
+}
+
+std::string BasicWatermark::getRandomTimeMin() const
+{
+    return randomTimeMin_;
+}
+
+void BasicWatermark::setRandomTimeMin(const std::string& value)
+{
+    randomTimeMin_ = value;
+    randomTimeMinIsSet_ = true;
+}
+
+bool BasicWatermark::randomTimeMinIsSet() const
+{
+    return randomTimeMinIsSet_;
+}
+
+void BasicWatermark::unsetrandomTimeMin()
+{
+    randomTimeMinIsSet_ = false;
+}
+
+std::string BasicWatermark::getRandomTimeMax() const
+{
+    return randomTimeMax_;
+}
+
+void BasicWatermark::setRandomTimeMax(const std::string& value)
+{
+    randomTimeMax_ = value;
+    randomTimeMaxIsSet_ = true;
+}
+
+bool BasicWatermark::randomTimeMaxIsSet() const
+{
+    return randomTimeMaxIsSet_;
+}
+
+void BasicWatermark::unsetrandomTimeMax()
+{
+    randomTimeMaxIsSet_ = false;
 }
 
 }

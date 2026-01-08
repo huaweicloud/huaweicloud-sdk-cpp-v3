@@ -76,6 +76,8 @@ NodeExtendParam::NodeExtendParam()
     initNodePasswordIsSet_ = false;
     securityReinforcementType_ = "";
     securityReinforcementTypeIsSet_ = false;
+    serverMetadataHttpTokens_ = "";
+    serverMetadataHttpTokensIsSet_ = false;
 }
 
 NodeExtendParam::~NodeExtendParam() = default;
@@ -183,6 +185,9 @@ web::json::value NodeExtendParam::toJson() const
     }
     if(securityReinforcementTypeIsSet_) {
         val[utility::conversions::to_string_t("securityReinforcementType")] = ModelBase::toJson(securityReinforcementType_);
+    }
+    if(serverMetadataHttpTokensIsSet_) {
+        val[utility::conversions::to_string_t("serverMetadataHttpTokens")] = ModelBase::toJson(serverMetadataHttpTokens_);
     }
 
     return val;
@@ -477,6 +482,15 @@ bool NodeExtendParam::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityReinforcementType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("serverMetadataHttpTokens"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serverMetadataHttpTokens"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerMetadataHttpTokens(refVal);
         }
     }
     return ok;
@@ -1153,6 +1167,27 @@ bool NodeExtendParam::securityReinforcementTypeIsSet() const
 void NodeExtendParam::unsetsecurityReinforcementType()
 {
     securityReinforcementTypeIsSet_ = false;
+}
+
+std::string NodeExtendParam::getServerMetadataHttpTokens() const
+{
+    return serverMetadataHttpTokens_;
+}
+
+void NodeExtendParam::setServerMetadataHttpTokens(const std::string& value)
+{
+    serverMetadataHttpTokens_ = value;
+    serverMetadataHttpTokensIsSet_ = true;
+}
+
+bool NodeExtendParam::serverMetadataHttpTokensIsSet() const
+{
+    return serverMetadataHttpTokensIsSet_;
+}
+
+void NodeExtendParam::unsetserverMetadataHttpTokens()
+{
+    serverMetadataHttpTokensIsSet_ = false;
 }
 
 }

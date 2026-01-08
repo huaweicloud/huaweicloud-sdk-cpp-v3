@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionResponseBody_rows_info_H_
-#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionResponseBody_rows_info_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionResponseBody_rows_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionResponseBody_rows_H_
 
 
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ListTransactionResponseBody_rows_info
+class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ListTransactionResponseBody_rows
     : public ModelBase
 {
 public:
-    ListTransactionResponseBody_rows_info();
-    virtual ~ListTransactionResponseBody_rows_info();
+    ListTransactionResponseBody_rows();
+    virtual ~ListTransactionResponseBody_rows();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ListTransactionResponseBody_rows_info members
+    /// ListTransactionResponseBody_rows members
 
     /// <summary>
     /// **参数解释**: 事务ID。 **取值范围**: 不涉及。
@@ -270,4 +270,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionResponseBody_rows_info_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionResponseBody_rows_H_

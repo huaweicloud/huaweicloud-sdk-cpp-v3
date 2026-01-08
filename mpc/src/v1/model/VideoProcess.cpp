@@ -22,6 +22,8 @@ VideoProcess::VideoProcess()
     rotateIsSet_ = false;
     adaptation_ = "";
     adaptationIsSet_ = false;
+    fillType_ = "";
+    fillTypeIsSet_ = false;
     upsample_ = 0;
     upsampleIsSet_ = false;
     hlsSegmentType_ = "";
@@ -52,6 +54,9 @@ web::json::value VideoProcess::toJson() const
     }
     if(adaptationIsSet_) {
         val[utility::conversions::to_string_t("adaptation")] = ModelBase::toJson(adaptation_);
+    }
+    if(fillTypeIsSet_) {
+        val[utility::conversions::to_string_t("fill_type")] = ModelBase::toJson(fillType_);
     }
     if(upsampleIsSet_) {
         val[utility::conversions::to_string_t("upsample")] = ModelBase::toJson(upsample_);
@@ -109,6 +114,15 @@ bool VideoProcess::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAdaptation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fill_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fill_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFillType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("upsample"))) {
@@ -236,6 +250,27 @@ bool VideoProcess::adaptationIsSet() const
 void VideoProcess::unsetadaptation()
 {
     adaptationIsSet_ = false;
+}
+
+std::string VideoProcess::getFillType() const
+{
+    return fillType_;
+}
+
+void VideoProcess::setFillType(const std::string& value)
+{
+    fillType_ = value;
+    fillTypeIsSet_ = true;
+}
+
+bool VideoProcess::fillTypeIsSet() const
+{
+    return fillTypeIsSet_;
+}
+
+void VideoProcess::unsetfillType()
+{
+    fillTypeIsSet_ = false;
 }
 
 int32_t VideoProcess::getUpsample() const

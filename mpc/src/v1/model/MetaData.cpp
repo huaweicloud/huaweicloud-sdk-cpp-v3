@@ -20,6 +20,8 @@ MetaData::MetaData()
     durationIsSet_ = false;
     format_ = "";
     formatIsSet_ = false;
+    md5_ = "";
+    md5IsSet_ = false;
     bitrate_ = 0L;
     bitrateIsSet_ = false;
     videoIsSet_ = false;
@@ -47,6 +49,9 @@ web::json::value MetaData::toJson() const
     }
     if(formatIsSet_) {
         val[utility::conversions::to_string_t("format")] = ModelBase::toJson(format_);
+    }
+    if(md5IsSet_) {
+        val[utility::conversions::to_string_t("md5")] = ModelBase::toJson(md5_);
     }
     if(bitrateIsSet_) {
         val[utility::conversions::to_string_t("bitrate")] = ModelBase::toJson(bitrate_);
@@ -98,6 +103,15 @@ bool MetaData::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFormat(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("md5"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("md5"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMd5(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("bitrate"))) {
@@ -213,6 +227,27 @@ bool MetaData::formatIsSet() const
 void MetaData::unsetformat()
 {
     formatIsSet_ = false;
+}
+
+std::string MetaData::getMd5() const
+{
+    return md5_;
+}
+
+void MetaData::setMd5(const std::string& value)
+{
+    md5_ = value;
+    md5IsSet_ = true;
+}
+
+bool MetaData::md5IsSet() const
+{
+    return md5IsSet_;
+}
+
+void MetaData::unsetmd5()
+{
+    md5IsSet_ = false;
 }
 
 int64_t MetaData::getBitrate() const

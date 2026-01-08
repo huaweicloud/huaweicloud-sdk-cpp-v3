@@ -49,6 +49,24 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
+    /// 黑点比例大于等于此值认为是黑帧。 
+    /// </summary>
+
+    int32_t getAmount() const;
+    bool amountIsSet() const;
+    void unsetamount();
+    void setAmount(int32_t value);
+
+    /// <summary>
+    /// 像素值小于此值认为是黑点。 
+    /// </summary>
+
+    int32_t getThreshold() const;
+    bool thresholdIsSet() const;
+    void unsetthreshold();
+    void setThreshold(int32_t value);
+
+    /// <summary>
     /// 采样截图的时间间隔值。  默认值：12。  单位：秒 
     /// </summary>
 
@@ -142,6 +160,10 @@ public:
 protected:
     std::string type_;
     bool typeIsSet_;
+    int32_t amount_;
+    bool amountIsSet_;
+    int32_t threshold_;
+    bool thresholdIsSet_;
     int32_t time_;
     bool timeIsSet_;
     int32_t startTime_;

@@ -12,7 +12,7 @@ namespace Model {
 
 ShowRedistributionParametersResponse::ShowRedistributionParametersResponse()
 {
-    redistributionParametersIsSet_ = false;
+    expansionParametersIsSet_ = false;
 }
 
 ShowRedistributionParametersResponse::~ShowRedistributionParametersResponse() = default;
@@ -25,8 +25,8 @@ web::json::value ShowRedistributionParametersResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(redistributionParametersIsSet_) {
-        val[utility::conversions::to_string_t("redistribution_parameters")] = ModelBase::toJson(redistributionParameters_);
+    if(expansionParametersIsSet_) {
+        val[utility::conversions::to_string_t("expansion_parameters")] = ModelBase::toJson(expansionParameters_);
     }
 
     return val;
@@ -35,38 +35,38 @@ bool ShowRedistributionParametersResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("redistribution_parameters"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("redistribution_parameters"));
+    if(val.has_field(utility::conversions::to_string_t("expansion_parameters"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expansion_parameters"));
         if(!fieldValue.is_null())
         {
             std::vector<RedistributionParameterResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRedistributionParameters(refVal);
+            setExpansionParameters(refVal);
         }
     }
     return ok;
 }
 
 
-std::vector<RedistributionParameterResult>& ShowRedistributionParametersResponse::getRedistributionParameters()
+std::vector<RedistributionParameterResult>& ShowRedistributionParametersResponse::getExpansionParameters()
 {
-    return redistributionParameters_;
+    return expansionParameters_;
 }
 
-void ShowRedistributionParametersResponse::setRedistributionParameters(const std::vector<RedistributionParameterResult>& value)
+void ShowRedistributionParametersResponse::setExpansionParameters(const std::vector<RedistributionParameterResult>& value)
 {
-    redistributionParameters_ = value;
-    redistributionParametersIsSet_ = true;
+    expansionParameters_ = value;
+    expansionParametersIsSet_ = true;
 }
 
-bool ShowRedistributionParametersResponse::redistributionParametersIsSet() const
+bool ShowRedistributionParametersResponse::expansionParametersIsSet() const
 {
-    return redistributionParametersIsSet_;
+    return expansionParametersIsSet_;
 }
 
-void ShowRedistributionParametersResponse::unsetredistributionParameters()
+void ShowRedistributionParametersResponse::unsetexpansionParameters()
 {
-    redistributionParametersIsSet_ = false;
+    expansionParametersIsSet_ = false;
 }
 
 }

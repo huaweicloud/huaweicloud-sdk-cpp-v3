@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/gaussdbforopengauss/v3/model/BackupPolicyInfo.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyOption.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -53,16 +53,16 @@ public:
     /// 
     /// </summary>
 
-    BackupPolicyInfo getBackupPolicy() const;
+    BatchSetBackupPolicyOption getBackupPolicy() const;
     bool backupPolicyIsSet() const;
     void unsetbackupPolicy();
-    void setBackupPolicy(const BackupPolicyInfo& value);
+    void setBackupPolicy(const BatchSetBackupPolicyOption& value);
 
 
 protected:
     std::vector<std::string> instanceIds_;
     bool instanceIdsIsSet_;
-    BackupPolicyInfo backupPolicy_;
+    BatchSetBackupPolicyOption backupPolicy_;
     bool backupPolicyIsSet_;
 
 };

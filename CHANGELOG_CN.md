@@ -1,3 +1,314 @@
+# 3.1.169 2026-01-08
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNode**
+    - 响应参数变更
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+  - **CreateNode**
+    - 请求参数变更
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+    - 响应参数变更
+      - `+ spec.extendParam.serverMetadataHttpTokens`
+  - **ListNodes**
+    - 响应参数变更
+      - `+ items.spec.extendParam.serverMetadataHttpTokens`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **UpdateNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **UpgradeNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **ListNodePools**
+    - 响应参数变更
+      - `+ items.spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+  - **ListHyperNodes**
+    - 响应参数变更
+      - `+ hyperNodeList.spec.nodeTemplate.extendParam.serverMetadataHttpTokens`
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainStats**
+    - 响应参数变更
+      - `+ start_time`
+      - `+ stat_type`
+      - `+ end_time`
+      - `+ action`
+      - `+ interval`
+
+### HuaweiCloud SDK Cloudtest
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`DownloadStepImageNew`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTransaction**
+    - 请求参数变更
+      - `+ transaction_query_info`
+      - `- transaction_query_option`
+    - 响应参数变更
+      - `+ rows`
+      - `- rows_info`
+  - **ShowRedistributionParameters**
+    - 响应参数变更
+      - `+ expansion_parameters`
+      - `- redistribution_parameters`
+  - **ShowEpsRemainingQuota**
+    - 响应参数变更
+      - `+ eps_remaining_quotas`
+      - `- eps_quota_remaining`
+  - **ListSqlLimitTask**
+    - 响应参数变更
+      - `* limit_task_list.instance_id: object -> string`
+  - **ListEnhanceFullSqls**
+    - 请求参数变更
+      - `+ node_id`
+  - **ExportFullSqlList**
+    - 请求参数变更
+      - `+ node_id`
+  - **ListFullSqlSwitches**
+    - 响应参数变更
+      - `+ full_sql_switches`
+      - `- full_sql_switchs`
+      - `+ allowed_sql_types.category`
+      - `+ allowed_sql_types.prefixes`
+      - `+ allowed_sql_types.is_preset`
+      - `- allowed_sql_types.is_open`
+      - `- allowed_sql_types.begin_time`
+  - **ListSlowSqls**
+    - 响应参数变更
+      - `+ slow_sql_infos.db_name`
+      - `+ slow_sql_infos.schema_name`
+  - **ModifyHbaConf**
+    - 请求参数变更
+      - `+ before_conf.type`
+      - `+ before_conf.database`
+      - `+ before_conf.user`
+      - `+ before_conf.address`
+      - `+ before_conf.method`
+      - `* before_conf: object -> object<BeforeHbaConfOption>`
+      - `+ after_conf.type`
+      - `+ after_conf.database`
+      - `+ after_conf.user`
+      - `+ after_conf.address`
+      - `+ after_conf.method`
+      - `* after_conf: object -> object<AfterHbaConfOption>`
+  - **BatchSetBackupPolicy**
+    - 请求参数变更
+      - `* backup_policy: object<BackupPolicyInfo> -> object<BatchSetBackupPolicyOption>`
+  - **ListWaitEvent**
+    - 响应参数变更
+      - `* rows: object<WaitEventResult> -> list<WaitEventResult>`
+  - **ListHbaInfoHistory**
+    - 响应参数变更
+      - `+ hba_histories.id`
+  - **ListMetricDatas**
+    - 响应参数变更
+      - `+ instances.nodes.role`
+
+### HuaweiCloud SDK MPC
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateThumbnailsTask**
+    - 请求参数变更
+      - `+ thumbnail_para.amount`
+      - `+ thumbnail_para.threshold`
+  - **UpdateWatermarkTemplate**
+    - 请求参数变更
+      - `+ random_time_min`
+      - `+ random_time_max`
+  - **CreateWatermarkTemplate**
+    - 请求参数变更
+      - `+ random_time_min`
+      - `+ random_time_max`
+  - **ListWatermarkTemplate**
+    - 响应参数变更
+      - `+ templates.random_time_min`
+      - `+ templates.random_time_max`
+  - **ListRemuxTask**
+    - 响应参数变更
+      - `+ tasks.output_metadata.md5`
+      - `+ tasks.output_metadata.video.duration`
+      - `+ tasks.output_metadata.video.duration_ms`
+      - `+ tasks.output_metadata.video.rotate`
+      - `+ tasks.output_metadata.audio.duration`
+      - `+ tasks.output_metadata.audio.duration_ms`
+  - **CreateExtractTask**
+    - 响应参数变更
+      - `+ metadata.md5`
+      - `+ metadata.video.duration`
+      - `+ metadata.video.duration_ms`
+      - `+ metadata.video.rotate`
+      - `+ metadata.audio.duration`
+      - `+ metadata.audio.duration_ms`
+  - **ListExtractTask**
+    - 响应参数变更
+      - `+ tasks.metadata.md5`
+      - `+ tasks.metadata.video.duration`
+      - `+ tasks.metadata.video.duration_ms`
+      - `+ tasks.metadata.video.rotate`
+      - `+ tasks.metadata.audio.duration`
+      - `+ tasks.metadata.audio.duration_ms`
+  - **CreateMbTasksReport**
+    - 请求参数变更
+      - `+ parameter.metadata.md5`
+      - `+ parameter.metadata.video.duration`
+      - `+ parameter.metadata.video.duration_ms`
+      - `+ parameter.metadata.video.rotate`
+      - `+ parameter.metadata.audio.duration`
+      - `+ parameter.metadata.audio.duration_ms`
+  - **CreateTranscodingTask**
+    - 请求参数变更
+      - `+ trans_template_list`
+      - `+ thumbnails`
+      - `+ image_sprites`
+      - `+ pipeline_id`
+      - `+ av_parameters.output`
+      - `+ av_parameters.output_filename`
+      - `+ watermarks.image_watermark.random_time_min`
+      - `+ watermarks.image_watermark.random_time_max`
+      - `+ watermarks.text_watermark.random_time_min`
+      - `+ watermarks.text_watermark.random_time_max`
+      - `+ thumbnail.params.amount`
+      - `+ thumbnail.params.threshold`
+      - `+ video_process.fill_type`
+  - **ListTranscodingTask**
+    - 响应参数变更
+      - `+ task_array.thumbnails_info`
+      - `+ task_array.image_sprite_info`
+      - `+ task_array.av_parameters.output`
+      - `+ task_array.av_parameters.output_filename`
+      - `+ task_array.transcode_detail.input_file.md5`
+      - `+ task_array.transcode_detail.input_file.video_info.duration`
+      - `+ task_array.transcode_detail.input_file.video_info.duration_ms`
+      - `+ task_array.transcode_detail.input_file.video_info.rotate`
+      - `+ task_array.transcode_detail.input_file.audio_info.duration`
+      - `+ task_array.transcode_detail.input_file.audio_info.duration_ms`
+  - **ListTranscodeDetail**
+    - 响应参数变更
+      - `+ task_array.media_detail.origin_para.video.duration`
+      - `+ task_array.media_detail.origin_para.video.duration_ms`
+      - `+ task_array.media_detail.origin_para.video.rotate`
+      - `+ task_array.media_detail.origin_para.audio.duration`
+      - `+ task_array.media_detail.origin_para.audio.duration_ms`
+  - **CreateEditingJob**
+    - 请求参数变更
+      - `+ image_watermark_settings.random_time_min`
+      - `+ image_watermark_settings.random_time_max`
+      - `+ concats.av_parameters.output`
+      - `+ concats.av_parameters.output_filename`
+  - **ListEditingJob**
+    - 响应参数变更
+      - `+ jobs.output_file_info.meta_data.md5`
+      - `+ jobs.output_file_info.meta_data.video_info.duration`
+      - `+ jobs.output_file_info.meta_data.video_info.duration_ms`
+      - `+ jobs.output_file_info.meta_data.video_info.rotate`
+      - `+ jobs.output_file_info.meta_data.audio_info.duration`
+      - `+ jobs.output_file_info.meta_data.audio_info.duration_ms`
+      - `+ jobs.edit_task_req.image_watermark_settings.random_time_min`
+      - `+ jobs.edit_task_req.image_watermark_settings.random_time_max`
+      - `+ jobs.edit_task_req.concats.av_parameters.output`
+      - `+ jobs.edit_task_req.concats.av_parameters.output_filename`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`UpdateTimeZone`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListBackups**
+    - 响应参数变更
+      - `+ backups.min_data_volume_capacity_for_restore`
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListCategoryInfo`、`ListAssetTaskInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListAddressGroupsDependency`
+    - `ListPorts`
+    - `ShowPort`
+    - `ListVirsubnets`
+    - `ShowVirsubnet`
+    - `ShowQuota`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddSecurityGroups**
+    - 响应参数变更
+      - `* port.extra_dhcp_opts: list<ExtraDhcpOpt> -> list<PortExtraDhcpOpt>`
+      - `* port.tags: list<ResourceTag> -> list<ResponseTag>`
+  - **RemoveSecurityGroups**
+    - 响应参数变更
+      - `* port.extra_dhcp_opts: list<ExtraDhcpOpt> -> list<PortExtraDhcpOpt>`
+      - `* port.tags: list<ResourceTag> -> list<ResponseTag>`
+
 # 3.1.168 2025-12-25
 
 ### HuaweiCloud SDK CCE

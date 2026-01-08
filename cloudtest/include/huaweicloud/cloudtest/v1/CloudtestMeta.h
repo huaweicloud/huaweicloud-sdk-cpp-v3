@@ -44,6 +44,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteService();
     static HttpRequestDef genRequestDefForDeleteTestCaseComment();
     static HttpRequestDef genRequestDefForDeleteTestReportCustomDetailByUri();
+    static HttpRequestDef genRequestDefForDownloadStepImageNew();
     static HttpRequestDef genRequestDefForListAlarmStatisticsUsing();
     static HttpRequestDef genRequestDefForListAlertGroupsByCondition();
     static HttpRequestDef genRequestDefForListAlertTemplates();

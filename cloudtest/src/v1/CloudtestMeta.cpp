@@ -276,6 +276,11 @@ HttpRequestDef CloudtestMeta::genRequestDefForDeleteTestReportCustomDetailByUri(
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudtestMeta::genRequestDefForDownloadStepImageNew() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CloudtestMeta::genRequestDefForListAlarmStatisticsUsing() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

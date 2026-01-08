@@ -14,7 +14,7 @@ ListFullSqlSwitchesResponse::ListFullSqlSwitchesResponse()
 {
     totalCount_ = 0L;
     totalCountIsSet_ = false;
-    fullSqlSwitchsIsSet_ = false;
+    fullSqlSwitchesIsSet_ = false;
     allowedSqlTypesIsSet_ = false;
 }
 
@@ -31,8 +31,8 @@ web::json::value ListFullSqlSwitchesResponse::toJson() const
     if(totalCountIsSet_) {
         val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
     }
-    if(fullSqlSwitchsIsSet_) {
-        val[utility::conversions::to_string_t("full_sql_switchs")] = ModelBase::toJson(fullSqlSwitchs_);
+    if(fullSqlSwitchesIsSet_) {
+        val[utility::conversions::to_string_t("full_sql_switches")] = ModelBase::toJson(fullSqlSwitches_);
     }
     if(allowedSqlTypesIsSet_) {
         val[utility::conversions::to_string_t("allowed_sql_types")] = ModelBase::toJson(allowedSqlTypes_);
@@ -53,13 +53,13 @@ bool ListFullSqlSwitchesResponse::fromJson(const web::json::value& val)
             setTotalCount(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("full_sql_switchs"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("full_sql_switchs"));
+    if(val.has_field(utility::conversions::to_string_t("full_sql_switches"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("full_sql_switches"));
         if(!fieldValue.is_null())
         {
             std::vector<FullSqlSwitchResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFullSqlSwitchs(refVal);
+            setFullSqlSwitches(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("allowed_sql_types"))) {
@@ -96,25 +96,25 @@ void ListFullSqlSwitchesResponse::unsettotalCount()
     totalCountIsSet_ = false;
 }
 
-std::vector<FullSqlSwitchResult>& ListFullSqlSwitchesResponse::getFullSqlSwitchs()
+std::vector<FullSqlSwitchResult>& ListFullSqlSwitchesResponse::getFullSqlSwitches()
 {
-    return fullSqlSwitchs_;
+    return fullSqlSwitches_;
 }
 
-void ListFullSqlSwitchesResponse::setFullSqlSwitchs(const std::vector<FullSqlSwitchResult>& value)
+void ListFullSqlSwitchesResponse::setFullSqlSwitches(const std::vector<FullSqlSwitchResult>& value)
 {
-    fullSqlSwitchs_ = value;
-    fullSqlSwitchsIsSet_ = true;
+    fullSqlSwitches_ = value;
+    fullSqlSwitchesIsSet_ = true;
 }
 
-bool ListFullSqlSwitchesResponse::fullSqlSwitchsIsSet() const
+bool ListFullSqlSwitchesResponse::fullSqlSwitchesIsSet() const
 {
-    return fullSqlSwitchsIsSet_;
+    return fullSqlSwitchesIsSet_;
 }
 
-void ListFullSqlSwitchesResponse::unsetfullSqlSwitchs()
+void ListFullSqlSwitchesResponse::unsetfullSqlSwitches()
 {
-    fullSqlSwitchsIsSet_ = false;
+    fullSqlSwitchesIsSet_ = false;
 }
 
 std::vector<SqlTypeRangeConfigResult>& ListFullSqlSwitchesResponse::getAllowedSqlTypes()

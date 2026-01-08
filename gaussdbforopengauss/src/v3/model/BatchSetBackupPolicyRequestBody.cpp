@@ -52,7 +52,7 @@ bool BatchSetBackupPolicyRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_policy"));
         if(!fieldValue.is_null())
         {
-            BackupPolicyInfo refVal;
+            BatchSetBackupPolicyOption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBackupPolicy(refVal);
         }
@@ -82,12 +82,12 @@ void BatchSetBackupPolicyRequestBody::unsetinstanceIds()
     instanceIdsIsSet_ = false;
 }
 
-BackupPolicyInfo BatchSetBackupPolicyRequestBody::getBackupPolicy() const
+BatchSetBackupPolicyOption BatchSetBackupPolicyRequestBody::getBackupPolicy() const
 {
     return backupPolicy_;
 }
 
-void BatchSetBackupPolicyRequestBody::setBackupPolicy(const BackupPolicyInfo& value)
+void BatchSetBackupPolicyRequestBody::setBackupPolicy(const BatchSetBackupPolicyOption& value)
 {
     backupPolicy_ = value;
     backupPolicyIsSet_ = true;

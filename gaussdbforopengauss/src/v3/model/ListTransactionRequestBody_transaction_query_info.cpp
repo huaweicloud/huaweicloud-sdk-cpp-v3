@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/gaussdbforopengauss/v3/model/ListTransactionRequestBody_transaction_query_option.h"
+#include "huaweicloud/gaussdbforopengauss/v3/model/ListTransactionRequestBody_transaction_query_info.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-ListTransactionRequestBody_transaction_query_option::ListTransactionRequestBody_transaction_query_option()
+ListTransactionRequestBody_transaction_query_info::ListTransactionRequestBody_transaction_query_info()
 {
     execTime_ = "";
     execTimeIsSet_ = false;
@@ -21,13 +21,13 @@ ListTransactionRequestBody_transaction_query_option::ListTransactionRequestBody_
     clientAddrsIsSet_ = false;
 }
 
-ListTransactionRequestBody_transaction_query_option::~ListTransactionRequestBody_transaction_query_option() = default;
+ListTransactionRequestBody_transaction_query_info::~ListTransactionRequestBody_transaction_query_info() = default;
 
-void ListTransactionRequestBody_transaction_query_option::validate()
+void ListTransactionRequestBody_transaction_query_info::validate()
 {
 }
 
-web::json::value ListTransactionRequestBody_transaction_query_option::toJson() const
+web::json::value ListTransactionRequestBody_transaction_query_info::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -49,7 +49,7 @@ web::json::value ListTransactionRequestBody_transaction_query_option::toJson() c
 
     return val;
 }
-bool ListTransactionRequestBody_transaction_query_option::fromJson(const web::json::value& val)
+bool ListTransactionRequestBody_transaction_query_info::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -102,107 +102,107 @@ bool ListTransactionRequestBody_transaction_query_option::fromJson(const web::js
 }
 
 
-std::string ListTransactionRequestBody_transaction_query_option::getExecTime() const
+std::string ListTransactionRequestBody_transaction_query_info::getExecTime() const
 {
     return execTime_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::setExecTime(const std::string& value)
+void ListTransactionRequestBody_transaction_query_info::setExecTime(const std::string& value)
 {
     execTime_ = value;
     execTimeIsSet_ = true;
 }
 
-bool ListTransactionRequestBody_transaction_query_option::execTimeIsSet() const
+bool ListTransactionRequestBody_transaction_query_info::execTimeIsSet() const
 {
     return execTimeIsSet_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::unsetexecTime()
+void ListTransactionRequestBody_transaction_query_info::unsetexecTime()
 {
     execTimeIsSet_ = false;
 }
 
-std::string ListTransactionRequestBody_transaction_query_option::getXlogQuantity() const
+std::string ListTransactionRequestBody_transaction_query_info::getXlogQuantity() const
 {
     return xlogQuantity_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::setXlogQuantity(const std::string& value)
+void ListTransactionRequestBody_transaction_query_info::setXlogQuantity(const std::string& value)
 {
     xlogQuantity_ = value;
     xlogQuantityIsSet_ = true;
 }
 
-bool ListTransactionRequestBody_transaction_query_option::xlogQuantityIsSet() const
+bool ListTransactionRequestBody_transaction_query_info::xlogQuantityIsSet() const
 {
     return xlogQuantityIsSet_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::unsetxlogQuantity()
+void ListTransactionRequestBody_transaction_query_info::unsetxlogQuantity()
 {
     xlogQuantityIsSet_ = false;
 }
 
-std::vector<std::string>& ListTransactionRequestBody_transaction_query_option::getDatnames()
+std::vector<std::string>& ListTransactionRequestBody_transaction_query_info::getDatnames()
 {
     return datnames_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::setDatnames(const std::vector<std::string>& value)
+void ListTransactionRequestBody_transaction_query_info::setDatnames(const std::vector<std::string>& value)
 {
     datnames_ = value;
     datnamesIsSet_ = true;
 }
 
-bool ListTransactionRequestBody_transaction_query_option::datnamesIsSet() const
+bool ListTransactionRequestBody_transaction_query_info::datnamesIsSet() const
 {
     return datnamesIsSet_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::unsetdatnames()
+void ListTransactionRequestBody_transaction_query_info::unsetdatnames()
 {
     datnamesIsSet_ = false;
 }
 
-std::vector<std::string>& ListTransactionRequestBody_transaction_query_option::getUsenames()
+std::vector<std::string>& ListTransactionRequestBody_transaction_query_info::getUsenames()
 {
     return usenames_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::setUsenames(const std::vector<std::string>& value)
+void ListTransactionRequestBody_transaction_query_info::setUsenames(const std::vector<std::string>& value)
 {
     usenames_ = value;
     usenamesIsSet_ = true;
 }
 
-bool ListTransactionRequestBody_transaction_query_option::usenamesIsSet() const
+bool ListTransactionRequestBody_transaction_query_info::usenamesIsSet() const
 {
     return usenamesIsSet_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::unsetusenames()
+void ListTransactionRequestBody_transaction_query_info::unsetusenames()
 {
     usenamesIsSet_ = false;
 }
 
-std::vector<std::string>& ListTransactionRequestBody_transaction_query_option::getClientAddrs()
+std::vector<std::string>& ListTransactionRequestBody_transaction_query_info::getClientAddrs()
 {
     return clientAddrs_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::setClientAddrs(const std::vector<std::string>& value)
+void ListTransactionRequestBody_transaction_query_info::setClientAddrs(const std::vector<std::string>& value)
 {
     clientAddrs_ = value;
     clientAddrsIsSet_ = true;
 }
 
-bool ListTransactionRequestBody_transaction_query_option::clientAddrsIsSet() const
+bool ListTransactionRequestBody_transaction_query_info::clientAddrsIsSet() const
 {
     return clientAddrsIsSet_;
 }
 
-void ListTransactionRequestBody_transaction_query_option::unsetclientAddrs()
+void ListTransactionRequestBody_transaction_query_info::unsetclientAddrs()
 {
     clientAddrsIsSet_ = false;
 }

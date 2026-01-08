@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/gaussdbforopengauss/v3/model/BackupPolicyInfo.h"
+#include "huaweicloud/gaussdbforopengauss/v3/model/BackupPolicyInfoOption.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-BackupPolicyInfo::BackupPolicyInfo()
+BackupPolicyInfoOption::BackupPolicyInfoOption()
 {
     keepDays_ = 0;
     keepDaysIsSet_ = false;
@@ -30,13 +30,13 @@ BackupPolicyInfo::BackupPolicyInfo()
     enableStandbyBackupIsSet_ = false;
 }
 
-BackupPolicyInfo::~BackupPolicyInfo() = default;
+BackupPolicyInfoOption::~BackupPolicyInfoOption() = default;
 
-void BackupPolicyInfo::validate()
+void BackupPolicyInfoOption::validate()
 {
 }
 
-web::json::value BackupPolicyInfo::toJson() const
+web::json::value BackupPolicyInfoOption::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -67,7 +67,7 @@ web::json::value BackupPolicyInfo::toJson() const
 
     return val;
 }
-bool BackupPolicyInfo::fromJson(const web::json::value& val)
+bool BackupPolicyInfoOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -147,170 +147,170 @@ bool BackupPolicyInfo::fromJson(const web::json::value& val)
 }
 
 
-int32_t BackupPolicyInfo::getKeepDays() const
+int32_t BackupPolicyInfoOption::getKeepDays() const
 {
     return keepDays_;
 }
 
-void BackupPolicyInfo::setKeepDays(int32_t value)
+void BackupPolicyInfoOption::setKeepDays(int32_t value)
 {
     keepDays_ = value;
     keepDaysIsSet_ = true;
 }
 
-bool BackupPolicyInfo::keepDaysIsSet() const
+bool BackupPolicyInfoOption::keepDaysIsSet() const
 {
     return keepDaysIsSet_;
 }
 
-void BackupPolicyInfo::unsetkeepDays()
+void BackupPolicyInfoOption::unsetkeepDays()
 {
     keepDaysIsSet_ = false;
 }
 
-std::string BackupPolicyInfo::getStartTime() const
+std::string BackupPolicyInfoOption::getStartTime() const
 {
     return startTime_;
 }
 
-void BackupPolicyInfo::setStartTime(const std::string& value)
+void BackupPolicyInfoOption::setStartTime(const std::string& value)
 {
     startTime_ = value;
     startTimeIsSet_ = true;
 }
 
-bool BackupPolicyInfo::startTimeIsSet() const
+bool BackupPolicyInfoOption::startTimeIsSet() const
 {
     return startTimeIsSet_;
 }
 
-void BackupPolicyInfo::unsetstartTime()
+void BackupPolicyInfoOption::unsetstartTime()
 {
     startTimeIsSet_ = false;
 }
 
-std::string BackupPolicyInfo::getPeriod() const
+std::string BackupPolicyInfoOption::getPeriod() const
 {
     return period_;
 }
 
-void BackupPolicyInfo::setPeriod(const std::string& value)
+void BackupPolicyInfoOption::setPeriod(const std::string& value)
 {
     period_ = value;
     periodIsSet_ = true;
 }
 
-bool BackupPolicyInfo::periodIsSet() const
+bool BackupPolicyInfoOption::periodIsSet() const
 {
     return periodIsSet_;
 }
 
-void BackupPolicyInfo::unsetperiod()
+void BackupPolicyInfoOption::unsetperiod()
 {
     periodIsSet_ = false;
 }
 
-std::string BackupPolicyInfo::getDifferentialPeriod() const
+std::string BackupPolicyInfoOption::getDifferentialPeriod() const
 {
     return differentialPeriod_;
 }
 
-void BackupPolicyInfo::setDifferentialPeriod(const std::string& value)
+void BackupPolicyInfoOption::setDifferentialPeriod(const std::string& value)
 {
     differentialPeriod_ = value;
     differentialPeriodIsSet_ = true;
 }
 
-bool BackupPolicyInfo::differentialPeriodIsSet() const
+bool BackupPolicyInfoOption::differentialPeriodIsSet() const
 {
     return differentialPeriodIsSet_;
 }
 
-void BackupPolicyInfo::unsetdifferentialPeriod()
+void BackupPolicyInfoOption::unsetdifferentialPeriod()
 {
     differentialPeriodIsSet_ = false;
 }
 
-int32_t BackupPolicyInfo::getRateLimit() const
+int32_t BackupPolicyInfoOption::getRateLimit() const
 {
     return rateLimit_;
 }
 
-void BackupPolicyInfo::setRateLimit(int32_t value)
+void BackupPolicyInfoOption::setRateLimit(int32_t value)
 {
     rateLimit_ = value;
     rateLimitIsSet_ = true;
 }
 
-bool BackupPolicyInfo::rateLimitIsSet() const
+bool BackupPolicyInfoOption::rateLimitIsSet() const
 {
     return rateLimitIsSet_;
 }
 
-void BackupPolicyInfo::unsetrateLimit()
+void BackupPolicyInfoOption::unsetrateLimit()
 {
     rateLimitIsSet_ = false;
 }
 
-int32_t BackupPolicyInfo::getPrefetchBlock() const
+int32_t BackupPolicyInfoOption::getPrefetchBlock() const
 {
     return prefetchBlock_;
 }
 
-void BackupPolicyInfo::setPrefetchBlock(int32_t value)
+void BackupPolicyInfoOption::setPrefetchBlock(int32_t value)
 {
     prefetchBlock_ = value;
     prefetchBlockIsSet_ = true;
 }
 
-bool BackupPolicyInfo::prefetchBlockIsSet() const
+bool BackupPolicyInfoOption::prefetchBlockIsSet() const
 {
     return prefetchBlockIsSet_;
 }
 
-void BackupPolicyInfo::unsetprefetchBlock()
+void BackupPolicyInfoOption::unsetprefetchBlock()
 {
     prefetchBlockIsSet_ = false;
 }
 
-int32_t BackupPolicyInfo::getFileSplitSize() const
+int32_t BackupPolicyInfoOption::getFileSplitSize() const
 {
     return fileSplitSize_;
 }
 
-void BackupPolicyInfo::setFileSplitSize(int32_t value)
+void BackupPolicyInfoOption::setFileSplitSize(int32_t value)
 {
     fileSplitSize_ = value;
     fileSplitSizeIsSet_ = true;
 }
 
-bool BackupPolicyInfo::fileSplitSizeIsSet() const
+bool BackupPolicyInfoOption::fileSplitSizeIsSet() const
 {
     return fileSplitSizeIsSet_;
 }
 
-void BackupPolicyInfo::unsetfileSplitSize()
+void BackupPolicyInfoOption::unsetfileSplitSize()
 {
     fileSplitSizeIsSet_ = false;
 }
 
-bool BackupPolicyInfo::isEnableStandbyBackup() const
+bool BackupPolicyInfoOption::isEnableStandbyBackup() const
 {
     return enableStandbyBackup_;
 }
 
-void BackupPolicyInfo::setEnableStandbyBackup(bool value)
+void BackupPolicyInfoOption::setEnableStandbyBackup(bool value)
 {
     enableStandbyBackup_ = value;
     enableStandbyBackupIsSet_ = true;
 }
 
-bool BackupPolicyInfo::enableStandbyBackupIsSet() const
+bool BackupPolicyInfoOption::enableStandbyBackupIsSet() const
 {
     return enableStandbyBackupIsSet_;
 }
 
-void BackupPolicyInfo::unsetenableStandbyBackup()
+void BackupPolicyInfoOption::unsetenableStandbyBackup()
 {
     enableStandbyBackupIsSet_ = false;
 }

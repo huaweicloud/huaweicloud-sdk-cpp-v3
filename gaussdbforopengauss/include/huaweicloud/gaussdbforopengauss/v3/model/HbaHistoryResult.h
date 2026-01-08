@@ -42,6 +42,15 @@ public:
     /// HbaHistoryResult members
 
     /// <summary>
+    /// **参数解释**: 客户端接入认证修改记录的ID。 **取值范围**: 不涉及。
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
+    /// <summary>
     /// **参数解释**: 修改结果。 **取值范围**:  - success：已生效。  - failed：未生效。  - etting：设置中。
     /// </summary>
 
@@ -88,6 +97,8 @@ public:
 
 
 protected:
+    std::string id_;
+    bool idIsSet_;
     std::string status_;
     bool statusIsSet_;
     utility::datetime time_;

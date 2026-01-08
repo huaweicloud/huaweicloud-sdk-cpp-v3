@@ -14,6 +14,10 @@ ThumbnailPara::ThumbnailPara()
 {
     type_ = "";
     typeIsSet_ = false;
+    amount_ = 0;
+    amountIsSet_ = false;
+    threshold_ = 0;
+    thresholdIsSet_ = false;
     time_ = 0;
     timeIsSet_ = false;
     startTime_ = 0;
@@ -46,6 +50,12 @@ web::json::value ThumbnailPara::toJson() const
 
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(amountIsSet_) {
+        val[utility::conversions::to_string_t("amount")] = ModelBase::toJson(amount_);
+    }
+    if(thresholdIsSet_) {
+        val[utility::conversions::to_string_t("threshold")] = ModelBase::toJson(threshold_);
     }
     if(timeIsSet_) {
         val[utility::conversions::to_string_t("time")] = ModelBase::toJson(time_);
@@ -91,6 +101,24 @@ bool ThumbnailPara::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("amount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("amount"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAmount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("threshold"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("threshold"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setThreshold(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("time"))) {
@@ -206,6 +234,48 @@ bool ThumbnailPara::typeIsSet() const
 void ThumbnailPara::unsettype()
 {
     typeIsSet_ = false;
+}
+
+int32_t ThumbnailPara::getAmount() const
+{
+    return amount_;
+}
+
+void ThumbnailPara::setAmount(int32_t value)
+{
+    amount_ = value;
+    amountIsSet_ = true;
+}
+
+bool ThumbnailPara::amountIsSet() const
+{
+    return amountIsSet_;
+}
+
+void ThumbnailPara::unsetamount()
+{
+    amountIsSet_ = false;
+}
+
+int32_t ThumbnailPara::getThreshold() const
+{
+    return threshold_;
+}
+
+void ThumbnailPara::setThreshold(int32_t value)
+{
+    threshold_ = value;
+    thresholdIsSet_ = true;
+}
+
+bool ThumbnailPara::thresholdIsSet() const
+{
+    return thresholdIsSet_;
+}
+
+void ThumbnailPara::unsetthreshold()
+{
+    thresholdIsSet_ = false;
 }
 
 int32_t ThumbnailPara::getTime() const

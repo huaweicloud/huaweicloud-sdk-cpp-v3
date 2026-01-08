@@ -85,6 +85,24 @@ public:
     void setTimelineDuration(const std::string& value);
 
     /// <summary>
+    /// 轮转间隔时间最小值，单位：秒 
+    /// </summary>
+
+    std::string getRandomTimeMin() const;
+    bool randomTimeMinIsSet() const;
+    void unsetrandomTimeMin();
+    void setRandomTimeMin(const std::string& value);
+
+    /// <summary>
+    /// 轮转间隔时间最大值，单位：秒 
+    /// </summary>
+
+    std::string getRandomTimeMax() const;
+    bool randomTimeMaxIsSet() const;
+    void unsetrandomTimeMax();
+    void setRandomTimeMax(const std::string& value);
+
+    /// <summary>
     /// 图片水印处理方式，type设置为Image时有效。  取值如下：  - Original：只做简单缩放，不做其他处理。 - Grayed：彩色图片变灰。 - Transparent：透明化。 
     /// </summary>
 
@@ -132,6 +150,10 @@ protected:
     bool timelineStartIsSet_;
     std::string timelineDuration_;
     bool timelineDurationIsSet_;
+    std::string randomTimeMin_;
+    bool randomTimeMinIsSet_;
+    std::string randomTimeMax_;
+    bool randomTimeMaxIsSet_;
     std::string imageProcess_;
     bool imageProcessIsSet_;
     std::string width_;

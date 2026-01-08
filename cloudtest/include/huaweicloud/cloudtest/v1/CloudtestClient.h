@@ -92,6 +92,8 @@
 #include <huaweicloud/cloudtest/v1/model/DeleteTestCaseInfo.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteTestReportCustomDetailByUriRequest.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteTestReportCustomDetailByUriResponse.h>
+#include <huaweicloud/cloudtest/v1/model/DownloadStepImageNewRequest.h>
+#include <huaweicloud/cloudtest/v1/model/DownloadStepImageNewResponse.h>
 #include <huaweicloud/cloudtest/v1/model/EtlRequestBody.h>
 #include <huaweicloud/cloudtest/v1/model/ExecuteTaskInfo.h>
 #include <huaweicloud/cloudtest/v1/model/GenerateReportInfo.h>
@@ -719,6 +721,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTestReportCustomDetailByUriResponse> deleteTestReportCustomDetailByUri(
         DeleteTestReportCustomDetailByUriRequest &request
+    );
+    // 下载图片
+    //
+    // 下载图片
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadStepImageNewResponse> downloadStepImageNew(
+        DownloadStepImageNewRequest &request
     );
     // 查询告警统计数据
     //

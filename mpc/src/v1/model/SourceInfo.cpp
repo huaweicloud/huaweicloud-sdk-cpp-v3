@@ -22,6 +22,8 @@ SourceInfo::SourceInfo()
     sizeIsSet_ = false;
     manifestName_ = "";
     manifestNameIsSet_ = false;
+    md5_ = "";
+    md5IsSet_ = false;
     videoInfoIsSet_ = false;
     audioInfoIsSet_ = false;
 }
@@ -50,6 +52,9 @@ web::json::value SourceInfo::toJson() const
     }
     if(manifestNameIsSet_) {
         val[utility::conversions::to_string_t("manifest_name")] = ModelBase::toJson(manifestName_);
+    }
+    if(md5IsSet_) {
+        val[utility::conversions::to_string_t("md5")] = ModelBase::toJson(md5_);
     }
     if(videoInfoIsSet_) {
         val[utility::conversions::to_string_t("video_info")] = ModelBase::toJson(videoInfo_);
@@ -107,6 +112,15 @@ bool SourceInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setManifestName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("md5"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("md5"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMd5(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("video_info"))) {
@@ -234,6 +248,27 @@ bool SourceInfo::manifestNameIsSet() const
 void SourceInfo::unsetmanifestName()
 {
     manifestNameIsSet_ = false;
+}
+
+std::string SourceInfo::getMd5() const
+{
+    return md5_;
+}
+
+void SourceInfo::setMd5(const std::string& value)
+{
+    md5_ = value;
+    md5IsSet_ = true;
+}
+
+bool SourceInfo::md5IsSet() const
+{
+    return md5IsSet_;
+}
+
+void SourceInfo::unsetmd5()
+{
+    md5IsSet_ = false;
 }
 
 VideoInfo SourceInfo::getVideoInfo() const

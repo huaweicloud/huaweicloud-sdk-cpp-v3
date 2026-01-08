@@ -191,6 +191,7 @@ public:
     static HttpRequestDef genRequestDefForUpdatePostgresqlInstanceAlias();
     static HttpRequestDef genRequestDefForUpdateSqlLimit();
     static HttpRequestDef genRequestDefForUpdateTdeStatus();
+    static HttpRequestDef genRequestDefForUpdateTimeZone();
     static HttpRequestDef genRequestDefForUpdateToPeriod();
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersion();
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersionPreCheck();

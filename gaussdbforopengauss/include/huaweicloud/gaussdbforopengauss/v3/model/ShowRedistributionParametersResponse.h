@@ -43,15 +43,15 @@ public:
     /// **参数解释**: 参数列表信息。
     /// </summary>
 
-    std::vector<RedistributionParameterResult>& getRedistributionParameters();
-    bool redistributionParametersIsSet() const;
-    void unsetredistributionParameters();
-    void setRedistributionParameters(const std::vector<RedistributionParameterResult>& value);
+    std::vector<RedistributionParameterResult>& getExpansionParameters();
+    bool expansionParametersIsSet() const;
+    void unsetexpansionParameters();
+    void setExpansionParameters(const std::vector<RedistributionParameterResult>& value);
 
 
 protected:
-    std::vector<RedistributionParameterResult> redistributionParameters_;
-    bool redistributionParametersIsSet_;
+    std::vector<RedistributionParameterResult> expansionParameters_;
+    bool expansionParametersIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

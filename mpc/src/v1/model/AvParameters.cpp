@@ -15,6 +15,9 @@ AvParameters::AvParameters()
     videoIsSet_ = false;
     audioIsSet_ = false;
     commonIsSet_ = false;
+    outputIsSet_ = false;
+    outputFilename_ = "";
+    outputFilenameIsSet_ = false;
 }
 
 AvParameters::~AvParameters() = default;
@@ -35,6 +38,12 @@ web::json::value AvParameters::toJson() const
     }
     if(commonIsSet_) {
         val[utility::conversions::to_string_t("common")] = ModelBase::toJson(common_);
+    }
+    if(outputIsSet_) {
+        val[utility::conversions::to_string_t("output")] = ModelBase::toJson(output_);
+    }
+    if(outputFilenameIsSet_) {
+        val[utility::conversions::to_string_t("output_filename")] = ModelBase::toJson(outputFilename_);
     }
 
     return val;
@@ -68,6 +77,24 @@ bool AvParameters::fromJson(const web::json::value& val)
             Common refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCommon(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("output"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("output"));
+        if(!fieldValue.is_null())
+        {
+            ObsObjInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOutput(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("output_filename"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("output_filename"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOutputFilename(refVal);
         }
     }
     return ok;
@@ -135,6 +162,48 @@ bool AvParameters::commonIsSet() const
 void AvParameters::unsetcommon()
 {
     commonIsSet_ = false;
+}
+
+ObsObjInfo AvParameters::getOutput() const
+{
+    return output_;
+}
+
+void AvParameters::setOutput(const ObsObjInfo& value)
+{
+    output_ = value;
+    outputIsSet_ = true;
+}
+
+bool AvParameters::outputIsSet() const
+{
+    return outputIsSet_;
+}
+
+void AvParameters::unsetoutput()
+{
+    outputIsSet_ = false;
+}
+
+std::string AvParameters::getOutputFilename() const
+{
+    return outputFilename_;
+}
+
+void AvParameters::setOutputFilename(const std::string& value)
+{
+    outputFilename_ = value;
+    outputFilenameIsSet_ = true;
+}
+
+bool AvParameters::outputFilenameIsSet() const
+{
+    return outputFilenameIsSet_;
+}
+
+void AvParameters::unsetoutputFilename()
+{
+    outputFilenameIsSet_ = false;
 }
 
 }

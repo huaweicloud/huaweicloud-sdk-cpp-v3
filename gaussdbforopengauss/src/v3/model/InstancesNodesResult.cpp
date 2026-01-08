@@ -16,6 +16,8 @@ InstancesNodesResult::InstancesNodesResult()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    role_ = "";
+    roleIsSet_ = false;
     componentIdsIsSet_ = false;
 }
 
@@ -34,6 +36,9 @@ web::json::value InstancesNodesResult::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(roleIsSet_) {
+        val[utility::conversions::to_string_t("role")] = ModelBase::toJson(role_);
     }
     if(componentIdsIsSet_) {
         val[utility::conversions::to_string_t("component_ids")] = ModelBase::toJson(componentIds_);
@@ -61,6 +66,15 @@ bool InstancesNodesResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("role"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("role"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRole(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("component_ids"))) {
@@ -116,6 +130,27 @@ bool InstancesNodesResult::nameIsSet() const
 void InstancesNodesResult::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string InstancesNodesResult::getRole() const
+{
+    return role_;
+}
+
+void InstancesNodesResult::setRole(const std::string& value)
+{
+    role_ = value;
+    roleIsSet_ = true;
+}
+
+bool InstancesNodesResult::roleIsSet() const
+{
+    return roleIsSet_;
+}
+
+void InstancesNodesResult::unsetrole()
+{
+    roleIsSet_ = false;
 }
 
 std::vector<std::string>& InstancesNodesResult::getComponentIds()

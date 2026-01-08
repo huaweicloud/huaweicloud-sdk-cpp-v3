@@ -12,6 +12,8 @@ namespace Model {
 
 HbaHistoryResult::HbaHistoryResult()
 {
+    id_ = "";
+    idIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     time_ = utility::datetime();
@@ -32,6 +34,9 @@ web::json::value HbaHistoryResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
@@ -54,6 +59,15 @@ bool HbaHistoryResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
@@ -102,6 +116,27 @@ bool HbaHistoryResult::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string HbaHistoryResult::getId() const
+{
+    return id_;
+}
+
+void HbaHistoryResult::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool HbaHistoryResult::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void HbaHistoryResult::unsetid()
+{
+    idIsSet_ = false;
+}
 
 std::string HbaHistoryResult::getStatus() const
 {

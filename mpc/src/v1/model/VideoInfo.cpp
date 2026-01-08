@@ -24,6 +24,12 @@ VideoInfo::VideoInfo()
     frameRateIsSet_ = false;
     codec_ = "";
     codecIsSet_ = false;
+    duration_ = "";
+    durationIsSet_ = false;
+    durationMs_ = "";
+    durationMsIsSet_ = false;
+    rotate_ = 0.0f;
+    rotateIsSet_ = false;
 }
 
 VideoInfo::~VideoInfo() = default;
@@ -53,6 +59,15 @@ web::json::value VideoInfo::toJson() const
     }
     if(codecIsSet_) {
         val[utility::conversions::to_string_t("codec")] = ModelBase::toJson(codec_);
+    }
+    if(durationIsSet_) {
+        val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
+    }
+    if(durationMsIsSet_) {
+        val[utility::conversions::to_string_t("duration_ms")] = ModelBase::toJson(durationMs_);
+    }
+    if(rotateIsSet_) {
+        val[utility::conversions::to_string_t("rotate")] = ModelBase::toJson(rotate_);
     }
 
     return val;
@@ -113,6 +128,33 @@ bool VideoInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCodec(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("duration"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("duration_ms"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration_ms"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDurationMs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotate"));
+        if(!fieldValue.is_null())
+        {
+            float refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotate(refVal);
         }
     }
     return ok;
@@ -243,6 +285,69 @@ bool VideoInfo::codecIsSet() const
 void VideoInfo::unsetcodec()
 {
     codecIsSet_ = false;
+}
+
+std::string VideoInfo::getDuration() const
+{
+    return duration_;
+}
+
+void VideoInfo::setDuration(const std::string& value)
+{
+    duration_ = value;
+    durationIsSet_ = true;
+}
+
+bool VideoInfo::durationIsSet() const
+{
+    return durationIsSet_;
+}
+
+void VideoInfo::unsetduration()
+{
+    durationIsSet_ = false;
+}
+
+std::string VideoInfo::getDurationMs() const
+{
+    return durationMs_;
+}
+
+void VideoInfo::setDurationMs(const std::string& value)
+{
+    durationMs_ = value;
+    durationMsIsSet_ = true;
+}
+
+bool VideoInfo::durationMsIsSet() const
+{
+    return durationMsIsSet_;
+}
+
+void VideoInfo::unsetdurationMs()
+{
+    durationMsIsSet_ = false;
+}
+
+float VideoInfo::getRotate() const
+{
+    return rotate_;
+}
+
+void VideoInfo::setRotate(float value)
+{
+    rotate_ = value;
+    rotateIsSet_ = true;
+}
+
+bool VideoInfo::rotateIsSet() const
+{
+    return rotateIsSet_;
+}
+
+void VideoInfo::unsetrotate()
+{
+    rotateIsSet_ = false;
 }
 
 }

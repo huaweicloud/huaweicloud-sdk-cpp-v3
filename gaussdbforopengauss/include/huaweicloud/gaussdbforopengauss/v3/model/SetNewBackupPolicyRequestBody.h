@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/BackupPolicyInfo.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BackupPolicyInfoOption.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    BackupPolicyInfo getBackupPolicy() const;
+    BackupPolicyInfoOption getBackupPolicy() const;
     bool backupPolicyIsSet() const;
     void unsetbackupPolicy();
-    void setBackupPolicy(const BackupPolicyInfo& value);
+    void setBackupPolicy(const BackupPolicyInfoOption& value);
 
 
 protected:
-    BackupPolicyInfo backupPolicy_;
+    BackupPolicyInfoOption backupPolicy_;
     bool backupPolicyIsSet_;
 
 };

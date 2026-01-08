@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -115,10 +114,10 @@ public:
     /// **参数解释**: 实例ID。 **取值范围**: 不涉及。
     /// </summary>
 
-    Object getInstanceId() const;
+    std::string getInstanceId() const;
     bool instanceIdIsSet() const;
     void unsetinstanceId();
-    void setInstanceId(const Object& value);
+    void setInstanceId(const std::string& value);
 
     /// <summary>
     /// **参数解释**: 规则名。 **取值范围**: 不涉及。
@@ -192,7 +191,7 @@ protected:
     bool keyWordsIsSet_;
     std::string status_;
     bool statusIsSet_;
-    Object instanceId_;
+    std::string instanceId_;
     bool instanceIdIsSet_;
     std::string ruleName_;
     bool ruleNameIsSet_;

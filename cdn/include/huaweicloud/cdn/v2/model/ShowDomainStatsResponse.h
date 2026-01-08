@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
+#include <string>
 #include <map>
 #include <vector>
 
@@ -41,6 +42,51 @@ public:
     /// ShowDomainStatsResponse members
 
     /// <summary>
+    /// 查询起始时间戳。
+    /// </summary>
+
+    int64_t getStartTime() const;
+    bool startTimeIsSet() const;
+    void unsetstartTime();
+    void setStartTime(int64_t value);
+
+    /// <summary>
+    /// 查询结束时间戳
+    /// </summary>
+
+    int64_t getEndTime() const;
+    bool endTimeIsSet() const;
+    void unsetendTime();
+    void setEndTime(int64_t value);
+
+    /// <summary>
+    /// 参数类型支持：flux(流量)，req_num(请求总数)。
+    /// </summary>
+
+    std::string getStatType() const;
+    bool statTypeIsSet() const;
+    void unsetstatType();
+    void setStatType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 规则行为 **约束限制：** 不涉及
+    /// </summary>
+
+    std::string getAction() const;
+    bool actionIsSet() const;
+    void unsetaction();
+    void setAction(const std::string& value);
+
+    /// <summary>
+    /// 查询时间间隔，单位：秒
+    /// </summary>
+
+    int64_t getInterval() const;
+    bool intervalIsSet() const;
+    void unsetinterval();
+    void setInterval(int64_t value);
+
+    /// <summary>
     /// 按指定的分组方式组织的数据
     /// </summary>
 
@@ -51,6 +97,16 @@ public:
 
 
 protected:
+    int64_t startTime_;
+    bool startTimeIsSet_;
+    int64_t endTime_;
+    bool endTimeIsSet_;
+    std::string statType_;
+    bool statTypeIsSet_;
+    std::string action_;
+    bool actionIsSet_;
+    int64_t interval_;
+    bool intervalIsSet_;
     std::map<std::string, Object> result_;
     bool resultIsSet_;
 

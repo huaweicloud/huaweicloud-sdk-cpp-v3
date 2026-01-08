@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -37,8 +38,19 @@ public:
     /////////////////////////////////////////////
     /// UpgradeNodePoolResponse members
 
+    /// <summary>
+    /// Job ID returned after the job is delivered. The job ID can be used to query the job execution status.
+    /// </summary>
+
+    std::string getJobid() const;
+    bool jobidIsSet() const;
+    void unsetjobid();
+    void setJobid(const std::string& value);
+
 
 protected:
+    std::string jobid_;
+    bool jobidIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

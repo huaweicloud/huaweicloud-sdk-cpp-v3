@@ -88,6 +88,10 @@
 #include <huaweicloud/vod/v1/model/ListAssetDailySummaryLogResponse.h>
 #include <huaweicloud/vod/v1/model/ListAssetListRequest.h>
 #include <huaweicloud/vod/v1/model/ListAssetListResponse.h>
+#include <huaweicloud/vod/v1/model/ListAssetTaskInfoRequest.h>
+#include <huaweicloud/vod/v1/model/ListAssetTaskInfoResponse.h>
+#include <huaweicloud/vod/v1/model/ListCategoryInfoRequest.h>
+#include <huaweicloud/vod/v1/model/ListCategoryInfoResponse.h>
 #include <huaweicloud/vod/v1/model/ListCdnStatisticsRequest.h>
 #include <huaweicloud/vod/v1/model/ListCdnStatisticsResponse.h>
 #include <huaweicloud/vod/v1/model/ListDomainLogsRequest.h>
@@ -114,6 +118,7 @@
 #include <huaweicloud/vod/v1/model/PublishAssetReq.h>
 #include <huaweicloud/vod/v1/model/PublishAssetsRequest.h>
 #include <huaweicloud/vod/v1/model/PublishAssetsResponse.h>
+#include <huaweicloud/vod/v1/model/QueryCategoryInfoRsp.h>
 #include <huaweicloud/vod/v1/model/QueryCategoryRsp.h>
 #include <huaweicloud/vod/v1/model/RefreshAssetRequest.h>
 #include <huaweicloud/vod/v1/model/RefreshAssetResponse.h>
@@ -499,6 +504,24 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAssetListResponse> listAssetList(
         ListAssetListRequest &request
+    );
+    // 查询媒资任务信息
+    //
+    // ## 典型场景 ##
+    //   查询媒资任务信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAssetTaskInfoResponse> listAssetTaskInfo(
+        ListAssetTaskInfoRequest &request
+    );
+    // 查询指定分类信息
+    //
+    // ## 典型场景 ##
+    //   查询指定分类信息，及其子分类（即下一级分类）的列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCategoryInfoResponse> listCategoryInfo(
+        ListCategoryInfoRequest &request
     );
     // 查询CDN统计信息
     //

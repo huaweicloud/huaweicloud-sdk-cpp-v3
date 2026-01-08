@@ -451,6 +451,9 @@
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusRequestBody.h>
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateTimeZoneRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateTimeZoneRequestBody.h>
+#include <huaweicloud/rds/v3/model/UpdateTimeZoneResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateToPeriodRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateToPeriodResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionPreCheckRequest.h>
@@ -2217,6 +2220,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateTdeStatusResponse> updateTdeStatus(
         UpdateTdeStatusRequest &request
+    );
+    // 修改时区
+    //
+    // 修改时区
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTimeZoneResponse> updateTimeZone(
+        UpdateTimeZoneRequest &request
     );
     // RDS实例按需转包周期
     //

@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListTransactionResponseBody_rows.h>
 #include <vector>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListTransactionResponseBody_rows_info.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -52,17 +52,17 @@ public:
     /// **参数解释**: 事务信息列表。
     /// </summary>
 
-    std::vector<ListTransactionResponseBody_rows_info>& getRowsInfo();
-    bool rowsInfoIsSet() const;
-    void unsetrowsInfo();
-    void setRowsInfo(const std::vector<ListTransactionResponseBody_rows_info>& value);
+    std::vector<ListTransactionResponseBody_rows>& getRows();
+    bool rowsIsSet() const;
+    void unsetrows();
+    void setRows(const std::vector<ListTransactionResponseBody_rows>& value);
 
 
 protected:
     int32_t total_;
     bool totalIsSet_;
-    std::vector<ListTransactionResponseBody_rows_info> rowsInfo_;
-    bool rowsInfoIsSet_;
+    std::vector<ListTransactionResponseBody_rows> rows_;
+    bool rowsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

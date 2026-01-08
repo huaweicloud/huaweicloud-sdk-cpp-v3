@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <vector>
 #include <huaweicloud/gaussdbforopengauss/v3/model/WaitEventResult.h>
 
 namespace HuaweiCloud {
@@ -48,19 +49,19 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 
+    /// **参数解释**: 数据库实例的等待事件列表。
     /// </summary>
 
-    WaitEventResult getRows() const;
+    std::vector<WaitEventResult>& getRows();
     bool rowsIsSet() const;
     void unsetrows();
-    void setRows(const WaitEventResult& value);
+    void setRows(const std::vector<WaitEventResult>& value);
 
 
 protected:
     int32_t total_;
     bool totalIsSet_;
-    WaitEventResult rows_;
+    std::vector<WaitEventResult> rows_;
     bool rowsIsSet_;
 
 #ifdef RTTR_FLAG

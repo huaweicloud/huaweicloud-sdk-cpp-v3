@@ -12,7 +12,7 @@ namespace Model {
 
 ShowEpsRemainingQuotaResponse::ShowEpsRemainingQuotaResponse()
 {
-    epsQuotaRemainingIsSet_ = false;
+    epsRemainingQuotasIsSet_ = false;
     jobId_ = "";
     jobIdIsSet_ = false;
     totalCount_ = 0;
@@ -29,8 +29,8 @@ web::json::value ShowEpsRemainingQuotaResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(epsQuotaRemainingIsSet_) {
-        val[utility::conversions::to_string_t("eps_quota_remaining")] = ModelBase::toJson(epsQuotaRemaining_);
+    if(epsRemainingQuotasIsSet_) {
+        val[utility::conversions::to_string_t("eps_remaining_quotas")] = ModelBase::toJson(epsRemainingQuotas_);
     }
     if(jobIdIsSet_) {
         val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
@@ -45,13 +45,13 @@ bool ShowEpsRemainingQuotaResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("eps_quota_remaining"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("eps_quota_remaining"));
+    if(val.has_field(utility::conversions::to_string_t("eps_remaining_quotas"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("eps_remaining_quotas"));
         if(!fieldValue.is_null())
         {
             std::vector<EpsRemainingQuotaResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEpsQuotaRemaining(refVal);
+            setEpsRemainingQuotas(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("job_id"))) {
@@ -76,25 +76,25 @@ bool ShowEpsRemainingQuotaResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<EpsRemainingQuotaResult>& ShowEpsRemainingQuotaResponse::getEpsQuotaRemaining()
+std::vector<EpsRemainingQuotaResult>& ShowEpsRemainingQuotaResponse::getEpsRemainingQuotas()
 {
-    return epsQuotaRemaining_;
+    return epsRemainingQuotas_;
 }
 
-void ShowEpsRemainingQuotaResponse::setEpsQuotaRemaining(const std::vector<EpsRemainingQuotaResult>& value)
+void ShowEpsRemainingQuotaResponse::setEpsRemainingQuotas(const std::vector<EpsRemainingQuotaResult>& value)
 {
-    epsQuotaRemaining_ = value;
-    epsQuotaRemainingIsSet_ = true;
+    epsRemainingQuotas_ = value;
+    epsRemainingQuotasIsSet_ = true;
 }
 
-bool ShowEpsRemainingQuotaResponse::epsQuotaRemainingIsSet() const
+bool ShowEpsRemainingQuotaResponse::epsRemainingQuotasIsSet() const
 {
-    return epsQuotaRemainingIsSet_;
+    return epsRemainingQuotasIsSet_;
 }
 
-void ShowEpsRemainingQuotaResponse::unsetepsQuotaRemaining()
+void ShowEpsRemainingQuotaResponse::unsetepsRemainingQuotas()
 {
-    epsQuotaRemainingIsSet_ = false;
+    epsRemainingQuotasIsSet_ = false;
 }
 
 std::string ShowEpsRemainingQuotaResponse::getJobId() const

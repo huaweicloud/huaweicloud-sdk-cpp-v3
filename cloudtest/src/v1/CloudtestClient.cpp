@@ -1271,6 +1271,40 @@ std::shared_ptr<DeleteTestReportCustomDetailByUriResponse> CloudtestClient::dele
 
     return localVarResult;
 }
+std::shared_ptr<DownloadStepImageNewResponse> CloudtestClient::downloadStepImageNew(DownloadStepImageNewRequest &request)
+{
+    std::string localVarPath = "/v4/{project_id}/image/{parent}/{sub}/{file_name}/{file_type}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["parent"] = parameterToString(request.getParent());
+    localVarPathParams["sub"] = parameterToString(request.getSub());
+    localVarPathParams["file_name"] = parameterToString(request.getFileName());
+    localVarPathParams["file_type"] = parameterToString(request.getFileType());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForDownloadStepImageNew());
+
+    std::shared_ptr<DownloadStepImageNewResponse> localVarResult = std::make_shared<DownloadStepImageNewResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListAlarmStatisticsUsingResponse> CloudtestClient::listAlarmStatisticsUsing(ListAlarmStatisticsUsingRequest &request)
 {
     std::string localVarPath = "/v1/projects/{service_id}/dashboards/alarm/statistics";

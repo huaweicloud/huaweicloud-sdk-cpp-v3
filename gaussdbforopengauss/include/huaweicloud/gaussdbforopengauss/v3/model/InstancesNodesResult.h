@@ -58,6 +58,15 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 节点角色。 **取值范围**： - master：主节点。 - slave：备节点。 - secondary：日志节点。 - readreplica：只读节点。
+    /// </summary>
+
+    std::string getRole() const;
+    bool roleIsSet() const;
+    void unsetrole();
+    void setRole(const std::string& value);
+
+    /// <summary>
     /// **参数解释**： 组件ID列表。
     /// </summary>
 
@@ -72,6 +81,8 @@ protected:
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string role_;
+    bool roleIsSet_;
     std::vector<std::string> componentIds_;
     bool componentIdsIsSet_;
 

@@ -84,6 +84,15 @@ public:
     void setAdaptation(const std::string& value);
 
     /// <summary>
+    /// adaptation为NONE时生效： - stretch：拉伸，对每一帧进行拉伸，填满整个画面 - black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。 - white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。 - gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。 
+    /// </summary>
+
+    std::string getFillType() const;
+    bool fillTypeIsSet() const;
+    void unsetfillType();
+    void setFillType(const std::string& value);
+
+    /// <summary>
     /// 是否开启上采样，如支持从480P的片源转为720P，可取值为:  - 0：表示上采样关闭， - 1：表示上采样开启. 
     /// </summary>
 
@@ -113,6 +122,8 @@ protected:
     bool rotateIsSet_;
     std::string adaptation_;
     bool adaptationIsSet_;
+    std::string fillType_;
+    bool fillTypeIsSet_;
     int32_t upsample_;
     bool upsampleIsSet_;
     std::string hlsSegmentType_;

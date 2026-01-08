@@ -22,6 +22,10 @@ TextWatermark::TextWatermark()
     timelineStartIsSet_ = false;
     timelineDuration_ = "";
     timelineDurationIsSet_ = false;
+    randomTimeMin_ = "";
+    randomTimeMinIsSet_ = false;
+    randomTimeMax_ = "";
+    randomTimeMaxIsSet_ = false;
     fontName_ = "";
     fontNameIsSet_ = false;
     fontSize_ = 0;
@@ -56,6 +60,12 @@ web::json::value TextWatermark::toJson() const
     }
     if(timelineDurationIsSet_) {
         val[utility::conversions::to_string_t("timeline_duration")] = ModelBase::toJson(timelineDuration_);
+    }
+    if(randomTimeMinIsSet_) {
+        val[utility::conversions::to_string_t("random_time_min")] = ModelBase::toJson(randomTimeMin_);
+    }
+    if(randomTimeMaxIsSet_) {
+        val[utility::conversions::to_string_t("random_time_max")] = ModelBase::toJson(randomTimeMax_);
     }
     if(fontNameIsSet_) {
         val[utility::conversions::to_string_t("font_name")] = ModelBase::toJson(fontName_);
@@ -119,6 +129,24 @@ bool TextWatermark::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimelineDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("random_time_min"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("random_time_min"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRandomTimeMin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("random_time_max"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("random_time_max"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRandomTimeMax(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("font_name"))) {
@@ -264,6 +292,48 @@ bool TextWatermark::timelineDurationIsSet() const
 void TextWatermark::unsettimelineDuration()
 {
     timelineDurationIsSet_ = false;
+}
+
+std::string TextWatermark::getRandomTimeMin() const
+{
+    return randomTimeMin_;
+}
+
+void TextWatermark::setRandomTimeMin(const std::string& value)
+{
+    randomTimeMin_ = value;
+    randomTimeMinIsSet_ = true;
+}
+
+bool TextWatermark::randomTimeMinIsSet() const
+{
+    return randomTimeMinIsSet_;
+}
+
+void TextWatermark::unsetrandomTimeMin()
+{
+    randomTimeMinIsSet_ = false;
+}
+
+std::string TextWatermark::getRandomTimeMax() const
+{
+    return randomTimeMax_;
+}
+
+void TextWatermark::setRandomTimeMax(const std::string& value)
+{
+    randomTimeMax_ = value;
+    randomTimeMaxIsSet_ = true;
+}
+
+bool TextWatermark::randomTimeMaxIsSet() const
+{
+    return randomTimeMaxIsSet_;
+}
+
+void TextWatermark::unsetrandomTimeMax()
+{
+    randomTimeMaxIsSet_ = false;
 }
 
 std::string TextWatermark::getFontName() const

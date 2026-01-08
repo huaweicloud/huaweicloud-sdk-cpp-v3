@@ -2412,7 +2412,7 @@ public:
     std::shared_ptr<CollectAspResponse> collectAsp(
         CollectAspRequest &request
     );
-    // 查询asp采集结果
+    // 查询ASP采集结果
     //
     // 查询ASP采集结果。
     // 

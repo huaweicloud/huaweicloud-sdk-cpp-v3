@@ -78,6 +78,15 @@ public:
     void setFormat(const std::string& value);
 
     /// <summary>
+    /// 视频的 md5 值。 
+    /// </summary>
+
+    std::string getMd5() const;
+    bool md5IsSet() const;
+    void unsetmd5();
+    void setMd5(const std::string& value);
+
+    /// <summary>
     /// 总码率。单位：bit/秒 
     /// </summary>
 
@@ -114,6 +123,8 @@ protected:
     bool durationIsSet_;
     std::string format_;
     bool formatIsSet_;
+    std::string md5_;
+    bool md5IsSet_;
     int64_t bitrate_;
     bool bitrateIsSet_;
     std::vector<VideoInfo> video_;

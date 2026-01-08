@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionRequestBody_transaction_query_option_H_
-#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionRequestBody_transaction_query_option_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionRequestBody_transaction_query_info_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionRequestBody_transaction_query_info_H_
 
 
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
@@ -23,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// **参数解释**: 查询事务筛选条件。 **约束限制**: 不涉及。
 /// </summary>
-class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ListTransactionRequestBody_transaction_query_option
+class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ListTransactionRequestBody_transaction_query_info
     : public ModelBase
 {
 public:
-    ListTransactionRequestBody_transaction_query_option();
-    virtual ~ListTransactionRequestBody_transaction_query_option();
+    ListTransactionRequestBody_transaction_query_info();
+    virtual ~ListTransactionRequestBody_transaction_query_info();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ListTransactionRequestBody_transaction_query_option members
+    /// ListTransactionRequestBody_transaction_query_info members
 
     /// <summary>
     /// **参数解释**: 事务执行时长，单位：秒。 **约束限制**: 不涉及。 **取值范围**: 非负整数。 **默认取值**: 0
@@ -106,4 +106,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionRequestBody_transaction_query_option_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListTransactionRequestBody_transaction_query_info_H_

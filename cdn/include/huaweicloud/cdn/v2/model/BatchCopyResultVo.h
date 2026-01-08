@@ -48,7 +48,7 @@ public:
     void setReason(const std::string& value);
 
     /// <summary>
-    /// 批量操作结果。
+    /// 批量操作结果。取值意义： - success：成功 - fail：失败
     /// </summary>
 
     std::string getStatus() const;

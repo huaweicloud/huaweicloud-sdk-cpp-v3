@@ -39,7 +39,7 @@ public:
     /// SwitchAgentNewResponse members
 
     /// <summary>
-    /// 操作结果  - SUCCESS: 成功
+    /// 操作结果  - SUCCESS：成功
     /// </summary>
 
     std::string getResult() const;

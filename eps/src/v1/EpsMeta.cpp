@@ -68,6 +68,9 @@ HttpRequestDef EpsMeta::genRequestDefForListEnterpriseProject() {
     reqDefBuilder.withRequestField(FieldDef().withName("Status")
                   .withJsonTag("status")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

@@ -56,6 +56,8 @@ JobDetailResp::JobDetailResp()
     repairDetailInfoIsSet_ = false;
     repairExportStatus_ = "";
     repairExportStatusIsSet_ = false;
+    jobKernelDirection_ = "";
+    jobKernelDirectionIsSet_ = false;
 }
 
 JobDetailResp::~JobDetailResp() = default;
@@ -172,6 +174,9 @@ web::json::value JobDetailResp::toJson() const
     }
     if(repairExportStatusIsSet_) {
         val[utility::conversions::to_string_t("repair_export_status")] = ModelBase::toJson(repairExportStatus_);
+    }
+    if(jobKernelDirectionIsSet_) {
+        val[utility::conversions::to_string_t("job_kernel_direction")] = ModelBase::toJson(jobKernelDirection_);
     }
 
     return val;
@@ -493,6 +498,15 @@ bool JobDetailResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRepairExportStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_kernel_direction"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_kernel_direction"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobKernelDirection(refVal);
         }
     }
     return ok;
@@ -1232,6 +1246,27 @@ bool JobDetailResp::repairExportStatusIsSet() const
 void JobDetailResp::unsetrepairExportStatus()
 {
     repairExportStatusIsSet_ = false;
+}
+
+std::string JobDetailResp::getJobKernelDirection() const
+{
+    return jobKernelDirection_;
+}
+
+void JobDetailResp::setJobKernelDirection(const std::string& value)
+{
+    jobKernelDirection_ = value;
+    jobKernelDirectionIsSet_ = true;
+}
+
+bool JobDetailResp::jobKernelDirectionIsSet() const
+{
+    return jobKernelDirectionIsSet_;
+}
+
+void JobDetailResp::unsetjobKernelDirection()
+{
+    jobKernelDirectionIsSet_ = false;
 }
 
 }

@@ -66,7 +66,7 @@ public:
     void setAvailability(const std::string& value);
 
     /// <summary>
-    /// 参数取值范围。
+    /// 参数范围。
     /// </summary>
 
     std::string getRange() const;

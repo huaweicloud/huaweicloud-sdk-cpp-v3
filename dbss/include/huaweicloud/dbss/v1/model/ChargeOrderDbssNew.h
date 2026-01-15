@@ -109,7 +109,7 @@ public:
     void setCompositeProductId(const std::string& value);
 
     /// <summary>
-    /// 实例部署方式，默认为云上 - CLOUD： 云上 - OUTSIDE：云外
+    /// 实例部署方式，默认为云上 - CLOUD：云上 - OUTSIDE：云外
     /// </summary>
 
     std::string getDeployMode() const;

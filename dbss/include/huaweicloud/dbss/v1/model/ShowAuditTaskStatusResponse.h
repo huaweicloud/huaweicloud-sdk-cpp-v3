@@ -48,7 +48,7 @@ public:
     void setBeginTime(int64_t value);
 
     /// <summary>
-    /// 业务类型  - audit: 审计  - risk: 风险
+    /// 业务类型  - audit：审计  - risk：风险
     /// </summary>
 
     std::string getBusiType() const;

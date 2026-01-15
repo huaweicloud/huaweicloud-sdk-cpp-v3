@@ -39,7 +39,7 @@ public:
     /// BatchDeleteResourceTagResponse members
 
     /// <summary>
-    /// 
+    /// 无返回内容
     /// </summary>
 
     std::string getBody() const;

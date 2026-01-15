@@ -25,6 +25,8 @@ ActionParams::ActionParams()
     isSyncReEditIsSet_ = false;
     isOnlyInitTask_ = false;
     isOnlyInitTaskIsSet_ = false;
+    isAutoCreateCompare_ = false;
+    isAutoCreateCompareIsSet_ = false;
     forceDelete_ = false;
     forceDeleteIsSet_ = false;
     publicIpConfigIsSet_ = false;
@@ -65,6 +67,9 @@ web::json::value ActionParams::toJson() const
     }
     if(isOnlyInitTaskIsSet_) {
         val[utility::conversions::to_string_t("is_only_init_task")] = ModelBase::toJson(isOnlyInitTask_);
+    }
+    if(isAutoCreateCompareIsSet_) {
+        val[utility::conversions::to_string_t("is_auto_create_compare")] = ModelBase::toJson(isAutoCreateCompare_);
     }
     if(forceDeleteIsSet_) {
         val[utility::conversions::to_string_t("force_delete")] = ModelBase::toJson(forceDelete_);
@@ -155,6 +160,15 @@ bool ActionParams::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOnlyInitTask(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_auto_create_compare"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_auto_create_compare"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAutoCreateCompare(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("force_delete"))) {
@@ -363,6 +377,27 @@ bool ActionParams::isOnlyInitTaskIsSet() const
 void ActionParams::unsetisOnlyInitTask()
 {
     isOnlyInitTaskIsSet_ = false;
+}
+
+bool ActionParams::isIsAutoCreateCompare() const
+{
+    return isAutoCreateCompare_;
+}
+
+void ActionParams::setIsAutoCreateCompare(bool value)
+{
+    isAutoCreateCompare_ = value;
+    isAutoCreateCompareIsSet_ = true;
+}
+
+bool ActionParams::isAutoCreateCompareIsSet() const
+{
+    return isAutoCreateCompareIsSet_;
+}
+
+void ActionParams::unsetisAutoCreateCompare()
+{
+    isAutoCreateCompareIsSet_ = false;
 }
 
 bool ActionParams::isForceDelete() const

@@ -88,10 +88,10 @@ public:
     /// 
     /// </summary>
 
-    RequestLimitRulesEngine getRequestLimitRules() const;
-    bool requestLimitRulesIsSet() const;
-    void unsetrequestLimitRules();
-    void setRequestLimitRules(const RequestLimitRulesEngine& value);
+    RequestLimitRulesEngine getRequestLimitRule() const;
+    bool requestLimitRuleIsSet() const;
+    void unsetrequestLimitRule();
+    void setRequestLimitRule(const RequestLimitRulesEngine& value);
 
     /// <summary>
     /// 
@@ -133,10 +133,10 @@ public:
     /// 
     /// </summary>
 
-    ErrorCodeCacheEngine getErrorCodeCache() const;
+    std::vector<ErrorCodeCacheEngine>& getErrorCodeCache();
     bool errorCodeCacheIsSet() const;
     void unseterrorCodeCache();
-    void setErrorCodeCache(const ErrorCodeCacheEngine& value);
+    void setErrorCodeCache(const std::vector<ErrorCodeCacheEngine>& value);
 
 
 protected:
@@ -148,8 +148,8 @@ protected:
     bool httpResponseHeaderIsSet_;
     AccessControl accessControl_;
     bool accessControlIsSet_;
-    RequestLimitRulesEngine requestLimitRules_;
-    bool requestLimitRulesIsSet_;
+    RequestLimitRulesEngine requestLimitRule_;
+    bool requestLimitRuleIsSet_;
     OriginRequestUrlRewriteEngine originRequestUrlRewrite_;
     bool originRequestUrlRewriteIsSet_;
     CacheRulesEngine cacheRule_;
@@ -158,7 +158,7 @@ protected:
     bool requestUrlRewriteIsSet_;
     BrowserCacheRulesEngine browserCacheRule_;
     bool browserCacheRuleIsSet_;
-    ErrorCodeCacheEngine errorCodeCache_;
+    std::vector<ErrorCodeCacheEngine> errorCodeCache_;
     bool errorCodeCacheIsSet_;
 
 };

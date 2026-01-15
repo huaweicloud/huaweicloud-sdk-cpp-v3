@@ -57,7 +57,7 @@ public:
     void setParentId(const std::string& value);
 
     /// <summary>
-    /// 类型。
+    /// 类型。 table：表名，function：函数，database：SCHEMA，procedure：存储过程
     /// </summary>
 
     std::string getType() const;

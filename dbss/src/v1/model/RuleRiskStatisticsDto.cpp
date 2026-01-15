@@ -58,7 +58,7 @@ bool RuleRiskStatisticsDto::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_risk_count"));
         if(!fieldValue.is_null())
         {
-            std::vector<AuditInsanceRiskCount> refVal;
+            std::vector<AuditInstanceRiskCount> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceRiskCount(refVal);
         }
@@ -97,12 +97,12 @@ void RuleRiskStatisticsDto::unsetcount()
     countIsSet_ = false;
 }
 
-std::vector<AuditInsanceRiskCount>& RuleRiskStatisticsDto::getInstanceRiskCount()
+std::vector<AuditInstanceRiskCount>& RuleRiskStatisticsDto::getInstanceRiskCount()
 {
     return instanceRiskCount_;
 }
 
-void RuleRiskStatisticsDto::setInstanceRiskCount(const std::vector<AuditInsanceRiskCount>& value)
+void RuleRiskStatisticsDto::setInstanceRiskCount(const std::vector<AuditInstanceRiskCount>& value)
 {
     instanceRiskCount_ = value;
     instanceRiskCountIsSet_ = true;

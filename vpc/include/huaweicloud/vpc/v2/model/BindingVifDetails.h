@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -38,7 +39,7 @@ public:
     /// BindingVifDetails members
 
     /// <summary>
-    /// 功能说明：取值为true，表示是虚拟机的主网卡。
+    /// 是否为虚拟机的主网卡。
     /// </summary>
 
     bool isPrimaryInterface() const;
@@ -47,7 +48,7 @@ public:
     void setPrimaryInterface(bool value);
 
     /// <summary>
-    /// 功能说明：表示该网络服务提供端口过滤特性，如安全组和反MAC/IP欺骗。
+    /// 是否提供端口过滤特性, 如安全组和反MAC/IP欺骗。
     /// </summary>
 
     bool isPortFilter() const;
@@ -56,13 +57,40 @@ public:
     void setPortFilter(bool value);
 
     /// <summary>
-    /// 用于通知像nova这样的API消费者，应该使用OVS的混合插入策略。
+    /// 是否为ovs/bridge混合模式。
     /// </summary>
 
     bool isOvsHybridPlug() const;
     bool ovsHybridPlugIsSet() const;
     void unsetovsHybridPlug();
     void setOvsHybridPlug(bool value);
+
+    /// <summary>
+    /// 辅助弹性网卡的vlan ID。
+    /// </summary>
+
+    std::string getVlanId() const;
+    bool vlanIdIsSet() const;
+    void unsetvlanId();
+    void setVlanId(const std::string& value);
+
+    /// <summary>
+    /// 辅助弹性网卡的宿主网卡ID。
+    /// </summary>
+
+    std::string getParentId() const;
+    bool parentIdIsSet() const;
+    void unsetparentId();
+    void setParentId(const std::string& value);
+
+    /// <summary>
+    /// 辅助弹性网卡的宿主网卡所属的设备ID。
+    /// </summary>
+
+    std::string getParentDeviceId() const;
+    bool parentDeviceIdIsSet() const;
+    void unsetparentDeviceId();
+    void setParentDeviceId(const std::string& value);
 
 
 protected:
@@ -72,6 +100,12 @@ protected:
     bool portFilterIsSet_;
     bool ovsHybridPlug_;
     bool ovsHybridPlugIsSet_;
+    std::string vlanId_;
+    bool vlanIdIsSet_;
+    std::string parentId_;
+    bool parentIdIsSet_;
+    std::string parentDeviceId_;
+    bool parentDeviceIdIsSet_;
 
 };
 

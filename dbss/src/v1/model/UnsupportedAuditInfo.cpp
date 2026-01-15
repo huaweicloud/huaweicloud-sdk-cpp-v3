@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/dbss/v1/model/UnSupportAuditInfo.h"
+#include "huaweicloud/dbss/v1/model/UnsupportedAuditInfo.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dbss {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-UnSupportAuditInfo::UnSupportAuditInfo()
+UnsupportedAuditInfo::UnsupportedAuditInfo()
 {
     auditVersion_ = "";
     auditVersionIsSet_ = false;
@@ -18,13 +18,13 @@ UnSupportAuditInfo::UnSupportAuditInfo()
     serverNameIsSet_ = false;
 }
 
-UnSupportAuditInfo::~UnSupportAuditInfo() = default;
+UnsupportedAuditInfo::~UnsupportedAuditInfo() = default;
 
-void UnSupportAuditInfo::validate()
+void UnsupportedAuditInfo::validate()
 {
 }
 
-web::json::value UnSupportAuditInfo::toJson() const
+web::json::value UnsupportedAuditInfo::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value UnSupportAuditInfo::toJson() const
 
     return val;
 }
-bool UnSupportAuditInfo::fromJson(const web::json::value& val)
+bool UnsupportedAuditInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool UnSupportAuditInfo::fromJson(const web::json::value& val)
 }
 
 
-std::string UnSupportAuditInfo::getAuditVersion() const
+std::string UnsupportedAuditInfo::getAuditVersion() const
 {
     return auditVersion_;
 }
 
-void UnSupportAuditInfo::setAuditVersion(const std::string& value)
+void UnsupportedAuditInfo::setAuditVersion(const std::string& value)
 {
     auditVersion_ = value;
     auditVersionIsSet_ = true;
 }
 
-bool UnSupportAuditInfo::auditVersionIsSet() const
+bool UnsupportedAuditInfo::auditVersionIsSet() const
 {
     return auditVersionIsSet_;
 }
 
-void UnSupportAuditInfo::unsetauditVersion()
+void UnsupportedAuditInfo::unsetauditVersion()
 {
     auditVersionIsSet_ = false;
 }
 
-std::string UnSupportAuditInfo::getServerName() const
+std::string UnsupportedAuditInfo::getServerName() const
 {
     return serverName_;
 }
 
-void UnSupportAuditInfo::setServerName(const std::string& value)
+void UnsupportedAuditInfo::setServerName(const std::string& value)
 {
     serverName_ = value;
     serverNameIsSet_ = true;
 }
 
-bool UnSupportAuditInfo::serverNameIsSet() const
+bool UnsupportedAuditInfo::serverNameIsSet() const
 {
     return serverNameIsSet_;
 }
 
-void UnSupportAuditInfo::unsetserverName()
+void UnsupportedAuditInfo::unsetserverName()
 {
     serverNameIsSet_ = false;
 }

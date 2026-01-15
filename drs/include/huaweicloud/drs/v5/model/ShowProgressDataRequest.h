@@ -83,6 +83,15 @@ public:
     void unsettype();
     void setType(const std::string& value);
 
+    /// <summary>
+    /// 需要过滤的源库对象名称
+    /// </summary>
+
+    std::string getSearchName() const;
+    bool searchNameIsSet() const;
+    void unsetsearchName();
+    void setSearchName(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -95,6 +104,8 @@ protected:
     bool limitIsSet_;
     std::string type_;
     bool typeIsSet_;
+    std::string searchName_;
+    bool searchNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

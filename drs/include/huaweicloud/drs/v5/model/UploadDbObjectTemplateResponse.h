@@ -48,7 +48,7 @@ public:
     void setSendSuccess(bool value);
 
     /// <summary>
-    /// 文件解析状态。
+    /// 文件解析状态。 取值：success，failed
     /// </summary>
 
     std::string getProcessStatus() const;

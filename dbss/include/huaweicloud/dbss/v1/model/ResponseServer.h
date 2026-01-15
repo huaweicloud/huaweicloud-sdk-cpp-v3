@@ -93,7 +93,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 双机实例HA中用来标注实例为主机还是备机, -0: 主机 -1:备机
+    /// 双机实例HA中用来标注实例为主机还是备机, - 0：主机  - 1：备机
     /// </summary>
 
     int32_t getIsActive() const;
@@ -138,7 +138,7 @@ public:
     void setResourceSpecCode(const std::string& value);
 
     /// <summary>
-    /// 冻结场景  - POLICE: 公安冻结  - ILLEGAL: 违规冻结  - VERIFY: 未实名认证冻结  - PARTNER: 合作伙伴冻结 - ARREAR: 普通冻结（普通）
+    /// 冻结场景  - POLICE：公安冻结  - ILLEGAL：违规冻结  - VERIFY：未实名认证冻结  - PARTNER：合作伙伴冻结 - ARREAR：普通冻结（普通）
     /// </summary>
 
     std::string getScene() const;

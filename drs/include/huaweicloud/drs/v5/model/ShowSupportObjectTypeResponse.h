@@ -147,6 +147,24 @@ public:
     void unsetisImportCloumn();
     void setIsImportCloumn(bool value);
 
+    /// <summary>
+    /// 文件导入映射场景。 - table_mapping - topic_mapping
+    /// </summary>
+
+    std::string getImportMappingType() const;
+    bool importMappingTypeIsSet() const;
+    void unsetimportMappingType();
+    void setImportMappingType(const std::string& value);
+
+    /// <summary>
+    /// 唯一键信息是否导入。
+    /// </summary>
+
+    bool isIsImportUniqueKey() const;
+    bool isImportUniqueKeyIsSet() const;
+    void unsetisImportUniqueKey();
+    void setIsImportUniqueKey(bool value);
+
 
 protected:
     bool isFullTransSupportObject_;
@@ -173,6 +191,10 @@ protected:
     bool importLevelIsSet_;
     bool isImportCloumn_;
     bool isImportCloumnIsSet_;
+    std::string importMappingType_;
+    bool importMappingTypeIsSet_;
+    bool isImportUniqueKey_;
+    bool isImportUniqueKeyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

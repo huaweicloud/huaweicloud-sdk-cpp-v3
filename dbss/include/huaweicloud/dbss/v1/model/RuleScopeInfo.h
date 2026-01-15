@@ -66,7 +66,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 审计范围规则状态 - OFF：禁用  - ON: 启用
+    /// 审计范围规则状态 - OFF：禁用  - ON：启用
     /// </summary>
 
     std::string getStatus() const;

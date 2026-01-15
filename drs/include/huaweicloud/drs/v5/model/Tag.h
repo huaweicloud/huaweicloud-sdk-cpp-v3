@@ -40,7 +40,7 @@ public:
     /// Tag members
 
     /// <summary>
-    /// 标签键。
+    /// 标签键。例如键值对{“aaa”:\&quot;bbb\&quot;}的key为\&quot;aaa\&quot;
     /// </summary>
 
     std::string getKey() const;
@@ -49,7 +49,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 标签值。
+    /// 标签值。例如键值对{“aaa”:[\&quot;bbb\&quot;]}的values为[\&quot;bbb\&quot;]
     /// </summary>
 
     std::vector<std::string>& getValues();

@@ -39,7 +39,7 @@ public:
     /// SwitchRiskRuleResponse members
 
     /// <summary>
-    /// 响应状态 - SUCCESS: 成功  - FAILED: 失败
+    /// 响应状态 - SUCCESS：成功  - FAILED：失败
     /// </summary>
 
     std::string getStatus() const;

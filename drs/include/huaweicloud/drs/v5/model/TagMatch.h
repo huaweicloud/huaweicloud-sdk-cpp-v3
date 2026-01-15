@@ -39,7 +39,7 @@ public:
     /// TagMatch members
 
     /// <summary>
-    /// 键。
+    /// 键，例如键值对{“aaa”:\&quot;bbb\&quot;}的key为\&quot;aaa\&quot;
     /// </summary>
 
     std::string getKey() const;
@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 值。
+    /// 值，例如键值对{“aaa”:\&quot;bbb\&quot;}的value为\&quot;bbb\&quot;
     /// </summary>
 
     std::string getValue() const;

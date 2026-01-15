@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 数据库用户会话量
 /// </summary>
 class HUAWEICLOUD_DBSS_V1_EXPORT  ReportClientSessionNew
     : public ModelBase

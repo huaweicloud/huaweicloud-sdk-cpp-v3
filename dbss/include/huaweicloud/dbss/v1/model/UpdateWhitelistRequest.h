@@ -58,7 +58,7 @@ public:
     void setDesc(const std::string& value);
 
     /// <summary>
-    /// 是否启用  - true: 启用  - false: 禁用
+    /// 是否启用  - true：启用  - false：禁用
     /// </summary>
 
     bool isEnabled() const;

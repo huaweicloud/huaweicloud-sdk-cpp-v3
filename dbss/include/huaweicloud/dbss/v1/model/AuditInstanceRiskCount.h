@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_DBSS_V1_MODEL_AuditInsanceRiskCount_H_
-#define HUAWEICLOUD_SDK_DBSS_V1_MODEL_AuditInsanceRiskCount_H_
+#ifndef HUAWEICLOUD_SDK_DBSS_V1_MODEL_AuditInstanceRiskCount_H_
+#define HUAWEICLOUD_SDK_DBSS_V1_MODEL_AuditInstanceRiskCount_H_
 
 
 #include <huaweicloud/dbss/v1/DbssExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_DBSS_V1_EXPORT  AuditInsanceRiskCount
+class HUAWEICLOUD_DBSS_V1_EXPORT  AuditInstanceRiskCount
     : public ModelBase
 {
 public:
-    AuditInsanceRiskCount();
-    virtual ~AuditInsanceRiskCount();
+    AuditInstanceRiskCount();
+    virtual ~AuditInstanceRiskCount();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// AuditInsanceRiskCount members
+    /// AuditInstanceRiskCount members
 
     /// <summary>
     /// 风险数量
@@ -116,4 +116,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_DBSS_V1_MODEL_AuditInsanceRiskCount_H_
+#endif // HUAWEICLOUD_SDK_DBSS_V1_MODEL_AuditInstanceRiskCount_H_

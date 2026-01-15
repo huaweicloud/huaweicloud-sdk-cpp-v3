@@ -43,15 +43,15 @@ public:
     /// ecs规格集合
     /// </summary>
 
-    std::vector<EcsSpecificationBean>& getSpecification();
-    bool specificationIsSet() const;
-    void unsetspecification();
-    void setSpecification(const std::vector<EcsSpecificationBean>& value);
+    std::vector<EcsSpecificationBean>& getSpecifications();
+    bool specificationsIsSet() const;
+    void unsetspecifications();
+    void setSpecifications(const std::vector<EcsSpecificationBean>& value);
 
 
 protected:
-    std::vector<EcsSpecificationBean> specification_;
-    bool specificationIsSet_;
+    std::vector<EcsSpecificationBean> specifications_;
+    bool specificationsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -40,7 +40,7 @@ public:
     /// CreateReportRequestBody members
 
     /// <summary>
-    /// 数据库ID列表，多个用英文逗号分割
+    /// 数据库ID列表，多个用英文逗号分隔
     /// </summary>
 
     std::string getDbIds() const;

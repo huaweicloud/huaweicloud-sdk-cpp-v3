@@ -75,7 +75,7 @@ public:
     void setFeature(const std::string& value);
 
     /// <summary>
-    /// 风险规则状态。 - ON: 开启 - OFF: 关闭
+    /// 风险规则状态。 - ON：开启 - OFF：关闭
     /// </summary>
 
     std::string getStatus() const;
@@ -102,7 +102,7 @@ public:
     void setRiskLevel(const std::string& value);
 
     /// <summary>
-    /// 规则类型 - SYSTEM: 系统  - CUSTOMIZE: 自定义
+    /// 规则类型 - SYSTEM：系统  - CUSTOMIZE：自定义
     /// </summary>
 
     std::string getRuleType() const;

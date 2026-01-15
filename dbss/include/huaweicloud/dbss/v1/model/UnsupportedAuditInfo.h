@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnSupportAuditInfo_H_
-#define HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnSupportAuditInfo_H_
+#ifndef HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnsupportedAuditInfo_H_
+#define HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnsupportedAuditInfo_H_
 
 
 #include <huaweicloud/dbss/v1/DbssExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_DBSS_V1_EXPORT  UnSupportAuditInfo
+class HUAWEICLOUD_DBSS_V1_EXPORT  UnsupportedAuditInfo
     : public ModelBase
 {
 public:
-    UnSupportAuditInfo();
-    virtual ~UnSupportAuditInfo();
+    UnsupportedAuditInfo();
+    virtual ~UnsupportedAuditInfo();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// UnSupportAuditInfo members
+    /// UnsupportedAuditInfo members
 
     /// <summary>
     /// 实例版本
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnSupportAuditInfo_H_
+#endif // HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnsupportedAuditInfo_H_

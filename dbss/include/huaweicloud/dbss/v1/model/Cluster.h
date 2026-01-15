@@ -50,7 +50,7 @@ public:
     void setActivateInfo(const InstanceActivateInfo& value);
 
     /// <summary>
-    /// 计费模式  - Period: 包周期  - Demand: 按需
+    /// 计费模式  - Period：包周期  - Demand：按需
     /// </summary>
 
     std::string getChargeModel() const;
@@ -77,7 +77,7 @@ public:
     void setCreated(int64_t value);
 
     /// <summary>
-    /// 部署方式  - CLOUD: 云上  - OUTSIDE：云外
+    /// 部署方式  - CLOUD：云上  - OUTSIDE：云外
     /// </summary>
 
     std::string getDeployMode() const;

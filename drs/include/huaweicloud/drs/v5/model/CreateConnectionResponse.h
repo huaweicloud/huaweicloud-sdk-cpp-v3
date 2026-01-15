@@ -70,7 +70,7 @@ public:
     void setCreateTime(int64_t value);
 
     /// <summary>
-    /// 连接类型。
+    /// 连接类型。 取值：mysql - postgresql - mongodb - oracle
     /// </summary>
 
     std::string getDbType() const;

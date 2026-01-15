@@ -48,7 +48,7 @@ public:
     void setCompareResult(const std::string& value);
 
     /// <summary>
-    /// 参数类型
+    /// 参数类型 figure，string
     /// </summary>
 
     std::string getDataType() const;
@@ -66,7 +66,7 @@ public:
     void setGroup(const std::string& value);
 
     /// <summary>
-    /// 参数名
+    /// 参数名 binlog_cache_size，binlog_stmt_cache_size，bulk_insert_buffer_size，character_set_server，collation_server...
     /// </summary>
 
     std::string getKey() const;

@@ -317,7 +317,7 @@ public:
     void setPublicIpList(const std::vector<PublicIpConfig>& value);
 
     /// <summary>
-    /// 是否成功绑定公网IP
+    /// 是否成功绑定公网IP 取值：SUCCESS，FAILED
     /// </summary>
 
     std::string getBindPublicIpState() const;
@@ -371,13 +371,22 @@ public:
     void setRepairDetailInfo(const QueryRepairDetailResp& value);
 
     /// <summary>
-    /// 修复SQL导出状态。
+    /// 修复SQL导出状态。 INIT：初始状态，EXPORTING：比对结果导出中，EXPORT_COMPLETE：比对结果导出完成，EXPORT_COMMON_FAILED：比对结果导出失败
     /// </summary>
 
     std::string getRepairExportStatus() const;
     bool repairExportStatusIsSet() const;
     void unsetrepairExportStatus();
     void setRepairExportStatus(const std::string& value);
+
+    /// <summary>
+    /// 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+    /// </summary>
+
+    std::string getJobKernelDirection() const;
+    bool jobKernelDirectionIsSet() const;
+    void unsetjobKernelDirection();
+    void setJobKernelDirection(const std::string& value);
 
 
 protected:
@@ -451,6 +460,8 @@ protected:
     bool repairDetailInfoIsSet_;
     std::string repairExportStatus_;
     bool repairExportStatusIsSet_;
+    std::string jobKernelDirection_;
+    bool jobKernelDirectionIsSet_;
 
 };
 

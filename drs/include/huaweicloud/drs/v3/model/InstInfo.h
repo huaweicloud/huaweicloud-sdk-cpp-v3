@@ -48,7 +48,7 @@ public:
     void setEngineType(const std::string& value);
 
     /// <summary>
-    /// 实例类型
+    /// 实例类型 取值：common，high，ultrahigh
     /// </summary>
 
     std::string getInstType() const;

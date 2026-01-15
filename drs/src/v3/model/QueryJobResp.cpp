@@ -120,6 +120,8 @@ QueryJobResp::QueryJobResp()
     childrenIsSet_ = false;
     isOpenFastClean_ = false;
     isOpenFastCleanIsSet_ = false;
+    jobKernelDirection_ = "";
+    jobKernelDirectionIsSet_ = false;
 }
 
 QueryJobResp::~QueryJobResp() = default;
@@ -314,6 +316,9 @@ web::json::value QueryJobResp::toJson() const
     }
     if(isOpenFastCleanIsSet_) {
         val[utility::conversions::to_string_t("is_open_fast_clean")] = ModelBase::toJson(isOpenFastClean_);
+    }
+    if(jobKernelDirectionIsSet_) {
+        val[utility::conversions::to_string_t("job_kernel_direction")] = ModelBase::toJson(jobKernelDirection_);
     }
 
     return val;
@@ -869,6 +874,15 @@ bool QueryJobResp::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOpenFastClean(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_kernel_direction"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_kernel_direction"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobKernelDirection(refVal);
         }
     }
     return ok;
@@ -2154,6 +2168,27 @@ bool QueryJobResp::isOpenFastCleanIsSet() const
 void QueryJobResp::unsetisOpenFastClean()
 {
     isOpenFastCleanIsSet_ = false;
+}
+
+std::string QueryJobResp::getJobKernelDirection() const
+{
+    return jobKernelDirection_;
+}
+
+void QueryJobResp::setJobKernelDirection(const std::string& value)
+{
+    jobKernelDirection_ = value;
+    jobKernelDirectionIsSet_ = true;
+}
+
+bool QueryJobResp::jobKernelDirectionIsSet() const
+{
+    return jobKernelDirectionIsSet_;
+}
+
+void QueryJobResp::unsetjobKernelDirection()
+{
+    jobKernelDirectionIsSet_ = false;
 }
 
 }

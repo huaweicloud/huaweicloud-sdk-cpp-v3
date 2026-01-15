@@ -16,7 +16,7 @@ Actions::Actions()
     originRequestHeaderIsSet_ = false;
     httpResponseHeaderIsSet_ = false;
     accessControlIsSet_ = false;
-    requestLimitRulesIsSet_ = false;
+    requestLimitRuleIsSet_ = false;
     originRequestUrlRewriteIsSet_ = false;
     cacheRuleIsSet_ = false;
     requestUrlRewriteIsSet_ = false;
@@ -46,8 +46,8 @@ web::json::value Actions::toJson() const
     if(accessControlIsSet_) {
         val[utility::conversions::to_string_t("access_control")] = ModelBase::toJson(accessControl_);
     }
-    if(requestLimitRulesIsSet_) {
-        val[utility::conversions::to_string_t("request_limit_rules")] = ModelBase::toJson(requestLimitRules_);
+    if(requestLimitRuleIsSet_) {
+        val[utility::conversions::to_string_t("request_limit_rule")] = ModelBase::toJson(requestLimitRule_);
     }
     if(originRequestUrlRewriteIsSet_) {
         val[utility::conversions::to_string_t("origin_request_url_rewrite")] = ModelBase::toJson(originRequestUrlRewrite_);
@@ -107,13 +107,13 @@ bool Actions::fromJson(const web::json::value& val)
             setAccessControl(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("request_limit_rules"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("request_limit_rules"));
+    if(val.has_field(utility::conversions::to_string_t("request_limit_rule"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("request_limit_rule"));
         if(!fieldValue.is_null())
         {
             RequestLimitRulesEngine refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRequestLimitRules(refVal);
+            setRequestLimitRule(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("origin_request_url_rewrite"))) {
@@ -156,7 +156,7 @@ bool Actions::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_code_cache"));
         if(!fieldValue.is_null())
         {
-            ErrorCodeCacheEngine refVal;
+            std::vector<ErrorCodeCacheEngine> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorCodeCache(refVal);
         }
@@ -249,25 +249,25 @@ void Actions::unsetaccessControl()
     accessControlIsSet_ = false;
 }
 
-RequestLimitRulesEngine Actions::getRequestLimitRules() const
+RequestLimitRulesEngine Actions::getRequestLimitRule() const
 {
-    return requestLimitRules_;
+    return requestLimitRule_;
 }
 
-void Actions::setRequestLimitRules(const RequestLimitRulesEngine& value)
+void Actions::setRequestLimitRule(const RequestLimitRulesEngine& value)
 {
-    requestLimitRules_ = value;
-    requestLimitRulesIsSet_ = true;
+    requestLimitRule_ = value;
+    requestLimitRuleIsSet_ = true;
 }
 
-bool Actions::requestLimitRulesIsSet() const
+bool Actions::requestLimitRuleIsSet() const
 {
-    return requestLimitRulesIsSet_;
+    return requestLimitRuleIsSet_;
 }
 
-void Actions::unsetrequestLimitRules()
+void Actions::unsetrequestLimitRule()
 {
-    requestLimitRulesIsSet_ = false;
+    requestLimitRuleIsSet_ = false;
 }
 
 OriginRequestUrlRewriteEngine Actions::getOriginRequestUrlRewrite() const
@@ -354,12 +354,12 @@ void Actions::unsetbrowserCacheRule()
     browserCacheRuleIsSet_ = false;
 }
 
-ErrorCodeCacheEngine Actions::getErrorCodeCache() const
+std::vector<ErrorCodeCacheEngine>& Actions::getErrorCodeCache()
 {
     return errorCodeCache_;
 }
 
-void Actions::setErrorCodeCache(const ErrorCodeCacheEngine& value)
+void Actions::setErrorCodeCache(const std::vector<ErrorCodeCacheEngine>& value)
 {
     errorCodeCache_ = value;
     errorCodeCacheIsSet_ = true;

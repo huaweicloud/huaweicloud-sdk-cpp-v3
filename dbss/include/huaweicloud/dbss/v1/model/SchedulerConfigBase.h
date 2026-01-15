@@ -57,7 +57,7 @@ public:
     void setFormat(const std::string& value);
 
     /// <summary>
-    /// 周期 - AUDIT_REPORT_DAY: 天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
+    /// 周期 - AUDIT_REPORT_DAY：天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
     /// </summary>
 
     std::string getFrequency() const;
@@ -102,7 +102,7 @@ public:
     void setStartTime(const std::string& value);
 
     /// <summary>
-    /// 模板状态 - ON: 开启 - OFF：关闭
+    /// 模板状态 - ON：开启 - OFF：关闭
     /// </summary>
 
     std::string getStatus() const;

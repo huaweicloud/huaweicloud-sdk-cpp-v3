@@ -58,7 +58,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 添加的数据库类型： - MYSQL：MySQL - ORACLE：Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SqlServer - DAMENG: Dameng - TAURUS: Taurus - DWS: Dws - KINGBASE: Kingbase - GAUSSDBOPENGAUSS：GaussDB(for openGauss) - GREENPLUM：Greenplum - HIGHGO：HighGo - SHENTONG：ShenTong - GBASE8A：GBase 8a - GBASE8S：GBase 8s - GBASEXDM：GBase XDM - MONGODB：MongoDB - DDS：DDS（Document Database Service）
+    /// 添加的数据库类型： - MYSQL：MySQL - ORACLE：Oracle - POSTGRESQL：PostgreSQL - SQLSERVER：SqlServer - DAMENG：Dameng - TAURUS：Taurus - DWS：Dws - KINGBASE：Kingbase - GAUSSDBOPENGAUSS：GaussDB(for openGauss) - GREENPLUM：Greenplum - HIGHGO：HighGo - SHENTONG：ShenTong - GBASE8A：GBase 8a - GBASE8S：GBase 8s - GBASEXDM：GBase XDM - MONGODB：MongoDB - DDS：DDS（Document Database Service）
     /// </summary>
 
     std::string getType() const;
@@ -112,7 +112,7 @@ public:
     void setOs(const std::string& value);
 
     /// <summary>
-    /// 实例状态 - ON :开启 - OFF : 关闭
+    /// 实例状态 - ON：开启 - OFF： 关闭
     /// </summary>
 
     std::string getStatus() const;
@@ -148,7 +148,7 @@ public:
     void setAgentUrl(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 数据库分类 - RDS: 表示RDS数据库 - ECS: 自建数据库
+    /// 数据库分类 - RDS：表示RDS数据库 - ECS：自建数据库
     /// </summary>
 
     std::string getDbClassification() const;

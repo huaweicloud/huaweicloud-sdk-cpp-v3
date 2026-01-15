@@ -35,6 +35,10 @@ ShowSupportObjectTypeResponse::ShowSupportObjectTypeResponse()
     importLevelIsSet_ = false;
     isImportCloumn_ = false;
     isImportCloumnIsSet_ = false;
+    importMappingType_ = "";
+    importMappingTypeIsSet_ = false;
+    isImportUniqueKey_ = false;
+    isImportUniqueKeyIsSet_ = false;
 }
 
 ShowSupportObjectTypeResponse::~ShowSupportObjectTypeResponse() = default;
@@ -82,6 +86,12 @@ web::json::value ShowSupportObjectTypeResponse::toJson() const
     }
     if(isImportCloumnIsSet_) {
         val[utility::conversions::to_string_t("is_import_cloumn")] = ModelBase::toJson(isImportCloumn_);
+    }
+    if(importMappingTypeIsSet_) {
+        val[utility::conversions::to_string_t("import_mapping_type")] = ModelBase::toJson(importMappingType_);
+    }
+    if(isImportUniqueKeyIsSet_) {
+        val[utility::conversions::to_string_t("is_import_unique_key")] = ModelBase::toJson(isImportUniqueKey_);
     }
 
     return val;
@@ -196,6 +206,24 @@ bool ShowSupportObjectTypeResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsImportCloumn(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("import_mapping_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("import_mapping_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImportMappingType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_import_unique_key"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_import_unique_key"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsImportUniqueKey(refVal);
         }
     }
     return ok;
@@ -452,6 +480,48 @@ bool ShowSupportObjectTypeResponse::isImportCloumnIsSet() const
 void ShowSupportObjectTypeResponse::unsetisImportCloumn()
 {
     isImportCloumnIsSet_ = false;
+}
+
+std::string ShowSupportObjectTypeResponse::getImportMappingType() const
+{
+    return importMappingType_;
+}
+
+void ShowSupportObjectTypeResponse::setImportMappingType(const std::string& value)
+{
+    importMappingType_ = value;
+    importMappingTypeIsSet_ = true;
+}
+
+bool ShowSupportObjectTypeResponse::importMappingTypeIsSet() const
+{
+    return importMappingTypeIsSet_;
+}
+
+void ShowSupportObjectTypeResponse::unsetimportMappingType()
+{
+    importMappingTypeIsSet_ = false;
+}
+
+bool ShowSupportObjectTypeResponse::isIsImportUniqueKey() const
+{
+    return isImportUniqueKey_;
+}
+
+void ShowSupportObjectTypeResponse::setIsImportUniqueKey(bool value)
+{
+    isImportUniqueKey_ = value;
+    isImportUniqueKeyIsSet_ = true;
+}
+
+bool ShowSupportObjectTypeResponse::isImportUniqueKeyIsSet() const
+{
+    return isImportUniqueKeyIsSet_;
+}
+
+void ShowSupportObjectTypeResponse::unsetisImportUniqueKey()
+{
+    isImportUniqueKeyIsSet_ = false;
 }
 
 }

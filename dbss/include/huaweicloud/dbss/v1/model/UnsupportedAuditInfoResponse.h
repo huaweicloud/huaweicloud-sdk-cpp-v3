@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnSupportAuditInfoResponse_H_
-#define HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnSupportAuditInfoResponse_H_
+#ifndef HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnsupportedAuditInfoResponse_H_
+#define HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnsupportedAuditInfoResponse_H_
 
 
 #include <huaweicloud/dbss/v1/DbssExport.h>
@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/dbss/v1/model/UnSupportAuditInfo.h>
+#include <huaweicloud/dbss/v1/model/UnsupportedAuditInfo.h>
 #include <string>
 #include <vector>
 
@@ -24,12 +24,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_DBSS_V1_EXPORT  UnSupportAuditInfoResponse
+class HUAWEICLOUD_DBSS_V1_EXPORT  UnsupportedAuditInfoResponse
     : public ModelBase
 {
 public:
-    UnSupportAuditInfoResponse();
-    virtual ~UnSupportAuditInfoResponse();
+    UnsupportedAuditInfoResponse();
+    virtual ~UnsupportedAuditInfoResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,16 +38,16 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// UnSupportAuditInfoResponse members
+    /// UnsupportedAuditInfoResponse members
 
     /// <summary>
     /// 审计信息
     /// </summary>
 
-    std::vector<UnSupportAuditInfo>& getAuditInfos();
+    std::vector<UnsupportedAuditInfo>& getAuditInfos();
     bool auditInfosIsSet() const;
     void unsetauditInfos();
-    void setAuditInfos(const std::vector<UnSupportAuditInfo>& value);
+    void setAuditInfos(const std::vector<UnsupportedAuditInfo>& value);
 
     /// <summary>
     /// 支持的版本
@@ -60,7 +60,7 @@ public:
 
 
 protected:
-    std::vector<UnSupportAuditInfo> auditInfos_;
+    std::vector<UnsupportedAuditInfo> auditInfos_;
     bool auditInfosIsSet_;
     std::string supportVersion_;
     bool supportVersionIsSet_;
@@ -74,4 +74,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnSupportAuditInfoResponse_H_
+#endif // HUAWEICLOUD_SDK_DBSS_V1_MODEL_UnsupportedAuditInfoResponse_H_

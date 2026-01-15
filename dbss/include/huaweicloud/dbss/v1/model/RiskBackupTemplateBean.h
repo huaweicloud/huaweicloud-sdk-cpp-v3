@@ -84,7 +84,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 状态 - 0: 关闭 - 1：开启
+    /// 状态 - 0：关闭 - 1：开启
     /// </summary>
 
     int32_t getStatus() const;

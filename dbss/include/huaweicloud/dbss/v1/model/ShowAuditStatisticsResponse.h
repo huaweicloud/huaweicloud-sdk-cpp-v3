@@ -9,10 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/dbss/v1/model/UnsupportedAuditInfoResponse.h>
 #include <string>
 #include <huaweicloud/dbss/v1/model/RuleRiskStatisticsDto.h>
 #include <huaweicloud/dbss/v1/model/DatabaseRiskStatisticsDto.h>
-#include <huaweicloud/dbss/v1/model/UnSupportAuditInfoResponse.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -100,10 +100,10 @@ public:
     /// 
     /// </summary>
 
-    UnSupportAuditInfoResponse getUnsupportedAuditInfos() const;
+    UnsupportedAuditInfoResponse getUnsupportedAuditInfos() const;
     bool unsupportedAuditInfosIsSet() const;
     void unsetunsupportedAuditInfos();
-    void setUnsupportedAuditInfos(const UnSupportAuditInfoResponse& value);
+    void setUnsupportedAuditInfos(const UnsupportedAuditInfoResponse& value);
 
     /// <summary>
     /// 更新时间
@@ -128,7 +128,7 @@ protected:
     bool projectIdIsSet_;
     std::vector<RuleRiskStatisticsDto> ruleRiskStatistics_;
     bool ruleRiskStatisticsIsSet_;
-    UnSupportAuditInfoResponse unsupportedAuditInfos_;
+    UnsupportedAuditInfoResponse unsupportedAuditInfos_;
     bool unsupportedAuditInfosIsSet_;
     int64_t updateTime_;
     bool updateTimeIsSet_;

@@ -59,7 +59,7 @@ public:
     void setAffectRows(int32_t value);
 
     /// <summary>
-    /// 影响行数操作符 - GREATER: 大于 - EQUAL: 等于 - LESS: 小于 - GREATER_EQUAL: 大于等于 - LESS_EQUAL: 小于等于 - NO_MATCH: 不等于
+    /// 影响行数操作符 - GREATER：大于 - EQUAL：等于 - LESS：小于 - GREATER_EQUAL：大于等于 - LESS_EQUAL：小于等于 - NO_MATCH：不等于
     /// </summary>
 
     std::string getAffectSymbol() const;
@@ -95,7 +95,7 @@ public:
     void setExceptionIps(const std::string& value);
 
     /// <summary>
-    /// 执行时长操作符 - GREATER: 大于 - EQUAL: 等于 - LESS: 小于 - GREATER_EQUAL: 大于等于 - LESS_EQUAL: 小于等于 - NO_MATCH: 不等于
+    /// 执行时长操作符 - GREATER：大于 - EQUAL：等于 - LESS：小于 - GREATER_EQUAL：大于等于 - LESS_EQUAL：小于等于 - NO_MATCH：不等于
     /// </summary>
 
     std::string getExecutionSymbol() const;

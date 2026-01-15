@@ -53,7 +53,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 数据库类型。
+    /// 数据库类型。 取值：mysql - postgresql - mongodb - oracle
     /// </summary>
 
     std::string getDbType() const;

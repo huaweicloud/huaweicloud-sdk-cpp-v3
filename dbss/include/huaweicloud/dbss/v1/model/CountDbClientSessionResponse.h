@@ -40,7 +40,7 @@ public:
     /// CountDbClientSessionResponse members
 
     /// <summary>
-    /// 
+    /// 客户端会话统计
     /// </summary>
 
     std::vector<ReportClientSessionNew>& getBody();

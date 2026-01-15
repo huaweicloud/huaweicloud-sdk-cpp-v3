@@ -48,7 +48,7 @@ public:
     void setCompareTaskId(const std::string& value);
 
     /// <summary>
-    /// 对比任务的类型。
+    /// 对比任务的类型。 lines：行对比，contents：值对比，object_comparison：对象级对比落库，object：对象级对比落库，account：账户对比，random：抽样比对，node：内核计算对比结果，mgr：管控计算对比结果
     /// </summary>
 
     std::string getCompareType() const;

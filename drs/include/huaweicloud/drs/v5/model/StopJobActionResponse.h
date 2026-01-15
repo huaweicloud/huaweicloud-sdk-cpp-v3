@@ -76,7 +76,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 操作结果。
+    /// 操作结果。 success，failed
     /// </summary>
 
     std::string getStatus() const;

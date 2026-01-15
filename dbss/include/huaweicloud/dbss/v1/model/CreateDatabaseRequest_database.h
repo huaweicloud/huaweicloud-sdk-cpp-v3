@@ -39,7 +39,7 @@ public:
     /// CreateDatabaseRequest_database members
 
     /// <summary>
-    /// 数据库分类 - RDS: RDS数据库 - ECS: 自建数据库
+    /// 数据库分类 - RDS：RDS数据库 - ECS：自建数据库
     /// </summary>
 
     std::string getDbClassification() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 数据库类型 - MYSQL: MySQL - ORACLE: Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SQL Server - DAMENG： DAMENG - TAURUS: Taurus DB - DWS: GaussDB(DWS) - KINGBASE: Kingbase - GAUSSDBOPENGAUSS：GaussDB/openGauss - GREENPLUM： Greenplum - HIGHGO: HIGHGO - SHENTONG： ShenTong - GBASE8A: GBase 8a - GBASE8S： GBase 8s - GBASEXDM： GBase XDM - MONGODB: MongoDB - DDS： DDS(MongoDB)
+    /// 数据库类型 - MYSQL：MySQL - ORACLE：Oracle - POSTGRESQL：PostgreSQL - SQLSERVER：SQL Server - DAMENG：DAMENG - TAURUS：Taurus DB - DWS：GaussDB(DWS) - KINGBASE：Kingbase - GAUSSDBOPENGAUSS：GaussDB/openGauss - GREENPLUM：Greenplum - HIGHGO：HIGHGO - SHENTONG：ShenTong - GBASE8A：GBase 8a - GBASE8S：GBase 8s - GBASEXDM：GBase XDM - MONGODB：MongoDB - DDS：DDS(MongoDB)
     /// </summary>
 
     std::string getType() const;
@@ -75,7 +75,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 字符集。 - GBK： GBK - UTF8：UTF8
+    /// 字符集。 - GBK：GBK - UTF8：UTF8
     /// </summary>
 
     std::string getCharset() const;

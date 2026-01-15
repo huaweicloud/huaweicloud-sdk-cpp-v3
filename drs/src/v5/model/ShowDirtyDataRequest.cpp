@@ -24,6 +24,10 @@ ShowDirtyDataRequest::ShowDirtyDataRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    anonymizeMode_ = false;
+    anonymizeModeIsSet_ = false;
+    taskMode_ = "";
+    taskModeIsSet_ = false;
 }
 
 ShowDirtyDataRequest::~ShowDirtyDataRequest() = default;
@@ -53,6 +57,12 @@ web::json::value ShowDirtyDataRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(anonymizeModeIsSet_) {
+        val[utility::conversions::to_string_t("anonymize_mode")] = ModelBase::toJson(anonymizeMode_);
+    }
+    if(taskModeIsSet_) {
+        val[utility::conversions::to_string_t("task_mode")] = ModelBase::toJson(taskMode_);
     }
 
     return val;
@@ -113,6 +123,24 @@ bool ShowDirtyDataRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("anonymize_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("anonymize_mode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAnonymizeMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("task_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("task_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaskMode(refVal);
         }
     }
     return ok;
@@ -243,6 +271,48 @@ bool ShowDirtyDataRequest::limitIsSet() const
 void ShowDirtyDataRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+bool ShowDirtyDataRequest::isAnonymizeMode() const
+{
+    return anonymizeMode_;
+}
+
+void ShowDirtyDataRequest::setAnonymizeMode(bool value)
+{
+    anonymizeMode_ = value;
+    anonymizeModeIsSet_ = true;
+}
+
+bool ShowDirtyDataRequest::anonymizeModeIsSet() const
+{
+    return anonymizeModeIsSet_;
+}
+
+void ShowDirtyDataRequest::unsetanonymizeMode()
+{
+    anonymizeModeIsSet_ = false;
+}
+
+std::string ShowDirtyDataRequest::getTaskMode() const
+{
+    return taskMode_;
+}
+
+void ShowDirtyDataRequest::setTaskMode(const std::string& value)
+{
+    taskMode_ = value;
+    taskModeIsSet_ = true;
+}
+
+bool ShowDirtyDataRequest::taskModeIsSet() const
+{
+    return taskModeIsSet_;
+}
+
+void ShowDirtyDataRequest::unsettaskMode()
+{
+    taskModeIsSet_ = false;
 }
 
 }

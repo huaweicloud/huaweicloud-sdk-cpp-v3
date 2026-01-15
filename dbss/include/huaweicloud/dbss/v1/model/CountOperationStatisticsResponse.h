@@ -59,7 +59,7 @@ public:
     void setOperationStatistics(const std::vector<OperationStatisticsBean>& value);
 
     /// <summary>
-    /// 状态  - FINISHED：已完成  - RUNNING：运行中
+    /// 状态  - FINISHED：已完成 - RUNNING：运行中
     /// </summary>
 
     std::string getStatus() const;

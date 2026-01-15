@@ -75,7 +75,7 @@ public:
     void setSchemaName(const std::string& value);
 
     /// <summary>
-    /// SQL类型
+    /// SQL类型 取值：SELECT, INSERT, DELETE, UPDATE, DDL
     /// </summary>
 
     std::string getQueryType() const;
@@ -84,7 +84,7 @@ public:
     void setQueryType(const std::string& value);
 
     /// <summary>
-    /// 目标库类型
+    /// 目标库类型 取值：mysql,taurusha,sqlserver,postgresql,ddm,mongodb,awsdocumentdb,hwmongodb,hwpostgresql,oracle,taurus,gaussdb,kafka,mrsKafka,cassandra,dynamo,dws,gaussdbv5,gaussdbv5ha,gaussmongodb,multigaussdbv5,dmq,gaussdbt,gaussdbtha,gaussdb300,elasticsearch,db2,tidb,redis,gaussredis,rediscluster,mariadb,oceanbase,informix,gaussdbv1,gausscassandra,geminidynamo,dds,tauruslite
     /// </summary>
 
     std::string getTargetType() const;

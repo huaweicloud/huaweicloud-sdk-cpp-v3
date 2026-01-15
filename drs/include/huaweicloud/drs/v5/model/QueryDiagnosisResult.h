@@ -50,7 +50,7 @@ public:
     void setScore(int32_t value);
 
     /// <summary>
-    /// 状态。
+    /// 状态。 INIT：初始化，RUNNING：诊断中，SUCCESS：诊断完成，FAILED：诊断失败
     /// </summary>
 
     std::string getStatus() const;

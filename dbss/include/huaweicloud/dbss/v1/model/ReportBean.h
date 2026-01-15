@@ -75,7 +75,7 @@ public:
     void setFinishTime(const std::string& value);
 
     /// <summary>
-    /// 格式  - pdf: PDF文件  - zip: zip文件
+    /// 格式  - pdf：PDF文件  - zip：zip文件
     /// </summary>
 
     std::string getFormat() const;
@@ -120,7 +120,7 @@ public:
     void setStartTime(const std::string& value);
 
     /// <summary>
-    /// 报表类型 - PDF: pdf - ZIP: zip
+    /// 报表类型 - PDF：pdf - ZIP：zip
     /// </summary>
 
     std::string getTemplateType() const;
@@ -129,7 +129,7 @@ public:
     void setTemplateType(const std::string& value);
 
     /// <summary>
-    /// 周期 - AUDIT_REPORT_DAY: 按天 - AUDIT_REPORT_WEEK： 按周 - AUDIT_REPORT_MONTH： 按月 - AUDIT_REPORT_YEAR：按年 - AUDIT_REPORT_REAL_TIME：立即
+    /// 周期 - AUDIT_REPORT_DAY：按天 - AUDIT_REPORT_WEEK：按周 - AUDIT_REPORT_MONTH：按月 - AUDIT_REPORT_YEAR：按年 - AUDIT_REPORT_REAL_TIME：立即
     /// </summary>
 
     std::string getType() const;

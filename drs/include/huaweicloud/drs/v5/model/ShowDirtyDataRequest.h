@@ -92,6 +92,24 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// 是否脱敏。
+    /// </summary>
+
+    bool isAnonymizeMode() const;
+    bool anonymizeModeIsSet() const;
+    void unsetanonymizeMode();
+    void setAnonymizeMode(bool value);
+
+    /// <summary>
+    /// 查询任务阶段信息，不传默认查增量阶段信息。 - FULL_TRANSFER，全量阶段
+    /// </summary>
+
+    std::string getTaskMode() const;
+    bool taskModeIsSet() const;
+    void unsettaskMode();
+    void setTaskMode(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -106,6 +124,10 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    bool anonymizeMode_;
+    bool anonymizeModeIsSet_;
+    std::string taskMode_;
+    bool taskModeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

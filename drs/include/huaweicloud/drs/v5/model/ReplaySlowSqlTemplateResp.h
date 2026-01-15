@@ -75,7 +75,7 @@ public:
     void setSchemaName(const std::string& value);
 
     /// <summary>
-    /// SQL类型
+    /// SQL类型 取值：SELECT, INSERT, DELETE, UPDATE, DDL
     /// </summary>
 
     std::string getQueryType() const;

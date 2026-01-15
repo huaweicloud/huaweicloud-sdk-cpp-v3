@@ -48,13 +48,22 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 是否支持只初始化任务。
+    /// 是否支持只初始化任务。仅支持白名单用户使用，需要提交工单申请才能使用。
     /// </summary>
 
     bool isIsOnlyInitTask() const;
     bool isOnlyInitTaskIsSet() const;
     void unsetisOnlyInitTask();
     void setIsOnlyInitTask(bool value);
+
+    /// <summary>
+    /// 是否在任务结束时自动创建对比任务，不填默认设置为true。
+    /// </summary>
+
+    bool isIsAutoCreateCompare() const;
+    bool isAutoCreateCompareIsSet() const;
+    void unsetisAutoCreateCompare();
+    void setIsAutoCreateCompare(bool value);
 
     /// <summary>
     /// 任务启动时间，时间戳格式精确到毫秒，例如：1679966489593，取值为空代表立即启动。
@@ -71,6 +80,8 @@ protected:
     bool jobIdIsSet_;
     bool isOnlyInitTask_;
     bool isOnlyInitTaskIsSet_;
+    bool isAutoCreateCompare_;
+    bool isAutoCreateCompareIsSet_;
     std::string startTime_;
     bool startTimeIsSet_;
 

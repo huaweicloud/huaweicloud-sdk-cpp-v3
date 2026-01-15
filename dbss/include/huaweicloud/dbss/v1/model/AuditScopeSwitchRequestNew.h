@@ -49,7 +49,7 @@ public:
     void setIds(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 状态  - OFF： 关闭  - ON： 启用
+    /// 状态  - OFF：关闭  - ON：启用
     /// </summary>
 
     std::string getStatus() const;

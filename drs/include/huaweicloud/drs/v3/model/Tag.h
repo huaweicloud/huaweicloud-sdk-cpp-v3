@@ -39,7 +39,7 @@ public:
     /// Tag members
 
     /// <summary>
-    /// 标签key
+    /// 标签key \&quot;key1\&quot; : \&quot;value1\&quot;, \&quot;key2\&quot; : \&quot;value2\&quot;
     /// </summary>
 
     std::string getKey() const;

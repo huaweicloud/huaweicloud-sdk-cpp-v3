@@ -2434,6 +2434,12 @@ std::shared_ptr<ListAuditRuleRisksNewResponse> DbssClient::listAuditRuleRisksNew
     if (request.supportDbClassifyRuleIsSet()) {
         localVarQueryParams["support_db_classify_rule"] = parameterToString(request.isSupportDbClassifyRule());
     }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
 
     std::string localVarHttpBody;
 

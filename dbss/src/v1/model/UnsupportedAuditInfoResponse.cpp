@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/dbss/v1/model/UnSupportAuditInfoResponse.h"
+#include "huaweicloud/dbss/v1/model/UnsupportedAuditInfoResponse.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dbss {
@@ -10,20 +10,20 @@ namespace Model {
 
 
 
-UnSupportAuditInfoResponse::UnSupportAuditInfoResponse()
+UnsupportedAuditInfoResponse::UnsupportedAuditInfoResponse()
 {
     auditInfosIsSet_ = false;
     supportVersion_ = "";
     supportVersionIsSet_ = false;
 }
 
-UnSupportAuditInfoResponse::~UnSupportAuditInfoResponse() = default;
+UnsupportedAuditInfoResponse::~UnsupportedAuditInfoResponse() = default;
 
-void UnSupportAuditInfoResponse::validate()
+void UnsupportedAuditInfoResponse::validate()
 {
 }
 
-web::json::value UnSupportAuditInfoResponse::toJson() const
+web::json::value UnsupportedAuditInfoResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -36,7 +36,7 @@ web::json::value UnSupportAuditInfoResponse::toJson() const
 
     return val;
 }
-bool UnSupportAuditInfoResponse::fromJson(const web::json::value& val)
+bool UnsupportedAuditInfoResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -44,7 +44,7 @@ bool UnSupportAuditInfoResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audit_infos"));
         if(!fieldValue.is_null())
         {
-            std::vector<UnSupportAuditInfo> refVal;
+            std::vector<UnsupportedAuditInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAuditInfos(refVal);
         }
@@ -62,44 +62,44 @@ bool UnSupportAuditInfoResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<UnSupportAuditInfo>& UnSupportAuditInfoResponse::getAuditInfos()
+std::vector<UnsupportedAuditInfo>& UnsupportedAuditInfoResponse::getAuditInfos()
 {
     return auditInfos_;
 }
 
-void UnSupportAuditInfoResponse::setAuditInfos(const std::vector<UnSupportAuditInfo>& value)
+void UnsupportedAuditInfoResponse::setAuditInfos(const std::vector<UnsupportedAuditInfo>& value)
 {
     auditInfos_ = value;
     auditInfosIsSet_ = true;
 }
 
-bool UnSupportAuditInfoResponse::auditInfosIsSet() const
+bool UnsupportedAuditInfoResponse::auditInfosIsSet() const
 {
     return auditInfosIsSet_;
 }
 
-void UnSupportAuditInfoResponse::unsetauditInfos()
+void UnsupportedAuditInfoResponse::unsetauditInfos()
 {
     auditInfosIsSet_ = false;
 }
 
-std::string UnSupportAuditInfoResponse::getSupportVersion() const
+std::string UnsupportedAuditInfoResponse::getSupportVersion() const
 {
     return supportVersion_;
 }
 
-void UnSupportAuditInfoResponse::setSupportVersion(const std::string& value)
+void UnsupportedAuditInfoResponse::setSupportVersion(const std::string& value)
 {
     supportVersion_ = value;
     supportVersionIsSet_ = true;
 }
 
-bool UnSupportAuditInfoResponse::supportVersionIsSet() const
+bool UnsupportedAuditInfoResponse::supportVersionIsSet() const
 {
     return supportVersionIsSet_;
 }
 
-void UnSupportAuditInfoResponse::unsetsupportVersion()
+void UnsupportedAuditInfoResponse::unsetsupportVersion()
 {
     supportVersionIsSet_ = false;
 }

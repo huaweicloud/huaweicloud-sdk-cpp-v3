@@ -48,7 +48,7 @@ public:
     void setAgentId(const std::string& value);
 
     /// <summary>
-    /// agent 类型 - DB: 数据库端 - APP: 应用端
+    /// agent 类型 - DB：数据库端 - APP：应用端
     /// </summary>
 
     std::string getAgentType() const;

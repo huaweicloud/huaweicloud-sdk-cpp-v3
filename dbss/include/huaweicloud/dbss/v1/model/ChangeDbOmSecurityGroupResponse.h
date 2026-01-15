@@ -39,7 +39,7 @@ public:
     /// ChangeDbOmSecurityGroupResponse members
 
     /// <summary>
-    /// - 0: 正常 - 非0: 异常
+    /// - 0：正常 - 非0：异常
     /// </summary>
 
     int32_t getCode() const;

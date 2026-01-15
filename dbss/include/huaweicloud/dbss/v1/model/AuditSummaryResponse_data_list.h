@@ -48,7 +48,7 @@ public:
     void setId(int64_t value);
 
     /// <summary>
-    /// 状态 - 1: success - 2: failure
+    /// 状态 - 1：success - 2：failure
     /// </summary>
 
     std::string getStatus() const;

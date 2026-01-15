@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/dbss/v1/model/AuditInsanceRiskCount.h>
 #include <string>
+#include <huaweicloud/dbss/v1/model/AuditInstanceRiskCount.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -53,10 +53,10 @@ public:
     /// 实例数据库风险汇总
     /// </summary>
 
-    std::vector<AuditInsanceRiskCount>& getInstanceRiskCount();
+    std::vector<AuditInstanceRiskCount>& getInstanceRiskCount();
     bool instanceRiskCountIsSet() const;
     void unsetinstanceRiskCount();
-    void setInstanceRiskCount(const std::vector<AuditInsanceRiskCount>& value);
+    void setInstanceRiskCount(const std::vector<AuditInstanceRiskCount>& value);
 
     /// <summary>
     /// 规则名称
@@ -71,7 +71,7 @@ public:
 protected:
     int64_t count_;
     bool countIsSet_;
-    std::vector<AuditInsanceRiskCount> instanceRiskCount_;
+    std::vector<AuditInstanceRiskCount> instanceRiskCount_;
     bool instanceRiskCountIsSet_;
     std::string ruleName_;
     bool ruleNameIsSet_;

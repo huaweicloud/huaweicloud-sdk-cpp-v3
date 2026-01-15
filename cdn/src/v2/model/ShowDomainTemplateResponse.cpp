@@ -14,7 +14,7 @@ ShowDomainTemplateResponse::ShowDomainTemplateResponse()
 {
     total_ = 0;
     totalIsSet_ = false;
-    temlatesIsSet_ = false;
+    templatesIsSet_ = false;
 }
 
 ShowDomainTemplateResponse::~ShowDomainTemplateResponse() = default;
@@ -30,8 +30,8 @@ web::json::value ShowDomainTemplateResponse::toJson() const
     if(totalIsSet_) {
         val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
     }
-    if(temlatesIsSet_) {
-        val[utility::conversions::to_string_t("temlates")] = ModelBase::toJson(temlates_);
+    if(templatesIsSet_) {
+        val[utility::conversions::to_string_t("templates")] = ModelBase::toJson(templates_);
     }
 
     return val;
@@ -49,13 +49,13 @@ bool ShowDomainTemplateResponse::fromJson(const web::json::value& val)
             setTotal(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("temlates"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("temlates"));
+    if(val.has_field(utility::conversions::to_string_t("templates"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("templates"));
         if(!fieldValue.is_null())
         {
             std::vector<TemplateItem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTemlates(refVal);
+            setTemplates(refVal);
         }
     }
     return ok;
@@ -83,25 +83,25 @@ void ShowDomainTemplateResponse::unsettotal()
     totalIsSet_ = false;
 }
 
-std::vector<TemplateItem>& ShowDomainTemplateResponse::getTemlates()
+std::vector<TemplateItem>& ShowDomainTemplateResponse::getTemplates()
 {
-    return temlates_;
+    return templates_;
 }
 
-void ShowDomainTemplateResponse::setTemlates(const std::vector<TemplateItem>& value)
+void ShowDomainTemplateResponse::setTemplates(const std::vector<TemplateItem>& value)
 {
-    temlates_ = value;
-    temlatesIsSet_ = true;
+    templates_ = value;
+    templatesIsSet_ = true;
 }
 
-bool ShowDomainTemplateResponse::temlatesIsSet() const
+bool ShowDomainTemplateResponse::templatesIsSet() const
 {
-    return temlatesIsSet_;
+    return templatesIsSet_;
 }
 
-void ShowDomainTemplateResponse::unsettemlates()
+void ShowDomainTemplateResponse::unsettemplates()
 {
-    temlatesIsSet_ = false;
+    templatesIsSet_ = false;
 }
 
 }

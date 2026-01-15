@@ -118,6 +118,15 @@ public:
     void setIsOnlyInitTask(bool value);
 
     /// <summary>
+    /// 是否在任务结束时自动创建对比任务，不填默认设置为true。
+    /// </summary>
+
+    bool isIsAutoCreateCompare() const;
+    bool isAutoCreateCompareIsSet() const;
+    void unsetisAutoCreateCompare();
+    void setIsAutoCreateCompare(bool value);
+
+    /// <summary>
     /// 强制结束时取值为true。
     /// </summary>
 
@@ -171,6 +180,8 @@ protected:
     bool isSyncReEditIsSet_;
     bool isOnlyInitTask_;
     bool isOnlyInitTaskIsSet_;
+    bool isAutoCreateCompare_;
+    bool isAutoCreateCompareIsSet_;
     bool forceDelete_;
     bool forceDeleteIsSet_;
     PublicIpConfig publicIpConfig_;

@@ -535,6 +535,12 @@ HttpRequestDef DbssMeta::genRequestDefForListAuditRuleRisksNew() {
     reqDefBuilder.withRequestField(FieldDef().withName("SupportDbClassifyRule")
                   .withJsonTag("support_db_classify_rule")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

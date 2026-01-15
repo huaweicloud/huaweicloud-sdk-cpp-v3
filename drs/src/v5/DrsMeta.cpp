@@ -291,6 +291,20 @@ HttpRequestDef DrsMeta::genRequestDefForCreateReplicationJob() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForDeleteColumnInfos() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForDeleteConnection() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -863,6 +877,20 @@ HttpRequestDef DrsMeta::genRequestDefForListsAgencyPermissions() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForModifyColumnInfos() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForModifyConnection() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -913,6 +941,20 @@ HttpRequestDef DrsMeta::genRequestDefForShowColumnInfoResult() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForShowColumnInfos() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -1053,6 +1095,12 @@ HttpRequestDef DrsMeta::genRequestDefForShowDirtyData() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AnonymizeMode")
+                  .withJsonTag("anonymize_mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskMode")
+                  .withJsonTag("task_mode")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -1187,6 +1235,9 @@ HttpRequestDef DrsMeta::genRequestDefForShowJobDetail() {
     reqDefBuilder.withRequestField(FieldDef().withName("CompareDetailType")
                   .withJsonTag("compare_detail_type")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LogLevel")
+                  .withJsonTag("log_level")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -1250,6 +1301,19 @@ HttpRequestDef DrsMeta::genRequestDefForShowProgressData() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SearchName")
+                  .withJsonTag("search_name")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForShowReplayProgress() {
+    HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -1308,6 +1372,26 @@ HttpRequestDef DrsMeta::genRequestDefForShowReplicationJob() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForShowSubscriptionLists() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

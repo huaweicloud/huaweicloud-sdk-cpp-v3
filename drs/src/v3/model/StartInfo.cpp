@@ -16,6 +16,8 @@ StartInfo::StartInfo()
     jobIdIsSet_ = false;
     isOnlyInitTask_ = false;
     isOnlyInitTaskIsSet_ = false;
+    isAutoCreateCompare_ = false;
+    isAutoCreateCompareIsSet_ = false;
     startTime_ = "";
     startTimeIsSet_ = false;
 }
@@ -35,6 +37,9 @@ web::json::value StartInfo::toJson() const
     }
     if(isOnlyInitTaskIsSet_) {
         val[utility::conversions::to_string_t("is_only_init_task")] = ModelBase::toJson(isOnlyInitTask_);
+    }
+    if(isAutoCreateCompareIsSet_) {
+        val[utility::conversions::to_string_t("is_auto_create_compare")] = ModelBase::toJson(isAutoCreateCompare_);
     }
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
@@ -62,6 +67,15 @@ bool StartInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOnlyInitTask(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_auto_create_compare"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_auto_create_compare"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAutoCreateCompare(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("start_time"))) {
@@ -117,6 +131,27 @@ bool StartInfo::isOnlyInitTaskIsSet() const
 void StartInfo::unsetisOnlyInitTask()
 {
     isOnlyInitTaskIsSet_ = false;
+}
+
+bool StartInfo::isIsAutoCreateCompare() const
+{
+    return isAutoCreateCompare_;
+}
+
+void StartInfo::setIsAutoCreateCompare(bool value)
+{
+    isAutoCreateCompare_ = value;
+    isAutoCreateCompareIsSet_ = true;
+}
+
+bool StartInfo::isAutoCreateCompareIsSet() const
+{
+    return isAutoCreateCompareIsSet_;
+}
+
+void StartInfo::unsetisAutoCreateCompare()
+{
+    isAutoCreateCompareIsSet_ = false;
 }
 
 std::string StartInfo::getStartTime() const

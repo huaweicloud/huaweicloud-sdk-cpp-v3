@@ -52,17 +52,17 @@ public:
     /// 
     /// </summary>
 
-    std::vector<TemplateItem>& getTemlates();
-    bool temlatesIsSet() const;
-    void unsettemlates();
-    void setTemlates(const std::vector<TemplateItem>& value);
+    std::vector<TemplateItem>& getTemplates();
+    bool templatesIsSet() const;
+    void unsettemplates();
+    void setTemplates(const std::vector<TemplateItem>& value);
 
 
 protected:
     int32_t total_;
     bool totalIsSet_;
-    std::vector<TemplateItem> temlates_;
-    bool temlatesIsSet_;
+    std::vector<TemplateItem> templates_;
+    bool templatesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

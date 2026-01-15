@@ -33,6 +33,7 @@ public:
     static HttpRequestDef genRequestDefForCreateConnection();
     static HttpRequestDef genRequestDefForCreateJob();
     static HttpRequestDef genRequestDefForCreateReplicationJob();
+    static HttpRequestDef genRequestDefForDeleteColumnInfos();
     static HttpRequestDef genRequestDefForDeleteConnection();
     static HttpRequestDef genRequestDefForDeleteJdbcDriver();
     static HttpRequestDef genRequestDefForDeleteJob();
@@ -63,10 +64,12 @@ public:
     static HttpRequestDef genRequestDefForListTemplates();
     static HttpRequestDef genRequestDefForListUserJdbcDrivers();
     static HttpRequestDef genRequestDefForListsAgencyPermissions();
+    static HttpRequestDef genRequestDefForModifyColumnInfos();
     static HttpRequestDef genRequestDefForModifyConnection();
     static HttpRequestDef genRequestDefForShowActions();
     static HttpRequestDef genRequestDefForShowAgencyInfo();
     static HttpRequestDef genRequestDefForShowColumnInfoResult();
+    static HttpRequestDef genRequestDefForShowColumnInfos();
     static HttpRequestDef genRequestDefForShowComparePolicy();
     static HttpRequestDef genRequestDefForShowCompareProgress();
     static HttpRequestDef genRequestDefForShowDataFilteringResult();
@@ -90,8 +93,10 @@ public:
     static HttpRequestDef genRequestDefForShowObjectMapping();
     static HttpRequestDef genRequestDefForShowPositionResult();
     static HttpRequestDef genRequestDefForShowProgressData();
+    static HttpRequestDef genRequestDefForShowReplayProgress();
     static HttpRequestDef genRequestDefForShowReplayResults();
     static HttpRequestDef genRequestDefForShowReplicationJob();
+    static HttpRequestDef genRequestDefForShowSubscriptionLists();
     static HttpRequestDef genRequestDefForShowSupportObjectType();
     static HttpRequestDef genRequestDefForShowTimeline();
     static HttpRequestDef genRequestDefForShowUpdateObjectSavingStatus();

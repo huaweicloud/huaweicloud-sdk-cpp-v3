@@ -40,7 +40,7 @@ public:
     /// JobDetailResp_repair_progress_info members
 
     /// <summary>
-    /// 修复状态。
+    /// 修复状态。 取值：\&quot;FAILED\&quot;, \&quot;SUCCEEDED\&quot;, \&quot;FINISHED\&quot;, \&quot;SUCCESS\&quot;
     /// </summary>
 
     std::string getStatus() const;

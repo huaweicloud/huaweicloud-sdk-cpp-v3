@@ -101,6 +101,15 @@ public:
     void unsetstatus();
     void setStatus(int32_t value);
 
+    /// <summary>
+    /// 查询项目类型。 - prod-商用项目 - poc-测试项目
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -117,6 +126,8 @@ protected:
     bool sortKeyIsSet_;
     int32_t status_;
     bool statusIsSet_;
+    std::string type_;
+    bool typeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

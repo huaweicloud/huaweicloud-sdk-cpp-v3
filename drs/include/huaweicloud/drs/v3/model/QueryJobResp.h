@@ -599,6 +599,15 @@ public:
     void unsetisOpenFastClean();
     void setIsOpenFastClean(bool value);
 
+    /// <summary>
+    /// 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+    /// </summary>
+
+    std::string getJobKernelDirection() const;
+    bool jobKernelDirectionIsSet() const;
+    void unsetjobKernelDirection();
+    void setJobKernelDirection(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -723,6 +732,8 @@ protected:
     bool childrenIsSet_;
     bool isOpenFastClean_;
     bool isOpenFastCleanIsSet_;
+    std::string jobKernelDirection_;
+    bool jobKernelDirectionIsSet_;
 
 };
 

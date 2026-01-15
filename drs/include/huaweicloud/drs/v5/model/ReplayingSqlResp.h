@@ -75,7 +75,7 @@ public:
     void setExecuteLatency(int32_t value);
 
     /// <summary>
-    /// 执行状态
+    /// 执行状态 取值：INIT，RUNNING，FAILED，PAUSE，SUCCESS，FINISHED
     /// </summary>
 
     std::string getStatus() const;

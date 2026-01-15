@@ -1,3 +1,205 @@
+# 3.1.170 2026-01-15
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateRuleNew**
+    - 请求参数变更
+      - `+ actions.request_limit_rule`
+      - `- actions.request_limit_rules`
+  - **ShowDomainTemplate**
+    - 响应参数变更
+      - `+ templates`
+      - `- temlates`
+  - **CreateRuleNew**
+    - 请求参数变更
+      - `+ actions.request_limit_rule`
+      - `- actions.request_limit_rules`
+  - **ListRuleDetails**
+    - 响应参数变更
+      - `+ rules.actions.request_limit_rule`
+      - `- rules.actions.request_limit_rules`
+  - **UpdateFullRule**
+    - 请求参数变更
+      - `+ rules.actions.request_limit_rule`
+      - `- rules.actions.request_limit_rules`
+
+### HuaweiCloud SDK DBSS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEcsSpecificationNew**
+    - 响应参数变更
+      - `+ specifications`
+      - `- specification`
+  - **ListAuditRuleRisksNew**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchStartJobs**
+    - 请求参数变更
+      - `+ jobs.is_auto_create_compare`
+  - **BatchListJobDetails**
+    - 响应参数变更
+      - `+ results.job_kernel_direction`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持以下接口：
+    - `ShowSubscriptionLists`
+    - `ShowColumnInfos`
+    - `DeleteColumnInfos`
+    - `ShowReplayProgress`
+    - `ModifyColumnInfos`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowSupportObjectType**
+    - 响应参数变更
+      - `+ import_mapping_type`
+      - `+ is_import_unique_key`
+  - **ShowDirtyData**
+    - 请求参数变更
+      - `+ anonymize_mode`
+      - `+ task_mode`
+  - **ShowProgressData**
+    - 请求参数变更
+      - `+ search_name`
+  - **ListTags**
+    - 请求参数变更
+      - `+ resource_type: enum value [verify]`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.job_kernel_direction`
+  - **ShowJobDetail**
+    - 请求参数变更
+      - `+ log_level`
+    - 响应参数变更
+      - `+ job.job_kernel_direction`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_params.is_auto_create_compare`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_params.is_auto_create_compare`
+
+### HuaweiCloud SDK EPS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEnterpriseProject**
+    - 请求参数变更
+      - `+ type`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 响应参数变更
+      - `+ ports.binding:vif_details.vlan_id`
+      - `+ ports.binding:vif_details.parent_id`
+      - `+ ports.binding:vif_details.parent_device_id`
+  - **CreatePort**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **ShowPort**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **UpdatePort**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **NeutronListPorts**
+    - 响应参数变更
+      - `+ ports.binding:vif_details.vlan_id`
+      - `+ ports.binding:vif_details.parent_id`
+      - `+ ports.binding:vif_details.parent_device_id`
+  - **NeutronCreatePort**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **NeutronShowPort**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **NeutronUpdatePort**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 响应参数变更
+      - `+ ports.binding:vif_details.vlan_id`
+      - `+ ports.binding:vif_details.parent_id`
+      - `+ ports.binding:vif_details.parent_device_id`
+  - **ShowPort**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **AddSecurityGroups**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **RemoveSecurityGroups**
+    - 响应参数变更
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+
 # 3.1.169 2026-01-08
 
 ### HuaweiCloud SDK CCE

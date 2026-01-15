@@ -22,6 +22,8 @@ ShowProgressDataRequest::ShowProgressDataRequest()
     limitIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
+    searchName_ = "";
+    searchNameIsSet_ = false;
 }
 
 ShowProgressDataRequest::~ShowProgressDataRequest() = default;
@@ -48,6 +50,9 @@ web::json::value ShowProgressDataRequest::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(searchNameIsSet_) {
+        val[utility::conversions::to_string_t("search_name")] = ModelBase::toJson(searchName_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool ShowProgressDataRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("search_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("search_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSearchName(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool ShowProgressDataRequest::typeIsSet() const
 void ShowProgressDataRequest::unsettype()
 {
     typeIsSet_ = false;
+}
+
+std::string ShowProgressDataRequest::getSearchName() const
+{
+    return searchName_;
+}
+
+void ShowProgressDataRequest::setSearchName(const std::string& value)
+{
+    searchName_ = value;
+    searchNameIsSet_ = true;
+}
+
+bool ShowProgressDataRequest::searchNameIsSet() const
+{
+    return searchNameIsSet_;
+}
+
+void ShowProgressDataRequest::unsetsearchName()
+{
+    searchNameIsSet_ = false;
 }
 
 }

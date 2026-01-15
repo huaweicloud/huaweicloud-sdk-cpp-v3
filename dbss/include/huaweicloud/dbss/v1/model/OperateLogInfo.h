@@ -66,7 +66,7 @@ public:
     void setTime(const std::string& value);
 
     /// <summary>
-    /// 该条记录的操作类型 - create：创建 - update：更新 - delete：删除 - download: 下载
+    /// 该条记录的操作类型 - create：创建 - update：更新 - delete：删除 - download：下载
     /// </summary>
 
     std::string getAction() const;
@@ -102,7 +102,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 该条记录对应用户执行的结果 - success: 成功 - fail: 失败
+    /// 该条记录对应用户执行的结果 - success：成功 - fail：失败
     /// </summary>
 
     std::string getResult() const;

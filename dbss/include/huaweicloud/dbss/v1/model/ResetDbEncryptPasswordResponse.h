@@ -39,7 +39,7 @@ public:
     /// ResetDbEncryptPasswordResponse members
 
     /// <summary>
-    /// 操作结果  - success: 成功  - failed: 失败
+    /// 操作结果  - success：成功  - failed：失败
     /// </summary>
 
     std::string getResult() const;

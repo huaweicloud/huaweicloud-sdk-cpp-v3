@@ -39,7 +39,7 @@ public:
     /// QueryCompareJobProgressResp_full_info members
 
     /// <summary>
-    /// 全量数据对比进度，单位为%。
+    /// 增量数据对比进度，单位为%。
     /// </summary>
 
     float getProgress() const;

@@ -155,6 +155,15 @@ public:
     void unsetcompareDetailType();
     void setCompareDetailType(const std::string& value);
 
+    /// <summary>
+    /// 查询日志的级别。取值： - Info：提示级别。 - Warn：警告级别。 - Error：错误级别。
+    /// </summary>
+
+    std::string getLogLevel() const;
+    bool logLevelIsSet() const;
+    void unsetlogLevel();
+    void setLogLevel(const std::string& value);
+
 
 protected:
     std::string jobId_;
@@ -183,6 +192,8 @@ protected:
     bool targetDbNameIsSet_;
     std::string compareDetailType_;
     bool compareDetailTypeIsSet_;
+    std::string logLevel_;
+    bool logLevelIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

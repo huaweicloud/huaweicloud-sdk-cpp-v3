@@ -39,7 +39,7 @@ public:
     /// ReplaySlowSqlResp members
 
     /// <summary>
-    /// SQL语句类型
+    /// SQL语句类型 取值：SELECT, INSERT, DELETE, UPDATE, DDL
     /// </summary>
 
     std::string getObjectType() const;

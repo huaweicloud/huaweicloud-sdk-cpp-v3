@@ -26,6 +26,8 @@ ListEnterpriseProjectRequest::ListEnterpriseProjectRequest()
     sortKeyIsSet_ = false;
     status_ = 0;
     statusIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
 }
 
 ListEnterpriseProjectRequest::~ListEnterpriseProjectRequest() = default;
@@ -58,6 +60,9 @@ web::json::value ListEnterpriseProjectRequest::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool ListEnterpriseProjectRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool ListEnterpriseProjectRequest::statusIsSet() const
 void ListEnterpriseProjectRequest::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string ListEnterpriseProjectRequest::getType() const
+{
+    return type_;
+}
+
+void ListEnterpriseProjectRequest::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool ListEnterpriseProjectRequest::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void ListEnterpriseProjectRequest::unsettype()
+{
+    typeIsSet_ = false;
 }
 
 }

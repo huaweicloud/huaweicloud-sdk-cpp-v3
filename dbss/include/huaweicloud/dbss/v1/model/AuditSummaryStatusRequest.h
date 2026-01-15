@@ -39,7 +39,7 @@ public:
     /// AuditSummaryStatusRequest members
 
     /// <summary>
-    /// 操作码，operType为switch时必输入  - on: 开启  - off: 关闭
+    /// 操作码，operType为switch时必输入  - on：开启  - off：关闭
     /// </summary>
 
     std::string getCode() const;
@@ -48,7 +48,7 @@ public:
     void setCode(const std::string& value);
 
     /// <summary>
-    /// 操作类型  - switch: 任务开关  - execute: 立即刷新
+    /// 操作类型  - switch：任务开关  - execute：立即刷新
     /// </summary>
 
     std::string getOperType() const;

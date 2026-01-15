@@ -126,7 +126,7 @@ bool ShowAuditStatisticsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("unsupported_audit_infos"));
         if(!fieldValue.is_null())
         {
-            UnSupportAuditInfoResponse refVal;
+            UnsupportedAuditInfoResponse refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUnsupportedAuditInfos(refVal);
         }
@@ -270,12 +270,12 @@ void ShowAuditStatisticsResponse::unsetruleRiskStatistics()
     ruleRiskStatisticsIsSet_ = false;
 }
 
-UnSupportAuditInfoResponse ShowAuditStatisticsResponse::getUnsupportedAuditInfos() const
+UnsupportedAuditInfoResponse ShowAuditStatisticsResponse::getUnsupportedAuditInfos() const
 {
     return unsupportedAuditInfos_;
 }
 
-void ShowAuditStatisticsResponse::setUnsupportedAuditInfos(const UnSupportAuditInfoResponse& value)
+void ShowAuditStatisticsResponse::setUnsupportedAuditInfos(const UnsupportedAuditInfoResponse& value)
 {
     unsupportedAuditInfos_ = value;
     unsupportedAuditInfosIsSet_ = true;

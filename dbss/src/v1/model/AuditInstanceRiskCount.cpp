@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/dbss/v1/model/AuditInsanceRiskCount.h"
+#include "huaweicloud/dbss/v1/model/AuditInstanceRiskCount.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dbss {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-AuditInsanceRiskCount::AuditInsanceRiskCount()
+AuditInstanceRiskCount::AuditInstanceRiskCount()
 {
     count_ = 0L;
     countIsSet_ = false;
@@ -26,13 +26,13 @@ AuditInsanceRiskCount::AuditInsanceRiskCount()
     instanceNameIsSet_ = false;
 }
 
-AuditInsanceRiskCount::~AuditInsanceRiskCount() = default;
+AuditInstanceRiskCount::~AuditInstanceRiskCount() = default;
 
-void AuditInsanceRiskCount::validate()
+void AuditInstanceRiskCount::validate()
 {
 }
 
-web::json::value AuditInsanceRiskCount::toJson() const
+web::json::value AuditInstanceRiskCount::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -57,7 +57,7 @@ web::json::value AuditInsanceRiskCount::toJson() const
 
     return val;
 }
-bool AuditInsanceRiskCount::fromJson(const web::json::value& val)
+bool AuditInstanceRiskCount::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -119,128 +119,128 @@ bool AuditInsanceRiskCount::fromJson(const web::json::value& val)
 }
 
 
-int64_t AuditInsanceRiskCount::getCount() const
+int64_t AuditInstanceRiskCount::getCount() const
 {
     return count_;
 }
 
-void AuditInsanceRiskCount::setCount(int64_t value)
+void AuditInstanceRiskCount::setCount(int64_t value)
 {
     count_ = value;
     countIsSet_ = true;
 }
 
-bool AuditInsanceRiskCount::countIsSet() const
+bool AuditInstanceRiskCount::countIsSet() const
 {
     return countIsSet_;
 }
 
-void AuditInsanceRiskCount::unsetcount()
+void AuditInstanceRiskCount::unsetcount()
 {
     countIsSet_ = false;
 }
 
-std::string AuditInsanceRiskCount::getDbId() const
+std::string AuditInstanceRiskCount::getDbId() const
 {
     return dbId_;
 }
 
-void AuditInsanceRiskCount::setDbId(const std::string& value)
+void AuditInstanceRiskCount::setDbId(const std::string& value)
 {
     dbId_ = value;
     dbIdIsSet_ = true;
 }
 
-bool AuditInsanceRiskCount::dbIdIsSet() const
+bool AuditInstanceRiskCount::dbIdIsSet() const
 {
     return dbIdIsSet_;
 }
 
-void AuditInsanceRiskCount::unsetdbId()
+void AuditInstanceRiskCount::unsetdbId()
 {
     dbIdIsSet_ = false;
 }
 
-std::string AuditInsanceRiskCount::getDbIp() const
+std::string AuditInstanceRiskCount::getDbIp() const
 {
     return dbIp_;
 }
 
-void AuditInsanceRiskCount::setDbIp(const std::string& value)
+void AuditInstanceRiskCount::setDbIp(const std::string& value)
 {
     dbIp_ = value;
     dbIpIsSet_ = true;
 }
 
-bool AuditInsanceRiskCount::dbIpIsSet() const
+bool AuditInstanceRiskCount::dbIpIsSet() const
 {
     return dbIpIsSet_;
 }
 
-void AuditInsanceRiskCount::unsetdbIp()
+void AuditInstanceRiskCount::unsetdbIp()
 {
     dbIpIsSet_ = false;
 }
 
-std::string AuditInsanceRiskCount::getDbName() const
+std::string AuditInstanceRiskCount::getDbName() const
 {
     return dbName_;
 }
 
-void AuditInsanceRiskCount::setDbName(const std::string& value)
+void AuditInstanceRiskCount::setDbName(const std::string& value)
 {
     dbName_ = value;
     dbNameIsSet_ = true;
 }
 
-bool AuditInsanceRiskCount::dbNameIsSet() const
+bool AuditInstanceRiskCount::dbNameIsSet() const
 {
     return dbNameIsSet_;
 }
 
-void AuditInsanceRiskCount::unsetdbName()
+void AuditInstanceRiskCount::unsetdbName()
 {
     dbNameIsSet_ = false;
 }
 
-std::string AuditInsanceRiskCount::getInstanceId() const
+std::string AuditInstanceRiskCount::getInstanceId() const
 {
     return instanceId_;
 }
 
-void AuditInsanceRiskCount::setInstanceId(const std::string& value)
+void AuditInstanceRiskCount::setInstanceId(const std::string& value)
 {
     instanceId_ = value;
     instanceIdIsSet_ = true;
 }
 
-bool AuditInsanceRiskCount::instanceIdIsSet() const
+bool AuditInstanceRiskCount::instanceIdIsSet() const
 {
     return instanceIdIsSet_;
 }
 
-void AuditInsanceRiskCount::unsetinstanceId()
+void AuditInstanceRiskCount::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
 }
 
-std::string AuditInsanceRiskCount::getInstanceName() const
+std::string AuditInstanceRiskCount::getInstanceName() const
 {
     return instanceName_;
 }
 
-void AuditInsanceRiskCount::setInstanceName(const std::string& value)
+void AuditInstanceRiskCount::setInstanceName(const std::string& value)
 {
     instanceName_ = value;
     instanceNameIsSet_ = true;
 }
 
-bool AuditInsanceRiskCount::instanceNameIsSet() const
+bool AuditInstanceRiskCount::instanceNameIsSet() const
 {
     return instanceNameIsSet_;
 }
 
-void AuditInsanceRiskCount::unsetinstanceName()
+void AuditInstanceRiskCount::unsetinstanceName()
 {
     instanceNameIsSet_ = false;
 }

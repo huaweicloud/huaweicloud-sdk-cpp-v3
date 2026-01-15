@@ -71,7 +71,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 云服务器对应可用分区信息。(两个主备分区，中间用“,”分割，例如az1.dc1,az2.dc2)。
+    /// 云服务器对应可用分区信息。(两个主备分区，中间用“,”分隔，例如az1.dc1,az2.dc2)。
     /// </summary>
 
     std::string getAvailabilityZone() const;
@@ -134,7 +134,7 @@ public:
     void setCloudServiceType(const std::string& value);
 
     /// <summary>
-    /// 计费模式： - 0: 包周期计费 - 1: 按需计费
+    /// 计费模式： - 0：包周期计费 - 1：按需计费
     /// </summary>
 
     int32_t getChargingMode() const;
@@ -143,7 +143,7 @@ public:
     void setChargingMode(int32_t value);
 
     /// <summary>
-    /// -订购周期类型 - 0: 天 - 1：周 - 2：月 - 3：年 - 4: 小时 - 5: 绝对时间
+    /// -订购周期类型 - 0：天 - 1：周 - 2：月 - 3：年 - 4：小时 - 5：绝对时间
     /// </summary>
 
     int32_t getPeriodType() const;
@@ -197,7 +197,7 @@ public:
     void setPromotionInfo(const std::string& value);
 
     /// <summary>
-    /// 自动续费 - 1: 自动续费 - 0: 不自动续费
+    /// 自动续费 - 1：自动续费 - 0：不自动续费
     /// </summary>
 
     int32_t getIsAutoRenew() const;

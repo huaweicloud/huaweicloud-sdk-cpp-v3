@@ -74,6 +74,24 @@ public:
     void unsetsupportDbClassifyRule();
     void setSupportDbClassifyRule(bool value);
 
+    /// <summary>
+    /// **参数解释**： 分页偏移量，从第一条数据偏移offset条数据后开始查询 **约束限制**： 仅支持大于等于0的整数 **取值范围**： 大于等于0 **默认取值**： 默认值为0 
+    /// </summary>
+
+    std::string getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 每页查询记录数。 **约束限制**： 仅支持大于0的整数 **取值范围**： 大于0小于等于1000 **默认取值**： 默认值为100 
+    /// </summary>
+
+    std::string getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(const std::string& value);
+
 
 protected:
     std::string instanceId_;
@@ -84,6 +102,10 @@ protected:
     bool riskLevelsIsSet_;
     bool supportDbClassifyRule_;
     bool supportDbClassifyRuleIsSet_;
+    std::string offset_;
+    bool offsetIsSet_;
+    std::string limit_;
+    bool limitIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

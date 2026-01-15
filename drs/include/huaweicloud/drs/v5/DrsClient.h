@@ -60,6 +60,9 @@
 #include <huaweicloud/drs/v5/model/CreateReplicationJobRequest.h>
 #include <huaweicloud/drs/v5/model/CreateReplicationJobResponse.h>
 #include <huaweicloud/drs/v5/model/DataProcessReq.h>
+#include <huaweicloud/drs/v5/model/DeleteColumnInfoReq.h>
+#include <huaweicloud/drs/v5/model/DeleteColumnInfosRequest.h>
+#include <huaweicloud/drs/v5/model/DeleteColumnInfosResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteConnectionRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteConnectionResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteDriverReq.h>
@@ -127,6 +130,9 @@
 #include <huaweicloud/drs/v5/model/ListUserJdbcDriversResponse.h>
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsRequest.h>
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsResponse.h>
+#include <huaweicloud/drs/v5/model/ModifyColumnInfoReq.h>
+#include <huaweicloud/drs/v5/model/ModifyColumnInfosRequest.h>
+#include <huaweicloud/drs/v5/model/ModifyColumnInfosResponse.h>
 #include <huaweicloud/drs/v5/model/ModifyComparePolicyReq.h>
 #include <huaweicloud/drs/v5/model/ModifyConnectionRequest.h>
 #include <huaweicloud/drs/v5/model/ModifyConnectionResponse.h>
@@ -137,13 +143,17 @@
 #include <huaweicloud/drs/v5/model/QueryDbPositionReq.h>
 #include <huaweicloud/drs/v5/model/QueryInstanceByTagReq.h>
 #include <huaweicloud/drs/v5/model/QuerySelectObjectInfoReq.h>
+#include <huaweicloud/drs/v5/model/QuerySubscriptionsReq.h>
 #include <huaweicloud/drs/v5/model/QueryUserSelectedObjectInfoReq.h>
 #include <huaweicloud/drs/v5/model/ShowActionsRequest.h>
 #include <huaweicloud/drs/v5/model/ShowActionsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowAgencyInfoRequest.h>
 #include <huaweicloud/drs/v5/model/ShowAgencyInfoResponse.h>
+#include <huaweicloud/drs/v5/model/ShowColumnInfoReq.h>
 #include <huaweicloud/drs/v5/model/ShowColumnInfoResultRequest.h>
 #include <huaweicloud/drs/v5/model/ShowColumnInfoResultResponse.h>
+#include <huaweicloud/drs/v5/model/ShowColumnInfosRequest.h>
+#include <huaweicloud/drs/v5/model/ShowColumnInfosResponse.h>
 #include <huaweicloud/drs/v5/model/ShowComparePolicyRequest.h>
 #include <huaweicloud/drs/v5/model/ShowComparePolicyResponse.h>
 #include <huaweicloud/drs/v5/model/ShowCompareProgressRequest.h>
@@ -190,10 +200,14 @@
 #include <huaweicloud/drs/v5/model/ShowPositionResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowProgressDataRequest.h>
 #include <huaweicloud/drs/v5/model/ShowProgressDataResponse.h>
+#include <huaweicloud/drs/v5/model/ShowReplayProgressRequest.h>
+#include <huaweicloud/drs/v5/model/ShowReplayProgressResponse.h>
 #include <huaweicloud/drs/v5/model/ShowReplayResultsRequest.h>
 #include <huaweicloud/drs/v5/model/ShowReplayResultsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowReplicationJobRequest.h>
 #include <huaweicloud/drs/v5/model/ShowReplicationJobResponse.h>
+#include <huaweicloud/drs/v5/model/ShowSubscriptionListsRequest.h>
+#include <huaweicloud/drs/v5/model/ShowSubscriptionListsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeRequest.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeResponse.h>
 #include <huaweicloud/drs/v5/model/ShowTimelineRequest.h>
@@ -437,6 +451,14 @@ public:
     std::shared_ptr<CreateReplicationJobResponse> createReplicationJob(
         CreateReplicationJobRequest &request
     );
+    // 删除对象的列信息（列映射、列过滤）
+    //
+    // 删除对象的列信息（列映射、列过滤）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteColumnInfosResponse> deleteColumnInfos(
+        DeleteColumnInfosRequest &request
+    );
     // 删除连接
     //
     // 删除租户指定的连接。
@@ -679,6 +701,14 @@ public:
     std::shared_ptr<ListsAgencyPermissionsResponse> listsAgencyPermissions(
         ListsAgencyPermissionsRequest &request
     );
+    // 修改对象的列信息（列映射、列过滤）
+    //
+    // 修改对象的列信息（列映射、列过滤）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyColumnInfosResponse> modifyColumnInfos(
+        ModifyColumnInfosRequest &request
+    );
     // 修改连接
     //
     // 修改创建的连接信息。
@@ -710,6 +740,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowColumnInfoResultResponse> showColumnInfoResult(
         ShowColumnInfoResultRequest &request
+    );
+    // 查询对象的列信息（列映射、列过滤）
+    //
+    // 查询对象的列信息（列映射、列过滤）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowColumnInfosResponse> showColumnInfos(
+        ShowColumnInfosRequest &request
     );
     // 查询对比策略
     //
@@ -904,6 +942,14 @@ public:
     std::shared_ptr<ShowProgressDataResponse> showProgressData(
         ShowProgressDataRequest &request
     );
+    // 查询录制回放任务进度
+    //
+    // 查询录制回放任务进度
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowReplayProgressResponse> showReplayProgress(
+        ShowReplayProgressRequest &request
+    );
     // 查询录制回放结果
     //
     // 获取录制回放结果数据，包括：回放基于时间维度统计信息，异常SQL及统计结果、慢SQL及统计结果
@@ -919,6 +965,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowReplicationJobResponse> showReplicationJob(
         ShowReplicationJobRequest &request
+    );
+    // 查询订阅任务列表
+    //
+    // 查询订阅任务列表，可以根据企业项目，引擎类型，网络类型，任务状态，任务名称，任务ID进行查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSubscriptionListsResponse> showSubscriptionLists(
+        ShowSubscriptionListsRequest &request
     );
     // 查询是否支持对象选择和列映射
     //

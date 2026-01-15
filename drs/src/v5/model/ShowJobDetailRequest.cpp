@@ -38,6 +38,8 @@ ShowJobDetailRequest::ShowJobDetailRequest()
     targetDbNameIsSet_ = false;
     compareDetailType_ = "";
     compareDetailTypeIsSet_ = false;
+    logLevel_ = "";
+    logLevelIsSet_ = false;
 }
 
 ShowJobDetailRequest::~ShowJobDetailRequest() = default;
@@ -88,6 +90,9 @@ web::json::value ShowJobDetailRequest::toJson() const
     }
     if(compareDetailTypeIsSet_) {
         val[utility::conversions::to_string_t("compare_detail_type")] = ModelBase::toJson(compareDetailType_);
+    }
+    if(logLevelIsSet_) {
+        val[utility::conversions::to_string_t("log_level")] = ModelBase::toJson(logLevel_);
     }
 
     return val;
@@ -211,6 +216,15 @@ bool ShowJobDetailRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCompareDetailType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogLevel(refVal);
         }
     }
     return ok;
@@ -488,6 +502,27 @@ bool ShowJobDetailRequest::compareDetailTypeIsSet() const
 void ShowJobDetailRequest::unsetcompareDetailType()
 {
     compareDetailTypeIsSet_ = false;
+}
+
+std::string ShowJobDetailRequest::getLogLevel() const
+{
+    return logLevel_;
+}
+
+void ShowJobDetailRequest::setLogLevel(const std::string& value)
+{
+    logLevel_ = value;
+    logLevelIsSet_ = true;
+}
+
+bool ShowJobDetailRequest::logLevelIsSet() const
+{
+    return logLevelIsSet_;
+}
+
+void ShowJobDetailRequest::unsetlogLevel()
+{
+    logLevelIsSet_ = false;
 }
 
 }

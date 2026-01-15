@@ -48,7 +48,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 选择对象任务成功标志
+    /// 选择对象任务成功标志：true，false
     /// </summary>
 
     bool isStatus() const;

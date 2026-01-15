@@ -39,7 +39,7 @@ public:
     /// KeyValueBean members
 
     /// <summary>
-    /// 键
+    /// 键。最大长度128个字符。
     /// </summary>
 
     std::string getKey() const;
@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 值
+    /// 值。每个值最大长度255个字符。
     /// </summary>
 
     std::string getValue() const;

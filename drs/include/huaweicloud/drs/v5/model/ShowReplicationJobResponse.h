@@ -52,7 +52,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 任务状态。
+    /// 任务状态。取值：success，failed
     /// </summary>
 
     std::string getStatus() const;

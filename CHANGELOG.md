@@ -1,3 +1,205 @@
+# 3.1.170 2026-01-15
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateRuleNew**
+    - changes of request param
+      - `+ actions.request_limit_rule`
+      - `- actions.request_limit_rules`
+  - **ShowDomainTemplate**
+    - changes of response param
+      - `+ templates`
+      - `- temlates`
+  - **CreateRuleNew**
+    - changes of request param
+      - `+ actions.request_limit_rule`
+      - `- actions.request_limit_rules`
+  - **ListRuleDetails**
+    - changes of response param
+      - `+ rules.actions.request_limit_rule`
+      - `- rules.actions.request_limit_rules`
+  - **UpdateFullRule**
+    - changes of request param
+      - `+ rules.actions.request_limit_rule`
+      - `- rules.actions.request_limit_rules`
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEcsSpecificationNew**
+    - changes of response param
+      - `+ specifications`
+      - `- specification`
+  - **ListAuditRuleRisksNew**
+    - changes of request param
+      - `+ offset`
+      - `+ limit`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchStartJobs**
+    - changes of request param
+      - `+ jobs.is_auto_create_compare`
+  - **BatchListJobDetails**
+    - changes of response param
+      - `+ results.job_kernel_direction`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ShowSubscriptionLists`
+    - `ShowColumnInfos`
+    - `DeleteColumnInfos`
+    - `ShowReplayProgress`
+    - `ModifyColumnInfos`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowSupportObjectType**
+    - changes of response param
+      - `+ import_mapping_type`
+      - `+ is_import_unique_key`
+  - **ShowDirtyData**
+    - changes of request param
+      - `+ anonymize_mode`
+      - `+ task_mode`
+  - **ShowProgressData**
+    - changes of request param
+      - `+ search_name`
+  - **ListTags**
+    - changes of request param
+      - `+ resource_type: enum value [verify]`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.job_kernel_direction`
+  - **ShowJobDetail**
+    - changes of request param
+      - `+ log_level`
+    - changes of response param
+      - `+ job.job_kernel_direction`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_params.is_auto_create_compare`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_params.is_auto_create_compare`
+
+### HuaweiCloud SDK EPS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEnterpriseProject**
+    - changes of request param
+      - `+ type`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of response param
+      - `+ ports.binding:vif_details.vlan_id`
+      - `+ ports.binding:vif_details.parent_id`
+      - `+ ports.binding:vif_details.parent_device_id`
+  - **CreatePort**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **ShowPort**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **UpdatePort**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **NeutronListPorts**
+    - changes of response param
+      - `+ ports.binding:vif_details.vlan_id`
+      - `+ ports.binding:vif_details.parent_id`
+      - `+ ports.binding:vif_details.parent_device_id`
+  - **NeutronCreatePort**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **NeutronShowPort**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **NeutronUpdatePort**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of response param
+      - `+ ports.binding:vif_details.vlan_id`
+      - `+ ports.binding:vif_details.parent_id`
+      - `+ ports.binding:vif_details.parent_device_id`
+  - **ShowPort**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **AddSecurityGroups**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+  - **RemoveSecurityGroups**
+    - changes of response param
+      - `+ port.binding:vif_details.vlan_id`
+      - `+ port.binding:vif_details.parent_id`
+      - `+ port.binding:vif_details.parent_device_id`
+
 # 3.1.169 2026-01-08
 
 ### HuaweiCloud SDK CCE

@@ -40,7 +40,7 @@ public:
     /// ListAuditTrendHistoryResponse members
 
     /// <summary>
-    /// 
+    /// 趋势统计数据列表
     /// </summary>
 
     std::vector<TrendStatusResponse>& getBody();

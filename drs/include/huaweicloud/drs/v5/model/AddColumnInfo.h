@@ -39,7 +39,7 @@ public:
     /// AddColumnInfo members
 
     /// <summary>
-    /// 列类型
+    /// 列类型 取值：default_value，create_time，update_time，expression，server_database_table
     /// </summary>
 
     std::string getColumnType() const;
@@ -66,7 +66,7 @@ public:
     void setColumnValue(const std::string& value);
 
     /// <summary>
-    /// 填充列的数据类型
+    /// 填充列的数据类型 取值：int，long，varchar(256)，varchar(191)，datetime，timestamp
     /// </summary>
 
     std::string getDataType() const;

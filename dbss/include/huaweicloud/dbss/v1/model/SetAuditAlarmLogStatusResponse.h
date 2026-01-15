@@ -39,7 +39,7 @@ public:
     /// SetAuditAlarmLogStatusResponse members
 
     /// <summary>
-    /// 请求结果  - request_success: 成功
+    /// 请求结果  - request_success：成功
     /// </summary>
 
     std::string getResult() const;

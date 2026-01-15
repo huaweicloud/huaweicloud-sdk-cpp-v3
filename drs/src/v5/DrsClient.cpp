@@ -908,6 +908,51 @@ std::shared_ptr<CreateReplicationJobResponse> DrsClient::createReplicationJob(Cr
 
     return localVarResult;
 }
+std::shared_ptr<DeleteColumnInfosResponse> DrsClient::deleteColumnInfos(DeleteColumnInfosRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/job/{job_id}/column-info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForDeleteColumnInfos());
+
+    std::shared_ptr<DeleteColumnInfosResponse> localVarResult = std::make_shared<DeleteColumnInfosResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteConnectionResponse> DrsClient::deleteConnection(DeleteConnectionRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/connections/{connection_id}";
@@ -2202,6 +2247,51 @@ std::shared_ptr<ListsAgencyPermissionsResponse> DrsClient::listsAgencyPermission
 
     return localVarResult;
 }
+std::shared_ptr<ModifyColumnInfosResponse> DrsClient::modifyColumnInfos(ModifyColumnInfosRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/job/{job_id}/column-info-modification";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForModifyColumnInfos());
+
+    std::shared_ptr<ModifyColumnInfosResponse> localVarResult = std::make_shared<ModifyColumnInfosResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ModifyConnectionResponse> DrsClient::modifyConnection(ModifyConnectionRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/connections/{connection_id}";
@@ -2352,6 +2442,51 @@ std::shared_ptr<ShowColumnInfoResultResponse> DrsClient::showColumnInfoResult(Sh
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowColumnInfosResponse> DrsClient::showColumnInfos(ShowColumnInfosRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/job/{job_id}/column-info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowColumnInfos());
+
+    std::shared_ptr<ShowColumnInfosResponse> localVarResult = std::make_shared<ShowColumnInfosResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -2715,6 +2850,12 @@ std::shared_ptr<ShowDirtyDataResponse> DrsClient::showDirtyData(ShowDirtyDataReq
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.anonymizeModeIsSet()) {
+        localVarQueryParams["anonymize_mode"] = parameterToString(request.isAnonymizeMode());
+    }
+    if (request.taskModeIsSet()) {
+        localVarQueryParams["task_mode"] = parameterToString(request.getTaskMode());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
@@ -3035,6 +3176,9 @@ std::shared_ptr<ShowJobDetailResponse> DrsClient::showJobDetail(ShowJobDetailReq
     if (request.compareDetailTypeIsSet()) {
         localVarQueryParams["compare_detail_type"] = parameterToString(request.getCompareDetailType());
     }
+    if (request.logLevelIsSet()) {
+        localVarQueryParams["log_level"] = parameterToString(request.getLogLevel());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
@@ -3222,6 +3366,9 @@ std::shared_ptr<ShowProgressDataResponse> DrsClient::showProgressData(ShowProgre
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.searchNameIsSet()) {
+        localVarQueryParams["search_name"] = parameterToString(request.getSearchName());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
@@ -3232,6 +3379,39 @@ std::shared_ptr<ShowProgressDataResponse> DrsClient::showProgressData(ShowProgre
         localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowProgressData());
 
     std::shared_ptr<ShowProgressDataResponse> localVarResult = std::make_shared<ShowProgressDataResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowReplayProgressResponse> DrsClient::showReplayProgress(ShowReplayProgressRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/jobs/{job_id}/replay-progress";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowReplayProgress());
+
+    std::shared_ptr<ShowReplayProgressResponse> localVarResult = std::make_shared<ShowReplayProgressResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3334,6 +3514,56 @@ std::shared_ptr<ShowReplicationJobResponse> DrsClient::showReplicationJob(ShowRe
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowSubscriptionListsResponse> DrsClient::showSubscriptionLists(ShowSubscriptionListsRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/subscriptions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowSubscriptionLists());
+
+    std::shared_ptr<ShowSubscriptionListsResponse> localVarResult = std::make_shared<ShowSubscriptionListsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

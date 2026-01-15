@@ -254,6 +254,9 @@ std::shared_ptr<ListEnterpriseProjectResponse> EpsClient::listEnterpriseProject(
     if (request.statusIsSet()) {
         localVarQueryParams["status"] = parameterToString(request.getStatus());
     }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
 
     std::string localVarHttpBody;
 

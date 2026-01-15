@@ -48,7 +48,7 @@ public:
     void setScheduler(const SchedulerConfigBase& value);
 
     /// <summary>
-    /// 是否支持订阅  - true: 支持  - false: 不支持\&quot;
+    /// 是否支持订阅  - true：支持  - false：不支持
     /// </summary>
 
     bool isSmnEffective() const;

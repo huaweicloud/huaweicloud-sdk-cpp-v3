@@ -48,7 +48,7 @@ public:
     void setEngineType(const std::string& value);
 
     /// <summary>
-    /// 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+    /// 迁移场景 migration实时迁移，sync实时同步，dataGuard实时灾备，subscription实时订阅，replay流量回放
     /// </summary>
 
     std::string getDbUseType() const;
@@ -66,7 +66,7 @@ public:
     void setJobDirection(const std::string& value);
 
     /// <summary>
-    /// 规格类型。
+    /// 规格类型。 micro：极小，small：小，medium：中，high：高，xlarge：超高，2xlarge：极高
     /// </summary>
 
     std::string getNodeType() const;

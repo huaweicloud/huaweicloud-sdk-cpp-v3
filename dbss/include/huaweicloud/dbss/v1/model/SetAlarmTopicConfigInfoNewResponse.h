@@ -39,7 +39,7 @@ public:
     /// SetAlarmTopicConfigInfoNewResponse members
 
     /// <summary>
-    /// 状态  - success: 成功  - fail: 失败
+    /// 状态  - success：成功  - fail：失败
     /// </summary>
 
     std::string getStatus() const;

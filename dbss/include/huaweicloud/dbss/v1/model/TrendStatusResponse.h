@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 数据库趋势统计
 /// </summary>
 class HUAWEICLOUD_DBSS_V1_EXPORT  TrendStatusResponse
     : public ModelBase
@@ -66,7 +66,7 @@ public:
     void setGenerateTime(const std::string& value);
 
     /// <summary>
-    /// 统计类型  - RISK: 风险  - SESSION：SESSION  - SQL: SQL  - COUNT: 数量  - INJECTION：注入 - OPERATION: 操作
+    /// 统计类型  - RISK：风险  - SESSION：SESSION  - SQL：SQL  - COUNT：数量  - INJECTION：注入 - OPERATION：操作
     /// </summary>
 
     std::string getStatisticsType() const;

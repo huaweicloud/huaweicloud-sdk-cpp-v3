@@ -39,7 +39,7 @@ public:
     /// ResourceInstanceResponse_tags members
 
     /// <summary>
-    /// 键
+    /// 键。最大长度128个字符。
     /// </summary>
 
     std::string getKey() const;

@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 状态
+    /// 状态 取值：success，failed
     /// </summary>
 
     std::string getStatus() const;

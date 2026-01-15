@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 可用区状态
+    /// 可用区状态，ENABLED：可用，DISABLED：不可用
     /// </summary>
 
     std::string getStatus() const;

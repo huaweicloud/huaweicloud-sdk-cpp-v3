@@ -39,7 +39,7 @@ bool ListAlarmWhitelistResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            PageInfo refVal;
+            HttpListAlarmWhiteListResponseData refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool ListAlarmWhitelistResponse::fromJson(const web::json::value& val)
 }
 
 
-PageInfo ListAlarmWhitelistResponse::getData() const
+HttpListAlarmWhiteListResponseData ListAlarmWhitelistResponse::getData() const
 {
     return data_;
 }
 
-void ListAlarmWhitelistResponse::setData(const PageInfo& value)
+void ListAlarmWhitelistResponse::setData(const HttpListAlarmWhiteListResponseData& value)
 {
     data_ = value;
     dataIsSet_ = true;

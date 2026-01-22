@@ -39,7 +39,7 @@ public:
     /// DeleteServiceItemResponseBodyData members
 
     /// <summary>
-    /// 服务组成员id
+    /// **参数解释**： 服务组成员ID **取值范围**： 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 服务组成员名称，为源和目的端口
+    /// **参数解释**： 源、目的端口 **取值范围**： 不涉及
     /// </summary>
 
     std::string getName() const;

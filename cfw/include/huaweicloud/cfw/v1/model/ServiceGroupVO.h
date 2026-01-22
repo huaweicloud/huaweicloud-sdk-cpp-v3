@@ -40,7 +40,7 @@ public:
     /// ServiceGroupVO members
 
     /// <summary>
-    /// 服务组名称
+    /// **参数解释**： 服务（协议、源端口、目的端口）组的名称。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -49,7 +49,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 协议列表，协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1
+    /// **参数解释**： 协议列表 **约束限制**： 不涉及 **取值范围**： - 6：TCP - 17：UDP - 1：ICMP - 58：ICMPV6 - -1：Any **默认取值**： 不涉及
     /// </summary>
 
     std::vector<int32_t>& getProtocols();
@@ -58,7 +58,7 @@ public:
     void setProtocols(std::vector<int32_t> value);
 
     /// <summary>
-    /// 服务组类型，0表示自定义服务组，1表示预定义服务组
+    /// **参数解释**： 服务（协议、源端口、目的端口）组的类型 **约束限制**： 不涉及 **取值范围**： 0表示自定义服务组，1表示预定义服务组 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getServiceSetType() const;
@@ -67,7 +67,7 @@ public:
     void setServiceSetType(int32_t value);
 
     /// <summary>
-    /// 服务组id，可通过[获取服务组列表接口](ListServiceSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
+    /// **参数解释**： 服务组ID，可通过[获取服务组列表接口](ListServiceSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getSetId() const;

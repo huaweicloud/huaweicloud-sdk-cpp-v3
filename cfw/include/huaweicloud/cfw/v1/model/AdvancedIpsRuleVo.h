@@ -48,7 +48,7 @@ public:
     void setAction(int32_t value);
 
     /// <summary>
-    /// 高级ips规则id
+    /// 频率ips规则id
     /// </summary>
 
     std::string getIpsRuleId() const;
@@ -57,7 +57,7 @@ public:
     void setIpsRuleId(const std::string& value);
 
     /// <summary>
-    /// ips规则类型：0表示敏感目录扫描、1表示反弹xshell
+    /// ips规则类型：0表示敏感目录扫描、1表示反弹shell
     /// </summary>
 
     int32_t getIpsRuleType() const;
@@ -66,7 +66,7 @@ public:
     void setIpsRuleType(int32_t value);
 
     /// <summary>
-    /// 包含特殊参数的JSON字符串
+    /// 频率ips定义JSON字符串
     /// </summary>
 
     std::string getParam() const;
@@ -75,7 +75,7 @@ public:
     void setParam(const std::string& value);
 
     /// <summary>
-    /// 开关状态：0表示关闭、1表示开启
+    /// 频率ips规则状态，0表示关闭，1表示开启
     /// </summary>
 
     int32_t getStatus() const;

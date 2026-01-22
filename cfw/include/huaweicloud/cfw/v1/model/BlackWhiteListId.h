@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 黑白名单名称，为黑白名单的地址
+    /// 黑白名单的地址
     /// </summary>
 
     std::string getName() const;

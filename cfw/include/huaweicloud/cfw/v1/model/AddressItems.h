@@ -50,7 +50,7 @@ public:
     void setItems(const std::vector<AddressItemIdWithoutName>& value);
 
     /// <summary>
-    /// 覆盖ip列表
+    /// 覆盖IP列表
     /// </summary>
 
     std::vector<CoveredIPVO>& getCoveredIp();

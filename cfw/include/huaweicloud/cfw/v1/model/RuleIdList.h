@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 规则id列表
+/// **参数解释**： 规则ID列表
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  RuleIdList
     : public ModelBase

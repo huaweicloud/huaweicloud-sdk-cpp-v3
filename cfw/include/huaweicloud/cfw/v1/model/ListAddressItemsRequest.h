@@ -75,7 +75,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// ip地址
+    /// IP地址
     /// </summary>
 
     std::string getAddress() const;
@@ -93,7 +93,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+    /// 防火墙ID，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
     /// </summary>
 
     std::string getFwInstanceId() const;

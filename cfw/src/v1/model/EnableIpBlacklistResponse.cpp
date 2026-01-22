@@ -12,7 +12,6 @@ namespace Model {
 
 EnableIpBlacklistResponse::EnableIpBlacklistResponse()
 {
-    body_ = "";
     bodyIsSet_ = false;
 }
 
@@ -40,7 +39,7 @@ bool EnableIpBlacklistResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -49,12 +48,12 @@ bool EnableIpBlacklistResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string EnableIpBlacklistResponse::getBody() const
+Object EnableIpBlacklistResponse::getBody() const
 {
     return body_;
 }
 
-void EnableIpBlacklistResponse::setBody(const std::string& value)
+void EnableIpBlacklistResponse::setBody(const Object& value)
 {
     body_ = value;
     bodyIsSet_ = true;

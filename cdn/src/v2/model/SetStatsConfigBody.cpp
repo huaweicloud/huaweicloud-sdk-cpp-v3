@@ -19,8 +19,6 @@ SetStatsConfigBody::SetStatsConfigBody()
     resourceName_ = "";
     resourceNameIsSet_ = false;
     configInfoIsSet_ = false;
-    expiredTime_ = 0L;
-    expiredTimeIsSet_ = false;
 }
 
 SetStatsConfigBody::~SetStatsConfigBody() = default;
@@ -44,9 +42,6 @@ web::json::value SetStatsConfigBody::toJson() const
     }
     if(configInfoIsSet_) {
         val[utility::conversions::to_string_t("config_info")] = ModelBase::toJson(configInfo_);
-    }
-    if(expiredTimeIsSet_) {
-        val[utility::conversions::to_string_t("expired_time")] = ModelBase::toJson(expiredTime_);
     }
 
     return val;
@@ -89,15 +84,6 @@ bool SetStatsConfigBody::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfigInfo(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("expired_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expired_time"));
-        if(!fieldValue.is_null())
-        {
-            int64_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setExpiredTime(refVal);
         }
     }
     return ok;
@@ -186,27 +172,6 @@ bool SetStatsConfigBody::configInfoIsSet() const
 void SetStatsConfigBody::unsetconfigInfo()
 {
     configInfoIsSet_ = false;
-}
-
-int64_t SetStatsConfigBody::getExpiredTime() const
-{
-    return expiredTime_;
-}
-
-void SetStatsConfigBody::setExpiredTime(int64_t value)
-{
-    expiredTime_ = value;
-    expiredTimeIsSet_ = true;
-}
-
-bool SetStatsConfigBody::expiredTimeIsSet() const
-{
-    return expiredTimeIsSet_;
-}
-
-void SetStatsConfigBody::unsetexpiredTime()
-{
-    expiredTimeIsSet_ = false;
 }
 
 }

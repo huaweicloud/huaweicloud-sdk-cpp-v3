@@ -39,7 +39,7 @@ public:
     /// ListDomainParseDetailRequest members
 
     /// <summary>
-    /// 域名，如www.test.com
+    /// **参数解释**： 域名 **约束限制**： 域名格式，如www.example.com **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -48,7 +48,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
+    /// **参数解释**： 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，配置后可根据企业项目过滤不同企业项目下的资产，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 0
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -57,7 +57,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+    /// **参数解释**： 防火墙ID，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -66,7 +66,7 @@ public:
     void setFwInstanceId(const std::string& value);
 
     /// <summary>
-    /// 地址类型，0 ipv4,1 ipv6
+    /// 参数解释： IP地址的互联网协议类型，用于指定IP地址的互联网协议，由客户指定 约束限制： 不涉及 取值范围： 0：IPv4 1：IPv6 默认取值： 不涉及
     /// </summary>
 
     int32_t getAddressType() const;

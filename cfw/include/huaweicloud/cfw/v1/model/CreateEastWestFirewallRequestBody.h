@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 创建东西向防火墙body体
+/// **参数解释**： 创建东西向防火墙body体 **约束限制**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  CreateEastWestFirewallRequestBody
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// CreateEastWestFirewallRequestBody members
 
     /// <summary>
-    /// 出方向关联ER ID,可通过ER服务查询企业路由器列表接口获得，返回值中instances.id即为erid（.表示各对象之间层级的区分）
+    /// **参数解释**： 出方向关联ER ID,可通过ER服务查询企业路由器列表接口获得，返回值中instances.id即为erid（.表示各对象之间层级的区分） **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getErId() const;
@@ -48,7 +48,7 @@ public:
     void setErId(const std::string& value);
 
     /// <summary>
-    /// 创建引流VPC时使用的网段
+    /// **参数解释**： 创建引流VPC时使用的网段 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getInspectionCidr() const;
@@ -57,7 +57,7 @@ public:
     void setInspectionCidr(const std::string& value);
 
     /// <summary>
-    /// 东西向防火墙模式，填写er
+    /// **参数解释**： 东西向防火墙模式，填写er **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getMode() const;

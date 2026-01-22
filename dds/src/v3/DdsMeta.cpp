@@ -792,6 +792,9 @@ HttpRequestDef DdsMeta::genRequestDefForListTasks() {
     reqDefBuilder.withRequestField(FieldDef().withName("Status")
                   .withJsonTag("status")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Name")
                   .withJsonTag("name")
                   .withLocationType(Query_));

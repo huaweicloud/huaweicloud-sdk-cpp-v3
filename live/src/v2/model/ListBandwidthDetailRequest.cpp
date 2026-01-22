@@ -32,6 +32,8 @@ ListBandwidthDetailRequest::ListBandwidthDetailRequest()
     endTimeIsSet_ = false;
     serviceType_ = "";
     serviceTypeIsSet_ = false;
+    ipType_ = "";
+    ipTypeIsSet_ = false;
 }
 
 ListBandwidthDetailRequest::~ListBandwidthDetailRequest() = default;
@@ -79,6 +81,9 @@ web::json::value ListBandwidthDetailRequest::toJson() const
     }
     if(serviceTypeIsSet_) {
         val[utility::conversions::to_string_t("service_type")] = ModelBase::toJson(serviceType_);
+    }
+    if(ipTypeIsSet_) {
+        val[utility::conversions::to_string_t("ip_type")] = ModelBase::toJson(ipType_);
     }
 
     return val;
@@ -193,6 +198,15 @@ bool ListBandwidthDetailRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServiceType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ip_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpType(refVal);
         }
     }
     return ok;
@@ -449,6 +463,27 @@ bool ListBandwidthDetailRequest::serviceTypeIsSet() const
 void ListBandwidthDetailRequest::unsetserviceType()
 {
     serviceTypeIsSet_ = false;
+}
+
+std::string ListBandwidthDetailRequest::getIpType() const
+{
+    return ipType_;
+}
+
+void ListBandwidthDetailRequest::setIpType(const std::string& value)
+{
+    ipType_ = value;
+    ipTypeIsSet_ = true;
+}
+
+bool ListBandwidthDetailRequest::ipTypeIsSet() const
+{
+    return ipTypeIsSet_;
+}
+
+void ListBandwidthDetailRequest::unsetipType()
+{
+    ipTypeIsSet_ = false;
 }
 
 }

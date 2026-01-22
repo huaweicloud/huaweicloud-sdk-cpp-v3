@@ -9,7 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <map>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -74,6 +77,15 @@ public:
     void unsetstatType();
     void setStatType(const std::string& value);
 
+    /// <summary>
+    /// 按指定的分组方式组织的数据
+    /// </summary>
+
+    std::map<std::string, Object>& getResult();
+    bool resultIsSet() const;
+    void unsetresult();
+    void setResult(const std::map<std::string, Object>& value);
+
 
 protected:
     std::string action_;
@@ -84,6 +96,8 @@ protected:
     bool endTimeIsSet_;
     std::string statType_;
     bool statTypeIsSet_;
+    std::map<std::string, Object> result_;
+    bool resultIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

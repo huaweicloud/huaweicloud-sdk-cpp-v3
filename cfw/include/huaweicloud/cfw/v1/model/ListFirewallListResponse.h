@@ -39,7 +39,7 @@ public:
     /// ListFirewallListResponse members
 
     /// <summary>
-    /// 是否支持企业项目，true表示是，false表示不是
+    /// **参数解释**： 是否支持企业项目 **取值范围**： - true：是 - false：否
     /// </summary>
 
     bool isUserSupportEps() const;
@@ -48,7 +48,7 @@ public:
     void setUserSupportEps(bool value);
 
     /// <summary>
-    /// 是否存在ndr，true表示是，false表示不是，NDR为原旁路版防火墙，现已停止售卖。
+    /// **参数解释**： 是否存在NDR，NDR为原旁路版防火墙，现已停止售卖。 **取值范围**： - true：是 - false：不是
     /// </summary>
 
     bool isHasNdr() const;
@@ -57,7 +57,7 @@ public:
     void setHasNdr(bool value);
 
     /// <summary>
-    /// 是否支持按需购买，true表示是，false表示不是
+    /// **参数解释**： 是否支持按需购买 **取值范围**： - true：是 - false：不是
     /// </summary>
 
     bool isIsSupportPostpaid() const;
@@ -66,7 +66,7 @@ public:
     void setIsSupportPostpaid(bool value);
 
     /// <summary>
-    /// 是否支持基础版，true表示是，false表示不是
+    /// **参数解释**： 是否支持基础版 **取值范围**： - true：是 - false：不是
     /// </summary>
 
     bool isIsSupportBasicVersion() const;
@@ -75,7 +75,7 @@ public:
     void setIsSupportBasicVersion(bool value);
 
     /// <summary>
-    /// 是否支持购买专业版，true表示是，false表示不是
+    /// **参数解释**： 是否支持购买专业版 **取值范围**： - true：是 - false：不是
     /// </summary>
 
     bool isIsSupportBuyProfessional() const;

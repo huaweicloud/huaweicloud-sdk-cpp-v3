@@ -9,7 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <vector>
+#include <huaweicloud/cfw/v1/model/IpRegionResponseBodyData.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,17 +40,17 @@ public:
     /// ListRegionsResponse members
 
     /// <summary>
-    /// region列表
+    /// **参数解释**： 地域列表 **取值范围**： 不涉及 
     /// </summary>
 
-    Object getData() const;
+    std::vector<IpRegionResponseBodyData>& getData();
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const Object& value);
+    void setData(const std::vector<IpRegionResponseBodyData>& value);
 
 
 protected:
-    Object data_;
+    std::vector<IpRegionResponseBodyData> data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

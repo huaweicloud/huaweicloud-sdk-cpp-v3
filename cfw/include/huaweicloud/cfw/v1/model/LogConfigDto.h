@@ -39,7 +39,7 @@ public:
     /// LogConfigDto members
 
     /// <summary>
-    /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+    /// 防火墙ID，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
     /// </summary>
 
     std::string getFwInstanceId() const;

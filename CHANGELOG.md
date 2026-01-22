@@ -1,3 +1,223 @@
+# 3.1.171 2026-01-22
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainCountryStat**
+    - changes of response param
+      - `+ result`
+  - **SetStatsConfig**
+    - changes of request param
+      - `- expired_time`
+  - **ShowStatsConfigs**
+    - changes of response param
+      - `- data.expired_time`
+
+### HuaweiCloud SDK CFW
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ImportRuleAcl`
+    - `ExportRuleAcl`
+    - `DownloadImportTemplate`
+    - `DownloadExportResult`
+    - `ShowExportStatus`
+    - `DownloadImportResult`
+    - `ListAclRuleHitStatus`
+    - `BatchDeleteAddressSets`
+    - `AddCustomDnsServer`
+    - `ListDomainResolveIp`
+    - `SwitchFirewallEipProtection`
+    - `AddEipAlarmWhitelist`
+    - `ListPrivateNetworkSegments`
+    - `UpdatePrivateNetworkSegment`
+    - `BatchCreatePrivateNetworkSegments`
+    - `BatchDeletePrivateNetworkSegments`
+    - `UpdateFirewallName`
+    - `ShowConfigQuota`
+    - `ShowSnFirewallProtectionStatus`
+    - `BatchDeleteCustomerIps`
+    - `BatchUpdateCustomerIpsAction`
+    - `UpdateIpsWhitelist`
+    - `ListIpsWhitelists`
+    - `BatchCreateIpsWhitelist`
+    - `BatchDeleteIpsWhitelist`
+    - `BatchRemoveAccounts`
+    - `ListSchedules`
+    - `CreateSchedule`
+    - `UpdateSchedule`
+    - `DeleteSchedule`
+    - `BatchDeleteSchedules`
+    - `ListReportHistory`
+    - `BatchDeleteServiceSets`
+    - `BatchCreateBlackWhiteList`
+    - `BatchDeleteBlackWhiteLists`
+    - `CreateCustomerIps`
+    - `BatchAddAccounts`
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteAddressItem**
+    - changes of response param
+      - `+ data`
+  - **ListBlackWhiteLists**
+    - changes of response param
+      - `+ data.records.created_date`
+      - `+ data.records.modified_date`
+  - **UpdateObjectConfigDesc**
+    - changes of request param
+      - `* body: object<ObjectInfoDto> -> object<UpdateObjectConfigDesc>`
+  - **ListRegions**
+    - changes of response param
+      - `* data: object -> list<IpRegionResponseBodyData>`
+  - **ShowImportStatus**
+    - changes of response param
+      - `+ data.id`
+      - `+ data.status`
+      - `* data: object -> object<ShowImportStatusId>`
+  - **ListLogs**
+    - changes of response param
+      - `* data.records.dst_region_id: object -> string`
+  - **ListDnsServers**
+    - changes of response param
+      - `+ data.status`
+  - **CreateFirewall**
+    - changes of request param
+      - `- X-Client-Token`
+  - **ListAlarmWhitelist**
+    - changes of response param
+      - `- data.endRow`
+      - `- data.hasNextPage`
+      - `- data.hasPreviousPage`
+      - `- data.isFirstPage`
+      - `- data.isLastPage`
+      - `- data.navigateFirstPage`
+      - `- data.navigateLastPage`
+      - `- data.navigatePages`
+      - `- data.navigatepageNums`
+      - `- data.nextPage`
+      - `- data.pageNum`
+      - `- data.pageSize`
+      - `- data.prePage`
+      - `- data.startRow`
+      - `- data.total`
+      - `+ data.list.eip_id`
+      - `+ data.list.fw_instance_id`
+      - `+ data.list.object_id`
+      - `+ data.list.public_ip`
+      - `+ data.list.public_ipv6`
+      - `+ data.list.type`
+      - `* data.list: list<object> -> list<EipInfo>`
+      - `* data: object<PageInfo> -> object<HttpListAlarmWhiteListResponseData>`
+  - **ListCustomerIps**
+    - changes of request param
+      - `* object_id: required -> optional`
+  - **ShowCustomerIpsInfo**
+    - changes of request param
+      - `* object_id: required -> optional`
+  - **ListFlowStatistic**
+    - changes of response param
+      - `+ data.records.agg_start_time`
+      - `+ data.records.agg_end_time`
+  - **ListAclRules**
+    - changes of response param
+      - `+ data.up_rules_count`
+      - `+ data.records.modified_date`
+  - **ListEips**
+    - changes of response param
+      - `+ data.records.bypass_status`
+  - **ShowAntiVirusRule**
+    - changes of request param
+      - `* engine_type: required -> optional`
+  - **DeleteIpBlacklist**
+    - changes of response param
+      - `- data`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateEntityConfiguration**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListTasks**
+    - changes of request param
+      - `+ id`
+
+### HuaweiCloud SDK EIP
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ShowPublicipPoolTypes`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GEIP
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CountGlobalEipSegment**
+    - changes of request param
+      - `- limit`
+      - `- offset`
+      - `- marker`
+      - `- page_reverse`
+  - **ListSupportMasks**
+    - changes of request param
+      - `* mask: list<integer> -> int32`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ShowCertificateInfo`
+    - `ShowDomainVerification`
+    - `CheckDomainVerification`
+    - `ListPullTasks`
+    - `ModifyPullTask`
+    - `CreatePullTask`
+    - `DeletePullTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListBandwidthDetail**
+    - changes of request param
+      - `+ ip_type`
+
 # 3.1.170 2026-01-15
 
 ### HuaweiCloud SDK CDN

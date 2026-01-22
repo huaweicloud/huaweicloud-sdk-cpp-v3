@@ -40,7 +40,7 @@ public:
     /// ListConfigurationsResponse members
 
     /// <summary>
-    /// 总记录数。
+    /// **参数解释：** 总记录数。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getTotalCount() const;
@@ -49,7 +49,7 @@ public:
     void setTotalCount(int32_t value);
 
     /// <summary>
-    /// 参数模板列表。
+    /// **参数解释：** 参数模板列表。 **取值范围：** 不涉及。
     /// </summary>
 
     std::vector<ListConfigurationsResult>& getConfigurations();

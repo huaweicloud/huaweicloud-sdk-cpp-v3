@@ -39,7 +39,7 @@ public:
     /// IpsRuleUpdateTimeVO members
 
     /// <summary>
-    /// 
+    /// ips类型，0表示基础防御，1表示虚拟补丁
     /// </summary>
 
     int32_t getIpsType() const;
@@ -48,7 +48,7 @@ public:
     void setIpsType(int32_t value);
 
     /// <summary>
-    /// 
+    /// ips规则版本
     /// </summary>
 
     std::string getIpsVersion() const;
@@ -57,7 +57,7 @@ public:
     void setIpsVersion(const std::string& value);
 
     /// <summary>
-    /// 
+    /// ips更新时间戳
     /// </summary>
 
     int64_t getUpdateTime() const;

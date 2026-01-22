@@ -40,7 +40,7 @@ public:
     /// BatchUpdateAclRuleActionsResponse members
 
     /// <summary>
-    /// 批量更新acl规则id，为请求体中传入的规则id
+    /// **参数解释**： 批量更新acl规则ID，为请求体中传入的规则ID **取值范围**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getData();

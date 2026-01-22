@@ -39,7 +39,7 @@ public:
     /// CoveredIPVO members
 
     /// <summary>
-    /// ip地址
+    /// IP地址
     /// </summary>
 
     std::string getIp() const;
@@ -48,7 +48,7 @@ public:
     void setIp(const std::string& value);
 
     /// <summary>
-    /// 覆盖ip地址。
+    /// 覆盖IP地址。
     /// </summary>
 
     std::string getCoveredIp() const;

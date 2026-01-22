@@ -39,7 +39,7 @@ public:
     /// DnsServersResponseDTO members
 
     /// <summary>
-    /// 域名服务器id
+    /// **参数解释**： 域名服务器id **取值范围**： 不涉及
     /// </summary>
 
     int32_t getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(int32_t value);
 
     /// <summary>
-    /// 域名服务器是否应用，0否 1是
+    /// **参数解释**： 域名服务器是否应用 **取值范围**： - 0：否 - 1：是
     /// </summary>
 
     int32_t getIsApplied() const;
@@ -57,7 +57,7 @@ public:
     void setIsApplied(int32_t value);
 
     /// <summary>
-    /// 域名服务器是否是用户自定义的dns服务器，0否 1是
+    /// **参数解释**： 域名服务器是否是用户自定义的dns服务器 **取值范围**： - 0：否 - 1：是
     /// </summary>
 
     int32_t getIsCustomized() const;
@@ -66,7 +66,7 @@ public:
     void setIsCustomized(int32_t value);
 
     /// <summary>
-    /// DNS服务器IP
+    /// **参数解释**： DNS服务器IP **取值范围**： 不涉及
     /// </summary>
 
     std::string getServerIp() const;
@@ -75,7 +75,16 @@ public:
     void setServerIp(const std::string& value);
 
     /// <summary>
-    /// 健康检查域名
+    /// **参数解释**： dns服务器解析状态 **取值范围**： 0：解析域名的频率正常 1：解析域名的频率缓慢 2：解析域名异常 
+    /// </summary>
+
+    int32_t getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(int32_t value);
+
+    /// <summary>
+    /// **参数解释**： 健康检查域名 **取值范围**： 不涉及
     /// </summary>
 
     std::string getHealthCheckDomainName() const;
@@ -93,6 +102,8 @@ protected:
     bool isCustomizedIsSet_;
     std::string serverIp_;
     bool serverIpIsSet_;
+    int32_t status_;
+    bool statusIsSet_;
     std::string healthCheckDomainName_;
     bool healthCheckDomainNameIsSet_;
 

@@ -39,7 +39,7 @@ bool ListRegionsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::vector<IpRegionResponseBodyData> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool ListRegionsResponse::fromJson(const web::json::value& val)
 }
 
 
-Object ListRegionsResponse::getData() const
+std::vector<IpRegionResponseBodyData>& ListRegionsResponse::getData()
 {
     return data_;
 }
 
-void ListRegionsResponse::setData(const Object& value)
+void ListRegionsResponse::setData(const std::vector<IpRegionResponseBodyData>& value)
 {
     data_ = value;
     dataIsSet_ = true;

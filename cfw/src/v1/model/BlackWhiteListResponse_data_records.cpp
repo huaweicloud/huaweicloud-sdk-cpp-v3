@@ -26,6 +26,10 @@ BlackWhiteListResponse_data_records::BlackWhiteListResponse_data_records()
     portIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    createdDate_ = "";
+    createdDateIsSet_ = false;
+    modifiedDate_ = "";
+    modifiedDateIsSet_ = false;
 }
 
 BlackWhiteListResponse_data_records::~BlackWhiteListResponse_data_records() = default;
@@ -58,6 +62,12 @@ web::json::value BlackWhiteListResponse_data_records::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(createdDateIsSet_) {
+        val[utility::conversions::to_string_t("created_date")] = ModelBase::toJson(createdDate_);
+    }
+    if(modifiedDateIsSet_) {
+        val[utility::conversions::to_string_t("modified_date")] = ModelBase::toJson(modifiedDate_);
     }
 
     return val;
@@ -127,6 +137,24 @@ bool BlackWhiteListResponse_data_records::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("created_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreatedDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("modified_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("modified_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModifiedDate(refVal);
         }
     }
     return ok;
@@ -278,6 +306,48 @@ bool BlackWhiteListResponse_data_records::descriptionIsSet() const
 void BlackWhiteListResponse_data_records::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+std::string BlackWhiteListResponse_data_records::getCreatedDate() const
+{
+    return createdDate_;
+}
+
+void BlackWhiteListResponse_data_records::setCreatedDate(const std::string& value)
+{
+    createdDate_ = value;
+    createdDateIsSet_ = true;
+}
+
+bool BlackWhiteListResponse_data_records::createdDateIsSet() const
+{
+    return createdDateIsSet_;
+}
+
+void BlackWhiteListResponse_data_records::unsetcreatedDate()
+{
+    createdDateIsSet_ = false;
+}
+
+std::string BlackWhiteListResponse_data_records::getModifiedDate() const
+{
+    return modifiedDate_;
+}
+
+void BlackWhiteListResponse_data_records::setModifiedDate(const std::string& value)
+{
+    modifiedDate_ = value;
+    modifiedDateIsSet_ = true;
+}
+
+bool BlackWhiteListResponse_data_records::modifiedDateIsSet() const
+{
+    return modifiedDateIsSet_;
+}
+
+void BlackWhiteListResponse_data_records::unsetmodifiedDate()
+{
+    modifiedDateIsSet_ = false;
 }
 
 }

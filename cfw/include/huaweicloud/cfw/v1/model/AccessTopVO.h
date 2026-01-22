@@ -51,7 +51,7 @@ public:
     void setDenyCount(int64_t value);
 
     /// <summary>
-    /// **参数解释**： 高频命中的阻断策略ID **取值范围**： 不涉及
+    /// **参数解释**： Top命中的阻断策略ID **取值范围**： 不涉及
     /// </summary>
 
     std::string getDenyTopOneAclId() const;
@@ -60,7 +60,7 @@ public:
     void setDenyTopOneAclId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 高频命中的阻断策略ID **取值范围**： 不涉及
+    /// **参数解释**： Top命中的阻断策略名称 **取值范围**： 不涉及
     /// </summary>
 
     std::string getDenyTopOneAclName() const;

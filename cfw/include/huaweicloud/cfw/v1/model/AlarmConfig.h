@@ -39,7 +39,7 @@ public:
     /// AlarmConfig members
 
     /// <summary>
-    /// 账号名称
+    /// 
     /// </summary>
 
     std::string getAccountName() const;
@@ -48,7 +48,7 @@ public:
     void setAccountName(const std::string& value);
 
     /// <summary>
-    /// 告警id
+    /// 
     /// </summary>
 
     std::string getAlarmId() const;
@@ -57,7 +57,7 @@ public:
     void setAlarmId(const std::string& value);
 
     /// <summary>
-    /// 告警周期，0：全天，1：8时到22时
+    /// 告警周期，0：8时到22时，1：全天
     /// </summary>
 
     int32_t getAlarmTimePeriod() const;
@@ -93,7 +93,7 @@ public:
     void setFrequencyCount(int32_t value);
 
     /// <summary>
-    /// 告警频次时间范围
+    /// 告警频次时间范围，以分钟为单位
     /// </summary>
 
     int32_t getFrequencyTime() const;
@@ -102,7 +102,7 @@ public:
     void setFrequencyTime(int32_t value);
 
     /// <summary>
-    /// 告警语言
+    /// 告警语言，zh-cn为中文，en-us为英文
     /// </summary>
 
     std::string getLanguage() const;
@@ -111,7 +111,7 @@ public:
     void setLanguage(const std::string& value);
 
     /// <summary>
-    /// 告警主题名称
+    /// 通知群组名称
     /// </summary>
 
     std::string getName() const;
@@ -120,7 +120,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 告警等级
+    /// 告警等级，当type为0和4时，severity为CRITICAL,HIGH,MEDIUM,LOW四种等级的组合字符串，当type为2时，severity固定为3
     /// </summary>
 
     std::string getSeverity() const;
@@ -129,7 +129,7 @@ public:
     void setSeverity(const std::string& value);
 
     /// <summary>
-    /// 告警urn
+    /// 告警topic的urn
     /// </summary>
 
     std::string getTopicUrn() const;
@@ -138,7 +138,7 @@ public:
     void setTopicUrn(const std::string& value);
 
     /// <summary>
-    /// 用户名称
+    /// 用户名称，为cfw
     /// </summary>
 
     std::string getUsername() const;

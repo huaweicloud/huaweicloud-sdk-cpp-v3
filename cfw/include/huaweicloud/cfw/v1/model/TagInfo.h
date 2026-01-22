@@ -40,7 +40,7 @@ public:
     /// TagInfo members
 
     /// <summary>
-    /// 标签键
+    /// **参数解释**： 标签键 **约束限制**： 不涉及
     /// </summary>
 
     std::string getKey() const;
@@ -49,7 +49,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 标签值列表
+    /// **参数解释**： 标签值列表 **约束限制**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getValues();

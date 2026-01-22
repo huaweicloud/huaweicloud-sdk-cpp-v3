@@ -41,7 +41,7 @@ public:
     /// DomainSetVo members
 
     /// <summary>
-    /// 域名组id
+    /// **参数解释**： 域名组id **取值范围**： 不涉及
     /// </summary>
 
     std::string getSetId() const;
@@ -50,7 +50,7 @@ public:
     void setSetId(const std::string& value);
 
     /// <summary>
-    /// 域名组名称
+    /// **参数解释**： 域名组名称 **取值范围**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -59,7 +59,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 域名组描述
+    /// **参数解释**： 域名组描述 **取值范围**： 不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -68,7 +68,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 域名组被规则引用次数
+    /// **参数解释**： 域名组被规则引用次数 **取值范围**： 不涉及
     /// </summary>
 
     int32_t getRefCount() const;
@@ -77,7 +77,7 @@ public:
     void setRefCount(int32_t value);
 
     /// <summary>
-    /// 域名组类型，0表示应用域名组，1表示网络域名组
+    /// **参数解释**： 域名组类型 **取值范围**： - 0：应用域名组 - 1：网络域名组
     /// </summary>
 
     int32_t getDomainSetType() const;
@@ -86,7 +86,7 @@ public:
     void setDomainSetType(int32_t value);
 
     /// <summary>
-    /// 配置状态，-1表示未配置态，0表示配置失败，1表示配置成功，2表示配置中，3表示正常，4表示配置异常
+    /// **参数解释**： 配置状态 **取值范围**： - -1：未配置态 - 0：配置失败 - 1：配置成功 - 2：配置中 - 3：正常 - 4：配置异常
     /// </summary>
 
     int32_t getConfigStatus() const;
@@ -95,7 +95,7 @@ public:
     void setConfigStatus(int32_t value);
 
     /// <summary>
-    /// 使用规则id列表
+    /// **参数解释**： 使用规则id列表 **取值范围**： 不涉及
     /// </summary>
 
     std::vector<UseRuleVO>& getRules();

@@ -40,7 +40,7 @@ public:
     /// ListRuleHitCountDto members
 
     /// <summary>
-    /// 规则id列表，规则id，可通过[查询防护规则接口](ListAclRules.xml)查询获得，通过返回值中的data.records.rule_id（.表示各对象之间层级的区分）获得。
+    /// 规则id列表，规则ID，可通过[查询防护规则接口](ListAclRules.xml)查询获得，通过返回值中的data.records.rule_id（.表示各对象之间层级的区分）获得。
     /// </summary>
 
     std::vector<std::string>& getRuleIds();

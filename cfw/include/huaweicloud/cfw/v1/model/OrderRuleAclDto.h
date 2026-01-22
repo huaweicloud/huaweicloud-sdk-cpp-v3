@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// UpdateRuleAclDto
+/// **参数解释**： 修改规则顺序请求体 **约束限制**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  OrderRuleAclDto
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// OrderRuleAclDto members
 
     /// <summary>
-    /// 目标规则id，添加规则位于此规则之后，非置顶时不能为空，置顶时为空，目标规则id可以通过[查询防护规则接口](ListAclRules.xml)获得，通过返回值中的data.records.rule_id（.表示各对象之间层级的区分）获得。
+    /// **参数解释**： 目标规则ID，填写后添加的新规则置位于此规则之后，非置顶时不能为空，置顶时为空，目标规则ID可以通过[查询防护规则接口](ListAclRules.xml)获得，通过返回值中的data.records.rule_id（.表示各对象之间层级的区分）获得。 **约束限制**： 非置顶时目标规则需要存在 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDestRuleId() const;
@@ -48,7 +48,7 @@ public:
     void setDestRuleId(const std::string& value);
 
     /// <summary>
-    /// 是否置顶，0代表非置顶，1代表置顶
+    /// **参数解释**： 规则是否置顶，用于确认规则是否置顶 **约束限制**： 不涉及 **取值范围**： 0代表非置顶，1代表置顶 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getTop() const;
@@ -57,7 +57,7 @@ public:
     void setTop(int32_t value);
 
     /// <summary>
-    /// 是否置底，0代表非置底，1代表置底
+    /// **参数解释**： 规则是否置底，用于确认规则是否置底 **约束限制**： 不涉及 **取值范围**： 0代表非置底，1代表置底 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getBottom() const;

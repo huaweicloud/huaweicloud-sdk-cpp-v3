@@ -39,7 +39,7 @@ public:
     /// AddLogConfigResponse members
 
     /// <summary>
-    /// 添加日志配置返回值，为防火墙id
+    /// 添加日志配置返回值，为防火墙ID
     /// </summary>
 
     std::string getData() const;

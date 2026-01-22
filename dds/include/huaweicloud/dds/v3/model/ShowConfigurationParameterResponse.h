@@ -41,7 +41,7 @@ public:
     /// ShowConfigurationParameterResponse members
 
     /// <summary>
-    /// 参数模板ID。
+    /// **参数解释：** 参数模板ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getId() const;
@@ -50,7 +50,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 参数模板名称。
+    /// **参数解释：** 参数模板名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getName() const;
@@ -59,7 +59,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 数据库版本。
+    /// **参数解释：** 数据库版本。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDatastoreVersion() const;
@@ -68,7 +68,7 @@ public:
     void setDatastoreVersion(const std::string& value);
 
     /// <summary>
-    /// 数据库类型。
+    /// **参数解释：** 数据库类型。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDatastoreName() const;
@@ -77,7 +77,7 @@ public:
     void setDatastoreName(const std::string& value);
 
     /// <summary>
-    /// 参数模板描述。
+    /// **参数解释：** 参数模板描述。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDescription() const;
@@ -86,7 +86,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 创建时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+    /// **参数解释：** 创建时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCreated() const;
@@ -95,7 +95,7 @@ public:
     void setCreated(const std::string& value);
 
     /// <summary>
-    /// 更新时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+    /// **参数解释：** 更新时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getUpdated() const;
@@ -104,7 +104,7 @@ public:
     void setUpdated(const std::string& value);
 
     /// <summary>
-    /// 参数对象，用户基于默认参数模板自定义的参数配置。
+    /// **参数解释：** 参数对象，用户基于默认参数模板自定义的参数配置。 **取值范围：** 不涉及。
     /// </summary>
 
     std::vector<ConfigurationParametersResult>& getParameters();

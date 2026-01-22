@@ -43,7 +43,7 @@ public:
     /// RuleAclListResponseDTO_data_records members
 
     /// <summary>
-    /// 规则id
+    /// **参数解释**： 规则ID **取值范围**： 不涉及
     /// </summary>
 
     std::string getRuleId() const;
@@ -52,34 +52,7 @@ public:
     void setRuleId(const std::string& value);
 
     /// <summary>
-    /// 应用列表
-    /// </summary>
-
-    std::vector<std::string>& getApplications();
-    bool applicationsIsSet() const;
-    void unsetapplications();
-    void setApplications(const std::vector<std::string>& value);
-
-    /// <summary>
-    /// 地址类型0 ipv4，1 ipv6
-    /// </summary>
-
-    int32_t getAddressType() const;
-    bool addressTypeIsSet() const;
-    void unsetaddressType();
-    void setAddressType(int32_t value);
-
-    /// <summary>
-    /// 规则名称
-    /// </summary>
-
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
-
-    /// <summary>
-    /// 排序id
+    /// **参数解释**： 排序id **取值范围**： 不涉及
     /// </summary>
 
     int32_t getOrderId() const;
@@ -88,7 +61,34 @@ public:
     void setOrderId(int32_t value);
 
     /// <summary>
-    /// 规则方向0：外到内1：内到外
+    /// **参数解释**： 应用列表 **取值范围**： 不涉及
+    /// </summary>
+
+    std::vector<std::string>& getApplications();
+    bool applicationsIsSet() const;
+    void unsetapplications();
+    void setApplications(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 参数解释： IP地址的互联网协议类型，用于指定IP地址的互联网协议，由客户指定 约束限制： 不涉及 取值范围： 0：IPv4 1：IPv6 默认取值： 不涉及
+    /// </summary>
+
+    int32_t getAddressType() const;
+    bool addressTypeIsSet() const;
+    void unsetaddressType();
+    void setAddressType(int32_t value);
+
+    /// <summary>
+    /// **参数解释**： 规则名称 **取值范围**： 不涉及
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 规则方向 **取值范围**： 0：外到内1：内到外
     /// </summary>
 
     int32_t getDirection() const;
@@ -97,7 +97,7 @@ public:
     void setDirection(int32_t value);
 
     /// <summary>
-    /// 动作0：permit，1：deny
+    /// **参数解释**： 规则动作类型，用于区分规则对流量的动作 **取值范围**： 0表示允许通行（permit），1表示拒绝通行（deny）
     /// </summary>
 
     int32_t getActionType() const;
@@ -106,7 +106,7 @@ public:
     void setActionType(int32_t value);
 
     /// <summary>
-    /// 规则下发状态 0：禁用，1：启用
+    /// **参数解释**： 规则启用状态，用于区分规则是否启用 **取值范围**： 0表示启用，1表示禁用
     /// </summary>
 
     int32_t getStatus() const;
@@ -115,7 +115,7 @@ public:
     void setStatus(int32_t value);
 
     /// <summary>
-    /// 描述
+    /// **参数解释**： 规则描述，用于描述规则的用途。 **取值范围**： 不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -124,7 +124,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 长连接时长
+    /// **参数解释**： 长连接时长（s）。 **取值范围**： 1-86400000。
     /// </summary>
 
     int64_t getLongConnectTime() const;
@@ -133,7 +133,7 @@ public:
     void setLongConnectTime(int64_t value);
 
     /// <summary>
-    /// 长连接支持
+    /// **参数解释**： 用于表示是否支持长连接。 **取值范围**： 0表示不支持，1表示支持
     /// </summary>
 
     int32_t getLongConnectEnable() const;
@@ -142,7 +142,7 @@ public:
     void setLongConnectEnable(int32_t value);
 
     /// <summary>
-    /// 长连接时长对应小时
+    /// **参数解释**： 长连接时长对应小时数（h）。 **取值范围**： 0-24000。
     /// </summary>
 
     int64_t getLongConnectTimeHour() const;
@@ -151,7 +151,7 @@ public:
     void setLongConnectTimeHour(int64_t value);
 
     /// <summary>
-    /// 长连接时长对应分钟
+    /// **参数解释**： 长连接时长对应分钟数（min）。 **取值范围**： 0-60。
     /// </summary>
 
     int64_t getLongConnectTimeMinute() const;
@@ -160,7 +160,7 @@ public:
     void setLongConnectTimeMinute(int64_t value);
 
     /// <summary>
-    /// 长连接时长秒
+    /// **参数解释**： 长连接时长对应秒数（s）。 **取值范围**： 0-60。
     /// </summary>
 
     int64_t getLongConnectTimeSecond() const;
@@ -196,7 +196,7 @@ public:
     void setService(const RuleServiceDtoForResponse& value);
 
     /// <summary>
-    /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
+    /// **参数解释**： 规则类型，用于区分不同防护对象设置规则类型。 **取值范围**：  0：互联网边界规则，源（source）和目的（destination）地址需要为公网IP或域名； 1：VPC间规则，源（source）和目的（destination）地址需要为私有ip； 2：NAT规则，源（source）地址需要为私网IP，目的地址为公网IP或域名。
     /// </summary>
 
     int32_t getType() const;
@@ -205,7 +205,7 @@ public:
     void setType(int32_t value);
 
     /// <summary>
-    /// 规则创建时间，例如：\&quot;2024-08-12 08:40:00\&quot;
+    /// **参数解释**： 规则创建时间。 **取值范围**： 不涉及
     /// </summary>
 
     std::string getCreatedDate() const;
@@ -214,7 +214,16 @@ public:
     void setCreatedDate(const std::string& value);
 
     /// <summary>
-    /// 规则最后开启时间，例如：\&quot;2024-08-12 08:40:00\&quot;
+    /// **参数解释**： 规则修改时间。 **取值范围**： 不涉及
+    /// </summary>
+
+    std::string getModifiedDate() const;
+    bool modifiedDateIsSet() const;
+    void unsetmodifiedDate();
+    void setModifiedDate(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 规则最后开启时间。 **取值范围**： 不涉及
     /// </summary>
 
     std::string getLastOpenTime() const;
@@ -235,14 +244,14 @@ public:
 protected:
     std::string ruleId_;
     bool ruleIdIsSet_;
+    int32_t orderId_;
+    bool orderIdIsSet_;
     std::vector<std::string> applications_;
     bool applicationsIsSet_;
     int32_t addressType_;
     bool addressTypeIsSet_;
     std::string name_;
     bool nameIsSet_;
-    int32_t orderId_;
-    bool orderIdIsSet_;
     int32_t direction_;
     bool directionIsSet_;
     int32_t actionType_;
@@ -271,6 +280,8 @@ protected:
     bool typeIsSet_;
     std::string createdDate_;
     bool createdDateIsSet_;
+    std::string modifiedDate_;
+    bool modifiedDateIsSet_;
     std::string lastOpenTime_;
     bool lastOpenTimeIsSet_;
     TagsVO tag_;

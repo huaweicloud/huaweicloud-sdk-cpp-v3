@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 东西向防护的资源信息，例如VPC、VGW等
+/// **参数解释**： 东西向防护的资源信息，例如VPC、VGW等 **取值范围**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  EwProtectResourceInfo
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// EwProtectResourceInfo members
 
     /// <summary>
-    /// 防护资源类型：0 VPC，1 VGW，2 VPN，3 PEERING
+    /// **参数解释**： 防护资源类 **取值范围**： - 0：VPC - 1：VGW - 2：VPN - 3：PEERING
     /// </summary>
 
     int32_t getProtectedResourceType() const;
@@ -48,7 +48,7 @@ public:
     void setProtectedResourceType(int32_t value);
 
     /// <summary>
-    /// 防护资源名称
+    /// **参数解释**： 防护资源名称 **取值范围**： 不涉及
     /// </summary>
 
     std::string getProtectedResourceName() const;
@@ -57,7 +57,7 @@ public:
     void setProtectedResourceName(const std::string& value);
 
     /// <summary>
-    /// 防护资源id
+    /// **参数解释**： 防护资源id **取值范围**： 不涉及
     /// </summary>
 
     std::string getProtectedResourceId() const;
@@ -66,7 +66,7 @@ public:
     void setProtectedResourceId(const std::string& value);
 
     /// <summary>
-    /// 防护资源nat网关名称，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的名称。
+    /// **参数解释**： 防护资源nat网关名称，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的名称。 **取值范围**： 不涉及
     /// </summary>
 
     std::string getProtectedResourceNatName() const;
@@ -75,7 +75,7 @@ public:
     void setProtectedResourceNatName(const std::string& value);
 
     /// <summary>
-    /// 防护资源nat网关id，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的id。
+    /// **参数解释**： 防护资源nat网关id，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的id。 **取值范围**： 不涉及
     /// </summary>
 
     std::string getProtectedResourceNatId() const;
@@ -84,7 +84,7 @@ public:
     void setProtectedResourceNatId(const std::string& value);
 
     /// <summary>
-    /// 防火墙支持跨账户防护，此处为防护资源租户id
+    /// **参数解释**： 防火墙支持跨账户防护，此处为防护资源租户id **取值范围**： 不涉及
     /// </summary>
 
     std::string getProtectedResourceProjectId() const;
@@ -93,7 +93,7 @@ public:
     void setProtectedResourceProjectId(const std::string& value);
 
     /// <summary>
-    /// 防护资源模式，为er
+    /// **参数解释**： 防护资源模式，为er **取值范围**： 不涉及
     /// </summary>
 
     std::string getProtectedResourceMode() const;
@@ -102,7 +102,7 @@ public:
     void setProtectedResourceMode(const std::string& value);
 
     /// <summary>
-    /// 防护资源的防护状态，0表示已关联，1表示未关联。
+    /// **参数解释**： 防护资源的防护状态 **取值范围**： - 0：已关联 - 1：未关联
     /// </summary>
 
     int32_t getStatus() const;

@@ -39,7 +39,7 @@ public:
     /// HistoryInfo members
 
     /// <summary>
-    /// 参数名称
+    /// **参数解释：** 参数名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getParameterName() const;
@@ -48,7 +48,7 @@ public:
     void setParameterName(const std::string& value);
 
     /// <summary>
-    /// 修改前的值。
+    /// **参数解释：** 修改前的值。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getOldValue() const;
@@ -57,7 +57,7 @@ public:
     void setOldValue(const std::string& value);
 
     /// <summary>
-    /// 修改后的值。
+    /// **参数解释：** 修改后的值。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getNewValue() const;
@@ -66,7 +66,7 @@ public:
     void setNewValue(const std::string& value);
 
     /// <summary>
-    /// 修改时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+    /// **参数解释：** 修改时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getUpdatedAt() const;

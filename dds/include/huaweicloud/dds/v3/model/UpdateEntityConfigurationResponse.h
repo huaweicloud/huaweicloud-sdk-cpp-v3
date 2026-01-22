@@ -39,7 +39,7 @@ public:
     /// UpdateEntityConfigurationResponse members
 
     /// <summary>
-    /// 修改实例参数的异步任务ID。
+    /// **参数解释：** 修改实例参数的异步任务ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getJobId() const;
@@ -48,7 +48,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 参数修改涉及范围（实例，组，节点）否需要重启。 - false不需要重启 - true需要重启。
+    /// **参数解释：** 参数修改涉及范围（实例，组，节点）否需要重启。 **取值范围：** - 取值为false，不需要重启。 - 取值为true，需要重启。
     /// </summary>
 
     bool isRestartRequired() const;

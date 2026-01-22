@@ -41,7 +41,7 @@ public:
     /// AntiVirusRuleDto members
 
     /// <summary>
-    /// 防护对象ID
+    /// 防护对象ID，为必传参数
     /// </summary>
 
     std::string getObjectId() const;
@@ -50,7 +50,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 扫描协议配置
+    /// 扫描协议配置列表
     /// </summary>
 
     std::vector<ScanProtocolConfig>& getScanProtocolConfigs();

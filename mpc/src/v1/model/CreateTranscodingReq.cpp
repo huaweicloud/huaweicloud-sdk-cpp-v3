@@ -25,8 +25,6 @@ CreateTranscodingReq::CreateTranscodingReq()
     thumbnailIsSet_ = false;
     thumbnailsIsSet_ = false;
     imageSpritesIsSet_ = false;
-    pipelineId_ = "";
-    pipelineIdIsSet_ = false;
     priority_ = 0;
     priorityIsSet_ = false;
     subtitleIsSet_ = false;
@@ -84,9 +82,6 @@ web::json::value CreateTranscodingReq::toJson() const
     }
     if(imageSpritesIsSet_) {
         val[utility::conversions::to_string_t("image_sprites")] = ModelBase::toJson(imageSprites_);
-    }
-    if(pipelineIdIsSet_) {
-        val[utility::conversions::to_string_t("pipeline_id")] = ModelBase::toJson(pipelineId_);
     }
     if(priorityIsSet_) {
         val[utility::conversions::to_string_t("priority")] = ModelBase::toJson(priority_);
@@ -228,15 +223,6 @@ bool CreateTranscodingReq::fromJson(const web::json::value& val)
             std::vector<ImageSprite> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setImageSprites(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("pipeline_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pipeline_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPipelineId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("priority"))) {
@@ -574,27 +560,6 @@ bool CreateTranscodingReq::imageSpritesIsSet() const
 void CreateTranscodingReq::unsetimageSprites()
 {
     imageSpritesIsSet_ = false;
-}
-
-std::string CreateTranscodingReq::getPipelineId() const
-{
-    return pipelineId_;
-}
-
-void CreateTranscodingReq::setPipelineId(const std::string& value)
-{
-    pipelineId_ = value;
-    pipelineIdIsSet_ = true;
-}
-
-bool CreateTranscodingReq::pipelineIdIsSet() const
-{
-    return pipelineIdIsSet_;
-}
-
-void CreateTranscodingReq::unsetpipelineId()
-{
-    pipelineIdIsSet_ = false;
 }
 
 int32_t CreateTranscodingReq::getPriority() const

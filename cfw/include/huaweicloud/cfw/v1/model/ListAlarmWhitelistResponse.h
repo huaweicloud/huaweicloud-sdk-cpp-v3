@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/PageInfo.h>
+#include <huaweicloud/cfw/v1/model/HttpListAlarmWhiteListResponseData.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    PageInfo getData() const;
+    HttpListAlarmWhiteListResponseData getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const PageInfo& value);
+    void setData(const HttpListAlarmWhiteListResponseData& value);
 
 
 protected:
-    PageInfo data_;
+    HttpListAlarmWhiteListResponseData data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

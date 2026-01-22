@@ -143,6 +143,9 @@ std::shared_ptr<ListBandwidthDetailResponse> LiveClient::listBandwidthDetail(Lis
     if (request.serviceTypeIsSet()) {
         localVarQueryParams["service_type"] = parameterToString(request.getServiceType());
     }
+    if (request.ipTypeIsSet()) {
+        localVarQueryParams["ip_type"] = parameterToString(request.getIpType());
+    }
 
     std::string localVarHttpBody;
 

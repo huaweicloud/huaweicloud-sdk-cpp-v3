@@ -39,7 +39,7 @@ public:
     /// ProtectObjectVO members
 
     /// <summary>
-    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id。
+    /// **参数解释**： 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id。 **取值范围**： 不涉及
     /// </summary>
 
     std::string getObjectId() const;
@@ -48,7 +48,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 防护对象名称
+    /// **参数解释**： 防护对象名称 **取值范围**： 不涉及
     /// </summary>
 
     std::string getObjectName() const;
@@ -57,7 +57,7 @@ public:
     void setObjectName(const std::string& value);
 
     /// <summary>
-    /// 防护对象类型：0 南北向，1 东西向护对象类型
+    /// **参数解释**： 防护对象类型 **取值范围**： - 0：南北向 - 1：东西向
     /// </summary>
 
     int32_t getType() const;

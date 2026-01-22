@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/AdvancedIpsRuleListVo.h>
+#include <huaweicloud/cfw/v1/model/IpsRuleListVO.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    AdvancedIpsRuleListVo getData() const;
+    IpsRuleListVO getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const AdvancedIpsRuleListVo& value);
+    void setData(const IpsRuleListVO& value);
 
 
 protected:
-    AdvancedIpsRuleListVo data_;
+    IpsRuleListVO data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

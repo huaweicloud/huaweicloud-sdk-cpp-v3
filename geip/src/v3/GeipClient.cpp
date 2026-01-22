@@ -1561,18 +1561,6 @@ std::shared_ptr<CountGlobalEipSegmentResponse> GeipClient::countGlobalEipSegment
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.markerIsSet()) {
-        localVarQueryParams["marker"] = parameterToString(request.getMarker());
-    }
-    if (request.pageReverseIsSet()) {
-        localVarQueryParams["page_reverse"] = parameterToString(request.isPageReverse());
-    }
     if (request.fieldsIsSet()) {
         localVarQueryParams["fields"] = parameterToString(request.getFields());
     }

@@ -41,7 +41,7 @@ public:
     /// AntiVirusRuleVO members
 
     /// <summary>
-    /// 
+    /// 反病毒规则id
     /// </summary>
 
     std::string getId() const;
@@ -50,7 +50,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 反病毒规则名称
     /// </summary>
 
     std::string getName() const;
@@ -59,7 +59,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 反病毒扫描协议列表
     /// </summary>
 
     std::vector<ScanProtocolConfig>& getScanProtocolConfigs();
@@ -68,7 +68,7 @@ public:
     void setScanProtocolConfigs(const std::vector<ScanProtocolConfig>& value);
 
     /// <summary>
-    /// 
+    /// 反病毒扫描协议列表总数
     /// </summary>
 
     int32_t getTotal() const;

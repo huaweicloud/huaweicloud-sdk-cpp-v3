@@ -39,7 +39,7 @@ public:
     /// AddressItemId members
 
     /// <summary>
-    /// 地址组成员id
+    /// **参数解释**： 地址组成员ID **取值范围**： 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 地址组成员名称
+    /// **参数解释**： IP地址 **取值范围**： 不涉及
     /// </summary>
 
     std::string getName() const;

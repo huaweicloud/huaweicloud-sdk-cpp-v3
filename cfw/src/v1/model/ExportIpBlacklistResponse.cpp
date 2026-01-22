@@ -12,10 +12,11 @@ namespace Model {
 
 ExportIpBlacklistResponse::ExportIpBlacklistResponse()
 {
-    body_ = "";
     bodyIsSet_ = false;
     contentDisposition_ = "";
     contentDispositionIsSet_ = false;
+    contentLength_ = 0;
+    contentLengthIsSet_ = false;
     contentType_ = "";
     contentTypeIsSet_ = false;
 }
@@ -36,6 +37,9 @@ web::json::value ExportIpBlacklistResponse::toJson() const
     if(contentDispositionIsSet_) {
         val[utility::conversions::to_string_t("Content-Disposition")] = ModelBase::toJson(contentDisposition_);
     }
+    if(contentLengthIsSet_) {
+        val[utility::conversions::to_string_t("Content-Length")] = ModelBase::toJson(contentLength_);
+    }
     if(contentTypeIsSet_) {
         val[utility::conversions::to_string_t("Content-Type")] = ModelBase::toJson(contentType_);
     }
@@ -50,7 +54,7 @@ bool ExportIpBlacklistResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -62,6 +66,15 @@ bool ExportIpBlacklistResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setContentDisposition(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("Content-Length"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("Content-Length"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setContentLength(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("Content-Type"))) {
@@ -77,12 +90,12 @@ bool ExportIpBlacklistResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string ExportIpBlacklistResponse::getBody() const
+Object ExportIpBlacklistResponse::getBody() const
 {
     return body_;
 }
 
-void ExportIpBlacklistResponse::setBody(const std::string& value)
+void ExportIpBlacklistResponse::setBody(const Object& value)
 {
     body_ = value;
     bodyIsSet_ = true;
@@ -117,6 +130,27 @@ bool ExportIpBlacklistResponse::contentDispositionIsSet() const
 void ExportIpBlacklistResponse::unsetcontentDisposition()
 {
     contentDispositionIsSet_ = false;
+}
+
+int32_t ExportIpBlacklistResponse::getContentLength() const
+{
+    return contentLength_;
+}
+
+void ExportIpBlacklistResponse::setContentLength(int32_t value)
+{
+    contentLength_ = value;
+    contentLengthIsSet_ = true;
+}
+
+bool ExportIpBlacklistResponse::contentLengthIsSet() const
+{
+    return contentLengthIsSet_;
+}
+
+void ExportIpBlacklistResponse::unsetcontentLength()
+{
+    contentLengthIsSet_ = false;
 }
 
 std::string ExportIpBlacklistResponse::getContentType() const

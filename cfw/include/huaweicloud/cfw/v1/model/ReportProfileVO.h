@@ -84,7 +84,7 @@ public:
     void setReportId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 最新的报告的生成时间 **取值范围**： 不涉及
+    /// **参数解释**： 最新的报告的生成时间，毫秒级时间戳 **取值范围**： 不涉及
     /// </summary>
 
     int64_t getLastTime() const;

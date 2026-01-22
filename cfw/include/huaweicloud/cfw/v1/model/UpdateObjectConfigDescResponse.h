@@ -39,7 +39,7 @@ public:
     /// UpdateObjectConfigDescResponse members
 
     /// <summary>
-    /// 
+    /// 成员id
     /// </summary>
 
     Object getData() const;

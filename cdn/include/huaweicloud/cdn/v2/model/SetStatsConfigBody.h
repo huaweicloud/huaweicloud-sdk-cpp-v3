@@ -75,15 +75,6 @@ public:
     void unsetconfigInfo();
     void setConfigInfo(const Object& value);
 
-    /// <summary>
-    /// 统计配置失效时间，秒时间戳。不能超过当前时间点往后一年
-    /// </summary>
-
-    int64_t getExpiredTime() const;
-    bool expiredTimeIsSet() const;
-    void unsetexpiredTime();
-    void setExpiredTime(int64_t value);
-
 
 protected:
     int32_t configType_;
@@ -94,8 +85,6 @@ protected:
     bool resourceNameIsSet_;
     Object configInfo_;
     bool configInfoIsSet_;
-    int64_t expiredTime_;
-    bool expiredTimeIsSet_;
 
 };
 

@@ -84,7 +84,7 @@ public:
     void setParam(const std::string& value);
 
     /// <summary>
-    /// 开关状态：0表示关闭、1表示开启
+    /// 频率ips规则状态，0表示关闭，1表示打开
     /// </summary>
 
     int32_t getStatus() const;

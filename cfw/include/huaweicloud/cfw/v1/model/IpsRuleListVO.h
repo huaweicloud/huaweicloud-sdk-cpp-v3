@@ -41,7 +41,7 @@ public:
     /// IpsRuleListVO members
 
     /// <summary>
-    /// 
+    /// 防火墙ID
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -50,7 +50,7 @@ public:
     void setFwInstanceId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 每页显示个数，范围为1-1024
     /// </summary>
 
     int32_t getLimit() const;
@@ -59,7 +59,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 防护对象id
     /// </summary>
 
     std::string getObjectId() const;
@@ -68,7 +68,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
     /// </summary>
 
     int32_t getOffset() const;
@@ -77,7 +77,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 
+    /// 查询ips规则列表
     /// </summary>
 
     std::vector<IpsRuleVO>& getRecords();
@@ -86,7 +86,7 @@ public:
     void setRecords(const std::vector<IpsRuleVO>& value);
 
     /// <summary>
-    /// 
+    /// 查询ips规则总数
     /// </summary>
 
     int32_t getTotal() const;

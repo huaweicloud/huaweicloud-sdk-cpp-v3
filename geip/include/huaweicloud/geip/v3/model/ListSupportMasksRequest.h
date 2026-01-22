@@ -124,10 +124,10 @@ public:
     /// 
     /// </summary>
 
-    std::vector<int32_t>& getMask();
+    int32_t getMask() const;
     bool maskIsSet() const;
     void unsetmask();
-    void setMask(std::vector<int32_t> value);
+    void setMask(int32_t value);
 
 
 protected:
@@ -149,7 +149,7 @@ protected:
     bool idIsSet_;
     std::vector<int32_t> ipVersion_;
     bool ipVersionIsSet_;
-    std::vector<int32_t> mask_;
+    int32_t mask_;
     bool maskIsSet_;
 
 #ifdef RTTR_FLAG

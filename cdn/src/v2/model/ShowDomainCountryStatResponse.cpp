@@ -20,6 +20,7 @@ ShowDomainCountryStatResponse::ShowDomainCountryStatResponse()
     endTimeIsSet_ = false;
     statType_ = "";
     statTypeIsSet_ = false;
+    resultIsSet_ = false;
 }
 
 ShowDomainCountryStatResponse::~ShowDomainCountryStatResponse() = default;
@@ -43,6 +44,9 @@ web::json::value ShowDomainCountryStatResponse::toJson() const
     }
     if(statTypeIsSet_) {
         val[utility::conversions::to_string_t("stat_type")] = ModelBase::toJson(statType_);
+    }
+    if(resultIsSet_) {
+        val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
 
     return val;
@@ -85,6 +89,15 @@ bool ShowDomainCountryStatResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
+        if(!fieldValue.is_null())
+        {
+            std::map<std::string, Object> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResult(refVal);
         }
     }
     return ok;
@@ -173,6 +186,27 @@ bool ShowDomainCountryStatResponse::statTypeIsSet() const
 void ShowDomainCountryStatResponse::unsetstatType()
 {
     statTypeIsSet_ = false;
+}
+
+std::map<std::string, Object>& ShowDomainCountryStatResponse::getResult()
+{
+    return result_;
+}
+
+void ShowDomainCountryStatResponse::setResult(const std::map<std::string, Object>& value)
+{
+    result_ = value;
+    resultIsSet_ = true;
+}
+
+bool ShowDomainCountryStatResponse::resultIsSet() const
+{
+    return resultIsSet_;
+}
+
+void ShowDomainCountryStatResponse::unsetresult()
+{
+    resultIsSet_ = false;
 }
 
 }

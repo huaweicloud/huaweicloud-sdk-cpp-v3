@@ -25,6 +25,7 @@ ListSupportMasksRequest::ListSupportMasksRequest()
     sortDirIsSet_ = false;
     idIsSet_ = false;
     ipVersionIsSet_ = false;
+    mask_ = 0;
     maskIsSet_ = false;
 }
 
@@ -160,7 +161,7 @@ bool ListSupportMasksRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mask"));
         if(!fieldValue.is_null())
         {
-            std::vector<int32_t> refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMask(refVal);
         }
@@ -358,12 +359,12 @@ void ListSupportMasksRequest::unsetipVersion()
     ipVersionIsSet_ = false;
 }
 
-std::vector<int32_t>& ListSupportMasksRequest::getMask()
+int32_t ListSupportMasksRequest::getMask() const
 {
     return mask_;
 }
 
-void ListSupportMasksRequest::setMask(std::vector<int32_t> value)
+void ListSupportMasksRequest::setMask(int32_t value)
 {
     mask_ = value;
     maskIsSet_ = true;

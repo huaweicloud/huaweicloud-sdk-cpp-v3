@@ -39,7 +39,7 @@ public:
     /// DeleteFirewallResponse members
 
     /// <summary>
-    /// 删除防火墙时生成的任务的job_id
+    /// **参数解释**： 删除防火墙时生成的任务的job_id **约束限制**： 不涉及
     /// </summary>
 
     std::string getData() const;

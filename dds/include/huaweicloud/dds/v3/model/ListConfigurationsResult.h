@@ -39,7 +39,7 @@ public:
     /// ListConfigurationsResult members
 
     /// <summary>
-    /// 参数模板ID。
+    /// **参数解释：** 参数模板ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 参数模板名称。
+    /// **参数解释：** 参数模板名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getName() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 参数模板描述。
+    /// **参数解释：** 参数模板描述。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDescription() const;
@@ -66,7 +66,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 数据库版本。
+    /// **参数解释：** 数据库版本。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDatastoreVersion() const;
@@ -75,7 +75,7 @@ public:
     void setDatastoreVersion(const std::string& value);
 
     /// <summary>
-    /// 数据库类型。
+    /// **参数解释：** 数据库类型。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDatastoreName() const;
@@ -84,7 +84,7 @@ public:
     void setDatastoreName(const std::string& value);
 
     /// <summary>
-    /// 参数模板节点类型。 - mongos，表示集群mongos节点类型。 - shard，表示集群shard节点类型。 - config，表示集群config节点类型。 - replica，表示副本集类型。 - single，表示单节点类型。
+    /// **参数解释：** 参数模板节点类型。 **取值范围：** - mongos，表示集群mongos节点类型。 - shard，表示集群shard节点类型。 - config，表示集群config节点类型。 - replica，表示副本集类型。 - readonly，表示副本集只读节点类型。 - shard_readonly，表示集群只读节点类型。 - single，表示单节点类型。
     /// </summary>
 
     std::string getNodeType() const;
@@ -93,7 +93,7 @@ public:
     void setNodeType(const std::string& value);
 
     /// <summary>
-    /// 创建时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+    /// **参数解释：** 创建时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCreated() const;
@@ -102,7 +102,7 @@ public:
     void setCreated(const std::string& value);
 
     /// <summary>
-    /// 更新时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+    /// **参数解释：** 更新时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getUpdated() const;
@@ -111,7 +111,7 @@ public:
     void setUpdated(const std::string& value);
 
     /// <summary>
-    /// 是否是用户自定义参数模板。 - false表示为默认参数模板。 - true表示为用户自定义参数模板。
+    /// **参数解释：** 是否是用户自定义参数模板。 **取值范围：** - 取值为“false”，表示为系统默认参数模板。 - 取值为“true”，表示为用户自定义参数模板。
     /// </summary>
 
     bool isUserDefined() const;

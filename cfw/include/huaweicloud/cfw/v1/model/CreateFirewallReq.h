@@ -43,7 +43,7 @@ public:
     /// CreateFirewallReq members
 
     /// <summary>
-    /// 防火墙名称
+    /// **参数解释**： 防火墙名称 约束限制： 不涉及 **取值范围**： 不涉及 默认取值： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -52,7 +52,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
+    /// **参数解释**： 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取 约束限制： 不涉及 **取值范围**： 不涉及 默认取值： 0
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -61,7 +61,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 服务资源标签列表，防火墙资源添加标签后，可根据键、值组合查询资源，同时可根据键、值组合进行话单合并统计。
+    /// **参数解释**： 服务资源标签列表，防火墙资源添加标签后，可根据键、值组合查询资源，同时可根据键、值组合进行话单合并统计 **约束限制**： 不涉及
     /// </summary>
 
     std::vector<CreateFirewallReq_tags>& getTags();

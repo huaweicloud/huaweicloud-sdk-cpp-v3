@@ -49,7 +49,7 @@ public:
     void setJobs(const std::vector<JobInfo>& value);
 
     /// <summary>
-    /// 任务列表总数
+    /// 任务列表总数。
     /// </summary>
 
     int32_t getTotalCount() const;

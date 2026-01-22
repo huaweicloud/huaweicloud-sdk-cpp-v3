@@ -39,7 +39,7 @@ public:
     /// ListFlowLogsRequest members
 
     /// <summary>
-    /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+    /// 防火墙ID，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -57,7 +57,7 @@ public:
     void setDirection(const std::string& value);
 
     /// <summary>
-    /// 日志类型包括：internet，vpc，nat
+    /// **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
     /// </summary>
 
     std::string getLogType() const;
@@ -120,7 +120,7 @@ public:
     void setDstPort(int32_t value);
 
     /// <summary>
-    /// 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
+    /// 协议类型，包含TCP, UDP，ICMP，ICMPV6等。
     /// </summary>
 
     std::string getProtocol() const;
@@ -129,7 +129,7 @@ public:
     void setProtocol(const std::string& value);
 
     /// <summary>
-    /// 规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
+    /// 规则应用类型包括：“HTTP”，“HTTPS“，“TLS1“，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
     /// </summary>
 
     std::string getApp() const;

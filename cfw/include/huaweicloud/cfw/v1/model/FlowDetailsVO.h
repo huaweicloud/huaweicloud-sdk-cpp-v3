@@ -86,6 +86,24 @@ public:
     void setLastTime(int64_t value);
 
     /// <summary>
+    /// **参数解释**： 聚合开始时间 **取值范围**： 不涉及
+    /// </summary>
+
+    int64_t getAggStartTime() const;
+    bool aggStartTimeIsSet() const;
+    void unsetaggStartTime();
+    void setAggStartTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**： 聚合结束时间 **取值范围**： 不涉及
+    /// </summary>
+
+    int64_t getAggEndTime() const;
+    bool aggEndTimeIsSet() const;
+    void unsetaggEndTime();
+    void setAggEndTime(int64_t value);
+
+    /// <summary>
     /// **参数解释**： 端口统计 **取值范围**： 不涉及
     /// </summary>
 
@@ -178,6 +196,10 @@ protected:
     bool itemIsSet_;
     int64_t lastTime_;
     bool lastTimeIsSet_;
+    int64_t aggStartTime_;
+    bool aggStartTimeIsSet_;
+    int64_t aggEndTime_;
+    bool aggEndTimeIsSet_;
     std::vector<ItemVO> ports_;
     bool portsIsSet_;
     std::string region_;

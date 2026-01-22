@@ -111,7 +111,7 @@ public:
     void setDeviceOwner(const std::string& value);
 
     /// <summary>
-    /// 关联实例类型，包括：NATGW，ELB，PORT等。
+    /// **参数解释**： 关联实例类型 **约束限制**： 不涉及 **取值范围**： PORT：IPV4云服务器 NATGW：NAT网关 ELB： 负载均衡器 VPN： 虚拟专用网络 EVPN： 虚拟专用网络 IPV6_PORT：IPV6云服务器 **默认取值**： 不涉及
     /// </summary>
 
     std::string getAssociateInstanceType() const;
@@ -147,7 +147,7 @@ public:
     void setFwEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
+    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
     /// </summary>
 
     std::string getObjectId() const;
@@ -181,6 +181,15 @@ public:
     bool fwDomainIdIsSet() const;
     void unsetfwDomainId();
     void setFwDomainId(const std::string& value);
+
+    /// <summary>
+    /// bypass状态，0: 未bypass, 1: 已bypass, 2: 失败
+    /// </summary>
+
+    int32_t getBypassStatus() const;
+    bool bypassStatusIsSet() const;
+    void unsetbypassStatus();
+    void setBypassStatus(int32_t value);
 
 
 protected:
@@ -216,6 +225,8 @@ protected:
     bool domainIdIsSet_;
     std::string fwDomainId_;
     bool fwDomainIdIsSet_;
+    int32_t bypassStatus_;
+    bool bypassStatusIsSet_;
 
 };
 

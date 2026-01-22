@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -160,10 +159,10 @@ public:
     /// **参数解释**： 目的地区ID **取值范围**： 不涉及
     /// </summary>
 
-    Object getDstRegionId() const;
+    std::string getDstRegionId() const;
     bool dstRegionIdIsSet() const;
     void unsetdstRegionId();
-    void setDstRegionId(const Object& value);
+    void setDstRegionId(const std::string& value);
 
     /// <summary>
     /// **参数解释**： 目的地区名称 **取值范围**： 不涉及
@@ -526,7 +525,7 @@ protected:
     bool srcPortIsSet_;
     int64_t startTime_;
     bool startTimeIsSet_;
-    Object dstRegionId_;
+    std::string dstRegionId_;
     bool dstRegionIdIsSet_;
     std::string dstRegionName_;
     bool dstRegionNameIsSet_;

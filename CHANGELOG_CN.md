@@ -1,3 +1,223 @@
+# 3.1.171 2026-01-22
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainCountryStat**
+    - 响应参数变更
+      - `+ result`
+  - **SetStatsConfig**
+    - 请求参数变更
+      - `- expired_time`
+  - **ShowStatsConfigs**
+    - 响应参数变更
+      - `- data.expired_time`
+
+### HuaweiCloud SDK CFW
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ImportRuleAcl`
+    - `ExportRuleAcl`
+    - `DownloadImportTemplate`
+    - `DownloadExportResult`
+    - `ShowExportStatus`
+    - `DownloadImportResult`
+    - `ListAclRuleHitStatus`
+    - `BatchDeleteAddressSets`
+    - `AddCustomDnsServer`
+    - `ListDomainResolveIp`
+    - `SwitchFirewallEipProtection`
+    - `AddEipAlarmWhitelist`
+    - `ListPrivateNetworkSegments`
+    - `UpdatePrivateNetworkSegment`
+    - `BatchCreatePrivateNetworkSegments`
+    - `BatchDeletePrivateNetworkSegments`
+    - `UpdateFirewallName`
+    - `ShowConfigQuota`
+    - `ShowSnFirewallProtectionStatus`
+    - `BatchDeleteCustomerIps`
+    - `BatchUpdateCustomerIpsAction`
+    - `UpdateIpsWhitelist`
+    - `ListIpsWhitelists`
+    - `BatchCreateIpsWhitelist`
+    - `BatchDeleteIpsWhitelist`
+    - `BatchRemoveAccounts`
+    - `ListSchedules`
+    - `CreateSchedule`
+    - `UpdateSchedule`
+    - `DeleteSchedule`
+    - `BatchDeleteSchedules`
+    - `ListReportHistory`
+    - `BatchDeleteServiceSets`
+    - `BatchCreateBlackWhiteList`
+    - `BatchDeleteBlackWhiteLists`
+    - `CreateCustomerIps`
+    - `BatchAddAccounts`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteAddressItem**
+    - 响应参数变更
+      - `+ data`
+  - **ListBlackWhiteLists**
+    - 响应参数变更
+      - `+ data.records.created_date`
+      - `+ data.records.modified_date`
+  - **UpdateObjectConfigDesc**
+    - 请求参数变更
+      - `* body: object<ObjectInfoDto> -> object<UpdateObjectConfigDesc>`
+  - **ListRegions**
+    - 响应参数变更
+      - `* data: object -> list<IpRegionResponseBodyData>`
+  - **ShowImportStatus**
+    - 响应参数变更
+      - `+ data.id`
+      - `+ data.status`
+      - `* data: object -> object<ShowImportStatusId>`
+  - **ListLogs**
+    - 响应参数变更
+      - `* data.records.dst_region_id: object -> string`
+  - **ListDnsServers**
+    - 响应参数变更
+      - `+ data.status`
+  - **CreateFirewall**
+    - 请求参数变更
+      - `- X-Client-Token`
+  - **ListAlarmWhitelist**
+    - 响应参数变更
+      - `- data.endRow`
+      - `- data.hasNextPage`
+      - `- data.hasPreviousPage`
+      - `- data.isFirstPage`
+      - `- data.isLastPage`
+      - `- data.navigateFirstPage`
+      - `- data.navigateLastPage`
+      - `- data.navigatePages`
+      - `- data.navigatepageNums`
+      - `- data.nextPage`
+      - `- data.pageNum`
+      - `- data.pageSize`
+      - `- data.prePage`
+      - `- data.startRow`
+      - `- data.total`
+      - `+ data.list.eip_id`
+      - `+ data.list.fw_instance_id`
+      - `+ data.list.object_id`
+      - `+ data.list.public_ip`
+      - `+ data.list.public_ipv6`
+      - `+ data.list.type`
+      - `* data.list: list<object> -> list<EipInfo>`
+      - `* data: object<PageInfo> -> object<HttpListAlarmWhiteListResponseData>`
+  - **ListCustomerIps**
+    - 请求参数变更
+      - `* object_id: required -> optional`
+  - **ShowCustomerIpsInfo**
+    - 请求参数变更
+      - `* object_id: required -> optional`
+  - **ListFlowStatistic**
+    - 响应参数变更
+      - `+ data.records.agg_start_time`
+      - `+ data.records.agg_end_time`
+  - **ListAclRules**
+    - 响应参数变更
+      - `+ data.up_rules_count`
+      - `+ data.records.modified_date`
+  - **ListEips**
+    - 响应参数变更
+      - `+ data.records.bypass_status`
+  - **ShowAntiVirusRule**
+    - 请求参数变更
+      - `* engine_type: required -> optional`
+  - **DeleteIpBlacklist**
+    - 响应参数变更
+      - `- data`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateEntityConfiguration**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListTasks**
+    - 请求参数变更
+      - `+ id`
+
+### HuaweiCloud SDK EIP
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ShowPublicipPoolTypes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GEIP
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CountGlobalEipSegment**
+    - 请求参数变更
+      - `- limit`
+      - `- offset`
+      - `- marker`
+      - `- page_reverse`
+  - **ListSupportMasks**
+    - 请求参数变更
+      - `* mask: list<integer> -> int32`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ShowCertificateInfo`
+    - `ShowDomainVerification`
+    - `CheckDomainVerification`
+    - `ListPullTasks`
+    - `ModifyPullTask`
+    - `CreatePullTask`
+    - `DeletePullTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListBandwidthDetail**
+    - 请求参数变更
+      - `+ ip_type`
+
 # 3.1.170 2026-01-15
 
 ### HuaweiCloud SDK CDN

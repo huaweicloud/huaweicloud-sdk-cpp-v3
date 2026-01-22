@@ -39,7 +39,7 @@ public:
     /// DomainInfo members
 
     /// <summary>
-    /// 域名地址id
+    /// **参数解释**： 域名地址id **取值范围**： 不涉及
     /// </summary>
 
     std::string getDomainAddressId() const;
@@ -48,7 +48,7 @@ public:
     void setDomainAddressId(const std::string& value);
 
     /// <summary>
-    /// 域名，如www.test.com
+    /// **参数解释**： 域名 **取值范围**： 不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -57,7 +57,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 域名描述
+    /// **参数解释**： 域名描述 **取值范围**： 不涉及
     /// </summary>
 
     std::string getDescription() const;

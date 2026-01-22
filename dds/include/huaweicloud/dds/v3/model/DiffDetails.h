@@ -39,7 +39,7 @@ public:
     /// DiffDetails members
 
     /// <summary>
-    /// 参数名称
+    /// **参数解释：** 参数名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getParameterName() const;
@@ -48,7 +48,7 @@ public:
     void setParameterName(const std::string& value);
 
     /// <summary>
-    /// 比较参数模板的参数值。
+    /// **参数解释：** 源参数模板中的参数值。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getSourceValue() const;
@@ -57,7 +57,7 @@ public:
     void setSourceValue(const std::string& value);
 
     /// <summary>
-    /// 目标参数模板的参数值。
+    /// **参数解释：** 目标参数模板中的参数值。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getTargetValue() const;

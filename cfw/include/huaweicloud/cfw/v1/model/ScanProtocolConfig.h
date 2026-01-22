@@ -47,7 +47,7 @@ public:
     void setAction(int32_t value);
 
     /// <summary>
-    /// 协议类型
+    /// 协议类型，包括0：HTTP、1：SMTP、2： POP3、3：IMAP4、4：FTP、5：SMB、6：恶意访问、7：IM
     /// </summary>
 
     int32_t getProtocolType() const;

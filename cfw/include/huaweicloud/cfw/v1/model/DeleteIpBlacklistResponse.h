@@ -42,15 +42,15 @@ public:
     /// 
     /// </summary>
 
-    Object getData() const;
-    bool dataIsSet() const;
-    void unsetdata();
-    void setData(const Object& value);
+    Object getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const Object& value);
 
 
 protected:
-    Object data_;
-    bool dataIsSet_;
+    Object body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

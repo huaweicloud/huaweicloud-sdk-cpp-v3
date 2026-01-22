@@ -40,7 +40,7 @@ public:
     /// ListAppliedInstancesResponse members
 
     /// <summary>
-    /// 可以应用的实例列表。
+    /// **参数解释：** 可以应用的实例列表。 **取值范围：** 不涉及。
     /// </summary>
 
     std::vector<ApplicableInstancesInfo>& getInstances();

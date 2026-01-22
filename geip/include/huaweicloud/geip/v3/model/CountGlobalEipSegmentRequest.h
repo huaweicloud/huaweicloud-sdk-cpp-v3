@@ -40,42 +40,6 @@ public:
     /// CountGlobalEipSegmentRequest members
 
     /// <summary>
-    /// 每页条数
-    /// </summary>
-
-    int32_t getLimit() const;
-    bool limitIsSet() const;
-    void unsetlimit();
-    void setLimit(int32_t value);
-
-    /// <summary>
-    /// 分页起始点
-    /// </summary>
-
-    int32_t getOffset() const;
-    bool offsetIsSet() const;
-    void unsetoffset();
-    void setOffset(int32_t value);
-
-    /// <summary>
-    /// 分页起始点
-    /// </summary>
-
-    std::string getMarker() const;
-    bool markerIsSet() const;
-    void unsetmarker();
-    void setMarker(const std::string& value);
-
-    /// <summary>
-    /// 翻页方向
-    /// </summary>
-
-    bool isPageReverse() const;
-    bool pageReverseIsSet() const;
-    void unsetpageReverse();
-    void setPageReverse(bool value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -275,14 +239,6 @@ public:
 
 
 protected:
-    int32_t limit_;
-    bool limitIsSet_;
-    int32_t offset_;
-    bool offsetIsSet_;
-    std::string marker_;
-    bool markerIsSet_;
-    bool pageReverse_;
-    bool pageReverseIsSet_;
     std::vector<std::string> fields_;
     bool fieldsIsSet_;
     std::vector<std::string> id_;

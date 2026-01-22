@@ -23,7 +23,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 规则地址dto
+/// **参数解释**： 规则地址dto **约束限制**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  RuleAddressDto
     : public ModelBase
@@ -42,7 +42,7 @@ public:
     /// RuleAddressDto members
 
     /// <summary>
-    /// 地址类型0手工输入，1关联IP地址组，2域名，3地理位置，4域名组，5多对象，6域名组-网络型，7域名组-应用型。
+    /// **参数解释**： 地址输入类型，用于区分不同的输入类型 **约束限制**： 当规则type&#x3D;0（互联网规则）或者type&#x3D; 2（NAT规则）时方向值（direction）必填 **取值范围**： 0手动输入，1关联IP地址组，2域名，3地理位置，4域名组-应用型，5多对象，6域名组-网络型，7域名-应用型。 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getType() const;
@@ -51,7 +51,7 @@ public:
     void setType(int32_t value);
 
     /// <summary>
-    /// 地址类型0 ipv4，1 ipv6，当type为0手动输入类型时不能为空
+    /// **参数解释**： IP地址互联网协议类型，用于区分不同互联网协议 **约束限制**： 当type为0手动输入时，此处不能为空 **取值范围**： 地址类型0 IPv4，1 IPv6。 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getAddressType() const;
@@ -60,7 +60,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// IP地址信息，当type为0手动输入类型时不能为空
+    /// **参数解释**： IP地址信息，用于明确规则IP地址 **约束限制**： 当type为0手动输入时，此处不能为空 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getAddress() const;
@@ -69,7 +69,7 @@ public:
     void setAddress(const std::string& value);
 
     /// <summary>
-    /// 关联IP地址组ID，当type为1关联IP地址组类型时不能为空，可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
+    /// **参数解释**： 关联IP地址组ID，用于明确规则IP地址组id，可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。 **约束限制**： 当type为1关联IP地址组时，此处不能为空 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getAddressSetId() const;
@@ -78,7 +78,7 @@ public:
     void setAddressSetId(const std::string& value);
 
     /// <summary>
-    /// 关联IP地址组名称，当type为1关联IP地址组类型时不能为空，可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.name（.表示各对象之间层级的区分）获得。
+    /// **参数解释**： 关联IP地址组名称，用于明确规则IP地址组名称，可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.name（.表示各对象之间层级的区分）获得。 **约束限制**： 当type为1关联IP地址组时，此处不能为空 **取值范围**： 不涉及 **默认取值**： 不涉及。
     /// </summary>
 
     std::string getAddressSetName() const;
@@ -87,7 +87,7 @@ public:
     void setAddressSetName(const std::string& value);
 
     /// <summary>
-    /// type为2（域名）和7（应用域名组）具体内容根据type中7修改后的类型名称
+    /// **参数解释**： 域名名称或引用域名组名称，用于明确规则引用域名或域名组名称 **约束限制**： 当type为2或7时不能为空，长度为0-255 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDomainAddressName() const;
@@ -96,7 +96,7 @@ public:
     void setDomainAddressName(const std::string& value);
 
     /// <summary>
-    /// 规则地域列表json值
+    /// **参数解释**： 规则地域列表json值，用于明确规则引用地域名称列表 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getRegionListJson() const;
@@ -105,7 +105,7 @@ public:
     void setRegionListJson(const std::string& value);
 
     /// <summary>
-    /// 规则地域列表
+    /// **参数解释**： 规则地域列表传输值 **约束限制**： 不涉及
     /// </summary>
 
     std::vector<IpRegionDto>& getRegionList();
@@ -114,7 +114,7 @@ public:
     void setRegionList(const std::vector<IpRegionDto>& value);
 
     /// <summary>
-    /// 域名组id，type为4（域名组）或7（域名组-应用型）时不能为空。可通过[查询域名组列表接口](ListDomainSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
+    /// **参数解释**： 域名组id，用于明确规则引用域名组。可通过[查询域名组列表接口](ListDomainSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。 **约束限制**： type为4（应用型域名组）或6（网络域名组）时不能为空。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDomainSetId() const;
@@ -123,7 +123,7 @@ public:
     void setDomainSetId(const std::string& value);
 
     /// <summary>
-    /// 域名组名称，type为4（域名组）或7（域名组-应用型）时不能为空。可通过[查询域名组列表接口](ListDomainSets.xml)查询获得，通过返回值中的data.records.name（.表示各对象之间层级的区分）获得。
+    /// **参数解释**： 域名组名称，用于明确规则引用域名组。可通过[查询域名组列表接口](ListDomainSets.xml)查询获得，通过返回值中的data.records.name（.表示各对象之间层级的区分）获得。 **约束限制**： type为4（应用型域名组）或6（网络域名组）时不能为空。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDomainSetName() const;
@@ -132,7 +132,7 @@ public:
     void setDomainSetName(const std::string& value);
 
     /// <summary>
-    /// IP地址列表，当type为5（多对象）时不能为空。
+    /// **参数解释**： IP地址列表，用于明确规则引用IP地址列表。 **约束限制**： 当type为5（多对象）时不能为空。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getIpAddress();
@@ -141,7 +141,7 @@ public:
     void setIpAddress(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 地址组id列表，当type为5（多对象）时不能为空。地址组id可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。查询条件中query_address_set_type需要设置为0自定义地址组。
+    /// **参数解释**： 地址组ID列表，用于明确规则引用地址组id列表。地址组id可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。查询条件中query_address_set_type需要设置为0自定义地址组。 **约束限制**： 当type为5（多对象）时不能为空。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getAddressGroup();
@@ -150,7 +150,7 @@ public:
     void setAddressGroup(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 地址组名称列表
+    /// **参数解释**： 地址组名称列表 **约束限制**： 不涉及
     /// </summary>
 
     std::vector<AddressGroupVO>& getAddressGroupNames();
@@ -159,7 +159,7 @@ public:
     void setAddressGroupNames(const std::vector<AddressGroupVO>& value);
 
     /// <summary>
-    /// 地址组类型，当type为1（关联IP地址组）时不能为空。0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
+    /// **参数解释**： 地址组类型，用于明确规则引用地址组类型。 **约束限制**： 当address的type为1（关联IP地址组）时，此处不能为空。 **取值范围**： 0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getAddressSetType() const;
@@ -168,7 +168,7 @@ public:
     void setAddressSetType(int32_t value);
 
     /// <summary>
-    /// 预定义地址组id列表，当type为5（多对象）时不能为空。地址组id可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。查询条件中query_address_set_type需要设置为1预定义地址组。
+    /// **参数解释**： 预定义地址组id列表，用于明确规则引用预定义地址组id列表。地址组id可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。查询条件中query_address_set_type需要设置为1预定义地址组。 **约束限制**： 当type为5（多对象）时不能为空。 **取值范围**： 0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getPredefinedGroup();

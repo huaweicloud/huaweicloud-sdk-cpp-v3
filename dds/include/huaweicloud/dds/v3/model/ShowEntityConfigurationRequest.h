@@ -39,7 +39,7 @@ public:
     /// ShowEntityConfigurationRequest members
 
     /// <summary>
-    /// 实例ID。
+    /// 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。
     /// </summary>
 
     std::string getInstanceId() const;

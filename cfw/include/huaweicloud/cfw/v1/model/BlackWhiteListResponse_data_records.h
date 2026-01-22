@@ -57,7 +57,7 @@ public:
     void setDirection(int32_t value);
 
     /// <summary>
-    /// ip地址类型0：ipv4，1:ipv6
+    /// IP地址类型0：ipv4，1:ipv6
     /// </summary>
 
     int32_t getAddressType() const;
@@ -66,7 +66,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// ip地址
+    /// IP地址
     /// </summary>
 
     std::string getAddress() const;
@@ -101,6 +101,24 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
+    /// <summary>
+    /// |- **参数解释**： 黑白名单创建时间。 **取值范围**： 不涉及 
+    /// </summary>
+
+    std::string getCreatedDate() const;
+    bool createdDateIsSet() const;
+    void unsetcreatedDate();
+    void setCreatedDate(const std::string& value);
+
+    /// <summary>
+    /// |- **参数解释**： 黑白名单修改时间。 **取值范围**： 不涉及 
+    /// </summary>
+
+    std::string getModifiedDate() const;
+    bool modifiedDateIsSet() const;
+    void unsetmodifiedDate();
+    void setModifiedDate(const std::string& value);
+
 
 protected:
     std::string listId_;
@@ -117,6 +135,10 @@ protected:
     bool portIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    std::string createdDate_;
+    bool createdDateIsSet_;
+    std::string modifiedDate_;
+    bool modifiedDateIsSet_;
 
 };
 

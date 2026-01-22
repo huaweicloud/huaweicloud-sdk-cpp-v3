@@ -40,7 +40,7 @@ public:
     /// HttpGetAclTagResponseData members
 
     /// <summary>
-    /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+    /// **参数解释**： 偏移量：指定返回记录的开始位置 **取值范围**： 大于或等于0
     /// </summary>
 
     int32_t getOffset() const;
@@ -49,7 +49,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 每页显示个数，范围为1-1024
+    /// **参数解释**： 每页显示个数 **取值范围**： 1-1024
     /// </summary>
 
     int32_t getLimit() const;
@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 规则标签总数
+    /// **参数解释**： 规则标签总数 **取值范围**： 大于0
     /// </summary>
 
     int32_t getTotal() const;
@@ -67,7 +67,7 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 规则标签列表
+    /// **参数解释**： 规则标签列表
     /// </summary>
 
     std::vector<TagsVO>& getRecords();

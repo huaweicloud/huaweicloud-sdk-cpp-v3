@@ -2723,6 +2723,9 @@ std::shared_ptr<ListTasksResponse> DdsClient::listTasks(ListTasksRequest &reques
     if (request.statusIsSet()) {
         localVarQueryParams["status"] = parameterToString(request.getStatus());
     }
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
     if (request.nameIsSet()) {
         localVarQueryParams["name"] = parameterToString(request.getName());
     }

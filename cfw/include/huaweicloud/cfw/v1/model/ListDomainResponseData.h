@@ -41,7 +41,7 @@ public:
     /// ListDomainResponseData members
 
     /// <summary>
-    /// 每页显示个数，范围为1-1024
+    /// **参数解释**： 每页显示个数 **取值范围**： 1-1024
     /// </summary>
 
     int32_t getLimit() const;
@@ -50,7 +50,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+    /// **参数解释**： 偏移量：指定返回记录的开始位置 **取值范围**： 大于或等于0
     /// </summary>
 
     int32_t getOffset() const;
@@ -59,7 +59,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 项目ID
+    /// **参数解释**： 项目ID **取值范围**： 不涉及
     /// </summary>
 
     std::string getProjectId() const;
@@ -68,7 +68,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 域名信息列表
+    /// **参数解释**： 域名信息列表 **取值范围**： 不涉及
     /// </summary>
 
     std::vector<DomainInfo>& getRecords();
@@ -77,7 +77,7 @@ public:
     void setRecords(const std::vector<DomainInfo>& value);
 
     /// <summary>
-    /// 域名组id
+    /// **参数解释**： 域名组id **取值范围**： 不涉及
     /// </summary>
 
     std::string getSetId() const;
@@ -86,7 +86,7 @@ public:
     void setSetId(const std::string& value);
 
     /// <summary>
-    /// 域名总数
+    /// **参数解释**： 域名总数 **取值范围**： 不涉及
     /// </summary>
 
     int32_t getTotal() const;

@@ -21,6 +21,10 @@ FlowDetailsVO::FlowDetailsVO()
     itemIsSet_ = false;
     lastTime_ = 0L;
     lastTimeIsSet_ = false;
+    aggStartTime_ = 0L;
+    aggStartTimeIsSet_ = false;
+    aggEndTime_ = 0L;
+    aggEndTimeIsSet_ = false;
     portsIsSet_ = false;
     region_ = "";
     regionIsSet_ = false;
@@ -62,6 +66,12 @@ web::json::value FlowDetailsVO::toJson() const
     }
     if(lastTimeIsSet_) {
         val[utility::conversions::to_string_t("last_time")] = ModelBase::toJson(lastTime_);
+    }
+    if(aggStartTimeIsSet_) {
+        val[utility::conversions::to_string_t("agg_start_time")] = ModelBase::toJson(aggStartTime_);
+    }
+    if(aggEndTimeIsSet_) {
+        val[utility::conversions::to_string_t("agg_end_time")] = ModelBase::toJson(aggEndTime_);
     }
     if(portsIsSet_) {
         val[utility::conversions::to_string_t("ports")] = ModelBase::toJson(ports_);
@@ -140,6 +150,24 @@ bool FlowDetailsVO::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLastTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agg_start_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agg_start_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAggStartTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agg_end_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agg_end_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAggEndTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ports"))) {
@@ -330,6 +358,48 @@ bool FlowDetailsVO::lastTimeIsSet() const
 void FlowDetailsVO::unsetlastTime()
 {
     lastTimeIsSet_ = false;
+}
+
+int64_t FlowDetailsVO::getAggStartTime() const
+{
+    return aggStartTime_;
+}
+
+void FlowDetailsVO::setAggStartTime(int64_t value)
+{
+    aggStartTime_ = value;
+    aggStartTimeIsSet_ = true;
+}
+
+bool FlowDetailsVO::aggStartTimeIsSet() const
+{
+    return aggStartTimeIsSet_;
+}
+
+void FlowDetailsVO::unsetaggStartTime()
+{
+    aggStartTimeIsSet_ = false;
+}
+
+int64_t FlowDetailsVO::getAggEndTime() const
+{
+    return aggEndTime_;
+}
+
+void FlowDetailsVO::setAggEndTime(int64_t value)
+{
+    aggEndTime_ = value;
+    aggEndTimeIsSet_ = true;
+}
+
+bool FlowDetailsVO::aggEndTimeIsSet() const
+{
+    return aggEndTimeIsSet_;
+}
+
+void FlowDetailsVO::unsetaggEndTime()
+{
+    aggEndTimeIsSet_ = false;
 }
 
 std::vector<ItemVO>& FlowDetailsVO::getPorts()

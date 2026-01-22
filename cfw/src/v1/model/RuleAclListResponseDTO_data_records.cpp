@@ -14,13 +14,13 @@ RuleAclListResponseDTO_data_records::RuleAclListResponseDTO_data_records()
 {
     ruleId_ = "";
     ruleIdIsSet_ = false;
+    orderId_ = 0;
+    orderIdIsSet_ = false;
     applicationsIsSet_ = false;
     addressType_ = 0;
     addressTypeIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    orderId_ = 0;
-    orderIdIsSet_ = false;
     direction_ = 0;
     directionIsSet_ = false;
     actionType_ = 0;
@@ -46,6 +46,8 @@ RuleAclListResponseDTO_data_records::RuleAclListResponseDTO_data_records()
     typeIsSet_ = false;
     createdDate_ = "";
     createdDateIsSet_ = false;
+    modifiedDate_ = "";
+    modifiedDateIsSet_ = false;
     lastOpenTime_ = "";
     lastOpenTimeIsSet_ = false;
     tagIsSet_ = false;
@@ -64,6 +66,9 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     if(ruleIdIsSet_) {
         val[utility::conversions::to_string_t("rule_id")] = ModelBase::toJson(ruleId_);
     }
+    if(orderIdIsSet_) {
+        val[utility::conversions::to_string_t("order_id")] = ModelBase::toJson(orderId_);
+    }
     if(applicationsIsSet_) {
         val[utility::conversions::to_string_t("applications")] = ModelBase::toJson(applications_);
     }
@@ -72,9 +77,6 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
-    }
-    if(orderIdIsSet_) {
-        val[utility::conversions::to_string_t("order_id")] = ModelBase::toJson(orderId_);
     }
     if(directionIsSet_) {
         val[utility::conversions::to_string_t("direction")] = ModelBase::toJson(direction_);
@@ -118,6 +120,9 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     if(createdDateIsSet_) {
         val[utility::conversions::to_string_t("created_date")] = ModelBase::toJson(createdDate_);
     }
+    if(modifiedDateIsSet_) {
+        val[utility::conversions::to_string_t("modified_date")] = ModelBase::toJson(modifiedDate_);
+    }
     if(lastOpenTimeIsSet_) {
         val[utility::conversions::to_string_t("last_open_time")] = ModelBase::toJson(lastOpenTime_);
     }
@@ -138,6 +143,15 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRuleId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("order_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("order_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOrderId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("applications"))) {
@@ -165,15 +179,6 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("order_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("order_id"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOrderId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("direction"))) {
@@ -302,6 +307,15 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             setCreatedDate(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("modified_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("modified_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setModifiedDate(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("last_open_time"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_open_time"));
         if(!fieldValue.is_null())
@@ -343,6 +357,27 @@ bool RuleAclListResponseDTO_data_records::ruleIdIsSet() const
 void RuleAclListResponseDTO_data_records::unsetruleId()
 {
     ruleIdIsSet_ = false;
+}
+
+int32_t RuleAclListResponseDTO_data_records::getOrderId() const
+{
+    return orderId_;
+}
+
+void RuleAclListResponseDTO_data_records::setOrderId(int32_t value)
+{
+    orderId_ = value;
+    orderIdIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::orderIdIsSet() const
+{
+    return orderIdIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsetorderId()
+{
+    orderIdIsSet_ = false;
 }
 
 std::vector<std::string>& RuleAclListResponseDTO_data_records::getApplications()
@@ -406,27 +441,6 @@ bool RuleAclListResponseDTO_data_records::nameIsSet() const
 void RuleAclListResponseDTO_data_records::unsetname()
 {
     nameIsSet_ = false;
-}
-
-int32_t RuleAclListResponseDTO_data_records::getOrderId() const
-{
-    return orderId_;
-}
-
-void RuleAclListResponseDTO_data_records::setOrderId(int32_t value)
-{
-    orderId_ = value;
-    orderIdIsSet_ = true;
-}
-
-bool RuleAclListResponseDTO_data_records::orderIdIsSet() const
-{
-    return orderIdIsSet_;
-}
-
-void RuleAclListResponseDTO_data_records::unsetorderId()
-{
-    orderIdIsSet_ = false;
 }
 
 int32_t RuleAclListResponseDTO_data_records::getDirection() const
@@ -721,6 +735,27 @@ bool RuleAclListResponseDTO_data_records::createdDateIsSet() const
 void RuleAclListResponseDTO_data_records::unsetcreatedDate()
 {
     createdDateIsSet_ = false;
+}
+
+std::string RuleAclListResponseDTO_data_records::getModifiedDate() const
+{
+    return modifiedDate_;
+}
+
+void RuleAclListResponseDTO_data_records::setModifiedDate(const std::string& value)
+{
+    modifiedDate_ = value;
+    modifiedDateIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::modifiedDateIsSet() const
+{
+    return modifiedDateIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsetmodifiedDate()
+{
+    modifiedDateIsSet_ = false;
 }
 
 std::string RuleAclListResponseDTO_data_records::getLastOpenTime() const

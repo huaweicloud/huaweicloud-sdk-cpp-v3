@@ -39,7 +39,7 @@ public:
     /// UseRuleVO members
 
     /// <summary>
-    /// 规则id
+    /// 规则ID
     /// </summary>
 
     std::string getId() const;

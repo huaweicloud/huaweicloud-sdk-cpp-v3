@@ -38,6 +38,7 @@ LogVO::LogVO()
     srcPortIsSet_ = false;
     startTime_ = 0L;
     startTimeIsSet_ = false;
+    dstRegionId_ = "";
     dstRegionIdIsSet_ = false;
     dstRegionName_ = "";
     dstRegionNameIsSet_ = false;
@@ -406,7 +407,7 @@ bool LogVO::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_region_id"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDstRegionId(refVal);
         }
@@ -1021,12 +1022,12 @@ void LogVO::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-Object LogVO::getDstRegionId() const
+std::string LogVO::getDstRegionId() const
 {
     return dstRegionId_;
 }
 
-void LogVO::setDstRegionId(const Object& value)
+void LogVO::setDstRegionId(const std::string& value)
 {
     dstRegionId_ = value;
     dstRegionIdIsSet_ = true;

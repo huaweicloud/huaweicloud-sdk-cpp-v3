@@ -40,7 +40,7 @@ public:
     /// FirewallInstanceVO members
 
     /// <summary>
-    /// 防火墙实例id，创建云防火墙后用于标记防火墙由系统自动生成的id。
+    /// **参数解释**： 防火墙实例id，创建云防火墙后用于标记防火墙由系统自动生成的id。 **约束限制**： 不涉及
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -49,7 +49,7 @@ public:
     void setFwInstanceId(const std::string& value);
 
     /// <summary>
-    /// 资源id，与防火墙实例id fw_instance_id相同
+    /// **参数解释**： 资源id，与防火墙实例id fw_instance_id相同。 **约束限制**： 不涉及
     /// </summary>
 
     std::string getResourceId() const;
@@ -58,7 +58,7 @@ public:
     void setResourceId(const std::string& value);
 
     /// <summary>
-    /// 创建防火墙时的时间戳
+    /// **参数解释**： 创建防火墙时的时间戳 **约束限制**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -67,7 +67,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 防火墙名称
+    /// **参数解释**： 防火墙名称 **约束限制**： 不涉及
     /// </summary>
 
     std::string getFwInstanceName() const;
@@ -76,7 +76,7 @@ public:
     void setFwInstanceName(const std::string& value);
 
     /// <summary>
-    /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+    /// **参数解释**： 企业项目id，用户支持企业项目后，由企业项目生成的id。 **约束限制**： 不涉及
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -85,7 +85,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 集群类型，包含主备（0）和集群（1）两种方式，主备模式包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点，集群模式仅拉起两个节点作为集群。
+    /// **参数解释**： 集群类型 **约束限制**： 不涉及 **取值范围**： - 0：主备模式，包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点 - 1：集群模式，仅拉起两个节点作为集群
     /// </summary>
 
     int32_t getHaType() const;
@@ -94,7 +94,7 @@ public:
     void setHaType(int32_t value);
 
     /// <summary>
-    /// 计费模式 0：包年/包月 1：按需
+    /// **参数解释**： 计费模式 **约束限制**： 不涉及 **取值范围**： - 0：包年/包月 - 1：按需 **默认取值**： 不涉及
     /// </summary>
 
     int32_t getChargeMode() const;
@@ -103,7 +103,7 @@ public:
     void setChargeMode(int32_t value);
 
     /// <summary>
-    /// 防火墙防护类型，目前仅支持0，互联网防护。
+    /// **参数解释**： 防火墙防护类型 **约束限制**： 不涉及 **取值范围**： 目前仅支持0，互联网防护
     /// </summary>
 
     int32_t getServiceType() const;
@@ -112,7 +112,7 @@ public:
     void setServiceType(int32_t value);
 
     /// <summary>
-    /// 引擎类型，0：自研引擎 1：山石引擎 3：天融信引擎
+    /// **参数解释**： 引擎类型 **约束限制**： 不涉及 **取值范围**： - 0：自研引擎 - 1：山石引擎 - 3：天融信引擎
     /// </summary>
 
     int32_t getEngineType() const;
@@ -130,7 +130,7 @@ public:
     void setFlavor(const Flavor& value);
 
     /// <summary>
-    /// 防火墙状态列表，包括-1：等待支付，0：创建中，1：删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
+    /// **参数解释**： 防火墙状态列表 **约束限制**： 不涉及 **取值范围**： - -1：等待支付 - 0：创建中 - 1，删除中 - 2：运行中 - 3：升级中 - 4：删除完成 - 5：冻结中 - 6：创建失败 - 7：删除失败 - 8：冻结失败 - 9：存储中 - 10：存储失败 - 11：升级失败
     /// </summary>
 
     int32_t getStatus() const;
@@ -139,7 +139,7 @@ public:
     void setStatus(int32_t value);
 
     /// <summary>
-    /// 标签列表，标签键值map转化的json字符串，如\&quot;{\\\&quot;key\\\&quot;:\\\&quot;value\\\&quot;}\&quot;
+    /// **参数解释**： 标签列表，标签键值map转化的json字符串，如\&quot;{\\\&quot;key\\\&quot;:\\\&quot;value\\\&quot;}\&quot; **约束限制**： 不涉及
     /// </summary>
 
     std::string getTags() const;

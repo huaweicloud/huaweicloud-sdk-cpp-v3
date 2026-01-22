@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// **参数解释**： 端口信息 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  Port
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// Port members
 
     /// <summary>
-    /// **参数解释**： 端口类型 **取值范围**： -1 Any，0 包含，1 排除
+    /// **参数解释**： 端口操作类型 **约束限制**：   不涉及 **取值范围**： -1：Any 0：包含 1：排除 **默认取值**：   不涉及
     /// </summary>
 
     int32_t getPortType() const;
@@ -48,7 +48,7 @@ public:
     void setPortType(int32_t value);
 
     /// <summary>
-    /// **参数解释**： 端口 **取值范围**： 不涉及
+    /// **参数解释**： 端口 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
 
     std::string getPorts() const;

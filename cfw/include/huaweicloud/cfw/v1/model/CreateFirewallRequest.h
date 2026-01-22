@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 #include <huaweicloud/cfw/v1/model/CreateFirewallReq.h>
 
 namespace HuaweiCloud {
@@ -40,15 +39,6 @@ public:
     /// CreateFirewallRequest members
 
     /// <summary>
-    /// 保证客户端请求幂等性的标识。  该标识为32位UUID格式，由客户端生成，且需确保不同请求之间该标识具有唯一性。
-    /// </summary>
-
-    std::string getXClientToken() const;
-    bool xClientTokenIsSet() const;
-    void unsetxClientToken();
-    void setXClientToken(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -59,8 +49,6 @@ public:
 
 
 protected:
-    std::string xClientToken_;
-    bool xClientTokenIsSet_;
     CreateFirewallReq body_;
     bool bodyIsSet_;
 

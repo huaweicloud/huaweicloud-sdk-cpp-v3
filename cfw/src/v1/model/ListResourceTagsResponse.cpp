@@ -14,8 +14,8 @@ ListResourceTagsResponse::ListResourceTagsResponse()
 {
     data_ = "";
     dataIsSet_ = false;
-    sysTagsIsSet_ = false;
     tagsIsSet_ = false;
+    sysTagsIsSet_ = false;
 }
 
 ListResourceTagsResponse::~ListResourceTagsResponse() = default;
@@ -31,11 +31,11 @@ web::json::value ListResourceTagsResponse::toJson() const
     if(dataIsSet_) {
         val[utility::conversions::to_string_t("data")] = ModelBase::toJson(data_);
     }
-    if(sysTagsIsSet_) {
-        val[utility::conversions::to_string_t("sys_tags")] = ModelBase::toJson(sysTags_);
-    }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(sysTagsIsSet_) {
+        val[utility::conversions::to_string_t("sys_tags")] = ModelBase::toJson(sysTags_);
     }
 
     return val;
@@ -53,15 +53,6 @@ bool ListResourceTagsResponse::fromJson(const web::json::value& val)
             setData(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("sys_tags"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_tags"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<ResourceTag> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSysTags(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("tags"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
@@ -69,6 +60,15 @@ bool ListResourceTagsResponse::fromJson(const web::json::value& val)
             std::vector<ResourceTag> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ResourceTag> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysTags(refVal);
         }
     }
     return ok;
@@ -96,27 +96,6 @@ void ListResourceTagsResponse::unsetdata()
     dataIsSet_ = false;
 }
 
-std::vector<ResourceTag>& ListResourceTagsResponse::getSysTags()
-{
-    return sysTags_;
-}
-
-void ListResourceTagsResponse::setSysTags(const std::vector<ResourceTag>& value)
-{
-    sysTags_ = value;
-    sysTagsIsSet_ = true;
-}
-
-bool ListResourceTagsResponse::sysTagsIsSet() const
-{
-    return sysTagsIsSet_;
-}
-
-void ListResourceTagsResponse::unsetsysTags()
-{
-    sysTagsIsSet_ = false;
-}
-
 std::vector<ResourceTag>& ListResourceTagsResponse::getTags()
 {
     return tags_;
@@ -136,6 +115,27 @@ bool ListResourceTagsResponse::tagsIsSet() const
 void ListResourceTagsResponse::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::vector<ResourceTag>& ListResourceTagsResponse::getSysTags()
+{
+    return sysTags_;
+}
+
+void ListResourceTagsResponse::setSysTags(const std::vector<ResourceTag>& value)
+{
+    sysTags_ = value;
+    sysTagsIsSet_ = true;
+}
+
+bool ListResourceTagsResponse::sysTagsIsSet() const
+{
+    return sysTagsIsSet_;
+}
+
+void ListResourceTagsResponse::unsetsysTags()
+{
+    sysTagsIsSet_ = false;
 }
 
 }

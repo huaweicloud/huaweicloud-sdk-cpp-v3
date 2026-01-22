@@ -39,7 +39,7 @@ public:
     /// UpdateAttackLogAlarmConfigDto members
 
     /// <summary>
-    /// 账号名称
+    /// 账户名称
     /// </summary>
 
     std::string getAccountName() const;
@@ -48,7 +48,7 @@ public:
     void setAccountName(const std::string& value);
 
     /// <summary>
-    /// 告警id
+    /// 账户名称ID.
     /// </summary>
 
     std::string getAlarmId() const;
@@ -57,7 +57,7 @@ public:
     void setAlarmId(const std::string& value);
 
     /// <summary>
-    /// 告警周期，0：全天，1：8时到22时
+    /// 告警周期，0：全天，1：8时到22时，为必传参数
     /// </summary>
 
     int32_t getAlarmTimePeriod() const;
@@ -66,7 +66,7 @@ public:
     void setAlarmTimePeriod(int32_t value);
 
     /// <summary>
-    /// 告警类型 0:攻击告警; 1:流量超额预警; 2:EIP未防护告警; 3:威胁情报告警
+    /// 告警类型 0：攻击告警; 1：流量超额预警; 2：EIP未防护告警; 3：异常外联告警，为必传参数
     /// </summary>
 
     int32_t getAlarmType() const;
@@ -75,7 +75,7 @@ public:
     void setAlarmType(int32_t value);
 
     /// <summary>
-    /// 告警状态 0:失效; 1:生效
+    /// 告警状态 0：失效; 1：生效，为必传参数
     /// </summary>
 
     int32_t getEnableStatus() const;
@@ -84,7 +84,7 @@ public:
     void setEnableStatus(int32_t value);
 
     /// <summary>
-    /// 告警触发频次
+    /// 告警触发频次，为必传参数
     /// </summary>
 
     int32_t getFrequencyCount() const;
@@ -93,7 +93,7 @@ public:
     void setFrequencyCount(int32_t value);
 
     /// <summary>
-    /// 告警频次时间范围
+    /// 告警频次时间范围，以分钟为单位，为必传参数
     /// </summary>
 
     int32_t getFrequencyTime() const;
@@ -102,7 +102,7 @@ public:
     void setFrequencyTime(int32_t value);
 
     /// <summary>
-    /// 告警语言
+    /// 告警语言，zh-cn为中文，en-us为英文
     /// </summary>
 
     std::string getLanguage() const;
@@ -111,7 +111,7 @@ public:
     void setLanguage(const std::string& value);
 
     /// <summary>
-    /// 告警等级
+    /// 告警等级，当type为0和4时，severity为CRITICAL,HIGH,MEDIUM,LOW四种等级的组合字符串，当type为1时，severity为2；当type为2时，severity固定为3，为必传参数
     /// </summary>
 
     std::string getSeverity() const;
@@ -120,7 +120,7 @@ public:
     void setSeverity(const std::string& value);
 
     /// <summary>
-    /// 告警urn
+    /// 告警urn，为必传参数
     /// </summary>
 
     std::string getTopicUrn() const;
@@ -129,7 +129,7 @@ public:
     void setTopicUrn(const std::string& value);
 
     /// <summary>
-    /// 用户名称
+    /// 用户名称，为cfw，为必传参数
     /// </summary>
 
     std::string getUsername() const;

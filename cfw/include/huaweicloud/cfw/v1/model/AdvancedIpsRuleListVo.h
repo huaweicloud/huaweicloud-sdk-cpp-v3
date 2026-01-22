@@ -40,7 +40,7 @@ public:
     /// AdvancedIpsRuleListVo members
 
     /// <summary>
-    /// 
+    /// 频率ips规则列表
     /// </summary>
 
     std::vector<AdvancedIpsRuleVo>& getAdvancedIpsRules();
@@ -49,7 +49,7 @@ public:
     void setAdvancedIpsRules(const std::vector<AdvancedIpsRuleVo>& value);
 
     /// <summary>
-    /// 
+    /// 频率ips规则总数
     /// </summary>
 
     int32_t getTotal() const;

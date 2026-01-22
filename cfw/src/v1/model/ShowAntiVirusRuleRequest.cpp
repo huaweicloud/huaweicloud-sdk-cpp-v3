@@ -14,14 +14,14 @@ ShowAntiVirusRuleRequest::ShowAntiVirusRuleRequest()
 {
     objectId_ = "";
     objectIdIsSet_ = false;
-    engineType_ = 0;
-    engineTypeIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    engineType_ = 0;
+    engineTypeIsSet_ = false;
 }
 
 ShowAntiVirusRuleRequest::~ShowAntiVirusRuleRequest() = default;
@@ -37,9 +37,6 @@ web::json::value ShowAntiVirusRuleRequest::toJson() const
     if(objectIdIsSet_) {
         val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
     }
-    if(engineTypeIsSet_) {
-        val[utility::conversions::to_string_t("engine_type")] = ModelBase::toJson(engineType_);
-    }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
@@ -48,6 +45,9 @@ web::json::value ShowAntiVirusRuleRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(engineTypeIsSet_) {
+        val[utility::conversions::to_string_t("engine_type")] = ModelBase::toJson(engineType_);
     }
 
     return val;
@@ -63,15 +63,6 @@ bool ShowAntiVirusRuleRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("engine_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("engine_type"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEngineType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("limit"))) {
@@ -101,6 +92,15 @@ bool ShowAntiVirusRuleRequest::fromJson(const web::json::value& val)
             setEnterpriseProjectId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("engine_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("engine_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEngineType(refVal);
+        }
+    }
     return ok;
 }
 
@@ -124,27 +124,6 @@ bool ShowAntiVirusRuleRequest::objectIdIsSet() const
 void ShowAntiVirusRuleRequest::unsetobjectId()
 {
     objectIdIsSet_ = false;
-}
-
-int32_t ShowAntiVirusRuleRequest::getEngineType() const
-{
-    return engineType_;
-}
-
-void ShowAntiVirusRuleRequest::setEngineType(int32_t value)
-{
-    engineType_ = value;
-    engineTypeIsSet_ = true;
-}
-
-bool ShowAntiVirusRuleRequest::engineTypeIsSet() const
-{
-    return engineTypeIsSet_;
-}
-
-void ShowAntiVirusRuleRequest::unsetengineType()
-{
-    engineTypeIsSet_ = false;
 }
 
 int32_t ShowAntiVirusRuleRequest::getLimit() const
@@ -208,6 +187,27 @@ bool ShowAntiVirusRuleRequest::enterpriseProjectIdIsSet() const
 void ShowAntiVirusRuleRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+int32_t ShowAntiVirusRuleRequest::getEngineType() const
+{
+    return engineType_;
+}
+
+void ShowAntiVirusRuleRequest::setEngineType(int32_t value)
+{
+    engineType_ = value;
+    engineTypeIsSet_ = true;
+}
+
+bool ShowAntiVirusRuleRequest::engineTypeIsSet() const
+{
+    return engineTypeIsSet_;
+}
+
+void ShowAntiVirusRuleRequest::unsetengineType()
+{
+    engineTypeIsSet_ = false;
 }
 
 }

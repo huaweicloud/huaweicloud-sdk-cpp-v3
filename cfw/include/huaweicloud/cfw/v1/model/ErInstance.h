@@ -39,7 +39,7 @@ public:
     /// ErInstance members
 
     /// <summary>
-    /// ER ID，创建ER时产生的ID
+    /// **参数解释**： ER ID，创建ER时产生的ID **取值范围**： 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// ER名称
+    /// **参数解释**： ER名称 **取值范围**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 项目ID, 可以从调API处获取，也可以从控制台获取。[项目ID获取方式](cfw_02_0015.xml)
+    /// **参数解释**： 项目ID，可以通过调用API获取，也可以从控制台获取。[项目ID获取方式](cfw_02_0015.xml) **取值范围**： 不涉及
     /// </summary>
 
     std::string getProjectId() const;
@@ -66,7 +66,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 企业路由器连接id，该连接用于连接防火墙和企业路由器，此字段可在通过id在ER界面查询指定er后在管理连接界面查询连接了解连接具体情况。
+    /// **参数解释**： 企业路由器连接id，该连接用于连接防火墙和企业路由器，此字段可在通过id在ER界面查询指定er后在管理连接界面查询连接了解连接具体情况。 **取值范围**： 不涉及
     /// </summary>
 
     std::string getAttachmentId() const;

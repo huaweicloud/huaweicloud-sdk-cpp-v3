@@ -39,7 +39,7 @@ public:
     /// TagsVO members
 
     /// <summary>
-    /// 规则id
+    /// **参数解释**： 规则标签ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getTagId() const;
@@ -48,7 +48,7 @@ public:
     void setTagId(const std::string& value);
 
     /// <summary>
-    /// 规则标签键
+    /// **参数解释**： 规则标签键 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getTagKey() const;
@@ -57,7 +57,7 @@ public:
     void setTagKey(const std::string& value);
 
     /// <summary>
-    /// 规则标签值
+    /// **参数解释**： 规则标签值 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getTagValue() const;

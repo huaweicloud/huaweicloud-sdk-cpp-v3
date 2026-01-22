@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 管理子网信息
+/// **参数解释**： 管理子网信息 **取值范围**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  SubnetInfo
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// SubnetInfo members
 
     /// <summary>
-    /// 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0000.xml)
+    /// **参数解释**： 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0000.xml) **取值范围**： 不涉及
     /// </summary>
 
     std::string getAvailabilityZone() const;
@@ -48,7 +48,7 @@ public:
     void setAvailabilityZone(const std::string& value);
 
     /// <summary>
-    /// 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
+    /// **参数解释**： 虚拟私有云下可用子网的范围 **取值范围**： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24
     /// </summary>
 
     std::string getCidr() const;
@@ -57,7 +57,7 @@ public:
     void setCidr(const std::string& value);
 
     /// <summary>
-    /// 子网名称
+    /// **参数解释**： 子网名称 **取值范围**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -66,7 +66,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 子网id
+    /// **参数解释**： 子网id **取值范围**： 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -75,7 +75,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 子网的网关，取值范围为子网网段cidr中的ip地址
+    /// **参数解释**： 子网的网关 **取值范围**： 子网网段cidr中的IP地址
     /// </summary>
 
     std::string getGatewayIp() const;
@@ -84,7 +84,7 @@ public:
     void setGatewayIp(const std::string& value);
 
     /// <summary>
-    /// 创建vpc产生的uuid
+    /// **参数解释**： 创建VPC产生的uuid **取值范围**： 不涉及
     /// </summary>
 
     std::string getVpcId() const;
@@ -93,7 +93,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 是否支持ipv6，boolean值为true表示是，false表示否
+    /// **参数解释**： 是否支持ipv6 **取值范围**： - true：是 - false：否
     /// </summary>
 
     bool isIpv6Enable() const;

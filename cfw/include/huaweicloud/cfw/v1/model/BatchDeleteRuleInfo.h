@@ -39,7 +39,7 @@ public:
     /// BatchDeleteRuleInfo members
 
     /// <summary>
-    /// 批量删除的acl的名称
+    /// **参数解释**： 批量删除的ACL的名称 **取值范围**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -48,7 +48,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 批量删除的acl的id
+    /// **参数解释**： 批量删除的ACL的ID **取值范围**： 不涉及
     /// </summary>
 
     std::string getId() const;

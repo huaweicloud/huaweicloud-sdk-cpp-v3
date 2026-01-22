@@ -40,7 +40,7 @@ public:
     /// UpdateDnsServersResponse members
 
     /// <summary>
-    /// 域名服务器列表
+    /// **参数解释**： 域名服务器列表 **取值范围**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getData();

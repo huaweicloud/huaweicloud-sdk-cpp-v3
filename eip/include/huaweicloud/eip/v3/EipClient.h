@@ -22,6 +22,8 @@
 #include <huaweicloud/eip/v3/model/ListShareBandwidthTypesResponse.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipPoolRequest.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipPoolResponse.h>
+#include <huaweicloud/eip/v3/model/ShowPublicipPoolTypesRequest.h>
+#include <huaweicloud/eip/v3/model/ShowPublicipPoolTypesResponse.h>
 #include <string>
 
 #include <huaweicloud/eip/v3/model/ListProjectGeipBindingsRequest.h>
@@ -162,6 +164,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPublicipPoolResponse> showPublicipPool(
         ShowPublicipPoolRequest &request
+    );
+    // 查询公网IP池类型
+    //
+    // 查询公网IP池类型。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPublicipPoolTypesResponse> showPublicipPoolTypes(
+        ShowPublicipPoolTypesRequest &request
     );
 
     // 查询GEIP与实例绑定关系的租户列表

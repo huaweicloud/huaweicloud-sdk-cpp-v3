@@ -261,6 +261,47 @@ HttpRequestDef EipMeta::genRequestDefForShowPublicipPool() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EipMeta::genRequestDefForShowPublicipPoolTypes() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
+                  .withJsonTag("sort_dir")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Size")
+                  .withJsonTag("size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Description")
+                  .withJsonTag("description")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PublicBorderGroup")
+                  .withJsonTag("public_border_group")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EipMeta::genRequestDefForListProjectGeipBindings() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Fields")

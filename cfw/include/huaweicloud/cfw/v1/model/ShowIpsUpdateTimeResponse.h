@@ -40,7 +40,7 @@ public:
     /// ShowIpsUpdateTimeResponse members
 
     /// <summary>
-    /// 
+    /// 查询ips规则细节时间数据
     /// </summary>
 
     std::vector<IpsRuleUpdateTimeVO>& getData();

@@ -83,6 +83,9 @@ HttpRequestDef LiveMeta::genRequestDefForListBandwidthDetail() {
     reqDefBuilder.withRequestField(FieldDef().withName("ServiceType")
                   .withJsonTag("service_type")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpType")
+                  .withJsonTag("ip_type")
+                  .withLocationType(Query_));
     reqDefBuilder.withResponseField(FieldDef().
         withName("xRequestId").
         withJsonTag("X-Request-Id").

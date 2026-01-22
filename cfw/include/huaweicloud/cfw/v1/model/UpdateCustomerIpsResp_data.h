@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// **参数解释**： 更新自定义IPS规则响应数据 **取值范围**： 不涉及
+/// **参数解释**： 更新自定义IPS规则响应数据 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  UpdateCustomerIpsResp_data
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// UpdateCustomerIpsResp_data members
 
     /// <summary>
-    /// **参数解释**： 防火墙id **取值范围**： 不涉及
+    /// **参数解释**： 防火墙id **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getId() const;

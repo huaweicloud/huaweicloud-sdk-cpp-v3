@@ -20,6 +20,8 @@ RuleAclListResponseDTO_data::RuleAclListResponseDTO_data()
     totalIsSet_ = false;
     objectId_ = "";
     objectIdIsSet_ = false;
+    upRulesCount_ = 0;
+    upRulesCountIsSet_ = false;
     recordsIsSet_ = false;
 }
 
@@ -44,6 +46,9 @@ web::json::value RuleAclListResponseDTO_data::toJson() const
     }
     if(objectIdIsSet_) {
         val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
+    }
+    if(upRulesCountIsSet_) {
+        val[utility::conversions::to_string_t("up_rules_count")] = ModelBase::toJson(upRulesCount_);
     }
     if(recordsIsSet_) {
         val[utility::conversions::to_string_t("records")] = ModelBase::toJson(records_);
@@ -89,6 +94,15 @@ bool RuleAclListResponseDTO_data::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("up_rules_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("up_rules_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpRulesCount(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("records"))) {
@@ -186,6 +200,27 @@ bool RuleAclListResponseDTO_data::objectIdIsSet() const
 void RuleAclListResponseDTO_data::unsetobjectId()
 {
     objectIdIsSet_ = false;
+}
+
+int32_t RuleAclListResponseDTO_data::getUpRulesCount() const
+{
+    return upRulesCount_;
+}
+
+void RuleAclListResponseDTO_data::setUpRulesCount(int32_t value)
+{
+    upRulesCount_ = value;
+    upRulesCountIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data::upRulesCountIsSet() const
+{
+    return upRulesCountIsSet_;
+}
+
+void RuleAclListResponseDTO_data::unsetupRulesCount()
+{
+    upRulesCountIsSet_ = false;
 }
 
 std::vector<RuleAclListResponseDTO_data_records>& RuleAclListResponseDTO_data::getRecords()

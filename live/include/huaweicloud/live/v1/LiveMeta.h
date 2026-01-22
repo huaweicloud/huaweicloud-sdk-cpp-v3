@@ -14,10 +14,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_LIVE_V1_EXPORT  LiveMeta {
 public:
     static HttpRequestDef genRequestDefForBatchShowIpBelongs();
+    static HttpRequestDef genRequestDefForCheckDomainVerification();
     static HttpRequestDef genRequestDefForCreateDomain();
     static HttpRequestDef genRequestDefForCreateDomainMapping();
     static HttpRequestDef genRequestDefForCreateFlowOutput();
     static HttpRequestDef genRequestDefForCreateFlows();
+    static HttpRequestDef genRequestDefForCreatePullTask();
     static HttpRequestDef genRequestDefForCreateRecordCallbackConfig();
     static HttpRequestDef genRequestDefForCreateRecordIndex();
     static HttpRequestDef genRequestDefForCreateRecordRule();
@@ -35,6 +37,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteFlow();
     static HttpRequestDef genRequestDefForDeleteFlowOutput();
     static HttpRequestDef genRequestDefForDeletePublishTemplate();
+    static HttpRequestDef genRequestDefForDeletePullTask();
     static HttpRequestDef genRequestDefForDeleteRecordCallbackConfig();
     static HttpRequestDef genRequestDefForDeleteRecordRule();
     static HttpRequestDef genRequestDefForDeleteRefererChain();
@@ -52,6 +55,7 @@ public:
     static HttpRequestDef genRequestDefForListLiveSampleLogs();
     static HttpRequestDef genRequestDefForListLiveStreamsOnline();
     static HttpRequestDef genRequestDefForListPublishTemplate();
+    static HttpRequestDef genRequestDefForListPullTasks();
     static HttpRequestDef genRequestDefForListRecordCallbackConfigs();
     static HttpRequestDef genRequestDefForListRecordContents();
     static HttpRequestDef genRequestDefForListRecordRules();
@@ -64,10 +68,12 @@ public:
     static HttpRequestDef genRequestDefForModifyFlowSources();
     static HttpRequestDef genRequestDefForModifyFlowStart();
     static HttpRequestDef genRequestDefForModifyFlowStop();
+    static HttpRequestDef genRequestDefForModifyPullTask();
     static HttpRequestDef genRequestDefForRunRecord();
     static HttpRequestDef genRequestDefForSetRefererChain();
     static HttpRequestDef genRequestDefForShowDomain();
     static HttpRequestDef genRequestDefForShowDomainKeyChain();
+    static HttpRequestDef genRequestDefForShowDomainVerification();
     static HttpRequestDef genRequestDefForShowFlowDetail();
     static HttpRequestDef genRequestDefForShowOutputInfo();
     static HttpRequestDef genRequestDefForShowPullSourcesConfig();
@@ -96,6 +102,7 @@ public:
     static HttpRequestDef genRequestDefForListCesDimsInfo();
     static HttpRequestDef genRequestDefForListCesInstance();
     static HttpRequestDef genRequestDefForDeleteDomainHttpsCert();
+    static HttpRequestDef genRequestDefForShowCertificateInfo();
     static HttpRequestDef genRequestDefForShowDomainHttpsCert();
     static HttpRequestDef genRequestDefForUpdateDomainHttpsCert();
     static HttpRequestDef genRequestDefForCreateHarvestTask();

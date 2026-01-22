@@ -147,6 +147,15 @@ public:
     void unsetserviceType();
     void setServiceType(const std::string& value);
 
+    /// <summary>
+    /// ip类型，取值如下：  - v4 ：ipv4协议  - v6 ：ipv6协议   不填写默认查询所有ip类型的数据   该参数只对2026-01-30后的数据生效。 
+    /// </summary>
+
+    std::string getIpType() const;
+    bool ipTypeIsSet() const;
+    void unsetipType();
+    void setIpType(const std::string& value);
+
 
 protected:
     std::string projectId_;
@@ -173,6 +182,8 @@ protected:
     bool endTimeIsSet_;
     std::string serviceType_;
     bool serviceTypeIsSet_;
+    std::string ipType_;
+    bool ipTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

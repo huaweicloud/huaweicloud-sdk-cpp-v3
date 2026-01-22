@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/cfw/v1/model/ShowImportStatusId.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    Object getData() const;
+    ShowImportStatusId getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const Object& value);
+    void setData(const ShowImportStatusId& value);
 
 
 protected:
-    Object data_;
+    ShowImportStatusId data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

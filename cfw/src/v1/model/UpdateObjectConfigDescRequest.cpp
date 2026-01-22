@@ -39,7 +39,7 @@ bool UpdateObjectConfigDescRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            ObjectInfoDto refVal;
+            UpdateObjectConfigDesc refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -48,12 +48,12 @@ bool UpdateObjectConfigDescRequest::fromJson(const web::json::value& val)
 }
 
 
-ObjectInfoDto UpdateObjectConfigDescRequest::getBody() const
+UpdateObjectConfigDesc UpdateObjectConfigDescRequest::getBody() const
 {
     return body_;
 }
 
-void UpdateObjectConfigDescRequest::setBody(const ObjectInfoDto& value)
+void UpdateObjectConfigDescRequest::setBody(const UpdateObjectConfigDesc& value)
 {
     body_ = value;
     bodyIsSet_ = true;

@@ -57,7 +57,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 防护对象名称
     /// </summary>
 
     std::string getName() const;

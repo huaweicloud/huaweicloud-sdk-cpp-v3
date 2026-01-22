@@ -67,7 +67,7 @@ public:
     void setGroupId(const std::string& value);
 
     /// <summary>
-    /// 防火墙id
+    /// 防火墙ID
     /// </summary>
 
     std::string getId() const;

@@ -40,7 +40,7 @@ public:
     /// ListDnsServersResponse members
 
     /// <summary>
-    /// dns服务器列表
+    /// **参数解释**： dns服务器列表 **取值范围**： 不涉及
     /// </summary>
 
     std::vector<DnsServersResponseDTO>& getData();
@@ -49,7 +49,7 @@ public:
     void setData(const std::vector<DnsServersResponseDTO>& value);
 
     /// <summary>
-    /// dns服务器总数
+    /// **参数解释**： dns服务器总数 **取值范围**： 不涉及
     /// </summary>
 
     int32_t getTotal() const;

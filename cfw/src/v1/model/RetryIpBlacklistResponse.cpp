@@ -12,7 +12,6 @@ namespace Model {
 
 RetryIpBlacklistResponse::RetryIpBlacklistResponse()
 {
-    body_ = "";
     bodyIsSet_ = false;
 }
 
@@ -40,7 +39,7 @@ bool RetryIpBlacklistResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -49,12 +48,12 @@ bool RetryIpBlacklistResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string RetryIpBlacklistResponse::getBody() const
+Object RetryIpBlacklistResponse::getBody() const
 {
     return body_;
 }
 
-void RetryIpBlacklistResponse::setBody(const std::string& value)
+void RetryIpBlacklistResponse::setBody(const Object& value)
 {
     body_ = value;
     bodyIsSet_ = true;

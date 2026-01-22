@@ -39,7 +39,7 @@ bool ListIpsRulesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            AdvancedIpsRuleListVo refVal;
+            IpsRuleListVO refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool ListIpsRulesResponse::fromJson(const web::json::value& val)
 }
 
 
-AdvancedIpsRuleListVo ListIpsRulesResponse::getData() const
+IpsRuleListVO ListIpsRulesResponse::getData() const
 {
     return data_;
 }
 
-void ListIpsRulesResponse::setData(const AdvancedIpsRuleListVo& value)
+void ListIpsRulesResponse::setData(const IpsRuleListVO& value)
 {
     data_ = value;
     dataIsSet_ = true;

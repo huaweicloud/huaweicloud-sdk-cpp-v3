@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// vpc protects vo
+/// **参数解释**： vpc protects vo **取值范围**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  VPCProtectsVo
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// VPCProtectsVo members
 
     /// <summary>
-    /// 总防护VPC数
+    /// **参数解释**： 总防护VPC数 **取值范围**： 不涉及
     /// </summary>
 
     int32_t getTotal() const;
@@ -49,7 +49,7 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 防火墙东西向防护可进行跨账号防护VPC，self_total表示本项目防护VPC总数。
+    /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，self_total表示本项目防护VPC总数。 **取值范围**： 不涉及
     /// </summary>
 
     int32_t getSelfTotal() const;
@@ -58,7 +58,7 @@ public:
     void setSelfTotal(int32_t value);
 
     /// <summary>
-    /// 防火墙东西向防护可进行跨账号防护VPC，other_total表示其他项目防护VPC数
+    /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，other_total表示其他项目防护VPC数 **取值范围**： 不涉及
     /// </summary>
 
     int32_t getOtherTotal() const;
@@ -67,7 +67,7 @@ public:
     void setOtherTotal(int32_t value);
 
     /// <summary>
-    /// 防火墙东西向防护可进行跨账号防护VPC，protect_vpcs指的是总体防护VPC列表
+    /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，protect_vpcs表示总体防护VPC列表 **取值范围**： 不涉及
     /// </summary>
 
     std::vector<VpcAttachmentDetail>& getProtectVpcs();
@@ -76,7 +76,7 @@ public:
     void setProtectVpcs(const std::vector<VpcAttachmentDetail>& value);
 
     /// <summary>
-    /// 防火墙东西向防护可进行跨账号防护VPC，self_protect_vpcs指的是本项目防护VPC列表
+    /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，self_protect_vpcs表示本项目防护VPC列表 **取值范围**： 不涉及
     /// </summary>
 
     std::vector<VpcAttachmentDetail>& getSelfProtectVpcs();
@@ -85,7 +85,7 @@ public:
     void setSelfProtectVpcs(const std::vector<VpcAttachmentDetail>& value);
 
     /// <summary>
-    /// 防火墙东西向防护可进行跨账号防护VPC，other_protect_vpcs指的是其他项目防护VPC列表
+    /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，other_protect_vpcs表示其他项目防护VPC列表 **取值范围**： 不涉及
     /// </summary>
 
     std::vector<VpcAttachmentDetail>& getOtherProtectVpcs();
@@ -94,7 +94,7 @@ public:
     void setOtherProtectVpcs(const std::vector<VpcAttachmentDetail>& value);
 
     /// <summary>
-    /// 租户的所有VPC资产数量
+    /// **参数解释**： 租户的所有VPC资产数量 **取值范围**： 不涉及
     /// </summary>
 
     int32_t getTotalAssets() const;

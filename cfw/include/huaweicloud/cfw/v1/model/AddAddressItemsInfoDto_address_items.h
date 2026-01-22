@@ -48,7 +48,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// ip
+    /// ip地址
     /// </summary>
 
     std::string getAddress() const;

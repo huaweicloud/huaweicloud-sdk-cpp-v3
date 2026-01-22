@@ -39,7 +39,7 @@ public:
     /// UpdateDomainSetInfoDto members
 
     /// <summary>
-    /// 域名组名称
+    /// **参数解释**： 域名组名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -48,7 +48,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 域名组描述
+    /// **参数解释**： 域名组描述 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDescription() const;

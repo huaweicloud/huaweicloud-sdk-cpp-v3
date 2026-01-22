@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/ObjectInfoDto.h>
+#include <huaweicloud/cfw/v1/model/UpdateObjectConfigDesc.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    ObjectInfoDto getBody() const;
+    UpdateObjectConfigDesc getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const ObjectInfoDto& value);
+    void setBody(const UpdateObjectConfigDesc& value);
 
 
 protected:
-    ObjectInfoDto body_;
+    UpdateObjectConfigDesc body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

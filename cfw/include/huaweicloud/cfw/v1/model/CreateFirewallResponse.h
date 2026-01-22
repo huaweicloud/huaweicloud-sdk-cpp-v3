@@ -40,7 +40,7 @@ public:
     /// CreateFirewallResponse members
 
     /// <summary>
-    /// 实例创建的任务id。仅创建按需实例时会返回该参数。
+    /// **参数解释**： 实例创建的任务id **取值范围**： 不涉及
     /// </summary>
 
     std::string getJobId() const;
@@ -49,7 +49,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 订单号，创建包年包月时返回该参数。
+    /// **参数解释**： 订单号 **取值范围**： 不涉及
     /// </summary>
 
     std::string getOrderId() const;

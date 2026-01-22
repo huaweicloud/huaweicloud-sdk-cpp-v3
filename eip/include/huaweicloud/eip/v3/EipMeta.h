@@ -21,6 +21,7 @@ public:
     static HttpRequestDef genRequestDefForListPublicipPool();
     static HttpRequestDef genRequestDefForListShareBandwidthTypes();
     static HttpRequestDef genRequestDefForShowPublicipPool();
+    static HttpRequestDef genRequestDefForShowPublicipPoolTypes();
     static HttpRequestDef genRequestDefForListProjectGeipBindings();
     static HttpRequestDef genRequestDefForCreateTenantVpcIgw();
     static HttpRequestDef genRequestDefForDeleteTenantVpcIgw();

@@ -44,6 +44,8 @@ EipResource::EipResource()
     domainIdIsSet_ = false;
     fwDomainId_ = "";
     fwDomainIdIsSet_ = false;
+    bypassStatus_ = 0;
+    bypassStatusIsSet_ = false;
 }
 
 EipResource::~EipResource() = default;
@@ -103,6 +105,9 @@ web::json::value EipResource::toJson() const
     }
     if(fwDomainIdIsSet_) {
         val[utility::conversions::to_string_t("fw_domain_id")] = ModelBase::toJson(fwDomainId_);
+    }
+    if(bypassStatusIsSet_) {
+        val[utility::conversions::to_string_t("bypass_status")] = ModelBase::toJson(bypassStatus_);
     }
 
     return val;
@@ -253,6 +258,15 @@ bool EipResource::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFwDomainId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bypass_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bypass_status"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBypassStatus(refVal);
         }
     }
     return ok;
@@ -593,6 +607,27 @@ bool EipResource::fwDomainIdIsSet() const
 void EipResource::unsetfwDomainId()
 {
     fwDomainIdIsSet_ = false;
+}
+
+int32_t EipResource::getBypassStatus() const
+{
+    return bypassStatus_;
+}
+
+void EipResource::setBypassStatus(int32_t value)
+{
+    bypassStatus_ = value;
+    bypassStatusIsSet_ = true;
+}
+
+bool EipResource::bypassStatusIsSet() const
+{
+    return bypassStatusIsSet_;
+}
+
+void EipResource::unsetbypassStatus()
+{
+    bypassStatusIsSet_ = false;
 }
 
 }

@@ -20,6 +20,8 @@ DnsServersResponseDTO::DnsServersResponseDTO()
     isCustomizedIsSet_ = false;
     serverIp_ = "";
     serverIpIsSet_ = false;
+    status_ = 0;
+    statusIsSet_ = false;
     healthCheckDomainName_ = "";
     healthCheckDomainNameIsSet_ = false;
 }
@@ -45,6 +47,9 @@ web::json::value DnsServersResponseDTO::toJson() const
     }
     if(serverIpIsSet_) {
         val[utility::conversions::to_string_t("server_ip")] = ModelBase::toJson(serverIp_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
     if(healthCheckDomainNameIsSet_) {
         val[utility::conversions::to_string_t("health_check_domain_name")] = ModelBase::toJson(healthCheckDomainName_);
@@ -90,6 +95,15 @@ bool DnsServersResponseDTO::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerIp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("health_check_domain_name"))) {
@@ -187,6 +201,27 @@ bool DnsServersResponseDTO::serverIpIsSet() const
 void DnsServersResponseDTO::unsetserverIp()
 {
     serverIpIsSet_ = false;
+}
+
+int32_t DnsServersResponseDTO::getStatus() const
+{
+    return status_;
+}
+
+void DnsServersResponseDTO::setStatus(int32_t value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool DnsServersResponseDTO::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void DnsServersResponseDTO::unsetstatus()
+{
+    statusIsSet_ = false;
 }
 
 std::string DnsServersResponseDTO::getHealthCheckDomainName() const

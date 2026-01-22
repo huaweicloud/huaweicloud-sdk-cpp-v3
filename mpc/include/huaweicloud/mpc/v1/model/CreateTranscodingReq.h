@@ -163,15 +163,6 @@ public:
     void setImageSprites(const std::vector<ImageSprite>& value);
 
     /// <summary>
-    /// 
-    /// </summary>
-
-    std::string getPipelineId() const;
-    bool pipelineIdIsSet() const;
-    void unsetpipelineId();
-    void setPipelineId(const std::string& value);
-
-    /// <summary>
     /// 任务优先级，取值如下： - 9代表高优先级。 - 6代表中优先级，默认为6。  暂时只支持6和9。 
     /// </summary>
 
@@ -278,8 +269,6 @@ protected:
     bool thumbnailsIsSet_;
     std::vector<ImageSprite> imageSprites_;
     bool imageSpritesIsSet_;
-    std::string pipelineId_;
-    bool pipelineIdIsSet_;
     int32_t priority_;
     bool priorityIsSet_;
     Subtitle subtitle_;

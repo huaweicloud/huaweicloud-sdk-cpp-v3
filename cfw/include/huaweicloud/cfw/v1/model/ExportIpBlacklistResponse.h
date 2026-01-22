@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -42,10 +43,10 @@ public:
     /// 
     /// </summary>
 
-    std::string getBody() const;
+    Object getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const std::string& value);
+    void setBody(const Object& value);
 
     /// <summary>
     /// 
@@ -60,6 +61,15 @@ public:
     /// 
     /// </summary>
 
+    int32_t getContentLength() const;
+    bool contentLengthIsSet() const;
+    void unsetcontentLength();
+    void setContentLength(int32_t value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
     std::string getContentType() const;
     bool contentTypeIsSet() const;
     void unsetcontentType();
@@ -67,10 +77,12 @@ public:
 
 
 protected:
-    std::string body_;
+    Object body_;
     bool bodyIsSet_;
     std::string contentDisposition_;
     bool contentDispositionIsSet_;
+    int32_t contentLength_;
+    bool contentLengthIsSet_;
     std::string contentType_;
     bool contentTypeIsSet_;
 

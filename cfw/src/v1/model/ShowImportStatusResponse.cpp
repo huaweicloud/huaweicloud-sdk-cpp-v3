@@ -39,7 +39,7 @@ bool ShowImportStatusResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ShowImportStatusId refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool ShowImportStatusResponse::fromJson(const web::json::value& val)
 }
 
 
-Object ShowImportStatusResponse::getData() const
+ShowImportStatusId ShowImportStatusResponse::getData() const
 {
     return data_;
 }
 
-void ShowImportStatusResponse::setData(const Object& value)
+void ShowImportStatusResponse::setData(const ShowImportStatusId& value)
 {
     data_ = value;
     dataIsSet_ = true;

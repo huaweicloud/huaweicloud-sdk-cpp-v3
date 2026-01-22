@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// **参数解释**： 自定义IPS规则内容 **取值范围**： 不涉及
+/// **参数解释**： 自定义IPS规则内容 **约束限制**：     不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  IpsContent
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// IpsContent members
 
     /// <summary>
-    /// **参数解释**： 内容 **取值范围**： 不涉及
+    /// **参数解释**： 内容 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
 
     std::string getContent() const;
@@ -48,7 +48,7 @@ public:
     void setContent(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 深度 **取值范围**： 不涉及
+    /// **参数解释**： 匹配特征时，截止匹配的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
 
     int32_t getDepth() const;
@@ -57,7 +57,7 @@ public:
     void setDepth(int32_t value);
 
     /// <summary>
-    /// **参数解释**： 报文内容是否为十六进制 **取值范围**： 不涉及
+    /// **参数解释**： 报文内容是否为十六进制 **约束限制**： 不涉及 **取值范围**： true： 是十六进制 false： 不是十六进制 **默认取值**：   不涉及
     /// </summary>
 
     bool isIsHex() const;
@@ -66,7 +66,7 @@ public:
     void setIsHex(bool value);
 
     /// <summary>
-    /// **参数解释**： 是否忽略大小写 **取值范围**： 不涉及
+    /// **参数解释**： 是否忽略大小写 **约束限制**： 不涉及 **取值范围**： true： 忽略 false： 不忽略 **默认取值**：   不涉及
     /// </summary>
 
     bool isIsIgnore() const;
@@ -75,7 +75,7 @@ public:
     void setIsIgnore(bool value);
 
     /// <summary>
-    /// **参数解释**： 是否在uri中截取报文 **取值范围**： 不涉及
+    /// **参数解释**： 是否匹配URL中跟“内容”一致的字段 **约束限制**： 不涉及 **取值范围**： true： 匹配 false： 不匹配 **默认取值**：   不涉及
     /// </summary>
 
     bool isIsUri() const;
@@ -84,7 +84,7 @@ public:
     void setIsUri(bool value);
 
     /// <summary>
-    /// **参数解释**： 偏移量 **取值范围**： 不涉及
+    /// **参数解释**： 匹配特征时开始的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
 
     int32_t getOffset() const;
@@ -93,7 +93,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// **参数解释**： 相对位置 **取值范围**： 不涉及
+    /// **参数解释**： 匹配特征时，指定开始的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
 
     int32_t getRelativePosition() const;

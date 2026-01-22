@@ -40,7 +40,7 @@ public:
     /// CustomerIpsPageInfo members
 
     /// <summary>
-    /// **参数解释**： 查询返回记录的数量限制 **取值范围**： 1-1024
+    /// **参数解释**： 查询返回记录的数量限制 **约束限制**：   不涉及 **取值范围**： 1-1024 **默认取值**：   不涉及
     /// </summary>
 
     int32_t getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// **参数解释**： 偏移量，表示查询该偏移量后面的记录 **取值范围**： 0 - 1024
+    /// **参数解释**： 偏移量，表示查询该偏移量后面的记录 **约束限制**：   不涉及 **取值范围**： 0 - 1024 **默认取值**：   不涉及
     /// </summary>
 
     int32_t getOffset() const;
@@ -58,7 +58,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// **参数解释**： 自定义IPS规则列表 **取值范围**： 不涉及
+    /// **参数解释**： 自定义IPS规则列表 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
 
     std::vector<CustomerIpsListVO>& getRecords();
@@ -67,7 +67,7 @@ public:
     void setRecords(const std::vector<CustomerIpsListVO>& value);
 
     /// <summary>
-    /// **参数解释**： 自定义IPS规则数量 **取值范围**： 不涉及
+    /// **参数解释**： 自定义IPS规则数量 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
 
     int32_t getTotal() const;

@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/projectman/v4/model/IssueListResult.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -49,13 +49,13 @@ public:
     void setMessage(const std::string& value);
 
     /// <summary>
-    /// 返回对象
+    /// 
     /// </summary>
 
-    Object getResult() const;
+    IssueListResult getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const Object& value);
+    void setResult(const IssueListResult& value);
 
     /// <summary>
     /// 返回状态
@@ -70,7 +70,7 @@ public:
 protected:
     std::string message_;
     bool messageIsSet_;
-    Object result_;
+    IssueListResult result_;
     bool resultIsSet_;
     std::string status_;
     bool statusIsSet_;

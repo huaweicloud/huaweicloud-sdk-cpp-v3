@@ -4110,6 +4110,12 @@ std::shared_ptr<ShowApplicableInstancesResponse> GaussDBforNoSQLClient::showAppl
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.instanceNameIsSet()) {
+        localVarQueryParams["instance_name"] = parameterToString(request.getInstanceName());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
 
     std::string localVarHttpBody;
 

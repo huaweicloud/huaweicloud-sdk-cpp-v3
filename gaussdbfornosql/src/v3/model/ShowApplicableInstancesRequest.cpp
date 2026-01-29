@@ -18,6 +18,10 @@ ShowApplicableInstancesRequest::ShowApplicableInstancesRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    instanceName_ = "";
+    instanceNameIsSet_ = false;
+    instanceId_ = "";
+    instanceIdIsSet_ = false;
 }
 
 ShowApplicableInstancesRequest::~ShowApplicableInstancesRequest() = default;
@@ -38,6 +42,12 @@ web::json::value ShowApplicableInstancesRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(instanceNameIsSet_) {
+        val[utility::conversions::to_string_t("instance_name")] = ModelBase::toJson(instanceName_);
+    }
+    if(instanceIdIsSet_) {
+        val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
 
     return val;
@@ -71,6 +81,24 @@ bool ShowApplicableInstancesRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceId(refVal);
         }
     }
     return ok;
@@ -138,6 +166,48 @@ bool ShowApplicableInstancesRequest::limitIsSet() const
 void ShowApplicableInstancesRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ShowApplicableInstancesRequest::getInstanceName() const
+{
+    return instanceName_;
+}
+
+void ShowApplicableInstancesRequest::setInstanceName(const std::string& value)
+{
+    instanceName_ = value;
+    instanceNameIsSet_ = true;
+}
+
+bool ShowApplicableInstancesRequest::instanceNameIsSet() const
+{
+    return instanceNameIsSet_;
+}
+
+void ShowApplicableInstancesRequest::unsetinstanceName()
+{
+    instanceNameIsSet_ = false;
+}
+
+std::string ShowApplicableInstancesRequest::getInstanceId() const
+{
+    return instanceId_;
+}
+
+void ShowApplicableInstancesRequest::setInstanceId(const std::string& value)
+{
+    instanceId_ = value;
+    instanceIdIsSet_ = true;
+}
+
+bool ShowApplicableInstancesRequest::instanceIdIsSet() const
+{
+    return instanceIdIsSet_;
+}
+
+void ShowApplicableInstancesRequest::unsetinstanceId()
+{
+    instanceIdIsSet_ = false;
 }
 
 }

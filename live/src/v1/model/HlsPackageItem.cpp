@@ -12,6 +12,8 @@ namespace Model {
 
 HlsPackageItem::HlsPackageItem()
 {
+    id_ = "";
+    idIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
     streamSelectionIsSet_ = false;
@@ -41,6 +43,7 @@ HlsPackageItem::HlsPackageItem()
     manifestNameIsSet_ = false;
     slaveUrl_ = "";
     slaveUrlIsSet_ = false;
+    manifestSelectionIsSet_ = false;
 }
 
 HlsPackageItem::~HlsPackageItem() = default;
@@ -53,6 +56,9 @@ web::json::value HlsPackageItem::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
     }
@@ -107,6 +113,9 @@ web::json::value HlsPackageItem::toJson() const
     if(slaveUrlIsSet_) {
         val[utility::conversions::to_string_t("slave_url")] = ModelBase::toJson(slaveUrl_);
     }
+    if(manifestSelectionIsSet_) {
+        val[utility::conversions::to_string_t("manifest_selection")] = ModelBase::toJson(manifestSelection_);
+    }
 
     return val;
 }
@@ -114,6 +123,15 @@ bool HlsPackageItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("url"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("url"));
         if(!fieldValue.is_null())
@@ -276,9 +294,39 @@ bool HlsPackageItem::fromJson(const web::json::value& val)
             setSlaveUrl(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("manifest_selection"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("manifest_selection"));
+        if(!fieldValue.is_null())
+        {
+            ManifestSelection refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setManifestSelection(refVal);
+        }
+    }
     return ok;
 }
 
+
+std::string HlsPackageItem::getId() const
+{
+    return id_;
+}
+
+void HlsPackageItem::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool HlsPackageItem::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void HlsPackageItem::unsetid()
+{
+    idIsSet_ = false;
+}
 
 std::string HlsPackageItem::getUrl() const
 {
@@ -656,6 +704,27 @@ bool HlsPackageItem::slaveUrlIsSet() const
 void HlsPackageItem::unsetslaveUrl()
 {
     slaveUrlIsSet_ = false;
+}
+
+ManifestSelection HlsPackageItem::getManifestSelection() const
+{
+    return manifestSelection_;
+}
+
+void HlsPackageItem::setManifestSelection(const ManifestSelection& value)
+{
+    manifestSelection_ = value;
+    manifestSelectionIsSet_ = true;
+}
+
+bool HlsPackageItem::manifestSelectionIsSet() const
+{
+    return manifestSelectionIsSet_;
+}
+
+void HlsPackageItem::unsetmanifestSelection()
+{
+    manifestSelectionIsSet_ = false;
 }
 
 }

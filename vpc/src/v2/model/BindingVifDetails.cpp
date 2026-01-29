@@ -18,7 +18,7 @@ BindingVifDetails::BindingVifDetails()
     portFilterIsSet_ = false;
     ovsHybridPlug_ = false;
     ovsHybridPlugIsSet_ = false;
-    vlanId_ = "";
+    vlanId_ = 0;
     vlanIdIsSet_ = false;
     parentId_ = "";
     parentIdIsSet_ = false;
@@ -92,7 +92,7 @@ bool BindingVifDetails::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vlan_id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVlanId(refVal);
         }
@@ -182,12 +182,12 @@ void BindingVifDetails::unsetovsHybridPlug()
     ovsHybridPlugIsSet_ = false;
 }
 
-std::string BindingVifDetails::getVlanId() const
+int32_t BindingVifDetails::getVlanId() const
 {
     return vlanId_;
 }
 
-void BindingVifDetails::setVlanId(const std::string& value)
+void BindingVifDetails::setVlanId(int32_t value)
 {
     vlanId_ = value;
     vlanIdIsSet_ = true;

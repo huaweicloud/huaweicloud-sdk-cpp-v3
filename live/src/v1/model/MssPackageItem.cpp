@@ -12,6 +12,8 @@ namespace Model {
 
 MssPackageItem::MssPackageItem()
 {
+    id_ = "";
+    idIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
     streamSelectionIsSet_ = false;
@@ -39,6 +41,7 @@ MssPackageItem::MssPackageItem()
     manifestNameIsSet_ = false;
     slaveUrl_ = "";
     slaveUrlIsSet_ = false;
+    manifestSelectionIsSet_ = false;
 }
 
 MssPackageItem::~MssPackageItem() = default;
@@ -51,6 +54,9 @@ web::json::value MssPackageItem::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
     }
@@ -99,6 +105,9 @@ web::json::value MssPackageItem::toJson() const
     if(slaveUrlIsSet_) {
         val[utility::conversions::to_string_t("slave_url")] = ModelBase::toJson(slaveUrl_);
     }
+    if(manifestSelectionIsSet_) {
+        val[utility::conversions::to_string_t("manifest_selection")] = ModelBase::toJson(manifestSelection_);
+    }
 
     return val;
 }
@@ -106,6 +115,15 @@ bool MssPackageItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("url"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("url"));
         if(!fieldValue.is_null())
@@ -250,9 +268,39 @@ bool MssPackageItem::fromJson(const web::json::value& val)
             setSlaveUrl(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("manifest_selection"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("manifest_selection"));
+        if(!fieldValue.is_null())
+        {
+            ManifestSelection refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setManifestSelection(refVal);
+        }
+    }
     return ok;
 }
 
+
+std::string MssPackageItem::getId() const
+{
+    return id_;
+}
+
+void MssPackageItem::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool MssPackageItem::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void MssPackageItem::unsetid()
+{
+    idIsSet_ = false;
+}
 
 std::string MssPackageItem::getUrl() const
 {
@@ -588,6 +636,27 @@ bool MssPackageItem::slaveUrlIsSet() const
 void MssPackageItem::unsetslaveUrl()
 {
     slaveUrlIsSet_ = false;
+}
+
+ManifestSelection MssPackageItem::getManifestSelection() const
+{
+    return manifestSelection_;
+}
+
+void MssPackageItem::setManifestSelection(const ManifestSelection& value)
+{
+    manifestSelection_ = value;
+    manifestSelectionIsSet_ = true;
+}
+
+bool MssPackageItem::manifestSelectionIsSet() const
+{
+    return manifestSelectionIsSet_;
+}
+
+void MssPackageItem::unsetmanifestSelection()
+{
+    manifestSelectionIsSet_ = false;
 }
 
 }

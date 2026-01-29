@@ -65,8 +65,8 @@
 #include <huaweicloud/projectman/v4/model/ShowProjectSummaryV4Response.h>
 #include <huaweicloud/projectman/v4/model/ShowWorkItemWrokflowConfigRequest.h>
 #include <huaweicloud/projectman/v4/model/ShowWorkItemWrokflowConfigResponse.h>
+#include <huaweicloud/projectman/v4/model/UpdateMembersRoleV4RequestBody.h>
 #include <huaweicloud/projectman/v4/model/UpdateMembesRoleV4Request.h>
-#include <huaweicloud/projectman/v4/model/UpdateMembesRoleV4RequestBody.h>
 #include <huaweicloud/projectman/v4/model/UpdateMembesRoleV4Response.h>
 #include <huaweicloud/projectman/v4/model/UpdateNickNameV4Request.h>
 #include <huaweicloud/projectman/v4/model/UpdateNickNameV4Response.h>
@@ -82,6 +82,10 @@
 #include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueRequest.h>
 #include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueRequestBody.h>
 #include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueResponse.h>
+#include <huaweicloud/projectman/v4/model/DeleteIpdImageInIssueRequest.h>
+#include <huaweicloud/projectman/v4/model/DeleteIpdImageInIssueResponse.h>
+#include <huaweicloud/projectman/v4/model/DownloadIpdImageInIssueRequest.h>
+#include <huaweicloud/projectman/v4/model/DownloadIpdImageInIssueResponse.h>
 #include <huaweicloud/core/utils/HttpContent.h>
 #include <huaweicloud/projectman/v4/model/ListIpdProjectIssuesRequest.h>
 #include <huaweicloud/projectman/v4/model/ListIpdProjectIssuesResponse.h>
@@ -98,6 +102,9 @@
 #include <huaweicloud/projectman/v4/model/ShowWorkflowTemplateResponse.h>
 #include <huaweicloud/projectman/v4/model/TransferWorkItemFlowRequest.h>
 #include <huaweicloud/projectman/v4/model/TransferWorkItemFlowResponse.h>
+#include <huaweicloud/projectman/v4/model/UploadIpdImageInIssueRequest.h>
+#include <huaweicloud/projectman/v4/model/UploadIpdImageInIssueRequestBody.h>
+#include <huaweicloud/projectman/v4/model/UploadIpdImageInIssueResponse.h>
 #include <huaweicloud/projectman/v4/model/WorkItemFlowRequestBody.h>
 #include <string>
 
@@ -120,7 +127,7 @@
 #include <huaweicloud/projectman/v4/model/AddIssueWorkHoursRequest.h>
 #include <huaweicloud/projectman/v4/model/AddIssueWorkHoursRequestBody.h>
 #include <huaweicloud/projectman/v4/model/AddIssueWorkHoursResponse.h>
-#include <huaweicloud/projectman/v4/model/BatchDelelteIssuesRequestV4.h>
+#include <huaweicloud/projectman/v4/model/BatchDeleteIssuesRequestV4.h>
 #include <huaweicloud/projectman/v4/model/BatchDeleteIssuesV4Request.h>
 #include <huaweicloud/projectman/v4/model/BatchDeleteIssuesV4Response.h>
 #include <huaweicloud/projectman/v4/model/BatchDeleteIterationsV4Request.h>
@@ -508,6 +515,22 @@ public:
     std::shared_ptr<CreateIpdProjectIssueAttachmentResponse> createIpdProjectIssueAttachment(
         CreateIpdProjectIssueAttachmentRequest &request
     );
+    // 删除工作项描述中的图片
+    //
+    // 删除工作项描述中的图片
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteIpdImageInIssueResponse> deleteIpdImageInIssue(
+        DeleteIpdImageInIssueRequest &request
+    );
+    // 下载工作项描述中的图片
+    //
+    // 下载工作项描述中的图片
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadIpdImageInIssueResponse> downloadIpdImageInIssue(
+        DownloadIpdImageInIssueRequest &request
+    );
     // 查询项目工作项列表
     //
     // 查询Ipd项目的工作项列表
@@ -563,6 +586,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<TransferWorkItemFlowResponse> transferWorkItemFlow(
         TransferWorkItemFlowRequest &request
+    );
+    // 上传图片到工作项描述中
+    //
+    // 上传图片并更新到工作项描述中
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UploadIpdImageInIssueResponse> uploadIpdImageInIssue(
+        UploadIpdImageInIssueRequest &request
     );
 
     // 根据ID下载工作项附件

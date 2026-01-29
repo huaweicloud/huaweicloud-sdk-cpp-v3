@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/projectman/v4/model/UpdateMembesRoleV4RequestBody.h"
+#include "huaweicloud/projectman/v4/model/UpdateMembersRoleV4RequestBody.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Projectman {
@@ -10,20 +10,20 @@ namespace Model {
 
 
 
-UpdateMembesRoleV4RequestBody::UpdateMembesRoleV4RequestBody()
+UpdateMembersRoleV4RequestBody::UpdateMembersRoleV4RequestBody()
 {
     roleId_ = 0;
     roleIdIsSet_ = false;
     userIdsIsSet_ = false;
 }
 
-UpdateMembesRoleV4RequestBody::~UpdateMembesRoleV4RequestBody() = default;
+UpdateMembersRoleV4RequestBody::~UpdateMembersRoleV4RequestBody() = default;
 
-void UpdateMembesRoleV4RequestBody::validate()
+void UpdateMembersRoleV4RequestBody::validate()
 {
 }
 
-web::json::value UpdateMembesRoleV4RequestBody::toJson() const
+web::json::value UpdateMembersRoleV4RequestBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -36,7 +36,7 @@ web::json::value UpdateMembesRoleV4RequestBody::toJson() const
 
     return val;
 }
-bool UpdateMembesRoleV4RequestBody::fromJson(const web::json::value& val)
+bool UpdateMembersRoleV4RequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -62,44 +62,44 @@ bool UpdateMembesRoleV4RequestBody::fromJson(const web::json::value& val)
 }
 
 
-int32_t UpdateMembesRoleV4RequestBody::getRoleId() const
+int32_t UpdateMembersRoleV4RequestBody::getRoleId() const
 {
     return roleId_;
 }
 
-void UpdateMembesRoleV4RequestBody::setRoleId(int32_t value)
+void UpdateMembersRoleV4RequestBody::setRoleId(int32_t value)
 {
     roleId_ = value;
     roleIdIsSet_ = true;
 }
 
-bool UpdateMembesRoleV4RequestBody::roleIdIsSet() const
+bool UpdateMembersRoleV4RequestBody::roleIdIsSet() const
 {
     return roleIdIsSet_;
 }
 
-void UpdateMembesRoleV4RequestBody::unsetroleId()
+void UpdateMembersRoleV4RequestBody::unsetroleId()
 {
     roleIdIsSet_ = false;
 }
 
-std::vector<std::string>& UpdateMembesRoleV4RequestBody::getUserIds()
+std::vector<std::string>& UpdateMembersRoleV4RequestBody::getUserIds()
 {
     return userIds_;
 }
 
-void UpdateMembesRoleV4RequestBody::setUserIds(const std::vector<std::string>& value)
+void UpdateMembersRoleV4RequestBody::setUserIds(const std::vector<std::string>& value)
 {
     userIds_ = value;
     userIdsIsSet_ = true;
 }
 
-bool UpdateMembesRoleV4RequestBody::userIdsIsSet() const
+bool UpdateMembersRoleV4RequestBody::userIdsIsSet() const
 {
     return userIdsIsSet_;
 }
 
-void UpdateMembesRoleV4RequestBody::unsetuserIds()
+void UpdateMembersRoleV4RequestBody::unsetuserIds()
 {
     userIdsIsSet_ = false;
 }

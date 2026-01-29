@@ -39,6 +39,7 @@ public:
     static HttpRequestDef genRequestDefForListProjectRolePermissions();
     static HttpRequestDef genRequestDefForListProjectUsers();
     static HttpRequestDef genRequestDefForListSecGuardList();
+    static HttpRequestDef genRequestDefForListUserPrivileges();
     static HttpRequestDef genRequestDefForModifyRepository();
     static HttpRequestDef genRequestDefForResetUserPassword();
     static HttpRequestDef genRequestDefForSearchArtifacts();
@@ -56,16 +57,21 @@ public:
     static HttpRequestDef genRequestDefForShowPackageDataDetail();
     static HttpRequestDef genRequestDefForShowPackageInfo();
     static HttpRequestDef genRequestDefForShowProjectList();
+    static HttpRequestDef genRequestDefForShowProjectRelatedRepository();
     static HttpRequestDef genRequestDefForShowProjectReleaseFiles();
     static HttpRequestDef genRequestDefForShowProjectStorageInfo();
+    static HttpRequestDef genRequestDefForShowProjectVersionsCount();
     static HttpRequestDef genRequestDefForShowReleaseProjectFiles();
     static HttpRequestDef genRequestDefForShowRepoUserInfo();
     static HttpRequestDef genRequestDefForShowRepository();
     static HttpRequestDef genRequestDefForShowRepositoryInfo();
+    static HttpRequestDef genRequestDefForShowRepositoryRolesPrivilege();
     static HttpRequestDef genRequestDefForShowStorage();
     static HttpRequestDef genRequestDefForShowUserPrivileges();
     static HttpRequestDef genRequestDefForShowUserTicket();
+    static HttpRequestDef genRequestDefForShowVersionList();
     static HttpRequestDef genRequestDefForUpdateArtifactory();
+    static HttpRequestDef genRequestDefForUpdateRepoRolesPrivilege();
 };
 
 }

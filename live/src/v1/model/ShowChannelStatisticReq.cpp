@@ -21,6 +21,8 @@ ShowChannelStatisticReq::ShowChannelStatisticReq()
     type_ = "";
     typeIsSet_ = false;
     scte35IsSet_ = false;
+    regionType_ = "";
+    regionTypeIsSet_ = false;
 }
 
 ShowChannelStatisticReq::~ShowChannelStatisticReq() = default;
@@ -47,6 +49,9 @@ web::json::value ShowChannelStatisticReq::toJson() const
     }
     if(scte35IsSet_) {
         val[utility::conversions::to_string_t("scte35")] = ModelBase::toJson(scte35_);
+    }
+    if(regionTypeIsSet_) {
+        val[utility::conversions::to_string_t("region_type")] = ModelBase::toJson(regionType_);
     }
 
     return val;
@@ -98,6 +103,15 @@ bool ShowChannelStatisticReq::fromJson(const web::json::value& val)
             SCTE35StatisticReq refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setScte35(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("region_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegionType(refVal);
         }
     }
     return ok;
@@ -207,6 +221,27 @@ bool ShowChannelStatisticReq::scte35IsSet() const
 void ShowChannelStatisticReq::unsetscte35()
 {
     scte35IsSet_ = false;
+}
+
+std::string ShowChannelStatisticReq::getRegionType() const
+{
+    return regionType_;
+}
+
+void ShowChannelStatisticReq::setRegionType(const std::string& value)
+{
+    regionType_ = value;
+    regionTypeIsSet_ = true;
+}
+
+bool ShowChannelStatisticReq::regionTypeIsSet() const
+{
+    return regionTypeIsSet_;
+}
+
+void ShowChannelStatisticReq::unsetregionType()
+{
+    regionTypeIsSet_ = false;
 }
 
 }

@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/projectman/v4/model/BatchDeleteIssuesRequestV4.h>
 #include <string>
-#include <huaweicloud/projectman/v4/model/BatchDelelteIssuesRequestV4.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -52,16 +52,16 @@ public:
     /// 
     /// </summary>
 
-    BatchDelelteIssuesRequestV4 getBody() const;
+    BatchDeleteIssuesRequestV4 getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const BatchDelelteIssuesRequestV4& value);
+    void setBody(const BatchDeleteIssuesRequestV4& value);
 
 
 protected:
     std::string projectId_;
     bool projectIdIsSet_;
-    BatchDelelteIssuesRequestV4 body_;
+    BatchDeleteIssuesRequestV4 body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

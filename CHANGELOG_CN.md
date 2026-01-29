@@ -1,3 +1,163 @@
+# 3.1.172 2026-01-29
+
+### HuaweiCloud SDK CodeArtsArtifact
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ListUserPrivileges`
+    - `ShowProjectRelatedRepository`
+    - `ShowVersionList`
+    - `ShowProjectVersionsCount`
+    - `ShowRepositoryRolesPrivilege`
+    - `UpdateRepoRolesPrivilege`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowApplicableInstances**
+    - 请求参数变更
+      - `+ instance_name`
+      - `+ instance_id`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListCesDimsInfo**
+    - 响应参数变更
+      - `+ query.region`
+  - **ShowChannelStatistic**
+    - 请求参数变更
+      - `+ region_type`
+    - 响应参数变更
+      - `+ scte35.scte35_info.region_type`
+      - `+ scte35.scte35_info.region`
+  - **ShowFlowDetail**
+    - 响应参数变更
+      - `+ sources.health_status`
+  - **ModifyFlowSources**
+    - 请求参数变更
+      - `+ source.health_status`
+    - 响应参数变更
+      - `+ source.health_status`
+  - **CreateFlows**
+    - 请求参数变更
+      - `+ sources.health_status`
+    - 响应参数变更
+      - `+ flow.sources.health_status`
+  - **ModifyOttChannelInfoEndPoints**
+    - 请求参数变更
+      - `+ endpoints.dash_package.id`
+      - `+ endpoints.dash_package.manifest_selection`
+      - `+ endpoints.mss_package.id`
+      - `+ endpoints.mss_package.manifest_selection`
+      - `+ endpoints.hls_package.id`
+      - `+ endpoints.hls_package.manifest_selection`
+  - **CreateOttChannelInfo**
+    - 请求参数变更
+      - `+ endpoints.dash_package.id`
+      - `+ endpoints.dash_package.manifest_selection`
+      - `+ endpoints.mss_package.id`
+      - `+ endpoints.mss_package.manifest_selection`
+      - `+ endpoints.hls_package.id`
+      - `+ endpoints.hls_package.manifest_selection`
+  - **ListOttChannelInfo**
+    - 响应参数变更
+      - `+ channels.endpoints.dash_package.id`
+      - `+ channels.endpoints.dash_package.manifest_selection`
+      - `+ channels.endpoints.mss_package.id`
+      - `+ channels.endpoints.mss_package.manifest_selection`
+      - `+ channels.endpoints.hls_package.id`
+      - `+ channels.endpoints.hls_package.manifest_selection`
+
+### HuaweiCloud SDK ProjectMan
+
+- _接口版本_
+  - V4
+- _新增特性_
+  - 支持接口`DownloadIpdImageInIssue`、`UploadIpdImageInIssue`、`DeleteIpdImageInIssue`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListIpdProjectIssues**
+    - 响应参数变更
+      - `+ result.issues`
+      - `+ result.total`
+      - `* result: object -> object<IssueListResult>`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 响应参数变更
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **CreatePort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **ShowPort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **UpdatePort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronListPorts**
+    - 响应参数变更
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronCreatePort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronShowPort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronUpdatePort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 响应参数变更
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **ShowPort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **AddSecurityGroups**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **RemoveSecurityGroups**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+
 # 3.1.171 2026-01-22
 
 ### HuaweiCloud SDK CDN

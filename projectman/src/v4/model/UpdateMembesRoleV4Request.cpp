@@ -53,7 +53,7 @@ bool UpdateMembesRoleV4Request::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            UpdateMembesRoleV4RequestBody refVal;
+            UpdateMembersRoleV4RequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -83,12 +83,12 @@ void UpdateMembesRoleV4Request::unsetprojectId()
     projectIdIsSet_ = false;
 }
 
-UpdateMembesRoleV4RequestBody UpdateMembesRoleV4Request::getBody() const
+UpdateMembersRoleV4RequestBody UpdateMembesRoleV4Request::getBody() const
 {
     return body_;
 }
 
-void UpdateMembesRoleV4Request::setBody(const UpdateMembesRoleV4RequestBody& value)
+void UpdateMembesRoleV4Request::setBody(const UpdateMembersRoleV4RequestBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;

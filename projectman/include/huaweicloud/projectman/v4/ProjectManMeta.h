@@ -43,6 +43,8 @@ public:
     static HttpRequestDef genRequestDefForUpdateProjectV4();
     static HttpRequestDef genRequestDefForCreateIpdProjectIssue();
     static HttpRequestDef genRequestDefForCreateIpdProjectIssueAttachment();
+    static HttpRequestDef genRequestDefForDeleteIpdImageInIssue();
+    static HttpRequestDef genRequestDefForDownloadIpdImageInIssue();
     static HttpRequestDef genRequestDefForListIpdProjectIssues();
     static HttpRequestDef genRequestDefForListIssueFields();
     static HttpRequestDef genRequestDefForListIssueStatues();
@@ -50,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForShowIssueDetail();
     static HttpRequestDef genRequestDefForShowWorkflowTemplate();
     static HttpRequestDef genRequestDefForTransferWorkItemFlow();
+    static HttpRequestDef genRequestDefForUploadIpdImageInIssue();
     static HttpRequestDef genRequestDefForDownloadIpdIssueAttachment();
     static HttpRequestDef genRequestDefForShowIpdAttachmentByWorkItemId();
     static HttpRequestDef genRequestDefForCreateScrumPlanToProject();

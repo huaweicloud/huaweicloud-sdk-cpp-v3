@@ -15,6 +15,7 @@
 #include <huaweicloud/live/v1/model/HttpHeader.h>
 #include <string>
 #include <huaweicloud/live/v1/model/Encryption.h>
+#include <huaweicloud/live/v1/model/ManifestSelection.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -43,6 +44,15 @@ public:
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
     /// MssPackageItem members
+
+    /// <summary>
+    /// package唯一标识id，由服务创建并在查询时返回，修改endpoints时需要携带。
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
 
     /// <summary>
     /// 客户自定义的拉流地址，包括方法、域名、路径
@@ -188,8 +198,19 @@ public:
     void unsetslaveUrl();
     void setSlaveUrl(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ManifestSelection getManifestSelection() const;
+    bool manifestSelectionIsSet() const;
+    void unsetmanifestSelection();
+    void setManifestSelection(const ManifestSelection& value);
+
 
 protected:
+    std::string id_;
+    bool idIsSet_;
     std::string url_;
     bool urlIsSet_;
     std::vector<StreamSelectionItem> streamSelection_;
@@ -222,6 +243,8 @@ protected:
     bool manifestNameIsSet_;
     std::string slaveUrl_;
     bool slaveUrlIsSet_;
+    ManifestSelection manifestSelection_;
+    bool manifestSelectionIsSet_;
 
 };
 

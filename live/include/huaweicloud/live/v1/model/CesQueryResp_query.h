@@ -101,6 +101,15 @@ public:
     void unsetmedialiveTailor();
     void setMedialiveTailor(const CesDimsItem& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CesDimsItem getRegion() const;
+    bool regionIsSet() const;
+    void unsetregion();
+    void setRegion(const CesDimsItem& value);
+
 
 protected:
     CesDimsItem medialiveMpc_;
@@ -117,6 +126,8 @@ protected:
     bool medialiveConnectIsSet_;
     CesDimsItem medialiveTailor_;
     bool medialiveTailorIsSet_;
+    CesDimsItem region_;
+    bool regionIsSet_;
 
 };
 

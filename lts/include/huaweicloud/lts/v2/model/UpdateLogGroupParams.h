@@ -40,7 +40,7 @@ public:
     /// UpdateLogGroupParams members
 
     /// <summary>
-    /// 日志存储时间 天。 取值范围为 [1, 30]
+    /// 日志存储时间 天。 取值范围为 [1, 365]
     /// </summary>
 
     int32_t getTtlInDays() const;

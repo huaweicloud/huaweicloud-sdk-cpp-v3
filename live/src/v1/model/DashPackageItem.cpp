@@ -12,6 +12,8 @@ namespace Model {
 
 DashPackageItem::DashPackageItem()
 {
+    id_ = "";
+    idIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
     streamSelectionIsSet_ = false;
@@ -46,6 +48,7 @@ DashPackageItem::DashPackageItem()
     manifestNameIsSet_ = false;
     slaveUrl_ = "";
     slaveUrlIsSet_ = false;
+    manifestSelectionIsSet_ = false;
 }
 
 DashPackageItem::~DashPackageItem() = default;
@@ -58,6 +61,9 @@ web::json::value DashPackageItem::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
     }
@@ -118,6 +124,9 @@ web::json::value DashPackageItem::toJson() const
     if(slaveUrlIsSet_) {
         val[utility::conversions::to_string_t("slave_url")] = ModelBase::toJson(slaveUrl_);
     }
+    if(manifestSelectionIsSet_) {
+        val[utility::conversions::to_string_t("manifest_selection")] = ModelBase::toJson(manifestSelection_);
+    }
 
     return val;
 }
@@ -125,6 +134,15 @@ bool DashPackageItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("url"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("url"));
         if(!fieldValue.is_null())
@@ -305,9 +323,39 @@ bool DashPackageItem::fromJson(const web::json::value& val)
             setSlaveUrl(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("manifest_selection"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("manifest_selection"));
+        if(!fieldValue.is_null())
+        {
+            ManifestSelection refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setManifestSelection(refVal);
+        }
+    }
     return ok;
 }
 
+
+std::string DashPackageItem::getId() const
+{
+    return id_;
+}
+
+void DashPackageItem::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool DashPackageItem::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void DashPackageItem::unsetid()
+{
+    idIsSet_ = false;
+}
 
 std::string DashPackageItem::getUrl() const
 {
@@ -727,6 +775,27 @@ bool DashPackageItem::slaveUrlIsSet() const
 void DashPackageItem::unsetslaveUrl()
 {
     slaveUrlIsSet_ = false;
+}
+
+ManifestSelection DashPackageItem::getManifestSelection() const
+{
+    return manifestSelection_;
+}
+
+void DashPackageItem::setManifestSelection(const ManifestSelection& value)
+{
+    manifestSelection_ = value;
+    manifestSelectionIsSet_ = true;
+}
+
+bool DashPackageItem::manifestSelectionIsSet() const
+{
+    return manifestSelectionIsSet_;
+}
+
+void DashPackageItem::unsetmanifestSelection()
+{
+    manifestSelectionIsSet_ = false;
 }
 
 }

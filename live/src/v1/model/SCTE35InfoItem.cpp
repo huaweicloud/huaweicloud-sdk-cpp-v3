@@ -26,6 +26,10 @@ SCTE35InfoItem::SCTE35InfoItem()
     base64DataIsSet_ = false;
     rawSplice_ = "";
     rawSpliceIsSet_ = false;
+    regionType_ = "";
+    regionTypeIsSet_ = false;
+    region_ = "";
+    regionIsSet_ = false;
 }
 
 SCTE35InfoItem::~SCTE35InfoItem() = default;
@@ -58,6 +62,12 @@ web::json::value SCTE35InfoItem::toJson() const
     }
     if(rawSpliceIsSet_) {
         val[utility::conversions::to_string_t("raw_splice")] = ModelBase::toJson(rawSplice_);
+    }
+    if(regionTypeIsSet_) {
+        val[utility::conversions::to_string_t("region_type")] = ModelBase::toJson(regionType_);
+    }
+    if(regionIsSet_) {
+        val[utility::conversions::to_string_t("region")] = ModelBase::toJson(region_);
     }
 
     return val;
@@ -127,6 +137,24 @@ bool SCTE35InfoItem::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRawSplice(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("region_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegionType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("region"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegion(refVal);
         }
     }
     return ok;
@@ -278,6 +306,48 @@ bool SCTE35InfoItem::rawSpliceIsSet() const
 void SCTE35InfoItem::unsetrawSplice()
 {
     rawSpliceIsSet_ = false;
+}
+
+std::string SCTE35InfoItem::getRegionType() const
+{
+    return regionType_;
+}
+
+void SCTE35InfoItem::setRegionType(const std::string& value)
+{
+    regionType_ = value;
+    regionTypeIsSet_ = true;
+}
+
+bool SCTE35InfoItem::regionTypeIsSet() const
+{
+    return regionTypeIsSet_;
+}
+
+void SCTE35InfoItem::unsetregionType()
+{
+    regionTypeIsSet_ = false;
+}
+
+std::string SCTE35InfoItem::getRegion() const
+{
+    return region_;
+}
+
+void SCTE35InfoItem::setRegion(const std::string& value)
+{
+    region_ = value;
+    regionIsSet_ = true;
+}
+
+bool SCTE35InfoItem::regionIsSet() const
+{
+    return regionIsSet_;
+}
+
+void SCTE35InfoItem::unsetregion()
+{
+    regionIsSet_ = false;
 }
 
 }

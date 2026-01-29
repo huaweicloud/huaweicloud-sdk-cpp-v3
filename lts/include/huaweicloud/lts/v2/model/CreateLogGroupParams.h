@@ -50,7 +50,7 @@ public:
     void setLogGroupName(const std::string& value);
 
     /// <summary>
-    /// 日志存储时间（天），取值范围：1-30。
+    /// 日志存储时间（天），取值范围：1-365。
     /// </summary>
 
     int32_t getTtlInDays() const;

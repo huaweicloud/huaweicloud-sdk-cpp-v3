@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/projectman/v4/model/UpdateMembesRoleV4RequestBody.h>
+#include <huaweicloud/projectman/v4/model/UpdateMembersRoleV4RequestBody.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -52,16 +52,16 @@ public:
     /// 
     /// </summary>
 
-    UpdateMembesRoleV4RequestBody getBody() const;
+    UpdateMembersRoleV4RequestBody getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const UpdateMembesRoleV4RequestBody& value);
+    void setBody(const UpdateMembersRoleV4RequestBody& value);
 
 
 protected:
     std::string projectId_;
     bool projectIdIsSet_;
-    UpdateMembesRoleV4RequestBody body_;
+    UpdateMembersRoleV4RequestBody body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

@@ -65,6 +65,24 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 实例名称，支持模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getInstanceName() const;
+    bool instanceNameIsSet() const;
+    void unsetinstanceName();
+    void setInstanceName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 实例ID，支持模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getInstanceId() const;
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::string& value);
+
 
 protected:
     std::string configId_;
@@ -73,6 +91,10 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string instanceName_;
+    bool instanceNameIsSet_;
+    std::string instanceId_;
+    bool instanceIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

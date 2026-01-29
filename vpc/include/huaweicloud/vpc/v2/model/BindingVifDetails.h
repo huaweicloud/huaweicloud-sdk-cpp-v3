@@ -69,10 +69,10 @@ public:
     /// 辅助弹性网卡的vlan ID。
     /// </summary>
 
-    std::string getVlanId() const;
+    int32_t getVlanId() const;
     bool vlanIdIsSet() const;
     void unsetvlanId();
-    void setVlanId(const std::string& value);
+    void setVlanId(int32_t value);
 
     /// <summary>
     /// 辅助弹性网卡的宿主网卡ID。
@@ -100,7 +100,7 @@ protected:
     bool portFilterIsSet_;
     bool ovsHybridPlug_;
     bool ovsHybridPlugIsSet_;
-    std::string vlanId_;
+    int32_t vlanId_;
     bool vlanIdIsSet_;
     std::string parentId_;
     bool parentIdIsSet_;

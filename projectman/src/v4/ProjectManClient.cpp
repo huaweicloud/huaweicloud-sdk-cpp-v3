@@ -1143,6 +1143,78 @@ std::shared_ptr<CreateIpdProjectIssueAttachmentResponse> ProjectManClient::creat
 
     return localVarResult;
 }
+std::shared_ptr<DeleteIpdImageInIssueResponse> ProjectManClient::deleteIpdImageInIssue(DeleteIpdImageInIssueRequest &request)
+{
+    std::string localVarPath = "/v2/ipdprojectservice/projects/{project_id}/images";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.issueIdIsSet()) {
+        localVarQueryParams["issue_id"] = parameterToString(request.getIssueId());
+    }
+    if (request.fileNameIsSet()) {
+        localVarQueryParams["file_name"] = parameterToString(request.getFileName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForDeleteIpdImageInIssue());
+
+    std::shared_ptr<DeleteIpdImageInIssueResponse> localVarResult = std::make_shared<DeleteIpdImageInIssueResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DownloadIpdImageInIssueResponse> ProjectManClient::downloadIpdImageInIssue(DownloadIpdImageInIssueRequest &request)
+{
+    std::string localVarPath = "/v2/ipdprojectservice/projects/{project_id}/images";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.issueIdIsSet()) {
+        localVarQueryParams["issue_id"] = parameterToString(request.getIssueId());
+    }
+    if (request.fileNameIsSet()) {
+        localVarQueryParams["file_name"] = parameterToString(request.getFileName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForDownloadIpdImageInIssue());
+
+    std::shared_ptr<DownloadIpdImageInIssueResponse> localVarResult = std::make_shared<DownloadIpdImageInIssueResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListIpdProjectIssuesResponse> ProjectManClient::listIpdProjectIssues(ListIpdProjectIssuesRequest &request)
 {
     std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/issues/query";
@@ -1407,6 +1479,39 @@ std::shared_ptr<TransferWorkItemFlowResponse> ProjectManClient::transferWorkItem
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<UploadIpdImageInIssueResponse> ProjectManClient::uploadIpdImageInIssue(UploadIpdImageInIssueRequest &request)
+{
+    std::string localVarPath = "/v2/ipdprojectservice/projects/{project_id}/images";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.issueIdIsSet()) {
+        localVarQueryParams["issue_id"] = parameterToString(request.getIssueId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForUploadIpdImageInIssue());
+
+    std::shared_ptr<UploadIpdImageInIssueResponse> localVarResult = std::make_shared<UploadIpdImageInIssueResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

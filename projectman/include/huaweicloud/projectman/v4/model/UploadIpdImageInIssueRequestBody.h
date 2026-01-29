@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_BatchDelelteIssuesRequestV4_H_
-#define HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_BatchDelelteIssuesRequestV4_H_
+#ifndef HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UploadIpdImageInIssueRequestBody_H_
+#define HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UploadIpdImageInIssueRequestBody_H_
 
 
 #include <huaweicloud/projectman/v4/ProjectManExport.h>
@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <vector>
+#include <huaweicloud/core/utils/HttpContent.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_PROJECTMAN_V4_EXPORT  BatchDelelteIssuesRequestV4
+class HUAWEICLOUD_PROJECTMAN_V4_EXPORT  UploadIpdImageInIssueRequestBody
     : public ModelBase
 {
 public:
-    BatchDelelteIssuesRequestV4();
-    virtual ~BatchDelelteIssuesRequestV4();
+    UploadIpdImageInIssueRequestBody();
+    virtual ~UploadIpdImageInIssueRequestBody();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,21 +36,21 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// BatchDelelteIssuesRequestV4 members
+    /// UploadIpdImageInIssueRequestBody members
 
     /// <summary>
-    /// 工作项的id
+    /// 上传的图片内容，当前支持jpg,jpeg,png,gif,bmp,tiff,svg格式的图片
     /// </summary>
 
-    std::vector<int32_t>& getIssueIds();
-    bool issueIdsIsSet() const;
-    void unsetissueIds();
-    void setIssueIds(std::vector<int32_t> value);
+    HttpContent getFile() const;
+    bool fileIsSet() const;
+    void unsetfile();
+    void setFile(const HttpContent& value);
 
 
 protected:
-    std::vector<int32_t> issueIds_;
-    bool issueIdsIsSet_;
+    HttpContent file_;
+    bool fileIsSet_;
 
 };
 
@@ -61,4 +61,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_BatchDelelteIssuesRequestV4_H_
+#endif // HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UploadIpdImageInIssueRequestBody_H_

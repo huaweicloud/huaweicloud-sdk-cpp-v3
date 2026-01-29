@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/projectman/v4/model/BatchDelelteIssuesRequestV4.h"
+#include "huaweicloud/projectman/v4/model/BatchDeleteIssuesRequestV4.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Projectman {
@@ -10,18 +10,18 @@ namespace Model {
 
 
 
-BatchDelelteIssuesRequestV4::BatchDelelteIssuesRequestV4()
+BatchDeleteIssuesRequestV4::BatchDeleteIssuesRequestV4()
 {
     issueIdsIsSet_ = false;
 }
 
-BatchDelelteIssuesRequestV4::~BatchDelelteIssuesRequestV4() = default;
+BatchDeleteIssuesRequestV4::~BatchDeleteIssuesRequestV4() = default;
 
-void BatchDelelteIssuesRequestV4::validate()
+void BatchDeleteIssuesRequestV4::validate()
 {
 }
 
-web::json::value BatchDelelteIssuesRequestV4::toJson() const
+web::json::value BatchDeleteIssuesRequestV4::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -31,7 +31,7 @@ web::json::value BatchDelelteIssuesRequestV4::toJson() const
 
     return val;
 }
-bool BatchDelelteIssuesRequestV4::fromJson(const web::json::value& val)
+bool BatchDeleteIssuesRequestV4::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -48,23 +48,23 @@ bool BatchDelelteIssuesRequestV4::fromJson(const web::json::value& val)
 }
 
 
-std::vector<int32_t>& BatchDelelteIssuesRequestV4::getIssueIds()
+std::vector<int32_t>& BatchDeleteIssuesRequestV4::getIssueIds()
 {
     return issueIds_;
 }
 
-void BatchDelelteIssuesRequestV4::setIssueIds(std::vector<int32_t> value)
+void BatchDeleteIssuesRequestV4::setIssueIds(std::vector<int32_t> value)
 {
     issueIds_ = value;
     issueIdsIsSet_ = true;
 }
 
-bool BatchDelelteIssuesRequestV4::issueIdsIsSet() const
+bool BatchDeleteIssuesRequestV4::issueIdsIsSet() const
 {
     return issueIdsIsSet_;
 }
 
-void BatchDelelteIssuesRequestV4::unsetissueIds()
+void BatchDeleteIssuesRequestV4::unsetissueIds()
 {
     issueIdsIsSet_ = false;
 }

@@ -101,6 +101,24 @@ public:
     void unsetrawSplice();
     void setRawSplice(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 该广告信号对应的region类型，是主region，还是备region **取值范围**：  - master: 主region  - slave: 备region 
+    /// </summary>
+
+    std::string getRegionType() const;
+    bool regionTypeIsSet() const;
+    void unsetregionType();
+    void setRegionType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 该广告信号对应的region区域 **取值范围**： 华为云的region 
+    /// </summary>
+
+    std::string getRegion() const;
+    bool regionIsSet() const;
+    void unsetregion();
+    void setRegion(const std::string& value);
+
 
 protected:
     std::string type_;
@@ -117,6 +135,10 @@ protected:
     bool base64DataIsSet_;
     std::string rawSplice_;
     bool rawSpliceIsSet_;
+    std::string regionType_;
+    bool regionTypeIsSet_;
+    std::string region_;
+    bool regionIsSet_;
 
 };
 

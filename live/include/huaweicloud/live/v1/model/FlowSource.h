@@ -121,6 +121,15 @@ public:
     void unsetdecryption();
     void setDecryption(const FlowSourceDecryption& value);
 
+    /// <summary>
+    /// **参数解释**： 转推流状态 **约束限制**： 不涉及 **取值范围**： - CONNECTED：转推中 - DISCONNECTED：转推中断 
+    /// </summary>
+
+    std::string getHealthStatus() const;
+    bool healthStatusIsSet() const;
+    void unsethealthStatus();
+    void setHealthStatus(const std::string& value);
+
 
 protected:
     std::string sourceListenerAddress_;
@@ -141,6 +150,8 @@ protected:
     bool nameIsSet_;
     FlowSourceDecryption decryption_;
     bool decryptionIsSet_;
+    std::string healthStatus_;
+    bool healthStatusIsSet_;
 
 };
 

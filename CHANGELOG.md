@@ -1,3 +1,163 @@
+# 3.1.172 2026-01-29
+
+### HuaweiCloud SDK CodeArtsArtifact
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ListUserPrivileges`
+    - `ShowProjectRelatedRepository`
+    - `ShowVersionList`
+    - `ShowProjectVersionsCount`
+    - `ShowRepositoryRolesPrivilege`
+    - `UpdateRepoRolesPrivilege`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowApplicableInstances**
+    - changes of request param
+      - `+ instance_name`
+      - `+ instance_id`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListCesDimsInfo**
+    - changes of response param
+      - `+ query.region`
+  - **ShowChannelStatistic**
+    - changes of request param
+      - `+ region_type`
+    - changes of response param
+      - `+ scte35.scte35_info.region_type`
+      - `+ scte35.scte35_info.region`
+  - **ShowFlowDetail**
+    - changes of response param
+      - `+ sources.health_status`
+  - **ModifyFlowSources**
+    - changes of request param
+      - `+ source.health_status`
+    - changes of response param
+      - `+ source.health_status`
+  - **CreateFlows**
+    - changes of request param
+      - `+ sources.health_status`
+    - changes of response param
+      - `+ flow.sources.health_status`
+  - **ModifyOttChannelInfoEndPoints**
+    - changes of request param
+      - `+ endpoints.dash_package.id`
+      - `+ endpoints.dash_package.manifest_selection`
+      - `+ endpoints.mss_package.id`
+      - `+ endpoints.mss_package.manifest_selection`
+      - `+ endpoints.hls_package.id`
+      - `+ endpoints.hls_package.manifest_selection`
+  - **CreateOttChannelInfo**
+    - changes of request param
+      - `+ endpoints.dash_package.id`
+      - `+ endpoints.dash_package.manifest_selection`
+      - `+ endpoints.mss_package.id`
+      - `+ endpoints.mss_package.manifest_selection`
+      - `+ endpoints.hls_package.id`
+      - `+ endpoints.hls_package.manifest_selection`
+  - **ListOttChannelInfo**
+    - changes of response param
+      - `+ channels.endpoints.dash_package.id`
+      - `+ channels.endpoints.dash_package.manifest_selection`
+      - `+ channels.endpoints.mss_package.id`
+      - `+ channels.endpoints.mss_package.manifest_selection`
+      - `+ channels.endpoints.hls_package.id`
+      - `+ channels.endpoints.hls_package.manifest_selection`
+
+### HuaweiCloud SDK ProjectMan
+
+- _API Version_
+  - V4
+- _Features_
+  - Support the APIs `DownloadIpdImageInIssue`, `UploadIpdImageInIssue`, `DeleteIpdImageInIssue`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListIpdProjectIssues**
+    - changes of response param
+      - `+ result.issues`
+      - `+ result.total`
+      - `* result: object -> object<IssueListResult>`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of response param
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **CreatePort**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **ShowPort**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **UpdatePort**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronListPorts**
+    - changes of response param
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronCreatePort**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronShowPort**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronUpdatePort**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of response param
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **ShowPort**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **AddSecurityGroups**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **RemoveSecurityGroups**
+    - changes of response param
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+
 # 3.1.171 2026-01-22
 
 ### HuaweiCloud SDK CDN

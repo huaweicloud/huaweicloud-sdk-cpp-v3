@@ -329,6 +329,11 @@ HttpRequestDef CodeArtsArtifactMeta::genRequestDefForListSecGuardList() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsArtifactMeta::genRequestDefForListUserPrivileges() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsArtifactMeta::genRequestDefForModifyRepository() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -476,6 +481,23 @@ HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowProjectList() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowProjectRelatedRepository() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SearchName")
+                  .withJsonTag("search_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RepoId")
+                  .withJsonTag("repo_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowProjectReleaseFiles() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FileName")
@@ -494,6 +516,14 @@ HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowProjectStorageInfo() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ParentId")
                   .withJsonTag("parent_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowProjectVersionsCount() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("BuildVersion")
+                  .withJsonTag("build_version")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -530,6 +560,16 @@ HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowRepositoryInfo() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowRepositoryRolesPrivilege() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("x-language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowStorage() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FormatList")
@@ -551,7 +591,30 @@ HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowUserTicket() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsArtifactMeta::genRequestDefForShowVersionList() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("BuildVersion")
+                  .withJsonTag("build_version")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsArtifactMeta::genRequestDefForUpdateArtifactory() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsArtifactMeta::genRequestDefForUpdateRepoRolesPrivilege() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

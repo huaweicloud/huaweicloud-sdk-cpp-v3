@@ -58,7 +58,7 @@ bool ListIpdProjectIssuesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            IssueListResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -97,12 +97,12 @@ void ListIpdProjectIssuesResponse::unsetmessage()
     messageIsSet_ = false;
 }
 
-Object ListIpdProjectIssuesResponse::getResult() const
+IssueListResult ListIpdProjectIssuesResponse::getResult() const
 {
     return result_;
 }
 
-void ListIpdProjectIssuesResponse::setResult(const Object& value)
+void ListIpdProjectIssuesResponse::setResult(const IssueListResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

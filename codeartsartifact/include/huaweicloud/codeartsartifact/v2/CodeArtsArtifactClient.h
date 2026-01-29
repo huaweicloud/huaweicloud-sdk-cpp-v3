@@ -67,12 +67,15 @@
 #include <huaweicloud/codeartsartifact/v2/model/ListProjectUsersResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ListSecGuardListRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ListSecGuardListResponse.h>
+#include <huaweicloud/codeartsartifact/v2/model/ListUserPrivilegesRequest.h>
+#include <huaweicloud/codeartsartifact/v2/model/ListUserPrivilegesResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ModifyRepositoryRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ModifyRepositoryResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/PathMap.h>
 #include <huaweicloud/codeartsartifact/v2/model/RepoFileQueryDTOV5.h>
 #include <huaweicloud/codeartsartifact/v2/model/ResetUserPasswordRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ResetUserPasswordResponse.h>
+#include <huaweicloud/codeartsartifact/v2/model/RolePrivilegeV5.h>
 #include <huaweicloud/codeartsartifact/v2/model/SearchArtifactsRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/SearchArtifactsResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/SearchByChecksumRequest.h>
@@ -103,10 +106,14 @@
 #include <huaweicloud/codeartsartifact/v2/model/ShowPackageInfoResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowProjectListRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowProjectListResponse.h>
+#include <huaweicloud/codeartsartifact/v2/model/ShowProjectRelatedRepositoryRequest.h>
+#include <huaweicloud/codeartsartifact/v2/model/ShowProjectRelatedRepositoryResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowProjectReleaseFilesRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowProjectReleaseFilesResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowProjectStorageInfoRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowProjectStorageInfoResponse.h>
+#include <huaweicloud/codeartsartifact/v2/model/ShowProjectVersionsCountRequest.h>
+#include <huaweicloud/codeartsartifact/v2/model/ShowProjectVersionsCountResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowReleaseProjectFilesRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowReleaseProjectFilesResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowRepoUserInfoRequest.h>
@@ -115,16 +122,22 @@
 #include <huaweicloud/codeartsartifact/v2/model/ShowRepositoryInfoResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowRepositoryRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowRepositoryResponse.h>
+#include <huaweicloud/codeartsartifact/v2/model/ShowRepositoryRolesPrivilegeRequest.h>
+#include <huaweicloud/codeartsartifact/v2/model/ShowRepositoryRolesPrivilegeResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowStorageRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowStorageResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowUserPrivilegesRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowUserPrivilegesResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowUserTicketRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/ShowUserTicketResponse.h>
+#include <huaweicloud/codeartsartifact/v2/model/ShowVersionListRequest.h>
+#include <huaweicloud/codeartsartifact/v2/model/ShowVersionListResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/TrashArtifactModelForDelete.h>
 #include <huaweicloud/codeartsartifact/v2/model/UpdateArtifactoryRequest.h>
 #include <huaweicloud/codeartsartifact/v2/model/UpdateArtifactoryResponse.h>
 #include <huaweicloud/codeartsartifact/v2/model/UpdateNotMavenRepoDO.h>
+#include <huaweicloud/codeartsartifact/v2/model/UpdateRepoRolesPrivilegeRequest.h>
+#include <huaweicloud/codeartsartifact/v2/model/UpdateRepoRolesPrivilegeResponse.h>
 #include <string>
 #include <vector>
 
@@ -360,6 +373,14 @@ public:
     std::shared_ptr<ListSecGuardListResponse> listSecGuardList(
         ListSecGuardListRequest &request
     );
+    // 查询用户权限
+    //
+    // 查询用户在项目下的角色及权限，如创建仓库、编辑仓库、上传、下载、导入和导出等权限。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUserPrivilegesResponse> listUserPrivileges(
+        ListUserPrivilegesRequest &request
+    );
     // 编辑仓库
     //
     // 编辑仓库
@@ -496,6 +517,14 @@ public:
     std::shared_ptr<ShowProjectListResponse> showProjectList(
         ShowProjectListRequest &request
     );
+    // 查询项目列表
+    //
+    // 调用该接口可以快速查询项目列表信息，包含仓库和项目的关联关系，以便于仓库的管理和协作。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProjectRelatedRepositoryResponse> showProjectRelatedRepository(
+        ShowProjectRelatedRepositoryRequest &request
+    );
     // 获取项目下文件版本信息列表
     //
     // 获取项目下文件版本信息列表
@@ -511,6 +540,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowProjectStorageInfoResponse> showProjectStorageInfo(
         ShowProjectStorageInfoRequest &request
+    );
+    // 查询项目下的版本数量
+    //
+    // 当发布库版本众多时，用户可根据项目ID查询对应发布库的版本数量，以便于管理和跟踪不同版本的发布情况。该接口支持通过版本名称过滤。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProjectVersionsCountResponse> showProjectVersionsCount(
+        ShowProjectVersionsCountRequest &request
     );
     // 获取项目下文件版本信息列表
     //
@@ -544,6 +581,14 @@ public:
     std::shared_ptr<ShowRepositoryInfoResponse> showRepositoryInfo(
         ShowRepositoryInfoRequest &request
     );
+    // 查询仓库权限
+    //
+    // 根据仓库ID查询指定仓库的权限，包含各角色对该仓库的权限信息。当用户需要指定仓库的指定权限时，可调用该接口查看需要授权的角色。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRepositoryRolesPrivilegeResponse> showRepositoryRolesPrivilege(
+        ShowRepositoryRolesPrivilegeRequest &request
+    );
     // 仓库用量查询
     //
     // 仓库用量查询
@@ -568,6 +613,14 @@ public:
     std::shared_ptr<ShowUserTicketResponse> showUserTicket(
         ShowUserTicketRequest &request
     );
+    // 查询发布库版本列表
+    //
+    // 当发布库版本众多时，用户可根据项目ID分页查询对应发布库下的版本列表。该接口支持版本名称的模糊搜索。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowVersionListResponse> showVersionList(
+        ShowVersionListRequest &request
+    );
     // 编辑非maven仓库信息
     //
     // 编辑非maven仓库信息
@@ -575,6 +628,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateArtifactoryResponse> updateArtifactory(
         UpdateArtifactoryRequest &request
+    );
+    // 更新角色权限
+    //
+    // 根据角色ID更新指定角色的权限，如创建仓库、编辑仓库、上传、下载、导入和导出等权限，实现权限的集中管理和自动化分配。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateRepoRolesPrivilegeResponse> updateRepoRolesPrivilege(
+        UpdateRepoRolesPrivilegeRequest &request
     );
 
 

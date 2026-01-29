@@ -19,6 +19,7 @@ CesQueryResp_query::CesQueryResp_query()
     medialivePackageIsSet_ = false;
     medialiveConnectIsSet_ = false;
     medialiveTailorIsSet_ = false;
+    regionIsSet_ = false;
 }
 
 CesQueryResp_query::~CesQueryResp_query() = default;
@@ -51,6 +52,9 @@ web::json::value CesQueryResp_query::toJson() const
     }
     if(medialiveTailorIsSet_) {
         val[utility::conversions::to_string_t("medialive_tailor")] = ModelBase::toJson(medialiveTailor_);
+    }
+    if(regionIsSet_) {
+        val[utility::conversions::to_string_t("region")] = ModelBase::toJson(region_);
     }
 
     return val;
@@ -120,6 +124,15 @@ bool CesQueryResp_query::fromJson(const web::json::value& val)
             CesDimsItem refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMedialiveTailor(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("region"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region"));
+        if(!fieldValue.is_null())
+        {
+            CesDimsItem refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegion(refVal);
         }
     }
     return ok;
@@ -271,6 +284,27 @@ bool CesQueryResp_query::medialiveTailorIsSet() const
 void CesQueryResp_query::unsetmedialiveTailor()
 {
     medialiveTailorIsSet_ = false;
+}
+
+CesDimsItem CesQueryResp_query::getRegion() const
+{
+    return region_;
+}
+
+void CesQueryResp_query::setRegion(const CesDimsItem& value)
+{
+    region_ = value;
+    regionIsSet_ = true;
+}
+
+bool CesQueryResp_query::regionIsSet() const
+{
+    return regionIsSet_;
+}
+
+void CesQueryResp_query::unsetregion()
+{
+    regionIsSet_ = false;
 }
 
 }

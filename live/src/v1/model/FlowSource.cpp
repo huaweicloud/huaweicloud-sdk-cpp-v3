@@ -28,6 +28,8 @@ FlowSource::FlowSource()
     name_ = "";
     nameIsSet_ = false;
     decryptionIsSet_ = false;
+    healthStatus_ = "";
+    healthStatusIsSet_ = false;
 }
 
 FlowSource::~FlowSource() = default;
@@ -66,6 +68,9 @@ web::json::value FlowSource::toJson() const
     }
     if(decryptionIsSet_) {
         val[utility::conversions::to_string_t("decryption")] = ModelBase::toJson(decryption_);
+    }
+    if(healthStatusIsSet_) {
+        val[utility::conversions::to_string_t("health_status")] = ModelBase::toJson(healthStatus_);
     }
 
     return val;
@@ -153,6 +158,15 @@ bool FlowSource::fromJson(const web::json::value& val)
             FlowSourceDecryption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDecryption(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("health_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("health_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHealthStatus(refVal);
         }
     }
     return ok;
@@ -346,6 +360,27 @@ bool FlowSource::decryptionIsSet() const
 void FlowSource::unsetdecryption()
 {
     decryptionIsSet_ = false;
+}
+
+std::string FlowSource::getHealthStatus() const
+{
+    return healthStatus_;
+}
+
+void FlowSource::setHealthStatus(const std::string& value)
+{
+    healthStatus_ = value;
+    healthStatusIsSet_ = true;
+}
+
+bool FlowSource::healthStatusIsSet() const
+{
+    return healthStatusIsSet_;
+}
+
+void FlowSource::unsethealthStatus()
+{
+    healthStatusIsSet_ = false;
 }
 
 }

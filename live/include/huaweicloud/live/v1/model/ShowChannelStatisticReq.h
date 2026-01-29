@@ -84,6 +84,15 @@ public:
     void unsetscte35();
     void setScte35(const SCTE35StatisticReq& value);
 
+    /// <summary>
+    /// **参数解释**： 频道对应的region类型，是主region，还是备region **约束限制**： 如果region_type不填，或是没有该字段，则按照主region处理 **取值范围**： - master: 主region - slave: 备region - all: 所有region 
+    /// </summary>
+
+    std::string getRegionType() const;
+    bool regionTypeIsSet() const;
+    void unsetregionType();
+    void setRegionType(const std::string& value);
+
 
 protected:
     std::string domain_;
@@ -96,6 +105,8 @@ protected:
     bool typeIsSet_;
     SCTE35StatisticReq scte35_;
     bool scte35IsSet_;
+    std::string regionType_;
+    bool regionTypeIsSet_;
 
 };
 

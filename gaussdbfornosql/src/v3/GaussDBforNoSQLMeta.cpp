@@ -1145,6 +1145,12 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowApplicableInstances() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceName")
+                  .withJsonTag("instance_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

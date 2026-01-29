@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UpdateMembesRoleV4RequestBody_H_
-#define HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UpdateMembesRoleV4RequestBody_H_
+#ifndef HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UpdateMembersRoleV4RequestBody_H_
+#define HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UpdateMembersRoleV4RequestBody_H_
 
 
 #include <huaweicloud/projectman/v4/ProjectManExport.h>
@@ -23,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_PROJECTMAN_V4_EXPORT  UpdateMembesRoleV4RequestBody
+class HUAWEICLOUD_PROJECTMAN_V4_EXPORT  UpdateMembersRoleV4RequestBody
     : public ModelBase
 {
 public:
-    UpdateMembesRoleV4RequestBody();
-    virtual ~UpdateMembesRoleV4RequestBody();
+    UpdateMembersRoleV4RequestBody();
+    virtual ~UpdateMembersRoleV4RequestBody();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// UpdateMembesRoleV4RequestBody members
+    /// UpdateMembersRoleV4RequestBody members
 
     /// <summary>
     /// 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
@@ -73,4 +73,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UpdateMembesRoleV4RequestBody_H_
+#endif // HUAWEICLOUD_SDK_PROJECTMAN_V4_MODEL_UpdateMembersRoleV4RequestBody_H_

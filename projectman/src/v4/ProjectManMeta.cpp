@@ -279,6 +279,28 @@ HttpRequestDef ProjectManMeta::genRequestDefForCreateIpdProjectIssueAttachment()
     return reqDefBuilder;
 }
 
+HttpRequestDef ProjectManMeta::genRequestDefForDeleteIpdImageInIssue() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("IssueId")
+                  .withJsonTag("issue_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FileName")
+                  .withJsonTag("file_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForDownloadIpdImageInIssue() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("IssueId")
+                  .withJsonTag("issue_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FileName")
+                  .withJsonTag("file_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ProjectManMeta::genRequestDefForListIpdProjectIssues() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("IsBacklog")
@@ -349,6 +371,19 @@ HttpRequestDef ProjectManMeta::genRequestDefForTransferWorkItemFlow() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForUploadIpdImageInIssue() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("IssueId")
+                  .withJsonTag("issue_id")
+                  .withLocationType(Query_));
+    FieldDef formBodyParams;
+    reqDefBuilder.withRequestField(formBodyParams.
+                  withName("").
+                  withName("Body").
+                  withLocationType(Body_));
     return reqDefBuilder;
 }
 

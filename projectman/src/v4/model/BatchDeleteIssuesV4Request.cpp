@@ -53,7 +53,7 @@ bool BatchDeleteIssuesV4Request::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            BatchDelelteIssuesRequestV4 refVal;
+            BatchDeleteIssuesRequestV4 refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -83,12 +83,12 @@ void BatchDeleteIssuesV4Request::unsetprojectId()
     projectIdIsSet_ = false;
 }
 
-BatchDelelteIssuesRequestV4 BatchDeleteIssuesV4Request::getBody() const
+BatchDeleteIssuesRequestV4 BatchDeleteIssuesV4Request::getBody() const
 {
     return body_;
 }
 
-void BatchDeleteIssuesV4Request::setBody(const BatchDelelteIssuesRequestV4& value)
+void BatchDeleteIssuesV4Request::setBody(const BatchDeleteIssuesRequestV4& value)
 {
     body_ = value;
     bodyIsSet_ = true;

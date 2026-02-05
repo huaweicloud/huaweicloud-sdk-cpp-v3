@@ -1,3 +1,16 @@
+# 3.1.173 2026-02-05
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`DeleteBackupSelection`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.172 2026-01-29
 
 ### HuaweiCloud SDK CodeArtsArtifact

@@ -1,3 +1,16 @@
+# 3.1.173 2026-02-05
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `DeleteBackupSelection`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.172 2026-01-29
 
 ### HuaweiCloud SDK CodeArtsArtifact

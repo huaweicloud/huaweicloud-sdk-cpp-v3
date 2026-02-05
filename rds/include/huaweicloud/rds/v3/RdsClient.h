@@ -88,6 +88,9 @@
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReqNew.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeMajorVersionReq.h>
 #include <huaweicloud/rds/v3/model/DataIpRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteBackupSelectionRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteBackupSelectionRequestBody.h>
+#include <huaweicloud/rds/v3/model/DeleteBackupSelectionResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteDisasterRecoveryRequest.h>
@@ -1011,6 +1014,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateXelLogDownloadResponse> createXelLogDownload(
         CreateXelLogDownloadRequest &request
+    );
+    // 删除实例选择是否保留自动备份
+    //
+    // 删除实例时选择是否删除或保留自动备份。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteBackupSelectionResponse> deleteBackupSelection(
+        DeleteBackupSelectionRequest &request
     );
     // 删除参数模板
     //

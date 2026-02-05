@@ -41,6 +41,7 @@ public:
     static HttpRequestDef genRequestDefForCreateRestoreInstance();
     static HttpRequestDef genRequestDefForCreateSqlLimit();
     static HttpRequestDef genRequestDefForCreateXelLogDownload();
+    static HttpRequestDef genRequestDefForDeleteBackupSelection();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
     static HttpRequestDef genRequestDefForDeleteDisasterRecovery();
     static HttpRequestDef genRequestDefForDeleteInstance();

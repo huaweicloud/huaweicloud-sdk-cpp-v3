@@ -15,7 +15,10 @@ class HUAWEICLOUD_SIS_V1_EXPORT  SisMeta {
 public:
     static HttpRequestDef genRequestDefForCollectTranscriberJob();
     static HttpRequestDef genRequestDefForCreateVocabulary();
+    static HttpRequestDef genRequestDefForCreateVoice();
     static HttpRequestDef genRequestDefForDeleteVocabulary();
+    static HttpRequestDef genRequestDefForGenerateSpeech();
+    static HttpRequestDef genRequestDefForListVoices();
     static HttpRequestDef genRequestDefForPushTranscriberJobs();
     static HttpRequestDef genRequestDefForRecognizeFlashAsr();
     static HttpRequestDef genRequestDefForRecognizeShortAudio();

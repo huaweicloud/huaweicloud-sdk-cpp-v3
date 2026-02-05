@@ -10,8 +10,15 @@
 #include <huaweicloud/sis/v1/model/CollectTranscriberJobResponse.h>
 #include <huaweicloud/sis/v1/model/CreateVocabularyRequest.h>
 #include <huaweicloud/sis/v1/model/CreateVocabularyResponse.h>
+#include <huaweicloud/sis/v1/model/CreateVoiceRequest.h>
+#include <huaweicloud/sis/v1/model/CreateVoiceResponse.h>
 #include <huaweicloud/sis/v1/model/DeleteVocabularyRequest.h>
 #include <huaweicloud/sis/v1/model/DeleteVocabularyResponse.h>
+#include <huaweicloud/sis/v1/model/GenerateSpeechRequest.h>
+#include <huaweicloud/sis/v1/model/GenerateSpeechRequestBody.h>
+#include <huaweicloud/sis/v1/model/GenerateSpeechResponse.h>
+#include <huaweicloud/sis/v1/model/ListVoicesRequest.h>
+#include <huaweicloud/sis/v1/model/ListVoicesResponse.h>
 #include <huaweicloud/sis/v1/model/PostCreateVocabReq.h>
 #include <huaweicloud/sis/v1/model/PostCustomTTSReq.h>
 #include <huaweicloud/sis/v1/model/PostShortAudioReq.h>
@@ -23,6 +30,7 @@
 #include <huaweicloud/sis/v1/model/RecognizeFlashAsrResponse.h>
 #include <huaweicloud/sis/v1/model/RecognizeShortAudioRequest.h>
 #include <huaweicloud/sis/v1/model/RecognizeShortAudioResponse.h>
+#include <huaweicloud/sis/v1/model/RegisterVoiceReq.h>
 #include <huaweicloud/sis/v1/model/RunTtsRequest.h>
 #include <huaweicloud/sis/v1/model/RunTtsResponse.h>
 #include <huaweicloud/sis/v1/model/ShowVocabulariesParams.h>
@@ -74,6 +82,14 @@ public:
     std::shared_ptr<CreateVocabularyResponse> createVocabulary(
         CreateVocabularyRequest &request
     );
+    // 注册接口
+    //
+    // 客户上传一段录音，并指定voice_name，在系统中注册声音。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateVoiceResponse> createVoice(
+        CreateVoiceRequest &request
+    );
     // 删除热词表
     //
     // 通过热词表id删除热词表。
@@ -81,6 +97,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteVocabularyResponse> deleteVocabulary(
         DeleteVocabularyRequest &request
+    );
+    // 合成接口
+    //
+    // 用户指定一个声色名称，并指定对应的文本，合成对应的复刻的声音
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GenerateSpeechResponse> generateSpeech(
+        GenerateSpeechRequest &request
+    );
+    // 查询接口
+    //
+    // 查询已注册的声音列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListVoicesResponse> listVoices(
+        ListVoicesRequest &request
     );
     // 提交录音文件识别任务
     //

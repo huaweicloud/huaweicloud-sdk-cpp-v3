@@ -52,7 +52,7 @@ git clone https://github.com/gabime/spdlog.git
 cd spdlog
 mkdir build
 cd build
-cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  // for shared library
+cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  # for shared library
 make
 sudo make install
 ```
@@ -387,7 +387,7 @@ std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
 
 * Region Services
 
-```c++
+```cpp
 // add dependency for the {{Service}}Region
 #include <huaweicloud/ecs/v2/EcsRegion.h>
 using namespace HuaweiCloud::Sdk::Ecs::V2;
@@ -408,7 +408,7 @@ auto client = EcsClient::newBuilder()
 
 * Global Services
 
-```c++
+```cpp
 // add dependency for the {{Service}}Region
 #include <huaweicloud/devstar/v1/DevstarRegion.h>
 #include <huaweicloud/devstar/v1/DevstarClient.h>

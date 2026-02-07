@@ -27,7 +27,7 @@ This document introduces how to obtain and use Huawei Cloud C++ SDK.
 
 ## Install C++ SDK
 
-You can get the SDK version information through [SDK center](https://console-intl.huaweicloud.com/apiexplorer/#/sdkcenter?language=C%2B%2B) or [Github Releases](https://github.com/huaweicloud/huaweicloud-sdk-cpp-v3/releases?page=1).
+You can get the SDK version information through [SDK center](https:console-intl.huaweicloud.com/apiexplorer/#/sdkcenter?language=C%2B%2B) or [Github Releases](https:github.com/huaweicloud/huaweicloud-sdk-cpp-v3/releases?page=1).
 
 ### Dependent Third-Party Libraries
 
@@ -48,11 +48,11 @@ sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest
 `spdlog` is able to installed by source code only:
 
 ``` bash
-git clone https://github.com/gabime/spdlog.git
+git clone https:github.com/gabime/spdlog.git
 cd spdlog
 mkdir build
 cd build
-cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  // for shared library
+cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  # for shared library
 make
 sudo make install
 ```
@@ -75,7 +75,7 @@ make
 sudo make install
 ```
 
-After the preceding commands completed, **the installation directory of C++ SDK** is `/usr/local`.
+After the preceding commands completed, **the installation directory of  SDK** is `/usr/local`.
 
 ### Install SDK on Windows platform
 
@@ -108,11 +108,11 @@ vcpkg install libbson
 
 8. choose `Build` and start compile
 
-#### Step 3: Install C++ SDK
+#### Step 3: Install  SDK
 
 choose `Build` -> `Install` after compilation.
 
-After the preceding commands completed, **the installation directory of C++ SDK**
+After the preceding commands completed, **the installation directory of  SDK**
 is `C:\Program File (x86)\huaweicloud-sdk-cpp-v3`.
 
 ## Code example
@@ -203,7 +203,7 @@ If you want to run the example on Linux platform, please copy commands above and
 the following command:
 
 ``` bash
-$ g++ -o vpc_test vpc_test.cpp --std=c++14 -lvpc_v2 -lcore -lcrypto -lboost_system -lcpprest
+$ g++ -o vpc_test vpc_test.cpp --std=14 -lvpc_v2 -lcore -lcrypto -lboost_system -lcpprest
 $ ./vpc_test
 # response
 $
@@ -387,7 +387,7 @@ std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
 
 * Region Services
 
-```c++
+```cpp
 // add dependency for the {{Service}}Region
 #include <huaweicloud/ecs/v2/EcsRegion.h>
 using namespace HuaweiCloud::Sdk::Ecs::V2;
@@ -408,7 +408,7 @@ auto client = EcsClient::newBuilder()
 
 * Global Services
 
-```c++
+```cpp
 // add dependency for the {{Service}}Region
 #include <huaweicloud/devstar/v1/DevstarRegion.h>
 #include <huaweicloud/devstar/v1/DevstarClient.h>

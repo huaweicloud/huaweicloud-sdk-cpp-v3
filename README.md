@@ -125,7 +125,9 @@ is `C:\Program File (x86)\huaweicloud-sdk-cpp-v3`.
 
 ``` cpp
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 #include <huaweicloud/core/exception/Exceptions.h>
 #include <huaweicloud/core/Client.h>
 #include <huaweicloud/vpc/v2/VpcClient.h>
@@ -138,23 +140,15 @@ int main(void)
 {   
     //Do not hard-code authentication information into the code, as this may pose a security risk
     //Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.4 Authentication Management 
-    std::string ak;
-    std::string sk;
-#if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
-    ak = getenv("HUAWEICLOUD_SDK_AK");
-    sk = getenv("HUAWEICLOUD_SDK_SK");    
-#elif defined(linux) || defined(__linux) || defined(__linux__)
-    char* envVar; 
-    #define INIT_ENV_VAR(ID, NAME)               \
-    do {                                     \
-        if (envVar = secure_getenv(#NAME)) { \
-            ID = std::string(envVar);        \
-        }                                    \
-    } while (0)
-    INIT_ENV_VAR(ak, HUAWEICLOUD_SDK_AK);
-    INIT_ENV_VAR(sk, HUAWEICLOUD_SDK_SK);
-    #undef INIT_ENV_VAR
-#endif
+    const char* akEnv = std::getenv("HUAWEICLOUD_SDK_AK");
+    const char* skEnv = std::getenv("HUAWEICLOUD_SDK_SK");
+    if (akEnv == nullptr || skEnv == nullptr) {
+        std::cerr << "Missing environment variables: HUAWEICLOUD_SDK_AK/HUAWEICLOUD_SDK_SK"
+                  << std::endl;
+        return 1;
+    }
+    std::string ak(akEnv);
+    std::string sk(skEnv);
     
     // Initialize AK/SK module
     auto basicCredentials = std::make_unique<BasicCredentials>();
@@ -165,7 +159,7 @@ int main(void)
     // Initialize HTTP config
     HttpConfig httpConfig = HttpConfig();
     // Configure VpcClient instance
-    std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
+    std::unique_ptr<Vpc::V2::VpcClient> vpcApi = Vpc::V2::VpcClient::newBuilder()
             .withCredentials(std::unique_ptr<Credentials>(basicCredentials.release()))
             .withHttpConfig(httpConfig)
             .withEndPoint("{your endpoint}")
@@ -370,7 +364,7 @@ globalCredentials->withAk(ak)
 
 ``` cpp
 // Initialize specified service client instance, take VpcClient for example
-std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
+std::unique_ptr<Vpc::V2::VpcClient> vpcApi = Vpc::V2::VpcClient::newBuilder()
     .withCredentials(basicCredentials)
     .withHttpConfig(httpConfig)
     .withEndPoint(endpoint)
@@ -450,7 +444,7 @@ auto client = DevStarClient::newBuilder()
 Vpc::V2::Model::ListVpcsRequest listRequest;
 std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
 std::string responseBody = listRes->getHttpBody();
-std::cout << stringValue << std::endl;
+std::cout << responseBody << std::endl;
 ```
 
 #### 4.1 Exceptions [:top:](#user-manual-top)
@@ -470,12 +464,12 @@ try {
     std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
         vpcApi->listVpcs(listRequest);
     std::string responseBody = listRes->getHttpBody();
-    std::cout << stringValue << std::endl;
+    std::cout << responseBody << std::endl;
 } catch (HostUnreachableException& e) {
     std::cout << e.what() << std::endl;
 } catch (SslHandShakeException& e) {
     std::cout << e.what() << std::endl;
-} catch (RetryQutageException& e) {
+} catch (RetryOutageException& e) {
     std::cout << e.what() << std::endl;
 } catch (CallTimeoutException& e) {
     std::cout << e.what() << std::endl;
@@ -493,7 +487,7 @@ try {
 // use c++ std::async
 #include <future>
 auto future = std::async(std::launch::async,
-                        &Vpc::V2::VpcClient::listVpcs, vpcApi, listRequest);
+                        &Vpc::V2::VpcClient::listVpcs, vpcApi.get(), listRequest);
 auto listResponse = future.get();
 ```
 
@@ -510,7 +504,7 @@ For example:
 
 ``` cpp
 // Initialize specified service client instance, take VpcClient for example
-std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
+std::unique_ptr<Vpc::V2::VpcClient> vpcApi = Vpc::V2::VpcClient::newBuilder()
     .withCredentials(basicCredentials)
     .withHttpConfig(httpConfig)
     .withFileLog(R"(.\log.txt)", true)

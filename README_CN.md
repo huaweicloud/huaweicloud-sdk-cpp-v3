@@ -65,7 +65,7 @@ git clone https://github.com/gabime/spdlog.git
 cd spdlog
 mkdir build
 cd build
-cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  // 用以生成动态库
+cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  # 用以生成动态库
 make
 sudo make install
 ```
@@ -217,8 +217,10 @@ $ ./vpc_test
 # 下方会显示实际运行结果
 $ 
 ```
+
 如果您是在 Windows系统下使用cmake来管理工程，则需要在CMakeLists.txt 中引入sdk core包和服务包的相关依赖。
 可以参考下面的CMakeLists.txt 文件:
+
 ```
 cmake_minimum_required(VERSION 3.16)
 project(demo)
@@ -396,7 +398,7 @@ std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
 
 * Region级服务
 
-```c++
+```cpp
 // 添加对应服务的Region依赖
 #include <huaweicloud/ecs/v2/EcsRegion.h>
 using namespace HuaweiCloud::Sdk::Ecs::V2;
@@ -417,7 +419,7 @@ auto client = EcsClient::newBuilder()
 
 * Global级服务
 
-```c++
+```cpp
 // 添加对应服务的Region依赖
 #include <huaweicloud/devstar/v1/DevstarRegion.h>
 #include <huaweicloud/devstar/v1/DevstarClient.h>
@@ -572,9 +574,10 @@ add_subdirectory(vpc/src/v2)
 add_subdirectory(eip/src/v2)
 add_subdirectory(ecs/src/v2)
 ```
+
 - 对于使用bson编码的服务(kvs)，需要设置ENABLE_BSON开关为ON，默认OFF
+
 ``` cmake
 # SET ENABLE_BSON IS ON
 option(ENABLE_BSON "Enable bson library" ON)
-
 ```

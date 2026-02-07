@@ -156,15 +156,15 @@ int main(void)
     #undef INIT_ENV_VAR
 #endif
     
-    Initialize AK/SK module
+    // Initialize AK/SK module
     auto basicCredentials = std::make_unique<BasicCredentials>();
     basicCredentials->withAk(ak)
             .withSk(sk)
             .withProjectId("{your project id}");
     
-    Initialize HTTP config
+    // Initialize HTTP config
     HttpConfig httpConfig = HttpConfig();
-    Configure VpcClient instance
+    // Configure VpcClient instance
     std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
             .withCredentials(std::unique_ptr<Credentials>(basicCredentials.release()))
             .withHttpConfig(httpConfig)

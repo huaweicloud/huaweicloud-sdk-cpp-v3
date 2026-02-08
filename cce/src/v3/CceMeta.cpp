@@ -653,7 +653,7 @@ HttpRequestDef CceMeta::genRequestDefForShowClusterConfig() {
 
 HttpRequestDef CceMeta::genRequestDefForShowClusterConfigurationDetails() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.WithResponseField(FieldDef().
+    reqDefBuilder.withResponseField(FieldDef().
                 withName("Body").
                 withLocationType(Body_));
     return reqDefBuilder;
@@ -678,7 +678,7 @@ HttpRequestDef CceMeta::genRequestDefForShowClusterSupportConfiguration() {
     reqDefBuilder.withRequestField(FieldDef().withName("NetworkMode")
                   .withJsonTag("networkMode")
                   .withLocationType(Query_));
-    reqDefBuilder.WithResponseField(FieldDef().
+    reqDefBuilder.withResponseField(FieldDef().
                 withName("Body").
                 withLocationType(Body_));
     return reqDefBuilder;
@@ -712,7 +712,7 @@ HttpRequestDef CceMeta::genRequestDefForShowNodePool() {
 
 HttpRequestDef CceMeta::genRequestDefForShowNodePoolConfigurationDetails() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.WithResponseField(FieldDef().
+    reqDefBuilder.withResponseField(FieldDef().
                 withName("Body").
                 withLocationType(Body_));
     return reqDefBuilder;

@@ -17,7 +17,7 @@ This document introduces how to obtain and use Huawei Cloud C++ SDK.
 ## Requirements
 
 - To use Huawei Cloud C++ SDK, you must have Huawei Cloud account as well as the Access Key (AK) and Secret key (SK) of the Huawei
-  Cloud account. You can create an Access Key in the Huawei Cloud console. For more information,
+  Cloud account. You can create an Access Ken the Huawei Cloud console. For more information,
   see [My Credentials](https://support.huaweicloud.com/en-us/usermanual-ca/en-us_topic_0046606340.html).
 
 - To use Huawei Cloud C++ SDK to access the APIs of specific service, please make sure you do have activated the service

@@ -351,7 +351,7 @@ HttpRequestDef CbrMeta::genRequestDefForListFeatures() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
-    reqDefBuilder.WithResponseField(FieldDef().
+    reqDefBuilder.withResponseField(FieldDef().
                 withName("Body").
                 withLocationType(Body_));
     return reqDefBuilder;
@@ -503,7 +503,7 @@ HttpRequestDef CbrMeta::genRequestDefForMigrateDomain() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
-    reqDefBuilder.WithResponseField(FieldDef().
+    reqDefBuilder.withResponseField(FieldDef().
                 withName("Body").
                 withLocationType(Body_));
     return reqDefBuilder;
@@ -591,7 +591,7 @@ HttpRequestDef CbrMeta::genRequestDefForShowFeature() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
-    reqDefBuilder.WithResponseField(FieldDef().
+    reqDefBuilder.withResponseField(FieldDef().
                 withName("Body").
                 withLocationType(Body_));
     return reqDefBuilder;

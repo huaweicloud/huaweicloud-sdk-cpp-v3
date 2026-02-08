@@ -45,14 +45,14 @@ Take `Debian/Ubuntu` system for example, you could run the following commands:
 sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev
 ```
 
-`spdlog` is able to installed by source code only:
+`spdlog` is able to installed by source code only and should build for shared library:
 
 ``` bash
 git clone https://github.com/gabime/spdlog.git
 cd spdlog
 mkdir build
 cd build
-cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  // for shared library
+cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  
 make
 sudo make install
 ```
@@ -125,7 +125,9 @@ is `C:\Program File (x86)\huaweicloud-sdk-cpp-v3`.
 
 ``` cpp
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 #include <huaweicloud/core/exception/Exceptions.h>
 #include <huaweicloud/core/Client.h>
 #include <huaweicloud/vpc/v2/VpcClient.h>
@@ -174,13 +176,13 @@ int main(void)
     // Initialize request parameters
     Vpc::V2::Model::ListVpcsRequest listRequest;
     try {
-        std::string stringValue;
+        std::string responseBody;
         // Creat an API request and get response
         std::cout << "************ListVpc***********" << std::endl;
         std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
-            vpcApi->listVpcs(listRequest);
-        stringValue = listRes->getHttpBody();
-        std::cout << stringValue << std::endl;
+            vpcApi_v2->listVpcs(listRequest);
+        responseBody = listRes->getHttpBody();
+        std::cout << responseBody << std::endl;
     } catch (HostUnreachableException& e) { // handle exception
         std::cout << e.what() << std::endl;
     } catch (SslHandShakeException& e) {
@@ -448,9 +450,9 @@ auto client = DevStarClient::newBuilder()
 ``` cpp
 // Initialize request
 Vpc::V2::Model::ListVpcsRequest listRequest;
-std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
+std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi_v2->listVpcs(listRequest);
 std::string responseBody = listRes->getHttpBody();
-std::cout << stringValue << std::endl;
+std::cout << responseBody << std::endl;
 ```
 
 #### 4.1 Exceptions [:top:](#user-manual-top)
@@ -468,14 +470,14 @@ std::cout << stringValue << std::endl;
 // handle exceptions
 try {
     std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
-        vpcApi->listVpcs(listRequest);
+        vpcApi_v2->listVpcs(listRequest);
     std::string responseBody = listRes->getHttpBody();
-    std::cout << stringValue << std::endl;
+    std::cout << responseBody << std::endl;
 } catch (HostUnreachableException& e) {
     std::cout << e.what() << std::endl;
 } catch (SslHandShakeException& e) {
     std::cout << e.what() << std::endl;
-} catch (RetryQutageException& e) {
+} catch (RetryOutageException& e) {
     std::cout << e.what() << std::endl;
 } catch (CallTimeoutException& e) {
     std::cout << e.what() << std::endl;
@@ -493,7 +495,7 @@ try {
 // use c++ std::async
 #include <future>
 auto future = std::async(std::launch::async,
-                        &Vpc::V2::VpcClient::listVpcs, vpcApi, listRequest);
+                        &Vpc::V2::VpcClient::listVpcs, vpcApi_v2.get(), listRequest);
 auto listResponse = future.get();
 ```
 
@@ -570,4 +572,70 @@ add_subdirectory(ecs/src/v2)
 ``` bash
 # For services that use BSON, set ENABLE_BSON to ON. ENABLE_BSON is set to OFF by default.
 option(ENABLE_BSON "Enable bson library" ON)
+```
+
+8. Special Notes
+If you use the three special APIs of the CCE service: listAutopilotJobs, getAutopilotOneJob, and deleteAutopilotJob, please refer to the following sample code for invocation.
+Compared with other CCE APIs, there are two changes:
+1) When importing the corresponding SDK client, you need to include the CceSpecClient.h header file (other APIs use CceClient.h).
+2) When calling the API, you need to use the CceSpecClient::newBuilder() method to create the Client (other APIs use the CceClient::newBuilder() method).
+
+``` cpp
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <memory>
+#include <huaweicloud/core/exception/Exceptions.h>
+#include <huaweicloud/core/Client.h>
+// use CceSpecClient.h to import CceSpecClient
+#include <huaweicloud/cce/v3/CceSpecClient.h
+
+using namespace HuaweiCloud::Sdk::Cce::V3;
+using namespace HuaweiCloud::Sdk::Cce::V3::Model;
+using namespace HuaweiCloud::Sdk::Core;
+using namespace HuaweiCloud::Sdk::Core::Exception;
+using namespace std;
+
+int main() {
+    string ak = getenv("CLOUD_SDK_AK");
+    string sk = getenv("CLOUD_SDK_SK");
+
+    auto auth = std::make_unique<BasicCredentials>();
+    auth->withAk(ak)
+        .withSk(sk);
+    HttpConfig httpConfig = HttpConfig();
+    // use CceSpecClient to create client for api deleteAutopilotJob
+    auto client = CceSpecClient::newBuilder()
+            .withCredentials(std::unique_ptr<Credentials>(auth.release()))
+            .withHttpConfig(httpConfig)
+            .withEndPoint(endpoint)
+            .build();
+
+    DeleteAutopilotJobRequest request;
+    request.setJobId("1234-11f1-852c-0255ac101783");
+
+    std::cout << "-----begin execute request-------" << std::endl;
+    try {
+        auto reponse = client->deleteAutopilotJob(request);
+        std::cout << reponse->getHttpBody() << std::endl;
+    } catch (HostUnreachableException& e) {
+        std::cout << "host unreachable:" << e.what() << std::endl;
+    } catch (SslHandShakeException& e) {
+        std::cout << "ssl handshake error:" << e.what() << std::endl;
+    } catch (RetryOutageException& e) {
+        std::cout << "retryoutage error:" << e.what() << std::endl;
+    } catch (CallTimeoutException& e) {
+        std::cout << "call timeout:" <<  e.what() << std::endl;
+    } catch (ServiceResponseException& e) {
+        std::cout << "http status code:" << e.getStatusCode() << std::endl;
+        std::cout << "error code:" << e.getErrorCode() << std::endl;
+        std::cout << "error msg:" << e.getErrorMsg() << std::endl;
+        std::cout << "RequestId:" << e.getRequestId() << std::endl;
+    } catch (exception& e) {
+        std:cout << "unknown exception:" << e.what() << std::endl;
+    }
+    std::cout << "------request finished--------" << std::endl;
+    return 0;
+}
+
 ```

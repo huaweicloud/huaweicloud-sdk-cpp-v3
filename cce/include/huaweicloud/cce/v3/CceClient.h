@@ -396,15 +396,6 @@
 #include <huaweicloud/cce/v3/model/UpgradeWorkFlowUpdateRequestBody.h>
 #include <string>
 
-#include <huaweicloud/cce/v3/model/DeleteAutopilotJobRequest.h>
-#include <huaweicloud/cce/v3/model/DeleteAutopilotJobResponse.h>
-#include <huaweicloud/cce/v3/model/GetAutopilotOneJobRequest.h>
-#include <huaweicloud/cce/v3/model/GetAutopilotOneJobResponse.h>
-#include <huaweicloud/cce/v3/model/ListAutopilotJobsRequest.h>
-#include <huaweicloud/cce/v3/model/ListAutopilotJobsResponse.h>
-#include <huaweicloud/cce/v3/model/V2Job.h>
-#include <string>
-
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Object.h>
@@ -1815,31 +1806,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeAutopilotWorkFlowUpdateResponse> upgradeAutopilotWorkFlowUpdate(
         UpgradeAutopilotWorkFlowUpdateRequest &request
-    );
-
-    // 删除Job
-    //
-    // 该API用于删除指定项目下的Job。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<DeleteAutopilotJobResponse> deleteAutopilotJob(
-        DeleteAutopilotJobRequest &request
-    );
-    // 获取Job详情
-    //
-    // 该API用于获取指定项目下的Job详情。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<GetAutopilotOneJobResponse> getAutopilotOneJob(
-        GetAutopilotOneJobRequest &request
-    );
-    // 获取Job列表
-    //
-    // 该API用于获取指定项目下的所有jobs。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListAutopilotJobsResponse> listAutopilotJobs(
-        ListAutopilotJobsRequest &request
     );
 
 

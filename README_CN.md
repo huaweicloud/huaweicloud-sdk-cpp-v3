@@ -58,14 +58,14 @@
 sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev
 ```
 
-spdlog 需要从源码进行安装
+spdlog 需要从源码进行安装, 生成对应的动态库
 
 ``` bash
 git clone https://github.com/gabime/spdlog.git
 cd spdlog
 mkdir build
 cd build
-cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  // 用以生成动态库
+cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON .. 
 make
 sudo make install
 ```
@@ -138,7 +138,9 @@ vcpkg install libbson
 
 ``` cpp
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 #include <huaweicloud/core/exception/Exceptions.h>
 #include <huaweicloud/core/Client.h>
 #include <huaweicloud/vpc/v2/VpcClient.h>
@@ -184,13 +186,13 @@ int main(void)
     // Initialize request parameters
     Vpc::V2::Model::ListVpcsRequest listRequest;
     try {
-        std::string stringValue;
+        std::string responseBody;
         // Creat an API request and get response
         std::cout << "************ListVpc***********" << std::endl;
         std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
-            vpcApi->listVpcs(listRequest);
-        stringValue = listRes->getHttpBody();
-        std::cout << stringValue << std::endl;
+            vpcApi_v2->listVpcs(listRequest);
+        responseBody = listRes->getHttpBody();
+        std::cout << responseBody << std::endl;
     } catch (HostUnreachableException& e) { // handle exception
         std::cout << e.what() << std::endl;
     } catch (SslHandShakeException& e) {
@@ -457,9 +459,9 @@ auto client = DevStarClient::newBuilder()
 ``` cpp
 // 初始化请求，以调用接口 listVpcs 为例
 Vpc::V2::Model::ListVpcsRequest listRequest;
-std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
+std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi_v2->listVpcs(listRequest);
 std::string responseBody = listRes->getHttpBody();
-std::cout << stringValue << std::endl;
+std::cout << responseBody << std::endl;
 ```
 
 #### 4.1 异常处理 [:top:](#用户手册-top)
@@ -477,14 +479,14 @@ std::cout << stringValue << std::endl;
 // 异常处理
 try {
     std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
-        vpcApi->listVpcs(listRequest);
+        vpcApi_v2->listVpcs(listRequest);
     std::string responseBody = listRes->getHttpBody();
-    std::cout << stringValue << std::endl;
+    std::cout << responseBody << std::endl;
 } catch (HostUnreachableException& e) {
     std::cout << e.what() << std::endl;
 } catch (SslHandShakeException& e) {
     std::cout << e.what() << std::endl;
-} catch (RetryQutageException& e) {
+} catch (RetryOutageException& e) {
     std::cout << e.what() << std::endl;
 } catch (CallTimeoutException& e) {
     std::cout << e.what() << std::endl;
@@ -502,7 +504,7 @@ try {
 // 采用c++ std::async接口实现，以listVpcs接口为例
 #include <future>
 auto future = std::async(std::launch::async,
-                        &Vpc::V2::VpcClient::listVpcs, vpcApi, listRequest);
+                        &Vpc::V2::VpcClient::listVpcs, vpcApi_v2.get(), listRequest);
 auto listResponse = future.get();
 ```
 
@@ -576,5 +578,71 @@ add_subdirectory(ecs/src/v2)
 ``` cmake
 # SET ENABLE_BSON IS ON
 option(ENABLE_BSON "Enable bson library" ON)
+
+```
+
+### 8.特殊说明
+- 如果使用cce 服务的listAutopilotJobs、getAutopilotOneJob、deleteAutopilotJob 的3个特殊api, 需要参考以下示例代码进行调用。
+和其他cce 的api 相比，有以下两处改动
+1）在引用对应sdk 的client时需要引用 CceSpecClient.h头文件(其他api 是使用CceClient.h)
+2）调用api 时需要CceSpecClient::newBuilder()方法来创建Client(其他api 是使用CceClient::newBuilder()方法)
+
+``` cpp
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <memory>
+#include <huaweicloud/core/exception/Exceptions.h>
+#include <huaweicloud/core/Client.h>
+// include 头文件时需要引用CceSpecClient.h
+#include <huaweicloud/cce/v3/CceSpecClient.h
+
+using namespace HuaweiCloud::Sdk::Cce::V3;
+using namespace HuaweiCloud::Sdk::Cce::V3::Model;
+using namespace HuaweiCloud::Sdk::Core;
+using namespace HuaweiCloud::Sdk::Core::Exception;
+using namespace std;
+
+int main() {
+    string ak = getenv("CLOUD_SDK_AK");
+    string sk = getenv("CLOUD_SDK_SK");
+
+    auto auth = std::make_unique<BasicCredentials>();
+    auth->withAk(ak)
+        .withSk(sk);
+    HttpConfig httpConfig = HttpConfig();
+    // 调用api需要使用CceSpecClient
+    auto client = CceSpecClient::newBuilder()
+            .withCredentials(std::unique_ptr<Credentials>(auth.release()))
+            .withHttpConfig(httpConfig)
+            .withEndPoint(endpoint)
+            .build();
+
+    DeleteAutopilotJobRequest request;
+    request.setJobId("f55daac6-0411-11f1-852c-0255ac101783");
+
+    std::cout << "-----begin execute request-------" << std::endl;
+    try {
+        auto reponse = client->deleteAutopilotJob(request);
+        std::cout << reponse->getHttpBody() << std::endl;
+    } catch (HostUnreachableException& e) {
+        std::cout << "host unreachable:" << e.what() << std::endl;
+    } catch (SslHandShakeException& e) {
+        std::cout << "ssl handshake error:" << e.what() << std::endl;
+    } catch (RetryOutageException& e) {
+        std::cout << "retryoutage error:" << e.what() << std::endl;
+    } catch (CallTimeoutException& e) {
+        std::cout << "call timeout:" <<  e.what() << std::endl;
+    } catch (ServiceResponseException& e) {
+        std::cout << "http status code:" << e.getStatusCode() << std::endl;
+        std::cout << "error code:" << e.getErrorCode() << std::endl;
+        std::cout << "error msg:" << e.getErrorMsg() << std::endl;
+        std::cout << "RequestId:" << e.getRequestId() << std::endl;
+    } catch (exception& e) {
+        std:cout << "unknown exception:" << e.what() << std::endl;
+    }
+    std::cout << "------request finished--------" << std::endl;
+    return 0;
+}
 
 ```

@@ -15,6 +15,11 @@
 
 这里将向您介绍如何获取并使用华为云 C++ SDK 。
 
+## 项目说明
+
+- 当前SDK主体代码由华为云内部团队通过开源组件（openapi-generator）自动生成，并由华为云团队直接提交到Github社区，基于实现方案一致性以及版本兼容性考虑，暂时无法接受开发者PR
+- 我们正在研究SDK按开源社区标准方式运作的可行性，需要一些时间，同时我们会及时响应并处理开发者提的Issue
+
 ## 使用前提
 
 - 要使用华为云 C++ SDK ，您需要拥有云账号以及该账号对应的 Access Key（AK）和 Secret Access Key（SK）。 请在华为云控制台“我的凭证-访问密钥”页面上创建和查看您的 AK&SK
@@ -44,7 +49,7 @@
 
 ### 依赖的第三方库
 
-`curl`、`boost`、`cpprestsdk`、`spdlog`、`openssl`
+`curl`、`boost`、`cpprestsdk`、`spdlog`、`openssl`、`rttr`
 
 ### 在 Linux 系统上安装 SDK
 
@@ -55,17 +60,17 @@
 例如基于 Debian/Ubuntu 的系统
 
 ``` bash
-sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev
+sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev librttr-dev
 ```
 
-spdlog 需要从源码进行安装, 生成对应的动态库
+spdlog 需要从源码进行安装, 生成对应的动态库，推荐使用v1.17.0版本，如果您本地安装其他版本的spdlog，建议参考官网文档进行源码安装 https://github.com/gabime/spdlog 。
 
 ``` bash
-git clone https://github.com/gabime/spdlog.git
+git clone -b v1.17.0 https://github.com/gabime/spdlog.git
 cd spdlog
 mkdir build
 cd build
-cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON .. 
+cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DBUILD_SHARED_LIBS=ON .. 
 make
 sudo make install
 ```
@@ -88,7 +93,237 @@ sudo make install
 ```
 
 完成上述操作后，**C++ SDK 安装目录为 `/usr/local`**。
+#### 特殊说明
+产物中的`libcore`可能会与其他动态库名字发生冲突，可以在源码中手动改名后再构建，以避免冲突。
+以下以编译vpc包为例，产物改名为`core_change_name_demo`
 
+1、修改`/huaweicloud-sdk-cpp-v3/core/CMakeLists.txt`中的`core`为`core_change_name_demo`，涉及改动点已通过注释标明。
+``` cmake
+cmake_minimum_required (VERSION 3.10)
+
+project(core)
+
+if(CMAKE_HOST_WIN32)
+    add_compile_options(-bigobj)
+else()
+    set(cxx_base_flags "${cxx_base_flags} -bigobj")
+    set(cpprestsdk_DIR /usr/lib/${CMAKE_LIBRARY_ARCHITECTURE}/cmake/)
+endif()
+
+set(CMAKE_BUILD_TYPE Debug)
+
+find_package(OpenSSL REQUIRED)
+find_package(spdlog REQUIRED)
+find_package(cpprestsdk REQUIRED)
+find_package(CURL REQUIRED)
+# Update require components as necessary
+if(CMAKE_HOST_WIN32)
+    find_package(Boost REQUIRED COMPONENTS ${Boost_THREAD_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${Boost_REGEX_LIBRARY} ${Boost_DATE_TIME_LIBRARY} ${Boost_PROGRAM_OPTIONS_LIBRARY} ${Boost_FILESYSTEM_LIBRARY})
+else()
+    find_package(Boost REQUIRED COMPONENTS filesystem thread system regex date_time program_options)
+endif()
+
+if(ENABLE_BSON)
+    file(GLOB source_file "src/*.cpp" "src/auth/*.cpp" "src/http/*.cpp" "src/utils/*.cpp" "src/exception/*.cpp" "src/bson/*.cpp" "src/bson/impl/*.cpp")
+    file(GLOB core_bson_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/bson/*.h)
+    file(GLOB core_bson_impl_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/bson/impl/*.h)
+else()
+    file(GLOB source_file "src/*.cpp" "src/auth/*.cpp" "src/http/*.cpp" "src/utils/*.cpp" "src/exception/*.cpp")
+endif ()
+file(GLOB core_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/*.h)
+file(GLOB core_auth_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/auth/*.h)
+file(GLOB core_exception_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/exception/*.h)
+file(GLOB core_http_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/http/*.h)
+file(GLOB core_utils_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/utils/*.h)
+
+if(ENABLE_BSON)
+    # 改动点1
+    add_library(core_change_name_demo ${LIB_TYPE}
+            ${source_file}
+            ${core_header}
+            ${core_auth_header}
+            ${core_exception_header}
+            ${core_http_header}
+            ${core_utils_header}
+            ${core_bson_header}
+            ${core_bson_impl_header}
+            )
+else()
+    # 改动点2
+    add_library(core_change_name_demo ${LIB_TYPE}
+            ${source_file}
+            ${core_header}
+            ${core_auth_header}
+            ${core_exception_header}
+            ${core_http_header}
+            ${core_utils_header}
+            )
+endif()
+# 改动点3
+set_target_properties(core_change_name_demo
+        PROPERTIES
+        LINKER_LANGUAGE CXX
+        ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+        LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+        #改动点4
+        OUTPUT_NAME core_change_name_demo
+        )
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+    # 改动点5
+    set_target_properties(core_change_name_demo
+            PROPERTIES
+            DEFINE_SYMBOL HUAWEICLOUD_CORE_SHARED)
+endif()
+
+
+if(ENABLE_BSON)
+    if(NOT LIBBSON_DIR)
+        message(FATAL_ERROR "Please manual set variable LIBBSON_DIR for search libbson root dir")
+    endif()
+    set(LIBBSON_LIBRARY_DIR ${LIBBSON_DIR}/lib)
+    set(LIBBSON_INCLUDE_DIR ${LIBBSON_DIR}/include/libbson-1.0)
+    # 改动点6
+    target_include_directories(core_change_name_demo PUBLIC ${LIBBSON_INCLUDE_DIR})
+    target_link_libraries(core_change_name_demo PUBLIC bson-1.0)
+    target_link_directories(core_change_name_demo PUBLIC ${LIBBSON_LIBRARY_DIR})
+endif()
+# 改动点7
+target_include_directories(core_change_name_demo PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        )
+# 改动点8
+if(CMAKE_HOST_WIN32)
+    target_link_libraries(core_change_name_demo PUBLIC
+            spdlog::spdlog
+            OpenSSL::SSL
+            bcrypt
+            ${Boost_LIBRARIES}
+            ${CURL_LIBRARIES}
+            cpprestsdk::cpprest
+            )
+else()
+# 改动点9
+    target_link_libraries(core_change_name_demo PUBLIC
+            spdlog::spdlog
+            OpenSSL::SSL
+            crypto
+            ${Boost_LIBRARIES}
+            ${CURL_LIBRARIES}
+            cpprest
+            )
+endif()
+
+install(FILES ${core_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core)
+install(FILES ${core_auth_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core/auth)
+install(FILES ${core_exception_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core/exception)
+install(FILES ${core_http_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core/http)
+install(FILES ${core_utils_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core/utils)
+# 改动点10
+install(TARGETS core_change_name_demo
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+        )
+if(ENABLE_BSON)
+install(FILES ${core_bson_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core/bson)
+install(FILES ${core_bson_impl_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core/bson/impl)
+endif()
+
+```
+
+2、修改/huaweicloud-sdk-cpp-v3/vpc/src/v2/CMakeLists.txt，将链接的库名从`core`修改为`core_change_name_demo`，修改点已用注释标明。
+
+``` cmake
+cmake_minimum_required (VERSION 3.10)
+
+#PROJECT's NAME
+project(vpc_v2)
+
+if(CMAKE_HOST_WIN32)
+    add_compile_options(-bigobj)
+else()
+    set(cxx_base_flags "${cxx_base_flags} -bigobj")
+endif()
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_UUID_FORCE_AUTO_LINK")
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+#HEADER FILES
+file(GLOB service_client_header
+        ${CMAKE_SOURCE_DIR}/vpc/include/huaweicloud/vpc/v2/*.h)
+file(GLOB service_model_header
+        ${CMAKE_SOURCE_DIR}/vpc/include/huaweicloud/vpc/v2/model/*.h)
+#SOURCE FILES
+file(GLOB source_file
+        ${CMAKE_SOURCE_DIR}/vpc/src/v2/*.cpp
+        ${CMAKE_SOURCE_DIR}/vpc/src/v2/model/*.cpp)
+
+add_library(vpc_v2 ${LIB_TYPE}
+        ${source_file}
+        ${service_client_header}
+        ${service_model_header})
+
+set_target_properties(vpc_v2
+        PROPERTIES
+        LINKER_LANGUAGE CXX
+        ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+        LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+        OUTPUT_NAME vpc_v2
+        )
+
+if(CMAKE_HOST_WIN32)
+    if(${LIB_TYPE} STREQUAL "SHARED")
+        set_target_properties(vpc_v2
+            PROPERTIES
+            DEFINE_SYMBOL HUAWEICLOUD_VPC_V2_SHARED)
+    endif()
+else()
+    if(${LIB_TYPE} STREQUAL "SHARED")
+        set_target_properties(vpc_v2
+            PROPERTIES
+            DEFINE_SYMBOL HUAWEICLOUD_VPC_V2_EXPORT)
+    endif()
+endif()
+
+target_include_directories(vpc_v2 PUBLIC
+        ${CMAKE_SOURCE_DIR}/vpc/include
+        )
+# 改动点
+target_link_libraries(vpc_v2 PUBLIC
+        core_change_name_demo)
+
+if(ENABLE_RTTR)
+    if(NOT CMAKE_HOST_WIN32)
+        set(rttr_DIR /home/nfs/rttr/rttr-0.9.6/build/install/share/rttr/cmake)
+    endif()
+    find_package(rttr CONFIG REQUIRED)
+    target_link_libraries(vpc_v2 PUBLIC
+            RTTR::Core)
+endif()
+
+install(FILES ${service_client_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/vpc/v2)
+install(FILES ${service_model_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/vpc/v2/model)
+install(TARGETS vpc_v2
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+```
 ### 在 Windows 系统上安装 SDK
 
 #### Step 1：安装 vcpkg 并使用 vcpkg 安装所需软件包

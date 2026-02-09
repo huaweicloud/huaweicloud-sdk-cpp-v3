@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cce/v3/model/V2Job.h>
 #include <string>
 #include <map>
 #include <vector>
@@ -20,6 +19,7 @@ namespace Cce {
 namespace V3 {
 namespace Model {
 
+class V2Job;
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
@@ -119,4 +119,5 @@ protected:
 }
 }
 
+#include <huaweicloud/cce/v3/model/V2Job.h>
 #endif // HUAWEICLOUD_SDK_CCE_V3_MODEL_V2JobSpec_H_

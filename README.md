@@ -45,14 +45,14 @@ Take `Debian/Ubuntu` system for example, you could run the following commands:
 sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev
 ```
 
-`spdlog` is able to installed by source code only:
+`spdlog` is able to installed by source code only and should build for shared library:
 
 ``` bash
 git clone https://github.com/gabime/spdlog.git
 cd spdlog
 mkdir build
 cd build
-cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  # for shared library
+cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..  
 make
 sudo make install
 ```
@@ -125,7 +125,9 @@ is `C:\Program File (x86)\huaweicloud-sdk-cpp-v3`.
 
 ``` cpp
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 #include <huaweicloud/core/exception/Exceptions.h>
 #include <huaweicloud/core/Client.h>
 #include <huaweicloud/vpc/v2/VpcClient.h>
@@ -174,13 +176,13 @@ int main(void)
     // Initialize request parameters
     Vpc::V2::Model::ListVpcsRequest listRequest;
     try {
-        std::string stringValue;
+        std::string responseBody;
         // Creat an API request and get response
         std::cout << "************ListVpc***********" << std::endl;
         std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
-            vpcApi->listVpcs(listRequest);
-        stringValue = listRes->getHttpBody();
-        std::cout << stringValue << std::endl;
+            vpcApi_v2->listVpcs(listRequest);
+        responseBody = listRes->getHttpBody();
+        std::cout << responseBody << std::endl;
     } catch (HostUnreachableException& e) { // handle exception
         std::cout << e.what() << std::endl;
     } catch (SslHandShakeException& e) {
@@ -448,9 +450,9 @@ auto client = DevStarClient::newBuilder()
 ``` cpp
 // Initialize request
 Vpc::V2::Model::ListVpcsRequest listRequest;
-std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
+std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi_v2->listVpcs(listRequest);
 std::string responseBody = listRes->getHttpBody();
-std::cout << stringValue << std::endl;
+std::cout << responseBody << std::endl;
 ```
 
 #### 4.1 Exceptions [:top:](#user-manual-top)
@@ -468,14 +470,14 @@ std::cout << stringValue << std::endl;
 // handle exceptions
 try {
     std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
-        vpcApi->listVpcs(listRequest);
+        vpcApi_v2->listVpcs(listRequest);
     std::string responseBody = listRes->getHttpBody();
-    std::cout << stringValue << std::endl;
+    std::cout << responseBody << std::endl;
 } catch (HostUnreachableException& e) {
     std::cout << e.what() << std::endl;
 } catch (SslHandShakeException& e) {
     std::cout << e.what() << std::endl;
-} catch (RetryQutageException& e) {
+} catch (RetryOutageException& e) {
     std::cout << e.what() << std::endl;
 } catch (CallTimeoutException& e) {
     std::cout << e.what() << std::endl;
@@ -493,7 +495,7 @@ try {
 // use c++ std::async
 #include <future>
 auto future = std::async(std::launch::async,
-                        &Vpc::V2::VpcClient::listVpcs, vpcApi, listRequest);
+                        &Vpc::V2::VpcClient::listVpcs, vpcApi_v2.get(), listRequest);
 auto listResponse = future.get();
 ```
 

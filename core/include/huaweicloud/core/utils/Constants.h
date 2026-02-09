@@ -41,7 +41,7 @@ static const std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams&)> D
         std::string endpoint = requestParams.getHost();
         std::string https_scheme = "https://";
         endpoint = endpoint.substr(0, endpoint.find(https_scheme)) + endpoint.substr(endpoint.find(https_scheme) + https_scheme.length());
-        std::regex re("(^[a-z][a-z0-9-]+(\.[a-z]{2,}-[a-z]+-\d{1,2})?\.(my)?(huaweicloud|myhwclouds).(com|cn))");
+        std::regex re(R"((^[a-z][a-z0-9-]+(\.[a-z]{2,}-[a-z]+-\d{1,2})?\.(my)?(huaweicloud|myhwclouds)\.(com|cn)))");
         return !std::regex_match(endpoint, re);
 };
 }

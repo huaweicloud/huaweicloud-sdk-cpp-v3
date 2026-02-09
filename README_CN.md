@@ -58,7 +58,7 @@
 sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev
 ```
 
-spdlog 需要从源码进行安装
+spdlog 需要从源码进行安装, 生成对应的动态库
 
 ``` bash
 git clone https://github.com/gabime/spdlog.git
@@ -138,7 +138,9 @@ vcpkg install libbson
 
 ``` cpp
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 #include <huaweicloud/core/exception/Exceptions.h>
 #include <huaweicloud/core/Client.h>
 #include <huaweicloud/vpc/v2/VpcClient.h>
@@ -184,13 +186,13 @@ int main(void)
     // Initialize request parameters
     Vpc::V2::Model::ListVpcsRequest listRequest;
     try {
-        std::string stringValue;
+        std::string responseBody;
         // Creat an API request and get response
         std::cout << "************ListVpc***********" << std::endl;
         std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
-            vpcApi->listVpcs(listRequest);
-        stringValue = listRes->getHttpBody();
-        std::cout << stringValue << std::endl;
+            vpcApi_v2->listVpcs(listRequest);
+        responseBody = listRes->getHttpBody();
+        std::cout << responseBody << std::endl;
     } catch (HostUnreachableException& e) { // handle exception
         std::cout << e.what() << std::endl;
     } catch (SslHandShakeException& e) {
@@ -459,9 +461,9 @@ auto client = DevStarClient::newBuilder()
 ``` cpp
 // 初始化请求，以调用接口 listVpcs 为例
 Vpc::V2::Model::ListVpcsRequest listRequest;
-std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
+std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi_v2->listVpcs(listRequest);
 std::string responseBody = listRes->getHttpBody();
-std::cout << stringValue << std::endl;
+std::cout << responseBody << std::endl;
 ```
 
 #### 4.1 异常处理 [:top:](#用户手册-top)
@@ -479,14 +481,14 @@ std::cout << stringValue << std::endl;
 // 异常处理
 try {
     std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
-        vpcApi->listVpcs(listRequest);
+        vpcApi_v2->listVpcs(listRequest);
     std::string responseBody = listRes->getHttpBody();
-    std::cout << stringValue << std::endl;
+    std::cout << responseBody << std::endl;
 } catch (HostUnreachableException& e) {
     std::cout << e.what() << std::endl;
 } catch (SslHandShakeException& e) {
     std::cout << e.what() << std::endl;
-} catch (RetryQutageException& e) {
+} catch (RetryOutageException& e) {
     std::cout << e.what() << std::endl;
 } catch (CallTimeoutException& e) {
     std::cout << e.what() << std::endl;
@@ -504,7 +506,7 @@ try {
 // 采用c++ std::async接口实现，以listVpcs接口为例
 #include <future>
 auto future = std::async(std::launch::async,
-                        &Vpc::V2::VpcClient::listVpcs, vpcApi, listRequest);
+                        &Vpc::V2::VpcClient::listVpcs, vpcApi_v2.get(), listRequest);
 auto listResponse = future.get();
 ```
 

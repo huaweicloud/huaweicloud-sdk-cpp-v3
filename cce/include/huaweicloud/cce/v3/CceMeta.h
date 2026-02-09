@@ -175,9 +175,6 @@ public:
     static HttpRequestDef genRequestDefForUpdateAutopilotUpgradePlan();
     static HttpRequestDef genRequestDefForUpgradeAutopilotCluster();
     static HttpRequestDef genRequestDefForUpgradeAutopilotWorkFlowUpdate();
-    static HttpRequestDef genRequestDefForDeleteAutopilotJob();
-    static HttpRequestDef genRequestDefForGetAutopilotOneJob();
-    static HttpRequestDef genRequestDefForListAutopilotJobs();
 };
 
 }

@@ -830,7 +830,7 @@ option(ENABLE_BSON "Enable bson library" ON)
 #include <huaweicloud/core/exception/Exceptions.h>
 #include <huaweicloud/core/Client.h>
 // include 头文件时需要引用CceSpecClient.h
-#include <huaweicloud/cce/v3/CceSpecClient.h
+#include <huaweicloud/cce/v3/CceSpecClient.h>
 
 using namespace HuaweiCloud::Sdk::Cce::V3;
 using namespace HuaweiCloud::Sdk::Cce::V3::Model;

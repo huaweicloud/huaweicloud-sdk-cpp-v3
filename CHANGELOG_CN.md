@@ -1,3 +1,31 @@
+# 3.1.174 2026-02-10
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - readme中cmake脚本错误注释
+  - readme中依赖的第三方库补充`rttr`
+  - readme中补充产物改名样例
+  - readme中补充`spdlog`源码构建推荐版本号
+  - readme中cpp验证用例修复
+  - 正则表达式语法修复
+  - `CMakeLists.txt`新增文件结尾换行
+  - 修复代码生成中的拼写错误
+  - `CMakeLists.txt`中提示信息修正
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 解决循环依赖问题
+- _特性变更_
+  - 无
+
 # 3.1.173 2026-02-05
 
 ### HuaweiCloud SDK RDS

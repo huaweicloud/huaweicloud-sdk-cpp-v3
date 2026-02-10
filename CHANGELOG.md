@@ -1,3 +1,31 @@
+# 3.1.174 2026-02-10
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Fix incorrect comments in the CMake script within the readme
+  - Add `rttr` to the list of third‑party library dependencies in the readme
+  - Include examples of renaming outputs in the readme
+  - Recommend version numbers for building `spdlog` from source in the readme
+  - Fix C++ validation test cases
+  - Correct regular expression syntax
+  - Add line breaks at the end of files in `CMakeLists.txt`
+  - Fix spelling errors in code generation
+  - Revise prompt messages in `CMakeLists.txt`
+- _Change_
+  - None
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Fix the circular dependency
+- _Change_
+  - None
+
 # 3.1.173 2026-02-05
 
 ### HuaweiCloud SDK RDS

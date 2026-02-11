@@ -1,3 +1,17 @@
+# 3.1.175 2026-02-11
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Optimize the description of third-party library dependencies in README
+  - Optimize the build example description in README
+  - Optimize the content of `CMakeLists.txt`
+  - Resolve some compilation warnings
+- _Change_
+  - None
+
 # 3.1.174 2026-02-10
 
 ### HuaweiCloud SDK Core

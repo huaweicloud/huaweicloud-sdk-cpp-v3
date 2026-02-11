@@ -36,7 +36,7 @@ You can get the SDK version information through [SDK center](https://console-int
 
 ### Dependent Third-Party Libraries
 
-`curl`, `boost`, `cpprestsdk`, `spdlog`, `openssl`, `rttr`
+`curl`, `boost`, `cpprestsdk`, `spdlog`, `openssl`, `rttr`, `cmake`, `g++`
 
 ### Install SDK on Linux platform
 
@@ -69,13 +69,13 @@ sudo apt-get install libbson-1.0
 ```
 
 #### Step 2: Build and install SDK
-
+By default, a service is constructed. The following example uses the v3 version of the CCE service.
 ``` bash
 git clone https://github.com/huaweicloud/huaweicloud-sdk-cpp-v3.git
 cd huaweicloud-sdk-cpp-v3
 mkdir build
 cd build
-cmake ..
+cmake -DBUILD_SERVICE=cce -DSERVICE_VERSION=v3 ..
 make
 sudo make install
 ```
@@ -385,10 +385,10 @@ int main(void)
 #elif defined(linux) || defined(__linux) || defined(__linux__)
     char* envVar; 
     #define INIT_ENV_VAR(ID, NAME)               \
-    do {                                     \
-        if (envVar = secure_getenv(#NAME)) { \
-            ID = std::string(envVar);        \
-        }                                    \
+    do {                                         \
+        if ((envVar = secure_getenv(#NAME))) {   \
+            ID = std::string(envVar);            \
+        }                                        \
     } while (0)
     INIT_ENV_VAR(ak, HUAWEICLOUD_SDK_AK);
     INIT_ENV_VAR(sk, HUAWEICLOUD_SDK_SK);
@@ -799,7 +799,7 @@ endif()
 - If you want to use multiple services, you could configure like this:
 
 ``` cmake
-# USE MULTIPLE SERVICES(EXAMPLE: USE VPC ECS AND EIP)
+# USE MULTIPLE SERVICES(EXAMPLE: vpc ecs eip)
 add_subdirectory(core)
 add_subdirectory(vpc/src/v2)
 add_subdirectory(eip/src/v2)

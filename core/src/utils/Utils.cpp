@@ -25,13 +25,13 @@ namespace Core {
 namespace Utils {
 
 inline std::string& lTrim(std::string &ss) {
-    auto p = find_if(ss.begin(), ss.end(), not1(std::ptr_fun(isspace)));
+    auto p = find_if(ss.begin(), ss.end(), std::not1(std::function<bool(int)>(isspace)));
     ss.erase(ss.begin(), p);
     return ss;
 }
 
 inline std::string& rTrim(std::string &ss) {
-    auto p = find_if(ss.rbegin(), ss.rend(), not1(std::ptr_fun(isspace)));
+    auto p = find_if(ss.rbegin(), ss.rend(), std::not1(std::function<bool(int)>(isspace)));
     ss.erase(p.base(),ss.end());
     return ss;
 }

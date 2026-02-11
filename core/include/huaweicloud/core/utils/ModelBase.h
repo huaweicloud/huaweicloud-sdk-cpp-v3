@@ -331,7 +331,7 @@ template <typename T> bool ModelBase::fromJson(const web::json::value &val, std:
 {
     bool ok = true;
     if (val.is_array()) {
-        for (const auto jitem : val.as_array()) {
+        for (const auto &jitem : val.as_array()) {
             T item;
             ok &= fromJson(jitem, item);
             outVal.push_back(item);

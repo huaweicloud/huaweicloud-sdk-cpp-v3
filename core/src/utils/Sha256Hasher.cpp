@@ -30,6 +30,12 @@ using namespace HuaweiCloud::Sdk::Core::Utils;
 Sha256Hasher::Sha256Hasher() = default;
 
 /*
+TODO: Some functions we used are marked as deprecated after openssl 3.0, so just ignore this warning for a while
+      We will refactor the following codes later
+*/
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+/*
  * SHA256 π˛œ£º∆À„
  */
 int Sha256Hasher::hash(const std::string &str, unsigned char *hash)
@@ -45,6 +51,7 @@ int Sha256Hasher::hash(const std::string &str, unsigned char *hash)
 
     return SHA256_DIGEST_LENGTH;
 }
+#pragma GCC diagnostic pop
 
 /*
  * SHA256 HMACº∆À„

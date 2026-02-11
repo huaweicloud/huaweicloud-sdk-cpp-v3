@@ -1,3 +1,17 @@
+# 3.1.175 2026-02-11
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 优化README中依赖的第三方库内容
+  - 优化README中构建样例描述
+  - 优化`CMakeLists.txt`内容
+  - 解决部分编译告警问题
+- _特性变更_
+  - 无
+
 # 3.1.174 2026-02-10
 
 ### HuaweiCloud SDK Core

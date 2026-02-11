@@ -84,11 +84,11 @@ inline std::unique_ptr<Credentials> getCredentialFromSystem(const std::string &d
 
     char *envVar;
 
-#define INIT_ENV_VAR(ID, NAME)               \
-    do {                                     \
-        if (envVar = secure_getenv(#NAME)) { \
-            ID = std::string(envVar);        \
-        }                                    \
+#define INIT_ENV_VAR(ID, NAME)                 \
+    do {                                       \
+        if ((envVar = secure_getenv(#NAME))) { \
+            ID = std::string(envVar);          \
+        }                                      \
     } while (0)
 
     INIT_ENV_VAR(akStr, HUAWEICLOUD_SDK_AK);

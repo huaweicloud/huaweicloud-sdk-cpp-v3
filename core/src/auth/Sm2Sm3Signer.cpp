@@ -294,6 +294,12 @@ std::string Sm2Sm3Signer::getSignature(const std::string &msg) {
 }
 
 /*
+TODO: Some functions we used are marked as deprecated after openssl 3.0, so just ignore this warning for a while
+      We will refactor the following codes later
+*/
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+/*
  * 国密SM2算法验证签名
  *  SM2 verify, based on GB/T 32918.5-2017
     Step 1: assert r in [1, n-1]
@@ -451,3 +457,4 @@ cleanup:
     spdlog::info("End to verify Signature SM2withSM3, {}", isVerify);
     return isVerify;
 }
+#pragma GCC diagnostic pop

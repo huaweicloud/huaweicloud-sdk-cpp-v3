@@ -50,6 +50,12 @@ std::vector<unsigned char> HKDF::extract(const std::vector<unsigned char>& ikm, 
     return hmacSha256(salt, ikm);
 }
 
+/*
+TODO: Some functions we used are marked as deprecated after openssl 3.0, so just ignore this warning for a while
+      We will refactor the following codes later
+*/
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 std::vector<unsigned char> HKDF::hmacSha256(const std::vector<unsigned char>& key,
                                        const std::vector<unsigned char>& data) {
     HMAC_CTX* ctx = HMAC_CTX_new();
@@ -81,6 +87,7 @@ std::vector<unsigned char> HKDF::hmacSha256(const std::vector<unsigned char>& ke
 
     return result;
 }
+#pragma GCC diagnostic pop
 
 int HKDF::getHashLen(const std::string& hmac_algorithm) const {
     return hmac_algorithm == HMAC_SHA1 ? HMAC_SHA1_LENGTH : HMAC_SHA256_LENGTH;

@@ -25,7 +25,7 @@ FieldDef::FieldDef() = default;
 
 FieldDef::~FieldDef() = default;
 
-FieldDef::FieldDef(const FieldDef &def) : name(def.name), locationType(def.locationType), JsonTag(def.JsonTag) {}
+FieldDef::FieldDef(const FieldDef &def) : locationType(def.locationType), name(def.name), JsonTag(def.JsonTag) {}
 
 FieldDef& FieldDef::withLocationType(LocationType locationType)  {
     this->locationType = locationType;

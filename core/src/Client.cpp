@@ -88,7 +88,7 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
                 httpClient_.doHttpRequestSync(httpRequest, httpConfig_, handler_response);
             spdlog::info("execute http request for the api successfully, get the response....");
             return httpResponse;
-        } catch (HostUnreachableException ex) {
+        } catch (HostUnreachableException &ex) {
             if (!this->endpoints_.empty() && endpointIndex < this->endpoints_.size() - 1) {
                 spdlog::error("can not resolve host for service,region:{}, error:{}", regionId, ex.what());
                 endpointIndex++;

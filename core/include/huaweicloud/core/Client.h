@@ -106,7 +106,7 @@ private:
     HttpClient httpClient_;
     std::string derivedAuthServiceName_;
     std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams&)> derivedPredicate;
-    std::atomic<int> endpointIndex;
+    std::atomic<uint32_t> endpointIndex;
 };
 }
 }

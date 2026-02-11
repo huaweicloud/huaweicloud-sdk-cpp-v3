@@ -42,6 +42,12 @@ P256Sha256Signer::P256Sha256Signer() : Signer()
 P256Sha256Signer::~P256Sha256Signer()= default;
 
 /*
+TODO: Some functions we used are marked as deprecated after openssl 3.0, so just ignore this warning for a while
+      We will refactor the following codes later
+*/
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+/*
  * 获取国标P-256数字签名入口
  */
 std::string P256Sha256Signer::getSignature(const std::string &stringToSign)
@@ -172,3 +178,4 @@ bool P256Sha256Signer::p256Sha256DoVerify(std::string signature, const std::stri
     spdlog::info("End to verify Signature P256Sha256, {}", isVerify);
     return isVerify;
 }
+#pragma GCC diagnostic pop

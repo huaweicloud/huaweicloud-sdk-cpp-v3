@@ -49,7 +49,7 @@
 
 ### 依赖的第三方库
 
-`curl`、`boost`、`cpprestsdk`、`spdlog`、`openssl`、`rttr`
+`curl`、`boost`、`cpprestsdk`、`spdlog`、`openssl`、`rttr`、`cmake`、`g++`
 
 ### 在 Linux 系统上安装 SDK
 
@@ -81,13 +81,13 @@ sudo apt-get install libbson-1.0
 ```
 
 #### Step 2：编译安装
-
+默认构建一个服务，以下以cce服务的v3版本为例
 ``` bash
 git clone https://github.com/huaweicloud/huaweicloud-sdk-cpp-v3.git
 cd huaweicloud-sdk-cpp-v3
 mkdir build
 cd build
-cmake ..
+cmake -DBUILD_SERVICE=cce -DSERVICE_VERSION=v3 ..
 make
 sudo make install
 ```
@@ -394,10 +394,10 @@ int main(void)
 #elif defined(linux) || defined(__linux) || defined(__linux__)
     char* envVar; 
     #define INIT_ENV_VAR(ID, NAME)               \
-    do {                                     \
-        if (envVar = secure_getenv(#NAME)) { \
-            ID = std::string(envVar);        \
-        }                                    \
+    do {                                         \
+        if ((envVar = secure_getenv(#NAME))) {   \
+            ID = std::string(envVar);            \
+        }                                        \
     } while (0)
     INIT_ENV_VAR(ak, HUAWEICLOUD_SDK_AK);
     INIT_ENV_VAR(sk, HUAWEICLOUD_SDK_SK);
@@ -803,7 +803,7 @@ endif()
 - 使用多个服务
 
 ``` cmake
-# USE MULTIPLE SERVICES(EXAMPLE: USE VPC ECS AND EIP)
+# USE MULTIPLE SERVICES(EXAMPLE: vpc ecs eip)
 add_subdirectory(core)
 add_subdirectory(vpc/src/v2)
 add_subdirectory(eip/src/v2)

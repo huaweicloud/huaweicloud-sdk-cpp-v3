@@ -25,12 +25,22 @@ if(ENABLE_BSON)
     add_definitions(-DHUAWEICLOUD_SDK_BSON_)
 endif()
 
-# USE SINGLE SERVICE(EXAMPLE: USE VPC ECS AND EIP)
+# USE SINGLE SERVICE(EXAMPLE: vpc ecs eip)
 # compile core default
 add_subdirectory(core)
+
 #If you need to compile a specific version of a service, specify BUILD_SERVICE as the service name and SERVICE_VERSION as the version number.
-SET(BUILD_SERVICE cce)
-SET(SERVICE_VERSION v3)
-# If you want to compile multiple services, refer to the compilation instructions for a single service and simply append the add_subdirectory command at the end.
-add_subdirectory(${BUILD_SERVICE}/src/${SERVICE_VERSION})
-message(STATUS   "'BUILD_SERVICE'=${BUILD_SERVICE}")
+if(BUILD_SERVICE)
+    message(STATUS   "'BUILD_SERVICE'=${BUILD_SERVICE}")
+    message(STATUS   "'SERVICE_VERSION'=${SERVICE_VERSION}")
+
+    if(NOT EXISTS "${CMAKE_SOURCE_DIR}/${BUILD_SERVICE}")
+        message(FATAL_ERROR "BUILD_SERVICE(${BUILD_SERVICE}) is invalid")
+    endif()
+
+    if(NOT EXISTS "${CMAKE_SOURCE_DIR}/${BUILD_SERVICE}/src/${SERVICE_VERSION}")
+        message(FATAL_ERROR "SERVICE_VERSION(${SERVICE_VERSION}) is invalid")
+    endif()
+
+    add_subdirectory(${BUILD_SERVICE}/src/${SERVICE_VERSION})
+endif()

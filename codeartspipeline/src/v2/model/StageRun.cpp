@@ -37,6 +37,8 @@ StageRun::StageRun()
     startTimeIsSet_ = false;
     endTime_ = 0L;
     endTimeIsSet_ = false;
+    pauseTime_ = 0L;
+    pauseTimeIsSet_ = false;
     preIsSet_ = false;
     postIsSet_ = false;
     jobsIsSet_ = false;
@@ -90,6 +92,9 @@ web::json::value StageRun::toJson() const
     }
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
+    }
+    if(pauseTimeIsSet_) {
+        val[utility::conversions::to_string_t("pause_time")] = ModelBase::toJson(pauseTime_);
     }
     if(preIsSet_) {
         val[utility::conversions::to_string_t("pre")] = ModelBase::toJson(pre_);
@@ -222,6 +227,15 @@ bool StageRun::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pause_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pause_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPauseTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pre"))) {
@@ -526,6 +540,27 @@ bool StageRun::endTimeIsSet() const
 void StageRun::unsetendTime()
 {
     endTimeIsSet_ = false;
+}
+
+int64_t StageRun::getPauseTime() const
+{
+    return pauseTime_;
+}
+
+void StageRun::setPauseTime(int64_t value)
+{
+    pauseTime_ = value;
+    pauseTimeIsSet_ = true;
+}
+
+bool StageRun::pauseTimeIsSet() const
+{
+    return pauseTimeIsSet_;
+}
+
+void StageRun::unsetpauseTime()
+{
+    pauseTimeIsSet_ = false;
 }
 
 std::vector<StepRun>& StageRun::getPre()

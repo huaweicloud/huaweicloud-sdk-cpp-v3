@@ -34,6 +34,8 @@ ShowPipelineRunDetailResponse::ShowPipelineRunDetailResponse()
     triggerTypeIsSet_ = false;
     runNumber_ = 0;
     runNumberIsSet_ = false;
+    pauseTime_ = 0L;
+    pauseTimeIsSet_ = false;
     startTime_ = 0L;
     startTimeIsSet_ = false;
     endTime_ = 0L;
@@ -105,6 +107,9 @@ web::json::value ShowPipelineRunDetailResponse::toJson() const
     }
     if(runNumberIsSet_) {
         val[utility::conversions::to_string_t("run_number")] = ModelBase::toJson(runNumber_);
+    }
+    if(pauseTimeIsSet_) {
+        val[utility::conversions::to_string_t("pause_time")] = ModelBase::toJson(pauseTime_);
     }
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
@@ -255,6 +260,15 @@ bool ShowPipelineRunDetailResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRunNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pause_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pause_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPauseTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("start_time"))) {
@@ -625,6 +639,27 @@ bool ShowPipelineRunDetailResponse::runNumberIsSet() const
 void ShowPipelineRunDetailResponse::unsetrunNumber()
 {
     runNumberIsSet_ = false;
+}
+
+int64_t ShowPipelineRunDetailResponse::getPauseTime() const
+{
+    return pauseTime_;
+}
+
+void ShowPipelineRunDetailResponse::setPauseTime(int64_t value)
+{
+    pauseTime_ = value;
+    pauseTimeIsSet_ = true;
+}
+
+bool ShowPipelineRunDetailResponse::pauseTimeIsSet() const
+{
+    return pauseTimeIsSet_;
+}
+
+void ShowPipelineRunDetailResponse::unsetpauseTime()
+{
+    pauseTimeIsSet_ = false;
 }
 
 int64_t ShowPipelineRunDetailResponse::getStartTime() const

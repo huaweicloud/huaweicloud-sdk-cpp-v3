@@ -1,3 +1,28 @@
+# 3.1.176 2026-02-12
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Optimize the content of README
+- _Change_
+  - None
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPipelineRunDetail**
+    - changes of response param
+      - `+ pause_time`
+      - `+ stages.pause_time`
+
 # 3.1.175 2026-02-11
 
 ### HuaweiCloud SDK Core

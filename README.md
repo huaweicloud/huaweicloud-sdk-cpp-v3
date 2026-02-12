@@ -36,7 +36,7 @@ You can get the SDK version information through [SDK center](https://console-int
 
 ### Dependent Third-Party Libraries
 
-`curl`, `boost`, `cpprestsdk`, `spdlog`, `openssl`, `rttr`, `cmake`, `g++`
+`curl`, `boost`, `cpprestsdk`, `spdlog`, `openssl`, `rttr`
 
 ### Install SDK on Linux platform
 
@@ -47,7 +47,7 @@ The required third-party packages are available in great part of package managem
 Take `Debian/Ubuntu` system for example, you could run the following commands:
 
 ``` bash
-sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev librttr-dev
+sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev librttr-dev cmake g++
 ```
 
 `spdlog` needs to be installed from source code to generate the corresponding dynamic library. Version v1.17.0 is recommended. If you have other versions of `spdlog` installed locally, it is advised to refer to the official documentation for source installation: https://github.com/gabime/spdlog.
@@ -363,20 +363,19 @@ is `C:\Program File (x86)\huaweicloud-sdk-cpp-v3`.
 ``` cpp
 #include <cstdio>
 #include <cstdlib>
+#include <exception>
 #include <iostream>
 #include <string>
 #include <huaweicloud/core/exception/Exceptions.h>
 #include <huaweicloud/core/Client.h>
 #include <huaweicloud/vpc/v2/VpcClient.h>
-
+ 
 using namespace HuaweiCloud::Sdk;
 using namespace HuaweiCloud::Sdk::Core;
 using namespace HuaweiCloud::Sdk::Core::Exception;
-
+ 
 int main(void)
 {   
-    //Do not hard-code authentication information into the code, as this may pose a security risk
-    //Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.4 Authentication Management 
     std::string ak;
     std::string sk;
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
@@ -394,13 +393,12 @@ int main(void)
     INIT_ENV_VAR(sk, HUAWEICLOUD_SDK_SK);
     #undef INIT_ENV_VAR
 #endif
-    
     // Initialize AK/SK module
     auto basicCredentials = std::make_unique<BasicCredentials>();
     basicCredentials->withAk(ak)
             .withSk(sk)
             .withProjectId("{your project id}");
-    
+     
     // Initialize HTTP config
     HttpConfig httpConfig = HttpConfig();
     // Configure VpcClient instance
@@ -409,7 +407,7 @@ int main(void)
             .withHttpConfig(httpConfig)
             .withEndPoint("{your endpoint}")
             .build();
-
+ 
     // Initialize request parameters
     Vpc::V2::Model::ListVpcsRequest listRequest;
     try {
@@ -433,6 +431,8 @@ int main(void)
         std::cout << "ErrorCode: " << e.getErrorCode() << std::endl;
         std::cout << "ErrorMsg: " << e.getErrorMsg() << std::endl;
         std::cout << "RequestId: " << e.getRequestId() << std::endl;
+    } catch (std::exception &e) {
+        std::cout << "Catch an unexpected exception: " << e.what() << std::endl;
     }
     return 0;
 }

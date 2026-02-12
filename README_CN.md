@@ -49,7 +49,7 @@
 
 ### 依赖的第三方库
 
-`curl`、`boost`、`cpprestsdk`、`spdlog`、`openssl`、`rttr`、`cmake`、`g++`
+`curl`、`boost`、`cpprestsdk`、`spdlog`、`openssl`、`rttr`
 
 ### 在 Linux 系统上安装 SDK
 
@@ -60,7 +60,7 @@
 例如基于 Debian/Ubuntu 的系统
 
 ``` bash
-sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev librttr-dev
+sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev librttr-dev cmake g++
 ```
 
 spdlog 需要从源码进行安装, 生成对应的动态库，推荐使用v1.17.0版本，如果您本地安装其他版本的spdlog，建议参考官网文档进行源码安装 https://github.com/gabime/spdlog 。
@@ -374,16 +374,17 @@ vcpkg install libbson
 ``` cpp
 #include <cstdio>
 #include <cstdlib>
+#include <exception>
 #include <iostream>
 #include <string>
 #include <huaweicloud/core/exception/Exceptions.h>
 #include <huaweicloud/core/Client.h>
 #include <huaweicloud/vpc/v2/VpcClient.h>
-
+ 
 using namespace HuaweiCloud::Sdk;
 using namespace HuaweiCloud::Sdk::Core;
 using namespace HuaweiCloud::Sdk::Core::Exception;
-
+ 
 int main(void)
 {   
     std::string ak;
@@ -417,7 +418,7 @@ int main(void)
             .withHttpConfig(httpConfig)
             .withEndPoint("{your endpoint}")
             .build();
-
+ 
     // Initialize request parameters
     Vpc::V2::Model::ListVpcsRequest listRequest;
     try {
@@ -441,6 +442,8 @@ int main(void)
         std::cout << "ErrorCode: " << e.getErrorCode() << std::endl;
         std::cout << "ErrorMsg: " << e.getErrorMsg() << std::endl;
         std::cout << "RequestId: " << e.getRequestId() << std::endl;
+    } catch (std::exception &e) {
+        std::cout << "Catch an unexpected exception: " << e.what() << std::endl;
     }
     return 0;
 }

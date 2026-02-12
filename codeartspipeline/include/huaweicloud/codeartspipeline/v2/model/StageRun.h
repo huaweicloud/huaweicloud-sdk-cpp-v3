@@ -159,6 +159,15 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
+    /// **参数解释**： 阶段中断时间，单位毫秒。 **取值范围**： 大于等于 0。 
+    /// </summary>
+
+    int64_t getPauseTime() const;
+    bool pauseTimeIsSet() const;
+    void unsetpauseTime();
+    void setPauseTime(int64_t value);
+
+    /// <summary>
     /// **参数解释**： 阶段准入。 **取值范围**： 不涉及。 
     /// </summary>
 
@@ -213,6 +222,8 @@ protected:
     bool startTimeIsSet_;
     int64_t endTime_;
     bool endTimeIsSet_;
+    int64_t pauseTime_;
+    bool pauseTimeIsSet_;
     std::vector<StepRun> pre_;
     bool preIsSet_;
     std::vector<StepRun> post_;

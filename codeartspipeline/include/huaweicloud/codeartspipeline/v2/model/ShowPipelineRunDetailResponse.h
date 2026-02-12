@@ -142,6 +142,15 @@ public:
     void setRunNumber(int32_t value);
 
     /// <summary>
+    /// **参数解释**： 流水线中断时间，单位毫秒。 **取值范围**： 大于等于 0。 
+    /// </summary>
+
+    int64_t getPauseTime() const;
+    bool pauseTimeIsSet() const;
+    void unsetpauseTime();
+    void setPauseTime(int64_t value);
+
+    /// <summary>
     /// **参数解释**： 流水线开始时间。 **取值范围**： 不涉及。 
     /// </summary>
 
@@ -300,6 +309,8 @@ protected:
     bool triggerTypeIsSet_;
     int32_t runNumber_;
     bool runNumberIsSet_;
+    int64_t pauseTime_;
+    bool pauseTimeIsSet_;
     int64_t startTime_;
     bool startTimeIsSet_;
     int64_t endTime_;

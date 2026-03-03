@@ -111,7 +111,6 @@ public:
     static HttpRequestDef genRequestDefForShowKeystorePermission();
     static HttpRequestDef genRequestDefForUpdateKeystore();
     static HttpRequestDef genRequestDefForUpdateKeystorePermission();
-    static HttpRequestDef genRequestDefForUploadKeystore();
     static HttpRequestDef genRequestDefForDownloadBuildFullLog();
     static HttpRequestDef genRequestDefForDownloadBuildRealTimeLog();
     static HttpRequestDef genRequestDefForShowActionIInfo();

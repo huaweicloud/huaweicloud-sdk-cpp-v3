@@ -26,10 +26,6 @@
 #include <huaweicloud/eip/v3/model/ShowPublicipPoolTypesResponse.h>
 #include <string>
 
-#include <huaweicloud/eip/v3/model/ListProjectGeipBindingsRequest.h>
-#include <huaweicloud/eip/v3/model/ListProjectGeipBindingsResponse.h>
-#include <string>
-
 #include <huaweicloud/eip/v3/model/CreateTenantVpcIgwRequest.h>
 #include <huaweicloud/eip/v3/model/CreateTenantVpcIgwRequestBody.h>
 #include <huaweicloud/eip/v3/model/CreateTenantVpcIgwResponse.h>
@@ -68,8 +64,6 @@
 #include <huaweicloud/eip/v3/model/EipResourcesAvailableV3RequestBody.h>
 #include <huaweicloud/eip/v3/model/EnableNat64Request.h>
 #include <huaweicloud/eip/v3/model/EnableNat64Response.h>
-#include <huaweicloud/eip/v3/model/ListPublicipsRequest.h>
-#include <huaweicloud/eip/v3/model/ListPublicipsResponse.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipRequest.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipResponse.h>
 #include <huaweicloud/eip/v3/model/UpdatePublicipRequest.h>
@@ -172,15 +166,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPublicipPoolTypesResponse> showPublicipPoolTypes(
         ShowPublicipPoolTypesRequest &request
-    );
-
-    // 查询GEIP与实例绑定关系的租户列表
-    //
-    // 查询GEIP与实例绑定关系的租户列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListProjectGeipBindingsResponse> listProjectGeipBindings(
-        ListProjectGeipBindingsRequest &request
     );
 
     // 创建虚拟igw
@@ -295,14 +280,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<EnableNat64Response> enableNat64(
         EnableNat64Request &request
-    );
-    // 全量查询弹性公网IP列表
-    //
-    // 查询弹性公网IP列表信息
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListPublicipsResponse> listPublicips(
-        ListPublicipsRequest &request
     );
     // 查询弹性公网IP详情
     //

@@ -259,7 +259,6 @@ public:
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPermission();
     static HttpRequestDef genRequestDefForUpdateStarrocksParams();
     static HttpRequestDef genRequestDefForUpgradeSrKernelVersion();
-    static HttpRequestDef genRequestDefForUploadImportExcelTemplate();
 };
 
 }

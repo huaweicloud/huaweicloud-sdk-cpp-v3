@@ -53,7 +53,9 @@ public:
     void processAuthParams(const std::string regionId) override;
 
     void setDerivedPredicate(const std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams &)> &derivedPredicate);
-
+    // 规避commit c5fd04cb85491f1215906a38ae100f41b3654004中引入的不兼容问题
+    virtual std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams,
+                                   HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig);
 protected:
     std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams, HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig, const std::string &region, const std::string &derivedAuthServiceName) override;
     const std::map<std::string, std::string> &getUpdatePathParams() override;

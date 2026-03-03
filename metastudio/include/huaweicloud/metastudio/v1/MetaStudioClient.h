@@ -472,10 +472,6 @@
 
 #include <huaweicloud/metastudio/v1/model/CreatePictureModelingByUrlJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreatePictureModelingByUrlJobResponse.h>
-#include <huaweicloud/metastudio/v1/model/CreatePictureModelingJobRequest.h>
-#include <huaweicloud/metastudio/v1/model/CreatePictureModelingJobRequestBody.h>
-#include <huaweicloud/metastudio/v1/model/CreatePictureModelingJobResponse.h>
-#include <huaweicloud/core/utils/HttpContent.h>
 #include <huaweicloud/metastudio/v1/model/ListPictureModelingJobsRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListPictureModelingJobsResponse.h>
 #include <huaweicloud/metastudio/v1/model/PictureModelingByUrlReq.h>
@@ -2200,14 +2196,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreatePictureModelingByUrlJobResponse> createPictureModelingByUrlJob(
         CreatePictureModelingByUrlJobRequest &request
-    );
-    // 创建照片建模任务
-    //
-    // 该接口用于创建风格化照片建模任务。通过上传照片，生成风格化数字人模型。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreatePictureModelingJobResponse> createPictureModelingJob(
-        CreatePictureModelingJobRequest &request
     );
     // 照片建模任务列表查询
     //

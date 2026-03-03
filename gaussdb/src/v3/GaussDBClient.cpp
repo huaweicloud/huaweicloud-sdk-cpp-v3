@@ -10306,51 +10306,6 @@ std::shared_ptr<UpgradeSrKernelVersionResponse> GaussDBClient::upgradeSrKernelVe
 
     return localVarResult;
 }
-std::shared_ptr<UploadImportExcelTemplateResponse> GaussDBClient::uploadImportExcelTemplate(UploadImportExcelTemplateRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/htap/template";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["template_type"] = parameterToString(request.getTemplateType());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["is_instance_level"] = parameterToString(request.getIsInstanceLevel());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["selected_dbs"] = parameterToString(request.getSelectedDbs());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["is_support_regexp"] = parameterToString(request.getIsSupportRegexp());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForUploadImportExcelTemplate());
-
-    std::shared_ptr<UploadImportExcelTemplateResponse> localVarResult = std::make_shared<UploadImportExcelTemplateResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
 std::string GaussDBClient::parameterToString(utility::string_t value)
 {

@@ -1377,41 +1377,6 @@ std::shared_ptr<ExportOperationInfoResponse> DrsClient::exportOperationInfo(Expo
 
     return localVarResult;
 }
-std::shared_ptr<ImportBatchCreateJobsResponse> DrsClient::importBatchCreateJobs(ImportBatchCreateJobsRequest &request)
-{
-    std::string localVarPath = "/v5/{project_id}/jobs/template";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["type"] = parameterToString(request.getType());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForImportBatchCreateJobs());
-
-    std::shared_ptr<ImportBatchCreateJobsResponse> localVarResult = std::make_shared<ImportBatchCreateJobsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ListAsyncJobDetailResponse> DrsClient::listAsyncJobDetail(ListAsyncJobDetailRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/batch-async-jobs/{async_job_id}";

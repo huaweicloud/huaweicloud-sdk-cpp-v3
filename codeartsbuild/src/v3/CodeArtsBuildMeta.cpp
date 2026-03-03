@@ -857,16 +857,6 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForUpdateKeystorePermission() {
     return reqDefBuilder;
 }
 
-HttpRequestDef CodeArtsBuildMeta::genRequestDefForUploadKeystore() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef formBodyParams;
-    reqDefBuilder.withRequestField(formBodyParams.
-                  withName("").
-                  withName("Body").
-                  withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadBuildFullLog() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("LogLevel")

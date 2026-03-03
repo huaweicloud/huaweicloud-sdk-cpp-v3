@@ -1,3 +1,14 @@
+# 3.1.177 2026-03-03
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Resolve the header file issue on which KVS depends.
+- _Change_
+  - Removing some useless APIs.
+
 # 3.1.176 2026-02-12
 
 ### HuaweiCloud SDK Core

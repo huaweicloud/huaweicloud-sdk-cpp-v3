@@ -175,7 +175,6 @@ public:
     static HttpRequestDef genRequestDefForUpdatePacifyWordsSwitch();
     static HttpRequestDef genRequestDefForUpdatePacifyWordsTriggerTime();
     static HttpRequestDef genRequestDefForCreatePictureModelingByUrlJob();
-    static HttpRequestDef genRequestDefForCreatePictureModelingJob();
     static HttpRequestDef genRequestDefForListPictureModelingJobs();
     static HttpRequestDef genRequestDefForShowPictureModelingJob();
     static HttpRequestDef genRequestDefForCreatePluginConfig();

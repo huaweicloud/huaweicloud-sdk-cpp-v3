@@ -3498,41 +3498,6 @@ std::shared_ptr<UpdateKeystorePermissionResponse> CodeArtsBuildClient::updateKey
 
     return localVarResult;
 }
-std::shared_ptr<UploadKeystoreResponse> CodeArtsBuildClient::uploadKeystore(UploadKeystoreRequest &request)
-{
-    std::string localVarPath = "/v2/keystore/upload";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.IsSet()) {
-        localVarFormParams["privacy"] = parameterToString(request.getPrivacy());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["description"] = parameterToString(request.getDescription());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForUploadKeystore());
-
-    std::shared_ptr<UploadKeystoreResponse> localVarResult = std::make_shared<UploadKeystoreResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<DownloadBuildFullLogResponse> CodeArtsBuildClient::downloadBuildFullLog(DownloadBuildFullLogRequest &request)
 {
     std::string localVarPath = "/v1/log/{record_id}/download-log";

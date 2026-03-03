@@ -23,7 +23,6 @@ public:
     static HttpRequestDef genRequestDefForDeleteInternetBandwidth();
     static HttpRequestDef genRequestDefForDeleteInternetBandwidthTag();
     static HttpRequestDef genRequestDefForDeleteUserDisclaimer();
-    static HttpRequestDef genRequestDefForListAccessSites();
     static HttpRequestDef genRequestDefForListGeipResourceQuotas();
     static HttpRequestDef genRequestDefForListInternetBandwidthCountFilterTags();
     static HttpRequestDef genRequestDefForListInternetBandwidthDomainTags();
@@ -49,8 +48,6 @@ public:
     static HttpRequestDef genRequestDefForBatchDeleteGlobalEipTags();
     static HttpRequestDef genRequestDefForBatchDetachGeipSegmentInternetBandwidth();
     static HttpRequestDef genRequestDefForBatchDetachInternetBandwidth();
-    static HttpRequestDef genRequestDefForCountGlobalEipSegment();
-    static HttpRequestDef genRequestDefForCountGlobalEips();
     static HttpRequestDef genRequestDefForCreateGlobalEip();
     static HttpRequestDef genRequestDefForCreateGlobalEipSegment();
     static HttpRequestDef genRequestDefForDeleteGeipSegmentTag();
@@ -60,15 +57,12 @@ public:
     static HttpRequestDef genRequestDefForDetachInternetBandwidth();
     static HttpRequestDef genRequestDefForDisassociateGeipSegmentInstance();
     static HttpRequestDef genRequestDefForDisassociateInstance();
-    static HttpRequestDef genRequestDefForListGeipPools();
     static HttpRequestDef genRequestDefForListGeipSegmentCountFilterTags();
     static HttpRequestDef genRequestDefForListGeipSegmentDomainTags();
     static HttpRequestDef genRequestDefForListGeipSegmentFilterTags();
     static HttpRequestDef genRequestDefForListGlobalEipCountFilterTags();
     static HttpRequestDef genRequestDefForListGlobalEipDomainTags();
     static HttpRequestDef genRequestDefForListGlobalEipFilterTags();
-    static HttpRequestDef genRequestDefForListGlobalEipSegments();
-    static HttpRequestDef genRequestDefForListGlobalEips();
     static HttpRequestDef genRequestDefForShowGeipSegmentTags();
     static HttpRequestDef genRequestDefForShowGlobalEip();
     static HttpRequestDef genRequestDefForShowGlobalEipSegment();

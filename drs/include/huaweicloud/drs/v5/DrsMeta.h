@@ -45,7 +45,6 @@ public:
     static HttpRequestDef genRequestDefForExecuteJobAction();
     static HttpRequestDef genRequestDefForExportCreationTemplate();
     static HttpRequestDef genRequestDefForExportOperationInfo();
-    static HttpRequestDef genRequestDefForImportBatchCreateJobs();
     static HttpRequestDef genRequestDefForListAsyncJobDetail();
     static HttpRequestDef genRequestDefForListAsyncJobs();
     static HttpRequestDef genRequestDefForListConnections();

@@ -90,9 +90,6 @@
 #include <huaweicloud/drs/v5/model/ExportOperationInfoRequest.h>
 #include <huaweicloud/drs/v5/model/ExportOperationInfoResponse.h>
 #include <huaweicloud/core/utils/HttpContent.h>
-#include <huaweicloud/drs/v5/model/ImportBatchCreateJobsRequest.h>
-#include <huaweicloud/drs/v5/model/ImportBatchCreateJobsRequestBody.h>
-#include <huaweicloud/drs/v5/model/ImportBatchCreateJobsResponse.h>
 #include <huaweicloud/drs/v5/model/JobActionReq.h>
 #include <huaweicloud/drs/v5/model/ListAsyncJobDetailRequest.h>
 #include <huaweicloud/drs/v5/model/ListAsyncJobDetailResponse.h>
@@ -546,14 +543,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ExportOperationInfoResponse> exportOperationInfo(
         ExportOperationInfoRequest &request
-    );
-    // 批量导入任务
-    //
-    // 批量导入任务
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ImportBatchCreateJobsResponse> importBatchCreateJobs(
-        ImportBatchCreateJobsRequest &request
     );
     // 查询指定ID批量异步任务详情
     //

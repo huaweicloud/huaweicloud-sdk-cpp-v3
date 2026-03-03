@@ -79,8 +79,7 @@ if(ENABLE_BSON)
     set(LIBBSON_LIBRARY_DIR ${LIBBSON_DIR}/lib)
     set(LIBBSON_INCLUDE_DIR ${LIBBSON_DIR}/include/libbson-1.0)
     target_include_directories(core PUBLIC ${LIBBSON_INCLUDE_DIR})
-    target_link_libraries(core PUBLIC bson-1.0)
-    target_link_directories(core PUBLIC ${LIBBSON_LIBRARY_DIR})
+    target_link_libraries(core PUBLIC ${LIBBSON_LIBRARY_DIR}/libbson-1.0.so)
 endif()
 
 target_include_directories(core PUBLIC

@@ -43,4 +43,18 @@ if(BUILD_SERVICE)
     endif()
 
     add_subdirectory(${BUILD_SERVICE}/src/${SERVICE_VERSION})
+else()
+    # 1. Recursively obtains the paths of all CMakeLists.txt files.
+    file(GLOB_RECURSE all_cmakefiles RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "**/CMakeLists.txt")
+
+    foreach(file_path ${all_cmakefiles})
+        # Obtains the name of the directory where the file is located
+        get_filename_component(sub_dir ${file_path} DIRECTORY)
+
+        # Exclude the current directory and core directory (avoid infinite loop)
+        if(NOT "${sub_dir}" STREQUAL "" AND NOT "${sub_dir}" STREQUAL "." AND NOT "${sub_dir}" STREQUAL "core" )
+            message(STATUS "Found recursive subdirectory: ${sub_dir}")
+            add_subdirectory(${sub_dir})
+        endif()
+    endforeach()
 endif()

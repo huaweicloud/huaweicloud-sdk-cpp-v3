@@ -441,21 +441,6 @@ HttpRequestDef DrsMeta::genRequestDefForExportOperationInfo() {
     return reqDefBuilder;
 }
 
-HttpRequestDef DrsMeta::genRequestDefForImportBatchCreateJobs() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef formBodyParams;
-    reqDefBuilder.withRequestField(formBodyParams.
-                  withName("").
-                  withName("Body").
-                  withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef DrsMeta::genRequestDefForListAsyncJobDetail() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")

@@ -224,7 +224,6 @@
 #include <huaweicloud/codeartsbuild/v3/model/DeleteKeystoreResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreByNameRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreByNameResponse.h>
-#include <huaweicloud/core/utils/HttpContent.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreSearchRequest.h>
@@ -237,9 +236,6 @@
 #include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreResponse.h>
-#include <huaweicloud/codeartsbuild/v3/model/UploadKeystoreRequest.h>
-#include <huaweicloud/codeartsbuild/v3/model/UploadKeystoreRequestBody.h>
-#include <huaweicloud/codeartsbuild/v3/model/UploadKeystoreResponse.h>
 #include <string>
 
 #include <huaweicloud/codeartsbuild/v3/model/DownloadBuildFullLogRequest.h>
@@ -1141,14 +1137,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateKeystorePermissionResponse> updateKeystorePermission(
         UpdateKeystorePermissionRequest &request
-    );
-    // 上传文件
-    //
-    // 上传文件
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UploadKeystoreResponse> uploadKeystore(
-        UploadKeystoreRequest &request
     );
 
     // 下载全量构建日志

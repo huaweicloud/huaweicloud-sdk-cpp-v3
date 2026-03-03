@@ -8061,56 +8061,6 @@ std::shared_ptr<CreatePictureModelingByUrlJobResponse> MetaStudioClient::createP
 
     return localVarResult;
 }
-std::shared_ptr<CreatePictureModelingJobResponse> MetaStudioClient::createPictureModelingJob(CreatePictureModelingJobRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/digital-human/stylized/picture-modelings";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
-    if (request.xSdkDateIsSet()) {
-        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
-    }
-    if (request.xProjectIdIsSet()) {
-        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
-    }
-    if (request.xAppUserIdIsSet()) {
-        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["style_id"] = parameterToString(request.getStyleId());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["name"] = parameterToString(request.getName());
-    }
-    if (request.IsSet()) {
-        localVarFormParams["notify_url"] = parameterToString(request.getNotifyUrl());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForCreatePictureModelingJob());
-
-    std::shared_ptr<CreatePictureModelingJobResponse> localVarResult = std::make_shared<CreatePictureModelingJobResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ListPictureModelingJobsResponse> MetaStudioClient::listPictureModelingJobs(ListPictureModelingJobsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/digital-human/stylized/picture-modelings";

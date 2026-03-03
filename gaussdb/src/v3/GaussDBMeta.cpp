@@ -3548,21 +3548,6 @@ HttpRequestDef GaussDBMeta::genRequestDefForUpgradeSrKernelVersion() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBMeta::genRequestDefForUploadImportExcelTemplate() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef formBodyParams;
-    reqDefBuilder.withRequestField(formBodyParams.
-                  withName("").
-                  withName("Body").
-                  withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 
 }
 }

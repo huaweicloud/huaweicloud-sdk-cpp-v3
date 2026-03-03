@@ -513,7 +513,6 @@
 #include <huaweicloud/gaussdb/v3/model/DownloadImportExcelTemplateRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DownloadImportExcelTemplateResponse.h>
 #include <huaweicloud/gaussdb/v3/model/HtapErrorLogQueryRequestBody.h>
-#include <huaweicloud/core/utils/HttpContent.h>
 #include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseParameterRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseParameterResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseReplicationConfigRequest.h>
@@ -632,9 +631,6 @@
 #include <huaweicloud/gaussdb/v3/model/UpgradeSrKernelVersionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpgradeSrKernelVersionRequestV3.h>
 #include <huaweicloud/gaussdb/v3/model/UpgradeSrKernelVersionResponse.h>
-#include <huaweicloud/gaussdb/v3/model/UploadImportExcelTemplateRequest.h>
-#include <huaweicloud/gaussdb/v3/model/UploadImportExcelTemplateRequestBody.h>
-#include <huaweicloud/gaussdb/v3/model/UploadImportExcelTemplateResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UserSyncReq.h>
 #include <string>
 
@@ -2632,14 +2628,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeSrKernelVersionResponse> upgradeSrKernelVersion(
         UpgradeSrKernelVersionRequest &request
-    );
-    // HTAP库表导入校验
-    //
-    // 创建数据同步时支持Excel导入并进行校验。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UploadImportExcelTemplateResponse> uploadImportExcelTemplate(
-        UploadImportExcelTemplateRequest &request
     );
 
 

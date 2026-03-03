@@ -31,8 +31,6 @@
 #include <huaweicloud/geip/v3/model/DeleteInternetBandwidthTagResponse.h>
 #include <huaweicloud/geip/v3/model/DeleteUserDisclaimerRequest.h>
 #include <huaweicloud/geip/v3/model/DeleteUserDisclaimerResponse.h>
-#include <huaweicloud/geip/v3/model/ListAccessSitesRequest.h>
-#include <huaweicloud/geip/v3/model/ListAccessSitesResponse.h>
 #include <huaweicloud/geip/v3/model/ListGeipResourceQuotasRequest.h>
 #include <huaweicloud/geip/v3/model/ListGeipResourceQuotasResponse.h>
 #include <huaweicloud/geip/v3/model/ListInternetBandwidthCountFilterTagsRequest.h>
@@ -97,10 +95,6 @@
 #include <huaweicloud/geip/v3/model/BatchDetachInternetBandwidthResponse.h>
 #include <huaweicloud/geip/v3/model/BatchDetachInternetBandwidthsGlobalEipRequestBody.h>
 #include <huaweicloud/geip/v3/model/BatchDetachInternetBandwidthsGlobalEipSegmentRequestBody.h>
-#include <huaweicloud/geip/v3/model/CountGlobalEipSegmentRequest.h>
-#include <huaweicloud/geip/v3/model/CountGlobalEipSegmentResponse.h>
-#include <huaweicloud/geip/v3/model/CountGlobalEipsRequest.h>
-#include <huaweicloud/geip/v3/model/CountGlobalEipsResponse.h>
 #include <huaweicloud/geip/v3/model/CreateGlobalEipRequest.h>
 #include <huaweicloud/geip/v3/model/CreateGlobalEipRequestBody.h>
 #include <huaweicloud/geip/v3/model/CreateGlobalEipResponse.h>
@@ -122,8 +116,6 @@
 #include <huaweicloud/geip/v3/model/DisassociateGeipSegmentInstanceResponse.h>
 #include <huaweicloud/geip/v3/model/DisassociateInstanceRequest.h>
 #include <huaweicloud/geip/v3/model/DisassociateInstanceResponse.h>
-#include <huaweicloud/geip/v3/model/ListGeipPoolsRequest.h>
-#include <huaweicloud/geip/v3/model/ListGeipPoolsResponse.h>
 #include <huaweicloud/geip/v3/model/ListGeipSegmentCountFilterTagsRequest.h>
 #include <huaweicloud/geip/v3/model/ListGeipSegmentCountFilterTagsResponse.h>
 #include <huaweicloud/geip/v3/model/ListGeipSegmentDomainTagsRequest.h>
@@ -136,10 +128,6 @@
 #include <huaweicloud/geip/v3/model/ListGlobalEipDomainTagsResponse.h>
 #include <huaweicloud/geip/v3/model/ListGlobalEipFilterTagsRequest.h>
 #include <huaweicloud/geip/v3/model/ListGlobalEipFilterTagsResponse.h>
-#include <huaweicloud/geip/v3/model/ListGlobalEipSegmentsRequest.h>
-#include <huaweicloud/geip/v3/model/ListGlobalEipSegmentsResponse.h>
-#include <huaweicloud/geip/v3/model/ListGlobalEipsRequest.h>
-#include <huaweicloud/geip/v3/model/ListGlobalEipsResponse.h>
 #include <huaweicloud/geip/v3/model/ListResourcesByTagsRequestBody.h>
 #include <huaweicloud/geip/v3/model/ShowGeipSegmentTagsRequest.h>
 #include <huaweicloud/geip/v3/model/ShowGeipSegmentTagsResponse.h>
@@ -272,14 +260,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteUserDisclaimerResponse> deleteUserDisclaimer(
         DeleteUserDisclaimerRequest &request
-    );
-    // 查询接入点列表
-    //
-    // 查询接入点列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListAccessSitesResponse> listAccessSites(
-        ListAccessSitesRequest &request
     );
     // 查询租户全域弹性公网IP配额
     //
@@ -482,22 +462,6 @@ public:
     std::shared_ptr<BatchDetachInternetBandwidthResponse> batchDetachInternetBandwidth(
         BatchDetachInternetBandwidthRequest &request
     );
-    // 查询全域弹性公网IP段个数
-    //
-    // 查询全域弹性公网IP段个数
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CountGlobalEipSegmentResponse> countGlobalEipSegment(
-        CountGlobalEipSegmentRequest &request
-    );
-    // 查询全域弹性公网IP个数
-    //
-    // 查询全域弹性公网IP个数
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CountGlobalEipsResponse> countGlobalEips(
-        CountGlobalEipsRequest &request
-    );
     // 创建全域弹性公网IP
     //
     // 创建全域弹性公网IP
@@ -570,14 +534,6 @@ public:
     std::shared_ptr<DisassociateInstanceResponse> disassociateInstance(
         DisassociateInstanceRequest &request
     );
-    // 查询全域弹性公网IP池列表
-    //
-    // 查询全域弹性公网IP池列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListGeipPoolsResponse> listGeipPools(
-        ListGeipPoolsRequest &request
-    );
     // 查询资源实例列表数目
     //
     // 查询资源实例列表的数目
@@ -625,22 +581,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListGlobalEipFilterTagsResponse> listGlobalEipFilterTags(
         ListGlobalEipFilterTagsRequest &request
-    );
-    // 查询全域弹性公网IP段列表
-    //
-    // 查询全域弹性公网IP段列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListGlobalEipSegmentsResponse> listGlobalEipSegments(
-        ListGlobalEipSegmentsRequest &request
-    );
-    // 查询全域弹性公网IP列表
-    //
-    // 查询全域弹性公网IP列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListGlobalEipsResponse> listGlobalEips(
-        ListGlobalEipsRequest &request
     );
     // 查询全域弹性公网IP段标签
     //

@@ -5463,41 +5463,6 @@ HttpRequestDef MetaStudioMeta::genRequestDefForCreatePictureModelingByUrlJob() {
     return reqDefBuilder;
 }
 
-HttpRequestDef MetaStudioMeta::genRequestDefForCreatePictureModelingJob() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamAuthorization;
-    reqDefBuilder.withRequestField(headerParamAuthorization
-                  .withName("Authorization")
-                  .withJsonTag("Authorization")
-                  .withLocationType(Header_));
-    FieldDef headerParamXSdkDate;
-    reqDefBuilder.withRequestField(headerParamXSdkDate
-                  .withName("XSdkDate")
-                  .withJsonTag("X-Sdk-Date")
-                  .withLocationType(Header_));
-    FieldDef headerParamXProjectId;
-    reqDefBuilder.withRequestField(headerParamXProjectId
-                  .withName("XProjectId")
-                  .withJsonTag("X-Project-Id")
-                  .withLocationType(Header_));
-    FieldDef headerParamXAppUserId;
-    reqDefBuilder.withRequestField(headerParamXAppUserId
-                  .withName("XAppUserId")
-                  .withJsonTag("X-App-UserId")
-                  .withLocationType(Header_));
-    FieldDef formBodyParams;
-    reqDefBuilder.withRequestField(formBodyParams.
-                  withName("").
-                  withName("Body").
-                  withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef MetaStudioMeta::genRequestDefForListPictureModelingJobs() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")

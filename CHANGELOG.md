@@ -1,3 +1,14 @@
+# 3.1.178 2026-03-03
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Resolve the header file issue on which FunctionGraph depends.
+- _Change_
+  - None
+
 # 3.1.177 2026-03-03
 
 ### HuaweiCloud SDK Core

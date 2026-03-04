@@ -1,3 +1,14 @@
+# 3.1.178 2026-03-03
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 解决FunctionGraph头文件使用问题
+- _特性变更_
+  - 无
+
 # 3.1.177 2026-03-03
 
 ### HuaweiCloud SDK Core

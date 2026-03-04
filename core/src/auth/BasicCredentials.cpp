@@ -87,6 +87,18 @@ std::string BasicCredentials::processAuthRequest(HuaweiCloud::Sdk::Core::Request
     return signature;
 }
 
+std::string BasicCredentials::processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams,
+                                   HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig)
+{
+    requestParams.addHeader("X-Project-Id", projectId_);
+    if (!securityToken_.empty()) {
+        requestParams.addHeader("X-Security-Token", securityToken_);
+    }
+    std::unique_ptr<Signer> signer = getAlgorithmSigner(httpConfig.getAlgorithm(), ak_, sk_);
+    std::string signature = signer->createSignature(requestParams);
+    return signature;
+}
+
 const std::map<std::string, std::string> &BasicCredentials::getUpdatePathParams()
 {
     static std::map<std::string, std::string> updatePathParams {{"project_id", projectId_ } };

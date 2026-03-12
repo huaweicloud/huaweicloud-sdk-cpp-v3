@@ -20,6 +20,7 @@ RedistributionParameterResult::RedistributionParameterResult()
     restartRequiredIsSet_ = false;
     valueRange_ = "";
     valueRangeIsSet_ = false;
+    type_ = "";
     typeIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
@@ -100,7 +101,7 @@ bool RedistributionParameterResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
         }
@@ -202,12 +203,12 @@ void RedistributionParameterResult::unsetvalueRange()
     valueRangeIsSet_ = false;
 }
 
-Object RedistributionParameterResult::getType() const
+std::string RedistributionParameterResult::getType() const
 {
     return type_;
 }
 
-void RedistributionParameterResult::setType(const Object& value)
+void RedistributionParameterResult::setType(const std::string& value)
 {
     type_ = value;
     typeIsSet_ = true;

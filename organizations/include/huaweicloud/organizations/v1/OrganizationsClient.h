@@ -48,6 +48,34 @@
 #include <huaweicloud/organizations/v1/model/RegisterDelegatedAdministratorResponse.h>
 #include <string>
 
+#include <huaweicloud/organizations/v1/model/ShowDryRunConfigRequest.h>
+#include <huaweicloud/organizations/v1/model/ShowDryRunConfigResponse.h>
+#include <huaweicloud/organizations/v1/model/UpdateDryRunConfigReqBody.h>
+#include <huaweicloud/organizations/v1/model/UpdateDryRunConfigRequest.h>
+#include <huaweicloud/organizations/v1/model/UpdateDryRunConfigResponse.h>
+#include <string>
+
+#include <huaweicloud/organizations/v1/model/AttachDryRunPolicyRequest.h>
+#include <huaweicloud/organizations/v1/model/AttachDryRunPolicyResponse.h>
+#include <huaweicloud/organizations/v1/model/CreateDryRunPolicyReqBody.h>
+#include <huaweicloud/organizations/v1/model/CreateDryRunPolicyRequest.h>
+#include <huaweicloud/organizations/v1/model/CreateDryRunPolicyResponse.h>
+#include <huaweicloud/organizations/v1/model/DeleteDryRunPolicyRequest.h>
+#include <huaweicloud/organizations/v1/model/DeleteDryRunPolicyResponse.h>
+#include <huaweicloud/organizations/v1/model/DetachDryRunPolicyRequest.h>
+#include <huaweicloud/organizations/v1/model/DetachDryRunPolicyResponse.h>
+#include <huaweicloud/organizations/v1/model/ListDryRunPoliciesRequest.h>
+#include <huaweicloud/organizations/v1/model/ListDryRunPoliciesResponse.h>
+#include <huaweicloud/organizations/v1/model/ListEntitiesForDryRunPolicyRequest.h>
+#include <huaweicloud/organizations/v1/model/ListEntitiesForDryRunPolicyResponse.h>
+#include <huaweicloud/organizations/v1/model/PolicyTachReqBody.h>
+#include <huaweicloud/organizations/v1/model/ShowDryRunPolicyRequest.h>
+#include <huaweicloud/organizations/v1/model/ShowDryRunPolicyResponse.h>
+#include <huaweicloud/organizations/v1/model/UpdateDryRunPolicyRequest.h>
+#include <huaweicloud/organizations/v1/model/UpdateDryRunPolicyResponse.h>
+#include <huaweicloud/organizations/v1/model/UpdatePolicyReqBody.h>
+#include <string>
+
 #include <huaweicloud/organizations/v1/model/AcceptHandshakeRequest.h>
 #include <huaweicloud/organizations/v1/model/AcceptHandshakeResponse.h>
 #include <huaweicloud/organizations/v1/model/CancelHandshakeRequest.h>
@@ -310,6 +338,88 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RegisterDelegatedAdministratorResponse> registerDelegatedAdministrator(
         RegisterDelegatedAdministratorRequest &request
+    );
+
+    // 查询组织策略试运行的配置
+    //
+    // 查询组织策略试运行的配置。此操作只能由组织的管理或云服务委托管理员账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDryRunConfigResponse> showDryRunConfig(
+        ShowDryRunConfigRequest &request
+    );
+    // 更新组织策略试运行的配置
+    //
+    // 更新组织策略试运行的配置。此操作只能由组织的管理账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDryRunConfigResponse> updateDryRunConfig(
+        UpdateDryRunConfigRequest &request
+    );
+
+    // 将试运行策略跟实体绑定
+    //
+    // 绑定试运行策略到根、组织单元或个人账户。此操作只能由组织的管理账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AttachDryRunPolicyResponse> attachDryRunPolicy(
+        AttachDryRunPolicyRequest &request
+    );
+    // 创建试运行策略
+    //
+    // 创建指定类型的试运行策略。此操作只能由组织的管理账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDryRunPolicyResponse> createDryRunPolicy(
+        CreateDryRunPolicyRequest &request
+    );
+    // 删除试运行策略
+    //
+    // 从组织中删除指定的试运行策略。在执行此操作之前，必须首先将策略跟所有组织单元、根和账号解绑。此操作只能由组织的管理账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDryRunPolicyResponse> deleteDryRunPolicy(
+        DeleteDryRunPolicyRequest &request
+    );
+    // 将试运行策略跟实体解绑
+    //
+    // 从根、组织单元或账号解绑试运行策略。此操作只能由组织的管理账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DetachDryRunPolicyResponse> detachDryRunPolicy(
+        DetachDryRunPolicyRequest &request
+    );
+    // 列出试运行策略
+    //
+    // 列出组织中的所有试运行策略。如果指定了资源ID，例如组织单元ID或账号ID，则将获得该资源已绑定的策略列表。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDryRunPoliciesResponse> listDryRunPolicies(
+        ListDryRunPoliciesRequest &request
+    );
+    // 列出跟指定试运行策略绑定的所有实体
+    //
+    // 列出跟指定试运行策略绑定的所有根、组织单元和账号。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListEntitiesForDryRunPolicyResponse> listEntitiesForDryRunPolicy(
+        ListEntitiesForDryRunPolicyRequest &request
+    );
+    // 查询试运行策略相关信息
+    //
+    // 检索试运行策略的相关信息。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDryRunPolicyResponse> showDryRunPolicy(
+        ShowDryRunPolicyRequest &request
+    );
+    // 更新试运行策略
+    //
+    // 更新试运行策略，可以更新试运行策略的名称、描述或内容。如果不提供任何参数，则策略将保持不变。您不能更改策略的类型。此操作只能由组织的管理账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDryRunPolicyResponse> updateDryRunPolicy(
+        UpdateDryRunPolicyRequest &request
     );
 
     // 接受邀请

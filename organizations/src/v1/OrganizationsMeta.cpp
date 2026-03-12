@@ -238,6 +238,167 @@ HttpRequestDef OrganizationsMeta::genRequestDefForRegisterDelegatedAdministrator
     return reqDefBuilder;
 }
 
+HttpRequestDef OrganizationsMeta::genRequestDefForShowDryRunConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("RootId")
+                  .withJsonTag("root_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PolicyType")
+                  .withJsonTag("policy_type")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForUpdateDryRunConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForAttachDryRunPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForCreateDryRunPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForDeleteDryRunPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForDetachDryRunPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForListDryRunPolicies() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("AttachedEntityId")
+                  .withJsonTag("attached_entity_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForListEntitiesForDryRunPolicy() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForShowDryRunPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForUpdateDryRunPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef OrganizationsMeta::genRequestDefForAcceptHandshake() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXSecurityToken;

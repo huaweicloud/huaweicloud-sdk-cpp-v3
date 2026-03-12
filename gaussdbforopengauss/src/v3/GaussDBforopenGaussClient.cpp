@@ -10400,6 +10400,18 @@ std::shared_ptr<ListWdrSnapshotsCollectResultsResponse> GaussDBforopenGaussClien
     if (request.jobIdIsSet()) {
         localVarQueryParams["job_id"] = parameterToString(request.getJobId());
     }
+    if (request.jobEndTimeIsSet()) {
+        localVarQueryParams["job_end_time"] = parameterToString(request.getJobEndTime());
+    }
+    if (request.jobStartTimeIsSet()) {
+        localVarQueryParams["job_start_time"] = parameterToString(request.getJobStartTime());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.wdrTypeIsSet()) {
+        localVarQueryParams["wdr_type"] = parameterToString(request.getWdrType());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }

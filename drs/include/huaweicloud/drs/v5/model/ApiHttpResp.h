@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_DRS_V5_MODEL_ApiHttpNullResp_H_
-#define HUAWEICLOUD_SDK_DRS_V5_MODEL_ApiHttpNullResp_H_
+#ifndef HUAWEICLOUD_SDK_DRS_V5_MODEL_ApiHttpResp_H_
+#define HUAWEICLOUD_SDK_DRS_V5_MODEL_ApiHttpResp_H_
 
 
 #include <huaweicloud/drs/v5/DrsExport.h>
@@ -21,12 +21,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 空响应体。
 /// </summary>
-class HUAWEICLOUD_DRS_V5_EXPORT  ApiHttpNullResp
+class HUAWEICLOUD_DRS_V5_EXPORT  ApiHttpResp
     : public ModelBase
 {
 public:
-    ApiHttpNullResp();
-    virtual ~ApiHttpNullResp();
+    ApiHttpResp();
+    virtual ~ApiHttpResp();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -35,7 +35,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ApiHttpNullResp members
+    /// ApiHttpResp members
 
 
 protected:
@@ -49,4 +49,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_DRS_V5_MODEL_ApiHttpNullResp_H_
+#endif // HUAWEICLOUD_SDK_DRS_V5_MODEL_ApiHttpResp_H_

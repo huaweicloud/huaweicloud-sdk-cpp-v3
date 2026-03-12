@@ -48,15 +48,6 @@ public:
     void setCategory(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 对应SQL类别中，采集的SQL语句类型列表，采用前缀方式进行匹配。 **取值范围**: - all：不区分SQL类型，全部采集。对应取值为：[\&quot;.*\&quot;]。 - ddl：只采集DDL语句类别，对于取值为：[\&quot;create\&quot;, \&quot;alter\&quot;, \&quot;drop\&quot;, \&quot;truncate\&quot;, \&quot;reindex\&quot;, \&quot;vacuum\&quot;, \&quot;analyze\&quot;, \&quot;declare\&quot;, \&quot;move\&quot;, \&quot;close\&quot;]。 - dml：只采集DML语句类型，对于取值为：[\&quot;insert\&quot;, \&quot;update\&quot;, \&quot;delete\&quot;, \&quot;merge\&quot;, \&quot;show\&quot;, \&quot;explain\&quot;, \&quot;prepare\&quot;, \&quot;lock\&quot;, \&quot;copy\&quot;, \&quot;execute\&quot;, \&quot;deallocate\&quot;]。 - dcl：只采集DCL语句类型，对于取值为：[\&quot;grant\&quot;, \&quot;revoke\&quot;, \&quot;reassign\&quot;, \&quot;set\&quot;]。 - tcl：只采集TCL语句类型，对于取值为：[\&quot;begin\&quot;, \&quot;commit\&quot;, \&quot;rollback\&quot;, \&quot;start\&quot;, \&quot;savepoint\&quot;, \&quot;checkpoint\&quot;, \&quot;release savepoint\&quot;]。 - dql：只采集DQL语句类型，对于取值为：[\&quot;select\&quot;]。 - custom：采集自定义语句类型。对应取值为：开启全量SQL时，用户填写的自定义SQL语句类型列表。
-    /// </summary>
-
-    std::string getPrefixes() const;
-    bool prefixesIsSet() const;
-    void unsetprefixes();
-    void setPrefixes(const std::string& value);
-
-    /// <summary>
     /// **参数解释**: 对应SQL类别是否为预置类别。 **取值范围**: - true：对应category取值all、ddl 、dml 、dcl 、tcl 、dql 。 - false：对应category取值custom。
     /// </summary>
 
@@ -69,8 +60,6 @@ public:
 protected:
     std::string category_;
     bool categoryIsSet_;
-    std::string prefixes_;
-    bool prefixesIsSet_;
     bool isPreset_;
     bool isPresetIsSet_;
 

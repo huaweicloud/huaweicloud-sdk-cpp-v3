@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/gaussdbforopengauss/v3/model/BackupNodeInfoResult.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -111,15 +110,6 @@ public:
     void unsetbackupParallelDegree();
     void setBackupParallelDegree(int32_t value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    BackupNodeInfoResult getBackupNodeInfo() const;
-    bool backupNodeInfoIsSet() const;
-    void unsetbackupNodeInfo();
-    void setBackupNodeInfo(const BackupNodeInfoResult& value);
-
 
 protected:
     int32_t rateLimit_;
@@ -138,8 +128,6 @@ protected:
     bool defaultBackupMethodIsSet_;
     int32_t backupParallelDegree_;
     bool backupParallelDegreeIsSet_;
-    BackupNodeInfoResult backupNodeInfo_;
-    bool backupNodeInfoIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -43,7 +43,7 @@ bool ShowFullSqlResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trace_statistics"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            FullSqlTraceStatisticsResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTraceStatistics(refVal);
         }
@@ -61,12 +61,12 @@ bool ShowFullSqlResponse::fromJson(const web::json::value& val)
 }
 
 
-Object ShowFullSqlResponse::getTraceStatistics() const
+FullSqlTraceStatisticsResult ShowFullSqlResponse::getTraceStatistics() const
 {
     return traceStatistics_;
 }
 
-void ShowFullSqlResponse::setTraceStatistics(const Object& value)
+void ShowFullSqlResponse::setTraceStatistics(const FullSqlTraceStatisticsResult& value)
 {
     traceStatistics_ = value;
     traceStatisticsIsSet_ = true;

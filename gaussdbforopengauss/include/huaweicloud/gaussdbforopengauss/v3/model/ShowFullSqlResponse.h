@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdbforopengauss/v3/model/FullSqlComponetResult.h>
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/FullSqlTraceStatisticsResult.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -41,13 +41,13 @@ public:
     /// ShowFullSqlResponse members
 
     /// <summary>
-    /// **参数解释**: 链路详情。
+    /// 
     /// </summary>
 
-    Object getTraceStatistics() const;
+    FullSqlTraceStatisticsResult getTraceStatistics() const;
     bool traceStatisticsIsSet() const;
     void unsettraceStatistics();
-    void setTraceStatistics(const Object& value);
+    void setTraceStatistics(const FullSqlTraceStatisticsResult& value);
 
     /// <summary>
     /// **参数解释**: 组件上SQL执行记录列表。
@@ -60,7 +60,7 @@ public:
 
 
 protected:
-    Object traceStatistics_;
+    FullSqlTraceStatisticsResult traceStatistics_;
     bool traceStatisticsIsSet_;
     std::vector<FullSqlComponetResult> components_;
     bool componentsIsSet_;

@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/gaussdbforopengauss/v3/model/ConfigurationParameter.h"
+#include "huaweicloud/gaussdbforopengauss/v3/model/ConfigurationParameterResult.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-ConfigurationParameter::ConfigurationParameter()
+ConfigurationParameterResult::ConfigurationParameterResult()
 {
     name_ = "";
     nameIsSet_ = false;
@@ -18,6 +18,8 @@ ConfigurationParameter::ConfigurationParameter()
     valueIsSet_ = false;
     restartRequired_ = false;
     restartRequiredIsSet_ = false;
+    readonly_ = false;
+    readonlyIsSet_ = false;
     valueRange_ = "";
     valueRangeIsSet_ = false;
     type_ = "";
@@ -26,13 +28,13 @@ ConfigurationParameter::ConfigurationParameter()
     descriptionIsSet_ = false;
 }
 
-ConfigurationParameter::~ConfigurationParameter() = default;
+ConfigurationParameterResult::~ConfigurationParameterResult() = default;
 
-void ConfigurationParameter::validate()
+void ConfigurationParameterResult::validate()
 {
 }
 
-web::json::value ConfigurationParameter::toJson() const
+web::json::value ConfigurationParameterResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -44,6 +46,9 @@ web::json::value ConfigurationParameter::toJson() const
     }
     if(restartRequiredIsSet_) {
         val[utility::conversions::to_string_t("restart_required")] = ModelBase::toJson(restartRequired_);
+    }
+    if(readonlyIsSet_) {
+        val[utility::conversions::to_string_t("readonly")] = ModelBase::toJson(readonly_);
     }
     if(valueRangeIsSet_) {
         val[utility::conversions::to_string_t("value_range")] = ModelBase::toJson(valueRange_);
@@ -57,7 +62,7 @@ web::json::value ConfigurationParameter::toJson() const
 
     return val;
 }
-bool ConfigurationParameter::fromJson(const web::json::value& val)
+bool ConfigurationParameterResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -86,6 +91,15 @@ bool ConfigurationParameter::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRestartRequired(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("readonly"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("readonly"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReadonly(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("value_range"))) {
@@ -119,128 +133,149 @@ bool ConfigurationParameter::fromJson(const web::json::value& val)
 }
 
 
-std::string ConfigurationParameter::getName() const
+std::string ConfigurationParameterResult::getName() const
 {
     return name_;
 }
 
-void ConfigurationParameter::setName(const std::string& value)
+void ConfigurationParameterResult::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool ConfigurationParameter::nameIsSet() const
+bool ConfigurationParameterResult::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void ConfigurationParameter::unsetname()
+void ConfigurationParameterResult::unsetname()
 {
     nameIsSet_ = false;
 }
 
-std::string ConfigurationParameter::getValue() const
+std::string ConfigurationParameterResult::getValue() const
 {
     return value_;
 }
 
-void ConfigurationParameter::setValue(const std::string& value)
+void ConfigurationParameterResult::setValue(const std::string& value)
 {
     value_ = value;
     valueIsSet_ = true;
 }
 
-bool ConfigurationParameter::valueIsSet() const
+bool ConfigurationParameterResult::valueIsSet() const
 {
     return valueIsSet_;
 }
 
-void ConfigurationParameter::unsetvalue()
+void ConfigurationParameterResult::unsetvalue()
 {
     valueIsSet_ = false;
 }
 
-bool ConfigurationParameter::isRestartRequired() const
+bool ConfigurationParameterResult::isRestartRequired() const
 {
     return restartRequired_;
 }
 
-void ConfigurationParameter::setRestartRequired(bool value)
+void ConfigurationParameterResult::setRestartRequired(bool value)
 {
     restartRequired_ = value;
     restartRequiredIsSet_ = true;
 }
 
-bool ConfigurationParameter::restartRequiredIsSet() const
+bool ConfigurationParameterResult::restartRequiredIsSet() const
 {
     return restartRequiredIsSet_;
 }
 
-void ConfigurationParameter::unsetrestartRequired()
+void ConfigurationParameterResult::unsetrestartRequired()
 {
     restartRequiredIsSet_ = false;
 }
 
-std::string ConfigurationParameter::getValueRange() const
+bool ConfigurationParameterResult::isReadonly() const
+{
+    return readonly_;
+}
+
+void ConfigurationParameterResult::setReadonly(bool value)
+{
+    readonly_ = value;
+    readonlyIsSet_ = true;
+}
+
+bool ConfigurationParameterResult::readonlyIsSet() const
+{
+    return readonlyIsSet_;
+}
+
+void ConfigurationParameterResult::unsetreadonly()
+{
+    readonlyIsSet_ = false;
+}
+
+std::string ConfigurationParameterResult::getValueRange() const
 {
     return valueRange_;
 }
 
-void ConfigurationParameter::setValueRange(const std::string& value)
+void ConfigurationParameterResult::setValueRange(const std::string& value)
 {
     valueRange_ = value;
     valueRangeIsSet_ = true;
 }
 
-bool ConfigurationParameter::valueRangeIsSet() const
+bool ConfigurationParameterResult::valueRangeIsSet() const
 {
     return valueRangeIsSet_;
 }
 
-void ConfigurationParameter::unsetvalueRange()
+void ConfigurationParameterResult::unsetvalueRange()
 {
     valueRangeIsSet_ = false;
 }
 
-std::string ConfigurationParameter::getType() const
+std::string ConfigurationParameterResult::getType() const
 {
     return type_;
 }
 
-void ConfigurationParameter::setType(const std::string& value)
+void ConfigurationParameterResult::setType(const std::string& value)
 {
     type_ = value;
     typeIsSet_ = true;
 }
 
-bool ConfigurationParameter::typeIsSet() const
+bool ConfigurationParameterResult::typeIsSet() const
 {
     return typeIsSet_;
 }
 
-void ConfigurationParameter::unsettype()
+void ConfigurationParameterResult::unsettype()
 {
     typeIsSet_ = false;
 }
 
-std::string ConfigurationParameter::getDescription() const
+std::string ConfigurationParameterResult::getDescription() const
 {
     return description_;
 }
 
-void ConfigurationParameter::setDescription(const std::string& value)
+void ConfigurationParameterResult::setDescription(const std::string& value)
 {
     description_ = value;
     descriptionIsSet_ = true;
 }
 
-bool ConfigurationParameter::descriptionIsSet() const
+bool ConfigurationParameterResult::descriptionIsSet() const
 {
     return descriptionIsSet_;
 }
 
-void ConfigurationParameter::unsetdescription()
+void ConfigurationParameterResult::unsetdescription()
 {
     descriptionIsSet_ = false;
 }

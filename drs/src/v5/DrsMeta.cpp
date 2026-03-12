@@ -1578,6 +1578,9 @@ HttpRequestDef DrsMeta::genRequestDefForUploadDbObjectTemplate() {
     reqDefBuilder.withRequestField(FieldDef().withName("FileImportDbLevel")
                   .withJsonTag("file_import_db_level")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FileImportMappingType")
+                  .withJsonTag("file_import_mapping_type")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

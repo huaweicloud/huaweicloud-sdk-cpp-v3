@@ -28,7 +28,6 @@ ShowConfigurationResponse::ShowConfigurationResponse()
     defaultBackupMethodIsSet_ = false;
     backupParallelDegree_ = 0;
     backupParallelDegreeIsSet_ = false;
-    backupNodeInfoIsSet_ = false;
 }
 
 ShowConfigurationResponse::~ShowConfigurationResponse() = default;
@@ -64,9 +63,6 @@ web::json::value ShowConfigurationResponse::toJson() const
     }
     if(backupParallelDegreeIsSet_) {
         val[utility::conversions::to_string_t("backup_parallel_degree")] = ModelBase::toJson(backupParallelDegree_);
-    }
-    if(backupNodeInfoIsSet_) {
-        val[utility::conversions::to_string_t("backup_node_info")] = ModelBase::toJson(backupNodeInfo_);
     }
 
     return val;
@@ -145,15 +141,6 @@ bool ShowConfigurationResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBackupParallelDegree(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("backup_node_info"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_node_info"));
-        if(!fieldValue.is_null())
-        {
-            BackupNodeInfoResult refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBackupNodeInfo(refVal);
         }
     }
     return ok;
@@ -326,27 +313,6 @@ bool ShowConfigurationResponse::backupParallelDegreeIsSet() const
 void ShowConfigurationResponse::unsetbackupParallelDegree()
 {
     backupParallelDegreeIsSet_ = false;
-}
-
-BackupNodeInfoResult ShowConfigurationResponse::getBackupNodeInfo() const
-{
-    return backupNodeInfo_;
-}
-
-void ShowConfigurationResponse::setBackupNodeInfo(const BackupNodeInfoResult& value)
-{
-    backupNodeInfo_ = value;
-    backupNodeInfoIsSet_ = true;
-}
-
-bool ShowConfigurationResponse::backupNodeInfoIsSet() const
-{
-    return backupNodeInfoIsSet_;
-}
-
-void ShowConfigurationResponse::unsetbackupNodeInfo()
-{
-    backupNodeInfoIsSet_ = false;
 }
 
 }

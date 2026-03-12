@@ -186,19 +186,19 @@ public:
     /// **参数解释**: 开始时间，格式为“yyyy-mm-ddThh:mm:ss.SSSSSZ”。 **取值范围**: 不涉及。
     /// </summary>
 
-    std::string getBeginTime() const;
-    bool beginTimeIsSet() const;
-    void unsetbeginTime();
-    void setBeginTime(const std::string& value);
+    std::string getStartTime() const;
+    bool startTimeIsSet() const;
+    void unsetstartTime();
+    void setStartTime(const std::string& value);
 
     /// <summary>
     /// **参数解释**: 结束时间，格式为“yyyy-mm-ddThh:mm:ss.SSSSSZ”。 **取值范围**: 不涉及。
     /// </summary>
 
-    std::string getEndTime() const;
-    bool endTimeIsSet() const;
-    void unsetendTime();
-    void setEndTime(const std::string& value);
+    std::string getFinishTime() const;
+    bool finishTimeIsSet() const;
+    void unsetfinishTime();
+    void setFinishTime(const std::string& value);
 
     /// <summary>
     /// **参数解释**: 慢SQL阈值。 **取值范围**: 不涉及。
@@ -240,10 +240,10 @@ public:
     /// **参数解释**: SELECT语句的返回结果集行数。 **取值范围**: 不涉及。
     /// </summary>
 
-    int64_t getNReturnRows() const;
-    bool nReturnRowsIsSet() const;
-    void unsetnReturnRows();
-    void setNReturnRows(int64_t value);
+    int64_t getNReturnedRows() const;
+    bool nReturnedRowsIsSet() const;
+    void unsetnReturnedRows();
+    void setNReturnedRows(int64_t value);
 
     /// <summary>
     /// **参数解释**: 随机扫描行。 **取值范围**: 不涉及。
@@ -531,10 +531,10 @@ protected:
     bool threadIdIsSet_;
     std::string sessionId_;
     bool sessionIdIsSet_;
-    std::string beginTime_;
-    bool beginTimeIsSet_;
-    std::string endTime_;
-    bool endTimeIsSet_;
+    std::string startTime_;
+    bool startTimeIsSet_;
+    std::string finishTime_;
+    bool finishTimeIsSet_;
     int64_t slowQueryThreshold_;
     bool slowQueryThresholdIsSet_;
     int64_t nSoftParse_;
@@ -543,8 +543,8 @@ protected:
     bool nHardParseIsSet_;
     std::string queryPlan_;
     bool queryPlanIsSet_;
-    int64_t nReturnRows_;
-    bool nReturnRowsIsSet_;
+    int64_t nReturnedRows_;
+    bool nReturnedRowsIsSet_;
     int64_t nTuplesFetched_;
     bool nTuplesFetchedIsSet_;
     int64_t nTuplesReturned_;

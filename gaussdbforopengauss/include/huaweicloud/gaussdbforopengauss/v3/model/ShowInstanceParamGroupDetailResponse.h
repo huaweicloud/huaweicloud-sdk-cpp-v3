@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/ConfigurationParameter.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ConfigurationParameterResult.h>
 #include <string>
 #include <vector>
 
@@ -80,10 +80,10 @@ public:
     /// 参数对象，用户基于默认参数模板自定义的参数配置。
     /// </summary>
 
-    std::vector<ConfigurationParameter>& getConfigurationParameters();
+    std::vector<ConfigurationParameterResult>& getConfigurationParameters();
     bool configurationParametersIsSet() const;
     void unsetconfigurationParameters();
-    void setConfigurationParameters(const std::vector<ConfigurationParameter>& value);
+    void setConfigurationParameters(const std::vector<ConfigurationParameterResult>& value);
 
 
 protected:
@@ -95,7 +95,7 @@ protected:
     bool createdIsSet_;
     std::string updated_;
     bool updatedIsSet_;
-    std::vector<ConfigurationParameter> configurationParameters_;
+    std::vector<ConfigurationParameterResult> configurationParameters_;
     bool configurationParametersIsSet_;
 
 #ifdef RTTR_FLAG

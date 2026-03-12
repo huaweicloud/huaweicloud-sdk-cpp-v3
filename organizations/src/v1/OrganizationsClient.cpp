@@ -678,6 +678,425 @@ std::shared_ptr<RegisterDelegatedAdministratorResponse> OrganizationsClient::reg
 
     return localVarResult;
 }
+std::shared_ptr<ShowDryRunConfigResponse> OrganizationsClient::showDryRunConfig(ShowDryRunConfigRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.rootIdIsSet()) {
+        localVarQueryParams["root_id"] = parameterToString(request.getRootId());
+    }
+    if (request.policyTypeIsSet()) {
+        localVarQueryParams["policy_type"] = parameterToString(request.getPolicyType());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForShowDryRunConfig());
+
+    std::shared_ptr<ShowDryRunConfigResponse> localVarResult = std::make_shared<ShowDryRunConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateDryRunConfigResponse> OrganizationsClient::updateDryRunConfig(UpdateDryRunConfigRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForUpdateDryRunConfig());
+
+    std::shared_ptr<UpdateDryRunConfigResponse> localVarResult = std::make_shared<UpdateDryRunConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<AttachDryRunPolicyResponse> OrganizationsClient::attachDryRunPolicy(AttachDryRunPolicyRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-policies/{policy_id}/attach";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForAttachDryRunPolicy());
+
+    std::shared_ptr<AttachDryRunPolicyResponse> localVarResult = std::make_shared<AttachDryRunPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateDryRunPolicyResponse> OrganizationsClient::createDryRunPolicy(CreateDryRunPolicyRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForCreateDryRunPolicy());
+
+    std::shared_ptr<CreateDryRunPolicyResponse> localVarResult = std::make_shared<CreateDryRunPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteDryRunPolicyResponse> OrganizationsClient::deleteDryRunPolicy(DeleteDryRunPolicyRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForDeleteDryRunPolicy());
+
+    std::shared_ptr<DeleteDryRunPolicyResponse> localVarResult = std::make_shared<DeleteDryRunPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DetachDryRunPolicyResponse> OrganizationsClient::detachDryRunPolicy(DetachDryRunPolicyRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-policies/{policy_id}/detach";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForDetachDryRunPolicy());
+
+    std::shared_ptr<DetachDryRunPolicyResponse> localVarResult = std::make_shared<DetachDryRunPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListDryRunPoliciesResponse> OrganizationsClient::listDryRunPolicies(ListDryRunPoliciesRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.attachedEntityIdIsSet()) {
+        localVarQueryParams["attached_entity_id"] = parameterToString(request.getAttachedEntityId());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForListDryRunPolicies());
+
+    std::shared_ptr<ListDryRunPoliciesResponse> localVarResult = std::make_shared<ListDryRunPoliciesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListEntitiesForDryRunPolicyResponse> OrganizationsClient::listEntitiesForDryRunPolicy(ListEntitiesForDryRunPolicyRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-policies/{policy_id}/attached-entities";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForListEntitiesForDryRunPolicy());
+
+    std::shared_ptr<ListEntitiesForDryRunPolicyResponse> localVarResult = std::make_shared<ListEntitiesForDryRunPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDryRunPolicyResponse> OrganizationsClient::showDryRunPolicy(ShowDryRunPolicyRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForShowDryRunPolicy());
+
+    std::shared_ptr<ShowDryRunPolicyResponse> localVarResult = std::make_shared<ShowDryRunPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateDryRunPolicyResponse> OrganizationsClient::updateDryRunPolicy(UpdateDryRunPolicyRequest &request)
+{
+    std::string localVarPath = "/v1/organizations/dry-run-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PATCH", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OrganizationsMeta::genRequestDefForUpdateDryRunPolicy());
+
+    std::shared_ptr<UpdateDryRunPolicyResponse> localVarResult = std::make_shared<UpdateDryRunPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<AcceptHandshakeResponse> OrganizationsClient::acceptHandshake(AcceptHandshakeRequest &request)
 {
     std::string localVarPath = "/v1/received-handshakes/{handshake_id}/accept";

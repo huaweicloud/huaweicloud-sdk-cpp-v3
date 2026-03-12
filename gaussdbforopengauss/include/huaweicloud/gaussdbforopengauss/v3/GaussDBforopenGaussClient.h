@@ -317,7 +317,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceActionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussModifyInstanceConfigurationRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussResizeRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussResizeRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpengaussRestoreInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ParaErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ParaErrorResponseBody.h>
@@ -526,7 +526,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequestBody.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussResizeRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussResizeRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResizeInstanceFlavorRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResizeInstanceFlavorResponse.h>
 #include <string>
@@ -2292,7 +2292,7 @@ public:
     // 
     //       - 分布式实例：根据分片数滚动升级。
     //       - 集中式实例：根据AZ数进行滚动升级。 
-    //     
+    // 
     //     - 提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级或者升级回退。
     // 
     //       - 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。

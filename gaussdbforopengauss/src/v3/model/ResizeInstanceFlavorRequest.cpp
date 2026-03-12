@@ -67,7 +67,7 @@ bool ResizeInstanceFlavorRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            OpenGaussResizeRequest refVal;
+            OpenGaussResizeRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -118,12 +118,12 @@ void ResizeInstanceFlavorRequest::unsetinstanceId()
     instanceIdIsSet_ = false;
 }
 
-OpenGaussResizeRequest ResizeInstanceFlavorRequest::getBody() const
+OpenGaussResizeRequestBody ResizeInstanceFlavorRequest::getBody() const
 {
     return body_;
 }
 
-void ResizeInstanceFlavorRequest::setBody(const OpenGaussResizeRequest& value)
+void ResizeInstanceFlavorRequest::setBody(const OpenGaussResizeRequestBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;

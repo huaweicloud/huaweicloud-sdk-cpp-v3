@@ -26,6 +26,14 @@ ListWdrSnapshotsCollectResultsRequest::ListWdrSnapshotsCollectResultsRequest()
     endTimeIsSet_ = false;
     jobId_ = "";
     jobIdIsSet_ = false;
+    jobEndTime_ = "";
+    jobEndTimeIsSet_ = false;
+    jobStartTime_ = "";
+    jobStartTimeIsSet_ = false;
+    status_ = "";
+    statusIsSet_ = false;
+    wdrType_ = "";
+    wdrTypeIsSet_ = false;
 }
 
 ListWdrSnapshotsCollectResultsRequest::~ListWdrSnapshotsCollectResultsRequest() = default;
@@ -58,6 +66,18 @@ web::json::value ListWdrSnapshotsCollectResultsRequest::toJson() const
     }
     if(jobIdIsSet_) {
         val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    }
+    if(jobEndTimeIsSet_) {
+        val[utility::conversions::to_string_t("job_end_time")] = ModelBase::toJson(jobEndTime_);
+    }
+    if(jobStartTimeIsSet_) {
+        val[utility::conversions::to_string_t("job_start_time")] = ModelBase::toJson(jobStartTime_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(wdrTypeIsSet_) {
+        val[utility::conversions::to_string_t("wdr_type")] = ModelBase::toJson(wdrType_);
     }
 
     return val;
@@ -127,6 +147,42 @@ bool ListWdrSnapshotsCollectResultsRequest::fromJson(const web::json::value& val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setJobId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_end_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_end_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobEndTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_start_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_start_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobStartTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("wdr_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("wdr_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWdrType(refVal);
         }
     }
     return ok;
@@ -278,6 +334,90 @@ bool ListWdrSnapshotsCollectResultsRequest::jobIdIsSet() const
 void ListWdrSnapshotsCollectResultsRequest::unsetjobId()
 {
     jobIdIsSet_ = false;
+}
+
+std::string ListWdrSnapshotsCollectResultsRequest::getJobEndTime() const
+{
+    return jobEndTime_;
+}
+
+void ListWdrSnapshotsCollectResultsRequest::setJobEndTime(const std::string& value)
+{
+    jobEndTime_ = value;
+    jobEndTimeIsSet_ = true;
+}
+
+bool ListWdrSnapshotsCollectResultsRequest::jobEndTimeIsSet() const
+{
+    return jobEndTimeIsSet_;
+}
+
+void ListWdrSnapshotsCollectResultsRequest::unsetjobEndTime()
+{
+    jobEndTimeIsSet_ = false;
+}
+
+std::string ListWdrSnapshotsCollectResultsRequest::getJobStartTime() const
+{
+    return jobStartTime_;
+}
+
+void ListWdrSnapshotsCollectResultsRequest::setJobStartTime(const std::string& value)
+{
+    jobStartTime_ = value;
+    jobStartTimeIsSet_ = true;
+}
+
+bool ListWdrSnapshotsCollectResultsRequest::jobStartTimeIsSet() const
+{
+    return jobStartTimeIsSet_;
+}
+
+void ListWdrSnapshotsCollectResultsRequest::unsetjobStartTime()
+{
+    jobStartTimeIsSet_ = false;
+}
+
+std::string ListWdrSnapshotsCollectResultsRequest::getStatus() const
+{
+    return status_;
+}
+
+void ListWdrSnapshotsCollectResultsRequest::setStatus(const std::string& value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool ListWdrSnapshotsCollectResultsRequest::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void ListWdrSnapshotsCollectResultsRequest::unsetstatus()
+{
+    statusIsSet_ = false;
+}
+
+std::string ListWdrSnapshotsCollectResultsRequest::getWdrType() const
+{
+    return wdrType_;
+}
+
+void ListWdrSnapshotsCollectResultsRequest::setWdrType(const std::string& value)
+{
+    wdrType_ = value;
+    wdrTypeIsSet_ = true;
+}
+
+bool ListWdrSnapshotsCollectResultsRequest::wdrTypeIsSet() const
+{
+    return wdrTypeIsSet_;
+}
+
+void ListWdrSnapshotsCollectResultsRequest::unsetwdrType()
+{
+    wdrTypeIsSet_ = false;
 }
 
 }

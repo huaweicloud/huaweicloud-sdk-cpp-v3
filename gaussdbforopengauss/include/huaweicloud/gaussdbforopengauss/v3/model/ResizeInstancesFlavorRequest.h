@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussResizeRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussResizeRequestBody.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -61,10 +61,10 @@ public:
     /// 
     /// </summary>
 
-    OpenGaussResizeRequest getBody() const;
+    OpenGaussResizeRequestBody getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const OpenGaussResizeRequest& value);
+    void setBody(const OpenGaussResizeRequestBody& value);
 
 
 protected:
@@ -72,7 +72,7 @@ protected:
     bool xLanguageIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
-    OpenGaussResizeRequest body_;
+    OpenGaussResizeRequestBody body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

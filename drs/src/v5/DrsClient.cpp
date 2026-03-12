@@ -4155,6 +4155,9 @@ std::shared_ptr<UploadDbObjectTemplateResponse> DrsClient::uploadDbObjectTemplat
     if (request.fileImportDbLevelIsSet()) {
         localVarQueryParams["file_import_db_level"] = parameterToString(request.getFileImportDbLevel());
     }
+    if (request.fileImportMappingTypeIsSet()) {
+        localVarQueryParams["file_import_mapping_type"] = parameterToString(request.getFileImportMappingType());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }

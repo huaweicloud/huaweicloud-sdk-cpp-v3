@@ -28,6 +28,17 @@ CollectedWdrSnapshotInfoResult::CollectedWdrSnapshotInfoResult()
     statusIsSet_ = false;
     notes_ = "";
     notesIsSet_ = false;
+    jobCreateTime_ = "";
+    jobCreateTimeIsSet_ = false;
+    startSnapshotId_ = "";
+    startSnapshotIdIsSet_ = false;
+    endSnapshotId_ = "";
+    endSnapshotIdIsSet_ = false;
+    fileName_ = "";
+    fileNameIsSet_ = false;
+    filePath_ = "";
+    filePathIsSet_ = false;
+    obsBucketIsSet_ = false;
 }
 
 CollectedWdrSnapshotInfoResult::~CollectedWdrSnapshotInfoResult() = default;
@@ -63,6 +74,24 @@ web::json::value CollectedWdrSnapshotInfoResult::toJson() const
     }
     if(notesIsSet_) {
         val[utility::conversions::to_string_t("notes")] = ModelBase::toJson(notes_);
+    }
+    if(jobCreateTimeIsSet_) {
+        val[utility::conversions::to_string_t("job_create_time")] = ModelBase::toJson(jobCreateTime_);
+    }
+    if(startSnapshotIdIsSet_) {
+        val[utility::conversions::to_string_t("start_snapshot_id")] = ModelBase::toJson(startSnapshotId_);
+    }
+    if(endSnapshotIdIsSet_) {
+        val[utility::conversions::to_string_t("end_snapshot_id")] = ModelBase::toJson(endSnapshotId_);
+    }
+    if(fileNameIsSet_) {
+        val[utility::conversions::to_string_t("file_name")] = ModelBase::toJson(fileName_);
+    }
+    if(filePathIsSet_) {
+        val[utility::conversions::to_string_t("file_path")] = ModelBase::toJson(filePath_);
+    }
+    if(obsBucketIsSet_) {
+        val[utility::conversions::to_string_t("obs_bucket")] = ModelBase::toJson(obsBucket_);
     }
 
     return val;
@@ -141,6 +170,60 @@ bool CollectedWdrSnapshotInfoResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNotes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_create_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_create_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobCreateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("start_snapshot_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_snapshot_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStartSnapshotId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("end_snapshot_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_snapshot_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEndSnapshotId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("file_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFileName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("file_path"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_path"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFilePath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("obs_bucket"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("obs_bucket"));
+        if(!fieldValue.is_null())
+        {
+            CollectedWdrSnapshotInfoResult_obs_bucket refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setObsBucket(refVal);
         }
     }
     return ok;
@@ -313,6 +396,132 @@ bool CollectedWdrSnapshotInfoResult::notesIsSet() const
 void CollectedWdrSnapshotInfoResult::unsetnotes()
 {
     notesIsSet_ = false;
+}
+
+std::string CollectedWdrSnapshotInfoResult::getJobCreateTime() const
+{
+    return jobCreateTime_;
+}
+
+void CollectedWdrSnapshotInfoResult::setJobCreateTime(const std::string& value)
+{
+    jobCreateTime_ = value;
+    jobCreateTimeIsSet_ = true;
+}
+
+bool CollectedWdrSnapshotInfoResult::jobCreateTimeIsSet() const
+{
+    return jobCreateTimeIsSet_;
+}
+
+void CollectedWdrSnapshotInfoResult::unsetjobCreateTime()
+{
+    jobCreateTimeIsSet_ = false;
+}
+
+std::string CollectedWdrSnapshotInfoResult::getStartSnapshotId() const
+{
+    return startSnapshotId_;
+}
+
+void CollectedWdrSnapshotInfoResult::setStartSnapshotId(const std::string& value)
+{
+    startSnapshotId_ = value;
+    startSnapshotIdIsSet_ = true;
+}
+
+bool CollectedWdrSnapshotInfoResult::startSnapshotIdIsSet() const
+{
+    return startSnapshotIdIsSet_;
+}
+
+void CollectedWdrSnapshotInfoResult::unsetstartSnapshotId()
+{
+    startSnapshotIdIsSet_ = false;
+}
+
+std::string CollectedWdrSnapshotInfoResult::getEndSnapshotId() const
+{
+    return endSnapshotId_;
+}
+
+void CollectedWdrSnapshotInfoResult::setEndSnapshotId(const std::string& value)
+{
+    endSnapshotId_ = value;
+    endSnapshotIdIsSet_ = true;
+}
+
+bool CollectedWdrSnapshotInfoResult::endSnapshotIdIsSet() const
+{
+    return endSnapshotIdIsSet_;
+}
+
+void CollectedWdrSnapshotInfoResult::unsetendSnapshotId()
+{
+    endSnapshotIdIsSet_ = false;
+}
+
+std::string CollectedWdrSnapshotInfoResult::getFileName() const
+{
+    return fileName_;
+}
+
+void CollectedWdrSnapshotInfoResult::setFileName(const std::string& value)
+{
+    fileName_ = value;
+    fileNameIsSet_ = true;
+}
+
+bool CollectedWdrSnapshotInfoResult::fileNameIsSet() const
+{
+    return fileNameIsSet_;
+}
+
+void CollectedWdrSnapshotInfoResult::unsetfileName()
+{
+    fileNameIsSet_ = false;
+}
+
+std::string CollectedWdrSnapshotInfoResult::getFilePath() const
+{
+    return filePath_;
+}
+
+void CollectedWdrSnapshotInfoResult::setFilePath(const std::string& value)
+{
+    filePath_ = value;
+    filePathIsSet_ = true;
+}
+
+bool CollectedWdrSnapshotInfoResult::filePathIsSet() const
+{
+    return filePathIsSet_;
+}
+
+void CollectedWdrSnapshotInfoResult::unsetfilePath()
+{
+    filePathIsSet_ = false;
+}
+
+CollectedWdrSnapshotInfoResult_obs_bucket CollectedWdrSnapshotInfoResult::getObsBucket() const
+{
+    return obsBucket_;
+}
+
+void CollectedWdrSnapshotInfoResult::setObsBucket(const CollectedWdrSnapshotInfoResult_obs_bucket& value)
+{
+    obsBucket_ = value;
+    obsBucketIsSet_ = true;
+}
+
+bool CollectedWdrSnapshotInfoResult::obsBucketIsSet() const
+{
+    return obsBucketIsSet_;
+}
+
+void CollectedWdrSnapshotInfoResult::unsetobsBucket()
+{
+    obsBucketIsSet_ = false;
 }
 
 }

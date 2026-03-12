@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/gaussdbforopengauss/v3/model/CollectedWdrSnapshotInfoResult_obs_bucket.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -110,6 +111,60 @@ public:
     void unsetnotes();
     void setNotes(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： WDR报告生成任务的创建时间。格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始，Z指时区偏移量，当前时间固定为+0时区。例如，\&quot;2025-07-08T10:57:59+0000\&quot;。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getJobCreateTime() const;
+    bool jobCreateTimeIsSet() const;
+    void unsetjobCreateTime();
+    void setJobCreateTime(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 用于生成WDR报告的第一个对比快照ID。例如：\&quot;20024\&quot;。只针对使用报告生成模式为对比快照ID（mode&#x3D;snapshot_id）的采集任务生效；如果该任务使用的是时间区间查询方式（mode&#x3D;time_range），则该字段为空。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getStartSnapshotId() const;
+    bool startSnapshotIdIsSet() const;
+    void unsetstartSnapshotId();
+    void setStartSnapshotId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 用于生成WDR报告的第二个对比快照ID。例如：\&quot;20025\&quot;。只针对使用报告生成模式为对比快照ID（mode&#x3D;snapshot_id）的采集任务生效；如果该任务使用的是时间区间查询方式（mode&#x3D;time_range）来生成的，则该字段为空。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getEndSnapshotId() const;
+    bool endSnapshotIdIsSet() const;
+    void unsetendSnapshotId();
+    void setEndSnapshotId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： WDR报告临时文件名称。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getFileName() const;
+    bool fileNameIsSet() const;
+    void unsetfileName();
+    void setFileName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： WDR报告临时文件保存路径。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getFilePath() const;
+    bool filePathIsSet() const;
+    void unsetfilePath();
+    void setFilePath(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CollectedWdrSnapshotInfoResult_obs_bucket getObsBucket() const;
+    bool obsBucketIsSet() const;
+    void unsetobsBucket();
+    void setObsBucket(const CollectedWdrSnapshotInfoResult_obs_bucket& value);
+
 
 protected:
     std::string jobId_;
@@ -128,6 +183,18 @@ protected:
     bool statusIsSet_;
     std::string notes_;
     bool notesIsSet_;
+    std::string jobCreateTime_;
+    bool jobCreateTimeIsSet_;
+    std::string startSnapshotId_;
+    bool startSnapshotIdIsSet_;
+    std::string endSnapshotId_;
+    bool endSnapshotIdIsSet_;
+    std::string fileName_;
+    bool fileNameIsSet_;
+    std::string filePath_;
+    bool filePathIsSet_;
+    CollectedWdrSnapshotInfoResult_obs_bucket obsBucket_;
+    bool obsBucketIsSet_;
 
 };
 

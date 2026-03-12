@@ -18,6 +18,8 @@ UploadDbObjectTemplateRequest::UploadDbObjectTemplateRequest()
     xLanguageIsSet_ = false;
     fileImportDbLevel_ = "";
     fileImportDbLevelIsSet_ = false;
+    fileImportMappingType_ = "";
+    fileImportMappingTypeIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -39,6 +41,9 @@ web::json::value UploadDbObjectTemplateRequest::toJson() const
     }
     if(fileImportDbLevelIsSet_) {
         val[utility::conversions::to_string_t("file_import_db_level")] = ModelBase::toJson(fileImportDbLevel_);
+    }
+    if(fileImportMappingTypeIsSet_) {
+        val[utility::conversions::to_string_t("file_import_mapping_type")] = ModelBase::toJson(fileImportMappingType_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -75,6 +80,15 @@ bool UploadDbObjectTemplateRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFileImportDbLevel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("file_import_mapping_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_import_mapping_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFileImportMappingType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -151,6 +165,27 @@ bool UploadDbObjectTemplateRequest::fileImportDbLevelIsSet() const
 void UploadDbObjectTemplateRequest::unsetfileImportDbLevel()
 {
     fileImportDbLevelIsSet_ = false;
+}
+
+std::string UploadDbObjectTemplateRequest::getFileImportMappingType() const
+{
+    return fileImportMappingType_;
+}
+
+void UploadDbObjectTemplateRequest::setFileImportMappingType(const std::string& value)
+{
+    fileImportMappingType_ = value;
+    fileImportMappingTypeIsSet_ = true;
+}
+
+bool UploadDbObjectTemplateRequest::fileImportMappingTypeIsSet() const
+{
+    return fileImportMappingTypeIsSet_;
+}
+
+void UploadDbObjectTemplateRequest::unsetfileImportMappingType()
+{
+    fileImportMappingTypeIsSet_ = false;
 }
 
 UploadDbObjectTemplateRequestBody UploadDbObjectTemplateRequest::getBody() const

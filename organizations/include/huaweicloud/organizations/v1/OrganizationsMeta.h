@@ -29,6 +29,16 @@ public:
     static HttpRequestDef genRequestDefForListDelegatedAdministrators();
     static HttpRequestDef genRequestDefForListDelegatedServices();
     static HttpRequestDef genRequestDefForRegisterDelegatedAdministrator();
+    static HttpRequestDef genRequestDefForShowDryRunConfig();
+    static HttpRequestDef genRequestDefForUpdateDryRunConfig();
+    static HttpRequestDef genRequestDefForAttachDryRunPolicy();
+    static HttpRequestDef genRequestDefForCreateDryRunPolicy();
+    static HttpRequestDef genRequestDefForDeleteDryRunPolicy();
+    static HttpRequestDef genRequestDefForDetachDryRunPolicy();
+    static HttpRequestDef genRequestDefForListDryRunPolicies();
+    static HttpRequestDef genRequestDefForListEntitiesForDryRunPolicy();
+    static HttpRequestDef genRequestDefForShowDryRunPolicy();
+    static HttpRequestDef genRequestDefForUpdateDryRunPolicy();
     static HttpRequestDef genRequestDefForAcceptHandshake();
     static HttpRequestDef genRequestDefForCancelHandshake();
     static HttpRequestDef genRequestDefForDeclineHandshake();

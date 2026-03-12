@@ -108,7 +108,7 @@ bool ListWaitEventRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("wait_event_query_info"));
         if(!fieldValue.is_null())
         {
-            WaitEventQueryInfo refVal;
+            WaitEventQueryInfoOption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWaitEventQueryInfo(refVal);
         }
@@ -222,12 +222,12 @@ void ListWaitEventRequestBody::unsetorderFields()
     orderFieldsIsSet_ = false;
 }
 
-WaitEventQueryInfo ListWaitEventRequestBody::getWaitEventQueryInfo() const
+WaitEventQueryInfoOption ListWaitEventRequestBody::getWaitEventQueryInfo() const
 {
     return waitEventQueryInfo_;
 }
 
-void ListWaitEventRequestBody::setWaitEventQueryInfo(const WaitEventQueryInfo& value)
+void ListWaitEventRequestBody::setWaitEventQueryInfo(const WaitEventQueryInfoOption& value)
 {
     waitEventQueryInfo_ = value;
     waitEventQueryInfoIsSet_ = true;

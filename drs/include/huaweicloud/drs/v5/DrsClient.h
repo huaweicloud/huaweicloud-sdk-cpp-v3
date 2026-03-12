@@ -6,7 +6,7 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
-#include <huaweicloud/drs/v5/model/ApiHttpNullResp.h>
+#include <huaweicloud/drs/v5/model/ApiHttpResp.h>
 #include <huaweicloud/drs/v5/model/BatchAddTagReq.h>
 #include <huaweicloud/drs/v5/model/BatchAsyncCreateJobReq.h>
 #include <huaweicloud/drs/v5/model/BatchAsyncUpdateJobReq.h>

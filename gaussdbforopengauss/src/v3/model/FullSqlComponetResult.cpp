@@ -44,10 +44,10 @@ FullSqlComponetResult::FullSqlComponetResult()
     threadIdIsSet_ = false;
     sessionId_ = "";
     sessionIdIsSet_ = false;
-    beginTime_ = "";
-    beginTimeIsSet_ = false;
-    endTime_ = "";
-    endTimeIsSet_ = false;
+    startTime_ = "";
+    startTimeIsSet_ = false;
+    finishTime_ = "";
+    finishTimeIsSet_ = false;
     slowQueryThreshold_ = 0L;
     slowQueryThresholdIsSet_ = false;
     nSoftParse_ = 0L;
@@ -56,8 +56,8 @@ FullSqlComponetResult::FullSqlComponetResult()
     nHardParseIsSet_ = false;
     queryPlan_ = "";
     queryPlanIsSet_ = false;
-    nReturnRows_ = 0L;
-    nReturnRowsIsSet_ = false;
+    nReturnedRows_ = 0L;
+    nReturnedRowsIsSet_ = false;
     nTuplesFetched_ = 0L;
     nTuplesFetchedIsSet_ = false;
     nTuplesReturned_ = 0L;
@@ -174,11 +174,11 @@ web::json::value FullSqlComponetResult::toJson() const
     if(sessionIdIsSet_) {
         val[utility::conversions::to_string_t("session_id")] = ModelBase::toJson(sessionId_);
     }
-    if(beginTimeIsSet_) {
-        val[utility::conversions::to_string_t("begin_time")] = ModelBase::toJson(beginTime_);
+    if(startTimeIsSet_) {
+        val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
     }
-    if(endTimeIsSet_) {
-        val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
+    if(finishTimeIsSet_) {
+        val[utility::conversions::to_string_t("finish_time")] = ModelBase::toJson(finishTime_);
     }
     if(slowQueryThresholdIsSet_) {
         val[utility::conversions::to_string_t("slow_query_threshold")] = ModelBase::toJson(slowQueryThreshold_);
@@ -192,8 +192,8 @@ web::json::value FullSqlComponetResult::toJson() const
     if(queryPlanIsSet_) {
         val[utility::conversions::to_string_t("query_plan")] = ModelBase::toJson(queryPlan_);
     }
-    if(nReturnRowsIsSet_) {
-        val[utility::conversions::to_string_t("n_return_rows")] = ModelBase::toJson(nReturnRows_);
+    if(nReturnedRowsIsSet_) {
+        val[utility::conversions::to_string_t("n_returned_rows")] = ModelBase::toJson(nReturnedRows_);
     }
     if(nTuplesFetchedIsSet_) {
         val[utility::conversions::to_string_t("n_tuples_fetched")] = ModelBase::toJson(nTuplesFetched_);
@@ -430,22 +430,22 @@ bool FullSqlComponetResult::fromJson(const web::json::value& val)
             setSessionId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("begin_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("begin_time"));
+    if(val.has_field(utility::conversions::to_string_t("start_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBeginTime(refVal);
+            setStartTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("end_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
+    if(val.has_field(utility::conversions::to_string_t("finish_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("finish_time"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEndTime(refVal);
+            setFinishTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("slow_query_threshold"))) {
@@ -484,13 +484,13 @@ bool FullSqlComponetResult::fromJson(const web::json::value& val)
             setQueryPlan(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("n_return_rows"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("n_return_rows"));
+    if(val.has_field(utility::conversions::to_string_t("n_returned_rows"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("n_returned_rows"));
         if(!fieldValue.is_null())
         {
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNReturnRows(refVal);
+            setNReturnedRows(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("n_tuples_fetched"))) {
@@ -1085,46 +1085,46 @@ void FullSqlComponetResult::unsetsessionId()
     sessionIdIsSet_ = false;
 }
 
-std::string FullSqlComponetResult::getBeginTime() const
+std::string FullSqlComponetResult::getStartTime() const
 {
-    return beginTime_;
+    return startTime_;
 }
 
-void FullSqlComponetResult::setBeginTime(const std::string& value)
+void FullSqlComponetResult::setStartTime(const std::string& value)
 {
-    beginTime_ = value;
-    beginTimeIsSet_ = true;
+    startTime_ = value;
+    startTimeIsSet_ = true;
 }
 
-bool FullSqlComponetResult::beginTimeIsSet() const
+bool FullSqlComponetResult::startTimeIsSet() const
 {
-    return beginTimeIsSet_;
+    return startTimeIsSet_;
 }
 
-void FullSqlComponetResult::unsetbeginTime()
+void FullSqlComponetResult::unsetstartTime()
 {
-    beginTimeIsSet_ = false;
+    startTimeIsSet_ = false;
 }
 
-std::string FullSqlComponetResult::getEndTime() const
+std::string FullSqlComponetResult::getFinishTime() const
 {
-    return endTime_;
+    return finishTime_;
 }
 
-void FullSqlComponetResult::setEndTime(const std::string& value)
+void FullSqlComponetResult::setFinishTime(const std::string& value)
 {
-    endTime_ = value;
-    endTimeIsSet_ = true;
+    finishTime_ = value;
+    finishTimeIsSet_ = true;
 }
 
-bool FullSqlComponetResult::endTimeIsSet() const
+bool FullSqlComponetResult::finishTimeIsSet() const
 {
-    return endTimeIsSet_;
+    return finishTimeIsSet_;
 }
 
-void FullSqlComponetResult::unsetendTime()
+void FullSqlComponetResult::unsetfinishTime()
 {
-    endTimeIsSet_ = false;
+    finishTimeIsSet_ = false;
 }
 
 int64_t FullSqlComponetResult::getSlowQueryThreshold() const
@@ -1211,25 +1211,25 @@ void FullSqlComponetResult::unsetqueryPlan()
     queryPlanIsSet_ = false;
 }
 
-int64_t FullSqlComponetResult::getNReturnRows() const
+int64_t FullSqlComponetResult::getNReturnedRows() const
 {
-    return nReturnRows_;
+    return nReturnedRows_;
 }
 
-void FullSqlComponetResult::setNReturnRows(int64_t value)
+void FullSqlComponetResult::setNReturnedRows(int64_t value)
 {
-    nReturnRows_ = value;
-    nReturnRowsIsSet_ = true;
+    nReturnedRows_ = value;
+    nReturnedRowsIsSet_ = true;
 }
 
-bool FullSqlComponetResult::nReturnRowsIsSet() const
+bool FullSqlComponetResult::nReturnedRowsIsSet() const
 {
-    return nReturnRowsIsSet_;
+    return nReturnedRowsIsSet_;
 }
 
-void FullSqlComponetResult::unsetnReturnRows()
+void FullSqlComponetResult::unsetnReturnedRows()
 {
-    nReturnRowsIsSet_ = false;
+    nReturnedRowsIsSet_ = false;
 }
 
 int64_t FullSqlComponetResult::getNTuplesFetched() const

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_WaitEventQueryInfo_H_
-#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_WaitEventQueryInfo_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_WaitEventQueryInfoOption_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_WaitEventQueryInfoOption_H_
 
 
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  WaitEventQueryInfo
+class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  WaitEventQueryInfoOption
     : public ModelBase
 {
 public:
-    WaitEventQueryInfo();
-    virtual ~WaitEventQueryInfo();
+    WaitEventQueryInfoOption();
+    virtual ~WaitEventQueryInfoOption();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// WaitEventQueryInfo members
+    /// WaitEventQueryInfoOption members
 
     /// <summary>
     /// **参数解释**: 数据库名称。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
@@ -87,10 +87,10 @@ public:
     /// **参数解释**: 阻塞当前会话的会话数。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
     /// </summary>
 
-    std::string getBlockCount() const;
+    int32_t getBlockCount() const;
     bool blockCountIsSet() const;
     void unsetblockCount();
-    void setBlockCount(const std::string& value);
+    void setBlockCount(int32_t value);
 
     /// <summary>
     /// **参数解释**: 唯一的SQL ID。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
@@ -149,7 +149,7 @@ protected:
     bool sessionIdIsSet_;
     std::string blockSessionId_;
     bool blockSessionIdIsSet_;
-    std::string blockCount_;
+    int32_t blockCount_;
     bool blockCountIsSet_;
     std::string uniqueSqlId_;
     bool uniqueSqlIdIsSet_;
@@ -171,4 +171,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_WaitEventQueryInfo_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_WaitEventQueryInfoOption_H_

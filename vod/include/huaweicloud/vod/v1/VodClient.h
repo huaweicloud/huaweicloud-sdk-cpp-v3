@@ -74,6 +74,8 @@
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupResponse.h>
+#include <huaweicloud/vod/v1/model/DeleteThumbnailsRequest.h>
+#include <huaweicloud/vod/v1/model/DeleteThumbnailsResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteTranscodeProductReq.h>
 #include <huaweicloud/vod/v1/model/DeleteTranscodeProductRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteTranscodeProductResponse.h>
@@ -100,6 +102,10 @@
 #include <huaweicloud/vod/v1/model/ListTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/ListTemplateGroupRequest.h>
 #include <huaweicloud/vod/v1/model/ListTemplateGroupResponse.h>
+#include <huaweicloud/vod/v1/model/ListThumbnailDetailsRequest.h>
+#include <huaweicloud/vod/v1/model/ListThumbnailDetailsResponse.h>
+#include <huaweicloud/vod/v1/model/ListThumbnailInfoRequest.h>
+#include <huaweicloud/vod/v1/model/ListThumbnailInfoResponse.h>
 #include <huaweicloud/vod/v1/model/ListTopStatisticsRequest.h>
 #include <huaweicloud/vod/v1/model/ListTopStatisticsResponse.h>
 #include <huaweicloud/vod/v1/model/ListTranscodeTemplateRequest.h>
@@ -453,6 +459,14 @@ public:
     std::shared_ptr<DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollection(
         DeleteTemplateGroupCollectionRequest &request
     );
+    // 删除媒资下的多个截图
+    //
+    // 删除媒资对应的截图，支持批量删除单个媒资下的多个截图结果，一次最多能删除十个。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteThumbnailsResponse> deleteThumbnails(
+        DeleteThumbnailsRequest &request
+    );
     // 删除转码产物
     //
     // 删除转码产物。
@@ -554,6 +568,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTemplateGroupCollectionResponse> listTemplateGroupCollection(
         ListTemplateGroupCollectionRequest &request
+    );
+    // 查询截图详情
+    //
+    // 查询截图结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListThumbnailDetailsResponse> listThumbnailDetails(
+        ListThumbnailDetailsRequest &request
+    );
+    // 查询截图任务结果列表
+    //
+    // 查询截图任务结果列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListThumbnailInfoResponse> listThumbnailInfo(
+        ListThumbnailInfoRequest &request
     );
     // 查询TopN媒资信息
     //

@@ -40,6 +40,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteDyAsset();
     static HttpRequestDef genRequestDefForDeleteTemplateGroup();
     static HttpRequestDef genRequestDefForDeleteTemplateGroupCollection();
+    static HttpRequestDef genRequestDefForDeleteThumbnails();
     static HttpRequestDef genRequestDefForDeleteTranscodeProduct();
     static HttpRequestDef genRequestDefForDeleteTranscodeTemplate();
     static HttpRequestDef genRequestDefForDeleteWatermarkTemplate();
@@ -52,6 +53,8 @@ public:
     static HttpRequestDef genRequestDefForListDomainLogs();
     static HttpRequestDef genRequestDefForListTemplateGroup();
     static HttpRequestDef genRequestDefForListTemplateGroupCollection();
+    static HttpRequestDef genRequestDefForListThumbnailDetails();
+    static HttpRequestDef genRequestDefForListThumbnailInfo();
     static HttpRequestDef genRequestDefForListTopStatistics();
     static HttpRequestDef genRequestDefForListTranscodeTemplate();
     static HttpRequestDef genRequestDefForListWatermarkTemplate();

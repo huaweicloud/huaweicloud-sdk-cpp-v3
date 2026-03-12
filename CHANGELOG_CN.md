@@ -1,3 +1,346 @@
+# 3.1.179 2026-03-12
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchDeleteJobs**
+    - 请求参数变更
+      - `+ jobs.delete_type: enum value [roll_back_upgrade_active_standby]`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DownloadDbObjectTemplate**
+    - 请求参数变更
+      - `+ file_import_db_level: enum value [partition]`
+  - **UploadDbObjectTemplate**
+    - 请求参数变更
+      - `+ file_import_mapping_type`
+      - `+ file_import_db_level: enum value [partition]`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateDependencyVersion**
+    - 请求参数变更
+      - `+ runtime: enum value [PHP8.3]`
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+  - **ShowDependencyVersion**
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+  - **ListDependencies**
+    - 响应参数变更
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **ListDependencyVersion**
+    - 响应参数变更
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **ShowFunctionCode**
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **UpdateFunctionCode**
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **ImportFunction**
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+  - **ListFunctions**
+    - 响应参数变更
+      - `+ functions.runtime: enum value [PHP8.3]`
+  - **CreateFunction**
+    - 请求参数变更
+      - `+ runtime: enum value [PHP8.3]`
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **ShowFunctionConfig**
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **UpdateFunctionConfig**
+    - 请求参数变更
+      - `+ runtime: enum value [PHP8.3]`
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **UpdateFunctionMaxInstanceConfig**
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **ListBridgeFunctions**
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+  - **CreateFunctionVersion**
+    - 响应参数变更
+      - `+ runtime: enum value [PHP8.3]`
+      - `+ dependencies.runtime: enum value [PHP8.3]`
+  - **ListFunctionVersions**
+    - 响应参数变更
+      - `+ versions.runtime: enum value [PHP8.3]`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowConfiguration**
+    - 响应参数变更
+      - `- backup_node_info`
+  - **ResizeInstanceFlavor**
+    - 请求参数变更
+      - `+ cn_concurrent_resize_num`
+      - `+ dn_concurrent_resize_num`
+      - `* body: object<OpenGaussResizeRequest> -> object<OpenGaussResizeRequestBody>`
+  - **ResizeInstancesFlavor**
+    - 请求参数变更
+      - `+ cn_concurrent_resize_num`
+      - `+ dn_concurrent_resize_num`
+      - `* body: object<OpenGaussResizeRequest> -> object<OpenGaussResizeRequestBody>`
+  - **ShowInstanceConfiguration**
+    - 响应参数变更
+      - `+ configuration_parameters.readonly`
+      - `* configuration_parameters: list<ConfigurationParameter> -> list<ConfigurationParameterResult>`
+  - **ShowInstanceParamGroup**
+    - 响应参数变更
+      - `+ configuration_parameters.readonly`
+      - `* configuration_parameters: list<ConfigurationParameter> -> list<ConfigurationParameterResult>`
+  - **ShowInstanceParamGroupDetail**
+    - 响应参数变更
+      - `+ configuration_parameters.readonly`
+      - `* configuration_parameters: list<ConfigurationParameter> -> list<ConfigurationParameterResult>`
+  - **ListWdrSnapshotsCollectResults**
+    - 请求参数变更
+      - `+ job_end_time`
+      - `+ job_start_time`
+      - `+ status`
+      - `+ wdr_type`
+    - 响应参数变更
+      - `+ wdr_snapshots.job_create_time`
+      - `+ wdr_snapshots.start_snapshot_id`
+      - `+ wdr_snapshots.end_snapshot_id`
+      - `+ wdr_snapshots.file_name`
+      - `+ wdr_snapshots.file_path`
+      - `+ wdr_snapshots.obs_bucket`
+  - **ListWaitEvent**
+    - 请求参数变更
+      - `* wait_event_query_info.block_count: string -> int32`
+      - `* wait_event_query_info: object<WaitEventQueryInfo> -> object<WaitEventQueryInfoOption>`
+  - **ShowRedistributionParameters**
+    - 响应参数变更
+      - `* expansion_parameters.type: object -> string`
+  - **ShowFullSql**
+    - 响应参数变更
+      - `+ trace_statistics.hit_rate`
+      - `+ trace_statistics.db_time`
+      - `+ trace_statistics.cpu_time`
+      - `+ trace_statistics.io_time`
+      - `+ trace_statistics.execution_time`
+      - `+ trace_statistics.scan_rows`
+      - `+ trace_statistics.update_rows`
+      - `+ trace_statistics.insert_rows`
+      - `+ trace_statistics.delete_rows`
+      - `* trace_statistics: object -> object<FullSqlTraceStatisticsResult>`
+      - `+ components.start_time`
+      - `+ components.finish_time`
+      - `+ components.n_returned_rows`
+      - `- components.begin_time`
+      - `- components.end_time`
+      - `- components.n_return_rows`
+  - **ListTopTableVolumes**
+    - 响应参数变更
+      - `+ job_id`
+      - `+ node_id`
+  - **ListFullSqlSwitches**
+    - 响应参数变更
+      - `- allowed_sql_types.prefixes`
+
+### HuaweiCloud SDK MetaStudio
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowHotQuestion**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdateHotQuestion**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ShowPacifyWords**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdatePacifyWords**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdatePacifyWordsSwitch**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdatePacifyWordsTriggerTime**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ShowWelcomeSpeech**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdateWelcomeSpeech**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdateWelcomeSpeechSwitch**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreateInteractiveChat**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ShowKnowledgeLibrary**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **StartSmartChatJob**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ShowSmartChatJob**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreateHotQuestion**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ListHotQuestion**
+    - 响应参数变更
+      - `+ data.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ListHotWords**
+    - 响应参数变更
+      - `+ data.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreateHotWords**
+    - 请求参数变更
+      - `+ sis_hot_words.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ShowHotWords**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdateHotWords**
+    - 请求参数变更
+      - `+ sis_hot_words.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreatePacifyWords**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ListPacifyWords**
+    - 响应参数变更
+      - `+ data.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ListRobot**
+    - 响应参数变更
+      - `+ data.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreateRobot**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ShowRobot**
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdateRobot**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreateWelcomeSpeech**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+    - 响应参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ListWelcomeSpeech**
+    - 响应参数变更
+      - `+ data.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ShowInstruction**
+    - 响应参数变更
+      - `+ reply_words_list.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdateInstruction**
+    - 请求参数变更
+      - `+ reply_words_list.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreateKnowledgeLibrary**
+    - 请求参数变更
+      - `+ language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ListKnowledgeLibrary**
+    - 响应参数变更
+      - `+ data.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreateInstruction**
+    - 请求参数变更
+      - `+ reply_words_list.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ListInstruction**
+    - 响应参数变更
+      - `+ data.reply_words_list.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ShowRole**
+    - 响应参数变更
+      - `+ role_business_list.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **UpdateRole**
+    - 请求参数变更
+      - `+ role_business_list.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **CreateRole**
+    - 请求参数变更
+      - `+ role_business_list.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+  - **ListRole**
+    - 响应参数变更
+      - `+ data.role_business_list.language: enum value [zh_CN,en_US,ESP,por,Arabic,Thai,fr]`
+
+### HuaweiCloud SDK Organizations
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ShowDryRunConfig`
+    - `UpdateDryRunConfig`
+    - `ListDryRunPolicies`
+    - `CreateDryRunPolicy`
+    - `ShowDryRunPolicy`
+    - `DeleteDryRunPolicy`
+    - `UpdateDryRunPolicy`
+    - `AttachDryRunPolicy`
+    - `DetachDryRunPolicy`
+    - `ListEntitiesForDryRunPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListThumbnailInfo`、`DeleteThumbnails`、`ListThumbnailDetails`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.178 2026-03-03
 
 ### HuaweiCloud SDK Core

@@ -58,13 +58,22 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+    /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
     /// </summary>
 
     std::string getFileImportDbLevel() const;
     bool fileImportDbLevelIsSet() const;
     void unsetfileImportDbLevel();
     void setFileImportDbLevel(const std::string& value);
+
+    /// <summary>
+    /// 导入文件模板的映射场景，取值： - table_mapping：表名映射 - topic_mapping：topic名映射
+    /// </summary>
+
+    std::string getFileImportMappingType() const;
+    bool fileImportMappingTypeIsSet() const;
+    void unsetfileImportMappingType();
+    void setFileImportMappingType(const std::string& value);
 
     /// <summary>
     /// 
@@ -83,6 +92,8 @@ protected:
     bool xLanguageIsSet_;
     std::string fileImportDbLevel_;
     bool fileImportDbLevelIsSet_;
+    std::string fileImportMappingType_;
+    bool fileImportMappingTypeIsSet_;
     UploadDbObjectTemplateRequestBody body_;
     bool bodyIsSet_;
 

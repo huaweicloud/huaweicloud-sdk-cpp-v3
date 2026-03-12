@@ -39,7 +39,7 @@ public:
     /// DeleteJobReq members
 
     /// <summary>
-    /// terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
+    /// terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务,roll_back_upgrade_active_standby:转主备任务回滚
     /// </summary>
 
     std::string getDeleteType() const;

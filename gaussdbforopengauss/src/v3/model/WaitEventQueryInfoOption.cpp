@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/gaussdbforopengauss/v3/model/WaitEventQueryInfo.h"
+#include "huaweicloud/gaussdbforopengauss/v3/model/WaitEventQueryInfoOption.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-WaitEventQueryInfo::WaitEventQueryInfo()
+WaitEventQueryInfoOption::WaitEventQueryInfoOption()
 {
     databaseName_ = "";
     databaseNameIsSet_ = false;
@@ -22,7 +22,7 @@ WaitEventQueryInfo::WaitEventQueryInfo()
     sessionIdIsSet_ = false;
     blockSessionId_ = "";
     blockSessionIdIsSet_ = false;
-    blockCount_ = "";
+    blockCount_ = 0;
     blockCountIsSet_ = false;
     uniqueSqlId_ = "";
     uniqueSqlIdIsSet_ = false;
@@ -36,13 +36,13 @@ WaitEventQueryInfo::WaitEventQueryInfo()
     waitStatusIsSet_ = false;
 }
 
-WaitEventQueryInfo::~WaitEventQueryInfo() = default;
+WaitEventQueryInfoOption::~WaitEventQueryInfoOption() = default;
 
-void WaitEventQueryInfo::validate()
+void WaitEventQueryInfoOption::validate()
 {
 }
 
-web::json::value WaitEventQueryInfo::toJson() const
+web::json::value WaitEventQueryInfoOption::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -82,7 +82,7 @@ web::json::value WaitEventQueryInfo::toJson() const
 
     return val;
 }
-bool WaitEventQueryInfo::fromJson(const web::json::value& val)
+bool WaitEventQueryInfoOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -135,7 +135,7 @@ bool WaitEventQueryInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("block_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBlockCount(refVal);
         }
@@ -189,233 +189,233 @@ bool WaitEventQueryInfo::fromJson(const web::json::value& val)
 }
 
 
-std::string WaitEventQueryInfo::getDatabaseName() const
+std::string WaitEventQueryInfoOption::getDatabaseName() const
 {
     return databaseName_;
 }
 
-void WaitEventQueryInfo::setDatabaseName(const std::string& value)
+void WaitEventQueryInfoOption::setDatabaseName(const std::string& value)
 {
     databaseName_ = value;
     databaseNameIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::databaseNameIsSet() const
+bool WaitEventQueryInfoOption::databaseNameIsSet() const
 {
     return databaseNameIsSet_;
 }
 
-void WaitEventQueryInfo::unsetdatabaseName()
+void WaitEventQueryInfoOption::unsetdatabaseName()
 {
     databaseNameIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getUserName() const
+std::string WaitEventQueryInfoOption::getUserName() const
 {
     return userName_;
 }
 
-void WaitEventQueryInfo::setUserName(const std::string& value)
+void WaitEventQueryInfoOption::setUserName(const std::string& value)
 {
     userName_ = value;
     userNameIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::userNameIsSet() const
+bool WaitEventQueryInfoOption::userNameIsSet() const
 {
     return userNameIsSet_;
 }
 
-void WaitEventQueryInfo::unsetuserName()
+void WaitEventQueryInfoOption::unsetuserName()
 {
     userNameIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getWaiting() const
+std::string WaitEventQueryInfoOption::getWaiting() const
 {
     return waiting_;
 }
 
-void WaitEventQueryInfo::setWaiting(const std::string& value)
+void WaitEventQueryInfoOption::setWaiting(const std::string& value)
 {
     waiting_ = value;
     waitingIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::waitingIsSet() const
+bool WaitEventQueryInfoOption::waitingIsSet() const
 {
     return waitingIsSet_;
 }
 
-void WaitEventQueryInfo::unsetwaiting()
+void WaitEventQueryInfoOption::unsetwaiting()
 {
     waitingIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getSessionId() const
+std::string WaitEventQueryInfoOption::getSessionId() const
 {
     return sessionId_;
 }
 
-void WaitEventQueryInfo::setSessionId(const std::string& value)
+void WaitEventQueryInfoOption::setSessionId(const std::string& value)
 {
     sessionId_ = value;
     sessionIdIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::sessionIdIsSet() const
+bool WaitEventQueryInfoOption::sessionIdIsSet() const
 {
     return sessionIdIsSet_;
 }
 
-void WaitEventQueryInfo::unsetsessionId()
+void WaitEventQueryInfoOption::unsetsessionId()
 {
     sessionIdIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getBlockSessionId() const
+std::string WaitEventQueryInfoOption::getBlockSessionId() const
 {
     return blockSessionId_;
 }
 
-void WaitEventQueryInfo::setBlockSessionId(const std::string& value)
+void WaitEventQueryInfoOption::setBlockSessionId(const std::string& value)
 {
     blockSessionId_ = value;
     blockSessionIdIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::blockSessionIdIsSet() const
+bool WaitEventQueryInfoOption::blockSessionIdIsSet() const
 {
     return blockSessionIdIsSet_;
 }
 
-void WaitEventQueryInfo::unsetblockSessionId()
+void WaitEventQueryInfoOption::unsetblockSessionId()
 {
     blockSessionIdIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getBlockCount() const
+int32_t WaitEventQueryInfoOption::getBlockCount() const
 {
     return blockCount_;
 }
 
-void WaitEventQueryInfo::setBlockCount(const std::string& value)
+void WaitEventQueryInfoOption::setBlockCount(int32_t value)
 {
     blockCount_ = value;
     blockCountIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::blockCountIsSet() const
+bool WaitEventQueryInfoOption::blockCountIsSet() const
 {
     return blockCountIsSet_;
 }
 
-void WaitEventQueryInfo::unsetblockCount()
+void WaitEventQueryInfoOption::unsetblockCount()
 {
     blockCountIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getUniqueSqlId() const
+std::string WaitEventQueryInfoOption::getUniqueSqlId() const
 {
     return uniqueSqlId_;
 }
 
-void WaitEventQueryInfo::setUniqueSqlId(const std::string& value)
+void WaitEventQueryInfoOption::setUniqueSqlId(const std::string& value)
 {
     uniqueSqlId_ = value;
     uniqueSqlIdIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::uniqueSqlIdIsSet() const
+bool WaitEventQueryInfoOption::uniqueSqlIdIsSet() const
 {
     return uniqueSqlIdIsSet_;
 }
 
-void WaitEventQueryInfo::unsetuniqueSqlId()
+void WaitEventQueryInfoOption::unsetuniqueSqlId()
 {
     uniqueSqlIdIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getQueryId() const
+std::string WaitEventQueryInfoOption::getQueryId() const
 {
     return queryId_;
 }
 
-void WaitEventQueryInfo::setQueryId(const std::string& value)
+void WaitEventQueryInfoOption::setQueryId(const std::string& value)
 {
     queryId_ = value;
     queryIdIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::queryIdIsSet() const
+bool WaitEventQueryInfoOption::queryIdIsSet() const
 {
     return queryIdIsSet_;
 }
 
-void WaitEventQueryInfo::unsetqueryId()
+void WaitEventQueryInfoOption::unsetqueryId()
 {
     queryIdIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getState() const
+std::string WaitEventQueryInfoOption::getState() const
 {
     return state_;
 }
 
-void WaitEventQueryInfo::setState(const std::string& value)
+void WaitEventQueryInfoOption::setState(const std::string& value)
 {
     state_ = value;
     stateIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::stateIsSet() const
+bool WaitEventQueryInfoOption::stateIsSet() const
 {
     return stateIsSet_;
 }
 
-void WaitEventQueryInfo::unsetstate()
+void WaitEventQueryInfoOption::unsetstate()
 {
     stateIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getWaitEvent() const
+std::string WaitEventQueryInfoOption::getWaitEvent() const
 {
     return waitEvent_;
 }
 
-void WaitEventQueryInfo::setWaitEvent(const std::string& value)
+void WaitEventQueryInfoOption::setWaitEvent(const std::string& value)
 {
     waitEvent_ = value;
     waitEventIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::waitEventIsSet() const
+bool WaitEventQueryInfoOption::waitEventIsSet() const
 {
     return waitEventIsSet_;
 }
 
-void WaitEventQueryInfo::unsetwaitEvent()
+void WaitEventQueryInfoOption::unsetwaitEvent()
 {
     waitEventIsSet_ = false;
 }
 
-std::string WaitEventQueryInfo::getWaitStatus() const
+std::string WaitEventQueryInfoOption::getWaitStatus() const
 {
     return waitStatus_;
 }
 
-void WaitEventQueryInfo::setWaitStatus(const std::string& value)
+void WaitEventQueryInfoOption::setWaitStatus(const std::string& value)
 {
     waitStatus_ = value;
     waitStatusIsSet_ = true;
 }
 
-bool WaitEventQueryInfo::waitStatusIsSet() const
+bool WaitEventQueryInfoOption::waitStatusIsSet() const
 {
     return waitStatusIsSet_;
 }
 
-void WaitEventQueryInfo::unsetwaitStatus()
+void WaitEventQueryInfoOption::unsetwaitStatus()
 {
     waitStatusIsSet_ = false;
 }

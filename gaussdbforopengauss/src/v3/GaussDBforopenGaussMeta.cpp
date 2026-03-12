@@ -3797,6 +3797,18 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListWdrSnapshotsCollectR
     reqDefBuilder.withRequestField(FieldDef().withName("JobId")
                   .withJsonTag("job_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobEndTime")
+                  .withJsonTag("job_end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobStartTime")
+                  .withJsonTag("job_start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("WdrType")
+                  .withJsonTag("wdr_type")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

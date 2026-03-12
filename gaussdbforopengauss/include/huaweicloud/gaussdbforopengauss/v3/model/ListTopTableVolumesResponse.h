@@ -67,6 +67,24 @@ public:
     void unsetstate();
     void setState(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**: 任务ID，当无请求参数时返回。 **取值范围**: 不涉及。 
+    /// </summary>
+
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 工作流执行节点ID，当无请求参数时返回。 **取值范围**: 不涉及。 
+    /// </summary>
+
+    std::string getNodeId() const;
+    bool nodeIdIsSet() const;
+    void unsetnodeId();
+    void setNodeId(const std::string& value);
+
 
 protected:
     std::vector<TableVolumeResult> tableVolumes_;
@@ -75,6 +93,10 @@ protected:
     bool totalCountIsSet_;
     std::string state_;
     bool stateIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
+    std::string nodeId_;
+    bool nodeIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

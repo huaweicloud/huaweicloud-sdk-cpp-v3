@@ -10,8 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/gaussdbforopengauss/v3/model/WaitEventQueryInfo.h>
 #include <vector>
+#include <huaweicloud/gaussdbforopengauss/v3/model/WaitEventQueryInfoOption.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -89,10 +89,10 @@ public:
     /// 
     /// </summary>
 
-    WaitEventQueryInfo getWaitEventQueryInfo() const;
+    WaitEventQueryInfoOption getWaitEventQueryInfo() const;
     bool waitEventQueryInfoIsSet() const;
     void unsetwaitEventQueryInfo();
-    void setWaitEventQueryInfo(const WaitEventQueryInfo& value);
+    void setWaitEventQueryInfo(const WaitEventQueryInfoOption& value);
 
 
 protected:
@@ -106,7 +106,7 @@ protected:
     bool offsetIsSet_;
     std::vector<std::vector<std::string>> orderFields_;
     bool orderFieldsIsSet_;
-    WaitEventQueryInfo waitEventQueryInfo_;
+    WaitEventQueryInfoOption waitEventQueryInfo_;
     bool waitEventQueryInfoIsSet_;
 
 };

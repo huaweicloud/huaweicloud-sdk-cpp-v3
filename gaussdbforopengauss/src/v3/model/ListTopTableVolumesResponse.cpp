@@ -17,6 +17,10 @@ ListTopTableVolumesResponse::ListTopTableVolumesResponse()
     totalCountIsSet_ = false;
     state_ = "";
     stateIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
+    nodeId_ = "";
+    nodeIdIsSet_ = false;
 }
 
 ListTopTableVolumesResponse::~ListTopTableVolumesResponse() = default;
@@ -37,6 +41,12 @@ web::json::value ListTopTableVolumesResponse::toJson() const
     }
     if(stateIsSet_) {
         val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
+    }
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    }
+    if(nodeIdIsSet_) {
+        val[utility::conversions::to_string_t("node_id")] = ModelBase::toJson(nodeId_);
     }
 
     return val;
@@ -70,6 +80,24 @@ bool ListTopTableVolumesResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("node_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("node_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodeId(refVal);
         }
     }
     return ok;
@@ -137,6 +165,48 @@ bool ListTopTableVolumesResponse::stateIsSet() const
 void ListTopTableVolumesResponse::unsetstate()
 {
     stateIsSet_ = false;
+}
+
+std::string ListTopTableVolumesResponse::getJobId() const
+{
+    return jobId_;
+}
+
+void ListTopTableVolumesResponse::setJobId(const std::string& value)
+{
+    jobId_ = value;
+    jobIdIsSet_ = true;
+}
+
+bool ListTopTableVolumesResponse::jobIdIsSet() const
+{
+    return jobIdIsSet_;
+}
+
+void ListTopTableVolumesResponse::unsetjobId()
+{
+    jobIdIsSet_ = false;
+}
+
+std::string ListTopTableVolumesResponse::getNodeId() const
+{
+    return nodeId_;
+}
+
+void ListTopTableVolumesResponse::setNodeId(const std::string& value)
+{
+    nodeId_ = value;
+    nodeIdIsSet_ = true;
+}
+
+bool ListTopTableVolumesResponse::nodeIdIsSet() const
+{
+    return nodeIdIsSet_;
+}
+
+void ListTopTableVolumesResponse::unsetnodeId()
+{
+    nodeIdIsSet_ = false;
 }
 
 }

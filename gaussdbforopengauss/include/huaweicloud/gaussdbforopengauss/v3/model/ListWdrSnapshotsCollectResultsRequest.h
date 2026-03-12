@@ -101,6 +101,42 @@ public:
     void unsetjobId();
     void setJobId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**:   采集任务创建时间终点。可查询任务创建时间小于等于该时间终点的任务结果。格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量。时区中的+号需要进行URL编码，编码为%2B，时区中的-号无需编码。例如，北京时间偏移显示为+0800，job_end_time&#x3D;2024-03-16T17:20:33+0800，传参时编码为job_end_time&#x3D;2024-03-16T17:20:33%2B0800。 **约束限制**:   不涉及。 **取值范围**:   不涉及。 **默认取值**:   不涉及。
+    /// </summary>
+
+    std::string getJobEndTime() const;
+    bool jobEndTimeIsSet() const;
+    void unsetjobEndTime();
+    void setJobEndTime(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**:   采集任务创建时间起点。可查询任务创建时间大于等于该时间起点的任务结果。格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量。时区中的+号需要进行URL编码，编码为%2B，时区中的-号无需编码。例如，北京时间偏移显示为+0800，job_start_time&#x3D;2024-03-15T17:20:33+0800传参时编码为job_start_time&#x3D;2024-03-15T17:20:33%2B0800。 **约束限制**:   不涉及。 **取值范围**:   不涉及。 **默认取值**:   不涉及。
+    /// </summary>
+
+    std::string getJobStartTime() const;
+    bool jobStartTimeIsSet() const;
+    void unsetjobStartTime();
+    void setJobStartTime(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 任务采集状态。填写后，可查询对应采集状态的任务结果。 **约束限制**: 不支持模糊匹配，区分大小写，请填写完整的合法状态值。 **取值范围**: - EXPORTING：采集中。 - SUCCESS：采集成功。 - FAILED：采集失败。  **默认取值**:   不涉及。
+    /// </summary>
+
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 填写后，可查询对应采集类型的任务结果。 **约束限制**: 不支持模糊匹配，区分大小写，请填写完整的合法枚举值。 **取值范围**: - cluster：实例级。 - component：组件级。 - pdb：租户级。  **默认取值**:   不涉及。
+    /// </summary>
+
+    std::string getWdrType() const;
+    bool wdrTypeIsSet() const;
+    void unsetwdrType();
+    void setWdrType(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -117,6 +153,14 @@ protected:
     bool endTimeIsSet_;
     std::string jobId_;
     bool jobIdIsSet_;
+    std::string jobEndTime_;
+    bool jobEndTimeIsSet_;
+    std::string jobStartTime_;
+    bool jobStartTimeIsSet_;
+    std::string status_;
+    bool statusIsSet_;
+    std::string wdrType_;
+    bool wdrTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

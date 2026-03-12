@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ConfigurationParameter_H_
-#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ConfigurationParameter_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ConfigurationParameterResult_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ConfigurationParameterResult_H_
 
 
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ConfigurationParameter
+class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ConfigurationParameterResult
     : public ModelBase
 {
 public:
-    ConfigurationParameter();
-    virtual ~ConfigurationParameter();
+    ConfigurationParameterResult();
+    virtual ~ConfigurationParameterResult();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ConfigurationParameter members
+    /// ConfigurationParameterResult members
 
     /// <summary>
     /// 参数名称。
@@ -64,6 +64,15 @@ public:
     bool restartRequiredIsSet() const;
     void unsetrestartRequired();
     void setRestartRequired(bool value);
+
+    /// <summary>
+    /// **参数解释**: 该参数的value值是否为只读，无法直接修改。 **取值范围**: - true：该参数的value值只读，不允许用户直接修改。 - false：允许修改。
+    /// </summary>
+
+    bool isReadonly() const;
+    bool readonlyIsSet() const;
+    void unsetreadonly();
+    void setReadonly(bool value);
 
     /// <summary>
     /// 参数取值范围。
@@ -100,6 +109,8 @@ protected:
     bool valueIsSet_;
     bool restartRequired_;
     bool restartRequiredIsSet_;
+    bool readonly_;
+    bool readonlyIsSet_;
     std::string valueRange_;
     bool valueRangeIsSet_;
     std::string type_;
@@ -116,4 +127,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ConfigurationParameter_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ConfigurationParameterResult_H_

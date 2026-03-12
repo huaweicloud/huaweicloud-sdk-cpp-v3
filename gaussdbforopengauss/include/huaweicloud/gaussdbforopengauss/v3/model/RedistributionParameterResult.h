@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -79,10 +78,10 @@ public:
     /// **参数解释**: 参数类型。 **取值范围**: - integer：整数。 - boolean：布尔类型。 - string：字符串类型。
     /// </summary>
 
-    Object getType() const;
+    std::string getType() const;
     bool typeIsSet() const;
     void unsettype();
-    void setType(const Object& value);
+    void setType(const std::string& value);
 
     /// <summary>
     /// **参数解释**: 参数解释。 **取值范围**: 不涉及。
@@ -103,7 +102,7 @@ protected:
     bool restartRequiredIsSet_;
     std::string valueRange_;
     bool valueRangeIsSet_;
-    Object type_;
+    std::string type_;
     bool typeIsSet_;
     std::string description_;
     bool descriptionIsSet_;

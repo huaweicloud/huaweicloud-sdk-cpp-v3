@@ -95,7 +95,7 @@ bool ShowInstanceConfigurationResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configuration_parameters"));
         if(!fieldValue.is_null())
         {
-            std::vector<ConfigurationParameter> refVal;
+            std::vector<ConfigurationParameterResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfigurationParameters(refVal);
         }
@@ -188,12 +188,12 @@ void ShowInstanceConfigurationResponse::unsetupdated()
     updatedIsSet_ = false;
 }
 
-std::vector<ConfigurationParameter>& ShowInstanceConfigurationResponse::getConfigurationParameters()
+std::vector<ConfigurationParameterResult>& ShowInstanceConfigurationResponse::getConfigurationParameters()
 {
     return configurationParameters_;
 }
 
-void ShowInstanceConfigurationResponse::setConfigurationParameters(const std::vector<ConfigurationParameter>& value)
+void ShowInstanceConfigurationResponse::setConfigurationParameters(const std::vector<ConfigurationParameterResult>& value)
 {
     configurationParameters_ = value;
     configurationParametersIsSet_ = true;

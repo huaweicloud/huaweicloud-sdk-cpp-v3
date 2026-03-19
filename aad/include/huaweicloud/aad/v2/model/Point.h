@@ -41,10 +41,10 @@ public:
     /// 时间戳
     /// </summary>
 
-    int32_t getTime() const;
+    int64_t getTime() const;
     bool timeIsSet() const;
     void unsettime();
-    void setTime(int32_t value);
+    void setTime(int64_t value);
 
     /// <summary>
     /// 请求总量
@@ -93,7 +93,7 @@ public:
 
 
 protected:
-    int32_t time_;
+    int64_t time_;
     bool timeIsSet_;
     int32_t total_;
     bool totalIsSet_;

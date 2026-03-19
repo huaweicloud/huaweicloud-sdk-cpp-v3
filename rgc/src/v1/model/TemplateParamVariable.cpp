@@ -24,6 +24,8 @@ TemplateParamVariable::TemplateParamVariable()
     type_ = "";
     typeIsSet_ = false;
     validationsIsSet_ = false;
+    latestParam_ = "";
+    latestParamIsSet_ = false;
 }
 
 TemplateParamVariable::~TemplateParamVariable() = default;
@@ -56,6 +58,9 @@ web::json::value TemplateParamVariable::toJson() const
     }
     if(validationsIsSet_) {
         val[utility::conversions::to_string_t("validations")] = ModelBase::toJson(validations_);
+    }
+    if(latestParamIsSet_) {
+        val[utility::conversions::to_string_t("latest_param")] = ModelBase::toJson(latestParam_);
     }
 
     return val;
@@ -125,6 +130,15 @@ bool TemplateParamVariable::fromJson(const web::json::value& val)
             std::vector<TemplateParamVariableValidation> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValidations(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("latest_param"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("latest_param"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLatestParam(refVal);
         }
     }
     return ok;
@@ -276,6 +290,27 @@ bool TemplateParamVariable::validationsIsSet() const
 void TemplateParamVariable::unsetvalidations()
 {
     validationsIsSet_ = false;
+}
+
+std::string TemplateParamVariable::getLatestParam() const
+{
+    return latestParam_;
+}
+
+void TemplateParamVariable::setLatestParam(const std::string& value)
+{
+    latestParam_ = value;
+    latestParamIsSet_ = true;
+}
+
+bool TemplateParamVariable::latestParamIsSet() const
+{
+    return latestParamIsSet_;
+}
+
+void TemplateParamVariable::unsetlatestParam()
+{
+    latestParamIsSet_ = false;
 }
 
 }

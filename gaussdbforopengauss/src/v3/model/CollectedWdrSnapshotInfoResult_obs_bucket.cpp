@@ -18,7 +18,7 @@ CollectedWdrSnapshotInfoResult_obs_bucket::CollectedWdrSnapshotInfoResult_obs_bu
     typeIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
-    port_ = "";
+    port_ = 0;
     portIsSet_ = false;
     domainId_ = "";
     domainIdIsSet_ = false;
@@ -87,7 +87,7 @@ bool CollectedWdrSnapshotInfoResult_obs_bucket::fromJson(const web::json::value&
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("port"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPort(refVal);
         }
@@ -168,12 +168,12 @@ void CollectedWdrSnapshotInfoResult_obs_bucket::unseturl()
     urlIsSet_ = false;
 }
 
-std::string CollectedWdrSnapshotInfoResult_obs_bucket::getPort() const
+int32_t CollectedWdrSnapshotInfoResult_obs_bucket::getPort() const
 {
     return port_;
 }
 
-void CollectedWdrSnapshotInfoResult_obs_bucket::setPort(const std::string& value)
+void CollectedWdrSnapshotInfoResult_obs_bucket::setPort(int32_t value)
 {
     port_ = value;
     portIsSet_ = true;

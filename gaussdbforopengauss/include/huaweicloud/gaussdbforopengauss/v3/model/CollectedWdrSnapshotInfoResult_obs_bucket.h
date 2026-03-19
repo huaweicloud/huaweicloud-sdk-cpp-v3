@@ -69,10 +69,10 @@ public:
     /// **参数解释**： OBS服务端口号。 **取值范围**： 不涉及。
     /// </summary>
 
-    std::string getPort() const;
+    int32_t getPort() const;
     bool portIsSet() const;
     void unsetport();
-    void setPort(const std::string& value);
+    void setPort(int32_t value);
 
     /// <summary>
     /// **参数解释**： 最终租户ID。 **取值范围**： 不涉及。
@@ -91,7 +91,7 @@ protected:
     bool typeIsSet_;
     std::string url_;
     bool urlIsSet_;
-    std::string port_;
+    int32_t port_;
     bool portIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;

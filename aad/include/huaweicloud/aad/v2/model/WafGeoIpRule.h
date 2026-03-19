@@ -78,10 +78,10 @@ public:
     /// 添加时间
     /// </summary>
 
-    int32_t getTimestamp() const;
+    int64_t getTimestamp() const;
     bool timestampIsSet() const;
     void unsettimestamp();
-    void setTimestamp(int32_t value);
+    void setTimestamp(int64_t value);
 
     /// <summary>
     /// 防护动作 0-阻断，1-放行，2-仅记录
@@ -102,7 +102,7 @@ protected:
     bool nameIsSet_;
     int32_t overseasType_;
     bool overseasTypeIsSet_;
-    int32_t timestamp_;
+    int64_t timestamp_;
     bool timestampIsSet_;
     int32_t white_;
     bool whiteIsSet_;

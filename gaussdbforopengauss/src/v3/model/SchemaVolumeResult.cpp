@@ -18,8 +18,8 @@ SchemaVolumeResult::SchemaVolumeResult()
     tableCountIsSet_ = false;
     userName_ = "";
     userNameIsSet_ = false;
-    nspName_ = "";
-    nspNameIsSet_ = false;
+    schemaName_ = "";
+    schemaNameIsSet_ = false;
 }
 
 SchemaVolumeResult::~SchemaVolumeResult() = default;
@@ -41,8 +41,8 @@ web::json::value SchemaVolumeResult::toJson() const
     if(userNameIsSet_) {
         val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
     }
-    if(nspNameIsSet_) {
-        val[utility::conversions::to_string_t("nsp_name")] = ModelBase::toJson(nspName_);
+    if(schemaNameIsSet_) {
+        val[utility::conversions::to_string_t("schema_name")] = ModelBase::toJson(schemaName_);
     }
 
     return val;
@@ -78,13 +78,13 @@ bool SchemaVolumeResult::fromJson(const web::json::value& val)
             setUserName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("nsp_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nsp_name"));
+    if(val.has_field(utility::conversions::to_string_t("schema_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("schema_name"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNspName(refVal);
+            setSchemaName(refVal);
         }
     }
     return ok;
@@ -154,25 +154,25 @@ void SchemaVolumeResult::unsetuserName()
     userNameIsSet_ = false;
 }
 
-std::string SchemaVolumeResult::getNspName() const
+std::string SchemaVolumeResult::getSchemaName() const
 {
-    return nspName_;
+    return schemaName_;
 }
 
-void SchemaVolumeResult::setNspName(const std::string& value)
+void SchemaVolumeResult::setSchemaName(const std::string& value)
 {
-    nspName_ = value;
-    nspNameIsSet_ = true;
+    schemaName_ = value;
+    schemaNameIsSet_ = true;
 }
 
-bool SchemaVolumeResult::nspNameIsSet() const
+bool SchemaVolumeResult::schemaNameIsSet() const
 {
-    return nspNameIsSet_;
+    return schemaNameIsSet_;
 }
 
-void SchemaVolumeResult::unsetnspName()
+void SchemaVolumeResult::unsetschemaName()
 {
-    nspNameIsSet_ = false;
+    schemaNameIsSet_ = false;
 }
 
 }

@@ -41,10 +41,10 @@ public:
     /// 时间戳毫秒值
     /// </summary>
 
-    int32_t getTime() const;
+    int64_t getTime() const;
     bool timeIsSet() const;
     void unsettime();
-    void setTime(int32_t value);
+    void setTime(int64_t value);
 
     /// <summary>
     /// 连接数
@@ -57,7 +57,7 @@ public:
 
 
 protected:
-    int32_t time_;
+    int64_t time_;
     bool timeIsSet_;
     int32_t value_;
     bool valueIsSet_;

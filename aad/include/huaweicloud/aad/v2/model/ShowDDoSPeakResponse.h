@@ -95,10 +95,10 @@ public:
     /// 峰值时间
     /// </summary>
 
-    int32_t getUtime() const;
+    int64_t getUtime() const;
     bool utimeIsSet() const;
     void unsetutime();
-    void setUtime(int32_t value);
+    void setUtime(int64_t value);
 
 
 protected:
@@ -114,7 +114,7 @@ protected:
     bool inBpsPeakIsSet_;
     int32_t ddosCount_;
     bool ddosCountIsSet_;
-    int32_t utime_;
+    int64_t utime_;
     bool utimeIsSet_;
 
 #ifdef RTTR_FLAG

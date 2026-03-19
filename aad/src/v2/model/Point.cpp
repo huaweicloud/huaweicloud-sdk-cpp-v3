@@ -12,7 +12,7 @@ namespace Model {
 
 Point::Point()
 {
-    time_ = 0;
+    time_ = 0L;
     timeIsSet_ = false;
     total_ = 0;
     totalIsSet_ = false;
@@ -65,7 +65,7 @@ bool Point::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTime(refVal);
         }
@@ -119,12 +119,12 @@ bool Point::fromJson(const web::json::value& val)
 }
 
 
-int32_t Point::getTime() const
+int64_t Point::getTime() const
 {
     return time_;
 }
 
-void Point::setTime(int32_t value)
+void Point::setTime(int64_t value)
 {
     time_ = value;
     timeIsSet_ = true;

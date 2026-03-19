@@ -61,10 +61,10 @@ public:
     /// 攻击时间
     /// </summary>
 
-    int32_t getTime() const;
+    int64_t getTime() const;
     bool timeIsSet() const;
     void unsettime();
-    void setTime(int32_t value);
+    void setTime(int64_t value);
 
     /// <summary>
     /// 攻击源IP
@@ -117,7 +117,7 @@ protected:
     bool idIsSet_;
     std::string domain_;
     bool domainIsSet_;
-    int32_t time_;
+    int64_t time_;
     bool timeIsSet_;
     std::string sip_;
     bool sipIsSet_;

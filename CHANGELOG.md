@@ -1,3 +1,87 @@
+# 3.1.180 2026-03-19
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDDoSPeak**
+    - changes of response param
+      - `* utime: int32 -> int64`
+  - **ListWafBandwidth**
+    - changes of response param
+      - `* curve.time: int32 -> int64`
+  - **ListWafQps**
+    - changes of response param
+      - `* curve.time: int32 -> int64`
+  - **ListWafGeoIpRule**
+    - changes of response param
+      - `* items.timestamp: int32 -> int64`
+  - **ShowInstanceByInstanceId**
+    - changes of response param
+      - `* expire_time: int32 -> int64`
+      - `* create_time: int32 -> int64`
+      - `* current_time: int32 -> int64`
+  - **ListDDoSBlackHoleEvent**
+    - changes of response param
+      - `* items.start_time: int32 -> int64`
+      - `* items.end_time: int32 -> int64`
+  - **ListWafAttackEvent**
+    - changes of response param
+      - `* list.time: int32 -> int64`
+  - **ListDDoSConnectionNumber**
+    - changes of response param
+      - `* data.list.time: int32 -> int64`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateSqlLimitTask**
+    - changes of request param
+      - `+ node_infos.sql_ids`
+      - `- node_infos.sql_id`
+      - `* node_infos: list<CreateLimitTaskNodeOption> -> list<CreateSqlLimitTaskNodeOption>`
+  - **ListWdrSnapshotsCollectResults**
+    - changes of response param
+      - `* wdr_snapshots.obs_bucket.port: string -> int32`
+  - **ShowFullSql**
+    - changes of response param
+      - `+ components.sql`
+  - **ListSchemaVolumes**
+    - changes of response param
+      - `+ schema_volumes.schema_name`
+      - `- schema_volumes.nsp_name`
+  - **ListFullSqlSwitches**
+    - changes of response param
+      - `+ allowed_sql_types.prefixes`
+  - **ListLtsConfigs**
+    - changes of request param
+      - `+ instance_id`
+      - `- instance_id`
+
+### HuaweiCloud SDK RGC
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowTemplateDeployParams**
+    - changes of response param
+      - `+ variables.latest_param`
+
 # 3.1.179 2026-03-12
 
 ### HuaweiCloud SDK DRS

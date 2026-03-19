@@ -104,6 +104,15 @@ public:
     void unsetvalidations();
     void setValidations(const std::vector<TemplateParamVariableValidation>& value);
 
+    /// <summary>
+    /// 最近一次的部署参数。
+    /// </summary>
+
+    std::string getLatestParam() const;
+    bool latestParamIsSet() const;
+    void unsetlatestParam();
+    void setLatestParam(const std::string& value);
+
 
 protected:
     Object default_;
@@ -120,6 +129,8 @@ protected:
     bool typeIsSet_;
     std::vector<TemplateParamVariableValidation> validations_;
     bool validationsIsSet_;
+    std::string latestParam_;
+    bool latestParamIsSet_;
 
 };
 

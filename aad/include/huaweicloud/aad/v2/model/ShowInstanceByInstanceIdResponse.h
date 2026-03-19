@@ -71,28 +71,28 @@ public:
     /// 过期时间
     /// </summary>
 
-    int32_t getExpireTime() const;
+    int64_t getExpireTime() const;
     bool expireTimeIsSet() const;
     void unsetexpireTime();
-    void setExpireTime(int32_t value);
+    void setExpireTime(int64_t value);
 
     /// <summary>
     /// 创建时间
     /// </summary>
 
-    int32_t getCreateTime() const;
+    int64_t getCreateTime() const;
     bool createTimeIsSet() const;
     void unsetcreateTime();
-    void setCreateTime(int32_t value);
+    void setCreateTime(int64_t value);
 
     /// <summary>
     /// 当前时间
     /// </summary>
 
-    int32_t getCurrentTime() const;
+    int64_t getCurrentTime() const;
     bool currentTimeIsSet() const;
     void unsetcurrentTime();
-    void setCurrentTime(int32_t value);
+    void setCurrentTime(int64_t value);
 
     /// <summary>
     /// 
@@ -129,11 +129,11 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string version_;
     bool versionIsSet_;
-    int32_t expireTime_;
+    int64_t expireTime_;
     bool expireTimeIsSet_;
-    int32_t createTime_;
+    int64_t createTime_;
     bool createTimeIsSet_;
-    int32_t currentTime_;
+    int64_t currentTime_;
     bool currentTimeIsSet_;
     ProductSpecData productSpecData_;
     bool productSpecDataIsSet_;

@@ -96,19 +96,19 @@ public:
     /// 封堵开始时间
     /// </summary>
 
-    int32_t getStartTime() const;
+    int64_t getStartTime() const;
     bool startTimeIsSet() const;
     void unsetstartTime();
-    void setStartTime(int32_t value);
+    void setStartTime(int64_t value);
 
     /// <summary>
     /// 封堵结束时间
     /// </summary>
 
-    int32_t getEndTime() const;
+    int64_t getEndTime() const;
     bool endTimeIsSet() const;
     void unsetendTime();
-    void setEndTime(int32_t value);
+    void setEndTime(int64_t value);
 
 
 protected:
@@ -124,9 +124,9 @@ protected:
     bool instanceIdIsSet_;
     std::string eventType_;
     bool eventTypeIsSet_;
-    int32_t startTime_;
+    int64_t startTime_;
     bool startTimeIsSet_;
-    int32_t endTime_;
+    int64_t endTime_;
     bool endTimeIsSet_;
 
 };

@@ -40,6 +40,8 @@ FullSqlComponetResult::FullSqlComponetResult()
     traceIdIsSet_ = false;
     query_ = "";
     queryIsSet_ = false;
+    sql_ = "";
+    sqlIsSet_ = false;
     threadId_ = "";
     threadIdIsSet_ = false;
     sessionId_ = "";
@@ -167,6 +169,9 @@ web::json::value FullSqlComponetResult::toJson() const
     }
     if(queryIsSet_) {
         val[utility::conversions::to_string_t("query")] = ModelBase::toJson(query_);
+    }
+    if(sqlIsSet_) {
+        val[utility::conversions::to_string_t("sql")] = ModelBase::toJson(sql_);
     }
     if(threadIdIsSet_) {
         val[utility::conversions::to_string_t("thread_id")] = ModelBase::toJson(threadId_);
@@ -410,6 +415,15 @@ bool FullSqlComponetResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setQuery(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sql"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSql(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("thread_id"))) {
@@ -1041,6 +1055,27 @@ bool FullSqlComponetResult::queryIsSet() const
 void FullSqlComponetResult::unsetquery()
 {
     queryIsSet_ = false;
+}
+
+std::string FullSqlComponetResult::getSql() const
+{
+    return sql_;
+}
+
+void FullSqlComponetResult::setSql(const std::string& value)
+{
+    sql_ = value;
+    sqlIsSet_ = true;
+}
+
+bool FullSqlComponetResult::sqlIsSet() const
+{
+    return sqlIsSet_;
+}
+
+void FullSqlComponetResult::unsetsql()
+{
+    sqlIsSet_ = false;
 }
 
 std::string FullSqlComponetResult::getThreadId() const

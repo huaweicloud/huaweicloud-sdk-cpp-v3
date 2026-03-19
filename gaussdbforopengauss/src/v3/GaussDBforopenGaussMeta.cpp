@@ -3297,6 +3297,9 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForBindLtsConfig() {
 
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListLtsConfigs() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("InstanceName")
                   .withJsonTag("instance_name")
                   .withLocationType(Query_));

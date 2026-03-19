@@ -8924,7 +8924,6 @@ std::shared_ptr<ListLtsConfigsResponse> GaussDBforopenGaussClient::listLtsConfig
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
 
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -8932,6 +8931,9 @@ std::shared_ptr<ListLtsConfigsResponse> GaussDBforopenGaussClient::listLtsConfig
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
     if (request.instanceNameIsSet()) {
         localVarQueryParams["instance_name"] = parameterToString(request.getInstanceName());
     }

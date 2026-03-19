@@ -1,3 +1,87 @@
+# 3.1.180 2026-03-19
+
+### HuaweiCloud SDK AAD
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDDoSPeak**
+    - 响应参数变更
+      - `* utime: int32 -> int64`
+  - **ListWafBandwidth**
+    - 响应参数变更
+      - `* curve.time: int32 -> int64`
+  - **ListWafQps**
+    - 响应参数变更
+      - `* curve.time: int32 -> int64`
+  - **ListWafGeoIpRule**
+    - 响应参数变更
+      - `* items.timestamp: int32 -> int64`
+  - **ShowInstanceByInstanceId**
+    - 响应参数变更
+      - `* expire_time: int32 -> int64`
+      - `* create_time: int32 -> int64`
+      - `* current_time: int32 -> int64`
+  - **ListDDoSBlackHoleEvent**
+    - 响应参数变更
+      - `* items.start_time: int32 -> int64`
+      - `* items.end_time: int32 -> int64`
+  - **ListWafAttackEvent**
+    - 响应参数变更
+      - `* list.time: int32 -> int64`
+  - **ListDDoSConnectionNumber**
+    - 响应参数变更
+      - `* data.list.time: int32 -> int64`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateSqlLimitTask**
+    - 请求参数变更
+      - `+ node_infos.sql_ids`
+      - `- node_infos.sql_id`
+      - `* node_infos: list<CreateLimitTaskNodeOption> -> list<CreateSqlLimitTaskNodeOption>`
+  - **ListWdrSnapshotsCollectResults**
+    - 响应参数变更
+      - `* wdr_snapshots.obs_bucket.port: string -> int32`
+  - **ShowFullSql**
+    - 响应参数变更
+      - `+ components.sql`
+  - **ListSchemaVolumes**
+    - 响应参数变更
+      - `+ schema_volumes.schema_name`
+      - `- schema_volumes.nsp_name`
+  - **ListFullSqlSwitches**
+    - 响应参数变更
+      - `+ allowed_sql_types.prefixes`
+  - **ListLtsConfigs**
+    - 请求参数变更
+      - `+ instance_id`
+      - `- instance_id`
+
+### HuaweiCloud SDK RGC
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowTemplateDeployParams**
+    - 响应参数变更
+      - `+ variables.latest_param`
+
 # 3.1.179 2026-03-12
 
 ### HuaweiCloud SDK DRS

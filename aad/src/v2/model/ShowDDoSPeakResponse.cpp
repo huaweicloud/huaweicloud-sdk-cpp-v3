@@ -24,7 +24,7 @@ ShowDDoSPeakResponse::ShowDDoSPeakResponse()
     inBpsPeakIsSet_ = false;
     ddosCount_ = 0;
     ddosCountIsSet_ = false;
-    utime_ = 0;
+    utime_ = 0L;
     utimeIsSet_ = false;
 }
 
@@ -124,7 +124,7 @@ bool ShowDDoSPeakResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("utime"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUtime(refVal);
         }
@@ -259,12 +259,12 @@ void ShowDDoSPeakResponse::unsetddosCount()
     ddosCountIsSet_ = false;
 }
 
-int32_t ShowDDoSPeakResponse::getUtime() const
+int64_t ShowDDoSPeakResponse::getUtime() const
 {
     return utime_;
 }
 
-void ShowDDoSPeakResponse::setUtime(int32_t value)
+void ShowDDoSPeakResponse::setUtime(int64_t value)
 {
     utime_ = value;
     utimeIsSet_ = true;

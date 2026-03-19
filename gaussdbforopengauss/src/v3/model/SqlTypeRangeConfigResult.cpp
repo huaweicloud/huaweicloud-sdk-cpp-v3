@@ -14,6 +14,7 @@ SqlTypeRangeConfigResult::SqlTypeRangeConfigResult()
 {
     category_ = "";
     categoryIsSet_ = false;
+    prefixesIsSet_ = false;
     isPreset_ = false;
     isPresetIsSet_ = false;
 }
@@ -30,6 +31,9 @@ web::json::value SqlTypeRangeConfigResult::toJson() const
 
     if(categoryIsSet_) {
         val[utility::conversions::to_string_t("category")] = ModelBase::toJson(category_);
+    }
+    if(prefixesIsSet_) {
+        val[utility::conversions::to_string_t("prefixes")] = ModelBase::toJson(prefixes_);
     }
     if(isPresetIsSet_) {
         val[utility::conversions::to_string_t("is_preset")] = ModelBase::toJson(isPreset_);
@@ -48,6 +52,15 @@ bool SqlTypeRangeConfigResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCategory(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("prefixes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("prefixes"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPrefixes(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_preset"))) {
@@ -82,6 +95,27 @@ bool SqlTypeRangeConfigResult::categoryIsSet() const
 void SqlTypeRangeConfigResult::unsetcategory()
 {
     categoryIsSet_ = false;
+}
+
+std::vector<std::string>& SqlTypeRangeConfigResult::getPrefixes()
+{
+    return prefixes_;
+}
+
+void SqlTypeRangeConfigResult::setPrefixes(const std::vector<std::string>& value)
+{
+    prefixes_ = value;
+    prefixesIsSet_ = true;
+}
+
+bool SqlTypeRangeConfigResult::prefixesIsSet() const
+{
+    return prefixesIsSet_;
+}
+
+void SqlTypeRangeConfigResult::unsetprefixes()
+{
+    prefixesIsSet_ = false;
 }
 
 bool SqlTypeRangeConfigResult::isIsPreset() const

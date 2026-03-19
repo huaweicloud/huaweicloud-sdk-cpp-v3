@@ -20,7 +20,7 @@ WafGeoIpRule::WafGeoIpRule()
     nameIsSet_ = false;
     overseasType_ = 0;
     overseasTypeIsSet_ = false;
-    timestamp_ = 0;
+    timestamp_ = 0L;
     timestampIsSet_ = false;
     white_ = 0;
     whiteIsSet_ = false;
@@ -101,7 +101,7 @@ bool WafGeoIpRule::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("timestamp"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimestamp(refVal);
         }
@@ -203,12 +203,12 @@ void WafGeoIpRule::unsetoverseasType()
     overseasTypeIsSet_ = false;
 }
 
-int32_t WafGeoIpRule::getTimestamp() const
+int64_t WafGeoIpRule::getTimestamp() const
 {
     return timestamp_;
 }
 
-void WafGeoIpRule::setTimestamp(int32_t value)
+void WafGeoIpRule::setTimestamp(int64_t value)
 {
     timestamp_ = value;
     timestampIsSet_ = true;

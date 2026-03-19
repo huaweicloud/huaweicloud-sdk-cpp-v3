@@ -16,7 +16,7 @@ Curve::Curve()
     inIsSet_ = false;
     out_ = 0.0f;
     outIsSet_ = false;
-    time_ = 0;
+    time_ = 0L;
     timeIsSet_ = false;
 }
 
@@ -68,7 +68,7 @@ bool Curve::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTime(refVal);
         }
@@ -119,12 +119,12 @@ void Curve::unsetout()
     outIsSet_ = false;
 }
 
-int32_t Curve::getTime() const
+int64_t Curve::getTime() const
 {
     return time_;
 }
 
-void Curve::setTime(int32_t value)
+void Curve::setTime(int64_t value)
 {
     time_ = value;
     timeIsSet_ = true;

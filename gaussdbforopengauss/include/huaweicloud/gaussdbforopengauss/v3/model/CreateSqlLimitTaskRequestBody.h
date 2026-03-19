@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskNodeOption.h>
 #include <string>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateSqlLimitTaskNodeOption.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -152,10 +152,10 @@ public:
     /// **参数解释**: CN节点信息列表 **约束限制**: 如果“limit_type”为SQL_ID，则“node_infos”必选。
     /// </summary>
 
-    std::vector<CreateLimitTaskNodeOption>& getNodeInfos();
+    std::vector<CreateSqlLimitTaskNodeOption>& getNodeInfos();
     bool nodeInfosIsSet() const;
     void unsetnodeInfos();
-    void setNodeInfos(const std::vector<CreateLimitTaskNodeOption>& value);
+    void setNodeInfos(const std::vector<CreateSqlLimitTaskNodeOption>& value);
 
 
 protected:
@@ -183,7 +183,7 @@ protected:
     bool memoryUtilizationIsSet_;
     std::string databases_;
     bool databasesIsSet_;
-    std::vector<CreateLimitTaskNodeOption> nodeInfos_;
+    std::vector<CreateSqlLimitTaskNodeOption> nodeInfos_;
     bool nodeInfosIsSet_;
 
 };

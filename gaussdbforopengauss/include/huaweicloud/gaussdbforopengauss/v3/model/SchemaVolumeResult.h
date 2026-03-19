@@ -69,10 +69,10 @@ public:
     /// **参数解释**: schema名称空间的名称。 **取值范围**: 不涉及。 
     /// </summary>
 
-    std::string getNspName() const;
-    bool nspNameIsSet() const;
-    void unsetnspName();
-    void setNspName(const std::string& value);
+    std::string getSchemaName() const;
+    bool schemaNameIsSet() const;
+    void unsetschemaName();
+    void setSchemaName(const std::string& value);
 
 
 protected:
@@ -82,8 +82,8 @@ protected:
     bool tableCountIsSet_;
     std::string userName_;
     bool userNameIsSet_;
-    std::string nspName_;
-    bool nspNameIsSet_;
+    std::string schemaName_;
+    bool schemaNameIsSet_;
 
 };
 

@@ -165,6 +165,15 @@ public:
     void setQuery(const std::string& value);
 
     /// <summary>
+    /// **参数解释**: 解析后的原始SQL文本。 开启track_stmt_parameter参数后，会把SQL文本中的变量替换成真实值，展示原始的SQL。对于track_stmt_parameter参数关闭时采集的SQL文本，无法获取到SQL参数变量的值，展示的内容为空。 **取值范围**: 不涉及。
+    /// </summary>
+
+    std::string getSql() const;
+    bool sqlIsSet() const;
+    void unsetsql();
+    void setSql(const std::string& value);
+
+    /// <summary>
     /// **参数解释**: 线程ID。 **取值范围**: 不涉及。
     /// </summary>
 
@@ -527,6 +536,8 @@ protected:
     bool traceIdIsSet_;
     std::string query_;
     bool queryIsSet_;
+    std::string sql_;
+    bool sqlIsSet_;
     std::string threadId_;
     bool threadIdIsSet_;
     std::string sessionId_;

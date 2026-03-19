@@ -16,7 +16,7 @@ ListWafAttackEventlist::ListWafAttackEventlist()
     idIsSet_ = false;
     domain_ = "";
     domainIsSet_ = false;
-    time_ = 0;
+    time_ = 0L;
     timeIsSet_ = false;
     sip_ = "";
     sipIsSet_ = false;
@@ -92,7 +92,7 @@ bool ListWafAttackEventlist::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTime(refVal);
         }
@@ -188,12 +188,12 @@ void ListWafAttackEventlist::unsetdomain()
     domainIsSet_ = false;
 }
 
-int32_t ListWafAttackEventlist::getTime() const
+int64_t ListWafAttackEventlist::getTime() const
 {
     return time_;
 }
 
-void ListWafAttackEventlist::setTime(int32_t value)
+void ListWafAttackEventlist::setTime(int64_t value)
 {
     time_ = value;
     timeIsSet_ = true;

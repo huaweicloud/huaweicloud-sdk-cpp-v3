@@ -12,7 +12,7 @@ namespace Model {
 
 ListConnectionNumberDataList::ListConnectionNumberDataList()
 {
-    time_ = 0;
+    time_ = 0L;
     timeIsSet_ = false;
     value_ = 0;
     valueIsSet_ = false;
@@ -45,7 +45,7 @@ bool ListConnectionNumberDataList::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTime(refVal);
         }
@@ -63,12 +63,12 @@ bool ListConnectionNumberDataList::fromJson(const web::json::value& val)
 }
 
 
-int32_t ListConnectionNumberDataList::getTime() const
+int64_t ListConnectionNumberDataList::getTime() const
 {
     return time_;
 }
 
-void ListConnectionNumberDataList::setTime(int32_t value)
+void ListConnectionNumberDataList::setTime(int64_t value)
 {
     time_ = value;
     timeIsSet_ = true;

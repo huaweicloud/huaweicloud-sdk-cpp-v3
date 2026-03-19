@@ -24,9 +24,9 @@ ListBlackHoleEventRecordItem::ListBlackHoleEventRecordItem()
     instanceIdIsSet_ = false;
     eventType_ = "";
     eventTypeIsSet_ = false;
-    startTime_ = 0;
+    startTime_ = 0L;
     startTimeIsSet_ = false;
-    endTime_ = 0;
+    endTime_ = 0L;
     endTimeIsSet_ = false;
 }
 
@@ -129,7 +129,7 @@ bool ListBlackHoleEventRecordItem::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStartTime(refVal);
         }
@@ -138,7 +138,7 @@ bool ListBlackHoleEventRecordItem::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
         }
@@ -273,12 +273,12 @@ void ListBlackHoleEventRecordItem::unseteventType()
     eventTypeIsSet_ = false;
 }
 
-int32_t ListBlackHoleEventRecordItem::getStartTime() const
+int64_t ListBlackHoleEventRecordItem::getStartTime() const
 {
     return startTime_;
 }
 
-void ListBlackHoleEventRecordItem::setStartTime(int32_t value)
+void ListBlackHoleEventRecordItem::setStartTime(int64_t value)
 {
     startTime_ = value;
     startTimeIsSet_ = true;
@@ -294,12 +294,12 @@ void ListBlackHoleEventRecordItem::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-int32_t ListBlackHoleEventRecordItem::getEndTime() const
+int64_t ListBlackHoleEventRecordItem::getEndTime() const
 {
     return endTime_;
 }
 
-void ListBlackHoleEventRecordItem::setEndTime(int32_t value)
+void ListBlackHoleEventRecordItem::setEndTime(int64_t value)
 {
     endTime_ = value;
     endTimeIsSet_ = true;

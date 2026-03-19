@@ -207,7 +207,7 @@ bool CreateSqlLimitTaskRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("node_infos"));
         if(!fieldValue.is_null())
         {
-            std::vector<CreateLimitTaskNodeOption> refVal;
+            std::vector<CreateSqlLimitTaskNodeOption> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeInfos(refVal);
         }
@@ -468,12 +468,12 @@ void CreateSqlLimitTaskRequestBody::unsetdatabases()
     databasesIsSet_ = false;
 }
 
-std::vector<CreateLimitTaskNodeOption>& CreateSqlLimitTaskRequestBody::getNodeInfos()
+std::vector<CreateSqlLimitTaskNodeOption>& CreateSqlLimitTaskRequestBody::getNodeInfos()
 {
     return nodeInfos_;
 }
 
-void CreateSqlLimitTaskRequestBody::setNodeInfos(const std::vector<CreateLimitTaskNodeOption>& value)
+void CreateSqlLimitTaskRequestBody::setNodeInfos(const std::vector<CreateSqlLimitTaskNodeOption>& value)
 {
     nodeInfos_ = value;
     nodeInfosIsSet_ = true;

@@ -93,7 +93,7 @@ public:
     void setDatabaseName(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 表或者索引是否具有分区表的性质。 **取值范围**: 不涉及。 
+    /// **参数解释**: 表或者索引是否具有分区表的性质。 **取值范围**: - true：具有分区表的性质。 - false：不具有分区表的性质。 
     /// </summary>
 
     bool isIsPartType() const;
@@ -102,7 +102,7 @@ public:
     void setIsPartType(bool value);
 
     /// <summary>
-    /// **参数解释**: 是否包含hash分区列信息。 **取值范围**: 不涉及。 
+    /// **参数解释**: 是否包含hash分区列信息。 **取值范围**: - true：包含hash分区列信息。 - false：不包含hash分区列信息。 
     /// </summary>
 
     bool isIsHashClusterKey() const;
@@ -183,7 +183,7 @@ public:
     void setSkewRatio(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 表分布标准方差（在表大小一定的情况下，该值越大表明表的整体分布情况越倾斜）。。 **取值范围**: 不涉及。 
+    /// **参数解释**: 表分布标准方差（在表大小一定的情况下，该值越大表明表的整体分布情况越倾斜）。 **取值范围**: 不涉及。 
     /// </summary>
 
     std::string getSkewStddev() const;

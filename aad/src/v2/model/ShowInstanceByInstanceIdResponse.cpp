@@ -18,11 +18,11 @@ ShowInstanceByInstanceIdResponse::ShowInstanceByInstanceIdResponse()
     enterpriseProjectIdIsSet_ = false;
     version_ = "";
     versionIsSet_ = false;
-    expireTime_ = 0;
+    expireTime_ = 0L;
     expireTimeIsSet_ = false;
-    createTime_ = 0;
+    createTime_ = 0L;
     createTimeIsSet_ = false;
-    currentTime_ = 0;
+    currentTime_ = 0L;
     currentTimeIsSet_ = false;
     productSpecDataIsSet_ = false;
     instanceConfigIsSet_ = false;
@@ -105,7 +105,7 @@ bool ShowInstanceByInstanceIdResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expire_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExpireTime(refVal);
         }
@@ -114,7 +114,7 @@ bool ShowInstanceByInstanceIdResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateTime(refVal);
         }
@@ -123,7 +123,7 @@ bool ShowInstanceByInstanceIdResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("current_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCurrentTime(refVal);
         }
@@ -222,12 +222,12 @@ void ShowInstanceByInstanceIdResponse::unsetversion()
     versionIsSet_ = false;
 }
 
-int32_t ShowInstanceByInstanceIdResponse::getExpireTime() const
+int64_t ShowInstanceByInstanceIdResponse::getExpireTime() const
 {
     return expireTime_;
 }
 
-void ShowInstanceByInstanceIdResponse::setExpireTime(int32_t value)
+void ShowInstanceByInstanceIdResponse::setExpireTime(int64_t value)
 {
     expireTime_ = value;
     expireTimeIsSet_ = true;
@@ -243,12 +243,12 @@ void ShowInstanceByInstanceIdResponse::unsetexpireTime()
     expireTimeIsSet_ = false;
 }
 
-int32_t ShowInstanceByInstanceIdResponse::getCreateTime() const
+int64_t ShowInstanceByInstanceIdResponse::getCreateTime() const
 {
     return createTime_;
 }
 
-void ShowInstanceByInstanceIdResponse::setCreateTime(int32_t value)
+void ShowInstanceByInstanceIdResponse::setCreateTime(int64_t value)
 {
     createTime_ = value;
     createTimeIsSet_ = true;
@@ -264,12 +264,12 @@ void ShowInstanceByInstanceIdResponse::unsetcreateTime()
     createTimeIsSet_ = false;
 }
 
-int32_t ShowInstanceByInstanceIdResponse::getCurrentTime() const
+int64_t ShowInstanceByInstanceIdResponse::getCurrentTime() const
 {
     return currentTime_;
 }
 
-void ShowInstanceByInstanceIdResponse::setCurrentTime(int32_t value)
+void ShowInstanceByInstanceIdResponse::setCurrentTime(int64_t value)
 {
     currentTime_ = value;
     currentTimeIsSet_ = true;

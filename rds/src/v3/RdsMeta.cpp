@@ -147,6 +147,20 @@ HttpRequestDef RdsMeta::genRequestDefForBatchTagDelAction() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForChangeBackupConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForChangeFailoverMode() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1966,6 +1980,16 @@ HttpRequestDef RdsMeta::genRequestDefForShowAutoUpgradePolicy() {
 }
 
 HttpRequestDef RdsMeta::genRequestDefForShowAvailableVersion() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForShowBackupConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

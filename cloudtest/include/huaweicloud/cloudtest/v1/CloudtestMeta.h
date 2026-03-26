@@ -16,6 +16,7 @@ public:
     static HttpRequestDef genRequestDefForAddCaseResultFour();
     static HttpRequestDef genRequestDefForAddTestCaseComment();
     static HttpRequestDef genRequestDefForAddTestCaseResultLog();
+    static HttpRequestDef genRequestDefForBatchAddCaseResultInTask();
     static HttpRequestDef genRequestDefForBatchAddRelationsByOneCase();
     static HttpRequestDef genRequestDefForBatchAddResourcesForIterator();
     static HttpRequestDef genRequestDefForBatchDeleteTestCase();

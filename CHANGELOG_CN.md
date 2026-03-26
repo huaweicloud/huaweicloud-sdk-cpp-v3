@@ -1,3 +1,95 @@
+# 3.1.181 2026-03-26
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainLocationStats**
+    - 请求参数变更
+      - `+ ip_version`
+
+### HuaweiCloud SDK Cloudtest
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`BatchAddCaseResultInTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowServer**
+    - 响应参数变更
+      - `+ server.capacity_reservation_id`
+      - `+ server.capacity_reservation_specification`
+      - `+ server.spod_id`
+      - `+ server.enclave_options`
+  - **ListServersDetails**
+    - 响应参数变更
+      - `+ servers.capacity_reservation_id`
+      - `+ servers.capacity_reservation_specification`
+      - `+ servers.spod_id`
+      - `+ servers.enclave_options`
+  - **ListRecycleBinServers**
+    - 响应参数变更
+      - `+ servers.capacity_reservation_id`
+      - `+ servers.capacity_reservation_specification`
+      - `+ servers.spod_id`
+      - `+ servers.enclave_options`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ShowHtapProcessList`
+    - `DeleteHtapProcessList`
+    - `ShowInstanceBackups`
+    - `DeleteAutoSqlLimiting`
+    - `UpdateStarRockLtsConfig`
+    - `DeleteStarRockLtsConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListRecycleInstances**
+    - 响应参数变更
+      - `+ instances.recycle_backups`
+      - `- instances.recycle_bakcups`
+  - **ListImmediateJobs**
+    - 响应参数变更
+      - `+ jobs.show_detail`
+      - `+ jobs.action_names`
+  - **CreateGaussMySqlInstance**
+    - 请求参数变更
+      - `+ volume.type`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ShowBackupConfig`、`ChangeBackupConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.180 2026-03-19
 
 ### HuaweiCloud SDK AAD

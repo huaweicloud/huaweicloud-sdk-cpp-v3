@@ -24,6 +24,7 @@ public:
     static HttpRequestDef genRequestDefForBatchStopInstance();
     static HttpRequestDef genRequestDefForBatchTagAddAction();
     static HttpRequestDef genRequestDefForBatchTagDelAction();
+    static HttpRequestDef genRequestDefForChangeBackupConfig();
     static HttpRequestDef genRequestDefForChangeFailoverMode();
     static HttpRequestDef genRequestDefForChangeFailoverStrategy();
     static HttpRequestDef genRequestDefForChangeOpsWindow();
@@ -144,6 +145,7 @@ public:
     static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForShowAutoUpgradePolicy();
     static HttpRequestDef genRequestDefForShowAvailableVersion();
+    static HttpRequestDef genRequestDefForShowBackupConfig();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
     static HttpRequestDef genRequestDefForShowBinlogClearPolicy();

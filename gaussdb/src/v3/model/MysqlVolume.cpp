@@ -14,6 +14,8 @@ MysqlVolume::MysqlVolume()
 {
     size_ = "";
     sizeIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
 }
 
 MysqlVolume::~MysqlVolume() = default;
@@ -29,6 +31,9 @@ web::json::value MysqlVolume::toJson() const
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
     }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool MysqlVolume::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool MysqlVolume::sizeIsSet() const
 void MysqlVolume::unsetsize()
 {
     sizeIsSet_ = false;
+}
+
+std::string MysqlVolume::getType() const
+{
+    return type_;
+}
+
+void MysqlVolume::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool MysqlVolume::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void MysqlVolume::unsettype()
+{
+    typeIsSet_ = false;
 }
 
 }

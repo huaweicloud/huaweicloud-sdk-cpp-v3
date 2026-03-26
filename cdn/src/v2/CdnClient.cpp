@@ -2144,6 +2144,9 @@ std::shared_ptr<ShowDomainLocationStatsResponse> CdnClient::showDomainLocationSt
     if (request.statTypeIsSet()) {
         localVarQueryParams["stat_type"] = parameterToString(request.getStatType());
     }
+    if (request.ipVersionIsSet()) {
+        localVarQueryParams["ip_version"] = parameterToString(request.getIpVersion());
+    }
     if (request.intervalIsSet()) {
         localVarQueryParams["interval"] = parameterToString(request.getInterval());
     }

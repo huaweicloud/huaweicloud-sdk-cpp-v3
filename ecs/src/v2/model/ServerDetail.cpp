@@ -12,6 +12,12 @@ namespace Model {
 
 ServerDetail::ServerDetail()
 {
+    capacityReservationId_ = "";
+    capacityReservationIdIsSet_ = false;
+    capacityReservationSpecificationIsSet_ = false;
+    spodId_ = "";
+    spodIdIsSet_ = false;
+    enclaveOptionsIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     updated_ = "";
@@ -108,6 +114,18 @@ web::json::value ServerDetail::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(capacityReservationIdIsSet_) {
+        val[utility::conversions::to_string_t("capacity_reservation_id")] = ModelBase::toJson(capacityReservationId_);
+    }
+    if(capacityReservationSpecificationIsSet_) {
+        val[utility::conversions::to_string_t("capacity_reservation_specification")] = ModelBase::toJson(capacityReservationSpecification_);
+    }
+    if(spodIdIsSet_) {
+        val[utility::conversions::to_string_t("spod_id")] = ModelBase::toJson(spodId_);
+    }
+    if(enclaveOptionsIsSet_) {
+        val[utility::conversions::to_string_t("enclave_options")] = ModelBase::toJson(enclaveOptions_);
+    }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
@@ -262,6 +280,42 @@ bool ServerDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("capacity_reservation_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("capacity_reservation_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCapacityReservationId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("capacity_reservation_specification"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("capacity_reservation_specification"));
+        if(!fieldValue.is_null())
+        {
+            CapacityReservationSpecification refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCapacityReservationSpecification(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("spod_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spod_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSpodId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enclave_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enclave_options"));
+        if(!fieldValue.is_null())
+        {
+            EnclaveOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnclaveOptions(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
@@ -706,6 +760,90 @@ bool ServerDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ServerDetail::getCapacityReservationId() const
+{
+    return capacityReservationId_;
+}
+
+void ServerDetail::setCapacityReservationId(const std::string& value)
+{
+    capacityReservationId_ = value;
+    capacityReservationIdIsSet_ = true;
+}
+
+bool ServerDetail::capacityReservationIdIsSet() const
+{
+    return capacityReservationIdIsSet_;
+}
+
+void ServerDetail::unsetcapacityReservationId()
+{
+    capacityReservationIdIsSet_ = false;
+}
+
+CapacityReservationSpecification ServerDetail::getCapacityReservationSpecification() const
+{
+    return capacityReservationSpecification_;
+}
+
+void ServerDetail::setCapacityReservationSpecification(const CapacityReservationSpecification& value)
+{
+    capacityReservationSpecification_ = value;
+    capacityReservationSpecificationIsSet_ = true;
+}
+
+bool ServerDetail::capacityReservationSpecificationIsSet() const
+{
+    return capacityReservationSpecificationIsSet_;
+}
+
+void ServerDetail::unsetcapacityReservationSpecification()
+{
+    capacityReservationSpecificationIsSet_ = false;
+}
+
+std::string ServerDetail::getSpodId() const
+{
+    return spodId_;
+}
+
+void ServerDetail::setSpodId(const std::string& value)
+{
+    spodId_ = value;
+    spodIdIsSet_ = true;
+}
+
+bool ServerDetail::spodIdIsSet() const
+{
+    return spodIdIsSet_;
+}
+
+void ServerDetail::unsetspodId()
+{
+    spodIdIsSet_ = false;
+}
+
+EnclaveOptions ServerDetail::getEnclaveOptions() const
+{
+    return enclaveOptions_;
+}
+
+void ServerDetail::setEnclaveOptions(const EnclaveOptions& value)
+{
+    enclaveOptions_ = value;
+    enclaveOptionsIsSet_ = true;
+}
+
+bool ServerDetail::enclaveOptionsIsSet() const
+{
+    return enclaveOptionsIsSet_;
+}
+
+void ServerDetail::unsetenclaveOptions()
+{
+    enclaveOptionsIsSet_ = false;
+}
 
 std::string ServerDetail::getStatus() const
 {

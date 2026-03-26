@@ -83,7 +83,7 @@ public:
     void setDatastore(const MysqlDatastoreInReq& value);
 
     /// <summary>
-    /// 实例类型，目前仅支持Cluster。
+    /// **参数解释**：    实例模式。  **约束限制**：   不涉及。  **取值范围**：  - Cluster：集群版。 - StandSingle：单机版。  **默认取值**：  不涉及。
     /// </summary>
 
     std::string getMode() const;
@@ -182,7 +182,7 @@ public:
     void setMasterAvailabilityZone(const std::string& value);
 
     /// <summary>
-    /// 只读节点个数。单次接口调用最多支持创建9个只读节点。
+    /// 只读节点个数。单次接口调用最多支持创建9个只读节点。实例模式取值为StandSingle时取值必须为0。
     /// </summary>
 
     int32_t getSlaveCount() const;

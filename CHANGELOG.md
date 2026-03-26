@@ -1,3 +1,95 @@
+# 3.1.181 2026-03-26
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainLocationStats**
+    - changes of request param
+      - `+ ip_version`
+
+### HuaweiCloud SDK Cloudtest
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `BatchAddCaseResultInTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowServer**
+    - changes of response param
+      - `+ server.capacity_reservation_id`
+      - `+ server.capacity_reservation_specification`
+      - `+ server.spod_id`
+      - `+ server.enclave_options`
+  - **ListServersDetails**
+    - changes of response param
+      - `+ servers.capacity_reservation_id`
+      - `+ servers.capacity_reservation_specification`
+      - `+ servers.spod_id`
+      - `+ servers.enclave_options`
+  - **ListRecycleBinServers**
+    - changes of response param
+      - `+ servers.capacity_reservation_id`
+      - `+ servers.capacity_reservation_specification`
+      - `+ servers.spod_id`
+      - `+ servers.enclave_options`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowHtapProcessList`
+    - `DeleteHtapProcessList`
+    - `ShowInstanceBackups`
+    - `DeleteAutoSqlLimiting`
+    - `UpdateStarRockLtsConfig`
+    - `DeleteStarRockLtsConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListRecycleInstances**
+    - changes of response param
+      - `+ instances.recycle_backups`
+      - `- instances.recycle_bakcups`
+  - **ListImmediateJobs**
+    - changes of response param
+      - `+ jobs.show_detail`
+      - `+ jobs.action_names`
+  - **CreateGaussMySqlInstance**
+    - changes of request param
+      - `+ volume.type`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowBackupConfig`, `ChangeBackupConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.180 2026-03-19
 
 ### HuaweiCloud SDK AAD

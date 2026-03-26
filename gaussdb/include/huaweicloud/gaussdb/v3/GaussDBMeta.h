@@ -36,6 +36,7 @@ public:
     static HttpRequestDef genRequestDefForCreateLtsConfigs();
     static HttpRequestDef genRequestDefForCreateProxyDnsName();
     static HttpRequestDef genRequestDefForCreateRestoreTables();
+    static HttpRequestDef genRequestDefForDeleteAutoSqlLimiting();
     static HttpRequestDef genRequestDefForDeleteDatabasePermission();
     static HttpRequestDef genRequestDefForDeleteGaussMySqlBackup();
     static HttpRequestDef genRequestDefForDeleteGaussMySqlConfiguration();
@@ -122,6 +123,7 @@ public:
     static HttpRequestDef genRequestDefForShowGaussMySqlProxyList();
     static HttpRequestDef genRequestDefForShowGaussMySqlQuotas();
     static HttpRequestDef genRequestDefForShowHistoricalSqlFilterRule();
+    static HttpRequestDef genRequestDefForShowInstanceBackups();
     static HttpRequestDef genRequestDefForShowInstanceDatabaseVersion();
     static HttpRequestDef genRequestDefForShowInstanceEip();
     static HttpRequestDef genRequestDefForShowInstanceMonitorExtend();
@@ -205,6 +207,8 @@ public:
     static HttpRequestDef genRequestDefForDeleteClickHouseDatabaseUser();
     static HttpRequestDef genRequestDefForDeleteClickHouseInstance();
     static HttpRequestDef genRequestDefForDeleteClickHouseLtsConfig();
+    static HttpRequestDef genRequestDefForDeleteHtapProcessList();
+    static HttpRequestDef genRequestDefForDeleteStarRockLtsConfig();
     static HttpRequestDef genRequestDefForDeleteStarRocksDataReplication();
     static HttpRequestDef genRequestDefForDeleteStarRocksDatabaseUser();
     static HttpRequestDef genRequestDefForDeleteStarrocksInstance();
@@ -243,6 +247,7 @@ public:
     static HttpRequestDef genRequestDefForShowClickHouseSlowLogSensitiveStatus();
     static HttpRequestDef genRequestDefForShowHtapErrorLogDetail();
     static HttpRequestDef genRequestDefForShowHtapLtsConfig();
+    static HttpRequestDef genRequestDefForShowHtapProcessList();
     static HttpRequestDef genRequestDefForShowHtapQueryQueuesRule();
     static HttpRequestDef genRequestDefForShowInstanceDatabasesForHtap();
     static HttpRequestDef genRequestDefForShowInstanceTablesForHtap();
@@ -255,6 +260,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateClickHouseLtsConfig();
     static HttpRequestDef genRequestDefForUpdateClickHouseSlowLogSensitiveStatus();
     static HttpRequestDef genRequestDefForUpdateHtapQueryQueuesControl();
+    static HttpRequestDef genRequestDefForUpdateStarRockLtsConfig();
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPassword();
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPermission();
     static HttpRequestDef genRequestDefForUpdateStarrocksParams();

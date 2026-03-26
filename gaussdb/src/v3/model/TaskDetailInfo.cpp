@@ -34,6 +34,9 @@ TaskDetailInfo::TaskDetailInfo()
     endedTimeIsSet_ = false;
     failReason_ = "";
     failReasonIsSet_ = false;
+    showDetail_ = false;
+    showDetailIsSet_ = false;
+    actionNamesIsSet_ = false;
 }
 
 TaskDetailInfo::~TaskDetailInfo() = default;
@@ -78,6 +81,12 @@ web::json::value TaskDetailInfo::toJson() const
     }
     if(failReasonIsSet_) {
         val[utility::conversions::to_string_t("fail_reason")] = ModelBase::toJson(failReason_);
+    }
+    if(showDetailIsSet_) {
+        val[utility::conversions::to_string_t("show_detail")] = ModelBase::toJson(showDetail_);
+    }
+    if(actionNamesIsSet_) {
+        val[utility::conversions::to_string_t("action_names")] = ModelBase::toJson(actionNames_);
     }
 
     return val;
@@ -183,6 +192,24 @@ bool TaskDetailInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFailReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("show_detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("show_detail"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setShowDetail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("action_names"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action_names"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActionNames(refVal);
         }
     }
     return ok;
@@ -418,6 +445,48 @@ bool TaskDetailInfo::failReasonIsSet() const
 void TaskDetailInfo::unsetfailReason()
 {
     failReasonIsSet_ = false;
+}
+
+bool TaskDetailInfo::isShowDetail() const
+{
+    return showDetail_;
+}
+
+void TaskDetailInfo::setShowDetail(bool value)
+{
+    showDetail_ = value;
+    showDetailIsSet_ = true;
+}
+
+bool TaskDetailInfo::showDetailIsSet() const
+{
+    return showDetailIsSet_;
+}
+
+void TaskDetailInfo::unsetshowDetail()
+{
+    showDetailIsSet_ = false;
+}
+
+std::vector<std::string>& TaskDetailInfo::getActionNames()
+{
+    return actionNames_;
+}
+
+void TaskDetailInfo::setActionNames(const std::vector<std::string>& value)
+{
+    actionNames_ = value;
+    actionNamesIsSet_ = true;
+}
+
+bool TaskDetailInfo::actionNamesIsSet() const
+{
+    return actionNamesIsSet_;
+}
+
+void TaskDetailInfo::unsetactionNames()
+{
+    actionNamesIsSet_ = false;
 }
 
 }

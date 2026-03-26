@@ -15,9 +15,11 @@
 #include <huaweicloud/ecs/v2/model/ServerSchedulerHints.h>
 #include <string>
 #include <huaweicloud/ecs/v2/model/SecurityOptions.h>
+#include <huaweicloud/ecs/v2/model/EnclaveOptions.h>
 #include <huaweicloud/ecs/v2/model/Hypervisor.h>
 #include <vector>
 #include <huaweicloud/ecs/v2/model/NetworkInterfaces.h>
+#include <huaweicloud/ecs/v2/model/CapacityReservationSpecification.h>
 #include <huaweicloud/ecs/v2/model/ServerSystemTag.h>
 #include <huaweicloud/ecs/v2/model/ServerSecurityGroup.h>
 #include <huaweicloud/ecs/v2/model/CpuOptions.h>
@@ -51,6 +53,42 @@ public:
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
     /// ServerDetail members
+
+    /// <summary>
+    /// 容量预留ID
+    /// </summary>
+
+    std::string getCapacityReservationId() const;
+    bool capacityReservationIdIsSet() const;
+    void unsetcapacityReservationId();
+    void setCapacityReservationId(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CapacityReservationSpecification getCapacityReservationSpecification() const;
+    bool capacityReservationSpecificationIsSet() const;
+    void unsetcapacityReservationSpecification();
+    void setCapacityReservationSpecification(const CapacityReservationSpecification& value);
+
+    /// <summary>
+    /// 共池裸机按整机柜发放的同一批次的批创ID
+    /// </summary>
+
+    std::string getSpodId() const;
+    bool spodIdIsSet() const;
+    void unsetspodId();
+    void setSpodId(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    EnclaveOptions getEnclaveOptions() const;
+    bool enclaveOptionsIsSet() const;
+    void unsetenclaveOptions();
+    void setEnclaveOptions(const EnclaveOptions& value);
 
     /// <summary>
     /// 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
@@ -495,6 +533,14 @@ public:
 
 
 protected:
+    std::string capacityReservationId_;
+    bool capacityReservationIdIsSet_;
+    CapacityReservationSpecification capacityReservationSpecification_;
+    bool capacityReservationSpecificationIsSet_;
+    std::string spodId_;
+    bool spodIdIsSet_;
+    EnclaveOptions enclaveOptions_;
+    bool enclaveOptionsIsSet_;
     std::string status_;
     bool statusIsSet_;
     std::string updated_;

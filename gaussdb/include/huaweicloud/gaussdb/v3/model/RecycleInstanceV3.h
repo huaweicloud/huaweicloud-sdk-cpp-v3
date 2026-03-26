@@ -197,10 +197,10 @@ public:
     /// **参数解释**：  实例所有的回收站备份列表。
     /// </summary>
 
-    std::vector<RecycleBackupV3>& getRecycleBakcups();
-    bool recycleBakcupsIsSet() const;
-    void unsetrecycleBakcups();
-    void setRecycleBakcups(const std::vector<RecycleBackupV3>& value);
+    std::vector<RecycleBackupV3>& getRecycleBackups();
+    bool recycleBackupsIsSet() const;
+    void unsetrecycleBackups();
+    void setRecycleBackups(const std::vector<RecycleBackupV3>& value);
 
 
 protected:
@@ -238,8 +238,8 @@ protected:
     bool recycleBackupIdIsSet_;
     std::string recycleStatus_;
     bool recycleStatusIsSet_;
-    std::vector<RecycleBackupV3> recycleBakcups_;
-    bool recycleBakcupsIsSet_;
+    std::vector<RecycleBackupV3> recycleBackups_;
+    bool recycleBackupsIsSet_;
 
 };
 

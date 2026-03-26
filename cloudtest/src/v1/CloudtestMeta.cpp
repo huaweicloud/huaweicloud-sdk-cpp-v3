@@ -35,6 +35,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForAddTestCaseResultLog() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudtestMeta::genRequestDefForBatchAddCaseResultInTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CloudtestMeta::genRequestDefForBatchAddRelationsByOneCase() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

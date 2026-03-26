@@ -36,6 +36,8 @@
 #include <huaweicloud/rds/v3/model/BatchTagDelActionResponse.h>
 #include <huaweicloud/rds/v3/model/BindEipRequest.h>
 #include <huaweicloud/rds/v3/model/BinlogClearPolicyRequestBody.h>
+#include <huaweicloud/rds/v3/model/ChangeBackupConfigRequest.h>
+#include <huaweicloud/rds/v3/model/ChangeBackupConfigResponse.h>
 #include <huaweicloud/rds/v3/model/ChangeFailoverModeRequest.h>
 #include <huaweicloud/rds/v3/model/ChangeFailoverModeResponse.h>
 #include <huaweicloud/rds/v3/model/ChangeFailoverStrategyRequest.h>
@@ -315,6 +317,7 @@
 #include <huaweicloud/rds/v3/model/SetBackupPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/SetConfigurationRequestBody.h>
 #include <huaweicloud/rds/v3/model/SetInstancesProxyRestartRequest.h>
 #include <huaweicloud/rds/v3/model/SetInstancesProxyRestartResponse.h>
 #include <huaweicloud/rds/v3/model/SetLogLtsConfigsRequest.h>
@@ -341,6 +344,8 @@
 #include <huaweicloud/rds/v3/model/ShowAutoUpgradePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableVersionRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableVersionResponse.h>
+#include <huaweicloud/rds/v3/model/ShowBackupConfigRequest.h>
+#include <huaweicloud/rds/v3/model/ShowBackupConfigResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupDownloadLinkRequest.h>
 #include <huaweicloud/rds/v3/model/ShowBackupDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupPolicyRequest.h>
@@ -878,6 +883,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchTagDelActionResponse> batchTagDelAction(
         BatchTagDelActionRequest &request
+    );
+    // 切换实例备份方式（PostgreSQL）
+    //
+    // 备份管理通用配置接口，目前支持切换备份方式
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeBackupConfigResponse> changeBackupConfig(
+        ChangeBackupConfigRequest &request
     );
     // 更改主备实例的数据同步方式
     //
@@ -1847,6 +1860,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAvailableVersionResponse> showAvailableVersion(
         ShowAvailableVersionRequest &request
+    );
+    // 查询实例备份方式（PostgreSQL）
+    //
+    // 查询备份管理配置接口。目前支持查询备份方式。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBackupConfigResponse> showBackupConfig(
+        ShowBackupConfigRequest &request
     );
     // 获取备份下载链接
     //

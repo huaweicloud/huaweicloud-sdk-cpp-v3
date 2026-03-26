@@ -18,10 +18,13 @@
 #include <huaweicloud/cloudtest/v1/model/AddTestCaseResultLogResponse.h>
 #include <huaweicloud/cloudtest/v1/model/AlarmStatisticsQuery.h>
 #include <huaweicloud/cloudtest/v1/model/AlertStatisticsDto.h>
+#include <huaweicloud/cloudtest/v1/model/BatchAddCaseResultInTaskRequest.h>
+#include <huaweicloud/cloudtest/v1/model/BatchAddCaseResultInTaskResponse.h>
 #include <huaweicloud/cloudtest/v1/model/BatchAddRelationsByOneCaseRequest.h>
 #include <huaweicloud/cloudtest/v1/model/BatchAddRelationsByOneCaseResponse.h>
 #include <huaweicloud/cloudtest/v1/model/BatchAddResourcesForIteratorRequest.h>
 #include <huaweicloud/cloudtest/v1/model/BatchAddResourcesForIteratorResponse.h>
+#include <huaweicloud/cloudtest/v1/model/BatchAddTestCaseResultInTaskInfo.h>
 #include <huaweicloud/cloudtest/v1/model/BatchDeleteTestCaseRequest.h>
 #include <huaweicloud/cloudtest/v1/model/BatchDeleteTestCaseRequestBody.h>
 #include <huaweicloud/cloudtest/v1/model/BatchDeleteTestCaseResponse.h>
@@ -497,6 +500,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AddTestCaseResultLogResponse> addTestCaseResultLog(
         AddTestCaseResultLogRequest &request
+    );
+    // 在任务下批量设置用例结果
+    //
+    // 在任务下批量设置用例结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchAddCaseResultInTaskResponse> batchAddCaseResultInTask(
+        BatchAddCaseResultInTaskRequest &request
     );
     // 添加需求/缺陷和多个用例关联关系
     //

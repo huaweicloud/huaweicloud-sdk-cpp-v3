@@ -808,6 +808,9 @@ HttpRequestDef CdnMeta::genRequestDefForShowDomainLocationStats() {
     reqDefBuilder.withRequestField(FieldDef().withName("StatType")
                   .withJsonTag("stat_type")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpVersion")
+                  .withJsonTag("ip_version")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Interval")
                   .withJsonTag("interval")
                   .withLocationType(Query_));

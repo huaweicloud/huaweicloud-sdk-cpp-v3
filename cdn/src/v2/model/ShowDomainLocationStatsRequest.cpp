@@ -22,6 +22,8 @@ ShowDomainLocationStatsRequest::ShowDomainLocationStatsRequest()
     domainNameIsSet_ = false;
     statType_ = "";
     statTypeIsSet_ = false;
+    ipVersion_ = "";
+    ipVersionIsSet_ = false;
     interval_ = 0L;
     intervalIsSet_ = false;
     country_ = "";
@@ -60,6 +62,9 @@ web::json::value ShowDomainLocationStatsRequest::toJson() const
     }
     if(statTypeIsSet_) {
         val[utility::conversions::to_string_t("stat_type")] = ModelBase::toJson(statType_);
+    }
+    if(ipVersionIsSet_) {
+        val[utility::conversions::to_string_t("ip_version")] = ModelBase::toJson(ipVersion_);
     }
     if(intervalIsSet_) {
         val[utility::conversions::to_string_t("interval")] = ModelBase::toJson(interval_);
@@ -129,6 +134,15 @@ bool ShowDomainLocationStatsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ip_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip_version"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpVersion(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("interval"))) {
@@ -292,6 +306,27 @@ bool ShowDomainLocationStatsRequest::statTypeIsSet() const
 void ShowDomainLocationStatsRequest::unsetstatType()
 {
     statTypeIsSet_ = false;
+}
+
+std::string ShowDomainLocationStatsRequest::getIpVersion() const
+{
+    return ipVersion_;
+}
+
+void ShowDomainLocationStatsRequest::setIpVersion(const std::string& value)
+{
+    ipVersion_ = value;
+    ipVersionIsSet_ = true;
+}
+
+bool ShowDomainLocationStatsRequest::ipVersionIsSet() const
+{
+    return ipVersionIsSet_;
+}
+
+void ShowDomainLocationStatsRequest::unsetipVersion()
+{
+    ipVersionIsSet_ = false;
 }
 
 int64_t ShowDomainLocationStatsRequest::getInterval() const

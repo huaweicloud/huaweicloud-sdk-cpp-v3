@@ -46,7 +46,7 @@ RecycleInstanceV3::RecycleInstanceV3()
     recycleBackupIdIsSet_ = false;
     recycleStatus_ = "";
     recycleStatusIsSet_ = false;
-    recycleBakcupsIsSet_ = false;
+    recycleBackupsIsSet_ = false;
 }
 
 RecycleInstanceV3::~RecycleInstanceV3() = default;
@@ -110,8 +110,8 @@ web::json::value RecycleInstanceV3::toJson() const
     if(recycleStatusIsSet_) {
         val[utility::conversions::to_string_t("recycle_status")] = ModelBase::toJson(recycleStatus_);
     }
-    if(recycleBakcupsIsSet_) {
-        val[utility::conversions::to_string_t("recycle_bakcups")] = ModelBase::toJson(recycleBakcups_);
+    if(recycleBackupsIsSet_) {
+        val[utility::conversions::to_string_t("recycle_backups")] = ModelBase::toJson(recycleBackups_);
     }
 
     return val;
@@ -273,13 +273,13 @@ bool RecycleInstanceV3::fromJson(const web::json::value& val)
             setRecycleStatus(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("recycle_bakcups"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("recycle_bakcups"));
+    if(val.has_field(utility::conversions::to_string_t("recycle_backups"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("recycle_backups"));
         if(!fieldValue.is_null())
         {
             std::vector<RecycleBackupV3> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRecycleBakcups(refVal);
+            setRecycleBackups(refVal);
         }
     }
     return ok;
@@ -643,25 +643,25 @@ void RecycleInstanceV3::unsetrecycleStatus()
     recycleStatusIsSet_ = false;
 }
 
-std::vector<RecycleBackupV3>& RecycleInstanceV3::getRecycleBakcups()
+std::vector<RecycleBackupV3>& RecycleInstanceV3::getRecycleBackups()
 {
-    return recycleBakcups_;
+    return recycleBackups_;
 }
 
-void RecycleInstanceV3::setRecycleBakcups(const std::vector<RecycleBackupV3>& value)
+void RecycleInstanceV3::setRecycleBackups(const std::vector<RecycleBackupV3>& value)
 {
-    recycleBakcups_ = value;
-    recycleBakcupsIsSet_ = true;
+    recycleBackups_ = value;
+    recycleBackupsIsSet_ = true;
 }
 
-bool RecycleInstanceV3::recycleBakcupsIsSet() const
+bool RecycleInstanceV3::recycleBackupsIsSet() const
 {
-    return recycleBakcupsIsSet_;
+    return recycleBackupsIsSet_;
 }
 
-void RecycleInstanceV3::unsetrecycleBakcups()
+void RecycleInstanceV3::unsetrecycleBackups()
 {
-    recycleBakcupsIsSet_ = false;
+    recycleBackupsIsSet_ = false;
 }
 
 }

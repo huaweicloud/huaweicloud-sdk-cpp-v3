@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -137,6 +138,24 @@ public:
     void unsetfailReason();
     void setFailReason(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  是否支持通过[获取异步任务详情](https://support.huaweicloud.com/api-taurusdb/ShowTaskDetails.html)接口获取任务详情。  **取值范围**：  - true：是。 - false：否。
+    /// </summary>
+
+    bool isShowDetail() const;
+    bool showDetailIsSet() const;
+    void unsetshowDetail();
+    void setShowDetail(bool value);
+
+    /// <summary>
+    /// **参数解释**：  支持筛选的任务名称。  **取值范围**：  不涉及。
+    /// </summary>
+
+    std::vector<std::string>& getActionNames();
+    bool actionNamesIsSet() const;
+    void unsetactionNames();
+    void setActionNames(const std::vector<std::string>& value);
+
 
 protected:
     std::string instanceId_;
@@ -161,6 +180,10 @@ protected:
     bool endedTimeIsSet_;
     std::string failReason_;
     bool failReasonIsSet_;
+    bool showDetail_;
+    bool showDetailIsSet_;
+    std::vector<std::string> actionNames_;
+    bool actionNamesIsSet_;
 
 };
 

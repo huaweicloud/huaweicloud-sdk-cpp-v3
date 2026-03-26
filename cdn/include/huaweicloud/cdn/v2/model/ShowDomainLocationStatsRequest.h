@@ -84,6 +84,15 @@ public:
     void setStatType(const std::string& value);
 
     /// <summary>
+    /// - 传输协议：IPv4或IPv6,不支持同时指定  - 如果不传，默认取全部
+    /// </summary>
+
+    std::string getIpVersion() const;
+    bool ipVersionIsSet() const;
+    void unsetipVersion();
+    void setIpVersion(const std::string& value);
+
+    /// <summary>
     /// 查询时间间隔，单位：秒，取值说明： - 300(5分钟)：最大查询跨度2天 - 3600(1小时)：最大查询跨度7天 - 86400(1天)：最大查询跨度31天 - 如果不传，默认取对应时间跨度的最小间隔。
     /// </summary>
 
@@ -149,6 +158,8 @@ protected:
     bool domainNameIsSet_;
     std::string statType_;
     bool statTypeIsSet_;
+    std::string ipVersion_;
+    bool ipVersionIsSet_;
     int64_t interval_;
     bool intervalIsSet_;
     std::string country_;

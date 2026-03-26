@@ -39,7 +39,7 @@ public:
     /// MysqlVolume members
 
     /// <summary>
-    /// 磁盘大小。默认值为10，单位GB。 取值范围：10~128000，必须为10的整数倍。
+    /// **参数解释**：  磁盘大小，单位GB。  **约束限制**：  必须为10的整数倍。创建按需实例时不可选。  **取值范围**：  10-128000。  **默认取值**：  10。
     /// </summary>
 
     std::string getSize() const;
@@ -47,10 +47,21 @@ public:
     void unsetsize();
     void setSize(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  磁盘存储类型。  **约束限制**：  不涉及。  **取值范围**：  - DL6：DL6存储类型。 - DL5：DL5存储类型。  **默认取值**：  DL6。
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
 
 protected:
     std::string size_;
     bool sizeIsSet_;
+    std::string type_;
+    bool typeIsSet_;
 
 };
 

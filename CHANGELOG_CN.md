@@ -1,3 +1,16 @@
+# 3.1.182 2026-04-02
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ModifySecurityGroup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.181 2026-03-26
 
 ### HuaweiCloud SDK CDN

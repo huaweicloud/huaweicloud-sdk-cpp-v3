@@ -1,3 +1,16 @@
+# 3.1.182 2026-04-02
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ModifySecurityGroup`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.181 2026-03-26
 
 ### HuaweiCloud SDK CDN

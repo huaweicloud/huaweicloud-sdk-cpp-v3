@@ -140,6 +140,7 @@ public:
     static HttpRequestDef genRequestDefForModifyHbaConf();
     static HttpRequestDef genRequestDefForModifyInstancePort();
     static HttpRequestDef genRequestDefForModifyParameterConfigTemplate();
+    static HttpRequestDef genRequestDefForModifySecurityGroup();
     static HttpRequestDef genRequestDefForResetConfiguration();
     static HttpRequestDef genRequestDefForResetDrConfig();
     static HttpRequestDef genRequestDefForResetPwd();

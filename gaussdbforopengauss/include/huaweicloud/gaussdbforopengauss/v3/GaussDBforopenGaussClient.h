@@ -313,6 +313,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyParameterConfigTemplateRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyParameterConfigTemplateRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyParameterConfigTemplateResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ModifySecurityGroupRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ModifySecurityGroupRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ModifySecurityGroupResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceActionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequestBody.h>
@@ -1696,6 +1699,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyParameterConfigTemplateResponse> modifyParameterConfigTemplate(
         ModifyParameterConfigTemplateRequest &request
+    );
+    // 修改实例安全组
+    //
+    // 修改实例安全组。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifySecurityGroupResponse> modifySecurityGroup(
+        ModifySecurityGroupRequest &request
     );
     // 重置参数模板
     //

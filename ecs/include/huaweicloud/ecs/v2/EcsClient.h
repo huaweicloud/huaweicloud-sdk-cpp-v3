@@ -1021,9 +1021,9 @@ public:
     std::shared_ptr<ShowAppendableVolumeQuotaResponse> showAppendableVolumeQuota(
         ShowAppendableVolumeQuotaRequest &request
     );
-    // 查询flavor的容量
+    // 查询规格的容量
     //
-    // 查询flavor的容量
+    // 查询规格的容量
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowFlavorCapacityResponse> showFlavorCapacity(

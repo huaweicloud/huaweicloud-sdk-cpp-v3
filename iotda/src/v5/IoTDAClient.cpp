@@ -853,6 +853,51 @@ std::shared_ptr<UpdateRoutingBacklogPolicyResponse> IoTDAClient::updateRoutingBa
 
     return localVarResult;
 }
+std::shared_ptr<ConfirmBatchTaskResponse> IoTDAClient::confirmBatchTask(ConfirmBatchTaskRequest &request)
+{
+    std::string localVarPath = "/v5/iot/{project_id}/batchtasks/{task_id}/confirm";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["task_id"] = parameterToString(request.getTaskId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdIsSet()) {
+        localVarHeaderParams["Instance-Id"] = parameterToString(request.getInstanceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IoTDAMeta::genRequestDefForConfirmBatchTask());
+
+    std::shared_ptr<ConfirmBatchTaskResponse> localVarResult = std::make_shared<ConfirmBatchTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateBatchTaskResponse> IoTDAClient::createBatchTask(CreateBatchTaskRequest &request)
 {
     std::string localVarPath = "/v5/iot/{project_id}/batchtasks";

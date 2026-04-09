@@ -11,6 +11,7 @@
 
 #include <string>
 #include <huaweicloud/cloudtest/v1/model/AddTestCaseResultInfo.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -67,13 +68,13 @@ public:
     void setTaskResultUri(const std::string& value);
 
     /// <summary>
-    /// 用例uri
+    /// 用例uri列表
     /// </summary>
 
-    std::string getTestCaseUris() const;
+    std::vector<std::string>& getTestCaseUris();
     bool testCaseUrisIsSet() const;
     void unsettestCaseUris();
-    void setTestCaseUris(const std::string& value);
+    void setTestCaseUris(const std::vector<std::string>& value);
 
     /// <summary>
     /// 是否异步执行
@@ -92,7 +93,7 @@ protected:
     bool taskUriIsSet_;
     std::string taskResultUri_;
     bool taskResultUriIsSet_;
-    std::string testCaseUris_;
+    std::vector<std::string> testCaseUris_;
     bool testCaseUrisIsSet_;
     bool isAsyn_;
     bool isAsynIsSet_;

@@ -20,6 +20,8 @@ CreateBatchTask::CreateBatchTask()
     taskTypeIsSet_ = false;
     taskMode_ = "";
     taskModeIsSet_ = false;
+    needConfirm_ = false;
+    needConfirmIsSet_ = false;
     taskExtInfoIsSet_ = false;
     targetsIsSet_ = false;
     targetsFilterIsSet_ = false;
@@ -50,6 +52,9 @@ web::json::value CreateBatchTask::toJson() const
     }
     if(taskModeIsSet_) {
         val[utility::conversions::to_string_t("task_mode")] = ModelBase::toJson(taskMode_);
+    }
+    if(needConfirmIsSet_) {
+        val[utility::conversions::to_string_t("need_confirm")] = ModelBase::toJson(needConfirm_);
     }
     if(taskExtInfoIsSet_) {
         val[utility::conversions::to_string_t("task_ext_info")] = ModelBase::toJson(taskExtInfo_);
@@ -110,6 +115,15 @@ bool CreateBatchTask::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaskMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("need_confirm"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("need_confirm"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNeedConfirm(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("task_ext_info"))) {
@@ -252,6 +266,27 @@ bool CreateBatchTask::taskModeIsSet() const
 void CreateBatchTask::unsettaskMode()
 {
     taskModeIsSet_ = false;
+}
+
+bool CreateBatchTask::isNeedConfirm() const
+{
+    return needConfirm_;
+}
+
+void CreateBatchTask::setNeedConfirm(bool value)
+{
+    needConfirm_ = value;
+    needConfirmIsSet_ = true;
+}
+
+bool CreateBatchTask::needConfirmIsSet() const
+{
+    return needConfirmIsSet_;
+}
+
+void CreateBatchTask::unsetneedConfirm()
+{
+    needConfirmIsSet_ = false;
 }
 
 Object CreateBatchTask::getTaskExtInfo() const

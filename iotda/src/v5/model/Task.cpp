@@ -20,6 +20,8 @@ Task::Task()
     taskTypeIsSet_ = false;
     taskMode_ = "";
     taskModeIsSet_ = false;
+    needConfirm_ = false;
+    needConfirmIsSet_ = false;
     taskExtInfoIsSet_ = false;
     targetsIsSet_ = false;
     targetsFilterIsSet_ = false;
@@ -55,6 +57,9 @@ web::json::value Task::toJson() const
     }
     if(taskModeIsSet_) {
         val[utility::conversions::to_string_t("task_mode")] = ModelBase::toJson(taskMode_);
+    }
+    if(needConfirmIsSet_) {
+        val[utility::conversions::to_string_t("need_confirm")] = ModelBase::toJson(needConfirm_);
     }
     if(taskExtInfoIsSet_) {
         val[utility::conversions::to_string_t("task_ext_info")] = ModelBase::toJson(taskExtInfo_);
@@ -124,6 +129,15 @@ bool Task::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaskMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("need_confirm"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("need_confirm"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNeedConfirm(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("task_ext_info"))) {
@@ -293,6 +307,27 @@ bool Task::taskModeIsSet() const
 void Task::unsettaskMode()
 {
     taskModeIsSet_ = false;
+}
+
+bool Task::isNeedConfirm() const
+{
+    return needConfirm_;
+}
+
+void Task::setNeedConfirm(bool value)
+{
+    needConfirm_ = value;
+    needConfirmIsSet_ = true;
+}
+
+bool Task::needConfirmIsSet() const
+{
+    return needConfirmIsSet_;
+}
+
+void Task::unsetneedConfirm()
+{
+    needConfirmIsSet_ = false;
 }
 
 Object Task::getTaskExtInfo() const

@@ -20,6 +20,8 @@ AccessConfigDeatilCreate::AccessConfigDeatilCreate()
     stdoutIsSet_ = false;
     stderr_ = false;
     stderrIsSet_ = false;
+    combineStdout_ = false;
+    combineStdoutIsSet_ = false;
     pathType_ = "";
     pathTypeIsSet_ = false;
     namespaceRegex_ = "";
@@ -82,6 +84,9 @@ web::json::value AccessConfigDeatilCreate::toJson() const
     }
     if(stderrIsSet_) {
         val[utility::conversions::to_string_t("stderr")] = ModelBase::toJson(stderr_);
+    }
+    if(combineStdoutIsSet_) {
+        val[utility::conversions::to_string_t("combine_stdout")] = ModelBase::toJson(combineStdout_);
     }
     if(pathTypeIsSet_) {
         val[utility::conversions::to_string_t("pathType")] = ModelBase::toJson(pathType_);
@@ -208,6 +213,15 @@ bool AccessConfigDeatilCreate::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStderr(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("combine_stdout"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("combine_stdout"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCombineStdout(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pathType"))) {
@@ -536,6 +550,27 @@ bool AccessConfigDeatilCreate::stderrIsSet() const
 void AccessConfigDeatilCreate::unsetstderr()
 {
     stderrIsSet_ = false;
+}
+
+bool AccessConfigDeatilCreate::isCombineStdout() const
+{
+    return combineStdout_;
+}
+
+void AccessConfigDeatilCreate::setCombineStdout(bool value)
+{
+    combineStdout_ = value;
+    combineStdoutIsSet_ = true;
+}
+
+bool AccessConfigDeatilCreate::combineStdoutIsSet() const
+{
+    return combineStdoutIsSet_;
+}
+
+void AccessConfigDeatilCreate::unsetcombineStdout()
+{
+    combineStdoutIsSet_ = false;
 }
 
 std::string AccessConfigDeatilCreate::getPathType() const

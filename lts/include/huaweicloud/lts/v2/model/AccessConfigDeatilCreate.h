@@ -97,6 +97,15 @@ public:
     void setStderr(bool value);
 
     /// <summary>
+    /// **参数解释：** 云容器引擎CCE应用日志接入时，是否将标准输出和标准错误采集到同一个文件。 **取值范围：** - true：将标准输出和标准错误采集到同一个文件（stdout.log）。 - false：将标准输出和标准错误采集到不同的文件（stdout.log和stderr.log）。
+    /// </summary>
+
+    bool isCombineStdout() const;
+    bool combineStdoutIsSet() const;
+    void unsetcombineStdout();
+    void setCombineStdout(bool value);
+
+    /// <summary>
     /// CCE接入类型，仅CCE接入类型时使用
     /// </summary>
 
@@ -308,6 +317,8 @@ protected:
     bool stdoutIsSet_;
     bool stderr_;
     bool stderrIsSet_;
+    bool combineStdout_;
+    bool combineStdoutIsSet_;
     std::string pathType_;
     bool pathTypeIsSet_;
     std::string namespaceRegex_;

@@ -458,6 +458,47 @@ std::shared_ptr<CancelScheduleTaskResponse> GaussDBforopenGaussClient::cancelSch
 
     return localVarResult;
 }
+std::shared_ptr<ChangeDemand2PeriodResponse> GaussDBforopenGaussClient::changeDemand2Period(ChangeDemand2PeriodRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/change-charge-mode";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForChangeDemand2Period());
+
+    std::shared_ptr<ChangeDemand2PeriodResponse> localVarResult = std::make_shared<ChangeDemand2PeriodResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ConfirmRestoredDataResponse> GaussDBforopenGaussClient::confirmRestoredData(ConfirmRestoredDataRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/confirm-restore-data";
@@ -7943,6 +7984,84 @@ std::shared_ptr<SwitchLogCollectionStatusResponse> GaussDBforopenGaussClient::sw
         localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForSwitchLogCollectionStatus());
 
     std::shared_ptr<SwitchLogCollectionStatusResponse> localVarResult = std::make_shared<SwitchLogCollectionStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<SwitchLoggerReplicaResponse> GaussDBforopenGaussClient::switchLoggerReplica(SwitchLoggerReplicaRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instance/{instance_id}/switch-logger-replica";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForSwitchLoggerReplica());
+
+    std::shared_ptr<SwitchLoggerReplicaResponse> localVarResult = std::make_shared<SwitchLoggerReplicaResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SwitchLoggerReplicaAvailabilityZonesResponse> GaussDBforopenGaussClient::switchLoggerReplicaAvailabilityZones(SwitchLoggerReplicaAvailabilityZonesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability_zones";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForSwitchLoggerReplicaAvailabilityZones());
+
+    std::shared_ptr<SwitchLoggerReplicaAvailabilityZonesResponse> localVarResult = std::make_shared<SwitchLoggerReplicaAvailabilityZonesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

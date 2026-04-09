@@ -317,6 +317,20 @@ HttpRequestDef IoTDAMeta::genRequestDefForUpdateRoutingBacklogPolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef IoTDAMeta::genRequestDefForConfirmBatchTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef IoTDAMeta::genRequestDefForCreateBatchTask() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamInstanceId;

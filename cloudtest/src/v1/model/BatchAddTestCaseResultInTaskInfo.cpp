@@ -17,7 +17,6 @@ BatchAddTestCaseResultInTaskInfo::BatchAddTestCaseResultInTaskInfo()
     taskUriIsSet_ = false;
     taskResultUri_ = "";
     taskResultUriIsSet_ = false;
-    testCaseUris_ = "";
     testCaseUrisIsSet_ = false;
     isAsyn_ = false;
     isAsynIsSet_ = false;
@@ -86,7 +85,7 @@ bool BatchAddTestCaseResultInTaskInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("test_case_uris"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTestCaseUris(refVal);
         }
@@ -167,12 +166,12 @@ void BatchAddTestCaseResultInTaskInfo::unsettaskResultUri()
     taskResultUriIsSet_ = false;
 }
 
-std::string BatchAddTestCaseResultInTaskInfo::getTestCaseUris() const
+std::vector<std::string>& BatchAddTestCaseResultInTaskInfo::getTestCaseUris()
 {
     return testCaseUris_;
 }
 
-void BatchAddTestCaseResultInTaskInfo::setTestCaseUris(const std::string& value)
+void BatchAddTestCaseResultInTaskInfo::setTestCaseUris(const std::vector<std::string>& value)
 {
     testCaseUris_ = value;
     testCaseUrisIsSet_ = true;

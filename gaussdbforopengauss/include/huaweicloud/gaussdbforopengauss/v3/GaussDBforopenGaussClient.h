@@ -35,6 +35,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/BindEIPRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CancelScheduleTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CancelScheduleTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ChangeDemand2PeriodRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ChangeDemand2PeriodResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConstructReq.h>
@@ -301,6 +303,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyAutoEnlargePolicyRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyAutoEnlargePolicyRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyAutoEnlargePolicyResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ModifyDBPayTypeRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaResponse.h>
@@ -477,6 +480,11 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchKmsTdeResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLogCollectionStatusRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLogCollectionStatusResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLoggerReplicaAvailabilityZonesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLoggerReplicaAvailabilityZonesResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLoggerReplicaRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLoggerReplicaRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchLoggerReplicaResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchReplicaRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchReplicaRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchReplicaResponse.h>
@@ -762,6 +770,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CancelScheduleTaskResponse> cancelScheduleTask(
         CancelScheduleTaskRequest &request
+    );
+    // 按需转包周期
+    //
+    // 按需转包周期
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeDemand2PeriodResponse> changeDemand2Period(
+        ChangeDemand2PeriodRequest &request
     );
     // 备份恢复到目标实例数据后执行数据确认
     //
@@ -2218,6 +2234,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchLogCollectionStatusResponse> switchLogCollectionStatus(
         SwitchLogCollectionStatusRequest &request
+    );
+    // 一主两备切换一主一备一日志
+    //
+    // 一主两备切换一主一备一日志
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchLoggerReplicaResponse> switchLoggerReplica(
+        SwitchLoggerReplicaRequest &request
+    );
+    // 选择日志节点AZ
+    //
+    // 选择日志节点AZ
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchLoggerReplicaAvailabilityZonesResponse> switchLoggerReplicaAvailabilityZones(
+        SwitchLoggerReplicaAvailabilityZonesRequest &request
     );
     // 分布式实例一主一备一日志形态切换到一主两备形态
     //

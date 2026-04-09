@@ -80,6 +80,15 @@ public:
     void setTaskMode(const std::string& value);
 
     /// <summary>
+    /// **参数说明**：当需要自主控制该任务时设置此参数，当task_type为firmwareUpgrade，softwareUpgrade,moduleUpgrade支持该参数。软固件升级的场景下，当need_confirm为true时，任务分发后所有子任务一直为waitting状态，需要调确认接口后才变为processing状态，任务开始分发，不设置或者设置为false时子任务自动分发。 **取值范围**：true: 需要确认才分发子任务，false: 不需要确认自动分发子任务。
+    /// </summary>
+
+    bool isNeedConfirm() const;
+    bool needConfirmIsSet() const;
+    void unsetneedConfirm();
+    void setNeedConfirm(bool value);
+
+    /// <summary>
     /// **参数说明**：批量任务额外扩展信息，当task_type为firmwareUpgrade，softwareUpgrade支持该参数。软固件升级的场景下，平台下发获取版本信息通知和平台下发升级通知将携带该字段。 **取值范围**：最长不超过512个字符。
     /// </summary>
 
@@ -170,6 +179,8 @@ protected:
     bool taskTypeIsSet_;
     std::string taskMode_;
     bool taskModeIsSet_;
+    bool needConfirm_;
+    bool needConfirmIsSet_;
     Object taskExtInfo_;
     bool taskExtInfoIsSet_;
     std::vector<std::string> targets_;

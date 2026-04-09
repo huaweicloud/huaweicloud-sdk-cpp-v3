@@ -146,6 +146,10 @@ public:
             { 
                 "https://lts.cn-south-4.myhuaweicloud.com"
             });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://lts.af-north-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

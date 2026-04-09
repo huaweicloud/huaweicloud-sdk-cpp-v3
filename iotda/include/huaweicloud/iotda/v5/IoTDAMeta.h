@@ -33,6 +33,7 @@ public:
     static HttpRequestDef genRequestDefForListRoutingBacklogPolicy();
     static HttpRequestDef genRequestDefForShowRoutingBacklogPolicy();
     static HttpRequestDef genRequestDefForUpdateRoutingBacklogPolicy();
+    static HttpRequestDef genRequestDefForConfirmBatchTask();
     static HttpRequestDef genRequestDefForCreateBatchTask();
     static HttpRequestDef genRequestDefForDeleteBatchTask();
     static HttpRequestDef genRequestDefForListBatchTasks();

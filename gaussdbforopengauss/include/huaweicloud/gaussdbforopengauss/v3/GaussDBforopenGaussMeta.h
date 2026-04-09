@@ -23,6 +23,7 @@ public:
     static HttpRequestDef genRequestDefForBatchSetBackupPolicy();
     static HttpRequestDef genRequestDefForBatchShowUpgradeCandidateVersions();
     static HttpRequestDef genRequestDefForCancelScheduleTask();
+    static HttpRequestDef genRequestDefForChangeDemand2Period();
     static HttpRequestDef genRequestDefForConfirmRestoredData();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateConfigurationTemplate();
@@ -205,6 +206,8 @@ public:
     static HttpRequestDef genRequestDefForSwitchConfiguration();
     static HttpRequestDef genRequestDefForSwitchKmsTde();
     static HttpRequestDef genRequestDefForSwitchLogCollectionStatus();
+    static HttpRequestDef genRequestDefForSwitchLoggerReplica();
+    static HttpRequestDef genRequestDefForSwitchLoggerReplicaAvailabilityZones();
     static HttpRequestDef genRequestDefForSwitchReplica();
     static HttpRequestDef genRequestDefForSwitchShard();
     static HttpRequestDef genRequestDefForUpdateAgencyPolicy();

@@ -140,6 +140,20 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCancelScheduleTask() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForChangeDemand2Period() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForConfirmRestoredData() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2972,6 +2986,30 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSwitchKmsTde() {
 }
 
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSwitchLogCollectionStatus() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSwitchLoggerReplica() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSwitchLoggerReplicaAvailabilityZones() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

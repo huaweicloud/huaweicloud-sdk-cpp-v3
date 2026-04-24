@@ -12,7 +12,7 @@ namespace Model {
 
 ListHyperNodesResponse::ListHyperNodesResponse()
 {
-    hyperNodeListIsSet_ = false;
+    bodyIsSet_ = false;
 }
 
 ListHyperNodesResponse::~ListHyperNodesResponse() = default;
@@ -25,8 +25,8 @@ web::json::value ListHyperNodesResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(hyperNodeListIsSet_) {
-        val[utility::conversions::to_string_t("hyperNodeList")] = ModelBase::toJson(hyperNodeList_);
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
 
     return val;
@@ -35,38 +35,38 @@ bool ListHyperNodesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("hyperNodeList"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hyperNodeList"));
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
             std::vector<HyperNode> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHyperNodeList(refVal);
+            setBody(refVal);
         }
     }
     return ok;
 }
 
 
-std::vector<HyperNode>& ListHyperNodesResponse::getHyperNodeList()
+std::vector<HyperNode>& ListHyperNodesResponse::getBody()
 {
-    return hyperNodeList_;
+    return body_;
 }
 
-void ListHyperNodesResponse::setHyperNodeList(const std::vector<HyperNode>& value)
+void ListHyperNodesResponse::setBody(const std::vector<HyperNode>& value)
 {
-    hyperNodeList_ = value;
-    hyperNodeListIsSet_ = true;
+    body_ = value;
+    bodyIsSet_ = true;
 }
 
-bool ListHyperNodesResponse::hyperNodeListIsSet() const
+bool ListHyperNodesResponse::bodyIsSet() const
 {
-    return hyperNodeListIsSet_;
+    return bodyIsSet_;
 }
 
-void ListHyperNodesResponse::unsethyperNodeList()
+void ListHyperNodesResponse::unsetbody()
 {
-    hyperNodeListIsSet_ = false;
+    bodyIsSet_ = false;
 }
 
 }

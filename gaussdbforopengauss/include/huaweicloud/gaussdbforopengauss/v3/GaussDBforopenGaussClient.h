@@ -32,6 +32,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchShowUpgradeCandidateVersionsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchShowUpgradeCandidateVersionsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BindDNatRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BindDNatRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BindDNatResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BindEIPRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CancelScheduleTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CancelScheduleTaskResponse.h>
@@ -170,6 +173,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsDiffResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDNatInfoRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDNatInfoResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseInstancesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseInstancesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseRolesRequest.h>
@@ -763,6 +768,14 @@ public:
     std::shared_ptr<BatchShowUpgradeCandidateVersionsResponse> batchShowUpgradeCandidateVersions(
         BatchShowUpgradeCandidateVersionsRequest &request
     );
+    // 绑定/解绑NAT网关
+    //
+    // 绑定/解绑NAT网关。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BindDNatResponse> bindDNat(
+        BindDNatRequest &request
+    );
     // 取消定时任务
     //
     // 取消定时任务
@@ -1178,6 +1191,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListConfigurationsDiffResponse> listConfigurationsDiff(
         ListConfigurationsDiffRequest &request
+    );
+    // 查询已绑定的NAT网关列表
+    //
+    // 查询已绑定的NAT网关列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDNatInfoResponse> listDNatInfo(
+        ListDNatInfoRequest &request
     );
     // 查询数据库实例列表/查询实例详情
     //

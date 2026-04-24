@@ -464,6 +464,9 @@ HttpRequestDef CceMeta::genRequestDefForListHyperNodes() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
     return reqDefBuilder;
 }
 

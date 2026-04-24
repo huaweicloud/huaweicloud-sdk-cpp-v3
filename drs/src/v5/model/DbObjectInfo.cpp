@@ -12,6 +12,8 @@ namespace Model {
 
 DbObjectInfo::DbObjectInfo()
 {
+    objectName_ = "";
+    objectNameIsSet_ = false;
     sourceDbName_ = "";
     sourceDbNameIsSet_ = false;
     sourceSchemaName_ = "";
@@ -38,6 +40,9 @@ web::json::value DbObjectInfo::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(objectNameIsSet_) {
+        val[utility::conversions::to_string_t("object_name")] = ModelBase::toJson(objectName_);
+    }
     if(sourceDbNameIsSet_) {
         val[utility::conversions::to_string_t("source_db_name")] = ModelBase::toJson(sourceDbName_);
     }
@@ -66,6 +71,15 @@ bool DbObjectInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("object_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setObjectName(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("source_db_name"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source_db_name"));
         if(!fieldValue.is_null())
@@ -132,6 +146,27 @@ bool DbObjectInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string DbObjectInfo::getObjectName() const
+{
+    return objectName_;
+}
+
+void DbObjectInfo::setObjectName(const std::string& value)
+{
+    objectName_ = value;
+    objectNameIsSet_ = true;
+}
+
+bool DbObjectInfo::objectNameIsSet() const
+{
+    return objectNameIsSet_;
+}
+
+void DbObjectInfo::unsetobjectName()
+{
+    objectNameIsSet_ = false;
+}
 
 std::string DbObjectInfo::getSourceDbName() const
 {

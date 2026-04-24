@@ -14,7 +14,7 @@ LineStatus::LineStatus()
 {
     startPointIsSet_ = false;
     endPointIsSet_ = false;
-    critical_ = "";
+    critical_ = false;
     criticalIsSet_ = false;
 }
 
@@ -66,7 +66,7 @@ bool LineStatus::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("critical"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCritical(refVal);
         }
@@ -117,12 +117,12 @@ void LineStatus::unsetendPoint()
     endPointIsSet_ = false;
 }
 
-std::string LineStatus::getCritical() const
+bool LineStatus::isCritical() const
 {
     return critical_;
 }
 
-void LineStatus::setCritical(const std::string& value)
+void LineStatus::setCritical(bool value)
 {
     critical_ = value;
     criticalIsSet_ = true;

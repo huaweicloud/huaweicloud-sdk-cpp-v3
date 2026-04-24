@@ -22,6 +22,7 @@ public:
     static HttpRequestDef genRequestDefForBatchDeleteInstanceTag();
     static HttpRequestDef genRequestDefForBatchSetBackupPolicy();
     static HttpRequestDef genRequestDefForBatchShowUpgradeCandidateVersions();
+    static HttpRequestDef genRequestDefForBindDNat();
     static HttpRequestDef genRequestDefForCancelScheduleTask();
     static HttpRequestDef genRequestDefForChangeDemand2Period();
     static HttpRequestDef genRequestDefForConfirmRestoredData();
@@ -74,6 +75,7 @@ public:
     static HttpRequestDef genRequestDefForListComponentInfos();
     static HttpRequestDef genRequestDefForListConfigurations();
     static HttpRequestDef genRequestDefForListConfigurationsDiff();
+    static HttpRequestDef genRequestDefForListDNatInfo();
     static HttpRequestDef genRequestDefForListDatabaseInstances();
     static HttpRequestDef genRequestDefForListDatabaseRoles();
     static HttpRequestDef genRequestDefForListDatabaseSchemaTables();

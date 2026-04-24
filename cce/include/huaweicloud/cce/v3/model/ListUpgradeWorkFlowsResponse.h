@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 #include <huaweicloud/cce/v3/model/UpgradeWorkFlow.h>
 
 namespace HuaweiCloud {
@@ -61,10 +62,10 @@ public:
     /// 
     /// </summary>
 
-    UpgradeWorkFlow getItems() const;
+    std::vector<UpgradeWorkFlow>& getItems();
     bool itemsIsSet() const;
     void unsetitems();
-    void setItems(const UpgradeWorkFlow& value);
+    void setItems(const std::vector<UpgradeWorkFlow>& value);
 
 
 protected:
@@ -72,7 +73,7 @@ protected:
     bool kindIsSet_;
     std::string apiVersion_;
     bool apiVersionIsSet_;
-    UpgradeWorkFlow items_;
+    std::vector<UpgradeWorkFlow> items_;
     bool itemsIsSet_;
 
 #ifdef RTTR_FLAG

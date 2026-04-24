@@ -121,7 +121,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 返回结果按该关键字排序，默认为“create_time”。
+    /// 返回结果按该关键字排序，默认为“create_time”。 当前支持排序的关键字： - name - status - create_time - net_type - job_direction - pay_mode
     /// </summary>
 
     std::string getSortKey() const;

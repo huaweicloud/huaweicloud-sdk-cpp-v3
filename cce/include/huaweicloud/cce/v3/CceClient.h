@@ -103,6 +103,7 @@
 #include <huaweicloud/cce/v3/model/GetResourceTagsResponse.h>
 #include <huaweicloud/cce/v3/model/HibernateClusterRequest.h>
 #include <huaweicloud/cce/v3/model/HibernateClusterResponse.h>
+#include <huaweicloud/cce/v3/model/HyperNode.h>
 #include <huaweicloud/cce/v3/model/InstanceRequest.h>
 #include <huaweicloud/cce/v3/model/ListAccessPolicyRequest.h>
 #include <huaweicloud/cce/v3/model/ListAccessPolicyResponse.h>

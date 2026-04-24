@@ -67,7 +67,7 @@ bool ListUpgradeWorkFlowsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("items"));
         if(!fieldValue.is_null())
         {
-            UpgradeWorkFlow refVal;
+            std::vector<UpgradeWorkFlow> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setItems(refVal);
         }
@@ -118,12 +118,12 @@ void ListUpgradeWorkFlowsResponse::unsetapiVersion()
     apiVersionIsSet_ = false;
 }
 
-UpgradeWorkFlow ListUpgradeWorkFlowsResponse::getItems() const
+std::vector<UpgradeWorkFlow>& ListUpgradeWorkFlowsResponse::getItems()
 {
     return items_;
 }
 
-void ListUpgradeWorkFlowsResponse::setItems(const UpgradeWorkFlow& value)
+void ListUpgradeWorkFlowsResponse::setItems(const std::vector<UpgradeWorkFlow>& value)
 {
     items_ = value;
     itemsIsSet_ = true;

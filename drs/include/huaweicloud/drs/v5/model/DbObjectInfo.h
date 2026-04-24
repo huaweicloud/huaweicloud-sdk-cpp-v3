@@ -39,6 +39,15 @@ public:
     /// DbObjectInfo members
 
     /// <summary>
+    /// 对象名
+    /// </summary>
+
+    std::string getObjectName() const;
+    bool objectNameIsSet() const;
+    void unsetobjectName();
+    void setObjectName(const std::string& value);
+
+    /// <summary>
     /// 源数据库库名。
     /// </summary>
 
@@ -103,6 +112,8 @@ public:
 
 
 protected:
+    std::string objectName_;
+    bool objectNameIsSet_;
     std::string sourceDbName_;
     bool sourceDbNameIsSet_;
     std::string sourceSchemaName_;

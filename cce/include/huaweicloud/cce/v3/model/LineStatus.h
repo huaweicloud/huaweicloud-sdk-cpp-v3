@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cce/v3/model/Point.h>
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -61,10 +60,10 @@ public:
     /// 表示是否为关键线路（关键线路未执行无法取消升级流程）
     /// </summary>
 
-    std::string getCritical() const;
+    bool isCritical() const;
     bool criticalIsSet() const;
     void unsetcritical();
-    void setCritical(const std::string& value);
+    void setCritical(bool value);
 
 
 protected:
@@ -72,7 +71,7 @@ protected:
     bool startPointIsSet_;
     Point endPoint_;
     bool endPointIsSet_;
-    std::string critical_;
+    bool critical_;
     bool criticalIsSet_;
 
 };

@@ -43,15 +43,15 @@ public:
     /// 
     /// </summary>
 
-    std::vector<HyperNode>& getHyperNodeList();
-    bool hyperNodeListIsSet() const;
-    void unsethyperNodeList();
-    void setHyperNodeList(const std::vector<HyperNode>& value);
+    std::vector<HyperNode>& getBody();
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const std::vector<HyperNode>& value);
 
 
 protected:
-    std::vector<HyperNode> hyperNodeList_;
-    bool hyperNodeListIsSet_;
+    std::vector<HyperNode> body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

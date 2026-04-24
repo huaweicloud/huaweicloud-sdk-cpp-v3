@@ -1,3 +1,48 @@
+# 3.1.184 2026-04-24
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ShowSubscriptionDetail`
+    - `DeleteSubscription`
+    - `ShowCompareUsersDetail`
+    - `ShowSmnTopicInfo`
+    - `ShowChildNum`
+    - `CreateSubscription`
+    - `UpdateSubscriptionInfo`
+    - `ShowReplayReportExportStatus`
+    - `ExportReplayReport`
+    - `ListSupportLinks`
+    - `ListExtraColumns`
+    - `PauseCompareJobs`
+    - `RestartCompareJobs`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateComparePolicy**
+    - changes of request param
+      - `+ compare_policy: enum value [normal,manyToOne]`
+  - **ShowObjectMapping**
+    - changes of response param
+      - `+ object_mapping_list.object_name`
+  - **ListJobs**
+    - changes of request param
+      - `+ sort_key: enum value [name,status,create_time,net_type,job_direction,pay_mode]`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListDNatInfo`, `BindDNat`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.183 2026-04-09
 
 ### HuaweiCloud SDK Cloudtest

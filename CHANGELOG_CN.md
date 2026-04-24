@@ -1,3 +1,48 @@
+# 3.1.184 2026-04-24
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持以下接口：
+    - `ShowSubscriptionDetail`
+    - `DeleteSubscription`
+    - `ShowCompareUsersDetail`
+    - `ShowSmnTopicInfo`
+    - `ShowChildNum`
+    - `CreateSubscription`
+    - `UpdateSubscriptionInfo`
+    - `ShowReplayReportExportStatus`
+    - `ExportReplayReport`
+    - `ListSupportLinks`
+    - `ListExtraColumns`
+    - `PauseCompareJobs`
+    - `RestartCompareJobs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateComparePolicy**
+    - 请求参数变更
+      - `+ compare_policy: enum value [normal,manyToOne]`
+  - **ShowObjectMapping**
+    - 响应参数变更
+      - `+ object_mapping_list.object_name`
+  - **ListJobs**
+    - 请求参数变更
+      - `+ sort_key: enum value [name,status,create_time,net_type,job_direction,pay_mode]`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListDNatInfo`、`BindDNat`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.183 2026-04-09
 
 ### HuaweiCloud SDK Cloudtest

@@ -40,7 +40,7 @@ public:
     /// SetAuditlogPolicyRequestBody members
 
     /// <summary>
-    /// 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
+    /// 审计日志保存天数，取值范围0~3660。0表示关闭审计日志策略。
     /// </summary>
 
     int32_t getKeepDays() const;
@@ -58,13 +58,22 @@ public:
     void setReserveAuditlogs(bool value);
 
     /// <summary>
-    /// 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。
+    /// 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。该参数仅针对RDS for MySQL实例。
     /// </summary>
 
     std::vector<std::string>& getAuditTypes();
     bool auditTypesIsSet() const;
     void unsetauditTypes();
     void setAuditTypes(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 仅打开审计日志策略时有效。内容为打开审计日志时需自动安装pg_audit插件的数据库名称。空表示不自动安装。该参数仅针对RDS for PostgreSQL实例。
+    /// </summary>
+
+    std::vector<std::string>& getDatabases();
+    bool databasesIsSet() const;
+    void unsetdatabases();
+    void setDatabases(const std::vector<std::string>& value);
 
 
 protected:
@@ -74,6 +83,8 @@ protected:
     bool reserveAuditlogsIsSet_;
     std::vector<std::string> auditTypes_;
     bool auditTypesIsSet_;
+    std::vector<std::string> databases_;
+    bool databasesIsSet_;
 
 };
 

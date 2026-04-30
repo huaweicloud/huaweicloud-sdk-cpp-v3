@@ -155,6 +155,24 @@ public:
     void unsetsourceCodehubHttpUrl();
     void setSourceCodehubHttpUrl(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 预合并分支。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    std::string getVirtualMergeBranch() const;
+    bool virtualMergeBranchIsSet() const;
+    void unsetvirtualMergeBranch();
+    void setVirtualMergeBranch(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 预合并提交ID。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    std::string getVirtualMergeCommitId() const;
+    bool virtualMergeCommitIdIsSet() const;
+    void unsetvirtualMergeCommitId();
+    void setVirtualMergeCommitId(const std::string& value);
+
 
 protected:
     std::string action_;
@@ -183,6 +201,10 @@ protected:
     bool sourceCodehubUrlIsSet_;
     std::string sourceCodehubHttpUrl_;
     bool sourceCodehubHttpUrlIsSet_;
+    std::string virtualMergeBranch_;
+    bool virtualMergeBranchIsSet_;
+    std::string virtualMergeCommitId_;
+    bool virtualMergeCommitIdIsSet_;
 
 };
 

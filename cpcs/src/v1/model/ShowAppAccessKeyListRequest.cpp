@@ -14,10 +14,10 @@ ShowAppAccessKeyListRequest::ShowAppAccessKeyListRequest()
 {
     appId_ = "";
     appIdIsSet_ = false;
-    pageSize_ = 0;
-    pageSizeIsSet_ = false;
-    pageNum_ = 0;
-    pageNumIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
     keyName_ = "";
     keyNameIsSet_ = false;
     sortKey_ = "";
@@ -39,11 +39,11 @@ web::json::value ShowAppAccessKeyListRequest::toJson() const
     if(appIdIsSet_) {
         val[utility::conversions::to_string_t("app_id")] = ModelBase::toJson(appId_);
     }
-    if(pageSizeIsSet_) {
-        val[utility::conversions::to_string_t("page_size")] = ModelBase::toJson(pageSize_);
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
-    if(pageNumIsSet_) {
-        val[utility::conversions::to_string_t("page_num")] = ModelBase::toJson(pageNum_);
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
     if(keyNameIsSet_) {
         val[utility::conversions::to_string_t("key_name")] = ModelBase::toJson(keyName_);
@@ -70,22 +70,22 @@ bool ShowAppAccessKeyListRequest::fromJson(const web::json::value& val)
             setAppId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("page_size"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_size"));
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageSize(refVal);
+            setLimit(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("page_num"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_num"));
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageNum(refVal);
+            setOffset(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("key_name"))) {
@@ -140,46 +140,46 @@ void ShowAppAccessKeyListRequest::unsetappId()
     appIdIsSet_ = false;
 }
 
-int32_t ShowAppAccessKeyListRequest::getPageSize() const
+int32_t ShowAppAccessKeyListRequest::getLimit() const
 {
-    return pageSize_;
+    return limit_;
 }
 
-void ShowAppAccessKeyListRequest::setPageSize(int32_t value)
+void ShowAppAccessKeyListRequest::setLimit(int32_t value)
 {
-    pageSize_ = value;
-    pageSizeIsSet_ = true;
+    limit_ = value;
+    limitIsSet_ = true;
 }
 
-bool ShowAppAccessKeyListRequest::pageSizeIsSet() const
+bool ShowAppAccessKeyListRequest::limitIsSet() const
 {
-    return pageSizeIsSet_;
+    return limitIsSet_;
 }
 
-void ShowAppAccessKeyListRequest::unsetpageSize()
+void ShowAppAccessKeyListRequest::unsetlimit()
 {
-    pageSizeIsSet_ = false;
+    limitIsSet_ = false;
 }
 
-int32_t ShowAppAccessKeyListRequest::getPageNum() const
+int32_t ShowAppAccessKeyListRequest::getOffset() const
 {
-    return pageNum_;
+    return offset_;
 }
 
-void ShowAppAccessKeyListRequest::setPageNum(int32_t value)
+void ShowAppAccessKeyListRequest::setOffset(int32_t value)
 {
-    pageNum_ = value;
-    pageNumIsSet_ = true;
+    offset_ = value;
+    offsetIsSet_ = true;
 }
 
-bool ShowAppAccessKeyListRequest::pageNumIsSet() const
+bool ShowAppAccessKeyListRequest::offsetIsSet() const
 {
-    return pageNumIsSet_;
+    return offsetIsSet_;
 }
 
-void ShowAppAccessKeyListRequest::unsetpageNum()
+void ShowAppAccessKeyListRequest::unsetoffset()
 {
-    pageNumIsSet_ = false;
+    offsetIsSet_ = false;
 }
 
 std::string ShowAppAccessKeyListRequest::getKeyName() const

@@ -40,6 +40,8 @@ StepRun::StepRun()
     startTimeIsSet_ = false;
     endTime_ = 0L;
     endTimeIsSet_ = false;
+    dailyBuildNumber_ = "";
+    dailyBuildNumberIsSet_ = false;
 }
 
 StepRun::~StepRun() = default;
@@ -96,6 +98,9 @@ web::json::value StepRun::toJson() const
     }
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
+    }
+    if(dailyBuildNumberIsSet_) {
+        val[utility::conversions::to_string_t("daily_build_number")] = ModelBase::toJson(dailyBuildNumber_);
     }
 
     return val;
@@ -237,6 +242,15 @@ bool StepRun::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("daily_build_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("daily_build_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDailyBuildNumber(refVal);
         }
     }
     return ok;
@@ -556,6 +570,27 @@ bool StepRun::endTimeIsSet() const
 void StepRun::unsetendTime()
 {
     endTimeIsSet_ = false;
+}
+
+std::string StepRun::getDailyBuildNumber() const
+{
+    return dailyBuildNumber_;
+}
+
+void StepRun::setDailyBuildNumber(const std::string& value)
+{
+    dailyBuildNumber_ = value;
+    dailyBuildNumberIsSet_ = true;
+}
+
+bool StepRun::dailyBuildNumberIsSet() const
+{
+    return dailyBuildNumberIsSet_;
+}
+
+void StepRun::unsetdailyBuildNumber()
+{
+    dailyBuildNumberIsSet_ = false;
 }
 
 }

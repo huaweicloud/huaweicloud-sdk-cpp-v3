@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/cpcs/v1/model/SwitchTokenResponse_user_domain.h"
+#include "huaweicloud/cpcs/v1/model/SwitchTokenResponse_token_roles.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cpcs {
@@ -10,21 +10,21 @@ namespace Model {
 
 
 
-SwitchTokenResponse_user_domain::SwitchTokenResponse_user_domain()
+SwitchTokenResponse_token_roles::SwitchTokenResponse_token_roles()
 {
     name_ = "";
     nameIsSet_ = false;
-    id_ = "";
+    id_ = 0;
     idIsSet_ = false;
 }
 
-SwitchTokenResponse_user_domain::~SwitchTokenResponse_user_domain() = default;
+SwitchTokenResponse_token_roles::~SwitchTokenResponse_token_roles() = default;
 
-void SwitchTokenResponse_user_domain::validate()
+void SwitchTokenResponse_token_roles::validate()
 {
 }
 
-web::json::value SwitchTokenResponse_user_domain::toJson() const
+web::json::value SwitchTokenResponse_token_roles::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value SwitchTokenResponse_user_domain::toJson() const
 
     return val;
 }
-bool SwitchTokenResponse_user_domain::fromJson(const web::json::value& val)
+bool SwitchTokenResponse_token_roles::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -54,7 +54,7 @@ bool SwitchTokenResponse_user_domain::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
         }
@@ -63,44 +63,44 @@ bool SwitchTokenResponse_user_domain::fromJson(const web::json::value& val)
 }
 
 
-std::string SwitchTokenResponse_user_domain::getName() const
+std::string SwitchTokenResponse_token_roles::getName() const
 {
     return name_;
 }
 
-void SwitchTokenResponse_user_domain::setName(const std::string& value)
+void SwitchTokenResponse_token_roles::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool SwitchTokenResponse_user_domain::nameIsSet() const
+bool SwitchTokenResponse_token_roles::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void SwitchTokenResponse_user_domain::unsetname()
+void SwitchTokenResponse_token_roles::unsetname()
 {
     nameIsSet_ = false;
 }
 
-std::string SwitchTokenResponse_user_domain::getId() const
+int32_t SwitchTokenResponse_token_roles::getId() const
 {
     return id_;
 }
 
-void SwitchTokenResponse_user_domain::setId(const std::string& value)
+void SwitchTokenResponse_token_roles::setId(int32_t value)
 {
     id_ = value;
     idIsSet_ = true;
 }
 
-bool SwitchTokenResponse_user_domain::idIsSet() const
+bool SwitchTokenResponse_token_roles::idIsSet() const
 {
     return idIsSet_;
 }
 
-void SwitchTokenResponse_user_domain::unsetid()
+void SwitchTokenResponse_token_roles::unsetid()
 {
     idIsSet_ = false;
 }

@@ -87,19 +87,19 @@ public:
     /// 页面大小，不超过1500
     /// </summary>
 
-    int32_t getPageSize() const;
-    bool pageSizeIsSet() const;
-    void unsetpageSize();
-    void setPageSize(int32_t value);
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
 
     /// <summary>
     /// 页数，默认1
     /// </summary>
 
-    int32_t getPageNum() const;
-    bool pageNumIsSet() const;
-    void unsetpageNum();
-    void setPageNum(int32_t value);
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
 
     /// <summary>
     /// 查询起始时间戳，毫秒级时间戳，默认为0，默认从三天前查询
@@ -131,10 +131,10 @@ protected:
     bool algorithmTypeIsSet_;
     std::string certificateType_;
     bool certificateTypeIsSet_;
-    int32_t pageSize_;
-    bool pageSizeIsSet_;
-    int32_t pageNum_;
-    bool pageNumIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
     int64_t from_;
     bool fromIsSet_;
     std::string to_;

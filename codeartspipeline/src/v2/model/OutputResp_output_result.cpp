@@ -14,7 +14,6 @@ OutputResp_output_result::OutputResp_output_result()
 {
     key_ = "";
     keyIsSet_ = false;
-    value_ = "";
     valueIsSet_ = false;
 }
 
@@ -54,7 +53,7 @@ bool OutputResp_output_result::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("value"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValue(refVal);
         }
@@ -84,12 +83,12 @@ void OutputResp_output_result::unsetkey()
     keyIsSet_ = false;
 }
 
-std::string OutputResp_output_result::getValue() const
+Object OutputResp_output_result::getValue() const
 {
     return value_;
 }
 
-void OutputResp_output_result::setValue(const std::string& value)
+void OutputResp_output_result::setValue(const Object& value)
 {
     value_ = value;
     valueIsSet_ = true;

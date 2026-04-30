@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_H_
-#define HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_H_
+#ifndef HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_app_H_
+#define HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_app_H_
 
 
 #include <huaweicloud/cpcs/v1/CpcsExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 鉴权对象
+/// 应用信息
 /// </summary>
-class HUAWEICLOUD_CPCS_V1_EXPORT  AuthObject
+class HUAWEICLOUD_CPCS_V1_EXPORT  SwitchTokenResponse_token_app
     : public ModelBase
 {
 public:
-    AuthObject();
-    virtual ~AuthObject();
+    SwitchTokenResponse_token_app();
+    virtual ~SwitchTokenResponse_token_app();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,19 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// AuthObject members
+    /// SwitchTokenResponse_token_app members
 
     /// <summary>
-    /// 
+    /// 应用名称
+    /// </summary>
+
+    std::string getAppName() const;
+    bool appNameIsSet() const;
+    void unsetappName();
+    void setAppName(const std::string& value);
+
+    /// <summary>
+    /// 应用ID
     /// </summary>
 
     std::string getAppId() const;
@@ -47,10 +56,23 @@ public:
     void unsetappId();
     void setAppId(const std::string& value);
 
+    /// <summary>
+    /// 应用状态
+    /// </summary>
+
+    int32_t getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(int32_t value);
+
 
 protected:
+    std::string appName_;
+    bool appNameIsSet_;
     std::string appId_;
     bool appIdIsSet_;
+    int32_t status_;
+    bool statusIsSet_;
 
 };
 
@@ -61,4 +83,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_H_
+#endif // HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_app_H_

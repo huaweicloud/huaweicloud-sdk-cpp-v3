@@ -9,10 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cpcs/v1/model/SwitchTokenResponse_user.h>
 #include <string>
-#include <vector>
-#include <huaweicloud/cpcs/v1/model/SwitchTokenResponse_ak.h>
+#include <huaweicloud/cpcs/v1/model/SwitchTokenResponse_token.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,49 +40,13 @@ public:
     /// SwitchCpcsTokenResponse members
 
     /// <summary>
-    /// 角色列表
-    /// </summary>
-
-    std::vector<std::string>& getRoles();
-    bool rolesIsSet() const;
-    void unsetroles();
-    void setRoles(const std::vector<std::string>& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
-    SwitchTokenResponse_ak getAk() const;
-    bool akIsSet() const;
-    void unsetak();
-    void setAk(const SwitchTokenResponse_ak& value);
-
-    /// <summary>
-    /// 过期时间
-    /// </summary>
-
-    std::string getExpiredAt() const;
-    bool expiredAtIsSet() const;
-    void unsetexpiredAt();
-    void setExpiredAt(const std::string& value);
-
-    /// <summary>
-    /// 签发时间
-    /// </summary>
-
-    std::string getIssuedAt() const;
-    bool issuedAtIsSet() const;
-    void unsetissuedAt();
-    void setIssuedAt(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    SwitchTokenResponse_user getUser() const;
-    bool userIsSet() const;
-    void unsetuser();
-    void setUser(const SwitchTokenResponse_user& value);
+    SwitchTokenResponse_token getToken() const;
+    bool tokenIsSet() const;
+    void unsettoken();
+    void setToken(const SwitchTokenResponse_token& value);
 
     /// <summary>
     /// 
@@ -97,16 +59,8 @@ public:
 
 
 protected:
-    std::vector<std::string> roles_;
-    bool rolesIsSet_;
-    SwitchTokenResponse_ak ak_;
-    bool akIsSet_;
-    std::string expiredAt_;
-    bool expiredAtIsSet_;
-    std::string issuedAt_;
-    bool issuedAtIsSet_;
-    SwitchTokenResponse_user user_;
-    bool userIsSet_;
+    SwitchTokenResponse_token token_;
+    bool tokenIsSet_;
     std::string xCPCSToken_;
     bool xCPCSTokenIsSet_;
 

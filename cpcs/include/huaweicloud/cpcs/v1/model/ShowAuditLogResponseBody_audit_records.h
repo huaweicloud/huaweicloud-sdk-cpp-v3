@@ -96,28 +96,28 @@ public:
     /// 操作状态
     /// </summary>
 
-    int32_t getOperateStatus() const;
-    bool operateStatusIsSet() const;
-    void unsetoperateStatus();
-    void setOperateStatus(int32_t value);
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
 
     /// <summary>
-    /// 操作结果消息
+    /// 操作失败消息
     /// </summary>
 
-    std::string getOperateMessage() const;
-    bool operateMessageIsSet() const;
-    void unsetoperateMessage();
-    void setOperateMessage(const std::string& value);
+    std::string getFailureMessage() const;
+    bool failureMessageIsSet() const;
+    void unsetfailureMessage();
+    void setFailureMessage(const std::string& value);
 
     /// <summary>
-    /// 审计状态
+    /// 操作验证信息
     /// </summary>
 
-    int32_t getAuditStatus() const;
-    bool auditStatusIsSet() const;
-    void unsetauditStatus();
-    void setAuditStatus(int32_t value);
+    std::string getVerification() const;
+    bool verificationIsSet() const;
+    void unsetverification();
+    void setVerification(const std::string& value);
 
 
 protected:
@@ -133,12 +133,12 @@ protected:
     bool operationIsSet_;
     int64_t time_;
     bool timeIsSet_;
-    int32_t operateStatus_;
-    bool operateStatusIsSet_;
-    std::string operateMessage_;
-    bool operateMessageIsSet_;
-    int32_t auditStatus_;
-    bool auditStatusIsSet_;
+    std::string status_;
+    bool statusIsSet_;
+    std::string failureMessage_;
+    bool failureMessageIsSet_;
+    std::string verification_;
+    bool verificationIsSet_;
 
 };
 

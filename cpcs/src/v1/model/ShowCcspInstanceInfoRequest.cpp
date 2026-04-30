@@ -12,12 +12,12 @@ namespace Model {
 
 ShowCcspInstanceInfoRequest::ShowCcspInstanceInfoRequest()
 {
-    pageSize_ = 0;
-    pageSizeIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    pageNum_ = 0;
-    pageNumIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
     sortKey_ = "";
     sortKeyIsSet_ = false;
     sortDir_ = "";
@@ -40,14 +40,14 @@ web::json::value ShowCcspInstanceInfoRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(pageSizeIsSet_) {
-        val[utility::conversions::to_string_t("page_size")] = ModelBase::toJson(pageSize_);
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(pageNumIsSet_) {
-        val[utility::conversions::to_string_t("page_num")] = ModelBase::toJson(pageNum_);
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
     if(sortKeyIsSet_) {
         val[utility::conversions::to_string_t("sort_key")] = ModelBase::toJson(sortKey_);
@@ -71,13 +71,13 @@ bool ShowCcspInstanceInfoRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("page_size"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_size"));
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageSize(refVal);
+            setLimit(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("name"))) {
@@ -89,13 +89,13 @@ bool ShowCcspInstanceInfoRequest::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("page_num"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_num"));
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageNum(refVal);
+            setOffset(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("sort_key"))) {
@@ -147,25 +147,25 @@ bool ShowCcspInstanceInfoRequest::fromJson(const web::json::value& val)
 }
 
 
-int32_t ShowCcspInstanceInfoRequest::getPageSize() const
+int32_t ShowCcspInstanceInfoRequest::getLimit() const
 {
-    return pageSize_;
+    return limit_;
 }
 
-void ShowCcspInstanceInfoRequest::setPageSize(int32_t value)
+void ShowCcspInstanceInfoRequest::setLimit(int32_t value)
 {
-    pageSize_ = value;
-    pageSizeIsSet_ = true;
+    limit_ = value;
+    limitIsSet_ = true;
 }
 
-bool ShowCcspInstanceInfoRequest::pageSizeIsSet() const
+bool ShowCcspInstanceInfoRequest::limitIsSet() const
 {
-    return pageSizeIsSet_;
+    return limitIsSet_;
 }
 
-void ShowCcspInstanceInfoRequest::unsetpageSize()
+void ShowCcspInstanceInfoRequest::unsetlimit()
 {
-    pageSizeIsSet_ = false;
+    limitIsSet_ = false;
 }
 
 std::string ShowCcspInstanceInfoRequest::getName() const
@@ -189,25 +189,25 @@ void ShowCcspInstanceInfoRequest::unsetname()
     nameIsSet_ = false;
 }
 
-int32_t ShowCcspInstanceInfoRequest::getPageNum() const
+int32_t ShowCcspInstanceInfoRequest::getOffset() const
 {
-    return pageNum_;
+    return offset_;
 }
 
-void ShowCcspInstanceInfoRequest::setPageNum(int32_t value)
+void ShowCcspInstanceInfoRequest::setOffset(int32_t value)
 {
-    pageNum_ = value;
-    pageNumIsSet_ = true;
+    offset_ = value;
+    offsetIsSet_ = true;
 }
 
-bool ShowCcspInstanceInfoRequest::pageNumIsSet() const
+bool ShowCcspInstanceInfoRequest::offsetIsSet() const
 {
-    return pageNumIsSet_;
+    return offsetIsSet_;
 }
 
-void ShowCcspInstanceInfoRequest::unsetpageNum()
+void ShowCcspInstanceInfoRequest::unsetoffset()
 {
-    pageNumIsSet_ = false;
+    offsetIsSet_ = false;
 }
 
 std::string ShowCcspInstanceInfoRequest::getSortKey() const

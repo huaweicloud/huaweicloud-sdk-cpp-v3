@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_ak_H_
-#define HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_ak_H_
+#ifndef HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_user_H_
+#define HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_user_H_
 
 
 #include <huaweicloud/cpcs/v1/CpcsExport.h>
@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cpcs/v1/model/SwitchTokenResponse_token_user_domain.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -20,14 +21,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 授权的ak数据
+/// 用户信息
 /// </summary>
-class HUAWEICLOUD_CPCS_V1_EXPORT  SwitchTokenResponse_ak
+class HUAWEICLOUD_CPCS_V1_EXPORT  SwitchTokenResponse_token_user
     : public ModelBase
 {
 public:
-    SwitchTokenResponse_ak();
-    virtual ~SwitchTokenResponse_ak();
+    SwitchTokenResponse_token_user();
+    virtual ~SwitchTokenResponse_token_user();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +37,19 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// SwitchTokenResponse_ak members
+    /// SwitchTokenResponse_token_user members
 
     /// <summary>
-    /// ak名称
+    /// 
+    /// </summary>
+
+    SwitchTokenResponse_token_user_domain getDomain() const;
+    bool domainIsSet() const;
+    void unsetdomain();
+    void setDomain(const SwitchTokenResponse_token_user_domain& value);
+
+    /// <summary>
+    /// 用户名称
     /// </summary>
 
     std::string getName() const;
@@ -48,7 +58,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// ak id
+    /// 用户ID
     /// </summary>
 
     std::string getId() const;
@@ -56,23 +66,14 @@ public:
     void unsetid();
     void setId(const std::string& value);
 
-    /// <summary>
-    /// ak状态
-    /// </summary>
-
-    std::string getStatus() const;
-    bool statusIsSet() const;
-    void unsetstatus();
-    void setStatus(const std::string& value);
-
 
 protected:
+    SwitchTokenResponse_token_user_domain domain_;
+    bool domainIsSet_;
     std::string name_;
     bool nameIsSet_;
     std::string id_;
     bool idIsSet_;
-    std::string status_;
-    bool statusIsSet_;
 
 };
 
@@ -83,4 +84,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_ak_H_
+#endif // HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_user_H_

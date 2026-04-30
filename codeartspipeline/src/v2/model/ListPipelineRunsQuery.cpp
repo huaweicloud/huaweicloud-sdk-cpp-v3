@@ -17,6 +17,8 @@ ListPipelineRunsQuery::ListPipelineRunsQuery()
     startTimeIsSet_ = false;
     endTime_ = "";
     endTimeIsSet_ = false;
+    updateTime_ = "";
+    updateTimeIsSet_ = false;
     offset_ = 0L;
     offsetIsSet_ = false;
     limit_ = 0L;
@@ -45,6 +47,9 @@ web::json::value ListPipelineRunsQuery::toJson() const
     }
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
+    }
+    if(updateTimeIsSet_) {
+        val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
@@ -90,6 +95,15 @@ bool ListPipelineRunsQuery::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("update_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdateTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
@@ -193,6 +207,27 @@ bool ListPipelineRunsQuery::endTimeIsSet() const
 void ListPipelineRunsQuery::unsetendTime()
 {
     endTimeIsSet_ = false;
+}
+
+std::string ListPipelineRunsQuery::getUpdateTime() const
+{
+    return updateTime_;
+}
+
+void ListPipelineRunsQuery::setUpdateTime(const std::string& value)
+{
+    updateTime_ = value;
+    updateTimeIsSet_ = true;
+}
+
+bool ListPipelineRunsQuery::updateTimeIsSet() const
+{
+    return updateTimeIsSet_;
+}
+
+void ListPipelineRunsQuery::unsetupdateTime()
+{
+    updateTimeIsSet_ = false;
 }
 
 int64_t ListPipelineRunsQuery::getOffset() const

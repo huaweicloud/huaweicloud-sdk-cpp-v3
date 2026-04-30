@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_scope_cluster_H_
-#define HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_scope_cluster_H_
+#ifndef HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_roles_H_
+#define HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_roles_H_
 
 
 #include <huaweicloud/cpcs/v1/CpcsExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 集群信息
+/// 
 /// </summary>
-class HUAWEICLOUD_CPCS_V1_EXPORT  AuthObject_scope_cluster
+class HUAWEICLOUD_CPCS_V1_EXPORT  SwitchTokenResponse_token_roles
     : public ModelBase
 {
 public:
-    AuthObject_scope_cluster();
-    virtual ~AuthObject_scope_cluster();
+    SwitchTokenResponse_token_roles();
+    virtual ~SwitchTokenResponse_token_roles();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,19 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// AuthObject_scope_cluster members
+    /// SwitchTokenResponse_token_roles members
 
     /// <summary>
-    /// 集群id
-    /// </summary>
-
-    std::string getId() const;
-    bool idIsSet() const;
-    void unsetid();
-    void setId(const std::string& value);
-
-    /// <summary>
-    /// 集群名称
+    /// 角色名称
     /// </summary>
 
     std::string getName() const;
@@ -56,12 +47,21 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// 角色ID
+    /// </summary>
+
+    int32_t getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(int32_t value);
+
 
 protected:
-    std::string id_;
-    bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
+    int32_t id_;
+    bool idIsSet_;
 
 };
 
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_scope_cluster_H_
+#endif // HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_roles_H_

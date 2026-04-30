@@ -175,6 +175,15 @@ public:
     void unsetendTime();
     void setEndTime(int64_t value);
 
+    /// <summary>
+    /// **参数解释**： 构建编号。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    std::string getDailyBuildNumber() const;
+    bool dailyBuildNumberIsSet() const;
+    void unsetdailyBuildNumber();
+    void setDailyBuildNumber(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -207,6 +216,8 @@ protected:
     bool startTimeIsSet_;
     int64_t endTime_;
     bool endTimeIsSet_;
+    std::string dailyBuildNumber_;
+    bool dailyBuildNumberIsSet_;
 
 };
 

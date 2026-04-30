@@ -8070,7 +8070,7 @@ std::shared_ptr<SwitchLogCollectionStatusResponse> GaussDBforopenGaussClient::sw
 }
 std::shared_ptr<SwitchLoggerReplicaResponse> GaussDBforopenGaussClient::switchLoggerReplica(SwitchLoggerReplicaRequest &request)
 {
-    std::string localVarPath = "/v3/{project_id}/instance/{instance_id}/switch-logger-replica";
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/switch-logger-replica";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;

@@ -24,12 +24,12 @@ ShowAuditLogResponseBody_audit_records::ShowAuditLogResponseBody_audit_records()
     operationIsSet_ = false;
     time_ = 0L;
     timeIsSet_ = false;
-    operateStatus_ = 0;
-    operateStatusIsSet_ = false;
-    operateMessage_ = "";
-    operateMessageIsSet_ = false;
-    auditStatus_ = 0;
-    auditStatusIsSet_ = false;
+    status_ = "";
+    statusIsSet_ = false;
+    failureMessage_ = "";
+    failureMessageIsSet_ = false;
+    verification_ = "";
+    verificationIsSet_ = false;
 }
 
 ShowAuditLogResponseBody_audit_records::~ShowAuditLogResponseBody_audit_records() = default;
@@ -60,14 +60,14 @@ web::json::value ShowAuditLogResponseBody_audit_records::toJson() const
     if(timeIsSet_) {
         val[utility::conversions::to_string_t("time")] = ModelBase::toJson(time_);
     }
-    if(operateStatusIsSet_) {
-        val[utility::conversions::to_string_t("operate_status")] = ModelBase::toJson(operateStatus_);
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
-    if(operateMessageIsSet_) {
-        val[utility::conversions::to_string_t("operate_message")] = ModelBase::toJson(operateMessage_);
+    if(failureMessageIsSet_) {
+        val[utility::conversions::to_string_t("failure_message")] = ModelBase::toJson(failureMessage_);
     }
-    if(auditStatusIsSet_) {
-        val[utility::conversions::to_string_t("audit_status")] = ModelBase::toJson(auditStatus_);
+    if(verificationIsSet_) {
+        val[utility::conversions::to_string_t("verification")] = ModelBase::toJson(verification_);
     }
 
     return val;
@@ -130,31 +130,31 @@ bool ShowAuditLogResponseBody_audit_records::fromJson(const web::json::value& va
             setTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("operate_status"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("operate_status"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOperateStatus(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("operate_message"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("operate_message"));
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOperateMessage(refVal);
+            setStatus(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("audit_status"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audit_status"));
+    if(val.has_field(utility::conversions::to_string_t("failure_message"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("failure_message"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAuditStatus(refVal);
+            setFailureMessage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("verification"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("verification"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVerification(refVal);
         }
     }
     return ok;
@@ -287,67 +287,67 @@ void ShowAuditLogResponseBody_audit_records::unsettime()
     timeIsSet_ = false;
 }
 
-int32_t ShowAuditLogResponseBody_audit_records::getOperateStatus() const
+std::string ShowAuditLogResponseBody_audit_records::getStatus() const
 {
-    return operateStatus_;
+    return status_;
 }
 
-void ShowAuditLogResponseBody_audit_records::setOperateStatus(int32_t value)
+void ShowAuditLogResponseBody_audit_records::setStatus(const std::string& value)
 {
-    operateStatus_ = value;
-    operateStatusIsSet_ = true;
+    status_ = value;
+    statusIsSet_ = true;
 }
 
-bool ShowAuditLogResponseBody_audit_records::operateStatusIsSet() const
+bool ShowAuditLogResponseBody_audit_records::statusIsSet() const
 {
-    return operateStatusIsSet_;
+    return statusIsSet_;
 }
 
-void ShowAuditLogResponseBody_audit_records::unsetoperateStatus()
+void ShowAuditLogResponseBody_audit_records::unsetstatus()
 {
-    operateStatusIsSet_ = false;
+    statusIsSet_ = false;
 }
 
-std::string ShowAuditLogResponseBody_audit_records::getOperateMessage() const
+std::string ShowAuditLogResponseBody_audit_records::getFailureMessage() const
 {
-    return operateMessage_;
+    return failureMessage_;
 }
 
-void ShowAuditLogResponseBody_audit_records::setOperateMessage(const std::string& value)
+void ShowAuditLogResponseBody_audit_records::setFailureMessage(const std::string& value)
 {
-    operateMessage_ = value;
-    operateMessageIsSet_ = true;
+    failureMessage_ = value;
+    failureMessageIsSet_ = true;
 }
 
-bool ShowAuditLogResponseBody_audit_records::operateMessageIsSet() const
+bool ShowAuditLogResponseBody_audit_records::failureMessageIsSet() const
 {
-    return operateMessageIsSet_;
+    return failureMessageIsSet_;
 }
 
-void ShowAuditLogResponseBody_audit_records::unsetoperateMessage()
+void ShowAuditLogResponseBody_audit_records::unsetfailureMessage()
 {
-    operateMessageIsSet_ = false;
+    failureMessageIsSet_ = false;
 }
 
-int32_t ShowAuditLogResponseBody_audit_records::getAuditStatus() const
+std::string ShowAuditLogResponseBody_audit_records::getVerification() const
 {
-    return auditStatus_;
+    return verification_;
 }
 
-void ShowAuditLogResponseBody_audit_records::setAuditStatus(int32_t value)
+void ShowAuditLogResponseBody_audit_records::setVerification(const std::string& value)
 {
-    auditStatus_ = value;
-    auditStatusIsSet_ = true;
+    verification_ = value;
+    verificationIsSet_ = true;
 }
 
-bool ShowAuditLogResponseBody_audit_records::auditStatusIsSet() const
+bool ShowAuditLogResponseBody_audit_records::verificationIsSet() const
 {
-    return auditStatusIsSet_;
+    return verificationIsSet_;
 }
 
-void ShowAuditLogResponseBody_audit_records::unsetauditStatus()
+void ShowAuditLogResponseBody_audit_records::unsetverification()
 {
-    auditStatusIsSet_ = false;
+    verificationIsSet_ = false;
 }
 
 }

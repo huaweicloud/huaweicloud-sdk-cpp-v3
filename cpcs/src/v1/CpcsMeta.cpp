@@ -138,11 +138,11 @@ HttpRequestDef CpcsMeta::genRequestDefForEnableCcspInstance() {
 
 HttpRequestDef CpcsMeta::genRequestDefForListCcspTenantImages() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("ImageName")
                   .withJsonTag("image_name")
@@ -171,11 +171,11 @@ HttpRequestDef CpcsMeta::genRequestDefForShowAccessKey() {
 
 HttpRequestDef CpcsMeta::genRequestDefForShowAppAccessKeyList() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("KeyName")
                   .withJsonTag("key_name")
@@ -191,11 +191,11 @@ HttpRequestDef CpcsMeta::genRequestDefForShowAppAccessKeyList() {
 
 HttpRequestDef CpcsMeta::genRequestDefForShowAppList() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("AppName")
                   .withJsonTag("app_name")
@@ -220,11 +220,11 @@ HttpRequestDef CpcsMeta::genRequestDefForShowAssociationList() {
     reqDefBuilder.withRequestField(FieldDef().withName("AppId")
                   .withJsonTag("app_id")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
                   .withJsonTag("sort_key")
@@ -237,11 +237,11 @@ HttpRequestDef CpcsMeta::genRequestDefForShowAssociationList() {
 
 HttpRequestDef CpcsMeta::genRequestDefForShowAuditLog() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
                   .withJsonTag("start_time")
@@ -264,11 +264,11 @@ HttpRequestDef CpcsMeta::genRequestDefForShowCcspCluster() {
 
 HttpRequestDef CpcsMeta::genRequestDefForShowCcspClusterList() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Name")
                   .withJsonTag("name")
@@ -287,14 +287,14 @@ HttpRequestDef CpcsMeta::genRequestDefForShowCcspClusterList() {
 
 HttpRequestDef CpcsMeta::genRequestDefForShowCcspInstanceInfo() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Name")
                   .withJsonTag("name")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
                   .withJsonTag("sort_key")
@@ -316,11 +316,11 @@ HttpRequestDef CpcsMeta::genRequestDefForShowCcspInstanceInfo() {
 
 HttpRequestDef CpcsMeta::genRequestDefForShowClusterAccessKeyList() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("AppName")
                   .withJsonTag("app_name")
@@ -356,11 +356,11 @@ HttpRequestDef CpcsMeta::genRequestDefForShowResourceDetailAccessKey() {
     reqDefBuilder.withRequestField(FieldDef().withName("CertificateType")
                   .withJsonTag("certificate_type")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("From")
                   .withJsonTag("from")
@@ -388,11 +388,11 @@ HttpRequestDef CpcsMeta::genRequestDefForShowResourceDetailCertificate() {
     reqDefBuilder.withRequestField(FieldDef().withName("CertificateType")
                   .withJsonTag("certificate_type")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
-                  .withJsonTag("page_size")
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PageNum")
-                  .withJsonTag("page_num")
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("From")
                   .withJsonTag("from")

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_auth_accessKey_H_
-#define HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_auth_accessKey_H_
+#ifndef HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_user_domain_H_
+#define HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_user_domain_H_
 
 
 #include <huaweicloud/cpcs/v1/CpcsExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// ak/sk信息
+/// 主账号信息
 /// </summary>
-class HUAWEICLOUD_CPCS_V1_EXPORT  AuthObject_auth_accessKey
+class HUAWEICLOUD_CPCS_V1_EXPORT  SwitchTokenResponse_token_user_domain
     : public ModelBase
 {
 public:
-    AuthObject_auth_accessKey();
-    virtual ~AuthObject_auth_accessKey();
+    SwitchTokenResponse_token_user_domain();
+    virtual ~SwitchTokenResponse_token_user_domain();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,19 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// AuthObject_auth_accessKey members
+    /// SwitchTokenResponse_token_user_domain members
 
     /// <summary>
-    /// ak id
+    /// 主账号名称
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
+    /// 主账号ID
     /// </summary>
 
     std::string getId() const;
@@ -47,21 +56,12 @@ public:
     void unsetid();
     void setId(const std::string& value);
 
-    /// <summary>
-    /// sk id
-    /// </summary>
-
-    std::string getSecret() const;
-    bool secretIsSet() const;
-    void unsetsecret();
-    void setSecret(const std::string& value);
-
 
 protected:
+    std::string name_;
+    bool nameIsSet_;
     std::string id_;
     bool idIsSet_;
-    std::string secret_;
-    bool secretIsSet_;
 
 };
 
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CPCS_V1_MODEL_AuthObject_auth_accessKey_H_
+#endif // HUAWEICLOUD_SDK_CPCS_V1_MODEL_SwitchTokenResponse_token_user_domain_H_

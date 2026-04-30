@@ -681,11 +681,11 @@ std::shared_ptr<ListCcspTenantImagesResponse> CpcsClient::listCcspTenantImages(L
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.imageNameIsSet()) {
         localVarQueryParams["image_name"] = parameterToString(request.getImageName());
@@ -790,11 +790,11 @@ std::shared_ptr<ShowAppAccessKeyListResponse> CpcsClient::showAppAccessKeyList(S
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.keyNameIsSet()) {
         localVarQueryParams["key_name"] = parameterToString(request.getKeyName());
@@ -834,11 +834,11 @@ std::shared_ptr<ShowAppListResponse> CpcsClient::showAppList(ShowAppListRequest 
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.appNameIsSet()) {
         localVarQueryParams["app_name"] = parameterToString(request.getAppName());
@@ -887,11 +887,11 @@ std::shared_ptr<ShowAssociationListResponse> CpcsClient::showAssociationList(Sho
     if (request.appIdIsSet()) {
         localVarQueryParams["app_id"] = parameterToString(request.getAppId());
     }
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.sortKeyIsSet()) {
         localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
@@ -928,11 +928,11 @@ std::shared_ptr<ShowAuditLogResponse> CpcsClient::showAuditLog(ShowAuditLogReque
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.startTimeIsSet()) {
         localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
@@ -1028,11 +1028,11 @@ std::shared_ptr<ShowCcspClusterListResponse> CpcsClient::showCcspClusterList(Sho
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.nameIsSet()) {
         localVarQueryParams["name"] = parameterToString(request.getName());
@@ -1075,14 +1075,14 @@ std::shared_ptr<ShowCcspInstanceInfoResponse> CpcsClient::showCcspInstanceInfo(S
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
     if (request.nameIsSet()) {
         localVarQueryParams["name"] = parameterToString(request.getName());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.sortKeyIsSet()) {
         localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
@@ -1129,11 +1129,11 @@ std::shared_ptr<ShowClusterAccessKeyListResponse> CpcsClient::showClusterAccessK
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.appNameIsSet()) {
         localVarQueryParams["app_name"] = parameterToString(request.getAppName());
@@ -1218,11 +1218,11 @@ std::shared_ptr<ShowResourceDetailAccessKeyResponse> CpcsClient::showResourceDet
     if (request.certificateTypeIsSet()) {
         localVarQueryParams["certificate_type"] = parameterToString(request.getCertificateType());
     }
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.fromIsSet()) {
         localVarQueryParams["from"] = parameterToString(request.getFrom());
@@ -1274,11 +1274,11 @@ std::shared_ptr<ShowResourceDetailCertificateResponse> CpcsClient::showResourceD
     if (request.certificateTypeIsSet()) {
         localVarQueryParams["certificate_type"] = parameterToString(request.getCertificateType());
     }
-    if (request.pageSizeIsSet()) {
-        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.pageNumIsSet()) {
-        localVarQueryParams["page_num"] = parameterToString(request.getPageNum());
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
     if (request.fromIsSet()) {
         localVarQueryParams["from"] = parameterToString(request.getFrom());

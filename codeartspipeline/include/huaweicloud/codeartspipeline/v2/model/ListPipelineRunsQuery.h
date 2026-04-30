@@ -67,6 +67,15 @@ public:
     void setEndTime(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 流水线状态更新时间。 **约束限制**： 不涉及。 **取值范围**： 时间戳或者yyyy-MM-dd HH:mm:ss格式均可。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getUpdateTime() const;
+    bool updateTimeIsSet() const;
+    void unsetupdateTime();
+    void setUpdateTime(const std::string& value);
+
+    /// <summary>
     /// **参数解释**： 起始偏移。 **约束限制**： 不涉及。 **取值范围**： 大于等于零。 **默认取值**： 不涉及。 
     /// </summary>
 
@@ -85,7 +94,7 @@ public:
     void setLimit(int64_t value);
 
     /// <summary>
-    /// **参数解释**： 排序字段名称。 **约束限制**： 不涉及。 **取值范围**： \&quot;start_time\&quot; - 流水线开始时间。 **默认取值**： 不涉及。 
+    /// **参数解释**： 排序字段名称。 **约束限制**： 不涉及。 **取值范围**： \&quot;start_time\&quot; - 流水线开始时间。 \&quot;update_time\&quot; - 流水线更新时间。 **默认取值**： 不涉及。 
     /// </summary>
 
     std::string getSortKey() const;
@@ -110,6 +119,8 @@ protected:
     bool startTimeIsSet_;
     std::string endTime_;
     bool endTimeIsSet_;
+    std::string updateTime_;
+    bool updateTimeIsSet_;
     int64_t offset_;
     bool offsetIsSet_;
     int64_t limit_;

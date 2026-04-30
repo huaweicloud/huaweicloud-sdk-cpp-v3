@@ -12,10 +12,10 @@ namespace Model {
 
 ShowAppListRequest::ShowAppListRequest()
 {
-    pageSize_ = 0;
-    pageSizeIsSet_ = false;
-    pageNum_ = 0;
-    pageNumIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
     appName_ = "";
     appNameIsSet_ = false;
     vpcName_ = "";
@@ -36,11 +36,11 @@ web::json::value ShowAppListRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(pageSizeIsSet_) {
-        val[utility::conversions::to_string_t("page_size")] = ModelBase::toJson(pageSize_);
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
-    if(pageNumIsSet_) {
-        val[utility::conversions::to_string_t("page_num")] = ModelBase::toJson(pageNum_);
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
     if(appNameIsSet_) {
         val[utility::conversions::to_string_t("app_name")] = ModelBase::toJson(appName_);
@@ -61,22 +61,22 @@ bool ShowAppListRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("page_size"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_size"));
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageSize(refVal);
+            setLimit(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("page_num"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_num"));
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageNum(refVal);
+            setOffset(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("app_name"))) {
@@ -119,46 +119,46 @@ bool ShowAppListRequest::fromJson(const web::json::value& val)
 }
 
 
-int32_t ShowAppListRequest::getPageSize() const
+int32_t ShowAppListRequest::getLimit() const
 {
-    return pageSize_;
+    return limit_;
 }
 
-void ShowAppListRequest::setPageSize(int32_t value)
+void ShowAppListRequest::setLimit(int32_t value)
 {
-    pageSize_ = value;
-    pageSizeIsSet_ = true;
+    limit_ = value;
+    limitIsSet_ = true;
 }
 
-bool ShowAppListRequest::pageSizeIsSet() const
+bool ShowAppListRequest::limitIsSet() const
 {
-    return pageSizeIsSet_;
+    return limitIsSet_;
 }
 
-void ShowAppListRequest::unsetpageSize()
+void ShowAppListRequest::unsetlimit()
 {
-    pageSizeIsSet_ = false;
+    limitIsSet_ = false;
 }
 
-int32_t ShowAppListRequest::getPageNum() const
+int32_t ShowAppListRequest::getOffset() const
 {
-    return pageNum_;
+    return offset_;
 }
 
-void ShowAppListRequest::setPageNum(int32_t value)
+void ShowAppListRequest::setOffset(int32_t value)
 {
-    pageNum_ = value;
-    pageNumIsSet_ = true;
+    offset_ = value;
+    offsetIsSet_ = true;
 }
 
-bool ShowAppListRequest::pageNumIsSet() const
+bool ShowAppListRequest::offsetIsSet() const
 {
-    return pageNumIsSet_;
+    return offsetIsSet_;
 }
 
-void ShowAppListRequest::unsetpageNum()
+void ShowAppListRequest::unsetoffset()
 {
-    pageNumIsSet_ = false;
+    offsetIsSet_ = false;
 }
 
 std::string ShowAppListRequest::getAppName() const

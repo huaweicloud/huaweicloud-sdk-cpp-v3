@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -51,16 +52,16 @@ public:
     /// **参数解释**： 步骤输出value值。 **取值范围**： 不涉及。 
     /// </summary>
 
-    std::string getValue() const;
+    Object getValue() const;
     bool valueIsSet() const;
     void unsetvalue();
-    void setValue(const std::string& value);
+    void setValue(const Object& value);
 
 
 protected:
     std::string key_;
     bool keyIsSet_;
-    std::string value_;
+    Object value_;
     bool valueIsSet_;
 
 };

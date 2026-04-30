@@ -42,10 +42,10 @@ public:
     /// 指定查询返回记录条数，默认值10
     /// </summary>
 
-    int32_t getPageSize() const;
-    bool pageSizeIsSet() const;
-    void unsetpageSize();
-    void setPageSize(int32_t value);
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
 
     /// <summary>
     /// 实例名称
@@ -57,13 +57,13 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 索引位置，从page_num指定的下一条数据开始查询默认值为0
+    /// 索引位置，从offset指定的下一条数据开始查询默认值为0
     /// </summary>
 
-    int32_t getPageNum() const;
-    bool pageNumIsSet() const;
-    void unsetpageNum();
-    void setPageNum(int32_t value);
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
 
     /// <summary>
     /// 排序属性，目前支持以下属性： - **create_time** : 实例创建时间（默认）
@@ -112,12 +112,12 @@ public:
 
 
 protected:
-    int32_t pageSize_;
-    bool pageSizeIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
     std::string name_;
     bool nameIsSet_;
-    int32_t pageNum_;
-    bool pageNumIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
     std::string sortKey_;
     bool sortKeyIsSet_;
     std::string sortDir_;

@@ -12,13 +12,7 @@ namespace Model {
 
 SwitchCpcsTokenResponse::SwitchCpcsTokenResponse()
 {
-    rolesIsSet_ = false;
-    akIsSet_ = false;
-    expiredAt_ = "";
-    expiredAtIsSet_ = false;
-    issuedAt_ = "";
-    issuedAtIsSet_ = false;
-    userIsSet_ = false;
+    tokenIsSet_ = false;
     xCPCSToken_ = "";
     xCPCSTokenIsSet_ = false;
 }
@@ -33,20 +27,8 @@ web::json::value SwitchCpcsTokenResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(rolesIsSet_) {
-        val[utility::conversions::to_string_t("roles")] = ModelBase::toJson(roles_);
-    }
-    if(akIsSet_) {
-        val[utility::conversions::to_string_t("ak")] = ModelBase::toJson(ak_);
-    }
-    if(expiredAtIsSet_) {
-        val[utility::conversions::to_string_t("expired_at")] = ModelBase::toJson(expiredAt_);
-    }
-    if(issuedAtIsSet_) {
-        val[utility::conversions::to_string_t("issued_at")] = ModelBase::toJson(issuedAt_);
-    }
-    if(userIsSet_) {
-        val[utility::conversions::to_string_t("user")] = ModelBase::toJson(user_);
+    if(tokenIsSet_) {
+        val[utility::conversions::to_string_t("token")] = ModelBase::toJson(token_);
     }
     if(xCPCSTokenIsSet_) {
         val[utility::conversions::to_string_t("X-CPCS-Token")] = ModelBase::toJson(xCPCSToken_);
@@ -58,49 +40,13 @@ bool SwitchCpcsTokenResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("roles"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("roles"));
+    if(val.has_field(utility::conversions::to_string_t("token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("token"));
         if(!fieldValue.is_null())
         {
-            std::vector<std::string> refVal;
+            SwitchTokenResponse_token refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRoles(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("ak"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ak"));
-        if(!fieldValue.is_null())
-        {
-            SwitchTokenResponse_ak refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAk(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("expired_at"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expired_at"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setExpiredAt(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("issued_at"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("issued_at"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIssuedAt(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("user"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user"));
-        if(!fieldValue.is_null())
-        {
-            SwitchTokenResponse_user refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUser(refVal);
+            setToken(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-CPCS-Token"))) {
@@ -116,109 +62,25 @@ bool SwitchCpcsTokenResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<std::string>& SwitchCpcsTokenResponse::getRoles()
+SwitchTokenResponse_token SwitchCpcsTokenResponse::getToken() const
 {
-    return roles_;
+    return token_;
 }
 
-void SwitchCpcsTokenResponse::setRoles(const std::vector<std::string>& value)
+void SwitchCpcsTokenResponse::setToken(const SwitchTokenResponse_token& value)
 {
-    roles_ = value;
-    rolesIsSet_ = true;
+    token_ = value;
+    tokenIsSet_ = true;
 }
 
-bool SwitchCpcsTokenResponse::rolesIsSet() const
+bool SwitchCpcsTokenResponse::tokenIsSet() const
 {
-    return rolesIsSet_;
+    return tokenIsSet_;
 }
 
-void SwitchCpcsTokenResponse::unsetroles()
+void SwitchCpcsTokenResponse::unsettoken()
 {
-    rolesIsSet_ = false;
-}
-
-SwitchTokenResponse_ak SwitchCpcsTokenResponse::getAk() const
-{
-    return ak_;
-}
-
-void SwitchCpcsTokenResponse::setAk(const SwitchTokenResponse_ak& value)
-{
-    ak_ = value;
-    akIsSet_ = true;
-}
-
-bool SwitchCpcsTokenResponse::akIsSet() const
-{
-    return akIsSet_;
-}
-
-void SwitchCpcsTokenResponse::unsetak()
-{
-    akIsSet_ = false;
-}
-
-std::string SwitchCpcsTokenResponse::getExpiredAt() const
-{
-    return expiredAt_;
-}
-
-void SwitchCpcsTokenResponse::setExpiredAt(const std::string& value)
-{
-    expiredAt_ = value;
-    expiredAtIsSet_ = true;
-}
-
-bool SwitchCpcsTokenResponse::expiredAtIsSet() const
-{
-    return expiredAtIsSet_;
-}
-
-void SwitchCpcsTokenResponse::unsetexpiredAt()
-{
-    expiredAtIsSet_ = false;
-}
-
-std::string SwitchCpcsTokenResponse::getIssuedAt() const
-{
-    return issuedAt_;
-}
-
-void SwitchCpcsTokenResponse::setIssuedAt(const std::string& value)
-{
-    issuedAt_ = value;
-    issuedAtIsSet_ = true;
-}
-
-bool SwitchCpcsTokenResponse::issuedAtIsSet() const
-{
-    return issuedAtIsSet_;
-}
-
-void SwitchCpcsTokenResponse::unsetissuedAt()
-{
-    issuedAtIsSet_ = false;
-}
-
-SwitchTokenResponse_user SwitchCpcsTokenResponse::getUser() const
-{
-    return user_;
-}
-
-void SwitchCpcsTokenResponse::setUser(const SwitchTokenResponse_user& value)
-{
-    user_ = value;
-    userIsSet_ = true;
-}
-
-bool SwitchCpcsTokenResponse::userIsSet() const
-{
-    return userIsSet_;
-}
-
-void SwitchCpcsTokenResponse::unsetuser()
-{
-    userIsSet_ = false;
+    tokenIsSet_ = false;
 }
 
 std::string SwitchCpcsTokenResponse::getXCPCSToken() const

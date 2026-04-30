@@ -22,10 +22,10 @@ ShowResourceDetailAccessKeyRequest::ShowResourceDetailAccessKeyRequest()
     algorithmTypeIsSet_ = false;
     certificateType_ = "";
     certificateTypeIsSet_ = false;
-    pageSize_ = 0;
-    pageSizeIsSet_ = false;
-    pageNum_ = 0;
-    pageNumIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
     from_ = 0L;
     fromIsSet_ = false;
     to_ = "";
@@ -57,11 +57,11 @@ web::json::value ShowResourceDetailAccessKeyRequest::toJson() const
     if(certificateTypeIsSet_) {
         val[utility::conversions::to_string_t("certificate_type")] = ModelBase::toJson(certificateType_);
     }
-    if(pageSizeIsSet_) {
-        val[utility::conversions::to_string_t("page_size")] = ModelBase::toJson(pageSize_);
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
-    if(pageNumIsSet_) {
-        val[utility::conversions::to_string_t("page_num")] = ModelBase::toJson(pageNum_);
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
     if(fromIsSet_) {
         val[utility::conversions::to_string_t("from")] = ModelBase::toJson(from_);
@@ -121,22 +121,22 @@ bool ShowResourceDetailAccessKeyRequest::fromJson(const web::json::value& val)
             setCertificateType(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("page_size"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_size"));
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageSize(refVal);
+            setLimit(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("page_num"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_num"));
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageNum(refVal);
+            setOffset(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("from"))) {
@@ -266,46 +266,46 @@ void ShowResourceDetailAccessKeyRequest::unsetcertificateType()
     certificateTypeIsSet_ = false;
 }
 
-int32_t ShowResourceDetailAccessKeyRequest::getPageSize() const
+int32_t ShowResourceDetailAccessKeyRequest::getLimit() const
 {
-    return pageSize_;
+    return limit_;
 }
 
-void ShowResourceDetailAccessKeyRequest::setPageSize(int32_t value)
+void ShowResourceDetailAccessKeyRequest::setLimit(int32_t value)
 {
-    pageSize_ = value;
-    pageSizeIsSet_ = true;
+    limit_ = value;
+    limitIsSet_ = true;
 }
 
-bool ShowResourceDetailAccessKeyRequest::pageSizeIsSet() const
+bool ShowResourceDetailAccessKeyRequest::limitIsSet() const
 {
-    return pageSizeIsSet_;
+    return limitIsSet_;
 }
 
-void ShowResourceDetailAccessKeyRequest::unsetpageSize()
+void ShowResourceDetailAccessKeyRequest::unsetlimit()
 {
-    pageSizeIsSet_ = false;
+    limitIsSet_ = false;
 }
 
-int32_t ShowResourceDetailAccessKeyRequest::getPageNum() const
+int32_t ShowResourceDetailAccessKeyRequest::getOffset() const
 {
-    return pageNum_;
+    return offset_;
 }
 
-void ShowResourceDetailAccessKeyRequest::setPageNum(int32_t value)
+void ShowResourceDetailAccessKeyRequest::setOffset(int32_t value)
 {
-    pageNum_ = value;
-    pageNumIsSet_ = true;
+    offset_ = value;
+    offsetIsSet_ = true;
 }
 
-bool ShowResourceDetailAccessKeyRequest::pageNumIsSet() const
+bool ShowResourceDetailAccessKeyRequest::offsetIsSet() const
 {
-    return pageNumIsSet_;
+    return offsetIsSet_;
 }
 
-void ShowResourceDetailAccessKeyRequest::unsetpageNum()
+void ShowResourceDetailAccessKeyRequest::unsetoffset()
 {
-    pageNumIsSet_ = false;
+    offsetIsSet_ = false;
 }
 
 int64_t ShowResourceDetailAccessKeyRequest::getFrom() const

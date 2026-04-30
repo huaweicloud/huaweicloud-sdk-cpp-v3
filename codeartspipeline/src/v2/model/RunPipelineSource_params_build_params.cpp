@@ -38,6 +38,10 @@ RunPipelineSource_params_build_params::RunPipelineSource_params_build_params()
     sourceCodehubUrlIsSet_ = false;
     sourceCodehubHttpUrl_ = "";
     sourceCodehubHttpUrlIsSet_ = false;
+    virtualMergeBranch_ = "";
+    virtualMergeBranchIsSet_ = false;
+    virtualMergeCommitId_ = "";
+    virtualMergeCommitIdIsSet_ = false;
 }
 
 RunPipelineSource_params_build_params::~RunPipelineSource_params_build_params() = default;
@@ -88,6 +92,12 @@ web::json::value RunPipelineSource_params_build_params::toJson() const
     }
     if(sourceCodehubHttpUrlIsSet_) {
         val[utility::conversions::to_string_t("source_codehub_http_url")] = ModelBase::toJson(sourceCodehubHttpUrl_);
+    }
+    if(virtualMergeBranchIsSet_) {
+        val[utility::conversions::to_string_t("virtual_merge_branch")] = ModelBase::toJson(virtualMergeBranch_);
+    }
+    if(virtualMergeCommitIdIsSet_) {
+        val[utility::conversions::to_string_t("virtual_merge_commitId")] = ModelBase::toJson(virtualMergeCommitId_);
     }
 
     return val;
@@ -211,6 +221,24 @@ bool RunPipelineSource_params_build_params::fromJson(const web::json::value& val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSourceCodehubHttpUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("virtual_merge_branch"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("virtual_merge_branch"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVirtualMergeBranch(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("virtual_merge_commitId"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("virtual_merge_commitId"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVirtualMergeCommitId(refVal);
         }
     }
     return ok;
@@ -488,6 +516,48 @@ bool RunPipelineSource_params_build_params::sourceCodehubHttpUrlIsSet() const
 void RunPipelineSource_params_build_params::unsetsourceCodehubHttpUrl()
 {
     sourceCodehubHttpUrlIsSet_ = false;
+}
+
+std::string RunPipelineSource_params_build_params::getVirtualMergeBranch() const
+{
+    return virtualMergeBranch_;
+}
+
+void RunPipelineSource_params_build_params::setVirtualMergeBranch(const std::string& value)
+{
+    virtualMergeBranch_ = value;
+    virtualMergeBranchIsSet_ = true;
+}
+
+bool RunPipelineSource_params_build_params::virtualMergeBranchIsSet() const
+{
+    return virtualMergeBranchIsSet_;
+}
+
+void RunPipelineSource_params_build_params::unsetvirtualMergeBranch()
+{
+    virtualMergeBranchIsSet_ = false;
+}
+
+std::string RunPipelineSource_params_build_params::getVirtualMergeCommitId() const
+{
+    return virtualMergeCommitId_;
+}
+
+void RunPipelineSource_params_build_params::setVirtualMergeCommitId(const std::string& value)
+{
+    virtualMergeCommitId_ = value;
+    virtualMergeCommitIdIsSet_ = true;
+}
+
+bool RunPipelineSource_params_build_params::virtualMergeCommitIdIsSet() const
+{
+    return virtualMergeCommitIdIsSet_;
+}
+
+void RunPipelineSource_params_build_params::unsetvirtualMergeCommitId()
+{
+    virtualMergeCommitIdIsSet_ = false;
 }
 
 }

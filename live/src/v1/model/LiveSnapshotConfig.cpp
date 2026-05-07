@@ -22,6 +22,8 @@ LiveSnapshotConfig::LiveSnapshotConfig()
     timeIntervalIsSet_ = false;
     objectWriteMode_ = 0;
     objectWriteModeIsSet_ = false;
+    snapshotMode_ = "";
+    snapshotModeIsSet_ = false;
     obsLocationIsSet_ = false;
     callBackEnable_ = "";
     callBackEnableIsSet_ = false;
@@ -59,6 +61,9 @@ web::json::value LiveSnapshotConfig::toJson() const
     }
     if(objectWriteModeIsSet_) {
         val[utility::conversions::to_string_t("object_write_mode")] = ModelBase::toJson(objectWriteMode_);
+    }
+    if(snapshotModeIsSet_) {
+        val[utility::conversions::to_string_t("snapshot_mode")] = ModelBase::toJson(snapshotMode_);
     }
     if(obsLocationIsSet_) {
         val[utility::conversions::to_string_t("obs_location")] = ModelBase::toJson(obsLocation_);
@@ -128,6 +133,15 @@ bool LiveSnapshotConfig::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObjectWriteMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("snapshot_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("snapshot_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSnapshotMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("obs_location"))) {
@@ -291,6 +305,27 @@ bool LiveSnapshotConfig::objectWriteModeIsSet() const
 void LiveSnapshotConfig::unsetobjectWriteMode()
 {
     objectWriteModeIsSet_ = false;
+}
+
+std::string LiveSnapshotConfig::getSnapshotMode() const
+{
+    return snapshotMode_;
+}
+
+void LiveSnapshotConfig::setSnapshotMode(const std::string& value)
+{
+    snapshotMode_ = value;
+    snapshotModeIsSet_ = true;
+}
+
+bool LiveSnapshotConfig::snapshotModeIsSet() const
+{
+    return snapshotModeIsSet_;
+}
+
+void LiveSnapshotConfig::unsetsnapshotMode()
+{
+    snapshotModeIsSet_ = false;
 }
 
 ObsFileAddr LiveSnapshotConfig::getObsLocation() const

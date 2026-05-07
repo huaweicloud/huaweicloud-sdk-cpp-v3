@@ -12,8 +12,6 @@ namespace Model {
 
 ListRecordDataRequest::ListRecordDataRequest()
 {
-    projectId_ = "";
-    projectIdIsSet_ = false;
     publishDomain_ = "";
     publishDomainIsSet_ = false;
     startTime_ = "";
@@ -32,9 +30,6 @@ web::json::value ListRecordDataRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(projectIdIsSet_) {
-        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
-    }
     if(publishDomainIsSet_) {
         val[utility::conversions::to_string_t("publish_domain")] = ModelBase::toJson(publishDomain_);
     }
@@ -51,15 +46,6 @@ bool ListRecordDataRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("publish_domain"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("publish_domain"));
         if(!fieldValue.is_null())
@@ -90,27 +76,6 @@ bool ListRecordDataRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string ListRecordDataRequest::getProjectId() const
-{
-    return projectId_;
-}
-
-void ListRecordDataRequest::setProjectId(const std::string& value)
-{
-    projectId_ = value;
-    projectIdIsSet_ = true;
-}
-
-bool ListRecordDataRequest::projectIdIsSet() const
-{
-    return projectIdIsSet_;
-}
-
-void ListRecordDataRequest::unsetprojectId()
-{
-    projectIdIsSet_ = false;
-}
 
 std::string ListRecordDataRequest::getPublishDomain() const
 {

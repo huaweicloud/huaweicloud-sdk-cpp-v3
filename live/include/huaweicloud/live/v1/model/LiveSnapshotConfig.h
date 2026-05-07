@@ -85,6 +85,15 @@ public:
     void setObjectWriteMode(int32_t value);
 
     /// <summary>
+    /// **参数解释**： 截图模式 **约束限制**： 不涉及 **取值范围**：   - keyframe：I帧截图只选取、保存符合要求的I帧。   - nokeyframe：非I帧截图只选取、保存符合要求的非I帧。   - random：随机截图交替选取、保存符合要求的I帧及非I帧。 **默认取值**： keyframe 
+    /// </summary>
+
+    std::string getSnapshotMode() const;
+    bool snapshotModeIsSet() const;
+    void unsetsnapshotMode();
+    void setSnapshotMode(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -150,6 +159,8 @@ protected:
     bool timeIntervalIsSet_;
     int32_t objectWriteMode_;
     bool objectWriteModeIsSet_;
+    std::string snapshotMode_;
+    bool snapshotModeIsSet_;
     ObsFileAddr obsLocation_;
     bool obsLocationIsSet_;
     std::string callBackEnable_;

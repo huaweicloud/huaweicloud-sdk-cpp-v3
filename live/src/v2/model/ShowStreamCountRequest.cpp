@@ -12,8 +12,6 @@ namespace Model {
 
 ShowStreamCountRequest::ShowStreamCountRequest()
 {
-    projectId_ = "";
-    projectIdIsSet_ = false;
     publishDomainsIsSet_ = false;
     startTime_ = "";
     startTimeIsSet_ = false;
@@ -31,9 +29,6 @@ web::json::value ShowStreamCountRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(projectIdIsSet_) {
-        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
-    }
     if(publishDomainsIsSet_) {
         val[utility::conversions::to_string_t("publish_domains")] = ModelBase::toJson(publishDomains_);
     }
@@ -50,15 +45,6 @@ bool ShowStreamCountRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("publish_domains"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("publish_domains"));
         if(!fieldValue.is_null())
@@ -89,27 +75,6 @@ bool ShowStreamCountRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string ShowStreamCountRequest::getProjectId() const
-{
-    return projectId_;
-}
-
-void ShowStreamCountRequest::setProjectId(const std::string& value)
-{
-    projectId_ = value;
-    projectIdIsSet_ = true;
-}
-
-bool ShowStreamCountRequest::projectIdIsSet() const
-{
-    return projectIdIsSet_;
-}
-
-void ShowStreamCountRequest::unsetprojectId()
-{
-    projectIdIsSet_ = false;
-}
 
 std::vector<std::string>& ShowStreamCountRequest::getPublishDomains()
 {

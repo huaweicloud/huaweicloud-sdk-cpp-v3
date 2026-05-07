@@ -302,6 +302,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListTransactionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListTransactionRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListTransactionResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListUpgradePathsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListUpgradePathsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListWaitEventRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListWaitEventRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListWaitEventResponse.h>
@@ -1688,6 +1690,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTransactionResponse> listTransaction(
         ListTransactionRequest &request
+    );
+    // 查询引擎的升级路径
+    //
+    // 查询引擎的升级路径
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUpgradePathsResponse> listUpgradePaths(
+        ListUpgradePathsRequest &request
     );
     // 查询等待事件列表
     //

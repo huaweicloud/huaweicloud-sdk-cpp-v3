@@ -137,6 +137,7 @@ public:
     static HttpRequestDef genRequestDefForListTasks();
     static HttpRequestDef genRequestDefForListTopTableVolumes();
     static HttpRequestDef genRequestDefForListTransaction();
+    static HttpRequestDef genRequestDefForListUpgradePaths();
     static HttpRequestDef genRequestDefForListWaitEvent();
     static HttpRequestDef genRequestDefForModifyAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForModifyEpsQuota();

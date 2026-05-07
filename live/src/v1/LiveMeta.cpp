@@ -654,6 +654,15 @@ HttpRequestDef LiveMeta::genRequestDefForListWatermarkTemplate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForModifyDomainStreamBackup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForModifyFlowOutput() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
@@ -750,6 +759,14 @@ HttpRequestDef LiveMeta::genRequestDefForShowDomainKeyChain() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
                   .withJsonTag("domain")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForShowDomainStreamBackup() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PublishDomain")
+                  .withJsonTag("publish_domain")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

@@ -97,7 +97,7 @@ web::json::value RunPipelineSource_params_build_params::toJson() const
         val[utility::conversions::to_string_t("virtual_merge_branch")] = ModelBase::toJson(virtualMergeBranch_);
     }
     if(virtualMergeCommitIdIsSet_) {
-        val[utility::conversions::to_string_t("virtual_merge_commitId")] = ModelBase::toJson(virtualMergeCommitId_);
+        val[utility::conversions::to_string_t("virtual_merge_commit_id")] = ModelBase::toJson(virtualMergeCommitId_);
     }
 
     return val;
@@ -232,8 +232,8 @@ bool RunPipelineSource_params_build_params::fromJson(const web::json::value& val
             setVirtualMergeBranch(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("virtual_merge_commitId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("virtual_merge_commitId"));
+    if(val.has_field(utility::conversions::to_string_t("virtual_merge_commit_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("virtual_merge_commit_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;

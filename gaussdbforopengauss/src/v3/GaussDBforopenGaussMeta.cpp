@@ -2075,6 +2075,22 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListTransaction() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListUpgradePaths() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceVersion")
+                  .withJsonTag("source_version")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetVersion")
+                  .withJsonTag("target_version")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListWaitEvent() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

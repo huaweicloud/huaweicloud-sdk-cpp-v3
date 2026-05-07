@@ -5255,6 +5255,44 @@ std::shared_ptr<ListTransactionResponse> GaussDBforopenGaussClient::listTransact
 
     return localVarResult;
 }
+std::shared_ptr<ListUpgradePathsResponse> GaussDBforopenGaussClient::listUpgradePaths(ListUpgradePathsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/upgrade-paths";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.sourceVersionIsSet()) {
+        localVarQueryParams["source_version"] = parameterToString(request.getSourceVersion());
+    }
+    if (request.targetVersionIsSet()) {
+        localVarQueryParams["target_version"] = parameterToString(request.getTargetVersion());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForListUpgradePaths());
+
+    std::shared_ptr<ListUpgradePathsResponse> localVarResult = std::make_shared<ListUpgradePathsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListWaitEventResponse> GaussDBforopenGaussClient::listWaitEvent(ListWaitEventRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/wait-event-list";

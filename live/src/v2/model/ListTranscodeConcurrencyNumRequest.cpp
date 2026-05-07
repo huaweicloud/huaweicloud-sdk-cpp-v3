@@ -12,8 +12,6 @@ namespace Model {
 
 ListTranscodeConcurrencyNumRequest::ListTranscodeConcurrencyNumRequest()
 {
-    projectId_ = "";
-    projectIdIsSet_ = false;
     publishDomainsIsSet_ = false;
     app_ = "";
     appIsSet_ = false;
@@ -35,9 +33,6 @@ web::json::value ListTranscodeConcurrencyNumRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(projectIdIsSet_) {
-        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
-    }
     if(publishDomainsIsSet_) {
         val[utility::conversions::to_string_t("publish_domains")] = ModelBase::toJson(publishDomains_);
     }
@@ -60,15 +55,6 @@ bool ListTranscodeConcurrencyNumRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("publish_domains"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("publish_domains"));
         if(!fieldValue.is_null())
@@ -117,27 +103,6 @@ bool ListTranscodeConcurrencyNumRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string ListTranscodeConcurrencyNumRequest::getProjectId() const
-{
-    return projectId_;
-}
-
-void ListTranscodeConcurrencyNumRequest::setProjectId(const std::string& value)
-{
-    projectId_ = value;
-    projectIdIsSet_ = true;
-}
-
-bool ListTranscodeConcurrencyNumRequest::projectIdIsSet() const
-{
-    return projectIdIsSet_;
-}
-
-void ListTranscodeConcurrencyNumRequest::unsetprojectId()
-{
-    projectIdIsSet_ = false;
-}
 
 std::vector<std::string>& ListTranscodeConcurrencyNumRequest::getPublishDomains()
 {

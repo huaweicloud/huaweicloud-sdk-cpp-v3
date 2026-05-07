@@ -12,8 +12,6 @@ namespace Model {
 
 ListSingleStreamFramerateRequest::ListSingleStreamFramerateRequest()
 {
-    projectId_ = "";
-    projectIdIsSet_ = false;
     domain_ = "";
     domainIsSet_ = false;
     app_ = "";
@@ -36,9 +34,6 @@ web::json::value ListSingleStreamFramerateRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(projectIdIsSet_) {
-        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
-    }
     if(domainIsSet_) {
         val[utility::conversions::to_string_t("domain")] = ModelBase::toJson(domain_);
     }
@@ -61,15 +56,6 @@ bool ListSingleStreamFramerateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("domain"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain"));
         if(!fieldValue.is_null())
@@ -118,27 +104,6 @@ bool ListSingleStreamFramerateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string ListSingleStreamFramerateRequest::getProjectId() const
-{
-    return projectId_;
-}
-
-void ListSingleStreamFramerateRequest::setProjectId(const std::string& value)
-{
-    projectId_ = value;
-    projectIdIsSet_ = true;
-}
-
-bool ListSingleStreamFramerateRequest::projectIdIsSet() const
-{
-    return projectIdIsSet_;
-}
-
-void ListSingleStreamFramerateRequest::unsetprojectId()
-{
-    projectIdIsSet_ = false;
-}
 
 std::string ListSingleStreamFramerateRequest::getDomain() const
 {

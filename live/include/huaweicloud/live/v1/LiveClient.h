@@ -81,6 +81,7 @@
 #include <huaweicloud/live/v1/model/DeleteWatermarkTemplateResponse.h>
 #include <huaweicloud/live/v1/model/DomainIpv6SwitchReq.h>
 #include <huaweicloud/live/v1/model/DomainMapping.h>
+#include <huaweicloud/live/v1/model/DomainStreamBackupInfo.h>
 #include <huaweicloud/live/v1/model/GeoBlockingConfigInfo.h>
 #include <huaweicloud/live/v1/model/IPAuthInfo.h>
 #include <huaweicloud/live/v1/model/KeyChainInfo.h>
@@ -123,6 +124,8 @@
 #include <huaweicloud/live/v1/model/LivePullStreamTask.h>
 #include <huaweicloud/live/v1/model/LiveSnapshotConfig.h>
 #include <huaweicloud/live/v1/model/ModifyDelayConfig.h>
+#include <huaweicloud/live/v1/model/ModifyDomainStreamBackupRequest.h>
+#include <huaweicloud/live/v1/model/ModifyDomainStreamBackupResponse.h>
 #include <huaweicloud/live/v1/model/ModifyFlowOutputRequest.h>
 #include <huaweicloud/live/v1/model/ModifyFlowOutputResponse.h>
 #include <huaweicloud/live/v1/model/ModifyFlowSourcesRequest.h>
@@ -152,6 +155,8 @@
 #include <huaweicloud/live/v1/model/ShowDomainKeyChainResponse.h>
 #include <huaweicloud/live/v1/model/ShowDomainRequest.h>
 #include <huaweicloud/live/v1/model/ShowDomainResponse.h>
+#include <huaweicloud/live/v1/model/ShowDomainStreamBackupRequest.h>
+#include <huaweicloud/live/v1/model/ShowDomainStreamBackupResponse.h>
 #include <huaweicloud/live/v1/model/ShowDomainVerificationRequest.h>
 #include <huaweicloud/live/v1/model/ShowDomainVerificationResponse.h>
 #include <huaweicloud/live/v1/model/ShowFlowDetailRequest.h>
@@ -716,6 +721,14 @@ public:
     std::shared_ptr<ListWatermarkTemplateResponse> listWatermarkTemplate(
         ListWatermarkTemplateRequest &request
     );
+    // 设置域名主备流功能开关
+    //
+    // 设置域名主备流功能开关，可支持同一路流推多个，按照先后顺序定优先级，客户可进行流优先级切换
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyDomainStreamBackupResponse> modifyDomainStreamBackup(
+        ModifyDomainStreamBackupRequest &request
+    );
     // 更新转推输出
     //
     // 更新转推输出
@@ -787,6 +800,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDomainKeyChainResponse> showDomainKeyChain(
         ShowDomainKeyChainRequest &request
+    );
+    // 查询域名主备流功能开关
+    //
+    // 查询域名主备流功能开关，可支持同一路流推多个，按照先后顺序定优先级，客户可进行流优先级切换
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDomainStreamBackupResponse> showDomainStreamBackup(
+        ShowDomainStreamBackupRequest &request
     );
     // 查询域名归属权验证信息
     //

@@ -12,8 +12,6 @@ namespace Model {
 
 ShowStreamPortraitRequest::ShowStreamPortraitRequest()
 {
-    projectId_ = "";
-    projectIdIsSet_ = false;
     playDomain_ = "";
     playDomainIsSet_ = false;
     stream_ = "";
@@ -32,9 +30,6 @@ web::json::value ShowStreamPortraitRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(projectIdIsSet_) {
-        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
-    }
     if(playDomainIsSet_) {
         val[utility::conversions::to_string_t("play_domain")] = ModelBase::toJson(playDomain_);
     }
@@ -51,15 +46,6 @@ bool ShowStreamPortraitRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("play_domain"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("play_domain"));
         if(!fieldValue.is_null())
@@ -90,27 +76,6 @@ bool ShowStreamPortraitRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string ShowStreamPortraitRequest::getProjectId() const
-{
-    return projectId_;
-}
-
-void ShowStreamPortraitRequest::setProjectId(const std::string& value)
-{
-    projectId_ = value;
-    projectIdIsSet_ = true;
-}
-
-bool ShowStreamPortraitRequest::projectIdIsSet() const
-{
-    return projectIdIsSet_;
-}
-
-void ShowStreamPortraitRequest::unsetprojectId()
-{
-    projectIdIsSet_ = false;
-}
 
 std::string ShowStreamPortraitRequest::getPlayDomain() const
 {

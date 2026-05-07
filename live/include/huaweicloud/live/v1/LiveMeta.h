@@ -64,6 +64,7 @@ public:
     static HttpRequestDef genRequestDefForListStreamForbidden();
     static HttpRequestDef genRequestDefForListWatermarkRule();
     static HttpRequestDef genRequestDefForListWatermarkTemplate();
+    static HttpRequestDef genRequestDefForModifyDomainStreamBackup();
     static HttpRequestDef genRequestDefForModifyFlowOutput();
     static HttpRequestDef genRequestDefForModifyFlowSources();
     static HttpRequestDef genRequestDefForModifyFlowStart();
@@ -73,6 +74,7 @@ public:
     static HttpRequestDef genRequestDefForSetRefererChain();
     static HttpRequestDef genRequestDefForShowDomain();
     static HttpRequestDef genRequestDefForShowDomainKeyChain();
+    static HttpRequestDef genRequestDefForShowDomainStreamBackup();
     static HttpRequestDef genRequestDefForShowDomainVerification();
     static HttpRequestDef genRequestDefForShowFlowDetail();
     static HttpRequestDef genRequestDefForShowOutputInfo();

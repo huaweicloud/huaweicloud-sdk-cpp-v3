@@ -30,7 +30,6 @@ public:
     static HttpRequestDef genRequestDefForShowStreamCount();
     static HttpRequestDef genRequestDefForShowStreamPortrait();
     static HttpRequestDef genRequestDefForShowUpBandwidth();
-    static HttpRequestDef genRequestDefForListCarouselTaskDetail();
     static HttpRequestDef genRequestDefForListSingleStreamBitrate();
     static HttpRequestDef genRequestDefForListSingleStreamDetail();
     static HttpRequestDef genRequestDefForListSingleStreamFramerate();

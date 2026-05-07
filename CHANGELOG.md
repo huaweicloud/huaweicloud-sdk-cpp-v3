@@ -1,3 +1,30 @@
+# 3.1.186 2026-05-07
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPipelineRunDetail**
+    - changes of response param
+      - `+ sources.params.build_params.virtual_merge_commit_id`
+      - `- sources.params.build_params.virtual_merge_commitId`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListUpgradePaths`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.185 2026-04-30
 
 ### HuaweiCloud SDK CodeArtsPipeline

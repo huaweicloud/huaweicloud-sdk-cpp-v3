@@ -1978,6 +1978,47 @@ std::shared_ptr<ListWatermarkTemplateResponse> LiveClient::listWatermarkTemplate
 
     return localVarResult;
 }
+std::shared_ptr<ModifyDomainStreamBackupResponse> LiveClient::modifyDomainStreamBackup(ModifyDomainStreamBackupRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/domain/stream-backup";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForModifyDomainStreamBackup());
+
+    std::shared_ptr<ModifyDomainStreamBackupResponse> localVarResult = std::make_shared<ModifyDomainStreamBackupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ModifyFlowOutputResponse> LiveClient::modifyFlowOutput(ModifyFlowOutputRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/flows/outputs";
@@ -2323,6 +2364,38 @@ std::shared_ptr<ShowDomainKeyChainResponse> LiveClient::showDomainKeyChain(ShowD
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowDomainKeyChain());
 
     std::shared_ptr<ShowDomainKeyChainResponse> localVarResult = std::make_shared<ShowDomainKeyChainResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDomainStreamBackupResponse> LiveClient::showDomainStreamBackup(ShowDomainStreamBackupRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/domain/stream-backup";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.publishDomainIsSet()) {
+        localVarQueryParams["publish_domain"] = parameterToString(request.getPublishDomain());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowDomainStreamBackup());
+
+    std::shared_ptr<ShowDomainStreamBackupResponse> localVarResult = std::make_shared<ShowDomainStreamBackupResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

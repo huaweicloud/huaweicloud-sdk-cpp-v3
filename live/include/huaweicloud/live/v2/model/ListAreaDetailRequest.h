@@ -40,15 +40,6 @@ public:
     /// ListAreaDetailRequest members
 
     /// <summary>
-    /// 项目ID，获取方法请参考[获取项目ID](https://support.huaweicloud.com/api-live/live_03_0023.html)。 
-    /// </summary>
-
-    std::string getProjectId() const;
-    bool projectIdIsSet() const;
-    void unsetprojectId();
-    void setProjectId(const std::string& value);
-
-    /// <summary>
     /// 查询起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期90天。 
     /// </summary>
 
@@ -140,8 +131,6 @@ public:
 
 
 protected:
-    std::string projectId_;
-    bool projectIdIsSet_;
     std::string startTime_;
     bool startTimeIsSet_;
     std::string endTime_;

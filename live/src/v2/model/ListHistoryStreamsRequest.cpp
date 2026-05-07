@@ -12,8 +12,6 @@ namespace Model {
 
 ListHistoryStreamsRequest::ListHistoryStreamsRequest()
 {
-    projectId_ = "";
-    projectIdIsSet_ = false;
     domainIsSet_ = false;
     app_ = "";
     appIsSet_ = false;
@@ -39,9 +37,6 @@ web::json::value ListHistoryStreamsRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(projectIdIsSet_) {
-        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
-    }
     if(domainIsSet_) {
         val[utility::conversions::to_string_t("domain")] = ModelBase::toJson(domain_);
     }
@@ -70,15 +65,6 @@ bool ListHistoryStreamsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("domain"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain"));
         if(!fieldValue.is_null())
@@ -145,27 +131,6 @@ bool ListHistoryStreamsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string ListHistoryStreamsRequest::getProjectId() const
-{
-    return projectId_;
-}
-
-void ListHistoryStreamsRequest::setProjectId(const std::string& value)
-{
-    projectId_ = value;
-    projectIdIsSet_ = true;
-}
-
-bool ListHistoryStreamsRequest::projectIdIsSet() const
-{
-    return projectIdIsSet_;
-}
-
-void ListHistoryStreamsRequest::unsetprojectId()
-{
-    projectIdIsSet_ = false;
-}
 
 std::vector<std::string>& ListHistoryStreamsRequest::getDomain()
 {

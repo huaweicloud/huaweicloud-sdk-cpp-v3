@@ -216,6 +216,15 @@ HttpRequestDef KmsMeta::genRequestDefForDeleteTag() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForDeriveSharedSecret() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForDisableKey() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -384,6 +393,15 @@ HttpRequestDef KmsMeta::genRequestDefForListSupportRegions() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForReEncrypt() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

@@ -14,6 +14,8 @@ CreateAssetProcessTaskResponse::CreateAssetProcessTaskResponse()
 {
     assetId_ = "";
     assetIdIsSet_ = false;
+    thumbnailTaskId_ = "";
+    thumbnailTaskIdIsSet_ = false;
 }
 
 CreateAssetProcessTaskResponse::~CreateAssetProcessTaskResponse() = default;
@@ -29,6 +31,9 @@ web::json::value CreateAssetProcessTaskResponse::toJson() const
     if(assetIdIsSet_) {
         val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
     }
+    if(thumbnailTaskIdIsSet_) {
+        val[utility::conversions::to_string_t("thumbnail_task_id")] = ModelBase::toJson(thumbnailTaskId_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool CreateAssetProcessTaskResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("thumbnail_task_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("thumbnail_task_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setThumbnailTaskId(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool CreateAssetProcessTaskResponse::assetIdIsSet() const
 void CreateAssetProcessTaskResponse::unsetassetId()
 {
     assetIdIsSet_ = false;
+}
+
+std::string CreateAssetProcessTaskResponse::getThumbnailTaskId() const
+{
+    return thumbnailTaskId_;
+}
+
+void CreateAssetProcessTaskResponse::setThumbnailTaskId(const std::string& value)
+{
+    thumbnailTaskId_ = value;
+    thumbnailTaskIdIsSet_ = true;
+}
+
+bool CreateAssetProcessTaskResponse::thumbnailTaskIdIsSet() const
+{
+    return thumbnailTaskIdIsSet_;
+}
+
+void CreateAssetProcessTaskResponse::unsetthumbnailTaskId()
+{
+    thumbnailTaskIdIsSet_ = false;
 }
 
 }

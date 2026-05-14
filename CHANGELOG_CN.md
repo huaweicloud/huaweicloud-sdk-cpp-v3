@@ -1,3 +1,32 @@
+# 3.1.187 2026-05-14
+
+### HuaweiCloud SDK KMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ReEncrypt`、`DeriveSharedSecret`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListAssetEditTask`、`CreateAssetEditTask`、`DeleteAssetEditTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateAssetProcessTask**
+    - 响应参数变更
+      - `+ thumbnail_task_id`
+  - **ModifySubtitle**
+    - 响应参数变更
+      - `+ thumbnail_task_id`
+
 # 3.1.186 2026-05-07
 
 ### HuaweiCloud SDK CodeArtsPipeline

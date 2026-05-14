@@ -1,3 +1,32 @@
+# 3.1.187 2026-05-14
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ReEncrypt`, `DeriveSharedSecret`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListAssetEditTask`, `CreateAssetEditTask`, `DeleteAssetEditTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAssetProcessTask**
+    - changes of response param
+      - `+ thumbnail_task_id`
+  - **ModifySubtitle**
+    - changes of response param
+      - `+ thumbnail_task_id`
+
 # 3.1.186 2026-05-07
 
 ### HuaweiCloud SDK CodeArtsPipeline

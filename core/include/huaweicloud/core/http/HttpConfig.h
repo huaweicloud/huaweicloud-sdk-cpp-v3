@@ -49,6 +49,10 @@ public:
 
     void setProxyPassword(const std::string &proxyPassword);
 
+    const std::string &getUserAgent() const;
+
+    void setUserAgent(const std::string& userAgent);
+
     bool isIgnoreSslVerification() const;
 
     void setIgnoreSslVerification(bool ignoreSslVerification);
@@ -90,6 +94,7 @@ private:
     std::string proxyPort_;
     std::string proxyUser_;
     std::string proxyPassword_;
+    std::string userAgent_;
 
     bool ignoreSslVerification_ = false;
 

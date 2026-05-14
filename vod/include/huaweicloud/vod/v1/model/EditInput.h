@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetProcessTaskResponse_H_
-#define HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetProcessTaskResponse_H_
+#ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_EditInput_H_
+#define HUAWEICLOUD_SDK_VOD_V1_MODEL_EditInput_H_
 
 
 #include <huaweicloud/vod/v1/VodExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// Response Object
+/// 
 /// </summary>
-class HUAWEICLOUD_VOD_V1_EXPORT  CreateAssetProcessTaskResponse
-    : public ModelBase, public HttpResponse
+class HUAWEICLOUD_VOD_V1_EXPORT  EditInput
+    : public ModelBase
 {
 public:
-    CreateAssetProcessTaskResponse();
-    virtual ~CreateAssetProcessTaskResponse();
+    EditInput();
+    virtual ~EditInput();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// CreateAssetProcessTaskResponse members
+    /// EditInput members
 
     /// <summary>
-    /// 媒资ID。
+    /// 媒资ID 
     /// </summary>
 
     std::string getAssetId() const;
@@ -48,24 +48,32 @@ public:
     void setAssetId(const std::string& value);
 
     /// <summary>
-    /// 截图任务id，仅支持多截图场景会返回。
+    /// 剪切开始时间，单位：秒，最大长度支持32。 
     /// </summary>
 
-    std::string getThumbnailTaskId() const;
-    bool thumbnailTaskIdIsSet() const;
-    void unsetthumbnailTaskId();
-    void setThumbnailTaskId(const std::string& value);
+    std::string getTimelineStart() const;
+    bool timelineStartIsSet() const;
+    void unsettimelineStart();
+    void setTimelineStart(const std::string& value);
+
+    /// <summary>
+    /// 剪切结束时间，单位：秒，最大长度支持32。 
+    /// </summary>
+
+    std::string getTimelineEnd() const;
+    bool timelineEndIsSet() const;
+    void unsettimelineEnd();
+    void setTimelineEnd(const std::string& value);
 
 
 protected:
     std::string assetId_;
     bool assetIdIsSet_;
-    std::string thumbnailTaskId_;
-    bool thumbnailTaskIdIsSet_;
+    std::string timelineStart_;
+    bool timelineStartIsSet_;
+    std::string timelineEnd_;
+    bool timelineEndIsSet_;
 
-#ifdef RTTR_FLAG
-    RTTR_ENABLE()
-#endif
 };
 
 
@@ -75,4 +83,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetProcessTaskResponse_H_
+#endif // HUAWEICLOUD_SDK_VOD_V1_MODEL_EditInput_H_

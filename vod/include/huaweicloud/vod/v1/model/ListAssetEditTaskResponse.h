@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_ModifySubtitleResponse_H_
-#define HUAWEICLOUD_SDK_VOD_V1_MODEL_ModifySubtitleResponse_H_
+#ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_ListAssetEditTaskResponse_H_
+#define HUAWEICLOUD_SDK_VOD_V1_MODEL_ListAssetEditTaskResponse_H_
 
 
 #include <huaweicloud/vod/v1/VodExport.h>
@@ -9,7 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
+#include <huaweicloud/vod/v1/model/EditingTaskInfo.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -22,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_VOD_V1_EXPORT  ModifySubtitleResponse
+class HUAWEICLOUD_VOD_V1_EXPORT  ListAssetEditTaskResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    ModifySubtitleResponse();
-    virtual ~ModifySubtitleResponse();
+    ListAssetEditTaskResponse();
+    virtual ~ListAssetEditTaskResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,32 +37,32 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ModifySubtitleResponse members
+    /// ListAssetEditTaskResponse members
 
     /// <summary>
-    /// 媒资ID。
+    /// 任务总数 
     /// </summary>
 
-    std::string getAssetId() const;
-    bool assetIdIsSet() const;
-    void unsetassetId();
-    void setAssetId(const std::string& value);
+    int64_t getTotal() const;
+    bool totalIsSet() const;
+    void unsettotal();
+    void setTotal(int64_t value);
 
     /// <summary>
-    /// 截图任务id，仅支持多截图场景会返回。
+    /// 任务列表 
     /// </summary>
 
-    std::string getThumbnailTaskId() const;
-    bool thumbnailTaskIdIsSet() const;
-    void unsetthumbnailTaskId();
-    void setThumbnailTaskId(const std::string& value);
+    std::vector<EditingTaskInfo>& getTasks();
+    bool tasksIsSet() const;
+    void unsettasks();
+    void setTasks(const std::vector<EditingTaskInfo>& value);
 
 
 protected:
-    std::string assetId_;
-    bool assetIdIsSet_;
-    std::string thumbnailTaskId_;
-    bool thumbnailTaskIdIsSet_;
+    int64_t total_;
+    bool totalIsSet_;
+    std::vector<EditingTaskInfo> tasks_;
+    bool tasksIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
@@ -75,4 +76,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_VOD_V1_MODEL_ModifySubtitleResponse_H_
+#endif // HUAWEICLOUD_SDK_VOD_V1_MODEL_ListAssetEditTaskResponse_H_

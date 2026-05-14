@@ -490,6 +490,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-cpp-v3/blob/ma
     * [2.2 Use Temporary AK&SK](#22-use-temporary-aksk-top)
 * [3. Client Initialization](#3-client-initialization-top)
     * [3.1 Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
+    * [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
+    * [3.3 Initialize the client with specified User Agent](#33-initialize-the-serviceclient-with-specified-user-agent-top)
 * [4. Send Requests and Handle Responses](#4-send-requests-and-handle-responses-top)
     * [4.1 Exceptions](#41-exceptions-top)
 * [5. Use Asynchronous Client](#5-use-asynchronous-client-top)
@@ -681,6 +683,32 @@ auto client = DevStarClient::newBuilder()
 | ------------------ | ------------------------------------------------------------ | ---------------------------------------------------- |
 | Specified Endpoint | The API can be invoked successfully once it has been published in the environment. | You need to prepare projectId and endpoint yourself. |
 | Specified Region   | No need for projectId and endpoint, it supports automatic acquisition if you configure it in the right way. | The supported services and regions are limited.      |
+
+#### 3.3 Initialize the client with specified User Agent  [:top:](#user-manual-top)
+
+Additional information will be appended to the User-Agent in the request header by default since **v3.1.187**. It is
+used by service to identify what SDK language, C++ version, and platform info a client is using to call into their
+service, and a random identifier will be generated and appended to the User-Agent. The identifier will be stored in the
+user's home directory, as `~/.huaweicloud/application_id` on Linux and `C:\Users\USER_NAME\.huaweicloud\application_id`
+on Windows.
+
+The above information will be used to protect the security of your and your users' Huawei Cloud accounts.
+
+You can disable this automatic User-Agent augmentation by explicitly setting a custom User-Agent header value. The value
+is recommended to be less than 50 characters and should use US-ASCII visible characters:
+
+``` cpp
+
+// Append custom User-Agent information to replace the default
+HttpConfig httpConfig = HttpConfig();
+httpConfig.setUserAgent("custom user agent...");
+ 
+std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
+    .withCredentials(basicCredentials)
+    .withHttpConfig(httpConfig)
+    .withEndPoint(endpoint)
+    .build();
+```
 
 ### 4. Send Requests and Handle Responses [:top:](#user-manual-top)
 

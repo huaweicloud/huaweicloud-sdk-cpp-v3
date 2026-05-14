@@ -68,6 +68,9 @@
 #include <huaweicloud/kms/v2/model/DeleteKeyStoreResponse.h>
 #include <huaweicloud/kms/v2/model/DeleteTagRequest.h>
 #include <huaweicloud/kms/v2/model/DeleteTagResponse.h>
+#include <huaweicloud/kms/v2/model/DeriveSharedSecretRequest.h>
+#include <huaweicloud/kms/v2/model/DeriveSharedSecretRequestBody.h>
+#include <huaweicloud/kms/v2/model/DeriveSharedSecretResponse.h>
 #include <huaweicloud/kms/v2/model/DisableKeyRequest.h>
 #include <huaweicloud/kms/v2/model/DisableKeyResponse.h>
 #include <huaweicloud/kms/v2/model/DisableKeyRotationRequest.h>
@@ -118,6 +121,9 @@
 #include <huaweicloud/kms/v2/model/ListSupportRegionsRequest.h>
 #include <huaweicloud/kms/v2/model/ListSupportRegionsResponse.h>
 #include <huaweicloud/kms/v2/model/OperateKeyRequestBody.h>
+#include <huaweicloud/kms/v2/model/ReEncryptRequest.h>
+#include <huaweicloud/kms/v2/model/ReEncryptRequestBody.h>
+#include <huaweicloud/kms/v2/model/ReEncryptResponse.h>
 #include <huaweicloud/kms/v2/model/ReplicateKeyRequest.h>
 #include <huaweicloud/kms/v2/model/ReplicateKeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/ReplicateKeyResponse.h>
@@ -396,6 +402,14 @@ public:
     std::shared_ptr<DeleteTagResponse> deleteTag(
         DeleteTagRequest &request
     );
+    // 派生共享密钥
+    //
+    // 功能介绍：派生共享密钥
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeriveSharedSecretResponse> deriveSharedSecret(
+        DeriveSharedSecretRequest &request
+    );
     // 禁用密钥
     //
     // - 功能介绍：禁用密钥，密钥禁用后不可以使用。
@@ -552,6 +566,16 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSupportRegionsResponse> listSupportRegions(
         ListSupportRegionsRequest &request
+    );
+    // 重加密
+    //
+    // 将密文使用源密钥解密后，再使用指定的新密钥加密。
+    // 能将CreateDatekey，CreateDatakeyWithoutPlainText,EncryptDatakey加密的数据密钥密文重新加密成新的数据密钥密文。
+    // 能将EncryptData加密的密文重新加密成新的密文。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ReEncryptResponse> reEncrypt(
+        ReEncryptRequest &request
     );
     // 复制密钥到指定区域
     //

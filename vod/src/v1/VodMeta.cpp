@@ -106,6 +106,20 @@ HttpRequestDef VodMeta::genRequestDefForCreateAssetCategory() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForCreateAssetEditTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForCreateAssetProcessTask() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXSdkDate;
@@ -319,6 +333,19 @@ HttpRequestDef VodMeta::genRequestDefForDeleteAssetCategory() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForDeleteAssetEditTask() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
+                  .withJsonTag("task_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForDeleteAssets() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("AssetId")
@@ -462,6 +489,25 @@ HttpRequestDef VodMeta::genRequestDefForListAssetDailySummaryLog() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
                   .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef VodMeta::genRequestDefForListAssetEditTask() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
+                  .withJsonTag("task_id")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")

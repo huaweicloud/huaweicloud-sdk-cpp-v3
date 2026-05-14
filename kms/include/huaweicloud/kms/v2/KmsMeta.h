@@ -37,6 +37,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteKey();
     static HttpRequestDef genRequestDefForDeleteKeyStore();
     static HttpRequestDef genRequestDefForDeleteTag();
+    static HttpRequestDef genRequestDefForDeriveSharedSecret();
     static HttpRequestDef genRequestDefForDisableKey();
     static HttpRequestDef genRequestDefForDisableKeyRotation();
     static HttpRequestDef genRequestDefForDisableKeyStore();
@@ -56,6 +57,7 @@ public:
     static HttpRequestDef genRequestDefForListKmsTags();
     static HttpRequestDef genRequestDefForListRetirableGrants();
     static HttpRequestDef genRequestDefForListSupportRegions();
+    static HttpRequestDef genRequestDefForReEncrypt();
     static HttpRequestDef genRequestDefForReplicateKey();
     static HttpRequestDef genRequestDefForShowKeyRotationStatus();
     static HttpRequestDef genRequestDefForShowKeyStore();

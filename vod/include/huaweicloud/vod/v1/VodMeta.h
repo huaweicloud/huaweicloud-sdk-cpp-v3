@@ -20,6 +20,7 @@ public:
     static HttpRequestDef genRequestDefForConfirmImageUpload();
     static HttpRequestDef genRequestDefForCreateAssetByFileUpload();
     static HttpRequestDef genRequestDefForCreateAssetCategory();
+    static HttpRequestDef genRequestDefForCreateAssetEditTask();
     static HttpRequestDef genRequestDefForCreateAssetProcessTask();
     static HttpRequestDef genRequestDefForCreateAssetReviewTask();
     static HttpRequestDef genRequestDefForCreateEditTask();
@@ -36,6 +37,7 @@ public:
     static HttpRequestDef genRequestDefForCreateUploadByUrl();
     static HttpRequestDef genRequestDefForCreateWatermarkTemplate();
     static HttpRequestDef genRequestDefForDeleteAssetCategory();
+    static HttpRequestDef genRequestDefForDeleteAssetEditTask();
     static HttpRequestDef genRequestDefForDeleteAssets();
     static HttpRequestDef genRequestDefForDeleteDyAsset();
     static HttpRequestDef genRequestDefForDeleteTemplateGroup();
@@ -46,6 +48,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteWatermarkTemplate();
     static HttpRequestDef genRequestDefForListAssetCategory();
     static HttpRequestDef genRequestDefForListAssetDailySummaryLog();
+    static HttpRequestDef genRequestDefForListAssetEditTask();
     static HttpRequestDef genRequestDefForListAssetList();
     static HttpRequestDef genRequestDefForListAssetTaskInfo();
     static HttpRequestDef genRequestDefForListCategoryInfo();

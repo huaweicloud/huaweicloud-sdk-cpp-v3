@@ -317,6 +317,50 @@ std::shared_ptr<CreateAssetCategoryResponse> VodClient::createAssetCategory(Crea
 
     return localVarResult;
 }
+std::shared_ptr<CreateAssetEditTaskResponse> VodClient::createAssetEditTask(CreateAssetEditTaskRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/editing/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForCreateAssetEditTask());
+
+    std::shared_ptr<CreateAssetEditTaskResponse> localVarResult = std::make_shared<CreateAssetEditTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateAssetProcessTaskResponse> VodClient::createAssetProcessTask(CreateAssetProcessTaskRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/asset/process";
@@ -1006,6 +1050,41 @@ std::shared_ptr<DeleteAssetCategoryResponse> VodClient::deleteAssetCategory(Dele
 
     return localVarResult;
 }
+std::shared_ptr<DeleteAssetEditTaskResponse> VodClient::deleteAssetEditTask(DeleteAssetEditTaskRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/editing/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.taskIdIsSet()) {
+        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForDeleteAssetEditTask());
+
+    std::shared_ptr<DeleteAssetEditTaskResponse> localVarResult = std::make_shared<DeleteAssetEditTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteAssetsResponse> VodClient::deleteAssets(DeleteAssetsRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/asset";
@@ -1383,6 +1462,47 @@ std::shared_ptr<ListAssetDailySummaryLogResponse> VodClient::listAssetDailySumma
         localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForListAssetDailySummaryLog());
 
     std::shared_ptr<ListAssetDailySummaryLogResponse> localVarResult = std::make_shared<ListAssetDailySummaryLogResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListAssetEditTaskResponse> VodClient::listAssetEditTask(ListAssetEditTaskRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/editing/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.taskIdIsSet()) {
+        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForListAssetEditTask());
+
+    std::shared_ptr<ListAssetEditTaskResponse> localVarResult = std::make_shared<ListAssetEditTaskResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

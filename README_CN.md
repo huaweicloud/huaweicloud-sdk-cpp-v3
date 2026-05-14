@@ -501,6 +501,8 @@ target_link_libraries(demo PUBLIC core vpc_v2)
     * [2.2 使用临时 AK 和 SK](#22-使用临时-ak-和-sk-top)
 * [3. 客户端初始化](#3-客户端初始化-top)
     * [3.1 指定云服务 Endpoint 方式](#31-指定云服务-endpoint-方式-top)
+    * [3.2 指定Region 方式（推荐)](#32-指定-region-方式-推荐-top)
+    * [3.3 指定 UserAgent 方式](#33-指定-UserAgent-方式-top)
 * [4. 发送请求并查看响应](#4-发送请求并查看响应-top)
     * [4.1 异常处理](#41-异常处理-top)
 * [5. 异步客户端使用](#5-异步客户端使用-top)
@@ -691,6 +693,28 @@ auto client = DevStarClient::newBuilder()
 | ------------------------ | ------------------------------------------------------------ | -------------------------------------------- |
 | 指定云服务 Endpoint 方式 | 只要接口已在当前环境发布就可以成功调用                       | 需要用户自行查找并填写 projectId 和 endpoint |
 | 指定 Region 方式         | 无需指定 projectId 和 endpoint，按照要求配置即可自动获取该值并回填 | 支持的服务和 region 有限制                   |
+
+#### 3.3 指定 UserAgent 方式 [:top:](#用户手册-top)
+
+从**v3.1.187**版本起，默认会在请求头User-Agent中附加额外信息，用于识别客户端调用服务时所使用的SDK语言、客户端库版本以及平台信息等。
+User-Agent包含C++版本、操作系统和时区语言信息，同时会生成一个随机标识符追加到User-Agent信息中。随机标识符会存储在用户主目录下，linux为 `~/.huaweicloud/application_id`
+，windows为`C:\Users\USER_NAME\.huaweicloud\application_id`。
+
+上述信息将用于保护您及您的用户的华为云账号安全。
+
+您可以通过自定义User-Agent的方式关闭上述行为，自定义User-Agent信息建议长度不超过50个字符，仅可包含ASCII可打印字符：
+
+``` cpp
+// Append custom User-Agent information to replace the default
+HttpConfig httpConfig = HttpConfig();
+httpConfig.setUserAgent("custom user agent...");
+ 
+std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
+    .withCredentials(basicCredentials)
+    .withHttpConfig(httpConfig)
+    .withEndPoint(endpoint)
+    .build();
+```
 
 ### 4. 发送请求并查看响应 [:top:](#用户手册-top)
 

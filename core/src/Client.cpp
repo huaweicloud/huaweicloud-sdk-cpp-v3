@@ -22,6 +22,7 @@
 #include <huaweicloud/core/auth/BasicCredentials.h>
 #include <huaweicloud/core/http/HttpRequest.h>
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/http/UserAgent.h>
 
 #include <boost/algorithm/string/replace.hpp>
 #include <utility>
@@ -67,7 +68,15 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
         std::string queryParamsHttp = getQueryParams(queryParams);
         RequestParams requestParams(method, scheme, host, uriHttp, queryParamsHttp, false, body);
 
-        requestParams.addHeader(Header("User-Agent", "huaweicloud-usdk-cpp/3.0"));
+        std::string userAgent = httpConfig_.getUserAgent();
+        if (userAgent.empty()) {
+            userAgent = getUserAgentStr();
+            spdlog::info("build default useragent:{} successfully", userAgent);
+        } else {
+            spdlog::info("useragent:{} ", userAgent);
+        }
+        requestParams.addHeader(Header("User-Agent", userAgent));
+
         addHeaderParams(requestParams, headerParams);
         credentials_->processAuthRequest(requestParams, httpConfig_, region_.getRegionId(), derivedAuthServiceName_);
 

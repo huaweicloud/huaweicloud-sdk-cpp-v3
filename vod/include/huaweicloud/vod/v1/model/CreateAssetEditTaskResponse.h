@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetProcessTaskResponse_H_
-#define HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetProcessTaskResponse_H_
+#ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetEditTaskResponse_H_
+#define HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetEditTaskResponse_H_
 
 
 #include <huaweicloud/vod/v1/VodExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_VOD_V1_EXPORT  CreateAssetProcessTaskResponse
+class HUAWEICLOUD_VOD_V1_EXPORT  CreateAssetEditTaskResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    CreateAssetProcessTaskResponse();
-    virtual ~CreateAssetProcessTaskResponse();
+    CreateAssetEditTaskResponse();
+    virtual ~CreateAssetEditTaskResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,19 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// CreateAssetProcessTaskResponse members
+    /// CreateAssetEditTaskResponse members
 
     /// <summary>
-    /// 媒资ID。
+    /// 编辑任务ID 
+    /// </summary>
+
+    std::string getTaskId() const;
+    bool taskIdIsSet() const;
+    void unsettaskId();
+    void setTaskId(const std::string& value);
+
+    /// <summary>
+    /// 媒资ID 
     /// </summary>
 
     std::string getAssetId() const;
@@ -47,21 +56,12 @@ public:
     void unsetassetId();
     void setAssetId(const std::string& value);
 
-    /// <summary>
-    /// 截图任务id，仅支持多截图场景会返回。
-    /// </summary>
-
-    std::string getThumbnailTaskId() const;
-    bool thumbnailTaskIdIsSet() const;
-    void unsetthumbnailTaskId();
-    void setThumbnailTaskId(const std::string& value);
-
 
 protected:
+    std::string taskId_;
+    bool taskIdIsSet_;
     std::string assetId_;
     bool assetIdIsSet_;
-    std::string thumbnailTaskId_;
-    bool thumbnailTaskIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
@@ -75,4 +75,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetProcessTaskResponse_H_
+#endif // HUAWEICLOUD_SDK_VOD_V1_MODEL_CreateAssetEditTaskResponse_H_

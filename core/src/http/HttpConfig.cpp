@@ -72,6 +72,16 @@ void HttpConfig::setProxyPassword(const std::string &proxyPassword)
     proxyPassword_ = proxyPassword;
 }
 
+const std::string &HttpConfig::getUserAgent() const
+{
+    return userAgent_;
+}
+
+void HttpConfig::setUserAgent(const std::string &userAgent)
+{
+    userAgent_ = userAgent;
+}
+
 bool HttpConfig::isIgnoreSslVerification() const
 {
     return ignoreSslVerification_;

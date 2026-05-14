@@ -25,6 +25,9 @@
 #include <huaweicloud/vod/v1/model/CreateAssetByFileUploadResponse.h>
 #include <huaweicloud/vod/v1/model/CreateAssetCategoryRequest.h>
 #include <huaweicloud/vod/v1/model/CreateAssetCategoryResponse.h>
+#include <huaweicloud/vod/v1/model/CreateAssetEditTaskReq.h>
+#include <huaweicloud/vod/v1/model/CreateAssetEditTaskRequest.h>
+#include <huaweicloud/vod/v1/model/CreateAssetEditTaskResponse.h>
 #include <huaweicloud/vod/v1/model/CreateAssetProcessTaskRequest.h>
 #include <huaweicloud/vod/v1/model/CreateAssetProcessTaskResponse.h>
 #include <huaweicloud/vod/v1/model/CreateAssetReviewTaskRequest.h>
@@ -66,6 +69,8 @@
 #include <huaweicloud/vod/v1/model/CreateWatermarkTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteAssetCategoryRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteAssetCategoryResponse.h>
+#include <huaweicloud/vod/v1/model/DeleteAssetEditTaskRequest.h>
+#include <huaweicloud/vod/v1/model/DeleteAssetEditTaskResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteAssetsRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteAssetsResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteDyAssetRequest.h>
@@ -88,6 +93,8 @@
 #include <huaweicloud/vod/v1/model/ListAssetCategoryResponse.h>
 #include <huaweicloud/vod/v1/model/ListAssetDailySummaryLogRequest.h>
 #include <huaweicloud/vod/v1/model/ListAssetDailySummaryLogResponse.h>
+#include <huaweicloud/vod/v1/model/ListAssetEditTaskRequest.h>
+#include <huaweicloud/vod/v1/model/ListAssetEditTaskResponse.h>
 #include <huaweicloud/vod/v1/model/ListAssetListRequest.h>
 #include <huaweicloud/vod/v1/model/ListAssetListResponse.h>
 #include <huaweicloud/vod/v1/model/ListAssetTaskInfoRequest.h>
@@ -286,6 +293,14 @@ public:
     std::shared_ptr<CreateAssetCategoryResponse> createAssetCategory(
         CreateAssetCategoryRequest &request
     );
+    // 创建编辑任务
+    //
+    // 创建编辑任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAssetEditTaskResponse> createAssetEditTask(
+        CreateAssetEditTaskRequest &request
+    );
     // 媒资处理
     //
     // 实现视频转码、截图、加密等处理。既可以同时启动多种操作，也可以只启动一种操作。
@@ -426,6 +441,14 @@ public:
     std::shared_ptr<DeleteAssetCategoryResponse> deleteAssetCategory(
         DeleteAssetCategoryRequest &request
     );
+    // 取消编辑任务
+    //
+    // 取消编辑任务，仅支持取消等待中的任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAssetEditTaskResponse> deleteAssetEditTask(
+        DeleteAssetEditTaskRequest &request
+    );
     // 删除媒资
     //
     // 删除媒资。
@@ -510,6 +533,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAssetDailySummaryLogResponse> listAssetDailySummaryLog(
         ListAssetDailySummaryLogRequest &request
+    );
+    // 查询编辑任务
+    //
+    // 查询编辑任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAssetEditTaskResponse> listAssetEditTask(
+        ListAssetEditTaskRequest &request
     );
     // 查询媒资列表
     //

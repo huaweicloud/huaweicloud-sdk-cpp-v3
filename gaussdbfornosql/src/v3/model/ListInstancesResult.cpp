@@ -61,6 +61,8 @@ ListInstancesResult::ListInstancesResult()
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
     dualActiveInfoIsSet_ = false;
+    ssl_ = "";
+    sslIsSet_ = false;
 }
 
 ListInstancesResult::~ListInstancesResult() = default;
@@ -153,6 +155,9 @@ web::json::value ListInstancesResult::toJson() const
     }
     if(dualActiveInfoIsSet_) {
         val[utility::conversions::to_string_t("dual_active_info")] = ModelBase::toJson(dualActiveInfo_);
+    }
+    if(sslIsSet_) {
+        val[utility::conversions::to_string_t("ssl")] = ModelBase::toJson(ssl_);
     }
 
     return val;
@@ -402,6 +407,15 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             DualActiveInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDualActiveInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ssl"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ssl"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSsl(refVal);
         }
     }
     return ok;
@@ -973,6 +987,27 @@ bool ListInstancesResult::dualActiveInfoIsSet() const
 void ListInstancesResult::unsetdualActiveInfo()
 {
     dualActiveInfoIsSet_ = false;
+}
+
+std::string ListInstancesResult::getSsl() const
+{
+    return ssl_;
+}
+
+void ListInstancesResult::setSsl(const std::string& value)
+{
+    ssl_ = value;
+    sslIsSet_ = true;
+}
+
+bool ListInstancesResult::sslIsSet() const
+{
+    return sslIsSet_;
+}
+
+void ListInstancesResult::unsetssl()
+{
+    sslIsSet_ = false;
 }
 
 }

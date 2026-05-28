@@ -1,3 +1,18 @@
+# 3.1.188 2026-05-28
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.ssl`
+
 # 3.1.187 2026-05-14
 
 ### HuaweiCloud SDK KMS

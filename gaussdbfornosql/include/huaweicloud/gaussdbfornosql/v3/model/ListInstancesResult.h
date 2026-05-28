@@ -286,6 +286,15 @@ public:
     void unsetdualActiveInfo();
     void setDualActiveInfo(const DualActiveInfo& value);
 
+    /// <summary>
+    /// 参数解释： SSL安全连接启用情况。 取值范围： - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
+    /// </summary>
+
+    std::string getSsl() const;
+    bool sslIsSet() const;
+    void unsetssl();
+    void setSsl(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -342,6 +351,8 @@ protected:
     bool availabilityZoneIsSet_;
     DualActiveInfo dualActiveInfo_;
     bool dualActiveInfoIsSet_;
+    std::string ssl_;
+    bool sslIsSet_;
 
 };
 

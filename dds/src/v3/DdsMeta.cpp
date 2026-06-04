@@ -76,6 +76,15 @@ HttpRequestDef DdsMeta::genRequestDefForBatchUpgradeDatabaseVersion() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForBindPublicGateway() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForCancelEip() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -1203,6 +1212,11 @@ HttpRequestDef DdsMeta::genRequestDefForSwitchoverReplicaSet() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForUnbindPublicGateway() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdatePostgresqlInstanceAliasRequest_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdatePostgresqlInstanceAliasRequest_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdateInstanceAliasRequest_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdateInstanceAliasRequest_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -23,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  UpdatePostgresqlInstanceAliasRequest
+class HUAWEICLOUD_RDS_V3_EXPORT  UpdateInstanceAliasRequest
     : public ModelBase
 {
 public:
-    UpdatePostgresqlInstanceAliasRequest();
-    virtual ~UpdatePostgresqlInstanceAliasRequest();
+    UpdateInstanceAliasRequest();
+    virtual ~UpdateInstanceAliasRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// UpdatePostgresqlInstanceAliasRequest members
+    /// UpdateInstanceAliasRequest members
 
     /// <summary>
     /// 语言
@@ -78,7 +78,7 @@ protected:
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    UpdatePostgresqlInstanceAliasRequest& dereference_from_shared_ptr(std::shared_ptr<UpdatePostgresqlInstanceAliasRequest> ptr) {
+    UpdateInstanceAliasRequest& dereference_from_shared_ptr(std::shared_ptr<UpdateInstanceAliasRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -91,4 +91,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdatePostgresqlInstanceAliasRequest_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdateInstanceAliasRequest_H_

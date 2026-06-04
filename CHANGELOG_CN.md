@@ -1,3 +1,37 @@
+# 3.1.189 2026-06-04
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.https_tls_version`
+      - `+ configs.error_code_redirect_rules.execution_mode`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.https_tls_version`
+      - `+ configs.error_code_redirect_rules.execution_mode`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`BindPublicGateway`、`UnbindPublicGateway`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.groups.nodes.nat_gateway_id`
+      - `+ instances.groups.nodes.external_service_port`
+
 # 3.1.188 2026-05-28
 
 ### HuaweiCloud SDK GaussDBforNoSQL

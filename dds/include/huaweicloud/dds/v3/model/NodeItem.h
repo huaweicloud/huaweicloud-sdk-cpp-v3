@@ -110,6 +110,24 @@ public:
     void unsetavailabilityZone();
     void setAvailabilityZone(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 公网NAT网关实例的ID。可以调用“查询公网NAT网关列表”接口获取。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getNatGatewayId() const;
+    bool natGatewayIdIsSet() const;
+    void unsetnatGatewayId();
+    void setNatGatewayId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 弹性公网IP对外提供服务的端口号。 **取值范围：** 1~65535。
+    /// </summary>
+
+    int32_t getExternalServicePort() const;
+    bool externalServicePortIsSet() const;
+    void unsetexternalServicePort();
+    void setExternalServicePort(int32_t value);
+
 
 protected:
     std::string id_;
@@ -128,6 +146,10 @@ protected:
     bool specCodeIsSet_;
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
+    std::string natGatewayId_;
+    bool natGatewayIdIsSet_;
+    int32_t externalServicePort_;
+    bool externalServicePortIsSet_;
 
 };
 

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdatePostgresqlInstanceAliasResponse_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdatePostgresqlInstanceAliasResponse_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdateInstanceAliasResponse_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdateInstanceAliasResponse_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  UpdatePostgresqlInstanceAliasResponse
+class HUAWEICLOUD_RDS_V3_EXPORT  UpdateInstanceAliasResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    UpdatePostgresqlInstanceAliasResponse();
-    virtual ~UpdatePostgresqlInstanceAliasResponse();
+    UpdateInstanceAliasResponse();
+    virtual ~UpdateInstanceAliasResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// UpdatePostgresqlInstanceAliasResponse members
+    /// UpdateInstanceAliasResponse members
 
     /// <summary>
     /// 操作结果。
@@ -64,4 +64,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdatePostgresqlInstanceAliasResponse_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_UpdateInstanceAliasResponse_H_

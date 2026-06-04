@@ -1,3 +1,37 @@
+# 3.1.189 2026-06-04
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.https_tls_version`
+      - `+ configs.error_code_redirect_rules.execution_mode`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.https_tls_version`
+      - `+ configs.error_code_redirect_rules.execution_mode`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `BindPublicGateway`, `UnbindPublicGateway`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.groups.nodes.nat_gateway_id`
+      - `+ instances.groups.nodes.external_service_port`
+
 # 3.1.188 2026-05-28
 
 ### HuaweiCloud SDK GaussDBforNoSQL

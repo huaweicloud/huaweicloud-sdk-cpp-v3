@@ -28,6 +28,10 @@ NodeItem::NodeItem()
     specCodeIsSet_ = false;
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
+    natGatewayId_ = "";
+    natGatewayIdIsSet_ = false;
+    externalServicePort_ = 0;
+    externalServicePortIsSet_ = false;
 }
 
 NodeItem::~NodeItem() = default;
@@ -63,6 +67,12 @@ web::json::value NodeItem::toJson() const
     }
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
+    }
+    if(natGatewayIdIsSet_) {
+        val[utility::conversions::to_string_t("nat_gateway_id")] = ModelBase::toJson(natGatewayId_);
+    }
+    if(externalServicePortIsSet_) {
+        val[utility::conversions::to_string_t("external_service_port")] = ModelBase::toJson(externalServicePort_);
     }
 
     return val;
@@ -141,6 +151,24 @@ bool NodeItem::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailabilityZone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nat_gateway_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nat_gateway_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNatGatewayId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("external_service_port"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("external_service_port"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExternalServicePort(refVal);
         }
     }
     return ok;
@@ -313,6 +341,48 @@ bool NodeItem::availabilityZoneIsSet() const
 void NodeItem::unsetavailabilityZone()
 {
     availabilityZoneIsSet_ = false;
+}
+
+std::string NodeItem::getNatGatewayId() const
+{
+    return natGatewayId_;
+}
+
+void NodeItem::setNatGatewayId(const std::string& value)
+{
+    natGatewayId_ = value;
+    natGatewayIdIsSet_ = true;
+}
+
+bool NodeItem::natGatewayIdIsSet() const
+{
+    return natGatewayIdIsSet_;
+}
+
+void NodeItem::unsetnatGatewayId()
+{
+    natGatewayIdIsSet_ = false;
+}
+
+int32_t NodeItem::getExternalServicePort() const
+{
+    return externalServicePort_;
+}
+
+void NodeItem::setExternalServicePort(int32_t value)
+{
+    externalServicePort_ = value;
+    externalServicePortIsSet_ = true;
+}
+
+bool NodeItem::externalServicePortIsSet() const
+{
+    return externalServicePortIsSet_;
+}
+
+void NodeItem::unsetexternalServicePort()
+{
+    externalServicePortIsSet_ = false;
 }
 
 }

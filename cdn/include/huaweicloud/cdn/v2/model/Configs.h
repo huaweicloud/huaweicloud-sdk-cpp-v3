@@ -25,6 +25,7 @@
 #include <huaweicloud/cdn/v2/model/OriginRequestHeader.h>
 #include <huaweicloud/cdn/v2/model/CommonRemoteAuth.h>
 #include <huaweicloud/cdn/v2/model/Hsts.h>
+#include <huaweicloud/cdn/v2/model/HttpsTlsVersion.h>
 #include <huaweicloud/cdn/v2/model/ErrorCodeRedirectRules.h>
 #include <vector>
 #include <huaweicloud/cdn/v2/model/BrowserCacheRules.h>
@@ -400,6 +401,15 @@ public:
     void unsetclientCert();
     void setClientCert(const ClientCert& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    HttpsTlsVersion getHttpsTlsVersion() const;
+    bool httpsTlsVersionIsSet() const;
+    void unsethttpsTlsVersion();
+    void setHttpsTlsVersion(const HttpsTlsVersion& value);
+
 
 protected:
     std::string businessType_;
@@ -476,6 +486,8 @@ protected:
     bool accessAreaFilterIsSet_;
     ClientCert clientCert_;
     bool clientCertIsSet_;
+    HttpsTlsVersion httpsTlsVersion_;
+    bool httpsTlsVersionIsSet_;
 
 };
 

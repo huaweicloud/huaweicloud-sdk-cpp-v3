@@ -187,11 +187,11 @@ public:
     static HttpRequestDef genRequestDefForUpdateDataIp();
     static HttpRequestDef genRequestDefForUpdateDnsName();
     static HttpRequestDef genRequestDefForUpdateIncreBackupPolicy1();
+    static HttpRequestDef genRequestDefForUpdateInstanceAlias();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceConfigurationAsync();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpdatePort();
-    static HttpRequestDef genRequestDefForUpdatePostgresqlInstanceAlias();
     static HttpRequestDef genRequestDefForUpdateSqlLimit();
     static HttpRequestDef genRequestDefForUpdateTdeStatus();
     static HttpRequestDef genRequestDefForUpdateTimeZone();

@@ -2458,6 +2458,20 @@ HttpRequestDef RdsMeta::genRequestDefForUpdateIncreBackupPolicy1() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForUpdateInstanceAlias() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForUpdateInstanceConfiguration() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2501,20 +2515,6 @@ HttpRequestDef RdsMeta::genRequestDefForUpdateInstanceName() {
 }
 
 HttpRequestDef RdsMeta::genRequestDefForUpdatePort() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef RdsMeta::genRequestDefForUpdatePostgresqlInstanceAlias() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

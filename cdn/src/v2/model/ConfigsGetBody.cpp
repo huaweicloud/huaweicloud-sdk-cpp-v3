@@ -58,6 +58,7 @@ ConfigsGetBody::ConfigsGetBody()
     browserCacheRulesIsSet_ = false;
     accessAreaFilterIsSet_ = false;
     clientCertIsSet_ = false;
+    httpsTlsVersionIsSet_ = false;
 }
 
 ConfigsGetBody::~ConfigsGetBody() = default;
@@ -180,6 +181,9 @@ web::json::value ConfigsGetBody::toJson() const
     }
     if(clientCertIsSet_) {
         val[utility::conversions::to_string_t("client_cert")] = ModelBase::toJson(clientCert_);
+    }
+    if(httpsTlsVersionIsSet_) {
+        val[utility::conversions::to_string_t("https_tls_version")] = ModelBase::toJson(httpsTlsVersion_);
     }
 
     return val;
@@ -519,6 +523,15 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             ClientCert refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setClientCert(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("https_tls_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("https_tls_version"));
+        if(!fieldValue.is_null())
+        {
+            HttpsTlsVersion refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHttpsTlsVersion(refVal);
         }
     }
     return ok;
@@ -1300,6 +1313,27 @@ bool ConfigsGetBody::clientCertIsSet() const
 void ConfigsGetBody::unsetclientCert()
 {
     clientCertIsSet_ = false;
+}
+
+HttpsTlsVersion ConfigsGetBody::getHttpsTlsVersion() const
+{
+    return httpsTlsVersion_;
+}
+
+void ConfigsGetBody::setHttpsTlsVersion(const HttpsTlsVersion& value)
+{
+    httpsTlsVersion_ = value;
+    httpsTlsVersionIsSet_ = true;
+}
+
+bool ConfigsGetBody::httpsTlsVersionIsSet() const
+{
+    return httpsTlsVersionIsSet_;
+}
+
+void ConfigsGetBody::unsethttpsTlsVersion()
+{
+    httpsTlsVersionIsSet_ = false;
 }
 
 }

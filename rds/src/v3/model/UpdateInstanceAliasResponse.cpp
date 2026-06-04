@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasResponse.h"
+#include "huaweicloud/rds/v3/model/UpdateInstanceAliasResponse.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,19 +10,19 @@ namespace Model {
 
 
 
-UpdatePostgresqlInstanceAliasResponse::UpdatePostgresqlInstanceAliasResponse()
+UpdateInstanceAliasResponse::UpdateInstanceAliasResponse()
 {
     resp_ = "";
     respIsSet_ = false;
 }
 
-UpdatePostgresqlInstanceAliasResponse::~UpdatePostgresqlInstanceAliasResponse() = default;
+UpdateInstanceAliasResponse::~UpdateInstanceAliasResponse() = default;
 
-void UpdatePostgresqlInstanceAliasResponse::validate()
+void UpdateInstanceAliasResponse::validate()
 {
 }
 
-web::json::value UpdatePostgresqlInstanceAliasResponse::toJson() const
+web::json::value UpdateInstanceAliasResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -32,7 +32,7 @@ web::json::value UpdatePostgresqlInstanceAliasResponse::toJson() const
 
     return val;
 }
-bool UpdatePostgresqlInstanceAliasResponse::fromJson(const web::json::value& val)
+bool UpdateInstanceAliasResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -49,23 +49,23 @@ bool UpdatePostgresqlInstanceAliasResponse::fromJson(const web::json::value& val
 }
 
 
-std::string UpdatePostgresqlInstanceAliasResponse::getResp() const
+std::string UpdateInstanceAliasResponse::getResp() const
 {
     return resp_;
 }
 
-void UpdatePostgresqlInstanceAliasResponse::setResp(const std::string& value)
+void UpdateInstanceAliasResponse::setResp(const std::string& value)
 {
     resp_ = value;
     respIsSet_ = true;
 }
 
-bool UpdatePostgresqlInstanceAliasResponse::respIsSet() const
+bool UpdateInstanceAliasResponse::respIsSet() const
 {
     return respIsSet_;
 }
 
-void UpdatePostgresqlInstanceAliasResponse::unsetresp()
+void UpdateInstanceAliasResponse::unsetresp()
 {
     respIsSet_ = false;
 }

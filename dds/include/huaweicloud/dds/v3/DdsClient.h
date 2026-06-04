@@ -28,6 +28,9 @@
 #include <huaweicloud/dds/v3/model/BatchUpgradeDatabaseVersionRequest.h>
 #include <huaweicloud/dds/v3/model/BatchUpgradeDatabaseVersionRequestBody.h>
 #include <huaweicloud/dds/v3/model/BatchUpgradeDatabaseVersionResponse.h>
+#include <huaweicloud/dds/v3/model/BindPublicGatewayRequest.h>
+#include <huaweicloud/dds/v3/model/BindPublicGatewayRequestBody.h>
+#include <huaweicloud/dds/v3/model/BindPublicGatewayResponse.h>
 #include <huaweicloud/dds/v3/model/CancelEipRequest.h>
 #include <huaweicloud/dds/v3/model/CancelEipResponse.h>
 #include <huaweicloud/dds/v3/model/CancelScheduledTaskRequest.h>
@@ -287,6 +290,8 @@
 #include <huaweicloud/dds/v3/model/SwitchoverReplicaSetRequest.h>
 #include <huaweicloud/dds/v3/model/SwitchoverReplicaSetRequestBody.h>
 #include <huaweicloud/dds/v3/model/SwitchoverReplicaSetResponse.h>
+#include <huaweicloud/dds/v3/model/UnbindPublicGatewayRequest.h>
+#include <huaweicloud/dds/v3/model/UnbindPublicGatewayResponse.h>
 #include <huaweicloud/dds/v3/model/UpdateBackupDownloadPolicyRequest.h>
 #include <huaweicloud/dds/v3/model/UpdateBackupDownloadPolicyRequestBody.h>
 #include <huaweicloud/dds/v3/model/UpdateBackupDownloadPolicyResponse.h>
@@ -411,6 +416,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersion(
         BatchUpgradeDatabaseVersionRequest &request
+    );
+    // 绑定公网网关
+    //
+    // 为实例下的节点绑定公网网关。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BindPublicGatewayResponse> bindPublicGateway(
+        BindPublicGatewayRequest &request
     );
     // 解绑弹性公网IP
     //
@@ -1251,6 +1264,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchoverReplicaSetResponse> switchoverReplicaSet(
         SwitchoverReplicaSetRequest &request
+    );
+    // 解绑公网网关
+    //
+    // 为实例下的节点解绑公网网关。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UnbindPublicGatewayResponse> unbindPublicGateway(
+        UnbindPublicGatewayRequest &request
     );
     // 更新备份下载策略
     //

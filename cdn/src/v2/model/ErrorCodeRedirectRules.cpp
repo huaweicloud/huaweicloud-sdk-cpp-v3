@@ -14,6 +14,8 @@ ErrorCodeRedirectRules::ErrorCodeRedirectRules()
 {
     errorCode_ = 0;
     errorCodeIsSet_ = false;
+    executionMode_ = "";
+    executionModeIsSet_ = false;
     targetCode_ = 0;
     targetCodeIsSet_ = false;
     targetLink_ = "";
@@ -32,6 +34,9 @@ web::json::value ErrorCodeRedirectRules::toJson() const
 
     if(errorCodeIsSet_) {
         val[utility::conversions::to_string_t("error_code")] = ModelBase::toJson(errorCode_);
+    }
+    if(executionModeIsSet_) {
+        val[utility::conversions::to_string_t("execution_mode")] = ModelBase::toJson(executionMode_);
     }
     if(targetCodeIsSet_) {
         val[utility::conversions::to_string_t("target_code")] = ModelBase::toJson(targetCode_);
@@ -53,6 +58,15 @@ bool ErrorCodeRedirectRules::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("execution_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("execution_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExecutionMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("target_code"))) {
@@ -96,6 +110,27 @@ bool ErrorCodeRedirectRules::errorCodeIsSet() const
 void ErrorCodeRedirectRules::unseterrorCode()
 {
     errorCodeIsSet_ = false;
+}
+
+std::string ErrorCodeRedirectRules::getExecutionMode() const
+{
+    return executionMode_;
+}
+
+void ErrorCodeRedirectRules::setExecutionMode(const std::string& value)
+{
+    executionMode_ = value;
+    executionModeIsSet_ = true;
+}
+
+bool ErrorCodeRedirectRules::executionModeIsSet() const
+{
+    return executionModeIsSet_;
+}
+
+void ErrorCodeRedirectRules::unsetexecutionMode()
+{
+    executionModeIsSet_ = false;
 }
 
 int32_t ErrorCodeRedirectRules::getTargetCode() const

@@ -441,6 +441,8 @@
 #include <huaweicloud/rds/v3/model/UpdateIncreBackupPolicy1Request.h>
 #include <huaweicloud/rds/v3/model/UpdateIncreBackupPolicy1RequestBody.h>
 #include <huaweicloud/rds/v3/model/UpdateIncreBackupPolicy1Response.h>
+#include <huaweicloud/rds/v3/model/UpdateInstanceAliasRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateInstanceAliasResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateInstanceConfigurationAsyncRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateInstanceConfigurationAsyncResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateInstanceConfigurationRequest.h>
@@ -450,8 +452,6 @@
 #include <huaweicloud/rds/v3/model/UpdateInstanceNameResponse.h>
 #include <huaweicloud/rds/v3/model/UpdatePortRequest.h>
 #include <huaweicloud/rds/v3/model/UpdatePortResponse.h>
-#include <huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasRequest.h>
-#include <huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateRdsInstanceAliasRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateSqlLimitRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateSqlLimitResponse.h>
@@ -2197,6 +2197,14 @@ public:
     std::shared_ptr<UpdateIncreBackupPolicy1Response> updateIncreBackupPolicy1(
         UpdateIncreBackupPolicy1Request &request
     );
+    // 修改实例备注信息
+    //
+    // 修改指定数据库实例的备注信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstanceAliasResponse> updateInstanceAlias(
+        UpdateInstanceAliasRequest &request
+    );
     // 修改指定实例的参数
     //
     // 修改指定实例的参数。
@@ -2228,14 +2236,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePortResponse> updatePort(
         UpdatePortRequest &request
-    );
-    // 修改实例备注信息
-    //
-    // 修改指定数据库实例的备注信息。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAlias(
-        UpdatePostgresqlInstanceAliasRequest &request
     );
     // 修改SQL限流
     //

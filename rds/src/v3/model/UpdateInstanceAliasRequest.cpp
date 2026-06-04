@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasRequest.h"
+#include "huaweicloud/rds/v3/model/UpdateInstanceAliasRequest.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-UpdatePostgresqlInstanceAliasRequest::UpdatePostgresqlInstanceAliasRequest()
+UpdateInstanceAliasRequest::UpdateInstanceAliasRequest()
 {
     xLanguage_ = "";
     xLanguageIsSet_ = false;
@@ -19,13 +19,13 @@ UpdatePostgresqlInstanceAliasRequest::UpdatePostgresqlInstanceAliasRequest()
     bodyIsSet_ = false;
 }
 
-UpdatePostgresqlInstanceAliasRequest::~UpdatePostgresqlInstanceAliasRequest() = default;
+UpdateInstanceAliasRequest::~UpdateInstanceAliasRequest() = default;
 
-void UpdatePostgresqlInstanceAliasRequest::validate()
+void UpdateInstanceAliasRequest::validate()
 {
 }
 
-web::json::value UpdatePostgresqlInstanceAliasRequest::toJson() const
+web::json::value UpdateInstanceAliasRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -41,7 +41,7 @@ web::json::value UpdatePostgresqlInstanceAliasRequest::toJson() const
 
     return val;
 }
-bool UpdatePostgresqlInstanceAliasRequest::fromJson(const web::json::value& val)
+bool UpdateInstanceAliasRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -76,65 +76,65 @@ bool UpdatePostgresqlInstanceAliasRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string UpdatePostgresqlInstanceAliasRequest::getXLanguage() const
+std::string UpdateInstanceAliasRequest::getXLanguage() const
 {
     return xLanguage_;
 }
 
-void UpdatePostgresqlInstanceAliasRequest::setXLanguage(const std::string& value)
+void UpdateInstanceAliasRequest::setXLanguage(const std::string& value)
 {
     xLanguage_ = value;
     xLanguageIsSet_ = true;
 }
 
-bool UpdatePostgresqlInstanceAliasRequest::xLanguageIsSet() const
+bool UpdateInstanceAliasRequest::xLanguageIsSet() const
 {
     return xLanguageIsSet_;
 }
 
-void UpdatePostgresqlInstanceAliasRequest::unsetxLanguage()
+void UpdateInstanceAliasRequest::unsetxLanguage()
 {
     xLanguageIsSet_ = false;
 }
 
-std::string UpdatePostgresqlInstanceAliasRequest::getInstanceId() const
+std::string UpdateInstanceAliasRequest::getInstanceId() const
 {
     return instanceId_;
 }
 
-void UpdatePostgresqlInstanceAliasRequest::setInstanceId(const std::string& value)
+void UpdateInstanceAliasRequest::setInstanceId(const std::string& value)
 {
     instanceId_ = value;
     instanceIdIsSet_ = true;
 }
 
-bool UpdatePostgresqlInstanceAliasRequest::instanceIdIsSet() const
+bool UpdateInstanceAliasRequest::instanceIdIsSet() const
 {
     return instanceIdIsSet_;
 }
 
-void UpdatePostgresqlInstanceAliasRequest::unsetinstanceId()
+void UpdateInstanceAliasRequest::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
 }
 
-UpdateRdsInstanceAliasRequest UpdatePostgresqlInstanceAliasRequest::getBody() const
+UpdateRdsInstanceAliasRequest UpdateInstanceAliasRequest::getBody() const
 {
     return body_;
 }
 
-void UpdatePostgresqlInstanceAliasRequest::setBody(const UpdateRdsInstanceAliasRequest& value)
+void UpdateInstanceAliasRequest::setBody(const UpdateRdsInstanceAliasRequest& value)
 {
     body_ = value;
     bodyIsSet_ = true;
 }
 
-bool UpdatePostgresqlInstanceAliasRequest::bodyIsSet() const
+bool UpdateInstanceAliasRequest::bodyIsSet() const
 {
     return bodyIsSet_;
 }
 
-void UpdatePostgresqlInstanceAliasRequest::unsetbody()
+void UpdateInstanceAliasRequest::unsetbody()
 {
     bodyIsSet_ = false;
 }

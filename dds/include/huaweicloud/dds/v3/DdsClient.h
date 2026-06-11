@@ -22,6 +22,9 @@
 #include <huaweicloud/dds/v3/model/BatchDeleteBackupRequest.h>
 #include <huaweicloud/dds/v3/model/BatchDeleteBackupRequestBody.h>
 #include <huaweicloud/dds/v3/model/BatchDeleteBackupResponse.h>
+#include <huaweicloud/dds/v3/model/BatchDeleteShardsRequest.h>
+#include <huaweicloud/dds/v3/model/BatchDeleteShardsRequestBody.h>
+#include <huaweicloud/dds/v3/model/BatchDeleteShardsResponse.h>
 #include <huaweicloud/dds/v3/model/BatchOperateInstanceTagRequestBody.h>
 #include <huaweicloud/dds/v3/model/BatchTagActionRequest.h>
 #include <huaweicloud/dds/v3/model/BatchTagActionResponse.h>
@@ -400,6 +403,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteBackupResponse> batchDeleteBackup(
         BatchDeleteBackupRequest &request
+    );
+    // 删除分片
+    //
+    // 删除分片
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteShardsResponse> batchDeleteShards(
+        BatchDeleteShardsRequest &request
     );
     // 批量添加或删除资源标签
     //

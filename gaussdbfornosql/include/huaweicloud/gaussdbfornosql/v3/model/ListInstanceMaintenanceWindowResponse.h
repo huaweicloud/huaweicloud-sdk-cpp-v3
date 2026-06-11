@@ -39,7 +39,7 @@ public:
     /// ListInstanceMaintenanceWindowResponse members
 
     /// <summary>
-    /// 参数解释： 实例的可维护时间窗。
+    /// **参数解释：** 实例的可维护时间窗。
     /// </summary>
 
     std::string getMaintenanceWindow() const;

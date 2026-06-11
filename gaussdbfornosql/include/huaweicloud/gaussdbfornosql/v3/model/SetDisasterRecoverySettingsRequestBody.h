@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/gaussdbfornosql/v3/model/SetSwitchoverRatioInfo.h>
 #include <vector>
-#include <huaweicloud/gaussdbfornosql/v3/model/SwitchoverRatioInfo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,17 +40,17 @@ public:
     /// SetDisasterRecoverySettingsRequestBody members
 
     /// <summary>
-    /// 容灾切换的故障节点比例列表。
+    /// **参数解释：** 容灾切换的故障节点比例列表。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
-    std::vector<SwitchoverRatioInfo>& getDisasterRecoverySettings();
+    std::vector<SetSwitchoverRatioInfo>& getDisasterRecoverySettings();
     bool disasterRecoverySettingsIsSet() const;
     void unsetdisasterRecoverySettings();
-    void setDisasterRecoverySettings(const std::vector<SwitchoverRatioInfo>& value);
+    void setDisasterRecoverySettings(const std::vector<SetSwitchoverRatioInfo>& value);
 
 
 protected:
-    std::vector<SwitchoverRatioInfo> disasterRecoverySettings_;
+    std::vector<SetSwitchoverRatioInfo> disasterRecoverySettings_;
     bool disasterRecoverySettingsIsSet_;
 
 };

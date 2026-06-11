@@ -57,6 +57,15 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
     /// 排序字段: avg_cpu_time:平均CPU耗时 total_cpu_time：总CPU耗时 total_duration_time：总执行时间 avg_duration_time：平均执行时间 total_rows：总行数 avg_rows：平均行数 total_logical_reads：总逻辑读 avg_logical_reads：平均逻辑读
     /// </summary>
 
@@ -98,6 +107,8 @@ protected:
     bool instanceIdIsSet_;
     std::string xLanguage_;
     bool xLanguageIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
     std::string sortKey_;
     bool sortKeyIsSet_;
     int32_t limit_;

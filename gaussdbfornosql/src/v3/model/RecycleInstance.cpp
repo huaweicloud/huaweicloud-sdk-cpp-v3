@@ -20,9 +20,9 @@ RecycleInstance::RecycleInstance()
     modeIsSet_ = false;
     productType_ = "";
     productTypeIsSet_ = false;
-    datastoreIsSet_ = false;
-    chargeMode_ = "";
-    chargeModeIsSet_ = false;
+    dataStoreIsSet_ = false;
+    chargeType_ = "";
+    chargeTypeIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
     backupId_ = "";
@@ -57,11 +57,11 @@ web::json::value RecycleInstance::toJson() const
     if(productTypeIsSet_) {
         val[utility::conversions::to_string_t("product_type")] = ModelBase::toJson(productType_);
     }
-    if(datastoreIsSet_) {
-        val[utility::conversions::to_string_t("datastore")] = ModelBase::toJson(datastore_);
+    if(dataStoreIsSet_) {
+        val[utility::conversions::to_string_t("data_store")] = ModelBase::toJson(dataStore_);
     }
-    if(chargeModeIsSet_) {
-        val[utility::conversions::to_string_t("charge_mode")] = ModelBase::toJson(chargeMode_);
+    if(chargeTypeIsSet_) {
+        val[utility::conversions::to_string_t("charge_type")] = ModelBase::toJson(chargeType_);
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
@@ -121,22 +121,22 @@ bool RecycleInstance::fromJson(const web::json::value& val)
             setProductType(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("datastore"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("datastore"));
+    if(val.has_field(utility::conversions::to_string_t("data_store"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data_store"));
         if(!fieldValue.is_null())
         {
             RecycleDatastore refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDatastore(refVal);
+            setDataStore(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("charge_mode"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("charge_mode"));
+    if(val.has_field(utility::conversions::to_string_t("charge_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("charge_type"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setChargeMode(refVal);
+            setChargeType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
@@ -272,46 +272,46 @@ void RecycleInstance::unsetproductType()
     productTypeIsSet_ = false;
 }
 
-RecycleDatastore RecycleInstance::getDatastore() const
+RecycleDatastore RecycleInstance::getDataStore() const
 {
-    return datastore_;
+    return dataStore_;
 }
 
-void RecycleInstance::setDatastore(const RecycleDatastore& value)
+void RecycleInstance::setDataStore(const RecycleDatastore& value)
 {
-    datastore_ = value;
-    datastoreIsSet_ = true;
+    dataStore_ = value;
+    dataStoreIsSet_ = true;
 }
 
-bool RecycleInstance::datastoreIsSet() const
+bool RecycleInstance::dataStoreIsSet() const
 {
-    return datastoreIsSet_;
+    return dataStoreIsSet_;
 }
 
-void RecycleInstance::unsetdatastore()
+void RecycleInstance::unsetdataStore()
 {
-    datastoreIsSet_ = false;
+    dataStoreIsSet_ = false;
 }
 
-std::string RecycleInstance::getChargeMode() const
+std::string RecycleInstance::getChargeType() const
 {
-    return chargeMode_;
+    return chargeType_;
 }
 
-void RecycleInstance::setChargeMode(const std::string& value)
+void RecycleInstance::setChargeType(const std::string& value)
 {
-    chargeMode_ = value;
-    chargeModeIsSet_ = true;
+    chargeType_ = value;
+    chargeTypeIsSet_ = true;
 }
 
-bool RecycleInstance::chargeModeIsSet() const
+bool RecycleInstance::chargeTypeIsSet() const
 {
-    return chargeModeIsSet_;
+    return chargeTypeIsSet_;
 }
 
-void RecycleInstance::unsetchargeMode()
+void RecycleInstance::unsetchargeType()
 {
-    chargeModeIsSet_ = false;
+    chargeTypeIsSet_ = false;
 }
 
 std::string RecycleInstance::getEnterpriseProjectId() const

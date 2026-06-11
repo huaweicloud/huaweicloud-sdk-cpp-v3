@@ -32,6 +32,8 @@ CreateInstanceRequestBody::CreateInstanceRequestBody()
     productType_ = "";
     productTypeIsSet_ = false;
     flavorIsSet_ = false;
+    diskEncryptionId_ = "";
+    diskEncryptionIdIsSet_ = false;
     configurationId_ = "";
     configurationIdIsSet_ = false;
     backupStrategyIsSet_ = false;
@@ -46,6 +48,7 @@ CreateInstanceRequestBody::CreateInstanceRequestBody()
     port_ = "";
     portIsSet_ = false;
     availabilityZoneDetailIsSet_ = false;
+    lbAccessControlSettingsIsSet_ = false;
 }
 
 CreateInstanceRequestBody::~CreateInstanceRequestBody() = default;
@@ -91,6 +94,9 @@ web::json::value CreateInstanceRequestBody::toJson() const
     if(flavorIsSet_) {
         val[utility::conversions::to_string_t("flavor")] = ModelBase::toJson(flavor_);
     }
+    if(diskEncryptionIdIsSet_) {
+        val[utility::conversions::to_string_t("disk_encryption_id")] = ModelBase::toJson(diskEncryptionId_);
+    }
     if(configurationIdIsSet_) {
         val[utility::conversions::to_string_t("configuration_id")] = ModelBase::toJson(configurationId_);
     }
@@ -117,6 +123,9 @@ web::json::value CreateInstanceRequestBody::toJson() const
     }
     if(availabilityZoneDetailIsSet_) {
         val[utility::conversions::to_string_t("availability_zone_detail")] = ModelBase::toJson(availabilityZoneDetail_);
+    }
+    if(lbAccessControlSettingsIsSet_) {
+        val[utility::conversions::to_string_t("lb_access_control_settings")] = ModelBase::toJson(lbAccessControlSettings_);
     }
 
     return val;
@@ -224,6 +233,15 @@ bool CreateInstanceRequestBody::fromJson(const web::json::value& val)
             setFlavor(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("disk_encryption_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("disk_encryption_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDiskEncryptionId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("configuration_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configuration_id"));
         if(!fieldValue.is_null())
@@ -303,6 +321,15 @@ bool CreateInstanceRequestBody::fromJson(const web::json::value& val)
             AvailabilityZoneDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailabilityZoneDetail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("lb_access_control_settings"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lb_access_control_settings"));
+        if(!fieldValue.is_null())
+        {
+            LbAccessControlSettings refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLbAccessControlSettings(refVal);
         }
     }
     return ok;
@@ -540,6 +567,27 @@ void CreateInstanceRequestBody::unsetflavor()
     flavorIsSet_ = false;
 }
 
+std::string CreateInstanceRequestBody::getDiskEncryptionId() const
+{
+    return diskEncryptionId_;
+}
+
+void CreateInstanceRequestBody::setDiskEncryptionId(const std::string& value)
+{
+    diskEncryptionId_ = value;
+    diskEncryptionIdIsSet_ = true;
+}
+
+bool CreateInstanceRequestBody::diskEncryptionIdIsSet() const
+{
+    return diskEncryptionIdIsSet_;
+}
+
+void CreateInstanceRequestBody::unsetdiskEncryptionId()
+{
+    diskEncryptionIdIsSet_ = false;
+}
+
 std::string CreateInstanceRequestBody::getConfigurationId() const
 {
     return configurationId_;
@@ -727,6 +775,27 @@ bool CreateInstanceRequestBody::availabilityZoneDetailIsSet() const
 void CreateInstanceRequestBody::unsetavailabilityZoneDetail()
 {
     availabilityZoneDetailIsSet_ = false;
+}
+
+LbAccessControlSettings CreateInstanceRequestBody::getLbAccessControlSettings() const
+{
+    return lbAccessControlSettings_;
+}
+
+void CreateInstanceRequestBody::setLbAccessControlSettings(const LbAccessControlSettings& value)
+{
+    lbAccessControlSettings_ = value;
+    lbAccessControlSettingsIsSet_ = true;
+}
+
+bool CreateInstanceRequestBody::lbAccessControlSettingsIsSet() const
+{
+    return lbAccessControlSettingsIsSet_;
+}
+
+void CreateInstanceRequestBody::unsetlbAccessControlSettings()
+{
+    lbAccessControlSettingsIsSet_ = false;
 }
 
 }

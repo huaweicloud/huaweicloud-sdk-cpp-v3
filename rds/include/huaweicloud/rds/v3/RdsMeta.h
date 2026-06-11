@@ -34,6 +34,7 @@ public:
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateConfiguration();
     static HttpRequestDef genRequestDefForCreateDnsName();
+    static HttpRequestDef genRequestDefForCreateDrsJobTask();
     static HttpRequestDef genRequestDefForCreateInstance();
     static HttpRequestDef genRequestDefForCreateInstanceIam5();
     static HttpRequestDef genRequestDefForCreateManualBackup();
@@ -72,6 +73,9 @@ public:
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListFlavorsResize();
     static HttpRequestDef genRequestDefForListHistoryDatabase();
+    static HttpRequestDef genRequestDefForListHistorySessions();
+    static HttpRequestDef genRequestDefForListHistoryTopSqls();
+    static HttpRequestDef genRequestDefForListHistoryWaitEvents();
     static HttpRequestDef genRequestDefForListInspectionHistories();
     static HttpRequestDef genRequestDefForListInstanceDiagnosis();
     static HttpRequestDef genRequestDefForListInstanceParamHistories();
@@ -144,6 +148,7 @@ public:
     static HttpRequestDef genRequestDefForShowAuditlogPolicy();
     static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForShowAutoUpgradePolicy();
+    static HttpRequestDef genRequestDefForShowAvailableBuildDrInstance();
     static HttpRequestDef genRequestDefForShowAvailableVersion();
     static HttpRequestDef genRequestDefForShowBackupConfig();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
@@ -154,6 +159,9 @@ public:
     static HttpRequestDef genRequestDefForShowDnsName();
     static HttpRequestDef genRequestDefForShowDomainName();
     static HttpRequestDef genRequestDefForShowDrReplicaStatus();
+    static HttpRequestDef genRequestDefForShowDrsJobName();
+    static HttpRequestDef genRequestDefForShowHistorySessionAnalyseDownloadInfo();
+    static HttpRequestDef genRequestDefForShowHotClodSeparationStatus();
     static HttpRequestDef genRequestDefForShowIncreBackupPolicy1();
     static HttpRequestDef genRequestDefForShowInstanceConfiguration();
     static HttpRequestDef genRequestDefForShowOffSiteBackupPolicy();
@@ -167,6 +175,7 @@ public:
     static HttpRequestDef genRequestDefForShowStorageUsedSpace();
     static HttpRequestDef genRequestDefForShowTaskDetail();
     static HttpRequestDef genRequestDefForShowTdeStatus();
+    static HttpRequestDef genRequestDefForShowTopObjects();
     static HttpRequestDef genRequestDefForShowTransferPolicy();
     static HttpRequestDef genRequestDefForShowUpgradeDbMajorVersionStatus();
     static HttpRequestDef genRequestDefForStartFailover();
@@ -201,9 +210,11 @@ public:
     static HttpRequestDef genRequestDefForUpgradeDbVersion();
     static HttpRequestDef genRequestDefForUpgradeDbVersionNew();
     static HttpRequestDef genRequestDefForUpgradeLargeVersion();
+    static HttpRequestDef genRequestDefForUploadHistorySessionAnalyase();
     static HttpRequestDef genRequestDefForListApiVersion();
     static HttpRequestDef genRequestDefForListApiVersionNew();
     static HttpRequestDef genRequestDefForShowApiVersion();
+    static HttpRequestDef genRequestDefForShowMsdtcLocalHost();
     static HttpRequestDef genRequestDefForAllowDbUserPrivilege();
     static HttpRequestDef genRequestDefForCreateDatabase();
     static HttpRequestDef genRequestDefForCreateDbUser();
@@ -258,6 +269,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateReadWeight();
     static HttpRequestDef genRequestDefForCreateIntelligentKillSession();
     static HttpRequestDef genRequestDefForGetInstancesNoIndexTables();
+    static HttpRequestDef genRequestDefForRotateAuditLog();
     static HttpRequestDef genRequestDefForShowAutoCesAlarm();
     static HttpRequestDef genRequestDefForShowIntelligentKillSessionHistory();
     static HttpRequestDef genRequestDefForShowIntelligentKillSessionStatistic();

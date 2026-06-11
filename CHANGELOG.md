@@ -1,3 +1,81 @@
+# 3.1.190 2026-06-11
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `BatchDeleteShards`
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddReadonlyNode**
+    - changes of request param
+      - `+ group_id`
+      - `+ availability_zone`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDisasterRecoverySettings**
+    - changes of response param
+      - `+ disaster_recovery_settings.sync_delay`
+      - `* disaster_recovery_settings: list<SwitchoverRatioInfo> -> list<QuerySwitchoverRatioInfo>`
+  - **SetDisasterRecoverySettings**
+    - changes of request param
+      - `+ disaster_recovery_settings.sync_delay`
+      - `* disaster_recovery_settings: list<SwitchoverRatioInfo> -> list<SetSwitchoverRatioInfo>`
+  - **ListRecycleInstances**
+    - changes of response param
+      - `+ instances.data_store`
+      - `+ instances.charge_type`
+      - `- instances.datastore`
+      - `- instances.charge_mode`
+  - **CreateInstance**
+    - changes of request param
+      - `+ disk_encryption_id`
+      - `+ lb_access_control_settings`
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.disk_encryption_id`
+      - `+ instances.dr_instance_id`
+      - `+ instances.ccm_cert_info`
+      - `+ instances.backup_space_usage`
+      - `+ instances.dual_active_info.destination_instance_name`
+      - `+ instances.dual_active_info.destination_instance_node_num`
+      - `+ instances.dual_active_info.destination_instance_spec_code`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowMsdtcLocalHost`
+    - `ShowTopObjects`
+    - `CreateDrsJobTask`
+    - `ShowDrsJobName`
+    - `ShowHotClodSeparationStatus`
+    - `ShowAvailableBuildDrInstance`
+    - `ListHistorySessions`
+    - `ListHistoryTopSqls`
+    - `ListHistoryWaitEvents`
+    - `ShowHistorySessionAnalyseDownloadInfo`
+    - `UploadHistorySessionAnalyase`
+    - `RotateAuditLog`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTopSqls**
+    - changes of request param
+      - `+ offset`
+
 # 3.1.189 2026-06-04
 
 ### HuaweiCloud SDK CDN

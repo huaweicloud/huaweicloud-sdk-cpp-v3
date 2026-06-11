@@ -16,6 +16,8 @@ ListTopSqlsRequest::ListTopSqlsRequest()
     instanceIdIsSet_ = false;
     xLanguage_ = "";
     xLanguageIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
     sortKey_ = "";
     sortKeyIsSet_ = false;
     limit_ = 0;
@@ -41,6 +43,9 @@ web::json::value ListTopSqlsRequest::toJson() const
     }
     if(xLanguageIsSet_) {
         val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
     if(sortKeyIsSet_) {
         val[utility::conversions::to_string_t("sort_key")] = ModelBase::toJson(sortKey_);
@@ -77,6 +82,15 @@ bool ListTopSqlsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setXLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("sort_key"))) {
@@ -159,6 +173,27 @@ bool ListTopSqlsRequest::xLanguageIsSet() const
 void ListTopSqlsRequest::unsetxLanguage()
 {
     xLanguageIsSet_ = false;
+}
+
+int32_t ListTopSqlsRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ListTopSqlsRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ListTopSqlsRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ListTopSqlsRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
 }
 
 std::string ListTopSqlsRequest::getSortKey() const

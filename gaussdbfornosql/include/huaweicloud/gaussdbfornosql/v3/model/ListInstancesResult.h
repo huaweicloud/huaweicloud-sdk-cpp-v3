@@ -10,7 +10,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdbfornosql/v3/model/DualActiveInfo.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/BackupSpaceUsage.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesDatastoreResult.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/CertInfoOption.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesGroupResult.h>
 #include <string>
 #include <vector>
@@ -25,7 +27,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 实例信息。
+/// **参数解释：** 实例信息。 **取值范围：** 不涉及。
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFORNOSQL_V3_EXPORT  ListInstancesResult
     : public ModelBase
@@ -44,7 +46,7 @@ public:
     /// ListInstancesResult members
 
     /// <summary>
-    /// 实例ID。
+    /// **参数解释：** 实例ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getId() const;
@@ -53,7 +55,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 实例名称。
+    /// **参数解释：** 实例名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getName() const;
@@ -62,7 +64,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 实例状态。 取值： - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
+    /// **参数解释：** 实例状态。 **取值范围：** - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
     /// </summary>
 
     std::string getStatus() const;
@@ -71,7 +73,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 数据库端口。
+    /// **参数解释：** 数据库端口。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getPort() const;
@@ -80,7 +82,7 @@ public:
     void setPort(const std::string& value);
 
     /// <summary>
-    /// 实例所在区域。
+    /// **参数解释：** 实例所在区域。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getRegion() const;
@@ -98,7 +100,7 @@ public:
     void setDatastore(const ListInstancesDatastoreResult& value);
 
     /// <summary>
-    /// 实例类型。与请求参数相同。
+    /// **参数解释：** 实例类型。 **取值范围：** 与请求参数相同。
     /// </summary>
 
     std::string getMode() const;
@@ -107,7 +109,7 @@ public:
     void setMode(const std::string& value);
 
     /// <summary>
-    /// 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+    /// **参数解释：** 产品类型。 **取值范围：** GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
     /// </summary>
 
     std::string getProductType() const;
@@ -116,7 +118,7 @@ public:
     void setProductType(const std::string& value);
 
     /// <summary>
-    /// 存储引擎。取值为“rocksDB”。
+    /// **参数解释：** 存储引擎。 **取值范围：** 取值为“rocksDB”。
     /// </summary>
 
     std::string getEngine() const;
@@ -125,7 +127,7 @@ public:
     void setEngine(const std::string& value);
 
     /// <summary>
-    /// 实例创建时间。
+    /// **参数解释：** 实例创建时间。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCreated() const;
@@ -134,7 +136,7 @@ public:
     void setCreated(const std::string& value);
 
     /// <summary>
-    /// 实例操作最新变更的时间。
+    /// **参数解释：** 实例操作最新变更的时间。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getUpdated() const;
@@ -143,7 +145,7 @@ public:
     void setUpdated(const std::string& value);
 
     /// <summary>
-    /// 默认用户名。取值为“rwuser”。
+    /// **参数解释：** 默认用户名。 **取值范围：** 取值为“rwuser”。
     /// </summary>
 
     std::string getDbUserName() const;
@@ -152,7 +154,7 @@ public:
     void setDbUserName(const std::string& value);
 
     /// <summary>
-    /// 虚拟私有云ID。
+    /// **参数解释：** 虚拟私有云ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getVpcId() const;
@@ -161,7 +163,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 子网ID。
+    /// **参数解释：** 子网ID。 **取值范围：** GeminiDB Cassandra 实例使用多个子网的场景，请参见表 ListInstancesNodeResult字段数据结构说明中的“subnet_id”。
     /// </summary>
 
     std::string getSubnetId() const;
@@ -170,7 +172,7 @@ public:
     void setSubnetId(const std::string& value);
 
     /// <summary>
-    /// 安全组ID。
+    /// **参数解释：** 安全组ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getSecurityGroupId() const;
@@ -188,7 +190,7 @@ public:
     void setBackupStrategy(const ListInstancesBackupStrategyResult& value);
 
     /// <summary>
-    /// 计费方式。 - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
+    /// **参数解释：** 计费方式。 **取值范围：** - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
     /// </summary>
 
     std::string getPayMode() const;
@@ -197,7 +199,7 @@ public:
     void setPayMode(const std::string& value);
 
     /// <summary>
-    /// 系统可维护时间窗。
+    /// **参数解释：** 系统可维护时间窗。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getMaintenanceWindow() const;
@@ -206,7 +208,7 @@ public:
     void setMaintenanceWindow(const std::string& value);
 
     /// <summary>
-    /// 组信息。
+    /// **参数解释：** 组信息。 **取值范围：** 不涉及。
     /// </summary>
 
     std::vector<ListInstancesGroupResult>& getGroups();
@@ -215,7 +217,7 @@ public:
     void setGroups(const std::vector<ListInstancesGroupResult>& value);
 
     /// <summary>
-    /// 企业项目ID。取值为“0”，表示为default企业项目。
+    /// **参数解释：** 企业项目ID。 **取值范围：** 取值为“0”，表示为default企业项目。
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -224,7 +226,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 专属资源ID，只有数据库实例属于专属资源池才会返回该参数。
+    /// **参数解释：** 专属资源ID。只有数据库实例属于专属资源池才会返回该参数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDedicatedResourceId() const;
@@ -233,7 +235,7 @@ public:
     void setDedicatedResourceId(const std::string& value);
 
     /// <summary>
-    /// 时区。
+    /// **参数解释：** 时区。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getTimeZone() const;
@@ -242,7 +244,7 @@ public:
     void setTimeZone(const std::string& value);
 
     /// <summary>
-    /// 实例正在执行的动作。
+    /// **参数解释：** 实例正在执行的动作。 **取值范围：** 不涉及。
     /// </summary>
 
     std::vector<std::string>& getActions();
@@ -251,7 +253,16 @@ public:
     void setActions(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 负载均衡ip，只有存在负载均衡ip，才会返回该参数。
+    /// **参数解释：** 磁盘加密时的密钥ID。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getDiskEncryptionId() const;
+    bool diskEncryptionIdIsSet() const;
+    void unsetdiskEncryptionId();
+    void setDiskEncryptionId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 负载均衡ip。 **取值范围：** 只有存在负载均衡ip，才会返回该参数。
     /// </summary>
 
     std::string getLbIpAddress() const;
@@ -260,7 +271,7 @@ public:
     void setLbIpAddress(const std::string& value);
 
     /// <summary>
-    /// 负载均衡端口，只有存在负载均衡ip，才会返回该参数。
+    /// **参数解释：** 负载均衡端口。 **取值范围：** 只有存在负载均衡ip，才会返回该参数。
     /// </summary>
 
     std::string getLbPort() const;
@@ -269,13 +280,22 @@ public:
     void setLbPort(const std::string& value);
 
     /// <summary>
-    /// 实例可用区。
+    /// **参数解释：** 实例可用区。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getAvailabilityZone() const;
     bool availabilityZoneIsSet() const;
     void unsetavailabilityZone();
     void setAvailabilityZone(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 容灾实例ID。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getDrInstanceId() const;
+    bool drInstanceIdIsSet() const;
+    void unsetdrInstanceId();
+    void setDrInstanceId(const std::string& value);
 
     /// <summary>
     /// 
@@ -287,13 +307,31 @@ public:
     void setDualActiveInfo(const DualActiveInfo& value);
 
     /// <summary>
-    /// 参数解释： SSL安全连接启用情况。 取值范围： - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
+    /// 
+    /// </summary>
+
+    CertInfoOption getCcmCertInfo() const;
+    bool ccmCertInfoIsSet() const;
+    void unsetccmCertInfo();
+    void setCcmCertInfo(const CertInfoOption& value);
+
+    /// <summary>
+    /// **参数解释：** SSL安全连接启用情况。 **取值范围：** - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
     /// </summary>
 
     std::string getSsl() const;
     bool sslIsSet() const;
     void unsetssl();
     void setSsl(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    BackupSpaceUsage getBackupSpaceUsage() const;
+    bool backupSpaceUsageIsSet() const;
+    void unsetbackupSpaceUsage();
+    void setBackupSpaceUsage(const BackupSpaceUsage& value);
 
 
 protected:
@@ -343,16 +381,24 @@ protected:
     bool timeZoneIsSet_;
     std::vector<std::string> actions_;
     bool actionsIsSet_;
+    std::string diskEncryptionId_;
+    bool diskEncryptionIdIsSet_;
     std::string lbIpAddress_;
     bool lbIpAddressIsSet_;
     std::string lbPort_;
     bool lbPortIsSet_;
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
+    std::string drInstanceId_;
+    bool drInstanceIdIsSet_;
     DualActiveInfo dualActiveInfo_;
     bool dualActiveInfoIsSet_;
+    CertInfoOption ccmCertInfo_;
+    bool ccmCertInfoIsSet_;
     std::string ssl_;
     bool sslIsSet_;
+    BackupSpaceUsage backupSpaceUsage_;
+    bool backupSpaceUsageIsSet_;
 
 };
 

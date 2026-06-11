@@ -20,6 +20,10 @@ AddReadonlyNodeRequestBody::AddReadonlyNodeRequestBody()
     delayIsSet_ = false;
     isAutoPay_ = false;
     isAutoPayIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
+    availabilityZone_ = "";
+    availabilityZoneIsSet_ = false;
 }
 
 AddReadonlyNodeRequestBody::~AddReadonlyNodeRequestBody() = default;
@@ -43,6 +47,12 @@ web::json::value AddReadonlyNodeRequestBody::toJson() const
     }
     if(isAutoPayIsSet_) {
         val[utility::conversions::to_string_t("is_auto_pay")] = ModelBase::toJson(isAutoPay_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
+    }
+    if(availabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
 
     return val;
@@ -85,6 +95,24 @@ bool AddReadonlyNodeRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAutoPay(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZone(refVal);
         }
     }
     return ok;
@@ -173,6 +201,48 @@ bool AddReadonlyNodeRequestBody::isAutoPayIsSet() const
 void AddReadonlyNodeRequestBody::unsetisAutoPay()
 {
     isAutoPayIsSet_ = false;
+}
+
+std::string AddReadonlyNodeRequestBody::getGroupId() const
+{
+    return groupId_;
+}
+
+void AddReadonlyNodeRequestBody::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool AddReadonlyNodeRequestBody::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void AddReadonlyNodeRequestBody::unsetgroupId()
+{
+    groupIdIsSet_ = false;
+}
+
+std::string AddReadonlyNodeRequestBody::getAvailabilityZone() const
+{
+    return availabilityZone_;
+}
+
+void AddReadonlyNodeRequestBody::setAvailabilityZone(const std::string& value)
+{
+    availabilityZone_ = value;
+    availabilityZoneIsSet_ = true;
+}
+
+bool AddReadonlyNodeRequestBody::availabilityZoneIsSet() const
+{
+    return availabilityZoneIsSet_;
+}
+
+void AddReadonlyNodeRequestBody::unsetavailabilityZone()
+{
+    availabilityZoneIsSet_ = false;
 }
 
 }

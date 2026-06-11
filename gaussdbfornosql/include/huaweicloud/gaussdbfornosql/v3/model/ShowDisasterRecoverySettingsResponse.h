@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/gaussdbfornosql/v3/model/QuerySwitchoverRatioInfo.h>
 #include <vector>
-#include <huaweicloud/gaussdbfornosql/v3/model/SwitchoverRatioInfo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,16 +40,16 @@ public:
     /// ShowDisasterRecoverySettingsResponse members
 
     /// <summary>
-    /// 容灾切换的故障节点比例列表。
+    /// **参数解释：** 容灾切换的故障节点比例列表。 **取值范围：** 不涉及。
     /// </summary>
 
-    std::vector<SwitchoverRatioInfo>& getDisasterRecoverySettings();
+    std::vector<QuerySwitchoverRatioInfo>& getDisasterRecoverySettings();
     bool disasterRecoverySettingsIsSet() const;
     void unsetdisasterRecoverySettings();
-    void setDisasterRecoverySettings(const std::vector<SwitchoverRatioInfo>& value);
+    void setDisasterRecoverySettings(const std::vector<QuerySwitchoverRatioInfo>& value);
 
     /// <summary>
-    /// 总记录数。
+    /// **参数解释：** 参数修改历史记录总条数。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getTotalCount() const;
@@ -59,7 +59,7 @@ public:
 
 
 protected:
-    std::vector<SwitchoverRatioInfo> disasterRecoverySettings_;
+    std::vector<QuerySwitchoverRatioInfo> disasterRecoverySettings_;
     bool disasterRecoverySettingsIsSet_;
     int32_t totalCount_;
     bool totalCountIsSet_;

@@ -245,6 +245,48 @@ std::shared_ptr<BatchDeleteBackupResponse> DdsClient::batchDeleteBackup(BatchDel
 
     return localVarResult;
 }
+std::shared_ptr<BatchDeleteShardsResponse> DdsClient::batchDeleteShards(BatchDeleteShardsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/shards/batch-delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForBatchDeleteShards());
+
+    std::shared_ptr<BatchDeleteShardsResponse> localVarResult = std::make_shared<BatchDeleteShardsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchTagActionResponse> DdsClient::batchTagAction(BatchTagActionRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/tags/action";

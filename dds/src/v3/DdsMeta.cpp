@@ -58,6 +58,15 @@ HttpRequestDef DdsMeta::genRequestDefForBatchDeleteBackup() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForBatchDeleteShards() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForBatchTagAction() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

@@ -44,7 +44,7 @@ bool ShowDisasterRecoverySettingsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("disaster_recovery_settings"));
         if(!fieldValue.is_null())
         {
-            std::vector<SwitchoverRatioInfo> refVal;
+            std::vector<QuerySwitchoverRatioInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDisasterRecoverySettings(refVal);
         }
@@ -62,12 +62,12 @@ bool ShowDisasterRecoverySettingsResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<SwitchoverRatioInfo>& ShowDisasterRecoverySettingsResponse::getDisasterRecoverySettings()
+std::vector<QuerySwitchoverRatioInfo>& ShowDisasterRecoverySettingsResponse::getDisasterRecoverySettings()
 {
     return disasterRecoverySettings_;
 }
 
-void ShowDisasterRecoverySettingsResponse::setDisasterRecoverySettings(const std::vector<SwitchoverRatioInfo>& value)
+void ShowDisasterRecoverySettingsResponse::setDisasterRecoverySettings(const std::vector<QuerySwitchoverRatioInfo>& value)
 {
     disasterRecoverySettings_ = value;
     disasterRecoverySettingsIsSet_ = true;

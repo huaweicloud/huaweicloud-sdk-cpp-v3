@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 参数解释： &#39;备份文件所在OBS信息。&#39; 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+/// **参数解释：** &#39;备份文件所在OBS信息。&#39; **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFORNOSQL_V3_EXPORT  RecoveryInfo
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// RecoveryInfo members
 
     /// <summary>
-    /// 参数解释： &#39;备份文件所在OBS bucket。&#39; 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+    /// **参数解释：** &#39;备份文件所在OBS bucket。&#39; **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getBucketName() const;
@@ -49,7 +49,7 @@ public:
     void setBucketName(const std::string& value);
 
     /// <summary>
-    /// 参数解释： &#39;备份文件名。&#39; 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+    /// **参数解释：** &#39;备份文件名。&#39; **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::vector<std::string>& getFiles();

@@ -18,6 +18,7 @@ public:
     static HttpRequestDef genRequestDefForAttachEip();
     static HttpRequestDef genRequestDefForAttachInternalIp();
     static HttpRequestDef genRequestDefForBatchDeleteBackup();
+    static HttpRequestDef genRequestDefForBatchDeleteShards();
     static HttpRequestDef genRequestDefForBatchTagAction();
     static HttpRequestDef genRequestDefForBatchUpgradeDatabaseVersion();
     static HttpRequestDef genRequestDefForBindPublicGateway();

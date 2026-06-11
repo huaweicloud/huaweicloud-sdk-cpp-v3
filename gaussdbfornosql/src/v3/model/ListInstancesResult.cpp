@@ -54,15 +54,21 @@ ListInstancesResult::ListInstancesResult()
     timeZone_ = "";
     timeZoneIsSet_ = false;
     actionsIsSet_ = false;
+    diskEncryptionId_ = "";
+    diskEncryptionIdIsSet_ = false;
     lbIpAddress_ = "";
     lbIpAddressIsSet_ = false;
     lbPort_ = "";
     lbPortIsSet_ = false;
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
+    drInstanceId_ = "";
+    drInstanceIdIsSet_ = false;
     dualActiveInfoIsSet_ = false;
+    ccmCertInfoIsSet_ = false;
     ssl_ = "";
     sslIsSet_ = false;
+    backupSpaceUsageIsSet_ = false;
 }
 
 ListInstancesResult::~ListInstancesResult() = default;
@@ -144,6 +150,9 @@ web::json::value ListInstancesResult::toJson() const
     if(actionsIsSet_) {
         val[utility::conversions::to_string_t("actions")] = ModelBase::toJson(actions_);
     }
+    if(diskEncryptionIdIsSet_) {
+        val[utility::conversions::to_string_t("disk_encryption_id")] = ModelBase::toJson(diskEncryptionId_);
+    }
     if(lbIpAddressIsSet_) {
         val[utility::conversions::to_string_t("lb_ip_address")] = ModelBase::toJson(lbIpAddress_);
     }
@@ -153,11 +162,20 @@ web::json::value ListInstancesResult::toJson() const
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
+    if(drInstanceIdIsSet_) {
+        val[utility::conversions::to_string_t("dr_instance_id")] = ModelBase::toJson(drInstanceId_);
+    }
     if(dualActiveInfoIsSet_) {
         val[utility::conversions::to_string_t("dual_active_info")] = ModelBase::toJson(dualActiveInfo_);
     }
+    if(ccmCertInfoIsSet_) {
+        val[utility::conversions::to_string_t("ccm_cert_info")] = ModelBase::toJson(ccmCertInfo_);
+    }
     if(sslIsSet_) {
         val[utility::conversions::to_string_t("ssl")] = ModelBase::toJson(ssl_);
+    }
+    if(backupSpaceUsageIsSet_) {
+        val[utility::conversions::to_string_t("backup_space_usage")] = ModelBase::toJson(backupSpaceUsage_);
     }
 
     return val;
@@ -373,6 +391,15 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             setActions(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("disk_encryption_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("disk_encryption_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDiskEncryptionId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("lb_ip_address"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lb_ip_address"));
         if(!fieldValue.is_null())
@@ -400,6 +427,15 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             setAvailabilityZone(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("dr_instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dr_instance_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDrInstanceId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("dual_active_info"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dual_active_info"));
         if(!fieldValue.is_null())
@@ -409,6 +445,15 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             setDualActiveInfo(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("ccm_cert_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ccm_cert_info"));
+        if(!fieldValue.is_null())
+        {
+            CertInfoOption refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCcmCertInfo(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("ssl"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ssl"));
         if(!fieldValue.is_null())
@@ -416,6 +461,15 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSsl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_space_usage"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_space_usage"));
+        if(!fieldValue.is_null())
+        {
+            BackupSpaceUsage refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupSpaceUsage(refVal);
         }
     }
     return ok;
@@ -905,6 +959,27 @@ void ListInstancesResult::unsetactions()
     actionsIsSet_ = false;
 }
 
+std::string ListInstancesResult::getDiskEncryptionId() const
+{
+    return diskEncryptionId_;
+}
+
+void ListInstancesResult::setDiskEncryptionId(const std::string& value)
+{
+    diskEncryptionId_ = value;
+    diskEncryptionIdIsSet_ = true;
+}
+
+bool ListInstancesResult::diskEncryptionIdIsSet() const
+{
+    return diskEncryptionIdIsSet_;
+}
+
+void ListInstancesResult::unsetdiskEncryptionId()
+{
+    diskEncryptionIdIsSet_ = false;
+}
+
 std::string ListInstancesResult::getLbIpAddress() const
 {
     return lbIpAddress_;
@@ -968,6 +1043,27 @@ void ListInstancesResult::unsetavailabilityZone()
     availabilityZoneIsSet_ = false;
 }
 
+std::string ListInstancesResult::getDrInstanceId() const
+{
+    return drInstanceId_;
+}
+
+void ListInstancesResult::setDrInstanceId(const std::string& value)
+{
+    drInstanceId_ = value;
+    drInstanceIdIsSet_ = true;
+}
+
+bool ListInstancesResult::drInstanceIdIsSet() const
+{
+    return drInstanceIdIsSet_;
+}
+
+void ListInstancesResult::unsetdrInstanceId()
+{
+    drInstanceIdIsSet_ = false;
+}
+
 DualActiveInfo ListInstancesResult::getDualActiveInfo() const
 {
     return dualActiveInfo_;
@@ -989,6 +1085,27 @@ void ListInstancesResult::unsetdualActiveInfo()
     dualActiveInfoIsSet_ = false;
 }
 
+CertInfoOption ListInstancesResult::getCcmCertInfo() const
+{
+    return ccmCertInfo_;
+}
+
+void ListInstancesResult::setCcmCertInfo(const CertInfoOption& value)
+{
+    ccmCertInfo_ = value;
+    ccmCertInfoIsSet_ = true;
+}
+
+bool ListInstancesResult::ccmCertInfoIsSet() const
+{
+    return ccmCertInfoIsSet_;
+}
+
+void ListInstancesResult::unsetccmCertInfo()
+{
+    ccmCertInfoIsSet_ = false;
+}
+
 std::string ListInstancesResult::getSsl() const
 {
     return ssl_;
@@ -1008,6 +1125,27 @@ bool ListInstancesResult::sslIsSet() const
 void ListInstancesResult::unsetssl()
 {
     sslIsSet_ = false;
+}
+
+BackupSpaceUsage ListInstancesResult::getBackupSpaceUsage() const
+{
+    return backupSpaceUsage_;
+}
+
+void ListInstancesResult::setBackupSpaceUsage(const BackupSpaceUsage& value)
+{
+    backupSpaceUsage_ = value;
+    backupSpaceUsageIsSet_ = true;
+}
+
+bool ListInstancesResult::backupSpaceUsageIsSet() const
+{
+    return backupSpaceUsageIsSet_;
+}
+
+void ListInstancesResult::unsetbackupSpaceUsage()
+{
+    backupSpaceUsageIsSet_ = false;
 }
 
 }

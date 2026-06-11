@@ -62,6 +62,9 @@
 #include <huaweicloud/rds/v3/model/CreateDnsNameRequest.h>
 #include <huaweicloud/rds/v3/model/CreateDnsNameRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateDnsNameResponse.h>
+#include <huaweicloud/rds/v3/model/CreateDrsJobTaskRequest.h>
+#include <huaweicloud/rds/v3/model/CreateDrsJobTaskResponse.h>
+#include <huaweicloud/rds/v3/model/CreateDrsTaskReq.h>
 #include <huaweicloud/rds/v3/model/CreateInstanceIam5Request.h>
 #include <huaweicloud/rds/v3/model/CreateInstanceIam5Response.h>
 #include <huaweicloud/rds/v3/model/CreateInstanceRequest.h>
@@ -165,6 +168,12 @@
 #include <huaweicloud/rds/v3/model/ListFlavorsResponse.h>
 #include <huaweicloud/rds/v3/model/ListHistoryDatabaseRequest.h>
 #include <huaweicloud/rds/v3/model/ListHistoryDatabaseResponse.h>
+#include <huaweicloud/rds/v3/model/ListHistorySessionsRequest.h>
+#include <huaweicloud/rds/v3/model/ListHistorySessionsResponse.h>
+#include <huaweicloud/rds/v3/model/ListHistoryTopSqlsRequest.h>
+#include <huaweicloud/rds/v3/model/ListHistoryTopSqlsResponse.h>
+#include <huaweicloud/rds/v3/model/ListHistoryWaitEventsRequest.h>
+#include <huaweicloud/rds/v3/model/ListHistoryWaitEventsResponse.h>
 #include <huaweicloud/rds/v3/model/ListInspectionHistoriesRequest.h>
 #include <huaweicloud/rds/v3/model/ListInspectionHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceDiagnosisRequest.h>
@@ -342,6 +351,8 @@
 #include <huaweicloud/rds/v3/model/ShowAutoEnlargePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAutoUpgradePolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAutoUpgradePolicyResponse.h>
+#include <huaweicloud/rds/v3/model/ShowAvailableBuildDrInstanceRequest.h>
+#include <huaweicloud/rds/v3/model/ShowAvailableBuildDrInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableVersionRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableVersionResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupConfigRequest.h>
@@ -362,6 +373,12 @@
 #include <huaweicloud/rds/v3/model/ShowDomainNameResponse.h>
 #include <huaweicloud/rds/v3/model/ShowDrReplicaStatusRequest.h>
 #include <huaweicloud/rds/v3/model/ShowDrReplicaStatusResponse.h>
+#include <huaweicloud/rds/v3/model/ShowDrsJobNameRequest.h>
+#include <huaweicloud/rds/v3/model/ShowDrsJobNameResponse.h>
+#include <huaweicloud/rds/v3/model/ShowHistorySessionAnalyseDownloadInfoRequest.h>
+#include <huaweicloud/rds/v3/model/ShowHistorySessionAnalyseDownloadInfoResponse.h>
+#include <huaweicloud/rds/v3/model/ShowHotClodSeparationStatusRequest.h>
+#include <huaweicloud/rds/v3/model/ShowHotClodSeparationStatusResponse.h>
 #include <huaweicloud/rds/v3/model/ShowIncreBackupPolicy1Request.h>
 #include <huaweicloud/rds/v3/model/ShowIncreBackupPolicy1Response.h>
 #include <huaweicloud/rds/v3/model/ShowInstanceConfigurationRequest.h>
@@ -388,6 +405,8 @@
 #include <huaweicloud/rds/v3/model/ShowTaskDetailResponse.h>
 #include <huaweicloud/rds/v3/model/ShowTdeStatusRequest.h>
 #include <huaweicloud/rds/v3/model/ShowTdeStatusResponse.h>
+#include <huaweicloud/rds/v3/model/ShowTopObjectsRequest.h>
+#include <huaweicloud/rds/v3/model/ShowTopObjectsResponse.h>
 #include <huaweicloud/rds/v3/model/ShowTransferPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowTransferPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowUpgradeDbMajorVersionStatusRequest.h>
@@ -475,6 +494,9 @@
 #include <huaweicloud/rds/v3/model/UpgradeLargeVersionRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeLargeVersionResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradePgMajorVersion.h>
+#include <huaweicloud/rds/v3/model/UploadHistorySessionAnalyaseBody.h>
+#include <huaweicloud/rds/v3/model/UploadHistorySessionAnalyaseRequest.h>
+#include <huaweicloud/rds/v3/model/UploadHistorySessionAnalyaseResponse.h>
 #include <string>
 #include <vector>
 #include <cpprest/details/basic_types.h>
@@ -485,6 +507,11 @@
 #include <huaweicloud/rds/v3/model/ListApiVersionResponse.h>
 #include <huaweicloud/rds/v3/model/ShowApiVersionRequest.h>
 #include <huaweicloud/rds/v3/model/ShowApiVersionResponse.h>
+#include <string>
+
+#include <huaweicloud/rds/v3/model/ErrorResponse.h>
+#include <huaweicloud/rds/v3/model/ShowMsdtcLocalHostRequest.h>
+#include <huaweicloud/rds/v3/model/ShowMsdtcLocalHostResponse.h>
 #include <string>
 
 #include <huaweicloud/rds/v3/model/AllowDbUserPrivilegeRequest.h>
@@ -632,6 +659,9 @@
 #include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesRequest.h>
 #include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesResponse.h>
 #include <huaweicloud/rds/v3/model/IntelligentKillSessionReq.h>
+#include <huaweicloud/rds/v3/model/RotateAuditLogRequest.h>
+#include <huaweicloud/rds/v3/model/RotateAuditLogRequestBody.h>
+#include <huaweicloud/rds/v3/model/RotateAuditLogResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAutoCesAlarmRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAutoCesAlarmResponse.h>
 #include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionHistoryRequest.h>
@@ -964,6 +994,14 @@ public:
     std::shared_ptr<CreateDnsNameResponse> createDnsName(
         CreateDnsNameRequest &request
     );
+    // 创建drs同步任务
+    //
+    // 创建drs同步任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDrsJobTaskResponse> createDrsJobTask(
+        CreateDrsJobTaskRequest &request
+    );
     // 创建数据库实例
     //
     // 创建数据库实例。
@@ -1266,6 +1304,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListHistoryDatabaseResponse> listHistoryDatabase(
         ListHistoryDatabaseRequest &request
+    );
+    // 查询历史会话
+    //
+    // 查询历史会话
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHistorySessionsResponse> listHistorySessions(
+        ListHistorySessionsRequest &request
+    );
+    // 查询历史TOP SQL（瞬时）
+    //
+    // 查询历史TOP SQL（瞬时）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHistoryTopSqlsResponse> listHistoryTopSqls(
+        ListHistoryTopSqlsRequest &request
+    );
+    // 查询历史等待事件
+    //
+    // 查询历史等待事件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHistoryWaitEventsResponse> listHistoryWaitEvents(
+        ListHistoryWaitEventsRequest &request
     );
     // 查询实例大版本升级检查历史
     //
@@ -1853,6 +1915,14 @@ public:
     std::shared_ptr<ShowAutoUpgradePolicyResponse> showAutoUpgradePolicy(
         ShowAutoUpgradePolicyRequest &request
     );
+    // 查询可用于搭建容灾的主实例或灾备实例
+    //
+    // 查询可用于搭建容灾的主实例或灾备实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAvailableBuildDrInstanceResponse> showAvailableBuildDrInstance(
+        ShowAvailableBuildDrInstanceRequest &request
+    );
     // 查询实例可升级的目标版本
     //
     // 查询实例可升级的目标版本
@@ -1932,6 +2002,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDrReplicaStatusResponse> showDrReplicaStatus(
         ShowDrReplicaStatusRequest &request
+    );
+    // 查询实例的drs任务名称
+    //
+    // 查询实例的drs任务名称
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDrsJobNameResponse> showDrsJobName(
+        ShowDrsJobNameRequest &request
+    );
+    // 查询历史会话分析的下载信息
+    //
+    // 查询历史会话分析的下载信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHistorySessionAnalyseDownloadInfoResponse> showHistorySessionAnalyseDownloadInfo(
+        ShowHistorySessionAnalyseDownloadInfoRequest &request
+    );
+    // 查询冷热分离是否开启
+    //
+    // 查询冷热分离是否开启
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHotClodSeparationStatusResponse> showHotClodSeparationStatus(
+        ShowHotClodSeparationStatusRequest &request
     );
     // 获取增备策略
     //
@@ -2036,6 +2130,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTdeStatusResponse> showTdeStatus(
         ShowTdeStatusRequest &request
+    );
+    // 查询top对象
+    //
+    // 查询top对象
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTopObjectsResponse> showTopObjects(
+        ShowTopObjectsRequest &request
     );
     // 查询自动转储策略
     //
@@ -2309,6 +2411,14 @@ public:
     std::shared_ptr<UpgradeLargeVersionResponse> upgradeLargeVersion(
         UpgradeLargeVersionRequest &request
     );
+    // 上传历史会话分析
+    //
+    // 上传历史会话分析
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UploadHistorySessionAnalyaseResponse> uploadHistorySessionAnalyase(
+        UploadHistorySessionAnalyaseRequest &request
+    );
 
     // 查询API版本列表
     //
@@ -2333,6 +2443,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowApiVersionResponse> showApiVersion(
         ShowApiVersionRequest &request
+    );
+
+    // 获取msdtc本机信息
+    //
+    // 获取msdtc本机信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowMsdtcLocalHostResponse> showMsdtcLocalHost(
+        ShowMsdtcLocalHostRequest &request
     );
 
     // 授权数据库帐号
@@ -2774,6 +2893,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<GetInstancesNoIndexTablesResponse> getInstancesNoIndexTables(
         GetInstancesNoIndexTablesRequest &request
+    );
+    // 触发审计日志轮转
+    //
+    // 触发审计日志轮转
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RotateAuditLogResponse> rotateAuditLog(
+        RotateAuditLogRequest &request
     );
     // 查询当前用户自动告警配置
     //

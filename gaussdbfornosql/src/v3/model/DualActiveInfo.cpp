@@ -20,6 +20,12 @@ DualActiveInfo::DualActiveInfo()
     destinationInstanceIdIsSet_ = false;
     destinationRegion_ = "";
     destinationRegionIsSet_ = false;
+    destinationInstanceName_ = "";
+    destinationInstanceNameIsSet_ = false;
+    destinationInstanceNodeNum_ = "";
+    destinationInstanceNodeNumIsSet_ = false;
+    destinationInstanceSpecCode_ = "";
+    destinationInstanceSpecCodeIsSet_ = false;
 }
 
 DualActiveInfo::~DualActiveInfo() = default;
@@ -43,6 +49,15 @@ web::json::value DualActiveInfo::toJson() const
     }
     if(destinationRegionIsSet_) {
         val[utility::conversions::to_string_t("destination_region")] = ModelBase::toJson(destinationRegion_);
+    }
+    if(destinationInstanceNameIsSet_) {
+        val[utility::conversions::to_string_t("destination_instance_name")] = ModelBase::toJson(destinationInstanceName_);
+    }
+    if(destinationInstanceNodeNumIsSet_) {
+        val[utility::conversions::to_string_t("destination_instance_node_num")] = ModelBase::toJson(destinationInstanceNodeNum_);
+    }
+    if(destinationInstanceSpecCodeIsSet_) {
+        val[utility::conversions::to_string_t("destination_instance_spec_code")] = ModelBase::toJson(destinationInstanceSpecCode_);
     }
 
     return val;
@@ -85,6 +100,33 @@ bool DualActiveInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDestinationRegion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("destination_instance_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination_instance_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDestinationInstanceName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("destination_instance_node_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination_instance_node_num"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDestinationInstanceNodeNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("destination_instance_spec_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination_instance_spec_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDestinationInstanceSpecCode(refVal);
         }
     }
     return ok;
@@ -173,6 +215,69 @@ bool DualActiveInfo::destinationRegionIsSet() const
 void DualActiveInfo::unsetdestinationRegion()
 {
     destinationRegionIsSet_ = false;
+}
+
+std::string DualActiveInfo::getDestinationInstanceName() const
+{
+    return destinationInstanceName_;
+}
+
+void DualActiveInfo::setDestinationInstanceName(const std::string& value)
+{
+    destinationInstanceName_ = value;
+    destinationInstanceNameIsSet_ = true;
+}
+
+bool DualActiveInfo::destinationInstanceNameIsSet() const
+{
+    return destinationInstanceNameIsSet_;
+}
+
+void DualActiveInfo::unsetdestinationInstanceName()
+{
+    destinationInstanceNameIsSet_ = false;
+}
+
+std::string DualActiveInfo::getDestinationInstanceNodeNum() const
+{
+    return destinationInstanceNodeNum_;
+}
+
+void DualActiveInfo::setDestinationInstanceNodeNum(const std::string& value)
+{
+    destinationInstanceNodeNum_ = value;
+    destinationInstanceNodeNumIsSet_ = true;
+}
+
+bool DualActiveInfo::destinationInstanceNodeNumIsSet() const
+{
+    return destinationInstanceNodeNumIsSet_;
+}
+
+void DualActiveInfo::unsetdestinationInstanceNodeNum()
+{
+    destinationInstanceNodeNumIsSet_ = false;
+}
+
+std::string DualActiveInfo::getDestinationInstanceSpecCode() const
+{
+    return destinationInstanceSpecCode_;
+}
+
+void DualActiveInfo::setDestinationInstanceSpecCode(const std::string& value)
+{
+    destinationInstanceSpecCode_ = value;
+    destinationInstanceSpecCodeIsSet_ = true;
+}
+
+bool DualActiveInfo::destinationInstanceSpecCodeIsSet() const
+{
+    return destinationInstanceSpecCodeIsSet_;
+}
+
+void DualActiveInfo::unsetdestinationInstanceSpecCode()
+{
+    destinationInstanceSpecCodeIsSet_ = false;
 }
 
 }

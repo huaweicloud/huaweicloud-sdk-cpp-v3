@@ -1,0 +1,159 @@
+
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_ListHistorySessionsRequest_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_ListHistorySessionsRequest_H_
+
+
+#include <huaweicloud/rds/v3/RdsExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Rds {
+namespace V3 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Request Object
+/// </summary>
+class HUAWEICLOUD_RDS_V3_EXPORT  ListHistorySessionsRequest
+    : public ModelBase
+{
+public:
+    ListHistorySessionsRequest();
+    virtual ~ListHistorySessionsRequest();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// ListHistorySessionsRequest members
+
+    /// <summary>
+    /// 实例ID。
+    /// </summary>
+
+    std::string getInstanceId() const;
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::string& value);
+
+    /// <summary>
+    /// 进程ID
+    /// </summary>
+
+    std::string getPid() const;
+    bool pidIsSet() const;
+    void unsetpid();
+    void setPid(const std::string& value);
+
+    /// <summary>
+    /// 语言。默认en-us。
+    /// </summary>
+
+    std::string getXLanguage() const;
+    bool xLanguageIsSet() const;
+    void unsetxLanguage();
+    void setXLanguage(const std::string& value);
+
+    /// <summary>
+    /// 用户名
+    /// </summary>
+
+    std::string getUserName() const;
+    bool userNameIsSet() const;
+    void unsetuserName();
+    void setUserName(const std::string& value);
+
+    /// <summary>
+    /// 数据库名
+    /// </summary>
+
+    std::string getDatabaseName() const;
+    bool databaseNameIsSet() const;
+    void unsetdatabaseName();
+    void setDatabaseName(const std::string& value);
+
+    /// <summary>
+    /// 参数解释： 开始时间。 格式为UTC时间戳。 取值范围： 不涉及。 默认取值： 不涉及。
+    /// </summary>
+
+    int64_t getStartTime() const;
+    bool startTimeIsSet() const;
+    void unsetstartTime();
+    void setStartTime(int64_t value);
+
+    /// <summary>
+    /// 参数解释： 结束时间。 格式为UTC时间戳。 取值范围： 不涉及。 默认取值： 不涉及。
+    /// </summary>
+
+    int64_t getEndTime() const;
+    bool endTimeIsSet() const;
+    void unsetendTime();
+    void setEndTime(int64_t value);
+
+    /// <summary>
+    /// 参数解释： 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，值为0表示从第一条数据开始查询）。 约束限制： 必须为数字，不能为负数。 取值范围： 大于等于0的整数。 默认取值： 0
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// 参数解释： 查询记录数。 约束限制： 不涉及。 取值范围： [1, 1000] 默认取值： 100
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+
+protected:
+    std::string instanceId_;
+    bool instanceIdIsSet_;
+    std::string pid_;
+    bool pidIsSet_;
+    std::string xLanguage_;
+    bool xLanguageIsSet_;
+    std::string userName_;
+    bool userNameIsSet_;
+    std::string databaseName_;
+    bool databaseNameIsSet_;
+    int64_t startTime_;
+    bool startTimeIsSet_;
+    int64_t endTime_;
+    bool endTimeIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+public:
+    ListHistorySessionsRequest& dereference_from_shared_ptr(std::shared_ptr<ListHistorySessionsRequest> ptr) {
+        return *ptr;
+    }
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_ListHistorySessionsRequest_H_

@@ -68,15 +68,6 @@ public:
     void setBody(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 附件(弃用)。
-    /// </summary>
-
-    std::string getAttachment() const;
-    bool attachmentIsSet() const;
-    void unsetattachment();
-    void setAttachment(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -131,7 +122,7 @@ public:
     void setNoteableType(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 提交记录id。
+    /// **参数解释：** 提交记录id(源自合并请求下的评论commit_id为null，源自commit的评论才有值)。 **约束限制：** 不涉及。 **取值范围：** 长度为40的sha1字符串。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getCommitId() const;
@@ -347,6 +338,15 @@ public:
     void setIsOutdated(bool value);
 
     /// <summary>
+    /// **参数解释：** 是否为AI工具提供的。
+    /// </summary>
+
+    bool isFromRobot() const;
+    bool fromRobotIsSet() const;
+    void unsetfromRobot();
+    void setFromRobot(bool value);
+
+    /// <summary>
     /// **参数解释：** 内容审核结果。
     /// </summary>
 
@@ -381,8 +381,6 @@ protected:
     bool typeIsSet_;
     std::string body_;
     bool bodyIsSet_;
-    std::string attachment_;
-    bool attachmentIsSet_;
     UserBasicDto author_;
     bool authorIsSet_;
     std::string createdAt_;
@@ -443,6 +441,8 @@ protected:
     bool resolvedIsSet_;
     bool isOutdated_;
     bool isOutdatedIsSet_;
+    bool fromRobot_;
+    bool fromRobotIsSet_;
     bool moderationResult_;
     bool moderationResultIsSet_;
     int64_t moderationTime_;

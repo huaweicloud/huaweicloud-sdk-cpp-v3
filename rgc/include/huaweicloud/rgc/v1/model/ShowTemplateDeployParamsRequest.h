@@ -56,12 +56,23 @@ public:
     void unsetversion();
     void setVersion(const std::string& value);
 
+    /// <summary>
+    /// 纳管账号ID。
+    /// </summary>
+
+    std::string getAccountId() const;
+    bool accountIdIsSet() const;
+    void unsetaccountId();
+    void setAccountId(const std::string& value);
+
 
 protected:
     std::string templateName_;
     bool templateNameIsSet_;
     std::string version_;
     bool versionIsSet_;
+    std::string accountId_;
+    bool accountIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

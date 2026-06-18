@@ -39,7 +39,7 @@ public:
     /// RepositoryInheritSettingDto members
 
     /// <summary>
-    /// **参数解释：** 设置源类型。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。
+    /// **参数解释：** 设置源类型。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - mr_branch_policies，分支策略设置。 - reviews，检视意见设置。 - e2e_settings，E2E设置。 - watermark，水印设置。
     /// </summary>
 
     std::string getName() const;

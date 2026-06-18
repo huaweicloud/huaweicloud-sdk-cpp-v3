@@ -18,8 +18,6 @@ CreateMergeRequestDiscussionResponseResponse::CreateMergeRequestDiscussionRespon
     typeIsSet_ = false;
     body_ = "";
     bodyIsSet_ = false;
-    attachment_ = "";
-    attachmentIsSet_ = false;
     authorIsSet_ = false;
     createdAt_ = "";
     createdAtIsSet_ = false;
@@ -75,6 +73,8 @@ CreateMergeRequestDiscussionResponseResponse::CreateMergeRequestDiscussionRespon
     resolvedIsSet_ = false;
     isOutdated_ = false;
     isOutdatedIsSet_ = false;
+    fromRobot_ = false;
+    fromRobotIsSet_ = false;
     moderationResult_ = false;
     moderationResultIsSet_ = false;
     moderationTime_ = 0L;
@@ -101,9 +101,6 @@ web::json::value CreateMergeRequestDiscussionResponseResponse::toJson() const
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
-    }
-    if(attachmentIsSet_) {
-        val[utility::conversions::to_string_t("attachment")] = ModelBase::toJson(attachment_);
     }
     if(authorIsSet_) {
         val[utility::conversions::to_string_t("author")] = ModelBase::toJson(author_);
@@ -195,6 +192,9 @@ web::json::value CreateMergeRequestDiscussionResponseResponse::toJson() const
     if(isOutdatedIsSet_) {
         val[utility::conversions::to_string_t("is_outdated")] = ModelBase::toJson(isOutdated_);
     }
+    if(fromRobotIsSet_) {
+        val[utility::conversions::to_string_t("from_robot")] = ModelBase::toJson(fromRobot_);
+    }
     if(moderationResultIsSet_) {
         val[utility::conversions::to_string_t("moderation_result")] = ModelBase::toJson(moderationResult_);
     }
@@ -236,15 +236,6 @@ bool CreateMergeRequestDiscussionResponseResponse::fromJson(const web::json::val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("attachment"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attachment"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAttachment(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("author"))) {
@@ -517,6 +508,15 @@ bool CreateMergeRequestDiscussionResponseResponse::fromJson(const web::json::val
             setIsOutdated(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("from_robot"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("from_robot"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFromRobot(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("moderation_result"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("moderation_result"));
         if(!fieldValue.is_null())
@@ -609,27 +609,6 @@ bool CreateMergeRequestDiscussionResponseResponse::bodyIsSet() const
 void CreateMergeRequestDiscussionResponseResponse::unsetbody()
 {
     bodyIsSet_ = false;
-}
-
-std::string CreateMergeRequestDiscussionResponseResponse::getAttachment() const
-{
-    return attachment_;
-}
-
-void CreateMergeRequestDiscussionResponseResponse::setAttachment(const std::string& value)
-{
-    attachment_ = value;
-    attachmentIsSet_ = true;
-}
-
-bool CreateMergeRequestDiscussionResponseResponse::attachmentIsSet() const
-{
-    return attachmentIsSet_;
-}
-
-void CreateMergeRequestDiscussionResponseResponse::unsetattachment()
-{
-    attachmentIsSet_ = false;
 }
 
 UserBasicDto CreateMergeRequestDiscussionResponseResponse::getAuthor() const
@@ -1260,6 +1239,27 @@ bool CreateMergeRequestDiscussionResponseResponse::isOutdatedIsSet() const
 void CreateMergeRequestDiscussionResponseResponse::unsetisOutdated()
 {
     isOutdatedIsSet_ = false;
+}
+
+bool CreateMergeRequestDiscussionResponseResponse::isFromRobot() const
+{
+    return fromRobot_;
+}
+
+void CreateMergeRequestDiscussionResponseResponse::setFromRobot(bool value)
+{
+    fromRobot_ = value;
+    fromRobotIsSet_ = true;
+}
+
+bool CreateMergeRequestDiscussionResponseResponse::fromRobotIsSet() const
+{
+    return fromRobotIsSet_;
+}
+
+void CreateMergeRequestDiscussionResponseResponse::unsetfromRobot()
+{
+    fromRobotIsSet_ = false;
 }
 
 bool CreateMergeRequestDiscussionResponseResponse::isModerationResult() const

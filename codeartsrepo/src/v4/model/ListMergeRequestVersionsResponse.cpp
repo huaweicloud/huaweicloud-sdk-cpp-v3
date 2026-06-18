@@ -28,6 +28,8 @@ ListMergeRequestVersionsResponse::ListMergeRequestVersionsResponse()
     stateIsSet_ = false;
     realSize_ = "";
     realSizeIsSet_ = false;
+    xTotal_ = "";
+    xTotalIsSet_ = false;
 }
 
 ListMergeRequestVersionsResponse::~ListMergeRequestVersionsResponse() = default;
@@ -63,6 +65,9 @@ web::json::value ListMergeRequestVersionsResponse::toJson() const
     }
     if(realSizeIsSet_) {
         val[utility::conversions::to_string_t("real_size")] = ModelBase::toJson(realSize_);
+    }
+    if(xTotalIsSet_) {
+        val[utility::conversions::to_string_t("X-Total")] = ModelBase::toJson(xTotal_);
     }
 
     return val;
@@ -141,6 +146,15 @@ bool ListMergeRequestVersionsResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRealSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Total"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXTotal(refVal);
         }
     }
     return ok;
@@ -313,6 +327,27 @@ bool ListMergeRequestVersionsResponse::realSizeIsSet() const
 void ListMergeRequestVersionsResponse::unsetrealSize()
 {
     realSizeIsSet_ = false;
+}
+
+std::string ListMergeRequestVersionsResponse::getXTotal() const
+{
+    return xTotal_;
+}
+
+void ListMergeRequestVersionsResponse::setXTotal(const std::string& value)
+{
+    xTotal_ = value;
+    xTotalIsSet_ = true;
+}
+
+bool ListMergeRequestVersionsResponse::xTotalIsSet() const
+{
+    return xTotalIsSet_;
+}
+
+void ListMergeRequestVersionsResponse::unsetxTotal()
+{
+    xTotalIsSet_ = false;
 }
 
 }

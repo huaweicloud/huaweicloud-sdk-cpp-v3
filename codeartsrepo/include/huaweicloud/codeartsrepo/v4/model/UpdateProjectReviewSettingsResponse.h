@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartsrepo/v4/model/RequiredAttributeDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/CategoryDto.h>
 #include <string>
 #include <vector>
@@ -96,40 +95,22 @@ public:
     void setReviewModules(const std::vector<std::string>& value);
 
     /// <summary>
-    /// **参数解释：** 仓库id。
+    /// **参数解释：** 系统预置检视意见分类类型(启用系统预置检视意见分类时返回，默认&#39;HiCode&#39;)。
     /// </summary>
 
-    int32_t getRepositoryId() const;
-    bool repositoryIdIsSet() const;
-    void unsetrepositoryId();
-    void setRepositoryId(int32_t value);
+    std::string getSecondaryCategoryType() const;
+    bool secondaryCategoryTypeIsSet() const;
+    void unsetsecondaryCategoryType();
+    void setSecondaryCategoryType(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 检视意见必填项。
+    /// **参数解释：** 系统预置检视意见分类详情(启用系统预置检视意见分类时返回)。
     /// </summary>
 
-    std::vector<RequiredAttributeDto>& getNoteRequiredAttributes();
-    bool noteRequiredAttributesIsSet() const;
-    void unsetnoteRequiredAttributes();
-    void setNoteRequiredAttributes(const std::vector<RequiredAttributeDto>& value);
-
-    /// <summary>
-    /// **参数解释：** 检视意见分类(所有可勾选的，需传参with_default_review_categories: true才返回)。
-    /// </summary>
-
-    std::vector<CategoryDto>& getCodehubDefaultCategories();
-    bool codehubDefaultCategoriesIsSet() const;
-    void unsetcodehubDefaultCategories();
-    void setCodehubDefaultCategories(const std::vector<CategoryDto>& value);
-
-    /// <summary>
-    /// **参数解释：** 系统预置检视意见分类(需传参with_default_review_categories: true才返回)。
-    /// </summary>
-
-    std::vector<CategoryDto>& getHicodeDefaultCategories();
-    bool hicodeDefaultCategoriesIsSet() const;
-    void unsethicodeDefaultCategories();
-    void setHicodeDefaultCategories(const std::vector<CategoryDto>& value);
+    std::vector<CategoryDto>& getSecondaryCategories();
+    bool secondaryCategoriesIsSet() const;
+    void unsetsecondaryCategories();
+    void setSecondaryCategories(const std::vector<CategoryDto>& value);
 
 
 protected:
@@ -145,14 +126,10 @@ protected:
     bool reviewCustomizedCategoriesIsSet_;
     std::vector<std::string> reviewModules_;
     bool reviewModulesIsSet_;
-    int32_t repositoryId_;
-    bool repositoryIdIsSet_;
-    std::vector<RequiredAttributeDto> noteRequiredAttributes_;
-    bool noteRequiredAttributesIsSet_;
-    std::vector<CategoryDto> codehubDefaultCategories_;
-    bool codehubDefaultCategoriesIsSet_;
-    std::vector<CategoryDto> hicodeDefaultCategories_;
-    bool hicodeDefaultCategoriesIsSet_;
+    std::string secondaryCategoryType_;
+    bool secondaryCategoryTypeIsSet_;
+    std::vector<CategoryDto> secondaryCategories_;
+    bool secondaryCategoriesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

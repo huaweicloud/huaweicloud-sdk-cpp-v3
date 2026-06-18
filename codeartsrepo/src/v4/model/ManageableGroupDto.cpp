@@ -18,6 +18,12 @@ ManageableGroupDto::ManageableGroupDto()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    fullPath_ = "";
+    fullPathIsSet_ = false;
+    path_ = "";
+    pathIsSet_ = false;
+    visibility_ = "";
+    visibilityIsSet_ = false;
 }
 
 ManageableGroupDto::~ManageableGroupDto() = default;
@@ -38,6 +44,15 @@ web::json::value ManageableGroupDto::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(fullPathIsSet_) {
+        val[utility::conversions::to_string_t("full_path")] = ModelBase::toJson(fullPath_);
+    }
+    if(pathIsSet_) {
+        val[utility::conversions::to_string_t("path")] = ModelBase::toJson(path_);
+    }
+    if(visibilityIsSet_) {
+        val[utility::conversions::to_string_t("visibility")] = ModelBase::toJson(visibility_);
     }
 
     return val;
@@ -71,6 +86,33 @@ bool ManageableGroupDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("full_path"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("full_path"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFullPath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("path"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("path"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("visibility"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("visibility"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVisibility(refVal);
         }
     }
     return ok;
@@ -138,6 +180,69 @@ bool ManageableGroupDto::nameIsSet() const
 void ManageableGroupDto::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string ManageableGroupDto::getFullPath() const
+{
+    return fullPath_;
+}
+
+void ManageableGroupDto::setFullPath(const std::string& value)
+{
+    fullPath_ = value;
+    fullPathIsSet_ = true;
+}
+
+bool ManageableGroupDto::fullPathIsSet() const
+{
+    return fullPathIsSet_;
+}
+
+void ManageableGroupDto::unsetfullPath()
+{
+    fullPathIsSet_ = false;
+}
+
+std::string ManageableGroupDto::getPath() const
+{
+    return path_;
+}
+
+void ManageableGroupDto::setPath(const std::string& value)
+{
+    path_ = value;
+    pathIsSet_ = true;
+}
+
+bool ManageableGroupDto::pathIsSet() const
+{
+    return pathIsSet_;
+}
+
+void ManageableGroupDto::unsetpath()
+{
+    pathIsSet_ = false;
+}
+
+std::string ManageableGroupDto::getVisibility() const
+{
+    return visibility_;
+}
+
+void ManageableGroupDto::setVisibility(const std::string& value)
+{
+    visibility_ = value;
+    visibilityIsSet_ = true;
+}
+
+bool ManageableGroupDto::visibilityIsSet() const
+{
+    return visibilityIsSet_;
+}
+
+void ManageableGroupDto::unsetvisibility()
+{
+    visibilityIsSet_ = false;
 }
 
 }

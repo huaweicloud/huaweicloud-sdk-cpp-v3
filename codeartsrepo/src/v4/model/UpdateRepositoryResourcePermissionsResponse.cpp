@@ -12,8 +12,10 @@ namespace Model {
 
 UpdateRepositoryResourcePermissionsResponse::UpdateRepositoryResourcePermissionsResponse()
 {
-    status_ = "";
+    status_ = 0;
     statusIsSet_ = false;
+    message_ = "";
+    messageIsSet_ = false;
 }
 
 UpdateRepositoryResourcePermissionsResponse::~UpdateRepositoryResourcePermissionsResponse() = default;
@@ -29,6 +31,9 @@ web::json::value UpdateRepositoryResourcePermissionsResponse::toJson() const
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
+    if(messageIsSet_) {
+        val[utility::conversions::to_string_t("message")] = ModelBase::toJson(message_);
+    }
 
     return val;
 }
@@ -40,21 +45,30 @@ bool UpdateRepositoryResourcePermissionsResponse::fromJson(const web::json::valu
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("message"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("message"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMessage(refVal);
         }
     }
     return ok;
 }
 
 
-std::string UpdateRepositoryResourcePermissionsResponse::getStatus() const
+int32_t UpdateRepositoryResourcePermissionsResponse::getStatus() const
 {
     return status_;
 }
 
-void UpdateRepositoryResourcePermissionsResponse::setStatus(const std::string& value)
+void UpdateRepositoryResourcePermissionsResponse::setStatus(int32_t value)
 {
     status_ = value;
     statusIsSet_ = true;
@@ -68,6 +82,27 @@ bool UpdateRepositoryResourcePermissionsResponse::statusIsSet() const
 void UpdateRepositoryResourcePermissionsResponse::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string UpdateRepositoryResourcePermissionsResponse::getMessage() const
+{
+    return message_;
+}
+
+void UpdateRepositoryResourcePermissionsResponse::setMessage(const std::string& value)
+{
+    message_ = value;
+    messageIsSet_ = true;
+}
+
+bool UpdateRepositoryResourcePermissionsResponse::messageIsSet() const
+{
+    return messageIsSet_;
+}
+
+void UpdateRepositoryResourcePermissionsResponse::unsetmessage()
+{
+    messageIsSet_ = false;
 }
 
 }

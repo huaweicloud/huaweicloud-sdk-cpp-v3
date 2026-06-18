@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -64,6 +65,15 @@ public:
     bool pushEventsBranchRegexFilterIsSet() const;
     void unsetpushEventsBranchRegexFilter();
     void setPushEventsBranchRegexFilter(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 评论事件文本过滤规则。 **取值范围：** 字符串长度不少于0，不超过50，不能超过10个。  
+    /// </summary>
+
+    std::vector<std::string>& getNotePlainTextFilter();
+    bool notePlainTextFilterIsSet() const;
+    void unsetnotePlainTextFilter();
+    void setNotePlainTextFilter(const std::vector<std::string>& value);
 
     /// <summary>
     /// **参数解释：** 是否启用Tag推送事件。
@@ -136,6 +146,8 @@ protected:
     bool pushEventsIsSet_;
     std::string pushEventsBranchRegexFilter_;
     bool pushEventsBranchRegexFilterIsSet_;
+    std::vector<std::string> notePlainTextFilter_;
+    bool notePlainTextFilterIsSet_;
     bool tagPushEvents_;
     bool tagPushEventsIsSet_;
     bool mergeRequestsEvents_;

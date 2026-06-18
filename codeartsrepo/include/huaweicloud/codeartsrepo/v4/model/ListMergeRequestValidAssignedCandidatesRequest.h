@@ -39,7 +39,7 @@ public:
     /// ListMergeRequestValidAssignedCandidatesRequest members
 
     /// <summary>
-    /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+    /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getRepositoryId() const;
@@ -93,7 +93,7 @@ public:
     void setSearch(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** Search user list by name list。
+    /// **参数解释：** 批量匹配用户，一次可传多个用户的用户名和昵称，用\&quot;, \&quot;分隔，最多50个。示例：\&quot;zhangsan, lisi, wangwu\&quot;
     /// </summary>
 
     std::string getSearchByNameList() const;
@@ -102,16 +102,16 @@ public:
     void setSearchByNameList(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 项目的32位uuid，项目唯一标识，通过[[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)](tag:hws)[[查询项目列表](https://support.huaweicloud.com/intl/en-us/api-projectman/ListProjectsV4.html)](tag:hws_hk)[[查询项目列表](https://support.huaweicloud.com/eu/api-projectman/ListProjectsV4.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **取值范围：** 字符串长度32。
+    /// **参数解释：** 目标仓库id。创建MR时，代码将要合入的仓库。
     /// </summary>
 
-    std::string getTargetProjectId() const;
-    bool targetProjectIdIsSet() const;
-    void unsettargetProjectId();
-    void setTargetProjectId(const std::string& value);
+    std::string getTargetRepositoryId() const;
+    bool targetRepositoryIdIsSet() const;
+    void unsettargetRepositoryId();
+    void setTargetRepositoryId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** The type of assignee, merge user or approver
+    /// **参数解释：** approver: 获取审核人 assingee: 获取合并人
     /// </summary>
 
     std::string getView() const;
@@ -120,16 +120,7 @@ public:
     void setView(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** The type of assignee, merge user or approver
-    /// </summary>
-
-    std::string getMode() const;
-    bool modeIsSet() const;
-    void unsetmode();
-    void setMode(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** The type of memeber, developer
+    /// **参数解释：** true: 仅返回开发者。
     /// </summary>
 
     bool isOnlyDevelopers() const;
@@ -153,12 +144,10 @@ protected:
     bool searchIsSet_;
     std::string searchByNameList_;
     bool searchByNameListIsSet_;
-    std::string targetProjectId_;
-    bool targetProjectIdIsSet_;
+    std::string targetRepositoryId_;
+    bool targetRepositoryIdIsSet_;
     std::string view_;
     bool viewIsSet_;
-    std::string mode_;
-    bool modeIsSet_;
     bool onlyDevelopers_;
     bool onlyDevelopersIsSet_;
 

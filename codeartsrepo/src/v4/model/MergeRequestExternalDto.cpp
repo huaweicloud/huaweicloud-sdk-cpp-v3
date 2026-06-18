@@ -34,9 +34,16 @@ MergeRequestExternalDto::MergeRequestExternalDto()
     targetBranchIsSet_ = false;
     isSourceBranchProtected_ = false;
     isSourceBranchProtectedIsSet_ = false;
+    isSourceBranchDefault_ = false;
+    isSourceBranchDefaultIsSet_ = false;
     devcloudSourceBranch_ = "";
     devcloudSourceBranchIsSet_ = false;
+    upvotes_ = 0;
+    upvotesIsSet_ = false;
+    downvotes_ = 0;
+    downvotesIsSet_ = false;
     authorIsSet_ = false;
+    assigneeIsSet_ = false;
     sourceRepositoryId_ = 0;
     sourceRepositoryIdIsSet_ = false;
     targetRepositoryId_ = 0;
@@ -67,6 +74,8 @@ MergeRequestExternalDto::MergeRequestExternalDto()
     closedAtIsSet_ = false;
     userNotesCount_ = 0;
     userNotesCountIsSet_ = false;
+    shouldRemoveSourceBranch_ = false;
+    shouldRemoveSourceBranchIsSet_ = false;
     forceRemoveSourceBranch_ = false;
     forceRemoveSourceBranchIsSet_ = false;
     webUrl_ = "";
@@ -95,6 +104,8 @@ MergeRequestExternalDto::MergeRequestExternalDto()
     moderationStatusIsSet_ = false;
     isUseTempBranch_ = false;
     isUseTempBranchIsSet_ = false;
+    onlyAssigneeCanMerge_ = false;
+    onlyAssigneeCanMergeIsSet_ = false;
 }
 
 MergeRequestExternalDto::~MergeRequestExternalDto() = default;
@@ -140,11 +151,23 @@ web::json::value MergeRequestExternalDto::toJson() const
     if(isSourceBranchProtectedIsSet_) {
         val[utility::conversions::to_string_t("is_source_branch_protected")] = ModelBase::toJson(isSourceBranchProtected_);
     }
+    if(isSourceBranchDefaultIsSet_) {
+        val[utility::conversions::to_string_t("is_source_branch_default")] = ModelBase::toJson(isSourceBranchDefault_);
+    }
     if(devcloudSourceBranchIsSet_) {
         val[utility::conversions::to_string_t("devcloud_source_branch")] = ModelBase::toJson(devcloudSourceBranch_);
     }
+    if(upvotesIsSet_) {
+        val[utility::conversions::to_string_t("upvotes")] = ModelBase::toJson(upvotes_);
+    }
+    if(downvotesIsSet_) {
+        val[utility::conversions::to_string_t("downvotes")] = ModelBase::toJson(downvotes_);
+    }
     if(authorIsSet_) {
         val[utility::conversions::to_string_t("author")] = ModelBase::toJson(author_);
+    }
+    if(assigneeIsSet_) {
+        val[utility::conversions::to_string_t("assignee")] = ModelBase::toJson(assignee_);
     }
     if(sourceRepositoryIdIsSet_) {
         val[utility::conversions::to_string_t("source_repository_id")] = ModelBase::toJson(sourceRepositoryId_);
@@ -197,6 +220,9 @@ web::json::value MergeRequestExternalDto::toJson() const
     if(userNotesCountIsSet_) {
         val[utility::conversions::to_string_t("user_notes_count")] = ModelBase::toJson(userNotesCount_);
     }
+    if(shouldRemoveSourceBranchIsSet_) {
+        val[utility::conversions::to_string_t("should_remove_source_branch")] = ModelBase::toJson(shouldRemoveSourceBranch_);
+    }
     if(forceRemoveSourceBranchIsSet_) {
         val[utility::conversions::to_string_t("force_remove_source_branch")] = ModelBase::toJson(forceRemoveSourceBranch_);
     }
@@ -244,6 +270,9 @@ web::json::value MergeRequestExternalDto::toJson() const
     }
     if(isUseTempBranchIsSet_) {
         val[utility::conversions::to_string_t("is_use_temp_branch")] = ModelBase::toJson(isUseTempBranch_);
+    }
+    if(onlyAssigneeCanMergeIsSet_) {
+        val[utility::conversions::to_string_t("only_assignee_can_merge")] = ModelBase::toJson(onlyAssigneeCanMerge_);
     }
 
     return val;
@@ -351,6 +380,15 @@ bool MergeRequestExternalDto::fromJson(const web::json::value& val)
             setIsSourceBranchProtected(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("is_source_branch_default"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_source_branch_default"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsSourceBranchDefault(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("devcloud_source_branch"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("devcloud_source_branch"));
         if(!fieldValue.is_null())
@@ -360,6 +398,24 @@ bool MergeRequestExternalDto::fromJson(const web::json::value& val)
             setDevcloudSourceBranch(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("upvotes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("upvotes"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpvotes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("downvotes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("downvotes"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDownvotes(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("author"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("author"));
         if(!fieldValue.is_null())
@@ -367,6 +423,15 @@ bool MergeRequestExternalDto::fromJson(const web::json::value& val)
             UserBasicExternalDto refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAuthor(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("assignee"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("assignee"));
+        if(!fieldValue.is_null())
+        {
+            UserBasicExternalDto refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAssignee(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("source_repository_id"))) {
@@ -522,6 +587,15 @@ bool MergeRequestExternalDto::fromJson(const web::json::value& val)
             setUserNotesCount(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("should_remove_source_branch"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("should_remove_source_branch"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setShouldRemoveSourceBranch(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("force_remove_source_branch"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("force_remove_source_branch"));
         if(!fieldValue.is_null())
@@ -664,6 +738,15 @@ bool MergeRequestExternalDto::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsUseTempBranch(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("only_assignee_can_merge"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("only_assignee_can_merge"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOnlyAssigneeCanMerge(refVal);
         }
     }
     return ok;
@@ -901,6 +984,27 @@ void MergeRequestExternalDto::unsetisSourceBranchProtected()
     isSourceBranchProtectedIsSet_ = false;
 }
 
+bool MergeRequestExternalDto::isIsSourceBranchDefault() const
+{
+    return isSourceBranchDefault_;
+}
+
+void MergeRequestExternalDto::setIsSourceBranchDefault(bool value)
+{
+    isSourceBranchDefault_ = value;
+    isSourceBranchDefaultIsSet_ = true;
+}
+
+bool MergeRequestExternalDto::isSourceBranchDefaultIsSet() const
+{
+    return isSourceBranchDefaultIsSet_;
+}
+
+void MergeRequestExternalDto::unsetisSourceBranchDefault()
+{
+    isSourceBranchDefaultIsSet_ = false;
+}
+
 std::string MergeRequestExternalDto::getDevcloudSourceBranch() const
 {
     return devcloudSourceBranch_;
@@ -922,6 +1026,48 @@ void MergeRequestExternalDto::unsetdevcloudSourceBranch()
     devcloudSourceBranchIsSet_ = false;
 }
 
+int32_t MergeRequestExternalDto::getUpvotes() const
+{
+    return upvotes_;
+}
+
+void MergeRequestExternalDto::setUpvotes(int32_t value)
+{
+    upvotes_ = value;
+    upvotesIsSet_ = true;
+}
+
+bool MergeRequestExternalDto::upvotesIsSet() const
+{
+    return upvotesIsSet_;
+}
+
+void MergeRequestExternalDto::unsetupvotes()
+{
+    upvotesIsSet_ = false;
+}
+
+int32_t MergeRequestExternalDto::getDownvotes() const
+{
+    return downvotes_;
+}
+
+void MergeRequestExternalDto::setDownvotes(int32_t value)
+{
+    downvotes_ = value;
+    downvotesIsSet_ = true;
+}
+
+bool MergeRequestExternalDto::downvotesIsSet() const
+{
+    return downvotesIsSet_;
+}
+
+void MergeRequestExternalDto::unsetdownvotes()
+{
+    downvotesIsSet_ = false;
+}
+
 UserBasicExternalDto MergeRequestExternalDto::getAuthor() const
 {
     return author_;
@@ -941,6 +1087,27 @@ bool MergeRequestExternalDto::authorIsSet() const
 void MergeRequestExternalDto::unsetauthor()
 {
     authorIsSet_ = false;
+}
+
+UserBasicExternalDto MergeRequestExternalDto::getAssignee() const
+{
+    return assignee_;
+}
+
+void MergeRequestExternalDto::setAssignee(const UserBasicExternalDto& value)
+{
+    assignee_ = value;
+    assigneeIsSet_ = true;
+}
+
+bool MergeRequestExternalDto::assigneeIsSet() const
+{
+    return assigneeIsSet_;
+}
+
+void MergeRequestExternalDto::unsetassignee()
+{
+    assigneeIsSet_ = false;
 }
 
 int32_t MergeRequestExternalDto::getSourceRepositoryId() const
@@ -1300,6 +1467,27 @@ void MergeRequestExternalDto::unsetuserNotesCount()
     userNotesCountIsSet_ = false;
 }
 
+bool MergeRequestExternalDto::isShouldRemoveSourceBranch() const
+{
+    return shouldRemoveSourceBranch_;
+}
+
+void MergeRequestExternalDto::setShouldRemoveSourceBranch(bool value)
+{
+    shouldRemoveSourceBranch_ = value;
+    shouldRemoveSourceBranchIsSet_ = true;
+}
+
+bool MergeRequestExternalDto::shouldRemoveSourceBranchIsSet() const
+{
+    return shouldRemoveSourceBranchIsSet_;
+}
+
+void MergeRequestExternalDto::unsetshouldRemoveSourceBranch()
+{
+    shouldRemoveSourceBranchIsSet_ = false;
+}
+
 bool MergeRequestExternalDto::isForceRemoveSourceBranch() const
 {
     return forceRemoveSourceBranch_;
@@ -1634,6 +1822,27 @@ bool MergeRequestExternalDto::isUseTempBranchIsSet() const
 void MergeRequestExternalDto::unsetisUseTempBranch()
 {
     isUseTempBranchIsSet_ = false;
+}
+
+bool MergeRequestExternalDto::isOnlyAssigneeCanMerge() const
+{
+    return onlyAssigneeCanMerge_;
+}
+
+void MergeRequestExternalDto::setOnlyAssigneeCanMerge(bool value)
+{
+    onlyAssigneeCanMerge_ = value;
+    onlyAssigneeCanMergeIsSet_ = true;
+}
+
+bool MergeRequestExternalDto::onlyAssigneeCanMergeIsSet() const
+{
+    return onlyAssigneeCanMergeIsSet_;
+}
+
+void MergeRequestExternalDto::unsetonlyAssigneeCanMerge()
+{
+    onlyAssigneeCanMergeIsSet_ = false;
 }
 
 }

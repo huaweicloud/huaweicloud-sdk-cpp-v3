@@ -20,11 +20,9 @@ ShowGroupReviewSettingsResponse::ShowGroupReviewSettingsResponse()
     reviewDefaultCategoriesIsSet_ = false;
     reviewCustomizedCategoriesIsSet_ = false;
     reviewModulesIsSet_ = false;
-    repositoryId_ = 0;
-    repositoryIdIsSet_ = false;
-    noteRequiredAttributesIsSet_ = false;
-    codehubDefaultCategoriesIsSet_ = false;
-    hicodeDefaultCategoriesIsSet_ = false;
+    secondaryCategoryType_ = "";
+    secondaryCategoryTypeIsSet_ = false;
+    secondaryCategoriesIsSet_ = false;
 }
 
 ShowGroupReviewSettingsResponse::~ShowGroupReviewSettingsResponse() = default;
@@ -55,17 +53,11 @@ web::json::value ShowGroupReviewSettingsResponse::toJson() const
     if(reviewModulesIsSet_) {
         val[utility::conversions::to_string_t("review_modules")] = ModelBase::toJson(reviewModules_);
     }
-    if(repositoryIdIsSet_) {
-        val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
+    if(secondaryCategoryTypeIsSet_) {
+        val[utility::conversions::to_string_t("secondary_category_type")] = ModelBase::toJson(secondaryCategoryType_);
     }
-    if(noteRequiredAttributesIsSet_) {
-        val[utility::conversions::to_string_t("note_required_attributes")] = ModelBase::toJson(noteRequiredAttributes_);
-    }
-    if(codehubDefaultCategoriesIsSet_) {
-        val[utility::conversions::to_string_t("codehub_default_categories")] = ModelBase::toJson(codehubDefaultCategories_);
-    }
-    if(hicodeDefaultCategoriesIsSet_) {
-        val[utility::conversions::to_string_t("hicode_default_categories")] = ModelBase::toJson(hicodeDefaultCategories_);
+    if(secondaryCategoriesIsSet_) {
+        val[utility::conversions::to_string_t("secondary_categories")] = ModelBase::toJson(secondaryCategories_);
     }
 
     return val;
@@ -128,40 +120,22 @@ bool ShowGroupReviewSettingsResponse::fromJson(const web::json::value& val)
             setReviewModules(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("repository_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_id"));
+    if(val.has_field(utility::conversions::to_string_t("secondary_category_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secondary_category_type"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRepositoryId(refVal);
+            setSecondaryCategoryType(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("note_required_attributes"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("note_required_attributes"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<RequiredAttributeDto> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNoteRequiredAttributes(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("codehub_default_categories"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("codehub_default_categories"));
+    if(val.has_field(utility::conversions::to_string_t("secondary_categories"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secondary_categories"));
         if(!fieldValue.is_null())
         {
             std::vector<CategoryDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCodehubDefaultCategories(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("hicode_default_categories"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hicode_default_categories"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<CategoryDto> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHicodeDefaultCategories(refVal);
+            setSecondaryCategories(refVal);
         }
     }
     return ok;
@@ -294,88 +268,46 @@ void ShowGroupReviewSettingsResponse::unsetreviewModules()
     reviewModulesIsSet_ = false;
 }
 
-int32_t ShowGroupReviewSettingsResponse::getRepositoryId() const
+std::string ShowGroupReviewSettingsResponse::getSecondaryCategoryType() const
 {
-    return repositoryId_;
+    return secondaryCategoryType_;
 }
 
-void ShowGroupReviewSettingsResponse::setRepositoryId(int32_t value)
+void ShowGroupReviewSettingsResponse::setSecondaryCategoryType(const std::string& value)
 {
-    repositoryId_ = value;
-    repositoryIdIsSet_ = true;
+    secondaryCategoryType_ = value;
+    secondaryCategoryTypeIsSet_ = true;
 }
 
-bool ShowGroupReviewSettingsResponse::repositoryIdIsSet() const
+bool ShowGroupReviewSettingsResponse::secondaryCategoryTypeIsSet() const
 {
-    return repositoryIdIsSet_;
+    return secondaryCategoryTypeIsSet_;
 }
 
-void ShowGroupReviewSettingsResponse::unsetrepositoryId()
+void ShowGroupReviewSettingsResponse::unsetsecondaryCategoryType()
 {
-    repositoryIdIsSet_ = false;
+    secondaryCategoryTypeIsSet_ = false;
 }
 
-std::vector<RequiredAttributeDto>& ShowGroupReviewSettingsResponse::getNoteRequiredAttributes()
+std::vector<CategoryDto>& ShowGroupReviewSettingsResponse::getSecondaryCategories()
 {
-    return noteRequiredAttributes_;
+    return secondaryCategories_;
 }
 
-void ShowGroupReviewSettingsResponse::setNoteRequiredAttributes(const std::vector<RequiredAttributeDto>& value)
+void ShowGroupReviewSettingsResponse::setSecondaryCategories(const std::vector<CategoryDto>& value)
 {
-    noteRequiredAttributes_ = value;
-    noteRequiredAttributesIsSet_ = true;
+    secondaryCategories_ = value;
+    secondaryCategoriesIsSet_ = true;
 }
 
-bool ShowGroupReviewSettingsResponse::noteRequiredAttributesIsSet() const
+bool ShowGroupReviewSettingsResponse::secondaryCategoriesIsSet() const
 {
-    return noteRequiredAttributesIsSet_;
+    return secondaryCategoriesIsSet_;
 }
 
-void ShowGroupReviewSettingsResponse::unsetnoteRequiredAttributes()
+void ShowGroupReviewSettingsResponse::unsetsecondaryCategories()
 {
-    noteRequiredAttributesIsSet_ = false;
-}
-
-std::vector<CategoryDto>& ShowGroupReviewSettingsResponse::getCodehubDefaultCategories()
-{
-    return codehubDefaultCategories_;
-}
-
-void ShowGroupReviewSettingsResponse::setCodehubDefaultCategories(const std::vector<CategoryDto>& value)
-{
-    codehubDefaultCategories_ = value;
-    codehubDefaultCategoriesIsSet_ = true;
-}
-
-bool ShowGroupReviewSettingsResponse::codehubDefaultCategoriesIsSet() const
-{
-    return codehubDefaultCategoriesIsSet_;
-}
-
-void ShowGroupReviewSettingsResponse::unsetcodehubDefaultCategories()
-{
-    codehubDefaultCategoriesIsSet_ = false;
-}
-
-std::vector<CategoryDto>& ShowGroupReviewSettingsResponse::getHicodeDefaultCategories()
-{
-    return hicodeDefaultCategories_;
-}
-
-void ShowGroupReviewSettingsResponse::setHicodeDefaultCategories(const std::vector<CategoryDto>& value)
-{
-    hicodeDefaultCategories_ = value;
-    hicodeDefaultCategoriesIsSet_ = true;
-}
-
-bool ShowGroupReviewSettingsResponse::hicodeDefaultCategoriesIsSet() const
-{
-    return hicodeDefaultCategoriesIsSet_;
-}
-
-void ShowGroupReviewSettingsResponse::unsethicodeDefaultCategories()
-{
-    hicodeDefaultCategoriesIsSet_ = false;
+    secondaryCategoriesIsSet_ = false;
 }
 
 }

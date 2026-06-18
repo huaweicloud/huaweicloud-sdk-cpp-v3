@@ -112,6 +112,15 @@ public:
     void setSortField(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** 是否锁定。 **约束限制：** 不传是查询全部数据 **取值范围：** - true，锁定的仓库。 - false，未锁定的仓库。
+    /// </summary>
+
+    bool isLocked() const;
+    bool lockedIsSet() const;
+    void unsetlocked();
+    void setLocked(bool value);
+
+    /// <summary>
     /// **参数解释：** 偏移量，从0开始。
     /// </summary>
 
@@ -147,6 +156,8 @@ protected:
     bool sortIsSet_;
     std::string sortField_;
     bool sortFieldIsSet_;
+    bool locked_;
+    bool lockedIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
     int32_t limit_;

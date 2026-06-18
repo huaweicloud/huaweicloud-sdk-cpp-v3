@@ -9,8 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartsrepo/v4/model/MergeRequestVoteReviewerDto.h>
+#include <string>
 #include <vector>
+#include <huaweicloud/codeartsrepo/v4/model/UserBasicDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,15 +44,26 @@ public:
     /// 
     /// </summary>
 
-    std::vector<MergeRequestVoteReviewerDto>& getBody();
+    std::vector<UserBasicDto>& getBody();
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const std::vector<MergeRequestVoteReviewerDto>& value);
+    void setBody(const std::vector<UserBasicDto>& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXTotal() const;
+    bool xTotalIsSet() const;
+    void unsetxTotal();
+    void setXTotal(const std::string& value);
 
 
 protected:
-    std::vector<MergeRequestVoteReviewerDto> body_;
+    std::vector<UserBasicDto> body_;
     bool bodyIsSet_;
+    std::string xTotal_;
+    bool xTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

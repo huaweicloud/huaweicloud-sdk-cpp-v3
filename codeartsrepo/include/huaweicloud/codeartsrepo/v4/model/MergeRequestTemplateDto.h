@@ -49,15 +49,6 @@ public:
     void setId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 仓库id
-    /// </summary>
-
-    int32_t getRepositoryId() const;
-    bool repositoryIdIsSet() const;
-    void unsetrepositoryId();
-    void setRepositoryId(int32_t value);
-
-    /// <summary>
     /// **参数解释：** 描述
     /// </summary>
 
@@ -142,8 +133,6 @@ public:
 protected:
     int32_t id_;
     bool idIsSet_;
-    int32_t repositoryId_;
-    bool repositoryIdIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     std::string createdAt_;

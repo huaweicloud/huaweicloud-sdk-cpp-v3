@@ -66,6 +66,15 @@ public:
     void setProjectUuid(const std::string& value);
 
     /// <summary>
+    /// 代码组id，代码组首页，Group ID后的数字Id
+    /// </summary>
+
+    int32_t getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(int32_t value);
+
+    /// <summary>
     /// 复制模板的ID
     /// </summary>
 
@@ -145,6 +154,8 @@ protected:
     bool nameIsSet_;
     std::string projectUuid_;
     bool projectUuidIsSet_;
+    int32_t groupId_;
+    bool groupIdIsSet_;
     std::string templateId_;
     bool templateIdIsSet_;
     int32_t visibilityLevel_;

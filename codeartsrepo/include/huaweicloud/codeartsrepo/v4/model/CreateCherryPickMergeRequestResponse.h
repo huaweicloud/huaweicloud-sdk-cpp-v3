@@ -57,7 +57,7 @@ public:
     void setTitle(const std::string& value);
 
     /// <summary>
-    /// CherryPick临时分支名名称
+    /// CherryPick临时分支名称
     /// </summary>
 
     std::string getCherryPickBranchName() const;

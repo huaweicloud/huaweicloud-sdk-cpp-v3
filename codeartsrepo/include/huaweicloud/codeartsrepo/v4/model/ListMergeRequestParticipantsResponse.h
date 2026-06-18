@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <vector>
 #include <huaweicloud/codeartsrepo/v4/model/UserBasicDto.h>
 
@@ -48,10 +49,21 @@ public:
     void unsetbody();
     void setBody(const std::vector<UserBasicDto>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXTotal() const;
+    bool xTotalIsSet() const;
+    void unsetxTotal();
+    void setXTotal(const std::string& value);
+
 
 protected:
     std::vector<UserBasicDto> body_;
     bool bodyIsSet_;
+    std::string xTotal_;
+    bool xTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

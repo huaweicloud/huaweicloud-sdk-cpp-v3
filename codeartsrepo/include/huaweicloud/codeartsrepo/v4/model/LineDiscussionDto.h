@@ -10,8 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/codeartsrepo/v4/model/MergeRequestBasicDiscussionDto.h>
 #include <vector>
+#include <huaweicloud/codeartsrepo/v4/model/MergeRequestDiscussionDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -44,10 +44,10 @@ public:
     /// **参数解释：** 位于某一侧某行的检视意见集合。
     /// </summary>
 
-    std::vector<MergeRequestBasicDiscussionDto>& getDiscussions();
+    std::vector<MergeRequestDiscussionDto>& getDiscussions();
     bool discussionsIsSet() const;
     void unsetdiscussions();
-    void setDiscussions(const std::vector<MergeRequestBasicDiscussionDto>& value);
+    void setDiscussions(const std::vector<MergeRequestDiscussionDto>& value);
 
     /// <summary>
     /// **参数解释：** 所在的行号。
@@ -69,7 +69,7 @@ public:
 
 
 protected:
-    std::vector<MergeRequestBasicDiscussionDto> discussions_;
+    std::vector<MergeRequestDiscussionDto> discussions_;
     bool discussionsIsSet_;
     int32_t line_;
     bool lineIsSet_;

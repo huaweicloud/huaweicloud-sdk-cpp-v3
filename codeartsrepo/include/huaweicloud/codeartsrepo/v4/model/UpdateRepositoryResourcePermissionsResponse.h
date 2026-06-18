@@ -39,18 +39,29 @@ public:
     /// UpdateRepositoryResourcePermissionsResponse members
 
     /// <summary>
-    /// **参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。
+    /// 返回状态码
     /// </summary>
 
-    std::string getStatus() const;
+    int32_t getStatus() const;
     bool statusIsSet() const;
     void unsetstatus();
-    void setStatus(const std::string& value);
+    void setStatus(int32_t value);
+
+    /// <summary>
+    /// 返回信息
+    /// </summary>
+
+    std::string getMessage() const;
+    bool messageIsSet() const;
+    void unsetmessage();
+    void setMessage(const std::string& value);
 
 
 protected:
-    std::string status_;
+    int32_t status_;
     bool statusIsSet_;
+    std::string message_;
+    bool messageIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

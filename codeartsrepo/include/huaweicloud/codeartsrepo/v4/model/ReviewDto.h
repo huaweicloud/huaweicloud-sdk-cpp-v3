@@ -256,7 +256,7 @@ public:
     void setModerationStatus(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 合并请求id(noteable_type&#x3D;MergRequest时返回)。
+    /// **参数解释：** 合并请求id(noteable_type&#x3D;MergeRequest时返回)。
     /// </summary>
 
     int32_t getMergeRequestId() const;
@@ -265,7 +265,7 @@ public:
     void setMergeRequestId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 合并请求iid(noteable_type&#x3D;MergRequest时返回)。
+    /// **参数解释：** 合并请求iid(noteable_type&#x3D;MergeRequest时返回)。
     /// </summary>
 
     int32_t getMergeRequestIid() const;
@@ -274,7 +274,7 @@ public:
     void setMergeRequestIid(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 合并请求标题(noteable_type&#x3D;MergRequest时返回)。
+    /// **参数解释：** 合并请求标题(noteable_type&#x3D;MergeRequest时返回)。
     /// </summary>
 
     std::string getMergeRequestTitle() const;
@@ -283,7 +283,7 @@ public:
     void setMergeRequestTitle(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 合并请求状态(noteable_type&#x3D;MergRequest时返回)。
+    /// **参数解释：** 合并请求状态(noteable_type&#x3D;MergeRequest时返回)。
     /// </summary>
 
     std::string getMergeRequestState() const;

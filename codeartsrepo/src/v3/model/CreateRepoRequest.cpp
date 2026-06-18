@@ -18,6 +18,8 @@ CreateRepoRequest::CreateRepoRequest()
     nameIsSet_ = false;
     projectUuid_ = "";
     projectUuidIsSet_ = false;
+    groupId_ = 0;
+    groupIdIsSet_ = false;
     templateId_ = "";
     templateIdIsSet_ = false;
     visibilityLevel_ = 0;
@@ -54,6 +56,9 @@ web::json::value CreateRepoRequest::toJson() const
     }
     if(projectUuidIsSet_) {
         val[utility::conversions::to_string_t("project_uuid")] = ModelBase::toJson(projectUuid_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
     }
     if(templateIdIsSet_) {
         val[utility::conversions::to_string_t("template_id")] = ModelBase::toJson(templateId_);
@@ -111,6 +116,15 @@ bool CreateRepoRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProjectUuid(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("template_id"))) {
@@ -250,6 +264,27 @@ bool CreateRepoRequest::projectUuidIsSet() const
 void CreateRepoRequest::unsetprojectUuid()
 {
     projectUuidIsSet_ = false;
+}
+
+int32_t CreateRepoRequest::getGroupId() const
+{
+    return groupId_;
+}
+
+void CreateRepoRequest::setGroupId(int32_t value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool CreateRepoRequest::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void CreateRepoRequest::unsetgroupId()
+{
+    groupIdIsSet_ = false;
 }
 
 std::string CreateRepoRequest::getTemplateId() const

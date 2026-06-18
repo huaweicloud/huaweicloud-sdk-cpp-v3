@@ -367,6 +367,9 @@ HttpRequestDef RgcMeta::genRequestDefForShowTemplateDeployParams() {
     reqDefBuilder.withRequestField(FieldDef().withName("Version")
                   .withJsonTag("version")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AccountId")
+                  .withJsonTag("account_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

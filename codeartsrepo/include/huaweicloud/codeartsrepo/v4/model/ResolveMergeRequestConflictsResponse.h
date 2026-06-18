@@ -39,7 +39,7 @@ public:
     /// ResolveMergeRequestConflictsResponse members
 
     /// <summary>
-    /// **参数解释：** prompt property name already exists    
+    /// **参数解释：** 解决冲突结果信息    
     /// </summary>
 
     std::string getMessage() const;

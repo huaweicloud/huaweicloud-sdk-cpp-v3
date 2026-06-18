@@ -16,6 +16,8 @@ ShowTemplateDeployParamsRequest::ShowTemplateDeployParamsRequest()
     templateNameIsSet_ = false;
     version_ = "";
     versionIsSet_ = false;
+    accountId_ = "";
+    accountIdIsSet_ = false;
 }
 
 ShowTemplateDeployParamsRequest::~ShowTemplateDeployParamsRequest() = default;
@@ -33,6 +35,9 @@ web::json::value ShowTemplateDeployParamsRequest::toJson() const
     }
     if(versionIsSet_) {
         val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
+    }
+    if(accountIdIsSet_) {
+        val[utility::conversions::to_string_t("account_id")] = ModelBase::toJson(accountId_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ShowTemplateDeployParamsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("account_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("account_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAccountId(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ShowTemplateDeployParamsRequest::versionIsSet() const
 void ShowTemplateDeployParamsRequest::unsetversion()
 {
     versionIsSet_ = false;
+}
+
+std::string ShowTemplateDeployParamsRequest::getAccountId() const
+{
+    return accountId_;
+}
+
+void ShowTemplateDeployParamsRequest::setAccountId(const std::string& value)
+{
+    accountId_ = value;
+    accountIdIsSet_ = true;
+}
+
+bool ShowTemplateDeployParamsRequest::accountIdIsSet() const
+{
+    return accountIdIsSet_;
+}
+
+void ShowTemplateDeployParamsRequest::unsetaccountId()
+{
+    accountIdIsSet_ = false;
 }
 
 }

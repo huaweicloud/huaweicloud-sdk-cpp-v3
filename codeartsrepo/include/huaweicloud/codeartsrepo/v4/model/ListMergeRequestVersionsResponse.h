@@ -66,7 +66,7 @@ public:
     void setBaseCommitSha(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** tart commit节点。
+    /// **参数解释：** start commit节点。
     /// </summary>
 
     std::string getStartCommitSha() const;
@@ -110,6 +110,15 @@ public:
     void unsetrealSize();
     void setRealSize(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXTotal() const;
+    bool xTotalIsSet() const;
+    void unsetxTotal();
+    void setXTotal(const std::string& value);
+
 
 protected:
     int32_t id_;
@@ -128,6 +137,8 @@ protected:
     bool stateIsSet_;
     std::string realSize_;
     bool realSizeIsSet_;
+    std::string xTotal_;
+    bool xTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

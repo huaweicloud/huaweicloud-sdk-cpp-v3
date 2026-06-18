@@ -32,6 +32,8 @@ TenantRepositoryDto::TenantRepositoryDto()
     projectNameIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
+    locked_ = false;
+    lockedIsSet_ = false;
 }
 
 TenantRepositoryDto::~TenantRepositoryDto() = default;
@@ -73,6 +75,9 @@ web::json::value TenantRepositoryDto::toJson() const
     }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
+    if(lockedIsSet_) {
+        val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
     }
 
     return val;
@@ -169,6 +174,15 @@ bool TenantRepositoryDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("locked"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locked"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLocked(refVal);
         }
     }
     return ok;
@@ -383,6 +397,27 @@ bool TenantRepositoryDto::projectIdIsSet() const
 void TenantRepositoryDto::unsetprojectId()
 {
     projectIdIsSet_ = false;
+}
+
+bool TenantRepositoryDto::isLocked() const
+{
+    return locked_;
+}
+
+void TenantRepositoryDto::setLocked(bool value)
+{
+    locked_ = value;
+    lockedIsSet_ = true;
+}
+
+bool TenantRepositoryDto::lockedIsSet() const
+{
+    return lockedIsSet_;
+}
+
+void TenantRepositoryDto::unsetlocked()
+{
+    lockedIsSet_ = false;
 }
 
 }

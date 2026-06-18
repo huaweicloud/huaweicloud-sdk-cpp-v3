@@ -23,6 +23,9 @@ ShowRepositoryGeneralPolicyResponse::ShowRepositoryGeneralPolicyResponse()
     forbiddenDeveloperCreateBranch_ = false;
     forbiddenDeveloperCreateBranchIsSet_ = false;
     createBranchWhitelistUsersIsSet_ = false;
+    repoEncryptionEnabled_ = false;
+    repoEncryptionEnabledIsSet_ = false;
+    repoEncryptionStatusIsSet_ = false;
 }
 
 ShowRepositoryGeneralPolicyResponse::~ShowRepositoryGeneralPolicyResponse() = default;
@@ -52,6 +55,12 @@ web::json::value ShowRepositoryGeneralPolicyResponse::toJson() const
     }
     if(createBranchWhitelistUsersIsSet_) {
         val[utility::conversions::to_string_t("create_branch_whitelist_users")] = ModelBase::toJson(createBranchWhitelistUsers_);
+    }
+    if(repoEncryptionEnabledIsSet_) {
+        val[utility::conversions::to_string_t("repo_encryption_enabled")] = ModelBase::toJson(repoEncryptionEnabled_);
+    }
+    if(repoEncryptionStatusIsSet_) {
+        val[utility::conversions::to_string_t("repo_encryption_status")] = ModelBase::toJson(repoEncryptionStatus_);
     }
 
     return val;
@@ -112,6 +121,24 @@ bool ShowRepositoryGeneralPolicyResponse::fromJson(const web::json::value& val)
             std::vector<PushRuleDevelopersDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateBranchWhitelistUsers(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repo_encryption_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repo_encryption_enabled"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepoEncryptionEnabled(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repo_encryption_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repo_encryption_status"));
+        if(!fieldValue.is_null())
+        {
+            ProjectEncryptionStatusBriefDto refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepoEncryptionStatus(refVal);
         }
     }
     return ok;
@@ -242,6 +269,48 @@ bool ShowRepositoryGeneralPolicyResponse::createBranchWhitelistUsersIsSet() cons
 void ShowRepositoryGeneralPolicyResponse::unsetcreateBranchWhitelistUsers()
 {
     createBranchWhitelistUsersIsSet_ = false;
+}
+
+bool ShowRepositoryGeneralPolicyResponse::isRepoEncryptionEnabled() const
+{
+    return repoEncryptionEnabled_;
+}
+
+void ShowRepositoryGeneralPolicyResponse::setRepoEncryptionEnabled(bool value)
+{
+    repoEncryptionEnabled_ = value;
+    repoEncryptionEnabledIsSet_ = true;
+}
+
+bool ShowRepositoryGeneralPolicyResponse::repoEncryptionEnabledIsSet() const
+{
+    return repoEncryptionEnabledIsSet_;
+}
+
+void ShowRepositoryGeneralPolicyResponse::unsetrepoEncryptionEnabled()
+{
+    repoEncryptionEnabledIsSet_ = false;
+}
+
+ProjectEncryptionStatusBriefDto ShowRepositoryGeneralPolicyResponse::getRepoEncryptionStatus() const
+{
+    return repoEncryptionStatus_;
+}
+
+void ShowRepositoryGeneralPolicyResponse::setRepoEncryptionStatus(const ProjectEncryptionStatusBriefDto& value)
+{
+    repoEncryptionStatus_ = value;
+    repoEncryptionStatusIsSet_ = true;
+}
+
+bool ShowRepositoryGeneralPolicyResponse::repoEncryptionStatusIsSet() const
+{
+    return repoEncryptionStatusIsSet_;
+}
+
+void ShowRepositoryGeneralPolicyResponse::unsetrepoEncryptionStatus()
+{
+    repoEncryptionStatusIsSet_ = false;
 }
 
 }

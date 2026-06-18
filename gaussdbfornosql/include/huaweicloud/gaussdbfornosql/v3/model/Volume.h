@@ -39,7 +39,7 @@ public:
     /// Volume members
 
     /// <summary>
-    /// 磁盘大小。单位：GB。
+    /// 参数解释： 磁盘大小。单位：GB。 取值范围： 不涉及。
     /// </summary>
 
     std::string getSize() const;
@@ -48,7 +48,7 @@ public:
     void setSize(const std::string& value);
 
     /// <summary>
-    /// 磁盘使用量。单位：GB。
+    /// 参数解释： 磁盘使用量。单位：GB。 取值范围： 不涉及。
     /// </summary>
 
     std::string getUsed() const;
@@ -56,12 +56,23 @@ public:
     void unsetused();
     void setUsed(const std::string& value);
 
+    /// <summary>
+    /// 参数解释： 赠送的磁盘大小。单位：GB。 取值范围： 不涉及。
+    /// </summary>
+
+    std::string getGiftSize() const;
+    bool giftSizeIsSet() const;
+    void unsetgiftSize();
+    void setGiftSize(const std::string& value);
+
 
 protected:
     std::string size_;
     bool sizeIsSet_;
     std::string used_;
     bool usedIsSet_;
+    std::string giftSize_;
+    bool giftSizeIsSet_;
 
 };
 

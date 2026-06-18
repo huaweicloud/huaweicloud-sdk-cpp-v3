@@ -16,6 +16,8 @@ Volume::Volume()
     sizeIsSet_ = false;
     used_ = "";
     usedIsSet_ = false;
+    giftSize_ = "";
+    giftSizeIsSet_ = false;
 }
 
 Volume::~Volume() = default;
@@ -33,6 +35,9 @@ web::json::value Volume::toJson() const
     }
     if(usedIsSet_) {
         val[utility::conversions::to_string_t("used")] = ModelBase::toJson(used_);
+    }
+    if(giftSizeIsSet_) {
+        val[utility::conversions::to_string_t("gift_size")] = ModelBase::toJson(giftSize_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool Volume::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUsed(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("gift_size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gift_size"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGiftSize(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool Volume::usedIsSet() const
 void Volume::unsetused()
 {
     usedIsSet_ = false;
+}
+
+std::string Volume::getGiftSize() const
+{
+    return giftSize_;
+}
+
+void Volume::setGiftSize(const std::string& value)
+{
+    giftSize_ = value;
+    giftSizeIsSet_ = true;
+}
+
+bool Volume::giftSizeIsSet() const
+{
+    return giftSizeIsSet_;
+}
+
+void Volume::unsetgiftSize()
+{
+    giftSizeIsSet_ = false;
 }
 
 }

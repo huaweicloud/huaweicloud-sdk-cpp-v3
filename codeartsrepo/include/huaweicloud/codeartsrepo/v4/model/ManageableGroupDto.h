@@ -39,7 +39,7 @@ public:
     /// ManageableGroupDto members
 
     /// <summary>
-    /// 代码组全名
+    /// **参数解释：** 代码组全名。
     /// </summary>
 
     std::string getFullName() const;
@@ -48,7 +48,7 @@ public:
     void setFullName(const std::string& value);
 
     /// <summary>
-    /// 代码组id
+    /// **参数解释：** 代码组id。
     /// </summary>
 
     int32_t getId() const;
@@ -57,13 +57,40 @@ public:
     void setId(int32_t value);
 
     /// <summary>
-    /// 代码组名
+    /// **参数解释：** 代码组名。 **取值范围：** 字符串长度不少于0，不超过256。
     /// </summary>
 
     std::string getName() const;
     bool nameIsSet() const;
     void unsetname();
     void setName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 全路径。 **取值范围：** 字符串长度不少于0，不超过1000。
+    /// </summary>
+
+    std::string getFullPath() const;
+    bool fullPathIsSet() const;
+    void unsetfullPath();
+    void setFullPath(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 路径。 **取值范围：** 字符串长度不少于0，不超过1000。
+    /// </summary>
+
+    std::string getPath() const;
+    bool pathIsSet() const;
+    void unsetpath();
+    void setPath(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 可见性。 **取值范围：** private public。
+    /// </summary>
+
+    std::string getVisibility() const;
+    bool visibilityIsSet() const;
+    void unsetvisibility();
+    void setVisibility(const std::string& value);
 
 
 protected:
@@ -73,6 +100,12 @@ protected:
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string fullPath_;
+    bool fullPathIsSet_;
+    std::string path_;
+    bool pathIsSet_;
+    std::string visibility_;
+    bool visibilityIsSet_;
 
 };
 

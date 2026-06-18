@@ -137,6 +137,7 @@
 #include <huaweicloud/codeartsrepo/v4/model/GroupBaseDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/GroupBatchAddMemberDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/GroupMemberDetailDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/GroupProtectedBranchApiDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupAddableMembersRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupAddableMembersResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupAddableUserGroupsRequest.h>
@@ -145,6 +146,8 @@
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupMembersResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupPermissionResourcesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupPermissionResourcesResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListGroupProtectedBranchesRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListGroupProtectedBranchesResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupSubgroupsAndRepositoriesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupSubgroupsAndRepositoriesResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupUserGroupsRequest.h>
@@ -191,6 +194,8 @@
 #include <huaweicloud/codeartsrepo/v4/model/GrantedUsersDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupProtectedRefsUserGroupsRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListGroupProtectedRefsUserGroupsResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListManagementUsersRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListManagementUsersResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListMembersRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListMembersResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListProductPermissionResourcesGrantedUsersRequest.h>
@@ -201,6 +206,7 @@
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryProtectedRefsUserGroupsResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryUserGroupsRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryUserGroupsResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ManagementUserDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/ProtectedRefsUserGroupBasicDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/RepositoryMemberDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/RepositoryUserGroupDto.h>
@@ -298,6 +304,8 @@
 #include <huaweicloud/codeartsrepo/v4/model/ListProjectMergeRequestCanBeAssignedUsersResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListProjectMergeRequestTemplatesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListProjectMergeRequestTemplatesResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListProjectMergeRequestsRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListProjectMergeRequestsResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryMergeRequestsRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryMergeRequestsResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/MRConflictFileDto.h>
@@ -310,7 +318,6 @@
 #include <huaweicloud/codeartsrepo/v4/model/MergeRequestListBasicDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/MergeRequestStatisticDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/MergeRequestVoteBodyDto.h>
-#include <huaweicloud/codeartsrepo/v4/model/MergeRequestVoteReviewerDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/MrCherryRevertDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/PostMergeRequestParamsDtoForOpenApi.h>
 #include <huaweicloud/codeartsrepo/v4/model/ProjectMergeRequestTemplateDto.h>
@@ -395,6 +402,8 @@
 #include <huaweicloud/codeartsrepo/v4/model/ResponsePermissionInfo.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryPermissionInheritEnabledRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryPermissionInheritEnabledResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/UpdateGroupResourcePermissionsRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/UpdateGroupResourcePermissionsResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/UpdatePermissionBodyDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/UpdateRepositoryPermissionInheritEnabledRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/UpdateRepositoryPermissionInheritEnabledResponse.h>
@@ -492,10 +501,6 @@
 #include <string>
 #include <vector>
 
-#include <huaweicloud/codeartsrepo/v4/model/ListRefsListRequest.h>
-#include <huaweicloud/codeartsrepo/v4/model/ListRefsListResponse.h>
-#include <string>
-
 #include <huaweicloud/codeartsrepo/v4/model/BatchDeleteBranchDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/BatchDeleteBranchRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/BatchDeleteBranchResponse.h>
@@ -512,6 +517,8 @@
 #include <huaweicloud/codeartsrepo/v4/model/DeleteTagResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListBranchesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListBranchesResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListRefsListRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListRefsListResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListTagsRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListTagsResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowBranchRequest.h>
@@ -585,6 +592,8 @@
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryLabelsResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryLanguagesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryLanguagesResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListRepositoryNavigationReferencesRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListRepositoryNavigationReferencesResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryTemplatesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListRepositoryTemplatesResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListSubmodulesRequest.h>
@@ -594,6 +603,8 @@
 #include <huaweicloud/codeartsrepo/v4/model/LockRepositoryRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/LockRepositoryResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/PersonalPushEventDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/RebuildRepositoryNavigationRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/RebuildRepositoryNavigationResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/RemoteMirrorDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/RemoteMirrorSyncInfoDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/RemoteMirrorUpdateBody.h>
@@ -608,6 +619,7 @@
 #include <huaweicloud/codeartsrepo/v4/model/RepositoryPushEventDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/RepositorySimplestDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/RepositoryTemplateDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/RepositoryTransferBodyDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowBlobsRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowBlobsResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowCommitStatisticsRequest.h>
@@ -624,6 +636,10 @@
 #include <huaweicloud/codeartsrepo/v4/model/ShowRefCompareResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRemoteMirrorRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRemoteMirrorResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepoLastStatisticsRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepoLastStatisticsResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepoStatisticsSummaryRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepoStatisticsSummaryResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryGeneralCommitRuleRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryGeneralCommitRuleResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryGeneralPolicyRequest.h>
@@ -632,6 +648,12 @@
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryInheritSettingResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryInheritSettingSourceRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryInheritSettingSourceResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryNavigationLanguageRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryNavigationLanguageResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryNavigationOutlineRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryNavigationOutlineResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryNavigationSchemaRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryNavigationSchemaResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ShowRepositoryStatisticsStatusRequest.h>
@@ -651,6 +673,8 @@
 #include <huaweicloud/codeartsrepo/v4/model/SubmoduleReqDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/SyncDeployKeyToSubmodulesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/SyncDeployKeyToSubmodulesResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/TransferRepositoryRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/TransferRepositoryResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/TrustedIpAddressDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/UnlockRepositoryRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/UnlockRepositoryResponse.h>
@@ -682,17 +706,36 @@
 #include <huaweicloud/codeartsrepo/v4/model/AddTenantTrustedIpAddressRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/AddTenantTrustedIpAddressResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/AddTrustedIpAddressRequestBody.h>
+#include <huaweicloud/codeartsrepo/v4/model/CreateTenantKmsGrantRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/CreateTenantKmsGrantResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/DeleteTenantTrustedIpAddressRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/DeleteTenantTrustedIpAddressResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ExportTenantRepositoriesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ExportTenantRepositoriesResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ExportTenantRepositoryBody.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListTenantCmksRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListTenantCmksResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListTenantEncryptedRepositoriesRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ListTenantEncryptedRepositoriesResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListTenantRepositoriesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListTenantRepositoriesResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListTenantTrustedIpAddressesRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/ListTenantTrustedIpAddressesResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/RepoEncryptionDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowProjectTenantSettingsRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowProjectTenantSettingsResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowTenantDevelopModeRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowTenantDevelopModeResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowTenantKmsGrantRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowTenantKmsGrantResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowTenantRepoEncryptionSettingRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/ShowTenantRepoEncryptionSettingResponse.h>
+#include <huaweicloud/codeartsrepo/v4/model/TenantCMKDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/TenantRepoEncryptionSettingRequestDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/TenantRepositoryDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/TenantTrustedIpAddressDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/UpdateTenantRepoEncryptionSettingRequest.h>
+#include <huaweicloud/codeartsrepo/v4/model/UpdateTenantRepoEncryptionSettingResponse.h>
 #include <huaweicloud/codeartsrepo/v4/model/UpdateTenantTrustedIpAddressRequest.h>
 #include <huaweicloud/codeartsrepo/v4/model/UpdateTenantTrustedIpAddressResponse.h>
 #include <string>
@@ -801,6 +844,7 @@
 #include <huaweicloud/codeartsrepo/v4/model/WebhookLogDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/WebhookLogExtendDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/WebhookParamsDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/WebhookParamsRequestDto.h>
 #include <string>
 #include <cpprest/details/basic_types.h>
 
@@ -1255,6 +1299,14 @@ public:
     std::shared_ptr<ListGroupPermissionResourcesResponse> listGroupPermissionResources(
         ListGroupPermissionResourcesRequest &request
     );
+    // 获取代码组下保护分支列表
+    //
+    // 获取代码组下保护分支列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListGroupProtectedBranchesResponse> listGroupProtectedBranches(
+        ListGroupProtectedBranchesRequest &request
+    );
     // 获取代码组下的子代码组和仓库列表
     //
     // 获取代码组下的子代码组和仓库列表
@@ -1391,6 +1443,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListGroupProtectedRefsUserGroupsResponse> listGroupProtectedRefsUserGroups(
         ListGroupProtectedRefsUserGroupsRequest &request
+    );
+    // 获取仓库下有审批权限成员
+    //
+    // 获取仓库下有审批权限成员（审批用户是否可以进入该仓库）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListManagementUsersResponse> listManagementUsers(
+        ListManagementUsersRequest &request
     );
     // 获取仓库成员列表
     //
@@ -1697,9 +1757,9 @@ public:
     std::shared_ptr<ListMergeRequestTemplatesResponse> listMergeRequestTemplates(
         ListMergeRequestTemplatesRequest &request
     );
-    // 获取可选的合并请求检视人
+    // 获取仓库审核人或合并人
     //
-    // 获取可选的合并请求检视人
+    // 获取仓库审核人或合并人
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListMergeRequestValidAssignedCandidatesResponse> listMergeRequestValidAssignedCandidates(
@@ -1731,7 +1791,7 @@ public:
     );
     // 获取项目检视人
     //
-    // 获取代码组检视人
+    // 获取项目检视人
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListProjectMergeRequestCanBeAssignedReviewersResponse> listProjectMergeRequestCanBeAssignedReviewers(
@@ -1739,7 +1799,7 @@ public:
     );
     // 获取项目审核人或合并人
     //
-    // 获取代码组审核人或合并人
+    // 获取项目审核人或合并人
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListProjectMergeRequestCanBeAssignedUsersResponse> listProjectMergeRequestCanBeAssignedUsers(
@@ -1752,6 +1812,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListProjectMergeRequestTemplatesResponse> listProjectMergeRequestTemplates(
         ListProjectMergeRequestTemplatesRequest &request
+    );
+    // 获取项目MR列表
+    //
+    // 获取项目MR列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListProjectMergeRequestsResponse> listProjectMergeRequests(
+        ListProjectMergeRequestsRequest &request
     );
     // 获取仓库MR列表
     //
@@ -2034,6 +2102,14 @@ public:
     std::shared_ptr<ShowRepositoryPermissionInheritEnabledResponse> showRepositoryPermissionInheritEnabled(
         ShowRepositoryPermissionInheritEnabledRequest &request
     );
+    // 更新代码组权限矩阵配置
+    //
+    // 更新代码组权限矩阵配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateGroupResourcePermissionsResponse> updateGroupResourcePermissions(
+        UpdateGroupResourcePermissionsRequest &request
+    );
     // 更新仓库权限继承配置
     //
     // 更新仓库权限继承配置。
@@ -2124,9 +2200,12 @@ public:
     std::shared_ptr<ShowProjectsGeneralPolicyResponse> showProjectsGeneralPolicy(
         ShowProjectsGeneralPolicyRequest &request
     );
-    // 获取资源点对应的角色和权限
+    // 获取代码组中指定权限资源下的权限矩阵
     //
-    // 获取资源点对应的角色和权限
+    // 获取代码组中指定权限资源下的权限矩阵。
+    // 说明：
+    // (a) 权限资源：CodeArtsRepo中需要鉴权的对象。代码组层级的权限资源有：代码组、仓库、代码、成员、Tag、合并请求&amp;变更请求、标签。&lt;动作 + 权限资源&gt; 就构成权限点，如：新建仓库、下载代码、添加成员等。权限点是CodeArtsRepo鉴权的基本单位。
+    // (b) 权限矩阵：记录了角色和权限点之间的关联关系，即记录了角色有哪些权限，没有哪些权限。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowResourcePermissionsResponse> showResourcePermissions(
@@ -2302,15 +2381,6 @@ public:
         UpdateProtectedTagRequest &request
     );
 
-    // 查看分支/tag列表
-    //
-    // 查看分支/tag列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListRefsListResponse> listRefsList(
-        ListRefsListRequest &request
-    );
-
     // 批量删除分支
     //
     // 批量删除分支
@@ -2358,6 +2428,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListBranchesResponse> listBranches(
         ListBranchesRequest &request
+    );
+    // 查看分支/tag列表
+    //
+    // 查看分支/tag列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRefsListResponse> listRefsList(
+        ListRefsListRequest &request
     );
     // 获取标签列表
     //
@@ -2584,6 +2662,14 @@ public:
     std::shared_ptr<ListRepositoryLanguagesResponse> listRepositoryLanguages(
         ListRepositoryLanguagesRequest &request
     );
+    // 获取代码导航引用关系
+    //
+    // 获取代码导航引用关系
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRepositoryNavigationReferencesResponse> listRepositoryNavigationReferences(
+        ListRepositoryNavigationReferencesRequest &request
+    );
     // 模板仓列表
     //
     // 模板仓列表
@@ -2616,6 +2702,14 @@ public:
     std::shared_ptr<LockRepositoryResponse> lockRepository(
         LockRepositoryRequest &request
     );
+    // 触发代码导航任务
+    //
+    // 触发代码导航任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RebuildRepositoryNavigationResponse> rebuildRepositoryNavigation(
+        RebuildRepositoryNavigationRequest &request
+    );
     // 删除仓库部署密钥
     //
     // 删除仓库部署密钥
@@ -2626,7 +2720,7 @@ public:
     );
     // 删除子仓库部署密钥
     //
-    // 将该该仓库的部署密钥从子模组中删除
+    // 将该仓库的部署密钥从子模组中删除
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RemoveDeployKeyFromSubmodulesResponse> removeDeployKeyFromSubmodules(
@@ -2696,6 +2790,22 @@ public:
     std::shared_ptr<ShowRemoteMirrorResponse> showRemoteMirror(
         ShowRemoteMirrorRequest &request
     );
+    // 获取仓库最近的提交统计信息
+    //
+    // 获取仓库最近的提交统计信息，其中按人员统计记录最多统计按创建时间降序的前100条数据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRepoLastStatisticsResponse> showRepoLastStatistics(
+        ShowRepoLastStatisticsRequest &request
+    );
+    // 获取仓库统计信息概览
+    //
+    // 获取仓库统计信息概览，包括仓库大小，分支数量，提交数量等。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRepoStatisticsSummaryResponse> showRepoStatisticsSummary(
+        ShowRepoStatisticsSummaryRequest &request
+    );
     // 获取仓库详情
     //
     // 获取仓库详情
@@ -2735,6 +2845,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRepositoryInheritSettingSourceResponse> showRepositoryInheritSettingSource(
         ShowRepositoryInheritSettingSourceRequest &request
+    );
+    // 获取代码导航功能的语言信息
+    //
+    // 获取代码导航功能的语言信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRepositoryNavigationLanguageResponse> showRepositoryNavigationLanguage(
+        ShowRepositoryNavigationLanguageRequest &request
+    );
+    // 获取代码导航大纲
+    //
+    // 获取代码导航大纲
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRepositoryNavigationOutlineResponse> showRepositoryNavigationOutline(
+        ShowRepositoryNavigationOutlineRequest &request
+    );
+    // 获取代码导航功能的模式信息
+    //
+    // 获取代码导航功能的模式信息，包括最近索引创建时间，做大统计的文件数量信息等
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRepositoryNavigationSchemaResponse> showRepositoryNavigationSchema(
+        ShowRepositoryNavigationSchemaRequest &request
     );
     // 获取仓库统计任务状态
     //
@@ -2791,6 +2925,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SyncDeployKeyToSubmodulesResponse> syncDeployKeyToSubmodules(
         SyncDeployKeyToSubmodulesRequest &request
+    );
+    // 转移仓库
+    //
+    // 将仓库转移到其他代码组
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<TransferRepositoryResponse> transferRepository(
+        TransferRepositoryRequest &request
     );
     // 解锁仓库
     //
@@ -2881,6 +3023,14 @@ public:
     std::shared_ptr<AddTenantTrustedIpAddressResponse> addTenantTrustedIpAddress(
         AddTenantTrustedIpAddressRequest &request
     );
+    // 创建当前租户委托给Repo的KMS授权
+    //
+    // 创建当前租户委托给Repo的KMS授权
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTenantKmsGrantResponse> createTenantKmsGrant(
+        CreateTenantKmsGrantRequest &request
+    );
     // 删除租户ip白名单
     //
     // 删除租户ip白名单
@@ -2891,11 +3041,27 @@ public:
     );
     // 租户仓库列表
     //
-    // 租户下所有占用资源的仓库列表
+    // 租户下所有占用资源的仓库列表，最多只能导出2万条记录。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ExportTenantRepositoriesResponse> exportTenantRepositories(
         ExportTenantRepositoriesRequest &request
+    );
+    // 获取当前租户的在KMS托管的主密钥CMK列表
+    //
+    // 获取当前租户的在KMS托管的主密钥CMK列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTenantCmksResponse> listTenantCmks(
+        ListTenantCmksRequest &request
+    );
+    // 获取当前租户已加密的仓库列表
+    //
+    // 获取当前租户已加密的仓库列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTenantEncryptedRepositoriesResponse> listTenantEncryptedRepositories(
+        ListTenantEncryptedRepositoriesRequest &request
     );
     // 租户仓库列表
     //
@@ -2912,6 +3078,46 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTenantTrustedIpAddressesResponse> listTenantTrustedIpAddresses(
         ListTenantTrustedIpAddressesRequest &request
+    );
+    // 获取租户设置
+    //
+    // 获取租户设置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProjectTenantSettingsResponse> showProjectTenantSettings(
+        ShowProjectTenantSettingsRequest &request
+    );
+    // 查看当前租户的开发模式
+    //
+    // 查看当前租户的开发模式
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTenantDevelopModeResponse> showTenantDevelopMode(
+        ShowTenantDevelopModeRequest &request
+    );
+    // 获取当前租户委托授权KMS状态
+    //
+    // 获取当前租户委托授权KMS状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTenantKmsGrantResponse> showTenantKmsGrant(
+        ShowTenantKmsGrantRequest &request
+    );
+    // 获取当前租户的仓库加密配置
+    //
+    // 获取当前租户的仓库加密配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTenantRepoEncryptionSettingResponse> showTenantRepoEncryptionSetting(
+        ShowTenantRepoEncryptionSettingRequest &request
+    );
+    // 修改当前租户的仓库加密配置
+    //
+    // 修改当前租户的仓库加密配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTenantRepoEncryptionSettingResponse> updateTenantRepoEncryptionSetting(
+        UpdateTenantRepoEncryptionSettingRequest &request
     );
     // 修改租户ip白名单
     //

@@ -34,6 +34,8 @@ ApproverBasicDto::ApproverBasicDto()
     tenantNameIsSet_ = false;
     approverComment_ = "";
     approverCommentIsSet_ = false;
+    hasPermission_ = false;
+    hasPermissionIsSet_ = false;
 }
 
 ApproverBasicDto::~ApproverBasicDto() = default;
@@ -78,6 +80,9 @@ web::json::value ApproverBasicDto::toJson() const
     }
     if(approverCommentIsSet_) {
         val[utility::conversions::to_string_t("approver_comment")] = ModelBase::toJson(approverComment_);
+    }
+    if(hasPermissionIsSet_) {
+        val[utility::conversions::to_string_t("has_permission")] = ModelBase::toJson(hasPermission_);
     }
 
     return val;
@@ -183,6 +188,15 @@ bool ApproverBasicDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setApproverComment(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("has_permission"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("has_permission"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHasPermission(refVal);
         }
     }
     return ok;
@@ -418,6 +432,27 @@ bool ApproverBasicDto::approverCommentIsSet() const
 void ApproverBasicDto::unsetapproverComment()
 {
     approverCommentIsSet_ = false;
+}
+
+bool ApproverBasicDto::isHasPermission() const
+{
+    return hasPermission_;
+}
+
+void ApproverBasicDto::setHasPermission(bool value)
+{
+    hasPermission_ = value;
+    hasPermissionIsSet_ = true;
+}
+
+bool ApproverBasicDto::hasPermissionIsSet() const
+{
+    return hasPermissionIsSet_;
+}
+
+void ApproverBasicDto::unsethasPermission()
+{
+    hasPermissionIsSet_ = false;
 }
 
 }

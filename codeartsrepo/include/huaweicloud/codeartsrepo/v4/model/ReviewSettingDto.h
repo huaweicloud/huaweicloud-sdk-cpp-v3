@@ -1,0 +1,143 @@
+
+#ifndef HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_ReviewSettingDto_H_
+#define HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_ReviewSettingDto_H_
+
+
+#include <huaweicloud/codeartsrepo/v4/CodeArtsRepoExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/codeartsrepo/v4/model/CategoryDto.h>
+#include <string>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Codeartsrepo {
+namespace V4 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 检视意见设置返回体
+/// </summary>
+class HUAWEICLOUD_CODEARTSREPO_V4_EXPORT  ReviewSettingDto
+    : public ModelBase
+{
+public:
+    ReviewSettingDto();
+    virtual ~ReviewSettingDto();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// ReviewSettingDto members
+
+    /// <summary>
+    /// **参数解释：** 是否启用启用检视意见分类与模块。
+    /// </summary>
+
+    bool isCategoriesAndModulesEnabled() const;
+    bool categoriesAndModulesEnabledIsSet() const;
+    void unsetcategoriesAndModulesEnabled();
+    void setCategoriesAndModulesEnabled(bool value);
+
+    /// <summary>
+    /// **参数解释：** 是否启用系统预置检视意见分类。
+    /// </summary>
+
+    bool isSecondaryCategoryEnabled() const;
+    bool secondaryCategoryEnabledIsSet() const;
+    void unsetsecondaryCategoryEnabled();
+    void setSecondaryCategoryEnabled(bool value);
+
+    /// <summary>
+    /// **参数解释：** 检视意见分类(已勾选)。
+    /// </summary>
+
+    std::vector<CategoryDto>& getPrimaryCategories();
+    bool primaryCategoriesIsSet() const;
+    void unsetprimaryCategories();
+    void setPrimaryCategories(const std::vector<CategoryDto>& value);
+
+    /// <summary>
+    /// **参数解释：** 检视意见分类的key(已勾选)。
+    /// </summary>
+
+    std::vector<std::string>& getReviewDefaultCategories();
+    bool reviewDefaultCategoriesIsSet() const;
+    void unsetreviewDefaultCategories();
+    void setReviewDefaultCategories(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// **参数解释：** 自定义分类。
+    /// </summary>
+
+    std::vector<std::string>& getReviewCustomizedCategories();
+    bool reviewCustomizedCategoriesIsSet() const;
+    void unsetreviewCustomizedCategories();
+    void setReviewCustomizedCategories(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// **参数解释：** 检视意见模块。
+    /// </summary>
+
+    std::vector<std::string>& getReviewModules();
+    bool reviewModulesIsSet() const;
+    void unsetreviewModules();
+    void setReviewModules(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// **参数解释：** 系统预置检视意见分类类型(启用系统预置检视意见分类时返回，默认&#39;HiCode&#39;)。
+    /// </summary>
+
+    std::string getSecondaryCategoryType() const;
+    bool secondaryCategoryTypeIsSet() const;
+    void unsetsecondaryCategoryType();
+    void setSecondaryCategoryType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 系统预置检视意见分类详情(启用系统预置检视意见分类时返回)。
+    /// </summary>
+
+    std::vector<CategoryDto>& getSecondaryCategories();
+    bool secondaryCategoriesIsSet() const;
+    void unsetsecondaryCategories();
+    void setSecondaryCategories(const std::vector<CategoryDto>& value);
+
+
+protected:
+    bool categoriesAndModulesEnabled_;
+    bool categoriesAndModulesEnabledIsSet_;
+    bool secondaryCategoryEnabled_;
+    bool secondaryCategoryEnabledIsSet_;
+    std::vector<CategoryDto> primaryCategories_;
+    bool primaryCategoriesIsSet_;
+    std::vector<std::string> reviewDefaultCategories_;
+    bool reviewDefaultCategoriesIsSet_;
+    std::vector<std::string> reviewCustomizedCategories_;
+    bool reviewCustomizedCategoriesIsSet_;
+    std::vector<std::string> reviewModules_;
+    bool reviewModulesIsSet_;
+    std::string secondaryCategoryType_;
+    bool secondaryCategoryTypeIsSet_;
+    std::vector<CategoryDto> secondaryCategories_;
+    bool secondaryCategoriesIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_ReviewSettingDto_H_

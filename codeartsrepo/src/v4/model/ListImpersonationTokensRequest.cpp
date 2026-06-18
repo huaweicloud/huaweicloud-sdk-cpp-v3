@@ -12,8 +12,6 @@ namespace Model {
 
 ListImpersonationTokensRequest::ListImpersonationTokensRequest()
 {
-    groupId_ = 0;
-    groupIdIsSet_ = false;
     state_ = "";
     stateIsSet_ = false;
     search_ = "";
@@ -34,9 +32,6 @@ web::json::value ListImpersonationTokensRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(groupIdIsSet_) {
-        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
-    }
     if(stateIsSet_) {
         val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
     }
@@ -56,15 +51,6 @@ bool ListImpersonationTokensRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setGroupId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("state"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("state"));
         if(!fieldValue.is_null())
@@ -104,27 +90,6 @@ bool ListImpersonationTokensRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-int32_t ListImpersonationTokensRequest::getGroupId() const
-{
-    return groupId_;
-}
-
-void ListImpersonationTokensRequest::setGroupId(int32_t value)
-{
-    groupId_ = value;
-    groupIdIsSet_ = true;
-}
-
-bool ListImpersonationTokensRequest::groupIdIsSet() const
-{
-    return groupIdIsSet_;
-}
-
-void ListImpersonationTokensRequest::unsetgroupId()
-{
-    groupIdIsSet_ = false;
-}
 
 std::string ListImpersonationTokensRequest::getState() const
 {

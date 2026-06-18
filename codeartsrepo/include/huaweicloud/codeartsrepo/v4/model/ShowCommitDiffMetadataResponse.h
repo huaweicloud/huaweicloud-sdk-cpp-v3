@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <vector>
 #include <huaweicloud/codeartsrepo/v4/model/DiffDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/DiffRefsDto.h>
@@ -103,6 +104,15 @@ public:
     void unsettooLarge();
     void setTooLarge(bool value);
 
+    /// <summary>
+    /// **参数解释：** blob文件ID。 **约束限制：** 不涉及。    
+    /// </summary>
+
+    std::string getBlobId() const;
+    bool blobIdIsSet() const;
+    void unsetblobId();
+    void setBlobId(const std::string& value);
+
 
 protected:
     std::vector<DiffDto> diffs_;
@@ -119,6 +129,8 @@ protected:
     bool changeLineCountIsSet_;
     bool tooLarge_;
     bool tooLargeIsSet_;
+    std::string blobId_;
+    bool blobIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

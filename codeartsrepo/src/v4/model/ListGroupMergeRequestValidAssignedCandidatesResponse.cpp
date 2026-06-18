@@ -13,6 +13,8 @@ namespace Model {
 ListGroupMergeRequestValidAssignedCandidatesResponse::ListGroupMergeRequestValidAssignedCandidatesResponse()
 {
     bodyIsSet_ = false;
+    xTotal_ = "";
+    xTotalIsSet_ = false;
 }
 
 ListGroupMergeRequestValidAssignedCandidatesResponse::~ListGroupMergeRequestValidAssignedCandidatesResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ListGroupMergeRequestValidAssignedCandidatesResponse::toJson() 
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
+    if(xTotalIsSet_) {
+        val[utility::conversions::to_string_t("X-Total")] = ModelBase::toJson(xTotal_);
+    }
 
     return val;
 }
@@ -39,21 +44,30 @@ bool ListGroupMergeRequestValidAssignedCandidatesResponse::fromJson(const web::j
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            std::vector<MergeRequestVoteReviewerDto> refVal;
+            std::vector<UserBasicDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Total"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXTotal(refVal);
         }
     }
     return ok;
 }
 
 
-std::vector<MergeRequestVoteReviewerDto>& ListGroupMergeRequestValidAssignedCandidatesResponse::getBody()
+std::vector<UserBasicDto>& ListGroupMergeRequestValidAssignedCandidatesResponse::getBody()
 {
     return body_;
 }
 
-void ListGroupMergeRequestValidAssignedCandidatesResponse::setBody(const std::vector<MergeRequestVoteReviewerDto>& value)
+void ListGroupMergeRequestValidAssignedCandidatesResponse::setBody(const std::vector<UserBasicDto>& value)
 {
     body_ = value;
     bodyIsSet_ = true;
@@ -67,6 +81,27 @@ bool ListGroupMergeRequestValidAssignedCandidatesResponse::bodyIsSet() const
 void ListGroupMergeRequestValidAssignedCandidatesResponse::unsetbody()
 {
     bodyIsSet_ = false;
+}
+
+std::string ListGroupMergeRequestValidAssignedCandidatesResponse::getXTotal() const
+{
+    return xTotal_;
+}
+
+void ListGroupMergeRequestValidAssignedCandidatesResponse::setXTotal(const std::string& value)
+{
+    xTotal_ = value;
+    xTotalIsSet_ = true;
+}
+
+bool ListGroupMergeRequestValidAssignedCandidatesResponse::xTotalIsSet() const
+{
+    return xTotalIsSet_;
+}
+
+void ListGroupMergeRequestValidAssignedCandidatesResponse::unsetxTotal()
+{
+    xTotalIsSet_ = false;
 }
 
 }

@@ -39,7 +39,7 @@ public:
     /// ListFilesRequest members
 
     /// <summary>
-    /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+    /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getRepositoryId() const;
@@ -55,6 +55,15 @@ public:
     bool refNameIsSet() const;
     void unsetrefName();
     void setRefName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 文件名、文件路径 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getSearch() const;
+    bool searchIsSet() const;
+    void unsetsearch();
+    void setSearch(const std::string& value);
 
     /// <summary>
     /// **参数解释：** 偏移量，从0开始。
@@ -80,6 +89,8 @@ protected:
     bool repositoryIdIsSet_;
     std::string refName_;
     bool refNameIsSet_;
+    std::string search_;
+    bool searchIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
     int32_t limit_;

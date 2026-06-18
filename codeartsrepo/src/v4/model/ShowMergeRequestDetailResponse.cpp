@@ -34,9 +34,16 @@ ShowMergeRequestDetailResponse::ShowMergeRequestDetailResponse()
     targetBranchIsSet_ = false;
     isSourceBranchProtected_ = false;
     isSourceBranchProtectedIsSet_ = false;
+    isSourceBranchDefault_ = false;
+    isSourceBranchDefaultIsSet_ = false;
     devcloudSourceBranch_ = "";
     devcloudSourceBranchIsSet_ = false;
+    upvotes_ = 0;
+    upvotesIsSet_ = false;
+    downvotes_ = 0;
+    downvotesIsSet_ = false;
     authorIsSet_ = false;
+    assigneeIsSet_ = false;
     sourceRepositoryId_ = 0;
     sourceRepositoryIdIsSet_ = false;
     targetRepositoryId_ = 0;
@@ -67,6 +74,8 @@ ShowMergeRequestDetailResponse::ShowMergeRequestDetailResponse()
     closedAtIsSet_ = false;
     userNotesCount_ = 0;
     userNotesCountIsSet_ = false;
+    shouldRemoveSourceBranch_ = false;
+    shouldRemoveSourceBranchIsSet_ = false;
     forceRemoveSourceBranch_ = false;
     forceRemoveSourceBranchIsSet_ = false;
     webUrl_ = "";
@@ -95,12 +104,16 @@ ShowMergeRequestDetailResponse::ShowMergeRequestDetailResponse()
     moderationStatusIsSet_ = false;
     isUseTempBranch_ = false;
     isUseTempBranchIsSet_ = false;
+    onlyAssigneeCanMerge_ = false;
+    onlyAssigneeCanMergeIsSet_ = false;
     reviewMode_ = "";
     reviewModeIsSet_ = false;
     squash_ = false;
     squashIsSet_ = false;
     approvalMergeRequestApproversIsSet_ = false;
     approvalMergeRequestReviewersIsSet_ = false;
+    topic_ = "";
+    topicIsSet_ = false;
     sourceRepositoryIsSet_ = false;
     targetRepositoryIsSet_ = false;
     isSourceBranchExist_ = false;
@@ -161,11 +174,23 @@ web::json::value ShowMergeRequestDetailResponse::toJson() const
     if(isSourceBranchProtectedIsSet_) {
         val[utility::conversions::to_string_t("is_source_branch_protected")] = ModelBase::toJson(isSourceBranchProtected_);
     }
+    if(isSourceBranchDefaultIsSet_) {
+        val[utility::conversions::to_string_t("is_source_branch_default")] = ModelBase::toJson(isSourceBranchDefault_);
+    }
     if(devcloudSourceBranchIsSet_) {
         val[utility::conversions::to_string_t("devcloud_source_branch")] = ModelBase::toJson(devcloudSourceBranch_);
     }
+    if(upvotesIsSet_) {
+        val[utility::conversions::to_string_t("upvotes")] = ModelBase::toJson(upvotes_);
+    }
+    if(downvotesIsSet_) {
+        val[utility::conversions::to_string_t("downvotes")] = ModelBase::toJson(downvotes_);
+    }
     if(authorIsSet_) {
         val[utility::conversions::to_string_t("author")] = ModelBase::toJson(author_);
+    }
+    if(assigneeIsSet_) {
+        val[utility::conversions::to_string_t("assignee")] = ModelBase::toJson(assignee_);
     }
     if(sourceRepositoryIdIsSet_) {
         val[utility::conversions::to_string_t("source_repository_id")] = ModelBase::toJson(sourceRepositoryId_);
@@ -218,6 +243,9 @@ web::json::value ShowMergeRequestDetailResponse::toJson() const
     if(userNotesCountIsSet_) {
         val[utility::conversions::to_string_t("user_notes_count")] = ModelBase::toJson(userNotesCount_);
     }
+    if(shouldRemoveSourceBranchIsSet_) {
+        val[utility::conversions::to_string_t("should_remove_source_branch")] = ModelBase::toJson(shouldRemoveSourceBranch_);
+    }
     if(forceRemoveSourceBranchIsSet_) {
         val[utility::conversions::to_string_t("force_remove_source_branch")] = ModelBase::toJson(forceRemoveSourceBranch_);
     }
@@ -266,6 +294,9 @@ web::json::value ShowMergeRequestDetailResponse::toJson() const
     if(isUseTempBranchIsSet_) {
         val[utility::conversions::to_string_t("is_use_temp_branch")] = ModelBase::toJson(isUseTempBranch_);
     }
+    if(onlyAssigneeCanMergeIsSet_) {
+        val[utility::conversions::to_string_t("only_assignee_can_merge")] = ModelBase::toJson(onlyAssigneeCanMerge_);
+    }
     if(reviewModeIsSet_) {
         val[utility::conversions::to_string_t("review_mode")] = ModelBase::toJson(reviewMode_);
     }
@@ -277,6 +308,9 @@ web::json::value ShowMergeRequestDetailResponse::toJson() const
     }
     if(approvalMergeRequestReviewersIsSet_) {
         val[utility::conversions::to_string_t("approval_merge_request_reviewers")] = ModelBase::toJson(approvalMergeRequestReviewers_);
+    }
+    if(topicIsSet_) {
+        val[utility::conversions::to_string_t("topic")] = ModelBase::toJson(topic_);
     }
     if(sourceRepositoryIsSet_) {
         val[utility::conversions::to_string_t("source_repository")] = ModelBase::toJson(sourceRepository_);
@@ -411,6 +445,15 @@ bool ShowMergeRequestDetailResponse::fromJson(const web::json::value& val)
             setIsSourceBranchProtected(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("is_source_branch_default"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_source_branch_default"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsSourceBranchDefault(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("devcloud_source_branch"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("devcloud_source_branch"));
         if(!fieldValue.is_null())
@@ -420,6 +463,24 @@ bool ShowMergeRequestDetailResponse::fromJson(const web::json::value& val)
             setDevcloudSourceBranch(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("upvotes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("upvotes"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpvotes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("downvotes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("downvotes"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDownvotes(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("author"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("author"));
         if(!fieldValue.is_null())
@@ -427,6 +488,15 @@ bool ShowMergeRequestDetailResponse::fromJson(const web::json::value& val)
             UserBasicExternalDto refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAuthor(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("assignee"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("assignee"));
+        if(!fieldValue.is_null())
+        {
+            UserBasicExternalDto refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAssignee(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("source_repository_id"))) {
@@ -582,6 +652,15 @@ bool ShowMergeRequestDetailResponse::fromJson(const web::json::value& val)
             setUserNotesCount(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("should_remove_source_branch"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("should_remove_source_branch"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setShouldRemoveSourceBranch(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("force_remove_source_branch"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("force_remove_source_branch"));
         if(!fieldValue.is_null())
@@ -726,6 +805,15 @@ bool ShowMergeRequestDetailResponse::fromJson(const web::json::value& val)
             setIsUseTempBranch(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("only_assignee_can_merge"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("only_assignee_can_merge"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOnlyAssigneeCanMerge(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("review_mode"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("review_mode"));
         if(!fieldValue.is_null())
@@ -760,6 +848,15 @@ bool ShowMergeRequestDetailResponse::fromJson(const web::json::value& val)
             std::vector<ApprovalUserDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setApprovalMergeRequestReviewers(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("topic"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("topic"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTopic(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("source_repository"))) {
@@ -1078,6 +1175,27 @@ void ShowMergeRequestDetailResponse::unsetisSourceBranchProtected()
     isSourceBranchProtectedIsSet_ = false;
 }
 
+bool ShowMergeRequestDetailResponse::isIsSourceBranchDefault() const
+{
+    return isSourceBranchDefault_;
+}
+
+void ShowMergeRequestDetailResponse::setIsSourceBranchDefault(bool value)
+{
+    isSourceBranchDefault_ = value;
+    isSourceBranchDefaultIsSet_ = true;
+}
+
+bool ShowMergeRequestDetailResponse::isSourceBranchDefaultIsSet() const
+{
+    return isSourceBranchDefaultIsSet_;
+}
+
+void ShowMergeRequestDetailResponse::unsetisSourceBranchDefault()
+{
+    isSourceBranchDefaultIsSet_ = false;
+}
+
 std::string ShowMergeRequestDetailResponse::getDevcloudSourceBranch() const
 {
     return devcloudSourceBranch_;
@@ -1099,6 +1217,48 @@ void ShowMergeRequestDetailResponse::unsetdevcloudSourceBranch()
     devcloudSourceBranchIsSet_ = false;
 }
 
+int32_t ShowMergeRequestDetailResponse::getUpvotes() const
+{
+    return upvotes_;
+}
+
+void ShowMergeRequestDetailResponse::setUpvotes(int32_t value)
+{
+    upvotes_ = value;
+    upvotesIsSet_ = true;
+}
+
+bool ShowMergeRequestDetailResponse::upvotesIsSet() const
+{
+    return upvotesIsSet_;
+}
+
+void ShowMergeRequestDetailResponse::unsetupvotes()
+{
+    upvotesIsSet_ = false;
+}
+
+int32_t ShowMergeRequestDetailResponse::getDownvotes() const
+{
+    return downvotes_;
+}
+
+void ShowMergeRequestDetailResponse::setDownvotes(int32_t value)
+{
+    downvotes_ = value;
+    downvotesIsSet_ = true;
+}
+
+bool ShowMergeRequestDetailResponse::downvotesIsSet() const
+{
+    return downvotesIsSet_;
+}
+
+void ShowMergeRequestDetailResponse::unsetdownvotes()
+{
+    downvotesIsSet_ = false;
+}
+
 UserBasicExternalDto ShowMergeRequestDetailResponse::getAuthor() const
 {
     return author_;
@@ -1118,6 +1278,27 @@ bool ShowMergeRequestDetailResponse::authorIsSet() const
 void ShowMergeRequestDetailResponse::unsetauthor()
 {
     authorIsSet_ = false;
+}
+
+UserBasicExternalDto ShowMergeRequestDetailResponse::getAssignee() const
+{
+    return assignee_;
+}
+
+void ShowMergeRequestDetailResponse::setAssignee(const UserBasicExternalDto& value)
+{
+    assignee_ = value;
+    assigneeIsSet_ = true;
+}
+
+bool ShowMergeRequestDetailResponse::assigneeIsSet() const
+{
+    return assigneeIsSet_;
+}
+
+void ShowMergeRequestDetailResponse::unsetassignee()
+{
+    assigneeIsSet_ = false;
 }
 
 int32_t ShowMergeRequestDetailResponse::getSourceRepositoryId() const
@@ -1477,6 +1658,27 @@ void ShowMergeRequestDetailResponse::unsetuserNotesCount()
     userNotesCountIsSet_ = false;
 }
 
+bool ShowMergeRequestDetailResponse::isShouldRemoveSourceBranch() const
+{
+    return shouldRemoveSourceBranch_;
+}
+
+void ShowMergeRequestDetailResponse::setShouldRemoveSourceBranch(bool value)
+{
+    shouldRemoveSourceBranch_ = value;
+    shouldRemoveSourceBranchIsSet_ = true;
+}
+
+bool ShowMergeRequestDetailResponse::shouldRemoveSourceBranchIsSet() const
+{
+    return shouldRemoveSourceBranchIsSet_;
+}
+
+void ShowMergeRequestDetailResponse::unsetshouldRemoveSourceBranch()
+{
+    shouldRemoveSourceBranchIsSet_ = false;
+}
+
 bool ShowMergeRequestDetailResponse::isForceRemoveSourceBranch() const
 {
     return forceRemoveSourceBranch_;
@@ -1813,6 +2015,27 @@ void ShowMergeRequestDetailResponse::unsetisUseTempBranch()
     isUseTempBranchIsSet_ = false;
 }
 
+bool ShowMergeRequestDetailResponse::isOnlyAssigneeCanMerge() const
+{
+    return onlyAssigneeCanMerge_;
+}
+
+void ShowMergeRequestDetailResponse::setOnlyAssigneeCanMerge(bool value)
+{
+    onlyAssigneeCanMerge_ = value;
+    onlyAssigneeCanMergeIsSet_ = true;
+}
+
+bool ShowMergeRequestDetailResponse::onlyAssigneeCanMergeIsSet() const
+{
+    return onlyAssigneeCanMergeIsSet_;
+}
+
+void ShowMergeRequestDetailResponse::unsetonlyAssigneeCanMerge()
+{
+    onlyAssigneeCanMergeIsSet_ = false;
+}
+
 std::string ShowMergeRequestDetailResponse::getReviewMode() const
 {
     return reviewMode_;
@@ -1895,6 +2118,27 @@ bool ShowMergeRequestDetailResponse::approvalMergeRequestReviewersIsSet() const
 void ShowMergeRequestDetailResponse::unsetapprovalMergeRequestReviewers()
 {
     approvalMergeRequestReviewersIsSet_ = false;
+}
+
+std::string ShowMergeRequestDetailResponse::getTopic() const
+{
+    return topic_;
+}
+
+void ShowMergeRequestDetailResponse::setTopic(const std::string& value)
+{
+    topic_ = value;
+    topicIsSet_ = true;
+}
+
+bool ShowMergeRequestDetailResponse::topicIsSet() const
+{
+    return topicIsSet_;
+}
+
+void ShowMergeRequestDetailResponse::unsettopic()
+{
+    topicIsSet_ = false;
 }
 
 ProjectSimpleDto ShowMergeRequestDetailResponse::getSourceRepository() const

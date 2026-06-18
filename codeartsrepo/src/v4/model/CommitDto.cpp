@@ -60,6 +60,8 @@ CommitDto::CommitDto()
     tenantNameIsSet_ = false;
     userName_ = "";
     userNameIsSet_ = false;
+    authorId_ = 0;
+    authorIdIsSet_ = false;
 }
 
 CommitDto::~CommitDto() = default;
@@ -146,6 +148,9 @@ web::json::value CommitDto::toJson() const
     }
     if(userNameIsSet_) {
         val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
+    }
+    if(authorIdIsSet_) {
+        val[utility::conversions::to_string_t("author_id")] = ModelBase::toJson(authorId_);
     }
 
     return val;
@@ -377,6 +382,15 @@ bool CommitDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("author_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("author_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuthorId(refVal);
         }
     }
     return ok;
@@ -906,6 +920,27 @@ bool CommitDto::userNameIsSet() const
 void CommitDto::unsetuserName()
 {
     userNameIsSet_ = false;
+}
+
+int32_t CommitDto::getAuthorId() const
+{
+    return authorId_;
+}
+
+void CommitDto::setAuthorId(int32_t value)
+{
+    authorId_ = value;
+    authorIdIsSet_ = true;
+}
+
+bool CommitDto::authorIdIsSet() const
+{
+    return authorIdIsSet_;
+}
+
+void CommitDto::unsetauthorId()
+{
+    authorIdIsSet_ = false;
 }
 
 }

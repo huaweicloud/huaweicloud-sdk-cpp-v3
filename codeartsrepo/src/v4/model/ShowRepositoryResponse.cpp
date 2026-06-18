@@ -74,6 +74,10 @@ ShowRepositoryResponse::ShowRepositoryResponse()
     creatorId_ = 0;
     creatorIdIsSet_ = false;
     forkedFromRepositoryIsSet_ = false;
+    encryptionStatus_ = "";
+    encryptionStatusIsSet_ = false;
+    repoEncryptionEnabled_ = false;
+    repoEncryptionEnabledIsSet_ = false;
     uuid_ = "";
     uuidIsSet_ = false;
     ancestorIdsIsSet_ = false;
@@ -217,6 +221,12 @@ web::json::value ShowRepositoryResponse::toJson() const
     }
     if(forkedFromRepositoryIsSet_) {
         val[utility::conversions::to_string_t("forked_from_repository")] = ModelBase::toJson(forkedFromRepository_);
+    }
+    if(encryptionStatusIsSet_) {
+        val[utility::conversions::to_string_t("encryption_status")] = ModelBase::toJson(encryptionStatus_);
+    }
+    if(repoEncryptionEnabledIsSet_) {
+        val[utility::conversions::to_string_t("repo_encryption_enabled")] = ModelBase::toJson(repoEncryptionEnabled_);
     }
     if(uuidIsSet_) {
         val[utility::conversions::to_string_t("uuid")] = ModelBase::toJson(uuid_);
@@ -577,6 +587,24 @@ bool ShowRepositoryResponse::fromJson(const web::json::value& val)
             RepositorySimpleDto refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setForkedFromRepository(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("encryption_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encryption_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEncryptionStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repo_encryption_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repo_encryption_enabled"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepoEncryptionEnabled(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("uuid"))) {
@@ -1445,6 +1473,48 @@ bool ShowRepositoryResponse::forkedFromRepositoryIsSet() const
 void ShowRepositoryResponse::unsetforkedFromRepository()
 {
     forkedFromRepositoryIsSet_ = false;
+}
+
+std::string ShowRepositoryResponse::getEncryptionStatus() const
+{
+    return encryptionStatus_;
+}
+
+void ShowRepositoryResponse::setEncryptionStatus(const std::string& value)
+{
+    encryptionStatus_ = value;
+    encryptionStatusIsSet_ = true;
+}
+
+bool ShowRepositoryResponse::encryptionStatusIsSet() const
+{
+    return encryptionStatusIsSet_;
+}
+
+void ShowRepositoryResponse::unsetencryptionStatus()
+{
+    encryptionStatusIsSet_ = false;
+}
+
+bool ShowRepositoryResponse::isRepoEncryptionEnabled() const
+{
+    return repoEncryptionEnabled_;
+}
+
+void ShowRepositoryResponse::setRepoEncryptionEnabled(bool value)
+{
+    repoEncryptionEnabled_ = value;
+    repoEncryptionEnabledIsSet_ = true;
+}
+
+bool ShowRepositoryResponse::repoEncryptionEnabledIsSet() const
+{
+    return repoEncryptionEnabledIsSet_;
+}
+
+void ShowRepositoryResponse::unsetrepoEncryptionEnabled()
+{
+    repoEncryptionEnabledIsSet_ = false;
 }
 
 std::string ShowRepositoryResponse::getUuid() const

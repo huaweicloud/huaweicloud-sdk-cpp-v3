@@ -138,6 +138,15 @@ public:
     void unsetapproverComment();
     void setApproverComment(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 是否有相关权限。
+    /// </summary>
+
+    bool isHasPermission() const;
+    bool hasPermissionIsSet() const;
+    void unsethasPermission();
+    void setHasPermission(bool value);
+
 
 protected:
     int32_t id_;
@@ -162,6 +171,8 @@ protected:
     bool tenantNameIsSet_;
     std::string approverComment_;
     bool approverCommentIsSet_;
+    bool hasPermission_;
+    bool hasPermissionIsSet_;
 
 };
 

@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartsrepo/v4/model/MultipleRoleDto.h>
 #include <string>
 #include <huaweicloud/codeartsrepo/v4/model/GroupMyRoleDtoV4.h>
 #include <vector>
@@ -328,6 +329,15 @@ public:
     void unsetstarred();
     void setStarred(bool value);
 
+    /// <summary>
+    /// **参数解释：** 角色列表。
+    /// </summary>
+
+    std::vector<MultipleRoleDto>& getRoles();
+    bool rolesIsSet() const;
+    void unsetroles();
+    void setRoles(const std::vector<MultipleRoleDto>& value);
+
 
 protected:
     std::string projectId_;
@@ -394,6 +404,8 @@ protected:
     bool lastOwnerIsSet_;
     bool starred_;
     bool starredIsSet_;
+    std::vector<MultipleRoleDto> roles_;
+    bool rolesIsSet_;
 
 };
 

@@ -14,7 +14,7 @@ BackupStrategyOption::BackupStrategyOption()
 {
     startTime_ = "";
     startTimeIsSet_ = false;
-    keepDays_ = "";
+    keepDays_ = 0;
     keepDaysIsSet_ = false;
 }
 
@@ -54,7 +54,7 @@ bool BackupStrategyOption::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("keep_days"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeepDays(refVal);
         }
@@ -84,12 +84,12 @@ void BackupStrategyOption::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-std::string BackupStrategyOption::getKeepDays() const
+int32_t BackupStrategyOption::getKeepDays() const
 {
     return keepDays_;
 }
 
-void BackupStrategyOption::setKeepDays(const std::string& value)
+void BackupStrategyOption::setKeepDays(int32_t value)
 {
     keepDays_ = value;
     keepDaysIsSet_ = true;

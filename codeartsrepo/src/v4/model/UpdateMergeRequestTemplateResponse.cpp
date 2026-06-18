@@ -14,8 +14,6 @@ UpdateMergeRequestTemplateResponse::UpdateMergeRequestTemplateResponse()
 {
     id_ = 0;
     idIsSet_ = false;
-    repositoryId_ = 0;
-    repositoryIdIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     createdAt_ = "";
@@ -33,6 +31,9 @@ UpdateMergeRequestTemplateResponse::UpdateMergeRequestTemplateResponse()
     autoExtractMrTitle_ = 0;
     autoExtractMrTitleIsSet_ = false;
     creatorIsSet_ = false;
+    repositoryId_ = 0;
+    repositoryIdIsSet_ = false;
+    fromIsSet_ = false;
 }
 
 UpdateMergeRequestTemplateResponse::~UpdateMergeRequestTemplateResponse() = default;
@@ -47,9 +48,6 @@ web::json::value UpdateMergeRequestTemplateResponse::toJson() const
 
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
-    }
-    if(repositoryIdIsSet_) {
-        val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -78,6 +76,12 @@ web::json::value UpdateMergeRequestTemplateResponse::toJson() const
     if(creatorIsSet_) {
         val[utility::conversions::to_string_t("creator")] = ModelBase::toJson(creator_);
     }
+    if(repositoryIdIsSet_) {
+        val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
+    }
+    if(fromIsSet_) {
+        val[utility::conversions::to_string_t("from")] = ModelBase::toJson(from_);
+    }
 
     return val;
 }
@@ -92,15 +96,6 @@ bool UpdateMergeRequestTemplateResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("repository_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_id"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRepositoryId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -184,6 +179,24 @@ bool UpdateMergeRequestTemplateResponse::fromJson(const web::json::value& val)
             setCreator(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("repository_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepositoryId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("from"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("from"));
+        if(!fieldValue.is_null())
+        {
+            MergeRequestTemplateFromDto refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFrom(refVal);
+        }
+    }
     return ok;
 }
 
@@ -207,27 +220,6 @@ bool UpdateMergeRequestTemplateResponse::idIsSet() const
 void UpdateMergeRequestTemplateResponse::unsetid()
 {
     idIsSet_ = false;
-}
-
-int32_t UpdateMergeRequestTemplateResponse::getRepositoryId() const
-{
-    return repositoryId_;
-}
-
-void UpdateMergeRequestTemplateResponse::setRepositoryId(int32_t value)
-{
-    repositoryId_ = value;
-    repositoryIdIsSet_ = true;
-}
-
-bool UpdateMergeRequestTemplateResponse::repositoryIdIsSet() const
-{
-    return repositoryIdIsSet_;
-}
-
-void UpdateMergeRequestTemplateResponse::unsetrepositoryId()
-{
-    repositoryIdIsSet_ = false;
 }
 
 std::string UpdateMergeRequestTemplateResponse::getDescription() const
@@ -417,6 +409,48 @@ bool UpdateMergeRequestTemplateResponse::creatorIsSet() const
 void UpdateMergeRequestTemplateResponse::unsetcreator()
 {
     creatorIsSet_ = false;
+}
+
+int32_t UpdateMergeRequestTemplateResponse::getRepositoryId() const
+{
+    return repositoryId_;
+}
+
+void UpdateMergeRequestTemplateResponse::setRepositoryId(int32_t value)
+{
+    repositoryId_ = value;
+    repositoryIdIsSet_ = true;
+}
+
+bool UpdateMergeRequestTemplateResponse::repositoryIdIsSet() const
+{
+    return repositoryIdIsSet_;
+}
+
+void UpdateMergeRequestTemplateResponse::unsetrepositoryId()
+{
+    repositoryIdIsSet_ = false;
+}
+
+MergeRequestTemplateFromDto UpdateMergeRequestTemplateResponse::getFrom() const
+{
+    return from_;
+}
+
+void UpdateMergeRequestTemplateResponse::setFrom(const MergeRequestTemplateFromDto& value)
+{
+    from_ = value;
+    fromIsSet_ = true;
+}
+
+bool UpdateMergeRequestTemplateResponse::fromIsSet() const
+{
+    return fromIsSet_;
+}
+
+void UpdateMergeRequestTemplateResponse::unsetfrom()
+{
+    fromIsSet_ = false;
 }
 
 }

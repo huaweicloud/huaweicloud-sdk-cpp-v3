@@ -13,6 +13,8 @@ namespace Model {
 ListMergeRequestValidAssignedCandidatesResponse::ListMergeRequestValidAssignedCandidatesResponse()
 {
     bodyIsSet_ = false;
+    xTotal_ = "";
+    xTotalIsSet_ = false;
 }
 
 ListMergeRequestValidAssignedCandidatesResponse::~ListMergeRequestValidAssignedCandidatesResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ListMergeRequestValidAssignedCandidatesResponse::toJson() const
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
+    if(xTotalIsSet_) {
+        val[utility::conversions::to_string_t("X-Total")] = ModelBase::toJson(xTotal_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ListMergeRequestValidAssignedCandidatesResponse::fromJson(const web::json::
             std::vector<MRVoteReviewerDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Total"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXTotal(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ListMergeRequestValidAssignedCandidatesResponse::bodyIsSet() const
 void ListMergeRequestValidAssignedCandidatesResponse::unsetbody()
 {
     bodyIsSet_ = false;
+}
+
+std::string ListMergeRequestValidAssignedCandidatesResponse::getXTotal() const
+{
+    return xTotal_;
+}
+
+void ListMergeRequestValidAssignedCandidatesResponse::setXTotal(const std::string& value)
+{
+    xTotal_ = value;
+    xTotalIsSet_ = true;
+}
+
+bool ListMergeRequestValidAssignedCandidatesResponse::xTotalIsSet() const
+{
+    return xTotalIsSet_;
+}
+
+void ListMergeRequestValidAssignedCandidatesResponse::unsetxTotal()
+{
+    xTotalIsSet_ = false;
 }
 
 }

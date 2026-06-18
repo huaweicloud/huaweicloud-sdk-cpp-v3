@@ -14,8 +14,6 @@ MergeRequestTemplateDto::MergeRequestTemplateDto()
 {
     id_ = 0;
     idIsSet_ = false;
-    repositoryId_ = 0;
-    repositoryIdIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     createdAt_ = "";
@@ -47,9 +45,6 @@ web::json::value MergeRequestTemplateDto::toJson() const
 
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
-    }
-    if(repositoryIdIsSet_) {
-        val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -92,15 +87,6 @@ bool MergeRequestTemplateDto::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("repository_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_id"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRepositoryId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -207,27 +193,6 @@ bool MergeRequestTemplateDto::idIsSet() const
 void MergeRequestTemplateDto::unsetid()
 {
     idIsSet_ = false;
-}
-
-int32_t MergeRequestTemplateDto::getRepositoryId() const
-{
-    return repositoryId_;
-}
-
-void MergeRequestTemplateDto::setRepositoryId(int32_t value)
-{
-    repositoryId_ = value;
-    repositoryIdIsSet_ = true;
-}
-
-bool MergeRequestTemplateDto::repositoryIdIsSet() const
-{
-    return repositoryIdIsSet_;
-}
-
-void MergeRequestTemplateDto::unsetrepositoryId()
-{
-    repositoryIdIsSet_ = false;
 }
 
 std::string MergeRequestTemplateDto::getDescription() const

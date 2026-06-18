@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartsrepo/v4/model/WebhookParamsDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/WebhookParamsRequestDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,7 +39,7 @@ public:
     /// AddGroupWebhookRequest members
 
     /// <summary>
-    /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
+    /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getGroupId() const;
@@ -51,16 +51,16 @@ public:
     /// 
     /// </summary>
 
-    WebhookParamsDto getBody() const;
+    WebhookParamsRequestDto getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const WebhookParamsDto& value);
+    void setBody(const WebhookParamsRequestDto& value);
 
 
 protected:
     int32_t groupId_;
     bool groupIdIsSet_;
-    WebhookParamsDto body_;
+    WebhookParamsRequestDto body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

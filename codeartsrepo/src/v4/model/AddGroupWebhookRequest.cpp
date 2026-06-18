@@ -53,7 +53,7 @@ bool AddGroupWebhookRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            WebhookParamsDto refVal;
+            WebhookParamsRequestDto refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -83,12 +83,12 @@ void AddGroupWebhookRequest::unsetgroupId()
     groupIdIsSet_ = false;
 }
 
-WebhookParamsDto AddGroupWebhookRequest::getBody() const
+WebhookParamsRequestDto AddGroupWebhookRequest::getBody() const
 {
     return body_;
 }
 
-void AddGroupWebhookRequest::setBody(const WebhookParamsDto& value)
+void AddGroupWebhookRequest::setBody(const WebhookParamsRequestDto& value)
 {
     body_ = value;
     bodyIsSet_ = true;

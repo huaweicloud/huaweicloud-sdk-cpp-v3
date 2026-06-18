@@ -147,6 +147,15 @@ public:
     void setIsSourceBranchProtected(bool value);
 
     /// <summary>
+    /// 源分支是否为默认分支
+    /// </summary>
+
+    bool isIsSourceBranchDefault() const;
+    bool isSourceBranchDefaultIsSet() const;
+    void unsetisSourceBranchDefault();
+    void setIsSourceBranchDefault(bool value);
+
+    /// <summary>
     /// 源分支
     /// </summary>
 
@@ -156,6 +165,24 @@ public:
     void setDevcloudSourceBranch(const std::string& value);
 
     /// <summary>
+    /// MR点赞数
+    /// </summary>
+
+    int32_t getUpvotes() const;
+    bool upvotesIsSet() const;
+    void unsetupvotes();
+    void setUpvotes(int32_t value);
+
+    /// <summary>
+    /// MR倒赞数
+    /// </summary>
+
+    int32_t getDownvotes() const;
+    bool downvotesIsSet() const;
+    void unsetdownvotes();
+    void setDownvotes(int32_t value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -163,6 +190,15 @@ public:
     bool authorIsSet() const;
     void unsetauthor();
     void setAuthor(const UserBasicExternalDto& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    UserBasicExternalDto getAssignee() const;
+    bool assigneeIsSet() const;
+    void unsetassignee();
+    void setAssignee(const UserBasicExternalDto& value);
 
     /// <summary>
     /// 源仓库id
@@ -318,6 +354,15 @@ public:
     void setUserNotesCount(int32_t value);
 
     /// <summary>
+    /// 是否需要删除源分支
+    /// </summary>
+
+    bool isShouldRemoveSourceBranch() const;
+    bool shouldRemoveSourceBranchIsSet() const;
+    void unsetshouldRemoveSourceBranch();
+    void setShouldRemoveSourceBranch(bool value);
+
+    /// <summary>
     /// 合入后删除源分支
     /// </summary>
 
@@ -462,6 +507,15 @@ public:
     void setIsUseTempBranch(bool value);
 
     /// <summary>
+    /// 只有合并人允许合入
+    /// </summary>
+
+    bool isOnlyAssigneeCanMerge() const;
+    bool onlyAssigneeCanMergeIsSet() const;
+    void unsetonlyAssigneeCanMerge();
+    void setOnlyAssigneeCanMerge(bool value);
+
+    /// <summary>
     /// 审核人
     /// </summary>
 
@@ -530,10 +584,18 @@ protected:
     bool targetBranchIsSet_;
     bool isSourceBranchProtected_;
     bool isSourceBranchProtectedIsSet_;
+    bool isSourceBranchDefault_;
+    bool isSourceBranchDefaultIsSet_;
     std::string devcloudSourceBranch_;
     bool devcloudSourceBranchIsSet_;
+    int32_t upvotes_;
+    bool upvotesIsSet_;
+    int32_t downvotes_;
+    bool downvotesIsSet_;
     UserBasicExternalDto author_;
     bool authorIsSet_;
+    UserBasicExternalDto assignee_;
+    bool assigneeIsSet_;
     int32_t sourceRepositoryId_;
     bool sourceRepositoryIdIsSet_;
     int32_t targetRepositoryId_;
@@ -568,6 +630,8 @@ protected:
     bool closedAtIsSet_;
     int32_t userNotesCount_;
     bool userNotesCountIsSet_;
+    bool shouldRemoveSourceBranch_;
+    bool shouldRemoveSourceBranchIsSet_;
     bool forceRemoveSourceBranch_;
     bool forceRemoveSourceBranchIsSet_;
     std::string webUrl_;
@@ -600,6 +664,8 @@ protected:
     bool moderationStatusIsSet_;
     bool isUseTempBranch_;
     bool isUseTempBranchIsSet_;
+    bool onlyAssigneeCanMerge_;
+    bool onlyAssigneeCanMergeIsSet_;
     std::vector<ApprovalUserDto> approvalMergeRequestApprovers_;
     bool approvalMergeRequestApproversIsSet_;
     std::string reviewMode_;

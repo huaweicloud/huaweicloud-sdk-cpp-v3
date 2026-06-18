@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/codeartsrepo/v4/model/UserBasicDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/UserSafeDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -157,13 +157,13 @@ public:
     void setErrorMessage(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 是否为committer。
+    /// 
     /// </summary>
 
-    bool isIsCommitter() const;
-    bool isCommitterIsSet() const;
-    void unsetisCommitter();
-    void setIsCommitter(bool value);
+    std::string getXTotal() const;
+    bool xTotalIsSet() const;
+    void unsetxTotal();
+    void setXTotal(const std::string& value);
 
 
 protected:
@@ -193,8 +193,8 @@ protected:
     bool tenantNameIsSet_;
     std::string errorMessage_;
     bool errorMessageIsSet_;
-    bool isCommitter_;
-    bool isCommitterIsSet_;
+    std::string xTotal_;
+    bool xTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

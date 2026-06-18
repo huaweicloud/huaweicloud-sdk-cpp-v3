@@ -18,6 +18,7 @@ WebhookParamsDto::WebhookParamsDto()
     pushEventsIsSet_ = false;
     pushEventsBranchRegexFilter_ = "";
     pushEventsBranchRegexFilterIsSet_ = false;
+    notePlainTextFilterIsSet_ = false;
     tagPushEvents_ = false;
     tagPushEventsIsSet_ = false;
     mergeRequestsEvents_ = false;
@@ -52,6 +53,9 @@ web::json::value WebhookParamsDto::toJson() const
     }
     if(pushEventsBranchRegexFilterIsSet_) {
         val[utility::conversions::to_string_t("push_events_branch_regex_filter")] = ModelBase::toJson(pushEventsBranchRegexFilter_);
+    }
+    if(notePlainTextFilterIsSet_) {
+        val[utility::conversions::to_string_t("note_plain_text_filter")] = ModelBase::toJson(notePlainTextFilter_);
     }
     if(tagPushEventsIsSet_) {
         val[utility::conversions::to_string_t("tag_push_events")] = ModelBase::toJson(tagPushEvents_);
@@ -106,6 +110,15 @@ bool WebhookParamsDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPushEventsBranchRegexFilter(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("note_plain_text_filter"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("note_plain_text_filter"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNotePlainTextFilter(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tag_push_events"))) {
@@ -236,6 +249,27 @@ bool WebhookParamsDto::pushEventsBranchRegexFilterIsSet() const
 void WebhookParamsDto::unsetpushEventsBranchRegexFilter()
 {
     pushEventsBranchRegexFilterIsSet_ = false;
+}
+
+std::vector<std::string>& WebhookParamsDto::getNotePlainTextFilter()
+{
+    return notePlainTextFilter_;
+}
+
+void WebhookParamsDto::setNotePlainTextFilter(const std::vector<std::string>& value)
+{
+    notePlainTextFilter_ = value;
+    notePlainTextFilterIsSet_ = true;
+}
+
+bool WebhookParamsDto::notePlainTextFilterIsSet() const
+{
+    return notePlainTextFilterIsSet_;
+}
+
+void WebhookParamsDto::unsetnotePlainTextFilter()
+{
+    notePlainTextFilterIsSet_ = false;
 }
 
 bool WebhookParamsDto::isTagPushEvents() const

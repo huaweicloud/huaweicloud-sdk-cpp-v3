@@ -21,6 +21,9 @@
 #include <huaweicloud/rds/v3/model/BatchDeleteManualBackupResponse.h>
 #include <huaweicloud/rds/v3/model/BatchExecuteEventsRequest.h>
 #include <huaweicloud/rds/v3/model/BatchExecuteEventsResponse.h>
+#include <huaweicloud/rds/v3/model/BatchResizeFlavorRequest.h>
+#include <huaweicloud/rds/v3/model/BatchResizeFlavorRequestBody.h>
+#include <huaweicloud/rds/v3/model/BatchResizeFlavorResponse.h>
 #include <huaweicloud/rds/v3/model/BatchRestoreDatabaseRequest.h>
 #include <huaweicloud/rds/v3/model/BatchRestoreDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/BatchRestorePostgreSqlTablesRequest.h>
@@ -873,6 +876,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchExecuteEventsResponse> batchExecuteEvents(
         BatchExecuteEventsRequest &request
+    );
+    // 批量变更实例规格
+    //
+    // 批量变更实例规格
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchResizeFlavorResponse> batchResizeFlavor(
+        BatchResizeFlavorRequest &request
     );
     // 库级时间点恢复
     //

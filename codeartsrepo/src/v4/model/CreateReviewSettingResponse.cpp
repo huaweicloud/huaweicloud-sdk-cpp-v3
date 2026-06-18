@@ -20,8 +20,9 @@ CreateReviewSettingResponse::CreateReviewSettingResponse()
     reviewDefaultCategoriesIsSet_ = false;
     reviewCustomizedCategoriesIsSet_ = false;
     reviewModulesIsSet_ = false;
-    repositoryId_ = 0;
-    repositoryIdIsSet_ = false;
+    secondaryCategoryType_ = "";
+    secondaryCategoryTypeIsSet_ = false;
+    secondaryCategoriesIsSet_ = false;
     noteRequiredAttributesIsSet_ = false;
     codehubDefaultCategoriesIsSet_ = false;
     hicodeDefaultCategoriesIsSet_ = false;
@@ -55,8 +56,11 @@ web::json::value CreateReviewSettingResponse::toJson() const
     if(reviewModulesIsSet_) {
         val[utility::conversions::to_string_t("review_modules")] = ModelBase::toJson(reviewModules_);
     }
-    if(repositoryIdIsSet_) {
-        val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
+    if(secondaryCategoryTypeIsSet_) {
+        val[utility::conversions::to_string_t("secondary_category_type")] = ModelBase::toJson(secondaryCategoryType_);
+    }
+    if(secondaryCategoriesIsSet_) {
+        val[utility::conversions::to_string_t("secondary_categories")] = ModelBase::toJson(secondaryCategories_);
     }
     if(noteRequiredAttributesIsSet_) {
         val[utility::conversions::to_string_t("note_required_attributes")] = ModelBase::toJson(noteRequiredAttributes_);
@@ -128,13 +132,22 @@ bool CreateReviewSettingResponse::fromJson(const web::json::value& val)
             setReviewModules(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("repository_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_id"));
+    if(val.has_field(utility::conversions::to_string_t("secondary_category_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secondary_category_type"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRepositoryId(refVal);
+            setSecondaryCategoryType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("secondary_categories"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secondary_categories"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<CategoryDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecondaryCategories(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("note_required_attributes"))) {
@@ -294,25 +307,46 @@ void CreateReviewSettingResponse::unsetreviewModules()
     reviewModulesIsSet_ = false;
 }
 
-int32_t CreateReviewSettingResponse::getRepositoryId() const
+std::string CreateReviewSettingResponse::getSecondaryCategoryType() const
 {
-    return repositoryId_;
+    return secondaryCategoryType_;
 }
 
-void CreateReviewSettingResponse::setRepositoryId(int32_t value)
+void CreateReviewSettingResponse::setSecondaryCategoryType(const std::string& value)
 {
-    repositoryId_ = value;
-    repositoryIdIsSet_ = true;
+    secondaryCategoryType_ = value;
+    secondaryCategoryTypeIsSet_ = true;
 }
 
-bool CreateReviewSettingResponse::repositoryIdIsSet() const
+bool CreateReviewSettingResponse::secondaryCategoryTypeIsSet() const
 {
-    return repositoryIdIsSet_;
+    return secondaryCategoryTypeIsSet_;
 }
 
-void CreateReviewSettingResponse::unsetrepositoryId()
+void CreateReviewSettingResponse::unsetsecondaryCategoryType()
 {
-    repositoryIdIsSet_ = false;
+    secondaryCategoryTypeIsSet_ = false;
+}
+
+std::vector<CategoryDto>& CreateReviewSettingResponse::getSecondaryCategories()
+{
+    return secondaryCategories_;
+}
+
+void CreateReviewSettingResponse::setSecondaryCategories(const std::vector<CategoryDto>& value)
+{
+    secondaryCategories_ = value;
+    secondaryCategoriesIsSet_ = true;
+}
+
+bool CreateReviewSettingResponse::secondaryCategoriesIsSet() const
+{
+    return secondaryCategoriesIsSet_;
+}
+
+void CreateReviewSettingResponse::unsetsecondaryCategories()
+{
+    secondaryCategoriesIsSet_ = false;
 }
 
 std::vector<RequiredAttributeDto>& CreateReviewSettingResponse::getNoteRequiredAttributes()

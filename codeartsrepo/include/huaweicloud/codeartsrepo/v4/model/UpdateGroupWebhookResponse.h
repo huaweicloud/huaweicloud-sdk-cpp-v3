@@ -9,8 +9,12 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartsrepo/v4/model/ChangeRequestHookCfgDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/WebHookBranchCfgDto.h>
 #include <string>
 #include <huaweicloud/codeartsrepo/v4/model/WebhookParamsDto.h>
+#include <vector>
+#include <huaweicloud/codeartsrepo/v4/model/WebHookEventCfgDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -65,6 +69,15 @@ public:
     bool pushEventsBranchRegexFilterIsSet() const;
     void unsetpushEventsBranchRegexFilter();
     void setPushEventsBranchRegexFilter(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 评论事件文本过滤规则。 **取值范围：** 字符串长度不少于0，不超过50，不能超过10个。  
+    /// </summary>
+
+    std::vector<std::string>& getNotePlainTextFilter();
+    bool notePlainTextFilterIsSet() const;
+    void unsetnotePlainTextFilter();
+    void setNotePlainTextFilter(const std::vector<std::string>& value);
 
     /// <summary>
     /// **参数解释：** 是否启用Tag推送事件。
@@ -130,6 +143,33 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** 预留字段，事件触发设置，可为空。
+    /// </summary>
+
+    std::vector<WebHookEventCfgDto>& getEventCfgs();
+    bool eventCfgsIsSet() const;
+    void unseteventCfgs();
+    void setEventCfgs(const std::vector<WebHookEventCfgDto>& value);
+
+    /// <summary>
+    /// **参数解释：** 预留字段，仓库分支规则设置，可为空。
+    /// </summary>
+
+    std::vector<WebHookBranchCfgDto>& getProjectCfgs();
+    bool projectCfgsIsSet() const;
+    void unsetprojectCfgs();
+    void setProjectCfgs(const std::vector<WebHookBranchCfgDto>& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::vector<WebHookBranchCfgDto>& getBranchCfgs();
+    bool branchCfgsIsSet() const;
+    void unsetbranchCfgs();
+    void setBranchCfgs(const std::vector<WebHookBranchCfgDto>& value);
+
+    /// <summary>
     /// **参数解释：** Webhook id。
     /// </summary>
 
@@ -156,6 +196,15 @@ public:
     void unsetupdatedAt();
     void setUpdatedAt(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 内部服务名称。
+    /// </summary>
+
+    std::string getService() const;
+    bool serviceIsSet() const;
+    void unsetservice();
+    void setService(const std::string& value);
+
 
 protected:
     std::string url_;
@@ -164,6 +213,8 @@ protected:
     bool pushEventsIsSet_;
     std::string pushEventsBranchRegexFilter_;
     bool pushEventsBranchRegexFilterIsSet_;
+    std::vector<std::string> notePlainTextFilter_;
+    bool notePlainTextFilterIsSet_;
     bool tagPushEvents_;
     bool tagPushEventsIsSet_;
     bool mergeRequestsEvents_;
@@ -178,12 +229,20 @@ protected:
     bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    std::vector<WebHookEventCfgDto> eventCfgs_;
+    bool eventCfgsIsSet_;
+    std::vector<WebHookBranchCfgDto> projectCfgs_;
+    bool projectCfgsIsSet_;
+    std::vector<WebHookBranchCfgDto> branchCfgs_;
+    bool branchCfgsIsSet_;
     int32_t id_;
     bool idIsSet_;
     std::string createdAt_;
     bool createdAtIsSet_;
     std::string updatedAt_;
     bool updatedAtIsSet_;
+    std::string service_;
+    bool serviceIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

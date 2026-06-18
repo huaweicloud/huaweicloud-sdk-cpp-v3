@@ -142,6 +142,9 @@ std::shared_ptr<ListCommitAssociatedRefsResponse> CodeArtsRepoClient::listCommit
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
 
     std::string localVarHttpBody;
 
@@ -1541,6 +1544,9 @@ std::shared_ptr<ListFilesResponse> CodeArtsRepoClient::listFiles(ListFilesReques
     if (request.refNameIsSet()) {
         localVarQueryParams["ref_name"] = parameterToString(request.getRefName());
     }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
@@ -2129,6 +2135,48 @@ std::shared_ptr<ListGroupPermissionResourcesResponse> CodeArtsRepoClient::listGr
         localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListGroupPermissionResources());
 
     std::shared_ptr<ListGroupPermissionResourcesResponse> localVarResult = std::make_shared<ListGroupPermissionResourcesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListGroupProtectedBranchesResponse> CodeArtsRepoClient::listGroupProtectedBranches(ListGroupProtectedBranchesRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/protected-branches";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.userActionsIsSet()) {
+        localVarQueryParams["user_actions"] = parameterToString(request.isUserActions());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListGroupProtectedBranches());
+
+    std::shared_ptr<ListGroupProtectedBranchesResponse> localVarResult = std::make_shared<ListGroupProtectedBranchesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2759,6 +2807,42 @@ std::shared_ptr<ListGroupProtectedRefsUserGroupsResponse> CodeArtsRepoClient::li
         localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListGroupProtectedRefsUserGroups());
 
     std::shared_ptr<ListGroupProtectedRefsUserGroupsResponse> localVarResult = std::make_shared<ListGroupProtectedRefsUserGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListManagementUsersResponse> CodeArtsRepoClient::listManagementUsers(ListManagementUsersRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/management-members";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListManagementUsers());
+
+    std::shared_ptr<ListManagementUsersResponse> localVarResult = std::make_shared<ListManagementUsersResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -4301,14 +4385,11 @@ std::shared_ptr<ListMergeRequestValidAssignedCandidatesResponse> CodeArtsRepoCli
     if (request.searchByNameListIsSet()) {
         localVarQueryParams["search_by_name_list"] = parameterToString(request.getSearchByNameList());
     }
-    if (request.targetProjectIdIsSet()) {
-        localVarQueryParams["target_project_id"] = parameterToString(request.getTargetProjectId());
+    if (request.targetRepositoryIdIsSet()) {
+        localVarQueryParams["target_repository_id"] = parameterToString(request.getTargetRepositoryId());
     }
     if (request.viewIsSet()) {
         localVarQueryParams["view"] = parameterToString(request.getView());
-    }
-    if (request.modeIsSet()) {
-        localVarQueryParams["mode"] = parameterToString(request.getMode());
     }
     if (request.onlyDevelopersIsSet()) {
         localVarQueryParams["only_developers"] = parameterToString(request.isOnlyDevelopers());
@@ -4596,6 +4677,75 @@ std::shared_ptr<ListProjectMergeRequestTemplatesResponse> CodeArtsRepoClient::li
         localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListProjectMergeRequestTemplates());
 
     std::shared_ptr<ListProjectMergeRequestTemplatesResponse> localVarResult = std::make_shared<ListProjectMergeRequestTemplatesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProjectMergeRequestsResponse> CodeArtsRepoClient::listProjectMergeRequests(ListProjectMergeRequestsRequest &request)
+{
+    std::string localVarPath = "/v4/projects/{project_id}/merge-requests";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.stateIsSet()) {
+        localVarQueryParams["state"] = parameterToString(request.getState());
+    }
+    if (request.orderByIsSet()) {
+        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+    if (request.authorIdIsSet()) {
+        localVarQueryParams["author_id"] = parameterToString(request.getAuthorId());
+    }
+    if (request.sourceBranchIsSet()) {
+        localVarQueryParams["source_branch"] = parameterToString(request.getSourceBranch());
+    }
+    if (request.targetBranchIsSet()) {
+        localVarQueryParams["target_branch"] = parameterToString(request.getTargetBranch());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.sourceRepositoryIdIsSet()) {
+        localVarQueryParams["source_repository_id"] = parameterToString(request.getSourceRepositoryId());
+    }
+    if (request.onlyCountIsSet()) {
+        localVarQueryParams["only_count"] = parameterToString(request.isOnlyCount());
+    }
+    if (request.labelsIsSet()) {
+        localVarQueryParams["labels"] = parameterToString(request.getLabels());
+    }
+    if (request.topicIsSet()) {
+        localVarQueryParams["topic"] = parameterToString(request.getTopic());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListProjectMergeRequests());
+
+    std::shared_ptr<ListProjectMergeRequestsResponse> localVarResult = std::make_shared<ListProjectMergeRequestsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5969,6 +6119,49 @@ std::shared_ptr<ShowRepositoryPermissionInheritEnabledResponse> CodeArtsRepoClie
 
     return localVarResult;
 }
+std::shared_ptr<UpdateGroupResourcePermissionsResponse> CodeArtsRepoClient::updateGroupResourcePermissions(UpdateGroupResourcePermissionsRequest &request)
+{
+    std::string localVarPath = "/v4/groups/{group_id}/permissions/{resource_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["resource_id"] = parameterToString(request.getResourceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForUpdateGroupResourcePermissions());
+
+    std::shared_ptr<UpdateGroupResourcePermissionsResponse> localVarResult = std::make_shared<UpdateGroupResourcePermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateRepositoryPermissionInheritEnabledResponse> CodeArtsRepoClient::updateRepositoryPermissionInheritEnabled(UpdateRepositoryPermissionInheritEnabledRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/permission-inherit-setting";
@@ -7240,48 +7433,6 @@ std::shared_ptr<UpdateProtectedTagResponse> CodeArtsRepoClient::updateProtectedT
 
     return localVarResult;
 }
-std::shared_ptr<ListRefsListResponse> CodeArtsRepoClient::listRefsList(ListRefsListRequest &request)
-{
-    std::string localVarPath = "/v4/repositories/{repository_id}/repository/refs";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.typeIsSet()) {
-        localVarQueryParams["type"] = parameterToString(request.getType());
-    }
-    if (request.searchIsSet()) {
-        localVarQueryParams["search"] = parameterToString(request.getSearch());
-    }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListRefsList());
-
-    std::shared_ptr<ListRefsListResponse> localVarResult = std::make_shared<ListRefsListResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<BatchDeleteBranchResponse> CodeArtsRepoClient::batchDeleteBranch(BatchDeleteBranchRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}/branches/batch-delete";
@@ -7519,6 +7670,48 @@ std::shared_ptr<ListBranchesResponse> CodeArtsRepoClient::listBranches(ListBranc
         localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListBranches());
 
     std::shared_ptr<ListBranchesResponse> localVarResult = std::make_shared<ListBranchesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListRefsListResponse> CodeArtsRepoClient::listRefsList(ListRefsListRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/refs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListRefsList());
+
+    std::shared_ptr<ListRefsListResponse> localVarResult = std::make_shared<ListRefsListResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -8688,6 +8881,57 @@ std::shared_ptr<ListRepositoryLanguagesResponse> CodeArtsRepoClient::listReposit
 
     return localVarResult;
 }
+std::shared_ptr<ListRepositoryNavigationReferencesResponse> CodeArtsRepoClient::listRepositoryNavigationReferences(ListRepositoryNavigationReferencesRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/nav/references";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.pathIsSet()) {
+        localVarQueryParams["path"] = parameterToString(request.getPath());
+    }
+    if (request.revisionIsSet()) {
+        localVarQueryParams["revision"] = parameterToString(request.getRevision());
+    }
+    if (request.refIsSet()) {
+        localVarQueryParams["ref"] = parameterToString(request.getRef());
+    }
+    if (request.symbolIsSet()) {
+        localVarQueryParams["symbol"] = parameterToString(request.getSymbol());
+    }
+    if (request.languageIsSet()) {
+        localVarQueryParams["language"] = parameterToString(request.getLanguage());
+    }
+    if (request.blobIsSet()) {
+        localVarQueryParams["blob"] = parameterToString(request.getBlob());
+    }
+    if (request.filePathIsSet()) {
+        localVarQueryParams["file_path"] = parameterToString(request.getFilePath());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListRepositoryNavigationReferences());
+
+    std::shared_ptr<ListRepositoryNavigationReferencesResponse> localVarResult = std::make_shared<ListRepositoryNavigationReferencesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListRepositoryTemplatesResponse> CodeArtsRepoClient::listRepositoryTemplates(ListRepositoryTemplatesRequest &request)
 {
     std::string localVarPath = "/v4/repository-templates";
@@ -8847,6 +9091,36 @@ std::shared_ptr<LockRepositoryResponse> CodeArtsRepoClient::lockRepository(LockR
         localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForLockRepository());
 
     std::shared_ptr<LockRepositoryResponse> localVarResult = std::make_shared<LockRepositoryResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<RebuildRepositoryNavigationResponse> CodeArtsRepoClient::rebuildRepositoryNavigation(RebuildRepositoryNavigationRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/nav/build";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForRebuildRepositoryNavigation());
+
+    std::shared_ptr<RebuildRepositoryNavigationResponse> localVarResult = std::make_shared<RebuildRepositoryNavigationResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -9212,6 +9486,69 @@ std::shared_ptr<ShowRemoteMirrorResponse> CodeArtsRepoClient::showRemoteMirror(S
 
     return localVarResult;
 }
+std::shared_ptr<ShowRepoLastStatisticsResponse> CodeArtsRepoClient::showRepoLastStatistics(ShowRepoLastStatisticsRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/stats/last-statistics";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.branchNameIsSet()) {
+        localVarQueryParams["branch_name"] = parameterToString(request.getBranchName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowRepoLastStatistics());
+
+    std::shared_ptr<ShowRepoLastStatisticsResponse> localVarResult = std::make_shared<ShowRepoLastStatisticsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowRepoStatisticsSummaryResponse> CodeArtsRepoClient::showRepoStatisticsSummary(ShowRepoStatisticsSummaryRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/stats/summary";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowRepoStatisticsSummary());
+
+    std::shared_ptr<ShowRepoStatisticsSummaryResponse> localVarResult = std::make_shared<ShowRepoStatisticsSummaryResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowRepositoryResponse> CodeArtsRepoClient::showRepository(ShowRepositoryRequest &request)
 {
     std::string localVarPath = "/v4/repositories/{repository_id}";
@@ -9359,6 +9696,111 @@ std::shared_ptr<ShowRepositoryInheritSettingSourceResponse> CodeArtsRepoClient::
         localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowRepositoryInheritSettingSource());
 
     std::shared_ptr<ShowRepositoryInheritSettingSourceResponse> localVarResult = std::make_shared<ShowRepositoryInheritSettingSourceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowRepositoryNavigationLanguageResponse> CodeArtsRepoClient::showRepositoryNavigationLanguage(ShowRepositoryNavigationLanguageRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/nav/language";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowRepositoryNavigationLanguage());
+
+    std::shared_ptr<ShowRepositoryNavigationLanguageResponse> localVarResult = std::make_shared<ShowRepositoryNavigationLanguageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowRepositoryNavigationOutlineResponse> CodeArtsRepoClient::showRepositoryNavigationOutline(ShowRepositoryNavigationOutlineRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/nav/outline";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.revisionIsSet()) {
+        localVarQueryParams["revision"] = parameterToString(request.getRevision());
+    }
+    if (request.refIsSet()) {
+        localVarQueryParams["ref"] = parameterToString(request.getRef());
+    }
+    if (request.languageIsSet()) {
+        localVarQueryParams["language"] = parameterToString(request.getLanguage());
+    }
+    if (request.blobIsSet()) {
+        localVarQueryParams["blob"] = parameterToString(request.getBlob());
+    }
+    if (request.filePathIsSet()) {
+        localVarQueryParams["file_path"] = parameterToString(request.getFilePath());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowRepositoryNavigationOutline());
+
+    std::shared_ptr<ShowRepositoryNavigationOutlineResponse> localVarResult = std::make_shared<ShowRepositoryNavigationOutlineResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowRepositoryNavigationSchemaResponse> CodeArtsRepoClient::showRepositoryNavigationSchema(ShowRepositoryNavigationSchemaRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/repository/nav/schema";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowRepositoryNavigationSchema());
+
+    std::shared_ptr<ShowRepositoryNavigationSchemaResponse> localVarResult = std::make_shared<ShowRepositoryNavigationSchemaResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -9594,6 +10036,48 @@ std::shared_ptr<SyncDeployKeyToSubmodulesResponse> CodeArtsRepoClient::syncDeplo
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<TransferRepositoryResponse> CodeArtsRepoClient::transferRepository(TransferRepositoryRequest &request)
+{
+    std::string localVarPath = "/v4/repositories/{repository_id}/transfer";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["repository_id"] = parameterToString(request.getRepositoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForTransferRepository());
+
+    std::shared_ptr<TransferRepositoryResponse> localVarResult = std::make_shared<TransferRepositoryResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -10052,6 +10536,36 @@ std::shared_ptr<AddTenantTrustedIpAddressResponse> CodeArtsRepoClient::addTenant
 
     return localVarResult;
 }
+std::shared_ptr<CreateTenantKmsGrantResponse> CodeArtsRepoClient::createTenantKmsGrant(CreateTenantKmsGrantRequest &request)
+{
+    std::string localVarPath = "/v4/tenants/{tenant_id}/repo-encryption/kms-grant";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForCreateTenantKmsGrant());
+
+    std::shared_ptr<CreateTenantKmsGrantResponse> localVarResult = std::make_shared<CreateTenantKmsGrantResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteTenantTrustedIpAddressResponse> CodeArtsRepoClient::deleteTenantTrustedIpAddress(DeleteTenantTrustedIpAddressRequest &request)
 {
     std::string localVarPath = "/v4/tenant/trusted-ip-addresses/{ip_id}";
@@ -10123,6 +10637,84 @@ std::shared_ptr<ExportTenantRepositoriesResponse> CodeArtsRepoClient::exportTena
 
     return localVarResult;
 }
+std::shared_ptr<ListTenantCmksResponse> CodeArtsRepoClient::listTenantCmks(ListTenantCmksRequest &request)
+{
+    std::string localVarPath = "/v4/tenants/{tenant_id}/repo-encryption/cmks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListTenantCmks());
+
+    std::shared_ptr<ListTenantCmksResponse> localVarResult = std::make_shared<ListTenantCmksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListTenantEncryptedRepositoriesResponse> CodeArtsRepoClient::listTenantEncryptedRepositories(ListTenantEncryptedRepositoriesRequest &request)
+{
+    std::string localVarPath = "/v4/tenants/{tenant_id}/repo-encryption/repositories";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.orderByIsSet()) {
+        localVarQueryParams["order_by"] = parameterToString(request.getOrderBy());
+    }
+    if (request.sortIsSet()) {
+        localVarQueryParams["sort"] = parameterToString(request.getSort());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForListTenantEncryptedRepositories());
+
+    std::shared_ptr<ListTenantEncryptedRepositoriesResponse> localVarResult = std::make_shared<ListTenantEncryptedRepositoriesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListTenantRepositoriesResponse> CodeArtsRepoClient::listTenantRepositories(ListTenantRepositoriesRequest &request)
 {
     std::string localVarPath = "/v4/tenant/repositories";
@@ -10162,6 +10754,9 @@ std::shared_ptr<ListTenantRepositoriesResponse> CodeArtsRepoClient::listTenantRe
     }
     if (request.sortFieldIsSet()) {
         localVarQueryParams["sort_field"] = parameterToString(request.getSortField());
+    }
+    if (request.lockedIsSet()) {
+        localVarQueryParams["locked"] = parameterToString(request.isLocked());
     }
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
@@ -10214,6 +10809,169 @@ std::shared_ptr<ListTenantTrustedIpAddressesResponse> CodeArtsRepoClient::listTe
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowProjectTenantSettingsResponse> CodeArtsRepoClient::showProjectTenantSettings(ShowProjectTenantSettingsRequest &request)
+{
+    std::string localVarPath = "/v4/tenant/setting";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.projectIdIsSet()) {
+        localVarQueryParams["project_id"] = parameterToString(request.getProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowProjectTenantSettings());
+
+    std::shared_ptr<ShowProjectTenantSettingsResponse> localVarResult = std::make_shared<ShowProjectTenantSettingsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTenantDevelopModeResponse> CodeArtsRepoClient::showTenantDevelopMode(ShowTenantDevelopModeRequest &request)
+{
+    std::string localVarPath = "/v4/tenant/develop-mode";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowTenantDevelopMode());
+
+    std::shared_ptr<ShowTenantDevelopModeResponse> localVarResult = std::make_shared<ShowTenantDevelopModeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTenantKmsGrantResponse> CodeArtsRepoClient::showTenantKmsGrant(ShowTenantKmsGrantRequest &request)
+{
+    std::string localVarPath = "/v4/tenants/{tenant_id}/repo-encryption/kms-grant";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowTenantKmsGrant());
+
+    std::shared_ptr<ShowTenantKmsGrantResponse> localVarResult = std::make_shared<ShowTenantKmsGrantResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTenantRepoEncryptionSettingResponse> CodeArtsRepoClient::showTenantRepoEncryptionSetting(ShowTenantRepoEncryptionSettingRequest &request)
+{
+    std::string localVarPath = "/v4/tenants/{tenant_id}/repo-encryption/setting";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForShowTenantRepoEncryptionSetting());
+
+    std::shared_ptr<ShowTenantRepoEncryptionSettingResponse> localVarResult = std::make_shared<ShowTenantRepoEncryptionSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateTenantRepoEncryptionSettingResponse> CodeArtsRepoClient::updateTenantRepoEncryptionSetting(UpdateTenantRepoEncryptionSettingRequest &request)
+{
+    std::string localVarPath = "/v4/tenants/{tenant_id}/repo-encryption/setting";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsRepoMeta::genRequestDefForUpdateTenantRepoEncryptionSetting());
+
+    std::shared_ptr<UpdateTenantRepoEncryptionSettingResponse> localVarResult = std::make_shared<UpdateTenantRepoEncryptionSettingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -10746,7 +11504,6 @@ std::shared_ptr<ListImpersonationTokensResponse> CodeArtsRepoClient::listImperso
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
 
-    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -11389,6 +12146,9 @@ std::shared_ptr<ListRepositoryWebhooksResponse> CodeArtsRepoClient::listReposito
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.includeSystemIsSet()) {
+        localVarQueryParams["include_system"] = parameterToString(request.isIncludeSystem());
+    }
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }

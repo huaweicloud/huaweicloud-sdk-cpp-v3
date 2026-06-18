@@ -48,7 +48,7 @@ bool ListMergeRequestReviewersResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("required_reviewers_list"));
         if(!fieldValue.is_null())
         {
-            std::vector<UserBasicDto> refVal;
+            std::vector<MergeRequestApprovalUserDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRequiredReviewersList(refVal);
         }
@@ -57,7 +57,7 @@ bool ListMergeRequestReviewersResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("optional_reviewers_list"));
         if(!fieldValue.is_null())
         {
-            std::vector<UserBasicDto> refVal;
+            std::vector<MergeRequestApprovalUserDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOptionalReviewersList(refVal);
         }
@@ -75,12 +75,12 @@ bool ListMergeRequestReviewersResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<UserBasicDto>& ListMergeRequestReviewersResponse::getRequiredReviewersList()
+std::vector<MergeRequestApprovalUserDto>& ListMergeRequestReviewersResponse::getRequiredReviewersList()
 {
     return requiredReviewersList_;
 }
 
-void ListMergeRequestReviewersResponse::setRequiredReviewersList(const std::vector<UserBasicDto>& value)
+void ListMergeRequestReviewersResponse::setRequiredReviewersList(const std::vector<MergeRequestApprovalUserDto>& value)
 {
     requiredReviewersList_ = value;
     requiredReviewersListIsSet_ = true;
@@ -96,12 +96,12 @@ void ListMergeRequestReviewersResponse::unsetrequiredReviewersList()
     requiredReviewersListIsSet_ = false;
 }
 
-std::vector<UserBasicDto>& ListMergeRequestReviewersResponse::getOptionalReviewersList()
+std::vector<MergeRequestApprovalUserDto>& ListMergeRequestReviewersResponse::getOptionalReviewersList()
 {
     return optionalReviewersList_;
 }
 
-void ListMergeRequestReviewersResponse::setOptionalReviewersList(const std::vector<UserBasicDto>& value)
+void ListMergeRequestReviewersResponse::setOptionalReviewersList(const std::vector<MergeRequestApprovalUserDto>& value)
 {
     optionalReviewersList_ = value;
     optionalReviewersListIsSet_ = true;

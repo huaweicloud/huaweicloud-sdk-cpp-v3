@@ -14,6 +14,8 @@ ListRepositoryWebhooksRequest::ListRepositoryWebhooksRequest()
 {
     repositoryId_ = 0;
     repositoryIdIsSet_ = false;
+    includeSystem_ = false;
+    includeSystemIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
     limit_ = 0;
@@ -32,6 +34,9 @@ web::json::value ListRepositoryWebhooksRequest::toJson() const
 
     if(repositoryIdIsSet_) {
         val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
+    }
+    if(includeSystemIsSet_) {
+        val[utility::conversions::to_string_t("include_system")] = ModelBase::toJson(includeSystem_);
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
@@ -53,6 +58,15 @@ bool ListRepositoryWebhooksRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRepositoryId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("include_system"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("include_system"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncludeSystem(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
@@ -96,6 +110,27 @@ bool ListRepositoryWebhooksRequest::repositoryIdIsSet() const
 void ListRepositoryWebhooksRequest::unsetrepositoryId()
 {
     repositoryIdIsSet_ = false;
+}
+
+bool ListRepositoryWebhooksRequest::isIncludeSystem() const
+{
+    return includeSystem_;
+}
+
+void ListRepositoryWebhooksRequest::setIncludeSystem(bool value)
+{
+    includeSystem_ = value;
+    includeSystemIsSet_ = true;
+}
+
+bool ListRepositoryWebhooksRequest::includeSystemIsSet() const
+{
+    return includeSystemIsSet_;
+}
+
+void ListRepositoryWebhooksRequest::unsetincludeSystem()
+{
+    includeSystemIsSet_ = false;
 }
 
 int32_t ListRepositoryWebhooksRequest::getOffset() const

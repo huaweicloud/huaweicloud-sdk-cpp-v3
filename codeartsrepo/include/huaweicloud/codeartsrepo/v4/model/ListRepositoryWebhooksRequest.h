@@ -38,13 +38,22 @@ public:
     /// ListRepositoryWebhooksRequest members
 
     /// <summary>
-    /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+    /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getRepositoryId() const;
     bool repositoryIdIsSet() const;
     void unsetrepositoryId();
     void setRepositoryId(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 是否包含系统webhook **取值范围：** - true，包含。 - false，不包含。
+    /// </summary>
+
+    bool isIncludeSystem() const;
+    bool includeSystemIsSet() const;
+    void unsetincludeSystem();
+    void setIncludeSystem(bool value);
 
     /// <summary>
     /// **参数解释：** 偏移量，从0开始。
@@ -68,6 +77,8 @@ public:
 protected:
     int32_t repositoryId_;
     bool repositoryIdIsSet_;
+    bool includeSystem_;
+    bool includeSystemIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
     int32_t limit_;

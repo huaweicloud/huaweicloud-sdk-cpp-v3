@@ -9,9 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartsrepo/v4/model/MergeRequestApprovalUserDto.h>
 #include <string>
 #include <vector>
-#include <huaweicloud/codeartsrepo/v4/model/UserBasicDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -44,19 +44,19 @@ public:
     /// **参数解释：** 必选检视人列表。 **取值范围：** 不涉及。
     /// </summary>
 
-    std::vector<UserBasicDto>& getRequiredReviewersList();
+    std::vector<MergeRequestApprovalUserDto>& getRequiredReviewersList();
     bool requiredReviewersListIsSet() const;
     void unsetrequiredReviewersList();
-    void setRequiredReviewersList(const std::vector<UserBasicDto>& value);
+    void setRequiredReviewersList(const std::vector<MergeRequestApprovalUserDto>& value);
 
     /// <summary>
     /// **参数解释：** 可选检视人列表。 **取值范围：** 不涉及。
     /// </summary>
 
-    std::vector<UserBasicDto>& getOptionalReviewersList();
+    std::vector<MergeRequestApprovalUserDto>& getOptionalReviewersList();
     bool optionalReviewersListIsSet() const;
     void unsetoptionalReviewersList();
-    void setOptionalReviewersList(const std::vector<UserBasicDto>& value);
+    void setOptionalReviewersList(const std::vector<MergeRequestApprovalUserDto>& value);
 
     /// <summary>
     /// 
@@ -69,9 +69,9 @@ public:
 
 
 protected:
-    std::vector<UserBasicDto> requiredReviewersList_;
+    std::vector<MergeRequestApprovalUserDto> requiredReviewersList_;
     bool requiredReviewersListIsSet_;
-    std::vector<UserBasicDto> optionalReviewersList_;
+    std::vector<MergeRequestApprovalUserDto> optionalReviewersList_;
     bool optionalReviewersListIsSet_;
     std::string xTotal_;
     bool xTotalIsSet_;

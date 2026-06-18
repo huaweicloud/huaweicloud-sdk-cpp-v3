@@ -14,8 +14,6 @@ UpdateGroupMergeRequestTemplateResponse::UpdateGroupMergeRequestTemplateResponse
 {
     id_ = 0;
     idIsSet_ = false;
-    repositoryId_ = 0;
-    repositoryIdIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     createdAt_ = "";
@@ -49,9 +47,6 @@ web::json::value UpdateGroupMergeRequestTemplateResponse::toJson() const
 
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
-    }
-    if(repositoryIdIsSet_) {
-        val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -97,15 +92,6 @@ bool UpdateGroupMergeRequestTemplateResponse::fromJson(const web::json::value& v
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("repository_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_id"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRepositoryId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -221,27 +207,6 @@ bool UpdateGroupMergeRequestTemplateResponse::idIsSet() const
 void UpdateGroupMergeRequestTemplateResponse::unsetid()
 {
     idIsSet_ = false;
-}
-
-int32_t UpdateGroupMergeRequestTemplateResponse::getRepositoryId() const
-{
-    return repositoryId_;
-}
-
-void UpdateGroupMergeRequestTemplateResponse::setRepositoryId(int32_t value)
-{
-    repositoryId_ = value;
-    repositoryIdIsSet_ = true;
-}
-
-bool UpdateGroupMergeRequestTemplateResponse::repositoryIdIsSet() const
-{
-    return repositoryIdIsSet_;
-}
-
-void UpdateGroupMergeRequestTemplateResponse::unsetrepositoryId()
-{
-    repositoryIdIsSet_ = false;
 }
 
 std::string UpdateGroupMergeRequestTemplateResponse::getDescription() const

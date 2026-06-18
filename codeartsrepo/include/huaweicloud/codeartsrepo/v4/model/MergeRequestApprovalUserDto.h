@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_MergeRequestVoteReviewerDto_H_
-#define HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_MergeRequestVoteReviewerDto_H_
+#ifndef HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_MergeRequestApprovalUserDto_H_
+#define HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_MergeRequestApprovalUserDto_H_
 
 
 #include <huaweicloud/codeartsrepo/v4/CodeArtsRepoExport.h>
@@ -21,14 +21,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 合并请求打分模式评审人
+/// 
 /// </summary>
-class HUAWEICLOUD_CODEARTSREPO_V4_EXPORT  MergeRequestVoteReviewerDto
+class HUAWEICLOUD_CODEARTSREPO_V4_EXPORT  MergeRequestApprovalUserDto
     : public ModelBase
 {
 public:
-    MergeRequestVoteReviewerDto();
-    virtual ~MergeRequestVoteReviewerDto();
+    MergeRequestApprovalUserDto();
+    virtual ~MergeRequestApprovalUserDto();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// MergeRequestVoteReviewerDto members
+    /// MergeRequestApprovalUserDto members
 
     /// <summary>
     /// **参数解释：** 用户id。
@@ -157,13 +157,13 @@ public:
     void setErrorMessage(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 是否为committer。
+    /// **参数解释：** 是否有相关权限。 **取值范围：** true：有权限。 false：没权限。           
     /// </summary>
 
-    bool isIsCommitter() const;
-    bool isCommitterIsSet() const;
-    void unsetisCommitter();
-    void setIsCommitter(bool value);
+    bool isHasPermission() const;
+    bool hasPermissionIsSet() const;
+    void unsethasPermission();
+    void setHasPermission(bool value);
 
 
 protected:
@@ -193,8 +193,8 @@ protected:
     bool tenantNameIsSet_;
     std::string errorMessage_;
     bool errorMessageIsSet_;
-    bool isCommitter_;
-    bool isCommitterIsSet_;
+    bool hasPermission_;
+    bool hasPermissionIsSet_;
 
 };
 
@@ -205,4 +205,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_MergeRequestVoteReviewerDto_H_
+#endif // HUAWEICLOUD_SDK_CODEARTSREPO_V4_MODEL_MergeRequestApprovalUserDto_H_

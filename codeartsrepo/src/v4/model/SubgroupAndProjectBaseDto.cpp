@@ -26,9 +26,9 @@ SubgroupAndProjectBaseDto::SubgroupAndProjectBaseDto()
     fullPathIsSet_ = false;
     createdAt_ = "";
     createdAtIsSet_ = false;
-    updatedAtTimestamp_ = "";
+    updatedAtTimestamp_ = 0L;
     updatedAtTimestampIsSet_ = false;
-    starTime_ = "";
+    starTime_ = 0L;
     starTimeIsSet_ = false;
     starred_ = false;
     starredIsSet_ = false;
@@ -320,7 +320,7 @@ bool SubgroupAndProjectBaseDto::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("updated_at_timestamp"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdatedAtTimestamp(refVal);
         }
@@ -329,7 +329,7 @@ bool SubgroupAndProjectBaseDto::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("star_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStarTime(refVal);
         }
@@ -809,12 +809,12 @@ void SubgroupAndProjectBaseDto::unsetcreatedAt()
     createdAtIsSet_ = false;
 }
 
-std::string SubgroupAndProjectBaseDto::getUpdatedAtTimestamp() const
+int64_t SubgroupAndProjectBaseDto::getUpdatedAtTimestamp() const
 {
     return updatedAtTimestamp_;
 }
 
-void SubgroupAndProjectBaseDto::setUpdatedAtTimestamp(const std::string& value)
+void SubgroupAndProjectBaseDto::setUpdatedAtTimestamp(int64_t value)
 {
     updatedAtTimestamp_ = value;
     updatedAtTimestampIsSet_ = true;
@@ -830,12 +830,12 @@ void SubgroupAndProjectBaseDto::unsetupdatedAtTimestamp()
     updatedAtTimestampIsSet_ = false;
 }
 
-std::string SubgroupAndProjectBaseDto::getStarTime() const
+int64_t SubgroupAndProjectBaseDto::getStarTime() const
 {
     return starTime_;
 }
 
-void SubgroupAndProjectBaseDto::setStarTime(const std::string& value)
+void SubgroupAndProjectBaseDto::setStarTime(int64_t value)
 {
     starTime_ = value;
     starTimeIsSet_ = true;

@@ -24,6 +24,8 @@ GeneralPolicyBodyDto::GeneralPolicyBodyDto()
     forbiddenDeveloperCreateBranchIsSet_ = false;
     createBranchWhitelistUserIds_ = "";
     createBranchWhitelistUserIdsIsSet_ = false;
+    repoEncryptionEnabled_ = false;
+    repoEncryptionEnabledIsSet_ = false;
 }
 
 GeneralPolicyBodyDto::~GeneralPolicyBodyDto() = default;
@@ -53,6 +55,9 @@ web::json::value GeneralPolicyBodyDto::toJson() const
     }
     if(createBranchWhitelistUserIdsIsSet_) {
         val[utility::conversions::to_string_t("create_branch_whitelist_user_ids")] = ModelBase::toJson(createBranchWhitelistUserIds_);
+    }
+    if(repoEncryptionEnabledIsSet_) {
+        val[utility::conversions::to_string_t("repo_encryption_enabled")] = ModelBase::toJson(repoEncryptionEnabled_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool GeneralPolicyBodyDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateBranchWhitelistUserIds(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repo_encryption_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repo_encryption_enabled"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepoEncryptionEnabled(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool GeneralPolicyBodyDto::createBranchWhitelistUserIdsIsSet() const
 void GeneralPolicyBodyDto::unsetcreateBranchWhitelistUserIds()
 {
     createBranchWhitelistUserIdsIsSet_ = false;
+}
+
+bool GeneralPolicyBodyDto::isRepoEncryptionEnabled() const
+{
+    return repoEncryptionEnabled_;
+}
+
+void GeneralPolicyBodyDto::setRepoEncryptionEnabled(bool value)
+{
+    repoEncryptionEnabled_ = value;
+    repoEncryptionEnabledIsSet_ = true;
+}
+
+bool GeneralPolicyBodyDto::repoEncryptionEnabledIsSet() const
+{
+    return repoEncryptionEnabledIsSet_;
+}
+
+void GeneralPolicyBodyDto::unsetrepoEncryptionEnabled()
+{
+    repoEncryptionEnabledIsSet_ = false;
 }
 
 }

@@ -28,6 +28,8 @@ ListTenantRepositoriesRequest::ListTenantRepositoriesRequest()
     sortIsSet_ = false;
     sortField_ = "";
     sortFieldIsSet_ = false;
+    locked_ = false;
+    lockedIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
     limit_ = 0;
@@ -67,6 +69,9 @@ web::json::value ListTenantRepositoriesRequest::toJson() const
     }
     if(sortFieldIsSet_) {
         val[utility::conversions::to_string_t("sort_field")] = ModelBase::toJson(sortField_);
+    }
+    if(lockedIsSet_) {
+        val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
@@ -151,6 +156,15 @@ bool ListTenantRepositoriesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSortField(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("locked"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locked"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLocked(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
@@ -341,6 +355,27 @@ bool ListTenantRepositoriesRequest::sortFieldIsSet() const
 void ListTenantRepositoriesRequest::unsetsortField()
 {
     sortFieldIsSet_ = false;
+}
+
+bool ListTenantRepositoriesRequest::isLocked() const
+{
+    return locked_;
+}
+
+void ListTenantRepositoriesRequest::setLocked(bool value)
+{
+    locked_ = value;
+    lockedIsSet_ = true;
+}
+
+bool ListTenantRepositoriesRequest::lockedIsSet() const
+{
+    return lockedIsSet_;
+}
+
+void ListTenantRepositoriesRequest::unsetlocked()
+{
+    lockedIsSet_ = false;
 }
 
 int32_t ListTenantRepositoriesRequest::getOffset() const

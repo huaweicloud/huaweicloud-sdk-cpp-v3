@@ -26,12 +26,10 @@ ListMergeRequestValidAssignedCandidatesRequest::ListMergeRequestValidAssignedCan
     searchIsSet_ = false;
     searchByNameList_ = "";
     searchByNameListIsSet_ = false;
-    targetProjectId_ = "";
-    targetProjectIdIsSet_ = false;
+    targetRepositoryId_ = "";
+    targetRepositoryIdIsSet_ = false;
     view_ = "";
     viewIsSet_ = false;
-    mode_ = "";
-    modeIsSet_ = false;
     onlyDevelopers_ = false;
     onlyDevelopersIsSet_ = false;
 }
@@ -67,14 +65,11 @@ web::json::value ListMergeRequestValidAssignedCandidatesRequest::toJson() const
     if(searchByNameListIsSet_) {
         val[utility::conversions::to_string_t("search_by_name_list")] = ModelBase::toJson(searchByNameList_);
     }
-    if(targetProjectIdIsSet_) {
-        val[utility::conversions::to_string_t("target_project_id")] = ModelBase::toJson(targetProjectId_);
+    if(targetRepositoryIdIsSet_) {
+        val[utility::conversions::to_string_t("target_repository_id")] = ModelBase::toJson(targetRepositoryId_);
     }
     if(viewIsSet_) {
         val[utility::conversions::to_string_t("view")] = ModelBase::toJson(view_);
-    }
-    if(modeIsSet_) {
-        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
     }
     if(onlyDevelopersIsSet_) {
         val[utility::conversions::to_string_t("only_developers")] = ModelBase::toJson(onlyDevelopers_);
@@ -149,13 +144,13 @@ bool ListMergeRequestValidAssignedCandidatesRequest::fromJson(const web::json::v
             setSearchByNameList(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("target_project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_project_id"));
+    if(val.has_field(utility::conversions::to_string_t("target_repository_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_repository_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTargetProjectId(refVal);
+            setTargetRepositoryId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("view"))) {
@@ -165,15 +160,6 @@ bool ListMergeRequestValidAssignedCandidatesRequest::fromJson(const web::json::v
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setView(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("mode"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("only_developers"))) {
@@ -336,25 +322,25 @@ void ListMergeRequestValidAssignedCandidatesRequest::unsetsearchByNameList()
     searchByNameListIsSet_ = false;
 }
 
-std::string ListMergeRequestValidAssignedCandidatesRequest::getTargetProjectId() const
+std::string ListMergeRequestValidAssignedCandidatesRequest::getTargetRepositoryId() const
 {
-    return targetProjectId_;
+    return targetRepositoryId_;
 }
 
-void ListMergeRequestValidAssignedCandidatesRequest::setTargetProjectId(const std::string& value)
+void ListMergeRequestValidAssignedCandidatesRequest::setTargetRepositoryId(const std::string& value)
 {
-    targetProjectId_ = value;
-    targetProjectIdIsSet_ = true;
+    targetRepositoryId_ = value;
+    targetRepositoryIdIsSet_ = true;
 }
 
-bool ListMergeRequestValidAssignedCandidatesRequest::targetProjectIdIsSet() const
+bool ListMergeRequestValidAssignedCandidatesRequest::targetRepositoryIdIsSet() const
 {
-    return targetProjectIdIsSet_;
+    return targetRepositoryIdIsSet_;
 }
 
-void ListMergeRequestValidAssignedCandidatesRequest::unsettargetProjectId()
+void ListMergeRequestValidAssignedCandidatesRequest::unsettargetRepositoryId()
 {
-    targetProjectIdIsSet_ = false;
+    targetRepositoryIdIsSet_ = false;
 }
 
 std::string ListMergeRequestValidAssignedCandidatesRequest::getView() const
@@ -376,27 +362,6 @@ bool ListMergeRequestValidAssignedCandidatesRequest::viewIsSet() const
 void ListMergeRequestValidAssignedCandidatesRequest::unsetview()
 {
     viewIsSet_ = false;
-}
-
-std::string ListMergeRequestValidAssignedCandidatesRequest::getMode() const
-{
-    return mode_;
-}
-
-void ListMergeRequestValidAssignedCandidatesRequest::setMode(const std::string& value)
-{
-    mode_ = value;
-    modeIsSet_ = true;
-}
-
-bool ListMergeRequestValidAssignedCandidatesRequest::modeIsSet() const
-{
-    return modeIsSet_;
-}
-
-void ListMergeRequestValidAssignedCandidatesRequest::unsetmode()
-{
-    modeIsSet_ = false;
 }
 
 bool ListMergeRequestValidAssignedCandidatesRequest::isOnlyDevelopers() const

@@ -92,6 +92,15 @@ public:
     void unsetcreateBranchWhitelistUserIds();
     void setCreateBranchWhitelistUserIds(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 是否开启仓库加密。 **约束限制：** 不涉及。 **取值范围：** - true，开启仓库加密。 - false，关闭仓库加密。
+    /// </summary>
+
+    bool isRepoEncryptionEnabled() const;
+    bool repoEncryptionEnabledIsSet() const;
+    void unsetrepoEncryptionEnabled();
+    void setRepoEncryptionEnabled(bool value);
+
 
 protected:
     bool disableFork_;
@@ -106,6 +115,8 @@ protected:
     bool forbiddenDeveloperCreateBranchIsSet_;
     std::string createBranchWhitelistUserIds_;
     bool createBranchWhitelistUserIdsIsSet_;
+    bool repoEncryptionEnabled_;
+    bool repoEncryptionEnabledIsSet_;
 
 };
 

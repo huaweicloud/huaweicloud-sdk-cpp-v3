@@ -266,6 +266,15 @@ public:
     void unsetuserName();
     void setUserName(const std::string& value);
 
+    /// <summary>
+    /// 作者id
+    /// </summary>
+
+    int32_t getAuthorId() const;
+    bool authorIdIsSet() const;
+    void unsetauthorId();
+    void setAuthorId(int32_t value);
+
 
 protected:
     std::string id_;
@@ -318,6 +327,8 @@ protected:
     bool tenantNameIsSet_;
     std::string userName_;
     bool userNameIsSet_;
+    int32_t authorId_;
+    bool authorIdIsSet_;
 
 };
 

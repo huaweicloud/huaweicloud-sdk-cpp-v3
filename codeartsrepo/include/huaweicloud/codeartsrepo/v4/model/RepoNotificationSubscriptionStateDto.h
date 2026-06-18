@@ -39,7 +39,7 @@ public:
     /// RepoNotificationSubscriptionStateDto members
 
     /// <summary>
-    /// **参数解释：** 配资源。
+    /// **参数解释：** 配置源。
     /// </summary>
 
     std::string getConfigSource() const;

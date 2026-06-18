@@ -39,15 +39,6 @@ public:
     /// ListImpersonationTokensRequest members
 
     /// <summary>
-    /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
-    /// </summary>
-
-    int32_t getGroupId() const;
-    bool groupIdIsSet() const;
-    void unsetgroupId();
-    void setGroupId(int32_t value);
-
-    /// <summary>
     /// **参数解释：** 状态 all 所有状态 active 活跃，未过期 inactive 非活跃，失效的。
     /// </summary>
 
@@ -85,8 +76,6 @@ public:
 
 
 protected:
-    int32_t groupId_;
-    bool groupIdIsSet_;
     std::string state_;
     bool stateIsSet_;
     std::string search_;

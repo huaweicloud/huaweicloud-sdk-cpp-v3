@@ -344,6 +344,24 @@ public:
     void setForkedFromRepository(const RepositorySimpleDto& value);
 
     /// <summary>
+    /// **参数解释：** 仓库加密状态 **取值范围：** - encrypting，加密中。 - encrypted，已加密。 - decrypting，解密中。 - decrypted，已解密。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getEncryptionStatus() const;
+    bool encryptionStatusIsSet() const;
+    void unsetencryptionStatus();
+    void setEncryptionStatus(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 是否开启仓库加密 **取值范围：** - true，已开启加密。 - false，未开启加密。
+    /// </summary>
+
+    bool isRepoEncryptionEnabled() const;
+    bool repoEncryptionEnabledIsSet() const;
+    void unsetrepoEncryptionEnabled();
+    void setRepoEncryptionEnabled(bool value);
+
+    /// <summary>
     /// **参数解释：** 仓库唯一标识符。 **约束限制：** 不涉及。
     /// </summary>
 
@@ -582,6 +600,10 @@ protected:
     bool creatorIdIsSet_;
     RepositorySimpleDto forkedFromRepository_;
     bool forkedFromRepositoryIsSet_;
+    std::string encryptionStatus_;
+    bool encryptionStatusIsSet_;
+    bool repoEncryptionEnabled_;
+    bool repoEncryptionEnabledIsSet_;
     std::string uuid_;
     bool uuidIsSet_;
     std::vector<int32_t> ancestorIds_;

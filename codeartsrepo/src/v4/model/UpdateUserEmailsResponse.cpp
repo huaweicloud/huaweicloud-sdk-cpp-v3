@@ -28,6 +28,8 @@ UpdateUserEmailsResponse::UpdateUserEmailsResponse()
     lastActivityOnIsSet_ = false;
     commitEmail_ = "";
     commitEmailIsSet_ = false;
+    isDefault_ = false;
+    isDefaultIsSet_ = false;
 }
 
 UpdateUserEmailsResponse::~UpdateUserEmailsResponse() = default;
@@ -63,6 +65,9 @@ web::json::value UpdateUserEmailsResponse::toJson() const
     }
     if(commitEmailIsSet_) {
         val[utility::conversions::to_string_t("commit_email")] = ModelBase::toJson(commitEmail_);
+    }
+    if(isDefaultIsSet_) {
+        val[utility::conversions::to_string_t("is_default")] = ModelBase::toJson(isDefault_);
     }
 
     return val;
@@ -141,6 +146,15 @@ bool UpdateUserEmailsResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCommitEmail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_default"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_default"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsDefault(refVal);
         }
     }
     return ok;
@@ -313,6 +327,27 @@ bool UpdateUserEmailsResponse::commitEmailIsSet() const
 void UpdateUserEmailsResponse::unsetcommitEmail()
 {
     commitEmailIsSet_ = false;
+}
+
+bool UpdateUserEmailsResponse::isIsDefault() const
+{
+    return isDefault_;
+}
+
+void UpdateUserEmailsResponse::setIsDefault(bool value)
+{
+    isDefault_ = value;
+    isDefaultIsSet_ = true;
+}
+
+bool UpdateUserEmailsResponse::isDefaultIsSet() const
+{
+    return isDefaultIsSet_;
+}
+
+void UpdateUserEmailsResponse::unsetisDefault()
+{
+    isDefaultIsSet_ = false;
 }
 
 }

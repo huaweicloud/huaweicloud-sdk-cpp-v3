@@ -28,8 +28,6 @@ CommitNoteDto::CommitNoteDto()
     diffFileIsSet_ = false;
     diff_ = "";
     diffIsSet_ = false;
-    attachment_ = "";
-    attachmentIsSet_ = false;
     authorIsSet_ = false;
     createdAt_ = "";
     createdAtIsSet_ = false;
@@ -71,6 +69,8 @@ CommitNoteDto::CommitNoteDto()
     proposerIsSet_ = false;
     isReply_ = false;
     isReplyIsSet_ = false;
+    fromRobot_ = false;
+    fromRobotIsSet_ = false;
     moderationResult_ = false;
     moderationResultIsSet_ = false;
     moderationTime_ = 0L;
@@ -112,9 +112,6 @@ web::json::value CommitNoteDto::toJson() const
     }
     if(diffIsSet_) {
         val[utility::conversions::to_string_t("diff")] = ModelBase::toJson(diff_);
-    }
-    if(attachmentIsSet_) {
-        val[utility::conversions::to_string_t("attachment")] = ModelBase::toJson(attachment_);
     }
     if(authorIsSet_) {
         val[utility::conversions::to_string_t("author")] = ModelBase::toJson(author_);
@@ -184,6 +181,9 @@ web::json::value CommitNoteDto::toJson() const
     }
     if(isReplyIsSet_) {
         val[utility::conversions::to_string_t("is_reply")] = ModelBase::toJson(isReply_);
+    }
+    if(fromRobotIsSet_) {
+        val[utility::conversions::to_string_t("from_robot")] = ModelBase::toJson(fromRobot_);
     }
     if(moderationResultIsSet_) {
         val[utility::conversions::to_string_t("moderation_result")] = ModelBase::toJson(moderationResult_);
@@ -271,15 +271,6 @@ bool CommitNoteDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDiff(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("attachment"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attachment"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAttachment(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("author"))) {
@@ -489,6 +480,15 @@ bool CommitNoteDto::fromJson(const web::json::value& val)
             setIsReply(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("from_robot"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("from_robot"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFromRobot(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("moderation_result"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("moderation_result"));
         if(!fieldValue.is_null())
@@ -686,27 +686,6 @@ bool CommitNoteDto::diffIsSet() const
 void CommitNoteDto::unsetdiff()
 {
     diffIsSet_ = false;
-}
-
-std::string CommitNoteDto::getAttachment() const
-{
-    return attachment_;
-}
-
-void CommitNoteDto::setAttachment(const std::string& value)
-{
-    attachment_ = value;
-    attachmentIsSet_ = true;
-}
-
-bool CommitNoteDto::attachmentIsSet() const
-{
-    return attachmentIsSet_;
-}
-
-void CommitNoteDto::unsetattachment()
-{
-    attachmentIsSet_ = false;
 }
 
 UserBasicDto CommitNoteDto::getAuthor() const
@@ -1190,6 +1169,27 @@ bool CommitNoteDto::isReplyIsSet() const
 void CommitNoteDto::unsetisReply()
 {
     isReplyIsSet_ = false;
+}
+
+bool CommitNoteDto::isFromRobot() const
+{
+    return fromRobot_;
+}
+
+void CommitNoteDto::setFromRobot(bool value)
+{
+    fromRobot_ = value;
+    fromRobotIsSet_ = true;
+}
+
+bool CommitNoteDto::fromRobotIsSet() const
+{
+    return fromRobotIsSet_;
+}
+
+void CommitNoteDto::unsetfromRobot()
+{
+    fromRobotIsSet_ = false;
 }
 
 bool CommitNoteDto::isModerationResult() const

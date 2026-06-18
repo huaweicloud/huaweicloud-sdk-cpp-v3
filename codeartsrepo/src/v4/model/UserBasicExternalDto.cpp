@@ -28,6 +28,8 @@ UserBasicExternalDto::UserBasicExternalDto()
     nickNameIsSet_ = false;
     tenantName_ = "";
     tenantNameIsSet_ = false;
+    hasPermission_ = false;
+    hasPermissionIsSet_ = false;
 }
 
 UserBasicExternalDto::~UserBasicExternalDto() = default;
@@ -63,6 +65,9 @@ web::json::value UserBasicExternalDto::toJson() const
     }
     if(tenantNameIsSet_) {
         val[utility::conversions::to_string_t("tenant_name")] = ModelBase::toJson(tenantName_);
+    }
+    if(hasPermissionIsSet_) {
+        val[utility::conversions::to_string_t("has_permission")] = ModelBase::toJson(hasPermission_);
     }
 
     return val;
@@ -141,6 +146,15 @@ bool UserBasicExternalDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTenantName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("has_permission"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("has_permission"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHasPermission(refVal);
         }
     }
     return ok;
@@ -313,6 +327,27 @@ bool UserBasicExternalDto::tenantNameIsSet() const
 void UserBasicExternalDto::unsettenantName()
 {
     tenantNameIsSet_ = false;
+}
+
+bool UserBasicExternalDto::isHasPermission() const
+{
+    return hasPermission_;
+}
+
+void UserBasicExternalDto::setHasPermission(bool value)
+{
+    hasPermission_ = value;
+    hasPermissionIsSet_ = true;
+}
+
+bool UserBasicExternalDto::hasPermissionIsSet() const
+{
+    return hasPermissionIsSet_;
+}
+
+void UserBasicExternalDto::unsethasPermission()
+{
+    hasPermissionIsSet_ = false;
 }
 
 }

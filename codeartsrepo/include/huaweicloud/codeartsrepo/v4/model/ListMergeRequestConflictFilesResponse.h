@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/codeartsrepo/v4/model/MRConflictFileDto.h>
+#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -48,10 +49,21 @@ public:
     void unsetbody();
     void setBody(const std::vector<MRConflictFileDto>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXTotal() const;
+    bool xTotalIsSet() const;
+    void unsetxTotal();
+    void setXTotal(const std::string& value);
+
 
 protected:
     std::vector<MRConflictFileDto> body_;
     bool bodyIsSet_;
+    std::string xTotal_;
+    bool xTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

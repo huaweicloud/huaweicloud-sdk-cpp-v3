@@ -51,7 +51,7 @@ public:
     void setEnabled(bool value);
 
     /// <summary>
-    /// **参数解释：** 配资源。
+    /// **参数解释：** 配置源。
     /// </summary>
 
     std::string getConfigSource() const;
@@ -69,7 +69,7 @@ public:
     void setWebhookConfig(const UpdateRepoWebHookSubscriptionDto& value);
 
     /// <summary>
-    /// **参数解释：** 仓库使用量告警阀值（百分比）。
+    /// **参数解释：** 仓库使用量告警阈值（百分比）。
     /// </summary>
 
     int32_t getWaringRepoUsageRate() const;

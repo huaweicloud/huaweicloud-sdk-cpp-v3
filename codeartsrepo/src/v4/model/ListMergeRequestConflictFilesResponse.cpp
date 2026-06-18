@@ -13,6 +13,8 @@ namespace Model {
 ListMergeRequestConflictFilesResponse::ListMergeRequestConflictFilesResponse()
 {
     bodyIsSet_ = false;
+    xTotal_ = "";
+    xTotalIsSet_ = false;
 }
 
 ListMergeRequestConflictFilesResponse::~ListMergeRequestConflictFilesResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ListMergeRequestConflictFilesResponse::toJson() const
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
+    if(xTotalIsSet_) {
+        val[utility::conversions::to_string_t("X-Total")] = ModelBase::toJson(xTotal_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ListMergeRequestConflictFilesResponse::fromJson(const web::json::value& val
             std::vector<MRConflictFileDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Total"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXTotal(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ListMergeRequestConflictFilesResponse::bodyIsSet() const
 void ListMergeRequestConflictFilesResponse::unsetbody()
 {
     bodyIsSet_ = false;
+}
+
+std::string ListMergeRequestConflictFilesResponse::getXTotal() const
+{
+    return xTotal_;
+}
+
+void ListMergeRequestConflictFilesResponse::setXTotal(const std::string& value)
+{
+    xTotal_ = value;
+    xTotalIsSet_ = true;
+}
+
+bool ListMergeRequestConflictFilesResponse::xTotalIsSet() const
+{
+    return xTotalIsSet_;
+}
+
+void ListMergeRequestConflictFilesResponse::unsetxTotal()
+{
+    xTotalIsSet_ = false;
 }
 
 }

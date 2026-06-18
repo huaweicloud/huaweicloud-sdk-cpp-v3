@@ -16,6 +16,8 @@ ListFilesRequest::ListFilesRequest()
     repositoryIdIsSet_ = false;
     refName_ = "";
     refNameIsSet_ = false;
+    search_ = "";
+    searchIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
     limit_ = 0;
@@ -37,6 +39,9 @@ web::json::value ListFilesRequest::toJson() const
     }
     if(refNameIsSet_) {
         val[utility::conversions::to_string_t("ref_name")] = ModelBase::toJson(refName_);
+    }
+    if(searchIsSet_) {
+        val[utility::conversions::to_string_t("search")] = ModelBase::toJson(search_);
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
@@ -67,6 +72,15 @@ bool ListFilesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRefName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("search"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("search"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSearch(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
@@ -131,6 +145,27 @@ bool ListFilesRequest::refNameIsSet() const
 void ListFilesRequest::unsetrefName()
 {
     refNameIsSet_ = false;
+}
+
+std::string ListFilesRequest::getSearch() const
+{
+    return search_;
+}
+
+void ListFilesRequest::setSearch(const std::string& value)
+{
+    search_ = value;
+    searchIsSet_ = true;
+}
+
+bool ListFilesRequest::searchIsSet() const
+{
+    return searchIsSet_;
+}
+
+void ListFilesRequest::unsetsearch()
+{
+    searchIsSet_ = false;
 }
 
 int32_t ListFilesRequest::getOffset() const

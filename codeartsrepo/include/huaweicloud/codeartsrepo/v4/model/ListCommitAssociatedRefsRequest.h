@@ -39,7 +39,7 @@ public:
     /// ListCommitAssociatedRefsRequest members
 
     /// <summary>
-    /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+    /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getRepositoryId() const;
@@ -74,6 +74,15 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 分支或者tag。 **取值范围：** 只能为branch或者tag。 **约束限制：** 只能为branch或者tag。
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
 
 protected:
     int32_t repositoryId_;
@@ -84,6 +93,8 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string type_;
+    bool typeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

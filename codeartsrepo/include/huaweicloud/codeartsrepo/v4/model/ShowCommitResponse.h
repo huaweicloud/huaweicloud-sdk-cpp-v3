@@ -271,6 +271,15 @@ public:
     void setUserName(const std::string& value);
 
     /// <summary>
+    /// 作者id
+    /// </summary>
+
+    int32_t getAuthorId() const;
+    bool authorIdIsSet() const;
+    void unsetauthorId();
+    void setAuthorId(int32_t value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -376,6 +385,8 @@ protected:
     bool tenantNameIsSet_;
     std::string userName_;
     bool userNameIsSet_;
+    int32_t authorId_;
+    bool authorIdIsSet_;
     CommitStatsDto stats_;
     bool statsIsSet_;
     std::string status_;

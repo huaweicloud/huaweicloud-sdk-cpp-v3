@@ -20,6 +20,8 @@ ListCommitAssociatedRefsRequest::ListCommitAssociatedRefsRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
 }
 
 ListCommitAssociatedRefsRequest::~ListCommitAssociatedRefsRequest() = default;
@@ -43,6 +45,9 @@ web::json::value ListCommitAssociatedRefsRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool ListCommitAssociatedRefsRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool ListCommitAssociatedRefsRequest::limitIsSet() const
 void ListCommitAssociatedRefsRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ListCommitAssociatedRefsRequest::getType() const
+{
+    return type_;
+}
+
+void ListCommitAssociatedRefsRequest::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool ListCommitAssociatedRefsRequest::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void ListCommitAssociatedRefsRequest::unsettype()
+{
+    typeIsSet_ = false;
 }
 
 }

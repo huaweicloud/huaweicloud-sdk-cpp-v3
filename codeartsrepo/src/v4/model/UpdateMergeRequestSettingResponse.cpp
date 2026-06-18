@@ -69,6 +69,8 @@ UpdateMergeRequestSettingResponse::UpdateMergeRequestSettingResponse()
     onlyAssigneeCanMergeIsSet_ = false;
     repositoryId_ = 0;
     repositoryIdIsSet_ = false;
+    hasEvaluationPermission_ = false;
+    hasEvaluationPermissionIsSet_ = false;
 }
 
 UpdateMergeRequestSettingResponse::~UpdateMergeRequestSettingResponse() = default;
@@ -167,6 +169,9 @@ web::json::value UpdateMergeRequestSettingResponse::toJson() const
     }
     if(repositoryIdIsSet_) {
         val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
+    }
+    if(hasEvaluationPermissionIsSet_) {
+        val[utility::conversions::to_string_t("has_evaluation_permission")] = ModelBase::toJson(hasEvaluationPermission_);
     }
 
     return val;
@@ -434,6 +439,15 @@ bool UpdateMergeRequestSettingResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRepositoryId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("has_evaluation_permission"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("has_evaluation_permission"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHasEvaluationPermission(refVal);
         }
     }
     return ok;
@@ -1047,6 +1061,27 @@ bool UpdateMergeRequestSettingResponse::repositoryIdIsSet() const
 void UpdateMergeRequestSettingResponse::unsetrepositoryId()
 {
     repositoryIdIsSet_ = false;
+}
+
+bool UpdateMergeRequestSettingResponse::isHasEvaluationPermission() const
+{
+    return hasEvaluationPermission_;
+}
+
+void UpdateMergeRequestSettingResponse::setHasEvaluationPermission(bool value)
+{
+    hasEvaluationPermission_ = value;
+    hasEvaluationPermissionIsSet_ = true;
+}
+
+bool UpdateMergeRequestSettingResponse::hasEvaluationPermissionIsSet() const
+{
+    return hasEvaluationPermissionIsSet_;
+}
+
+void UpdateMergeRequestSettingResponse::unsethasEvaluationPermission()
+{
+    hasEvaluationPermissionIsSet_ = false;
 }
 
 }

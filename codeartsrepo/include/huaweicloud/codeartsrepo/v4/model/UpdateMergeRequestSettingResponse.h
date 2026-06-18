@@ -302,6 +302,15 @@ public:
     void unsetrepositoryId();
     void setRepositoryId(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 调用者是否有星级评价权限。
+    /// </summary>
+
+    bool isHasEvaluationPermission() const;
+    bool hasEvaluationPermissionIsSet() const;
+    void unsethasEvaluationPermission();
+    void setHasEvaluationPermission(bool value);
+
 
 protected:
     int32_t id_;
@@ -362,6 +371,8 @@ protected:
     bool onlyAssigneeCanMergeIsSet_;
     int32_t repositoryId_;
     bool repositoryIdIsSet_;
+    bool hasEvaluationPermission_;
+    bool hasEvaluationPermissionIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -38,7 +38,7 @@ public:
     /// ShowResourcePermissionsRequest members
 
     /// <summary>
-    /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
+    /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getGroupId() const;
@@ -47,7 +47,7 @@ public:
     void setGroupId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 资源Id，通过获取代码组权限资源点列表获取的数据中的Id
+    /// **参数解释：** 资源Id，通过获取代码组权限资源点列表获取的数据中的Id **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getResourceId() const;

@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartsrepo/v4/model/MergeRequestTemplateFromDto.h>
 #include <huaweicloud/codeartsrepo/v4/model/MergeRequestTemplateDto.h>
 #include <string>
 #include <huaweicloud/codeartsrepo/v4/model/UserBasicDto.h>
@@ -48,15 +49,6 @@ public:
     bool idIsSet() const;
     void unsetid();
     void setId(int32_t value);
-
-    /// <summary>
-    /// **参数解释：** 仓库id。
-    /// </summary>
-
-    int32_t getRepositoryId() const;
-    bool repositoryIdIsSet() const;
-    void unsetrepositoryId();
-    void setRepositoryId(int32_t value);
 
     /// <summary>
     /// **参数解释：** 描述
@@ -139,12 +131,28 @@ public:
     void unsetcreator();
     void setCreator(const UserBasicDto& value);
 
+    /// <summary>
+    /// **参数解释：** 仓库id。
+    /// </summary>
+
+    int32_t getRepositoryId() const;
+    bool repositoryIdIsSet() const;
+    void unsetrepositoryId();
+    void setRepositoryId(int32_t value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    MergeRequestTemplateFromDto getFrom() const;
+    bool fromIsSet() const;
+    void unsetfrom();
+    void setFrom(const MergeRequestTemplateFromDto& value);
+
 
 protected:
     int32_t id_;
     bool idIsSet_;
-    int32_t repositoryId_;
-    bool repositoryIdIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     std::string createdAt_;
@@ -163,6 +171,10 @@ protected:
     bool autoExtractMrTitleIsSet_;
     UserBasicDto creator_;
     bool creatorIsSet_;
+    int32_t repositoryId_;
+    bool repositoryIdIsSet_;
+    MergeRequestTemplateFromDto from_;
+    bool fromIsSet_;
 
 };
 

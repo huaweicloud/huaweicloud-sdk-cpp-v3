@@ -12,42 +12,29 @@ namespace Model {
 
 UpdateMergeRequestDiscussionInfoResponse::UpdateMergeRequestDiscussionInfoResponse()
 {
-    id_ = 0;
+    id_ = "";
     idIsSet_ = false;
-    type_ = "";
-    typeIsSet_ = false;
-    body_ = "";
-    bodyIsSet_ = false;
-    attachment_ = "";
-    attachmentIsSet_ = false;
-    authorIsSet_ = false;
-    createdAt_ = "";
-    createdAtIsSet_ = false;
-    updatedAt_ = "";
-    updatedAtIsSet_ = false;
-    system_ = false;
-    systemIsSet_ = false;
-    noteableId_ = 0;
-    noteableIdIsSet_ = false;
+    individualNote_ = false;
+    individualNoteIsSet_ = false;
+    notesIsSet_ = false;
+    repositoryId_ = 0;
+    repositoryIdIsSet_ = false;
     noteableType_ = "";
     noteableTypeIsSet_ = false;
     commitId_ = "";
     commitIdIsSet_ = false;
-    resolvable_ = false;
-    resolvableIsSet_ = false;
-    isReply_ = false;
-    isReplyIsSet_ = false;
-    resolvedByIsSet_ = false;
-    noteableIid_ = 0;
-    noteableIidIsSet_ = false;
-    discussionId_ = "";
-    discussionIdIsSet_ = false;
-    repository_ = "";
-    repositoryIsSet_ = false;
-    diffFile_ = "";
-    diffFileIsSet_ = false;
-    diff_ = "";
-    diffIsSet_ = false;
+    repositoryFullPath_ = "";
+    repositoryFullPathIsSet_ = false;
+    aMode_ = "";
+    aModeIsSet_ = false;
+    bMode_ = "";
+    bModeIsSet_ = false;
+    deletedFile_ = false;
+    deletedFileIsSet_ = false;
+    newFile_ = false;
+    newFileIsSet_ = false;
+    resolved_ = false;
+    resolvedIsSet_ = false;
     archived_ = false;
     archivedIsSet_ = false;
     reviewCategories_ = "";
@@ -64,23 +51,15 @@ UpdateMergeRequestDiscussionInfoResponse::UpdateMergeRequestDiscussionInfoRespon
     severityCnIsSet_ = false;
     severityEn_ = "";
     severityEnIsSet_ = false;
-    filePath_ = "";
-    filePathIsSet_ = false;
-    line_ = "";
-    lineIsSet_ = false;
     assigneeIsSet_ = false;
     proposerIsSet_ = false;
-    positionIsSet_ = false;
-    resolved_ = false;
-    resolvedIsSet_ = false;
-    isOutdated_ = false;
-    isOutdatedIsSet_ = false;
-    moderationResult_ = false;
-    moderationResultIsSet_ = false;
-    moderationTime_ = 0L;
-    moderationTimeIsSet_ = false;
-    moderationStatus_ = 0;
-    moderationStatusIsSet_ = false;
+    mergeRequestVersionParamsIsSet_ = false;
+    diffFile_ = "";
+    diffFileIsSet_ = false;
+    addedLines_ = 0;
+    addedLinesIsSet_ = false;
+    removedLines_ = 0;
+    removedLinesIsSet_ = false;
 }
 
 UpdateMergeRequestDiscussionInfoResponse::~UpdateMergeRequestDiscussionInfoResponse() = default;
@@ -96,29 +75,14 @@ web::json::value UpdateMergeRequestDiscussionInfoResponse::toJson() const
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
     }
-    if(typeIsSet_) {
-        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    if(individualNoteIsSet_) {
+        val[utility::conversions::to_string_t("individual_note")] = ModelBase::toJson(individualNote_);
     }
-    if(bodyIsSet_) {
-        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    if(notesIsSet_) {
+        val[utility::conversions::to_string_t("notes")] = ModelBase::toJson(notes_);
     }
-    if(attachmentIsSet_) {
-        val[utility::conversions::to_string_t("attachment")] = ModelBase::toJson(attachment_);
-    }
-    if(authorIsSet_) {
-        val[utility::conversions::to_string_t("author")] = ModelBase::toJson(author_);
-    }
-    if(createdAtIsSet_) {
-        val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
-    }
-    if(updatedAtIsSet_) {
-        val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
-    }
-    if(systemIsSet_) {
-        val[utility::conversions::to_string_t("system")] = ModelBase::toJson(system_);
-    }
-    if(noteableIdIsSet_) {
-        val[utility::conversions::to_string_t("noteable_id")] = ModelBase::toJson(noteableId_);
+    if(repositoryIdIsSet_) {
+        val[utility::conversions::to_string_t("repository_id")] = ModelBase::toJson(repositoryId_);
     }
     if(noteableTypeIsSet_) {
         val[utility::conversions::to_string_t("noteable_type")] = ModelBase::toJson(noteableType_);
@@ -126,29 +90,23 @@ web::json::value UpdateMergeRequestDiscussionInfoResponse::toJson() const
     if(commitIdIsSet_) {
         val[utility::conversions::to_string_t("commit_id")] = ModelBase::toJson(commitId_);
     }
-    if(resolvableIsSet_) {
-        val[utility::conversions::to_string_t("resolvable")] = ModelBase::toJson(resolvable_);
+    if(repositoryFullPathIsSet_) {
+        val[utility::conversions::to_string_t("repository_full_path")] = ModelBase::toJson(repositoryFullPath_);
     }
-    if(isReplyIsSet_) {
-        val[utility::conversions::to_string_t("is_reply")] = ModelBase::toJson(isReply_);
+    if(aModeIsSet_) {
+        val[utility::conversions::to_string_t("a_mode")] = ModelBase::toJson(aMode_);
     }
-    if(resolvedByIsSet_) {
-        val[utility::conversions::to_string_t("resolved_by")] = ModelBase::toJson(resolvedBy_);
+    if(bModeIsSet_) {
+        val[utility::conversions::to_string_t("b_mode")] = ModelBase::toJson(bMode_);
     }
-    if(noteableIidIsSet_) {
-        val[utility::conversions::to_string_t("noteable_iid")] = ModelBase::toJson(noteableIid_);
+    if(deletedFileIsSet_) {
+        val[utility::conversions::to_string_t("deleted_file")] = ModelBase::toJson(deletedFile_);
     }
-    if(discussionIdIsSet_) {
-        val[utility::conversions::to_string_t("discussion_id")] = ModelBase::toJson(discussionId_);
+    if(newFileIsSet_) {
+        val[utility::conversions::to_string_t("new_file")] = ModelBase::toJson(newFile_);
     }
-    if(repositoryIsSet_) {
-        val[utility::conversions::to_string_t("repository")] = ModelBase::toJson(repository_);
-    }
-    if(diffFileIsSet_) {
-        val[utility::conversions::to_string_t("diff_file")] = ModelBase::toJson(diffFile_);
-    }
-    if(diffIsSet_) {
-        val[utility::conversions::to_string_t("diff")] = ModelBase::toJson(diff_);
+    if(resolvedIsSet_) {
+        val[utility::conversions::to_string_t("resolved")] = ModelBase::toJson(resolved_);
     }
     if(archivedIsSet_) {
         val[utility::conversions::to_string_t("archived")] = ModelBase::toJson(archived_);
@@ -174,35 +132,23 @@ web::json::value UpdateMergeRequestDiscussionInfoResponse::toJson() const
     if(severityEnIsSet_) {
         val[utility::conversions::to_string_t("severity_en")] = ModelBase::toJson(severityEn_);
     }
-    if(filePathIsSet_) {
-        val[utility::conversions::to_string_t("file_path")] = ModelBase::toJson(filePath_);
-    }
-    if(lineIsSet_) {
-        val[utility::conversions::to_string_t("line")] = ModelBase::toJson(line_);
-    }
     if(assigneeIsSet_) {
         val[utility::conversions::to_string_t("assignee")] = ModelBase::toJson(assignee_);
     }
     if(proposerIsSet_) {
         val[utility::conversions::to_string_t("proposer")] = ModelBase::toJson(proposer_);
     }
-    if(positionIsSet_) {
-        val[utility::conversions::to_string_t("position")] = ModelBase::toJson(position_);
+    if(mergeRequestVersionParamsIsSet_) {
+        val[utility::conversions::to_string_t("merge_request_version_params")] = ModelBase::toJson(mergeRequestVersionParams_);
     }
-    if(resolvedIsSet_) {
-        val[utility::conversions::to_string_t("resolved")] = ModelBase::toJson(resolved_);
+    if(diffFileIsSet_) {
+        val[utility::conversions::to_string_t("diff_file")] = ModelBase::toJson(diffFile_);
     }
-    if(isOutdatedIsSet_) {
-        val[utility::conversions::to_string_t("is_outdated")] = ModelBase::toJson(isOutdated_);
+    if(addedLinesIsSet_) {
+        val[utility::conversions::to_string_t("added_lines")] = ModelBase::toJson(addedLines_);
     }
-    if(moderationResultIsSet_) {
-        val[utility::conversions::to_string_t("moderation_result")] = ModelBase::toJson(moderationResult_);
-    }
-    if(moderationTimeIsSet_) {
-        val[utility::conversions::to_string_t("moderation_time")] = ModelBase::toJson(moderationTime_);
-    }
-    if(moderationStatusIsSet_) {
-        val[utility::conversions::to_string_t("moderation_status")] = ModelBase::toJson(moderationStatus_);
+    if(removedLinesIsSet_) {
+        val[utility::conversions::to_string_t("removed_lines")] = ModelBase::toJson(removedLines_);
     }
 
     return val;
@@ -215,81 +161,36 @@ bool UpdateMergeRequestDiscussionInfoResponse::fromJson(const web::json::value& 
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setType(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("body"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBody(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("attachment"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attachment"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAttachment(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("author"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("author"));
-        if(!fieldValue.is_null())
-        {
-            UserBasicDto refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAuthor(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("created_at"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_at"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCreatedAt(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("updated_at"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("updated_at"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUpdatedAt(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("system"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("system"));
+    if(val.has_field(utility::conversions::to_string_t("individual_note"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("individual_note"));
         if(!fieldValue.is_null())
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSystem(refVal);
+            setIndividualNote(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("noteable_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("noteable_id"));
+    if(val.has_field(utility::conversions::to_string_t("notes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notes"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<NoteDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNotes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repository_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_id"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNoteableId(refVal);
+            setRepositoryId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("noteable_type"))) {
@@ -310,76 +211,58 @@ bool UpdateMergeRequestDiscussionInfoResponse::fromJson(const web::json::value& 
             setCommitId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("resolvable"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resolvable"));
+    if(val.has_field(utility::conversions::to_string_t("repository_full_path"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository_full_path"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepositoryFullPath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("a_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("a_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("b_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("b_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("deleted_file"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deleted_file"));
         if(!fieldValue.is_null())
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResolvable(refVal);
+            setDeletedFile(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("is_reply"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_reply"));
+    if(val.has_field(utility::conversions::to_string_t("new_file"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_file"));
         if(!fieldValue.is_null())
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsReply(refVal);
+            setNewFile(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("resolved_by"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resolved_by"));
+    if(val.has_field(utility::conversions::to_string_t("resolved"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resolved"));
         if(!fieldValue.is_null())
         {
-            UserBasicDto refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResolvedBy(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("noteable_iid"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("noteable_iid"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNoteableIid(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("discussion_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("discussion_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDiscussionId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("repository"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repository"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRepository(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("diff_file"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("diff_file"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDiffFile(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("diff"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("diff"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDiff(refVal);
+            setResolved(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("archived"))) {
@@ -454,24 +337,6 @@ bool UpdateMergeRequestDiscussionInfoResponse::fromJson(const web::json::value& 
             setSeverityEn(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("file_path"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_path"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFilePath(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("line"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("line"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLine(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("assignee"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("assignee"));
         if(!fieldValue.is_null())
@@ -490,70 +355,52 @@ bool UpdateMergeRequestDiscussionInfoResponse::fromJson(const web::json::value& 
             setProposer(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("position"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("position"));
+    if(val.has_field(utility::conversions::to_string_t("merge_request_version_params"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("merge_request_version_params"));
         if(!fieldValue.is_null())
         {
-            PositionDto refVal;
+            MergeRequestVersionParamsDto refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPosition(refVal);
+            setMergeRequestVersionParams(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("resolved"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resolved"));
+    if(val.has_field(utility::conversions::to_string_t("diff_file"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("diff_file"));
         if(!fieldValue.is_null())
         {
-            bool refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResolved(refVal);
+            setDiffFile(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("is_outdated"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_outdated"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsOutdated(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("moderation_result"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("moderation_result"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setModerationResult(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("moderation_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("moderation_time"));
-        if(!fieldValue.is_null())
-        {
-            int64_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setModerationTime(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("moderation_status"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("moderation_status"));
+    if(val.has_field(utility::conversions::to_string_t("added_lines"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("added_lines"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setModerationStatus(refVal);
+            setAddedLines(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("removed_lines"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("removed_lines"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemovedLines(refVal);
         }
     }
     return ok;
 }
 
 
-int32_t UpdateMergeRequestDiscussionInfoResponse::getId() const
+std::string UpdateMergeRequestDiscussionInfoResponse::getId() const
 {
     return id_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setId(int32_t value)
+void UpdateMergeRequestDiscussionInfoResponse::setId(const std::string& value)
 {
     id_ = value;
     idIsSet_ = true;
@@ -569,172 +416,67 @@ void UpdateMergeRequestDiscussionInfoResponse::unsetid()
     idIsSet_ = false;
 }
 
-std::string UpdateMergeRequestDiscussionInfoResponse::getType() const
+bool UpdateMergeRequestDiscussionInfoResponse::isIndividualNote() const
 {
-    return type_;
+    return individualNote_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setType(const std::string& value)
+void UpdateMergeRequestDiscussionInfoResponse::setIndividualNote(bool value)
 {
-    type_ = value;
-    typeIsSet_ = true;
+    individualNote_ = value;
+    individualNoteIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::typeIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::individualNoteIsSet() const
 {
-    return typeIsSet_;
+    return individualNoteIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsettype()
+void UpdateMergeRequestDiscussionInfoResponse::unsetindividualNote()
 {
-    typeIsSet_ = false;
+    individualNoteIsSet_ = false;
 }
 
-std::string UpdateMergeRequestDiscussionInfoResponse::getBody() const
+std::vector<NoteDto>& UpdateMergeRequestDiscussionInfoResponse::getNotes()
 {
-    return body_;
+    return notes_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setBody(const std::string& value)
+void UpdateMergeRequestDiscussionInfoResponse::setNotes(const std::vector<NoteDto>& value)
 {
-    body_ = value;
-    bodyIsSet_ = true;
+    notes_ = value;
+    notesIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::bodyIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::notesIsSet() const
 {
-    return bodyIsSet_;
+    return notesIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetbody()
+void UpdateMergeRequestDiscussionInfoResponse::unsetnotes()
 {
-    bodyIsSet_ = false;
+    notesIsSet_ = false;
 }
 
-std::string UpdateMergeRequestDiscussionInfoResponse::getAttachment() const
+int32_t UpdateMergeRequestDiscussionInfoResponse::getRepositoryId() const
 {
-    return attachment_;
+    return repositoryId_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setAttachment(const std::string& value)
+void UpdateMergeRequestDiscussionInfoResponse::setRepositoryId(int32_t value)
 {
-    attachment_ = value;
-    attachmentIsSet_ = true;
+    repositoryId_ = value;
+    repositoryIdIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::attachmentIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::repositoryIdIsSet() const
 {
-    return attachmentIsSet_;
+    return repositoryIdIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetattachment()
+void UpdateMergeRequestDiscussionInfoResponse::unsetrepositoryId()
 {
-    attachmentIsSet_ = false;
-}
-
-UserBasicDto UpdateMergeRequestDiscussionInfoResponse::getAuthor() const
-{
-    return author_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setAuthor(const UserBasicDto& value)
-{
-    author_ = value;
-    authorIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::authorIsSet() const
-{
-    return authorIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetauthor()
-{
-    authorIsSet_ = false;
-}
-
-std::string UpdateMergeRequestDiscussionInfoResponse::getCreatedAt() const
-{
-    return createdAt_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setCreatedAt(const std::string& value)
-{
-    createdAt_ = value;
-    createdAtIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::createdAtIsSet() const
-{
-    return createdAtIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetcreatedAt()
-{
-    createdAtIsSet_ = false;
-}
-
-std::string UpdateMergeRequestDiscussionInfoResponse::getUpdatedAt() const
-{
-    return updatedAt_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setUpdatedAt(const std::string& value)
-{
-    updatedAt_ = value;
-    updatedAtIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::updatedAtIsSet() const
-{
-    return updatedAtIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetupdatedAt()
-{
-    updatedAtIsSet_ = false;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::isSystem() const
-{
-    return system_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setSystem(bool value)
-{
-    system_ = value;
-    systemIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::systemIsSet() const
-{
-    return systemIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetsystem()
-{
-    systemIsSet_ = false;
-}
-
-int32_t UpdateMergeRequestDiscussionInfoResponse::getNoteableId() const
-{
-    return noteableId_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setNoteableId(int32_t value)
-{
-    noteableId_ = value;
-    noteableIdIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::noteableIdIsSet() const
-{
-    return noteableIdIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetnoteableId()
-{
-    noteableIdIsSet_ = false;
+    repositoryIdIsSet_ = false;
 }
 
 std::string UpdateMergeRequestDiscussionInfoResponse::getNoteableType() const
@@ -779,172 +521,130 @@ void UpdateMergeRequestDiscussionInfoResponse::unsetcommitId()
     commitIdIsSet_ = false;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::isResolvable() const
+std::string UpdateMergeRequestDiscussionInfoResponse::getRepositoryFullPath() const
 {
-    return resolvable_;
+    return repositoryFullPath_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setResolvable(bool value)
+void UpdateMergeRequestDiscussionInfoResponse::setRepositoryFullPath(const std::string& value)
 {
-    resolvable_ = value;
-    resolvableIsSet_ = true;
+    repositoryFullPath_ = value;
+    repositoryFullPathIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::resolvableIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::repositoryFullPathIsSet() const
 {
-    return resolvableIsSet_;
+    return repositoryFullPathIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetresolvable()
+void UpdateMergeRequestDiscussionInfoResponse::unsetrepositoryFullPath()
 {
-    resolvableIsSet_ = false;
+    repositoryFullPathIsSet_ = false;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::isIsReply() const
+std::string UpdateMergeRequestDiscussionInfoResponse::getAMode() const
 {
-    return isReply_;
+    return aMode_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setIsReply(bool value)
+void UpdateMergeRequestDiscussionInfoResponse::setAMode(const std::string& value)
 {
-    isReply_ = value;
-    isReplyIsSet_ = true;
+    aMode_ = value;
+    aModeIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::isReplyIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::aModeIsSet() const
 {
-    return isReplyIsSet_;
+    return aModeIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetisReply()
+void UpdateMergeRequestDiscussionInfoResponse::unsetaMode()
 {
-    isReplyIsSet_ = false;
+    aModeIsSet_ = false;
 }
 
-UserBasicDto UpdateMergeRequestDiscussionInfoResponse::getResolvedBy() const
+std::string UpdateMergeRequestDiscussionInfoResponse::getBMode() const
 {
-    return resolvedBy_;
+    return bMode_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setResolvedBy(const UserBasicDto& value)
+void UpdateMergeRequestDiscussionInfoResponse::setBMode(const std::string& value)
 {
-    resolvedBy_ = value;
-    resolvedByIsSet_ = true;
+    bMode_ = value;
+    bModeIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::resolvedByIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::bModeIsSet() const
 {
-    return resolvedByIsSet_;
+    return bModeIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetresolvedBy()
+void UpdateMergeRequestDiscussionInfoResponse::unsetbMode()
 {
-    resolvedByIsSet_ = false;
+    bModeIsSet_ = false;
 }
 
-int32_t UpdateMergeRequestDiscussionInfoResponse::getNoteableIid() const
+bool UpdateMergeRequestDiscussionInfoResponse::isDeletedFile() const
 {
-    return noteableIid_;
+    return deletedFile_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setNoteableIid(int32_t value)
+void UpdateMergeRequestDiscussionInfoResponse::setDeletedFile(bool value)
 {
-    noteableIid_ = value;
-    noteableIidIsSet_ = true;
+    deletedFile_ = value;
+    deletedFileIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::noteableIidIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::deletedFileIsSet() const
 {
-    return noteableIidIsSet_;
+    return deletedFileIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetnoteableIid()
+void UpdateMergeRequestDiscussionInfoResponse::unsetdeletedFile()
 {
-    noteableIidIsSet_ = false;
+    deletedFileIsSet_ = false;
 }
 
-std::string UpdateMergeRequestDiscussionInfoResponse::getDiscussionId() const
+bool UpdateMergeRequestDiscussionInfoResponse::isNewFile() const
 {
-    return discussionId_;
+    return newFile_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setDiscussionId(const std::string& value)
+void UpdateMergeRequestDiscussionInfoResponse::setNewFile(bool value)
 {
-    discussionId_ = value;
-    discussionIdIsSet_ = true;
+    newFile_ = value;
+    newFileIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::discussionIdIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::newFileIsSet() const
 {
-    return discussionIdIsSet_;
+    return newFileIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetdiscussionId()
+void UpdateMergeRequestDiscussionInfoResponse::unsetnewFile()
 {
-    discussionIdIsSet_ = false;
+    newFileIsSet_ = false;
 }
 
-std::string UpdateMergeRequestDiscussionInfoResponse::getRepository() const
+bool UpdateMergeRequestDiscussionInfoResponse::isResolved() const
 {
-    return repository_;
+    return resolved_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setRepository(const std::string& value)
+void UpdateMergeRequestDiscussionInfoResponse::setResolved(bool value)
 {
-    repository_ = value;
-    repositoryIsSet_ = true;
+    resolved_ = value;
+    resolvedIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::repositoryIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::resolvedIsSet() const
 {
-    return repositoryIsSet_;
+    return resolvedIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetrepository()
+void UpdateMergeRequestDiscussionInfoResponse::unsetresolved()
 {
-    repositoryIsSet_ = false;
-}
-
-std::string UpdateMergeRequestDiscussionInfoResponse::getDiffFile() const
-{
-    return diffFile_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setDiffFile(const std::string& value)
-{
-    diffFile_ = value;
-    diffFileIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::diffFileIsSet() const
-{
-    return diffFileIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetdiffFile()
-{
-    diffFileIsSet_ = false;
-}
-
-std::string UpdateMergeRequestDiscussionInfoResponse::getDiff() const
-{
-    return diff_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setDiff(const std::string& value)
-{
-    diff_ = value;
-    diffIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::diffIsSet() const
-{
-    return diffIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetdiff()
-{
-    diffIsSet_ = false;
+    resolvedIsSet_ = false;
 }
 
 bool UpdateMergeRequestDiscussionInfoResponse::isArchived() const
@@ -1115,48 +815,6 @@ void UpdateMergeRequestDiscussionInfoResponse::unsetseverityEn()
     severityEnIsSet_ = false;
 }
 
-std::string UpdateMergeRequestDiscussionInfoResponse::getFilePath() const
-{
-    return filePath_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setFilePath(const std::string& value)
-{
-    filePath_ = value;
-    filePathIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::filePathIsSet() const
-{
-    return filePathIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetfilePath()
-{
-    filePathIsSet_ = false;
-}
-
-std::string UpdateMergeRequestDiscussionInfoResponse::getLine() const
-{
-    return line_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setLine(const std::string& value)
-{
-    line_ = value;
-    lineIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::lineIsSet() const
-{
-    return lineIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetline()
-{
-    lineIsSet_ = false;
-}
-
 UserBasicDto UpdateMergeRequestDiscussionInfoResponse::getAssignee() const
 {
     return assignee_;
@@ -1199,130 +857,88 @@ void UpdateMergeRequestDiscussionInfoResponse::unsetproposer()
     proposerIsSet_ = false;
 }
 
-PositionDto UpdateMergeRequestDiscussionInfoResponse::getPosition() const
+MergeRequestVersionParamsDto UpdateMergeRequestDiscussionInfoResponse::getMergeRequestVersionParams() const
 {
-    return position_;
+    return mergeRequestVersionParams_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setPosition(const PositionDto& value)
+void UpdateMergeRequestDiscussionInfoResponse::setMergeRequestVersionParams(const MergeRequestVersionParamsDto& value)
 {
-    position_ = value;
-    positionIsSet_ = true;
+    mergeRequestVersionParams_ = value;
+    mergeRequestVersionParamsIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::positionIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::mergeRequestVersionParamsIsSet() const
 {
-    return positionIsSet_;
+    return mergeRequestVersionParamsIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetposition()
+void UpdateMergeRequestDiscussionInfoResponse::unsetmergeRequestVersionParams()
 {
-    positionIsSet_ = false;
+    mergeRequestVersionParamsIsSet_ = false;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::isResolved() const
+std::string UpdateMergeRequestDiscussionInfoResponse::getDiffFile() const
 {
-    return resolved_;
+    return diffFile_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setResolved(bool value)
+void UpdateMergeRequestDiscussionInfoResponse::setDiffFile(const std::string& value)
 {
-    resolved_ = value;
-    resolvedIsSet_ = true;
+    diffFile_ = value;
+    diffFileIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::resolvedIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::diffFileIsSet() const
 {
-    return resolvedIsSet_;
+    return diffFileIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetresolved()
+void UpdateMergeRequestDiscussionInfoResponse::unsetdiffFile()
 {
-    resolvedIsSet_ = false;
+    diffFileIsSet_ = false;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::isIsOutdated() const
+int32_t UpdateMergeRequestDiscussionInfoResponse::getAddedLines() const
 {
-    return isOutdated_;
+    return addedLines_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setIsOutdated(bool value)
+void UpdateMergeRequestDiscussionInfoResponse::setAddedLines(int32_t value)
 {
-    isOutdated_ = value;
-    isOutdatedIsSet_ = true;
+    addedLines_ = value;
+    addedLinesIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::isOutdatedIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::addedLinesIsSet() const
 {
-    return isOutdatedIsSet_;
+    return addedLinesIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetisOutdated()
+void UpdateMergeRequestDiscussionInfoResponse::unsetaddedLines()
 {
-    isOutdatedIsSet_ = false;
+    addedLinesIsSet_ = false;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::isModerationResult() const
+int32_t UpdateMergeRequestDiscussionInfoResponse::getRemovedLines() const
 {
-    return moderationResult_;
+    return removedLines_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::setModerationResult(bool value)
+void UpdateMergeRequestDiscussionInfoResponse::setRemovedLines(int32_t value)
 {
-    moderationResult_ = value;
-    moderationResultIsSet_ = true;
+    removedLines_ = value;
+    removedLinesIsSet_ = true;
 }
 
-bool UpdateMergeRequestDiscussionInfoResponse::moderationResultIsSet() const
+bool UpdateMergeRequestDiscussionInfoResponse::removedLinesIsSet() const
 {
-    return moderationResultIsSet_;
+    return removedLinesIsSet_;
 }
 
-void UpdateMergeRequestDiscussionInfoResponse::unsetmoderationResult()
+void UpdateMergeRequestDiscussionInfoResponse::unsetremovedLines()
 {
-    moderationResultIsSet_ = false;
-}
-
-int64_t UpdateMergeRequestDiscussionInfoResponse::getModerationTime() const
-{
-    return moderationTime_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setModerationTime(int64_t value)
-{
-    moderationTime_ = value;
-    moderationTimeIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::moderationTimeIsSet() const
-{
-    return moderationTimeIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetmoderationTime()
-{
-    moderationTimeIsSet_ = false;
-}
-
-int32_t UpdateMergeRequestDiscussionInfoResponse::getModerationStatus() const
-{
-    return moderationStatus_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::setModerationStatus(int32_t value)
-{
-    moderationStatus_ = value;
-    moderationStatusIsSet_ = true;
-}
-
-bool UpdateMergeRequestDiscussionInfoResponse::moderationStatusIsSet() const
-{
-    return moderationStatusIsSet_;
-}
-
-void UpdateMergeRequestDiscussionInfoResponse::unsetmoderationStatus()
-{
-    moderationStatusIsSet_ = false;
+    removedLinesIsSet_ = false;
 }
 
 }

@@ -128,6 +128,15 @@ public:
     void unsetprojectId();
     void setProjectId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 是否锁定。 **取值范围：** - true，是。 - false，否。
+    /// </summary>
+
+    bool isLocked() const;
+    bool lockedIsSet() const;
+    void unsetlocked();
+    void setLocked(bool value);
+
 
 protected:
     std::string owner_;
@@ -150,6 +159,8 @@ protected:
     bool projectNameIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
+    bool locked_;
+    bool lockedIsSet_;
 
 };
 

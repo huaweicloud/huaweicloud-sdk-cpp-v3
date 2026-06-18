@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/codeartsrepo/v4/model/MergeRequestVoteReviewerDto.h"
+#include "huaweicloud/codeartsrepo/v4/model/MergeRequestApprovalUserDto.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsrepo {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-MergeRequestVoteReviewerDto::MergeRequestVoteReviewerDto()
+MergeRequestApprovalUserDto::MergeRequestApprovalUserDto()
 {
     id_ = 0;
     idIsSet_ = false;
@@ -38,17 +38,17 @@ MergeRequestVoteReviewerDto::MergeRequestVoteReviewerDto()
     tenantNameIsSet_ = false;
     errorMessage_ = "";
     errorMessageIsSet_ = false;
-    isCommitter_ = false;
-    isCommitterIsSet_ = false;
+    hasPermission_ = false;
+    hasPermissionIsSet_ = false;
 }
 
-MergeRequestVoteReviewerDto::~MergeRequestVoteReviewerDto() = default;
+MergeRequestApprovalUserDto::~MergeRequestApprovalUserDto() = default;
 
-void MergeRequestVoteReviewerDto::validate()
+void MergeRequestApprovalUserDto::validate()
 {
 }
 
-web::json::value MergeRequestVoteReviewerDto::toJson() const
+web::json::value MergeRequestApprovalUserDto::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -91,13 +91,13 @@ web::json::value MergeRequestVoteReviewerDto::toJson() const
     if(errorMessageIsSet_) {
         val[utility::conversions::to_string_t("error_message")] = ModelBase::toJson(errorMessage_);
     }
-    if(isCommitterIsSet_) {
-        val[utility::conversions::to_string_t("is_committer")] = ModelBase::toJson(isCommitter_);
+    if(hasPermissionIsSet_) {
+        val[utility::conversions::to_string_t("has_permission")] = ModelBase::toJson(hasPermission_);
     }
 
     return val;
 }
-bool MergeRequestVoteReviewerDto::fromJson(const web::json::value& val)
+bool MergeRequestApprovalUserDto::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -218,311 +218,311 @@ bool MergeRequestVoteReviewerDto::fromJson(const web::json::value& val)
             setErrorMessage(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("is_committer"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_committer"));
+    if(val.has_field(utility::conversions::to_string_t("has_permission"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("has_permission"));
         if(!fieldValue.is_null())
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsCommitter(refVal);
+            setHasPermission(refVal);
         }
     }
     return ok;
 }
 
 
-int32_t MergeRequestVoteReviewerDto::getId() const
+int32_t MergeRequestApprovalUserDto::getId() const
 {
     return id_;
 }
 
-void MergeRequestVoteReviewerDto::setId(int32_t value)
+void MergeRequestApprovalUserDto::setId(int32_t value)
 {
     id_ = value;
     idIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::idIsSet() const
+bool MergeRequestApprovalUserDto::idIsSet() const
 {
     return idIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetid()
+void MergeRequestApprovalUserDto::unsetid()
 {
     idIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getName() const
+std::string MergeRequestApprovalUserDto::getName() const
 {
     return name_;
 }
 
-void MergeRequestVoteReviewerDto::setName(const std::string& value)
+void MergeRequestApprovalUserDto::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::nameIsSet() const
+bool MergeRequestApprovalUserDto::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetname()
+void MergeRequestApprovalUserDto::unsetname()
 {
     nameIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getUsername() const
+std::string MergeRequestApprovalUserDto::getUsername() const
 {
     return username_;
 }
 
-void MergeRequestVoteReviewerDto::setUsername(const std::string& value)
+void MergeRequestApprovalUserDto::setUsername(const std::string& value)
 {
     username_ = value;
     usernameIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::usernameIsSet() const
+bool MergeRequestApprovalUserDto::usernameIsSet() const
 {
     return usernameIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetusername()
+void MergeRequestApprovalUserDto::unsetusername()
 {
     usernameIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getState() const
+std::string MergeRequestApprovalUserDto::getState() const
 {
     return state_;
 }
 
-void MergeRequestVoteReviewerDto::setState(const std::string& value)
+void MergeRequestApprovalUserDto::setState(const std::string& value)
 {
     state_ = value;
     stateIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::stateIsSet() const
+bool MergeRequestApprovalUserDto::stateIsSet() const
 {
     return stateIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetstate()
+void MergeRequestApprovalUserDto::unsetstate()
 {
     stateIsSet_ = false;
 }
 
-int32_t MergeRequestVoteReviewerDto::getServiceLicenseStatus() const
+int32_t MergeRequestApprovalUserDto::getServiceLicenseStatus() const
 {
     return serviceLicenseStatus_;
 }
 
-void MergeRequestVoteReviewerDto::setServiceLicenseStatus(int32_t value)
+void MergeRequestApprovalUserDto::setServiceLicenseStatus(int32_t value)
 {
     serviceLicenseStatus_ = value;
     serviceLicenseStatusIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::serviceLicenseStatusIsSet() const
+bool MergeRequestApprovalUserDto::serviceLicenseStatusIsSet() const
 {
     return serviceLicenseStatusIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetserviceLicenseStatus()
+void MergeRequestApprovalUserDto::unsetserviceLicenseStatus()
 {
     serviceLicenseStatusIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getAvatarUrl() const
+std::string MergeRequestApprovalUserDto::getAvatarUrl() const
 {
     return avatarUrl_;
 }
 
-void MergeRequestVoteReviewerDto::setAvatarUrl(const std::string& value)
+void MergeRequestApprovalUserDto::setAvatarUrl(const std::string& value)
 {
     avatarUrl_ = value;
     avatarUrlIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::avatarUrlIsSet() const
+bool MergeRequestApprovalUserDto::avatarUrlIsSet() const
 {
     return avatarUrlIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetavatarUrl()
+void MergeRequestApprovalUserDto::unsetavatarUrl()
 {
     avatarUrlIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getAvatarPath() const
+std::string MergeRequestApprovalUserDto::getAvatarPath() const
 {
     return avatarPath_;
 }
 
-void MergeRequestVoteReviewerDto::setAvatarPath(const std::string& value)
+void MergeRequestApprovalUserDto::setAvatarPath(const std::string& value)
 {
     avatarPath_ = value;
     avatarPathIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::avatarPathIsSet() const
+bool MergeRequestApprovalUserDto::avatarPathIsSet() const
 {
     return avatarPathIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetavatarPath()
+void MergeRequestApprovalUserDto::unsetavatarPath()
 {
     avatarPathIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getEmail() const
+std::string MergeRequestApprovalUserDto::getEmail() const
 {
     return email_;
 }
 
-void MergeRequestVoteReviewerDto::setEmail(const std::string& value)
+void MergeRequestApprovalUserDto::setEmail(const std::string& value)
 {
     email_ = value;
     emailIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::emailIsSet() const
+bool MergeRequestApprovalUserDto::emailIsSet() const
 {
     return emailIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetemail()
+void MergeRequestApprovalUserDto::unsetemail()
 {
     emailIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getNameCn() const
+std::string MergeRequestApprovalUserDto::getNameCn() const
 {
     return nameCn_;
 }
 
-void MergeRequestVoteReviewerDto::setNameCn(const std::string& value)
+void MergeRequestApprovalUserDto::setNameCn(const std::string& value)
 {
     nameCn_ = value;
     nameCnIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::nameCnIsSet() const
+bool MergeRequestApprovalUserDto::nameCnIsSet() const
 {
     return nameCnIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetnameCn()
+void MergeRequestApprovalUserDto::unsetnameCn()
 {
     nameCnIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getWebUrl() const
+std::string MergeRequestApprovalUserDto::getWebUrl() const
 {
     return webUrl_;
 }
 
-void MergeRequestVoteReviewerDto::setWebUrl(const std::string& value)
+void MergeRequestApprovalUserDto::setWebUrl(const std::string& value)
 {
     webUrl_ = value;
     webUrlIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::webUrlIsSet() const
+bool MergeRequestApprovalUserDto::webUrlIsSet() const
 {
     return webUrlIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetwebUrl()
+void MergeRequestApprovalUserDto::unsetwebUrl()
 {
     webUrlIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getNickName() const
+std::string MergeRequestApprovalUserDto::getNickName() const
 {
     return nickName_;
 }
 
-void MergeRequestVoteReviewerDto::setNickName(const std::string& value)
+void MergeRequestApprovalUserDto::setNickName(const std::string& value)
 {
     nickName_ = value;
     nickNameIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::nickNameIsSet() const
+bool MergeRequestApprovalUserDto::nickNameIsSet() const
 {
     return nickNameIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetnickName()
+void MergeRequestApprovalUserDto::unsetnickName()
 {
     nickNameIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getTenantName() const
+std::string MergeRequestApprovalUserDto::getTenantName() const
 {
     return tenantName_;
 }
 
-void MergeRequestVoteReviewerDto::setTenantName(const std::string& value)
+void MergeRequestApprovalUserDto::setTenantName(const std::string& value)
 {
     tenantName_ = value;
     tenantNameIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::tenantNameIsSet() const
+bool MergeRequestApprovalUserDto::tenantNameIsSet() const
 {
     return tenantNameIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsettenantName()
+void MergeRequestApprovalUserDto::unsettenantName()
 {
     tenantNameIsSet_ = false;
 }
 
-std::string MergeRequestVoteReviewerDto::getErrorMessage() const
+std::string MergeRequestApprovalUserDto::getErrorMessage() const
 {
     return errorMessage_;
 }
 
-void MergeRequestVoteReviewerDto::setErrorMessage(const std::string& value)
+void MergeRequestApprovalUserDto::setErrorMessage(const std::string& value)
 {
     errorMessage_ = value;
     errorMessageIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::errorMessageIsSet() const
+bool MergeRequestApprovalUserDto::errorMessageIsSet() const
 {
     return errorMessageIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unseterrorMessage()
+void MergeRequestApprovalUserDto::unseterrorMessage()
 {
     errorMessageIsSet_ = false;
 }
 
-bool MergeRequestVoteReviewerDto::isIsCommitter() const
+bool MergeRequestApprovalUserDto::isHasPermission() const
 {
-    return isCommitter_;
+    return hasPermission_;
 }
 
-void MergeRequestVoteReviewerDto::setIsCommitter(bool value)
+void MergeRequestApprovalUserDto::setHasPermission(bool value)
 {
-    isCommitter_ = value;
-    isCommitterIsSet_ = true;
+    hasPermission_ = value;
+    hasPermissionIsSet_ = true;
 }
 
-bool MergeRequestVoteReviewerDto::isCommitterIsSet() const
+bool MergeRequestApprovalUserDto::hasPermissionIsSet() const
 {
-    return isCommitterIsSet_;
+    return hasPermissionIsSet_;
 }
 
-void MergeRequestVoteReviewerDto::unsetisCommitter()
+void MergeRequestApprovalUserDto::unsethasPermission()
 {
-    isCommitterIsSet_ = false;
+    hasPermissionIsSet_ = false;
 }
 
 }

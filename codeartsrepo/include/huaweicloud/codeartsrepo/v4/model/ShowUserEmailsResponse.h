@@ -110,6 +110,15 @@ public:
     void unsetcommitEmail();
     void setCommitEmail(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 是否为默认邮箱。
+    /// </summary>
+
+    bool isIsDefault() const;
+    bool isDefaultIsSet() const;
+    void unsetisDefault();
+    void setIsDefault(bool value);
+
 
 protected:
     int32_t id_;
@@ -128,6 +137,8 @@ protected:
     bool lastActivityOnIsSet_;
     std::string commitEmail_;
     bool commitEmailIsSet_;
+    bool isDefault_;
+    bool isDefaultIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

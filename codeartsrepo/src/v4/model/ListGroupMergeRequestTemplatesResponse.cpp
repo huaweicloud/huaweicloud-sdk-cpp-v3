@@ -13,6 +13,8 @@ namespace Model {
 ListGroupMergeRequestTemplatesResponse::ListGroupMergeRequestTemplatesResponse()
 {
     bodyIsSet_ = false;
+    xTotal_ = "";
+    xTotalIsSet_ = false;
 }
 
 ListGroupMergeRequestTemplatesResponse::~ListGroupMergeRequestTemplatesResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ListGroupMergeRequestTemplatesResponse::toJson() const
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
+    if(xTotalIsSet_) {
+        val[utility::conversions::to_string_t("X-Total")] = ModelBase::toJson(xTotal_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ListGroupMergeRequestTemplatesResponse::fromJson(const web::json::value& va
             std::vector<GroupMergeRequestTemplateDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Total"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXTotal(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ListGroupMergeRequestTemplatesResponse::bodyIsSet() const
 void ListGroupMergeRequestTemplatesResponse::unsetbody()
 {
     bodyIsSet_ = false;
+}
+
+std::string ListGroupMergeRequestTemplatesResponse::getXTotal() const
+{
+    return xTotal_;
+}
+
+void ListGroupMergeRequestTemplatesResponse::setXTotal(const std::string& value)
+{
+    xTotal_ = value;
+    xTotalIsSet_ = true;
+}
+
+bool ListGroupMergeRequestTemplatesResponse::xTotalIsSet() const
+{
+    return xTotalIsSet_;
+}
+
+void ListGroupMergeRequestTemplatesResponse::unsetxTotal()
+{
+    xTotalIsSet_ = false;
 }
 
 }

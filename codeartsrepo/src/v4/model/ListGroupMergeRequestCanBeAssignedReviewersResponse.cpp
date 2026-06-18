@@ -38,8 +38,8 @@ ListGroupMergeRequestCanBeAssignedReviewersResponse::ListGroupMergeRequestCanBeA
     tenantNameIsSet_ = false;
     errorMessage_ = "";
     errorMessageIsSet_ = false;
-    isCommitter_ = false;
-    isCommitterIsSet_ = false;
+    xTotal_ = "";
+    xTotalIsSet_ = false;
 }
 
 ListGroupMergeRequestCanBeAssignedReviewersResponse::~ListGroupMergeRequestCanBeAssignedReviewersResponse() = default;
@@ -91,8 +91,8 @@ web::json::value ListGroupMergeRequestCanBeAssignedReviewersResponse::toJson() c
     if(errorMessageIsSet_) {
         val[utility::conversions::to_string_t("error_message")] = ModelBase::toJson(errorMessage_);
     }
-    if(isCommitterIsSet_) {
-        val[utility::conversions::to_string_t("is_committer")] = ModelBase::toJson(isCommitter_);
+    if(xTotalIsSet_) {
+        val[utility::conversions::to_string_t("X-Total")] = ModelBase::toJson(xTotal_);
     }
 
     return val;
@@ -218,13 +218,13 @@ bool ListGroupMergeRequestCanBeAssignedReviewersResponse::fromJson(const web::js
             setErrorMessage(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("is_committer"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_committer"));
+    if(val.has_field(utility::conversions::to_string_t("X-Total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Total"));
         if(!fieldValue.is_null())
         {
-            bool refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsCommitter(refVal);
+            setXTotal(refVal);
         }
     }
     return ok;
@@ -504,25 +504,25 @@ void ListGroupMergeRequestCanBeAssignedReviewersResponse::unseterrorMessage()
     errorMessageIsSet_ = false;
 }
 
-bool ListGroupMergeRequestCanBeAssignedReviewersResponse::isIsCommitter() const
+std::string ListGroupMergeRequestCanBeAssignedReviewersResponse::getXTotal() const
 {
-    return isCommitter_;
+    return xTotal_;
 }
 
-void ListGroupMergeRequestCanBeAssignedReviewersResponse::setIsCommitter(bool value)
+void ListGroupMergeRequestCanBeAssignedReviewersResponse::setXTotal(const std::string& value)
 {
-    isCommitter_ = value;
-    isCommitterIsSet_ = true;
+    xTotal_ = value;
+    xTotalIsSet_ = true;
 }
 
-bool ListGroupMergeRequestCanBeAssignedReviewersResponse::isCommitterIsSet() const
+bool ListGroupMergeRequestCanBeAssignedReviewersResponse::xTotalIsSet() const
 {
-    return isCommitterIsSet_;
+    return xTotalIsSet_;
 }
 
-void ListGroupMergeRequestCanBeAssignedReviewersResponse::unsetisCommitter()
+void ListGroupMergeRequestCanBeAssignedReviewersResponse::unsetxTotal()
 {
-    isCommitterIsSet_ = false;
+    xTotalIsSet_ = false;
 }
 
 }

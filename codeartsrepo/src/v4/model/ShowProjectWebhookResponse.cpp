@@ -18,6 +18,7 @@ ShowProjectWebhookResponse::ShowProjectWebhookResponse()
     pushEventsIsSet_ = false;
     pushEventsBranchRegexFilter_ = "";
     pushEventsBranchRegexFilterIsSet_ = false;
+    notePlainTextFilterIsSet_ = false;
     tagPushEvents_ = false;
     tagPushEventsIsSet_ = false;
     mergeRequestsEvents_ = false;
@@ -32,12 +33,17 @@ ShowProjectWebhookResponse::ShowProjectWebhookResponse()
     nameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    eventCfgsIsSet_ = false;
+    projectCfgsIsSet_ = false;
+    branchCfgsIsSet_ = false;
     id_ = 0;
     idIsSet_ = false;
     createdAt_ = "";
     createdAtIsSet_ = false;
     updatedAt_ = "";
     updatedAtIsSet_ = false;
+    service_ = "";
+    serviceIsSet_ = false;
 }
 
 ShowProjectWebhookResponse::~ShowProjectWebhookResponse() = default;
@@ -58,6 +64,9 @@ web::json::value ShowProjectWebhookResponse::toJson() const
     }
     if(pushEventsBranchRegexFilterIsSet_) {
         val[utility::conversions::to_string_t("push_events_branch_regex_filter")] = ModelBase::toJson(pushEventsBranchRegexFilter_);
+    }
+    if(notePlainTextFilterIsSet_) {
+        val[utility::conversions::to_string_t("note_plain_text_filter")] = ModelBase::toJson(notePlainTextFilter_);
     }
     if(tagPushEventsIsSet_) {
         val[utility::conversions::to_string_t("tag_push_events")] = ModelBase::toJson(tagPushEvents_);
@@ -80,6 +89,15 @@ web::json::value ShowProjectWebhookResponse::toJson() const
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
+    if(eventCfgsIsSet_) {
+        val[utility::conversions::to_string_t("event_cfgs")] = ModelBase::toJson(eventCfgs_);
+    }
+    if(projectCfgsIsSet_) {
+        val[utility::conversions::to_string_t("project_cfgs")] = ModelBase::toJson(projectCfgs_);
+    }
+    if(branchCfgsIsSet_) {
+        val[utility::conversions::to_string_t("branch_cfgs")] = ModelBase::toJson(branchCfgs_);
+    }
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
     }
@@ -88,6 +106,9 @@ web::json::value ShowProjectWebhookResponse::toJson() const
     }
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
+    }
+    if(serviceIsSet_) {
+        val[utility::conversions::to_string_t("service")] = ModelBase::toJson(service_);
     }
 
     return val;
@@ -121,6 +142,15 @@ bool ShowProjectWebhookResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPushEventsBranchRegexFilter(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("note_plain_text_filter"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("note_plain_text_filter"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNotePlainTextFilter(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tag_push_events"))) {
@@ -186,6 +216,33 @@ bool ShowProjectWebhookResponse::fromJson(const web::json::value& val)
             setDescription(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("event_cfgs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("event_cfgs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<WebHookEventCfgDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEventCfgs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("project_cfgs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_cfgs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<WebHookBranchCfgDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectCfgs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("branch_cfgs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("branch_cfgs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<WebHookBranchCfgDto> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBranchCfgs(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
         if(!fieldValue.is_null())
@@ -211,6 +268,15 @@ bool ShowProjectWebhookResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("service"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setService(refVal);
         }
     }
     return ok;
@@ -278,6 +344,27 @@ bool ShowProjectWebhookResponse::pushEventsBranchRegexFilterIsSet() const
 void ShowProjectWebhookResponse::unsetpushEventsBranchRegexFilter()
 {
     pushEventsBranchRegexFilterIsSet_ = false;
+}
+
+std::vector<std::string>& ShowProjectWebhookResponse::getNotePlainTextFilter()
+{
+    return notePlainTextFilter_;
+}
+
+void ShowProjectWebhookResponse::setNotePlainTextFilter(const std::vector<std::string>& value)
+{
+    notePlainTextFilter_ = value;
+    notePlainTextFilterIsSet_ = true;
+}
+
+bool ShowProjectWebhookResponse::notePlainTextFilterIsSet() const
+{
+    return notePlainTextFilterIsSet_;
+}
+
+void ShowProjectWebhookResponse::unsetnotePlainTextFilter()
+{
+    notePlainTextFilterIsSet_ = false;
 }
 
 bool ShowProjectWebhookResponse::isTagPushEvents() const
@@ -427,6 +514,69 @@ void ShowProjectWebhookResponse::unsetdescription()
     descriptionIsSet_ = false;
 }
 
+std::vector<WebHookEventCfgDto>& ShowProjectWebhookResponse::getEventCfgs()
+{
+    return eventCfgs_;
+}
+
+void ShowProjectWebhookResponse::setEventCfgs(const std::vector<WebHookEventCfgDto>& value)
+{
+    eventCfgs_ = value;
+    eventCfgsIsSet_ = true;
+}
+
+bool ShowProjectWebhookResponse::eventCfgsIsSet() const
+{
+    return eventCfgsIsSet_;
+}
+
+void ShowProjectWebhookResponse::unseteventCfgs()
+{
+    eventCfgsIsSet_ = false;
+}
+
+std::vector<WebHookBranchCfgDto>& ShowProjectWebhookResponse::getProjectCfgs()
+{
+    return projectCfgs_;
+}
+
+void ShowProjectWebhookResponse::setProjectCfgs(const std::vector<WebHookBranchCfgDto>& value)
+{
+    projectCfgs_ = value;
+    projectCfgsIsSet_ = true;
+}
+
+bool ShowProjectWebhookResponse::projectCfgsIsSet() const
+{
+    return projectCfgsIsSet_;
+}
+
+void ShowProjectWebhookResponse::unsetprojectCfgs()
+{
+    projectCfgsIsSet_ = false;
+}
+
+std::vector<WebHookBranchCfgDto>& ShowProjectWebhookResponse::getBranchCfgs()
+{
+    return branchCfgs_;
+}
+
+void ShowProjectWebhookResponse::setBranchCfgs(const std::vector<WebHookBranchCfgDto>& value)
+{
+    branchCfgs_ = value;
+    branchCfgsIsSet_ = true;
+}
+
+bool ShowProjectWebhookResponse::branchCfgsIsSet() const
+{
+    return branchCfgsIsSet_;
+}
+
+void ShowProjectWebhookResponse::unsetbranchCfgs()
+{
+    branchCfgsIsSet_ = false;
+}
+
 int32_t ShowProjectWebhookResponse::getId() const
 {
     return id_;
@@ -488,6 +638,27 @@ bool ShowProjectWebhookResponse::updatedAtIsSet() const
 void ShowProjectWebhookResponse::unsetupdatedAt()
 {
     updatedAtIsSet_ = false;
+}
+
+std::string ShowProjectWebhookResponse::getService() const
+{
+    return service_;
+}
+
+void ShowProjectWebhookResponse::setService(const std::string& value)
+{
+    service_ = value;
+    serviceIsSet_ = true;
+}
+
+bool ShowProjectWebhookResponse::serviceIsSet() const
+{
+    return serviceIsSet_;
+}
+
+void ShowProjectWebhookResponse::unsetservice()
+{
+    serviceIsSet_ = false;
 }
 
 }

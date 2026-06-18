@@ -48,7 +48,7 @@ bool ListMergeRequestApproversResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("required_approvers_list"));
         if(!fieldValue.is_null())
         {
-            std::vector<UserBasicDto> refVal;
+            std::vector<MergeRequestApprovalUserDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRequiredApproversList(refVal);
         }
@@ -57,7 +57,7 @@ bool ListMergeRequestApproversResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("optional_approvers_list"));
         if(!fieldValue.is_null())
         {
-            std::vector<UserBasicDto> refVal;
+            std::vector<MergeRequestApprovalUserDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOptionalApproversList(refVal);
         }
@@ -75,12 +75,12 @@ bool ListMergeRequestApproversResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<UserBasicDto>& ListMergeRequestApproversResponse::getRequiredApproversList()
+std::vector<MergeRequestApprovalUserDto>& ListMergeRequestApproversResponse::getRequiredApproversList()
 {
     return requiredApproversList_;
 }
 
-void ListMergeRequestApproversResponse::setRequiredApproversList(const std::vector<UserBasicDto>& value)
+void ListMergeRequestApproversResponse::setRequiredApproversList(const std::vector<MergeRequestApprovalUserDto>& value)
 {
     requiredApproversList_ = value;
     requiredApproversListIsSet_ = true;
@@ -96,12 +96,12 @@ void ListMergeRequestApproversResponse::unsetrequiredApproversList()
     requiredApproversListIsSet_ = false;
 }
 
-std::vector<UserBasicDto>& ListMergeRequestApproversResponse::getOptionalApproversList()
+std::vector<MergeRequestApprovalUserDto>& ListMergeRequestApproversResponse::getOptionalApproversList()
 {
     return optionalApproversList_;
 }
 
-void ListMergeRequestApproversResponse::setOptionalApproversList(const std::vector<UserBasicDto>& value)
+void ListMergeRequestApproversResponse::setOptionalApproversList(const std::vector<MergeRequestApprovalUserDto>& value)
 {
     optionalApproversList_ = value;
     optionalApproversListIsSet_ = true;

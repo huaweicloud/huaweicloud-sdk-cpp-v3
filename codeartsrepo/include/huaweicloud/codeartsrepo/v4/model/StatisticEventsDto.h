@@ -39,7 +39,7 @@ public:
     /// StatisticEventsDto members
 
     /// <summary>
-    /// **参数解释：** 统计ID。
+    /// **参数解释：** 统计ID。 **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 用户ID。
+    /// **参数解释：** 用户ID。 **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getUserId() const;
@@ -57,7 +57,7 @@ public:
     void setUserId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 仓库ID。
+    /// **参数解释：** 仓库ID。 **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getProjectId() const;
@@ -66,7 +66,7 @@ public:
     void setProjectId(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 分支名。 **取值范围：** 最小1个字节，最大200字节
+    /// **参数解释：** 分支名。 **取值范围：** 最小1个字节，最大200字节 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getBranch() const;
@@ -75,7 +75,7 @@ public:
     void setBranch(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 统计状态。
+    /// **参数解释：** 统计状态。 **默认取值：** 0
     /// </summary>
 
     std::string getStatus() const;

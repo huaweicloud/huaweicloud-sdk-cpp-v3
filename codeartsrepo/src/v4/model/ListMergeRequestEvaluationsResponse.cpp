@@ -26,6 +26,8 @@ ListMergeRequestEvaluationsResponse::ListMergeRequestEvaluationsResponse()
     contentIsSet_ = false;
     userIsSet_ = false;
     customEvaluationsIsSet_ = false;
+    xTotal_ = "";
+    xTotalIsSet_ = false;
 }
 
 ListMergeRequestEvaluationsResponse::~ListMergeRequestEvaluationsResponse() = default;
@@ -61,6 +63,9 @@ web::json::value ListMergeRequestEvaluationsResponse::toJson() const
     }
     if(customEvaluationsIsSet_) {
         val[utility::conversions::to_string_t("custom_evaluations")] = ModelBase::toJson(customEvaluations_);
+    }
+    if(xTotalIsSet_) {
+        val[utility::conversions::to_string_t("X-Total")] = ModelBase::toJson(xTotal_);
     }
 
     return val;
@@ -139,6 +144,15 @@ bool ListMergeRequestEvaluationsResponse::fromJson(const web::json::value& val)
             std::vector<CustomEvaluationDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCustomEvaluations(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Total"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXTotal(refVal);
         }
     }
     return ok;
@@ -311,6 +325,27 @@ bool ListMergeRequestEvaluationsResponse::customEvaluationsIsSet() const
 void ListMergeRequestEvaluationsResponse::unsetcustomEvaluations()
 {
     customEvaluationsIsSet_ = false;
+}
+
+std::string ListMergeRequestEvaluationsResponse::getXTotal() const
+{
+    return xTotal_;
+}
+
+void ListMergeRequestEvaluationsResponse::setXTotal(const std::string& value)
+{
+    xTotal_ = value;
+    xTotalIsSet_ = true;
+}
+
+bool ListMergeRequestEvaluationsResponse::xTotalIsSet() const
+{
+    return xTotalIsSet_;
+}
+
+void ListMergeRequestEvaluationsResponse::unsetxTotal()
+{
+    xTotalIsSet_ = false;
 }
 
 }

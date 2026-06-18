@@ -114,6 +114,15 @@ public:
     void unsetcustomEvaluations();
     void setCustomEvaluations(const std::vector<CustomEvaluationDto>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXTotal() const;
+    bool xTotalIsSet() const;
+    void unsetxTotal();
+    void setXTotal(const std::string& value);
+
 
 protected:
     int32_t id_;
@@ -132,6 +141,8 @@ protected:
     bool userIsSet_;
     std::vector<CustomEvaluationDto> customEvaluations_;
     bool customEvaluationsIsSet_;
+    std::string xTotal_;
+    bool xTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/codeartsrepo/v4/model/RepositoryMergeRequestTemplateDto.h>
+#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -48,10 +49,21 @@ public:
     void unsetbody();
     void setBody(const std::vector<RepositoryMergeRequestTemplateDto>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXTotal() const;
+    bool xTotalIsSet() const;
+    void unsetxTotal();
+    void setXTotal(const std::string& value);
+
 
 protected:
     std::vector<RepositoryMergeRequestTemplateDto> body_;
     bool bodyIsSet_;
+    std::string xTotal_;
+    bool xTotalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

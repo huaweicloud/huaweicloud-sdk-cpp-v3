@@ -74,6 +74,10 @@ RepositoryBasicDto::RepositoryBasicDto()
     creatorId_ = 0;
     creatorIdIsSet_ = false;
     forkedFromRepositoryIsSet_ = false;
+    encryptionStatus_ = "";
+    encryptionStatusIsSet_ = false;
+    repoEncryptionEnabled_ = false;
+    repoEncryptionEnabledIsSet_ = false;
 }
 
 RepositoryBasicDto::~RepositoryBasicDto() = default;
@@ -184,6 +188,12 @@ web::json::value RepositoryBasicDto::toJson() const
     }
     if(forkedFromRepositoryIsSet_) {
         val[utility::conversions::to_string_t("forked_from_repository")] = ModelBase::toJson(forkedFromRepository_);
+    }
+    if(encryptionStatusIsSet_) {
+        val[utility::conversions::to_string_t("encryption_status")] = ModelBase::toJson(encryptionStatus_);
+    }
+    if(repoEncryptionEnabledIsSet_) {
+        val[utility::conversions::to_string_t("repo_encryption_enabled")] = ModelBase::toJson(repoEncryptionEnabled_);
     }
 
     return val;
@@ -487,6 +497,24 @@ bool RepositoryBasicDto::fromJson(const web::json::value& val)
             RepositorySimpleDto refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setForkedFromRepository(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("encryption_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encryption_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEncryptionStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repo_encryption_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repo_encryption_enabled"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepoEncryptionEnabled(refVal);
         }
     }
     return ok;
@@ -1184,6 +1212,48 @@ bool RepositoryBasicDto::forkedFromRepositoryIsSet() const
 void RepositoryBasicDto::unsetforkedFromRepository()
 {
     forkedFromRepositoryIsSet_ = false;
+}
+
+std::string RepositoryBasicDto::getEncryptionStatus() const
+{
+    return encryptionStatus_;
+}
+
+void RepositoryBasicDto::setEncryptionStatus(const std::string& value)
+{
+    encryptionStatus_ = value;
+    encryptionStatusIsSet_ = true;
+}
+
+bool RepositoryBasicDto::encryptionStatusIsSet() const
+{
+    return encryptionStatusIsSet_;
+}
+
+void RepositoryBasicDto::unsetencryptionStatus()
+{
+    encryptionStatusIsSet_ = false;
+}
+
+bool RepositoryBasicDto::isRepoEncryptionEnabled() const
+{
+    return repoEncryptionEnabled_;
+}
+
+void RepositoryBasicDto::setRepoEncryptionEnabled(bool value)
+{
+    repoEncryptionEnabled_ = value;
+    repoEncryptionEnabledIsSet_ = true;
+}
+
+bool RepositoryBasicDto::repoEncryptionEnabledIsSet() const
+{
+    return repoEncryptionEnabledIsSet_;
+}
+
+void RepositoryBasicDto::unsetrepoEncryptionEnabled()
+{
+    repoEncryptionEnabledIsSet_ = false;
 }
 
 }

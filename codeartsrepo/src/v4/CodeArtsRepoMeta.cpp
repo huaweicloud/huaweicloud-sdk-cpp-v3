@@ -34,6 +34,9 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListCommitAssociatedRefs() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
@@ -487,6 +490,9 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListFiles() {
     reqDefBuilder.withRequestField(FieldDef().withName("RefName")
                   .withJsonTag("ref_name")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Search")
+                  .withJsonTag("search")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
@@ -708,6 +714,26 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListGroupPermissionResources() 
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForListGroupProtectedBranches() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Search")
+                  .withJsonTag("search")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("UserActions")
+                  .withJsonTag("user_actions")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForListGroupSubgroupsAndRepositories() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Filter")
@@ -895,6 +921,25 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListGroupProtectedRefsUserGroup
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Search")
                   .withJsonTag("search")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForListManagementUsers() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
@@ -1157,6 +1202,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListCommitAssociatedMergeReques
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1174,6 +1224,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListDiscussionTemplates() {
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1188,6 +1243,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListGroupMergeRequestApproverSe
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1199,6 +1259,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListGroupMergeRequestCanBeAssig
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1216,6 +1281,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListGroupMergeRequestTemplates(
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1230,6 +1300,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListGroupMergeRequestValidAssig
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1247,6 +1322,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestApproverSetting
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1307,6 +1387,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestChanges() {
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1333,6 +1418,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestChangesTrees() 
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1350,6 +1440,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestCommits() {
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1367,6 +1462,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestConflictFiles()
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1378,6 +1478,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestEvaluations() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1392,6 +1497,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestParticipants() 
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1443,6 +1553,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestTemplates() {
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1466,14 +1581,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestValidAssignedCa
     reqDefBuilder.withRequestField(FieldDef().withName("SearchByNameList")
                   .withJsonTag("search_by_name_list")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("TargetProjectId")
-                  .withJsonTag("target_project_id")
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetRepositoryId")
+                  .withJsonTag("target_repository_id")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("View")
                   .withJsonTag("view")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Mode")
-                  .withJsonTag("mode")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("OnlyDevelopers")
                   .withJsonTag("only_developers")
@@ -1481,6 +1593,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestValidAssignedCa
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1492,6 +1609,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListMergeRequestVersions() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1563,6 +1685,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListPersonalMergeRequests() {
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1577,6 +1704,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListProjectMergeRequestApprover
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1591,6 +1723,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListProjectMergeRequestCanBeAss
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1605,6 +1742,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListProjectMergeRequestCanBeAss
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1622,6 +1764,63 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListProjectMergeRequestTemplate
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForListProjectMergeRequests() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("State")
+                  .withJsonTag("state")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OrderBy")
+                  .withJsonTag("order_by")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Sort")
+                  .withJsonTag("sort")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AuthorId")
+                  .withJsonTag("author_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceBranch")
+                  .withJsonTag("source_branch")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetBranch")
+                  .withJsonTag("target_branch")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Search")
+                  .withJsonTag("search")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceRepositoryId")
+                  .withJsonTag("source_repository_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OnlyCount")
+                  .withJsonTag("only_count")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Labels")
+                  .withJsonTag("labels")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Topic")
+                  .withJsonTag("topic")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1666,6 +1865,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRepositoryMergeRequests() {
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xTotal").
+        withJsonTag("X-Total").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1985,6 +2189,15 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRepositoryResourcePermissio
 
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRepositoryPermissionInheritEnabled() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForUpdateGroupResourcePermissions() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -2361,26 +2574,6 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForUpdateProtectedTag() {
     return reqDefBuilder;
 }
 
-HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRefsList() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Search")
-                  .withJsonTag("search")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withResponseField(FieldDef().
-            withName("Body").
-            withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForBatchDeleteBranch() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -2455,6 +2648,26 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListBranches() {
         withJsonTag("X-Total").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRefsList() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Search")
+                  .withJsonTag("search")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -2929,6 +3142,32 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRepositoryLanguages() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRepositoryNavigationReferences() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Path")
+                  .withJsonTag("path")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Revision")
+                  .withJsonTag("revision")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Ref")
+                  .withJsonTag("ref")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Symbol")
+                  .withJsonTag("symbol")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Language")
+                  .withJsonTag("language")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Blob")
+                  .withJsonTag("blob")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FilePath")
+                  .withJsonTag("file_path")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRepositoryTemplates() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -3014,6 +3253,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListTrustedIpAddresses() {
 }
 
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForLockRepository() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForRebuildRepositoryNavigation() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -3140,6 +3384,19 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRemoteMirror() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRepoLastStatistics() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("BranchName")
+                  .withJsonTag("branch_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRepoStatisticsSummary() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRepository() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -3168,6 +3425,36 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRepositoryInheritSettingSou
     reqDefBuilder.withRequestField(FieldDef().withName("Name")
                   .withJsonTag("name")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRepositoryNavigationLanguage() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRepositoryNavigationOutline() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Revision")
+                  .withJsonTag("revision")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Ref")
+                  .withJsonTag("ref")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Language")
+                  .withJsonTag("language")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Blob")
+                  .withJsonTag("blob")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FilePath")
+                  .withJsonTag("file_path")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowRepositoryNavigationSchema() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -3221,6 +3508,15 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForStartRemoteMirrorSynchronizatio
 
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForSyncDeployKeyToSubmodules() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForTransferRepository() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -3325,6 +3621,11 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForAddTenantTrustedIpAddress() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForCreateTenantKmsGrant() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForDeleteTenantTrustedIpAddress() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -3336,6 +3637,40 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForExportTenantRepositories() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForListTenantCmks() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForListTenantEncryptedRepositories() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OrderBy")
+                  .withJsonTag("order_by")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Sort")
+                  .withJsonTag("sort")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -3364,6 +3699,9 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListTenantRepositories() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("SortField")
                   .withJsonTag("sort_field")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Locked")
+                  .withJsonTag("locked")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
@@ -3398,6 +3736,38 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListTenantTrustedIpAddresses() 
         withJsonTag("X-Total").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowProjectTenantSettings() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
+                  .withJsonTag("project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowTenantDevelopMode() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowTenantKmsGrant() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowTenantRepoEncryptionSetting() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsRepoMeta::genRequestDefForUpdateTenantRepoEncryptionSetting() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -3807,6 +4177,9 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRepositoryWebhookLogs() {
 
 HttpRequestDef CodeArtsRepoMeta::genRequestDefForListRepositoryWebhooks() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("IncludeSystem")
+                  .withJsonTag("include_system")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));

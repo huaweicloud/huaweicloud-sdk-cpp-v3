@@ -11,6 +11,7 @@
 
 #include <huaweicloud/codeartsrepo/v4/model/PushRuleDevelopersDto.h>
 #include <string>
+#include <huaweicloud/codeartsrepo/v4/model/ProjectEncryptionStatusBriefDto.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -94,6 +95,24 @@ public:
     void unsetcreateBranchWhitelistUsers();
     void setCreateBranchWhitelistUsers(const std::vector<PushRuleDevelopersDto>& value);
 
+    /// <summary>
+    /// **参数解释：** 是否开启仓库加密。 **约束限制：** 不涉及。 **取值范围：** - true，开启仓库加密。 - false，关闭仓库加密。
+    /// </summary>
+
+    bool isRepoEncryptionEnabled() const;
+    bool repoEncryptionEnabledIsSet() const;
+    void unsetrepoEncryptionEnabled();
+    void setRepoEncryptionEnabled(bool value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ProjectEncryptionStatusBriefDto getRepoEncryptionStatus() const;
+    bool repoEncryptionStatusIsSet() const;
+    void unsetrepoEncryptionStatus();
+    void setRepoEncryptionStatus(const ProjectEncryptionStatusBriefDto& value);
+
 
 protected:
     bool disableFork_;
@@ -108,6 +127,10 @@ protected:
     bool forbiddenDeveloperCreateBranchIsSet_;
     std::vector<PushRuleDevelopersDto> createBranchWhitelistUsers_;
     bool createBranchWhitelistUsersIsSet_;
+    bool repoEncryptionEnabled_;
+    bool repoEncryptionEnabledIsSet_;
+    ProjectEncryptionStatusBriefDto repoEncryptionStatus_;
+    bool repoEncryptionStatusIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

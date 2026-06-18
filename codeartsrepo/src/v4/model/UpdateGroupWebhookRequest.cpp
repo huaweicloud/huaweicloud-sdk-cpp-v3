@@ -67,7 +67,7 @@ bool UpdateGroupWebhookRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            WebhookParamsDto refVal;
+            WebhookParamsRequestDto refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -118,12 +118,12 @@ void UpdateGroupWebhookRequest::unsethookId()
     hookIdIsSet_ = false;
 }
 
-WebhookParamsDto UpdateGroupWebhookRequest::getBody() const
+WebhookParamsRequestDto UpdateGroupWebhookRequest::getBody() const
 {
     return body_;
 }
 
-void UpdateGroupWebhookRequest::setBody(const WebhookParamsDto& value)
+void UpdateGroupWebhookRequest::setBody(const WebhookParamsRequestDto& value)
 {
     body_ = value;
     bodyIsSet_ = true;

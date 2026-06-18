@@ -113,15 +113,6 @@ public:
     void setDiff(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 附件(弃用)。
-    /// </summary>
-
-    std::string getAttachment() const;
-    bool attachmentIsSet() const;
-    void unsetattachment();
-    void setAttachment(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -329,6 +320,15 @@ public:
     void setIsReply(bool value);
 
     /// <summary>
+    /// **参数解释：** 是否为AI工具提供的。
+    /// </summary>
+
+    bool isFromRobot() const;
+    bool fromRobotIsSet() const;
+    void unsetfromRobot();
+    void setFromRobot(bool value);
+
+    /// <summary>
     /// **参数解释：** 内容审核结果。
     /// </summary>
 
@@ -373,8 +373,6 @@ protected:
     bool diffFileIsSet_;
     std::string diff_;
     bool diffIsSet_;
-    std::string attachment_;
-    bool attachmentIsSet_;
     UserBasicDto author_;
     bool authorIsSet_;
     std::string createdAt_;
@@ -421,6 +419,8 @@ protected:
     bool proposerIsSet_;
     bool isReply_;
     bool isReplyIsSet_;
+    bool fromRobot_;
+    bool fromRobotIsSet_;
     bool moderationResult_;
     bool moderationResultIsSet_;
     int64_t moderationTime_;

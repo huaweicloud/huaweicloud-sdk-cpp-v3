@@ -1693,6 +1693,9 @@ std::shared_ptr<ShowTemplateDeployParamsResponse> RgcClient::showTemplateDeployP
     if (request.versionIsSet()) {
         localVarQueryParams["version"] = parameterToString(request.getVersion());
     }
+    if (request.accountIdIsSet()) {
+        localVarQueryParams["account_id"] = parameterToString(request.getAccountId());
+    }
 
     std::string localVarHttpBody;
 

@@ -9,9 +9,12 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartsrepo/v4/model/PositionDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/MergeRequestVersionParamsDto.h>
 #include <string>
+#include <huaweicloud/codeartsrepo/v4/model/MergeRequestBasicDiscussionDto.h>
+#include <vector>
 #include <huaweicloud/codeartsrepo/v4/model/UserBasicDto.h>
+#include <huaweicloud/codeartsrepo/v4/model/NoteDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -41,85 +44,40 @@ public:
     /// UpdateMergeRequestDiscussionInfoResponse members
 
     /// <summary>
-    /// **参数解释：** 评论id(主评论和回复不共用)。
+    /// **参数解释：** 检视意见id(主评论和回复共用)。
     /// </summary>
 
-    int32_t getId() const;
+    std::string getId() const;
     bool idIsSet() const;
     void unsetid();
-    void setId(int32_t value);
+    void setId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。
+    /// **参数解释：** 个人检视意见(不需要解决)。
     /// </summary>
 
-    std::string getType() const;
-    bool typeIsSet() const;
-    void unsettype();
-    void setType(const std::string& value);
+    bool isIndividualNote() const;
+    bool individualNoteIsSet() const;
+    void unsetindividualNote();
+    void setIndividualNote(bool value);
 
     /// <summary>
-    /// **参数解释：** 评论内容。
+    /// **参数解释：** 评论列表(主评+回复)。
     /// </summary>
 
-    std::string getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const std::string& value);
+    std::vector<NoteDto>& getNotes();
+    bool notesIsSet() const;
+    void unsetnotes();
+    void setNotes(const std::vector<NoteDto>& value);
 
     /// <summary>
-    /// **参数解释：** 附件(弃用)。
+    /// **参数解释：** 仓库id。
     /// </summary>
 
-    std::string getAttachment() const;
-    bool attachmentIsSet() const;
-    void unsetattachment();
-    void setAttachment(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    UserBasicDto getAuthor() const;
-    bool authorIsSet() const;
-    void unsetauthor();
-    void setAuthor(const UserBasicDto& value);
-
-    /// <summary>
-    /// **参数解释：** 创建时间。
-    /// </summary>
-
-    std::string getCreatedAt() const;
-    bool createdAtIsSet() const;
-    void unsetcreatedAt();
-    void setCreatedAt(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 更新时间。
-    /// </summary>
-
-    std::string getUpdatedAt() const;
-    bool updatedAtIsSet() const;
-    void unsetupdatedAt();
-    void setUpdatedAt(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 是否为系统添加的。
-    /// </summary>
-
-    bool isSystem() const;
-    bool systemIsSet() const;
-    void unsetsystem();
-    void setSystem(bool value);
-
-    /// <summary>
-    /// **参数解释：** 合并请求id或issue id。
-    /// </summary>
-
-    int32_t getNoteableId() const;
-    bool noteableIdIsSet() const;
-    void unsetnoteableId();
-    void setNoteableId(int32_t value);
+    int32_t getRepositoryId() const;
+    bool repositoryIdIsSet() const;
+    void unsetrepositoryId();
+    void setRepositoryId(int32_t value);
 
     /// <summary>
     /// **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
@@ -140,76 +98,58 @@ public:
     void setCommitId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 是否需要解决。
-    /// </summary>
-
-    bool isResolvable() const;
-    bool resolvableIsSet() const;
-    void unsetresolvable();
-    void setResolvable(bool value);
-
-    /// <summary>
-    /// **参数解释：** 是否为回复。
-    /// </summary>
-
-    bool isIsReply() const;
-    bool isReplyIsSet() const;
-    void unsetisReply();
-    void setIsReply(bool value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    UserBasicDto getResolvedBy() const;
-    bool resolvedByIsSet() const;
-    void unsetresolvedBy();
-    void setResolvedBy(const UserBasicDto& value);
-
-    /// <summary>
-    /// **参数解释：** 合并请求iid或issue iid。
-    /// </summary>
-
-    int32_t getNoteableIid() const;
-    bool noteableIidIsSet() const;
-    void unsetnoteableIid();
-    void setNoteableIid(int32_t value);
-
-    /// <summary>
-    /// **参数解释：** 检视意见id(主评论和回复共用)。
-    /// </summary>
-
-    std::string getDiscussionId() const;
-    bool discussionIdIsSet() const;
-    void unsetdiscussionId();
-    void setDiscussionId(const std::string& value);
-
-    /// <summary>
     /// **参数解释：** 仓库路径。
     /// </summary>
 
-    std::string getRepository() const;
-    bool repositoryIsSet() const;
-    void unsetrepository();
-    void setRepository(const std::string& value);
+    std::string getRepositoryFullPath() const;
+    bool repositoryFullPathIsSet() const;
+    void unsetrepositoryFullPath();
+    void setRepositoryFullPath(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 关联代码行所在文件的文件名。
+    /// **参数解释：** 文件旧权限(默认100644)。
     /// </summary>
 
-    std::string getDiffFile() const;
-    bool diffFileIsSet() const;
-    void unsetdiffFile();
-    void setDiffFile(const std::string& value);
+    std::string getAMode() const;
+    bool aModeIsSet() const;
+    void unsetaMode();
+    void setAMode(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 关联代码行的代码片段。
+    /// **参数解释：** 文件新权限(默认100644)。
     /// </summary>
 
-    std::string getDiff() const;
-    bool diffIsSet() const;
-    void unsetdiff();
-    void setDiff(const std::string& value);
+    std::string getBMode() const;
+    bool bModeIsSet() const;
+    void unsetbMode();
+    void setBMode(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 是否为删除文件。
+    /// </summary>
+
+    bool isDeletedFile() const;
+    bool deletedFileIsSet() const;
+    void unsetdeletedFile();
+    void setDeletedFile(bool value);
+
+    /// <summary>
+    /// **参数解释：** 是否为新增文件。
+    /// </summary>
+
+    bool isNewFile() const;
+    bool newFileIsSet() const;
+    void unsetnewFile();
+    void setNewFile(bool value);
+
+    /// <summary>
+    /// **参数解释：** 是否已解决。
+    /// </summary>
+
+    bool isResolved() const;
+    bool resolvedIsSet() const;
+    void unsetresolved();
+    void setResolved(bool value);
 
     /// <summary>
     /// **参数解释：** 是否已归档。
@@ -230,7 +170,7 @@ public:
     void setReviewCategories(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 意见分类中文名。
+    /// **参数解释：** 意见分类中文。
     /// </summary>
 
     std::string getReviewCategoriesCn() const;
@@ -239,7 +179,7 @@ public:
     void setReviewCategoriesCn(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 合并请求版本信息。
+    /// **参数解释：** 意见分类英文。
     /// </summary>
 
     std::string getReviewCategoriesEn() const;
@@ -248,7 +188,7 @@ public:
     void setReviewCategoriesEn(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 合并请求版本信息。
+    /// **参数解释：** 意见模块。
     /// </summary>
 
     std::string getReviewModules() const;
@@ -257,7 +197,7 @@ public:
     void setReviewModules(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 严重程度key。
+    /// **参数解释：** 严重程度key。 **取值范围：** - suggestion: 建议。 - minor: 一般。 - major: 严重。 - fatal: 致命。
     /// </summary>
 
     std::string getSeverity() const;
@@ -266,7 +206,7 @@ public:
     void setSeverity(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 严重程度中文。 **约束限制：** - 建议 - 一般 - 严重 - 致命
+    /// **参数解释：** 严重程度中文。 **取值范围：** - 建议 - 一般 - 严重 - 致命
     /// </summary>
 
     std::string getSeverityCn() const;
@@ -275,31 +215,13 @@ public:
     void setSeverityCn(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 严重程度英文。
+    /// **参数解释：** 严重程度英文。 **取值范围：** - Suggestion: 建议。 - Minor: 一般。 - major: 严重。 - fatal: 致命。
     /// </summary>
 
     std::string getSeverityEn() const;
     bool severityEnIsSet() const;
     void unsetseverityEn();
     void setSeverityEn(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 文件路径(弃用)。
-    /// </summary>
-
-    std::string getFilePath() const;
-    bool filePathIsSet() const;
-    void unsetfilePath();
-    void setFilePath(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 行号(弃用)。
-    /// </summary>
-
-    std::string getLine() const;
-    bool lineIsSet() const;
-    void unsetline();
-    void setLine(const std::string& value);
 
     /// <summary>
     /// 
@@ -323,96 +245,64 @@ public:
     /// 
     /// </summary>
 
-    PositionDto getPosition() const;
-    bool positionIsSet() const;
-    void unsetposition();
-    void setPosition(const PositionDto& value);
+    MergeRequestVersionParamsDto getMergeRequestVersionParams() const;
+    bool mergeRequestVersionParamsIsSet() const;
+    void unsetmergeRequestVersionParams();
+    void setMergeRequestVersionParams(const MergeRequestVersionParamsDto& value);
 
     /// <summary>
-    /// **参数解释：** 是否已解决。
+    /// **参数解释：** 变更页检视意见的代码片段。
     /// </summary>
 
-    bool isResolved() const;
-    bool resolvedIsSet() const;
-    void unsetresolved();
-    void setResolved(bool value);
+    std::string getDiffFile() const;
+    bool diffFileIsSet() const;
+    void unsetdiffFile();
+    void setDiffFile(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 是否已过期。
+    /// **参数解释：** 检视意见所在文件的新增行数量。
     /// </summary>
 
-    bool isIsOutdated() const;
-    bool isOutdatedIsSet() const;
-    void unsetisOutdated();
-    void setIsOutdated(bool value);
+    int32_t getAddedLines() const;
+    bool addedLinesIsSet() const;
+    void unsetaddedLines();
+    void setAddedLines(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 内容审核结果。
+    /// **参数解释：** 检视意见所在文件的删除行数量。
     /// </summary>
 
-    bool isModerationResult() const;
-    bool moderationResultIsSet() const;
-    void unsetmoderationResult();
-    void setModerationResult(bool value);
-
-    /// <summary>
-    /// **参数解释：** 内容审核时间。
-    /// </summary>
-
-    int64_t getModerationTime() const;
-    bool moderationTimeIsSet() const;
-    void unsetmoderationTime();
-    void setModerationTime(int64_t value);
-
-    /// <summary>
-    /// **参数解释：** 内容审核状态。
-    /// </summary>
-
-    int32_t getModerationStatus() const;
-    bool moderationStatusIsSet() const;
-    void unsetmoderationStatus();
-    void setModerationStatus(int32_t value);
+    int32_t getRemovedLines() const;
+    bool removedLinesIsSet() const;
+    void unsetremovedLines();
+    void setRemovedLines(int32_t value);
 
 
 protected:
-    int32_t id_;
+    std::string id_;
     bool idIsSet_;
-    std::string type_;
-    bool typeIsSet_;
-    std::string body_;
-    bool bodyIsSet_;
-    std::string attachment_;
-    bool attachmentIsSet_;
-    UserBasicDto author_;
-    bool authorIsSet_;
-    std::string createdAt_;
-    bool createdAtIsSet_;
-    std::string updatedAt_;
-    bool updatedAtIsSet_;
-    bool system_;
-    bool systemIsSet_;
-    int32_t noteableId_;
-    bool noteableIdIsSet_;
+    bool individualNote_;
+    bool individualNoteIsSet_;
+    std::vector<NoteDto> notes_;
+    bool notesIsSet_;
+    int32_t repositoryId_;
+    bool repositoryIdIsSet_;
     std::string noteableType_;
     bool noteableTypeIsSet_;
     std::string commitId_;
     bool commitIdIsSet_;
-    bool resolvable_;
-    bool resolvableIsSet_;
-    bool isReply_;
-    bool isReplyIsSet_;
-    UserBasicDto resolvedBy_;
-    bool resolvedByIsSet_;
-    int32_t noteableIid_;
-    bool noteableIidIsSet_;
-    std::string discussionId_;
-    bool discussionIdIsSet_;
-    std::string repository_;
-    bool repositoryIsSet_;
-    std::string diffFile_;
-    bool diffFileIsSet_;
-    std::string diff_;
-    bool diffIsSet_;
+    std::string repositoryFullPath_;
+    bool repositoryFullPathIsSet_;
+    std::string aMode_;
+    bool aModeIsSet_;
+    std::string bMode_;
+    bool bModeIsSet_;
+    bool deletedFile_;
+    bool deletedFileIsSet_;
+    bool newFile_;
+    bool newFileIsSet_;
+    bool resolved_;
+    bool resolvedIsSet_;
     bool archived_;
     bool archivedIsSet_;
     std::string reviewCategories_;
@@ -429,26 +319,18 @@ protected:
     bool severityCnIsSet_;
     std::string severityEn_;
     bool severityEnIsSet_;
-    std::string filePath_;
-    bool filePathIsSet_;
-    std::string line_;
-    bool lineIsSet_;
     UserBasicDto assignee_;
     bool assigneeIsSet_;
     UserBasicDto proposer_;
     bool proposerIsSet_;
-    PositionDto position_;
-    bool positionIsSet_;
-    bool resolved_;
-    bool resolvedIsSet_;
-    bool isOutdated_;
-    bool isOutdatedIsSet_;
-    bool moderationResult_;
-    bool moderationResultIsSet_;
-    int64_t moderationTime_;
-    bool moderationTimeIsSet_;
-    int32_t moderationStatus_;
-    bool moderationStatusIsSet_;
+    MergeRequestVersionParamsDto mergeRequestVersionParams_;
+    bool mergeRequestVersionParamsIsSet_;
+    std::string diffFile_;
+    bool diffFileIsSet_;
+    int32_t addedLines_;
+    bool addedLinesIsSet_;
+    int32_t removedLines_;
+    bool removedLinesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -24,6 +24,8 @@ ShowCommitDiffMetadataResponse::ShowCommitDiffMetadataResponse()
     changeLineCountIsSet_ = false;
     tooLarge_ = false;
     tooLargeIsSet_ = false;
+    blobId_ = "";
+    blobIdIsSet_ = false;
 }
 
 ShowCommitDiffMetadataResponse::~ShowCommitDiffMetadataResponse() = default;
@@ -56,6 +58,9 @@ web::json::value ShowCommitDiffMetadataResponse::toJson() const
     }
     if(tooLargeIsSet_) {
         val[utility::conversions::to_string_t("too_large")] = ModelBase::toJson(tooLarge_);
+    }
+    if(blobIdIsSet_) {
+        val[utility::conversions::to_string_t("blob_id")] = ModelBase::toJson(blobId_);
     }
 
     return val;
@@ -125,6 +130,15 @@ bool ShowCommitDiffMetadataResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTooLarge(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("blob_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("blob_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBlobId(refVal);
         }
     }
     return ok;
@@ -276,6 +290,27 @@ bool ShowCommitDiffMetadataResponse::tooLargeIsSet() const
 void ShowCommitDiffMetadataResponse::unsettooLarge()
 {
     tooLargeIsSet_ = false;
+}
+
+std::string ShowCommitDiffMetadataResponse::getBlobId() const
+{
+    return blobId_;
+}
+
+void ShowCommitDiffMetadataResponse::setBlobId(const std::string& value)
+{
+    blobId_ = value;
+    blobIdIsSet_ = true;
+}
+
+bool ShowCommitDiffMetadataResponse::blobIdIsSet() const
+{
+    return blobIdIsSet_;
+}
+
+void ShowCommitDiffMetadataResponse::unsetblobId()
+{
+    blobIdIsSet_ = false;
 }
 
 }

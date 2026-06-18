@@ -107,19 +107,19 @@ public:
     /// **参数解释：** 更新时间戳。 **取值范围：** 字符串长度不少于1，不超过1000。
     /// </summary>
 
-    std::string getUpdatedAtTimestamp() const;
+    int64_t getUpdatedAtTimestamp() const;
     bool updatedAtTimestampIsSet() const;
     void unsetupdatedAtTimestamp();
-    void setUpdatedAtTimestamp(const std::string& value);
+    void setUpdatedAtTimestamp(int64_t value);
 
     /// <summary>
     /// **参数解释：** 开始时间戳。 **取值范围：** 字符串长度不少于1，不超过1000。
     /// </summary>
 
-    std::string getStarTime() const;
+    int64_t getStarTime() const;
     bool starTimeIsSet() const;
     void unsetstarTime();
-    void setStarTime(const std::string& value);
+    void setStarTime(int64_t value);
 
     /// <summary>
     /// **参数解释：** 是否收藏。
@@ -461,9 +461,9 @@ protected:
     bool fullPathIsSet_;
     std::string createdAt_;
     bool createdAtIsSet_;
-    std::string updatedAtTimestamp_;
+    int64_t updatedAtTimestamp_;
     bool updatedAtTimestampIsSet_;
-    std::string starTime_;
+    int64_t starTime_;
     bool starTimeIsSet_;
     bool starred_;
     bool starredIsSet_;

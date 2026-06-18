@@ -49,7 +49,7 @@ bool LineDiscussionDto::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("discussions"));
         if(!fieldValue.is_null())
         {
-            std::vector<MergeRequestBasicDiscussionDto> refVal;
+            std::vector<MergeRequestDiscussionDto> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDiscussions(refVal);
         }
@@ -76,12 +76,12 @@ bool LineDiscussionDto::fromJson(const web::json::value& val)
 }
 
 
-std::vector<MergeRequestBasicDiscussionDto>& LineDiscussionDto::getDiscussions()
+std::vector<MergeRequestDiscussionDto>& LineDiscussionDto::getDiscussions()
 {
     return discussions_;
 }
 
-void LineDiscussionDto::setDiscussions(const std::vector<MergeRequestBasicDiscussionDto>& value)
+void LineDiscussionDto::setDiscussions(const std::vector<MergeRequestDiscussionDto>& value)
 {
     discussions_ = value;
     discussionsIsSet_ = true;

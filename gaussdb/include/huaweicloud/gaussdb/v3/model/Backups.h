@@ -106,10 +106,10 @@ public:
     /// 备份大小（单位：MB）。
     /// </summary>
 
-    int64_t getSize() const;
+    double getSize() const;
     bool sizeIsSet() const;
     void unsetsize();
-    void setSize(int64_t value);
+    void setSize(double value);
 
     /// <summary>
     /// 
@@ -172,7 +172,7 @@ protected:
     bool takeUpTimeIsSet_;
     std::string type_;
     bool typeIsSet_;
-    int64_t size_;
+    double size_;
     bool sizeIsSet_;
     MysqlDatastoreInBackup datastore_;
     bool datastoreIsSet_;

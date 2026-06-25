@@ -26,7 +26,7 @@ Backups::Backups()
     takeUpTimeIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
-    size_ = 0L;
+    size_ = 0.0;
     sizeIsSet_ = false;
     datastoreIsSet_ = false;
     instanceId_ = "";
@@ -162,7 +162,7 @@ bool Backups::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
         if(!fieldValue.is_null())
         {
-            int64_t refVal;
+            double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
         }
@@ -363,12 +363,12 @@ void Backups::unsettype()
     typeIsSet_ = false;
 }
 
-int64_t Backups::getSize() const
+double Backups::getSize() const
 {
     return size_;
 }
 
-void Backups::setSize(int64_t value)
+void Backups::setSize(double value)
 {
     size_ = value;
     sizeIsSet_ = true;

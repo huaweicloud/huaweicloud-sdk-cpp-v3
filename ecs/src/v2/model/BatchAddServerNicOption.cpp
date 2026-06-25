@@ -22,6 +22,8 @@ BatchAddServerNicOption::BatchAddServerNicOption()
     ipv6Enable_ = false;
     ipv6EnableIsSet_ = false;
     ipv6BandwidthIsSet_ = false;
+    efiEnable_ = false;
+    efiEnableIsSet_ = false;
 }
 
 BatchAddServerNicOption::~BatchAddServerNicOption() = default;
@@ -51,6 +53,9 @@ web::json::value BatchAddServerNicOption::toJson() const
     }
     if(ipv6BandwidthIsSet_) {
         val[utility::conversions::to_string_t("ipv6_bandwidth")] = ModelBase::toJson(ipv6Bandwidth_);
+    }
+    if(efiEnableIsSet_) {
+        val[utility::conversions::to_string_t("efi_enable")] = ModelBase::toJson(efiEnable_);
     }
 
     return val;
@@ -111,6 +116,15 @@ bool BatchAddServerNicOption::fromJson(const web::json::value& val)
             Ipv6Bandwidth refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIpv6Bandwidth(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("efi_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("efi_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEfiEnable(refVal);
         }
     }
     return ok;
@@ -241,6 +255,27 @@ bool BatchAddServerNicOption::ipv6BandwidthIsSet() const
 void BatchAddServerNicOption::unsetipv6Bandwidth()
 {
     ipv6BandwidthIsSet_ = false;
+}
+
+bool BatchAddServerNicOption::isEfiEnable() const
+{
+    return efiEnable_;
+}
+
+void BatchAddServerNicOption::setEfiEnable(bool value)
+{
+    efiEnable_ = value;
+    efiEnableIsSet_ = true;
+}
+
+bool BatchAddServerNicOption::efiEnableIsSet() const
+{
+    return efiEnableIsSet_;
+}
+
+void BatchAddServerNicOption::unsetefiEnable()
+{
+    efiEnableIsSet_ = false;
 }
 
 }

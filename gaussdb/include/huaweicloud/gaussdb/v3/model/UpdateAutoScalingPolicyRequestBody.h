@@ -94,6 +94,15 @@ public:
     void setReduceEnabled(bool value);
 
     /// <summary>
+    /// **参数解释**：  自动回缩的CPU平均使用率阈值（百分比数值）。  **约束限制**：  不涉及。  **取值范围**：  10-30。  **默认取值**：  不涉及。
+    /// </summary>
+
+    int32_t getReduceThreshold() const;
+    bool reduceThresholdIsSet() const;
+    void unsetreduceThreshold();
+    void setReduceThreshold(int32_t value);
+
+    /// <summary>
     /// 只读节点数量上限。开启增删只读节点时必填。
     /// </summary>
 
@@ -134,6 +143,8 @@ protected:
     bool maxFlavorIsSet_;
     bool reduceEnabled_;
     bool reduceEnabledIsSet_;
+    int32_t reduceThreshold_;
+    bool reduceThresholdIsSet_;
     int32_t maxReadOnlyCount_;
     bool maxReadOnlyCountIsSet_;
     int32_t readOnlyWeight_;

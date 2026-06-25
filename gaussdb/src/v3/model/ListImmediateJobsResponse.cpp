@@ -15,6 +15,7 @@ ListImmediateJobsResponse::ListImmediateJobsResponse()
     jobsIsSet_ = false;
     totalCount_ = 0;
     totalCountIsSet_ = false;
+    actionNamesIsSet_ = false;
 }
 
 ListImmediateJobsResponse::~ListImmediateJobsResponse() = default;
@@ -32,6 +33,9 @@ web::json::value ListImmediateJobsResponse::toJson() const
     }
     if(totalCountIsSet_) {
         val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
+    }
+    if(actionNamesIsSet_) {
+        val[utility::conversions::to_string_t("action_names")] = ModelBase::toJson(actionNames_);
     }
 
     return val;
@@ -56,6 +60,15 @@ bool ListImmediateJobsResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("action_names"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action_names"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActionNames(refVal);
         }
     }
     return ok;
@@ -102,6 +115,27 @@ bool ListImmediateJobsResponse::totalCountIsSet() const
 void ListImmediateJobsResponse::unsettotalCount()
 {
     totalCountIsSet_ = false;
+}
+
+std::vector<std::string>& ListImmediateJobsResponse::getActionNames()
+{
+    return actionNames_;
+}
+
+void ListImmediateJobsResponse::setActionNames(const std::vector<std::string>& value)
+{
+    actionNames_ = value;
+    actionNamesIsSet_ = true;
+}
+
+bool ListImmediateJobsResponse::actionNamesIsSet() const
+{
+    return actionNamesIsSet_;
+}
+
+void ListImmediateJobsResponse::unsetactionNames()
+{
+    actionNamesIsSet_ = false;
 }
 
 }

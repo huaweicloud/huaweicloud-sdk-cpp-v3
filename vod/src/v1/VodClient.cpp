@@ -3295,6 +3295,85 @@ std::shared_ptr<UploadMetaDataByUrlResponse> VodClient::uploadMetaDataByUrl(Uplo
 
     return localVarResult;
 }
+std::shared_ptr<ShowHttpsConfigResponse> VodClient::showHttpsConfig(ShowHttpsConfigRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/asset/domain/https";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.domainIsSet()) {
+        localVarQueryParams["domain"] = parameterToString(request.getDomain());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForShowHttpsConfig());
+
+    std::shared_ptr<ShowHttpsConfigResponse> localVarResult = std::make_shared<ShowHttpsConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateHttpsConfigResponse> VodClient::updateHttpsConfig(UpdateHttpsConfigRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/asset/domain/https";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForUpdateHttpsConfig());
+
+    std::shared_ptr<UpdateHttpsConfigResponse> localVarResult = std::make_shared<UpdateHttpsConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ListTakeOverTaskResponse> VodClient::listTakeOverTask(ListTakeOverTaskRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/asset/obs/host/stock/task";

@@ -121,6 +121,15 @@ public:
     void setReduceEnabled(bool value);
 
     /// <summary>
+    /// **参数解释**：  自动回缩的CPU平均使用率阈值（百分比数值）。  **取值范围**：  10-30。 
+    /// </summary>
+
+    int32_t getReduceThreshold() const;
+    bool reduceThresholdIsSet() const;
+    void unsetreduceThreshold();
+    void setReduceThreshold(int32_t value);
+
+    /// <summary>
     /// 缩容规格下限。
     /// </summary>
 
@@ -194,6 +203,8 @@ protected:
     bool maxFlavorIsSet_;
     bool reduceEnabled_;
     bool reduceEnabledIsSet_;
+    int32_t reduceThreshold_;
+    bool reduceThresholdIsSet_;
     std::string minFlavor_;
     bool minFlavorIsSet_;
     std::string silenceStartAt_;

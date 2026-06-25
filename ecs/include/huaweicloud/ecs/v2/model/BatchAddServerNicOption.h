@@ -95,6 +95,15 @@ public:
     void unsetipv6Bandwidth();
     void setIpv6Bandwidth(const Ipv6Bandwidth& value);
 
+    /// <summary>
+    /// 使能网卡的vRoCE能力，只支持从网卡，主网卡不支持。
+    /// </summary>
+
+    bool isEfiEnable() const;
+    bool efiEnableIsSet() const;
+    void unsetefiEnable();
+    void setEfiEnable(bool value);
+
 
 protected:
     std::string subnetId_;
@@ -109,6 +118,8 @@ protected:
     bool ipv6EnableIsSet_;
     Ipv6Bandwidth ipv6Bandwidth_;
     bool ipv6BandwidthIsSet_;
+    bool efiEnable_;
+    bool efiEnableIsSet_;
 
 };
 

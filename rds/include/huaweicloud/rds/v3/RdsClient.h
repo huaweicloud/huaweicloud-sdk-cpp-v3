@@ -179,6 +179,8 @@
 #include <huaweicloud/rds/v3/model/ListHistoryWaitEventsResponse.h>
 #include <huaweicloud/rds/v3/model/ListInspectionHistoriesRequest.h>
 #include <huaweicloud/rds/v3/model/ListInspectionHistoriesResponse.h>
+#include <huaweicloud/rds/v3/model/ListInstanceBackupSummaryRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstanceBackupSummaryResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceDiagnosisRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstanceDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceParamHistoriesRequest.h>
@@ -252,6 +254,8 @@
 #include <huaweicloud/rds/v3/model/ListSlowlogStatisticsResponse.h>
 #include <huaweicloud/rds/v3/model/ListSmallVersionRequest.h>
 #include <huaweicloud/rds/v3/model/ListSmallVersionResponse.h>
+#include <huaweicloud/rds/v3/model/ListSparseBackupPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/ListSparseBackupPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ListSqlLimitRequest.h>
 #include <huaweicloud/rds/v3/model/ListSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/ListSslCertDownloadLinkRequest.h>
@@ -364,6 +368,8 @@
 #include <huaweicloud/rds/v3/model/ShowBackupDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowBackupPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/ShowBackupUsageRequest.h>
+#include <huaweicloud/rds/v3/model/ShowBackupUsageResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBinlogClearPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowBinlogClearPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowConfigurationRequest.h>
@@ -475,6 +481,9 @@
 #include <huaweicloud/rds/v3/model/UpdatePortRequest.h>
 #include <huaweicloud/rds/v3/model/UpdatePortResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateRdsInstanceAliasRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateSparseBackupPolicyReq.h>
+#include <huaweicloud/rds/v3/model/UpdateSparseBackupPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateSparseBackupPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateSqlLimitRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateSqlLimitRuleReqV3.h>
@@ -1348,6 +1357,14 @@ public:
     std::shared_ptr<ListInspectionHistoriesResponse> listInspectionHistories(
         ListInspectionHistoriesRequest &request
     );
+    // 获取实例备份概览列表
+    //
+    // 获取实例备份概览列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceBackupSummaryResponse> listInstanceBackupSummary(
+        ListInstanceBackupSummaryRequest &request
+    );
     // 获取诊断后的实例数量
     //
     // 获取诊断后的实例数量
@@ -1640,6 +1657,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSmallVersionResponse> listSmallVersion(
         ListSmallVersionRequest &request
+    );
+    // 查询稀疏备份策略
+    //
+    // 查询稀疏备份策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSparseBackupPolicyResponse> listSparseBackupPolicy(
+        ListSparseBackupPolicyRequest &request
     );
     // 查询SQL限流列表
     //
@@ -1965,6 +1990,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowBackupPolicyResponse> showBackupPolicy(
         ShowBackupPolicyRequest &request
+    );
+    // 查询备份用量总览
+    //
+    // 查询备份用量总览
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBackupUsageResponse> showBackupUsage(
+        ShowBackupUsageRequest &request
     );
     // 获取binlog本地保留时长
     //
@@ -2349,6 +2382,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePortResponse> updatePort(
         UpdatePortRequest &request
+    );
+    // 修改实例稀疏备份策略
+    //
+    // 修改实例稀疏备份策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSparseBackupPolicyResponse> updateSparseBackupPolicy(
+        UpdateSparseBackupPolicyRequest &request
     );
     // 修改SQL限流
     //

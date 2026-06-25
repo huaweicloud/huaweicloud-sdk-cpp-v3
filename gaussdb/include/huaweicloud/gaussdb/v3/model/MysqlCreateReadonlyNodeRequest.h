@@ -58,6 +58,15 @@ public:
     void setIsAutoPay(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：     计费模式。  **约束限制**：  仅当实例为包年/包月实例时生效。  **取值范围**：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。  **默认取值**：  prePaid。
+    /// </summary>
+
+    std::string getChargeMode() const;
+    bool chargeModeIsSet() const;
+    void unsetchargeMode();
+    void setChargeMode(const std::string& value);
+
+    /// <summary>
     /// 可用区。可指定可用区创建只读节点，不传该参数时默认为自动选择可用区。  调用[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)获取，其中az_status中的key为availability_zone。  注：指定可用区创建只读节点，可能由于资源不足创建失败。
     /// </summary>
 
@@ -72,6 +81,8 @@ protected:
     bool prioritiesIsSet_;
     std::string isAutoPay_;
     bool isAutoPayIsSet_;
+    std::string chargeMode_;
+    bool chargeModeIsSet_;
     std::vector<std::string> availabilityZones_;
     bool availabilityZonesIsSet_;
 

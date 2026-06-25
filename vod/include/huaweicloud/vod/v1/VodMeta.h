@@ -90,6 +90,8 @@ public:
     static HttpRequestDef genRequestDefForUpdateTranscodeTemplate();
     static HttpRequestDef genRequestDefForUpdateWatermarkTemplate();
     static HttpRequestDef genRequestDefForUploadMetaDataByUrl();
+    static HttpRequestDef genRequestDefForShowHttpsConfig();
+    static HttpRequestDef genRequestDefForUpdateHttpsConfig();
     static HttpRequestDef genRequestDefForListTakeOverTask();
     static HttpRequestDef genRequestDefForShowTakeOverAssetDetails();
     static HttpRequestDef genRequestDefForShowTakeOverTaskDetails();

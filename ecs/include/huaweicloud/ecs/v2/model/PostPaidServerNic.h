@@ -95,6 +95,15 @@ public:
     void unsetallowedAddressPairs();
     void setAllowedAddressPairs(const std::vector<CreateServerNicAllowedAddressPairs>& value);
 
+    /// <summary>
+    /// 使能网卡的vRoCE能力，只支持从网卡，主网卡不支持。
+    /// </summary>
+
+    bool isEfiEnable() const;
+    bool efiEnableIsSet() const;
+    void unsetefiEnable();
+    void setEfiEnable(bool value);
+
 
 protected:
     std::string subnetId_;
@@ -109,6 +118,8 @@ protected:
     bool ipv6BandwidthIsSet_;
     std::vector<CreateServerNicAllowedAddressPairs> allowedAddressPairs_;
     bool allowedAddressPairsIsSet_;
+    bool efiEnable_;
+    bool efiEnableIsSet_;
 
 };
 

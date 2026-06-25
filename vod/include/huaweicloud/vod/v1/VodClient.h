@@ -201,6 +201,13 @@
 #include <huaweicloud/vod/v1/model/UploadMetaDataByUrlResponse.h>
 #include <string>
 
+#include <huaweicloud/vod/v1/model/ConfigCdnHttpsReq.h>
+#include <huaweicloud/vod/v1/model/ShowHttpsConfigRequest.h>
+#include <huaweicloud/vod/v1/model/ShowHttpsConfigResponse.h>
+#include <huaweicloud/vod/v1/model/UpdateHttpsConfigRequest.h>
+#include <huaweicloud/vod/v1/model/UpdateHttpsConfigResponse.h>
+#include <string>
+
 #include <huaweicloud/vod/v1/model/ListTakeOverTaskRequest.h>
 #include <huaweicloud/vod/v1/model/ListTakeOverTaskResponse.h>
 #include <huaweicloud/vod/v1/model/ShowTakeOverAssetDetailsRequest.h>
@@ -891,6 +898,23 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UploadMetaDataByUrlResponse> uploadMetaDataByUrl(
         UploadMetaDataByUrlRequest &request
+    );
+
+    // 查询https配置
+    //
+    // 查询证书配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHttpsConfigResponse> showHttpsConfig(
+        ShowHttpsConfigRequest &request
+    );
+    // 配置https
+    //
+    // 点播提供给域名配置https证书的接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateHttpsConfigResponse> updateHttpsConfig(
+        UpdateHttpsConfigRequest &request
     );
 
     // 查询托管任务

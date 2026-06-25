@@ -270,6 +270,15 @@ public:
     void setCreateFailErrorCode(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：  账号同步开关状态。  **取值范围**：  - true：开启。 - false：关闭。
+    /// </summary>
+
+    bool isUsersSyncSwitchOn() const;
+    bool usersSyncSwitchOnIsSet() const;
+    void unsetusersSyncSwitchOn();
+    void setUsersSyncSwitchOn(bool value);
+
+    /// <summary>
     /// 实例分组。
     /// </summary>
 
@@ -474,6 +483,8 @@ protected:
     bool actionsIsSet_;
     std::string createFailErrorCode_;
     bool createFailErrorCodeIsSet_;
+    bool usersSyncSwitchOn_;
+    bool usersSyncSwitchOnIsSet_;
     std::vector<StarRocksInstanceInfo_groups> groups_;
     bool groupsIsSet_;
     StarRocksInstanceInfo_ops_window opsWindow_;

@@ -1268,6 +1268,33 @@ HttpRequestDef VodMeta::genRequestDefForUploadMetaDataByUrl() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForShowHttpsConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef VodMeta::genRequestDefForUpdateHttpsConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForListTakeOverTask() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Status")

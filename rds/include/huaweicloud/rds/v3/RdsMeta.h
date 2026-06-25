@@ -78,6 +78,7 @@ public:
     static HttpRequestDef genRequestDefForListHistoryTopSqls();
     static HttpRequestDef genRequestDefForListHistoryWaitEvents();
     static HttpRequestDef genRequestDefForListInspectionHistories();
+    static HttpRequestDef genRequestDefForListInstanceBackupSummary();
     static HttpRequestDef genRequestDefForListInstanceDiagnosis();
     static HttpRequestDef genRequestDefForListInstanceParamHistories();
     static HttpRequestDef genRequestDefForListInstanceTags();
@@ -114,6 +115,7 @@ public:
     static HttpRequestDef genRequestDefForListSlowlogForLts();
     static HttpRequestDef genRequestDefForListSlowlogStatistics();
     static HttpRequestDef genRequestDefForListSmallVersion();
+    static HttpRequestDef genRequestDefForListSparseBackupPolicy();
     static HttpRequestDef genRequestDefForListSqlLimit();
     static HttpRequestDef genRequestDefForListSslCertDownloadLink();
     static HttpRequestDef genRequestDefForListStorageTypes();
@@ -154,6 +156,7 @@ public:
     static HttpRequestDef genRequestDefForShowBackupConfig();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
+    static HttpRequestDef genRequestDefForShowBackupUsage();
     static HttpRequestDef genRequestDefForShowBinlogClearPolicy();
     static HttpRequestDef genRequestDefForShowConfiguration();
     static HttpRequestDef genRequestDefForShowDatabaseLevelDatabase();
@@ -202,6 +205,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateInstanceConfigurationAsync();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpdatePort();
+    static HttpRequestDef genRequestDefForUpdateSparseBackupPolicy();
     static HttpRequestDef genRequestDefForUpdateSqlLimit();
     static HttpRequestDef genRequestDefForUpdateTdeStatus();
     static HttpRequestDef genRequestDefForUpdateTimeZone();

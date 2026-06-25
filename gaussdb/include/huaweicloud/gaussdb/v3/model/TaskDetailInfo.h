@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -147,15 +146,6 @@ public:
     void unsetshowDetail();
     void setShowDetail(bool value);
 
-    /// <summary>
-    /// **参数解释**：  支持筛选的任务名称。  **取值范围**：  不涉及。
-    /// </summary>
-
-    std::vector<std::string>& getActionNames();
-    bool actionNamesIsSet() const;
-    void unsetactionNames();
-    void setActionNames(const std::vector<std::string>& value);
-
 
 protected:
     std::string instanceId_;
@@ -182,8 +172,6 @@ protected:
     bool failReasonIsSet_;
     bool showDetail_;
     bool showDetailIsSet_;
-    std::vector<std::string> actionNames_;
-    bool actionNamesIsSet_;
 
 };
 

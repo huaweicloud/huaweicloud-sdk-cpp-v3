@@ -24,6 +24,8 @@ UpdateAutoScalingPolicyRequestBody::UpdateAutoScalingPolicyRequestBody()
     maxFlavorIsSet_ = false;
     reduceEnabled_ = false;
     reduceEnabledIsSet_ = false;
+    reduceThreshold_ = 0;
+    reduceThresholdIsSet_ = false;
     maxReadOnlyCount_ = 0;
     maxReadOnlyCountIsSet_ = false;
     readOnlyWeight_ = 0;
@@ -58,6 +60,9 @@ web::json::value UpdateAutoScalingPolicyRequestBody::toJson() const
     }
     if(reduceEnabledIsSet_) {
         val[utility::conversions::to_string_t("reduce_enabled")] = ModelBase::toJson(reduceEnabled_);
+    }
+    if(reduceThresholdIsSet_) {
+        val[utility::conversions::to_string_t("reduce_threshold")] = ModelBase::toJson(reduceThreshold_);
     }
     if(maxReadOnlyCountIsSet_) {
         val[utility::conversions::to_string_t("max_read_only_count")] = ModelBase::toJson(maxReadOnlyCount_);
@@ -127,6 +132,15 @@ bool UpdateAutoScalingPolicyRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReduceEnabled(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("reduce_threshold"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reduce_threshold"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReduceThreshold(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("max_read_only_count"))) {
@@ -284,6 +298,27 @@ bool UpdateAutoScalingPolicyRequestBody::reduceEnabledIsSet() const
 void UpdateAutoScalingPolicyRequestBody::unsetreduceEnabled()
 {
     reduceEnabledIsSet_ = false;
+}
+
+int32_t UpdateAutoScalingPolicyRequestBody::getReduceThreshold() const
+{
+    return reduceThreshold_;
+}
+
+void UpdateAutoScalingPolicyRequestBody::setReduceThreshold(int32_t value)
+{
+    reduceThreshold_ = value;
+    reduceThresholdIsSet_ = true;
+}
+
+bool UpdateAutoScalingPolicyRequestBody::reduceThresholdIsSet() const
+{
+    return reduceThresholdIsSet_;
+}
+
+void UpdateAutoScalingPolicyRequestBody::unsetreduceThreshold()
+{
+    reduceThresholdIsSet_ = false;
 }
 
 int32_t UpdateAutoScalingPolicyRequestBody::getMaxReadOnlyCount() const

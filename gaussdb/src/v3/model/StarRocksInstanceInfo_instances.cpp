@@ -61,6 +61,8 @@ StarRocksInstanceInfo_instances::StarRocksInstanceInfo_instances()
     actionsIsSet_ = false;
     createFailErrorCode_ = "";
     createFailErrorCodeIsSet_ = false;
+    usersSyncSwitchOn_ = false;
+    usersSyncSwitchOnIsSet_ = false;
     groupsIsSet_ = false;
     opsWindowIsSet_ = false;
     tagsInfoIsSet_ = false;
@@ -177,6 +179,9 @@ web::json::value StarRocksInstanceInfo_instances::toJson() const
     }
     if(createFailErrorCodeIsSet_) {
         val[utility::conversions::to_string_t("create_fail_error_code")] = ModelBase::toJson(createFailErrorCode_);
+    }
+    if(usersSyncSwitchOnIsSet_) {
+        val[utility::conversions::to_string_t("users_sync_switch_on")] = ModelBase::toJson(usersSyncSwitchOn_);
     }
     if(groupsIsSet_) {
         val[utility::conversions::to_string_t("groups")] = ModelBase::toJson(groups_);
@@ -459,6 +464,15 @@ bool StarRocksInstanceInfo_instances::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateFailErrorCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("users_sync_switch_on"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("users_sync_switch_on"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUsersSyncSwitchOn(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("groups"))) {
@@ -1141,6 +1155,27 @@ bool StarRocksInstanceInfo_instances::createFailErrorCodeIsSet() const
 void StarRocksInstanceInfo_instances::unsetcreateFailErrorCode()
 {
     createFailErrorCodeIsSet_ = false;
+}
+
+bool StarRocksInstanceInfo_instances::isUsersSyncSwitchOn() const
+{
+    return usersSyncSwitchOn_;
+}
+
+void StarRocksInstanceInfo_instances::setUsersSyncSwitchOn(bool value)
+{
+    usersSyncSwitchOn_ = value;
+    usersSyncSwitchOnIsSet_ = true;
+}
+
+bool StarRocksInstanceInfo_instances::usersSyncSwitchOnIsSet() const
+{
+    return usersSyncSwitchOnIsSet_;
+}
+
+void StarRocksInstanceInfo_instances::unsetusersSyncSwitchOn()
+{
+    usersSyncSwitchOnIsSet_ = false;
 }
 
 std::vector<StarRocksInstanceInfo_groups>& StarRocksInstanceInfo_instances::getGroups()

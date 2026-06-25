@@ -30,6 +30,8 @@ ShowAutoScalingPolicyResponse::ShowAutoScalingPolicyResponse()
     maxFlavorIsSet_ = false;
     reduceEnabled_ = false;
     reduceEnabledIsSet_ = false;
+    reduceThreshold_ = 0;
+    reduceThresholdIsSet_ = false;
     minFlavor_ = "";
     minFlavorIsSet_ = false;
     silenceStartAt_ = "";
@@ -79,6 +81,9 @@ web::json::value ShowAutoScalingPolicyResponse::toJson() const
     }
     if(reduceEnabledIsSet_) {
         val[utility::conversions::to_string_t("reduce_enabled")] = ModelBase::toJson(reduceEnabled_);
+    }
+    if(reduceThresholdIsSet_) {
+        val[utility::conversions::to_string_t("reduce_threshold")] = ModelBase::toJson(reduceThreshold_);
     }
     if(minFlavorIsSet_) {
         val[utility::conversions::to_string_t("min_flavor")] = ModelBase::toJson(minFlavor_);
@@ -184,6 +189,15 @@ bool ShowAutoScalingPolicyResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReduceEnabled(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("reduce_threshold"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reduce_threshold"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReduceThreshold(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("min_flavor"))) {
@@ -431,6 +445,27 @@ bool ShowAutoScalingPolicyResponse::reduceEnabledIsSet() const
 void ShowAutoScalingPolicyResponse::unsetreduceEnabled()
 {
     reduceEnabledIsSet_ = false;
+}
+
+int32_t ShowAutoScalingPolicyResponse::getReduceThreshold() const
+{
+    return reduceThreshold_;
+}
+
+void ShowAutoScalingPolicyResponse::setReduceThreshold(int32_t value)
+{
+    reduceThreshold_ = value;
+    reduceThresholdIsSet_ = true;
+}
+
+bool ShowAutoScalingPolicyResponse::reduceThresholdIsSet() const
+{
+    return reduceThresholdIsSet_;
+}
+
+void ShowAutoScalingPolicyResponse::unsetreduceThreshold()
+{
+    reduceThresholdIsSet_ = false;
 }
 
 std::string ShowAutoScalingPolicyResponse::getMinFlavor() const

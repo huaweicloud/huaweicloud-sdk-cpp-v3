@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/gaussdb/v3/model/TaskDetailInfo.h>
 #include <vector>
 
@@ -57,12 +58,23 @@ public:
     void unsettotalCount();
     void setTotalCount(int32_t value);
 
+    /// <summary>
+    /// **参数解释**：  支持筛选的任务名称。  **取值范围**：  不涉及。
+    /// </summary>
+
+    std::vector<std::string>& getActionNames();
+    bool actionNamesIsSet() const;
+    void unsetactionNames();
+    void setActionNames(const std::vector<std::string>& value);
+
 
 protected:
     std::vector<TaskDetailInfo> jobs_;
     bool jobsIsSet_;
     int32_t totalCount_;
     bool totalCountIsSet_;
+    std::vector<std::string> actionNames_;
+    bool actionNamesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

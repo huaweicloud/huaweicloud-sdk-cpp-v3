@@ -15,6 +15,8 @@ MysqlCreateReadonlyNodeRequest::MysqlCreateReadonlyNodeRequest()
     prioritiesIsSet_ = false;
     isAutoPay_ = "";
     isAutoPayIsSet_ = false;
+    chargeMode_ = "";
+    chargeModeIsSet_ = false;
     availabilityZonesIsSet_ = false;
 }
 
@@ -33,6 +35,9 @@ web::json::value MysqlCreateReadonlyNodeRequest::toJson() const
     }
     if(isAutoPayIsSet_) {
         val[utility::conversions::to_string_t("is_auto_pay")] = ModelBase::toJson(isAutoPay_);
+    }
+    if(chargeModeIsSet_) {
+        val[utility::conversions::to_string_t("charge_mode")] = ModelBase::toJson(chargeMode_);
     }
     if(availabilityZonesIsSet_) {
         val[utility::conversions::to_string_t("availability_zones")] = ModelBase::toJson(availabilityZones_);
@@ -60,6 +65,15 @@ bool MysqlCreateReadonlyNodeRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAutoPay(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("charge_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("charge_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setChargeMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("availability_zones"))) {
@@ -115,6 +129,27 @@ bool MysqlCreateReadonlyNodeRequest::isAutoPayIsSet() const
 void MysqlCreateReadonlyNodeRequest::unsetisAutoPay()
 {
     isAutoPayIsSet_ = false;
+}
+
+std::string MysqlCreateReadonlyNodeRequest::getChargeMode() const
+{
+    return chargeMode_;
+}
+
+void MysqlCreateReadonlyNodeRequest::setChargeMode(const std::string& value)
+{
+    chargeMode_ = value;
+    chargeModeIsSet_ = true;
+}
+
+bool MysqlCreateReadonlyNodeRequest::chargeModeIsSet() const
+{
+    return chargeModeIsSet_;
+}
+
+void MysqlCreateReadonlyNodeRequest::unsetchargeMode()
+{
+    chargeModeIsSet_ = false;
 }
 
 std::vector<std::string>& MysqlCreateReadonlyNodeRequest::getAvailabilityZones()

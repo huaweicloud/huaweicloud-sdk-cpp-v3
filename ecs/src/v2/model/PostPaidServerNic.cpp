@@ -22,6 +22,8 @@ PostPaidServerNic::PostPaidServerNic()
     ipv6EnableIsSet_ = false;
     ipv6BandwidthIsSet_ = false;
     allowedAddressPairsIsSet_ = false;
+    efiEnable_ = false;
+    efiEnableIsSet_ = false;
 }
 
 PostPaidServerNic::~PostPaidServerNic() = default;
@@ -51,6 +53,9 @@ web::json::value PostPaidServerNic::toJson() const
     }
     if(allowedAddressPairsIsSet_) {
         val[utility::conversions::to_string_t("allowed_address_pairs")] = ModelBase::toJson(allowedAddressPairs_);
+    }
+    if(efiEnableIsSet_) {
+        val[utility::conversions::to_string_t("efi_enable")] = ModelBase::toJson(efiEnable_);
     }
 
     return val;
@@ -111,6 +116,15 @@ bool PostPaidServerNic::fromJson(const web::json::value& val)
             std::vector<CreateServerNicAllowedAddressPairs> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllowedAddressPairs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("efi_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("efi_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEfiEnable(refVal);
         }
     }
     return ok;
@@ -241,6 +255,27 @@ bool PostPaidServerNic::allowedAddressPairsIsSet() const
 void PostPaidServerNic::unsetallowedAddressPairs()
 {
     allowedAddressPairsIsSet_ = false;
+}
+
+bool PostPaidServerNic::isEfiEnable() const
+{
+    return efiEnable_;
+}
+
+void PostPaidServerNic::setEfiEnable(bool value)
+{
+    efiEnable_ = value;
+    efiEnableIsSet_ = true;
+}
+
+bool PostPaidServerNic::efiEnableIsSet() const
+{
+    return efiEnableIsSet_;
+}
+
+void PostPaidServerNic::unsetefiEnable()
+{
+    efiEnableIsSet_ = false;
 }
 
 }

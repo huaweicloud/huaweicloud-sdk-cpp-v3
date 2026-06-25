@@ -1,3 +1,75 @@
+# 3.1.192 2026-06-25
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchAddServerNics**
+    - 请求参数变更
+      - `+ nics.efi_enable`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.nics.efi_enable`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateGaussMySqlReadonlyNode**
+    - 请求参数变更
+      - `+ charge_mode`
+  - **ListStarrocksInstanceInfo**
+    - 响应参数变更
+      - `+ instances.users_sync_switch_on`
+  - **ListImmediateJobs**
+    - 响应参数变更
+      - `+ action_names`
+      - `- jobs.action_names`
+  - **ShowAutoScalingPolicy**
+    - 响应参数变更
+      - `+ reduce_threshold`
+  - **UpdateAutoScalingPolicy**
+    - 请求参数变更
+      - `+ reduce_threshold`
+  - **UploadImportExcelTemplate**
+    - 请求参数变更
+      - `+ database_scope`
+  - **ShowGaussMySqlBackupList**
+    - 响应参数变更
+      - `* backups.size: int64 -> double`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ShowBackupUsage`、`ListInstanceBackupSummary`、`ListSparseBackupPolicy`、`UpdateSparseBackupPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ShowHttpsConfig`、`UpdateHttpsConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.191 2026-06-18
 
 ### HuaweiCloud SDK CodeArtsRepo

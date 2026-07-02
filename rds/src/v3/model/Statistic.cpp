@@ -24,7 +24,7 @@ Statistic::Statistic()
     queryIsSet_ = false;
     rows_ = 0L;
     rowsIsSet_ = false;
-    canUse_ = 0.0;
+    canUse_ = false;
     canUseIsSet_ = false;
 }
 
@@ -124,7 +124,7 @@ bool Statistic::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("canUse"));
         if(!fieldValue.is_null())
         {
-            double refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCanUse(refVal);
         }
@@ -259,12 +259,12 @@ void Statistic::unsetrows()
     rowsIsSet_ = false;
 }
 
-double Statistic::getCanUse() const
+bool Statistic::isCanUse() const
 {
     return canUse_;
 }
 
-void Statistic::setCanUse(double value)
+void Statistic::setCanUse(bool value)
 {
     canUse_ = value;
     canUseIsSet_ = true;

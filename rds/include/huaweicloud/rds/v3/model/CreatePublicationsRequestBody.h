@@ -11,8 +11,8 @@
 
 #include <huaweicloud/rds/v3/model/PublicationTableInfoRequest.h>
 #include <string>
+#include <huaweicloud/rds/v3/model/OperateUsedJobScheduleCreate.h>
 #include <vector>
-#include <huaweicloud/rds/v3/model/OperateUsedJobSchedule.h>
 #include <huaweicloud/rds/v3/model/SubscriptionOption.h>
 
 namespace HuaweiCloud {
@@ -64,10 +64,10 @@ public:
     /// 是否立即创建快照。
     /// </summary>
 
-    std::string getIsCreateSnapshotImmediately() const;
+    bool isIsCreateSnapshotImmediately() const;
     bool isCreateSnapshotImmediatelyIsSet() const;
     void unsetisCreateSnapshotImmediately();
-    void setIsCreateSnapshotImmediately(const std::string& value);
+    void setIsCreateSnapshotImmediately(bool value);
 
     /// <summary>
     /// 
@@ -82,10 +82,10 @@ public:
     /// 
     /// </summary>
 
-    OperateUsedJobSchedule getJobSchedule() const;
+    OperateUsedJobScheduleCreate getJobSchedule() const;
     bool jobScheduleIsSet() const;
     void unsetjobSchedule();
-    void setJobSchedule(const OperateUsedJobSchedule& value);
+    void setJobSchedule(const OperateUsedJobScheduleCreate& value);
 
     /// <summary>
     /// 是否选择所有数据表。
@@ -120,11 +120,11 @@ protected:
     bool publicationNameIsSet_;
     std::string publicationDatabase_;
     bool publicationDatabaseIsSet_;
-    std::string isCreateSnapshotImmediately_;
+    bool isCreateSnapshotImmediately_;
     bool isCreateSnapshotImmediatelyIsSet_;
     SubscriptionOption subscriptionOptions_;
     bool subscriptionOptionsIsSet_;
-    OperateUsedJobSchedule jobSchedule_;
+    OperateUsedJobScheduleCreate jobSchedule_;
     bool jobScheduleIsSet_;
     bool isSelectAllTable_;
     bool isSelectAllTableIsSet_;

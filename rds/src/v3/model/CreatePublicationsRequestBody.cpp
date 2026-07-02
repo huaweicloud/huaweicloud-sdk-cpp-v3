@@ -16,7 +16,7 @@ CreatePublicationsRequestBody::CreatePublicationsRequestBody()
     publicationNameIsSet_ = false;
     publicationDatabase_ = "";
     publicationDatabaseIsSet_ = false;
-    isCreateSnapshotImmediately_ = "";
+    isCreateSnapshotImmediately_ = false;
     isCreateSnapshotImmediatelyIsSet_ = false;
     subscriptionOptionsIsSet_ = false;
     jobScheduleIsSet_ = false;
@@ -89,7 +89,7 @@ bool CreatePublicationsRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_create_snapshot_immediately"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsCreateSnapshotImmediately(refVal);
         }
@@ -107,7 +107,7 @@ bool CreatePublicationsRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_schedule"));
         if(!fieldValue.is_null())
         {
-            OperateUsedJobSchedule refVal;
+            OperateUsedJobScheduleCreate refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setJobSchedule(refVal);
         }
@@ -185,12 +185,12 @@ void CreatePublicationsRequestBody::unsetpublicationDatabase()
     publicationDatabaseIsSet_ = false;
 }
 
-std::string CreatePublicationsRequestBody::getIsCreateSnapshotImmediately() const
+bool CreatePublicationsRequestBody::isIsCreateSnapshotImmediately() const
 {
     return isCreateSnapshotImmediately_;
 }
 
-void CreatePublicationsRequestBody::setIsCreateSnapshotImmediately(const std::string& value)
+void CreatePublicationsRequestBody::setIsCreateSnapshotImmediately(bool value)
 {
     isCreateSnapshotImmediately_ = value;
     isCreateSnapshotImmediatelyIsSet_ = true;
@@ -227,12 +227,12 @@ void CreatePublicationsRequestBody::unsetsubscriptionOptions()
     subscriptionOptionsIsSet_ = false;
 }
 
-OperateUsedJobSchedule CreatePublicationsRequestBody::getJobSchedule() const
+OperateUsedJobScheduleCreate CreatePublicationsRequestBody::getJobSchedule() const
 {
     return jobSchedule_;
 }
 
-void CreatePublicationsRequestBody::setJobSchedule(const OperateUsedJobSchedule& value)
+void CreatePublicationsRequestBody::setJobSchedule(const OperateUsedJobScheduleCreate& value)
 {
     jobSchedule_ = value;
     jobScheduleIsSet_ = true;

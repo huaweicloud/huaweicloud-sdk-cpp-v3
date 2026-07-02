@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -37,8 +38,19 @@ public:
     /////////////////////////////////////////////
     /// SetOffSiteBackupPolicyResponse members
 
+    /// <summary>
+    /// 响应结果
+    /// </summary>
+
+    std::string getResp() const;
+    bool respIsSet() const;
+    void unsetresp();
+    void setResp(const std::string& value);
+
 
 protected:
+    std::string resp_;
+    bool respIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

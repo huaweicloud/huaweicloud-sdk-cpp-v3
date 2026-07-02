@@ -65,7 +65,7 @@ bool ModifyPublicationsRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_schedule"));
         if(!fieldValue.is_null())
         {
-            OperateUsedJobSchedule refVal;
+            OperateUsedJobScheduleModifyPub refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setJobSchedule(refVal);
         }
@@ -122,12 +122,12 @@ void ModifyPublicationsRequestBody::unsetsubscriptionOptions()
     subscriptionOptionsIsSet_ = false;
 }
 
-OperateUsedJobSchedule ModifyPublicationsRequestBody::getJobSchedule() const
+OperateUsedJobScheduleModifyPub ModifyPublicationsRequestBody::getJobSchedule() const
 {
     return jobSchedule_;
 }
 
-void ModifyPublicationsRequestBody::setJobSchedule(const OperateUsedJobSchedule& value)
+void ModifyPublicationsRequestBody::setJobSchedule(const OperateUsedJobScheduleModifyPub& value)
 {
     jobSchedule_ = value;
     jobScheduleIsSet_ = true;

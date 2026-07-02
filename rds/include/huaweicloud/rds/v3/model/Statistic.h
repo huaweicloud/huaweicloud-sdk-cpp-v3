@@ -96,10 +96,10 @@ public:
     /// 是否可以执行sql限流
     /// </summary>
 
-    double getCanUse() const;
+    bool isCanUse() const;
     bool canUseIsSet() const;
     void unsetcanUse();
-    void setCanUse(double value);
+    void setCanUse(bool value);
 
 
 protected:
@@ -115,7 +115,7 @@ protected:
     bool queryIsSet_;
     int64_t rows_;
     bool rowsIsSet_;
-    double canUse_;
+    bool canUse_;
     bool canUseIsSet_;
 
 };

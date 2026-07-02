@@ -24,8 +24,6 @@ CollectPublicationMonitorResponse::CollectPublicationMonitorResponse()
     lastDistSyncIsSet_ = false;
     replicatedTransactions_ = 0;
     replicatedTransactionsIsSet_ = false;
-    replicationRateTrans_ = 0.0;
-    replicationRateTransIsSet_ = false;
 }
 
 CollectPublicationMonitorResponse::~CollectPublicationMonitorResponse() = default;
@@ -55,9 +53,6 @@ web::json::value CollectPublicationMonitorResponse::toJson() const
     }
     if(replicatedTransactionsIsSet_) {
         val[utility::conversions::to_string_t("replicated_transactions")] = ModelBase::toJson(replicatedTransactions_);
-    }
-    if(replicationRateTransIsSet_) {
-        val[utility::conversions::to_string_t("replication_rate_trans")] = ModelBase::toJson(replicationRateTrans_);
     }
 
     return val;
@@ -118,15 +113,6 @@ bool CollectPublicationMonitorResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReplicatedTransactions(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("replication_rate_trans"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("replication_rate_trans"));
-        if(!fieldValue.is_null())
-        {
-            double refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setReplicationRateTrans(refVal);
         }
     }
     return ok;
@@ -257,27 +243,6 @@ bool CollectPublicationMonitorResponse::replicatedTransactionsIsSet() const
 void CollectPublicationMonitorResponse::unsetreplicatedTransactions()
 {
     replicatedTransactionsIsSet_ = false;
-}
-
-double CollectPublicationMonitorResponse::getReplicationRateTrans() const
-{
-    return replicationRateTrans_;
-}
-
-void CollectPublicationMonitorResponse::setReplicationRateTrans(double value)
-{
-    replicationRateTrans_ = value;
-    replicationRateTransIsSet_ = true;
-}
-
-bool CollectPublicationMonitorResponse::replicationRateTransIsSet() const
-{
-    return replicationRateTransIsSet_;
-}
-
-void CollectPublicationMonitorResponse::unsetreplicationRateTrans()
-{
-    replicationRateTransIsSet_ = false;
 }
 
 }

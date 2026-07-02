@@ -10,9 +10,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/rds/v3/model/PublicationTableInfoRequest.h>
+#include <huaweicloud/rds/v3/model/OperateUsedJobScheduleModifyPub.h>
 #include <string>
 #include <vector>
-#include <huaweicloud/rds/v3/model/OperateUsedJobSchedule.h>
 #include <huaweicloud/rds/v3/model/SubscriptionOption.h>
 
 namespace HuaweiCloud {
@@ -55,10 +55,10 @@ public:
     /// 
     /// </summary>
 
-    OperateUsedJobSchedule getJobSchedule() const;
+    OperateUsedJobScheduleModifyPub getJobSchedule() const;
     bool jobScheduleIsSet() const;
     void unsetjobSchedule();
-    void setJobSchedule(const OperateUsedJobSchedule& value);
+    void setJobSchedule(const OperateUsedJobScheduleModifyPub& value);
 
     /// <summary>
     /// 是否选择所有数据表。
@@ -91,7 +91,7 @@ public:
 protected:
     SubscriptionOption subscriptionOptions_;
     bool subscriptionOptionsIsSet_;
-    OperateUsedJobSchedule jobSchedule_;
+    OperateUsedJobScheduleModifyPub jobSchedule_;
     bool jobScheduleIsSet_;
     bool isSelectAllTable_;
     bool isSelectAllTableIsSet_;

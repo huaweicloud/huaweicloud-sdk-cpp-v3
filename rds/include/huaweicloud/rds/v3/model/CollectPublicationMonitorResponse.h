@@ -92,15 +92,6 @@ public:
     void unsetreplicatedTransactions();
     void setReplicatedTransactions(int32_t value);
 
-    /// <summary>
-    /// 平均每秒传送到分发数据库的事务数。
-    /// </summary>
-
-    double getReplicationRateTrans() const;
-    bool replicationRateTransIsSet() const;
-    void unsetreplicationRateTrans();
-    void setReplicationRateTrans(double value);
-
 
 protected:
     std::string status_;
@@ -115,8 +106,6 @@ protected:
     bool lastDistSyncIsSet_;
     int32_t replicatedTransactions_;
     bool replicatedTransactionsIsSet_;
-    double replicationRateTrans_;
-    bool replicationRateTransIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

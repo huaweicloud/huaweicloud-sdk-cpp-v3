@@ -10,8 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/rds/v3/model/OperateUsedJobScheduleModify.h>
 #include <vector>
-#include <huaweicloud/rds/v3/model/OperateUsedJobSchedule.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -53,16 +53,16 @@ public:
     /// 
     /// </summary>
 
-    OperateUsedJobSchedule getJobSchedule() const;
+    OperateUsedJobScheduleModify getJobSchedule() const;
     bool jobScheduleIsSet() const;
     void unsetjobSchedule();
-    void setJobSchedule(const OperateUsedJobSchedule& value);
+    void setJobSchedule(const OperateUsedJobScheduleModify& value);
 
 
 protected:
     std::vector<std::string> subscriptionIds_;
     bool subscriptionIdsIsSet_;
-    OperateUsedJobSchedule jobSchedule_;
+    OperateUsedJobScheduleModify jobSchedule_;
     bool jobScheduleIsSet_;
 
 };

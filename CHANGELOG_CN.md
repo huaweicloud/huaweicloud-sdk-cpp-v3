@@ -1,3 +1,64 @@
+# 3.1.193 2026-07-02
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `SwitchGaussMySqlProxyAlt`
+    - `ShowDynamicServerlessPolicy`
+    - `UpdateDynamicServerlessPolicy`
+    - `DeleteDynamicServerlessPolicy`
+    - `CollectRealtimeSession`
+    - `ShowRealtimeSessionTaskStatus`
+    - `DownloadRealtimeSession`
+    - `BatchChangeInstanceSpecification`
+    - `ExecuteIntelligentKillSession`
+    - `ListIntelligentKillSessionHistory`
+    - `ShowIntelligentKillSessionStatistic`
+    - `ShowLockWaitSession`
+    - `CheckScheduleTaskExist`
+    - `CreateBackupResourcePackage`
+    - `ShowBackupResourcePackageFlavors`
+    - `ShowBackupVaultLock`
+    - `ModifyBackupVaultLock`
+    - `ListDdlLogs`
+    - `SetDdlLogPolicy`
+    - `DownloadDdlLogs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CollectPublicationMonitor**
+    - 响应参数变更
+      - `- replication_rate_trans`
+  - **ListSqlStatistics**
+    - 响应参数变更
+      - `* list.canUse: double -> boolean`
+  - **ModifyPublication**
+    - 请求参数变更
+      - `* job_schedule: object<OperateUsedJobSchedule> -> object<OperateUsedJobScheduleModifyPub>`
+  - **BatchModifySubscription**
+    - 请求参数变更
+      - `+ job_schedule.schedule_type`
+      - `+ job_schedule.user_defined`
+      - `* job_schedule: object<OperateUsedJobSchedule> -> object<OperateUsedJobScheduleModify>`
+  - **CreatePublication**
+    - 请求参数变更
+      - `* is_create_snapshot_immediately: string -> boolean`
+      - `* job_schedule: object<OperateUsedJobSchedule> -> object<OperateUsedJobScheduleCreate>`
+
 # 3.1.192 2026-06-25
 
 ### HuaweiCloud SDK ECS

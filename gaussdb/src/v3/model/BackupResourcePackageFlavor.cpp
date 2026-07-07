@@ -12,8 +12,8 @@ namespace Model {
 
 BackupResourcePackageFlavor::BackupResourcePackageFlavor()
 {
-    spceCode_ = "";
-    spceCodeIsSet_ = false;
+    specCode_ = "";
+    specCodeIsSet_ = false;
     volume_ = "";
     volumeIsSet_ = false;
 }
@@ -28,8 +28,8 @@ web::json::value BackupResourcePackageFlavor::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(spceCodeIsSet_) {
-        val[utility::conversions::to_string_t("spce_code")] = ModelBase::toJson(spceCode_);
+    if(specCodeIsSet_) {
+        val[utility::conversions::to_string_t("spec_code")] = ModelBase::toJson(specCode_);
     }
     if(volumeIsSet_) {
         val[utility::conversions::to_string_t("volume")] = ModelBase::toJson(volume_);
@@ -41,13 +41,13 @@ bool BackupResourcePackageFlavor::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("spce_code"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spce_code"));
+    if(val.has_field(utility::conversions::to_string_t("spec_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spec_code"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSpceCode(refVal);
+            setSpecCode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("volume"))) {
@@ -63,25 +63,25 @@ bool BackupResourcePackageFlavor::fromJson(const web::json::value& val)
 }
 
 
-std::string BackupResourcePackageFlavor::getSpceCode() const
+std::string BackupResourcePackageFlavor::getSpecCode() const
 {
-    return spceCode_;
+    return specCode_;
 }
 
-void BackupResourcePackageFlavor::setSpceCode(const std::string& value)
+void BackupResourcePackageFlavor::setSpecCode(const std::string& value)
 {
-    spceCode_ = value;
-    spceCodeIsSet_ = true;
+    specCode_ = value;
+    specCodeIsSet_ = true;
 }
 
-bool BackupResourcePackageFlavor::spceCodeIsSet() const
+bool BackupResourcePackageFlavor::specCodeIsSet() const
 {
-    return spceCodeIsSet_;
+    return specCodeIsSet_;
 }
 
-void BackupResourcePackageFlavor::unsetspceCode()
+void BackupResourcePackageFlavor::unsetspecCode()
 {
-    spceCodeIsSet_ = false;
+    specCodeIsSet_ = false;
 }
 
 std::string BackupResourcePackageFlavor::getVolume() const

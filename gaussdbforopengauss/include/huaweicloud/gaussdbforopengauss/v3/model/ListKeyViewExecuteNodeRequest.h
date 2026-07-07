@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -56,12 +57,23 @@ public:
     void unsetinstanceId();
     void setInstanceId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Object getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const Object& value);
+
 
 protected:
     std::string xLanguage_;
     bool xLanguageIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
+    Object body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

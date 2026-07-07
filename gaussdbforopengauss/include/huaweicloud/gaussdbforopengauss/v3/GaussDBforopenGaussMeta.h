@@ -20,6 +20,7 @@ public:
     static HttpRequestDef genRequestDefForAttachEip();
     static HttpRequestDef genRequestDefForAuthorizeBackupDownload();
     static HttpRequestDef genRequestDefForBatchDeleteInstanceTag();
+    static HttpRequestDef genRequestDefForBatchExecuteEvents();
     static HttpRequestDef genRequestDefForBatchSetBackupPolicy();
     static HttpRequestDef genRequestDefForBatchShowUpgradeCandidateVersions();
     static HttpRequestDef genRequestDefForBindDNat();
@@ -92,6 +93,7 @@ public:
     static HttpRequestDef genRequestDefForListDisasterRecoveryRecord();
     static HttpRequestDef genRequestDefForListEnterpriseProjects();
     static HttpRequestDef genRequestDefForListEpsQuotas();
+    static HttpRequestDef genRequestDefForListEvents();
     static HttpRequestDef genRequestDefForListFeatures();
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListFlavorsDetails();

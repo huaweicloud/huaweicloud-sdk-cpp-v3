@@ -42,10 +42,10 @@ public:
     /// **参数解释**：  备份资源包规格码。  **取值范围**：  不涉及。 
     /// </summary>
 
-    std::string getSpceCode() const;
-    bool spceCodeIsSet() const;
-    void unsetspceCode();
-    void setSpceCode(const std::string& value);
+    std::string getSpecCode() const;
+    bool specCodeIsSet() const;
+    void unsetspecCode();
+    void setSpecCode(const std::string& value);
 
     /// <summary>
     /// **参数解释**：  备份资源包规格。  **取值范围**：  不涉及。 
@@ -58,8 +58,8 @@ public:
 
 
 protected:
-    std::string spceCode_;
-    bool spceCodeIsSet_;
+    std::string specCode_;
+    bool specCodeIsSet_;
     std::string volume_;
     bool volumeIsSet_;
 

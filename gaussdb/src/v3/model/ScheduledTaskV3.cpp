@@ -12,11 +12,11 @@ namespace Model {
 
 ScheduledTaskV3::ScheduledTaskV3()
 {
-    createTime_ = utility::datetime();
+    createTime_ = 0L;
     createTimeIsSet_ = false;
     datastoreType_ = "";
     datastoreTypeIsSet_ = false;
-    endTime_ = utility::datetime();
+    endTime_ = 0L;
     endTimeIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
@@ -30,7 +30,7 @@ ScheduledTaskV3::ScheduledTaskV3()
     proxyIdIsSet_ = false;
     proxyName_ = "";
     proxyNameIsSet_ = false;
-    startTime_ = utility::datetime();
+    startTime_ = 0L;
     startTimeIsSet_ = false;
     targetConfigIsSet_ = false;
     taskId_ = "";
@@ -109,7 +109,7 @@ bool ScheduledTaskV3::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
         if(!fieldValue.is_null())
         {
-            utility::datetime refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateTime(refVal);
         }
@@ -127,7 +127,7 @@ bool ScheduledTaskV3::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
         if(!fieldValue.is_null())
         {
-            utility::datetime refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
         }
@@ -190,7 +190,7 @@ bool ScheduledTaskV3::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
         {
-            utility::datetime refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStartTime(refVal);
         }
@@ -244,12 +244,12 @@ bool ScheduledTaskV3::fromJson(const web::json::value& val)
 }
 
 
-utility::datetime ScheduledTaskV3::getCreateTime() const
+int64_t ScheduledTaskV3::getCreateTime() const
 {
     return createTime_;
 }
 
-void ScheduledTaskV3::setCreateTime(const utility::datetime& value)
+void ScheduledTaskV3::setCreateTime(int64_t value)
 {
     createTime_ = value;
     createTimeIsSet_ = true;
@@ -286,12 +286,12 @@ void ScheduledTaskV3::unsetdatastoreType()
     datastoreTypeIsSet_ = false;
 }
 
-utility::datetime ScheduledTaskV3::getEndTime() const
+int64_t ScheduledTaskV3::getEndTime() const
 {
     return endTime_;
 }
 
-void ScheduledTaskV3::setEndTime(const utility::datetime& value)
+void ScheduledTaskV3::setEndTime(int64_t value)
 {
     endTime_ = value;
     endTimeIsSet_ = true;
@@ -433,12 +433,12 @@ void ScheduledTaskV3::unsetproxyName()
     proxyNameIsSet_ = false;
 }
 
-utility::datetime ScheduledTaskV3::getStartTime() const
+int64_t ScheduledTaskV3::getStartTime() const
 {
     return startTime_;
 }
 
-void ScheduledTaskV3::setStartTime(const utility::datetime& value)
+void ScheduledTaskV3::setStartTime(int64_t value)
 {
     startTime_ = value;
     startTimeIsSet_ = true;

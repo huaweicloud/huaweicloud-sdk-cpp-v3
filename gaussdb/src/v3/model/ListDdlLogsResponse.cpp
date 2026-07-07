@@ -15,8 +15,8 @@ ListDdlLogsResponse::ListDdlLogsResponse()
     ddlLogsIsSet_ = false;
     totalCount_ = 0;
     totalCountIsSet_ = false;
-    keeyDays_ = 0;
-    keeyDaysIsSet_ = false;
+    keepDays_ = 0;
+    keepDaysIsSet_ = false;
     switchStatus_ = "";
     switchStatusIsSet_ = false;
 }
@@ -37,8 +37,8 @@ web::json::value ListDdlLogsResponse::toJson() const
     if(totalCountIsSet_) {
         val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
     }
-    if(keeyDaysIsSet_) {
-        val[utility::conversions::to_string_t("keey_days")] = ModelBase::toJson(keeyDays_);
+    if(keepDaysIsSet_) {
+        val[utility::conversions::to_string_t("keep_days")] = ModelBase::toJson(keepDays_);
     }
     if(switchStatusIsSet_) {
         val[utility::conversions::to_string_t("switch_status")] = ModelBase::toJson(switchStatus_);
@@ -68,13 +68,13 @@ bool ListDdlLogsResponse::fromJson(const web::json::value& val)
             setTotalCount(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("keey_days"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("keey_days"));
+    if(val.has_field(utility::conversions::to_string_t("keep_days"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("keep_days"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setKeeyDays(refVal);
+            setKeepDays(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("switch_status"))) {
@@ -132,25 +132,25 @@ void ListDdlLogsResponse::unsettotalCount()
     totalCountIsSet_ = false;
 }
 
-int32_t ListDdlLogsResponse::getKeeyDays() const
+int32_t ListDdlLogsResponse::getKeepDays() const
 {
-    return keeyDays_;
+    return keepDays_;
 }
 
-void ListDdlLogsResponse::setKeeyDays(int32_t value)
+void ListDdlLogsResponse::setKeepDays(int32_t value)
 {
-    keeyDays_ = value;
-    keeyDaysIsSet_ = true;
+    keepDays_ = value;
+    keepDaysIsSet_ = true;
 }
 
-bool ListDdlLogsResponse::keeyDaysIsSet() const
+bool ListDdlLogsResponse::keepDaysIsSet() const
 {
-    return keeyDaysIsSet_;
+    return keepDaysIsSet_;
 }
 
-void ListDdlLogsResponse::unsetkeeyDays()
+void ListDdlLogsResponse::unsetkeepDays()
 {
-    keeyDaysIsSet_ = false;
+    keepDaysIsSet_ = false;
 }
 
 std::string ListDdlLogsResponse::getSwitchStatus() const

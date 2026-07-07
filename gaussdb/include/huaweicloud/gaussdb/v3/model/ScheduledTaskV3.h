@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <cpprest/details/basic_types.h>
 #include <map>
 #include <vector>
 
@@ -45,10 +44,10 @@ public:
     /// **参数解释**：  任务创建时间。  **取值范围**： 不涉及。
     /// </summary>
 
-    utility::datetime getCreateTime() const;
+    int64_t getCreateTime() const;
     bool createTimeIsSet() const;
     void unsetcreateTime();
-    void setCreateTime(const utility::datetime& value);
+    void setCreateTime(int64_t value);
 
     /// <summary>
     /// **参数解释**：  数据库类型。  **取值范围**： 目前只支持gaussdb-mysql。
@@ -63,10 +62,10 @@ public:
     /// **参数解释**：  任务结束时间。  **取值范围**： 不涉及。
     /// </summary>
 
-    utility::datetime getEndTime() const;
+    int64_t getEndTime() const;
     bool endTimeIsSet() const;
     void unsetendTime();
-    void setEndTime(const utility::datetime& value);
+    void setEndTime(int64_t value);
 
     /// <summary>
     /// **参数解释**：  任务绑定的实例ID。  **取值范围**： 不涉及。
@@ -126,10 +125,10 @@ public:
     /// **参数解释**：  任务开始时间。  **取值范围**： 不涉及。
     /// </summary>
 
-    utility::datetime getStartTime() const;
+    int64_t getStartTime() const;
     bool startTimeIsSet() const;
     void unsetstartTime();
-    void setStartTime(const utility::datetime& value);
+    void setStartTime(int64_t value);
 
     /// <summary>
     /// **参数解释**：  任务的目标端配置信息，以键值对形式存储。  **取值范围**： 不涉及。
@@ -178,11 +177,11 @@ public:
 
 
 protected:
-    utility::datetime createTime_;
+    int64_t createTime_;
     bool createTimeIsSet_;
     std::string datastoreType_;
     bool datastoreTypeIsSet_;
-    utility::datetime endTime_;
+    int64_t endTime_;
     bool endTimeIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
@@ -196,7 +195,7 @@ protected:
     bool proxyIdIsSet_;
     std::string proxyName_;
     bool proxyNameIsSet_;
-    utility::datetime startTime_;
+    int64_t startTime_;
     bool startTimeIsSet_;
     std::map<std::string, std::string> targetConfig_;
     bool targetConfigIsSet_;

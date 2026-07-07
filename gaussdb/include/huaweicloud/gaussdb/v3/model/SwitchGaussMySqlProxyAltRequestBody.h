@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 更改数据库代理ALT开关的请求体
+/// ALT开关对象。
 /// </summary>
 class HUAWEICLOUD_GAUSSDB_V3_EXPORT  SwitchGaussMySqlProxyAltRequestBody
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// SwitchGaussMySqlProxyAltRequestBody members
 
     /// <summary>
-    /// **参数解释**：  ALT开关状态。  **取值范围**： - on：开启。 - off：关闭。  **默认取值**： 不涉及。
+    /// **参数解释**：  ALT开关。  **约束限制**：  不涉及。  **取值范围**：  - on：开启。  - off：关闭。  **默认取值**：  不涉及。 
     /// </summary>
 
     std::string getAltEnabled() const;
@@ -47,10 +47,21 @@ public:
     void unsetaltEnabled();
     void setAltEnabled(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  只读ALT开关。  **约束限制**：  不涉及。  **取值范围**：  - on：开启。  - off：关闭。  **默认取值**：  off。
+    /// </summary>
+
+    std::string getAltForReadonly() const;
+    bool altForReadonlyIsSet() const;
+    void unsetaltForReadonly();
+    void setAltForReadonly(const std::string& value);
+
 
 protected:
     std::string altEnabled_;
     bool altEnabledIsSet_;
+    std::string altForReadonly_;
+    bool altForReadonlyIsSet_;
 
 };
 

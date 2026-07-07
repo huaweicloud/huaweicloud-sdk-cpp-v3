@@ -16,6 +16,7 @@ ListKeyViewExecuteNodeRequest::ListKeyViewExecuteNodeRequest()
     xLanguageIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
+    bodyIsSet_ = false;
 }
 
 ListKeyViewExecuteNodeRequest::~ListKeyViewExecuteNodeRequest() = default;
@@ -33,6 +34,9 @@ web::json::value ListKeyViewExecuteNodeRequest::toJson() const
     }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
+    }
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
 
     return val;
@@ -57,6 +61,15 @@ bool ListKeyViewExecuteNodeRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBody(refVal);
         }
     }
     return ok;
@@ -103,6 +116,27 @@ bool ListKeyViewExecuteNodeRequest::instanceIdIsSet() const
 void ListKeyViewExecuteNodeRequest::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
+}
+
+Object ListKeyViewExecuteNodeRequest::getBody() const
+{
+    return body_;
+}
+
+void ListKeyViewExecuteNodeRequest::setBody(const Object& value)
+{
+    body_ = value;
+    bodyIsSet_ = true;
+}
+
+bool ListKeyViewExecuteNodeRequest::bodyIsSet() const
+{
+    return bodyIsSet_;
+}
+
+void ListKeyViewExecuteNodeRequest::unsetbody()
+{
+    bodyIsSet_ = false;
 }
 
 }

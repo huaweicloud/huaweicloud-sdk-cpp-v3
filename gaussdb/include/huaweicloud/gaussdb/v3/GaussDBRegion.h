@@ -94,6 +94,10 @@ public:
             { 
                 "https://gaussdb-mysql.la-north-2.myhuaweicloud.com"
             });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://gaussdb-mysql.cn-southwest-3.myhuaweicloud.com"
+            });
         regions["me-east-1"] = Region("me-east-1",
             { 
                 "https://gaussdbformysql.me-east-1.myhuaweicloud.com"

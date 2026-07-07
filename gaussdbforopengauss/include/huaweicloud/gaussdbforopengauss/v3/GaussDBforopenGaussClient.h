@@ -27,6 +27,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchDeleteInstanceTagRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchDeleteInstanceTagRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchDeleteInstanceTagResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BatchExecuteEventsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BatchExecuteEventsRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/BatchExecuteEventsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchSetBackupPolicyResponse.h>
@@ -207,6 +210,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListEnterpriseProjectsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListEpsQuotasRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListEpsQuotasResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListEventsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListEventsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFeaturesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFeaturesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsDetailsRequest.h>
@@ -753,6 +758,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteInstanceTagResponse> batchDeleteInstanceTag(
         BatchDeleteInstanceTagRequest &request
+    );
+    // 操作EG事件中心通知事件
+    //
+    // 操作EG事件中心通知事件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchExecuteEventsResponse> batchExecuteEvents(
+        BatchExecuteEventsRequest &request
     );
     // 批量设置自动备份策略
     //
@@ -1329,6 +1342,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListEpsQuotasResponse> listEpsQuotas(
         ListEpsQuotasRequest &request
+    );
+    // 查询事件列表
+    //
+    // 查询事件列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListEventsResponse> listEvents(
+        ListEventsRequest &request
     );
     // 查询实例特性列表
     //

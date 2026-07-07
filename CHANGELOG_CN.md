@@ -1,3 +1,49 @@
+# 3.1.194 2026-07-07
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **SwitchGaussMySqlProxyAlt**
+    - 请求参数变更
+      - `+ alt_for_readonly`
+  - **CheckScheduleTaskExist**
+    - 响应参数变更
+      - `* scheduled_tasks.create_time: date-time -> int64`
+      - `* scheduled_tasks.end_time: date-time -> int64`
+      - `* scheduled_tasks.start_time: date-time -> int64`
+  - **ShowBackupResourcePackageFlavors**
+    - 响应参数变更
+      - `+ flavors.spec_code`
+      - `- flavors.spce_code`
+  - **SetDdlLogPolicy**
+    - 响应参数变更
+      - `+ workflow_id`
+      - `- keey_days`
+      - `- total_count`
+      - `- switch_status`
+      - `- ddl_logs`
+  - **ListDdlLogs**
+    - 响应参数变更
+      - `+ keep_days`
+      - `- keey_days`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListEvents`、`BatchExecuteEvents`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.193 2026-07-02
 
 ### HuaweiCloud SDK GaussDB

@@ -62,10 +62,10 @@ public:
     /// **参数解释**：  日志保留天数。  **取值范围**：  不涉及。 
     /// </summary>
 
-    int32_t getKeeyDays() const;
-    bool keeyDaysIsSet() const;
-    void unsetkeeyDays();
-    void setKeeyDays(int32_t value);
+    int32_t getKeepDays() const;
+    bool keepDaysIsSet() const;
+    void unsetkeepDays();
+    void setKeepDays(int32_t value);
 
     /// <summary>
     /// **参数解释**：  DDL日志下载开关状态。  **取值范围**：  - ON，开启。 - OFF，关闭。 
@@ -82,8 +82,8 @@ protected:
     bool ddlLogsIsSet_;
     int32_t totalCount_;
     bool totalCountIsSet_;
-    int32_t keeyDays_;
-    bool keeyDaysIsSet_;
+    int32_t keepDays_;
+    bool keepDaysIsSet_;
     std::string switchStatus_;
     bool switchStatusIsSet_;
 

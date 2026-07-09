@@ -35,6 +35,15 @@ HttpRequestDef DbssMeta::genRequestDefForAddAuditDatabaseNew() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DbssMeta::genRequestDefForAddDatabaseSslKey() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DbssMeta::genRequestDefForAddRdsDatabase() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -465,6 +474,17 @@ HttpRequestDef DbssMeta::genRequestDefForListAuditInstances() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DbssMeta::genRequestDefForListAuditInstancesLast() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DbssMeta::genRequestDefForListAuditInstancesNew() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -637,6 +657,17 @@ HttpRequestDef DbssMeta::genRequestDefForListAvailabilityZoneInfosNew() {
 
 HttpRequestDef DbssMeta::genRequestDefForListDbEncryptInstances() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForListDomainAllResource() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -901,6 +932,11 @@ HttpRequestDef DbssMeta::genRequestDefForShowBackupRiskBucketPath() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DbssMeta::genRequestDefForShowDomainAllResourceCount() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef DbssMeta::genRequestDefForShowInstanceMonitorInfo() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -911,6 +947,11 @@ HttpRequestDef DbssMeta::genRequestDefForShowInstanceMonitorInfo() {
 }
 
 HttpRequestDef DbssMeta::genRequestDefForShowInstanceQuota() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForShowLogRetentionCommonSettings() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -1128,6 +1169,15 @@ HttpRequestDef DbssMeta::genRequestDefForUpdateDbEncryptInstanceName() {
 }
 
 HttpRequestDef DbssMeta::genRequestDefForUpdateDbOmInstanceName() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForUpdateLogRetentionCommonSettings() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

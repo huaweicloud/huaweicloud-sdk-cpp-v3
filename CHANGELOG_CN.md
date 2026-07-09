@@ -1,3 +1,36 @@
+# 3.1.195 2026-07-09
+
+### HuaweiCloud SDK DBSS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListDomainAllResource`
+    - `ShowDomainAllResourceCount`
+    - `ListAuditInstancesLast`
+    - `AddDatabaseSslKey`
+    - `ShowLogRetentionCommonSettings`
+    - `UpdateLogRetentionCommonSettings`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAuditInstancesNew**
+    - 响应参数变更
+      - `+ instances`
+      - `- servers`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`ListGaussMySqlInstances`、`ShowGaussMySqlInstanceInfo`、`ListGaussMySqlInstanceDetailInfo`
+
 # 3.1.194 2026-07-07
 
 ### HuaweiCloud SDK GaussDB

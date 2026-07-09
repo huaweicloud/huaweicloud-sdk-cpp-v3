@@ -12,6 +12,8 @@
 #include <huaweicloud/dbss/v1/model/AddAuditDatabaseNewResponse.h>
 #include <huaweicloud/dbss/v1/model/AddAuditDatabaseRequest.h>
 #include <huaweicloud/dbss/v1/model/AddAuditDatabaseResponse.h>
+#include <huaweicloud/dbss/v1/model/AddDatabaseSslKeyRequest.h>
+#include <huaweicloud/dbss/v1/model/AddDatabaseSslKeyResponse.h>
 #include <huaweicloud/dbss/v1/model/AddRdsDatabaseNewRequest.h>
 #include <huaweicloud/dbss/v1/model/AddRdsDatabaseNewResponse.h>
 #include <huaweicloud/dbss/v1/model/AddRdsDatabaseRequest.h>
@@ -139,6 +141,8 @@
 #include <huaweicloud/dbss/v1/model/ListAuditInstanceJobsNewResponse.h>
 #include <huaweicloud/dbss/v1/model/ListAuditInstanceJobsRequest.h>
 #include <huaweicloud/dbss/v1/model/ListAuditInstanceJobsResponse.h>
+#include <huaweicloud/dbss/v1/model/ListAuditInstancesLastRequest.h>
+#include <huaweicloud/dbss/v1/model/ListAuditInstancesLastResponse.h>
 #include <huaweicloud/dbss/v1/model/ListAuditInstancesNewRequest.h>
 #include <huaweicloud/dbss/v1/model/ListAuditInstancesNewResponse.h>
 #include <huaweicloud/dbss/v1/model/ListAuditInstancesRequest.h>
@@ -179,6 +183,8 @@
 #include <huaweicloud/dbss/v1/model/ListAvailabilityZoneInfosResponse.h>
 #include <huaweicloud/dbss/v1/model/ListDbEncryptInstancesRequest.h>
 #include <huaweicloud/dbss/v1/model/ListDbEncryptInstancesResponse.h>
+#include <huaweicloud/dbss/v1/model/ListDomainAllResourceRequest.h>
+#include <huaweicloud/dbss/v1/model/ListDomainAllResourceResponse.h>
 #include <huaweicloud/dbss/v1/model/ListEcsSpecificationNewRequest.h>
 #include <huaweicloud/dbss/v1/model/ListEcsSpecificationNewResponse.h>
 #include <huaweicloud/dbss/v1/model/ListEcsSpecificationRequest.h>
@@ -269,10 +275,14 @@
 #include <huaweicloud/dbss/v1/model/ShowAuditUpgradeStatusResponse.h>
 #include <huaweicloud/dbss/v1/model/ShowBackupRiskBucketPathRequest.h>
 #include <huaweicloud/dbss/v1/model/ShowBackupRiskBucketPathResponse.h>
+#include <huaweicloud/dbss/v1/model/ShowDomainAllResourceCountRequest.h>
+#include <huaweicloud/dbss/v1/model/ShowDomainAllResourceCountResponse.h>
 #include <huaweicloud/dbss/v1/model/ShowInstanceMonitorInfoRequest.h>
 #include <huaweicloud/dbss/v1/model/ShowInstanceMonitorInfoResponse.h>
 #include <huaweicloud/dbss/v1/model/ShowInstanceQuotaRequest.h>
 #include <huaweicloud/dbss/v1/model/ShowInstanceQuotaResponse.h>
+#include <huaweicloud/dbss/v1/model/ShowLogRetentionCommonSettingsRequest.h>
+#include <huaweicloud/dbss/v1/model/ShowLogRetentionCommonSettingsResponse.h>
 #include <huaweicloud/dbss/v1/model/ShowSensitiveMaskSwitchRequest.h>
 #include <huaweicloud/dbss/v1/model/ShowSensitiveMaskSwitchResponse.h>
 #include <huaweicloud/dbss/v1/model/ShowSensitiveResultSwitchRequest.h>
@@ -338,10 +348,14 @@
 #include <huaweicloud/dbss/v1/model/UpdateDbEncryptInstanceNameResponse.h>
 #include <huaweicloud/dbss/v1/model/UpdateDbOmInstanceNameRequest.h>
 #include <huaweicloud/dbss/v1/model/UpdateDbOmInstanceNameResponse.h>
+#include <huaweicloud/dbss/v1/model/UpdateLogRetention.h>
+#include <huaweicloud/dbss/v1/model/UpdateLogRetentionCommonSettingsRequest.h>
+#include <huaweicloud/dbss/v1/model/UpdateLogRetentionCommonSettingsResponse.h>
 #include <huaweicloud/dbss/v1/model/UpdateSensitiveMaskRuleRequest.h>
 #include <huaweicloud/dbss/v1/model/UpdateSensitiveMaskRuleResponse.h>
 #include <huaweicloud/dbss/v1/model/UploadAuditDbConfigRequest.h>
 #include <huaweicloud/dbss/v1/model/UploadAuditDbConfigResponse.h>
+#include <huaweicloud/dbss/v1/model/UploadDatabaseSslFileRequest.h>
 #include <string>
 
 #include <huaweicloud/dbss/v1/model/AddAuditAgentNewRequest.h>
@@ -454,6 +468,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AddAuditDatabaseNewResponse> addAuditDatabaseNew(
         AddAuditDatabaseNewRequest &request
+    );
+    // 上传/更新数据库私钥
+    //
+    // 上传/更新数据库私钥
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddDatabaseSslKeyResponse> addDatabaseSslKey(
+        AddDatabaseSslKeyRequest &request
     );
     // 添加RDS数据库[待下线]
     //
@@ -884,6 +906,14 @@ public:
     // 查询审计实例列表
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAuditInstancesLastResponse> listAuditInstancesLast(
+        ListAuditInstancesLastRequest &request
+    );
+    // 查询审计实例列表[待下线]
+    //
+    // 查询审计实例列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAuditInstancesNewResponse> listAuditInstancesNew(
         ListAuditInstancesNewRequest &request
     );
@@ -1030,6 +1060,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDbEncryptInstancesResponse> listDbEncryptInstances(
         ListDbEncryptInstancesRequest &request
+    );
+    // 云脑链接器获取资源列表
+    //
+    // 云脑链接器获取资源列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDomainAllResourceResponse> listDomainAllResource(
+        ListDomainAllResourceRequest &request
     );
     // 查询ECS服务器规格信息[待下线]
     //
@@ -1327,6 +1365,14 @@ public:
     std::shared_ptr<ShowBackupRiskBucketPathResponse> showBackupRiskBucketPath(
         ShowBackupRiskBucketPathRequest &request
     );
+    // 云脑链接器获取资源总量
+    //
+    // 云脑链接器获取资源总量
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDomainAllResourceCountResponse> showDomainAllResourceCount(
+        ShowDomainAllResourceCountRequest &request
+    );
     // 获取实例监控数据
     //
     // 获取实例监控数据
@@ -1342,6 +1388,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowInstanceQuotaResponse> showInstanceQuota(
         ShowInstanceQuotaRequest &request
+    );
+    // 获取审计实例日志保存时间配置
+    //
+    // 获取审计实例日志保存时间配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLogRetentionCommonSettingsResponse> showLogRetentionCommonSettings(
+        ShowLogRetentionCommonSettingsRequest &request
     );
     // 获取隐私数据脱敏开关
     //
@@ -1574,6 +1628,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDbOmInstanceNameResponse> updateDbOmInstanceName(
         UpdateDbOmInstanceNameRequest &request
+    );
+    // 设置审计实例日志保存时间配置
+    //
+    // 设置审计实例日志保存时间配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLogRetentionCommonSettingsResponse> updateLogRetentionCommonSettings(
+        UpdateLogRetentionCommonSettingsRequest &request
     );
     // 修改编辑隐私数据脱敏规则
     //

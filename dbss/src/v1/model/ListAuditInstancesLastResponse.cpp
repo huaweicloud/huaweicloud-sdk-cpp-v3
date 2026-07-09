@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/dbss/v1/model/ListAuditInstancesNewResponse.h"
+#include "huaweicloud/dbss/v1/model/ListAuditInstancesLastResponse.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dbss {
@@ -10,20 +10,20 @@ namespace Model {
 
 
 
-ListAuditInstancesNewResponse::ListAuditInstancesNewResponse()
+ListAuditInstancesLastResponse::ListAuditInstancesLastResponse()
 {
     instancesIsSet_ = false;
     total_ = 0;
     totalIsSet_ = false;
 }
 
-ListAuditInstancesNewResponse::~ListAuditInstancesNewResponse() = default;
+ListAuditInstancesLastResponse::~ListAuditInstancesLastResponse() = default;
 
-void ListAuditInstancesNewResponse::validate()
+void ListAuditInstancesLastResponse::validate()
 {
 }
 
-web::json::value ListAuditInstancesNewResponse::toJson() const
+web::json::value ListAuditInstancesLastResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -36,7 +36,7 @@ web::json::value ListAuditInstancesNewResponse::toJson() const
 
     return val;
 }
-bool ListAuditInstancesNewResponse::fromJson(const web::json::value& val)
+bool ListAuditInstancesLastResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -44,7 +44,7 @@ bool ListAuditInstancesNewResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instances"));
         if(!fieldValue.is_null())
         {
-            std::vector<ResponseAuditV2> refVal;
+            std::vector<AuditInstanceBean> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstances(refVal);
         }
@@ -62,44 +62,44 @@ bool ListAuditInstancesNewResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<ResponseAuditV2>& ListAuditInstancesNewResponse::getInstances()
+std::vector<AuditInstanceBean>& ListAuditInstancesLastResponse::getInstances()
 {
     return instances_;
 }
 
-void ListAuditInstancesNewResponse::setInstances(const std::vector<ResponseAuditV2>& value)
+void ListAuditInstancesLastResponse::setInstances(const std::vector<AuditInstanceBean>& value)
 {
     instances_ = value;
     instancesIsSet_ = true;
 }
 
-bool ListAuditInstancesNewResponse::instancesIsSet() const
+bool ListAuditInstancesLastResponse::instancesIsSet() const
 {
     return instancesIsSet_;
 }
 
-void ListAuditInstancesNewResponse::unsetinstances()
+void ListAuditInstancesLastResponse::unsetinstances()
 {
     instancesIsSet_ = false;
 }
 
-int32_t ListAuditInstancesNewResponse::getTotal() const
+int32_t ListAuditInstancesLastResponse::getTotal() const
 {
     return total_;
 }
 
-void ListAuditInstancesNewResponse::setTotal(int32_t value)
+void ListAuditInstancesLastResponse::setTotal(int32_t value)
 {
     total_ = value;
     totalIsSet_ = true;
 }
 
-bool ListAuditInstancesNewResponse::totalIsSet() const
+bool ListAuditInstancesLastResponse::totalIsSet() const
 {
     return totalIsSet_;
 }
 
-void ListAuditInstancesNewResponse::unsettotal()
+void ListAuditInstancesLastResponse::unsettotal()
 {
     totalIsSet_ = false;
 }

@@ -159,6 +159,49 @@ std::shared_ptr<AddAuditDatabaseNewResponse> DbssClient::addAuditDatabaseNew(Add
 
     return localVarResult;
 }
+std::shared_ptr<AddDatabaseSslKeyResponse> DbssClient::addDatabaseSslKey(AddDatabaseSslKeyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/audit/{instance_id}/databases/{db_id}/sslkey";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["db_id"] = parameterToString(request.getDbId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForAddDatabaseSslKey());
+
+    std::shared_ptr<AddDatabaseSslKeyResponse> localVarResult = std::make_shared<AddDatabaseSslKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<AddRdsDatabaseResponse> DbssClient::addRdsDatabase(AddRdsDatabaseRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/{instance_id}/audit/databases/rds";
@@ -2152,6 +2195,41 @@ std::shared_ptr<ListAuditInstancesResponse> DbssClient::listAuditInstances(ListA
 
     return localVarResult;
 }
+std::shared_ptr<ListAuditInstancesLastResponse> DbssClient::listAuditInstancesLast(ListAuditInstancesLastRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/audit/instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForListAuditInstancesLast());
+
+    std::shared_ptr<ListAuditInstancesLastResponse> localVarResult = std::make_shared<ListAuditInstancesLastResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListAuditInstancesNewResponse> DbssClient::listAuditInstancesNew(ListAuditInstancesNewRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/audit/instances";
@@ -2827,6 +2905,44 @@ std::shared_ptr<ListDbEncryptInstancesResponse> DbssClient::listDbEncryptInstanc
         localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForListDbEncryptInstances());
 
     std::shared_ptr<ListDbEncryptInstancesResponse> localVarResult = std::make_shared<ListDbEncryptInstancesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListDomainAllResourceResponse> DbssClient::listDomainAllResource(ListDomainAllResourceRequest &request)
+{
+    std::string localVarPath = "/v1/resource-manager/domains/{domain_id}/all-resources/{region_id}/{resource_type}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
+    localVarPathParams["resource_type"] = parameterToString(request.getResourceType());
+    localVarPathParams["region_id"] = parameterToString(request.getRegionId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForListDomainAllResource());
+
+    std::shared_ptr<ListDomainAllResourceResponse> localVarResult = std::make_shared<ListDomainAllResourceResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -4147,6 +4263,38 @@ std::shared_ptr<ShowBackupRiskBucketPathResponse> DbssClient::showBackupRiskBuck
 
     return localVarResult;
 }
+std::shared_ptr<ShowDomainAllResourceCountResponse> DbssClient::showDomainAllResourceCount(ShowDomainAllResourceCountRequest &request)
+{
+    std::string localVarPath = "/v1/resource-manager/domains/{domain_id}/all-resources/{region_id}/{resource_type}/count";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
+    localVarPathParams["resource_type"] = parameterToString(request.getResourceType());
+    localVarPathParams["region_id"] = parameterToString(request.getRegionId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForShowDomainAllResourceCount());
+
+    std::shared_ptr<ShowDomainAllResourceCountResponse> localVarResult = std::make_shared<ShowDomainAllResourceCountResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowInstanceMonitorInfoResponse> DbssClient::showInstanceMonitorInfo(ShowInstanceMonitorInfoRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/audit/{instance_id}/system/monitorinfo";
@@ -4212,6 +4360,36 @@ std::shared_ptr<ShowInstanceQuotaResponse> DbssClient::showInstanceQuota(ShowIns
         localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForShowInstanceQuota());
 
     std::shared_ptr<ShowInstanceQuotaResponse> localVarResult = std::make_shared<ShowInstanceQuotaResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowLogRetentionCommonSettingsResponse> DbssClient::showLogRetentionCommonSettings(ShowLogRetentionCommonSettingsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/audit/{instance_id}/settings/common-settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForShowLogRetentionCommonSettings());
+
+    std::shared_ptr<ShowLogRetentionCommonSettingsResponse> localVarResult = std::make_shared<ShowLogRetentionCommonSettingsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5300,6 +5478,48 @@ std::shared_ptr<UpdateDbOmInstanceNameResponse> DbssClient::updateDbOmInstanceNa
         localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForUpdateDbOmInstanceName());
 
     std::shared_ptr<UpdateDbOmInstanceNameResponse> localVarResult = std::make_shared<UpdateDbOmInstanceNameResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateLogRetentionCommonSettingsResponse> DbssClient::updateLogRetentionCommonSettings(UpdateLogRetentionCommonSettingsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/audit/{instance_id}/settings/common-settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForUpdateLogRetentionCommonSettings());
+
+    std::shared_ptr<UpdateLogRetentionCommonSettingsResponse> localVarResult = std::make_shared<UpdateLogRetentionCommonSettingsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

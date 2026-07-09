@@ -16,6 +16,7 @@ public:
     static HttpRequestDef genRequestDefForAddAuditAgent();
     static HttpRequestDef genRequestDefForAddAuditDatabase();
     static HttpRequestDef genRequestDefForAddAuditDatabaseNew();
+    static HttpRequestDef genRequestDefForAddDatabaseSslKey();
     static HttpRequestDef genRequestDefForAddRdsDatabase();
     static HttpRequestDef genRequestDefForAddRdsDatabaseNew();
     static HttpRequestDef genRequestDefForAddRdsNoAgentDatabase();
@@ -69,6 +70,7 @@ public:
     static HttpRequestDef genRequestDefForListAuditInstanceJobs();
     static HttpRequestDef genRequestDefForListAuditInstanceJobsNew();
     static HttpRequestDef genRequestDefForListAuditInstances();
+    static HttpRequestDef genRequestDefForListAuditInstancesLast();
     static HttpRequestDef genRequestDefForListAuditInstancesNew();
     static HttpRequestDef genRequestDefForListAuditObsBuckets();
     static HttpRequestDef genRequestDefForListAuditOperateLogs();
@@ -88,6 +90,7 @@ public:
     static HttpRequestDef genRequestDefForListAvailabilityZoneInfos();
     static HttpRequestDef genRequestDefForListAvailabilityZoneInfosNew();
     static HttpRequestDef genRequestDefForListDbEncryptInstances();
+    static HttpRequestDef genRequestDefForListDomainAllResource();
     static HttpRequestDef genRequestDefForListEcsSpecification();
     static HttpRequestDef genRequestDefForListEcsSpecificationNew();
     static HttpRequestDef genRequestDefForListInstances();
@@ -125,8 +128,10 @@ public:
     static HttpRequestDef genRequestDefForShowAuditTopicReportSchedulerConfig();
     static HttpRequestDef genRequestDefForShowAuditUpgradeStatus();
     static HttpRequestDef genRequestDefForShowBackupRiskBucketPath();
+    static HttpRequestDef genRequestDefForShowDomainAllResourceCount();
     static HttpRequestDef genRequestDefForShowInstanceMonitorInfo();
     static HttpRequestDef genRequestDefForShowInstanceQuota();
+    static HttpRequestDef genRequestDefForShowLogRetentionCommonSettings();
     static HttpRequestDef genRequestDefForShowSensitiveMaskSwitch();
     static HttpRequestDef genRequestDefForShowSensitiveResultSwitch();
     static HttpRequestDef genRequestDefForShowServerVersion();
@@ -156,6 +161,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateAuditTopicReportSchedulerConfig();
     static HttpRequestDef genRequestDefForUpdateDbEncryptInstanceName();
     static HttpRequestDef genRequestDefForUpdateDbOmInstanceName();
+    static HttpRequestDef genRequestDefForUpdateLogRetentionCommonSettings();
     static HttpRequestDef genRequestDefForUpdateSensitiveMaskRule();
     static HttpRequestDef genRequestDefForUploadAuditDbConfig();
     static HttpRequestDef genRequestDefForAddAuditAgentNew();

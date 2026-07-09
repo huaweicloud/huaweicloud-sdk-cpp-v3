@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_DBSS_V1_MODEL_ListAuditInstancesNewResponse_H_
-#define HUAWEICLOUD_SDK_DBSS_V1_MODEL_ListAuditInstancesNewResponse_H_
+#ifndef HUAWEICLOUD_SDK_DBSS_V1_MODEL_ListAuditInstancesLastResponse_H_
+#define HUAWEICLOUD_SDK_DBSS_V1_MODEL_ListAuditInstancesLastResponse_H_
 
 
 #include <huaweicloud/dbss/v1/DbssExport.h>
@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/dbss/v1/model/ResponseAuditV2.h>
+#include <huaweicloud/dbss/v1/model/AuditInstanceBean.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -23,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_DBSS_V1_EXPORT  ListAuditInstancesNewResponse
+class HUAWEICLOUD_DBSS_V1_EXPORT  ListAuditInstancesLastResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    ListAuditInstancesNewResponse();
-    virtual ~ListAuditInstancesNewResponse();
+    ListAuditInstancesLastResponse();
+    virtual ~ListAuditInstancesLastResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,19 +37,19 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ListAuditInstancesNewResponse members
+    /// ListAuditInstancesLastResponse members
 
     /// <summary>
-    /// 实例列表
+    /// 实例信息列表
     /// </summary>
 
-    std::vector<ResponseAuditV2>& getInstances();
+    std::vector<AuditInstanceBean>& getInstances();
     bool instancesIsSet() const;
     void unsetinstances();
-    void setInstances(const std::vector<ResponseAuditV2>& value);
+    void setInstances(const std::vector<AuditInstanceBean>& value);
 
     /// <summary>
-    /// 总记录数
+    /// 总数
     /// </summary>
 
     int32_t getTotal() const;
@@ -59,7 +59,7 @@ public:
 
 
 protected:
-    std::vector<ResponseAuditV2> instances_;
+    std::vector<AuditInstanceBean> instances_;
     bool instancesIsSet_;
     int32_t total_;
     bool totalIsSet_;
@@ -76,4 +76,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_DBSS_V1_MODEL_ListAuditInstancesNewResponse_H_
+#endif // HUAWEICLOUD_SDK_DBSS_V1_MODEL_ListAuditInstancesLastResponse_H_

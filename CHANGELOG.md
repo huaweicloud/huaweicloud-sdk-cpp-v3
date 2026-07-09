@@ -1,3 +1,36 @@
+# 3.1.195 2026-07-09
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListDomainAllResource`
+    - `ShowDomainAllResourceCount`
+    - `ListAuditInstancesLast`
+    - `AddDatabaseSslKey`
+    - `ShowLogRetentionCommonSettings`
+    - `UpdateLogRetentionCommonSettings`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAuditInstancesNew**
+    - changes of response param
+      - `+ instances`
+      - `- servers`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `ListGaussMySqlInstances`, `ShowGaussMySqlInstanceInfo`, `ListGaussMySqlInstanceDetailInfo`
+
 # 3.1.194 2026-07-07
 
 ### HuaweiCloud SDK GaussDB

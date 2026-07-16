@@ -40,7 +40,7 @@ public:
     /// SupportVersions members
 
     /// <summary>
-    /// 支持的集群类型
+    /// **参数解释**： 支持的集群类型 **取值范围**： - VirtualMachine: CCE集群，控制节点架构为X86 - ARM64: 鲲鹏集群，控制节点架构为鲲鹏 **约束限制**： CCE Autopilot集群仅支持VirtualMachine类型
     /// </summary>
 
     std::string getClusterType() const;

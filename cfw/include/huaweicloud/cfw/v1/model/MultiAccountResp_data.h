@@ -56,12 +56,23 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 云防火墙可信服务状态 **取值范围**： 1 已开启
+    /// </summary>
+
+    int32_t getTrustServiceStatus() const;
+    bool trustServiceStatusIsSet() const;
+    void unsettrustServiceStatus();
+    void setTrustServiceStatus(int32_t value);
+
 
 protected:
     std::string id_;
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
+    int32_t trustServiceStatus_;
+    bool trustServiceStatusIsSet_;
 
 };
 

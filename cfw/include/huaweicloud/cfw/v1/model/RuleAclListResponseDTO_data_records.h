@@ -106,7 +106,7 @@ public:
     void setActionType(int32_t value);
 
     /// <summary>
-    /// **参数解释**： 规则启用状态，用于区分规则是否启用 **取值范围**： 0表示启用，1表示禁用
+    /// **参数解释**： 规则启用状态，用于区分规则是否启用 **取值范围**： 0表示禁用，1表示启用
     /// </summary>
 
     int32_t getStatus() const;

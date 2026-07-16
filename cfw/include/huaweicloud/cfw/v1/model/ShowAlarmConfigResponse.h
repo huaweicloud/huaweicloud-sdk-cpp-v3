@@ -41,15 +41,6 @@ public:
     /// ShowAlarmConfigResponse members
 
     /// <summary>
-    /// 告警配置列表
-    /// </summary>
-
-    std::vector<AlarmConfig>& getAlarmConfigs();
-    bool alarmConfigsIsSet() const;
-    void unsetalarmConfigs();
-    void setAlarmConfigs(const std::vector<AlarmConfig>& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -58,12 +49,21 @@ public:
     void unsetdata();
     void setData(const Object& value);
 
+    /// <summary>
+    /// 告警配置列表
+    /// </summary>
+
+    std::vector<AlarmConfig>& getAlarmConfigs();
+    bool alarmConfigsIsSet() const;
+    void unsetalarmConfigs();
+    void setAlarmConfigs(const std::vector<AlarmConfig>& value);
+
 
 protected:
-    std::vector<AlarmConfig> alarmConfigs_;
-    bool alarmConfigsIsSet_;
     Object data_;
     bool dataIsSet_;
+    std::vector<AlarmConfig> alarmConfigs_;
+    bool alarmConfigsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

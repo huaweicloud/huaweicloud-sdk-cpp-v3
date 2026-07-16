@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/cfw/v1/model/AddEipAlarmWhitelistRespData.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,17 +39,17 @@ public:
     /// AddEipAlarmWhitelistResponse members
 
     /// <summary>
-    /// **参数解释**： 添加EIP告警白名单响应data **取值范围**： 不涉及
+    /// 
     /// </summary>
 
-    Object getData() const;
+    AddEipAlarmWhitelistRespData getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const Object& value);
+    void setData(const AddEipAlarmWhitelistRespData& value);
 
 
 protected:
-    Object data_;
+    AddEipAlarmWhitelistRespData data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

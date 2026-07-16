@@ -368,6 +368,24 @@ public:
     void setCity(const std::string& value);
 
     /// <summary>
+    /// 总页码。 
+    /// </summary>
+
+    std::string getTotalPages() const;
+    bool totalPagesIsSet() const;
+    void unsettotalPages();
+    void setTotalPages(const std::string& value);
+
+    /// <summary>
+    /// 当前页码。 
+    /// </summary>
+
+    std::string getCurrentPage() const;
+    bool currentPageIsSet() const;
+    void unsetcurrentPage();
+    void setCurrentPage(const std::string& value);
+
+    /// <summary>
     /// 各个字段的置信度。 当“advanced_mode”设置为“true”时才返回。 
     /// </summary>
 
@@ -612,6 +630,10 @@ protected:
     bool provinceIsSet_;
     std::string city_;
     bool cityIsSet_;
+    std::string totalPages_;
+    bool totalPagesIsSet_;
+    std::string currentPage_;
+    bool currentPageIsSet_;
     Object confidence_;
     bool confidenceIsSet_;
     Object textLocation_;

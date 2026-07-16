@@ -17,6 +17,7 @@ ListNodesResponse::ListNodesResponse()
     apiVersion_ = "";
     apiVersionIsSet_ = false;
     itemsIsSet_ = false;
+    pageInfoIsSet_ = false;
 }
 
 ListNodesResponse::~ListNodesResponse() = default;
@@ -37,6 +38,9 @@ web::json::value ListNodesResponse::toJson() const
     }
     if(itemsIsSet_) {
         val[utility::conversions::to_string_t("items")] = ModelBase::toJson(items_);
+    }
+    if(pageInfoIsSet_) {
+        val[utility::conversions::to_string_t("pageInfo")] = ModelBase::toJson(pageInfo_);
     }
 
     return val;
@@ -70,6 +74,15 @@ bool ListNodesResponse::fromJson(const web::json::value& val)
             std::vector<Node> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setItems(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pageInfo"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pageInfo"));
+        if(!fieldValue.is_null())
+        {
+            NodePageInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPageInfo(refVal);
         }
     }
     return ok;
@@ -137,6 +150,27 @@ bool ListNodesResponse::itemsIsSet() const
 void ListNodesResponse::unsetitems()
 {
     itemsIsSet_ = false;
+}
+
+NodePageInfo ListNodesResponse::getPageInfo() const
+{
+    return pageInfo_;
+}
+
+void ListNodesResponse::setPageInfo(const NodePageInfo& value)
+{
+    pageInfo_ = value;
+    pageInfoIsSet_ = true;
+}
+
+bool ListNodesResponse::pageInfoIsSet() const
+{
+    return pageInfoIsSet_;
+}
+
+void ListNodesResponse::unsetpageInfo()
+{
+    pageInfoIsSet_ = false;
 }
 
 }

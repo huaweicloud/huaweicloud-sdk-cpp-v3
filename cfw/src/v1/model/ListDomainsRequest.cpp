@@ -24,8 +24,6 @@ ListDomainsRequest::ListDomainsRequest()
     offsetIsSet_ = false;
     domainName_ = "";
     domainNameIsSet_ = false;
-    objectId_ = "";
-    objectIdIsSet_ = false;
 }
 
 ListDomainsRequest::~ListDomainsRequest() = default;
@@ -55,9 +53,6 @@ web::json::value ListDomainsRequest::toJson() const
     }
     if(domainNameIsSet_) {
         val[utility::conversions::to_string_t("domain_name")] = ModelBase::toJson(domainName_);
-    }
-    if(objectIdIsSet_) {
-        val[utility::conversions::to_string_t("object_Id")] = ModelBase::toJson(objectId_);
     }
 
     return val;
@@ -118,15 +113,6 @@ bool ListDomainsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomainName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("object_Id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_Id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObjectId(refVal);
         }
     }
     return ok;
@@ -257,27 +243,6 @@ bool ListDomainsRequest::domainNameIsSet() const
 void ListDomainsRequest::unsetdomainName()
 {
     domainNameIsSet_ = false;
-}
-
-std::string ListDomainsRequest::getObjectId() const
-{
-    return objectId_;
-}
-
-void ListDomainsRequest::setObjectId(const std::string& value)
-{
-    objectId_ = value;
-    objectIdIsSet_ = true;
-}
-
-bool ListDomainsRequest::objectIdIsSet() const
-{
-    return objectIdIsSet_;
-}
-
-void ListDomainsRequest::unsetobjectId()
-{
-    objectIdIsSet_ = false;
 }
 
 }

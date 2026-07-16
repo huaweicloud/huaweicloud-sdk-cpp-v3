@@ -89,6 +89,15 @@ public:
     void setNodeManagementUpdate(const NodeManagement& value);
 
     /// <summary>
+    /// 节点池自定义安全组相关配置。支持节点池新扩容节点绑定指定的安全组。  - 未指定安全组ID，新建节点将添加Node节点默认安全组。  - 指定有效安全组ID，新建节点将使用指定安全组。  - 指定安全组，应避免对CCE运行依赖的端口规则进行修改。[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/cce_faq/cce_faq_00265.html)。](tag:hws)[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/intl/zh-cn/cce_faq/cce_faq_00265.html)。](tag:hws_hk) 
+    /// </summary>
+
+    std::vector<std::string>& getCustomSecurityGroups();
+    bool customSecurityGroupsIsSet() const;
+    void unsetcustomSecurityGroups();
+    void setCustomSecurityGroups(const std::vector<std::string>& value);
+
+    /// <summary>
     /// **参数解释：** 是否同步K8S污点。 **约束限制**： 不涉及 **取值范围：** - 填写为refresh，K8S污点的改动将会被同步更新到存量节点上。 - 填写为ignore，节点池K8S污点将不会同步更新到存量节点上。  **默认取值：** 无
     /// </summary>
 
@@ -136,6 +145,8 @@ protected:
     bool autoscalingIsSet_;
     NodeManagement nodeManagementUpdate_;
     bool nodeManagementUpdateIsSet_;
+    std::vector<std::string> customSecurityGroups_;
+    bool customSecurityGroupsIsSet_;
     std::string taintPolicyOnExistingNodes_;
     bool taintPolicyOnExistingNodesIsSet_;
     std::string labelPolicyOnExistingNodes_;

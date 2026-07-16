@@ -16,6 +16,8 @@ UpdateAutopilotReleaseRequest::UpdateAutopilotReleaseRequest()
     nameIsSet_ = false;
     namespace_ = "";
     namespaceIsSet_ = false;
+    showResources_ = "";
+    showResourcesIsSet_ = false;
     clusterId_ = "";
     clusterIdIsSet_ = false;
     bodyIsSet_ = false;
@@ -36,6 +38,9 @@ web::json::value UpdateAutopilotReleaseRequest::toJson() const
     }
     if(namespaceIsSet_) {
         val[utility::conversions::to_string_t("namespace")] = ModelBase::toJson(namespace_);
+    }
+    if(showResourcesIsSet_) {
+        val[utility::conversions::to_string_t("show_resources")] = ModelBase::toJson(showResources_);
     }
     if(clusterIdIsSet_) {
         val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
@@ -66,6 +71,15 @@ bool UpdateAutopilotReleaseRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNamespace(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("show_resources"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("show_resources"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setShowResources(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cluster_id"))) {
@@ -130,6 +144,27 @@ bool UpdateAutopilotReleaseRequest::namespaceIsSet() const
 void UpdateAutopilotReleaseRequest::unsetnamespace()
 {
     namespaceIsSet_ = false;
+}
+
+std::string UpdateAutopilotReleaseRequest::getShowResources() const
+{
+    return showResources_;
+}
+
+void UpdateAutopilotReleaseRequest::setShowResources(const std::string& value)
+{
+    showResources_ = value;
+    showResourcesIsSet_ = true;
+}
+
+bool UpdateAutopilotReleaseRequest::showResourcesIsSet() const
+{
+    return showResourcesIsSet_;
+}
+
+void UpdateAutopilotReleaseRequest::unsetshowResources()
+{
+    showResourcesIsSet_ = false;
 }
 
 std::string UpdateAutopilotReleaseRequest::getClusterId() const

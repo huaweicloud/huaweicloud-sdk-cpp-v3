@@ -9,9 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/Mapstringstring.h>
-#include <map>
-#include <vector>
+#include <huaweicloud/cfw/v1/model/DeleteDomainSetResponseDatas.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -41,17 +39,17 @@ public:
     /// BatchDeleteDomainSetResponse members
 
     /// <summary>
-    /// **参数解释**： 批量删除域名组响应信息 **取值范围**： 不涉及 
+    /// 
     /// </summary>
 
-    std::map<std::string, std::vector<Mapstringstring>>& getData();
+    DeleteDomainSetResponseDatas getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const std::map<std::string, std::vector<Mapstringstring>>& value);
+    void setData(const DeleteDomainSetResponseDatas& value);
 
 
 protected:
-    std::map<std::string, std::vector<Mapstringstring>> data_;
+    DeleteDomainSetResponseDatas data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

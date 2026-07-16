@@ -12,8 +12,8 @@ namespace Model {
 
 ShowAlarmConfigResponse::ShowAlarmConfigResponse()
 {
-    alarmConfigsIsSet_ = false;
     dataIsSet_ = false;
+    alarmConfigsIsSet_ = false;
 }
 
 ShowAlarmConfigResponse::~ShowAlarmConfigResponse() = default;
@@ -26,11 +26,11 @@ web::json::value ShowAlarmConfigResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(alarmConfigsIsSet_) {
-        val[utility::conversions::to_string_t("alarm_configs")] = ModelBase::toJson(alarmConfigs_);
-    }
     if(dataIsSet_) {
         val[utility::conversions::to_string_t("data")] = ModelBase::toJson(data_);
+    }
+    if(alarmConfigsIsSet_) {
+        val[utility::conversions::to_string_t("alarm_configs")] = ModelBase::toJson(alarmConfigs_);
     }
 
     return val;
@@ -39,15 +39,6 @@ bool ShowAlarmConfigResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("alarm_configs"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_configs"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<AlarmConfig> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAlarmConfigs(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("data"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
@@ -57,30 +48,18 @@ bool ShowAlarmConfigResponse::fromJson(const web::json::value& val)
             setData(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("alarm_configs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_configs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AlarmConfig> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmConfigs(refVal);
+        }
+    }
     return ok;
 }
 
-
-std::vector<AlarmConfig>& ShowAlarmConfigResponse::getAlarmConfigs()
-{
-    return alarmConfigs_;
-}
-
-void ShowAlarmConfigResponse::setAlarmConfigs(const std::vector<AlarmConfig>& value)
-{
-    alarmConfigs_ = value;
-    alarmConfigsIsSet_ = true;
-}
-
-bool ShowAlarmConfigResponse::alarmConfigsIsSet() const
-{
-    return alarmConfigsIsSet_;
-}
-
-void ShowAlarmConfigResponse::unsetalarmConfigs()
-{
-    alarmConfigsIsSet_ = false;
-}
 
 Object ShowAlarmConfigResponse::getData() const
 {
@@ -101,6 +80,27 @@ bool ShowAlarmConfigResponse::dataIsSet() const
 void ShowAlarmConfigResponse::unsetdata()
 {
     dataIsSet_ = false;
+}
+
+std::vector<AlarmConfig>& ShowAlarmConfigResponse::getAlarmConfigs()
+{
+    return alarmConfigs_;
+}
+
+void ShowAlarmConfigResponse::setAlarmConfigs(const std::vector<AlarmConfig>& value)
+{
+    alarmConfigs_ = value;
+    alarmConfigsIsSet_ = true;
+}
+
+bool ShowAlarmConfigResponse::alarmConfigsIsSet() const
+{
+    return alarmConfigsIsSet_;
+}
+
+void ShowAlarmConfigResponse::unsetalarmConfigs()
+{
+    alarmConfigsIsSet_ = false;
 }
 
 }

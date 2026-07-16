@@ -19,6 +19,7 @@ NodePoolSpecUpdate::NodePoolSpecUpdate()
     ignoreInitialNodeCountIsSet_ = false;
     autoscalingIsSet_ = false;
     nodeManagementUpdateIsSet_ = false;
+    customSecurityGroupsIsSet_ = false;
     taintPolicyOnExistingNodes_ = "";
     taintPolicyOnExistingNodesIsSet_ = false;
     labelPolicyOnExistingNodes_ = "";
@@ -52,6 +53,9 @@ web::json::value NodePoolSpecUpdate::toJson() const
     }
     if(nodeManagementUpdateIsSet_) {
         val[utility::conversions::to_string_t("nodeManagementUpdate")] = ModelBase::toJson(nodeManagementUpdate_);
+    }
+    if(customSecurityGroupsIsSet_) {
+        val[utility::conversions::to_string_t("customSecurityGroups")] = ModelBase::toJson(customSecurityGroups_);
     }
     if(taintPolicyOnExistingNodesIsSet_) {
         val[utility::conversions::to_string_t("taintPolicyOnExistingNodes")] = ModelBase::toJson(taintPolicyOnExistingNodes_);
@@ -115,6 +119,15 @@ bool NodePoolSpecUpdate::fromJson(const web::json::value& val)
             NodeManagement refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeManagementUpdate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("customSecurityGroups"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("customSecurityGroups"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomSecurityGroups(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("taintPolicyOnExistingNodes"))) {
@@ -260,6 +273,27 @@ bool NodePoolSpecUpdate::nodeManagementUpdateIsSet() const
 void NodePoolSpecUpdate::unsetnodeManagementUpdate()
 {
     nodeManagementUpdateIsSet_ = false;
+}
+
+std::vector<std::string>& NodePoolSpecUpdate::getCustomSecurityGroups()
+{
+    return customSecurityGroups_;
+}
+
+void NodePoolSpecUpdate::setCustomSecurityGroups(const std::vector<std::string>& value)
+{
+    customSecurityGroups_ = value;
+    customSecurityGroupsIsSet_ = true;
+}
+
+bool NodePoolSpecUpdate::customSecurityGroupsIsSet() const
+{
+    return customSecurityGroupsIsSet_;
+}
+
+void NodePoolSpecUpdate::unsetcustomSecurityGroups()
+{
+    customSecurityGroupsIsSet_ = false;
 }
 
 std::string NodePoolSpecUpdate::getTaintPolicyOnExistingNodes() const

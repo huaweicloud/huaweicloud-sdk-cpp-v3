@@ -48,7 +48,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// Condition当前状态，取值如下 - \&quot;True\&quot; - \&quot;False\&quot; 
+    /// **参数解释**： Condition当前状态。 **约束限制**： 不涉及 **取值范围**： - \&quot;True\&quot;：满足当前状态 - \&quot;False\&quot;：不满足当前状态  **默认取值**： 不涉及
     /// </summary>
 
     std::string getStatus() const;

@@ -12,6 +12,7 @@ namespace Model {
 
 UpdateObjectConfigDescResponse::UpdateObjectConfigDescResponse()
 {
+    data_ = "";
     dataIsSet_ = false;
 }
 
@@ -39,7 +40,7 @@ bool UpdateObjectConfigDescResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +49,12 @@ bool UpdateObjectConfigDescResponse::fromJson(const web::json::value& val)
 }
 
 
-Object UpdateObjectConfigDescResponse::getData() const
+std::string UpdateObjectConfigDescResponse::getData() const
 {
     return data_;
 }
 
-void UpdateObjectConfigDescResponse::setData(const Object& value)
+void UpdateObjectConfigDescResponse::setData(const std::string& value)
 {
     data_ = value;
     dataIsSet_ = true;

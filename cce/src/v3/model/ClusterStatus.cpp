@@ -31,6 +31,7 @@ ClusterStatus::ClusterStatus()
     lockSourceIdIsSet_ = false;
     deleteOptionIsSet_ = false;
     deleteStatusIsSet_ = false;
+    conditionsIsSet_ = false;
 }
 
 ClusterStatus::~ClusterStatus() = default;
@@ -75,6 +76,9 @@ web::json::value ClusterStatus::toJson() const
     }
     if(deleteStatusIsSet_) {
         val[utility::conversions::to_string_t("deleteStatus")] = ModelBase::toJson(deleteStatus_);
+    }
+    if(conditionsIsSet_) {
+        val[utility::conversions::to_string_t("conditions")] = ModelBase::toJson(conditions_);
     }
 
     return val;
@@ -180,6 +184,15 @@ bool ClusterStatus::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDeleteStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("conditions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("conditions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ClusterCondition> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConditions(refVal);
         }
     }
     return ok;
@@ -415,6 +428,27 @@ bool ClusterStatus::deleteStatusIsSet() const
 void ClusterStatus::unsetdeleteStatus()
 {
     deleteStatusIsSet_ = false;
+}
+
+std::vector<ClusterCondition>& ClusterStatus::getConditions()
+{
+    return conditions_;
+}
+
+void ClusterStatus::setConditions(const std::vector<ClusterCondition>& value)
+{
+    conditions_ = value;
+    conditionsIsSet_ = true;
+}
+
+bool ClusterStatus::conditionsIsSet() const
+{
+    return conditionsIsSet_;
+}
+
+void ClusterStatus::unsetconditions()
+{
+    conditionsIsSet_ = false;
 }
 
 }

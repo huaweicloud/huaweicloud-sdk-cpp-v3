@@ -81,6 +81,10 @@ VatInvoiceResult::VatInvoiceResult()
     provinceIsSet_ = false;
     city_ = "";
     cityIsSet_ = false;
+    totalPages_ = "";
+    totalPagesIsSet_ = false;
+    currentPage_ = "";
+    currentPageIsSet_ = false;
     confidenceIsSet_ = false;
     textLocationIsSet_ = false;
     belongBuyerName_ = "";
@@ -234,6 +238,12 @@ web::json::value VatInvoiceResult::toJson() const
     }
     if(cityIsSet_) {
         val[utility::conversions::to_string_t("city")] = ModelBase::toJson(city_);
+    }
+    if(totalPagesIsSet_) {
+        val[utility::conversions::to_string_t("total_pages")] = ModelBase::toJson(totalPages_);
+    }
+    if(currentPageIsSet_) {
+        val[utility::conversions::to_string_t("current_page")] = ModelBase::toJson(currentPage_);
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
@@ -621,6 +631,24 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCity(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_pages"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_pages"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalPages(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("current_page"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("current_page"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCurrentPage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("confidence"))) {
@@ -1552,6 +1580,48 @@ bool VatInvoiceResult::cityIsSet() const
 void VatInvoiceResult::unsetcity()
 {
     cityIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getTotalPages() const
+{
+    return totalPages_;
+}
+
+void VatInvoiceResult::setTotalPages(const std::string& value)
+{
+    totalPages_ = value;
+    totalPagesIsSet_ = true;
+}
+
+bool VatInvoiceResult::totalPagesIsSet() const
+{
+    return totalPagesIsSet_;
+}
+
+void VatInvoiceResult::unsettotalPages()
+{
+    totalPagesIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getCurrentPage() const
+{
+    return currentPage_;
+}
+
+void VatInvoiceResult::setCurrentPage(const std::string& value)
+{
+    currentPage_ = value;
+    currentPageIsSet_ = true;
+}
+
+bool VatInvoiceResult::currentPageIsSet() const
+{
+    return currentPageIsSet_;
+}
+
+void VatInvoiceResult::unsetcurrentPage()
+{
+    currentPageIsSet_ = false;
 }
 
 Object VatInvoiceResult::getConfidence() const

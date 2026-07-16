@@ -39,7 +39,7 @@ public:
     /// QuotaResp_quotas_resources members
 
     /// <summary>
-    /// 类型
+    /// **参数解释**： 类型 **取值范围**： - Charts：配额类型为模板 
     /// </summary>
 
     std::string getType() const;

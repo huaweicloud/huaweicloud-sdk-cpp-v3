@@ -50,15 +50,6 @@ public:
     void setData(const std::string& value);
 
     /// <summary>
-    /// 资源标签列表
-    /// </summary>
-
-    std::vector<ResourceTag>& getTags();
-    bool tagsIsSet() const;
-    void unsettags();
-    void setTags(const std::vector<ResourceTag>& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -67,14 +58,23 @@ public:
     void unsetsysTags();
     void setSysTags(const std::vector<ResourceTag>& value);
 
+    /// <summary>
+    /// 资源标签列表
+    /// </summary>
+
+    std::vector<ResourceTag>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<ResourceTag>& value);
+
 
 protected:
     std::string data_;
     bool dataIsSet_;
-    std::vector<ResourceTag> tags_;
-    bool tagsIsSet_;
     std::vector<ResourceTag> sysTags_;
     bool sysTagsIsSet_;
+    std::vector<ResourceTag> tags_;
+    bool tagsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

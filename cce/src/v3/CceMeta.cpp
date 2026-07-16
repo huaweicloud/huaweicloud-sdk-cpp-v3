@@ -26,8 +26,26 @@ HttpRequestDef CceMeta::genRequestDefForAddNodesToNodePool() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForAssumeAgencyForPodIdentity() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForAwakeCluster() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForBatchChangeNodeToPeriod() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -150,6 +168,15 @@ HttpRequestDef CceMeta::genRequestDefForCreateNodePool() {
 }
 
 HttpRequestDef CceMeta::genRequestDefForCreatePartition() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForCreatePodIdentityAssociation() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -285,6 +312,11 @@ HttpRequestDef CceMeta::genRequestDefForDeleteNodePool() {
     reqDefBuilder.withRequestField(FieldDef().withName("ErrorStatus")
                   .withJsonTag("errorStatus")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForDeletePodIdentityAssociation() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -486,11 +518,25 @@ HttpRequestDef CceMeta::genRequestDefForListNodes() {
     reqDefBuilder.withRequestField(FieldDef().withName("ErrorStatus")
                   .withJsonTag("errorStatus")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
 HttpRequestDef CceMeta::genRequestDefForListPartitions() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForListPodIdentityAssociations() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -600,6 +646,24 @@ HttpRequestDef CceMeta::genRequestDefForRevokeKubernetesClusterCert() {
 }
 
 HttpRequestDef CceMeta::genRequestDefForRollbackAddonInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForRotateClusterCredentials() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForRotateNodeCert() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -727,6 +791,11 @@ HttpRequestDef CceMeta::genRequestDefForShowNodePoolConfigurations() {
 }
 
 HttpRequestDef CceMeta::genRequestDefForShowPartition() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForShowPodIdentityAssociation() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -877,6 +946,15 @@ HttpRequestDef CceMeta::genRequestDefForUpdateNodePool() {
 }
 
 HttpRequestDef CceMeta::genRequestDefForUpdatePartition() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CceMeta::genRequestDefForUpdatePodIdentityAssociation() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1075,6 +1153,9 @@ HttpRequestDef CceMeta::genRequestDefForDeleteAutopilotMaintenanceWindow() {
 
 HttpRequestDef CceMeta::genRequestDefForDeleteAutopilotRelease() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ShowResources")
+                  .withJsonTag("show_resources")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -1274,6 +1355,9 @@ HttpRequestDef CceMeta::genRequestDefForShowAutopilotQuotas() {
 
 HttpRequestDef CceMeta::genRequestDefForShowAutopilotRelease() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ShowResources")
+                  .withJsonTag("show_resources")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -1341,6 +1425,9 @@ HttpRequestDef CceMeta::genRequestDefForUpdateAutopilotMaintenanceWindow() {
 
 HttpRequestDef CceMeta::genRequestDefForUpdateAutopilotRelease() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ShowResources")
+                  .withJsonTag("show_resources")
+                  .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

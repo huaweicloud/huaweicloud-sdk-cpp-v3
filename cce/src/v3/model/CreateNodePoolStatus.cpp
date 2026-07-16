@@ -18,6 +18,8 @@ CreateNodePoolStatus::CreateNodePoolStatus()
     creatingNodeIsSet_ = false;
     deletingNode_ = 0;
     deletingNodeIsSet_ = false;
+    activeNode_ = 0;
+    activeNodeIsSet_ = false;
     configurationSyncedNodeCount_ = 0;
     configurationSyncedNodeCountIsSet_ = false;
     phase_ = "";
@@ -44,6 +46,9 @@ web::json::value CreateNodePoolStatus::toJson() const
     }
     if(deletingNodeIsSet_) {
         val[utility::conversions::to_string_t("deletingNode")] = ModelBase::toJson(deletingNode_);
+    }
+    if(activeNodeIsSet_) {
+        val[utility::conversions::to_string_t("activeNode")] = ModelBase::toJson(activeNode_);
     }
     if(configurationSyncedNodeCountIsSet_) {
         val[utility::conversions::to_string_t("configurationSyncedNodeCount")] = ModelBase::toJson(configurationSyncedNodeCount_);
@@ -89,6 +94,15 @@ bool CreateNodePoolStatus::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDeletingNode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("activeNode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("activeNode"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActiveNode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("configurationSyncedNodeCount"))) {
@@ -192,6 +206,27 @@ bool CreateNodePoolStatus::deletingNodeIsSet() const
 void CreateNodePoolStatus::unsetdeletingNode()
 {
     deletingNodeIsSet_ = false;
+}
+
+int32_t CreateNodePoolStatus::getActiveNode() const
+{
+    return activeNode_;
+}
+
+void CreateNodePoolStatus::setActiveNode(int32_t value)
+{
+    activeNode_ = value;
+    activeNodeIsSet_ = true;
+}
+
+bool CreateNodePoolStatus::activeNodeIsSet() const
+{
+    return activeNodeIsSet_;
+}
+
+void CreateNodePoolStatus::unsetactiveNode()
+{
+    activeNodeIsSet_ = false;
 }
 
 int32_t CreateNodePoolStatus::getConfigurationSyncedNodeCount() const

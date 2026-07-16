@@ -194,6 +194,15 @@ public:
     void setAdjustedImage(const std::string& value);
 
     /// <summary>
+    /// 是否是待理证，取值范围包括： - true：是待理证 - false：非待理证 
+    /// </summary>
+
+    bool isIsTemporaryCertificate() const;
+    bool isTemporaryCertificateIsSet() const;
+    void unsetisTemporaryCertificate();
+    void setIsTemporaryCertificate(bool value);
+
+    /// <summary>
     /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
     /// </summary>
 
@@ -238,6 +247,8 @@ protected:
     bool imageLocationIsSet_;
     std::string adjustedImage_;
     bool adjustedImageIsSet_;
+    bool isTemporaryCertificate_;
+    bool isTemporaryCertificateIsSet_;
     Object confidence_;
     bool confidenceIsSet_;
 

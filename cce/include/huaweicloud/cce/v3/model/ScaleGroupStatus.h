@@ -106,6 +106,15 @@ public:
     void setUnpaidScaleNodeCount(int32_t value);
 
     /// <summary>
+    /// **参数解释**： 伸缩组就绪节点个数 **取值范围**： 不涉及
+    /// </summary>
+
+    int32_t getActiveNodeCount() const;
+    bool activeNodeCountIsSet() const;
+    void unsetactiveNodeCount();
+    void setActiveNodeCount(int32_t value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -157,6 +166,8 @@ protected:
     bool desiredNodeCountIsSet_;
     int32_t unpaidScaleNodeCount_;
     bool unpaidScaleNodeCountIsSet_;
+    int32_t activeNodeCount_;
+    bool activeNodeCountIsSet_;
     ScaleGroupStatus_existingNodeCount existingNodeCount_;
     bool existingNodeCountIsSet_;
     ScaleGroupStatus_upcomingNodeCount upcomingNodeCount_;

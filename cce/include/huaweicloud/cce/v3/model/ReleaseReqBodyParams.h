@@ -66,7 +66,7 @@ public:
     void setNoHooks(bool value);
 
     /// <summary>
-    /// 是否替换同名实例
+    /// 模板实例更新时是否保留values，该字段仅在更新指定模板实例时生效
     /// </summary>
 
     bool isReplace() const;
@@ -75,7 +75,7 @@ public:
     void setReplace(bool value);
 
     /// <summary>
-    /// 是否重建实例
+    /// 模板实例更新时是否重建实例，该字段仅在更新指定模板实例时生效
     /// </summary>
 
     bool isRecreate() const;
@@ -84,7 +84,7 @@ public:
     void setRecreate(bool value);
 
     /// <summary>
-    /// 更新时是否重置values
+    /// 模板实例更新时是否重置values，该字段仅在更新指定模板实例时生效
     /// </summary>
 
     bool isResetValues() const;

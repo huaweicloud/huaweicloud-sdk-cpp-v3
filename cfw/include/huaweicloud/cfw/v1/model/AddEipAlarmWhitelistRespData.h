@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_Mapstringstring_H_
-#define HUAWEICLOUD_SDK_CFW_V1_MODEL_Mapstringstring_H_
+#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_AddEipAlarmWhitelistRespData_H_
+#define HUAWEICLOUD_SDK_CFW_V1_MODEL_AddEipAlarmWhitelistRespData_H_
 
 
 #include <huaweicloud/cfw/v1/CfwExport.h>
@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -21,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_CFW_V1_EXPORT  Mapstringstring
+class HUAWEICLOUD_CFW_V1_EXPORT  AddEipAlarmWhitelistRespData
     : public ModelBase
 {
 public:
-    Mapstringstring();
-    virtual ~Mapstringstring();
+    AddEipAlarmWhitelistRespData();
+    virtual ~AddEipAlarmWhitelistRespData();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -35,10 +36,21 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// Mapstringstring members
+    /// AddEipAlarmWhitelistRespData members
+
+    /// <summary>
+    /// **参数解释**： 防火墙实例id **约束限制**： 不涉及 
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
 
 
 protected:
+    std::string id_;
+    bool idIsSet_;
 
 };
 
@@ -49,4 +61,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_Mapstringstring_H_
+#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_AddEipAlarmWhitelistRespData_H_

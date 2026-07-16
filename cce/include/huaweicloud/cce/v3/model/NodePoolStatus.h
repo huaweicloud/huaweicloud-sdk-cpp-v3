@@ -69,6 +69,15 @@ public:
     void setDeletingNode(int32_t value);
 
     /// <summary>
+    /// **参数解释**： 当前节点池中就绪的节点数量。 **取值范围**： 不涉及
+    /// </summary>
+
+    int32_t getActiveNode() const;
+    bool activeNodeIsSet() const;
+    void unsetactiveNode();
+    void setActiveNode(int32_t value);
+
+    /// <summary>
     /// **参数解释** 当前节点池中已经同步了节点池配置参数的节点数量。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
@@ -121,6 +130,8 @@ protected:
     bool creatingNodeIsSet_;
     int32_t deletingNode_;
     bool deletingNodeIsSet_;
+    int32_t activeNode_;
+    bool activeNodeIsSet_;
     int32_t configurationSyncedNodeCount_;
     bool configurationSyncedNodeCountIsSet_;
     std::string phase_;

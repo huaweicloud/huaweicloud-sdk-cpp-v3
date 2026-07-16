@@ -56,12 +56,34 @@ public:
     void unseterrorStatus();
     void setErrorStatus(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 设置每页显示的数据条数。 **约束限制**： 不涉及 **取值范围**： 1到2000之间（含1和2000）的整数。 **默认取值**： 2000
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// **参数解释**： 通过资源uid进行分页查询,默认为查询第一页数据。marker&#x3D;{{uid}}表示查询该uid后的资源列表的信息(查询结果不包含该uid的资源)。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 无
+    /// </summary>
+
+    std::string getMarker() const;
+    bool markerIsSet() const;
+    void unsetmarker();
+    void setMarker(const std::string& value);
+
 
 protected:
     std::string clusterId_;
     bool clusterIdIsSet_;
     std::string errorStatus_;
     bool errorStatusIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    std::string marker_;
+    bool markerIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

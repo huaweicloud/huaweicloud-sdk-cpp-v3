@@ -26,9 +26,9 @@ BlackWhiteListResponse_data_records::BlackWhiteListResponse_data_records()
     portIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
-    createdDate_ = "";
+    createdDate_ = 0;
     createdDateIsSet_ = false;
-    modifiedDate_ = "";
+    modifiedDate_ = 0;
     modifiedDateIsSet_ = false;
 }
 
@@ -143,7 +143,7 @@ bool BlackWhiteListResponse_data_records::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_date"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreatedDate(refVal);
         }
@@ -152,7 +152,7 @@ bool BlackWhiteListResponse_data_records::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("modified_date"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setModifiedDate(refVal);
         }
@@ -308,12 +308,12 @@ void BlackWhiteListResponse_data_records::unsetdescription()
     descriptionIsSet_ = false;
 }
 
-std::string BlackWhiteListResponse_data_records::getCreatedDate() const
+int32_t BlackWhiteListResponse_data_records::getCreatedDate() const
 {
     return createdDate_;
 }
 
-void BlackWhiteListResponse_data_records::setCreatedDate(const std::string& value)
+void BlackWhiteListResponse_data_records::setCreatedDate(int32_t value)
 {
     createdDate_ = value;
     createdDateIsSet_ = true;
@@ -329,12 +329,12 @@ void BlackWhiteListResponse_data_records::unsetcreatedDate()
     createdDateIsSet_ = false;
 }
 
-std::string BlackWhiteListResponse_data_records::getModifiedDate() const
+int32_t BlackWhiteListResponse_data_records::getModifiedDate() const
 {
     return modifiedDate_;
 }
 
-void BlackWhiteListResponse_data_records::setModifiedDate(const std::string& value)
+void BlackWhiteListResponse_data_records::setModifiedDate(int32_t value)
 {
     modifiedDate_ = value;
     modifiedDateIsSet_ = true;

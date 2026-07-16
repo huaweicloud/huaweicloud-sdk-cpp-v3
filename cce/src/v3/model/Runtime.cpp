@@ -14,6 +14,8 @@ Runtime::Runtime()
 {
     name_ = "";
     nameIsSet_ = false;
+    runtimeClass_ = "";
+    runtimeClassIsSet_ = false;
 }
 
 Runtime::~Runtime() = default;
@@ -29,6 +31,9 @@ web::json::value Runtime::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
+    if(runtimeClassIsSet_) {
+        val[utility::conversions::to_string_t("runtimeClass")] = ModelBase::toJson(runtimeClass_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool Runtime::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("runtimeClass"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("runtimeClass"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRuntimeClass(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool Runtime::nameIsSet() const
 void Runtime::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string Runtime::getRuntimeClass() const
+{
+    return runtimeClass_;
+}
+
+void Runtime::setRuntimeClass(const std::string& value)
+{
+    runtimeClass_ = value;
+    runtimeClassIsSet_ = true;
+}
+
+bool Runtime::runtimeClassIsSet() const
+{
+    return runtimeClassIsSet_;
+}
+
+void Runtime::unsetruntimeClass()
+{
+    runtimeClassIsSet_ = false;
 }
 
 }

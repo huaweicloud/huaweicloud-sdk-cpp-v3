@@ -45,6 +45,8 @@ TransportationLicenseResult::TransportationLicenseResult()
     imageLocationIsSet_ = false;
     adjustedImage_ = "";
     adjustedImageIsSet_ = false;
+    isTemporaryCertificate_ = false;
+    isTemporaryCertificateIsSet_ = false;
     confidenceIsSet_ = false;
 }
 
@@ -108,6 +110,9 @@ web::json::value TransportationLicenseResult::toJson() const
     }
     if(adjustedImageIsSet_) {
         val[utility::conversions::to_string_t("adjusted_image")] = ModelBase::toJson(adjustedImage_);
+    }
+    if(isTemporaryCertificateIsSet_) {
+        val[utility::conversions::to_string_t("is_temporary_certificate")] = ModelBase::toJson(isTemporaryCertificate_);
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
@@ -270,6 +275,15 @@ bool TransportationLicenseResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAdjustedImage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_temporary_certificate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_temporary_certificate"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsTemporaryCertificate(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("confidence"))) {
@@ -640,6 +654,27 @@ bool TransportationLicenseResult::adjustedImageIsSet() const
 void TransportationLicenseResult::unsetadjustedImage()
 {
     adjustedImageIsSet_ = false;
+}
+
+bool TransportationLicenseResult::isIsTemporaryCertificate() const
+{
+    return isTemporaryCertificate_;
+}
+
+void TransportationLicenseResult::setIsTemporaryCertificate(bool value)
+{
+    isTemporaryCertificate_ = value;
+    isTemporaryCertificateIsSet_ = true;
+}
+
+bool TransportationLicenseResult::isTemporaryCertificateIsSet() const
+{
+    return isTemporaryCertificateIsSet_;
+}
+
+void TransportationLicenseResult::unsetisTemporaryCertificate()
+{
+    isTemporaryCertificateIsSet_ = false;
 }
 
 Object TransportationLicenseResult::getConfidence() const

@@ -40,6 +40,24 @@ public:
     /// AccessDetailVO members
 
     /// <summary>
+    /// **参数解释**： 所有会话数 **取值范围**： 不涉及
+    /// </summary>
+
+    int64_t getAllSessionCount() const;
+    bool allSessionCountIsSet() const;
+    void unsetallSessionCount();
+    void setAllSessionCount(int64_t value);
+
+    /// <summary>
+    /// **参数解释**： 会话数 **取值范围**： 不涉及
+    /// </summary>
+
+    int64_t getSessionCount() const;
+    bool sessionCountIsSet() const;
+    void unsetsessionCount();
+    void setSessionCount(int64_t value);
+
+    /// <summary>
     /// **参数解释**： 目的IP数量 **取值范围**： 不涉及
     /// </summary>
 
@@ -131,6 +149,10 @@ public:
 
 
 protected:
+    int64_t allSessionCount_;
+    bool allSessionCountIsSet_;
+    int64_t sessionCount_;
+    bool sessionCountIsSet_;
     int64_t dstIpCount_;
     bool dstIpCountIsSet_;
     int64_t dstPortCount_;

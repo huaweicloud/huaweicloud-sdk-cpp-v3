@@ -15,7 +15,9 @@ class HUAWEICLOUD_CCE_V3_EXPORT  CceMeta {
 public:
     static HttpRequestDef genRequestDefForAddNode();
     static HttpRequestDef genRequestDefForAddNodesToNodePool();
+    static HttpRequestDef genRequestDefForAssumeAgencyForPodIdentity();
     static HttpRequestDef genRequestDefForAwakeCluster();
+    static HttpRequestDef genRequestDefForBatchChangeNodeToPeriod();
     static HttpRequestDef genRequestDefForBatchCreateAddonPrecheck();
     static HttpRequestDef genRequestDefForBatchCreateClusterTags();
     static HttpRequestDef genRequestDefForBatchDeleteClusterTags();
@@ -30,6 +32,7 @@ public:
     static HttpRequestDef genRequestDefForCreateNode();
     static HttpRequestDef genRequestDefForCreateNodePool();
     static HttpRequestDef genRequestDefForCreatePartition();
+    static HttpRequestDef genRequestDefForCreatePodIdentityAssociation();
     static HttpRequestDef genRequestDefForCreatePostCheck();
     static HttpRequestDef genRequestDefForCreatePreCheck();
     static HttpRequestDef genRequestDefForCreateRelease();
@@ -41,6 +44,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteCluster();
     static HttpRequestDef genRequestDefForDeleteNode();
     static HttpRequestDef genRequestDefForDeleteNodePool();
+    static HttpRequestDef genRequestDefForDeletePodIdentityAssociation();
     static HttpRequestDef genRequestDefForDeleteRelease();
     static HttpRequestDef genRequestDefForDownloadChart();
     static HttpRequestDef genRequestDefForGetAccessPolicy();
@@ -66,6 +70,7 @@ public:
     static HttpRequestDef genRequestDefForListNodePools();
     static HttpRequestDef genRequestDefForListNodes();
     static HttpRequestDef genRequestDefForListPartitions();
+    static HttpRequestDef genRequestDefForListPodIdentityAssociations();
     static HttpRequestDef genRequestDefForListPreCheckTasks();
     static HttpRequestDef genRequestDefForListReleases();
     static HttpRequestDef genRequestDefForListUpgradeClusterTasks();
@@ -80,6 +85,8 @@ public:
     static HttpRequestDef genRequestDefForRetryUpgradeClusterTask();
     static HttpRequestDef genRequestDefForRevokeKubernetesClusterCert();
     static HttpRequestDef genRequestDefForRollbackAddonInstance();
+    static HttpRequestDef genRequestDefForRotateClusterCredentials();
+    static HttpRequestDef genRequestDefForRotateNodeCert();
     static HttpRequestDef genRequestDefForScaleNodePool();
     static HttpRequestDef genRequestDefForShowAddonInstance();
     static HttpRequestDef genRequestDefForShowChart();
@@ -96,6 +103,7 @@ public:
     static HttpRequestDef genRequestDefForShowNodePoolConfigurationDetails();
     static HttpRequestDef genRequestDefForShowNodePoolConfigurations();
     static HttpRequestDef genRequestDefForShowPartition();
+    static HttpRequestDef genRequestDefForShowPodIdentityAssociation();
     static HttpRequestDef genRequestDefForShowPreCheck();
     static HttpRequestDef genRequestDefForShowQuotas();
     static HttpRequestDef genRequestDefForShowRelease();
@@ -115,6 +123,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateNode();
     static HttpRequestDef genRequestDefForUpdateNodePool();
     static HttpRequestDef genRequestDefForUpdatePartition();
+    static HttpRequestDef genRequestDefForUpdatePodIdentityAssociation();
     static HttpRequestDef genRequestDefForUpdateRelease();
     static HttpRequestDef genRequestDefForUpgradeCluster();
     static HttpRequestDef genRequestDefForUpgradeNodePool();

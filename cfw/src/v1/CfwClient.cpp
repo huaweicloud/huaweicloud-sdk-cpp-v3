@@ -2962,9 +2962,6 @@ std::shared_ptr<ListDomainsResponse> CfwClient::listDomains(ListDomainsRequest &
     if (request.domainNameIsSet()) {
         localVarQueryParams["domain_name"] = parameterToString(request.getDomainName());
     }
-    if (request.objectIdIsSet()) {
-        localVarQueryParams["object_Id"] = parameterToString(request.getObjectId());
-    }
 
     std::string localVarHttpBody;
 

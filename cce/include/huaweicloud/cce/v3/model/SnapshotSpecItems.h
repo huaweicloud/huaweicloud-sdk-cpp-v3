@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 子任务类型
+    /// **参数解释**： 子任务类型 **取值范围**： - master-backup：集群EVS备份 - master-backup-rollback：集群EVS回滚 **默认取值**： 不涉及
     /// </summary>
 
     std::string getType() const;
@@ -57,7 +57,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 状态
+    /// **参数解释**： 状态 **取值范围**： - Init：初始化 - Queuing：等待 - Running：运行中 - Pause：暂停 - Success：成功 - Failed：失败 **默认取值**： 不涉及
     /// </summary>
 
     std::string getStatus() const;

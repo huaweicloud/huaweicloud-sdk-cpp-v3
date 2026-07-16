@@ -12,6 +12,10 @@ namespace Model {
 
 AccessDetailVO::AccessDetailVO()
 {
+    allSessionCount_ = 0L;
+    allSessionCountIsSet_ = false;
+    sessionCount_ = 0L;
+    sessionCountIsSet_ = false;
     dstIpCount_ = 0L;
     dstIpCountIsSet_ = false;
     dstPortCount_ = 0L;
@@ -43,6 +47,12 @@ web::json::value AccessDetailVO::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(allSessionCountIsSet_) {
+        val[utility::conversions::to_string_t("all_session_count")] = ModelBase::toJson(allSessionCount_);
+    }
+    if(sessionCountIsSet_) {
+        val[utility::conversions::to_string_t("session_count")] = ModelBase::toJson(sessionCount_);
+    }
     if(dstIpCountIsSet_) {
         val[utility::conversions::to_string_t("dst_ip_count")] = ModelBase::toJson(dstIpCount_);
     }
@@ -80,6 +90,24 @@ bool AccessDetailVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("all_session_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("all_session_count"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAllSessionCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("session_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("session_count"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSessionCount(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("dst_ip_count"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_ip_count"));
         if(!fieldValue.is_null())
@@ -173,6 +201,48 @@ bool AccessDetailVO::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+int64_t AccessDetailVO::getAllSessionCount() const
+{
+    return allSessionCount_;
+}
+
+void AccessDetailVO::setAllSessionCount(int64_t value)
+{
+    allSessionCount_ = value;
+    allSessionCountIsSet_ = true;
+}
+
+bool AccessDetailVO::allSessionCountIsSet() const
+{
+    return allSessionCountIsSet_;
+}
+
+void AccessDetailVO::unsetallSessionCount()
+{
+    allSessionCountIsSet_ = false;
+}
+
+int64_t AccessDetailVO::getSessionCount() const
+{
+    return sessionCount_;
+}
+
+void AccessDetailVO::setSessionCount(int64_t value)
+{
+    sessionCount_ = value;
+    sessionCountIsSet_ = true;
+}
+
+bool AccessDetailVO::sessionCountIsSet() const
+{
+    return sessionCountIsSet_;
+}
+
+void AccessDetailVO::unsetsessionCount()
+{
+    sessionCountIsSet_ = false;
+}
 
 int64_t AccessDetailVO::getDstIpCount() const
 {

@@ -39,7 +39,7 @@ bool AddEipAlarmWhitelistResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            AddEipAlarmWhitelistRespData refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool AddEipAlarmWhitelistResponse::fromJson(const web::json::value& val)
 }
 
 
-Object AddEipAlarmWhitelistResponse::getData() const
+AddEipAlarmWhitelistRespData AddEipAlarmWhitelistResponse::getData() const
 {
     return data_;
 }
 
-void AddEipAlarmWhitelistResponse::setData(const Object& value)
+void AddEipAlarmWhitelistResponse::setData(const AddEipAlarmWhitelistRespData& value)
 {
     data_ = value;
     dataIsSet_ = true;

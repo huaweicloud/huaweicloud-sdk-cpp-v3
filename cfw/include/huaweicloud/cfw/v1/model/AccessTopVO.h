@@ -42,6 +42,15 @@ public:
     /// AccessTopVO members
 
     /// <summary>
+    /// **参数解释**： 所有命中规则列表 **取值范围**： 不涉及
+    /// </summary>
+
+    std::vector<AccessTopMemberVO>& getAllHitRuleList();
+    bool allHitRuleListIsSet() const;
+    void unsetallHitRuleList();
+    void setAllHitRuleList(const std::vector<AccessTopMemberVO>& value);
+
+    /// <summary>
     /// **参数解释**： 阻断次数 **取值范围**： 不涉及
     /// </summary>
 
@@ -205,6 +214,8 @@ public:
 
 
 protected:
+    std::vector<AccessTopMemberVO> allHitRuleList_;
+    bool allHitRuleListIsSet_;
     int64_t denyCount_;
     bool denyCountIsSet_;
     std::string denyTopOneAclId_;

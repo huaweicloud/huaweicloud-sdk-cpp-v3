@@ -15,8 +15,14 @@
 #include <huaweicloud/cce/v3/model/AddNodesToNodePoolResponse.h>
 #include <huaweicloud/cce/v3/model/AddonCheckRequest.h>
 #include <huaweicloud/cce/v3/model/AddonInstanceRollbackRequest.h>
+#include <huaweicloud/cce/v3/model/AssumeAgencyForPodIdentityRequest.h>
+#include <huaweicloud/cce/v3/model/AssumeAgencyForPodIdentityRequestBody.h>
+#include <huaweicloud/cce/v3/model/AssumeAgencyForPodIdentityResponse.h>
 #include <huaweicloud/cce/v3/model/AwakeClusterRequest.h>
 #include <huaweicloud/cce/v3/model/AwakeClusterResponse.h>
+#include <huaweicloud/cce/v3/model/BatchChangeNodeToPeriodReqBody.h>
+#include <huaweicloud/cce/v3/model/BatchChangeNodeToPeriodRequest.h>
+#include <huaweicloud/cce/v3/model/BatchChangeNodeToPeriodResponse.h>
 #include <huaweicloud/cce/v3/model/BatchCreateAddonPrecheckRequest.h>
 #include <huaweicloud/cce/v3/model/BatchCreateAddonPrecheckResponse.h>
 #include <huaweicloud/cce/v3/model/BatchCreateClusterTagsRequest.h>
@@ -54,6 +60,8 @@
 #include <huaweicloud/cce/v3/model/CreateNodeResponse.h>
 #include <huaweicloud/cce/v3/model/CreatePartitionRequest.h>
 #include <huaweicloud/cce/v3/model/CreatePartitionResponse.h>
+#include <huaweicloud/cce/v3/model/CreatePodIdentityAssociationRequest.h>
+#include <huaweicloud/cce/v3/model/CreatePodIdentityAssociationResponse.h>
 #include <huaweicloud/cce/v3/model/CreatePostCheckRequest.h>
 #include <huaweicloud/cce/v3/model/CreatePostCheckResponse.h>
 #include <huaweicloud/cce/v3/model/CreatePreCheckRequest.h>
@@ -78,6 +86,8 @@
 #include <huaweicloud/cce/v3/model/DeleteNodePoolResponse.h>
 #include <huaweicloud/cce/v3/model/DeleteNodeRequest.h>
 #include <huaweicloud/cce/v3/model/DeleteNodeResponse.h>
+#include <huaweicloud/cce/v3/model/DeletePodIdentityAssociationRequest.h>
+#include <huaweicloud/cce/v3/model/DeletePodIdentityAssociationResponse.h>
 #include <huaweicloud/cce/v3/model/DeleteReleaseRequest.h>
 #include <huaweicloud/cce/v3/model/DeleteReleaseResponse.h>
 #include <huaweicloud/cce/v3/model/DownloadChartRequest.h>
@@ -131,6 +141,8 @@
 #include <huaweicloud/cce/v3/model/ListNodesResponse.h>
 #include <huaweicloud/cce/v3/model/ListPartitionsRequest.h>
 #include <huaweicloud/cce/v3/model/ListPartitionsResponse.h>
+#include <huaweicloud/cce/v3/model/ListPodIdentityAssociationsRequest.h>
+#include <huaweicloud/cce/v3/model/ListPodIdentityAssociationsResponse.h>
 #include <huaweicloud/cce/v3/model/ListPreCheckTasksRequest.h>
 #include <huaweicloud/cce/v3/model/ListPreCheckTasksResponse.h>
 #include <huaweicloud/cce/v3/model/ListReleasesRequest.h>
@@ -157,6 +169,9 @@
 #include <huaweicloud/cce/v3/model/PauseUpgradeClusterTaskRequest.h>
 #include <huaweicloud/cce/v3/model/PauseUpgradeClusterTaskResponse.h>
 #include <huaweicloud/cce/v3/model/PersistentVolumeClaim.h>
+#include <huaweicloud/cce/v3/model/PodIdentityAssociation.h>
+#include <huaweicloud/cce/v3/model/PodIdentityAssociationResp.h>
+#include <huaweicloud/cce/v3/model/PodIdentityAssociationUpdate.h>
 #include <huaweicloud/cce/v3/model/PostcheckClusterRequestBody.h>
 #include <huaweicloud/cce/v3/model/PrecheckClusterRequestBody.h>
 #include <huaweicloud/cce/v3/model/ReleaseResp.h>
@@ -175,6 +190,12 @@
 #include <huaweicloud/cce/v3/model/RevokeKubernetesClusterCertResponse.h>
 #include <huaweicloud/cce/v3/model/RollbackAddonInstanceRequest.h>
 #include <huaweicloud/cce/v3/model/RollbackAddonInstanceResponse.h>
+#include <huaweicloud/cce/v3/model/RotateCertNodeList.h>
+#include <huaweicloud/cce/v3/model/RotateClusterCredentialsRequest.h>
+#include <huaweicloud/cce/v3/model/RotateClusterCredentialsResponse.h>
+#include <huaweicloud/cce/v3/model/RotateCredentialsRequestBody.h>
+#include <huaweicloud/cce/v3/model/RotateNodeCertRequest.h>
+#include <huaweicloud/cce/v3/model/RotateNodeCertResponse.h>
 #include <huaweicloud/cce/v3/model/ScaleNodePoolRequest.h>
 #include <huaweicloud/cce/v3/model/ScaleNodePoolRequestBody.h>
 #include <huaweicloud/cce/v3/model/ScaleNodePoolResponse.h>
@@ -208,6 +229,8 @@
 #include <huaweicloud/cce/v3/model/ShowNodeResponse.h>
 #include <huaweicloud/cce/v3/model/ShowPartitionRequest.h>
 #include <huaweicloud/cce/v3/model/ShowPartitionResponse.h>
+#include <huaweicloud/cce/v3/model/ShowPodIdentityAssociationRequest.h>
+#include <huaweicloud/cce/v3/model/ShowPodIdentityAssociationResponse.h>
 #include <huaweicloud/cce/v3/model/ShowPreCheckRequest.h>
 #include <huaweicloud/cce/v3/model/ShowPreCheckResponse.h>
 #include <huaweicloud/cce/v3/model/ShowQuotasRequest.h>
@@ -249,6 +272,8 @@
 #include <huaweicloud/cce/v3/model/UpdateNodeResponse.h>
 #include <huaweicloud/cce/v3/model/UpdatePartitionRequest.h>
 #include <huaweicloud/cce/v3/model/UpdatePartitionResponse.h>
+#include <huaweicloud/cce/v3/model/UpdatePodIdentityAssociationRequest.h>
+#include <huaweicloud/cce/v3/model/UpdatePodIdentityAssociationResponse.h>
 #include <huaweicloud/cce/v3/model/UpdateReleaseReqBody.h>
 #include <huaweicloud/cce/v3/model/UpdateReleaseRequest.h>
 #include <huaweicloud/cce/v3/model/UpdateReleaseResponse.h>
@@ -439,6 +464,14 @@ public:
     std::shared_ptr<AddNodesToNodePoolResponse> addNodesToNodePool(
         AddNodesToNodePoolRequest &request
     );
+    // 获取pod-identity关联相关委托凭据
+    //
+    // 该API用于通过ServiceAccount token来assume获取ServiceAccount所关联的pod-identity关联中绑定的IAM委托凭据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AssumeAgencyForPodIdentityResponse> assumeAgencyForPodIdentity(
+        AssumeAgencyForPodIdentityRequest &request
+    );
     // 集群唤醒
     //
     // 集群唤醒用于唤醒已休眠的集群，唤醒后，将继续收取控制节点资源费用。
@@ -446,6 +479,18 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AwakeClusterResponse> awakeCluster(
         AwakeClusterRequest &request
+    );
+    // 按需节点转包年/包月
+    //
+    // 该API用于将节点从按需计费模式转成包周期计费模式。
+    // &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    // &gt;按需节点池中的节点转成包年/包月时，需要将集群升级到v1.19.16-r40、v1.21.11-r0、v1.23.9-r0、v1.25.4-r0以及其他更高版本的集群。
+    // &gt;当按需节点池中的节点转成包年/包月后，该节点不支持弹性缩容。
+    // &gt;按需计费节点绑定的资源（弹性公网IP）可能不支持同步变更计费模式，详情请参见[弹性云服务器ECS按需转包年/包月说明](https://support.huaweicloud.com/price-ecs/ecs_billing_5002.html)。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchChangeNodeToPeriodResponse> batchChangeNodeToPeriod(
+        BatchChangeNodeToPeriodRequest &request
     );
     // 批量创建插件检查任务
     //
@@ -580,6 +625,14 @@ public:
     std::shared_ptr<CreatePartitionResponse> createPartition(
         CreatePartitionRequest &request
     );
+    // 创建pod-identity关联
+    //
+    // 该API用于创建pod-identity关联，将容器集群serviceaccount与IAM委托绑定。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreatePodIdentityAssociationResponse> createPodIdentityAssociation(
+        CreatePodIdentityAssociationRequest &request
+    );
     // 集群升级后确认
     //
     // 集群升级后确认，该接口建议配合Console使用，主要用于升级步骤完成后，客户确认集群状态和业务正常后做反馈。
@@ -672,6 +725,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteNodePoolResponse> deleteNodePool(
         DeleteNodePoolRequest &request
+    );
+    // 删除pod-identity关联
+    //
+    // 该API用于删除指定的pod-identity关联。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeletePodIdentityAssociationResponse> deletePodIdentityAssociation(
+        DeletePodIdentityAssociationRequest &request
     );
     // 删除指定模板实例
     //
@@ -877,6 +938,14 @@ public:
     std::shared_ptr<ListPartitionsResponse> listPartitions(
         ListPartitionsRequest &request
     );
+    // 查询指定集群的pod-identity关联
+    //
+    // 该API用于获取集群下所有pod-identity关联。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPodIdentityAssociationsResponse> listPodIdentityAssociations(
+        ListPodIdentityAssociationsRequest &request
+    );
     // 获取集群升级前检查任务详情列表
     //
     // 获取集群升级前检查任务详情列表
@@ -1003,6 +1072,26 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RollbackAddonInstanceResponse> rollbackAddonInstance(
         RollbackAddonInstanceRequest &request
+    );
+    // 轮转用户的集群证书
+    //
+    // 该API用于轮转指定集群的证书
+    // 
+    // &gt; 只支持1.19及以上集群版本
+    // &gt; 操作完成后，用户集群组件的证书有效期会续期5年。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RotateClusterCredentialsResponse> rotateClusterCredentials(
+        RotateClusterCredentialsRequest &request
+    );
+    // 轮转节点证书
+    //
+    // 该API用于在指定集群下轮转节点证书。作为集群证书轮转操作的补偿机制：当通过配套的集群证书轮转接口执行轮转时，若部分节点证书轮转失败，可通过调用本接口进行重试。
+    // &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RotateNodeCertResponse> rotateNodeCert(
+        RotateNodeCertRequest &request
     );
     // 伸缩节点池
     //
@@ -1137,6 +1226,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPartitionResponse> showPartition(
         ShowPartitionRequest &request
+    );
+    // 查询指定pod-identity关联
+    //
+    // 该API用于查询指定pod-identity关联详情信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPodIdentityAssociationResponse> showPodIdentityAssociation(
+        ShowPodIdentityAssociationRequest &request
     );
     // 获取集群升级前检查任务详情
     //
@@ -1300,6 +1397,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePartitionResponse> updatePartition(
         UpdatePartitionRequest &request
+    );
+    // 更新pod-identity关联
+    //
+    // 该API用于更新指定pod-identity关联所绑定的IAM委托信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePodIdentityAssociationResponse> updatePodIdentityAssociation(
+        UpdatePodIdentityAssociationRequest &request
     );
     // 更新指定模板实例
     //

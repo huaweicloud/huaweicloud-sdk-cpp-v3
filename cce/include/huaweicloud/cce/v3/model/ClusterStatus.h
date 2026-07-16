@@ -12,6 +12,7 @@
 #include <huaweicloud/cce/v3/model/ClusterEndpoints.h>
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/cce/v3/model/ClusterCondition.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -140,6 +141,15 @@ public:
     void unsetdeleteStatus();
     void setDeleteStatus(const Object& value);
 
+    /// <summary>
+    /// **参数解释**： 集群当前详细状态列表，详情参见Condition类型定义。 **约束限制**： 不涉及
+    /// </summary>
+
+    std::vector<ClusterCondition>& getConditions();
+    bool conditionsIsSet() const;
+    void unsetconditions();
+    void setConditions(const std::vector<ClusterCondition>& value);
+
 
 protected:
     std::string phase_;
@@ -164,6 +174,8 @@ protected:
     bool deleteOptionIsSet_;
     Object deleteStatus_;
     bool deleteStatusIsSet_;
+    std::vector<ClusterCondition> conditions_;
+    bool conditionsIsSet_;
 
 };
 

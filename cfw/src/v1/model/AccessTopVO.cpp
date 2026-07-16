@@ -12,6 +12,7 @@ namespace Model {
 
 AccessTopVO::AccessTopVO()
 {
+    allHitRuleListIsSet_ = false;
     denyCount_ = 0L;
     denyCountIsSet_ = false;
     denyTopOneAclId_ = "";
@@ -49,6 +50,9 @@ web::json::value AccessTopVO::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(allHitRuleListIsSet_) {
+        val[utility::conversions::to_string_t("all_hit_rule_list")] = ModelBase::toJson(allHitRuleList_);
+    }
     if(denyCountIsSet_) {
         val[utility::conversions::to_string_t("deny_count")] = ModelBase::toJson(denyCount_);
     }
@@ -110,6 +114,15 @@ bool AccessTopVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("all_hit_rule_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("all_hit_rule_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AccessTopMemberVO> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAllHitRuleList(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("deny_count"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deny_count"));
         if(!fieldValue.is_null())
@@ -275,6 +288,27 @@ bool AccessTopVO::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::vector<AccessTopMemberVO>& AccessTopVO::getAllHitRuleList()
+{
+    return allHitRuleList_;
+}
+
+void AccessTopVO::setAllHitRuleList(const std::vector<AccessTopMemberVO>& value)
+{
+    allHitRuleList_ = value;
+    allHitRuleListIsSet_ = true;
+}
+
+bool AccessTopVO::allHitRuleListIsSet() const
+{
+    return allHitRuleListIsSet_;
+}
+
+void AccessTopVO::unsetallHitRuleList()
+{
+    allHitRuleListIsSet_ = false;
+}
 
 int64_t AccessTopVO::getDenyCount() const
 {

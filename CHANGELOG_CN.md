@@ -1,3 +1,194 @@
+# 3.1.196 2026-07-16
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `RotateClusterCredentials`
+    - `RotateNodeCert`
+    - `BatchChangeNodeToPeriod`
+    - `ListPodIdentityAssociations`
+    - `CreatePodIdentityAssociation`
+    - `ShowPodIdentityAssociation`
+    - `UpdatePodIdentityAssociation`
+    - `DeletePodIdentityAssociation`
+    - `AssumeAgencyForPodIdentity`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteAutopilotRelease**
+    - 请求参数变更
+      - `+ show_resources`
+  - **ShowAutopilotRelease**
+    - 请求参数变更
+      - `+ show_resources`
+  - **UpdateAutopilotRelease**
+    - 请求参数变更
+      - `+ show_resources`
+  - **ShowCluster**
+    - 响应参数变更
+      - `+ status.conditions`
+      - `+ spec.certificateAuthority`
+      - `+ spec.kubeProxyMode: enum value [nftables]`
+  - **UpdateCluster**
+    - 响应参数变更
+      - `+ status.conditions`
+      - `+ spec.certificateAuthority`
+      - `+ spec.kubeProxyMode: enum value [nftables]`
+  - **DeleteCluster**
+    - 响应参数变更
+      - `+ status.conditions`
+      - `+ spec.certificateAuthority`
+      - `+ spec.kubeProxyMode: enum value [nftables]`
+  - **MigrateNode**
+    - 请求参数变更
+      - `+ spec.runtime.runtimeClass`
+    - 响应参数变更
+      - `+ spec.runtime.runtimeClass`
+  - **CreateCluster**
+    - 请求参数变更
+      - `+ status.conditions`
+      - `+ spec.certificateAuthority`
+      - `+ spec.kubeProxyMode: enum value [nftables]`
+    - 响应参数变更
+      - `+ status.conditions`
+      - `+ spec.certificateAuthority`
+      - `+ spec.kubeProxyMode: enum value [nftables]`
+  - **ListClusters**
+    - 响应参数变更
+      - `+ items.status.conditions`
+      - `+ items.spec.certificateAuthority`
+      - `+ items.spec.kubeProxyMode: enum value [nftables]`
+  - **ShowNode**
+    - 响应参数变更
+      - `+ spec.runtime.runtimeClass`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ spec.runtime.runtimeClass`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ spec.runtime.runtimeClass`
+  - **CreateNode**
+    - 请求参数变更
+      - `+ spec.runtime.runtimeClass`
+    - 响应参数变更
+      - `+ spec.runtime.runtimeClass`
+  - **ListNodes**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+    - 响应参数变更
+      - `+ pageInfo`
+      - `+ items.spec.runtime.runtimeClass`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `+ status.activeNode`
+      - `+ status.scaleGroupStatuses.activeNodeCount`
+      - `+ spec.nodeTemplate.runtime.runtimeClass`
+  - **UpdateNodePool**
+    - 请求参数变更
+      - `+ spec.customSecurityGroups`
+      - `+ spec.nodeTemplate.runtime.runtimeClass`
+    - 响应参数变更
+      - `+ status.activeNode`
+      - `+ status.scaleGroupStatuses.activeNodeCount`
+      - `+ spec.nodeTemplate.runtime.runtimeClass`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `+ status.activeNode`
+      - `+ status.scaleGroupStatuses.activeNodeCount`
+      - `+ spec.nodeTemplate.runtime.runtimeClass`
+  - **UpgradeNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.runtime.runtimeClass`
+  - **AddNode**
+    - 请求参数变更
+      - `+ nodeList.spec.runtimeConfig.runtime.runtimeClass`
+  - **ResetNode**
+    - 请求参数变更
+      - `+ nodeList.spec.runtimeConfig.runtime.runtimeClass`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `+ status.activeNode`
+      - `+ status.scaleGroupStatuses.activeNodeCount`
+      - `+ spec.nodeTemplate.runtime.runtimeClass`
+    - 响应参数变更
+      - `+ status.activeNode`
+      - `+ status.scaleGroupStatuses.activeNodeCount`
+      - `+ spec.nodeTemplate.runtime.runtimeClass`
+  - **ListNodePools**
+    - 响应参数变更
+      - `+ items.status.activeNode`
+      - `+ items.status.scaleGroupStatuses.activeNodeCount`
+      - `+ items.spec.nodeTemplate.runtime.runtimeClass`
+  - **ListHyperNodes**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.runtime.runtimeClass`
+
+### HuaweiCloud SDK CFW
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchDeleteDomainSet**
+    - 响应参数变更
+      - `+ data.responseDatas`
+      - `* data: map<string, list<Map«string,string»>> -> object<DeleteDomainSetResponseDatas>`
+  - **UpdateObjectConfigDesc**
+    - 响应参数变更
+      - `* data: object -> string`
+  - **ListRegions**
+    - 响应参数变更
+      - `* data.region_type: string -> integer`
+      - `* data.superior_region_id: int32 -> string`
+  - **AddEipAlarmWhitelist**
+    - 响应参数变更
+      - `+ data.id`
+      - `* data: object -> object<AddEipAlarmWhitelistRespData>`
+  - **BatchRemoveAccounts**
+    - 响应参数变更
+      - `+ data.trust_service_status`
+  - **ListBlackWhiteLists**
+    - 响应参数变更
+      - `* data.records.created_date: string -> int32`
+      - `* data.records.modified_date: string -> int32`
+  - **ListDomains**
+    - 请求参数变更
+      - `- object_Id`
+  - **ShowAccessTop**
+    - 响应参数变更
+      - `+ data.all_hit_rule_list`
+  - **ShowAccessDetail**
+    - 响应参数变更
+      - `+ data.all_session_count`
+      - `+ data.session_count`
+  - **BatchAddAccounts**
+    - 响应参数变更
+      - `+ data.trust_service_status`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeTransportationLicense**
+    - 响应参数变更
+      - `+ result.is_temporary_certificate`
+  - **RecognizeVatInvoice**
+    - 响应参数变更
+      - `+ result.total_pages`
+      - `+ result.current_page`
+
 # 3.1.195 2026-07-09
 
 ### HuaweiCloud SDK DBSS

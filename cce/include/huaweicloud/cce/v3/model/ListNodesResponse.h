@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cce/v3/model/Node.h>
+#include <huaweicloud/cce/v3/model/NodePageInfo.h>
 #include <string>
 #include <vector>
 
@@ -67,6 +68,15 @@ public:
     void unsetitems();
     void setItems(const std::vector<Node>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    NodePageInfo getPageInfo() const;
+    bool pageInfoIsSet() const;
+    void unsetpageInfo();
+    void setPageInfo(const NodePageInfo& value);
+
 
 protected:
     std::string kind_;
@@ -75,6 +85,8 @@ protected:
     bool apiVersionIsSet_;
     std::vector<Node> items_;
     bool itemsIsSet_;
+    NodePageInfo pageInfo_;
+    bool pageInfoIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

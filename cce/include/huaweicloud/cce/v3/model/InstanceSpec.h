@@ -69,7 +69,7 @@ public:
     void setAddonTemplateName(const std::string& value);
 
     /// <summary>
-    /// 插件模板类型
+    /// **参数解释：** 插件模板类型 **约束限制：** 不涉及 **取值范围：** - helm: 表示使用Helm包进行部署的模板类型 - static: 表示静态模板类型  **默认取值：** 不涉及
     /// </summary>
 
     std::string getAddonTemplateType() const;

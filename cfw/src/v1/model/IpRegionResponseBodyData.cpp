@@ -18,9 +18,9 @@ IpRegionResponseBodyData::IpRegionResponseBodyData()
     descriptionCnIsSet_ = false;
     descriptionEn_ = "";
     descriptionEnIsSet_ = false;
-    regionType_ = "";
+    regionType_ = 0;
     regionTypeIsSet_ = false;
-    superiorRegionId_ = 0;
+    superiorRegionId_ = "";
     superiorRegionIdIsSet_ = false;
 }
 
@@ -87,7 +87,7 @@ bool IpRegionResponseBodyData::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region_type"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRegionType(refVal);
         }
@@ -96,7 +96,7 @@ bool IpRegionResponseBodyData::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("superior_region_id"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSuperiorRegionId(refVal);
         }
@@ -168,12 +168,12 @@ void IpRegionResponseBodyData::unsetdescriptionEn()
     descriptionEnIsSet_ = false;
 }
 
-std::string IpRegionResponseBodyData::getRegionType() const
+int32_t IpRegionResponseBodyData::getRegionType() const
 {
     return regionType_;
 }
 
-void IpRegionResponseBodyData::setRegionType(const std::string& value)
+void IpRegionResponseBodyData::setRegionType(int32_t value)
 {
     regionType_ = value;
     regionTypeIsSet_ = true;
@@ -189,12 +189,12 @@ void IpRegionResponseBodyData::unsetregionType()
     regionTypeIsSet_ = false;
 }
 
-int32_t IpRegionResponseBodyData::getSuperiorRegionId() const
+std::string IpRegionResponseBodyData::getSuperiorRegionId() const
 {
     return superiorRegionId_;
 }
 
-void IpRegionResponseBodyData::setSuperiorRegionId(int32_t value)
+void IpRegionResponseBodyData::setSuperiorRegionId(const std::string& value)
 {
     superiorRegionId_ = value;
     superiorRegionIdIsSet_ = true;

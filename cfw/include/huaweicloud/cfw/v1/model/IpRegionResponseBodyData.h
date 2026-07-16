@@ -69,19 +69,19 @@ public:
     /// **参数解释**： 区域类型 **取值范围**： - 0：国家 - 1：省份 - 2：大洲 
     /// </summary>
 
-    std::string getRegionType() const;
+    int32_t getRegionType() const;
     bool regionTypeIsSet() const;
     void unsetregionType();
-    void setRegionType(const std::string& value);
+    void setRegionType(int32_t value);
 
     /// <summary>
     /// **参数解释**： 上级区域ID **取值范围**： 不涉及 
     /// </summary>
 
-    int32_t getSuperiorRegionId() const;
+    std::string getSuperiorRegionId() const;
     bool superiorRegionIdIsSet() const;
     void unsetsuperiorRegionId();
-    void setSuperiorRegionId(int32_t value);
+    void setSuperiorRegionId(const std::string& value);
 
 
 protected:
@@ -91,9 +91,9 @@ protected:
     bool descriptionCnIsSet_;
     std::string descriptionEn_;
     bool descriptionEnIsSet_;
-    std::string regionType_;
+    int32_t regionType_;
     bool regionTypeIsSet_;
-    int32_t superiorRegionId_;
+    std::string superiorRegionId_;
     bool superiorRegionIdIsSet_;
 
 };

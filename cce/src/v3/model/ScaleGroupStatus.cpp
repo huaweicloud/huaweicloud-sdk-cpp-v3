@@ -26,6 +26,8 @@ ScaleGroupStatus::ScaleGroupStatus()
     desiredNodeCountIsSet_ = false;
     unpaidScaleNodeCount_ = 0;
     unpaidScaleNodeCountIsSet_ = false;
+    activeNodeCount_ = 0;
+    activeNodeCountIsSet_ = false;
     existingNodeCountIsSet_ = false;
     upcomingNodeCountIsSet_ = false;
     scaleDownDisabledNodeCount_ = 0;
@@ -63,6 +65,9 @@ web::json::value ScaleGroupStatus::toJson() const
     }
     if(unpaidScaleNodeCountIsSet_) {
         val[utility::conversions::to_string_t("unpaidScaleNodeCount")] = ModelBase::toJson(unpaidScaleNodeCount_);
+    }
+    if(activeNodeCountIsSet_) {
+        val[utility::conversions::to_string_t("activeNodeCount")] = ModelBase::toJson(activeNodeCount_);
     }
     if(existingNodeCountIsSet_) {
         val[utility::conversions::to_string_t("existingNodeCount")] = ModelBase::toJson(existingNodeCount_);
@@ -144,6 +149,15 @@ bool ScaleGroupStatus::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUnpaidScaleNodeCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("activeNodeCount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("activeNodeCount"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActiveNodeCount(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("existingNodeCount"))) {
@@ -331,6 +345,27 @@ bool ScaleGroupStatus::unpaidScaleNodeCountIsSet() const
 void ScaleGroupStatus::unsetunpaidScaleNodeCount()
 {
     unpaidScaleNodeCountIsSet_ = false;
+}
+
+int32_t ScaleGroupStatus::getActiveNodeCount() const
+{
+    return activeNodeCount_;
+}
+
+void ScaleGroupStatus::setActiveNodeCount(int32_t value)
+{
+    activeNodeCount_ = value;
+    activeNodeCountIsSet_ = true;
+}
+
+bool ScaleGroupStatus::activeNodeCountIsSet() const
+{
+    return activeNodeCountIsSet_;
+}
+
+void ScaleGroupStatus::unsetactiveNodeCount()
+{
+    activeNodeCountIsSet_ = false;
 }
 
 ScaleGroupStatus_existingNodeCount ScaleGroupStatus::getExistingNodeCount() const

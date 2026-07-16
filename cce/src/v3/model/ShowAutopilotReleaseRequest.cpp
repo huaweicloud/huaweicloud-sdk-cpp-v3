@@ -16,6 +16,8 @@ ShowAutopilotReleaseRequest::ShowAutopilotReleaseRequest()
     nameIsSet_ = false;
     namespace_ = "";
     namespaceIsSet_ = false;
+    showResources_ = "";
+    showResourcesIsSet_ = false;
     clusterId_ = "";
     clusterIdIsSet_ = false;
 }
@@ -35,6 +37,9 @@ web::json::value ShowAutopilotReleaseRequest::toJson() const
     }
     if(namespaceIsSet_) {
         val[utility::conversions::to_string_t("namespace")] = ModelBase::toJson(namespace_);
+    }
+    if(showResourcesIsSet_) {
+        val[utility::conversions::to_string_t("show_resources")] = ModelBase::toJson(showResources_);
     }
     if(clusterIdIsSet_) {
         val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
@@ -62,6 +67,15 @@ bool ShowAutopilotReleaseRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNamespace(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("show_resources"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("show_resources"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setShowResources(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cluster_id"))) {
@@ -117,6 +131,27 @@ bool ShowAutopilotReleaseRequest::namespaceIsSet() const
 void ShowAutopilotReleaseRequest::unsetnamespace()
 {
     namespaceIsSet_ = false;
+}
+
+std::string ShowAutopilotReleaseRequest::getShowResources() const
+{
+    return showResources_;
+}
+
+void ShowAutopilotReleaseRequest::setShowResources(const std::string& value)
+{
+    showResources_ = value;
+    showResourcesIsSet_ = true;
+}
+
+bool ShowAutopilotReleaseRequest::showResourcesIsSet() const
+{
+    return showResourcesIsSet_;
+}
+
+void ShowAutopilotReleaseRequest::unsetshowResources()
+{
+    showResourcesIsSet_ = false;
 }
 
 std::string ShowAutopilotReleaseRequest::getClusterId() const

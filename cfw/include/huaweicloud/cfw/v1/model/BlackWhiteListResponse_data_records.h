@@ -105,19 +105,19 @@ public:
     /// |- **参数解释**： 黑白名单创建时间。 **取值范围**： 不涉及 
     /// </summary>
 
-    std::string getCreatedDate() const;
+    int32_t getCreatedDate() const;
     bool createdDateIsSet() const;
     void unsetcreatedDate();
-    void setCreatedDate(const std::string& value);
+    void setCreatedDate(int32_t value);
 
     /// <summary>
     /// |- **参数解释**： 黑白名单修改时间。 **取值范围**： 不涉及 
     /// </summary>
 
-    std::string getModifiedDate() const;
+    int32_t getModifiedDate() const;
     bool modifiedDateIsSet() const;
     void unsetmodifiedDate();
-    void setModifiedDate(const std::string& value);
+    void setModifiedDate(int32_t value);
 
 
 protected:
@@ -135,9 +135,9 @@ protected:
     bool portIsSet_;
     std::string description_;
     bool descriptionIsSet_;
-    std::string createdDate_;
+    int32_t createdDate_;
     bool createdDateIsSet_;
-    std::string modifiedDate_;
+    int32_t modifiedDate_;
     bool modifiedDateIsSet_;
 
 };

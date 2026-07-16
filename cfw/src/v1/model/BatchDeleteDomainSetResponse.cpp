@@ -39,7 +39,7 @@ bool BatchDeleteDomainSetResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            std::map<std::string, std::vector<Mapstringstring>> refVal;
+            DeleteDomainSetResponseDatas refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool BatchDeleteDomainSetResponse::fromJson(const web::json::value& val)
 }
 
 
-std::map<std::string, std::vector<Mapstringstring>>& BatchDeleteDomainSetResponse::getData()
+DeleteDomainSetResponseDatas BatchDeleteDomainSetResponse::getData() const
 {
     return data_;
 }
 
-void BatchDeleteDomainSetResponse::setData(const std::map<std::string, std::vector<Mapstringstring>>& value)
+void BatchDeleteDomainSetResponse::setData(const DeleteDomainSetResponseDatas& value)
 {
     data_ = value;
     dataIsSet_ = true;

@@ -16,6 +16,8 @@ MultiAccountResp_data::MultiAccountResp_data()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    trustServiceStatus_ = 0;
+    trustServiceStatusIsSet_ = false;
 }
 
 MultiAccountResp_data::~MultiAccountResp_data() = default;
@@ -33,6 +35,9 @@ web::json::value MultiAccountResp_data::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(trustServiceStatusIsSet_) {
+        val[utility::conversions::to_string_t("trust_service_status")] = ModelBase::toJson(trustServiceStatus_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool MultiAccountResp_data::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("trust_service_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trust_service_status"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTrustServiceStatus(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool MultiAccountResp_data::nameIsSet() const
 void MultiAccountResp_data::unsetname()
 {
     nameIsSet_ = false;
+}
+
+int32_t MultiAccountResp_data::getTrustServiceStatus() const
+{
+    return trustServiceStatus_;
+}
+
+void MultiAccountResp_data::setTrustServiceStatus(int32_t value)
+{
+    trustServiceStatus_ = value;
+    trustServiceStatusIsSet_ = true;
+}
+
+bool MultiAccountResp_data::trustServiceStatusIsSet() const
+{
+    return trustServiceStatusIsSet_;
+}
+
+void MultiAccountResp_data::unsettrustServiceStatus()
+{
+    trustServiceStatusIsSet_ = false;
 }
 
 }

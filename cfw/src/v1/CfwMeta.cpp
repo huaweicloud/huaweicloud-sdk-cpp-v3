@@ -1027,9 +1027,6 @@ HttpRequestDef CfwMeta::genRequestDefForListDomains() {
     reqDefBuilder.withRequestField(FieldDef().withName("DomainName")
                   .withJsonTag("domain_name")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
-                  .withJsonTag("object_Id")
-                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

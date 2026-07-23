@@ -286,11 +286,13 @@ public:
     static HttpRequestDef genRequestDefForCollectSubscriptionMonitor();
     static HttpRequestDef genRequestDefForCopyDatabase();
     static HttpRequestDef genRequestDefForCreateDistribution();
+    static HttpRequestDef genRequestDefForCreateJobSchedule();
     static HttpRequestDef genRequestDefForCreatePublication();
     static HttpRequestDef genRequestDefForCreateSqlserverDatabase();
     static HttpRequestDef genRequestDefForCreateSqlserverDbUser();
     static HttpRequestDef genRequestDefForCreateSubscription();
     static HttpRequestDef genRequestDefForDeleteDistribution();
+    static HttpRequestDef genRequestDefForDeleteJobSchedule();
     static HttpRequestDef genRequestDefForDeleteMsdtcLocalHost();
     static HttpRequestDef genRequestDefForDeletePublication();
     static HttpRequestDef genRequestDefForDeleteSqlserverDatabase();
@@ -304,6 +306,7 @@ public:
     static HttpRequestDef genRequestDefForListDbAgentJobs();
     static HttpRequestDef genRequestDefForListDistribution();
     static HttpRequestDef genRequestDefForListDistributorInstances();
+    static HttpRequestDef genRequestDefForListJobSchedules();
     static HttpRequestDef genRequestDefForListMarketplaceEngineProducts();
     static HttpRequestDef genRequestDefForListMsdtcHosts();
     static HttpRequestDef genRequestDefForListPublications();
@@ -317,6 +320,7 @@ public:
     static HttpRequestDef genRequestDefForListSubscriptions();
     static HttpRequestDef genRequestDefForModifyCollation();
     static HttpRequestDef genRequestDefForModifyDbAgentJob();
+    static HttpRequestDef genRequestDefForModifyJobSchedule();
     static HttpRequestDef genRequestDefForModifyPublication();
     static HttpRequestDef genRequestDefForRefreshPublicationSnapshot();
     static HttpRequestDef genRequestDefForRefreshSubscription();

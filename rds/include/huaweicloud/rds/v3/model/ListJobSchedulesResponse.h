@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_ListDbAgentJobHistorysResponse_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_ListDbAgentJobHistorysResponse_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_ListJobSchedulesResponse_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_ListJobSchedulesResponse_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/rds/v3/model/ListDbAgentJobHistorysResult.h>
+#include <huaweicloud/rds/v3/model/JobScheduleInfo.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -23,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  ListDbAgentJobHistorysResponse
+class HUAWEICLOUD_RDS_V3_EXPORT  ListJobSchedulesResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    ListDbAgentJobHistorysResponse();
-    virtual ~ListDbAgentJobHistorysResponse();
+    ListJobSchedulesResponse();
+    virtual ~ListJobSchedulesResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,19 +37,19 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ListDbAgentJobHistorysResponse members
+    /// ListJobSchedulesResponse members
 
     /// <summary>
-    /// 执行历史列表。
+    /// 策略列表。
     /// </summary>
 
-    std::vector<ListDbAgentJobHistorysResult>& getHistories();
-    bool historiesIsSet() const;
-    void unsethistories();
-    void setHistories(const std::vector<ListDbAgentJobHistorysResult>& value);
+    std::vector<JobScheduleInfo>& getSchedules();
+    bool schedulesIsSet() const;
+    void unsetschedules();
+    void setSchedules(const std::vector<JobScheduleInfo>& value);
 
     /// <summary>
-    /// 执行历史总数。
+    /// 策略总数。
     /// </summary>
 
     int32_t getTotalCount() const;
@@ -59,8 +59,8 @@ public:
 
 
 protected:
-    std::vector<ListDbAgentJobHistorysResult> histories_;
-    bool historiesIsSet_;
+    std::vector<JobScheduleInfo> schedules_;
+    bool schedulesIsSet_;
     int32_t totalCount_;
     bool totalCountIsSet_;
 
@@ -76,4 +76,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_ListDbAgentJobHistorysResponse_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_ListJobSchedulesResponse_H_

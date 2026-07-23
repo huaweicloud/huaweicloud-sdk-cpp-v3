@@ -12,6 +12,8 @@ namespace Model {
 
 SwitchDbAgentJobResponse::SwitchDbAgentJobResponse()
 {
+    resp_ = "";
+    respIsSet_ = false;
 }
 
 SwitchDbAgentJobResponse::~SwitchDbAgentJobResponse() = default;
@@ -24,6 +26,9 @@ web::json::value SwitchDbAgentJobResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(respIsSet_) {
+        val[utility::conversions::to_string_t("resp")] = ModelBase::toJson(resp_);
+    }
 
     return val;
 }
@@ -31,9 +36,39 @@ bool SwitchDbAgentJobResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("resp"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resp"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResp(refVal);
+        }
+    }
     return ok;
 }
 
+
+std::string SwitchDbAgentJobResponse::getResp() const
+{
+    return resp_;
+}
+
+void SwitchDbAgentJobResponse::setResp(const std::string& value)
+{
+    resp_ = value;
+    respIsSet_ = true;
+}
+
+bool SwitchDbAgentJobResponse::respIsSet() const
+{
+    return respIsSet_;
+}
+
+void SwitchDbAgentJobResponse::unsetresp()
+{
+    respIsSet_ = false;
+}
 
 }
 }

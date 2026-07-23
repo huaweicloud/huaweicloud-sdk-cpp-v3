@@ -1,3 +1,19 @@
+# 3.1.197 2026-07-23
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ModifyJobSchedule`, `DeleteJobSchedule`, `ListJobSchedules`, `CreateJobSchedule`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListDbAgentJobHistorys**
+    - changes of response param
+      - `+ histories`
+      - `- historys`
+
 # 3.1.196 2026-07-16
 
 ### HuaweiCloud SDK CCE

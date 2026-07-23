@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_CreateJobScheduleResponse_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_CreateJobScheduleResponse_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  SwitchDbAgentJobResponse
+class HUAWEICLOUD_RDS_V3_EXPORT  CreateJobScheduleResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    SwitchDbAgentJobResponse();
-    virtual ~SwitchDbAgentJobResponse();
+    CreateJobScheduleResponse();
+    virtual ~CreateJobScheduleResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,21 +36,21 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// SwitchDbAgentJobResponse members
+    /// CreateJobScheduleResponse members
 
     /// <summary>
-    /// 响应结果
+    /// 策略id。
     /// </summary>
 
-    std::string getResp() const;
-    bool respIsSet() const;
-    void unsetresp();
-    void setResp(const std::string& value);
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
 
 
 protected:
-    std::string resp_;
-    bool respIsSet_;
+    std::string id_;
+    bool idIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
@@ -64,4 +64,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_CreateJobScheduleResponse_H_

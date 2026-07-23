@@ -702,6 +702,9 @@
 #include <huaweicloud/rds/v3/model/CreateDistributionRequest.h>
 #include <huaweicloud/rds/v3/model/CreateDistributionRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateDistributionResponse.h>
+#include <huaweicloud/rds/v3/model/CreateJobScheduleRequest.h>
+#include <huaweicloud/rds/v3/model/CreateJobScheduleRequestBody.h>
+#include <huaweicloud/rds/v3/model/CreateJobScheduleResponse.h>
 #include <huaweicloud/rds/v3/model/CreatePublicationRequest.h>
 #include <huaweicloud/rds/v3/model/CreatePublicationResponse.h>
 #include <huaweicloud/rds/v3/model/CreatePublicationsRequestBody.h>
@@ -714,6 +717,8 @@
 #include <huaweicloud/rds/v3/model/CreateSubscriptionResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteDistributionRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteDistributionResponse.h>
+#include <huaweicloud/rds/v3/model/DeleteJobScheduleRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteJobScheduleResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostRequestBody.h>
 #include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostResponse.h>
@@ -745,6 +750,8 @@
 #include <huaweicloud/rds/v3/model/ListDistributionResponse.h>
 #include <huaweicloud/rds/v3/model/ListDistributorInstancesRequest.h>
 #include <huaweicloud/rds/v3/model/ListDistributorInstancesResponse.h>
+#include <huaweicloud/rds/v3/model/ListJobSchedulesRequest.h>
+#include <huaweicloud/rds/v3/model/ListJobSchedulesResponse.h>
 #include <huaweicloud/rds/v3/model/ListMarketplaceEngineProductsRequest.h>
 #include <huaweicloud/rds/v3/model/ListMarketplaceEngineProductsResponse.h>
 #include <huaweicloud/rds/v3/model/ListMsdtcHostsRequest.h>
@@ -775,6 +782,9 @@
 #include <huaweicloud/rds/v3/model/ModifyDbAgentJobRequest.h>
 #include <huaweicloud/rds/v3/model/ModifyDbAgentJobRequestBody.h>
 #include <huaweicloud/rds/v3/model/ModifyDbAgentJobResponse.h>
+#include <huaweicloud/rds/v3/model/ModifyJobScheduleRequest.h>
+#include <huaweicloud/rds/v3/model/ModifyJobScheduleRequestBody.h>
+#include <huaweicloud/rds/v3/model/ModifyJobScheduleResponse.h>
 #include <huaweicloud/rds/v3/model/ModifyPublicationRequest.h>
 #include <huaweicloud/rds/v3/model/ModifyPublicationResponse.h>
 #include <huaweicloud/rds/v3/model/ModifyPublicationsRequestBody.h>
@@ -3043,6 +3053,14 @@ public:
     std::shared_ptr<CreateDistributionResponse> createDistribution(
         CreateDistributionRequest &request
     );
+    // 创建数据库定时任务策略
+    //
+    // 创建数据库定时任务策略。每个类型最多只能创建100个自定义策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateJobScheduleResponse> createJobSchedule(
+        CreateJobScheduleRequest &request
+    );
     // 创建发布
     //
     // 创建发布
@@ -3082,6 +3100,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDistributionResponse> deleteDistribution(
         DeleteDistributionRequest &request
+    );
+    // 删除数据库定时任务策略
+    //
+    // 删除数据库定时任务策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteJobScheduleResponse> deleteJobSchedule(
+        DeleteJobScheduleRequest &request
     );
     // 删除MSDTC
     //
@@ -3187,6 +3213,14 @@ public:
     std::shared_ptr<ListDistributorInstancesResponse> listDistributorInstances(
         ListDistributorInstancesRequest &request
     );
+    // 查询数据库定时任务策略
+    //
+    // 查询数据库定时任务策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListJobSchedulesResponse> listJobSchedules(
+        ListJobSchedulesRequest &request
+    );
     // 查询云市场引擎商品列表
     //
     // 查询云市场引擎商品列表。
@@ -3290,6 +3324,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyDbAgentJobResponse> modifyDbAgentJob(
         ModifyDbAgentJobRequest &request
+    );
+    // 修改数据库定时任务策略
+    //
+    // 修改数据库定时任务策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyJobScheduleResponse> modifyJobSchedule(
+        ModifyJobScheduleRequest &request
     );
     // 修改发布
     //

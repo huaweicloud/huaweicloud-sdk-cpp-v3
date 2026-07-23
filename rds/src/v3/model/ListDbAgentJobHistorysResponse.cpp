@@ -12,7 +12,7 @@ namespace Model {
 
 ListDbAgentJobHistorysResponse::ListDbAgentJobHistorysResponse()
 {
-    historysIsSet_ = false;
+    historiesIsSet_ = false;
     totalCount_ = 0;
     totalCountIsSet_ = false;
 }
@@ -27,8 +27,8 @@ web::json::value ListDbAgentJobHistorysResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(historysIsSet_) {
-        val[utility::conversions::to_string_t("historys")] = ModelBase::toJson(historys_);
+    if(historiesIsSet_) {
+        val[utility::conversions::to_string_t("histories")] = ModelBase::toJson(histories_);
     }
     if(totalCountIsSet_) {
         val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
@@ -40,13 +40,13 @@ bool ListDbAgentJobHistorysResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("historys"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("historys"));
+    if(val.has_field(utility::conversions::to_string_t("histories"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("histories"));
         if(!fieldValue.is_null())
         {
             std::vector<ListDbAgentJobHistorysResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHistorys(refVal);
+            setHistories(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("total_count"))) {
@@ -62,25 +62,25 @@ bool ListDbAgentJobHistorysResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<ListDbAgentJobHistorysResult>& ListDbAgentJobHistorysResponse::getHistorys()
+std::vector<ListDbAgentJobHistorysResult>& ListDbAgentJobHistorysResponse::getHistories()
 {
-    return historys_;
+    return histories_;
 }
 
-void ListDbAgentJobHistorysResponse::setHistorys(const std::vector<ListDbAgentJobHistorysResult>& value)
+void ListDbAgentJobHistorysResponse::setHistories(const std::vector<ListDbAgentJobHistorysResult>& value)
 {
-    historys_ = value;
-    historysIsSet_ = true;
+    histories_ = value;
+    historiesIsSet_ = true;
 }
 
-bool ListDbAgentJobHistorysResponse::historysIsSet() const
+bool ListDbAgentJobHistorysResponse::historiesIsSet() const
 {
-    return historysIsSet_;
+    return historiesIsSet_;
 }
 
-void ListDbAgentJobHistorysResponse::unsethistorys()
+void ListDbAgentJobHistorysResponse::unsethistories()
 {
-    historysIsSet_ = false;
+    historiesIsSet_ = false;
 }
 
 int32_t ListDbAgentJobHistorysResponse::getTotalCount() const

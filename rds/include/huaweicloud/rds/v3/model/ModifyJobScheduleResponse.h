@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_ModifyJobScheduleResponse_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_ModifyJobScheduleResponse_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  SwitchDbAgentJobResponse
+class HUAWEICLOUD_RDS_V3_EXPORT  ModifyJobScheduleResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    SwitchDbAgentJobResponse();
-    virtual ~SwitchDbAgentJobResponse();
+    ModifyJobScheduleResponse();
+    virtual ~ModifyJobScheduleResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// SwitchDbAgentJobResponse members
+    /// ModifyJobScheduleResponse members
 
     /// <summary>
     /// 响应结果
@@ -64,4 +64,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_ModifyJobScheduleResponse_H_

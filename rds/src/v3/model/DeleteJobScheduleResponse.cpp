@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/RestartDbAgentJobResponse.h"
+#include "huaweicloud/rds/v3/model/DeleteJobScheduleResponse.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,19 +10,19 @@ namespace Model {
 
 
 
-RestartDbAgentJobResponse::RestartDbAgentJobResponse()
+DeleteJobScheduleResponse::DeleteJobScheduleResponse()
 {
     resp_ = "";
     respIsSet_ = false;
 }
 
-RestartDbAgentJobResponse::~RestartDbAgentJobResponse() = default;
+DeleteJobScheduleResponse::~DeleteJobScheduleResponse() = default;
 
-void RestartDbAgentJobResponse::validate()
+void DeleteJobScheduleResponse::validate()
 {
 }
 
-web::json::value RestartDbAgentJobResponse::toJson() const
+web::json::value DeleteJobScheduleResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -32,7 +32,7 @@ web::json::value RestartDbAgentJobResponse::toJson() const
 
     return val;
 }
-bool RestartDbAgentJobResponse::fromJson(const web::json::value& val)
+bool DeleteJobScheduleResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -49,23 +49,23 @@ bool RestartDbAgentJobResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string RestartDbAgentJobResponse::getResp() const
+std::string DeleteJobScheduleResponse::getResp() const
 {
     return resp_;
 }
 
-void RestartDbAgentJobResponse::setResp(const std::string& value)
+void DeleteJobScheduleResponse::setResp(const std::string& value)
 {
     resp_ = value;
     respIsSet_ = true;
 }
 
-bool RestartDbAgentJobResponse::respIsSet() const
+bool DeleteJobScheduleResponse::respIsSet() const
 {
     return respIsSet_;
 }
 
-void RestartDbAgentJobResponse::unsetresp()
+void DeleteJobScheduleResponse::unsetresp()
 {
     respIsSet_ = false;
 }

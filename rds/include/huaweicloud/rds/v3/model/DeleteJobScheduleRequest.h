@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_DeleteJobScheduleRequest_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_DeleteJobScheduleRequest_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// Response Object
+/// Request Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  SwitchDbAgentJobResponse
-    : public ModelBase, public HttpResponse
+class HUAWEICLOUD_RDS_V3_EXPORT  DeleteJobScheduleRequest
+    : public ModelBase
 {
 public:
-    SwitchDbAgentJobResponse();
-    virtual ~SwitchDbAgentJobResponse();
+    DeleteJobScheduleRequest();
+    virtual ~DeleteJobScheduleRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,24 +36,28 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// SwitchDbAgentJobResponse members
+    /// DeleteJobScheduleRequest members
 
     /// <summary>
-    /// 响应结果
+    /// 策略ID
     /// </summary>
 
-    std::string getResp() const;
-    bool respIsSet() const;
-    void unsetresp();
-    void setResp(const std::string& value);
+    std::string getScheduleId() const;
+    bool scheduleIdIsSet() const;
+    void unsetscheduleId();
+    void setScheduleId(const std::string& value);
 
 
 protected:
-    std::string resp_;
-    bool respIsSet_;
+    std::string scheduleId_;
+    bool scheduleIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
+public:
+    DeleteJobScheduleRequest& dereference_from_shared_ptr(std::shared_ptr<DeleteJobScheduleRequest> ptr) {
+        return *ptr;
+    }
 #endif
 };
 
@@ -64,4 +68,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchDbAgentJobResponse_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_DeleteJobScheduleRequest_H_

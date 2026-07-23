@@ -11203,6 +11203,47 @@ std::shared_ptr<CreateDistributionResponse> RdsClient::createDistribution(Create
 
     return localVarResult;
 }
+std::shared_ptr<CreateJobScheduleResponse> RdsClient::createJobSchedule(CreateJobScheduleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/db-job/schedules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForCreateJobSchedule());
+
+    std::shared_ptr<CreateJobScheduleResponse> localVarResult = std::make_shared<CreateJobScheduleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreatePublicationResponse> RdsClient::createPublication(CreatePublicationRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/replication/publications";
@@ -11407,6 +11448,36 @@ std::shared_ptr<DeleteDistributionResponse> RdsClient::deleteDistribution(Delete
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForDeleteDistribution());
 
     std::shared_ptr<DeleteDistributionResponse> localVarResult = std::make_shared<DeleteDistributionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteJobScheduleResponse> RdsClient::deleteJobSchedule(DeleteJobScheduleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/db-job/schedules/{schedule_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["schedule_id"] = parameterToString(request.getScheduleId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForDeleteJobSchedule());
+
+    std::shared_ptr<DeleteJobScheduleResponse> localVarResult = std::make_shared<DeleteJobScheduleResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -11942,6 +12013,47 @@ std::shared_ptr<ListDistributorInstancesResponse> RdsClient::listDistributorInst
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListDistributorInstances());
 
     std::shared_ptr<ListDistributorInstancesResponse> localVarResult = std::make_shared<ListDistributorInstancesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListJobSchedulesResponse> RdsClient::listJobSchedules(ListJobSchedulesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/db-job/schedules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.scheduleTypeIsSet()) {
+        localVarQueryParams["schedule_type"] = parameterToString(request.getScheduleType());
+    }
+    if (request.scheduleIdIsSet()) {
+        localVarQueryParams["schedule_id"] = parameterToString(request.getScheduleId());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListJobSchedules());
+
+    std::shared_ptr<ListJobSchedulesResponse> localVarResult = std::make_shared<ListJobSchedulesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -12501,6 +12613,48 @@ std::shared_ptr<ModifyDbAgentJobResponse> RdsClient::modifyDbAgentJob(ModifyDbAg
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForModifyDbAgentJob());
 
     std::shared_ptr<ModifyDbAgentJobResponse> localVarResult = std::make_shared<ModifyDbAgentJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ModifyJobScheduleResponse> RdsClient::modifyJobSchedule(ModifyJobScheduleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/db-job/schedules/{schedule_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["schedule_id"] = parameterToString(request.getScheduleId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForModifyJobSchedule());
+
+    std::shared_ptr<ModifyJobScheduleResponse> localVarResult = std::make_shared<ModifyJobScheduleResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

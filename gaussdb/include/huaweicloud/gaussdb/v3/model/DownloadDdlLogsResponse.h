@@ -43,15 +43,15 @@ public:
     /// **参数解释**：  每个日志文件的下载链接详情。  **取值范围**：  不涉及。 
     /// </summary>
 
-    std::vector<DownLoadFileInfoItem>& getList();
-    bool listIsSet() const;
-    void unsetlist();
-    void setList(const std::vector<DownLoadFileInfoItem>& value);
+    std::vector<DownLoadFileInfoItem>& getDownloadFiles();
+    bool downloadFilesIsSet() const;
+    void unsetdownloadFiles();
+    void setDownloadFiles(const std::vector<DownLoadFileInfoItem>& value);
 
 
 protected:
-    std::vector<DownLoadFileInfoItem> list_;
-    bool listIsSet_;
+    std::vector<DownLoadFileInfoItem> downloadFiles_;
+    bool downloadFilesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

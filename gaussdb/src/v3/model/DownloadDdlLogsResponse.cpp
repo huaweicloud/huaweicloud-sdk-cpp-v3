@@ -12,7 +12,7 @@ namespace Model {
 
 DownloadDdlLogsResponse::DownloadDdlLogsResponse()
 {
-    listIsSet_ = false;
+    downloadFilesIsSet_ = false;
 }
 
 DownloadDdlLogsResponse::~DownloadDdlLogsResponse() = default;
@@ -25,8 +25,8 @@ web::json::value DownloadDdlLogsResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(listIsSet_) {
-        val[utility::conversions::to_string_t("list")] = ModelBase::toJson(list_);
+    if(downloadFilesIsSet_) {
+        val[utility::conversions::to_string_t("download_files")] = ModelBase::toJson(downloadFiles_);
     }
 
     return val;
@@ -35,38 +35,38 @@ bool DownloadDdlLogsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("list"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("list"));
+    if(val.has_field(utility::conversions::to_string_t("download_files"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("download_files"));
         if(!fieldValue.is_null())
         {
             std::vector<DownLoadFileInfoItem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setList(refVal);
+            setDownloadFiles(refVal);
         }
     }
     return ok;
 }
 
 
-std::vector<DownLoadFileInfoItem>& DownloadDdlLogsResponse::getList()
+std::vector<DownLoadFileInfoItem>& DownloadDdlLogsResponse::getDownloadFiles()
 {
-    return list_;
+    return downloadFiles_;
 }
 
-void DownloadDdlLogsResponse::setList(const std::vector<DownLoadFileInfoItem>& value)
+void DownloadDdlLogsResponse::setDownloadFiles(const std::vector<DownLoadFileInfoItem>& value)
 {
-    list_ = value;
-    listIsSet_ = true;
+    downloadFiles_ = value;
+    downloadFilesIsSet_ = true;
 }
 
-bool DownloadDdlLogsResponse::listIsSet() const
+bool DownloadDdlLogsResponse::downloadFilesIsSet() const
 {
-    return listIsSet_;
+    return downloadFilesIsSet_;
 }
 
-void DownloadDdlLogsResponse::unsetlist()
+void DownloadDdlLogsResponse::unsetdownloadFiles()
 {
-    listIsSet_ = false;
+    downloadFilesIsSet_ = false;
 }
 
 }

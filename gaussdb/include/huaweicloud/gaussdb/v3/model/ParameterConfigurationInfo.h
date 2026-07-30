@@ -57,6 +57,15 @@ public:
     void setDatastoreName(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：  参数组ID。  **取值范围**：  只能由英文字母、数字组成，前面为UUID，后缀为pr07，长度为36个字符。
+    /// </summary>
+
+    std::string getConfigurationId() const;
+    bool configurationIdIsSet() const;
+    void unsetconfigurationId();
+    void setConfigurationId(const std::string& value);
+
+    /// <summary>
     /// 创建时间，格式为\&quot;yyyy-mm-ddThh:mm:ssZ\&quot;。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
     /// </summary>
 
@@ -80,6 +89,8 @@ protected:
     bool datastoreVersionNameIsSet_;
     std::string datastoreName_;
     bool datastoreNameIsSet_;
+    std::string configurationId_;
+    bool configurationIdIsSet_;
     std::string created_;
     bool createdIsSet_;
     std::string updated_;

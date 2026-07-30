@@ -1,0 +1,114 @@
+
+
+#include "huaweicloud/modelarts/v1/model/Domain.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Modelarts {
+namespace V1 {
+namespace Model {
+
+
+
+
+Domain::Domain()
+{
+    id_ = "";
+    idIsSet_ = false;
+    name_ = "";
+    nameIsSet_ = false;
+}
+
+Domain::~Domain() = default;
+
+void Domain::validate()
+{
+}
+
+web::json::value Domain::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
+    if(nameIsSet_) {
+        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+
+    return val;
+}
+bool Domain::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setName(refVal);
+        }
+    }
+    return ok;
+}
+
+
+std::string Domain::getId() const
+{
+    return id_;
+}
+
+void Domain::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool Domain::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void Domain::unsetid()
+{
+    idIsSet_ = false;
+}
+
+std::string Domain::getName() const
+{
+    return name_;
+}
+
+void Domain::setName(const std::string& value)
+{
+    name_ = value;
+    nameIsSet_ = true;
+}
+
+bool Domain::nameIsSet() const
+{
+    return nameIsSet_;
+}
+
+void Domain::unsetname()
+{
+    nameIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

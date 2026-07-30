@@ -12,9 +12,9 @@ namespace Model {
 
 UpdateServerlessComputeAbilityPolicy::UpdateServerlessComputeAbilityPolicy()
 {
-    minVcpus_ = 0;
+    minVcpus_ = "";
     minVcpusIsSet_ = false;
-    maxVcpus_ = 0;
+    maxVcpus_ = "";
     maxVcpusIsSet_ = false;
     needUpdateNodesComputeAbility_ = false;
     needUpdateNodesComputeAbilityIsSet_ = false;
@@ -65,7 +65,7 @@ bool UpdateServerlessComputeAbilityPolicy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("min_vcpus"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMinVcpus(refVal);
         }
@@ -74,7 +74,7 @@ bool UpdateServerlessComputeAbilityPolicy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("max_vcpus"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMaxVcpus(refVal);
         }
@@ -119,12 +119,12 @@ bool UpdateServerlessComputeAbilityPolicy::fromJson(const web::json::value& val)
 }
 
 
-int32_t UpdateServerlessComputeAbilityPolicy::getMinVcpus() const
+std::string UpdateServerlessComputeAbilityPolicy::getMinVcpus() const
 {
     return minVcpus_;
 }
 
-void UpdateServerlessComputeAbilityPolicy::setMinVcpus(int32_t value)
+void UpdateServerlessComputeAbilityPolicy::setMinVcpus(const std::string& value)
 {
     minVcpus_ = value;
     minVcpusIsSet_ = true;
@@ -140,12 +140,12 @@ void UpdateServerlessComputeAbilityPolicy::unsetminVcpus()
     minVcpusIsSet_ = false;
 }
 
-int32_t UpdateServerlessComputeAbilityPolicy::getMaxVcpus() const
+std::string UpdateServerlessComputeAbilityPolicy::getMaxVcpus() const
 {
     return maxVcpus_;
 }
 
-void UpdateServerlessComputeAbilityPolicy::setMaxVcpus(int32_t value)
+void UpdateServerlessComputeAbilityPolicy::setMaxVcpus(const std::string& value)
 {
     maxVcpus_ = value;
     maxVcpusIsSet_ = true;

@@ -12,7 +12,7 @@ namespace Model {
 
 ModifyNodePriorityRequestBody::ModifyNodePriorityRequestBody()
 {
-    priority_ = "";
+    priority_ = 0;
     priorityIsSet_ = false;
 }
 
@@ -40,7 +40,7 @@ bool ModifyNodePriorityRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("priority"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPriority(refVal);
         }
@@ -49,12 +49,12 @@ bool ModifyNodePriorityRequestBody::fromJson(const web::json::value& val)
 }
 
 
-std::string ModifyNodePriorityRequestBody::getPriority() const
+int32_t ModifyNodePriorityRequestBody::getPriority() const
 {
     return priority_;
 }
 
-void ModifyNodePriorityRequestBody::setPriority(const std::string& value)
+void ModifyNodePriorityRequestBody::setPriority(int32_t value)
 {
     priority_ = value;
     priorityIsSet_ = true;

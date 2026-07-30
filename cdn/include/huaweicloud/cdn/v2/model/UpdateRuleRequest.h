@@ -51,7 +51,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 是否开启规则 **约束限制：** 不涉及 **取值范围：** - on: 开启 - off: 关闭 **默认取值：** 不涉及
+    /// **参数解释：** 是否开启规则 **约束限制：** 不涉及 **取值范围：** - on: 开启 - off: 关闭  **默认取值：** 不涉及
     /// </summary>
 
     std::string getStatus() const;

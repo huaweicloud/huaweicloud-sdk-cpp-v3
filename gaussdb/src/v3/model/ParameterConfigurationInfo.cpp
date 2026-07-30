@@ -16,6 +16,8 @@ ParameterConfigurationInfo::ParameterConfigurationInfo()
     datastoreVersionNameIsSet_ = false;
     datastoreName_ = "";
     datastoreNameIsSet_ = false;
+    configurationId_ = "";
+    configurationIdIsSet_ = false;
     created_ = "";
     createdIsSet_ = false;
     updated_ = "";
@@ -37,6 +39,9 @@ web::json::value ParameterConfigurationInfo::toJson() const
     }
     if(datastoreNameIsSet_) {
         val[utility::conversions::to_string_t("datastore_name")] = ModelBase::toJson(datastoreName_);
+    }
+    if(configurationIdIsSet_) {
+        val[utility::conversions::to_string_t("configuration_id")] = ModelBase::toJson(configurationId_);
     }
     if(createdIsSet_) {
         val[utility::conversions::to_string_t("created")] = ModelBase::toJson(created_);
@@ -67,6 +72,15 @@ bool ParameterConfigurationInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastoreName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("configuration_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configuration_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfigurationId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("created"))) {
@@ -131,6 +145,27 @@ bool ParameterConfigurationInfo::datastoreNameIsSet() const
 void ParameterConfigurationInfo::unsetdatastoreName()
 {
     datastoreNameIsSet_ = false;
+}
+
+std::string ParameterConfigurationInfo::getConfigurationId() const
+{
+    return configurationId_;
+}
+
+void ParameterConfigurationInfo::setConfigurationId(const std::string& value)
+{
+    configurationId_ = value;
+    configurationIdIsSet_ = true;
+}
+
+bool ParameterConfigurationInfo::configurationIdIsSet() const
+{
+    return configurationIdIsSet_;
+}
+
+void ParameterConfigurationInfo::unsetconfigurationId()
+{
+    configurationIdIsSet_ = false;
 }
 
 std::string ParameterConfigurationInfo::getCreated() const

@@ -13,11 +13,16 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_TMS_V1_EXPORT  TmsMeta {
 public:
+    static HttpRequestDef genRequestDefForChangeAssociatedResourceOpenStatus();
+    static HttpRequestDef genRequestDefForCreateAssociatedResourceRules();
     static HttpRequestDef genRequestDefForCreatePredefineTags();
     static HttpRequestDef genRequestDefForCreateResourceTag();
+    static HttpRequestDef genRequestDefForDeleteAssociatedResourceRule();
     static HttpRequestDef genRequestDefForDeletePredefineTags();
     static HttpRequestDef genRequestDefForDeleteResourceTag();
     static HttpRequestDef genRequestDefForListApiVersions();
+    static HttpRequestDef genRequestDefForListAssociatedResourceRules();
+    static HttpRequestDef genRequestDefForListAssociatedResourceSettings();
     static HttpRequestDef genRequestDefForListPredefineTags();
     static HttpRequestDef genRequestDefForListProviders();
     static HttpRequestDef genRequestDefForListResource();
@@ -25,8 +30,10 @@ public:
     static HttpRequestDef genRequestDefForListTagValues();
     static HttpRequestDef genRequestDefForListTags();
     static HttpRequestDef genRequestDefForShowApiVersion();
+    static HttpRequestDef genRequestDefForShowAssociatedResourceOpenStatus();
     static HttpRequestDef genRequestDefForShowResourceTag();
     static HttpRequestDef genRequestDefForShowTagQuota();
+    static HttpRequestDef genRequestDefForUpdateAssociatedResourceRules();
     static HttpRequestDef genRequestDefForUpdatePredefineTags();
 };
 

@@ -12,7 +12,7 @@ namespace Model {
 
 ShowAutoScalingHistoryResponse::ShowAutoScalingHistoryResponse()
 {
-    totalCount_ = "";
+    totalCount_ = 0;
     totalCountIsSet_ = false;
     recordsIsSet_ = false;
 }
@@ -44,7 +44,7 @@ bool ShowAutoScalingHistoryResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
         }
@@ -62,12 +62,12 @@ bool ShowAutoScalingHistoryResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string ShowAutoScalingHistoryResponse::getTotalCount() const
+int32_t ShowAutoScalingHistoryResponse::getTotalCount() const
 {
     return totalCount_;
 }
 
-void ShowAutoScalingHistoryResponse::setTotalCount(const std::string& value)
+void ShowAutoScalingHistoryResponse::setTotalCount(int32_t value)
 {
     totalCount_ = value;
     totalCountIsSet_ = true;

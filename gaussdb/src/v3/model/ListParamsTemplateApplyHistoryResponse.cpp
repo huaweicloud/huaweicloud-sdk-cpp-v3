@@ -12,7 +12,7 @@ namespace Model {
 
 ListParamsTemplateApplyHistoryResponse::ListParamsTemplateApplyHistoryResponse()
 {
-    totalCount_ = "";
+    totalCount_ = 0;
     totalCountIsSet_ = false;
     historiesIsSet_ = false;
 }
@@ -44,7 +44,7 @@ bool ListParamsTemplateApplyHistoryResponse::fromJson(const web::json::value& va
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
         }
@@ -62,12 +62,12 @@ bool ListParamsTemplateApplyHistoryResponse::fromJson(const web::json::value& va
 }
 
 
-std::string ListParamsTemplateApplyHistoryResponse::getTotalCount() const
+int32_t ListParamsTemplateApplyHistoryResponse::getTotalCount() const
 {
     return totalCount_;
 }
 
-void ListParamsTemplateApplyHistoryResponse::setTotalCount(const std::string& value)
+void ListParamsTemplateApplyHistoryResponse::setTotalCount(int32_t value)
 {
     totalCount_ = value;
     totalCountIsSet_ = true;

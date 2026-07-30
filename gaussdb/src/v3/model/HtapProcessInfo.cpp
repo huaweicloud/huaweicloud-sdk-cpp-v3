@@ -24,7 +24,7 @@ HtapProcessInfo::HtapProcessInfo()
     databaseIsSet_ = false;
     sqlStatement_ = "";
     sqlStatementIsSet_ = false;
-    duration_ = "";
+    duration_ = 0.0;
     durationIsSet_ = false;
     command_ = "";
     commandIsSet_ = false;
@@ -129,7 +129,7 @@ bool HtapProcessInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDuration(refVal);
         }
@@ -273,12 +273,12 @@ void HtapProcessInfo::unsetsqlStatement()
     sqlStatementIsSet_ = false;
 }
 
-std::string HtapProcessInfo::getDuration() const
+double HtapProcessInfo::getDuration() const
 {
     return duration_;
 }
 
-void HtapProcessInfo::setDuration(const std::string& value)
+void HtapProcessInfo::setDuration(double value)
 {
     duration_ = value;
     durationIsSet_ = true;

@@ -20,7 +20,7 @@ HtapErrorLogQueryRequestBody::HtapErrorLogQueryRequestBody()
     endTimeIsSet_ = false;
     level_ = "";
     levelIsSet_ = false;
-    limit_ = 0;
+    limit_ = "";
     limitIsSet_ = false;
     lineNum_ = "";
     lineNumIsSet_ = false;
@@ -101,7 +101,7 @@ bool HtapErrorLogQueryRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
         }
@@ -203,12 +203,12 @@ void HtapErrorLogQueryRequestBody::unsetlevel()
     levelIsSet_ = false;
 }
 
-int32_t HtapErrorLogQueryRequestBody::getLimit() const
+std::string HtapErrorLogQueryRequestBody::getLimit() const
 {
     return limit_;
 }
 
-void HtapErrorLogQueryRequestBody::setLimit(int32_t value)
+void HtapErrorLogQueryRequestBody::setLimit(const std::string& value)
 {
     limit_ = value;
     limitIsSet_ = true;

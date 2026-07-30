@@ -1,0 +1,65 @@
+
+#ifndef HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_ServerJobDeleteRequest_H_
+#define HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_ServerJobDeleteRequest_H_
+
+
+#include <huaweicloud/modelarts/v1/ModelArtsExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Modelarts {
+namespace V1 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 
+/// </summary>
+class HUAWEICLOUD_MODELARTS_V1_EXPORT  ServerJobDeleteRequest
+    : public ModelBase
+{
+public:
+    ServerJobDeleteRequest();
+    virtual ~ServerJobDeleteRequest();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// ServerJobDeleteRequest members
+
+    /// <summary>
+    /// **参数解释**：要删除的DevServer的任务id列表
+    /// </summary>
+
+    std::vector<std::string>& getJobIds();
+    bool jobIdsIsSet() const;
+    void unsetjobIds();
+    void setJobIds(const std::vector<std::string>& value);
+
+
+protected:
+    std::vector<std::string> jobIds_;
+    bool jobIdsIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_ServerJobDeleteRequest_H_

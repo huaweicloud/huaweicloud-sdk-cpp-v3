@@ -16,11 +16,11 @@ FlowLimitStrategy::FlowLimitStrategy()
     strategyTypeIsSet_ = false;
     itemType_ = "";
     itemTypeIsSet_ = false;
-    limitValue_ = "";
+    limitValue_ = 0L;
     limitValueIsSet_ = false;
-    alarmPercentThreshold_ = "";
+    alarmPercentThreshold_ = 0;
     alarmPercentThresholdIsSet_ = false;
-    banTime_ = "";
+    banTime_ = 0L;
     banTimeIsSet_ = false;
 }
 
@@ -78,7 +78,7 @@ bool FlowLimitStrategy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit_value"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimitValue(refVal);
         }
@@ -87,7 +87,7 @@ bool FlowLimitStrategy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_percent_threshold"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAlarmPercentThreshold(refVal);
         }
@@ -96,7 +96,7 @@ bool FlowLimitStrategy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ban_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBanTime(refVal);
         }
@@ -147,12 +147,12 @@ void FlowLimitStrategy::unsetitemType()
     itemTypeIsSet_ = false;
 }
 
-std::string FlowLimitStrategy::getLimitValue() const
+int64_t FlowLimitStrategy::getLimitValue() const
 {
     return limitValue_;
 }
 
-void FlowLimitStrategy::setLimitValue(const std::string& value)
+void FlowLimitStrategy::setLimitValue(int64_t value)
 {
     limitValue_ = value;
     limitValueIsSet_ = true;
@@ -168,12 +168,12 @@ void FlowLimitStrategy::unsetlimitValue()
     limitValueIsSet_ = false;
 }
 
-std::string FlowLimitStrategy::getAlarmPercentThreshold() const
+int32_t FlowLimitStrategy::getAlarmPercentThreshold() const
 {
     return alarmPercentThreshold_;
 }
 
-void FlowLimitStrategy::setAlarmPercentThreshold(const std::string& value)
+void FlowLimitStrategy::setAlarmPercentThreshold(int32_t value)
 {
     alarmPercentThreshold_ = value;
     alarmPercentThresholdIsSet_ = true;
@@ -189,12 +189,12 @@ void FlowLimitStrategy::unsetalarmPercentThreshold()
     alarmPercentThresholdIsSet_ = false;
 }
 
-std::string FlowLimitStrategy::getBanTime() const
+int64_t FlowLimitStrategy::getBanTime() const
 {
     return banTime_;
 }
 
-void FlowLimitStrategy::setBanTime(const std::string& value)
+void FlowLimitStrategy::setBanTime(int64_t value)
 {
     banTime_ = value;
     banTimeIsSet_ = true;

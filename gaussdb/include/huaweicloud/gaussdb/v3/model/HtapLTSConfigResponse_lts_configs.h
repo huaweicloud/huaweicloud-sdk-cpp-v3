@@ -69,10 +69,10 @@ public:
     /// **参数解释**： LTS配置开关状态。  **取值范围**：  不涉及。
     /// </summary>
 
-    std::string getEnabled() const;
+    bool isEnabled() const;
     bool enabledIsSet() const;
     void unsetenabled();
-    void setEnabled(const std::string& value);
+    void setEnabled(bool value);
 
 
 protected:
@@ -82,7 +82,7 @@ protected:
     bool ltsGroupIdIsSet_;
     std::string ltsStreamId_;
     bool ltsStreamIdIsSet_;
-    std::string enabled_;
+    bool enabled_;
     bool enabledIsSet_;
 
 };

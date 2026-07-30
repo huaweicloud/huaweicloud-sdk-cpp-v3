@@ -57,23 +57,12 @@ public:
     void unsettotalCount();
     void setTotalCount(int32_t value);
 
-    /// <summary>
-    /// 查询时间戳。
-    /// </summary>
-
-    int32_t getTimestamp() const;
-    bool timestampIsSet() const;
-    void unsettimestamp();
-    void setTimestamp(int32_t value);
-
 
 protected:
     std::vector<std::string> databases_;
     bool databasesIsSet_;
     int32_t totalCount_;
     bool totalCountIsSet_;
-    int32_t timestamp_;
-    bool timestampIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

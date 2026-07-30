@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -38,19 +37,8 @@ public:
     /////////////////////////////////////////////
     /// ModifyAutoExpandPolicyResponse members
 
-    /// <summary>
-    /// 修改结果。
-    /// </summary>
-
-    std::string getResult() const;
-    bool resultIsSet() const;
-    void unsetresult();
-    void setResult(const std::string& value);
-
 
 protected:
-    std::string result_;
-    bool resultIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -22,9 +22,9 @@ RecycleBackupV3::RecycleBackupV3()
     sizeIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
-    beginTime_ = "";
+    beginTime_ = 0L;
     beginTimeIsSet_ = false;
-    endTime_ = "";
+    endTime_ = 0L;
     endTimeIsSet_ = false;
 }
 
@@ -115,7 +115,7 @@ bool RecycleBackupV3::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("begin_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBeginTime(refVal);
         }
@@ -124,7 +124,7 @@ bool RecycleBackupV3::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
         }
@@ -238,12 +238,12 @@ void RecycleBackupV3::unsetstatus()
     statusIsSet_ = false;
 }
 
-std::string RecycleBackupV3::getBeginTime() const
+int64_t RecycleBackupV3::getBeginTime() const
 {
     return beginTime_;
 }
 
-void RecycleBackupV3::setBeginTime(const std::string& value)
+void RecycleBackupV3::setBeginTime(int64_t value)
 {
     beginTime_ = value;
     beginTimeIsSet_ = true;
@@ -259,12 +259,12 @@ void RecycleBackupV3::unsetbeginTime()
     beginTimeIsSet_ = false;
 }
 
-std::string RecycleBackupV3::getEndTime() const
+int64_t RecycleBackupV3::getEndTime() const
 {
     return endTime_;
 }
 
-void RecycleBackupV3::setEndTime(const std::string& value)
+void RecycleBackupV3::setEndTime(int64_t value)
 {
     endTime_ = value;
     endTimeIsSet_ = true;

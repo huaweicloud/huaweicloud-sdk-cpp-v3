@@ -142,10 +142,10 @@ public:
     /// 带宽大小。
     /// </summary>
 
-    std::string getBandwidthSize() const;
+    int32_t getBandwidthSize() const;
     bool bandwidthSizeIsSet() const;
     void unsetbandwidthSize();
-    void setBandwidthSize(const std::string& value);
+    void setBandwidthSize(int32_t value);
 
     /// <summary>
     /// 带宽类型。枚举值：PER 和WHOLE。
@@ -189,7 +189,7 @@ protected:
     bool bandwidthIdIsSet_;
     std::string bandwidthName_;
     bool bandwidthNameIsSet_;
-    std::string bandwidthSize_;
+    int32_t bandwidthSize_;
     bool bandwidthSizeIsSet_;
     std::string bandwidthShareType_;
     bool bandwidthShareTypeIsSet_;

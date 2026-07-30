@@ -78,10 +78,10 @@ public:
     /// **参数解释**： 查询记录数。  **约束限制**：  不涉及。  **取值范围**： 0-100。  **默认取值**： 不涉及。
     /// </summary>
 
-    int32_t getLimit() const;
+    std::string getLimit() const;
     bool limitIsSet() const;
     void unsetlimit();
-    void setLimit(int32_t value);
+    void setLimit(const std::string& value);
 
     /// <summary>
     /// **参数解释**： 日志单行序列号，第一次查询时不需要此参数，后续分页查询时需要使用，可从上次查询的返回信息中获取。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**： 不涉及。
@@ -102,7 +102,7 @@ protected:
     bool endTimeIsSet_;
     std::string level_;
     bool levelIsSet_;
-    int32_t limit_;
+    std::string limit_;
     bool limitIsSet_;
     std::string lineNum_;
     bool lineNumIsSet_;

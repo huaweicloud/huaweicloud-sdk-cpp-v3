@@ -18,7 +18,7 @@ HtapLTSConfigResponse_lts_configs::HtapLTSConfigResponse_lts_configs()
     ltsGroupIdIsSet_ = false;
     ltsStreamId_ = "";
     ltsStreamIdIsSet_ = false;
-    enabled_ = "";
+    enabled_ = false;
     enabledIsSet_ = false;
 }
 
@@ -82,7 +82,7 @@ bool HtapLTSConfigResponse_lts_configs::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enabled"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnabled(refVal);
         }
@@ -154,12 +154,12 @@ void HtapLTSConfigResponse_lts_configs::unsetltsStreamId()
     ltsStreamIdIsSet_ = false;
 }
 
-std::string HtapLTSConfigResponse_lts_configs::getEnabled() const
+bool HtapLTSConfigResponse_lts_configs::isEnabled() const
 {
     return enabled_;
 }
 
-void HtapLTSConfigResponse_lts_configs::setEnabled(const std::string& value)
+void HtapLTSConfigResponse_lts_configs::setEnabled(bool value)
 {
     enabled_ = value;
     enabledIsSet_ = true;

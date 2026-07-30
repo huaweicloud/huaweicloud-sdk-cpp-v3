@@ -12,7 +12,7 @@ namespace Model {
 
 SyncStarRocksUsersResponse::SyncStarRocksUsersResponse()
 {
-    success_ = "";
+    success_ = false;
     successIsSet_ = false;
 }
 
@@ -40,7 +40,7 @@ bool SyncStarRocksUsersResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("success"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSuccess(refVal);
         }
@@ -49,12 +49,12 @@ bool SyncStarRocksUsersResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string SyncStarRocksUsersResponse::getSuccess() const
+bool SyncStarRocksUsersResponse::isSuccess() const
 {
     return success_;
 }
 
-void SyncStarRocksUsersResponse::setSuccess(const std::string& value)
+void SyncStarRocksUsersResponse::setSuccess(bool value)
 {
     success_ = value;
     successIsSet_ = true;

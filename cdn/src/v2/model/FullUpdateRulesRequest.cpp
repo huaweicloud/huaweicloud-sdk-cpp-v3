@@ -39,7 +39,7 @@ bool FullUpdateRulesRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rules"));
         if(!fieldValue.is_null())
         {
-            std::vector<CreateRuleRequest> refVal;
+            std::vector<FullUpdateRuleRequest> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRules(refVal);
         }
@@ -48,12 +48,12 @@ bool FullUpdateRulesRequest::fromJson(const web::json::value& val)
 }
 
 
-std::vector<CreateRuleRequest>& FullUpdateRulesRequest::getRules()
+std::vector<FullUpdateRuleRequest>& FullUpdateRulesRequest::getRules()
 {
     return rules_;
 }
 
-void FullUpdateRulesRequest::setRules(const std::vector<CreateRuleRequest>& value)
+void FullUpdateRulesRequest::setRules(const std::vector<FullUpdateRuleRequest>& value)
 {
     rules_ = value;
     rulesIsSet_ = true;

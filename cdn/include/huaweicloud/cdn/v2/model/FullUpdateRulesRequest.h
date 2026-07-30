@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v2/model/FullUpdateRuleRequest.h>
 #include <vector>
-#include <huaweicloud/cdn/v2/model/CreateRuleRequest.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,14 +43,14 @@ public:
     /// **参数解释：** 规则配置内容，可以配置多个规则 **约束限制：** 不涉及
     /// </summary>
 
-    std::vector<CreateRuleRequest>& getRules();
+    std::vector<FullUpdateRuleRequest>& getRules();
     bool rulesIsSet() const;
     void unsetrules();
-    void setRules(const std::vector<CreateRuleRequest>& value);
+    void setRules(const std::vector<FullUpdateRuleRequest>& value);
 
 
 protected:
-    std::vector<CreateRuleRequest> rules_;
+    std::vector<FullUpdateRuleRequest> rules_;
     bool rulesIsSet_;
 
 };

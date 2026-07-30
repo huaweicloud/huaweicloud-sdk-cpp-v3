@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +41,14 @@ public:
     /// 开启行列分流是否成功。
     /// </summary>
 
-    std::string getSuccess() const;
+    bool isSuccess() const;
     bool successIsSet() const;
     void unsetsuccess();
-    void setSuccess(const std::string& value);
+    void setSuccess(bool value);
 
 
 protected:
-    std::string success_;
+    bool success_;
     bool successIsSet_;
 
 #ifdef RTTR_FLAG

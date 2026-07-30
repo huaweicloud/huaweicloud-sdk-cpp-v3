@@ -39,7 +39,7 @@ public:
     /// FlowLimitStrategy members
 
     /// <summary>
-    /// **参数解释：**  用量统计类型 **约束限制：** 不涉及 **取值范围：** - instant: 瞬时用量 - hour: 累计用量（小时） - day: 累计用量（天） **默认取值：** 不涉及
+    /// **参数解释：**  用量统计类型 **约束限制：** 不涉及 **取值范围：** - instant: 瞬时用量 - hour: 累计用量（小时） - day: 累计用量（天）  **默认取值：** 不涉及
     /// </summary>
 
     std::string getStrategyType() const;
@@ -48,7 +48,7 @@ public:
     void setStrategyType(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  用量封顶类型 **约束限制：** 不涉及 **取值范围：** - bandwidth: 带宽封顶，单位: bit/s - traffic: 流量封顶，单位: bit **默认取值：** 不涉及
+    /// **参数解释：**  用量封顶类型 **约束限制：** 不涉及 **取值范围：** - bandwidth: 带宽封顶，单位: bit/s - traffic: 流量封顶，单位: byte  **默认取值：** 不涉及
     /// </summary>
 
     std::string getItemType() const;
@@ -60,28 +60,28 @@ public:
     /// **参数解释：** 用量封顶阈值，域名用量达到该阈值后，将会停用域名 **约束限制：** 不涉及 **取值范围：** 必须为正整数 **默认取值：** 不涉及
     /// </summary>
 
-    std::string getLimitValue() const;
+    int64_t getLimitValue() const;
     bool limitValueIsSet() const;
     void unsetlimitValue();
-    void setLimitValue(const std::string& value);
+    void setLimitValue(int64_t value);
 
     /// <summary>
-    /// **参数解释：** 用量告警阈值，域名用量达到该阈值后，将会发送告警 **约束限制：** 不涉及 **取值范围：** 1-90 **默认取值：** 不涉及
+    /// **参数解释：** 用量告警阈值，域名用量达到该阈值后，将会发送告警 **约束限制：** 不涉及 **取值范围：** 10-90 **默认取值：** 不涉及
     /// </summary>
 
-    std::string getAlarmPercentThreshold() const;
+    int32_t getAlarmPercentThreshold() const;
     bool alarmPercentThresholdIsSet() const;
     void unsetalarmPercentThreshold();
-    void setAlarmPercentThreshold(const std::string& value);
+    void setAlarmPercentThreshold(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 域名封禁周期 **约束限制：** ban_time设置为0时，表示不自动解封，需要客户手动解封域名 **取值范围：** - 0: 不自动解封 - 60: 60分钟，即1个小时 - 720: 720分钟，即12个小时 - 1440: 1440分钟，即24个小时 - 4320: 4320分钟，即3天 **默认取值：** 不涉及
+    /// **参数解释：** 域名封禁周期 **约束限制：** ban_time设置为0时，表示不自动解封，需要客户手动解封域名 **取值范围：** - 0: 不自动解封 - 60: 60分钟，即1个小时 - 720: 720分钟，即12个小时 - 1440: 1440分钟，即24个小时 - 4320: 4320分钟，即3天  **默认取值：** 0
     /// </summary>
 
-    std::string getBanTime() const;
+    int64_t getBanTime() const;
     bool banTimeIsSet() const;
     void unsetbanTime();
-    void setBanTime(const std::string& value);
+    void setBanTime(int64_t value);
 
 
 protected:
@@ -89,11 +89,11 @@ protected:
     bool strategyTypeIsSet_;
     std::string itemType_;
     bool itemTypeIsSet_;
-    std::string limitValue_;
+    int64_t limitValue_;
     bool limitValueIsSet_;
-    std::string alarmPercentThreshold_;
+    int32_t alarmPercentThreshold_;
     bool alarmPercentThresholdIsSet_;
-    std::string banTime_;
+    int64_t banTime_;
     bool banTimeIsSet_;
 
 };

@@ -8,6 +8,24 @@ namespace V1 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef TmsMeta::genRequestDefForChangeAssociatedResourceOpenStatus() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef TmsMeta::genRequestDefForCreateAssociatedResourceRules() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef TmsMeta::genRequestDefForCreatePredefineTags() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -23,6 +41,14 @@ HttpRequestDef TmsMeta::genRequestDefForCreateResourceTag() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef TmsMeta::genRequestDefForDeleteAssociatedResourceRule() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("RegionId")
+                  .withJsonTag("region_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -46,6 +72,37 @@ HttpRequestDef TmsMeta::genRequestDefForDeleteResourceTag() {
 
 HttpRequestDef TmsMeta::genRequestDefForListApiVersions() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef TmsMeta::genRequestDefForListAssociatedResourceRules() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SettingName")
+                  .withJsonTag("setting_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RegionId")
+                  .withJsonTag("region_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef TmsMeta::genRequestDefForListAssociatedResourceSettings() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RegionId")
+                  .withJsonTag("region_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -148,6 +205,11 @@ HttpRequestDef TmsMeta::genRequestDefForShowApiVersion() {
     return reqDefBuilder;
 }
 
+HttpRequestDef TmsMeta::genRequestDefForShowAssociatedResourceOpenStatus() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef TmsMeta::genRequestDefForShowResourceTag() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
@@ -161,6 +223,15 @@ HttpRequestDef TmsMeta::genRequestDefForShowResourceTag() {
 
 HttpRequestDef TmsMeta::genRequestDefForShowTagQuota() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef TmsMeta::genRequestDefForUpdateAssociatedResourceRules() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

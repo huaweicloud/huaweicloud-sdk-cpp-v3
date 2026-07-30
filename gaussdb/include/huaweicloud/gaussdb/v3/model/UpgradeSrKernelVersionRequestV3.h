@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,25 +41,25 @@ public:
     /// **参数解释**： 是否延时升级。  **约束限制**： 不涉及  **取值范围**： - true - false  **默认取值**： false。
     /// </summary>
 
-    std::string getDelay() const;
+    bool isDelay() const;
     bool delayIsSet() const;
     void unsetdelay();
-    void setDelay(const std::string& value);
+    void setDelay(bool value);
 
     /// <summary>
     /// **参数解释**： 是否跳过升级校验。  **约束限制**： 不涉及  **取值范围**： - true - false  **默认取值**： false。
     /// </summary>
 
-    std::string getIsSkipValidate() const;
+    bool isIsSkipValidate() const;
     bool isSkipValidateIsSet() const;
     void unsetisSkipValidate();
-    void setIsSkipValidate(const std::string& value);
+    void setIsSkipValidate(bool value);
 
 
 protected:
-    std::string delay_;
+    bool delay_;
     bool delayIsSet_;
-    std::string isSkipValidate_;
+    bool isSkipValidate_;
     bool isSkipValidateIsSet_;
 
 };

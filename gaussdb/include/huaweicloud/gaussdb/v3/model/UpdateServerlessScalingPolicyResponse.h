@@ -9,8 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
-#include <huaweicloud/gaussdb/v3/model/CustomScalingConfig.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,30 +37,8 @@ public:
     /////////////////////////////////////////////
     /// UpdateServerlessScalingPolicyResponse members
 
-    /// <summary>
-    /// **参数描述**：  自定义扩容步长。  **约束限制**：  不涉及。  **取值范围**：  2-算力上限的一半。  **默认取值**：  不涉及。
-    /// </summary>
-
-    std::string getEnlargeStepSize() const;
-    bool enlargeStepSizeIsSet() const;
-    void unsetenlargeStepSize();
-    void setEnlargeStepSize(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    CustomScalingConfig getCustomScalingConfig() const;
-    bool customScalingConfigIsSet() const;
-    void unsetcustomScalingConfig();
-    void setCustomScalingConfig(const CustomScalingConfig& value);
-
 
 protected:
-    std::string enlargeStepSize_;
-    bool enlargeStepSizeIsSet_;
-    CustomScalingConfig customScalingConfig_;
-    bool customScalingConfigIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

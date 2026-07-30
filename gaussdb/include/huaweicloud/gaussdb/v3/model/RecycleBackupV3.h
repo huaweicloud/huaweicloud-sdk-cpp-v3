@@ -87,19 +87,19 @@ public:
     /// 备份开始时间。
     /// </summary>
 
-    std::string getBeginTime() const;
+    int64_t getBeginTime() const;
     bool beginTimeIsSet() const;
     void unsetbeginTime();
-    void setBeginTime(const std::string& value);
+    void setBeginTime(int64_t value);
 
     /// <summary>
     /// 备份结束时间。
     /// </summary>
 
-    std::string getEndTime() const;
+    int64_t getEndTime() const;
     bool endTimeIsSet() const;
     void unsetendTime();
-    void setEndTime(const std::string& value);
+    void setEndTime(int64_t value);
 
 
 protected:
@@ -113,9 +113,9 @@ protected:
     bool sizeIsSet_;
     std::string status_;
     bool statusIsSet_;
-    std::string beginTime_;
+    int64_t beginTime_;
     bool beginTimeIsSet_;
-    std::string endTime_;
+    int64_t endTime_;
     bool endTimeIsSet_;
 
 };

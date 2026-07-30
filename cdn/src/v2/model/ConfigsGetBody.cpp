@@ -59,6 +59,7 @@ ConfigsGetBody::ConfigsGetBody()
     accessAreaFilterIsSet_ = false;
     clientCertIsSet_ = false;
     httpsTlsVersionIsSet_ = false;
+    flowLimitStrategyIsSet_ = false;
 }
 
 ConfigsGetBody::~ConfigsGetBody() = default;
@@ -184,6 +185,9 @@ web::json::value ConfigsGetBody::toJson() const
     }
     if(httpsTlsVersionIsSet_) {
         val[utility::conversions::to_string_t("https_tls_version")] = ModelBase::toJson(httpsTlsVersion_);
+    }
+    if(flowLimitStrategyIsSet_) {
+        val[utility::conversions::to_string_t("flow_limit_strategy")] = ModelBase::toJson(flowLimitStrategy_);
     }
 
     return val;
@@ -532,6 +536,15 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             HttpsTlsVersion refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHttpsTlsVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("flow_limit_strategy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flow_limit_strategy"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<FlowLimitStrategy> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFlowLimitStrategy(refVal);
         }
     }
     return ok;
@@ -1334,6 +1347,27 @@ bool ConfigsGetBody::httpsTlsVersionIsSet() const
 void ConfigsGetBody::unsethttpsTlsVersion()
 {
     httpsTlsVersionIsSet_ = false;
+}
+
+std::vector<FlowLimitStrategy>& ConfigsGetBody::getFlowLimitStrategy()
+{
+    return flowLimitStrategy_;
+}
+
+void ConfigsGetBody::setFlowLimitStrategy(const std::vector<FlowLimitStrategy>& value)
+{
+    flowLimitStrategy_ = value;
+    flowLimitStrategyIsSet_ = true;
+}
+
+bool ConfigsGetBody::flowLimitStrategyIsSet() const
+{
+    return flowLimitStrategyIsSet_;
+}
+
+void ConfigsGetBody::unsetflowLimitStrategy()
+{
+    flowLimitStrategyIsSet_ = false;
 }
 
 }

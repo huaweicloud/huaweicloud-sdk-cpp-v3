@@ -15,6 +15,7 @@
 #include <huaweicloud/cdn/v2/model/Compress.h>
 #include <huaweicloud/cdn/v2/model/WebSocketSeek.h>
 #include <huaweicloud/cdn/v2/model/IpFrequencyLimit.h>
+#include <huaweicloud/cdn/v2/model/FlowLimitStrategy.h>
 #include <huaweicloud/cdn/v2/model/RequestLimitRules.h>
 #include <huaweicloud/cdn/v2/model/VideoSeek.h>
 #include <huaweicloud/cdn/v2/model/Quic.h>
@@ -410,6 +411,15 @@ public:
     void unsethttpsTlsVersion();
     void setHttpsTlsVersion(const HttpsTlsVersion& value);
 
+    /// <summary>
+    /// **参数解释：** 设置用量封顶阈值，当实际用量大于阈值时停用域名，有效预防流量盗刷或恶意攻击带来的高额账单。  &gt; 由于监控数据存在时延，域名将在用量达到阈值后的10分钟左右被停用  **约束限制：** 不涉及
+    /// </summary>
+
+    std::vector<FlowLimitStrategy>& getFlowLimitStrategy();
+    bool flowLimitStrategyIsSet() const;
+    void unsetflowLimitStrategy();
+    void setFlowLimitStrategy(const std::vector<FlowLimitStrategy>& value);
+
 
 protected:
     std::string businessType_;
@@ -488,6 +498,8 @@ protected:
     bool clientCertIsSet_;
     HttpsTlsVersion httpsTlsVersion_;
     bool httpsTlsVersionIsSet_;
+    std::vector<FlowLimitStrategy> flowLimitStrategy_;
+    bool flowLimitStrategyIsSet_;
 
 };
 

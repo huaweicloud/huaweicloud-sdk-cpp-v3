@@ -96,10 +96,10 @@ public:
     /// **参数解释**：  会话持续时间，单位是秒。  **取值范围**：  不涉及。
     /// </summary>
 
-    std::string getDuration() const;
+    double getDuration() const;
     bool durationIsSet() const;
     void unsetduration();
-    void setDuration(const std::string& value);
+    void setDuration(double value);
 
     /// <summary>
     /// **参数解释**：  会话命令类型。    **取值范围**：  不涉及。
@@ -124,7 +124,7 @@ protected:
     bool databaseIsSet_;
     std::string sqlStatement_;
     bool sqlStatementIsSet_;
-    std::string duration_;
+    double duration_;
     bool durationIsSet_;
     std::string command_;
     bool commandIsSet_;

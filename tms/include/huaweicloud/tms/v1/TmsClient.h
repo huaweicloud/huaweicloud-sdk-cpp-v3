@@ -6,16 +6,26 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/tms/v1/model/ChangeAssociatedResourceOpenStatusRequest.h>
+#include <huaweicloud/tms/v1/model/ChangeAssociatedResourceOpenStatusResponse.h>
+#include <huaweicloud/tms/v1/model/CreateAssociatedResourceRulesRequest.h>
+#include <huaweicloud/tms/v1/model/CreateAssociatedResourceRulesResponse.h>
 #include <huaweicloud/tms/v1/model/CreatePredefineTagsRequest.h>
 #include <huaweicloud/tms/v1/model/CreatePredefineTagsResponse.h>
 #include <huaweicloud/tms/v1/model/CreateResourceTagRequest.h>
 #include <huaweicloud/tms/v1/model/CreateResourceTagResponse.h>
+#include <huaweicloud/tms/v1/model/DeleteAssociatedResourceRuleRequest.h>
+#include <huaweicloud/tms/v1/model/DeleteAssociatedResourceRuleResponse.h>
 #include <huaweicloud/tms/v1/model/DeletePredefineTagsRequest.h>
 #include <huaweicloud/tms/v1/model/DeletePredefineTagsResponse.h>
 #include <huaweicloud/tms/v1/model/DeleteResourceTagRequest.h>
 #include <huaweicloud/tms/v1/model/DeleteResourceTagResponse.h>
 #include <huaweicloud/tms/v1/model/ListApiVersionsRequest.h>
 #include <huaweicloud/tms/v1/model/ListApiVersionsResponse.h>
+#include <huaweicloud/tms/v1/model/ListAssociatedResourceRulesRequest.h>
+#include <huaweicloud/tms/v1/model/ListAssociatedResourceRulesResponse.h>
+#include <huaweicloud/tms/v1/model/ListAssociatedResourceSettingsRequest.h>
+#include <huaweicloud/tms/v1/model/ListAssociatedResourceSettingsResponse.h>
 #include <huaweicloud/tms/v1/model/ListPredefineTagsRequest.h>
 #include <huaweicloud/tms/v1/model/ListPredefineTagsResponse.h>
 #include <huaweicloud/tms/v1/model/ListProvidersRequest.h>
@@ -29,17 +39,24 @@
 #include <huaweicloud/tms/v1/model/ListTagsRequest.h>
 #include <huaweicloud/tms/v1/model/ListTagsResponse.h>
 #include <huaweicloud/tms/v1/model/ModifyPrefineTag.h>
+#include <huaweicloud/tms/v1/model/ReqAssociatedResourceOpenStatus.h>
+#include <huaweicloud/tms/v1/model/ReqCreateAssociatedResourceRules.h>
 #include <huaweicloud/tms/v1/model/ReqCreatePredefineTag.h>
 #include <huaweicloud/tms/v1/model/ReqCreateTag.h>
 #include <huaweicloud/tms/v1/model/ReqDeletePredefineTag.h>
 #include <huaweicloud/tms/v1/model/ReqDeleteTag.h>
+#include <huaweicloud/tms/v1/model/ReqUpdateAssociatedResourceRules.h>
 #include <huaweicloud/tms/v1/model/ResqTagResource.h>
 #include <huaweicloud/tms/v1/model/ShowApiVersionRequest.h>
 #include <huaweicloud/tms/v1/model/ShowApiVersionResponse.h>
+#include <huaweicloud/tms/v1/model/ShowAssociatedResourceOpenStatusRequest.h>
+#include <huaweicloud/tms/v1/model/ShowAssociatedResourceOpenStatusResponse.h>
 #include <huaweicloud/tms/v1/model/ShowResourceTagRequest.h>
 #include <huaweicloud/tms/v1/model/ShowResourceTagResponse.h>
 #include <huaweicloud/tms/v1/model/ShowTagQuotaRequest.h>
 #include <huaweicloud/tms/v1/model/ShowTagQuotaResponse.h>
+#include <huaweicloud/tms/v1/model/UpdateAssociatedResourceRulesRequest.h>
+#include <huaweicloud/tms/v1/model/UpdateAssociatedResourceRulesResponse.h>
 #include <huaweicloud/tms/v1/model/UpdatePredefineTagsRequest.h>
 #include <huaweicloud/tms/v1/model/UpdatePredefineTagsResponse.h>
 #include <string>
@@ -68,6 +85,22 @@ public:
 
     static ClientBuilder<TmsClient> newBuilder();
 
+    // 开通或关闭关联资源标签继承能力
+    //
+    // 开通或关闭关联资源标签继承能力
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeAssociatedResourceOpenStatusResponse> changeAssociatedResourceOpenStatus(
+        ChangeAssociatedResourceOpenStatusRequest &request
+    );
+    // 批量启用规则
+    //
+    // 按照规则和region来批量启用规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAssociatedResourceRulesResponse> createAssociatedResourceRules(
+        CreateAssociatedResourceRulesRequest &request
+    );
     // 创建预定义标签
     //
     // 用于创建预定标签。用户创建预定义标签后，可以使用预定义标签来给资源创建标签。该接口支持幂等特性和处理批量数据。
@@ -83,6 +116,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateResourceTagResponse> createResourceTag(
         CreateResourceTagRequest &request
+    );
+    // 关闭规则
+    //
+    // 通过指定setting_name和region_id来关闭指定的规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAssociatedResourceRuleResponse> deleteAssociatedResourceRule(
+        DeleteAssociatedResourceRuleRequest &request
     );
     // 删除预定义标签
     //
@@ -107,6 +148,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListApiVersionsResponse> listApiVersions(
         ListApiVersionsRequest &request
+    );
+    // 查询当前规则列表
+    //
+    // 查询当前规则列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAssociatedResourceRulesResponse> listAssociatedResourceRules(
+        ListAssociatedResourceRulesRequest &request
+    );
+    // 查询当前规则的配置列表
+    //
+    // 查询当前规则的配置列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAssociatedResourceSettingsResponse> listAssociatedResourceSettings(
+        ListAssociatedResourceSettingsRequest &request
     );
     // 查询预定义标签列表
     //
@@ -164,6 +221,14 @@ public:
     std::shared_ptr<ShowApiVersionResponse> showApiVersion(
         ShowApiVersionRequest &request
     );
+    // 查询当前用户的关联资源标签继承能力的开通状态
+    //
+    // 查询当前用户的关联资源标签继承能力的开通状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAssociatedResourceOpenStatusResponse> showAssociatedResourceOpenStatus(
+        ShowAssociatedResourceOpenStatusRequest &request
+    );
     // 查询资源标签
     //
     // 查询单个资源上的标签。
@@ -179,6 +244,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTagQuotaResponse> showTagQuota(
         ShowTagQuotaRequest &request
+    );
+    // 更新规则
+    //
+    // 更新规则。规则更新的信息会覆盖原有内容
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAssociatedResourceRulesResponse> updateAssociatedResourceRules(
+        UpdateAssociatedResourceRulesRequest &request
     );
     // 修改预定义标签
     //

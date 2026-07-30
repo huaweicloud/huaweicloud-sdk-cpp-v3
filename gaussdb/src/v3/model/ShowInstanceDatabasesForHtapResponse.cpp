@@ -15,8 +15,6 @@ ShowInstanceDatabasesForHtapResponse::ShowInstanceDatabasesForHtapResponse()
     databasesIsSet_ = false;
     totalCount_ = 0;
     totalCountIsSet_ = false;
-    timestamp_ = 0;
-    timestampIsSet_ = false;
 }
 
 ShowInstanceDatabasesForHtapResponse::~ShowInstanceDatabasesForHtapResponse() = default;
@@ -34,9 +32,6 @@ web::json::value ShowInstanceDatabasesForHtapResponse::toJson() const
     }
     if(totalCountIsSet_) {
         val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
-    }
-    if(timestampIsSet_) {
-        val[utility::conversions::to_string_t("timestamp")] = ModelBase::toJson(timestamp_);
     }
 
     return val;
@@ -61,15 +56,6 @@ bool ShowInstanceDatabasesForHtapResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("timestamp"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("timestamp"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTimestamp(refVal);
         }
     }
     return ok;
@@ -116,27 +102,6 @@ bool ShowInstanceDatabasesForHtapResponse::totalCountIsSet() const
 void ShowInstanceDatabasesForHtapResponse::unsettotalCount()
 {
     totalCountIsSet_ = false;
-}
-
-int32_t ShowInstanceDatabasesForHtapResponse::getTimestamp() const
-{
-    return timestamp_;
-}
-
-void ShowInstanceDatabasesForHtapResponse::setTimestamp(int32_t value)
-{
-    timestamp_ = value;
-    timestampIsSet_ = true;
-}
-
-bool ShowInstanceDatabasesForHtapResponse::timestampIsSet() const
-{
-    return timestampIsSet_;
-}
-
-void ShowInstanceDatabasesForHtapResponse::unsettimestamp()
-{
-    timestampIsSet_ = false;
 }
 
 }

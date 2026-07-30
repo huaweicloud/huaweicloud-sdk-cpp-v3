@@ -33,6 +33,88 @@ ClientBuilder<TmsClient> TmsClient::newBuilder()
     ClientBuilder<TmsClient> client = ClientBuilder<TmsClient>("BasicCredentials");
     return client;
 }
+std::shared_ptr<ChangeAssociatedResourceOpenStatusResponse> TmsClient::changeAssociatedResourceOpenStatus(ChangeAssociatedResourceOpenStatusRequest &request)
+{
+    std::string localVarPath = "/v2/tms/associated-resources/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForChangeAssociatedResourceOpenStatus());
+
+    std::shared_ptr<ChangeAssociatedResourceOpenStatusResponse> localVarResult = std::make_shared<ChangeAssociatedResourceOpenStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateAssociatedResourceRulesResponse> TmsClient::createAssociatedResourceRules(CreateAssociatedResourceRulesRequest &request)
+{
+    std::string localVarPath = "/v2/tms/associated-resources/rules/batch-create";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForCreateAssociatedResourceRules());
+
+    std::shared_ptr<CreateAssociatedResourceRulesResponse> localVarResult = std::make_shared<CreateAssociatedResourceRulesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreatePredefineTagsResponse> TmsClient::createPredefineTags(CreatePredefineTagsRequest &request)
 {
     std::string localVarPath = "/v1.0/predefine_tags/action";
@@ -112,6 +194,39 @@ std::shared_ptr<CreateResourceTagResponse> TmsClient::createResourceTag(CreateRe
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteAssociatedResourceRuleResponse> TmsClient::deleteAssociatedResourceRule(DeleteAssociatedResourceRuleRequest &request)
+{
+    std::string localVarPath = "/v2/tms/associated-resources/rules/{setting_name}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["setting_name"] = parameterToString(request.getSettingName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.regionIdIsSet()) {
+        localVarQueryParams["region_id"] = parameterToString(request.getRegionId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForDeleteAssociatedResourceRule());
+
+    std::shared_ptr<DeleteAssociatedResourceRuleResponse> localVarResult = std::make_shared<DeleteAssociatedResourceRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -220,6 +335,85 @@ std::shared_ptr<ListApiVersionsResponse> TmsClient::listApiVersions(ListApiVersi
         localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForListApiVersions());
 
     std::shared_ptr<ListApiVersionsResponse> localVarResult = std::make_shared<ListApiVersionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListAssociatedResourceRulesResponse> TmsClient::listAssociatedResourceRules(ListAssociatedResourceRulesRequest &request)
+{
+    std::string localVarPath = "/v2/tms/associated-resources/rules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.settingNameIsSet()) {
+        localVarQueryParams["setting_name"] = parameterToString(request.getSettingName());
+    }
+    if (request.regionIdIsSet()) {
+        localVarQueryParams["region_id"] = parameterToString(request.getRegionId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForListAssociatedResourceRules());
+
+    std::shared_ptr<ListAssociatedResourceRulesResponse> localVarResult = std::make_shared<ListAssociatedResourceRulesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListAssociatedResourceSettingsResponse> TmsClient::listAssociatedResourceSettings(ListAssociatedResourceSettingsRequest &request)
+{
+    std::string localVarPath = "/v2/tms/associated-resources/settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.regionIdIsSet()) {
+        localVarQueryParams["region_id"] = parameterToString(request.getRegionId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForListAssociatedResourceSettings());
+
+    std::shared_ptr<ListAssociatedResourceSettingsResponse> localVarResult = std::make_shared<ListAssociatedResourceSettingsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -502,6 +696,35 @@ std::shared_ptr<ShowApiVersionResponse> TmsClient::showApiVersion(ShowApiVersion
 
     return localVarResult;
 }
+std::shared_ptr<ShowAssociatedResourceOpenStatusResponse> TmsClient::showAssociatedResourceOpenStatus(ShowAssociatedResourceOpenStatusRequest &request)
+{
+    std::string localVarPath = "/v2/tms/associated-resources/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForShowAssociatedResourceOpenStatus());
+
+    std::shared_ptr<ShowAssociatedResourceOpenStatusResponse> localVarResult = std::make_shared<ShowAssociatedResourceOpenStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowResourceTagResponse> TmsClient::showResourceTag(ShowResourceTagRequest &request)
 {
     std::string localVarPath = "/v2.0/resources/{resource_id}/tags";
@@ -564,6 +787,47 @@ std::shared_ptr<ShowTagQuotaResponse> TmsClient::showTagQuota(ShowTagQuotaReques
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateAssociatedResourceRulesResponse> TmsClient::updateAssociatedResourceRules(UpdateAssociatedResourceRulesRequest &request)
+{
+    std::string localVarPath = "/v2/tms/associated-resources/rules/batch-update";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForUpdateAssociatedResourceRules());
+
+    std::shared_ptr<UpdateAssociatedResourceRulesResponse> localVarResult = std::make_shared<UpdateAssociatedResourceRulesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

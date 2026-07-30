@@ -34,7 +34,7 @@ ShowInstanceEipResponse::ShowInstanceEipResponse()
     bandwidthIdIsSet_ = false;
     bandwidthName_ = "";
     bandwidthNameIsSet_ = false;
-    bandwidthSize_ = "";
+    bandwidthSize_ = 0;
     bandwidthSizeIsSet_ = false;
     bandwidthShareType_ = "";
     bandwidthShareTypeIsSet_ = false;
@@ -203,7 +203,7 @@ bool ShowInstanceEipResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bandwidth_size"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBandwidthSize(refVal);
         }
@@ -461,12 +461,12 @@ void ShowInstanceEipResponse::unsetbandwidthName()
     bandwidthNameIsSet_ = false;
 }
 
-std::string ShowInstanceEipResponse::getBandwidthSize() const
+int32_t ShowInstanceEipResponse::getBandwidthSize() const
 {
     return bandwidthSize_;
 }
 
-void ShowInstanceEipResponse::setBandwidthSize(const std::string& value)
+void ShowInstanceEipResponse::setBandwidthSize(int32_t value)
 {
     bandwidthSize_ = value;
     bandwidthSizeIsSet_ = true;

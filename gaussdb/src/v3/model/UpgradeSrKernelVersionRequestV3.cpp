@@ -12,9 +12,9 @@ namespace Model {
 
 UpgradeSrKernelVersionRequestV3::UpgradeSrKernelVersionRequestV3()
 {
-    delay_ = "";
+    delay_ = false;
     delayIsSet_ = false;
-    isSkipValidate_ = "";
+    isSkipValidate_ = false;
     isSkipValidateIsSet_ = false;
 }
 
@@ -45,7 +45,7 @@ bool UpgradeSrKernelVersionRequestV3::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delay"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDelay(refVal);
         }
@@ -54,7 +54,7 @@ bool UpgradeSrKernelVersionRequestV3::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_skip_validate"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsSkipValidate(refVal);
         }
@@ -63,12 +63,12 @@ bool UpgradeSrKernelVersionRequestV3::fromJson(const web::json::value& val)
 }
 
 
-std::string UpgradeSrKernelVersionRequestV3::getDelay() const
+bool UpgradeSrKernelVersionRequestV3::isDelay() const
 {
     return delay_;
 }
 
-void UpgradeSrKernelVersionRequestV3::setDelay(const std::string& value)
+void UpgradeSrKernelVersionRequestV3::setDelay(bool value)
 {
     delay_ = value;
     delayIsSet_ = true;
@@ -84,12 +84,12 @@ void UpgradeSrKernelVersionRequestV3::unsetdelay()
     delayIsSet_ = false;
 }
 
-std::string UpgradeSrKernelVersionRequestV3::getIsSkipValidate() const
+bool UpgradeSrKernelVersionRequestV3::isIsSkipValidate() const
 {
     return isSkipValidate_;
 }
 
-void UpgradeSrKernelVersionRequestV3::setIsSkipValidate(const std::string& value)
+void UpgradeSrKernelVersionRequestV3::setIsSkipValidate(bool value)
 {
     isSkipValidate_ = value;
     isSkipValidateIsSet_ = true;

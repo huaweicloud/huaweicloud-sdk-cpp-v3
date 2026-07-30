@@ -12,7 +12,7 @@ namespace Model {
 
 ShowProxyConfigurationsResponse::ShowProxyConfigurationsResponse()
 {
-    totalCount_ = "";
+    totalCount_ = 0;
     totalCountIsSet_ = false;
     configurationsIsSet_ = false;
 }
@@ -44,7 +44,7 @@ bool ShowProxyConfigurationsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
         }
@@ -62,12 +62,12 @@ bool ShowProxyConfigurationsResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string ShowProxyConfigurationsResponse::getTotalCount() const
+int32_t ShowProxyConfigurationsResponse::getTotalCount() const
 {
     return totalCount_;
 }
 
-void ShowProxyConfigurationsResponse::setTotalCount(const std::string& value)
+void ShowProxyConfigurationsResponse::setTotalCount(int32_t value)
 {
     totalCount_ = value;
     totalCountIsSet_ = true;

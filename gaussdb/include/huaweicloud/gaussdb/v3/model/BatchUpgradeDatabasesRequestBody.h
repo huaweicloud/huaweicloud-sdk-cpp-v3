@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdb/v3/model/UpgradeDatabasesSingleInstance.h>
-#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -53,16 +52,16 @@ public:
     /// 是否延迟升级。
     /// </summary>
 
-    std::string getDelay() const;
+    bool isDelay() const;
     bool delayIsSet() const;
     void unsetdelay();
-    void setDelay(const std::string& value);
+    void setDelay(bool value);
 
 
 protected:
     std::vector<UpgradeDatabasesSingleInstance> databasesInstanceInfos_;
     bool databasesInstanceInfosIsSet_;
-    std::string delay_;
+    bool delay_;
     bool delayIsSet_;
 
 };

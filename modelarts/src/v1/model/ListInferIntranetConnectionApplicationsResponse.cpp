@@ -1,0 +1,218 @@
+
+
+#include "huaweicloud/modelarts/v1/model/ListInferIntranetConnectionApplicationsResponse.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Modelarts {
+namespace V1 {
+namespace Model {
+
+
+
+
+ListInferIntranetConnectionApplicationsResponse::ListInferIntranetConnectionApplicationsResponse()
+{
+    current_ = 0;
+    currentIsSet_ = false;
+    pages_ = 0;
+    pagesIsSet_ = false;
+    size_ = 0;
+    sizeIsSet_ = false;
+    total_ = 0;
+    totalIsSet_ = false;
+    dataIsSet_ = false;
+}
+
+ListInferIntranetConnectionApplicationsResponse::~ListInferIntranetConnectionApplicationsResponse() = default;
+
+void ListInferIntranetConnectionApplicationsResponse::validate()
+{
+}
+
+web::json::value ListInferIntranetConnectionApplicationsResponse::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(currentIsSet_) {
+        val[utility::conversions::to_string_t("current")] = ModelBase::toJson(current_);
+    }
+    if(pagesIsSet_) {
+        val[utility::conversions::to_string_t("pages")] = ModelBase::toJson(pages_);
+    }
+    if(sizeIsSet_) {
+        val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
+    }
+    if(totalIsSet_) {
+        val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
+    }
+    if(dataIsSet_) {
+        val[utility::conversions::to_string_t("data")] = ModelBase::toJson(data_);
+    }
+
+    return val;
+}
+bool ListInferIntranetConnectionApplicationsResponse::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("current"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("current"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCurrent(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pages"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pages"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPages(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotal(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<IntranetConnectionInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setData(refVal);
+        }
+    }
+    return ok;
+}
+
+
+int32_t ListInferIntranetConnectionApplicationsResponse::getCurrent() const
+{
+    return current_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::setCurrent(int32_t value)
+{
+    current_ = value;
+    currentIsSet_ = true;
+}
+
+bool ListInferIntranetConnectionApplicationsResponse::currentIsSet() const
+{
+    return currentIsSet_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::unsetcurrent()
+{
+    currentIsSet_ = false;
+}
+
+int32_t ListInferIntranetConnectionApplicationsResponse::getPages() const
+{
+    return pages_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::setPages(int32_t value)
+{
+    pages_ = value;
+    pagesIsSet_ = true;
+}
+
+bool ListInferIntranetConnectionApplicationsResponse::pagesIsSet() const
+{
+    return pagesIsSet_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::unsetpages()
+{
+    pagesIsSet_ = false;
+}
+
+int32_t ListInferIntranetConnectionApplicationsResponse::getSize() const
+{
+    return size_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::setSize(int32_t value)
+{
+    size_ = value;
+    sizeIsSet_ = true;
+}
+
+bool ListInferIntranetConnectionApplicationsResponse::sizeIsSet() const
+{
+    return sizeIsSet_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::unsetsize()
+{
+    sizeIsSet_ = false;
+}
+
+int32_t ListInferIntranetConnectionApplicationsResponse::getTotal() const
+{
+    return total_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::setTotal(int32_t value)
+{
+    total_ = value;
+    totalIsSet_ = true;
+}
+
+bool ListInferIntranetConnectionApplicationsResponse::totalIsSet() const
+{
+    return totalIsSet_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::unsettotal()
+{
+    totalIsSet_ = false;
+}
+
+std::vector<IntranetConnectionInfo>& ListInferIntranetConnectionApplicationsResponse::getData()
+{
+    return data_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::setData(const std::vector<IntranetConnectionInfo>& value)
+{
+    data_ = value;
+    dataIsSet_ = true;
+}
+
+bool ListInferIntranetConnectionApplicationsResponse::dataIsSet() const
+{
+    return dataIsSet_;
+}
+
+void ListInferIntranetConnectionApplicationsResponse::unsetdata()
+{
+    dataIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

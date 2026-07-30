@@ -13,7 +13,7 @@ namespace Model {
 BatchUpgradeDatabasesRequestBody::BatchUpgradeDatabasesRequestBody()
 {
     databasesInstanceInfosIsSet_ = false;
-    delay_ = "";
+    delay_ = false;
     delayIsSet_ = false;
 }
 
@@ -53,7 +53,7 @@ bool BatchUpgradeDatabasesRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delay"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDelay(refVal);
         }
@@ -83,12 +83,12 @@ void BatchUpgradeDatabasesRequestBody::unsetdatabasesInstanceInfos()
     databasesInstanceInfosIsSet_ = false;
 }
 
-std::string BatchUpgradeDatabasesRequestBody::getDelay() const
+bool BatchUpgradeDatabasesRequestBody::isDelay() const
 {
     return delay_;
 }
 
-void BatchUpgradeDatabasesRequestBody::setDelay(const std::string& value)
+void BatchUpgradeDatabasesRequestBody::setDelay(bool value)
 {
     delay_ = value;
     delayIsSet_ = true;

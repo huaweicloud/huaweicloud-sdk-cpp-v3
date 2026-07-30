@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -41,19 +42,19 @@ public:
     /// **参数解释**：  单节点VCPUs伸缩下限。  **约束限制**：  不涉及。  **取值范围**：  取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)接口获取。  **默认取值**：  不涉及。
     /// </summary>
 
-    int32_t getMinVcpus() const;
+    std::string getMinVcpus() const;
     bool minVcpusIsSet() const;
     void unsetminVcpus();
-    void setMinVcpus(int32_t value);
+    void setMinVcpus(const std::string& value);
 
     /// <summary>
     /// **参数解释**：  单节点VCPUs伸缩上限。  **约束限制**：  不涉及。  **取值范围**：  ≥4。取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)接口获取。  **默认取值**：  不涉及。
     /// </summary>
 
-    int32_t getMaxVcpus() const;
+    std::string getMaxVcpus() const;
     bool maxVcpusIsSet() const;
     void unsetmaxVcpus();
-    void setMaxVcpus(int32_t value);
+    void setMaxVcpus(const std::string& value);
 
     /// <summary>
     /// **参数解释**：  节点算力同步，修改算力范围的同时，是否将小于最小算力的节点的当前算力同步至最小算力。  **约束限制**：  不涉及。  **取值范围**： - true: 节点算力同步。 - false: 节点算力不同步。  **默认取值**： false。
@@ -93,9 +94,9 @@ public:
 
 
 protected:
-    int32_t minVcpus_;
+    std::string minVcpus_;
     bool minVcpusIsSet_;
-    int32_t maxVcpus_;
+    std::string maxVcpus_;
     bool maxVcpusIsSet_;
     bool needUpdateNodesComputeAbility_;
     bool needUpdateNodesComputeAbilityIsSet_;

@@ -1,0 +1,141 @@
+
+#ifndef HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_FileResponse_H_
+#define HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_FileResponse_H_
+
+
+#include <huaweicloud/modelarts/v1/ModelArtsExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Modelarts {
+namespace V1 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// **参数解释：** 模型&amp;权重文件和代码存储挂载配置。
+/// </summary>
+class HUAWEICLOUD_MODELARTS_V1_EXPORT  FileResponse
+    : public ModelBase
+{
+public:
+    FileResponse();
+    virtual ~FileResponse();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// FileResponse members
+
+    /// <summary>
+    /// **参数解释：** 代码来源类别。 **取值范围：** - OBS：对象存储服务。 - OBSFS：OBS的文件系统接口。 - EFS：弹性文件服务。 - LOCAL：挂载宿主机本地存储目录。
+    /// </summary>
+
+    std::string getSource() const;
+    bool sourceIsSet() const;
+    void unsetsource();
+    void setSource(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 代码来源地址，格式遵循不同存储系统。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getAddress() const;
+    bool addressIsSet() const;
+    void unsetaddress();
+    void setAddress(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 挂载到容器内的路径。 **约束限制：** 不涉及。 **取值范围：** 以(/)开头和结尾，可包含字母、数字、中划线、下划线，整个挂载路径长度不能超过255位。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getMountPath() const;
+    bool mountPathIsSet() const;
+    void unsetmountPath();
+    void setMountPath(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 是否支持模型本地缓存，默认是不支持。 **取值范围：** - true：支持。 - false：不支持。
+    /// </summary>
+
+    bool isHostCache() const;
+    bool hostCacheIsSet() const;
+    void unsethostCache();
+    void setHostCache(bool value);
+
+    /// <summary>
+    /// **参数解释：** 当存储类别为EFS时，支持配置子目录。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getEfsSubPath() const;
+    bool efsSubPathIsSet() const;
+    void unsetefsSubPath();
+    void setEfsSubPath(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 挂载权限设置，是否只读。 **取值范围：** - true：只读。 - false：非只读。
+    /// </summary>
+
+    bool isReadOnly() const;
+    bool readOnlyIsSet() const;
+    void unsetreadOnly();
+    void setReadOnly(bool value);
+
+    /// <summary>
+    /// **参数解释：** OS预热。 **取值范围：** - true：预热。 - false：不预热。
+    /// </summary>
+
+    bool isOsWarmUp() const;
+    bool osWarmUpIsSet() const;
+    void unsetosWarmUp();
+    void setOsWarmUp(bool value);
+
+    /// <summary>
+    /// **参数解释：** 预热名称。 **约束限制：** os_warm_up为true时必填。 **取值范围：** 支持1-64位字符，可包含字母、中文、数字、中划线、下划线。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getSourceName() const;
+    bool sourceNameIsSet() const;
+    void unsetsourceName();
+    void setSourceName(const std::string& value);
+
+
+protected:
+    std::string source_;
+    bool sourceIsSet_;
+    std::string address_;
+    bool addressIsSet_;
+    std::string mountPath_;
+    bool mountPathIsSet_;
+    bool hostCache_;
+    bool hostCacheIsSet_;
+    std::string efsSubPath_;
+    bool efsSubPathIsSet_;
+    bool readOnly_;
+    bool readOnlyIsSet_;
+    bool osWarmUp_;
+    bool osWarmUpIsSet_;
+    std::string sourceName_;
+    bool sourceNameIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_FileResponse_H_

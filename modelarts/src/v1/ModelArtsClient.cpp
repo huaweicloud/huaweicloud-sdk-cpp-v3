@@ -2974,6 +2974,12 @@ std::shared_ptr<ListInferDeploymentPodEventsResponse> ModelArtsClient::listInfer
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
 
     std::string localVarHttpBody;
 
@@ -3058,6 +3064,15 @@ std::shared_ptr<ListInferDeploymentVersionsResponse> ModelArtsClient::listInferD
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
 
     std::string localVarHttpBody;
 

@@ -74,6 +74,24 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 查询开始时间，Unix时间戳（毫秒）。 **约束限制：** 需要与end_time同时传入或同时为空。不能早于end_time。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getStartTime() const;
+    bool startTimeIsSet() const;
+    void unsetstartTime();
+    void setStartTime(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 查询结束时间，Unix时间戳（毫秒）。 **约束限制：** 需要与start_time同时传入或同时为空。不能早于start_time。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getEndTime() const;
+    bool endTimeIsSet() const;
+    void unsetendTime();
+    void setEndTime(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -84,6 +102,10 @@ protected:
     bool instanceNameIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string startTime_;
+    bool startTimeIsSet_;
+    std::string endTime_;
+    bool endTimeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

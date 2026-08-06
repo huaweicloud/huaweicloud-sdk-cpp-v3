@@ -163,6 +163,10 @@
 #include <huaweicloud/cloudtest/v1/model/ListScattersUsingResponse.h>
 #include <huaweicloud/cloudtest/v1/model/ListSubTaskCaseOverstockUsingRequest.h>
 #include <huaweicloud/cloudtest/v1/model/ListSubTaskCaseOverstockUsingResponse.h>
+#include <huaweicloud/cloudtest/v1/model/ListSubTasksByPostUsingRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ListSubTasksByPostUsingResponse.h>
+#include <huaweicloud/cloudtest/v1/model/ListSubTestCaseByConditionsUsingRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ListSubTestCaseByConditionsUsingResponse.h>
 #include <huaweicloud/cloudtest/v1/model/ListTaskAssignCasesRequest.h>
 #include <huaweicloud/cloudtest/v1/model/ListTaskAssignCasesResponse.h>
 #include <huaweicloud/cloudtest/v1/model/ListTaskResultsDetailRequest.h>
@@ -329,6 +333,8 @@
 #include <huaweicloud/cloudtest/v1/model/ShowUserExecuteTestCaseInfoRequest.h>
 #include <huaweicloud/cloudtest/v1/model/ShowUserExecuteTestCaseInfoRequestBody.h>
 #include <huaweicloud/cloudtest/v1/model/ShowUserExecuteTestCaseInfoResponse.h>
+#include <huaweicloud/cloudtest/v1/model/SubTaskCaseQuery.h>
+#include <huaweicloud/cloudtest/v1/model/SubTaskQueryByPageParams.h>
 #include <huaweicloud/cloudtest/v1/model/TasksQueryInfo.h>
 #include <huaweicloud/cloudtest/v1/model/TestCaseCommentInfo.h>
 #include <huaweicloud/cloudtest/v1/model/TestCaseInfo.h>
@@ -964,6 +970,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSubTaskCaseOverstockUsingResponse> listSubTaskCaseOverstockUsing(
         ListSubTaskCaseOverstockUsingRequest &request
+    );
+    // 根据条件查询子任务集合
+    //
+    // 根据条件查询子任务集合
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSubTasksByPostUsingResponse> listSubTasksByPostUsing(
+        ListSubTasksByPostUsingRequest &request
+    );
+    // 批量查询子任务用例
+    //
+    // 批量查询子任务用例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSubTestCaseByConditionsUsingResponse> listSubTestCaseByConditionsUsing(
+        ListSubTestCaseByConditionsUsingRequest &request
     );
     // 获取测试套关联用例详情
     //

@@ -56,12 +56,45 @@ public:
     void unsetdeploymentId();
     void setDeploymentId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 排序字段。 **约束限制：** 不涉及。 **取值范围：** - create_at：按创建时间排序。 - update_at：按更新时间排序。 **默认取值：** update_at。
+    /// </summary>
+
+    std::string getSortKey() const;
+    bool sortKeyIsSet() const;
+    void unsetsortKey();
+    void setSortKey(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 指定返回的最大条目数。 **约束限制：** 不涉及。 **取值范围：** [1,500] **默认取值：** 10。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 分页列表查询的偏移量。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 0。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
 
 protected:
     std::string serviceId_;
     bool serviceIdIsSet_;
     std::string deploymentId_;
     bool deploymentIdIsSet_;
+    std::string sortKey_;
+    bool sortKeyIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

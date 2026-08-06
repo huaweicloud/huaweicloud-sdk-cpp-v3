@@ -575,6 +575,24 @@ HttpRequestDef CloudtestMeta::genRequestDefForListSubTaskCaseOverstockUsing() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudtestMeta::genRequestDefForListSubTasksByPostUsing() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CloudtestMeta::genRequestDefForListSubTestCaseByConditionsUsing() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CloudtestMeta::genRequestDefForListTaskAssignCases() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

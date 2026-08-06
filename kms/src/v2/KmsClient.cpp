@@ -239,6 +239,47 @@ std::shared_ptr<CancelSelfGrantResponse> KmsClient::cancelSelfGrant(CancelSelfGr
 
     return localVarResult;
 }
+std::shared_ptr<CreateAccessPointResponse> KmsClient::createAccessPoint(CreateAccessPointRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/access-points";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForCreateAccessPoint());
+
+    std::shared_ptr<CreateAccessPointResponse> localVarResult = std::make_shared<CreateAccessPointResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateAliasResponse> KmsClient::createAlias(CreateAliasRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/kms/aliases";
@@ -309,6 +350,47 @@ std::shared_ptr<CreateDatakeyResponse> KmsClient::createDatakey(CreateDatakeyReq
         localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForCreateDatakey());
 
     std::shared_ptr<CreateDatakeyResponse> localVarResult = std::make_shared<CreateDatakeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateDatakeyCapsuleResponse> KmsClient::createDatakeyCapsule(CreateDatakeyCapsuleRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/datakey-capsule/create";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForCreateDatakeyCapsule());
+
+    std::shared_ptr<CreateDatakeyCapsuleResponse> localVarResult = std::make_shared<CreateDatakeyCapsuleResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -473,6 +555,47 @@ std::shared_ptr<CreateKeyResponse> KmsClient::createKey(CreateKeyRequest &reques
         localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForCreateKey());
 
     std::shared_ptr<CreateKeyResponse> localVarResult = std::make_shared<CreateKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateKeyPolicyResponse> KmsClient::createKeyPolicy(CreateKeyPolicyRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/key-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForCreateKeyPolicy());
+
+    std::shared_ptr<CreateKeyPolicyResponse> localVarResult = std::make_shared<CreateKeyPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -814,6 +937,77 @@ std::shared_ptr<DecryptDatakeyResponse> KmsClient::decryptDatakey(DecryptDatakey
 
     return localVarResult;
 }
+std::shared_ptr<DecryptDatakeyCapsuleResponse> KmsClient::decryptDatakeyCapsule(DecryptDatakeyCapsuleRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/datakey-capsule/decrypt";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForDecryptDatakeyCapsule());
+
+    std::shared_ptr<DecryptDatakeyCapsuleResponse> localVarResult = std::make_shared<DecryptDatakeyCapsuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteAccessPointResponse> KmsClient::deleteAccessPoint(DeleteAccessPointRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/access-points/{access_point_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["access_point_id"] = parameterToString(request.getAccessPointId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForDeleteAccessPoint());
+
+    std::shared_ptr<DeleteAccessPointResponse> localVarResult = std::make_shared<DeleteAccessPointResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteAliasResponse> KmsClient::deleteAlias(DeleteAliasRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/kms/aliases";
@@ -937,6 +1131,36 @@ std::shared_ptr<DeleteKeyResponse> KmsClient::deleteKey(DeleteKeyRequest &reques
 
     return localVarResult;
 }
+std::shared_ptr<DeleteKeyPolicyResponse> KmsClient::deleteKeyPolicy(DeleteKeyPolicyRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/key-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForDeleteKeyPolicy());
+
+    std::shared_ptr<DeleteKeyPolicyResponse> localVarResult = std::make_shared<DeleteKeyPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteKeyStoreResponse> KmsClient::deleteKeyStore(DeleteKeyStoreRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/keystores/{keystore_id}";
@@ -1036,6 +1260,36 @@ std::shared_ptr<DeriveSharedSecretResponse> KmsClient::deriveSharedSecret(Derive
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<DisableAccessPointResponse> KmsClient::disableAccessPoint(DisableAccessPointRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/access-points/{access_point_id}/disable";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["access_point_id"] = parameterToString(request.getAccessPointId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForDisableAccessPoint());
+
+    std::shared_ptr<DisableAccessPointResponse> localVarResult = std::make_shared<DisableAccessPointResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1145,6 +1399,66 @@ std::shared_ptr<DisableKeyStoreResponse> KmsClient::disableKeyStore(DisableKeySt
         localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForDisableKeyStore());
 
     std::shared_ptr<DisableKeyStoreResponse> localVarResult = std::make_shared<DisableKeyStoreResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DownloadAccessPointPrivateKeyResponse> KmsClient::downloadAccessPointPrivateKey(DownloadAccessPointPrivateKeyRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/access-points/{access_point_id}/get-privatekey";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["access_point_id"] = parameterToString(request.getAccessPointId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForDownloadAccessPointPrivateKey());
+
+    std::shared_ptr<DownloadAccessPointPrivateKeyResponse> localVarResult = std::make_shared<DownloadAccessPointPrivateKeyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<EnableAccessPointResponse> KmsClient::enableAccessPoint(EnableAccessPointRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/access-points/{access_point_id}/enable";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["access_point_id"] = parameterToString(request.getAccessPointId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForEnableAccessPoint());
+
+    std::shared_ptr<EnableAccessPointResponse> localVarResult = std::make_shared<EnableAccessPointResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1427,6 +1741,44 @@ std::shared_ptr<ImportKeyMaterialResponse> KmsClient::importKeyMaterial(ImportKe
 
     return localVarResult;
 }
+std::shared_ptr<ListAccessPointResponse> KmsClient::listAccessPoint(ListAccessPointRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/access-points";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.keyspaceIdIsSet()) {
+        localVarQueryParams["keyspace_id"] = parameterToString(request.getKeyspaceId());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForListAccessPoint());
+
+    std::shared_ptr<ListAccessPointResponse> localVarResult = std::make_shared<ListAccessPointResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListAliasesResponse> KmsClient::listAliases(ListAliasesRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/kms/aliases";
@@ -1544,6 +1896,44 @@ std::shared_ptr<ListKeyDetailResponse> KmsClient::listKeyDetail(ListKeyDetailReq
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ListKeyPolicyResponse> KmsClient::listKeyPolicy(ListKeyPolicyRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/key-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.keyspaceIdIsSet()) {
+        localVarQueryParams["keyspace_id"] = parameterToString(request.getKeyspaceId());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForListKeyPolicy());
+
+    std::shared_ptr<ListKeyPolicyResponse> localVarResult = std::make_shared<ListKeyPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1850,6 +2240,77 @@ std::shared_ptr<ReplicateKeyResponse> KmsClient::replicateKey(ReplicateKeyReques
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<RotateOnDemandResponse> KmsClient::rotateOnDemand(RotateOnDemandRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/rotate-on-demand";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForRotateOnDemand());
+
+    std::shared_ptr<RotateOnDemandResponse> localVarResult = std::make_shared<RotateOnDemandResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ShowKeyPolicyResponse> KmsClient::showKeyPolicy(ShowKeyPolicyRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/key-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForShowKeyPolicy());
+
+    std::shared_ptr<ShowKeyPolicyResponse> localVarResult = std::make_shared<ShowKeyPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -2164,6 +2625,48 @@ std::shared_ptr<UpdateKeyDescriptionResponse> KmsClient::updateKeyDescription(Up
         localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForUpdateKeyDescription());
 
     std::shared_ptr<UpdateKeyDescriptionResponse> localVarResult = std::make_shared<UpdateKeyDescriptionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateKeyPolicyResponse> KmsClient::updateKeyPolicy(UpdateKeyPolicyRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/key-policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForUpdateKeyPolicy());
+
+    std::shared_ptr<UpdateKeyPolicyResponse> localVarResult = std::make_shared<UpdateKeyPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

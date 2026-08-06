@@ -9,7 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/kms/v2/model/GetkeyRotationStatusResponseBody_key_materials.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -74,6 +76,15 @@ public:
     void unsetnumberOfRotations();
     void setNumberOfRotations(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 密钥下的密钥材料信息 **取值范围：** 不涉及
+    /// </summary>
+
+    std::vector<GetkeyRotationStatusResponseBody_key_materials>& getKeyMaterials();
+    bool keyMaterialsIsSet() const;
+    void unsetkeyMaterials();
+    void setKeyMaterials(const std::vector<GetkeyRotationStatusResponseBody_key_materials>& value);
+
 
 protected:
     bool keyRotationEnabled_;
@@ -84,6 +95,8 @@ protected:
     bool lastRotationTimeIsSet_;
     int32_t numberOfRotations_;
     bool numberOfRotationsIsSet_;
+    std::vector<GetkeyRotationStatusResponseBody_key_materials> keyMaterials_;
+    bool keyMaterialsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

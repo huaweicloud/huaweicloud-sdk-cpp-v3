@@ -20,6 +20,10 @@ ListInferDeploymentPodEventsRequest::ListInferDeploymentPodEventsRequest()
     instanceNameIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    startTime_ = "";
+    startTimeIsSet_ = false;
+    endTime_ = "";
+    endTimeIsSet_ = false;
 }
 
 ListInferDeploymentPodEventsRequest::~ListInferDeploymentPodEventsRequest() = default;
@@ -43,6 +47,12 @@ web::json::value ListInferDeploymentPodEventsRequest::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(startTimeIsSet_) {
+        val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
+    }
+    if(endTimeIsSet_) {
+        val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
     }
 
     return val;
@@ -85,6 +95,24 @@ bool ListInferDeploymentPodEventsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("start_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStartTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("end_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEndTime(refVal);
         }
     }
     return ok;
@@ -173,6 +201,48 @@ bool ListInferDeploymentPodEventsRequest::nameIsSet() const
 void ListInferDeploymentPodEventsRequest::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string ListInferDeploymentPodEventsRequest::getStartTime() const
+{
+    return startTime_;
+}
+
+void ListInferDeploymentPodEventsRequest::setStartTime(const std::string& value)
+{
+    startTime_ = value;
+    startTimeIsSet_ = true;
+}
+
+bool ListInferDeploymentPodEventsRequest::startTimeIsSet() const
+{
+    return startTimeIsSet_;
+}
+
+void ListInferDeploymentPodEventsRequest::unsetstartTime()
+{
+    startTimeIsSet_ = false;
+}
+
+std::string ListInferDeploymentPodEventsRequest::getEndTime() const
+{
+    return endTime_;
+}
+
+void ListInferDeploymentPodEventsRequest::setEndTime(const std::string& value)
+{
+    endTime_ = value;
+    endTimeIsSet_ = true;
+}
+
+bool ListInferDeploymentPodEventsRequest::endTimeIsSet() const
+{
+    return endTimeIsSet_;
+}
+
+void ListInferDeploymentPodEventsRequest::unsetendTime()
+{
+    endTimeIsSet_ = false;
 }
 
 }

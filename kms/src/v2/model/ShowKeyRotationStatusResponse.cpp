@@ -20,6 +20,7 @@ ShowKeyRotationStatusResponse::ShowKeyRotationStatusResponse()
     lastRotationTimeIsSet_ = false;
     numberOfRotations_ = 0;
     numberOfRotationsIsSet_ = false;
+    keyMaterialsIsSet_ = false;
 }
 
 ShowKeyRotationStatusResponse::~ShowKeyRotationStatusResponse() = default;
@@ -43,6 +44,9 @@ web::json::value ShowKeyRotationStatusResponse::toJson() const
     }
     if(numberOfRotationsIsSet_) {
         val[utility::conversions::to_string_t("number_of_rotations")] = ModelBase::toJson(numberOfRotations_);
+    }
+    if(keyMaterialsIsSet_) {
+        val[utility::conversions::to_string_t("key_materials")] = ModelBase::toJson(keyMaterials_);
     }
 
     return val;
@@ -85,6 +89,15 @@ bool ShowKeyRotationStatusResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNumberOfRotations(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("key_materials"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("key_materials"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<GetkeyRotationStatusResponseBody_key_materials> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setKeyMaterials(refVal);
         }
     }
     return ok;
@@ -173,6 +186,27 @@ bool ShowKeyRotationStatusResponse::numberOfRotationsIsSet() const
 void ShowKeyRotationStatusResponse::unsetnumberOfRotations()
 {
     numberOfRotationsIsSet_ = false;
+}
+
+std::vector<GetkeyRotationStatusResponseBody_key_materials>& ShowKeyRotationStatusResponse::getKeyMaterials()
+{
+    return keyMaterials_;
+}
+
+void ShowKeyRotationStatusResponse::setKeyMaterials(const std::vector<GetkeyRotationStatusResponseBody_key_materials>& value)
+{
+    keyMaterials_ = value;
+    keyMaterialsIsSet_ = true;
+}
+
+bool ShowKeyRotationStatusResponse::keyMaterialsIsSet() const
+{
+    return keyMaterialsIsSet_;
+}
+
+void ShowKeyRotationStatusResponse::unsetkeyMaterials()
+{
+    keyMaterialsIsSet_ = false;
 }
 
 }

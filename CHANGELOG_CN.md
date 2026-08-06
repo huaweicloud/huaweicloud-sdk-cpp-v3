@@ -1,3 +1,87 @@
+# 3.1.199 2026-08-06
+
+### HuaweiCloud SDK Cloudtest
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListSubTestCaseByConditionsUsing`、`ListSubTasksByPostUsing`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK KMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `RotateOnDemand`
+    - `ListAccessPoint`
+    - `CreateAccessPoint`
+    - `EnableAccessPoint`
+    - `DisableAccessPoint`
+    - `DeleteAccessPoint`
+    - `DownloadAccessPointPrivateKey`
+    - `ListKeyPolicy`
+    - `CreateKeyPolicy`
+    - `ShowKeyPolicy`
+    - `UpdateKeyPolicy`
+    - `DeleteKeyPolicy`
+    - `CreateDatakeyCapsule`
+    - `DecryptDatakeyCapsule`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **Sign**
+    - 请求参数变更
+      - `+ signing_algorithm: enum value [ED25519_SHA_512,ED25519_PH_SHA_512]`
+  - **ValidateSignature**
+    - 请求参数变更
+      - `+ signing_algorithm: enum value [ED25519_SHA_512,ED25519_PH_SHA_512]`
+  - **ShowKeyRotationStatus**
+    - 响应参数变更
+      - `+ key_materials`
+  - **CreateKey**
+    - 请求参数变更
+      - `+ key_spec: enum value [ED25519,HMAC_256,HMAC_384,HMAC_512,HMAC_SM3]`
+
+### HuaweiCloud SDK LTS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListLogs**
+    - 响应参数变更
+      - `+ scrollId`
+  - **UpdateHostGroup**
+    - 请求参数变更
+      - `+ agent_access_type`
+      - `+ labels`
+  - **CreateHostGroup**
+    - 请求参数变更
+      - `+ agent_access_type`
+      - `+ labels`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+
 # 3.1.198 2026-07-30
 
 ### HuaweiCloud SDK CDN

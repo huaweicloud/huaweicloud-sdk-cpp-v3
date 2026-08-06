@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
+#include <string>
 #include <vector>
 #include <huaweicloud/lts/v2/model/LogContents.h>
 
@@ -68,6 +69,15 @@ public:
     void setIsQueryComplete(bool value);
 
     /// <summary>
+    /// **参数解释：** 分页查询时，若返回结果中包含该字段，下一次请求体需要增加scroll_Id参数参与分页查询。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getScrollId() const;
+    bool scrollIdIsSet() const;
+    void unsetscrollId();
+    void setScrollId(const std::string& value);
+
+    /// <summary>
     /// 分析日志返回响应体
     /// </summary>
 
@@ -84,6 +94,8 @@ protected:
     bool logsIsSet_;
     bool isQueryComplete_;
     bool isQueryCompleteIsSet_;
+    std::string scrollId_;
+    bool scrollIdIsSet_;
     std::vector<Object> analysisLogs_;
     bool analysisLogsIsSet_;
 

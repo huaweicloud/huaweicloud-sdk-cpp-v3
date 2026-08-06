@@ -53,6 +53,15 @@ HttpRequestDef KmsMeta::genRequestDefForCancelSelfGrant() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForCreateAccessPoint() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForCreateAlias() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -63,6 +72,15 @@ HttpRequestDef KmsMeta::genRequestDefForCreateAlias() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForCreateDatakey() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForCreateDatakeyCapsule() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -99,6 +117,15 @@ HttpRequestDef KmsMeta::genRequestDefForCreateGrant() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForCreateKey() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForCreateKeyPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -179,6 +206,20 @@ HttpRequestDef KmsMeta::genRequestDefForDecryptDatakey() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForDecryptDatakeyCapsule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForDeleteAccessPoint() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForDeleteAlias() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -206,6 +247,11 @@ HttpRequestDef KmsMeta::genRequestDefForDeleteKey() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForDeleteKeyPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForDeleteKeyStore() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -222,6 +268,11 @@ HttpRequestDef KmsMeta::genRequestDefForDeriveSharedSecret() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForDisableAccessPoint() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -244,6 +295,16 @@ HttpRequestDef KmsMeta::genRequestDefForDisableKeyRotation() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForDisableKeyStore() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForDownloadAccessPointPrivateKey() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForEnableAccessPoint() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -307,6 +368,20 @@ HttpRequestDef KmsMeta::genRequestDefForImportKeyMaterial() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForListAccessPoint() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("KeyspaceId")
+                  .withJsonTag("keyspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForListAliases() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("KeyId")
@@ -339,6 +414,20 @@ HttpRequestDef KmsMeta::genRequestDefForListKeyDetail() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForListKeyPolicy() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("KeyspaceId")
+                  .withJsonTag("keyspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -414,6 +503,20 @@ HttpRequestDef KmsMeta::genRequestDefForReplicateKey() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForRotateOnDemand() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForShowKeyPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForShowKeyRotationStatus() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -471,6 +574,15 @@ HttpRequestDef KmsMeta::genRequestDefForUpdateKeyAlias() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForUpdateKeyDescription() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForUpdateKeyPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

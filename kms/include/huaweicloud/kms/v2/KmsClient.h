@@ -18,9 +18,15 @@
 #include <huaweicloud/kms/v2/model/CancelKeyDeletionResponse.h>
 #include <huaweicloud/kms/v2/model/CancelSelfGrantRequest.h>
 #include <huaweicloud/kms/v2/model/CancelSelfGrantResponse.h>
+#include <huaweicloud/kms/v2/model/CreateAccessPointRequest.h>
+#include <huaweicloud/kms/v2/model/CreateAccessPointRequestBody.h>
+#include <huaweicloud/kms/v2/model/CreateAccessPointResponse.h>
 #include <huaweicloud/kms/v2/model/CreateAliasRequest.h>
 #include <huaweicloud/kms/v2/model/CreateAliasRequestBody.h>
 #include <huaweicloud/kms/v2/model/CreateAliasResponse.h>
+#include <huaweicloud/kms/v2/model/CreateDatakeyCapsuleRequest.h>
+#include <huaweicloud/kms/v2/model/CreateDatakeyCapsuleRequestBody.h>
+#include <huaweicloud/kms/v2/model/CreateDatakeyCapsuleResponse.h>
 #include <huaweicloud/kms/v2/model/CreateDatakeyRequest.h>
 #include <huaweicloud/kms/v2/model/CreateDatakeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/CreateDatakeyResponse.h>
@@ -32,6 +38,9 @@
 #include <huaweicloud/kms/v2/model/CreateGrantRequest.h>
 #include <huaweicloud/kms/v2/model/CreateGrantRequestBody.h>
 #include <huaweicloud/kms/v2/model/CreateGrantResponse.h>
+#include <huaweicloud/kms/v2/model/CreateKeyPolicyRequest.h>
+#include <huaweicloud/kms/v2/model/CreateKeyPolicyRequestBody.h>
+#include <huaweicloud/kms/v2/model/CreateKeyPolicyResponse.h>
 #include <huaweicloud/kms/v2/model/CreateKeyRequest.h>
 #include <huaweicloud/kms/v2/model/CreateKeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/CreateKeyResponse.h>
@@ -54,14 +63,21 @@
 #include <huaweicloud/kms/v2/model/DecryptDataRequest.h>
 #include <huaweicloud/kms/v2/model/DecryptDataRequestBody.h>
 #include <huaweicloud/kms/v2/model/DecryptDataResponse.h>
+#include <huaweicloud/kms/v2/model/DecryptDatakeyCapsuleRequest.h>
+#include <huaweicloud/kms/v2/model/DecryptDatakeyCapsuleRequestBody.h>
+#include <huaweicloud/kms/v2/model/DecryptDatakeyCapsuleResponse.h>
 #include <huaweicloud/kms/v2/model/DecryptDatakeyRequest.h>
 #include <huaweicloud/kms/v2/model/DecryptDatakeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/DecryptDatakeyResponse.h>
+#include <huaweicloud/kms/v2/model/DeleteAccessPointRequest.h>
+#include <huaweicloud/kms/v2/model/DeleteAccessPointResponse.h>
 #include <huaweicloud/kms/v2/model/DeleteAliasRequest.h>
 #include <huaweicloud/kms/v2/model/DeleteAliasRequestBody.h>
 #include <huaweicloud/kms/v2/model/DeleteAliasResponse.h>
 #include <huaweicloud/kms/v2/model/DeleteImportedKeyMaterialRequest.h>
 #include <huaweicloud/kms/v2/model/DeleteImportedKeyMaterialResponse.h>
+#include <huaweicloud/kms/v2/model/DeleteKeyPolicyRequest.h>
+#include <huaweicloud/kms/v2/model/DeleteKeyPolicyResponse.h>
 #include <huaweicloud/kms/v2/model/DeleteKeyRequest.h>
 #include <huaweicloud/kms/v2/model/DeleteKeyResponse.h>
 #include <huaweicloud/kms/v2/model/DeleteKeyStoreRequest.h>
@@ -71,12 +87,18 @@
 #include <huaweicloud/kms/v2/model/DeriveSharedSecretRequest.h>
 #include <huaweicloud/kms/v2/model/DeriveSharedSecretRequestBody.h>
 #include <huaweicloud/kms/v2/model/DeriveSharedSecretResponse.h>
+#include <huaweicloud/kms/v2/model/DisableAccessPointRequest.h>
+#include <huaweicloud/kms/v2/model/DisableAccessPointResponse.h>
 #include <huaweicloud/kms/v2/model/DisableKeyRequest.h>
 #include <huaweicloud/kms/v2/model/DisableKeyResponse.h>
 #include <huaweicloud/kms/v2/model/DisableKeyRotationRequest.h>
 #include <huaweicloud/kms/v2/model/DisableKeyRotationResponse.h>
 #include <huaweicloud/kms/v2/model/DisableKeyStoreRequest.h>
 #include <huaweicloud/kms/v2/model/DisableKeyStoreResponse.h>
+#include <huaweicloud/kms/v2/model/DownloadAccessPointPrivateKeyRequest.h>
+#include <huaweicloud/kms/v2/model/DownloadAccessPointPrivateKeyResponse.h>
+#include <huaweicloud/kms/v2/model/EnableAccessPointRequest.h>
+#include <huaweicloud/kms/v2/model/EnableAccessPointResponse.h>
 #include <huaweicloud/kms/v2/model/EnableKeyRequest.h>
 #include <huaweicloud/kms/v2/model/EnableKeyResponse.h>
 #include <huaweicloud/kms/v2/model/EnableKeyRotationRequest.h>
@@ -97,6 +119,8 @@
 #include <huaweicloud/kms/v2/model/ImportKeyMaterialRequest.h>
 #include <huaweicloud/kms/v2/model/ImportKeyMaterialRequestBody.h>
 #include <huaweicloud/kms/v2/model/ImportKeyMaterialResponse.h>
+#include <huaweicloud/kms/v2/model/ListAccessPointRequest.h>
+#include <huaweicloud/kms/v2/model/ListAccessPointResponse.h>
 #include <huaweicloud/kms/v2/model/ListAliasResponseBody.h>
 #include <huaweicloud/kms/v2/model/ListAliasesRequest.h>
 #include <huaweicloud/kms/v2/model/ListAliasesResponse.h>
@@ -105,6 +129,8 @@
 #include <huaweicloud/kms/v2/model/ListGrantsResponse.h>
 #include <huaweicloud/kms/v2/model/ListKeyDetailRequest.h>
 #include <huaweicloud/kms/v2/model/ListKeyDetailResponse.h>
+#include <huaweicloud/kms/v2/model/ListKeyPolicyRequest.h>
+#include <huaweicloud/kms/v2/model/ListKeyPolicyResponse.h>
 #include <huaweicloud/kms/v2/model/ListKeyStoresRequest.h>
 #include <huaweicloud/kms/v2/model/ListKeyStoresResponse.h>
 #include <huaweicloud/kms/v2/model/ListKeysRequest.h>
@@ -128,7 +154,12 @@
 #include <huaweicloud/kms/v2/model/ReplicateKeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/ReplicateKeyResponse.h>
 #include <huaweicloud/kms/v2/model/RevokeGrantRequestBody.h>
+#include <huaweicloud/kms/v2/model/RotateOnDemandRequest.h>
+#include <huaweicloud/kms/v2/model/RotateOnDemandRequestBody.h>
+#include <huaweicloud/kms/v2/model/RotateOnDemandResponse.h>
 #include <huaweicloud/kms/v2/model/ScheduleKeyDeletionRequestBody.h>
+#include <huaweicloud/kms/v2/model/ShowKeyPolicyRequest.h>
+#include <huaweicloud/kms/v2/model/ShowKeyPolicyResponse.h>
 #include <huaweicloud/kms/v2/model/ShowKeyRotationStatusRequest.h>
 #include <huaweicloud/kms/v2/model/ShowKeyRotationStatusResponse.h>
 #include <huaweicloud/kms/v2/model/ShowKeyStoreRequest.h>
@@ -150,6 +181,9 @@
 #include <huaweicloud/kms/v2/model/UpdateKeyDescriptionRequest.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyDescriptionRequestBody.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyDescriptionResponse.h>
+#include <huaweicloud/kms/v2/model/UpdateKeyPolicyRequest.h>
+#include <huaweicloud/kms/v2/model/UpdateKeyPolicyRequestBody.h>
+#include <huaweicloud/kms/v2/model/UpdateKeyPolicyResponse.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalRequest.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalRequestBody.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalResponse.h>
@@ -245,6 +279,14 @@ public:
     std::shared_ptr<CancelSelfGrantResponse> cancelSelfGrant(
         CancelSelfGrantRequest &request
     );
+    // 创建接入点
+    //
+    // 用于创建接入点
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAccessPointResponse> createAccessPoint(
+        CreateAccessPointRequest &request
+    );
     // 
     //
     // 
@@ -259,6 +301,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateDatakeyResponse> createDatakey(
         CreateDatakeyRequest &request
+    );
+    // 创建密钥胶囊
+    //
+    // 创建密钥胶囊
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDatakeyCapsuleResponse> createDatakeyCapsule(
+        CreateDatakeyCapsuleRequest &request
     );
     // 创建不含明文数据密钥
     //
@@ -295,6 +345,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateKeyResponse> createKey(
         CreateKeyRequest &request
+    );
+    // 创建密钥策略
+    //
+    // 创建密钥策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateKeyPolicyResponse> createKeyPolicy(
+        CreateKeyPolicyRequest &request
     );
     // 创建专属密钥库
     //
@@ -362,6 +420,22 @@ public:
     std::shared_ptr<DecryptDatakeyResponse> decryptDatakey(
         DecryptDatakeyRequest &request
     );
+    // 解密密钥胶囊
+    //
+    // 解密密钥胶囊
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DecryptDatakeyCapsuleResponse> decryptDatakeyCapsule(
+        DecryptDatakeyCapsuleRequest &request
+    );
+    // 删除接入点
+    //
+    // 删除接入点
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAccessPointResponse> deleteAccessPoint(
+        DeleteAccessPointRequest &request
+    );
     // 
     //
     // 删除别名
@@ -385,6 +459,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteKeyResponse> deleteKey(
         DeleteKeyRequest &request
+    );
+    // 删除密钥策略
+    //
+    // 删除密钥策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteKeyPolicyResponse> deleteKeyPolicy(
+        DeleteKeyPolicyRequest &request
     );
     // 删除专属密钥库
     //
@@ -410,6 +492,14 @@ public:
     std::shared_ptr<DeriveSharedSecretResponse> deriveSharedSecret(
         DeriveSharedSecretRequest &request
     );
+    // 禁用接入点
+    //
+    // 禁用接入点
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DisableAccessPointResponse> disableAccessPoint(
+        DisableAccessPointRequest &request
+    );
     // 禁用密钥
     //
     // - 功能介绍：禁用密钥，密钥禁用后不可以使用。
@@ -434,6 +524,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisableKeyStoreResponse> disableKeyStore(
         DisableKeyStoreRequest &request
+    );
+    // 下载通用接入点私钥
+    //
+    // 用于下载通用接入点私钥
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadAccessPointPrivateKeyResponse> downloadAccessPointPrivateKey(
+        DownloadAccessPointPrivateKeyRequest &request
+    );
+    // 启用接入点
+    //
+    // 启用接入点
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<EnableAccessPointResponse> enableAccessPoint(
+        EnableAccessPointRequest &request
     );
     // 启用密钥
     //
@@ -495,6 +601,14 @@ public:
     std::shared_ptr<ImportKeyMaterialResponse> importKeyMaterial(
         ImportKeyMaterialRequest &request
     );
+    // 查询接入点列表
+    //
+    // 用于查询接入点
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAccessPointResponse> listAccessPoint(
+        ListAccessPointRequest &request
+    );
     // 
     //
     // 查询一个密钥关联的所有别名
@@ -518,6 +632,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListKeyDetailResponse> listKeyDetail(
         ListKeyDetailRequest &request
+    );
+    // 查询密钥策略列表
+    //
+    // 查询密钥策略列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListKeyPolicyResponse> listKeyPolicy(
+        ListKeyPolicyRequest &request
     );
     // 查询专属密钥库列表
     //
@@ -584,6 +706,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ReplicateKeyResponse> replicateKey(
         ReplicateKeyRequest &request
+    );
+    // 按需轮转密钥
+    //
+    // 用于外部密钥的密钥材料，需要用户提前导入密钥材料后才能执行轮转
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RotateOnDemandResponse> rotateOnDemand(
+        RotateOnDemandRequest &request
+    );
+    // 查询密钥策略
+    //
+    // 查询密钥策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowKeyPolicyResponse> showKeyPolicy(
+        ShowKeyPolicyRequest &request
     );
     // 查询密钥轮换状态
     //
@@ -662,6 +800,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateKeyDescriptionResponse> updateKeyDescription(
         UpdateKeyDescriptionRequest &request
+    );
+    // 更新密钥策略
+    //
+    // 更新密钥策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateKeyPolicyResponse> updateKeyPolicy(
+        UpdateKeyPolicyRequest &request
     );
     // 修改密钥轮换周期
     //

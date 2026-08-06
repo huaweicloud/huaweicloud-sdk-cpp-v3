@@ -74,6 +74,8 @@ public:
     static HttpRequestDef genRequestDefForListResourcePools();
     static HttpRequestDef genRequestDefForListScattersUsing();
     static HttpRequestDef genRequestDefForListSubTaskCaseOverstockUsing();
+    static HttpRequestDef genRequestDefForListSubTasksByPostUsing();
+    static HttpRequestDef genRequestDefForListSubTestCaseByConditionsUsing();
     static HttpRequestDef genRequestDefForListTaskAssignCases();
     static HttpRequestDef genRequestDefForListTaskResultsDetail();
     static HttpRequestDef genRequestDefForListTaskTestCases();

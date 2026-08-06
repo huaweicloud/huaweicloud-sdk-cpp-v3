@@ -2434,6 +2434,90 @@ std::shared_ptr<ListSubTaskCaseOverstockUsingResponse> CloudtestClient::listSubT
 
     return localVarResult;
 }
+std::shared_ptr<ListSubTasksByPostUsingResponse> CloudtestClient::listSubTasksByPostUsing(ListSubTasksByPostUsingRequest &request)
+{
+    std::string localVarPath = "/v1/projects/{service_id}/testsuite/results";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["service_id"] = parameterToString(request.getServiceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForListSubTasksByPostUsing());
+
+    std::shared_ptr<ListSubTasksByPostUsingResponse> localVarResult = std::make_shared<ListSubTasksByPostUsingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListSubTestCaseByConditionsUsingResponse> CloudtestClient::listSubTestCaseByConditionsUsing(ListSubTestCaseByConditionsUsingRequest &request)
+{
+    std::string localVarPath = "/v1/projects/{service_id}/testsuite/results/cases";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["service_id"] = parameterToString(request.getServiceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForListSubTestCaseByConditionsUsing());
+
+    std::shared_ptr<ListSubTestCaseByConditionsUsingResponse> localVarResult = std::make_shared<ListSubTestCaseByConditionsUsingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ListTaskAssignCasesResponse> CloudtestClient::listTaskAssignCases(ListTaskAssignCasesRequest &request)
 {
     std::string localVarPath = "/GT3KServer/v4/{project_id}/tasks/{task_id}/testcases/batch-query";

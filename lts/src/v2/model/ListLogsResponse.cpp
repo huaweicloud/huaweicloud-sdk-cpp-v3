@@ -17,6 +17,8 @@ ListLogsResponse::ListLogsResponse()
     logsIsSet_ = false;
     isQueryComplete_ = false;
     isQueryCompleteIsSet_ = false;
+    scrollId_ = "";
+    scrollIdIsSet_ = false;
     analysisLogsIsSet_ = false;
 }
 
@@ -38,6 +40,9 @@ web::json::value ListLogsResponse::toJson() const
     }
     if(isQueryCompleteIsSet_) {
         val[utility::conversions::to_string_t("isQueryComplete")] = ModelBase::toJson(isQueryComplete_);
+    }
+    if(scrollIdIsSet_) {
+        val[utility::conversions::to_string_t("scrollId")] = ModelBase::toJson(scrollId_);
     }
     if(analysisLogsIsSet_) {
         val[utility::conversions::to_string_t("analysisLogs")] = ModelBase::toJson(analysisLogs_);
@@ -74,6 +79,15 @@ bool ListLogsResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsQueryComplete(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scrollId"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scrollId"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScrollId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("analysisLogs"))) {
@@ -150,6 +164,27 @@ bool ListLogsResponse::isQueryCompleteIsSet() const
 void ListLogsResponse::unsetisQueryComplete()
 {
     isQueryCompleteIsSet_ = false;
+}
+
+std::string ListLogsResponse::getScrollId() const
+{
+    return scrollId_;
+}
+
+void ListLogsResponse::setScrollId(const std::string& value)
+{
+    scrollId_ = value;
+    scrollIdIsSet_ = true;
+}
+
+bool ListLogsResponse::scrollIdIsSet() const
+{
+    return scrollIdIsSet_;
+}
+
+void ListLogsResponse::unsetscrollId()
+{
+    scrollIdIsSet_ = false;
 }
 
 std::vector<Object>& ListLogsResponse::getAnalysisLogs()

@@ -76,6 +76,24 @@ public:
     void unsethostGroupTag();
     void setHostGroupTag(const std::vector<HostGroupTag>& value);
 
+    /// <summary>
+    /// **参数解释：** 主机组类型。支持两种主机组类型，分别为IP类型和LABEL类型。 **约束限制：** 不涉及 **取值范围：** - IP - LABEL **默认取值：** IP。
+    /// </summary>
+
+    std::string getAgentAccessType() const;
+    bool agentAccessTypeIsSet() const;
+    void unsetagentAccessType();
+    void setAgentAccessType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 自定义标识。主机组类型为LABEL类型，该字段必填。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::vector<std::string>& getLabels();
+    bool labelsIsSet() const;
+    void unsetlabels();
+    void setLabels(const std::vector<std::string>& value);
+
 
 protected:
     std::string hostGroupId_;
@@ -86,6 +104,10 @@ protected:
     bool hostIdListIsSet_;
     std::vector<HostGroupTag> hostGroupTag_;
     bool hostGroupTagIsSet_;
+    std::string agentAccessType_;
+    bool agentAccessTypeIsSet_;
+    std::vector<std::string> labels_;
+    bool labelsIsSet_;
 
 };
 

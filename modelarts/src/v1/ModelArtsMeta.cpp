@@ -836,6 +836,12 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListInferDeploymentInstances() {
 
 HttpRequestDef ModelArtsMeta::genRequestDefForListInferDeploymentPodEvents() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
@@ -870,6 +876,15 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListInferDeploymentPods() {
 
 HttpRequestDef ModelArtsMeta::genRequestDefForListInferDeploymentVersions() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

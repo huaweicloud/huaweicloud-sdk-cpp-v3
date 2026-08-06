@@ -1,3 +1,87 @@
+# 3.1.199 2026-08-06
+
+### HuaweiCloud SDK Cloudtest
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListSubTestCaseByConditionsUsing`, `ListSubTasksByPostUsing`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `RotateOnDemand`
+    - `ListAccessPoint`
+    - `CreateAccessPoint`
+    - `EnableAccessPoint`
+    - `DisableAccessPoint`
+    - `DeleteAccessPoint`
+    - `DownloadAccessPointPrivateKey`
+    - `ListKeyPolicy`
+    - `CreateKeyPolicy`
+    - `ShowKeyPolicy`
+    - `UpdateKeyPolicy`
+    - `DeleteKeyPolicy`
+    - `CreateDatakeyCapsule`
+    - `DecryptDatakeyCapsule`
+- _Bug Fix_
+  - None
+- _Change_
+  - **Sign**
+    - changes of request param
+      - `+ signing_algorithm: enum value [ED25519_SHA_512,ED25519_PH_SHA_512]`
+  - **ValidateSignature**
+    - changes of request param
+      - `+ signing_algorithm: enum value [ED25519_SHA_512,ED25519_PH_SHA_512]`
+  - **ShowKeyRotationStatus**
+    - changes of response param
+      - `+ key_materials`
+  - **CreateKey**
+    - changes of request param
+      - `+ key_spec: enum value [ED25519,HMAC_256,HMAC_384,HMAC_512,HMAC_SM3]`
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLogs**
+    - changes of response param
+      - `+ scrollId`
+  - **UpdateHostGroup**
+    - changes of request param
+      - `+ agent_access_type`
+      - `+ labels`
+  - **CreateHostGroup**
+    - changes of request param
+      - `+ agent_access_type`
+      - `+ labels`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+
 # 3.1.198 2026-07-30
 
 ### HuaweiCloud SDK CDN

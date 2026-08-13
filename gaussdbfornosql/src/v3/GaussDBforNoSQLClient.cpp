@@ -5199,6 +5199,36 @@ std::shared_ptr<SwitchOverResponse> GaussDBforNoSQLClient::switchOver(SwitchOver
 
     return localVarResult;
 }
+std::shared_ptr<SwitchOverDisasterRecoveryResponse> GaussDBforNoSQLClient::switchOverDisasterRecovery(SwitchOverDisasterRecoveryRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/disaster-recovery/switchover";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforNoSQLMeta::genRequestDefForSwitchOverDisasterRecovery());
+
+    std::shared_ptr<SwitchOverDisasterRecoveryResponse> localVarResult = std::make_shared<SwitchOverDisasterRecoveryResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<SwitchSecondLevelMonitoringResponse> GaussDBforNoSQLClient::switchSecondLevelMonitoring(SwitchSecondLevelMonitoringRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch";

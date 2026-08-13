@@ -1425,6 +1425,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSwitchOver() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSwitchOverDisasterRecovery() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSwitchSecondLevelMonitoring() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

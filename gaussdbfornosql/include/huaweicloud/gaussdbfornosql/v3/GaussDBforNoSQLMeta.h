@@ -145,6 +145,7 @@ public:
     static HttpRequestDef genRequestDefForStopBackup();
     static HttpRequestDef genRequestDefForSwitchIpGroup();
     static HttpRequestDef genRequestDefForSwitchOver();
+    static HttpRequestDef genRequestDefForSwitchOverDisasterRecovery();
     static HttpRequestDef genRequestDefForSwitchSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForSwitchSlowlogDesensitization();
     static HttpRequestDef genRequestDefForSwitchSsl();

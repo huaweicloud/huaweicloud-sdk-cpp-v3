@@ -57,6 +57,15 @@ public:
     void setCodec(const std::string& value);
 
     /// <summary>
+    /// 音频编码格式。 须知：仅在2025/01/01之后创建的媒资元数据/转码产物包含该参数。
+    /// </summary>
+
+    std::string getAudioCodec() const;
+    bool audioCodecIsSet() const;
+    void unsetaudioCodec();
+    void setAudioCodec(const std::string& value);
+
+    /// <summary>
     /// 视频时长，单位：秒。  若视频的原时长为非整数，则该字段值为原时长的向下取整。 若视频的原时长小于1，则该字段值为1。
     /// </summary>
 
@@ -152,6 +161,8 @@ protected:
     bool packTypeIsSet_;
     std::string codec_;
     bool codecIsSet_;
+    std::string audioCodec_;
+    bool audioCodecIsSet_;
     int64_t duration_;
     bool durationIsSet_;
     int64_t durationMs_;

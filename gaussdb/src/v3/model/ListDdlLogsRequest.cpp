@@ -22,9 +22,9 @@ ListDdlLogsRequest::ListDdlLogsRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
-    startTime_ = "";
+    startTime_ = 0L;
     startTimeIsSet_ = false;
-    endTime_ = "";
+    endTime_ = 0L;
     endTimeIsSet_ = false;
 }
 
@@ -115,7 +115,7 @@ bool ListDdlLogsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStartTime(refVal);
         }
@@ -124,7 +124,7 @@ bool ListDdlLogsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
         }
@@ -238,12 +238,12 @@ void ListDdlLogsRequest::unsetlimit()
     limitIsSet_ = false;
 }
 
-std::string ListDdlLogsRequest::getStartTime() const
+int64_t ListDdlLogsRequest::getStartTime() const
 {
     return startTime_;
 }
 
-void ListDdlLogsRequest::setStartTime(const std::string& value)
+void ListDdlLogsRequest::setStartTime(int64_t value)
 {
     startTime_ = value;
     startTimeIsSet_ = true;
@@ -259,12 +259,12 @@ void ListDdlLogsRequest::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-std::string ListDdlLogsRequest::getEndTime() const
+int64_t ListDdlLogsRequest::getEndTime() const
 {
     return endTime_;
 }
 
-void ListDdlLogsRequest::setEndTime(const std::string& value)
+void ListDdlLogsRequest::setEndTime(int64_t value)
 {
     endTime_ = value;
     endTimeIsSet_ = true;

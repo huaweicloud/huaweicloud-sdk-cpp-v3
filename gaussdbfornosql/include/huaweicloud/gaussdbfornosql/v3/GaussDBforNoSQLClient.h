@@ -332,6 +332,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SwitchOverDisasterRecoveryRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SwitchOverDisasterRecoveryResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchOverRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchOverResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchSecondLevelMonitoringRequest.h>
@@ -1474,6 +1476,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchOverResponse> switchOver(
         SwitchOverRequest &request
+    );
+    // 容灾实例倒换
+    //
+    // 容灾实例倒换。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchOverDisasterRecoveryResponse> switchOverDisasterRecovery(
+        SwitchOverDisasterRecoveryRequest &request
     );
     // 开启/关闭秒级监控
     //

@@ -84,22 +84,22 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// **参数解释**：  开始日期。格式为\&quot;yyyy-mm-ddThh:mm:ssZ\&quot;。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。 
+    /// **参数解释**：  查询开始时间。格式为UNIX时间戳，单位是毫秒，时区为UTC标准时区。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。 
     /// </summary>
 
-    std::string getStartTime() const;
+    int64_t getStartTime() const;
     bool startTimeIsSet() const;
     void unsetstartTime();
-    void setStartTime(const std::string& value);
+    void setStartTime(int64_t value);
 
     /// <summary>
-    /// **参数解释**：  结束时间，格式为\&quot;yyyy-mm-ddThh:mm:ssZ\&quot;。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。只能查询当前时间前一个月内的慢日志。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。 
+    /// **参数解释**：  查询结束时间。格式为UNIX时间戳，单位是毫秒，时区为UTC标准时区。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。 
     /// </summary>
 
-    std::string getEndTime() const;
+    int64_t getEndTime() const;
     bool endTimeIsSet() const;
     void unsetendTime();
-    void setEndTime(const std::string& value);
+    void setEndTime(int64_t value);
 
 
 protected:
@@ -113,9 +113,9 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
-    std::string startTime_;
+    int64_t startTime_;
     bool startTimeIsSet_;
-    std::string endTime_;
+    int64_t endTime_;
     bool endTimeIsSet_;
 
 #ifdef RTTR_FLAG

@@ -16,6 +16,8 @@ MetaData::MetaData()
     packTypeIsSet_ = false;
     codec_ = "";
     codecIsSet_ = false;
+    audioCodec_ = "";
+    audioCodecIsSet_ = false;
     duration_ = 0L;
     durationIsSet_ = false;
     durationMs_ = 0L;
@@ -53,6 +55,9 @@ web::json::value MetaData::toJson() const
     }
     if(codecIsSet_) {
         val[utility::conversions::to_string_t("codec")] = ModelBase::toJson(codec_);
+    }
+    if(audioCodecIsSet_) {
+        val[utility::conversions::to_string_t("audio_codec")] = ModelBase::toJson(audioCodec_);
     }
     if(durationIsSet_) {
         val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
@@ -107,6 +112,15 @@ bool MetaData::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCodec(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("audio_codec"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audio_codec"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAudioCodec(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("duration"))) {
@@ -243,6 +257,27 @@ bool MetaData::codecIsSet() const
 void MetaData::unsetcodec()
 {
     codecIsSet_ = false;
+}
+
+std::string MetaData::getAudioCodec() const
+{
+    return audioCodec_;
+}
+
+void MetaData::setAudioCodec(const std::string& value)
+{
+    audioCodec_ = value;
+    audioCodecIsSet_ = true;
+}
+
+bool MetaData::audioCodecIsSet() const
+{
+    return audioCodecIsSet_;
+}
+
+void MetaData::unsetaudioCodec()
+{
+    audioCodecIsSet_ = false;
 }
 
 int64_t MetaData::getDuration() const

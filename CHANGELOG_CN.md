@@ -1,3 +1,69 @@
+# 3.1.200 2026-08-13
+
+### HuaweiCloud SDK EPS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`ShowResourceBindEnterpriseProject`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListDdlLogs**
+    - 请求参数变更
+      - `* start_time: string -> int64`
+      - `* end_time: string -> int64`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`SwitchOverDisasterRecovery`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowTakeOverAssetDetails**
+    - 响应参数变更
+      - `+ base_info.meta_data.audio_codec`
+  - **PublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.audio_codec`
+  - **UnpublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.audio_codec`
+  - **ShowAssetMeta**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.audio_codec`
+  - **ShowAssetDetail**
+    - 响应参数变更
+      - `+ base_info.meta_data.audio_codec`
+  - **ShowTakeOverTaskDetails**
+    - 响应参数变更
+      - `+ assets.base_info.meta_data.audio_codec`
+
 # 3.1.199 2026-08-06
 
 ### HuaweiCloud SDK Cloudtest

@@ -38,7 +38,7 @@ public:
     /// UpdateServerlessPolicy members
 
     /// <summary>
-    /// 单节点VCPUs伸缩下限，取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlFlavors.html)接口获取。
+    /// 单节点VCPUs伸缩下限，取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)接口获取。
     /// </summary>
 
     int32_t getMinVcpus() const;
@@ -47,7 +47,7 @@ public:
     void setMinVcpus(int32_t value);
 
     /// <summary>
-    /// 单节点VCPUs伸缩上限，取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlFlavors.html)接口获取。
+    /// 单节点VCPUs伸缩上限，取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)接口获取。
     /// </summary>
 
     int32_t getMaxVcpus() const;

@@ -48,7 +48,7 @@ public:
     void setEngineName(const std::string& value);
 
     /// <summary>
-    /// - 取值为“CloudNativeCluster”, 表示查询云原生部署模式支持的规格。 - 不传该参数表示查询数据库类型下的所有经典部署模式支持的规格。
+    /// - 取值为“CloudNativeCluster”, 表示查询云原生部署模式支持的规格。 - 取值为“EnhancedCluster”, 表示查询GeminiDB Influx经典部署模式集群增强版实例支持的规格。 - 不传该参数表示查询数据库类型下的所有经典部署模式支持的规格。
     /// </summary>
 
     std::string getMode() const;

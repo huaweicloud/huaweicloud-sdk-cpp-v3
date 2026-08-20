@@ -11,6 +11,7 @@
 
 #include <huaweicloud/modelarts/v1/model/FuseConfig.h>
 #include <string>
+#include <huaweicloud/modelarts/v1/model/ElbConnectionResponse.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -21,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// **参数解释：** 服务调用时的相关配置。
+/// **参数解释：**  服务调用时的相关配置。
 /// </summary>
 class HUAWEICLOUD_MODELARTS_V1_EXPORT  ServiceInvokeResponse
     : public ModelBase
@@ -174,6 +175,15 @@ public:
     void unsetfuseConfigs();
     void setFuseConfigs(const FuseConfig& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ElbConnectionResponse getElbConnection() const;
+    bool elbConnectionIsSet() const;
+    void unsetelbConnection();
+    void setElbConnection(const ElbConnectionResponse& value);
+
 
 protected:
     int32_t port_;
@@ -206,6 +216,8 @@ protected:
     bool requestRetryIntervalMsIsSet_;
     FuseConfig fuseConfigs_;
     bool fuseConfigsIsSet_;
+    ElbConnectionResponse elbConnection_;
+    bool elbConnectionIsSet_;
 
 };
 

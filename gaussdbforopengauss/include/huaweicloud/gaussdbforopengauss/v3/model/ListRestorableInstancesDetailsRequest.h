@@ -93,7 +93,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// **参数解释**: 查备份恢复的粒度。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE   - DATABASE **默认取值**: INSTANCE
+    /// **参数解释**: 查备份恢复的粒度。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE   - DATABASE  **默认取值**: INSTANCE
     /// </summary>
 
     std::string getBackupRestoreType() const;
@@ -102,7 +102,7 @@ public:
     void setBackupRestoreType(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 源实例的备份类型。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE **默认取值**: INSTANCE
+    /// **参数解释**: 源实例的备份类型。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE  **默认取值**: INSTANCE
     /// </summary>
 
     std::string getSourceBackupSchema() const;

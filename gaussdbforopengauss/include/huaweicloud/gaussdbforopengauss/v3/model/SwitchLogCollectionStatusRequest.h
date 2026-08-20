@@ -57,7 +57,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 采集状态。 **约束限制**: 不涉及。 **取值范围**: - ON：开始采集。 - OFF：关闭采集。 **默认取值**: 不涉及。
+    /// **参数解释**: 采集状态。 **约束限制**: 不涉及。 **取值范围**: - ON：开始采集。 - OFF：关闭采集。  **默认取值**: 不涉及。
     /// </summary>
 
     std::string getStatus() const;

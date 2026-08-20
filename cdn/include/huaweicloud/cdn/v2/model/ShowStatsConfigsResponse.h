@@ -40,7 +40,7 @@ public:
     /// ShowStatsConfigsResponse members
 
     /// <summary>
-    /// 统计配置数量
+    /// **参数解释：** 统计配置数量 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getTotal() const;

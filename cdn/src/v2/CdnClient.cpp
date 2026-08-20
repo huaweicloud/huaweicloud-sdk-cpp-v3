@@ -1306,9 +1306,6 @@ std::shared_ptr<ListCdnDomainTopRefersResponse> CdnClient::listCdnDomainTopRefer
     if (request.enterpriseProjectIdIsSet()) {
         localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
     }
-    if (request.includeRatioIsSet()) {
-        localVarQueryParams["include_ratio"] = parameterToString(request.isIncludeRatio());
-    }
 
     std::string localVarHttpBody;
 

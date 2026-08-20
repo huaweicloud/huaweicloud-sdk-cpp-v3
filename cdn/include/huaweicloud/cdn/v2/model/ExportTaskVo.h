@@ -39,7 +39,7 @@ public:
     /// ExportTaskVo members
 
     /// <summary>
-    /// **参数解释：** 规则行为 **约束限制：** 不涉及
+    /// **参数解释：** 导出数据类型 **约束限制：** 不涉及 **取值范围：** - reports_detail：基础话单数据导出 - top_url_detail：TOP URL数据导出 - top_ua_detail：TOP UA数据导出 - top_referer_detail：TOP referer数据导出 - top_ip_detail：TOP IP数据导出 - isp_detail：运营商数据导出, - top_path_detail： TOP path数据导出, - uv：UV数据导出 **默认取值：** 不涉及
     /// </summary>
 
     std::string getAction() const;
@@ -48,7 +48,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 订阅的域名列表，支持同时输入多个域名，多个域名用半角逗号（,）分隔；说明：如果该参数为all，则为账号下的所有域名订阅运营报表。
+    /// **参数解释：** 订阅的域名列表 &gt; 支持同时输入多个域名  **约束限制：** 不涉及 **取值范围：** - 多个域名用半角逗号（,）分隔 - 如果该参数为all，则为账号下的所有域名订阅运营报表 **默认取值：** 不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -57,7 +57,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+    /// **参数解释：** 导出起始时间 **约束限制：** 不涉及 **取值范围：** 相对于UTC 1970-01-01到当前时间相隔的毫秒数 **默认取值：** 不涉及
     /// </summary>
 
     int64_t getStartTime() const;
@@ -66,7 +66,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+    /// **参数解释：** 导出结束时间 **约束限制：** 不涉及 **取值范围：** 相对于UTC 1970-01-01到当前时间相隔的毫秒数 **默认取值：** 不涉及
     /// </summary>
 
     int64_t getEndTime() const;
@@ -75,7 +75,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// 数据分组方式，可选domain，默认不分组
+    /// **参数解释：** 数据分组方式 **约束限制：** 不涉及 **取值范围：** domain：按域名分组 **默认取值：** 默认不分组
     /// </summary>
 
     std::string getGroupBy() const;
@@ -84,7 +84,7 @@ public:
     void setGroupBy(const std::string& value);
 
     /// <summary>
-    /// 查询时间间隔，单位：秒
+    /// **参数解释：** 查询时间粒度 **约束限制：** 当导出时间跨度超过90天时，仅支持1小时粒度（3600） **取值范围：** - 300：采样时间间隔为5分钟，单位：秒 - 3600：采样时间间隔为1小时，单位：秒 **默认取值：** 不涉及
     /// </summary>
 
     int64_t getInterval() const;
@@ -93,7 +93,7 @@ public:
     void setInterval(int64_t value);
 
     /// <summary>
-    /// **参数解释：** 域名服务范围 **约束限制：** 服务范围为中国大陆或全球时，加速域名需要到工信部备案 **取值范围：** - mainland_china: 中国大陆 - outside_mainland_china: 中国大陆境外 - global: 全球  **默认取值：** mainland_china: 中国大陆
+    /// **参数解释：** 服务范围 **约束限制：** 服务范围为中国大陆或全球时，加速域名需要到工信部备案 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外 - global：全球 **默认取值：** mainland_china：中国大陆
     /// </summary>
 
     std::string getServiceArea() const;
@@ -102,7 +102,7 @@ public:
     void setServiceArea(const std::string& value);
 
     /// <summary>
-    /// 参数类型支持：flux(流量)，req_num(请求总数)。
+    /// **参数解释：** 统计指标类型 **约束限制：** 不涉及 **取值范围：** - flux：流量 - req_num：请求总数 **默认取值：** 不涉及
     /// </summary>
 
     std::string getStatType() const;
@@ -111,7 +111,7 @@ public:
     void setStatType(const std::string& value);
 
     /// <summary>
-    /// - 国家&amp;地区编码，多个以英文逗号分隔，all表示全部，取值见附录 - 访问运营商统计数据时不能填写 - 访问top_url数据时不能填写 - 访问区域情况数据时只能填写cn(中国)
+    /// **参数解释：** 国家&amp;地区编码 **约束限制：** - 查询运营商统计数据时，不传该参数 - 查询top_url数据时，不传该参数 - 查询区域情况数据时，该参数传cn（中国） **取值范围：** - 多个以英文逗号分隔 - all表示全部，取值见附录 **默认取值：** 不涉及
     /// </summary>
 
     std::string getCountry() const;
@@ -120,7 +120,7 @@ public:
     void setCountry(const std::string& value);
 
     /// <summary>
-    /// 省份编码，当country为cn（中国）时有效，多个以英文逗号分隔，all表示全部，取值见附录
+    /// **参数解释：** 省份编码： **约束限制：** 当country为cn（中国）时，该参数有效 **取值范围：** all表示全部，取值见附录 **默认取值：** 不涉及
     /// </summary>
 
     std::string getProvince() const;
@@ -129,7 +129,7 @@ public:
     void setProvince(const std::string& value);
 
     /// <summary>
-    /// 运营商名称。如果IP归属地未知，该字段返回null。
+    /// **参数解释：** 运营商名称 &gt; 如果IP归属地未知，该字段返回null  **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getIsp() const;
@@ -138,7 +138,7 @@ public:
     void setIsp(const std::string& value);
 
     /// <summary>
-    /// 语言，支持zh(中文)，en(英文)两种，如果不传默认为zh
+    /// **参数解释：** 语言 **约束限制：** 不涉及 **取值范围：** - zh：中文 - en：英文 **默认取值：** zh：中文
     /// </summary>
 
     std::string getLanguage() const;

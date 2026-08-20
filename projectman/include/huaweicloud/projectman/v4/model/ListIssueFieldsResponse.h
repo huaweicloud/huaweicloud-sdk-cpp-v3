@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/projectman/v4/model/FieldVO.h>
 #include <huaweicloud/projectman/v4/model/PageVO.h>
+#include <huaweicloud/projectman/v4/model/FieldLongDateVO.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -53,16 +53,16 @@ public:
     /// 返回数据
     /// </summary>
 
-    std::vector<FieldVO>& getResult();
+    std::vector<FieldLongDateVO>& getResult();
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const std::vector<FieldVO>& value);
+    void setResult(const std::vector<FieldLongDateVO>& value);
 
 
 protected:
     PageVO page_;
     bool pageIsSet_;
-    std::vector<FieldVO> result_;
+    std::vector<FieldLongDateVO> result_;
     bool resultIsSet_;
 
 #ifdef RTTR_FLAG

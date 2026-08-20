@@ -39,7 +39,7 @@ public:
     /// AscendInfo members
 
     /// <summary>
-    /// **参数解释**：NPU数量。 **取值范围**：不涉及。
+    /// **参数解释：** NPU数量。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getNpu() const;
@@ -48,7 +48,7 @@ public:
     void setNpu(int32_t value);
 
     /// <summary>
-    /// **参数解释**：NPU内存。 **取值范围**：不涉及。
+    /// **参数解释：** NPU内存。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getNpuMemory() const;
@@ -57,7 +57,7 @@ public:
     void setNpuMemory(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：NPU类型。 **取值范围**：不涉及。
+    /// **参数解释：** NPU类型。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getType() const;
@@ -66,13 +66,31 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：NPU设备数。 **取值范围**：不涉及。
+    /// **参数解释：** 切分规格中的ai_core。 **取值范围：** 不涉及。
     /// </summary>
 
-    int32_t getChip() const;
-    bool chipIsSet() const;
-    void unsetchip();
-    void setChip(int32_t value);
+    std::string getAiCore() const;
+    bool aiCoreIsSet() const;
+    void unsetaiCore();
+    void setAiCore(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 切分规格中的ai_cpu。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getAiCpu() const;
+    bool aiCpuIsSet() const;
+    void unsetaiCpu();
+    void setAiCpu(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 区分卡类型，如Snt9b3、Snt9b2 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getTypeAlias() const;
+    bool typeAliasIsSet() const;
+    void unsettypeAlias();
+    void setTypeAlias(const std::string& value);
 
 
 protected:
@@ -82,8 +100,12 @@ protected:
     bool npuMemoryIsSet_;
     std::string type_;
     bool typeIsSet_;
-    int32_t chip_;
-    bool chipIsSet_;
+    std::string aiCore_;
+    bool aiCoreIsSet_;
+    std::string aiCpu_;
+    bool aiCpuIsSet_;
+    std::string typeAlias_;
+    bool typeAliasIsSet_;
 
 };
 

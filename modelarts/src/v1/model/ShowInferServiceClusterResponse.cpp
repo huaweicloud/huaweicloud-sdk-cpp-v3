@@ -30,6 +30,10 @@ ShowInferServiceClusterResponse::ShowInferServiceClusterResponse()
     updateAt_ = 0L;
     updateAtIsSet_ = false;
     flavorsIsSet_ = false;
+    poolType_ = "";
+    poolTypeIsSet_ = false;
+    physicalPoolId_ = "";
+    physicalPoolIdIsSet_ = false;
 }
 
 ShowInferServiceClusterResponse::~ShowInferServiceClusterResponse() = default;
@@ -71,6 +75,12 @@ web::json::value ShowInferServiceClusterResponse::toJson() const
     }
     if(flavorsIsSet_) {
         val[utility::conversions::to_string_t("flavors")] = ModelBase::toJson(flavors_);
+    }
+    if(poolTypeIsSet_) {
+        val[utility::conversions::to_string_t("pool_type")] = ModelBase::toJson(poolType_);
+    }
+    if(physicalPoolIdIsSet_) {
+        val[utility::conversions::to_string_t("physical_pool_id")] = ModelBase::toJson(physicalPoolId_);
     }
 
     return val;
@@ -164,9 +174,27 @@ bool ShowInferServiceClusterResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flavors"));
         if(!fieldValue.is_null())
         {
-            std::vector<InferFlavor> refVal;
+            std::vector<NotebookFlavor> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFlavors(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pool_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pool_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPoolType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("physical_pool_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("physical_pool_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPhysicalPoolId(refVal);
         }
     }
     return ok;
@@ -362,12 +390,12 @@ void ShowInferServiceClusterResponse::unsetupdateAt()
     updateAtIsSet_ = false;
 }
 
-std::vector<InferFlavor>& ShowInferServiceClusterResponse::getFlavors()
+std::vector<NotebookFlavor>& ShowInferServiceClusterResponse::getFlavors()
 {
     return flavors_;
 }
 
-void ShowInferServiceClusterResponse::setFlavors(const std::vector<InferFlavor>& value)
+void ShowInferServiceClusterResponse::setFlavors(const std::vector<NotebookFlavor>& value)
 {
     flavors_ = value;
     flavorsIsSet_ = true;
@@ -381,6 +409,48 @@ bool ShowInferServiceClusterResponse::flavorsIsSet() const
 void ShowInferServiceClusterResponse::unsetflavors()
 {
     flavorsIsSet_ = false;
+}
+
+std::string ShowInferServiceClusterResponse::getPoolType() const
+{
+    return poolType_;
+}
+
+void ShowInferServiceClusterResponse::setPoolType(const std::string& value)
+{
+    poolType_ = value;
+    poolTypeIsSet_ = true;
+}
+
+bool ShowInferServiceClusterResponse::poolTypeIsSet() const
+{
+    return poolTypeIsSet_;
+}
+
+void ShowInferServiceClusterResponse::unsetpoolType()
+{
+    poolTypeIsSet_ = false;
+}
+
+std::string ShowInferServiceClusterResponse::getPhysicalPoolId() const
+{
+    return physicalPoolId_;
+}
+
+void ShowInferServiceClusterResponse::setPhysicalPoolId(const std::string& value)
+{
+    physicalPoolId_ = value;
+    physicalPoolIdIsSet_ = true;
+}
+
+bool ShowInferServiceClusterResponse::physicalPoolIdIsSet() const
+{
+    return physicalPoolIdIsSet_;
+}
+
+void ShowInferServiceClusterResponse::unsetphysicalPoolId()
+{
+    physicalPoolIdIsSet_ = false;
 }
 
 }

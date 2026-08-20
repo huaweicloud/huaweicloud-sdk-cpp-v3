@@ -24,6 +24,8 @@ IssueEntity::IssueEntity()
     numberIsSet_ = false;
     category_ = "";
     categoryIsSet_ = false;
+    categoryLayerId_ = "";
+    categoryLayerIdIsSet_ = false;
     parentId_ = "";
     parentIdIsSet_ = false;
     projectId_ = "";
@@ -33,6 +35,7 @@ IssueEntity::IssueEntity()
     state_ = "";
     stateIsSet_ = false;
     assigneeIsSet_ = false;
+    assignedCcIsSet_ = false;
     createdByIsSet_ = false;
     createdTime_ = "";
     createdTimeIsSet_ = false;
@@ -78,14 +81,66 @@ IssueEntity::IssueEntity()
     businessDomainIsSet_ = false;
     planPi_ = "";
     planPiIsSet_ = false;
+    planIteration_ = "";
+    planIterationIsSet_ = false;
     changeStatus_ = "";
     changeStatusIsSet_ = false;
     noBreakReason_ = "";
     noBreakReasonIsSet_ = false;
-    submittedBy_ = "";
     submittedByIsSet_ = false;
     ir2rr_ = "";
     ir2rrIsSet_ = false;
+    featureSet_ = "";
+    featureSetIsSet_ = false;
+    expectedRepairDate_ = "";
+    expectedRepairDateIsSet_ = false;
+    foundPi_ = "";
+    foundPiIsSet_ = false;
+    foundIteration_ = "";
+    foundIterationIsSet_ = false;
+    reasonAnalysis_ = "";
+    reasonAnalysisIsSet_ = false;
+    repairSolution_ = "";
+    repairSolutionIsSet_ = false;
+    testReport_ = "";
+    testReportIsSet_ = false;
+    sysNoRepairReason_ = "";
+    sysNoRepairReasonIsSet_ = false;
+    sysActivationReason_ = "";
+    sysActivationReasonIsSet_ = false;
+    sysReturnReason_ = "";
+    sysReturnReasonIsSet_ = false;
+    testFailuresTimes_ = 0;
+    testFailuresTimesIsSet_ = false;
+    closeType_ = "";
+    closeTypeIsSet_ = false;
+    planOwnerIsSet_ = false;
+    doingOwnerIsSet_ = false;
+    deliveredOwnerIsSet_ = false;
+    checkingOwnerIsSet_ = false;
+    testOwnerIsSet_ = false;
+    developOwnerIsSet_ = false;
+    processingOwnerIsSet_ = false;
+    fixedOwnerIsSet_ = false;
+    researchanddevelopOwnerIsSet_ = false;
+    analyseOwnerIsSet_ = false;
+    planStartDate_ = "";
+    planStartDateIsSet_ = false;
+    expectDeliveryTime_ = "";
+    expectDeliveryTimeIsSet_ = false;
+    planTestEndDate_ = "";
+    planTestEndDateIsSet_ = false;
+    severity_ = "";
+    severityIsSet_ = false;
+    promised_ = "";
+    promisedIsSet_ = false;
+    recipientIsSet_ = false;
+    sysNoDevelopReason_ = "";
+    sysNoDevelopReasonIsSet_ = false;
+    valFeature_ = "";
+    valFeatureIsSet_ = false;
+    functionScene_ = "";
+    functionSceneIsSet_ = false;
 }
 
 IssueEntity::~IssueEntity() = default;
@@ -116,6 +171,9 @@ web::json::value IssueEntity::toJson() const
     if(categoryIsSet_) {
         val[utility::conversions::to_string_t("category")] = ModelBase::toJson(category_);
     }
+    if(categoryLayerIdIsSet_) {
+        val[utility::conversions::to_string_t("category_layer_id")] = ModelBase::toJson(categoryLayerId_);
+    }
     if(parentIdIsSet_) {
         val[utility::conversions::to_string_t("parent_id")] = ModelBase::toJson(parentId_);
     }
@@ -130,6 +188,9 @@ web::json::value IssueEntity::toJson() const
     }
     if(assigneeIsSet_) {
         val[utility::conversions::to_string_t("assignee")] = ModelBase::toJson(assignee_);
+    }
+    if(assignedCcIsSet_) {
+        val[utility::conversions::to_string_t("assigned_cc")] = ModelBase::toJson(assignedCc_);
     }
     if(createdByIsSet_) {
         val[utility::conversions::to_string_t("created_by")] = ModelBase::toJson(createdBy_);
@@ -206,6 +267,9 @@ web::json::value IssueEntity::toJson() const
     if(planPiIsSet_) {
         val[utility::conversions::to_string_t("plan_pi")] = ModelBase::toJson(planPi_);
     }
+    if(planIterationIsSet_) {
+        val[utility::conversions::to_string_t("plan_iteration")] = ModelBase::toJson(planIteration_);
+    }
     if(changeStatusIsSet_) {
         val[utility::conversions::to_string_t("change_status")] = ModelBase::toJson(changeStatus_);
     }
@@ -217,6 +281,99 @@ web::json::value IssueEntity::toJson() const
     }
     if(ir2rrIsSet_) {
         val[utility::conversions::to_string_t("ir2rr")] = ModelBase::toJson(ir2rr_);
+    }
+    if(featureSetIsSet_) {
+        val[utility::conversions::to_string_t("feature_set")] = ModelBase::toJson(featureSet_);
+    }
+    if(expectedRepairDateIsSet_) {
+        val[utility::conversions::to_string_t("expected_repair_date")] = ModelBase::toJson(expectedRepairDate_);
+    }
+    if(foundPiIsSet_) {
+        val[utility::conversions::to_string_t("found_pi")] = ModelBase::toJson(foundPi_);
+    }
+    if(foundIterationIsSet_) {
+        val[utility::conversions::to_string_t("found_iteration")] = ModelBase::toJson(foundIteration_);
+    }
+    if(reasonAnalysisIsSet_) {
+        val[utility::conversions::to_string_t("reason_analysis")] = ModelBase::toJson(reasonAnalysis_);
+    }
+    if(repairSolutionIsSet_) {
+        val[utility::conversions::to_string_t("repair_solution")] = ModelBase::toJson(repairSolution_);
+    }
+    if(testReportIsSet_) {
+        val[utility::conversions::to_string_t("test_report")] = ModelBase::toJson(testReport_);
+    }
+    if(sysNoRepairReasonIsSet_) {
+        val[utility::conversions::to_string_t("sys_no_repair_reason")] = ModelBase::toJson(sysNoRepairReason_);
+    }
+    if(sysActivationReasonIsSet_) {
+        val[utility::conversions::to_string_t("sys_activation_reason")] = ModelBase::toJson(sysActivationReason_);
+    }
+    if(sysReturnReasonIsSet_) {
+        val[utility::conversions::to_string_t("sys_return_reason")] = ModelBase::toJson(sysReturnReason_);
+    }
+    if(testFailuresTimesIsSet_) {
+        val[utility::conversions::to_string_t("test_failures_times")] = ModelBase::toJson(testFailuresTimes_);
+    }
+    if(closeTypeIsSet_) {
+        val[utility::conversions::to_string_t("close_type")] = ModelBase::toJson(closeType_);
+    }
+    if(planOwnerIsSet_) {
+        val[utility::conversions::to_string_t("plan_owner")] = ModelBase::toJson(planOwner_);
+    }
+    if(doingOwnerIsSet_) {
+        val[utility::conversions::to_string_t("doing_owner")] = ModelBase::toJson(doingOwner_);
+    }
+    if(deliveredOwnerIsSet_) {
+        val[utility::conversions::to_string_t("delivered_owner")] = ModelBase::toJson(deliveredOwner_);
+    }
+    if(checkingOwnerIsSet_) {
+        val[utility::conversions::to_string_t("checking_owner")] = ModelBase::toJson(checkingOwner_);
+    }
+    if(testOwnerIsSet_) {
+        val[utility::conversions::to_string_t("test_owner")] = ModelBase::toJson(testOwner_);
+    }
+    if(developOwnerIsSet_) {
+        val[utility::conversions::to_string_t("develop_owner")] = ModelBase::toJson(developOwner_);
+    }
+    if(processingOwnerIsSet_) {
+        val[utility::conversions::to_string_t("processing_owner")] = ModelBase::toJson(processingOwner_);
+    }
+    if(fixedOwnerIsSet_) {
+        val[utility::conversions::to_string_t("fixed_owner")] = ModelBase::toJson(fixedOwner_);
+    }
+    if(researchanddevelopOwnerIsSet_) {
+        val[utility::conversions::to_string_t("researchanddevelop_owner")] = ModelBase::toJson(researchanddevelopOwner_);
+    }
+    if(analyseOwnerIsSet_) {
+        val[utility::conversions::to_string_t("analyse_owner")] = ModelBase::toJson(analyseOwner_);
+    }
+    if(planStartDateIsSet_) {
+        val[utility::conversions::to_string_t("plan_start_date")] = ModelBase::toJson(planStartDate_);
+    }
+    if(expectDeliveryTimeIsSet_) {
+        val[utility::conversions::to_string_t("expect_delivery_time")] = ModelBase::toJson(expectDeliveryTime_);
+    }
+    if(planTestEndDateIsSet_) {
+        val[utility::conversions::to_string_t("plan_test_end_date")] = ModelBase::toJson(planTestEndDate_);
+    }
+    if(severityIsSet_) {
+        val[utility::conversions::to_string_t("severity")] = ModelBase::toJson(severity_);
+    }
+    if(promisedIsSet_) {
+        val[utility::conversions::to_string_t("promised")] = ModelBase::toJson(promised_);
+    }
+    if(recipientIsSet_) {
+        val[utility::conversions::to_string_t("recipient")] = ModelBase::toJson(recipient_);
+    }
+    if(sysNoDevelopReasonIsSet_) {
+        val[utility::conversions::to_string_t("sys_no_develop_reason")] = ModelBase::toJson(sysNoDevelopReason_);
+    }
+    if(valFeatureIsSet_) {
+        val[utility::conversions::to_string_t("val_feature")] = ModelBase::toJson(valFeature_);
+    }
+    if(functionSceneIsSet_) {
+        val[utility::conversions::to_string_t("function_scene")] = ModelBase::toJson(functionScene_);
     }
 
     return val;
@@ -279,6 +436,15 @@ bool IssueEntity::fromJson(const web::json::value& val)
             setCategory(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("category_layer_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("category_layer_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCategoryLayerId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("parent_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("parent_id"));
         if(!fieldValue.is_null())
@@ -322,6 +488,15 @@ bool IssueEntity::fromJson(const web::json::value& val)
             UserEntity refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssignee(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("assigned_cc"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("assigned_cc"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<UserEntity> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAssignedCc(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("created_by"))) {
@@ -549,6 +724,15 @@ bool IssueEntity::fromJson(const web::json::value& val)
             setPlanPi(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("plan_iteration"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plan_iteration"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPlanIteration(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("change_status"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("change_status"));
         if(!fieldValue.is_null())
@@ -571,7 +755,7 @@ bool IssueEntity::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("submitted_by"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<UserEntity> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSubmittedBy(refVal);
         }
@@ -583,6 +767,285 @@ bool IssueEntity::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIr2rr(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("feature_set"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("feature_set"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFeatureSet(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("expected_repair_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expected_repair_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpectedRepairDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("found_pi"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("found_pi"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFoundPi(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("found_iteration"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("found_iteration"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFoundIteration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("reason_analysis"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reason_analysis"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReasonAnalysis(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repair_solution"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repair_solution"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairSolution(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("test_report"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("test_report"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTestReport(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_no_repair_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_no_repair_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysNoRepairReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_activation_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_activation_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysActivationReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_return_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_return_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysReturnReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("test_failures_times"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("test_failures_times"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTestFailuresTimes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("close_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("close_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCloseType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("plan_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plan_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPlanOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("doing_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("doing_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDoingOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delivered_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delivered_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeliveredOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("checking_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("checking_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCheckingOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("test_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("test_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTestOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("develop_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("develop_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDevelopOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("processing_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("processing_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProcessingOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fixed_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fixed_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFixedOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("researchanddevelop_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("researchanddevelop_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResearchanddevelopOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("analyse_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("analyse_owner"));
+        if(!fieldValue.is_null())
+        {
+            UserEntity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAnalyseOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("plan_start_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plan_start_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPlanStartDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("expect_delivery_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expect_delivery_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpectDeliveryTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("plan_test_end_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plan_test_end_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPlanTestEndDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("severity"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("severity"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSeverity(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("promised"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("promised"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPromised(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("recipient"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("recipient"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<UserEntity> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRecipient(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_no_develop_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_no_develop_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysNoDevelopReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("val_feature"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("val_feature"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setValFeature(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("function_scene"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("function_scene"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFunctionScene(refVal);
         }
     }
     return ok;
@@ -715,6 +1178,27 @@ void IssueEntity::unsetcategory()
     categoryIsSet_ = false;
 }
 
+std::string IssueEntity::getCategoryLayerId() const
+{
+    return categoryLayerId_;
+}
+
+void IssueEntity::setCategoryLayerId(const std::string& value)
+{
+    categoryLayerId_ = value;
+    categoryLayerIdIsSet_ = true;
+}
+
+bool IssueEntity::categoryLayerIdIsSet() const
+{
+    return categoryLayerIdIsSet_;
+}
+
+void IssueEntity::unsetcategoryLayerId()
+{
+    categoryLayerIdIsSet_ = false;
+}
+
 std::string IssueEntity::getParentId() const
 {
     return parentId_;
@@ -818,6 +1302,27 @@ bool IssueEntity::assigneeIsSet() const
 void IssueEntity::unsetassignee()
 {
     assigneeIsSet_ = false;
+}
+
+std::vector<UserEntity>& IssueEntity::getAssignedCc()
+{
+    return assignedCc_;
+}
+
+void IssueEntity::setAssignedCc(const std::vector<UserEntity>& value)
+{
+    assignedCc_ = value;
+    assignedCcIsSet_ = true;
+}
+
+bool IssueEntity::assignedCcIsSet() const
+{
+    return assignedCcIsSet_;
+}
+
+void IssueEntity::unsetassignedCc()
+{
+    assignedCcIsSet_ = false;
 }
 
 UserEntity IssueEntity::getCreatedBy() const
@@ -1345,6 +1850,27 @@ void IssueEntity::unsetplanPi()
     planPiIsSet_ = false;
 }
 
+std::string IssueEntity::getPlanIteration() const
+{
+    return planIteration_;
+}
+
+void IssueEntity::setPlanIteration(const std::string& value)
+{
+    planIteration_ = value;
+    planIterationIsSet_ = true;
+}
+
+bool IssueEntity::planIterationIsSet() const
+{
+    return planIterationIsSet_;
+}
+
+void IssueEntity::unsetplanIteration()
+{
+    planIterationIsSet_ = false;
+}
+
 std::string IssueEntity::getChangeStatus() const
 {
     return changeStatus_;
@@ -1387,12 +1913,12 @@ void IssueEntity::unsetnoBreakReason()
     noBreakReasonIsSet_ = false;
 }
 
-std::string IssueEntity::getSubmittedBy() const
+std::vector<UserEntity>& IssueEntity::getSubmittedBy()
 {
     return submittedBy_;
 }
 
-void IssueEntity::setSubmittedBy(const std::string& value)
+void IssueEntity::setSubmittedBy(const std::vector<UserEntity>& value)
 {
     submittedBy_ = value;
     submittedByIsSet_ = true;
@@ -1427,6 +1953,657 @@ bool IssueEntity::ir2rrIsSet() const
 void IssueEntity::unsetir2rr()
 {
     ir2rrIsSet_ = false;
+}
+
+std::string IssueEntity::getFeatureSet() const
+{
+    return featureSet_;
+}
+
+void IssueEntity::setFeatureSet(const std::string& value)
+{
+    featureSet_ = value;
+    featureSetIsSet_ = true;
+}
+
+bool IssueEntity::featureSetIsSet() const
+{
+    return featureSetIsSet_;
+}
+
+void IssueEntity::unsetfeatureSet()
+{
+    featureSetIsSet_ = false;
+}
+
+std::string IssueEntity::getExpectedRepairDate() const
+{
+    return expectedRepairDate_;
+}
+
+void IssueEntity::setExpectedRepairDate(const std::string& value)
+{
+    expectedRepairDate_ = value;
+    expectedRepairDateIsSet_ = true;
+}
+
+bool IssueEntity::expectedRepairDateIsSet() const
+{
+    return expectedRepairDateIsSet_;
+}
+
+void IssueEntity::unsetexpectedRepairDate()
+{
+    expectedRepairDateIsSet_ = false;
+}
+
+std::string IssueEntity::getFoundPi() const
+{
+    return foundPi_;
+}
+
+void IssueEntity::setFoundPi(const std::string& value)
+{
+    foundPi_ = value;
+    foundPiIsSet_ = true;
+}
+
+bool IssueEntity::foundPiIsSet() const
+{
+    return foundPiIsSet_;
+}
+
+void IssueEntity::unsetfoundPi()
+{
+    foundPiIsSet_ = false;
+}
+
+std::string IssueEntity::getFoundIteration() const
+{
+    return foundIteration_;
+}
+
+void IssueEntity::setFoundIteration(const std::string& value)
+{
+    foundIteration_ = value;
+    foundIterationIsSet_ = true;
+}
+
+bool IssueEntity::foundIterationIsSet() const
+{
+    return foundIterationIsSet_;
+}
+
+void IssueEntity::unsetfoundIteration()
+{
+    foundIterationIsSet_ = false;
+}
+
+std::string IssueEntity::getReasonAnalysis() const
+{
+    return reasonAnalysis_;
+}
+
+void IssueEntity::setReasonAnalysis(const std::string& value)
+{
+    reasonAnalysis_ = value;
+    reasonAnalysisIsSet_ = true;
+}
+
+bool IssueEntity::reasonAnalysisIsSet() const
+{
+    return reasonAnalysisIsSet_;
+}
+
+void IssueEntity::unsetreasonAnalysis()
+{
+    reasonAnalysisIsSet_ = false;
+}
+
+std::string IssueEntity::getRepairSolution() const
+{
+    return repairSolution_;
+}
+
+void IssueEntity::setRepairSolution(const std::string& value)
+{
+    repairSolution_ = value;
+    repairSolutionIsSet_ = true;
+}
+
+bool IssueEntity::repairSolutionIsSet() const
+{
+    return repairSolutionIsSet_;
+}
+
+void IssueEntity::unsetrepairSolution()
+{
+    repairSolutionIsSet_ = false;
+}
+
+std::string IssueEntity::getTestReport() const
+{
+    return testReport_;
+}
+
+void IssueEntity::setTestReport(const std::string& value)
+{
+    testReport_ = value;
+    testReportIsSet_ = true;
+}
+
+bool IssueEntity::testReportIsSet() const
+{
+    return testReportIsSet_;
+}
+
+void IssueEntity::unsettestReport()
+{
+    testReportIsSet_ = false;
+}
+
+std::string IssueEntity::getSysNoRepairReason() const
+{
+    return sysNoRepairReason_;
+}
+
+void IssueEntity::setSysNoRepairReason(const std::string& value)
+{
+    sysNoRepairReason_ = value;
+    sysNoRepairReasonIsSet_ = true;
+}
+
+bool IssueEntity::sysNoRepairReasonIsSet() const
+{
+    return sysNoRepairReasonIsSet_;
+}
+
+void IssueEntity::unsetsysNoRepairReason()
+{
+    sysNoRepairReasonIsSet_ = false;
+}
+
+std::string IssueEntity::getSysActivationReason() const
+{
+    return sysActivationReason_;
+}
+
+void IssueEntity::setSysActivationReason(const std::string& value)
+{
+    sysActivationReason_ = value;
+    sysActivationReasonIsSet_ = true;
+}
+
+bool IssueEntity::sysActivationReasonIsSet() const
+{
+    return sysActivationReasonIsSet_;
+}
+
+void IssueEntity::unsetsysActivationReason()
+{
+    sysActivationReasonIsSet_ = false;
+}
+
+std::string IssueEntity::getSysReturnReason() const
+{
+    return sysReturnReason_;
+}
+
+void IssueEntity::setSysReturnReason(const std::string& value)
+{
+    sysReturnReason_ = value;
+    sysReturnReasonIsSet_ = true;
+}
+
+bool IssueEntity::sysReturnReasonIsSet() const
+{
+    return sysReturnReasonIsSet_;
+}
+
+void IssueEntity::unsetsysReturnReason()
+{
+    sysReturnReasonIsSet_ = false;
+}
+
+int32_t IssueEntity::getTestFailuresTimes() const
+{
+    return testFailuresTimes_;
+}
+
+void IssueEntity::setTestFailuresTimes(int32_t value)
+{
+    testFailuresTimes_ = value;
+    testFailuresTimesIsSet_ = true;
+}
+
+bool IssueEntity::testFailuresTimesIsSet() const
+{
+    return testFailuresTimesIsSet_;
+}
+
+void IssueEntity::unsettestFailuresTimes()
+{
+    testFailuresTimesIsSet_ = false;
+}
+
+std::string IssueEntity::getCloseType() const
+{
+    return closeType_;
+}
+
+void IssueEntity::setCloseType(const std::string& value)
+{
+    closeType_ = value;
+    closeTypeIsSet_ = true;
+}
+
+bool IssueEntity::closeTypeIsSet() const
+{
+    return closeTypeIsSet_;
+}
+
+void IssueEntity::unsetcloseType()
+{
+    closeTypeIsSet_ = false;
+}
+
+UserEntity IssueEntity::getPlanOwner() const
+{
+    return planOwner_;
+}
+
+void IssueEntity::setPlanOwner(const UserEntity& value)
+{
+    planOwner_ = value;
+    planOwnerIsSet_ = true;
+}
+
+bool IssueEntity::planOwnerIsSet() const
+{
+    return planOwnerIsSet_;
+}
+
+void IssueEntity::unsetplanOwner()
+{
+    planOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getDoingOwner() const
+{
+    return doingOwner_;
+}
+
+void IssueEntity::setDoingOwner(const UserEntity& value)
+{
+    doingOwner_ = value;
+    doingOwnerIsSet_ = true;
+}
+
+bool IssueEntity::doingOwnerIsSet() const
+{
+    return doingOwnerIsSet_;
+}
+
+void IssueEntity::unsetdoingOwner()
+{
+    doingOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getDeliveredOwner() const
+{
+    return deliveredOwner_;
+}
+
+void IssueEntity::setDeliveredOwner(const UserEntity& value)
+{
+    deliveredOwner_ = value;
+    deliveredOwnerIsSet_ = true;
+}
+
+bool IssueEntity::deliveredOwnerIsSet() const
+{
+    return deliveredOwnerIsSet_;
+}
+
+void IssueEntity::unsetdeliveredOwner()
+{
+    deliveredOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getCheckingOwner() const
+{
+    return checkingOwner_;
+}
+
+void IssueEntity::setCheckingOwner(const UserEntity& value)
+{
+    checkingOwner_ = value;
+    checkingOwnerIsSet_ = true;
+}
+
+bool IssueEntity::checkingOwnerIsSet() const
+{
+    return checkingOwnerIsSet_;
+}
+
+void IssueEntity::unsetcheckingOwner()
+{
+    checkingOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getTestOwner() const
+{
+    return testOwner_;
+}
+
+void IssueEntity::setTestOwner(const UserEntity& value)
+{
+    testOwner_ = value;
+    testOwnerIsSet_ = true;
+}
+
+bool IssueEntity::testOwnerIsSet() const
+{
+    return testOwnerIsSet_;
+}
+
+void IssueEntity::unsettestOwner()
+{
+    testOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getDevelopOwner() const
+{
+    return developOwner_;
+}
+
+void IssueEntity::setDevelopOwner(const UserEntity& value)
+{
+    developOwner_ = value;
+    developOwnerIsSet_ = true;
+}
+
+bool IssueEntity::developOwnerIsSet() const
+{
+    return developOwnerIsSet_;
+}
+
+void IssueEntity::unsetdevelopOwner()
+{
+    developOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getProcessingOwner() const
+{
+    return processingOwner_;
+}
+
+void IssueEntity::setProcessingOwner(const UserEntity& value)
+{
+    processingOwner_ = value;
+    processingOwnerIsSet_ = true;
+}
+
+bool IssueEntity::processingOwnerIsSet() const
+{
+    return processingOwnerIsSet_;
+}
+
+void IssueEntity::unsetprocessingOwner()
+{
+    processingOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getFixedOwner() const
+{
+    return fixedOwner_;
+}
+
+void IssueEntity::setFixedOwner(const UserEntity& value)
+{
+    fixedOwner_ = value;
+    fixedOwnerIsSet_ = true;
+}
+
+bool IssueEntity::fixedOwnerIsSet() const
+{
+    return fixedOwnerIsSet_;
+}
+
+void IssueEntity::unsetfixedOwner()
+{
+    fixedOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getResearchanddevelopOwner() const
+{
+    return researchanddevelopOwner_;
+}
+
+void IssueEntity::setResearchanddevelopOwner(const UserEntity& value)
+{
+    researchanddevelopOwner_ = value;
+    researchanddevelopOwnerIsSet_ = true;
+}
+
+bool IssueEntity::researchanddevelopOwnerIsSet() const
+{
+    return researchanddevelopOwnerIsSet_;
+}
+
+void IssueEntity::unsetresearchanddevelopOwner()
+{
+    researchanddevelopOwnerIsSet_ = false;
+}
+
+UserEntity IssueEntity::getAnalyseOwner() const
+{
+    return analyseOwner_;
+}
+
+void IssueEntity::setAnalyseOwner(const UserEntity& value)
+{
+    analyseOwner_ = value;
+    analyseOwnerIsSet_ = true;
+}
+
+bool IssueEntity::analyseOwnerIsSet() const
+{
+    return analyseOwnerIsSet_;
+}
+
+void IssueEntity::unsetanalyseOwner()
+{
+    analyseOwnerIsSet_ = false;
+}
+
+std::string IssueEntity::getPlanStartDate() const
+{
+    return planStartDate_;
+}
+
+void IssueEntity::setPlanStartDate(const std::string& value)
+{
+    planStartDate_ = value;
+    planStartDateIsSet_ = true;
+}
+
+bool IssueEntity::planStartDateIsSet() const
+{
+    return planStartDateIsSet_;
+}
+
+void IssueEntity::unsetplanStartDate()
+{
+    planStartDateIsSet_ = false;
+}
+
+std::string IssueEntity::getExpectDeliveryTime() const
+{
+    return expectDeliveryTime_;
+}
+
+void IssueEntity::setExpectDeliveryTime(const std::string& value)
+{
+    expectDeliveryTime_ = value;
+    expectDeliveryTimeIsSet_ = true;
+}
+
+bool IssueEntity::expectDeliveryTimeIsSet() const
+{
+    return expectDeliveryTimeIsSet_;
+}
+
+void IssueEntity::unsetexpectDeliveryTime()
+{
+    expectDeliveryTimeIsSet_ = false;
+}
+
+std::string IssueEntity::getPlanTestEndDate() const
+{
+    return planTestEndDate_;
+}
+
+void IssueEntity::setPlanTestEndDate(const std::string& value)
+{
+    planTestEndDate_ = value;
+    planTestEndDateIsSet_ = true;
+}
+
+bool IssueEntity::planTestEndDateIsSet() const
+{
+    return planTestEndDateIsSet_;
+}
+
+void IssueEntity::unsetplanTestEndDate()
+{
+    planTestEndDateIsSet_ = false;
+}
+
+std::string IssueEntity::getSeverity() const
+{
+    return severity_;
+}
+
+void IssueEntity::setSeverity(const std::string& value)
+{
+    severity_ = value;
+    severityIsSet_ = true;
+}
+
+bool IssueEntity::severityIsSet() const
+{
+    return severityIsSet_;
+}
+
+void IssueEntity::unsetseverity()
+{
+    severityIsSet_ = false;
+}
+
+std::string IssueEntity::getPromised() const
+{
+    return promised_;
+}
+
+void IssueEntity::setPromised(const std::string& value)
+{
+    promised_ = value;
+    promisedIsSet_ = true;
+}
+
+bool IssueEntity::promisedIsSet() const
+{
+    return promisedIsSet_;
+}
+
+void IssueEntity::unsetpromised()
+{
+    promisedIsSet_ = false;
+}
+
+std::vector<UserEntity>& IssueEntity::getRecipient()
+{
+    return recipient_;
+}
+
+void IssueEntity::setRecipient(const std::vector<UserEntity>& value)
+{
+    recipient_ = value;
+    recipientIsSet_ = true;
+}
+
+bool IssueEntity::recipientIsSet() const
+{
+    return recipientIsSet_;
+}
+
+void IssueEntity::unsetrecipient()
+{
+    recipientIsSet_ = false;
+}
+
+std::string IssueEntity::getSysNoDevelopReason() const
+{
+    return sysNoDevelopReason_;
+}
+
+void IssueEntity::setSysNoDevelopReason(const std::string& value)
+{
+    sysNoDevelopReason_ = value;
+    sysNoDevelopReasonIsSet_ = true;
+}
+
+bool IssueEntity::sysNoDevelopReasonIsSet() const
+{
+    return sysNoDevelopReasonIsSet_;
+}
+
+void IssueEntity::unsetsysNoDevelopReason()
+{
+    sysNoDevelopReasonIsSet_ = false;
+}
+
+std::string IssueEntity::getValFeature() const
+{
+    return valFeature_;
+}
+
+void IssueEntity::setValFeature(const std::string& value)
+{
+    valFeature_ = value;
+    valFeatureIsSet_ = true;
+}
+
+bool IssueEntity::valFeatureIsSet() const
+{
+    return valFeatureIsSet_;
+}
+
+void IssueEntity::unsetvalFeature()
+{
+    valFeatureIsSet_ = false;
+}
+
+std::string IssueEntity::getFunctionScene() const
+{
+    return functionScene_;
+}
+
+void IssueEntity::setFunctionScene(const std::string& value)
+{
+    functionScene_ = value;
+    functionSceneIsSet_ = true;
+}
+
+bool IssueEntity::functionSceneIsSet() const
+{
+    return functionSceneIsSet_;
+}
+
+void IssueEntity::unsetfunctionScene()
+{
+    functionSceneIsSet_ = false;
 }
 
 }

@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -106,10 +105,10 @@ public:
     /// 任务信息。
     /// </summary>
 
-    Object getTaskContent() const;
+    std::string getTaskContent() const;
     bool taskContentIsSet() const;
     void unsettaskContent();
-    void setTaskContent(const Object& value);
+    void setTaskContent(const std::string& value);
 
 
 protected:
@@ -127,7 +126,7 @@ protected:
     bool instanceIdIsSet_;
     std::string instanceName_;
     bool instanceNameIsSet_;
-    Object taskContent_;
+    std::string taskContent_;
     bool taskContentIsSet_;
 
 };

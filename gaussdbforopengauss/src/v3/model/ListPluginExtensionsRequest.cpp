@@ -16,7 +16,10 @@ ListPluginExtensionsRequest::ListPluginExtensionsRequest()
     xLanguageIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
-    bodyIsSet_ = false;
+    dbName_ = "";
+    dbNameIsSet_ = false;
+    pluginName_ = "";
+    pluginNameIsSet_ = false;
 }
 
 ListPluginExtensionsRequest::~ListPluginExtensionsRequest() = default;
@@ -35,8 +38,11 @@ web::json::value ListPluginExtensionsRequest::toJson() const
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
-    if(bodyIsSet_) {
-        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    if(dbNameIsSet_) {
+        val[utility::conversions::to_string_t("db_name")] = ModelBase::toJson(dbName_);
+    }
+    if(pluginNameIsSet_) {
+        val[utility::conversions::to_string_t("plugin_name")] = ModelBase::toJson(pluginName_);
     }
 
     return val;
@@ -63,13 +69,22 @@ bool ListPluginExtensionsRequest::fromJson(const web::json::value& val)
             setInstanceId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("body"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+    if(val.has_field(utility::conversions::to_string_t("db_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("db_name"));
         if(!fieldValue.is_null())
         {
-            ListPluginExtensionsRequestBody refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBody(refVal);
+            setDbName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("plugin_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plugin_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPluginName(refVal);
         }
     }
     return ok;
@@ -118,25 +133,46 @@ void ListPluginExtensionsRequest::unsetinstanceId()
     instanceIdIsSet_ = false;
 }
 
-ListPluginExtensionsRequestBody ListPluginExtensionsRequest::getBody() const
+std::string ListPluginExtensionsRequest::getDbName() const
 {
-    return body_;
+    return dbName_;
 }
 
-void ListPluginExtensionsRequest::setBody(const ListPluginExtensionsRequestBody& value)
+void ListPluginExtensionsRequest::setDbName(const std::string& value)
 {
-    body_ = value;
-    bodyIsSet_ = true;
+    dbName_ = value;
+    dbNameIsSet_ = true;
 }
 
-bool ListPluginExtensionsRequest::bodyIsSet() const
+bool ListPluginExtensionsRequest::dbNameIsSet() const
 {
-    return bodyIsSet_;
+    return dbNameIsSet_;
 }
 
-void ListPluginExtensionsRequest::unsetbody()
+void ListPluginExtensionsRequest::unsetdbName()
 {
-    bodyIsSet_ = false;
+    dbNameIsSet_ = false;
+}
+
+std::string ListPluginExtensionsRequest::getPluginName() const
+{
+    return pluginName_;
+}
+
+void ListPluginExtensionsRequest::setPluginName(const std::string& value)
+{
+    pluginName_ = value;
+    pluginNameIsSet_ = true;
+}
+
+bool ListPluginExtensionsRequest::pluginNameIsSet() const
+{
+    return pluginNameIsSet_;
+}
+
+void ListPluginExtensionsRequest::unsetpluginName()
+{
+    pluginNameIsSet_ = false;
 }
 
 }

@@ -22,6 +22,8 @@ ConfigurationsResult::ConfigurationsResult()
     datastoreVersionIsSet_ = false;
     datastoreName_ = "";
     datastoreNameIsSet_ = false;
+    nodeType_ = "";
+    nodeTypeIsSet_ = false;
     haMode_ = "";
     haModeIsSet_ = false;
     created_ = "";
@@ -56,6 +58,9 @@ web::json::value ConfigurationsResult::toJson() const
     }
     if(datastoreNameIsSet_) {
         val[utility::conversions::to_string_t("datastore_name")] = ModelBase::toJson(datastoreName_);
+    }
+    if(nodeTypeIsSet_) {
+        val[utility::conversions::to_string_t("node_type")] = ModelBase::toJson(nodeType_);
     }
     if(haModeIsSet_) {
         val[utility::conversions::to_string_t("ha_mode")] = ModelBase::toJson(haMode_);
@@ -119,6 +124,15 @@ bool ConfigurationsResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastoreName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("node_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("node_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodeType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ha_mode"))) {
@@ -264,6 +278,27 @@ bool ConfigurationsResult::datastoreNameIsSet() const
 void ConfigurationsResult::unsetdatastoreName()
 {
     datastoreNameIsSet_ = false;
+}
+
+std::string ConfigurationsResult::getNodeType() const
+{
+    return nodeType_;
+}
+
+void ConfigurationsResult::setNodeType(const std::string& value)
+{
+    nodeType_ = value;
+    nodeTypeIsSet_ = true;
+}
+
+bool ConfigurationsResult::nodeTypeIsSet() const
+{
+    return nodeTypeIsSet_;
+}
+
+void ConfigurationsResult::unsetnodeType()
+{
+    nodeTypeIsSet_ = false;
 }
 
 std::string ConfigurationsResult::getHaMode() const

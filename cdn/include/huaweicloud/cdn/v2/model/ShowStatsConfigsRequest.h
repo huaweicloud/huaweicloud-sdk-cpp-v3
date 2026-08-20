@@ -38,7 +38,7 @@ public:
     /// ShowStatsConfigsRequest members
 
     /// <summary>
-    /// - 配置类型 - 目前支持0：热点统计，1：ces上报
+    /// **参数解释：** 配置类型 **约束限制：** 不涉及 **取值范围：** - 0：热点统计 - 1：ces上报 **默认取值：** 不涉及
     /// </summary>
 
     int32_t getConfigType() const;
@@ -56,7 +56,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 查询偏移量，表示跳过多少个数据开始查询 **约束限制：** 不涉及 **取值范围：** 0-65535 **默认取值：** 0
+    /// **参数解释：** 查询偏移量 &gt; 表示跳过多少个数据开始查询  **约束限制：** 不涉及 **取值范围：** 0-65535 **默认取值：** 0
     /// </summary>
 
     int32_t getOffset() const;

@@ -38,6 +38,8 @@ ListInferServicesRequest::ListInferServicesRequest()
     tagsIsSet_ = false;
     assetId_ = "";
     assetIdIsSet_ = false;
+    nodeIp_ = "";
+    nodeIpIsSet_ = false;
     sortDir_ = "";
     sortDirIsSet_ = false;
     limit_ = 0;
@@ -96,6 +98,9 @@ web::json::value ListInferServicesRequest::toJson() const
     }
     if(assetIdIsSet_) {
         val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
+    }
+    if(nodeIpIsSet_) {
+        val[utility::conversions::to_string_t("node_ip")] = ModelBase::toJson(nodeIp_);
     }
     if(sortDirIsSet_) {
         val[utility::conversions::to_string_t("sort_dir")] = ModelBase::toJson(sortDir_);
@@ -231,6 +236,15 @@ bool ListInferServicesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("node_ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("node_ip"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodeIp(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("sort_dir"))) {
@@ -544,6 +558,27 @@ bool ListInferServicesRequest::assetIdIsSet() const
 void ListInferServicesRequest::unsetassetId()
 {
     assetIdIsSet_ = false;
+}
+
+std::string ListInferServicesRequest::getNodeIp() const
+{
+    return nodeIp_;
+}
+
+void ListInferServicesRequest::setNodeIp(const std::string& value)
+{
+    nodeIp_ = value;
+    nodeIpIsSet_ = true;
+}
+
+bool ListInferServicesRequest::nodeIpIsSet() const
+{
+    return nodeIpIsSet_;
+}
+
+void ListInferServicesRequest::unsetnodeIp()
+{
+    nodeIpIsSet_ = false;
 }
 
 std::string ListInferServicesRequest::getSortDir() const

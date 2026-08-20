@@ -1,3 +1,271 @@
+# 3.1.201 2026-08-20
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainStats**
+    - 响应参数变更
+      - `+ group_by`
+  - **ListCdnDomainTopRefers**
+    - 请求参数变更
+      - `- include_ratio`
+  - **ListExportTasks**
+    - 请求参数变更
+      - `* task_id: required -> optional`
+      - `* task_name: required -> optional`
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListModulesDetail`、`ListEndpointsDetails`、`InvokeEndpointProxy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`BatchShowPipelinesStatus`
+  - **RunPipeline**
+    - 响应参数变更
+      - `+ error_msg`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ChangeDeploymentSolution`、`RestoreNodeRoles`、`ListWdrSnapshotAvailableGroups`、`ShowInstanceQuotas`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃以下接口：
+    - `ShowInstanceSnapshot`
+    - `ListDatastores`
+    - `ResizeInstanceFlavor`
+    - `UpdateInstanceVersions`
+    - `ListRestorableInstances`
+    - `ListRecycleInstances`
+    - `ShowInstanceConfiguration`
+    - `ListConfigurations`
+    - `ShowConfigurationDetail`
+    - `SetBackupPolicy`
+    - `ListGaussDbDatastores`
+    - `ListParamGroupTemplates`
+    - `ShowInstanceParamGroup`
+    - `CreateLimitTask`
+    - `DeleteLimitTask`
+    - `UpdateLimitTask`
+    - `ShowLimitTask`
+    - `ListInstances`
+    - `CreateInstance`
+    - `ListBackups`
+    - `ListFlavors`
+    - `ListInstancesDetails`
+    - `CreateDbInstance`
+    - `ShowUpgradeCandidateVersions`
+    - `ShowBatchUpgradeCandidateVersions`
+    - `ListDbFlavors`
+    - `ListDbBackups`
+    - `ListLimitTask`
+    - `ListInstanceDetails`
+  - **ListScheduleTask**
+    - 响应参数变更
+      - `* tasks.task_content: object -> string`
+  - **ListParameterGroupTemplates**
+    - 响应参数变更
+      - `+ configurations.node_type`
+  - **ShowInstanceParamGroupDetail**
+    - 响应参数变更
+      - `+ id`
+  - **ListPluginExtensions**
+    - 请求参数变更
+      - `+ db_name`
+      - `+ plugin_name`
+  - **ShowFullSql**
+    - 响应参数变更
+      - `* components.details: int64 -> string`
+
+### HuaweiCloud SDK ModelArts
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowTrainingJobFlavors**
+    - 响应参数变更
+      - `+ flavors.support_engines`
+      - `+ flavors.support_groups`
+  - **ShowTrainingJobDetails**
+    - 响应参数变更
+      - `+ status.retention_time`
+      - `+ status.task_ips`
+      - `+ tasks.task_resource.support_engines`
+      - `+ tasks.task_resource.support_groups`
+  - **StopTrainingJob**
+    - 响应参数变更
+      - `+ status.retention_time`
+      - `+ status.task_ips`
+      - `+ tasks.task_resource.support_engines`
+      - `+ tasks.task_resource.support_groups`
+  - **CreateTrainingJob**
+    - 请求参数变更
+      - `+ spec.retention`
+      - `+ spec.reserved_time`
+    - 响应参数变更
+      - `+ status.retention_time`
+      - `+ status.task_ips`
+      - `+ tasks.task_resource.support_engines`
+      - `+ tasks.task_resource.support_groups`
+  - **ListTrainingJobs**
+    - 请求参数变更
+      - `+ tags`
+      - `+ host_ips`
+    - 响应参数变更
+      - `+ items.status.retention_time`
+      - `+ items.status.task_ips`
+      - `+ items.tasks.task_resource.support_engines`
+      - `+ items.tasks.task_resource.support_groups`
+
+### HuaweiCloud SDK ProjectMan
+
+- _接口版本_
+  - V4
+- _新增特性_
+  - 支持以下接口：
+    - `ShowIpdFieldsV2`
+    - `CreateIpdProcessInstance`
+    - `PutIpdChangeReviewFormV2`
+    - `ListIpdLabels`
+    - `CreateIpdLabel`
+    - `UpdateIpdLabel`
+    - `DeleteIpdLabel`
+    - `CreateSprintSnapshots`
+    - `ListIssueSprintSnapshots`
+    - `ShowIpdThirdPartyAssociated`
+    - `UpdateIpdThirdParty`
+    - `AssociateIpdThirdParty`
+    - `DeleteIpdThirdParty`
+    - `AssociateIssues`
+    - `QueryIssueAssociatedItem`
+    - `BatchDeleteSnapshots`
+    - `BatchUpdateSnapshotDeletableFlag`
+    - `BatchCreateIssueSnapitems`
+    - `ListIssueBySnapIds`
+    - `BatchBaselineIpdIssues`
+    - `ListIpdReviewFormsByIssueId`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListIssueFields**
+    - 响应参数变更
+      - `+ result.id`
+      - `+ result.code`
+      - `+ result.created_date`
+      - `+ result.modified_by`
+      - `+ result.modified_date`
+      - `+ result.field_type_id`
+      - `+ result.field_type_name`
+      - `+ result.definition_type`
+      - `+ result.controlled`
+      - `+ result.immutable`
+      - `+ result.no`
+      - `+ result.option`
+      - `+ result.has_same_display_name`
+      - `* result: list<FieldVO> -> list<FieldLongDateVO>`
+  - **UploadIpdImageInIssue**
+    - 响应参数变更
+      - `+ result.category_layer_id`
+      - `+ result.assigned_cc`
+      - `+ result.plan_iteration`
+      - `+ result.feature_set`
+      - `+ result.expected_repair_date`
+      - `+ result.found_pi`
+      - `+ result.found_iteration`
+      - `+ result.reason_analysis`
+      - `+ result.repair_solution`
+      - `+ result.test_report`
+      - `+ result.sys_no_repair_reason`
+      - `+ result.sys_activation_reason`
+      - `+ result.sys_return_reason`
+      - `+ result.test_failures_times`
+      - `+ result.close_type`
+      - `+ result.plan_owner`
+      - `+ result.doing_owner`
+      - `+ result.delivered_owner`
+      - `+ result.checking_owner`
+      - `+ result.test_owner`
+      - `+ result.develop_owner`
+      - `+ result.processing_owner`
+      - `+ result.fixed_owner`
+      - `+ result.researchanddevelop_owner`
+      - `+ result.analyse_owner`
+      - `+ result.plan_start_date`
+      - `+ result.expect_delivery_time`
+      - `+ result.plan_test_end_date`
+      - `+ result.severity`
+      - `+ result.promised`
+      - `+ result.recipient`
+      - `+ result.sys_no_develop_reason`
+      - `+ result.val_feature`
+      - `+ result.function_scene`
+      - `* result.submitted_by: string -> list<UserEntity>`
+      - `+ result.labels.category_types`
+  - **DeleteIpdImageInIssue**
+    - 响应参数变更
+      - `+ result.category_layer_id`
+      - `+ result.assigned_cc`
+      - `+ result.plan_iteration`
+      - `+ result.feature_set`
+      - `+ result.expected_repair_date`
+      - `+ result.found_pi`
+      - `+ result.found_iteration`
+      - `+ result.reason_analysis`
+      - `+ result.repair_solution`
+      - `+ result.test_report`
+      - `+ result.sys_no_repair_reason`
+      - `+ result.sys_activation_reason`
+      - `+ result.sys_return_reason`
+      - `+ result.test_failures_times`
+      - `+ result.close_type`
+      - `+ result.plan_owner`
+      - `+ result.doing_owner`
+      - `+ result.delivered_owner`
+      - `+ result.checking_owner`
+      - `+ result.test_owner`
+      - `+ result.develop_owner`
+      - `+ result.processing_owner`
+      - `+ result.fixed_owner`
+      - `+ result.researchanddevelop_owner`
+      - `+ result.analyse_owner`
+      - `+ result.plan_start_date`
+      - `+ result.expect_delivery_time`
+      - `+ result.plan_test_end_date`
+      - `+ result.severity`
+      - `+ result.promised`
+      - `+ result.recipient`
+      - `+ result.sys_no_develop_reason`
+      - `+ result.val_feature`
+      - `+ result.function_scene`
+      - `* result.submitted_by: string -> list<UserEntity>`
+      - `+ result.labels.category_types`
+  - **ListIpdProjectIssues**
+    - 响应参数变更
+      - `* result.issues.activate_times: int32 -> string`
+      - `* result.issues.regression_failure_number: int32 -> string`
+      - `* result.issues.test_failures_times: int32 -> string`
+      - `+ result.issues.assigned_cc.role_id`
+      - `+ result.issues.assigned_cc.role_name`
+      - `+ result.issues.assigned_cc.role_code`
+      - `+ result.issues.status.linkage_node_fields`
+
 # 3.1.200 2026-08-13
 
 ### HuaweiCloud SDK EPS

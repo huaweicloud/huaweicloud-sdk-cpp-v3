@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/modelarts/v1/model/RunningRecord.h>
+#include <huaweicloud/modelarts/v1/model/TaskIP.h>
 #include <string>
 #include <huaweicloud/modelarts/v1/model/TaskStatuses.h>
 #include <vector>
@@ -113,6 +114,24 @@ public:
     void unsetrunningRecords();
     void setRunningRecords(const std::vector<RunningRecord>& value);
 
+    /// <summary>
+    /// **参数解释**：作业已经保留时长。  **约束限制**：仅当创建训练作业时，设置了&#x60;reserved_time&#x60;时返回。  **取值范围**：不涉及。    **默认取值**：不涉及。
+    /// </summary>
+
+    int32_t getRetentionTime() const;
+    bool retentionTimeIsSet() const;
+    void unsetretentionTime();
+    void setRetentionTime(int32_t value);
+
+    /// <summary>
+    /// **参数解释**：训练作业各 Task 的 IP 信息。 **约束限制**：仅当查询请求携带 &#x60;host_ips&#x60; 时返回；且仅返回与筛选 IP 匹配的记录。 **取值范围**：不涉及。 **默认取值**：不传 &#x60;host_ips&#x60; 时不返回。
+    /// </summary>
+
+    std::vector<TaskIP>& getTaskIps();
+    bool taskIpsIsSet() const;
+    void unsettaskIps();
+    void setTaskIps(const std::vector<TaskIP>& value);
+
 
 protected:
     std::string phase_;
@@ -131,6 +150,10 @@ protected:
     bool taskStatusesIsSet_;
     std::vector<RunningRecord> runningRecords_;
     bool runningRecordsIsSet_;
+    int32_t retentionTime_;
+    bool retentionTimeIsSet_;
+    std::vector<TaskIP> taskIps_;
+    bool taskIpsIsSet_;
 
 };
 

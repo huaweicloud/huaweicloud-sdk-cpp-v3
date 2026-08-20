@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 用户信息详情
 /// </summary>
 class HUAWEICLOUD_PROJECTMAN_V4_EXPORT  UserVO
     : public ModelBase
@@ -39,34 +39,7 @@ public:
     /// UserVO members
 
     /// <summary>
-    /// 用户的租户ID
-    /// </summary>
-
-    std::string getDomainId() const;
-    bool domainIdIsSet() const;
-    void unsetdomainId();
-    void setDomainId(const std::string& value);
-
-    /// <summary>
-    /// 用户的租户名称
-    /// </summary>
-
-    std::string getDomainName() const;
-    bool domainNameIsSet() const;
-    void unsetdomainName();
-    void setDomainName(const std::string& value);
-
-    /// <summary>
-    /// 用户的昵称
-    /// </summary>
-
-    std::string getNickName() const;
-    bool nickNameIsSet() const;
-    void unsetnickName();
-    void setNickName(const std::string& value);
-
-    /// <summary>
-    /// 用户Iam id
+    /// 用户ID。
     /// </summary>
 
     std::string getUserId() const;
@@ -75,7 +48,16 @@ public:
     void setUserId(const std::string& value);
 
     /// <summary>
-    /// 用户名
+    /// 用户短ID。
+    /// </summary>
+
+    int32_t getUserNumId() const;
+    bool userNumIdIsSet() const;
+    void unsetuserNumId();
+    void setUserNumId(int32_t value);
+
+    /// <summary>
+    /// 用户名称。
     /// </summary>
 
     std::string getUserName() const;
@@ -84,28 +66,79 @@ public:
     void setUserName(const std::string& value);
 
     /// <summary>
-    /// 用户索引id
+    /// 用户所属域ID。
     /// </summary>
 
-    int32_t getUserNumId() const;
-    bool userNumIdIsSet() const;
-    void unsetuserNumId();
-    void setUserNumId(int32_t value);
+    std::string getDomainId() const;
+    bool domainIdIsSet() const;
+    void unsetdomainId();
+    void setDomainId(const std::string& value);
+
+    /// <summary>
+    /// 租户名称。
+    /// </summary>
+
+    std::string getDomainName() const;
+    bool domainNameIsSet() const;
+    void unsetdomainName();
+    void setDomainName(const std::string& value);
+
+    /// <summary>
+    /// 用户昵称。
+    /// </summary>
+
+    std::string getNickName() const;
+    bool nickNameIsSet() const;
+    void unsetnickName();
+    void setNickName(const std::string& value);
+
+    /// <summary>
+    /// 角色ID，用户在项目中具有多个角色时用英文逗号分隔。
+    /// </summary>
+
+    std::string getRoleId() const;
+    bool roleIdIsSet() const;
+    void unsetroleId();
+    void setRoleId(const std::string& value);
+
+    /// <summary>
+    /// 用户角色名称，多个角色用英文逗号分隔。
+    /// </summary>
+
+    std::string getRoleName() const;
+    bool roleNameIsSet() const;
+    void unsetroleName();
+    void setRoleName(const std::string& value);
+
+    /// <summary>
+    /// 用户角色编码，多个角色用英文逗号分隔。
+    /// </summary>
+
+    std::string getRoleCode() const;
+    bool roleCodeIsSet() const;
+    void unsetroleCode();
+    void setRoleCode(const std::string& value);
 
 
 protected:
+    std::string userId_;
+    bool userIdIsSet_;
+    int32_t userNumId_;
+    bool userNumIdIsSet_;
+    std::string userName_;
+    bool userNameIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
     std::string domainName_;
     bool domainNameIsSet_;
     std::string nickName_;
     bool nickNameIsSet_;
-    std::string userId_;
-    bool userIdIsSet_;
-    std::string userName_;
-    bool userNameIsSet_;
-    int32_t userNumId_;
-    bool userNumIdIsSet_;
+    std::string roleId_;
+    bool roleIdIsSet_;
+    std::string roleName_;
+    bool roleNameIsSet_;
+    std::string roleCode_;
+    bool roleCodeIsSet_;
 
 };
 

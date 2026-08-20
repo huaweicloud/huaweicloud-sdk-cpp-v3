@@ -76,32 +76,88 @@
 #include <huaweicloud/projectman/v4/model/UpdateUserNickNameRequestV4.h>
 #include <string>
 
+#include <huaweicloud/projectman/v4/model/AssociateIpdIssuesResp.h>
+#include <huaweicloud/projectman/v4/model/AssociateIpdThirdPartyRequest.h>
+#include <huaweicloud/projectman/v4/model/AssociateIpdThirdPartyResponse.h>
+#include <huaweicloud/projectman/v4/model/AssociateIssuesRequest.h>
+#include <huaweicloud/projectman/v4/model/AssociateIssuesResponse.h>
+#include <huaweicloud/projectman/v4/model/BatchBaselineIpdIssuesParam.h>
+#include <huaweicloud/projectman/v4/model/BatchBaselineIpdIssuesRequest.h>
+#include <huaweicloud/projectman/v4/model/BatchBaselineIpdIssuesResponse.h>
+#include <huaweicloud/projectman/v4/model/BatchCreateIssueSnapitemsRequest.h>
+#include <huaweicloud/projectman/v4/model/BatchCreateIssueSnapitemsResponse.h>
+#include <huaweicloud/projectman/v4/model/BatchCreateSnapshotRequest.h>
+#include <huaweicloud/projectman/v4/model/BatchDeleteSnapshotRecordVO.h>
+#include <huaweicloud/projectman/v4/model/BatchDeleteSnapshotsRequest.h>
+#include <huaweicloud/projectman/v4/model/BatchDeleteSnapshotsResponse.h>
+#include <huaweicloud/projectman/v4/model/BatchUpdateSnapshotDeletableFlagRequest.h>
+#include <huaweicloud/projectman/v4/model/BatchUpdateSnapshotDeletableFlagResponse.h>
+#include <huaweicloud/projectman/v4/model/BatchUpdateSnapshotDeletableVO.h>
+#include <huaweicloud/projectman/v4/model/CreateIpdLabelRequest.h>
+#include <huaweicloud/projectman/v4/model/CreateIpdLabelResponse.h>
+#include <huaweicloud/projectman/v4/model/CreateIpdProcessInstanceRequest.h>
+#include <huaweicloud/projectman/v4/model/CreateIpdProcessInstanceResponse.h>
 #include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueAttachmentRequest.h>
 #include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueAttachmentRequestBody.h>
 #include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueAttachmentResponse.h>
+#include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueParam.h>
 #include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueRequest.h>
-#include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueRequestBody.h>
 #include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueResponse.h>
+#include <huaweicloud/projectman/v4/model/CreateProcessInstanceReq.h>
+#include <huaweicloud/projectman/v4/model/CreateSprintSnapshotsRequest.h>
+#include <huaweicloud/projectman/v4/model/CreateSprintSnapshotsResponse.h>
+#include <huaweicloud/projectman/v4/model/CreateThirdPartyAssociateVO.h>
 #include <huaweicloud/projectman/v4/model/DeleteIpdImageInIssueRequest.h>
 #include <huaweicloud/projectman/v4/model/DeleteIpdImageInIssueResponse.h>
+#include <huaweicloud/projectman/v4/model/DeleteIpdLabelRequest.h>
+#include <huaweicloud/projectman/v4/model/DeleteIpdLabelResponse.h>
+#include <huaweicloud/projectman/v4/model/DeleteIpdThirdPartyRequest.h>
+#include <huaweicloud/projectman/v4/model/DeleteIpdThirdPartyResponse.h>
+#include <huaweicloud/projectman/v4/model/DeleteThirdPartyAssociateVO.h>
 #include <huaweicloud/projectman/v4/model/DownloadIpdImageInIssueRequest.h>
 #include <huaweicloud/projectman/v4/model/DownloadIpdImageInIssueResponse.h>
 #include <huaweicloud/core/utils/HttpContent.h>
+#include <huaweicloud/projectman/v4/model/IssueAssociateVO.h>
+#include <huaweicloud/projectman/v4/model/LabelParam.h>
+#include <huaweicloud/projectman/v4/model/ListIpdLabelsRequest.h>
+#include <huaweicloud/projectman/v4/model/ListIpdLabelsResponse.h>
 #include <huaweicloud/projectman/v4/model/ListIpdProjectIssuesRequest.h>
 #include <huaweicloud/projectman/v4/model/ListIpdProjectIssuesResponse.h>
+#include <huaweicloud/projectman/v4/model/ListIpdReviewFormsByIssueIdRequest.h>
+#include <huaweicloud/projectman/v4/model/ListIpdReviewFormsByIssueIdResponse.h>
+#include <huaweicloud/projectman/v4/model/ListIssueBySnapIdsRequest.h>
+#include <huaweicloud/projectman/v4/model/ListIssueBySnapIdsResponse.h>
 #include <huaweicloud/projectman/v4/model/ListIssueFieldsRequest.h>
 #include <huaweicloud/projectman/v4/model/ListIssueFieldsResponse.h>
+#include <huaweicloud/projectman/v4/model/ListIssueSprintSnapshotsRequest.h>
+#include <huaweicloud/projectman/v4/model/ListIssueSprintSnapshotsResponse.h>
 #include <huaweicloud/projectman/v4/model/ListIssueStatuesRequest.h>
 #include <huaweicloud/projectman/v4/model/ListIssueStatuesResponse.h>
+#include <huaweicloud/projectman/v4/model/PutIpdChangeReviewFormV2Request.h>
+#include <huaweicloud/projectman/v4/model/PutIpdChangeReviewFormV2Response.h>
+#include <huaweicloud/projectman/v4/model/QueryIssueAssociatedItemRequest.h>
+#include <huaweicloud/projectman/v4/model/QueryIssueAssociatedItemResponse.h>
+#include <huaweicloud/projectman/v4/model/ReviewUpdateBodyV2.h>
 #include <huaweicloud/projectman/v4/model/SearchIpdIssuesRequestBody.h>
+#include <huaweicloud/projectman/v4/model/ShowIpdFieldsV2Request.h>
+#include <huaweicloud/projectman/v4/model/ShowIpdFieldsV2Response.h>
+#include <huaweicloud/projectman/v4/model/ShowIpdThirdPartyAssociatedRequest.h>
+#include <huaweicloud/projectman/v4/model/ShowIpdThirdPartyAssociatedResponse.h>
 #include <huaweicloud/projectman/v4/model/ShowIssueConfigFieldsRequest.h>
 #include <huaweicloud/projectman/v4/model/ShowIssueConfigFieldsResponse.h>
 #include <huaweicloud/projectman/v4/model/ShowIssueDetailRequest.h>
 #include <huaweicloud/projectman/v4/model/ShowIssueDetailResponse.h>
 #include <huaweicloud/projectman/v4/model/ShowWorkflowTemplateRequest.h>
 #include <huaweicloud/projectman/v4/model/ShowWorkflowTemplateResponse.h>
+#include <huaweicloud/projectman/v4/model/SnapshotIssueRequest.h>
+#include <huaweicloud/projectman/v4/model/SprintSnapshotsCreateParam.h>
 #include <huaweicloud/projectman/v4/model/TransferWorkItemFlowRequest.h>
 #include <huaweicloud/projectman/v4/model/TransferWorkItemFlowResponse.h>
+#include <huaweicloud/projectman/v4/model/UpdateIpdLabelRequest.h>
+#include <huaweicloud/projectman/v4/model/UpdateIpdLabelResponse.h>
+#include <huaweicloud/projectman/v4/model/UpdateIpdThirdPartyRequest.h>
+#include <huaweicloud/projectman/v4/model/UpdateIpdThirdPartyResponse.h>
+#include <huaweicloud/projectman/v4/model/UpdateThirdPartyAssociateVO.h>
 #include <huaweicloud/projectman/v4/model/UploadIpdImageInIssueRequest.h>
 #include <huaweicloud/projectman/v4/model/UploadIpdImageInIssueRequestBody.h>
 #include <huaweicloud/projectman/v4/model/UploadIpdImageInIssueResponse.h>
@@ -499,6 +555,70 @@ public:
         UpdateProjectV4Request &request
     );
 
+    // 新建并关联外部链接
+    //
+    // 需要给IPD项目下的工作项关联外部链接时，可调用此接口，用户可以通过项目ID和工作项ID，传入需要绑定的外部链接的名称和地址，给该工作项关联外部链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AssociateIpdThirdPartyResponse> associateIpdThirdParty(
+        AssociateIpdThirdPartyRequest &request
+    );
+    // 工作项关联/取消关联
+    //
+    // 支持动态关联或取消工作项间的父子层级及其他关联关系，用户可以根据不同的参数明确是关联或者取消，也可以根据参数明确关联的类型，比如关联父、子工作项或者关联其他工作项。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AssociateIssuesResponse> associateIssues(
+        AssociateIssuesRequest &request
+    );
+    // 批量基线工作项
+    //
+    // 需要批量基线IPD项目下的工作项时，可调用此接口。用户可以根据待基线的工作项ID数组对工作项进行批量基线。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchBaselineIpdIssuesResponse> batchBaselineIpdIssues(
+        BatchBaselineIpdIssuesRequest &request
+    );
+    // 批量创建工作项快照
+    //
+    // 为IPD工作项批量创建快照时，可调用此接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreateIssueSnapitemsResponse> batchCreateIssueSnapitems(
+        BatchCreateIssueSnapitemsRequest &request
+    );
+    // 批量删除快照
+    //
+    // 根据传入的快照ID列表批量删除快照。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteSnapshotsResponse> batchDeleteSnapshots(
+        BatchDeleteSnapshotsRequest &request
+    );
+    // 批量更新快照可删除标识
+    //
+    // 批量更新快照的可删除标识状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchUpdateSnapshotDeletableFlagResponse> batchUpdateSnapshotDeletableFlag(
+        BatchUpdateSnapshotDeletableFlagRequest &request
+    );
+    // 创建标签
+    //
+    // 创建标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateIpdLabelResponse> createIpdLabel(
+        CreateIpdLabelRequest &request
+    );
+    // 创建变更评审单（BR/GR）
+    //
+    // 创建变更评审单，适用于基线评审（BR）和通用评审（GR）单
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateIpdProcessInstanceResponse> createIpdProcessInstance(
+        CreateIpdProcessInstanceRequest &request
+    );
     // 创建工作项
     //
     // 创建IPD项目的工作项
@@ -515,6 +635,14 @@ public:
     std::shared_ptr<CreateIpdProjectIssueAttachmentResponse> createIpdProjectIssueAttachment(
         CreateIpdProjectIssueAttachmentRequest &request
     );
+    // 创建计划管理快照
+    //
+    // 为指定的发布/迭代及其中的工作项创建一个快照。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSprintSnapshotsResponse> createSprintSnapshots(
+        CreateSprintSnapshotsRequest &request
+    );
     // 删除工作项描述中的图片
     //
     // 删除工作项描述中的图片
@@ -522,6 +650,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteIpdImageInIssueResponse> deleteIpdImageInIssue(
         DeleteIpdImageInIssueRequest &request
+    );
+    // 删除标签
+    //
+    // 删除标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteIpdLabelResponse> deleteIpdLabel(
+        DeleteIpdLabelRequest &request
+    );
+    // 删除外部链接
+    //
+    // 需要删除IPD项目下的工作项对应的外部链接时，可调用此接口，用户可以通过项目ID和工作项ID确定工作项，传入需要删除的外部链接唯一标识ID，此ID可以通过查询外部链接获得，删除该工作项的某条外部链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteIpdThirdPartyResponse> deleteIpdThirdParty(
+        DeleteIpdThirdPartyRequest &request
     );
     // 下载工作项描述中的图片
     //
@@ -531,6 +675,14 @@ public:
     std::shared_ptr<DownloadIpdImageInIssueResponse> downloadIpdImageInIssue(
         DownloadIpdImageInIssueRequest &request
     );
+    // 查询标签列表
+    //
+    // 查询标签列表，不分页，支持按标题搜索。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIpdLabelsResponse> listIpdLabels(
+        ListIpdLabelsRequest &request
+    );
     // 查询项目工作项列表
     //
     // 查询Ipd项目的工作项列表
@@ -538,6 +690,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListIpdProjectIssuesResponse> listIpdProjectIssues(
         ListIpdProjectIssuesRequest &request
+    );
+    // 根据工作项ID查询关联的评审单列表
+    //
+    // 根据工作项ID查询关联的评审单列表。支持查询的评审单类型包括：变更评审、通用评审、基线评审。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIpdReviewFormsByIssueIdResponse> listIpdReviewFormsByIssueId(
+        ListIpdReviewFormsByIssueIdRequest &request
+    );
+    // 根据快照ID查询工作项信息
+    //
+    // 根据快照ID查询该快照的工作项信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIssueBySnapIdsResponse> listIssueBySnapIds(
+        ListIssueBySnapIdsRequest &request
     );
     // 查询字段模板列表
     //
@@ -547,6 +715,14 @@ public:
     std::shared_ptr<ListIssueFieldsResponse> listIssueFields(
         ListIssueFieldsRequest &request
     );
+    // 查询工作项计划管理快照列表
+    //
+    // 根据工作项ID查询工作项快照列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIssueSprintSnapshotsResponse> listIssueSprintSnapshots(
+        ListIssueSprintSnapshotsRequest &request
+    );
     // 查询工作项状态
     //
     // 根据工作项查询工作项下的状态信息
@@ -554,6 +730,38 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListIssueStatuesResponse> listIssueStatues(
         ListIssueStatuesRequest &request
+    );
+    // 更新IPD变更评审单
+    //
+    // 更新变更评审单，传参方式与portal页面一致。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<PutIpdChangeReviewFormV2Response> putIpdChangeReviewFormV2(
+        PutIpdChangeReviewFormV2Request &request
+    );
+    // 查询工作项关联项
+    //
+    // 根据项目ID和工作项ID，查询该工作项的所有关联关系（包括父子关系、协同上下游、普通关联等），支持分页查询、关系字段过滤和跨项目关联查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<QueryIssueAssociatedItemResponse> queryIssueAssociatedItem(
+        QueryIssueAssociatedItemRequest &request
+    );
+    // 查询工作项实例字段列表
+    //
+    // 查询创建工作项实例时可用的字段配置信息，包含系统字段和项目自定义字段。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIpdFieldsV2Response> showIpdFieldsV2(
+        ShowIpdFieldsV2Request &request
+    );
+    // 查询外部链接
+    //
+    // 需要获取IPD项目下工作项对应的外部链接列表时，可调用此接口，用户可以通过项目ID和工作项ID查询该工作项关联的所有外部链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIpdThirdPartyAssociatedResponse> showIpdThirdPartyAssociated(
+        ShowIpdThirdPartyAssociatedRequest &request
     );
     // 查询工作流字段配置信息
     //
@@ -586,6 +794,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<TransferWorkItemFlowResponse> transferWorkItemFlow(
         TransferWorkItemFlowRequest &request
+    );
+    // 更新标签
+    //
+    // 更新标签，支持更新标题和颜色。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateIpdLabelResponse> updateIpdLabel(
+        UpdateIpdLabelRequest &request
+    );
+    // 修改外部链接
+    //
+    // 需要修改IPD项目下的工作项对应的外部链接时，可调用此接口，用户可以通过项目ID和工作项ID确定工作项，传入需要修改的外部链接唯一标识ID，此ID可以通过查询外部链接接口获得，以及修改后的名称和地址，修改该工作项的某条外部链接的名称和地址。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateIpdThirdPartyResponse> updateIpdThirdParty(
+        UpdateIpdThirdPartyRequest &request
     );
     // 上传图片到工作项描述中
     //

@@ -159,7 +159,7 @@ bool ServiceUpdateRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("runtime_config"));
         if(!fieldValue.is_null())
         {
-            RuntimeConfig refVal;
+            RuntimeConfigUpdateRequest refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRuntimeConfig(refVal);
         }
@@ -186,7 +186,7 @@ bool ServiceUpdateRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_configs"));
         if(!fieldValue.is_null())
         {
-            std::vector<LtsConfig> refVal;
+            std::vector<LtsConfiguration> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogConfigs(refVal);
         }
@@ -366,12 +366,12 @@ void ServiceUpdateRequest::unsetgroupConfigs()
     groupConfigsIsSet_ = false;
 }
 
-RuntimeConfig ServiceUpdateRequest::getRuntimeConfig() const
+RuntimeConfigUpdateRequest ServiceUpdateRequest::getRuntimeConfig() const
 {
     return runtimeConfig_;
 }
 
-void ServiceUpdateRequest::setRuntimeConfig(const RuntimeConfig& value)
+void ServiceUpdateRequest::setRuntimeConfig(const RuntimeConfigUpdateRequest& value)
 {
     runtimeConfig_ = value;
     runtimeConfigIsSet_ = true;
@@ -429,12 +429,12 @@ void ServiceUpdateRequest::unsetltsStrategy()
     ltsStrategyIsSet_ = false;
 }
 
-std::vector<LtsConfig>& ServiceUpdateRequest::getLogConfigs()
+std::vector<LtsConfiguration>& ServiceUpdateRequest::getLogConfigs()
 {
     return logConfigs_;
 }
 
-void ServiceUpdateRequest::setLogConfigs(const std::vector<LtsConfig>& value)
+void ServiceUpdateRequest::setLogConfigs(const std::vector<LtsConfiguration>& value)
 {
     logConfigs_ = value;
     logConfigsIsSet_ = true;

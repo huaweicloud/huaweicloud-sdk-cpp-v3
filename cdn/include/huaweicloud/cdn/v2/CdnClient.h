@@ -279,7 +279,7 @@ public:
     );
     // 创建统计数据异步导出任务
     //
-    // 创建统计数据异步导出任务，目前支持话单数据导出、top url导出
+    // 创建统计数据异步导出任务，目前支持话单数据导出、top url导出。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateExportTaskResponse> createExportTask(
@@ -323,7 +323,7 @@ public:
     );
     // 创建运营报表订阅任务
     //
-    // create subscription task
+    // 创建运营报表订阅任务。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateSubscriptionTaskResponse> createSubscriptionTask(
@@ -373,7 +373,7 @@ public:
     );
     // 删除运营报表订阅任务
     //
-    // delete subscription task
+    // 删除运营报表订阅任务。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteSubscriptionTaskResponse> deleteSubscriptionTask(
@@ -433,7 +433,7 @@ public:
     );
     // CDN数据导出
     //
-    // CDN数据导出
+    // CDN数据导出。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ExportStatsOpenResponse> exportStatsOpen(
@@ -459,7 +459,7 @@ public:
     );
     // 查询域名top ip统计分析数据
     //
-    // - 查询域名top ip统计分析数据
+    // 查询域名top ip统计分析数据，支持查询流量、请求数指标。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCdnDomainTopIpsResponse> listCdnDomainTopIps(
@@ -467,7 +467,7 @@ public:
     );
     // 查询域名top回源URL数据
     //
-    // - 查询域名top 回源URL数据
+    // 查询域名top 回源URL数据，支持查询流量、请求数指标。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCdnDomainTopOriginUrlResponse> listCdnDomainTopOriginUrl(
@@ -475,7 +475,7 @@ public:
     );
     // 查询TOP100 Path访问明细
     //
-    // 查询TOP100 Path访问明细
+    // 查询TOP100 Path访问明细。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCdnDomainTopPathResponse> listCdnDomainTopPath(
@@ -483,12 +483,9 @@ public:
     );
     // 查询统计TOP100 referer数据明细
     //
-    // - 查询TOP100 referer数据。
-    // 
+    // 查询TOP100 referer明细数据，支持查询流量、请求数指标的明细数据。
     // - 支持查询90天内的数据。
-    // 
     // - 查询跨度不能超过31天。
-    // 
     // - 单租户调用频率：2次/s。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
@@ -497,7 +494,7 @@ public:
     );
     // 查询域名top ua统计分析数据
     //
-    // - 统计分析TOP UA统计数据
+    // 统计分析TOP UA统计数据，支持查询流量、请求数指标。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCdnDomainTopUasResponse> listCdnDomainTopUas(
@@ -505,11 +502,10 @@ public:
     );
     // 按域名维度查询每天客户端访问详情统计
     //
-    // - 按域名维度查询每天客户端访问详情统计。
+    // 按域名维度查询每天客户端访问详情统计。
     // - 支持查询90天内的数据。
-    // - ip_num查询跨度只支持1天,uv查询跨度只支持5分钟。
     // - 起始时间和结束时间，左闭右开，需要同时指定。如查询2022-07-12 00:00:00 到 2022-07-13 00:00:00 的数据，表示取 [2022-07-12 00:00:00, 2022-07-13 00:00:00)的统计数据。
-    // - ip_num开始时间、结束时间必须传毫秒级时间戳，必须为凌晨0点整时刻点，如果传的不是凌晨0点整时刻点，返回数据可能与预期不一致。
+    // - uv查询时间粒度只支持5分钟。
     // - uv必须为5分钟整时刻点，如：0分、5分、10分、15分等，如果传的不是5分钟时刻点，返回数据可能与预期不一致
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
@@ -535,7 +531,9 @@ public:
     );
     // 分页查询统计数据异步导出
     //
-    // 分页查询统计数据异步导出任务，按修改时间降序排列，当任务状态为success时，返回参数中会包含download_link
+    // 分页查询统计数据异步导出任务。
+    // - 按修改时间降序排列
+    // - 当任务状态为success时，返回参数中会包含下载链接（download_link）
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListExportTasksResponse> listExportTasks(
@@ -569,7 +567,7 @@ public:
     );
     // 分页查询运营报表订阅任务
     //
-    // query subscription task
+    // 查询运营报表订阅任务。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSubscriptionTasksResponse> listSubscriptionTasks(
@@ -585,15 +583,8 @@ public:
     );
     // 设置用户计费模式
     //
-    // - 设置用户计费模式。
-    // 
-    // - 服务区域仅支持mainland_china（国内）
-    // 
-    // - 计费模式仅支持设置flux（流量），v2及以上客户支持bw（带宽）
-    // 
-    // - 加速类型仅支持base（基础加速）
-    // 
-    // - 单租户调用频率：10次/min。
+    // 设置用户计费模式。
+    // - 单租户调用频率：10次/min
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetChargeModesResponse> setChargeModes(
@@ -601,7 +592,7 @@ public:
     );
     // 设置统计配置
     //
-    // - 设置统计配置。
+    // 设置统计配置
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetStatsConfigResponse> setStatsConfig(
@@ -645,14 +636,7 @@ public:
     );
     // 查询用户计费模式
     //
-    // - 查询用户计费模式。
-    // 
-    // - 服务区域仅支持mainland_china（国内，默认）和outside_mainland_china（海外）
-    // 
-    // - 计费模式状态支持active（已生效），upcoming（待生效）两种状态，默认为active(已生效)
-    // 
-    // - 加速类型仅支持base（基础加速）
-    // 
+    // 查询用户计费模式。
     // - 单租户调用频率：5次/s。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
@@ -661,7 +645,7 @@ public:
     );
     // CDN查询域名国家统计数据明细
     //
-    // CDN查询域名国家统计数据明细
+    // CDN查询域名国家统计数据明细。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDomainCountryStatResponse> showDomainCountryStat(
@@ -685,19 +669,14 @@ public:
     );
     // 按区域运营商查询域名统计数据
     //
+    // 查询域名的汇总统计数据或明细数据。支持域名、国家及地区、省份、运营商分组查询，支持查询域名的带宽、流量、请求数、HTTP状态码等指标。
     // - 支持查询90天内的数据。
-    // 
     // - 支持多指标同时查询，不超过5个。
-    // 
     // - 最多同时指定20个域名。
-    // 
     // - 起始时间和结束时间需要同时指定，左闭右开，毫秒级时间戳，且时间点必须为与查询时间间隔参数匹配的整时刻点。比如查询时间间隔为5分钟时，起始时间和结束时间必须为5分钟整时刻点，如：0分、5分、10分、15分等，如果时间点与时间间隔不匹配，返回数据可能与预期不一致。统一用开始时间表示一个时间段，如：2019-01-24 20:15:00 表示取 [20:15:00, 20:20:00)的统计数据，且左闭右开。
-    // 
-    // - action取值：location_detail,location_summary
-    // 
     // - 流量类指标单位统一为Byte（字节）、带宽类指标单位统一为bit/s（比特/秒）、请求数类和状态码类指标单位统一为次数。用于查询指定域名、指定统计指标的区域运营商明细数据。
-    // 
     // - 单租户调用频率：15次/s。
+    // - QPS(每秒请求数)：当action传location_detail、stat_type传req_num时，可自行根据接口返回值计算QPS(每秒请求数)，计算方法：单个查询粒度内的请求数/查询时间粒度(interval)。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDomainLocationStatsResponse> showDomainLocationStats(
@@ -705,19 +684,14 @@ public:
     );
     // 查询域名统计数据
     //
+    // 查询域名流量、带宽、请求数、HTTP状态码等指标的汇总数据及明细数据。
     // - 支持查询90天内的数据。
-    // 
     // - 支持多指标同时查询，不超过5个。
-    // 
     // - 最多同时指定20个域名。
-    // 
     // - 起始时间和结束时间需要同时指定，左闭右开，毫秒级时间戳，且时间点必须为与查询时间间隔参数匹配的整时刻点。比如查询时间间隔为5分钟时，起始时间和结束时间必须为5分钟整时刻点，如：0分、5分、10分、15分等，如果时间点与时间间隔不匹配，返回数据可能与预期不一致。统一用开始时间表示一个时间段，如：2019-01-24 20:15:00 表示取 [20:15:00, 20:20:00)的统计数据，且左闭右开。
-    // 
-    // - action取值：detail,summary
-    // 
     // - 流量类指标单位统一为Byte（字节）、带宽类指标单位统一为bit/s（比特/秒）、请求数类和状态码类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
-    // 
     // - 单租户调用频率：15次/s。
+    // - QPS(每秒请求数)：当action传detail、stat_type传req_num时，可自行根据接口返回值计算QPS(每秒请求数)，计算方法：单个查询粒度内的请求数/查询时间粒度(interval)。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDomainStatsResponse> showDomainStats(
@@ -757,7 +731,10 @@ public:
     );
     // 日志查询
     //
-    // 查询日志下载链接，支持查询30天内的日志信息。
+    // 查询日志下载链接。
+    // - 支持查询30天内的日志信息
+    // - 单用户每秒请求不超过20次
+    // - API整体请求每秒不超过200，否则会被限流
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowLogsResponse> showLogs(
@@ -773,7 +750,7 @@ public:
     );
     // 查询CDN特殊用户接口
     //
-    // 查询CDN特殊用户接口
+    // 查询CDN特殊用户。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSpecialUserResponse> showSpecialUser(
@@ -781,9 +758,7 @@ public:
     );
     // 查询统计配置
     //
-    // - 配置类型：目前支持，
-    // - 0：热点统计。
-    // - 1：ces上报。
+    // 查询热点统计、CES上报配置。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowStatsConfigsResponse> showStatsConfigs(
@@ -819,18 +794,12 @@ public:
     );
     // 查询TOP100 URL明细
     //
-    // - 查询TOP100 URL明细。
-    // 
+    // 查询TOP100 URL明细数据，支持查询流量、请求数指标的明细数据。
     // - 支持查询90天内的数据。
-    // 
     // - 查询跨度不能超过31天。
-    // 
     // - 起始时间和结束时间，左闭右开，需要同时指定。如查询2021-10-24 00:00:00 到 2021-10-25 00:00:00 的数据，表示取 [2021-10-24 00:00:00, 2021-10-25 00:00:00)的统计数据。
-    // 
     // - 开始时间、结束时间必须传毫秒级时间戳，且必须为凌晨0点整时刻点，如果传的不是凌晨0点整时刻点，返回数据可能与预期不一致。
-    // 
     // - 流量类指标单位统一为Byte（字节）、请求数类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
-    // 
     // - 单租户调用频率：5次/s。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
@@ -912,7 +881,7 @@ public:
     );
     // 修改运营报表订阅任务
     //
-    // modify subscription task
+    // 修改运营报表订阅任务。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSubscriptionTaskResponse> updateSubscriptionTask(

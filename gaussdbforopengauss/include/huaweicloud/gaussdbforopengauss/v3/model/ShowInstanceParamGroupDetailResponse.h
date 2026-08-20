@@ -41,7 +41,16 @@ public:
     /// ShowInstanceParamGroupDetailResponse members
 
     /// <summary>
-    /// 引擎版本。
+    /// **参数解释**: 实例对应参数组ID。 **取值范围**: 不涉及。
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 引擎版本。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getDatastoreVersion() const;
@@ -50,7 +59,7 @@ public:
     void setDatastoreVersion(const std::string& value);
 
     /// <summary>
-    /// 引擎名称。
+    /// **参数解释**: 引擎名称。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getDatastoreName() const;
@@ -59,7 +68,7 @@ public:
     void setDatastoreName(const std::string& value);
 
     /// <summary>
-    /// 创建时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。
+    /// **参数解释**: 创建时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getCreated() const;
@@ -68,7 +77,7 @@ public:
     void setCreated(const std::string& value);
 
     /// <summary>
-    /// 更新时间，格式为\&quot;yyyy-MM-ddHH:mm:ss\&quot;。
+    /// **参数解释**: 更新时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getUpdated() const;
@@ -77,7 +86,7 @@ public:
     void setUpdated(const std::string& value);
 
     /// <summary>
-    /// 参数对象，用户基于默认参数模板自定义的参数配置。
+    /// **参数解释**: 参数对象，用户基于默认参数模板自定义的参数配置，具体请参考ConfigurationParameterResult。
     /// </summary>
 
     std::vector<ConfigurationParameterResult>& getConfigurationParameters();
@@ -87,6 +96,8 @@ public:
 
 
 protected:
+    std::string id_;
+    bool idIsSet_;
     std::string datastoreVersion_;
     bool datastoreVersionIsSet_;
     std::string datastoreName_;

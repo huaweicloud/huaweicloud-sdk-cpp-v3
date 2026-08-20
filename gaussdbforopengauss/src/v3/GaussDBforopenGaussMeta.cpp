@@ -182,6 +182,20 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForChangeDemand2Period() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForChangeDeploymentSolution() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForConfirmRestoredData() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -760,37 +774,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListAvailableFlavors() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListBackups() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
-                  .withJsonTag("instance_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
-                  .withJsonTag("backup_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("BackupType")
-                  .withJsonTag("backup_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("BeginTime")
-                  .withJsonTag("begin_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
-                  .withJsonTag("end_time")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListBackupsDetails() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
@@ -861,22 +844,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListComponentInfos() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("AvailabilityZoneId")
                   .withJsonTag("availability_zone_id")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListConfigurations() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
                   .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -1077,74 +1044,8 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListDatabases() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListDatastores() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListDatastoresDetails() {
     HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListDbBackups() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
-                  .withJsonTag("instance_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
-                  .withJsonTag("backup_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("BackupType")
-                  .withJsonTag("backup_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("BeginTime")
-                  .withJsonTag("begin_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
-                  .withJsonTag("end_time")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListDbFlavors() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Version")
-                  .withJsonTag("version")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SpecCode")
-                  .withJsonTag("spec_code")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("HaMode")
-                  .withJsonTag("ha_mode")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -1279,31 +1180,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListFeatures() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListFlavors() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Version")
-                  .withJsonTag("version")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SpecCode")
-                  .withJsonTag("spec_code")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("HaMode")
-                  .withJsonTag("ha_mode")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListFlavorsDetails() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Version")
@@ -1321,16 +1197,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListFlavorsDetails() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListGaussDbDatastores() {
-    HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -1393,46 +1259,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListHistoryOperations() 
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstanceDetails() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Id")
-                  .withJsonTag("id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Name")
-                  .withJsonTag("name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
-                  .withJsonTag("datastore_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
-                  .withJsonTag("vpc_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SubnetId")
-                  .withJsonTag("subnet_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
-                  .withJsonTag("tags")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
-                  .withJsonTag("charge_mode")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstanceEngineDetail() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -1473,86 +1299,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstanceErrorLogs() 
 
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstanceTags() {
     HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstances() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Id")
-                  .withJsonTag("id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Name")
-                  .withJsonTag("name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
-                  .withJsonTag("datastore_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
-                  .withJsonTag("vpc_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SubnetId")
-                  .withJsonTag("subnet_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
-                  .withJsonTag("tags")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
-                  .withJsonTag("charge_mode")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstancesDetails() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Id")
-                  .withJsonTag("id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Name")
-                  .withJsonTag("name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
-                  .withJsonTag("datastore_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
-                  .withJsonTag("vpc_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SubnetId")
-                  .withJsonTag("subnet_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
-                  .withJsonTag("tags")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
-                  .withJsonTag("charge_mode")
-                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -1620,22 +1366,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListMetricDatas() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListParamGroupTemplates() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListParameterGroupTemplates() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -1654,15 +1384,17 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListParameterGroupTempla
 
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListPluginExtensions() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DbName")
+                  .withJsonTag("db_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PluginName")
+                  .withJsonTag("plugin_name")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
@@ -1732,54 +1464,10 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListRealTimeSessions() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListRecycleInstances() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("InstanceName")
-                  .withJsonTag("instance_name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListRecycleInstancesDetails() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("InstanceName")
                   .withJsonTag("instance_name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListRestorableInstances() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("SourceInstanceId")
-                  .withJsonTag("source_instance_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
-                  .withJsonTag("backup_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("RestoreTime")
-                  .withJsonTag("restore_time")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
@@ -2334,6 +2022,16 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForRestoreInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForRestoreNodeRoles() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForResumePluginExtensions() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2383,20 +2081,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSearchAutoEnlargePolicy(
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSetBackupPolicy() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -2522,31 +2206,7 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowBalanceStatus() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowBatchUpgradeCandidateVersions() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowConfiguration() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowConfigurationDetail() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -2659,16 +2319,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowExpansionParameters(
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceConfiguration() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceDisk() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2704,16 +2354,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceMetricData()
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceParamGroup() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceParamGroupDetail() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2724,17 +2364,8 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceParamGroupDe
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceSnapshot() {
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceQuotas() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
-                  .withJsonTag("instance_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("RestoreTime")
-                  .withJsonTag("restore_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
-                  .withJsonTag("backup_id")
-                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -2915,16 +2546,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowSourceInstanceDetail
 }
 
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowSslCertDownloadLink() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowUpgradeCandidateVersions() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -3226,20 +2847,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForUpdateInstanceName() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForUpdateInstanceVersions() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForUpdateMysqlCompatibility() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -3351,6 +2958,383 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateLimitTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForDeleteLimitTask() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListBackups() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
+                  .withJsonTag("backup_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupType")
+                  .withJsonTag("backup_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BeginTime")
+                  .withJsonTag("begin_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListConfigurations() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListDatastores() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListDbBackups() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
+                  .withJsonTag("backup_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupType")
+                  .withJsonTag("backup_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BeginTime")
+                  .withJsonTag("begin_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListDbFlavors() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Version")
+                  .withJsonTag("version")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SpecCode")
+                  .withJsonTag("spec_code")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("HaMode")
+                  .withJsonTag("ha_mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListFlavors() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Version")
+                  .withJsonTag("version")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SpecCode")
+                  .withJsonTag("spec_code")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("HaMode")
+                  .withJsonTag("ha_mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListGaussDbDatastores() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstanceDetails() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
+                  .withJsonTag("datastore_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
+                  .withJsonTag("vpc_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SubnetId")
+                  .withJsonTag("subnet_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
+                  .withJsonTag("charge_mode")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstances() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
+                  .withJsonTag("datastore_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
+                  .withJsonTag("vpc_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SubnetId")
+                  .withJsonTag("subnet_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
+                  .withJsonTag("charge_mode")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstancesDetails() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
+                  .withJsonTag("datastore_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
+                  .withJsonTag("vpc_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SubnetId")
+                  .withJsonTag("subnet_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
+                  .withJsonTag("charge_mode")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListLimitTask() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskScope")
+                  .withJsonTag("task_scope")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LimitType")
+                  .withJsonTag("limit_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LimitTypeValue")
+                  .withJsonTag("limit_type_value")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskName")
+                  .withJsonTag("task_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SqlModel")
+                  .withJsonTag("sql_model")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RuleName")
+                  .withJsonTag("rule_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListParamGroupTemplates() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListRecycleInstances() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceName")
+                  .withJsonTag("instance_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListRestorableInstances() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceInstanceId")
+                  .withJsonTag("source_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
+                  .withJsonTag("backup_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RestoreTime")
+                  .withJsonTag("restore_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForResizeInstanceFlavor() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -3358,6 +3342,121 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForResizeInstanceFlavor() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSetBackupPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowBatchUpgradeCandidateVersions() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowConfigurationDetail() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceConfiguration() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceParamGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowInstanceSnapshot() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RestoreTime")
+                  .withJsonTag("restore_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
+                  .withJsonTag("backup_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowLimitTask() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowUpgradeCandidateVersions() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForUpdateInstanceVersions() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForUpdateLimitTask() {
+    HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -3484,15 +3583,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForUnbindLtsConfig() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateLimitTask() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateSqlLimitTask() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -3504,11 +3594,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateSqlLimitTask() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForDeleteLimitTask() {
-    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -3609,41 +3694,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListFullSqlSwitches() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListLimitTask() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("TaskScope")
-                  .withJsonTag("task_scope")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("LimitType")
-                  .withJsonTag("limit_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("LimitTypeValue")
-                  .withJsonTag("limit_type_value")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("TaskName")
-                  .withJsonTag("task_name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SqlModel")
-                  .withJsonTag("sql_model")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("RuleName")
-                  .withJsonTag("rule_name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
-                  .withJsonTag("start_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
-                  .withJsonTag("end_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -3789,11 +3839,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowGlobalSlowSqlDetail(
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowLimitTask() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowSqlLimitTask() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("NodeId")
@@ -3833,15 +3878,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForStopFullSql() {
 
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSyncLimitData() {
     HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForUpdateLimitTask() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -3922,6 +3958,22 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCollectWdrSnapshot() {
 
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateWdrSnapshot() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListWdrSnapshotAvailableGroups() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("BeginTime")
+                  .withJsonTag("begin_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

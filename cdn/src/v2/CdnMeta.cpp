@@ -452,9 +452,6 @@ HttpRequestDef CdnMeta::genRequestDefForListCdnDomainTopRefers() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("IncludeRatio")
-                  .withJsonTag("include_ratio")
-                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

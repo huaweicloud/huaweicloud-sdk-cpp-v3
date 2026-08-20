@@ -1,0 +1,76 @@
+
+#ifndef HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ExtensionModuleList_H_
+#define HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ExtensionModuleList_H_
+
+
+#include <huaweicloud/codeartspipeline/v2/CodeArtsPipelineExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/codeartspipeline/v2/model/ExtensionModule.h>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Codeartspipeline {
+namespace V2 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 插件的modules的具体信息集合
+/// </summary>
+class HUAWEICLOUD_CODEARTSPIPELINE_V2_EXPORT  ExtensionModuleList
+    : public ModelBase
+{
+public:
+    ExtensionModuleList();
+    virtual ~ExtensionModuleList();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// ExtensionModuleList members
+
+    /// <summary>
+    /// 模块信息
+    /// </summary>
+
+    std::vector<ExtensionModule>& getData();
+    bool dataIsSet() const;
+    void unsetdata();
+    void setData(const std::vector<ExtensionModule>& value);
+
+    /// <summary>
+    /// modules集合长度
+    /// </summary>
+
+    int32_t getTotal() const;
+    bool totalIsSet() const;
+    void unsettotal();
+    void setTotal(int32_t value);
+
+
+protected:
+    std::vector<ExtensionModule> data_;
+    bool dataIsSet_;
+    int32_t total_;
+    bool totalIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_ExtensionModuleList_H_

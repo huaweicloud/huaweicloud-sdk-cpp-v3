@@ -14,6 +14,7 @@ LabelEntity::LabelEntity()
 {
     id_ = "";
     idIsSet_ = false;
+    categoryTypesIsSet_ = false;
     labelType_ = "";
     labelTypeIsSet_ = false;
     color_ = "";
@@ -34,6 +35,9 @@ web::json::value LabelEntity::toJson() const
 
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
+    if(categoryTypesIsSet_) {
+        val[utility::conversions::to_string_t("category_types")] = ModelBase::toJson(categoryTypes_);
     }
     if(labelTypeIsSet_) {
         val[utility::conversions::to_string_t("label_type")] = ModelBase::toJson(labelType_);
@@ -58,6 +62,15 @@ bool LabelEntity::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("category_types"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("category_types"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCategoryTypes(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("label_type"))) {
@@ -110,6 +123,27 @@ bool LabelEntity::idIsSet() const
 void LabelEntity::unsetid()
 {
     idIsSet_ = false;
+}
+
+std::vector<std::string>& LabelEntity::getCategoryTypes()
+{
+    return categoryTypes_;
+}
+
+void LabelEntity::setCategoryTypes(const std::vector<std::string>& value)
+{
+    categoryTypes_ = value;
+    categoryTypesIsSet_ = true;
+}
+
+bool LabelEntity::categoryTypesIsSet() const
+{
+    return categoryTypesIsSet_;
+}
+
+void LabelEntity::unsetcategoryTypes()
+{
+    categoryTypesIsSet_ = false;
 }
 
 std::string LabelEntity::getLabelType() const

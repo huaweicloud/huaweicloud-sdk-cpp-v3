@@ -26,6 +26,8 @@ JobSearches::JobSearches()
     workspaceIdIsSet_ = false;
     trainType_ = "";
     trainTypeIsSet_ = false;
+    tagsIsSet_ = false;
+    hostIpsIsSet_ = false;
     filtersIsSet_ = false;
 }
 
@@ -59,6 +61,12 @@ web::json::value JobSearches::toJson() const
     }
     if(trainTypeIsSet_) {
         val[utility::conversions::to_string_t("train_type")] = ModelBase::toJson(trainType_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(hostIpsIsSet_) {
+        val[utility::conversions::to_string_t("host_ips")] = ModelBase::toJson(hostIps_);
     }
     if(filtersIsSet_) {
         val[utility::conversions::to_string_t("filters")] = ModelBase::toJson(filters_);
@@ -131,6 +139,24 @@ bool JobSearches::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTrainType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ListTagFilter> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("host_ips"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("host_ips"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHostIps(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("filters"))) {
@@ -291,6 +317,48 @@ bool JobSearches::trainTypeIsSet() const
 void JobSearches::unsettrainType()
 {
     trainTypeIsSet_ = false;
+}
+
+std::vector<ListTagFilter>& JobSearches::getTags()
+{
+    return tags_;
+}
+
+void JobSearches::setTags(const std::vector<ListTagFilter>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool JobSearches::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void JobSearches::unsettags()
+{
+    tagsIsSet_ = false;
+}
+
+std::vector<std::string>& JobSearches::getHostIps()
+{
+    return hostIps_;
+}
+
+void JobSearches::setHostIps(const std::vector<std::string>& value)
+{
+    hostIps_ = value;
+    hostIpsIsSet_ = true;
+}
+
+bool JobSearches::hostIpsIsSet() const
+{
+    return hostIpsIsSet_;
+}
+
+void JobSearches::unsethostIps()
+{
+    hostIpsIsSet_ = false;
 }
 
 std::vector<Filter>& JobSearches::getFilters()

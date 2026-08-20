@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/modelarts/v1/model/Filter.h>
+#include <huaweicloud/modelarts/v1/model/ListTagFilter.h>
 #include <string>
 #include <vector>
 
@@ -104,6 +105,24 @@ public:
     void setTrainType(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：按 TMS 标签筛选训练作业列表。 **约束限制**：   - 最多 10 个标签条件；   - 同一 &#x60;key&#x60; 不可重复；   - 同一 &#x60;key&#x60; 下 &#x60;values&#x60; 不可重复；   - 传入本参数时须同时满足 &#x60;filters&#x60; 中 &#x60;create_time&#x60; 条件：未传则默认最近 31 天，时间跨度不得超过 31 天。 **匹配规则**：   - 同一 &#x60;key&#x60; 下多个 &#x60;values&#x60; 为 **OR**；   - 不同 &#x60;key&#x60; 之间为 **AND**；   - &#x60;values&#x60; 为空或仅含空字符串时，按 **仅匹配该 key**（不限 value）处理。 **取值范围**：不涉及。 **默认取值**：不传则不按标签筛选。
+    /// </summary>
+
+    std::vector<ListTagFilter>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<ListTagFilter>& value);
+
+    /// <summary>
+    /// **参数解释**：按训练实例所在节点宿主机 IP 筛选训练作业列表。 **约束限制**：   - 最多 10 个 IP；   - 每个元素须为合法 IPv4/IPv6 地址；   - 传入本参数时须同时满足 &#x60;filters&#x60; 中 &#x60;create_time&#x60; 条件：未传则默认最近 31 天，时间跨度不得超过 31 天。 **匹配规则**：   - 多个 IP 之间为 **OR**（命中任一 IP 即匹配） **取值范围**：不涉及。 **默认取值**：不传则不按 IP 筛选。
+    /// </summary>
+
+    std::vector<std::string>& getHostIps();
+    bool hostIpsIsSet() const;
+    void unsethostIps();
+    void setHostIps(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 查询作业要过滤的一系列条件。
     /// </summary>
 
@@ -128,6 +147,10 @@ protected:
     bool workspaceIdIsSet_;
     std::string trainType_;
     bool trainTypeIsSet_;
+    std::vector<ListTagFilter> tags_;
+    bool tagsIsSet_;
+    std::vector<std::string> hostIps_;
+    bool hostIpsIsSet_;
     std::vector<Filter> filters_;
     bool filtersIsSet_;
 

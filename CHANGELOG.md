@@ -1,3 +1,271 @@
+# 3.1.201 2026-08-20
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainStats**
+    - changes of response param
+      - `+ group_by`
+  - **ListCdnDomainTopRefers**
+    - changes of request param
+      - `- include_ratio`
+  - **ListExportTasks**
+    - changes of request param
+      - `* task_id: required -> optional`
+      - `* task_name: required -> optional`
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ListModulesDetail`, `ListEndpointsDetails`, `InvokeEndpointProxy`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `BatchShowPipelinesStatus`
+  - **RunPipeline**
+    - changes of response param
+      - `+ error_msg`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ChangeDeploymentSolution`, `RestoreNodeRoles`, `ListWdrSnapshotAvailableGroups`, `ShowInstanceQuotas`
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `ShowInstanceSnapshot`
+    - `ListDatastores`
+    - `ResizeInstanceFlavor`
+    - `UpdateInstanceVersions`
+    - `ListRestorableInstances`
+    - `ListRecycleInstances`
+    - `ShowInstanceConfiguration`
+    - `ListConfigurations`
+    - `ShowConfigurationDetail`
+    - `SetBackupPolicy`
+    - `ListGaussDbDatastores`
+    - `ListParamGroupTemplates`
+    - `ShowInstanceParamGroup`
+    - `CreateLimitTask`
+    - `DeleteLimitTask`
+    - `UpdateLimitTask`
+    - `ShowLimitTask`
+    - `ListInstances`
+    - `CreateInstance`
+    - `ListBackups`
+    - `ListFlavors`
+    - `ListInstancesDetails`
+    - `CreateDbInstance`
+    - `ShowUpgradeCandidateVersions`
+    - `ShowBatchUpgradeCandidateVersions`
+    - `ListDbFlavors`
+    - `ListDbBackups`
+    - `ListLimitTask`
+    - `ListInstanceDetails`
+  - **ListScheduleTask**
+    - changes of response param
+      - `* tasks.task_content: object -> string`
+  - **ListParameterGroupTemplates**
+    - changes of response param
+      - `+ configurations.node_type`
+  - **ShowInstanceParamGroupDetail**
+    - changes of response param
+      - `+ id`
+  - **ListPluginExtensions**
+    - changes of request param
+      - `+ db_name`
+      - `+ plugin_name`
+  - **ShowFullSql**
+    - changes of response param
+      - `* components.details: int64 -> string`
+
+### HuaweiCloud SDK ModelArts
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowTrainingJobFlavors**
+    - changes of response param
+      - `+ flavors.support_engines`
+      - `+ flavors.support_groups`
+  - **ShowTrainingJobDetails**
+    - changes of response param
+      - `+ status.retention_time`
+      - `+ status.task_ips`
+      - `+ tasks.task_resource.support_engines`
+      - `+ tasks.task_resource.support_groups`
+  - **StopTrainingJob**
+    - changes of response param
+      - `+ status.retention_time`
+      - `+ status.task_ips`
+      - `+ tasks.task_resource.support_engines`
+      - `+ tasks.task_resource.support_groups`
+  - **CreateTrainingJob**
+    - changes of request param
+      - `+ spec.retention`
+      - `+ spec.reserved_time`
+    - changes of response param
+      - `+ status.retention_time`
+      - `+ status.task_ips`
+      - `+ tasks.task_resource.support_engines`
+      - `+ tasks.task_resource.support_groups`
+  - **ListTrainingJobs**
+    - changes of request param
+      - `+ tags`
+      - `+ host_ips`
+    - changes of response param
+      - `+ items.status.retention_time`
+      - `+ items.status.task_ips`
+      - `+ items.tasks.task_resource.support_engines`
+      - `+ items.tasks.task_resource.support_groups`
+
+### HuaweiCloud SDK ProjectMan
+
+- _API Version_
+  - V4
+- _Features_
+  - Support the following APIs:
+    - `ShowIpdFieldsV2`
+    - `CreateIpdProcessInstance`
+    - `PutIpdChangeReviewFormV2`
+    - `ListIpdLabels`
+    - `CreateIpdLabel`
+    - `UpdateIpdLabel`
+    - `DeleteIpdLabel`
+    - `CreateSprintSnapshots`
+    - `ListIssueSprintSnapshots`
+    - `ShowIpdThirdPartyAssociated`
+    - `UpdateIpdThirdParty`
+    - `AssociateIpdThirdParty`
+    - `DeleteIpdThirdParty`
+    - `AssociateIssues`
+    - `QueryIssueAssociatedItem`
+    - `BatchDeleteSnapshots`
+    - `BatchUpdateSnapshotDeletableFlag`
+    - `BatchCreateIssueSnapitems`
+    - `ListIssueBySnapIds`
+    - `BatchBaselineIpdIssues`
+    - `ListIpdReviewFormsByIssueId`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListIssueFields**
+    - changes of response param
+      - `+ result.id`
+      - `+ result.code`
+      - `+ result.created_date`
+      - `+ result.modified_by`
+      - `+ result.modified_date`
+      - `+ result.field_type_id`
+      - `+ result.field_type_name`
+      - `+ result.definition_type`
+      - `+ result.controlled`
+      - `+ result.immutable`
+      - `+ result.no`
+      - `+ result.option`
+      - `+ result.has_same_display_name`
+      - `* result: list<FieldVO> -> list<FieldLongDateVO>`
+  - **UploadIpdImageInIssue**
+    - changes of response param
+      - `+ result.category_layer_id`
+      - `+ result.assigned_cc`
+      - `+ result.plan_iteration`
+      - `+ result.feature_set`
+      - `+ result.expected_repair_date`
+      - `+ result.found_pi`
+      - `+ result.found_iteration`
+      - `+ result.reason_analysis`
+      - `+ result.repair_solution`
+      - `+ result.test_report`
+      - `+ result.sys_no_repair_reason`
+      - `+ result.sys_activation_reason`
+      - `+ result.sys_return_reason`
+      - `+ result.test_failures_times`
+      - `+ result.close_type`
+      - `+ result.plan_owner`
+      - `+ result.doing_owner`
+      - `+ result.delivered_owner`
+      - `+ result.checking_owner`
+      - `+ result.test_owner`
+      - `+ result.develop_owner`
+      - `+ result.processing_owner`
+      - `+ result.fixed_owner`
+      - `+ result.researchanddevelop_owner`
+      - `+ result.analyse_owner`
+      - `+ result.plan_start_date`
+      - `+ result.expect_delivery_time`
+      - `+ result.plan_test_end_date`
+      - `+ result.severity`
+      - `+ result.promised`
+      - `+ result.recipient`
+      - `+ result.sys_no_develop_reason`
+      - `+ result.val_feature`
+      - `+ result.function_scene`
+      - `* result.submitted_by: string -> list<UserEntity>`
+      - `+ result.labels.category_types`
+  - **DeleteIpdImageInIssue**
+    - changes of response param
+      - `+ result.category_layer_id`
+      - `+ result.assigned_cc`
+      - `+ result.plan_iteration`
+      - `+ result.feature_set`
+      - `+ result.expected_repair_date`
+      - `+ result.found_pi`
+      - `+ result.found_iteration`
+      - `+ result.reason_analysis`
+      - `+ result.repair_solution`
+      - `+ result.test_report`
+      - `+ result.sys_no_repair_reason`
+      - `+ result.sys_activation_reason`
+      - `+ result.sys_return_reason`
+      - `+ result.test_failures_times`
+      - `+ result.close_type`
+      - `+ result.plan_owner`
+      - `+ result.doing_owner`
+      - `+ result.delivered_owner`
+      - `+ result.checking_owner`
+      - `+ result.test_owner`
+      - `+ result.develop_owner`
+      - `+ result.processing_owner`
+      - `+ result.fixed_owner`
+      - `+ result.researchanddevelop_owner`
+      - `+ result.analyse_owner`
+      - `+ result.plan_start_date`
+      - `+ result.expect_delivery_time`
+      - `+ result.plan_test_end_date`
+      - `+ result.severity`
+      - `+ result.promised`
+      - `+ result.recipient`
+      - `+ result.sys_no_develop_reason`
+      - `+ result.val_feature`
+      - `+ result.function_scene`
+      - `* result.submitted_by: string -> list<UserEntity>`
+      - `+ result.labels.category_types`
+  - **ListIpdProjectIssues**
+    - changes of response param
+      - `* result.issues.activate_times: int32 -> string`
+      - `* result.issues.regression_failure_number: int32 -> string`
+      - `* result.issues.test_failures_times: int32 -> string`
+      - `+ result.issues.assigned_cc.role_id`
+      - `+ result.issues.assigned_cc.role_name`
+      - `+ result.issues.assigned_cc.role_code`
+      - `+ result.issues.status.linkage_node_fields`
+
 # 3.1.200 2026-08-13
 
 ### HuaweiCloud SDK EPS

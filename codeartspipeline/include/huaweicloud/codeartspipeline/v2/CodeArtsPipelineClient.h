@@ -13,8 +13,6 @@
 #include <huaweicloud/codeartspipeline/v2/model/BatchMovePipelineToGroupResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/BatchShowPipelinesLatestStatusRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/BatchShowPipelinesLatestStatusResponse.h>
-#include <huaweicloud/codeartspipeline/v2/model/BatchShowPipelinesStatusRequest.h>
-#include <huaweicloud/codeartspipeline/v2/model/BatchShowPipelinesStatusResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/BusinessTypePluginsQueryDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreateBasicPluginRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreateBasicPluginResponse.h>
@@ -63,6 +61,10 @@
 #include <huaweicloud/codeartspipeline/v2/model/ListBasePluginsNewPostResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListBasePluginsRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListBasePluginsResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListEndpointsDetailsRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListEndpointsDetailsResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListModulesDetailRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListModulesDetailResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListPLuginVersionRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListPLuginVersionResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelineQuery.h>
@@ -98,7 +100,6 @@
 #include <huaweicloud/codeartspipeline/v2/model/LogQuery.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineByTemplateDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineDTO.h>
-#include <huaweicloud/codeartspipeline/v2/model/PipelineExecuteStates.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineGroupBindDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineGroupCreateDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineGroupUpdateDTO.h>
@@ -209,6 +210,10 @@
 #include <string>
 #include <vector>
 
+#include <huaweicloud/codeartspipeline/v2/model/EndpointProxyParam.h>
+#include <huaweicloud/codeartspipeline/v2/model/InvokeEndpointProxyRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/InvokeEndpointProxyResponse.h>
+
 #include <huaweicloud/codeartspipeline/v2/model/ActionsManualRunPipelineDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/ActionsPipelineRunsPollingQueryDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/ActionsPipelineRunsQueryDTO.h>
@@ -274,14 +279,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatus(
         BatchShowPipelinesLatestStatusRequest &request
-    );
-    // 批量获取流水线状态
-    //
-    // 批量获取流水线状态和阶段信息
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<BatchShowPipelinesStatusResponse> batchShowPipelinesStatus(
-        BatchShowPipelinesStatusRequest &request
     );
     // 创建基础插件
     //
@@ -458,6 +455,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListBasePluginsNewPostResponse> listBasePluginsNewPost(
         ListBasePluginsNewPostRequest &request
+    );
+    // 查询扩展点列表
+    //
+    // 查询扩展点列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListEndpointsDetailsResponse> listEndpointsDetails(
+        ListEndpointsDetailsRequest &request
+    );
+    // 查询插件列表
+    //
+    // 查询插件列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListModulesDetailResponse> listModulesDetail(
+        ListModulesDetailRequest &request
     );
     // 查询插件所有版本信息
     //
@@ -898,6 +911,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UploadPublisherIconResponse> uploadPublisherIcon(
         UploadPublisherIconRequest &request
+    );
+
+    // 代理调用外部服务接口
+    //
+    // 代理调用外部服务接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<InvokeEndpointProxyResponse> invokeEndpointProxy(
+        InvokeEndpointProxyRequest &request
     );
 
     // 删除gitcode流水线运行详情

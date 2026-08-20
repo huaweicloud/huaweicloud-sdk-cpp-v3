@@ -42,7 +42,7 @@ public:
     /// ListDomainClientStatsResponse members
 
     /// <summary>
-    /// 区域
+    /// **参数解释：** 服务范围 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外
     /// </summary>
 
     std::string getServiceArea() const;
@@ -51,7 +51,7 @@ public:
     void setServiceArea(const std::string& value);
 
     /// <summary>
-    /// 按域名维每天客户端访问详情统计
+    /// **参数解释：** 按域名维每天客户端访问详情统计 **取值范围：** 不涉及
     /// </summary>
 
     std::vector<std::map<std::string, Object>>& getResult();

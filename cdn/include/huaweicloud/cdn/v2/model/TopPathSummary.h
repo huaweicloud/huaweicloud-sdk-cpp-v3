@@ -39,7 +39,7 @@ public:
     /// TopPathSummary members
 
     /// <summary>
-    /// top100 path访问路径
+    /// **参数解释：** top100 path访问路径 **取值范围：** 不涉及
     /// </summary>
 
     std::string getPath() const;
@@ -48,7 +48,7 @@ public:
     void setPath(const std::string& value);
 
     /// <summary>
-    /// top100path访问次数
+    /// **参数解释：** top100 path访问次数 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getValue() const;

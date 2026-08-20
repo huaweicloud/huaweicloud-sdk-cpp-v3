@@ -40,7 +40,7 @@ public:
     /// ListSubscriptionTasksResponse members
 
     /// <summary>
-    /// 订阅任务总数
+    /// **参数解释：** 订阅任务总数 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getTotal() const;

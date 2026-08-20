@@ -16,7 +16,6 @@ public:
     static HttpRequestDef genRequestDefForAcceptManualReview();
     static HttpRequestDef genRequestDefForBatchMovePipelineToGroup();
     static HttpRequestDef genRequestDefForBatchShowPipelinesLatestStatus();
-    static HttpRequestDef genRequestDefForBatchShowPipelinesStatus();
     static HttpRequestDef genRequestDefForCreateBasicPlugin();
     static HttpRequestDef genRequestDefForCreatePipelineByTemplate();
     static HttpRequestDef genRequestDefForCreatePipelineByTemplateId();
@@ -39,6 +38,8 @@ public:
     static HttpRequestDef genRequestDefForListAvailablePublisher();
     static HttpRequestDef genRequestDefForListBasePlugins();
     static HttpRequestDef genRequestDefForListBasePluginsNewPost();
+    static HttpRequestDef genRequestDefForListEndpointsDetails();
+    static HttpRequestDef genRequestDefForListModulesDetail();
     static HttpRequestDef genRequestDefForListPLuginVersion();
     static HttpRequestDef genRequestDefForListPipelineRuns();
     static HttpRequestDef genRequestDefForListPipelineSimpleInfo();
@@ -94,6 +95,7 @@ public:
     static HttpRequestDef genRequestDefForUploadBasicPlugin();
     static HttpRequestDef genRequestDefForUploadPluginIcon();
     static HttpRequestDef genRequestDefForUploadPublisherIcon();
+    static HttpRequestDef genRequestDefForInvokeEndpointProxy();
     static HttpRequestDef genRequestDefForDeleteActionsRunPipeline();
     static HttpRequestDef genRequestDefForListActionsPipelineRuns();
     static HttpRequestDef genRequestDefForListActionsPipelineRunsByRunIds();

@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueRequestBody.h>
+#include <huaweicloud/projectman/v4/model/CreateIpdProjectIssueParam.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -52,16 +52,16 @@ public:
     /// 
     /// </summary>
 
-    CreateIpdProjectIssueRequestBody getBody() const;
+    CreateIpdProjectIssueParam getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const CreateIpdProjectIssueRequestBody& value);
+    void setBody(const CreateIpdProjectIssueParam& value);
 
 
 protected:
     std::string projectId_;
     bool projectIdIsSet_;
-    CreateIpdProjectIssueRequestBody body_;
+    CreateIpdProjectIssueParam body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

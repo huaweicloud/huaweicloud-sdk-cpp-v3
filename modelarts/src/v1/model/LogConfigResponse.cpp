@@ -22,6 +22,8 @@ LogConfigResponse::LogConfigResponse()
     logStreamIdIsSet_ = false;
     deploymentId_ = "";
     deploymentIdIsSet_ = false;
+    failureReason_ = "";
+    failureReasonIsSet_ = false;
 }
 
 LogConfigResponse::~LogConfigResponse() = default;
@@ -48,6 +50,9 @@ web::json::value LogConfigResponse::toJson() const
     }
     if(deploymentIdIsSet_) {
         val[utility::conversions::to_string_t("deployment_id")] = ModelBase::toJson(deploymentId_);
+    }
+    if(failureReasonIsSet_) {
+        val[utility::conversions::to_string_t("failure_reason")] = ModelBase::toJson(failureReason_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool LogConfigResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDeploymentId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("failure_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("failure_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFailureReason(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool LogConfigResponse::deploymentIdIsSet() const
 void LogConfigResponse::unsetdeploymentId()
 {
     deploymentIdIsSet_ = false;
+}
+
+std::string LogConfigResponse::getFailureReason() const
+{
+    return failureReason_;
+}
+
+void LogConfigResponse::setFailureReason(const std::string& value)
+{
+    failureReason_ = value;
+    failureReasonIsSet_ = true;
+}
+
+bool LogConfigResponse::failureReasonIsSet() const
+{
+    return failureReasonIsSet_;
+}
+
+void LogConfigResponse::unsetfailureReason()
+{
+    failureReasonIsSet_ = false;
 }
 
 }

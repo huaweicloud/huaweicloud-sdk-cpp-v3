@@ -66,7 +66,7 @@ public:
     void setStatType(const std::string& value);
 
     /// <summary>
-    /// 服务区域：mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china，当查询回源类指标时该参数无效。
+    /// **参数解释：** 服务范围 **约束限制：** 当查询回源类指标时，该参数无效 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外 **默认取值：** - mainland_china：中国大陆
     /// </summary>
 
     std::string getServiceArea() const;
@@ -75,7 +75,7 @@ public:
     void setServiceArea(const std::string& value);
 
     /// <summary>
-    /// top域名查询数量,默认为20,最大为500，最小为0
+    /// **参数解释：** top域名查询数量 **约束限制：** 不涉及 **取值范围：** 0-500 **默认取值：** 20
     /// </summary>
 
     int32_t getLimit() const;
@@ -84,7 +84,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\&quot;all\&quot;表示所有项目。注意：当使用子账号调用接口时，该参数必传。
+    /// **参数解释：** 企业项目id &gt; 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id  **约束限制：** - 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目 - 当使用子账号调用接口时，该参数必传 **取值范围：** all表示所有项目 **默认取值：** 不涉及
     /// </summary>
 
     std::string getEnterpriseProjectId() const;

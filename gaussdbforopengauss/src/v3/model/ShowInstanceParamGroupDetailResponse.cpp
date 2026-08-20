@@ -12,6 +12,8 @@ namespace Model {
 
 ShowInstanceParamGroupDetailResponse::ShowInstanceParamGroupDetailResponse()
 {
+    id_ = "";
+    idIsSet_ = false;
     datastoreVersion_ = "";
     datastoreVersionIsSet_ = false;
     datastoreName_ = "";
@@ -33,6 +35,9 @@ web::json::value ShowInstanceParamGroupDetailResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
     if(datastoreVersionIsSet_) {
         val[utility::conversions::to_string_t("datastore_version")] = ModelBase::toJson(datastoreVersion_);
     }
@@ -55,6 +60,15 @@ bool ShowInstanceParamGroupDetailResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("datastore_version"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("datastore_version"));
         if(!fieldValue.is_null())
@@ -103,6 +117,27 @@ bool ShowInstanceParamGroupDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ShowInstanceParamGroupDetailResponse::getId() const
+{
+    return id_;
+}
+
+void ShowInstanceParamGroupDetailResponse::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool ShowInstanceParamGroupDetailResponse::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void ShowInstanceParamGroupDetailResponse::unsetid()
+{
+    idIsSet_ = false;
+}
 
 std::string ShowInstanceParamGroupDetailResponse::getDatastoreVersion() const
 {

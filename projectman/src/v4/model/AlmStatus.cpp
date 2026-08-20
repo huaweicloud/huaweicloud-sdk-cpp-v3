@@ -48,6 +48,8 @@ AlmStatus::AlmStatus()
     modifiedDateIsSet_ = false;
     modifiedBy_ = "";
     modifiedByIsSet_ = false;
+    linkageNodeFields_ = false;
+    linkageNodeFieldsIsSet_ = false;
 }
 
 AlmStatus::~AlmStatus() = default;
@@ -113,6 +115,9 @@ web::json::value AlmStatus::toJson() const
     }
     if(modifiedByIsSet_) {
         val[utility::conversions::to_string_t("modified_by")] = ModelBase::toJson(modifiedBy_);
+    }
+    if(linkageNodeFieldsIsSet_) {
+        val[utility::conversions::to_string_t("linkage_node_fields")] = ModelBase::toJson(linkageNodeFields_);
     }
 
     return val;
@@ -281,6 +286,15 @@ bool AlmStatus::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setModifiedBy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("linkage_node_fields"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("linkage_node_fields"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLinkageNodeFields(refVal);
         }
     }
     return ok;
@@ -663,6 +677,27 @@ bool AlmStatus::modifiedByIsSet() const
 void AlmStatus::unsetmodifiedBy()
 {
     modifiedByIsSet_ = false;
+}
+
+bool AlmStatus::isLinkageNodeFields() const
+{
+    return linkageNodeFields_;
+}
+
+void AlmStatus::setLinkageNodeFields(bool value)
+{
+    linkageNodeFields_ = value;
+    linkageNodeFieldsIsSet_ = true;
+}
+
+bool AlmStatus::linkageNodeFieldsIsSet() const
+{
+    return linkageNodeFieldsIsSet_;
+}
+
+void AlmStatus::unsetlinkageNodeFields()
+{
+    linkageNodeFieldsIsSet_ = false;
 }
 
 }

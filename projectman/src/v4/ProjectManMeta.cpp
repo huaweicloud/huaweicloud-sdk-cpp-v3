@@ -260,6 +260,90 @@ HttpRequestDef ProjectManMeta::genRequestDefForUpdateProjectV4() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ProjectManMeta::genRequestDefForAssociateIpdThirdParty() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForAssociateIssues() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DstDomainId")
+                  .withJsonTag("dst_domain_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForBatchBaselineIpdIssues() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForBatchCreateIssueSnapitems() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForBatchDeleteSnapshots() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForBatchUpdateSnapshotDeletableFlag() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForCreateIpdLabel() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForCreateIpdProcessInstance() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("OperateType")
+                  .withJsonTag("operate_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainId")
+                  .withJsonTag("domain_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ProjectManMeta::genRequestDefForCreateIpdProjectIssue() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -279,6 +363,15 @@ HttpRequestDef ProjectManMeta::genRequestDefForCreateIpdProjectIssueAttachment()
     return reqDefBuilder;
 }
 
+HttpRequestDef ProjectManMeta::genRequestDefForCreateSprintSnapshots() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ProjectManMeta::genRequestDefForDeleteIpdImageInIssue() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("IssueId")
@@ -290,6 +383,20 @@ HttpRequestDef ProjectManMeta::genRequestDefForDeleteIpdImageInIssue() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ProjectManMeta::genRequestDefForDeleteIpdLabel() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForDeleteIpdThirdParty() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ProjectManMeta::genRequestDefForDownloadIpdImageInIssue() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("IssueId")
@@ -297,6 +404,20 @@ HttpRequestDef ProjectManMeta::genRequestDefForDownloadIpdImageInIssue() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("FileName")
                   .withJsonTag("file_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForListIpdLabels() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("LabelType")
+                  .withJsonTag("label_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Title")
+                  .withJsonTag("title")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("CategoryTypes")
+                  .withJsonTag("category_types")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -322,6 +443,20 @@ HttpRequestDef ProjectManMeta::genRequestDefForListIpdProjectIssues() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ProjectManMeta::genRequestDefForListIpdReviewFormsByIssueId() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForListIssueBySnapIds() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ProjectManMeta::genRequestDefForListIssueFields() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Page")
@@ -333,7 +468,60 @@ HttpRequestDef ProjectManMeta::genRequestDefForListIssueFields() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ProjectManMeta::genRequestDefForListIssueSprintSnapshots() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef ProjectManMeta::genRequestDefForListIssueStatues() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForPutIpdChangeReviewFormV2() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForQueryIssueAssociatedItem() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("IssueType")
+                  .withJsonTag("issue_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainId")
+                  .withJsonTag("domain_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetProjectId")
+                  .withJsonTag("target_project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LinkFieldCode")
+                  .withJsonTag("link_field_code")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageNo")
+                  .withJsonTag("page_no")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
+                  .withJsonTag("page_size")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForShowIpdFieldsV2() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("CategoryLayerId")
+                  .withJsonTag("category_layer_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetProjectId")
+                  .withJsonTag("target_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForShowIpdThirdPartyAssociated() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -366,6 +554,24 @@ HttpRequestDef ProjectManMeta::genRequestDefForShowWorkflowTemplate() {
 }
 
 HttpRequestDef ProjectManMeta::genRequestDefForTransferWorkItemFlow() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForUpdateIpdLabel() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ProjectManMeta::genRequestDefForUpdateIpdThirdParty() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

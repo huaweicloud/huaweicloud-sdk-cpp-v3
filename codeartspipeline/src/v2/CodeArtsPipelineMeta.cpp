@@ -37,17 +37,6 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForBatchShowPipelinesLatestSta
     return reqDefBuilder;
 }
 
-HttpRequestDef CodeArtsPipelineMeta::genRequestDefForBatchShowPipelinesStatus() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PipelineIds")
-                  .withJsonTag("pipeline_ids")
-                  .withLocationType(Query_));
-    reqDefBuilder.withResponseField(FieldDef().
-            withName("Body").
-            withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForCreateBasicPlugin() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -248,6 +237,55 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForListBasePluginsNewPost() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForListEndpointsDetails() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectUuid")
+                  .withJsonTag("project_uuid")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RegionName")
+                  .withJsonTag("region_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ModuleId")
+                  .withJsonTag("module_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForListModulesDetail() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectUuid")
+                  .withJsonTag("project_uuid")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RegionName")
+                  .withJsonTag("region_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ProductLine")
+                  .withJsonTag("productLine")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Locations")
+                  .withJsonTag("locations")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -824,6 +862,15 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForUploadPublisherIcon() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForInvokeEndpointProxy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

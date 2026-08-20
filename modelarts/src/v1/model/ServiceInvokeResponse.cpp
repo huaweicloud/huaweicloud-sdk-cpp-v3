@@ -41,6 +41,7 @@ ServiceInvokeResponse::ServiceInvokeResponse()
     requestRetryIntervalMs_ = 0;
     requestRetryIntervalMsIsSet_ = false;
     fuseConfigsIsSet_ = false;
+    elbConnectionIsSet_ = false;
 }
 
 ServiceInvokeResponse::~ServiceInvokeResponse() = default;
@@ -97,6 +98,9 @@ web::json::value ServiceInvokeResponse::toJson() const
     }
     if(fuseConfigsIsSet_) {
         val[utility::conversions::to_string_t("fuse_configs")] = ModelBase::toJson(fuseConfigs_);
+    }
+    if(elbConnectionIsSet_) {
+        val[utility::conversions::to_string_t("elb_connection")] = ModelBase::toJson(elbConnection_);
     }
 
     return val;
@@ -238,6 +242,15 @@ bool ServiceInvokeResponse::fromJson(const web::json::value& val)
             FuseConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFuseConfigs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("elb_connection"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("elb_connection"));
+        if(!fieldValue.is_null())
+        {
+            ElbConnectionResponse refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setElbConnection(refVal);
         }
     }
     return ok;
@@ -557,6 +570,27 @@ bool ServiceInvokeResponse::fuseConfigsIsSet() const
 void ServiceInvokeResponse::unsetfuseConfigs()
 {
     fuseConfigsIsSet_ = false;
+}
+
+ElbConnectionResponse ServiceInvokeResponse::getElbConnection() const
+{
+    return elbConnection_;
+}
+
+void ServiceInvokeResponse::setElbConnection(const ElbConnectionResponse& value)
+{
+    elbConnection_ = value;
+    elbConnectionIsSet_ = true;
+}
+
+bool ServiceInvokeResponse::elbConnectionIsSet() const
+{
+    return elbConnectionIsSet_;
+}
+
+void ServiceInvokeResponse::unsetelbConnection()
+{
+    elbConnectionIsSet_ = false;
 }
 
 }

@@ -29,6 +29,8 @@ ServiceVersionResponse::ServiceVersionResponse()
     ltsStatusIsSet_ = false;
     ltsEventStatus_ = "";
     ltsEventStatusIsSet_ = false;
+    ltsFileStatus_ = "";
+    ltsFileStatusIsSet_ = false;
     logConfigsIsSet_ = false;
     deployTimeoutMinutes_ = 0;
     deployTimeoutMinutesIsSet_ = false;
@@ -73,6 +75,9 @@ web::json::value ServiceVersionResponse::toJson() const
     }
     if(ltsEventStatusIsSet_) {
         val[utility::conversions::to_string_t("lts_event_status")] = ModelBase::toJson(ltsEventStatus_);
+    }
+    if(ltsFileStatusIsSet_) {
+        val[utility::conversions::to_string_t("lts_file_status")] = ModelBase::toJson(ltsFileStatus_);
     }
     if(logConfigsIsSet_) {
         val[utility::conversions::to_string_t("log_configs")] = ModelBase::toJson(logConfigs_);
@@ -175,6 +180,15 @@ bool ServiceVersionResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLtsEventStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("lts_file_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lts_file_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLtsFileStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("log_configs"))) {
@@ -407,6 +421,27 @@ bool ServiceVersionResponse::ltsEventStatusIsSet() const
 void ServiceVersionResponse::unsetltsEventStatus()
 {
     ltsEventStatusIsSet_ = false;
+}
+
+std::string ServiceVersionResponse::getLtsFileStatus() const
+{
+    return ltsFileStatus_;
+}
+
+void ServiceVersionResponse::setLtsFileStatus(const std::string& value)
+{
+    ltsFileStatus_ = value;
+    ltsFileStatusIsSet_ = true;
+}
+
+bool ServiceVersionResponse::ltsFileStatusIsSet() const
+{
+    return ltsFileStatusIsSet_;
+}
+
+void ServiceVersionResponse::unsetltsFileStatus()
+{
+    ltsFileStatusIsSet_ = false;
 }
 
 std::vector<LogConfigResponse>& ServiceVersionResponse::getLogConfigs()

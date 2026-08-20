@@ -11,14 +11,16 @@
 
 #include <huaweicloud/modelarts/v1/model/AutoStop.h>
 #include <huaweicloud/modelarts/v1/model/CustomMetrics.h>
-#include <huaweicloud/modelarts/v1/model/LogExportConfig.h>
 #include <string>
-#include <huaweicloud/modelarts/v1/model/OutputModel.h>
 #include <huaweicloud/modelarts/v1/model/AssetModel.h>
-#include <huaweicloud/modelarts/v1/model/SpecResource.h>
-#include <huaweicloud/modelarts/v1/model/Notification.h>
 #include <huaweicloud/modelarts/v1/model/SchedulePolicy.h>
 #include <vector>
+#include <huaweicloud/modelarts/v1/model/RetentionPolicy.h>
+#include <huaweicloud/modelarts/v1/model/LogExportConfig.h>
+#include <huaweicloud/modelarts/v1/model/OutputModel.h>
+#include <huaweicloud/modelarts/v1/model/SpecResource.h>
+#include <huaweicloud/modelarts/v1/model/Notification.h>
+#include <huaweicloud/modelarts/v1/model/ReserveTime.h>
 #include <huaweicloud/modelarts/v1/model/SpecVolumes.h>
 #include <huaweicloud/modelarts/v1/model/LogExportPath.h>
 
@@ -89,6 +91,15 @@ public:
     /// 
     /// </summary>
 
+    RetentionPolicy getRetention() const;
+    bool retentionIsSet() const;
+    void unsetretention();
+    void setRetention(const RetentionPolicy& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
     SchedulePolicy getSchedulePolicy() const;
     bool schedulePolicyIsSet() const;
     void unsetschedulePolicy();
@@ -148,6 +159,15 @@ public:
     void unsetassetId();
     void setAssetId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ReserveTime getReservedTime() const;
+    bool reservedTimeIsSet() const;
+    void unsetreservedTime();
+    void setReservedTime(const ReserveTime& value);
+
 
 protected:
     SpecResource resource_;
@@ -158,6 +178,8 @@ protected:
     bool logExportPathIsSet_;
     AutoStop autoStop_;
     bool autoStopIsSet_;
+    RetentionPolicy retention_;
+    bool retentionIsSet_;
     SchedulePolicy schedulePolicy_;
     bool schedulePolicyIsSet_;
     LogExportConfig logExportConfig_;
@@ -172,6 +194,8 @@ protected:
     bool assetModelIsSet_;
     std::string assetId_;
     bool assetIdIsSet_;
+    ReserveTime reservedTime_;
+    bool reservedTimeIsSet_;
 
 };
 

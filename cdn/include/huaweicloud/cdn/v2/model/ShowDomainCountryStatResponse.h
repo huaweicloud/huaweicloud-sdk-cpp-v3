@@ -42,7 +42,7 @@ public:
     /// ShowDomainCountryStatResponse members
 
     /// <summary>
-    /// **参数解释：** 规则行为 **约束限制：** 不涉及
+    /// **参数解释：** 查询数据类型 &gt; 汇总或明细数据  **取值范围：** - summary：查询汇总数据 - detail：查询数据详情
     /// </summary>
 
     std::string getAction() const;
@@ -51,7 +51,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+    /// **参数解释：** 查询起始时间 **取值范围：** 相对于UTC 1970-01-01到当前时间相隔的毫秒数
     /// </summary>
 
     int64_t getStartTime() const;
@@ -60,7 +60,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+    /// **参数解释：** 查询结束时间 **取值范围：** 相对于UTC 1970-01-01到当前时间相隔的毫秒数
     /// </summary>
 
     int64_t getEndTime() const;
@@ -69,7 +69,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// 参数类型支持：flux(流量)，req_num(请求总数)。
+    /// **参数解释：** 统计指标类型 **取值范围：** - flux：流量 - req_num：请求总数
     /// </summary>
 
     std::string getStatType() const;
@@ -78,7 +78,7 @@ public:
     void setStatType(const std::string& value);
 
     /// <summary>
-    /// 按指定的分组方式组织的数据
+    /// **参数解释：** 按指定的分组方式组织的数据 **取值范围：** - domain：按域名分组 - country：按国际&amp;地区分组 - province：按省份分组 - isp：按运营商分组 **默认取值：** 默认不分组
     /// </summary>
 
     std::map<std::string, Object>& getResult();

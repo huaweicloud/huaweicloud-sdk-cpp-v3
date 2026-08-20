@@ -1070,6 +1070,353 @@ std::shared_ptr<UpdateProjectV4Response> ProjectManClient::updateProjectV4(Updat
 
     return localVarResult;
 }
+std::shared_ptr<AssociateIpdThirdPartyResponse> ProjectManClient::associateIpdThirdParty(AssociateIpdThirdPartyRequest &request)
+{
+    std::string localVarPath = "/v2/projects/{project_id}/issues/{issue_id}/associate-third-party";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["issue_id"] = parameterToString(request.getIssueId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForAssociateIpdThirdParty());
+
+    std::shared_ptr<AssociateIpdThirdPartyResponse> localVarResult = std::make_shared<AssociateIpdThirdPartyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<AssociateIssuesResponse> ProjectManClient::associateIssues(AssociateIssuesRequest &request)
+{
+    std::string localVarPath = "/v2/ipdprojectservice/projects/{project_id}/issues/{issue_id}/associated-item";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["issue_id"] = parameterToString(request.getIssueId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.dstDomainIdIsSet()) {
+        localVarQueryParams["dst_domain_id"] = parameterToString(request.getDstDomainId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForAssociateIssues());
+
+    std::shared_ptr<AssociateIssuesResponse> localVarResult = std::make_shared<AssociateIssuesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchBaselineIpdIssuesResponse> ProjectManClient::batchBaselineIpdIssues(BatchBaselineIpdIssuesRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/issues/batch-update";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForBatchBaselineIpdIssues());
+
+    std::shared_ptr<BatchBaselineIpdIssuesResponse> localVarResult = std::make_shared<BatchBaselineIpdIssuesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchCreateIssueSnapitemsResponse> ProjectManClient::batchCreateIssueSnapitems(BatchCreateIssueSnapitemsRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/baseline-snapshots/create/batch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForBatchCreateIssueSnapitems());
+
+    std::shared_ptr<BatchCreateIssueSnapitemsResponse> localVarResult = std::make_shared<BatchCreateIssueSnapitemsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchDeleteSnapshotsResponse> ProjectManClient::batchDeleteSnapshots(BatchDeleteSnapshotsRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/baseline-snapshots/batch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForBatchDeleteSnapshots());
+
+    std::shared_ptr<BatchDeleteSnapshotsResponse> localVarResult = std::make_shared<BatchDeleteSnapshotsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchUpdateSnapshotDeletableFlagResponse> ProjectManClient::batchUpdateSnapshotDeletableFlag(BatchUpdateSnapshotDeletableFlagRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/baseline-snapshots/deletions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForBatchUpdateSnapshotDeletableFlag());
+
+    std::shared_ptr<BatchUpdateSnapshotDeletableFlagResponse> localVarResult = std::make_shared<BatchUpdateSnapshotDeletableFlagResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateIpdLabelResponse> ProjectManClient::createIpdLabel(CreateIpdLabelRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForCreateIpdLabel());
+
+    std::shared_ptr<CreateIpdLabelResponse> localVarResult = std::make_shared<CreateIpdLabelResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateIpdProcessInstanceResponse> ProjectManClient::createIpdProcessInstance(CreateIpdProcessInstanceRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/process-instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.operateTypeIsSet()) {
+        localVarQueryParams["operate_type"] = parameterToString(request.getOperateType());
+    }
+    if (request.domainIdIsSet()) {
+        localVarQueryParams["domain_id"] = parameterToString(request.getDomainId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForCreateIpdProcessInstance());
+
+    std::shared_ptr<CreateIpdProcessInstanceResponse> localVarResult = std::make_shared<CreateIpdProcessInstanceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateIpdProjectIssueResponse> ProjectManClient::createIpdProjectIssue(CreateIpdProjectIssueRequest &request)
 {
     std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/issues";
@@ -1143,6 +1490,48 @@ std::shared_ptr<CreateIpdProjectIssueAttachmentResponse> ProjectManClient::creat
 
     return localVarResult;
 }
+std::shared_ptr<CreateSprintSnapshotsResponse> ProjectManClient::createSprintSnapshots(CreateSprintSnapshotsRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/plan/snapshots";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForCreateSprintSnapshots());
+
+    std::shared_ptr<CreateSprintSnapshotsResponse> localVarResult = std::make_shared<CreateSprintSnapshotsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteIpdImageInIssueResponse> ProjectManClient::deleteIpdImageInIssue(DeleteIpdImageInIssueRequest &request)
 {
     std::string localVarPath = "/v2/ipdprojectservice/projects/{project_id}/images";
@@ -1179,6 +1568,80 @@ std::shared_ptr<DeleteIpdImageInIssueResponse> ProjectManClient::deleteIpdImageI
 
     return localVarResult;
 }
+std::shared_ptr<DeleteIpdLabelResponse> ProjectManClient::deleteIpdLabel(DeleteIpdLabelRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/tags/{label_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["label_id"] = parameterToString(request.getLabelId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForDeleteIpdLabel());
+
+    std::shared_ptr<DeleteIpdLabelResponse> localVarResult = std::make_shared<DeleteIpdLabelResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteIpdThirdPartyResponse> ProjectManClient::deleteIpdThirdParty(DeleteIpdThirdPartyRequest &request)
+{
+    std::string localVarPath = "/v2/projects/{project_id}/issues/{issue_id}/associate-third-party";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["issue_id"] = parameterToString(request.getIssueId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForDeleteIpdThirdParty());
+
+    std::shared_ptr<DeleteIpdThirdPartyResponse> localVarResult = std::make_shared<DeleteIpdThirdPartyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DownloadIpdImageInIssueResponse> ProjectManClient::downloadIpdImageInIssue(DownloadIpdImageInIssueRequest &request)
 {
     std::string localVarPath = "/v2/ipdprojectservice/projects/{project_id}/images";
@@ -1209,6 +1672,45 @@ std::shared_ptr<DownloadIpdImageInIssueResponse> ProjectManClient::downloadIpdIm
         localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForDownloadIpdImageInIssue());
 
     std::shared_ptr<DownloadIpdImageInIssueResponse> localVarResult = std::make_shared<DownloadIpdImageInIssueResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListIpdLabelsResponse> ProjectManClient::listIpdLabels(ListIpdLabelsRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.labelTypeIsSet()) {
+        localVarQueryParams["label_type"] = parameterToString(request.getLabelType());
+    }
+    if (request.titleIsSet()) {
+        localVarQueryParams["title"] = parameterToString(request.getTitle());
+    }
+    if (request.categoryTypesIsSet()) {
+        localVarQueryParams["category_types"] = parameterToString(request.getCategoryTypes());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForListIpdLabels());
+
+    std::shared_ptr<ListIpdLabelsResponse> localVarResult = std::make_shared<ListIpdLabelsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1269,6 +1771,79 @@ std::shared_ptr<ListIpdProjectIssuesResponse> ProjectManClient::listIpdProjectIs
 
     return localVarResult;
 }
+std::shared_ptr<ListIpdReviewFormsByIssueIdResponse> ProjectManClient::listIpdReviewFormsByIssueId(ListIpdReviewFormsByIssueIdRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/process-instances/query/{issue_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["issue_id"] = parameterToString(request.getIssueId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForListIpdReviewFormsByIssueId());
+
+    std::shared_ptr<ListIpdReviewFormsByIssueIdResponse> localVarResult = std::make_shared<ListIpdReviewFormsByIssueIdResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListIssueBySnapIdsResponse> ProjectManClient::listIssueBySnapIds(ListIssueBySnapIdsRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/baseline-snapshots/query-with-ids";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForListIssueBySnapIds());
+
+    std::shared_ptr<ListIssueBySnapIdsResponse> localVarResult = std::make_shared<ListIssueBySnapIdsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ListIssueFieldsResponse> ProjectManClient::listIssueFields(ListIssueFieldsRequest &request)
 {
     std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/categories/{category_id}/field/templates";
@@ -1306,6 +1881,37 @@ std::shared_ptr<ListIssueFieldsResponse> ProjectManClient::listIssueFields(ListI
 
     return localVarResult;
 }
+std::shared_ptr<ListIssueSprintSnapshotsResponse> ProjectManClient::listIssueSprintSnapshots(ListIssueSprintSnapshotsRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/plan/snapshots/issues/{issue_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["issue_id"] = parameterToString(request.getIssueId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForListIssueSprintSnapshots());
+
+    std::shared_ptr<ListIssueSprintSnapshotsResponse> localVarResult = std::make_shared<ListIssueSprintSnapshotsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListIssueStatuesResponse> ProjectManClient::listIssueStatues(ListIssueStatuesRequest &request)
 {
     std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/category/{category_id}/statuses";
@@ -1331,6 +1937,166 @@ std::shared_ptr<ListIssueStatuesResponse> ProjectManClient::listIssueStatues(Lis
         localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForListIssueStatues());
 
     std::shared_ptr<ListIssueStatuesResponse> localVarResult = std::make_shared<ListIssueStatuesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<PutIpdChangeReviewFormV2Response> ProjectManClient::putIpdChangeReviewFormV2(PutIpdChangeReviewFormV2Request &request)
+{
+    std::string localVarPath = "/v2/ipdprojectservice/projects/{project_id}/review/{review_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["review_id"] = parameterToString(request.getReviewId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForPutIpdChangeReviewFormV2());
+
+    std::shared_ptr<PutIpdChangeReviewFormV2Response> localVarResult = std::make_shared<PutIpdChangeReviewFormV2Response>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<QueryIssueAssociatedItemResponse> ProjectManClient::queryIssueAssociatedItem(QueryIssueAssociatedItemRequest &request)
+{
+    std::string localVarPath = "/v2/ipdprojectservice/projects/{project_id}/issues/{issue_id}/associated-item";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["issue_id"] = parameterToString(request.getIssueId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.issueTypeIsSet()) {
+        localVarQueryParams["issue_type"] = parameterToString(request.getIssueType());
+    }
+    if (request.domainIdIsSet()) {
+        localVarQueryParams["domain_id"] = parameterToString(request.getDomainId());
+    }
+    if (request.targetProjectIdIsSet()) {
+        localVarQueryParams["target_project_id"] = parameterToString(request.getTargetProjectId());
+    }
+    if (request.linkFieldCodeIsSet()) {
+        localVarQueryParams["link_field_code"] = parameterToString(request.getLinkFieldCode());
+    }
+    if (request.pageNoIsSet()) {
+        localVarQueryParams["page_no"] = parameterToString(request.getPageNo());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForQueryIssueAssociatedItem());
+
+    std::shared_ptr<QueryIssueAssociatedItemResponse> localVarResult = std::make_shared<QueryIssueAssociatedItemResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowIpdFieldsV2Response> ProjectManClient::showIpdFieldsV2(ShowIpdFieldsV2Request &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/categories/{category_id}/fields";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["category_id"] = parameterToString(request.getCategoryId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.categoryLayerIdIsSet()) {
+        localVarQueryParams["category_layer_id"] = parameterToString(request.getCategoryLayerId());
+    }
+    if (request.targetProjectIdIsSet()) {
+        localVarQueryParams["target_project_id"] = parameterToString(request.getTargetProjectId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForShowIpdFieldsV2());
+
+    std::shared_ptr<ShowIpdFieldsV2Response> localVarResult = std::make_shared<ShowIpdFieldsV2Response>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowIpdThirdPartyAssociatedResponse> ProjectManClient::showIpdThirdPartyAssociated(ShowIpdThirdPartyAssociatedRequest &request)
+{
+    std::string localVarPath = "/v2/projects/{project_id}/issues/{issue_id}/associate-third-party";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["issue_id"] = parameterToString(request.getIssueId());
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForShowIpdThirdPartyAssociated());
+
+    std::shared_ptr<ShowIpdThirdPartyAssociatedResponse> localVarResult = std::make_shared<ShowIpdThirdPartyAssociatedResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1470,6 +2236,92 @@ std::shared_ptr<TransferWorkItemFlowResponse> ProjectManClient::transferWorkItem
         localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForTransferWorkItemFlow());
 
     std::shared_ptr<TransferWorkItemFlowResponse> localVarResult = std::make_shared<TransferWorkItemFlowResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateIpdLabelResponse> ProjectManClient::updateIpdLabel(UpdateIpdLabelRequest &request)
+{
+    std::string localVarPath = "/v1/ipdprojectservice/projects/{project_id}/tags/{label_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["label_id"] = parameterToString(request.getLabelId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForUpdateIpdLabel());
+
+    std::shared_ptr<UpdateIpdLabelResponse> localVarResult = std::make_shared<UpdateIpdLabelResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateIpdThirdPartyResponse> ProjectManClient::updateIpdThirdParty(UpdateIpdThirdPartyRequest &request)
+{
+    std::string localVarPath = "/v2/projects/{project_id}/issues/{issue_id}/associate-third-party";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["issue_id"] = parameterToString(request.getIssueId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ProjectManMeta::genRequestDefForUpdateIpdThirdParty());
+
+    std::shared_ptr<UpdateIpdThirdPartyResponse> localVarResult = std::make_shared<UpdateIpdThirdPartyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

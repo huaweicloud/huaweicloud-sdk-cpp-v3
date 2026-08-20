@@ -40,7 +40,7 @@ public:
     /// ListExportTasksResponse members
 
     /// <summary>
-    /// 导出任务总数
+    /// **参数解释：** 导出任务总数 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getTotal() const;

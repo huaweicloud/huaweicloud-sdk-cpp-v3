@@ -42,7 +42,16 @@ public:
     /// ShowDomainStatsResponse members
 
     /// <summary>
-    /// 查询起始时间戳。
+    /// **参数解释：** 数据分组方式 **取值范围：** domain：按域名分组 **默认取值：** 不分组
+    /// </summary>
+
+    std::string getGroupBy() const;
+    bool groupByIsSet() const;
+    void unsetgroupBy();
+    void setGroupBy(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 查询起始时间戳 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getStartTime() const;
@@ -51,7 +60,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// 查询结束时间戳
+    /// **参数解释：** 查询结束时间戳 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getEndTime() const;
@@ -60,7 +69,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// 参数类型支持：flux(流量)，req_num(请求总数)。
+    /// **参数解释：** 统计指标类型 **取值范围：** - flux：流量 - req_num：请求总数
     /// </summary>
 
     std::string getStatType() const;
@@ -69,7 +78,7 @@ public:
     void setStatType(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 规则行为 **约束限制：** 不涉及
+    /// **参数解释：** 查询数据类型 **取值范围：** - summary：汇总数据 - detail：明细数据
     /// </summary>
 
     std::string getAction() const;
@@ -78,7 +87,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 查询时间间隔，单位：秒
+    /// **参数解释：** 查询时间粒度 **取值范围：** - 300：采样时间间隔为5分钟，单位：秒 - 3600：采样时间间隔为1小时，单位：秒 - 86400：采样时间间隔为1天，单位：秒 **默认取值：** 默认取对应时间跨度的最小间隔 &gt; 时间跨度小于等于7天，最小时间间隔为300；时间跨度大于7天，最小时间间隔为3600
     /// </summary>
 
     int64_t getInterval() const;
@@ -87,7 +96,7 @@ public:
     void setInterval(int64_t value);
 
     /// <summary>
-    /// 按指定的分组方式组织的数据
+    /// **参数解释：** 按指定的分组方式组织的数据 **取值范围：** 不涉及
     /// </summary>
 
     std::map<std::string, Object>& getResult();
@@ -97,6 +106,8 @@ public:
 
 
 protected:
+    std::string groupBy_;
+    bool groupByIsSet_;
     int64_t startTime_;
     bool startTimeIsSet_;
     int64_t endTime_;

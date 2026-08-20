@@ -53,7 +53,7 @@ bool CreateIpdProjectIssueRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            CreateIpdProjectIssueRequestBody refVal;
+            CreateIpdProjectIssueParam refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -83,12 +83,12 @@ void CreateIpdProjectIssueRequest::unsetprojectId()
     projectIdIsSet_ = false;
 }
 
-CreateIpdProjectIssueRequestBody CreateIpdProjectIssueRequest::getBody() const
+CreateIpdProjectIssueParam CreateIpdProjectIssueRequest::getBody() const
 {
     return body_;
 }
 
-void CreateIpdProjectIssueRequest::setBody(const CreateIpdProjectIssueRequestBody& value)
+void CreateIpdProjectIssueRequest::setBody(const CreateIpdProjectIssueParam& value)
 {
     body_ = value;
     bodyIsSet_ = true;

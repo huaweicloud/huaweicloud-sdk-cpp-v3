@@ -12,6 +12,8 @@ namespace Model {
 
 ShowDomainStatsResponse::ShowDomainStatsResponse()
 {
+    groupBy_ = "";
+    groupByIsSet_ = false;
     startTime_ = 0L;
     startTimeIsSet_ = false;
     endTime_ = 0L;
@@ -35,6 +37,9 @@ web::json::value ShowDomainStatsResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(groupByIsSet_) {
+        val[utility::conversions::to_string_t("group_by")] = ModelBase::toJson(groupBy_);
+    }
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
     }
@@ -60,6 +65,15 @@ bool ShowDomainStatsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("group_by"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_by"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupBy(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("start_time"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
@@ -117,6 +131,27 @@ bool ShowDomainStatsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ShowDomainStatsResponse::getGroupBy() const
+{
+    return groupBy_;
+}
+
+void ShowDomainStatsResponse::setGroupBy(const std::string& value)
+{
+    groupBy_ = value;
+    groupByIsSet_ = true;
+}
+
+bool ShowDomainStatsResponse::groupByIsSet() const
+{
+    return groupByIsSet_;
+}
+
+void ShowDomainStatsResponse::unsetgroupBy()
+{
+    groupByIsSet_ = false;
+}
 
 int64_t ShowDomainStatsResponse::getStartTime() const
 {

@@ -48,7 +48,7 @@ public:
     void setUa(const std::string& value);
 
     /// <summary>
-    /// 对应查询类型的值。（流量单位：Byte）
+    /// **参数解释：** 对应查询类型的值 **取值范围：** 若值为流量，流量单位：Byte
     /// </summary>
 
     int64_t getValue() const;
@@ -57,7 +57,7 @@ public:
     void setValue(int64_t value);
 
     /// <summary>
-    /// 该ua的流量(或请求数)占当前查询条件下总流量(或请求数)的比例。保留4位小数
+    /// **参数解释：** 该ua的流量（或请求数）占当前查询条件下总流量（或请求数）的比例 **取值范围：** 保留4位小数
     /// </summary>
 
     double getRatio() const;

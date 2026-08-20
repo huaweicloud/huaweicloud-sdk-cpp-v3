@@ -39,7 +39,7 @@ public:
     /// TopUrlSummary members
 
     /// <summary>
-    /// URL名称。
+    /// **参数解释：** URL名称 **取值范围：** 不涉及
     /// </summary>
 
     std::string getUrl() const;
@@ -48,7 +48,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// 对应查询类型的值。（流量单位：Byte）
+    /// **参数解释：** 对应查询类型的值 **取值范围：** 若值为流量，流量单位：Byte
     /// </summary>
 
     int64_t getValue() const;
@@ -57,7 +57,7 @@ public:
     void setValue(int64_t value);
 
     /// <summary>
-    /// 查询起始时间戳。
+    /// **参数解释：** 查询起始时间戳 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getStartTime() const;
@@ -66,7 +66,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// 查询结束时间戳
+    /// **参数解释：** 查询结束时间戳 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getEndTime() const;
@@ -75,7 +75,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// 参数类型支持：flux(流量)，req_num(请求总数)。
+    /// **参数解释：** 统计指标类型 **取值范围：** - flux：流量 - req_num：请求总数
     /// </summary>
 
     std::string getStatType() const;

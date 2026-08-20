@@ -39,7 +39,7 @@ public:
     /// TopReferSummary members
 
     /// <summary>
-    /// referer值。
+    /// **参数解释：** referer值 **取值范围：** 不涉及
     /// </summary>
 
     std::string getRefer() const;
@@ -48,7 +48,7 @@ public:
     void setRefer(const std::string& value);
 
     /// <summary>
-    /// 对应查询类型的值。（流量单位：Byte）
+    /// **参数解释：** 对应查询类型的值 **取值范围：** 若值为流量，流量单位：Byte
     /// </summary>
 
     int64_t getValue() const;

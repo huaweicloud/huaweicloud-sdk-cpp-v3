@@ -42,7 +42,7 @@ public:
     /// ShowDomainLocationStatsResponse members
 
     /// <summary>
-    /// 数据分组方式
+    /// **参数解释：** 数据分组方式 **取值范围：** - domain：按域名分组 - country：按国际&amp;地区分组 - province：按省份分组 - isp：按运营商分组
     /// </summary>
 
     std::string getGroupBy() const;
@@ -51,7 +51,7 @@ public:
     void setGroupBy(const std::string& value);
 
     /// <summary>
-    /// 按指定的分组方式组织的数据
+    /// **参数解释：** 按指定的分组方式组织的数据 **取值范围：** 不涉及
     /// </summary>
 
     std::map<std::string, Object>& getResult();

@@ -116,7 +116,7 @@ public:
     void setLtsStrategy(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 部署对接lts状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+    /// **参数解释：** 服务容器标准输出对接lts开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
     /// </summary>
 
     std::string getLtsStatus() const;
@@ -125,13 +125,22 @@ public:
     void setLtsStatus(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 部署对接lts k8s事件状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+    /// **参数解释：** 服务对接lts k8s事件开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
     /// </summary>
 
     std::string getLtsEventStatus() const;
     bool ltsEventStatusIsSet() const;
     void unsetltsEventStatus();
     void setLtsEventStatus(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 服务容器日志文件对接lts开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+    /// </summary>
+
+    std::string getLtsFileStatus() const;
+    bool ltsFileStatusIsSet() const;
+    void unsetltsFileStatus();
+    void setLtsFileStatus(const std::string& value);
 
     /// <summary>
     /// **参数解释：** 服务日志配置信息。
@@ -173,6 +182,8 @@ protected:
     bool ltsStatusIsSet_;
     std::string ltsEventStatus_;
     bool ltsEventStatusIsSet_;
+    std::string ltsFileStatus_;
+    bool ltsFileStatusIsSet_;
     std::vector<LogConfigResponse> logConfigs_;
     bool logConfigsIsSet_;
     int32_t deployTimeoutMinutes_;

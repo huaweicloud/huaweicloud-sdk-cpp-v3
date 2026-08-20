@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginExtensionsRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -58,13 +57,22 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// **参数解释**: 数据库名称。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
     /// </summary>
 
-    ListPluginExtensionsRequestBody getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const ListPluginExtensionsRequestBody& value);
+    std::string getDbName() const;
+    bool dbNameIsSet() const;
+    void unsetdbName();
+    void setDbName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 插件名称。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+    /// </summary>
+
+    std::string getPluginName() const;
+    bool pluginNameIsSet() const;
+    void unsetpluginName();
+    void setPluginName(const std::string& value);
 
 
 protected:
@@ -72,8 +80,10 @@ protected:
     bool xLanguageIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
-    ListPluginExtensionsRequestBody body_;
-    bool bodyIsSet_;
+    std::string dbName_;
+    bool dbNameIsSet_;
+    std::string pluginName_;
+    bool pluginNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

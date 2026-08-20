@@ -358,6 +358,20 @@ HttpRequestDef ModelArtsMeta::genRequestDefForCreateInferServiceTag() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateInferTempApiKey() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForCreateModelArtsAgency() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -1094,6 +1108,9 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListInferServices() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("AssetId")
                   .withJsonTag("asset_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("NodeIp")
+                  .withJsonTag("node_ip")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
                   .withJsonTag("sort_dir")

@@ -10,11 +10,11 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/modelarts/v1/model/GroupConfig.h>
+#include <huaweicloud/modelarts/v1/model/RuntimeConfigUpdateRequest.h>
+#include <huaweicloud/modelarts/v1/model/LtsConfiguration.h>
 #include <huaweicloud/modelarts/v1/model/UpgradeConfig.h>
 #include <string>
-#include <huaweicloud/modelarts/v1/model/LtsConfig.h>
 #include <huaweicloud/modelarts/v1/model/ScheduleConfig.h>
-#include <huaweicloud/modelarts/v1/model/RuntimeConfig.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -45,7 +45,7 @@ public:
     /// ServiceUpdateRequest members
 
     /// <summary>
-    /// **参数解释：** 服务ID **约束限制：** 不涉及。 **取值范围：** 不涉及
+    /// **参数解释：** 服务ID **约束限制：** 不填保留原有值。 **取值范围：** 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -54,7 +54,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 服务名称。 **约束限制：** 不涉及。 **取值范围：** 支持1-128个字符，可以包含字母、汉字、数字、连字符和下划线。 **默认取值：** 不涉及。
+    /// **参数解释：** 服务名称。 **约束限制：** 不填保留原有值。 **取值范围：** 支持1-128个字符，可以包含字母、汉字、数字、连字符和下划线。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getName() const;
@@ -63,7 +63,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 服务部署超时时间，integer类型，取值在1~300（860版本该参数做保留兼容）。 **约束限制：** 不涉及。 **取值范围：** [0, 300]。 **默认取值：** 不涉及。
+    /// **参数解释：** 服务部署超时时间，integer类型，取值在1~300。 **约束限制：** 不填保留原有值。 **取值范围：** [0, 300]。 **默认取值：** 不涉及。
     /// </summary>
 
     int32_t getDeployTimeoutMinutes() const;
@@ -72,7 +72,7 @@ public:
     void setDeployTimeoutMinutes(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 必填，填了之后，数据库中如果存在相同版本号，将会报错（仅修改描述的场景除外）。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+    /// **参数解释：** 服务版本，数据库中如果存在相同版本号，将会报错（仅修改描述的场景除外）。 **约束限制：** 不填保留原有值。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getVersion() const;
@@ -81,7 +81,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 非必填，仅更新描述的场景直接修改对应version的数据库字段，不新增版本号。 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// **参数解释：** 非必填，仅更新描述的场景直接修改对应version的数据库字段，不新增版本号。 **约束限制：** 不填保留原有值。 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -90,7 +90,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 仅修改服务时不需传，兼容部署分离之前版本。 **约束限制：** group_configs的最大元素数量为1。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+    /// **参数解释：** 仅修改服务时不需传，兼容部署分离之前版本。 **约束限制：** 不填保留原有值，group_configs的最大元素数量为1。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::vector<GroupConfig>& getGroupConfigs();
@@ -102,10 +102,10 @@ public:
     /// 
     /// </summary>
 
-    RuntimeConfig getRuntimeConfig() const;
+    RuntimeConfigUpdateRequest getRuntimeConfig() const;
     bool runtimeConfigIsSet() const;
     void unsetruntimeConfig();
-    void setRuntimeConfig(const RuntimeConfig& value);
+    void setRuntimeConfig(const RuntimeConfigUpdateRequest& value);
 
     /// <summary>
     /// 
@@ -117,7 +117,7 @@ public:
     void setUpgradeConfig(const UpgradeConfig& value);
 
     /// <summary>
-    /// **参数解释：** 日志策略。 **约束限制：** 不涉及。 **取值范围：** - POOL：使用资源池日志插件配置的日志流。 - AUTO_CREATE：自动创建日志流。 - DEFAULT: 由系统决定日志策略 **默认取值：** AUTO_CREATE：自动创建日志流。
+    /// **参数解释：** 日志策略。 **约束限制：** 不填保留原有值。 **取值范围：** - POOL：使用资源池日志插件配置的日志流。 - AUTO_CREATE：自动创建日志流。 - DEFAULT: 由系统决定日志策略 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getLtsStrategy() const;
@@ -126,16 +126,16 @@ public:
     void setLtsStrategy(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 日志配置，当开启LTS日志的时候，STDOUT类型为必填。 **约束限制：** 当开启LTS日志的时候，STDOUT类型为必填。 数量上限为2个。
+    /// **参数解释：** 服务日志配置。 **约束限制：** 1.不填保留原有值 2.数量上限为[3](tag:hws,hws_hk,fcs,fcs_super)[2](tag:hcs,hcs_sm)个，且每种类型只可配置一个。
     /// </summary>
 
-    std::vector<LtsConfig>& getLogConfigs();
+    std::vector<LtsConfiguration>& getLogConfigs();
     bool logConfigsIsSet() const;
     void unsetlogConfigs();
-    void setLogConfigs(const std::vector<LtsConfig>& value);
+    void setLogConfigs(const std::vector<LtsConfiguration>& value);
 
     /// <summary>
-    /// **参数解释：** 服务标签,上限20个 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// **参数解释：** 服务标签,上限20个 **约束限制：** 不填保留原有值。 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getTags() const;
@@ -144,7 +144,7 @@ public:
     void setTags(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 工作空间id，默认是“0” **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// **参数解释：** 工作空间id，默认是“0” **约束限制：** 不填保留原有值。 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getWorkspaceId() const;
@@ -153,7 +153,7 @@ public:
     void setWorkspaceId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 定时停止配置。 **约束限制：** 仅当body中另一个参数description为空时，此参数才生效。
+    /// **参数解释：**  定时停止配置。 **约束限制：** 1.不填保留原有值。 2.仅当body中另一个参数description为空时，此参数才生效。
     /// </summary>
 
     std::vector<ScheduleConfig>& getSchedule();
@@ -162,7 +162,7 @@ public:
     void setSchedule(const std::vector<ScheduleConfig>& value);
 
     /// <summary>
-    /// **参数解释：** 该参数值由英文逗号隔开的协议、端口号、地址组成，其中地址长度不超过255 ，且需要与镜像给定的协议、地址、端口一致，否则指标无法上报。
+    /// **参数解释：** 该参数值由英文逗号隔开的协议、端口号、地址组成，其中地址长度不超过255 ，且需要与镜像给定的协议、地址、端口一致，否则指标无法上报。 **约束限制：** 不填保留原有值。
     /// </summary>
 
     std::string getCustomMetricsPath() const;
@@ -171,7 +171,7 @@ public:
     void setCustomMetricsPath(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 模型类型。 **取值范围：** - TEXT_GENERATION：文本生成 - IMAGE_UNDERSTANDING：图像理解 - VIDEO_GENERATION：视频生成 - IMAGE_GENERATION：图像生成 - RERANK：重排序 - VECTOR_MODEL：向量模型 - EMBEDDING：Embedding嵌入
+    /// **参数解释：** 模型类型。 **约束限制：** 不填保留原有值。 **取值范围：** - TEXT_GENERATION：文本生成 - IMAGE_UNDERSTANDING：图像理解 - VIDEO_GENERATION：视频生成 - IMAGE_GENERATION：图像生成 - RERANK：重排序 - VECTOR_MODEL：向量模型 - EMBEDDING：Embedding嵌入
     /// </summary>
 
     std::string getTaskType() const;
@@ -193,13 +193,13 @@ protected:
     bool descriptionIsSet_;
     std::vector<GroupConfig> groupConfigs_;
     bool groupConfigsIsSet_;
-    RuntimeConfig runtimeConfig_;
+    RuntimeConfigUpdateRequest runtimeConfig_;
     bool runtimeConfigIsSet_;
     UpgradeConfig upgradeConfig_;
     bool upgradeConfigIsSet_;
     std::string ltsStrategy_;
     bool ltsStrategyIsSet_;
-    std::vector<LtsConfig> logConfigs_;
+    std::vector<LtsConfiguration> logConfigs_;
     bool logConfigsIsSet_;
     std::string tags_;
     bool tagsIsSet_;

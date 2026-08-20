@@ -66,7 +66,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 事务一致性类型。 **约束限制**: 不涉及。 **取值范围**: - strong - eventual **默认取值**: 不涉及。
+    /// **参数解释**: 事务一致性类型。 **约束限制**: 不涉及。 **取值范围**: - strong - eventual  **默认取值**: 不涉及。
     /// </summary>
 
     std::string getConsistency() const;
@@ -75,7 +75,7 @@ public:
     void setConsistency(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 副本一致性协议类型。 **约束限制**: 不涉及。 **取值范围**: - quorum - paxos **默认取值**: 不涉及。
+    /// **参数解释**: 副本一致性协议类型。 **约束限制**: 不涉及。 **取值范围**: - quorum - paxos  **默认取值**: 不涉及。
     /// </summary>
 
     std::string getConsistencyProtocol() const;

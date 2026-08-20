@@ -18,6 +18,10 @@ FlavorResponse::FlavorResponse()
     flavorIdIsSet_ = false;
     flavorName_ = "";
     flavorNameIsSet_ = false;
+    supportEngines_ = "";
+    supportEnginesIsSet_ = false;
+    supportGroups_ = "";
+    supportGroupsIsSet_ = false;
     maxNum_ = 0;
     maxNumIsSet_ = false;
     flavorType_ = "";
@@ -45,6 +49,12 @@ web::json::value FlavorResponse::toJson() const
     }
     if(flavorNameIsSet_) {
         val[utility::conversions::to_string_t("flavor_name")] = ModelBase::toJson(flavorName_);
+    }
+    if(supportEnginesIsSet_) {
+        val[utility::conversions::to_string_t("support_engines")] = ModelBase::toJson(supportEngines_);
+    }
+    if(supportGroupsIsSet_) {
+        val[utility::conversions::to_string_t("support_groups")] = ModelBase::toJson(supportGroups_);
     }
     if(maxNumIsSet_) {
         val[utility::conversions::to_string_t("max_num")] = ModelBase::toJson(maxNum_);
@@ -93,6 +103,24 @@ bool FlavorResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFlavorName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("support_engines"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("support_engines"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportEngines(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("support_groups"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("support_groups"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportGroups(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("max_num"))) {
@@ -205,6 +233,48 @@ bool FlavorResponse::flavorNameIsSet() const
 void FlavorResponse::unsetflavorName()
 {
     flavorNameIsSet_ = false;
+}
+
+std::string FlavorResponse::getSupportEngines() const
+{
+    return supportEngines_;
+}
+
+void FlavorResponse::setSupportEngines(const std::string& value)
+{
+    supportEngines_ = value;
+    supportEnginesIsSet_ = true;
+}
+
+bool FlavorResponse::supportEnginesIsSet() const
+{
+    return supportEnginesIsSet_;
+}
+
+void FlavorResponse::unsetsupportEngines()
+{
+    supportEnginesIsSet_ = false;
+}
+
+std::string FlavorResponse::getSupportGroups() const
+{
+    return supportGroups_;
+}
+
+void FlavorResponse::setSupportGroups(const std::string& value)
+{
+    supportGroups_ = value;
+    supportGroupsIsSet_ = true;
+}
+
+bool FlavorResponse::supportGroupsIsSet() const
+{
+    return supportGroupsIsSet_;
+}
+
+void FlavorResponse::unsetsupportGroups()
+{
+    supportGroupsIsSet_ = false;
 }
 
 int32_t FlavorResponse::getMaxNum() const

@@ -70,6 +70,24 @@ public:
     void setFlavorName(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：该规格支持的训练引擎列表（JSON 数组字符串格式）。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+    /// </summary>
+
+    std::string getSupportEngines() const;
+    bool supportEnginesIsSet() const;
+    void unsetsupportEngines();
+    void setSupportEngines(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：该规格支持的用户组列表。若为空则默认为 &#x60;public&#x60;。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：&#x60;public&#x60;
+    /// </summary>
+
+    std::string getSupportGroups() const;
+    bool supportGroupsIsSet() const;
+    void unsetsupportGroups();
+    void setSupportGroups(const std::string& value);
+
+    /// <summary>
     /// 资源规格的最大节点数。
     /// </summary>
 
@@ -122,6 +140,10 @@ protected:
     bool flavorIdIsSet_;
     std::string flavorName_;
     bool flavorNameIsSet_;
+    std::string supportEngines_;
+    bool supportEnginesIsSet_;
+    std::string supportGroups_;
+    bool supportGroupsIsSet_;
     int32_t maxNum_;
     bool maxNumIsSet_;
     std::string flavorType_;

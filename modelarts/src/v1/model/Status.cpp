@@ -24,6 +24,9 @@ Status::Status()
     startTimeIsSet_ = false;
     taskStatusesIsSet_ = false;
     runningRecordsIsSet_ = false;
+    retentionTime_ = 0;
+    retentionTimeIsSet_ = false;
+    taskIpsIsSet_ = false;
 }
 
 Status::~Status() = default;
@@ -59,6 +62,12 @@ web::json::value Status::toJson() const
     }
     if(runningRecordsIsSet_) {
         val[utility::conversions::to_string_t("running_records")] = ModelBase::toJson(runningRecords_);
+    }
+    if(retentionTimeIsSet_) {
+        val[utility::conversions::to_string_t("retention_time")] = ModelBase::toJson(retentionTime_);
+    }
+    if(taskIpsIsSet_) {
+        val[utility::conversions::to_string_t("task_ips")] = ModelBase::toJson(taskIps_);
     }
 
     return val;
@@ -137,6 +146,24 @@ bool Status::fromJson(const web::json::value& val)
             std::vector<RunningRecord> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRunningRecords(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("retention_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("retention_time"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRetentionTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("task_ips"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("task_ips"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<TaskIP> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaskIps(refVal);
         }
     }
     return ok;
@@ -309,6 +336,48 @@ bool Status::runningRecordsIsSet() const
 void Status::unsetrunningRecords()
 {
     runningRecordsIsSet_ = false;
+}
+
+int32_t Status::getRetentionTime() const
+{
+    return retentionTime_;
+}
+
+void Status::setRetentionTime(int32_t value)
+{
+    retentionTime_ = value;
+    retentionTimeIsSet_ = true;
+}
+
+bool Status::retentionTimeIsSet() const
+{
+    return retentionTimeIsSet_;
+}
+
+void Status::unsetretentionTime()
+{
+    retentionTimeIsSet_ = false;
+}
+
+std::vector<TaskIP>& Status::getTaskIps()
+{
+    return taskIps_;
+}
+
+void Status::setTaskIps(const std::vector<TaskIP>& value)
+{
+    taskIps_ = value;
+    taskIpsIsSet_ = true;
+}
+
+bool Status::taskIpsIsSet() const
+{
+    return taskIpsIsSet_;
+}
+
+void Status::unsettaskIps()
+{
+    taskIpsIsSet_ = false;
 }
 
 }

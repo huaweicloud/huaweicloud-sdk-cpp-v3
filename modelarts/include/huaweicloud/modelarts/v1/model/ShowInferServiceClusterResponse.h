@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/modelarts/v1/model/NotebookFlavor.h>
 #include <string>
-#include <huaweicloud/modelarts/v1/model/InferFlavor.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -125,10 +125,28 @@ public:
     /// **参数解释：** 当前专属池支持的规格。
     /// </summary>
 
-    std::vector<InferFlavor>& getFlavors();
+    std::vector<NotebookFlavor>& getFlavors();
     bool flavorsIsSet() const;
     void unsetflavors();
-    void setFlavors(const std::vector<InferFlavor>& value);
+    void setFlavors(const std::vector<NotebookFlavor>& value);
+
+    /// <summary>
+    /// **参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。
+    /// </summary>
+
+    std::string getPoolType() const;
+    bool poolTypeIsSet() const;
+    void unsetpoolType();
+    void setPoolType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 物理资源池ID，逻辑子池对应的父池ID。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getPhysicalPoolId() const;
+    bool physicalPoolIdIsSet() const;
+    void unsetphysicalPoolId();
+    void setPhysicalPoolId(const std::string& value);
 
 
 protected:
@@ -150,8 +168,12 @@ protected:
     bool createAtIsSet_;
     int64_t updateAt_;
     bool updateAtIsSet_;
-    std::vector<InferFlavor> flavors_;
+    std::vector<NotebookFlavor> flavors_;
     bool flavorsIsSet_;
+    std::string poolType_;
+    bool poolTypeIsSet_;
+    std::string physicalPoolId_;
+    bool physicalPoolIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -106,7 +106,7 @@ IssueVO::IssueVO()
     collaborativeStatusIsSet_ = false;
     projectIsSet_ = false;
     childIssuesIsSet_ = false;
-    activateTimes_ = 0;
+    activateTimes_ = "";
     activateTimesIsSet_ = false;
     baselineIsSet_ = false;
     businessDomainIsSet_ = false;
@@ -164,7 +164,7 @@ IssueVO::IssueVO()
     processingOwnerIsSet_ = false;
     reasonAnalysis_ = "";
     reasonAnalysisIsSet_ = false;
-    regressionFailureNumber_ = 0;
+    regressionFailureNumber_ = "";
     regressionFailureNumberIsSet_ = false;
     relatedNetworkSecurityIsSet_ = false;
     repairSolution_ = "";
@@ -176,7 +176,7 @@ IssueVO::IssueVO()
     sysActivationReasonIsSet_ = false;
     sysNoRepairReason_ = "";
     sysNoRepairReasonIsSet_ = false;
-    testFailuresTimes_ = 0;
+    testFailuresTimes_ = "";
     testFailuresTimesIsSet_ = false;
     testOwner_ = "";
     testOwnerIsSet_ = false;
@@ -1035,7 +1035,7 @@ bool IssueVO::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("activate_times"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setActivateTimes(refVal);
         }
@@ -1341,7 +1341,7 @@ bool IssueVO::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("regression_failure_number"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRegressionFailureNumber(refVal);
         }
@@ -1404,7 +1404,7 @@ bool IssueVO::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("test_failures_times"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTestFailuresTimes(refVal);
         }
@@ -2655,12 +2655,12 @@ void IssueVO::unsetchildIssues()
     childIssuesIsSet_ = false;
 }
 
-int32_t IssueVO::getActivateTimes() const
+std::string IssueVO::getActivateTimes() const
 {
     return activateTimes_;
 }
 
-void IssueVO::setActivateTimes(int32_t value)
+void IssueVO::setActivateTimes(const std::string& value)
 {
     activateTimes_ = value;
     activateTimesIsSet_ = true;
@@ -3369,12 +3369,12 @@ void IssueVO::unsetreasonAnalysis()
     reasonAnalysisIsSet_ = false;
 }
 
-int32_t IssueVO::getRegressionFailureNumber() const
+std::string IssueVO::getRegressionFailureNumber() const
 {
     return regressionFailureNumber_;
 }
 
-void IssueVO::setRegressionFailureNumber(int32_t value)
+void IssueVO::setRegressionFailureNumber(const std::string& value)
 {
     regressionFailureNumber_ = value;
     regressionFailureNumberIsSet_ = true;
@@ -3516,12 +3516,12 @@ void IssueVO::unsetsysNoRepairReason()
     sysNoRepairReasonIsSet_ = false;
 }
 
-int32_t IssueVO::getTestFailuresTimes() const
+std::string IssueVO::getTestFailuresTimes() const
 {
     return testFailuresTimes_;
 }
 
-void IssueVO::setTestFailuresTimes(int32_t value)
+void IssueVO::setTestFailuresTimes(const std::string& value)
 {
     testFailuresTimes_ = value;
     testFailuresTimesIsSet_ = true;

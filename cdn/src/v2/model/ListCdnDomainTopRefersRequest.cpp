@@ -24,8 +24,6 @@ ListCdnDomainTopRefersRequest::ListCdnDomainTopRefersRequest()
     serviceAreaIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
-    includeRatio_ = false;
-    includeRatioIsSet_ = false;
 }
 
 ListCdnDomainTopRefersRequest::~ListCdnDomainTopRefersRequest() = default;
@@ -55,9 +53,6 @@ web::json::value ListCdnDomainTopRefersRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
-    }
-    if(includeRatioIsSet_) {
-        val[utility::conversions::to_string_t("include_ratio")] = ModelBase::toJson(includeRatio_);
     }
 
     return val;
@@ -118,15 +113,6 @@ bool ListCdnDomainTopRefersRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("include_ratio"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("include_ratio"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIncludeRatio(refVal);
         }
     }
     return ok;
@@ -257,27 +243,6 @@ bool ListCdnDomainTopRefersRequest::enterpriseProjectIdIsSet() const
 void ListCdnDomainTopRefersRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
-}
-
-bool ListCdnDomainTopRefersRequest::isIncludeRatio() const
-{
-    return includeRatio_;
-}
-
-void ListCdnDomainTopRefersRequest::setIncludeRatio(bool value)
-{
-    includeRatio_ = value;
-    includeRatioIsSet_ = true;
-}
-
-bool ListCdnDomainTopRefersRequest::includeRatioIsSet() const
-{
-    return includeRatioIsSet_;
-}
-
-void ListCdnDomainTopRefersRequest::unsetincludeRatio()
-{
-    includeRatioIsSet_ = false;
 }
 
 }

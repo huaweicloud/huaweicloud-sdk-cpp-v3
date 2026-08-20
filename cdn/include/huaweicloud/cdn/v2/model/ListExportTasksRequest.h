@@ -39,7 +39,7 @@ public:
     /// ListExportTasksRequest members
 
     /// <summary>
-    /// - 每页显示的条目数量, 默认为10
+    /// **参数解释：** 每页显示的条目数量 **约束限制：** 不涉及 **取值范围：** 0-100 **默认取值：** 10
     /// </summary>
 
     int32_t getLimit() const;
@@ -48,7 +48,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 偏移量，表示从此偏移量开始查询， offset大于等于0，默认为0
+    /// **参数解释：** 偏移量 &gt; 表示从此偏移量开始查询  **约束限制：** 不涉及 **取值范围：** offset大于等于0 **默认取值：** 0
     /// </summary>
 
     int32_t getOffset() const;
@@ -57,7 +57,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 任务id
+    /// **参数解释：** 任务id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getTaskId() const;
@@ -66,7 +66,7 @@ public:
     void setTaskId(const std::string& value);
 
     /// <summary>
-    /// 任务名称
+    /// **参数解释：** 任务名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getTaskName() const;

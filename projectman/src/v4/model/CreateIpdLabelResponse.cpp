@@ -1,0 +1,148 @@
+
+
+#include "huaweicloud/projectman/v4/model/CreateIpdLabelResponse.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Projectman {
+namespace V4 {
+namespace Model {
+
+
+
+
+CreateIpdLabelResponse::CreateIpdLabelResponse()
+{
+    status_ = "";
+    statusIsSet_ = false;
+    message_ = "";
+    messageIsSet_ = false;
+    resultIsSet_ = false;
+}
+
+CreateIpdLabelResponse::~CreateIpdLabelResponse() = default;
+
+void CreateIpdLabelResponse::validate()
+{
+}
+
+web::json::value CreateIpdLabelResponse::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(messageIsSet_) {
+        val[utility::conversions::to_string_t("message")] = ModelBase::toJson(message_);
+    }
+    if(resultIsSet_) {
+        val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    }
+
+    return val;
+}
+bool CreateIpdLabelResponse::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("message"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("message"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMessage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
+        if(!fieldValue.is_null())
+        {
+            LabelCreateResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResult(refVal);
+        }
+    }
+    return ok;
+}
+
+
+std::string CreateIpdLabelResponse::getStatus() const
+{
+    return status_;
+}
+
+void CreateIpdLabelResponse::setStatus(const std::string& value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool CreateIpdLabelResponse::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void CreateIpdLabelResponse::unsetstatus()
+{
+    statusIsSet_ = false;
+}
+
+std::string CreateIpdLabelResponse::getMessage() const
+{
+    return message_;
+}
+
+void CreateIpdLabelResponse::setMessage(const std::string& value)
+{
+    message_ = value;
+    messageIsSet_ = true;
+}
+
+bool CreateIpdLabelResponse::messageIsSet() const
+{
+    return messageIsSet_;
+}
+
+void CreateIpdLabelResponse::unsetmessage()
+{
+    messageIsSet_ = false;
+}
+
+LabelCreateResult CreateIpdLabelResponse::getResult() const
+{
+    return result_;
+}
+
+void CreateIpdLabelResponse::setResult(const LabelCreateResult& value)
+{
+    result_ = value;
+    resultIsSet_ = true;
+}
+
+bool CreateIpdLabelResponse::resultIsSet() const
+{
+    return resultIsSet_;
+}
+
+void CreateIpdLabelResponse::unsetresult()
+{
+    resultIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

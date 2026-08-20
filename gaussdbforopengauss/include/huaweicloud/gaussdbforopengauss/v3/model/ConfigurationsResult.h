@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 参数模板信息。
+/// **参数解释**: 参数模板信息。
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ConfigurationsResult
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// ConfigurationsResult members
 
     /// <summary>
-    /// 参数组ID。
+    /// **参数解释**: 参数模板ID。参数模板的唯一标识。 **取值范围**: 只能由英文字母、数字组成，且长度为36个字符。
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 参数组名称。
+    /// **参数解释**: 参数模板名称。 **取值范围**: 参数模板名称在1到64个字符之间，区分大小写，可包含字母、数字、英文中划线、下划线或句点，不能包含其他特殊字符。
     /// </summary>
 
     std::string getName() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 参数组描述。
+    /// **参数解释**: 参数模板描述。 **取值范围**: 描述不能超过256个字符，且不能包含回车和 ! &lt; \&quot; &#x3D; &#39; &gt; &amp;这些特殊字符。
     /// </summary>
 
     std::string getDescription() const;
@@ -66,7 +66,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 引擎版本。
+    /// **参数解释**: 引擎版本。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getDatastoreVersion() const;
@@ -75,7 +75,7 @@ public:
     void setDatastoreVersion(const std::string& value);
 
     /// <summary>
-    /// 引擎名称。
+    /// **参数解释**: 引擎名称。 **取值范围**: GaussDB。
     /// </summary>
 
     std::string getDatastoreName() const;
@@ -84,7 +84,16 @@ public:
     void setDatastoreName(const std::string& value);
 
     /// <summary>
-    /// 实例类型。
+    /// **参数解释**: 节点类型。 **取值范围**: - independent：独立部署。 - ha：集中式。 - combined：混合部署。
+    /// </summary>
+
+    std::string getNodeType() const;
+    bool nodeTypeIsSet() const;
+    void unsetnodeType();
+    void setNodeType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**: 实例类型。 **取值范围**: - Enterprise：分布式实例（企业版）。 - centralization_standard：集中式版实例。  区分大小写。
     /// </summary>
 
     std::string getHaMode() const;
@@ -93,7 +102,7 @@ public:
     void setHaMode(const std::string& value);
 
     /// <summary>
-    /// 创建时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。
+    /// **参数解释**: 创建时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。例如：2024-07-03T14:18:55。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getCreated() const;
@@ -102,7 +111,7 @@ public:
     void setCreated(const std::string& value);
 
     /// <summary>
-    /// 更新时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。
+    /// **参数解释**: 更新时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。例如：2024-07-03T14:18:55。 **取值范围**: 不涉及。
     /// </summary>
 
     std::string getUpdated() const;
@@ -111,7 +120,7 @@ public:
     void setUpdated(const std::string& value);
 
     /// <summary>
-    /// 是否是用户自定义参数模板：  - false，表示为系统默认参数模板。 - true，表示为用户自定义参数模板。
+    /// **参数解释**: 是否是用户自定义参数模板。 **取值范围**: - false：表示为系统默认参数模板。 - true：表示为用户自定义参数模板。
     /// </summary>
 
     bool isUserDefined() const;
@@ -131,6 +140,8 @@ protected:
     bool datastoreVersionIsSet_;
     std::string datastoreName_;
     bool datastoreNameIsSet_;
+    std::string nodeType_;
+    bool nodeTypeIsSet_;
     std::string haMode_;
     bool haModeIsSet_;
     std::string created_;

@@ -14,6 +14,8 @@ RunPipelineResponse::RunPipelineResponse()
 {
     pipelineRunId_ = "";
     pipelineRunIdIsSet_ = false;
+    errorMsg_ = "";
+    errorMsgIsSet_ = false;
 }
 
 RunPipelineResponse::~RunPipelineResponse() = default;
@@ -29,6 +31,9 @@ web::json::value RunPipelineResponse::toJson() const
     if(pipelineRunIdIsSet_) {
         val[utility::conversions::to_string_t("pipeline_run_id")] = ModelBase::toJson(pipelineRunId_);
     }
+    if(errorMsgIsSet_) {
+        val[utility::conversions::to_string_t("error_msg")] = ModelBase::toJson(errorMsg_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool RunPipelineResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPipelineRunId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("error_msg"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_msg"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setErrorMsg(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool RunPipelineResponse::pipelineRunIdIsSet() const
 void RunPipelineResponse::unsetpipelineRunId()
 {
     pipelineRunIdIsSet_ = false;
+}
+
+std::string RunPipelineResponse::getErrorMsg() const
+{
+    return errorMsg_;
+}
+
+void RunPipelineResponse::setErrorMsg(const std::string& value)
+{
+    errorMsg_ = value;
+    errorMsgIsSet_ = true;
+}
+
+bool RunPipelineResponse::errorMsgIsSet() const
+{
+    return errorMsgIsSet_;
+}
+
+void RunPipelineResponse::unseterrorMsg()
+{
+    errorMsgIsSet_ = false;
 }
 
 }

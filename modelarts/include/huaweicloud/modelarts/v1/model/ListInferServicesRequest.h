@@ -156,6 +156,15 @@ public:
     void setAssetId(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** 节点IP地址，按节点IP地址查询该节点IP下POD对应的服务，默认不过滤。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getNodeIp() const;
+    bool nodeIpIsSet() const;
+    void unsetnodeIp();
+    void setNodeIp(const std::string& value);
+
+    /// <summary>
     /// **参数解释：** 排序方式 **约束限制：** 不涉及。 **取值范围：** - ASC: 递增排序。 - DESC: 递减排序。 **默认取值：** DESC。
     /// </summary>
 
@@ -219,6 +228,8 @@ protected:
     bool tagsIsSet_;
     std::string assetId_;
     bool assetIdIsSet_;
+    std::string nodeIp_;
+    bool nodeIpIsSet_;
     std::string sortDir_;
     bool sortDirIsSet_;
     int32_t limit_;

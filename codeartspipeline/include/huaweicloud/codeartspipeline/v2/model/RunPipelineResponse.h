@@ -47,10 +47,21 @@ public:
     void unsetpipelineRunId();
     void setPipelineRunId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 流水线运行失败详情。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    std::string getErrorMsg() const;
+    bool errorMsgIsSet() const;
+    void unseterrorMsg();
+    void setErrorMsg(const std::string& value);
+
 
 protected:
     std::string pipelineRunId_;
     bool pipelineRunIdIsSet_;
+    std::string errorMsg_;
+    bool errorMsgIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

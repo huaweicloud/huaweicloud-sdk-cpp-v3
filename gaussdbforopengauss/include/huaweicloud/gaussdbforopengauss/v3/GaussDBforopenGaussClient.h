@@ -43,6 +43,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/CancelScheduleTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ChangeDemand2PeriodRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ChangeDemand2PeriodResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ChangeDeploymentSolutionRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ChangeDeploymentSolutionRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ChangeDeploymentSolutionResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConstructReq.h>
@@ -80,7 +83,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateScheduleTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateSlowLogDownloadRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateSlowLogDownloadResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/DataStroeErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DbUserPwdRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteBackupErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteConfigurationRequest.h>
@@ -164,8 +166,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListAvailableFlavorsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListBackupsDetailsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListBackupsDetailsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListBackupsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListBackupsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListBindedEipsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListBindedEipsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListCnInfosBeforeReduceRequest.h>
@@ -174,8 +174,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListComponentInfosResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsDiffRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsDiffResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDNatInfoRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDNatInfoResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabaseInstancesRequest.h>
@@ -196,12 +194,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatabasesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatastoresDetailsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDatastoresDetailsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListDatastoresRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListDatastoresResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListDbBackupsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListDbBackupsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListDbFlavorsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListDbFlavorsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDbUsersRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDbUsersResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDisasterRecoveryRecordRequest.h>
@@ -216,28 +208,18 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFeaturesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsDetailsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsDetailsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListGaussDbDatastoresRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListGaussDbDatastoresResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHbaInfoHistoryRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHbaInfoHistoryResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHbaInfosRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHbaInfosResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHistoryOperationsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHistoryOperationsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceDetailsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceDetailsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceEngineDetailRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceEngineDetailResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceErrorLogsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceErrorLogsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceTagsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceTagsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesDetailsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesDetailsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListKernelPluginsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListKernelPluginsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListKeyViewExecuteNodeRequest.h>
@@ -246,12 +228,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListKmsTdeKeyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListMetricDatasRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListMetricDatasResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListParamGroupTemplatesRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListParamGroupTemplatesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListParameterGroupTemplatesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListParameterGroupTemplatesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginExtensionsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginExtensionsRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginExtensionsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginInfoListRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListPluginInfoListResponse.h>
@@ -266,12 +245,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRealTimeSessionsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRecycleInstancesDetailsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRecycleInstancesDetailsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListRecycleInstancesRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListRecycleInstancesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRestorableInstancesDetailsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRestorableInstancesDetailsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListRestorableInstancesRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListRestorableInstancesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRestoreTimesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRestoreTimesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListScheduleTaskRequest.h>
@@ -367,6 +342,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/RestoreNodeRolesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/RestoreNodeRolesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResumePluginExtensionsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResumePluginExtensionsRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResumePluginExtensionsResponse.h>
@@ -377,9 +354,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/SaveAsParameterConfigTemplateResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SearchAutoEnlargePolicyRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SearchAutoEnlargePolicyResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/SetBackupPolicyRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/SetBackupPolicyRequestBody.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/SetBackupPolicyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SetDbUserPwdRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SetDbUserPwdResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SetKernelPluginLicenseRequest.h>
@@ -400,10 +374,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowBackupPolicyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowBalanceStatusRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowBalanceStatusResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowBatchUpgradeCandidateVersionsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowBatchUpgradeCandidateVersionsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowCrossCloudDisasterInstanceMonitorRequest.h>
@@ -419,18 +389,14 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowErrorLogSwitchStatusResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowExpansionParametersRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowExpansionParametersResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceConfigurationRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceDiskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceDiskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceMetricDataRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceMetricDataResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceParamGroupDetailRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceParamGroupDetailResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceParamGroupRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceParamGroupResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceSnapshotRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceSnapshotResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceQuotasRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceQuotasResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstancesStatisticsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstancesStatisticsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowJobDetailRequest.h>
@@ -463,8 +429,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowSslCertDownloadLinkResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowUpgradeCandidateVersionsDetailsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowUpgradeCandidateVersionsDetailsResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowUpgradeCandidateVersionsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowUpgradeCandidateVersionsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShrinkCnRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShrinkCnResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/StartInstanceRequest.h>
@@ -519,8 +483,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceNameRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceNameResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceVersionsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceVersionsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateMySQLCompatibilityRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateMysqlCompatibilityRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateMysqlCompatibilityResponse.h>
@@ -546,12 +508,74 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateDbInstanceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateInstanceResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DataStroeErrorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteLimitTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ErrorResponseBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/FlavorErrorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListBackupsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListBackupsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListConfigurationsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDatastoresRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDatastoresResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDbBackupsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDbBackupsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDbFlavorsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDbFlavorsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListGaussDbDatastoresRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListGaussDbDatastoresResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceDetailsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceDetailsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesDetailsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesDetailsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListParamGroupTemplatesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListParamGroupTemplatesResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListRecycleInstancesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListRecycleInstancesResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListRestorableInstancesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListRestorableInstancesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussResizeRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ParaErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResizeInstanceFlavorRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResizeInstanceFlavorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ResourceErrorResponseBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SetBackupPolicyRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SetBackupPolicyRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SetBackupPolicyResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowBatchUpgradeCandidateVersionsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowBatchUpgradeCandidateVersionsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceConfigurationRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceConfigurationResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceParamGroupRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceParamGroupResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceSnapshotRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceSnapshotResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowUpgradeCandidateVersionsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowUpgradeCandidateVersionsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceVersionsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceVersionsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeErrorResponseBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeInstancesRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeRequestBody.h>
 #include <string>
 
 #include <huaweicloud/gaussdbforopengauss/v3/model/CollectAspRequest.h>
@@ -578,14 +602,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/UnbindLtsConfigResponse.h>
 #include <string>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskRequestBody.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateSqlLimitTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateSqlLimitTaskRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateSqlLimitTaskResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteLimitTaskRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteLimitTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteSqlLimitTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteSqlLimitTaskRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteSqlLimitTaskResponse.h>
@@ -605,8 +624,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListEnhanceFullSqlsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFullSqlSwitchesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFullSqlSwitchesResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListLimitTaskRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListLimitTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListNodeLimitSqlModelRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListNodeLimitSqlModelResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSQLExcuteNodeRequestBody.h>
@@ -632,8 +649,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowGlobalSlowSqlDetailRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowGlobalSlowSqlDetailRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowGlobalSlowSqlDetailResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowLimitTaskRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowLimitTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowSqlLimitTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowSqlLimitTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SlowSqlDetailRequestBody.h>
@@ -643,9 +658,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/StopFullSqlResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SyncLimitDataRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SyncLimitDataResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskRequestBody.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateSqlLimitTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateSqlLimitTaskRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateSqlLimitTaskResponse.h>
@@ -670,8 +682,11 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateWdrSnapshotRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateWdrSnapshotResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ErrorResponseBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListWdrSnapshotAvailableGroupsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListWdrSnapshotAvailableGroupsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListWdrSnapshotsCollectResultsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListWdrSnapshotsCollectResultsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowWdrSnapshotStatusRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowWdrSnapshotStatusResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchWdrSnapshotRequestBody.h>
@@ -806,6 +821,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeDemand2PeriodResponse> changeDemand2Period(
         ChangeDemand2PeriodRequest &request
+    );
+    // 形态变更
+    //
+    // 形态变更，用于变更实例的部署形态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeDeploymentSolutionResponse> changeDeploymentSolution(
+        ChangeDeploymentSolutionRequest &request
     );
     // 备份恢复到目标实例数据后执行数据确认
     //
@@ -1156,14 +1179,6 @@ public:
     // 获取备份列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListBackupsResponse> listBackups(
-        ListBackupsRequest &request
-    );
-    // 查询备份列表
-    //
-    // 获取备份列表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListBackupsDetailsResponse> listBackupsDetails(
         ListBackupsDetailsRequest &request
     );
@@ -1190,14 +1205,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListComponentInfosResponse> listComponentInfos(
         ListComponentInfosRequest &request
-    );
-    // 获取参数模板列表
-    //
-    // 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListConfigurationsResponse> listConfigurations(
-        ListConfigurationsRequest &request
     );
     // 比较两个参数组模板之间的差异
     //
@@ -1279,14 +1286,6 @@ public:
     std::shared_ptr<ListDatabasesResponse> listDatabases(
         ListDatabasesRequest &request
     );
-    // 查询数据库引擎的版本
-    //
-    // 查询指定数据库引擎对应的版本信息。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListDatastoresResponse> listDatastores(
-        ListDatastoresRequest &request
-    );
     // 查询引擎列表
     //
     // 查询引擎列表。
@@ -1294,22 +1293,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDatastoresDetailsResponse> listDatastoresDetails(
         ListDatastoresDetailsRequest &request
-    );
-    // 查询备份列表
-    //
-    // 获取备份列表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListDbBackupsResponse> listDbBackups(
-        ListDbBackupsRequest &request
-    );
-    // 查询数据库规格
-    //
-    // 查询数据库的规格信息。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListDbFlavorsResponse> listDbFlavors(
-        ListDbFlavorsRequest &request
     );
     // 查询数据库用户列表
     //
@@ -1364,24 +1347,8 @@ public:
     // 查询数据库的规格信息。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListFlavorsResponse> listFlavors(
-        ListFlavorsRequest &request
-    );
-    // 查询数据库规格
-    //
-    // 查询数据库的规格信息。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListFlavorsDetailsResponse> listFlavorsDetails(
         ListFlavorsDetailsRequest &request
-    );
-    // 查询引擎列表
-    //
-    // 查询引擎列表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListGaussDbDatastoresResponse> listGaussDbDatastores(
-        ListGaussDbDatastoresRequest &request
     );
     // 查询客户端接入认证配置修改历史
     //
@@ -1407,14 +1374,6 @@ public:
     std::shared_ptr<ListHistoryOperationsResponse> listHistoryOperations(
         ListHistoryOperationsRequest &request
     );
-    // 查询数据库实例列表/查询实例详情
-    //
-    // 查询数据库实例列表/查询实例详情
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListInstanceDetailsResponse> listInstanceDetails(
-        ListInstanceDetailsRequest &request
-    );
     // 查看实例引擎版本分布
     //
     // 查看实例引擎版本分布
@@ -1438,22 +1397,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstanceTagsResponse> listInstanceTags(
         ListInstanceTagsRequest &request
-    );
-    // 查询数据库实例列表/查询实例详情
-    //
-    // 查询数据库实例列表/查询实例详情
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListInstancesResponse> listInstances(
-        ListInstancesRequest &request
-    );
-    // 查询数据库实例列表/查询实例详情
-    //
-    // 查询数据库实例列表/查询实例详情
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListInstancesDetailsResponse> listInstancesDetails(
-        ListInstancesDetailsRequest &request
     );
     // 查询实例已安装的插件列表
     //
@@ -1486,14 +1429,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListMetricDatasResponse> listMetricDatas(
         ListMetricDatasRequest &request
-    );
-    // 获取参数模板列表
-    //
-    // 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListParamGroupTemplatesResponse> listParamGroupTemplates(
-        ListParamGroupTemplatesRequest &request
     );
     // 获取参数模板列表
     //
@@ -1556,24 +1491,8 @@ public:
     // 查询回收站所有引擎实例列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListRecycleInstancesResponse> listRecycleInstances(
-        ListRecycleInstancesRequest &request
-    );
-    // 查询回收站所有引擎实例列表。
-    //
-    // 查询回收站所有引擎实例列表。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRecycleInstancesDetailsResponse> listRecycleInstancesDetails(
         ListRecycleInstancesDetailsRequest &request
-    );
-    // 查询可用于备份恢复的实例列表
-    //
-    // 查询可用于备份恢复的实例列表，实例信息要符合备份条件。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListRestorableInstancesResponse> listRestorableInstances(
-        ListRestorableInstancesRequest &request
     );
     // 查询可用于备份恢复的实例列表
     //
@@ -1832,6 +1751,14 @@ public:
     std::shared_ptr<RestoreInstanceResponse> restoreInstance(
         RestoreInstanceRequest &request
     );
+    // 实例主备状态重置
+    //
+    // 将数据库实例恢复为初始配置的主备状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestoreNodeRolesResponse> restoreNodeRoles(
+        RestoreNodeRolesRequest &request
+    );
     // 配置插件拓展能力
     //
     // 配置插件拓展能力
@@ -1863,14 +1790,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SearchAutoEnlargePolicyResponse> searchAutoEnlargePolicy(
         SearchAutoEnlargePolicyRequest &request
-    );
-    // 设置自动备份策略。
-    //
-    // 设置自动备份策略。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<SetBackupPolicyResponse> setBackupPolicy(
-        SetBackupPolicyRequest &request
     );
     // 重置数据库帐号密码
     //
@@ -1944,14 +1863,6 @@ public:
     std::shared_ptr<ShowBalanceStatusResponse> showBalanceStatus(
         ShowBalanceStatusRequest &request
     );
-    // 查询批量实例可升级的版本和升级类型。
-    //
-    // 查询批量实例可升级的版本和升级类型。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowBatchUpgradeCandidateVersionsResponse> showBatchUpgradeCandidateVersions(
-        ShowBatchUpgradeCandidateVersionsRequest &request
-    );
     // 查询备份配置
     //
     // 查询备份管理配置接口。
@@ -1959,14 +1870,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowConfigurationResponse> showConfiguration(
         ShowConfigurationRequest &request
-    );
-    // 查询参数模板详情
-    //
-    // 根据参数模板ID获取指定参数模板详情。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowConfigurationDetailResponse> showConfigurationDetail(
-        ShowConfigurationDetailRequest &request
     );
     // 查询实例容灾监控实时状态
     //
@@ -2016,14 +1919,6 @@ public:
     std::shared_ptr<ShowExpansionParametersResponse> showExpansionParameters(
         ShowExpansionParametersRequest &request
     );
-    // 获取指定实例的参数模板
-    //
-    // 获取指定实例的参数模板。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowInstanceConfigurationResponse> showInstanceConfiguration(
-        ShowInstanceConfigurationRequest &request
-    );
     // 查询实例存储空间使用信息
     //
     // 查询指定实例的存储使用空间和最大空间。
@@ -2045,24 +1940,16 @@ public:
     // 获取指定实例的参数模板。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowInstanceParamGroupResponse> showInstanceParamGroup(
-        ShowInstanceParamGroupRequest &request
-    );
-    // 获取指定实例的参数模板
-    //
-    // 获取指定实例的参数模板。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowInstanceParamGroupDetailResponse> showInstanceParamGroupDetail(
         ShowInstanceParamGroupDetailRequest &request
     );
-    // 根据时间点或者备份文件查询原实例信息
+    // 控制台获取配额信息
     //
-    // 根据时间点或者备份文件查询原实例信息。
+    // Console获取配额信息
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowInstanceSnapshotResponse> showInstanceSnapshot(
-        ShowInstanceSnapshotRequest &request
+    std::shared_ptr<ShowInstanceQuotasResponse> showInstanceQuotas(
+        ShowInstanceQuotasRequest &request
     );
     // 实例状态统计
     //
@@ -2182,14 +2069,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSslCertDownloadLinkResponse> showSslCertDownloadLink(
         ShowSslCertDownloadLinkRequest &request
-    );
-    // 查询实例可升级版本
-    //
-    // 查询实例可升级版本。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowUpgradeCandidateVersionsResponse> showUpgradeCandidateVersions(
-        ShowUpgradeCandidateVersionsRequest &request
     );
     // 查询实例可升级版本
     //
@@ -2367,43 +2246,6 @@ public:
     std::shared_ptr<UpdateInstanceNameResponse> updateInstanceName(
         UpdateInstanceNameRequest &request
     );
-    // 实例内核版本升级
-    //
-    // GaussDB实例版本升级。包括灰度升级，就地升级，热补丁升级等三种升级方式。 
-    // 
-    // - 就地升级：
-    // 
-    //   就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
-    // 
-    // - 灰度升级： 
-    // 
-    //   每个主DN或者CN组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。灰度升级支持升级自动提交和升级待观察两种操作方式。
-    // 
-    //   - 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
-    // 
-    //   - 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。
-    // 
-    //     - 升级阶段可以根据部署方式细分为按分片或者按AZ的滚动升级。
-    // 
-    //       - 分布式实例：根据分片数滚动升级。
-    //       - 集中式实例：根据AZ数进行滚动升级。 
-    // 
-    //     - 提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级或者升级回退。
-    // 
-    //       - 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
-    // 
-    //       - 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
-    // 
-    // - 热补丁升级
-    // 
-    //   - 升级自动提交：热补丁自动升级并提交，中间无业务中断。
-    // 
-    //   - 升级回退：热补丁回退，无业务中断时间。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdateInstanceVersionsResponse> updateInstanceVersions(
-        UpdateInstanceVersionsRequest &request
-    );
     // 更新/关闭M兼容端口服务
     //
     // 更新指定实例的M兼容端口服务配置。
@@ -2490,6 +2332,134 @@ public:
     std::shared_ptr<CreateInstanceResponse> createInstance(
         CreateInstanceRequest &request
     );
+    // 创建限流任务
+    //
+    // 根据具体范围和类型，进行限流任务的创建
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateLimitTaskResponse> createLimitTask(
+        CreateLimitTaskRequest &request
+    );
+    // 删除限流任务
+    //
+    // 根据task_id进行限流任务的删除
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteLimitTaskResponse> deleteLimitTask(
+        DeleteLimitTaskRequest &request
+    );
+    // 查询备份列表
+    //
+    // 获取备份列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBackupsResponse> listBackups(
+        ListBackupsRequest &request
+    );
+    // 获取参数模板列表
+    //
+    // 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListConfigurationsResponse> listConfigurations(
+        ListConfigurationsRequest &request
+    );
+    // 查询数据库引擎的版本
+    //
+    // 查询指定数据库引擎对应的版本信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDatastoresResponse> listDatastores(
+        ListDatastoresRequest &request
+    );
+    // 查询备份列表
+    //
+    // 获取备份列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDbBackupsResponse> listDbBackups(
+        ListDbBackupsRequest &request
+    );
+    // 查询数据库规格
+    //
+    // 查询数据库的规格信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDbFlavorsResponse> listDbFlavors(
+        ListDbFlavorsRequest &request
+    );
+    // 查询数据库规格
+    //
+    // 查询数据库的规格信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListFlavorsResponse> listFlavors(
+        ListFlavorsRequest &request
+    );
+    // 查询引擎列表
+    //
+    // 查询引擎列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListGaussDbDatastoresResponse> listGaussDbDatastores(
+        ListGaussDbDatastoresRequest &request
+    );
+    // 查询数据库实例列表/查询实例详情
+    //
+    // 查询数据库实例列表/查询实例详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceDetailsResponse> listInstanceDetails(
+        ListInstanceDetailsRequest &request
+    );
+    // 查询数据库实例列表/查询实例详情
+    //
+    // 查询数据库实例列表/查询实例详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesResponse> listInstances(
+        ListInstancesRequest &request
+    );
+    // 查询数据库实例列表/查询实例详情
+    //
+    // 查询数据库实例列表/查询实例详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesDetailsResponse> listInstancesDetails(
+        ListInstancesDetailsRequest &request
+    );
+    // 根据指定条件查询限流任务列表
+    //
+    // 根据指定条件查询限流任务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLimitTaskResponse> listLimitTask(
+        ListLimitTaskRequest &request
+    );
+    // 获取参数模板列表
+    //
+    // 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListParamGroupTemplatesResponse> listParamGroupTemplates(
+        ListParamGroupTemplatesRequest &request
+    );
+    // 查询回收站所有引擎实例列表。
+    //
+    // 查询回收站所有引擎实例列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRecycleInstancesResponse> listRecycleInstances(
+        ListRecycleInstancesRequest &request
+    );
+    // 查询可用于备份恢复的实例列表
+    //
+    // 查询可用于备份恢复的实例列表，实例信息要符合备份条件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRestorableInstancesResponse> listRestorableInstances(
+        ListRestorableInstancesRequest &request
+    );
     // 变更实例规格
     //
     // 变更实例规格
@@ -2497,6 +2467,115 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ResizeInstanceFlavorResponse> resizeInstanceFlavor(
         ResizeInstanceFlavorRequest &request
+    );
+    // 设置自动备份策略。
+    //
+    // 设置自动备份策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetBackupPolicyResponse> setBackupPolicy(
+        SetBackupPolicyRequest &request
+    );
+    // 查询批量实例可升级的版本和升级类型。
+    //
+    // 查询批量实例可升级的版本和升级类型。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBatchUpgradeCandidateVersionsResponse> showBatchUpgradeCandidateVersions(
+        ShowBatchUpgradeCandidateVersionsRequest &request
+    );
+    // 查询参数模板详情
+    //
+    // 根据参数模板ID获取指定参数模板详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowConfigurationDetailResponse> showConfigurationDetail(
+        ShowConfigurationDetailRequest &request
+    );
+    // 获取指定实例的参数模板
+    //
+    // 获取指定实例的参数模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceConfigurationResponse> showInstanceConfiguration(
+        ShowInstanceConfigurationRequest &request
+    );
+    // 获取指定实例的参数模板
+    //
+    // 获取指定实例的参数模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceParamGroupResponse> showInstanceParamGroup(
+        ShowInstanceParamGroupRequest &request
+    );
+    // 根据时间点或者备份文件查询原实例信息
+    //
+    // 根据时间点或者备份文件查询原实例信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceSnapshotResponse> showInstanceSnapshot(
+        ShowInstanceSnapshotRequest &request
+    );
+    // 查询限流任务详情
+    //
+    // 查询限流任务详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLimitTaskResponse> showLimitTask(
+        ShowLimitTaskRequest &request
+    );
+    // 查询实例可升级版本
+    //
+    // 查询实例可升级版本。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowUpgradeCandidateVersionsResponse> showUpgradeCandidateVersions(
+        ShowUpgradeCandidateVersionsRequest &request
+    );
+    // 实例内核版本升级
+    //
+    // GaussDB实例版本升级。包括灰度升级，就地升级，热补丁升级等三种升级方式。 
+    // 
+    // - 就地升级：
+    // 
+    //   就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
+    // 
+    // - 灰度升级： 
+    // 
+    //   每个主DN或者CN组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。灰度升级支持升级自动提交和升级待观察两种操作方式。
+    // 
+    //   - 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
+    // 
+    //   - 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。
+    // 
+    //     - 升级阶段可以根据部署方式细分为按分片或者按AZ的滚动升级。
+    // 
+    //       - 分布式实例：根据分片数滚动升级。
+    //       - 集中式实例：根据AZ数进行滚动升级。 
+    // 
+    //     - 提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级或者升级回退。
+    // 
+    //       - 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
+    // 
+    //       - 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
+    // 
+    // - 热补丁升级
+    // 
+    //   - 升级自动提交：热补丁自动升级并提交，中间无业务中断。
+    // 
+    //   - 升级回退：热补丁回退，无业务中断时间。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstanceVersionsResponse> updateInstanceVersions(
+        UpdateInstanceVersionsRequest &request
+    );
+    // 修改限流任务
+    //
+    // 根据新的条件进行限流任务的更新
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLimitTaskResponse> updateLimitTask(
+        UpdateLimitTaskRequest &request
     );
 
     // 采集ASP报告
@@ -2557,14 +2636,6 @@ public:
         UnbindLtsConfigRequest &request
     );
 
-    // 创建限流任务
-    //
-    // 根据具体范围和类型，进行限流任务的创建
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateLimitTaskResponse> createLimitTask(
-        CreateLimitTaskRequest &request
-    );
     // 创建SQL限流任务
     //
     // 根据具体范围和类型，进行限流任务的创建。
@@ -2572,14 +2643,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateSqlLimitTaskResponse> createSqlLimitTask(
         CreateSqlLimitTaskRequest &request
-    );
-    // 删除限流任务
-    //
-    // 根据task_id进行限流任务的删除
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<DeleteLimitTaskResponse> deleteLimitTask(
-        DeleteLimitTaskRequest &request
     );
     // 删除SQL限流任务
     //
@@ -2636,14 +2699,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListFullSqlSwitchesResponse> listFullSqlSwitches(
         ListFullSqlSwitchesRequest &request
-    );
-    // 根据指定条件查询限流任务列表
-    //
-    // 根据指定条件查询限流任务列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListLimitTaskResponse> listLimitTask(
-        ListLimitTaskRequest &request
     );
     // 查询节点的sql模板列表
     //
@@ -2717,14 +2772,6 @@ public:
     std::shared_ptr<ShowGlobalSlowSqlDetailResponse> showGlobalSlowSqlDetail(
         ShowGlobalSlowSqlDetailRequest &request
     );
-    // 查询限流任务详情
-    //
-    // 查询限流任务详情
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowLimitTaskResponse> showLimitTask(
-        ShowLimitTaskRequest &request
-    );
     // 查询SQL限流任务详情
     //
     // 查询SQL限流任务详情。
@@ -2756,14 +2803,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SyncLimitDataResponse> syncLimitData(
         SyncLimitDataRequest &request
-    );
-    // 修改限流任务
-    //
-    // 根据新的条件进行限流任务的更新
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdateLimitTaskResponse> updateLimitTask(
-        UpdateLimitTaskRequest &request
     );
     // 修改SQL限流任务
     //
@@ -2815,6 +2854,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateWdrSnapshotResponse> createWdrSnapshot(
         CreateWdrSnapshotRequest &request
+    );
+    // 查询实例WDR可用快照分组列表
+    //
+    // 查询实例WDR可用快照分组列表，剔除发生内核重置（节点重启、主备倒换、性能指标进行RESET操作、DROP DATABASE）的时间区间。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListWdrSnapshotAvailableGroupsResponse> listWdrSnapshotAvailableGroups(
+        ListWdrSnapshotAvailableGroupsRequest &request
     );
     // 查询WDR快照报告采集结果
     //

@@ -12,18 +12,24 @@ namespace Model {
 
 UserVO::UserVO()
 {
+    userId_ = "";
+    userIdIsSet_ = false;
+    userNumId_ = 0;
+    userNumIdIsSet_ = false;
+    userName_ = "";
+    userNameIsSet_ = false;
     domainId_ = "";
     domainIdIsSet_ = false;
     domainName_ = "";
     domainNameIsSet_ = false;
     nickName_ = "";
     nickNameIsSet_ = false;
-    userId_ = "";
-    userIdIsSet_ = false;
-    userName_ = "";
-    userNameIsSet_ = false;
-    userNumId_ = 0;
-    userNumIdIsSet_ = false;
+    roleId_ = "";
+    roleIdIsSet_ = false;
+    roleName_ = "";
+    roleNameIsSet_ = false;
+    roleCode_ = "";
+    roleCodeIsSet_ = false;
 }
 
 UserVO::~UserVO() = default;
@@ -36,6 +42,15 @@ web::json::value UserVO::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(userIdIsSet_) {
+        val[utility::conversions::to_string_t("user_id")] = ModelBase::toJson(userId_);
+    }
+    if(userNumIdIsSet_) {
+        val[utility::conversions::to_string_t("user_num_id")] = ModelBase::toJson(userNumId_);
+    }
+    if(userNameIsSet_) {
+        val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
+    }
     if(domainIdIsSet_) {
         val[utility::conversions::to_string_t("domain_id")] = ModelBase::toJson(domainId_);
     }
@@ -45,14 +60,14 @@ web::json::value UserVO::toJson() const
     if(nickNameIsSet_) {
         val[utility::conversions::to_string_t("nick_name")] = ModelBase::toJson(nickName_);
     }
-    if(userIdIsSet_) {
-        val[utility::conversions::to_string_t("user_id")] = ModelBase::toJson(userId_);
+    if(roleIdIsSet_) {
+        val[utility::conversions::to_string_t("role_id")] = ModelBase::toJson(roleId_);
     }
-    if(userNameIsSet_) {
-        val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
+    if(roleNameIsSet_) {
+        val[utility::conversions::to_string_t("role_name")] = ModelBase::toJson(roleName_);
     }
-    if(userNumIdIsSet_) {
-        val[utility::conversions::to_string_t("user_num_id")] = ModelBase::toJson(userNumId_);
+    if(roleCodeIsSet_) {
+        val[utility::conversions::to_string_t("role_code")] = ModelBase::toJson(roleCode_);
     }
 
     return val;
@@ -61,6 +76,33 @@ bool UserVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("user_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUserId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("user_num_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_num_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUserNumId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("user_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUserName(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("domain_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain_id"));
         if(!fieldValue.is_null())
@@ -88,36 +130,99 @@ bool UserVO::fromJson(const web::json::value& val)
             setNickName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("user_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_id"));
+    if(val.has_field(utility::conversions::to_string_t("role_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("role_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUserId(refVal);
+            setRoleId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("user_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_name"));
+    if(val.has_field(utility::conversions::to_string_t("role_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("role_name"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUserName(refVal);
+            setRoleName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("user_num_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_num_id"));
+    if(val.has_field(utility::conversions::to_string_t("role_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("role_code"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUserNumId(refVal);
+            setRoleCode(refVal);
         }
     }
     return ok;
 }
 
+
+std::string UserVO::getUserId() const
+{
+    return userId_;
+}
+
+void UserVO::setUserId(const std::string& value)
+{
+    userId_ = value;
+    userIdIsSet_ = true;
+}
+
+bool UserVO::userIdIsSet() const
+{
+    return userIdIsSet_;
+}
+
+void UserVO::unsetuserId()
+{
+    userIdIsSet_ = false;
+}
+
+int32_t UserVO::getUserNumId() const
+{
+    return userNumId_;
+}
+
+void UserVO::setUserNumId(int32_t value)
+{
+    userNumId_ = value;
+    userNumIdIsSet_ = true;
+}
+
+bool UserVO::userNumIdIsSet() const
+{
+    return userNumIdIsSet_;
+}
+
+void UserVO::unsetuserNumId()
+{
+    userNumIdIsSet_ = false;
+}
+
+std::string UserVO::getUserName() const
+{
+    return userName_;
+}
+
+void UserVO::setUserName(const std::string& value)
+{
+    userName_ = value;
+    userNameIsSet_ = true;
+}
+
+bool UserVO::userNameIsSet() const
+{
+    return userNameIsSet_;
+}
+
+void UserVO::unsetuserName()
+{
+    userNameIsSet_ = false;
+}
 
 std::string UserVO::getDomainId() const
 {
@@ -182,67 +287,67 @@ void UserVO::unsetnickName()
     nickNameIsSet_ = false;
 }
 
-std::string UserVO::getUserId() const
+std::string UserVO::getRoleId() const
 {
-    return userId_;
+    return roleId_;
 }
 
-void UserVO::setUserId(const std::string& value)
+void UserVO::setRoleId(const std::string& value)
 {
-    userId_ = value;
-    userIdIsSet_ = true;
+    roleId_ = value;
+    roleIdIsSet_ = true;
 }
 
-bool UserVO::userIdIsSet() const
+bool UserVO::roleIdIsSet() const
 {
-    return userIdIsSet_;
+    return roleIdIsSet_;
 }
 
-void UserVO::unsetuserId()
+void UserVO::unsetroleId()
 {
-    userIdIsSet_ = false;
+    roleIdIsSet_ = false;
 }
 
-std::string UserVO::getUserName() const
+std::string UserVO::getRoleName() const
 {
-    return userName_;
+    return roleName_;
 }
 
-void UserVO::setUserName(const std::string& value)
+void UserVO::setRoleName(const std::string& value)
 {
-    userName_ = value;
-    userNameIsSet_ = true;
+    roleName_ = value;
+    roleNameIsSet_ = true;
 }
 
-bool UserVO::userNameIsSet() const
+bool UserVO::roleNameIsSet() const
 {
-    return userNameIsSet_;
+    return roleNameIsSet_;
 }
 
-void UserVO::unsetuserName()
+void UserVO::unsetroleName()
 {
-    userNameIsSet_ = false;
+    roleNameIsSet_ = false;
 }
 
-int32_t UserVO::getUserNumId() const
+std::string UserVO::getRoleCode() const
 {
-    return userNumId_;
+    return roleCode_;
 }
 
-void UserVO::setUserNumId(int32_t value)
+void UserVO::setRoleCode(const std::string& value)
 {
-    userNumId_ = value;
-    userNumIdIsSet_ = true;
+    roleCode_ = value;
+    roleCodeIsSet_ = true;
 }
 
-bool UserVO::userNumIdIsSet() const
+bool UserVO::roleCodeIsSet() const
 {
-    return userNumIdIsSet_;
+    return roleCodeIsSet_;
 }
 
-void UserVO::unsetuserNumId()
+void UserVO::unsetroleCode()
 {
-    userNumIdIsSet_ = false;
+    roleCodeIsSet_ = false;
 }
 
 }

@@ -52,7 +52,7 @@ bool ListIssueFieldsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            std::vector<FieldVO> refVal;
+            std::vector<FieldLongDateVO> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -82,12 +82,12 @@ void ListIssueFieldsResponse::unsetpage()
     pageIsSet_ = false;
 }
 
-std::vector<FieldVO>& ListIssueFieldsResponse::getResult()
+std::vector<FieldLongDateVO>& ListIssueFieldsResponse::getResult()
 {
     return result_;
 }
 
-void ListIssueFieldsResponse::setResult(const std::vector<FieldVO>& value)
+void ListIssueFieldsResponse::setResult(const std::vector<FieldLongDateVO>& value)
 {
     result_ = value;
     resultIsSet_ = true;

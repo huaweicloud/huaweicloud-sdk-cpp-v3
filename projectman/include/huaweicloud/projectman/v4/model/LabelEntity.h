@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,7 +40,7 @@ public:
     /// LabelEntity members
 
     /// <summary>
-    /// 标签id
+    /// 标签ID，可通过查询标签列表接口获取，响应消息体中的id字段的值就是标签ID。
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +49,16 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 标签所属工作项类型，对应工作项的type字段
+    /// 标签所属工作项类型编码。
+    /// </summary>
+
+    std::vector<std::string>& getCategoryTypes();
+    bool categoryTypesIsSet() const;
+    void unsetcategoryTypes();
+    void setCategoryTypes(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 标签所属工作项类型，对应工作项的type字段，枚举类型。
     /// </summary>
 
     std::string getLabelType() const;
@@ -57,7 +67,7 @@ public:
     void setLabelType(const std::string& value);
 
     /// <summary>
-    /// 标签颜色RGB
+    /// 标签颜色RGB。 0~16个字符。
     /// </summary>
 
     std::string getColor() const;
@@ -66,7 +76,7 @@ public:
     void setColor(const std::string& value);
 
     /// <summary>
-    /// 标签标题
+    /// 标签标题。 1~30个字符。
     /// </summary>
 
     std::string getTitle() const;
@@ -78,6 +88,8 @@ public:
 protected:
     std::string id_;
     bool idIsSet_;
+    std::vector<std::string> categoryTypes_;
+    bool categoryTypesIsSet_;
     std::string labelType_;
     bool labelTypeIsSet_;
     std::string color_;

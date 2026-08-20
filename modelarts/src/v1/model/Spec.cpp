@@ -16,6 +16,7 @@ Spec::Spec()
     volumesIsSet_ = false;
     logExportPathIsSet_ = false;
     autoStopIsSet_ = false;
+    retentionIsSet_ = false;
     schedulePolicyIsSet_ = false;
     logExportConfigIsSet_ = false;
     notificationIsSet_ = false;
@@ -24,6 +25,7 @@ Spec::Spec()
     assetModelIsSet_ = false;
     assetId_ = "";
     assetIdIsSet_ = false;
+    reservedTimeIsSet_ = false;
 }
 
 Spec::~Spec() = default;
@@ -48,6 +50,9 @@ web::json::value Spec::toJson() const
     if(autoStopIsSet_) {
         val[utility::conversions::to_string_t("auto_stop")] = ModelBase::toJson(autoStop_);
     }
+    if(retentionIsSet_) {
+        val[utility::conversions::to_string_t("retention")] = ModelBase::toJson(retention_);
+    }
     if(schedulePolicyIsSet_) {
         val[utility::conversions::to_string_t("schedule_policy")] = ModelBase::toJson(schedulePolicy_);
     }
@@ -68,6 +73,9 @@ web::json::value Spec::toJson() const
     }
     if(assetIdIsSet_) {
         val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
+    }
+    if(reservedTimeIsSet_) {
+        val[utility::conversions::to_string_t("reserved_time")] = ModelBase::toJson(reservedTime_);
     }
 
     return val;
@@ -110,6 +118,15 @@ bool Spec::fromJson(const web::json::value& val)
             AutoStop refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAutoStop(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("retention"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("retention"));
+        if(!fieldValue.is_null())
+        {
+            RetentionPolicy refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRetention(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("schedule_policy"))) {
@@ -173,6 +190,15 @@ bool Spec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("reserved_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reserved_time"));
+        if(!fieldValue.is_null())
+        {
+            ReserveTime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReservedTime(refVal);
         }
     }
     return ok;
@@ -261,6 +287,27 @@ bool Spec::autoStopIsSet() const
 void Spec::unsetautoStop()
 {
     autoStopIsSet_ = false;
+}
+
+RetentionPolicy Spec::getRetention() const
+{
+    return retention_;
+}
+
+void Spec::setRetention(const RetentionPolicy& value)
+{
+    retention_ = value;
+    retentionIsSet_ = true;
+}
+
+bool Spec::retentionIsSet() const
+{
+    return retentionIsSet_;
+}
+
+void Spec::unsetretention()
+{
+    retentionIsSet_ = false;
 }
 
 SchedulePolicy Spec::getSchedulePolicy() const
@@ -408,6 +455,27 @@ bool Spec::assetIdIsSet() const
 void Spec::unsetassetId()
 {
     assetIdIsSet_ = false;
+}
+
+ReserveTime Spec::getReservedTime() const
+{
+    return reservedTime_;
+}
+
+void Spec::setReservedTime(const ReserveTime& value)
+{
+    reservedTime_ = value;
+    reservedTimeIsSet_ = true;
+}
+
+bool Spec::reservedTimeIsSet() const
+{
+    return reservedTimeIsSet_;
+}
+
+void Spec::unsetreservedTime()
+{
+    reservedTimeIsSet_ = false;
 }
 
 }

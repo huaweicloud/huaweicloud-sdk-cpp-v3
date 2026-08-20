@@ -564,10 +564,10 @@ public:
     /// **参数解释：**  激活次数。Bug激活时自动赋值。 **取值范围：**  不涉及。
     /// </summary>
 
-    int32_t getActivateTimes() const;
+    std::string getActivateTimes() const;
     bool activateTimesIsSet() const;
     void unsetactivateTimes();
-    void setActivateTimes(int32_t value);
+    void setActivateTimes(const std::string& value);
 
     /// <summary>
     /// 
@@ -870,10 +870,10 @@ public:
     /// **参数解释：**  回归不通过次数。缺陷测试不通过时自动赋值。 **取值范围：**  不涉及。
     /// </summary>
 
-    int32_t getRegressionFailureNumber() const;
+    std::string getRegressionFailureNumber() const;
     bool regressionFailureNumberIsSet() const;
     void unsetregressionFailureNumber();
-    void setRegressionFailureNumber(int32_t value);
+    void setRegressionFailureNumber(const std::string& value);
 
     /// <summary>
     /// 
@@ -933,10 +933,10 @@ public:
     /// **参数解释：**  测试不通过次数。 **取值范围：**  不涉及。
     /// </summary>
 
-    int32_t getTestFailuresTimes() const;
+    std::string getTestFailuresTimes() const;
     bool testFailuresTimesIsSet() const;
     void unsettestFailuresTimes();
-    void setTestFailuresTimes(int32_t value);
+    void setTestFailuresTimes(const std::string& value);
 
     /// <summary>
     /// **参数解释：**  测试责任人。通常用于“测试”状态节点。 **取值范围：**  不涉及。
@@ -1099,7 +1099,7 @@ protected:
     bool projectIsSet_;
     std::map<std::string, IssueVO>* childIssues_;
     bool childIssuesIsSet_;
-    int32_t activateTimes_;
+    std::string activateTimes_;
     bool activateTimesIsSet_;
     OptionVO baseline_;
     bool baselineIsSet_;
@@ -1167,7 +1167,7 @@ protected:
     bool processingOwnerIsSet_;
     std::string reasonAnalysis_;
     bool reasonAnalysisIsSet_;
-    int32_t regressionFailureNumber_;
+    std::string regressionFailureNumber_;
     bool regressionFailureNumberIsSet_;
     OptionVO relatedNetworkSecurity_;
     bool relatedNetworkSecurityIsSet_;
@@ -1181,7 +1181,7 @@ protected:
     bool sysActivationReasonIsSet_;
     std::string sysNoRepairReason_;
     bool sysNoRepairReasonIsSet_;
-    int32_t testFailuresTimes_;
+    std::string testFailuresTimes_;
     bool testFailuresTimesIsSet_;
     std::string testOwner_;
     bool testOwnerIsSet_;

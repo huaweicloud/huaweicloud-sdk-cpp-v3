@@ -26,6 +26,7 @@ ScheduleTaskDetail::ScheduleTaskDetail()
     instanceIdIsSet_ = false;
     instanceName_ = "";
     instanceNameIsSet_ = false;
+    taskContent_ = "";
     taskContentIsSet_ = false;
 }
 
@@ -137,7 +138,7 @@ bool ScheduleTaskDetail::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("task_content"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaskContent(refVal);
         }
@@ -293,12 +294,12 @@ void ScheduleTaskDetail::unsetinstanceName()
     instanceNameIsSet_ = false;
 }
 
-Object ScheduleTaskDetail::getTaskContent() const
+std::string ScheduleTaskDetail::getTaskContent() const
 {
     return taskContent_;
 }
 
-void ScheduleTaskDetail::setTaskContent(const Object& value)
+void ScheduleTaskDetail::setTaskContent(const std::string& value)
 {
     taskContent_ = value;
     taskContentIsSet_ = true;

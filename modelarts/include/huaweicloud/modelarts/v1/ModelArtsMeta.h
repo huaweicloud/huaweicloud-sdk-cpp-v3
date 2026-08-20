@@ -45,6 +45,7 @@ public:
     static HttpRequestDef genRequestDefForCreateInferIntranetConnection();
     static HttpRequestDef genRequestDefForCreateInferService();
     static HttpRequestDef genRequestDefForCreateInferServiceTag();
+    static HttpRequestDef genRequestDefForCreateInferTempApiKey();
     static HttpRequestDef genRequestDefForCreateModelArtsAgency();
     static HttpRequestDef genRequestDefForCreateNetwork();
     static HttpRequestDef genRequestDefForCreateNodePool();

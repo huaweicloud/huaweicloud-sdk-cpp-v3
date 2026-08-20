@@ -39,7 +39,7 @@ public:
     /// AlmStatus members
 
     /// <summary>
-    /// **参数解释：**  状态Id。 **取值范围：**  不涉及。
+    /// 状态ID。
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  工作项的状态属性。 **取值范围：**  - START - IN_PROGRESS - END
+    /// 工作项的状态属性。
     /// </summary>
 
     std::string getBelonging() const;
@@ -57,7 +57,7 @@ public:
     void setBelonging(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  状态所属的项目空间id。 **取值范围：**  不涉及。
+    /// 状态所属的项目空间ID。
     /// </summary>
 
     std::string getSpaceId() const;
@@ -66,7 +66,7 @@ public:
     void setSpaceId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  状态名称。 **取值范围：**  不涉及。
+    /// 状态名称。
     /// </summary>
 
     std::string getName() const;
@@ -75,7 +75,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  状态code值。 **取值范围：**  不涉及。
+    /// 状态code值。
     /// </summary>
 
     std::string getCode() const;
@@ -84,7 +84,7 @@ public:
     void setCode(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  状态定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。 **取值范围：**  不涉及。
+    /// 状态定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。
     /// </summary>
 
     std::string getDefinitionType() const;
@@ -93,7 +93,7 @@ public:
     void setDefinitionType(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  状态归属定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。区别于definition_type。如果为系统级和租户自定义级，在项目中会复制一份元数据，归属于项目空间。 **取值范围：**  不涉及。
+    /// 状态归属定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。区别于definition_type。如果为系统级和租户自定义级，在项目中会复制一份元数据，归属于项目空间。
     /// </summary>
 
     int32_t getBelongDefinitionType() const;
@@ -102,7 +102,7 @@ public:
     void setBelongDefinitionType(int32_t value);
 
     /// <summary>
-    /// **参数解释：**  状态名称，和name值相同。 **取值范围：**  不涉及。
+    /// 状态名称，和name值相同。
     /// </summary>
 
     std::string getDisplayValue() const;
@@ -111,7 +111,7 @@ public:
     void setDisplayValue(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  位置顺序。 **取值范围：**  不涉及。
+    /// 位置顺序。
     /// </summary>
 
     int32_t getPosition() const;
@@ -120,7 +120,7 @@ public:
     void setPosition(int32_t value);
 
     /// <summary>
-    /// **参数解释：**  是否显示。 **取值范围：**  不涉及。
+    /// 是否显示。
     /// </summary>
 
     int32_t getDisplayable() const;
@@ -129,7 +129,7 @@ public:
     void setDisplayable(int32_t value);
 
     /// <summary>
-    /// **参数解释：**  是否可编辑。 **取值范围：**  不涉及。
+    /// 是否可编辑。
     /// </summary>
 
     int32_t getEditable() const;
@@ -138,7 +138,7 @@ public:
     void setEditable(int32_t value);
 
     /// <summary>
-    /// **参数解释：**  是否可删除。 **取值范围：**  不涉及。
+    /// 是否可删除。
     /// </summary>
 
     int32_t getDeletable() const;
@@ -147,7 +147,7 @@ public:
     void setDeletable(int32_t value);
 
     /// <summary>
-    /// **参数解释：**  是否可变，即是否为固定值。 **取值范围：**  不涉及。
+    /// 是否可变，即是否为固定值。
     /// </summary>
 
     int32_t getMutable() const;
@@ -156,7 +156,7 @@ public:
     void setMutable(int32_t value);
 
     /// <summary>
-    /// **参数解释：**  标题的拼音首字母。 **取值范围：**  不涉及。
+    /// 标题的拼音首字母。
     /// </summary>
 
     std::string getTitlePy() const;
@@ -165,7 +165,7 @@ public:
     void setTitlePy(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  创建人用户Id。 **取值范围：**  不涉及。
+    /// 创建人用户ID。
     /// </summary>
 
     std::string getCreatedBy() const;
@@ -174,7 +174,7 @@ public:
     void setCreatedBy(const std::string& value);
 
     /// <summary>
-    /// **参数解释：**  创建时间。Unix时间戳，精度为毫秒。 **取值范围：**  不涉及。
+    /// 创建时间。Unix时间戳，精度为毫秒。
     /// </summary>
 
     int64_t getCreatedDate() const;
@@ -183,7 +183,7 @@ public:
     void setCreatedDate(int64_t value);
 
     /// <summary>
-    /// **参数解释：**  最近修改时间。Unix时间戳，精度为毫秒。 **取值范围：**  不涉及。
+    /// 最近修改时间。Unix时间戳，精度为毫秒。
     /// </summary>
 
     int64_t getModifiedDate() const;
@@ -192,13 +192,22 @@ public:
     void setModifiedDate(int64_t value);
 
     /// <summary>
-    /// **参数解释：**  最近修改人用户Id。 **取值范围：**    不涉及。
+    /// 最近修改人用户ID。
     /// </summary>
 
     std::string getModifiedBy() const;
     bool modifiedByIsSet() const;
     void unsetmodifiedBy();
     void setModifiedBy(const std::string& value);
+
+    /// <summary>
+    /// 工作流配置中用于标识是否新增“节点责任人/节点结束时间”。
+    /// </summary>
+
+    bool isLinkageNodeFields() const;
+    bool linkageNodeFieldsIsSet() const;
+    void unsetlinkageNodeFields();
+    void setLinkageNodeFields(bool value);
 
 
 protected:
@@ -238,6 +247,8 @@ protected:
     bool modifiedDateIsSet_;
     std::string modifiedBy_;
     bool modifiedByIsSet_;
+    bool linkageNodeFields_;
+    bool linkageNodeFieldsIsSet_;
 
 };
 

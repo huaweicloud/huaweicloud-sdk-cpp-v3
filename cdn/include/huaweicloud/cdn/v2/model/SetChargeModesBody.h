@@ -39,7 +39,7 @@ public:
     /// SetChargeModesBody members
 
     /// <summary>
-    /// 计费模式，支持flux（流量），v2及以上客户支持bw（带宽）
+    /// **参数解释：** 计费模式 **约束限制：** v2及以上客户支持bw（带宽）计费模式 **取值范围：** - flux：流量 - bw：带宽 **默认取值：** 不涉及
     /// </summary>
 
     std::string getChargeMode() const;
@@ -48,7 +48,7 @@ public:
     void setChargeMode(const std::string& value);
 
     /// <summary>
-    /// 产品模式。取值意义： - base：基础加速
+    /// **参数解释：** 产品模式 **约束限制：** 不涉及 **取值范围：** base：基础加速 **默认取值：** 不涉及
     /// </summary>
 
     std::string getProductType() const;
@@ -57,7 +57,7 @@ public:
     void setProductType(const std::string& value);
 
     /// <summary>
-    /// 服务区域，仅支持mainland_china（国内）
+    /// **参数解释：** 服务范围 **约束限制：** 不涉及 **取值范围：** mainland_china：中国大陆 **默认取值：** 不涉及
     /// </summary>
 
     std::string getServiceArea() const;

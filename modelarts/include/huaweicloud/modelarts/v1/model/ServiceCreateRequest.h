@@ -11,11 +11,11 @@
 
 #include <huaweicloud/modelarts/v1/model/GroupConfig.h>
 #include <huaweicloud/modelarts/v1/model/ServiceCreateRequest_tags.h>
+#include <huaweicloud/modelarts/v1/model/LtsConfiguration.h>
 #include <huaweicloud/modelarts/v1/model/UpgradeConfig.h>
 #include <string>
-#include <huaweicloud/modelarts/v1/model/LtsConfig.h>
+#include <huaweicloud/modelarts/v1/model/RuntimeConfigCreateRequest.h>
 #include <huaweicloud/modelarts/v1/model/ScheduleConfig.h>
-#include <huaweicloud/modelarts/v1/model/RuntimeConfig.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -103,10 +103,10 @@ public:
     /// 
     /// </summary>
 
-    RuntimeConfig getRuntimeConfig() const;
+    RuntimeConfigCreateRequest getRuntimeConfig() const;
     bool runtimeConfigIsSet() const;
     void unsetruntimeConfig();
-    void setRuntimeConfig(const RuntimeConfig& value);
+    void setRuntimeConfig(const RuntimeConfigCreateRequest& value);
 
     /// <summary>
     /// 
@@ -127,13 +127,13 @@ public:
     void setLtsStrategy(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 日志配置。 **约束限制：** 当开启LTS日志的时候，STDOUT类型为必填。 数量上限为2个。
+    /// **参数解释：** 服务日志配置。 **约束限制：** 数量上限为[3](tag:hws,hws_hk,fcs,fcs_super)[2](tag:hcs,hcs_sm)个，且每种类型只可配置一个。
     /// </summary>
 
-    std::vector<LtsConfig>& getLogConfigs();
+    std::vector<LtsConfiguration>& getLogConfigs();
     bool logConfigsIsSet() const;
     void unsetlogConfigs();
-    void setLogConfigs(const std::vector<LtsConfig>& value);
+    void setLogConfigs(const std::vector<LtsConfiguration>& value);
 
     /// <summary>
     /// **参数解释：** 服务标签。 **约束限制：** 上限20个。
@@ -154,7 +154,7 @@ public:
     void setWorkspaceId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 定时停止配置。 **约束限制：** 最多支持一个定时任务。
+    /// **参数解释：**  定时停止配置。 **约束限制：**  最多支持一个定时任务。
     /// </summary>
 
     std::vector<ScheduleConfig>& getSchedule();
@@ -212,13 +212,13 @@ protected:
     bool deployTypeIsSet_;
     std::vector<GroupConfig> groupConfigs_;
     bool groupConfigsIsSet_;
-    RuntimeConfig runtimeConfig_;
+    RuntimeConfigCreateRequest runtimeConfig_;
     bool runtimeConfigIsSet_;
     UpgradeConfig upgradeConfig_;
     bool upgradeConfigIsSet_;
     std::string ltsStrategy_;
     bool ltsStrategyIsSet_;
-    std::vector<LtsConfig> logConfigs_;
+    std::vector<LtsConfiguration> logConfigs_;
     bool logConfigsIsSet_;
     std::vector<ServiceCreateRequest_tags> tags_;
     bool tagsIsSet_;

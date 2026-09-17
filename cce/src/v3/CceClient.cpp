@@ -1666,6 +1666,49 @@ std::shared_ptr<HibernateClusterResponse> CceClient::hibernateCluster(HibernateC
 
     return localVarResult;
 }
+std::shared_ptr<InplaceMigrateNodeResponse> CceClient::inplaceMigrateNode(InplaceMigrateNodeRequest &request)
+{
+    std::string localVarPath = "/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/in-place-migrateto/{target_cluster_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["cluster_id"] = parameterToString(request.getClusterId());
+    localVarPathParams["target_cluster_id"] = parameterToString(request.getTargetClusterId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CceMeta::genRequestDefForInplaceMigrateNode());
+
+    std::shared_ptr<InplaceMigrateNodeResponse> localVarResult = std::make_shared<InplaceMigrateNodeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ListAccessPolicyResponse> CceClient::listAccessPolicy(ListAccessPolicyRequest &request)
 {
     std::string localVarPath = "/api/v3/access-policies";
@@ -2035,6 +2078,9 @@ std::shared_ptr<ListNodePoolsResponse> CceClient::listNodePools(ListNodePoolsReq
     }
     if (request.showDefaultNodePoolIsSet()) {
         localVarQueryParams["showDefaultNodePool"] = parameterToString(request.getShowDefaultNodePool());
+    }
+    if (request.advanceStatusIsSet()) {
+        localVarQueryParams["advanceStatus"] = parameterToString(request.isAdvanceStatus());
     }
 
     std::string localVarHttpBody;
@@ -2449,6 +2495,9 @@ std::shared_ptr<RemoveNodeResponse> CceClient::removeNode(RemoveNodeRequest &req
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.removeNodeSystemSecurityGroupIsSet()) {
+        localVarQueryParams["removeNodeSystemSecurityGroup"] = parameterToString(request.isRemoveNodeSystemSecurityGroup());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -3178,6 +3227,9 @@ std::shared_ptr<ShowNodePoolResponse> CceClient::showNodePool(ShowNodePoolReques
 
     if (request.errorStatusIsSet()) {
         localVarQueryParams["errorStatus"] = parameterToString(request.getErrorStatus());
+    }
+    if (request.advanceStatusIsSet()) {
+        localVarQueryParams["advanceStatus"] = parameterToString(request.isAdvanceStatus());
     }
 
     std::string localVarHttpBody;

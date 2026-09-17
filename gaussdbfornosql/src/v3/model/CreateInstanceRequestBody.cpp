@@ -45,6 +45,7 @@ CreateInstanceRequestBody::CreateInstanceRequestBody()
     sslOptionIsSet_ = false;
     chargeInfoIsSet_ = false;
     restoreInfoIsSet_ = false;
+    drInfoIsSet_ = false;
     port_ = "";
     portIsSet_ = false;
     availabilityZoneDetailIsSet_ = false;
@@ -117,6 +118,9 @@ web::json::value CreateInstanceRequestBody::toJson() const
     }
     if(restoreInfoIsSet_) {
         val[utility::conversions::to_string_t("restore_info")] = ModelBase::toJson(restoreInfo_);
+    }
+    if(drInfoIsSet_) {
+        val[utility::conversions::to_string_t("dr_info")] = ModelBase::toJson(drInfo_);
     }
     if(portIsSet_) {
         val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
@@ -303,6 +307,15 @@ bool CreateInstanceRequestBody::fromJson(const web::json::value& val)
             RestoreInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRestoreInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dr_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dr_info"));
+        if(!fieldValue.is_null())
+        {
+            DRInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDrInfo(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("port"))) {
@@ -733,6 +746,27 @@ bool CreateInstanceRequestBody::restoreInfoIsSet() const
 void CreateInstanceRequestBody::unsetrestoreInfo()
 {
     restoreInfoIsSet_ = false;
+}
+
+DRInfo CreateInstanceRequestBody::getDrInfo() const
+{
+    return drInfo_;
+}
+
+void CreateInstanceRequestBody::setDrInfo(const DRInfo& value)
+{
+    drInfo_ = value;
+    drInfoIsSet_ = true;
+}
+
+bool CreateInstanceRequestBody::drInfoIsSet() const
+{
+    return drInfoIsSet_;
+}
+
+void CreateInstanceRequestBody::unsetdrInfo()
+{
+    drInfoIsSet_ = false;
 }
 
 std::string CreateInstanceRequestBody::getPort() const

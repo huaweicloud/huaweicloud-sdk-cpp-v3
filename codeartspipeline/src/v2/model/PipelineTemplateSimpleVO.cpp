@@ -38,7 +38,7 @@ PipelineTemplateSimpleVO::PipelineTemplateSimpleVO()
     updaterIdIsSet_ = false;
     isCollect_ = false;
     isCollectIsSet_ = false;
-    isShowSource_ = "";
+    isShowSource_ = false;
     isShowSourceIsSet_ = false;
     stagesIsSet_ = false;
 }
@@ -226,7 +226,7 @@ bool PipelineTemplateSimpleVO::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_show_source"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsShowSource(refVal);
         }
@@ -517,12 +517,12 @@ void PipelineTemplateSimpleVO::unsetisCollect()
     isCollectIsSet_ = false;
 }
 
-std::string PipelineTemplateSimpleVO::getIsShowSource() const
+bool PipelineTemplateSimpleVO::isIsShowSource() const
 {
     return isShowSource_;
 }
 
-void PipelineTemplateSimpleVO::setIsShowSource(const std::string& value)
+void PipelineTemplateSimpleVO::setIsShowSource(bool value)
 {
     isShowSource_ = value;
     isShowSourceIsSet_ = true;

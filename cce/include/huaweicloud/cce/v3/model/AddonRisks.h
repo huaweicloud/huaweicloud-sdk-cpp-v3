@@ -39,7 +39,7 @@ public:
     /// AddonRisks members
 
     /// <summary>
-    /// 插件模板名称
+    /// **参数解释：** 插件模板名称。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getAddonTemplateName() const;
@@ -48,7 +48,7 @@ public:
     void setAddonTemplateName(const std::string& value);
 
     /// <summary>
-    /// 插件别名
+    /// **参数解释：** 插件别名。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getAlias() const;

@@ -19,7 +19,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 集群升级特性开关
+/// **参数解释：** 集群升级特性开关 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  UpgradeFeatureGates
     : public ModelBase
@@ -38,7 +38,7 @@ public:
     /// UpgradeFeatureGates members
 
     /// <summary>
-    /// 集群升级Console界面是否支持V4版本，该字段一般由CCE Console使用。
+    /// **参数解释：** 集群升级Console界面是否支持V4版本，该字段一般由CCE Console使用。 **约束限制：** 不涉及 **取值范围：** - true：支持V4版本 - false：不支持V4版本  **默认取值：** 不涉及 
     /// </summary>
 
     bool isSupportUpgradePageV4() const;

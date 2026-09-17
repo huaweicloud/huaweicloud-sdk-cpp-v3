@@ -14,6 +14,8 @@ RemoveNodeRequest::RemoveNodeRequest()
 {
     clusterId_ = "";
     clusterIdIsSet_ = false;
+    removeNodeSystemSecurityGroup_ = false;
+    removeNodeSystemSecurityGroupIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -29,6 +31,9 @@ web::json::value RemoveNodeRequest::toJson() const
 
     if(clusterIdIsSet_) {
         val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
+    }
+    if(removeNodeSystemSecurityGroupIsSet_) {
+        val[utility::conversions::to_string_t("removeNodeSystemSecurityGroup")] = ModelBase::toJson(removeNodeSystemSecurityGroup_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -47,6 +52,15 @@ bool RemoveNodeRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setClusterId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("removeNodeSystemSecurityGroup"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("removeNodeSystemSecurityGroup"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemoveNodeSystemSecurityGroup(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -81,6 +95,27 @@ bool RemoveNodeRequest::clusterIdIsSet() const
 void RemoveNodeRequest::unsetclusterId()
 {
     clusterIdIsSet_ = false;
+}
+
+bool RemoveNodeRequest::isRemoveNodeSystemSecurityGroup() const
+{
+    return removeNodeSystemSecurityGroup_;
+}
+
+void RemoveNodeRequest::setRemoveNodeSystemSecurityGroup(bool value)
+{
+    removeNodeSystemSecurityGroup_ = value;
+    removeNodeSystemSecurityGroupIsSet_ = true;
+}
+
+bool RemoveNodeRequest::removeNodeSystemSecurityGroupIsSet() const
+{
+    return removeNodeSystemSecurityGroupIsSet_;
+}
+
+void RemoveNodeRequest::unsetremoveNodeSystemSecurityGroup()
+{
+    removeNodeSystemSecurityGroupIsSet_ = false;
 }
 
 RemoveNodesTask RemoveNodeRequest::getBody() const

@@ -39,7 +39,7 @@ public:
     /// SnapshotStatus members
 
     /// <summary>
-    /// 任务状态
+    /// **参数解释：** 任务状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getPhase() const;
@@ -48,7 +48,7 @@ public:
     void setPhase(const std::string& value);
 
     /// <summary>
-    /// 任务进度
+    /// **参数解释：** 任务进度 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getProgress() const;
@@ -57,7 +57,7 @@ public:
     void setProgress(const std::string& value);
 
     /// <summary>
-    /// 完成时间
+    /// **参数解释：** 完成时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getCompletionTime() const;

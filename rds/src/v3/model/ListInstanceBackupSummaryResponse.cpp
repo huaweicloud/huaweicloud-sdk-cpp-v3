@@ -13,8 +13,8 @@ namespace Model {
 ListInstanceBackupSummaryResponse::ListInstanceBackupSummaryResponse()
 {
     infosIsSet_ = false;
-    totalCount_ = 0;
-    totalCountIsSet_ = false;
+    total_ = 0;
+    totalIsSet_ = false;
 }
 
 ListInstanceBackupSummaryResponse::~ListInstanceBackupSummaryResponse() = default;
@@ -30,8 +30,8 @@ web::json::value ListInstanceBackupSummaryResponse::toJson() const
     if(infosIsSet_) {
         val[utility::conversions::to_string_t("infos")] = ModelBase::toJson(infos_);
     }
-    if(totalCountIsSet_) {
-        val[utility::conversions::to_string_t("total_count")] = ModelBase::toJson(totalCount_);
+    if(totalIsSet_) {
+        val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
     }
 
     return val;
@@ -49,13 +49,13 @@ bool ListInstanceBackupSummaryResponse::fromJson(const web::json::value& val)
             setInfos(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("total_count"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
+    if(val.has_field(utility::conversions::to_string_t("total"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTotalCount(refVal);
+            setTotal(refVal);
         }
     }
     return ok;
@@ -83,25 +83,25 @@ void ListInstanceBackupSummaryResponse::unsetinfos()
     infosIsSet_ = false;
 }
 
-int32_t ListInstanceBackupSummaryResponse::getTotalCount() const
+int32_t ListInstanceBackupSummaryResponse::getTotal() const
 {
-    return totalCount_;
+    return total_;
 }
 
-void ListInstanceBackupSummaryResponse::setTotalCount(int32_t value)
+void ListInstanceBackupSummaryResponse::setTotal(int32_t value)
 {
-    totalCount_ = value;
-    totalCountIsSet_ = true;
+    total_ = value;
+    totalIsSet_ = true;
 }
 
-bool ListInstanceBackupSummaryResponse::totalCountIsSet() const
+bool ListInstanceBackupSummaryResponse::totalIsSet() const
 {
-    return totalCountIsSet_;
+    return totalIsSet_;
 }
 
-void ListInstanceBackupSummaryResponse::unsettotalCount()
+void ListInstanceBackupSummaryResponse::unsettotal()
 {
-    totalCountIsSet_ = false;
+    totalIsSet_ = false;
 }
 
 }

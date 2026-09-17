@@ -23,7 +23,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// spec是集合类的元素类型，内容为插件实例具体信息
+/// **参数解释**： spec是集合类的元素类型，内容为插件实例具体信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  InstanceSpec
     : public ModelBase
@@ -42,7 +42,7 @@ public:
     /// InstanceSpec members
 
     /// <summary>
-    /// 集群id
+    /// **参数解释**： 集群ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getClusterID() const;
@@ -51,7 +51,7 @@ public:
     void setClusterID(const std::string& value);
 
     /// <summary>
-    /// 插件模板版本号，如1.0.0
+    /// **参数解释**： 插件模板版本号，如1.0.0。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getVersion() const;
@@ -60,7 +60,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 插件模板名称，如coredns
+    /// **参数解释**： 插件模板名称，如coredns。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getAddonTemplateName() const;
@@ -69,7 +69,7 @@ public:
     void setAddonTemplateName(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 插件模板类型 **约束限制：** 不涉及 **取值范围：** - helm: 表示使用Helm包进行部署的模板类型 - static: 表示静态模板类型  **默认取值：** 不涉及
+    /// **参数解释**： 插件模板类型。 **约束限制**： 不涉及 **取值范围**： - helm：表示使用Helm包进行部署的模板类型 - static：表示静态模板类型  **默认取值**： 不涉及
     /// </summary>
 
     std::string getAddonTemplateType() const;
@@ -78,7 +78,7 @@ public:
     void setAddonTemplateType(const std::string& value);
 
     /// <summary>
-    /// 插件模板logo图片的地址
+    /// **参数解释**： 插件模板logo图片的地址。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getAddonTemplateLogo() const;
@@ -87,7 +87,7 @@ public:
     void setAddonTemplateLogo(const std::string& value);
 
     /// <summary>
-    /// 插件模板所属类型
+    /// **参数解释**： 插件模板所属类型。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getAddonTemplateLabels();
@@ -96,7 +96,7 @@ public:
     void setAddonTemplateLabels(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 插件模板描述
+    /// **参数解释**： 插件模板描述。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -105,7 +105,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。
+    /// **参数解释**： 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::map<std::string, Object>& getValues();

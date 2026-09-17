@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartspipeline/v2/model/RetryPipelineRequest.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -65,6 +66,15 @@ public:
     void unsetpipelineRunId();
     void setPipelineRunId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    RetryPipelineRequest getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const RetryPipelineRequest& value);
+
 
 protected:
     std::string projectId_;
@@ -73,6 +83,8 @@ protected:
     bool pipelineIdIsSet_;
     std::string pipelineRunId_;
     bool pipelineRunIdIsSet_;
+    RetryPipelineRequest body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

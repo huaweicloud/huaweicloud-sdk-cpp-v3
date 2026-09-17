@@ -39,7 +39,7 @@ public:
     /// QuotaResp_quotas_resources members
 
     /// <summary>
-    /// **参数解释**： 类型 **取值范围**： - Charts：配额类型为模板 
+    /// **参数解释：** 类型 **约束限制：** 不涉及 **取值范围：** - Charts：配额类型为模板  **默认取值：** 不涉及
     /// </summary>
 
     std::string getType() const;
@@ -48,7 +48,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 配额
+    /// **参数解释：** 配额 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     int32_t getQuota() const;
@@ -57,7 +57,7 @@ public:
     void setQuota(int32_t value);
 
     /// <summary>
-    /// 已使用量
+    /// **参数解释：** 已使用量 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     int32_t getUsed() const;

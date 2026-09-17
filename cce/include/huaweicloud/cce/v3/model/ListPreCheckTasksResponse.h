@@ -42,7 +42,7 @@ public:
     /// ListPreCheckTasksResponse members
 
     /// <summary>
-    /// api版本，默认为v3
+    /// **参数解释：** API版本，默认为v3 **约束限制：** 不涉及 **取值范围：** - v3  **默认取值：** v3 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -51,7 +51,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 类型
+    /// **参数解释：** 类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getKind() const;
@@ -69,7 +69,7 @@ public:
     void setMetadata(const Metadata& value);
 
     /// <summary>
-    /// 集群检查任务列表
+    /// **参数解释：** 集群检查任务列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<PrecheckClusterTask>& getItems();

@@ -15,6 +15,7 @@
 #include <huaweicloud/cce/v3/model/NodePoolNodeAutoscaling.h>
 #include <huaweicloud/cce/v3/model/ExtensionScaleGroup.h>
 #include <vector>
+#include <huaweicloud/cce/v3/model/NodePoolRepairPolicy.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -83,6 +84,15 @@ public:
     /// 
     /// </summary>
 
+    NodePoolRepairPolicy getRepairPolicy() const;
+    bool repairPolicyIsSet() const;
+    void unsetrepairPolicy();
+    void setRepairPolicy(const NodePoolRepairPolicy& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
     NodeManagement getNodeManagementUpdate() const;
     bool nodeManagementUpdateIsSet() const;
     void unsetnodeManagementUpdate();
@@ -143,6 +153,8 @@ protected:
     bool ignoreInitialNodeCountIsSet_;
     NodePoolNodeAutoscaling autoscaling_;
     bool autoscalingIsSet_;
+    NodePoolRepairPolicy repairPolicy_;
+    bool repairPolicyIsSet_;
     NodeManagement nodeManagementUpdate_;
     bool nodeManagementUpdateIsSet_;
     std::vector<std::string> customSecurityGroups_;

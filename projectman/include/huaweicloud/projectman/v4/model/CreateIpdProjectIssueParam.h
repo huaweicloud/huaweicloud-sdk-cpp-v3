@@ -76,6 +76,15 @@ public:
     void setSrcDomain(const std::string& value);
 
     /// <summary>
+    /// 所属特性集，适用于SF类型工作项
+    /// </summary>
+
+    std::string getFeatureSet() const;
+    bool featureSetIsSet() const;
+    void unsetfeatureSet();
+    void setFeatureSet(const std::string& value);
+
+    /// <summary>
     /// 提交人Id
     /// </summary>
 
@@ -210,6 +219,60 @@ public:
     void unsetneedBreak();
     void setNeedBreak(const std::string& value);
 
+    /// <summary>
+    /// 工作项层级ID
+    /// </summary>
+
+    std::string getCategoryLayerId() const;
+    bool categoryLayerIdIsSet() const;
+    void unsetcategoryLayerId();
+    void setCategoryLayerId(const std::string& value);
+
+    /// <summary>
+    /// 父工作项ID
+    /// </summary>
+
+    std::string getParentId() const;
+    bool parentIdIsSet() const;
+    void unsetparentId();
+    void setParentId(const std::string& value);
+
+    /// <summary>
+    /// IR关联的RR的ID
+    /// </summary>
+
+    std::string getIr2rr() const;
+    bool ir2rrIsSet() const;
+    void unsetir2rr();
+    void setIr2rr(const std::string& value);
+
+    /// <summary>
+    /// US关联的RR的ID
+    /// </summary>
+
+    std::string getUs2rr() const;
+    bool us2rrIsSet() const;
+    void unsetus2rr();
+    void setUs2rr(const std::string& value);
+
+    /// <summary>
+    /// 关联工作项ID，多值使用英文逗号分隔
+    /// </summary>
+
+    std::string getLink() const;
+    bool linkIsSet() const;
+    void unsetlink();
+    void setLink(const std::string& value);
+
+    /// <summary>
+    /// IR关联的SF的ID
+    /// </summary>
+
+    std::string getIr2feature() const;
+    bool ir2featureIsSet() const;
+    void unsetir2feature();
+    void setIr2feature(const std::string& value);
+
 
 protected:
     std::string title_;
@@ -220,6 +283,8 @@ protected:
     bool statusIsSet_;
     std::string srcDomain_;
     bool srcDomainIsSet_;
+    std::string featureSet_;
+    bool featureSetIsSet_;
     std::string submittedBy_;
     bool submittedByIsSet_;
     std::string domainId_;
@@ -250,6 +315,18 @@ protected:
     bool businessDomainIsSet_;
     std::string needBreak_;
     bool needBreakIsSet_;
+    std::string categoryLayerId_;
+    bool categoryLayerIdIsSet_;
+    std::string parentId_;
+    bool parentIdIsSet_;
+    std::string ir2rr_;
+    bool ir2rrIsSet_;
+    std::string us2rr_;
+    bool us2rrIsSet_;
+    std::string link_;
+    bool linkIsSet_;
+    std::string ir2feature_;
+    bool ir2featureIsSet_;
 
 };
 

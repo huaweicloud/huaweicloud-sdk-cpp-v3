@@ -40,7 +40,7 @@ public:
     /// ResourceSelector members
 
     /// <summary>
-    /// 标签键值，取值如下 - node.uid：节点UID。
+    /// **参数解释：** 标签键值 **约束限制：** 不涉及 **取值范围：** - node.uid：节点UID  **默认取值：** 不涉及
     /// </summary>
 
     std::string getKey() const;
@@ -49,7 +49,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 标签值列表
+    /// **参数解释：** 标签值列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::vector<std::string>& getValues();
@@ -58,7 +58,7 @@ public:
     void setValues(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 标签逻辑运算符，当前支持如下取值 - In
+    /// **参数解释：** 标签逻辑运算符 **约束限制：** 不涉及 **取值范围：** - In  **默认取值：** 不涉及
     /// </summary>
 
     std::string getOperator() const;

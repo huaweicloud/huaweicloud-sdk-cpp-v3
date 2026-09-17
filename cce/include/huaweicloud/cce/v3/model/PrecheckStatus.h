@@ -23,7 +23,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 升级前检查状态
+/// **参数解释：** 升级前检查状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  PrecheckStatus
     : public ModelBase
@@ -42,7 +42,7 @@ public:
     /// PrecheckStatus members
 
     /// <summary>
-    /// 状态，取值如下 - Init: 初始化 - Running 运行中 - Success 成功 - Failed 失败 - Error 错误
+    /// **参数解释：** 状态 **约束限制：** 不涉及 **取值范围：** - Init：初始化 - Running：运行中 - Success：成功 - Failed：失败 - Error：错误  **默认取值：** 不涉及
     /// </summary>
 
     std::string getPhase() const;
@@ -51,7 +51,7 @@ public:
     void setPhase(const std::string& value);
 
     /// <summary>
-    /// 检查结果过期时间
+    /// **参数解释：** 检查结果过期时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getExpireTimeStamp() const;
@@ -60,7 +60,7 @@ public:
     void setExpireTimeStamp(const std::string& value);
 
     /// <summary>
-    /// 信息，一般是执行错误的日志信息
+    /// **参数解释：** 信息，一般是执行错误的日志信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getMessage() const;

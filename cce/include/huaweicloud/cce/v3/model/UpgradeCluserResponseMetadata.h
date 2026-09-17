@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 升级任务元数据
+/// **参数解释：** 升级任务元数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  UpgradeCluserResponseMetadata
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// UpgradeCluserResponseMetadata members
 
     /// <summary>
-    /// 升级任务ID，可通过调用获取集群升级任务详情API查询进展
+    /// **参数解释：** 升级任务ID，可通过调用获取集群升级任务详情API查询进展 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getUid() const;

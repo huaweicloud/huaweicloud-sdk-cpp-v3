@@ -22,6 +22,8 @@ RejectManualReviewRequest::RejectManualReviewRequest()
     pipelineIdIsSet_ = false;
     pipelineRunId_ = "";
     pipelineRunIdIsSet_ = false;
+    approvalDescription_ = "";
+    approvalDescriptionIsSet_ = false;
 }
 
 RejectManualReviewRequest::~RejectManualReviewRequest() = default;
@@ -48,6 +50,9 @@ web::json::value RejectManualReviewRequest::toJson() const
     }
     if(pipelineRunIdIsSet_) {
         val[utility::conversions::to_string_t("pipeline_run_id")] = ModelBase::toJson(pipelineRunId_);
+    }
+    if(approvalDescriptionIsSet_) {
+        val[utility::conversions::to_string_t("approval_description")] = ModelBase::toJson(approvalDescription_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool RejectManualReviewRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPipelineRunId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("approval_description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("approval_description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApprovalDescription(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool RejectManualReviewRequest::pipelineRunIdIsSet() const
 void RejectManualReviewRequest::unsetpipelineRunId()
 {
     pipelineRunIdIsSet_ = false;
+}
+
+std::string RejectManualReviewRequest::getApprovalDescription() const
+{
+    return approvalDescription_;
+}
+
+void RejectManualReviewRequest::setApprovalDescription(const std::string& value)
+{
+    approvalDescription_ = value;
+    approvalDescriptionIsSet_ = true;
+}
+
+bool RejectManualReviewRequest::approvalDescriptionIsSet() const
+{
+    return approvalDescriptionIsSet_;
+}
+
+void RejectManualReviewRequest::unsetapprovalDescription()
+{
+    approvalDescriptionIsSet_ = false;
 }
 
 }

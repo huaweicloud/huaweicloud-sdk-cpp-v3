@@ -40,7 +40,7 @@ public:
     /// ResourceTags members
 
     /// <summary>
-    /// 键。  - 最大长度127个unicode字符。  - key不能为空。
+    /// 键。  - 最大长度128个unicode字符。  - key不能为空。
     /// </summary>
 
     std::string getKey() const;
@@ -49,7 +49,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 值列表。  - 最多10个value。  - value不允许重复。  - 每个值最大长度255个unicode字符。  - 如果values为空则表示any_value。  - value之间为或的关系。
+    /// 值列表。  - 最多10个value。  - value不允许重复。  - 每个值最大长度256个unicode字符。  - 如果values为空则表示any_value。  - value之间为或的关系。
     /// </summary>
 
     std::vector<std::string>& getValues();

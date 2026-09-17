@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 模板配额
+/// **参数解释：** 模板配额 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  QuotaResp_quotas
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// QuotaResp_quotas members
 
     /// <summary>
-    /// 资源
+    /// **参数解释：** 资源 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::vector<QuotaResp_quotas_resources>& getResources();

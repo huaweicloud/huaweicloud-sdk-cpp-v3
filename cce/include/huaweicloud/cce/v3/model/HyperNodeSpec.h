@@ -11,7 +11,6 @@
 
 #include <huaweicloud/cce/v3/model/NodeTemplateInHyperNode.h>
 #include <string>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -22,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// **参数解释**： 超节点的配置详情，超节点只包含基本的资源规格属性，其他配置从所属节点池继承。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  HyperNodeSpec
     : public ModelBase
@@ -41,7 +40,7 @@ public:
     /// HyperNodeSpec members
 
     /// <summary>
-    /// **参数解释**： 超节点规格
+    /// **参数解释**： 超节点规格 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getFlavor() const;
@@ -50,7 +49,7 @@ public:
     void setFlavor(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 所属节点池ID
+    /// **参数解释**： 所属节点池ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getNodepoolID() const;
@@ -59,16 +58,16 @@ public:
     void setNodepoolID(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 超节点下节点相关的配置。
+    /// 
     /// </summary>
 
-    std::vector<NodeTemplateInHyperNode>& getNodeTemplate();
+    NodeTemplateInHyperNode getNodeTemplate() const;
     bool nodeTemplateIsSet() const;
     void unsetnodeTemplate();
-    void setNodeTemplate(const std::vector<NodeTemplateInHyperNode>& value);
+    void setNodeTemplate(const NodeTemplateInHyperNode& value);
 
     /// <summary>
-    /// **参数解释**： 付费方式 **取值范围**： - prepaid: 预付费，即包年包月； - postpaid: 后付费，即按需付费；
+    /// **参数解释**： 付费方式 **约束限制**： 不涉及 **取值范围**： - prepaid：预付费，即包年包月； - postpaid：后付费，即按需付费；  **默认取值**： 不涉及
     /// </summary>
 
     std::string getChargeMode() const;
@@ -82,7 +81,7 @@ protected:
     bool flavorIsSet_;
     std::string nodepoolID_;
     bool nodepoolIDIsSet_;
-    std::vector<NodeTemplateInHyperNode> nodeTemplate_;
+    NodeTemplateInHyperNode nodeTemplate_;
     bool nodeTemplateIsSet_;
     std::string chargeMode_;
     bool chargeModeIsSet_;

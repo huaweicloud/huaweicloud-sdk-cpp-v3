@@ -12,11 +12,11 @@ namespace Model {
 
 ResourceUsage::ResourceUsage()
 {
-    value_ = 0.0f;
+    value_ = 0.0;
     valueIsSet_ = false;
-    total_ = 0.0f;
+    total_ = 0.0;
     totalIsSet_ = false;
-    contrast_ = 0.0f;
+    contrast_ = 0.0;
     contrastIsSet_ = false;
     unit_ = "";
     unitIsSet_ = false;
@@ -55,7 +55,7 @@ bool ResourceUsage::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("value"));
         if(!fieldValue.is_null())
         {
-            float refVal;
+            double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValue(refVal);
         }
@@ -64,7 +64,7 @@ bool ResourceUsage::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total"));
         if(!fieldValue.is_null())
         {
-            float refVal;
+            double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotal(refVal);
         }
@@ -73,7 +73,7 @@ bool ResourceUsage::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("contrast"));
         if(!fieldValue.is_null())
         {
-            float refVal;
+            double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setContrast(refVal);
         }
@@ -91,12 +91,12 @@ bool ResourceUsage::fromJson(const web::json::value& val)
 }
 
 
-float ResourceUsage::getValue() const
+double ResourceUsage::getValue() const
 {
     return value_;
 }
 
-void ResourceUsage::setValue(float value)
+void ResourceUsage::setValue(double value)
 {
     value_ = value;
     valueIsSet_ = true;
@@ -112,12 +112,12 @@ void ResourceUsage::unsetvalue()
     valueIsSet_ = false;
 }
 
-float ResourceUsage::getTotal() const
+double ResourceUsage::getTotal() const
 {
     return total_;
 }
 
-void ResourceUsage::setTotal(float value)
+void ResourceUsage::setTotal(double value)
 {
     total_ = value;
     totalIsSet_ = true;
@@ -133,12 +133,12 @@ void ResourceUsage::unsettotal()
     totalIsSet_ = false;
 }
 
-float ResourceUsage::getContrast() const
+double ResourceUsage::getContrast() const
 {
     return contrast_;
 }
 
-void ResourceUsage::setContrast(float value)
+void ResourceUsage::setContrast(double value)
 {
     contrast_ = value;
     contrastIsSet_ = true;

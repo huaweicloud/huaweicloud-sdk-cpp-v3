@@ -20,7 +20,7 @@ InfluxdbSlowLogDetail::InfluxdbSlowLogDetail()
     wholeMessageIsSet_ = false;
     operateType_ = "";
     operateTypeIsSet_ = false;
-    costTime_ = "";
+    costTime_ = 0;
     costTimeIsSet_ = false;
     logTime_ = "";
     logTimeIsSet_ = false;
@@ -116,7 +116,7 @@ bool InfluxdbSlowLogDetail::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cost_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCostTime(refVal);
         }
@@ -245,12 +245,12 @@ void InfluxdbSlowLogDetail::unsetoperateType()
     operateTypeIsSet_ = false;
 }
 
-std::string InfluxdbSlowLogDetail::getCostTime() const
+int32_t InfluxdbSlowLogDetail::getCostTime() const
 {
     return costTime_;
 }
 
-void InfluxdbSlowLogDetail::setCostTime(const std::string& value)
+void InfluxdbSlowLogDetail::setCostTime(int32_t value)
 {
     costTime_ = value;
     costTimeIsSet_ = true;

@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 备份任务数据
+/// **参数解释：** 备份任务数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  SnapshotCluserResponseMetadata
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// SnapshotCluserResponseMetadata members
 
     /// <summary>
-    /// API版本，默认为v3.1
+    /// **参数解释：** API版本，默认为v3.1 **约束限制：** 不涉及 **取值范围：** - v3.1  **默认取值：** v3.1 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -48,7 +48,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 任务类型
+    /// **参数解释：** 任务类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getKind() const;

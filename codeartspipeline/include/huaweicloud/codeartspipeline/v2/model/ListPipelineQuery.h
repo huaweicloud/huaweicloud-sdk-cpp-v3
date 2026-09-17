@@ -139,6 +139,51 @@ public:
     void setEndTime(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 流水线运行更新时间。 **约束限制**： 不涉及。 **取值范围**： 时间戳或yyyy-MM-dd HH:mm:ss格式。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getPipelineRunUpdateTime() const;
+    bool pipelineRunUpdateTimeIsSet() const;
+    void unsetpipelineRunUpdateTime();
+    void setPipelineRunUpdateTime(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 排除的流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getExcludePipelineId() const;
+    bool excludePipelineIdIsSet() const;
+    void unsetexcludePipelineId();
+    void setExcludePipelineId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 包含的流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getIncludePipelineId() const;
+    bool includePipelineIdIsSet() const;
+    void unsetincludePipelineId();
+    void setIncludePipelineId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 流水线标签列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::vector<std::string>& getTagList();
+    bool tagListIsSet() const;
+    void unsettagList();
+    void setTagList(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// **参数解释**： 流水线版本列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::vector<std::string>& getManifestVersionList();
+    bool manifestVersionListIsSet() const;
+    void unsetmanifestVersionList();
+    void setManifestVersionList(const std::vector<std::string>& value);
+
+    /// <summary>
     /// **参数解释**： 起始偏移。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
     /// </summary>
 
@@ -219,6 +264,15 @@ public:
     void unsetsecurityLevelList();
     void setSecurityLevelList(std::vector<int32_t> value);
 
+    /// <summary>
+    /// **参数解释**： DevUC流水线密级列表。 **约束限制**： 非涉密场景无该字段。 **取值范围**： 零及以上正整数。 0：未设置密级。 1：最低密级。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::vector<int32_t>& getDevUcSecurityLevelList();
+    bool devUcSecurityLevelListIsSet() const;
+    void unsetdevUcSecurityLevelList();
+    void setDevUcSecurityLevelList(std::vector<int32_t> value);
+
 
 protected:
     std::string projectId_;
@@ -243,6 +297,16 @@ protected:
     bool startTimeIsSet_;
     std::string endTime_;
     bool endTimeIsSet_;
+    std::string pipelineRunUpdateTime_;
+    bool pipelineRunUpdateTimeIsSet_;
+    std::string excludePipelineId_;
+    bool excludePipelineIdIsSet_;
+    std::string includePipelineId_;
+    bool includePipelineIdIsSet_;
+    std::vector<std::string> tagList_;
+    bool tagListIsSet_;
+    std::vector<std::string> manifestVersionList_;
+    bool manifestVersionListIsSet_;
     int64_t offset_;
     bool offsetIsSet_;
     int64_t limit_;
@@ -261,6 +325,8 @@ protected:
     bool queryNewIsSet_;
     std::vector<int32_t> securityLevelList_;
     bool securityLevelListIsSet_;
+    std::vector<int32_t> devUcSecurityLevelList_;
+    bool devUcSecurityLevelListIsSet_;
 
 };
 

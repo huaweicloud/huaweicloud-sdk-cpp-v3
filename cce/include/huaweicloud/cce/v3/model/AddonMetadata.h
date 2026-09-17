@@ -23,7 +23,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。
+/// **参数解释**： 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  AddonMetadata
     : public ModelBase
@@ -42,7 +42,7 @@ public:
     /// AddonMetadata members
 
     /// <summary>
-    /// 唯一id标识
+    /// **参数解释**： 插件实例唯一ID标识，创建成功后系统自动生成。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getUid() const;
@@ -51,7 +51,7 @@ public:
     void setUid(const std::string& value);
 
     /// <summary>
-    /// 插件名称
+    /// **参数解释**： 插件名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -60,7 +60,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 插件别名
+    /// **参数解释**： 插件别名。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getAlias() const;
@@ -69,7 +69,7 @@ public:
     void setAlias(const std::string& value);
 
     /// <summary>
-    /// 插件标签，key/value对格式，接口保留字段，填写不会生效
+    /// **参数解释**： 插件标签，key/value对格式，接口保留字段，填写不会生效。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::map<std::string, std::string>& getLabels();
@@ -78,7 +78,7 @@ public:
     void setLabels(const std::map<std::string, std::string>& value);
 
     /// <summary>
-    /// 插件注解，由key/value组成 - 安装：固定值为{\&quot;addon.install/type\&quot;:\&quot;install\&quot;} - 升级：固定值为{\&quot;addon.upgrade/type\&quot;:\&quot;upgrade\&quot;} 
+    /// **参数解释**： 插件注解，由key/value组成。 **约束限制**： 不涉及 **取值范围**： - 安装时固定值为{\&quot;addon.install/type\&quot;:\&quot;install\&quot;} - 升级时固定值为{\&quot;addon.upgrade/type\&quot;:\&quot;upgrade\&quot;}  **默认取值**： 不涉及
     /// </summary>
 
     std::map<std::string, std::string>& getAnnotations();
@@ -87,7 +87,7 @@ public:
     void setAnnotations(const std::map<std::string, std::string>& value);
 
     /// <summary>
-    /// 更新时间
+    /// **参数解释**： 更新时间 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     utility::datetime getUpdateTimestamp() const;
@@ -96,7 +96,7 @@ public:
     void setUpdateTimestamp(const utility::datetime& value);
 
     /// <summary>
-    /// 创建时间
+    /// **参数解释**： 创建时间，创建成功后系统自动生成，填写无效。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     utility::datetime getCreationTimestamp() const;

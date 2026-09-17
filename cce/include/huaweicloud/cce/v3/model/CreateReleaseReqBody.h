@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 创建模板实例的请求体
+/// **参数解释：** 创建模板实例的请求体 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  CreateReleaseReqBody
     : public ModelBase
@@ -41,7 +41,7 @@ public:
     /// CreateReleaseReqBody members
 
     /// <summary>
-    /// 模板ID
+    /// **参数解释：** 模板ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getChartId() const;
@@ -50,7 +50,7 @@ public:
     void setChartId(const std::string& value);
 
     /// <summary>
-    /// 模板实例描述
+    /// **参数解释：** 模板实例描述 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -59,7 +59,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 模板实例名称
+    /// **参数解释：** 模板实例名称 **约束限制：** 由小写字母开头，中间由小写字母、数字和中划线(-)组成，以小写字母或数字结尾 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -68,7 +68,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 模板实例所在的命名空间
+    /// **参数解释：** 模板实例所在的命名空间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getNamespace() const;
@@ -77,7 +77,7 @@ public:
     void setNamespace(const std::string& value);
 
     /// <summary>
-    /// 模板实例版本号
+    /// **参数解释：** 模板实例版本号 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getVersion() const;

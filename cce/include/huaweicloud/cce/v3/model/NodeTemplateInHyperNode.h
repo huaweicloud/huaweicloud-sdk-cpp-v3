@@ -28,7 +28,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 超节点下节点的信息。
+/// **参数解释**： 超节点下节点的信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  NodeTemplateInHyperNode
     : public ModelBase
@@ -47,7 +47,7 @@ public:
     /// NodeTemplateInHyperNode members
 
     /// <summary>
-    /// **参数解释**： 超节点下节点所在的可用区。 [CCE支持的可用区请参考[地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws_hk)
+    /// **参数解释**： 超节点下节点所在的可用区。 [CCE支持的可用区请参考[地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws_hk) **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getAz() const;
@@ -56,7 +56,7 @@ public:
     void setAz(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 超节点下节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。
+    /// **参数解释**： 超节点下节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getOs() const;
@@ -83,7 +83,7 @@ public:
     void setRootVolume(const Volume& value);
 
     /// <summary>
-    /// **参数解释**： 节点的数据盘参数。
+    /// **参数解释**： 节点的数据盘参数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<Volume>& getDataVolumes();
@@ -101,7 +101,7 @@ public:
     void setStorage(const Storage& value);
 
     /// <summary>
-    /// **参数解释**： 超节点创建时下发到节点上的 k8s 标签，格式为key/value键值对。此接口中仅为展示作用。 示例： &#x60;&#x60;&#x60; \&quot;k8sTags\&quot;: {   \&quot;key\&quot;: \&quot;value\&quot; } &#x60;&#x60;&#x60;
+    /// **参数解释**： 超节点创建时下发到节点上的 k8s 标签，格式为key/value键值对。 示例： &#x60;&#x60;&#x60; \&quot;k8sTags\&quot;: {   \&quot;key\&quot;: \&quot;value\&quot; } &#x60;&#x60;&#x60; **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::map<std::string, std::string>& getK8sTags();

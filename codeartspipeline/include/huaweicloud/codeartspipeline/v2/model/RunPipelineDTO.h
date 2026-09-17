@@ -86,6 +86,24 @@ public:
     void unsetchooseStages();
     void setChooseStages(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// **参数解释**： 是否为子流水线触发。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    bool isSubHook() const;
+    bool subHookIsSet() const;
+    void unsetsubHook();
+    void setSubHook(bool value);
+
+    /// <summary>
+    /// **参数解释**： 使用哪一个执行方案运行流水线。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getExecutionPlanId() const;
+    bool executionPlanIdIsSet() const;
+    void unsetexecutionPlanId();
+    void setExecutionPlanId(const std::string& value);
+
 
 protected:
     std::vector<RunPipelineDTO_sources> sources_;
@@ -98,6 +116,10 @@ protected:
     bool chooseJobsIsSet_;
     std::vector<std::string> chooseStages_;
     bool chooseStagesIsSet_;
+    bool subHook_;
+    bool subHookIsSet_;
+    std::string executionPlanId_;
+    bool executionPlanIdIsSet_;
 
 };
 

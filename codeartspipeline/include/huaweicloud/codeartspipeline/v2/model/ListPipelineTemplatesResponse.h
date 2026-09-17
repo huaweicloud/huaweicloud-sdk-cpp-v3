@@ -43,28 +43,28 @@ public:
     /// **参数解释**： 起始偏移。 **取值范围**： 不涉及。 
     /// </summary>
 
-    int32_t getOffset() const;
+    int64_t getOffset() const;
     bool offsetIsSet() const;
     void unsetoffset();
-    void setOffset(int32_t value);
+    void setOffset(int64_t value);
 
     /// <summary>
     /// **参数解释**： 查询大小。 **取值范围**： 不涉及。 
     /// </summary>
 
-    int32_t getLimit() const;
+    int64_t getLimit() const;
     bool limitIsSet() const;
     void unsetlimit();
-    void setLimit(int32_t value);
+    void setLimit(int64_t value);
 
     /// <summary>
     /// **参数解释**： 记录总数。 **取值范围**： 不涉及。 
     /// </summary>
 
-    int32_t getTotal() const;
+    int64_t getTotal() const;
     bool totalIsSet() const;
     void unsettotal();
-    void setTotal(int32_t value);
+    void setTotal(int64_t value);
 
     /// <summary>
     /// **参数解释**： 流水线模板列表，包含流水线模板的详细信息。 **取值范围**： 不涉及。 
@@ -77,11 +77,11 @@ public:
 
 
 protected:
-    int32_t offset_;
+    int64_t offset_;
     bool offsetIsSet_;
-    int32_t limit_;
+    int64_t limit_;
     bool limitIsSet_;
-    int32_t total_;
+    int64_t total_;
     bool totalIsSet_;
     std::vector<PipelineTemplateSimpleVO> templates_;
     bool templatesIsSet_;

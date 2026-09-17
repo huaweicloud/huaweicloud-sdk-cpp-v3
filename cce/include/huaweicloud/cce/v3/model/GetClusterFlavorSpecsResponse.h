@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cce/v3/model/ClusterFlavorSpecification.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +43,14 @@ public:
     /// 
     /// </summary>
 
-    ClusterFlavorSpecification getClusterFlavorSpecs() const;
+    std::vector<ClusterFlavorSpecification>& getClusterFlavorSpecs();
     bool clusterFlavorSpecsIsSet() const;
     void unsetclusterFlavorSpecs();
-    void setClusterFlavorSpecs(const ClusterFlavorSpecification& value);
+    void setClusterFlavorSpecs(const std::vector<ClusterFlavorSpecification>& value);
 
 
 protected:
-    ClusterFlavorSpecification clusterFlavorSpecs_;
+    std::vector<ClusterFlavorSpecification> clusterFlavorSpecs_;
     bool clusterFlavorSpecsIsSet_;
 
 #ifdef RTTR_FLAG

@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 集群限制检查状态
+/// **参数解释：** 集群限制检查状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  ClusterCheckStatus
     : public ModelBase
@@ -41,7 +41,7 @@ public:
     /// ClusterCheckStatus members
 
     /// <summary>
-    /// 状态，取值如下 - Init: 初始化 - Running 运行中 - Success 成功 - Failed 失败
+    /// **参数解释：** 状态 **约束限制：** 不涉及 **取值范围：** - Init：初始化 - Running：运行中 - Success：成功 - Failed：失败  **默认取值：** 不涉及
     /// </summary>
 
     std::string getPhase() const;
@@ -50,7 +50,7 @@ public:
     void setPhase(const std::string& value);
 
     /// <summary>
-    /// 检查项状态集合
+    /// **参数解释：** 检查项状态集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<PreCheckItemStatus>& getItemsStatus();

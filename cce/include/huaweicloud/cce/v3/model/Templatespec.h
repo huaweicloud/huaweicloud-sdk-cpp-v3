@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 插件模板详细信息
+/// **参数解释**： 插件模板详细信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  Templatespec
     : public ModelBase
@@ -41,7 +41,7 @@ public:
     /// Templatespec members
 
     /// <summary>
-    /// **参数解释：** 插件模板类型 **约束限制：** 不涉及 **取值范围：** - helm: 表示使用Helm包进行部署的模板类型 - static: 表示静态模板类型  **默认取值：** 不涉及
+    /// **参数解释**： 插件模板类型。 **约束限制**： 不涉及 **取值范围**： - helm：表示使用Helm包进行部署的模板类型 - static：表示静态模板类型  **默认取值**： 不涉及
     /// </summary>
 
     std::string getType() const;
@@ -50,7 +50,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 是否为必安装插件
+    /// **参数解释**： 是否为必安装插件。 **约束限制**： 不涉及 **取值范围**： - true：必安装插件 - false：非必安装插件  **默认取值**： 不涉及
     /// </summary>
 
     bool isRequire() const;
@@ -59,7 +59,7 @@ public:
     void setRequire(bool value);
 
     /// <summary>
-    /// 模板所属分组
+    /// **参数解释**： 模板所属分组。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getLabels();
@@ -68,7 +68,7 @@ public:
     void setLabels(const std::vector<std::string>& value);
 
     /// <summary>
-    /// Logo图片地址
+    /// **参数解释**： Logo图片地址。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getLogoURL() const;
@@ -77,7 +77,7 @@ public:
     void setLogoURL(const std::string& value);
 
     /// <summary>
-    /// 插件详情描述及使用说明
+    /// **参数解释**： 插件详情描述及使用说明。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getReadmeURL() const;
@@ -86,7 +86,7 @@ public:
     void setReadmeURL(const std::string& value);
 
     /// <summary>
-    /// 模板描述
+    /// **参数解释**： 模板描述。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -95,7 +95,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 模板具体版本详情
+    /// **参数解释**： 模板具体版本详情。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<Versions>& getVersions();

@@ -18,6 +18,8 @@ ShowNodePoolRequest::ShowNodePoolRequest()
     nodepoolIdIsSet_ = false;
     errorStatus_ = "";
     errorStatusIsSet_ = false;
+    advanceStatus_ = false;
+    advanceStatusIsSet_ = false;
 }
 
 ShowNodePoolRequest::~ShowNodePoolRequest() = default;
@@ -38,6 +40,9 @@ web::json::value ShowNodePoolRequest::toJson() const
     }
     if(errorStatusIsSet_) {
         val[utility::conversions::to_string_t("errorStatus")] = ModelBase::toJson(errorStatus_);
+    }
+    if(advanceStatusIsSet_) {
+        val[utility::conversions::to_string_t("advanceStatus")] = ModelBase::toJson(advanceStatus_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ShowNodePoolRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("advanceStatus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("advanceStatus"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdvanceStatus(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ShowNodePoolRequest::errorStatusIsSet() const
 void ShowNodePoolRequest::unseterrorStatus()
 {
     errorStatusIsSet_ = false;
+}
+
+bool ShowNodePoolRequest::isAdvanceStatus() const
+{
+    return advanceStatus_;
+}
+
+void ShowNodePoolRequest::setAdvanceStatus(bool value)
+{
+    advanceStatus_ = value;
+    advanceStatusIsSet_ = true;
+}
+
+bool ShowNodePoolRequest::advanceStatusIsSet() const
+{
+    return advanceStatusIsSet_;
+}
+
+void ShowNodePoolRequest::unsetadvanceStatus()
+{
+    advanceStatusIsSet_ = false;
 }
 
 }

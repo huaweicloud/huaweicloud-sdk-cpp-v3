@@ -87,10 +87,10 @@ public:
     /// **参数解释：** 双活对端实例节点数量。 **取值范围：** 不涉及。
     /// </summary>
 
-    std::string getDestinationInstanceNodeNum() const;
+    int32_t getDestinationInstanceNodeNum() const;
     bool destinationInstanceNodeNumIsSet() const;
     void unsetdestinationInstanceNodeNum();
-    void setDestinationInstanceNodeNum(const std::string& value);
+    void setDestinationInstanceNodeNum(int32_t value);
 
     /// <summary>
     /// **参数解释：** 双活对端实例规格。 **取值范围：** 不涉及。
@@ -113,7 +113,7 @@ protected:
     bool destinationRegionIsSet_;
     std::string destinationInstanceName_;
     bool destinationInstanceNameIsSet_;
-    std::string destinationInstanceNodeNum_;
+    int32_t destinationInstanceNodeNum_;
     bool destinationInstanceNodeNumIsSet_;
     std::string destinationInstanceSpecCode_;
     bool destinationInstanceSpecCodeIsSet_;

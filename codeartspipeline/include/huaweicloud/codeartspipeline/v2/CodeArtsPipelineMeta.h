@@ -13,28 +13,35 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_CODEARTSPIPELINE_V2_EXPORT  CodeArtsPipelineMeta {
 public:
+    static HttpRequestDef genRequestDefForAcceptCheckpoint();
     static HttpRequestDef genRequestDefForAcceptManualReview();
     static HttpRequestDef genRequestDefForBatchMovePipelineToGroup();
     static HttpRequestDef genRequestDefForBatchShowPipelinesLatestStatus();
+    static HttpRequestDef genRequestDefForCreateAlertPolicy();
     static HttpRequestDef genRequestDefForCreateBasicPlugin();
     static HttpRequestDef genRequestDefForCreatePipelineByTemplate();
     static HttpRequestDef genRequestDefForCreatePipelineByTemplateId();
     static HttpRequestDef genRequestDefForCreatePipelineGroup();
     static HttpRequestDef genRequestDefForCreatePipelineNew();
+    static HttpRequestDef genRequestDefForCreatePipelineTag();
     static HttpRequestDef genRequestDefForCreatePipelineTemplate();
     static HttpRequestDef genRequestDefForCreatePluginDraft();
     static HttpRequestDef genRequestDefForCreatePluginVersion();
     static HttpRequestDef genRequestDefForCreatePublisher();
     static HttpRequestDef genRequestDefForCreateRule();
     static HttpRequestDef genRequestDefForCreateStrategy();
+    static HttpRequestDef genRequestDefForCreateVariableGroup();
+    static HttpRequestDef genRequestDefForDeleteAlertPolicy();
     static HttpRequestDef genRequestDefForDeleteBasicPlugin();
     static HttpRequestDef genRequestDefForDeletePipeline();
     static HttpRequestDef genRequestDefForDeletePipelineGroup();
+    static HttpRequestDef genRequestDefForDeletePipelineTag();
     static HttpRequestDef genRequestDefForDeletePipelineTemplate();
     static HttpRequestDef genRequestDefForDeletePluginDraft();
     static HttpRequestDef genRequestDefForDeletePublisher();
     static HttpRequestDef genRequestDefForDeleteRule();
     static HttpRequestDef genRequestDefForDeleteStrategy();
+    static HttpRequestDef genRequestDefForDeleteVariableGroup();
     static HttpRequestDef genRequestDefForListAvailablePublisher();
     static HttpRequestDef genRequestDefForListBasePlugins();
     static HttpRequestDef genRequestDefForListBasePluginsNewPost();
@@ -43,6 +50,7 @@ public:
     static HttpRequestDef genRequestDefForListPLuginVersion();
     static HttpRequestDef genRequestDefForListPipelineRuns();
     static HttpRequestDef genRequestDefForListPipelineSimpleInfo();
+    static HttpRequestDef genRequestDefForListPipelineTag();
     static HttpRequestDef genRequestDefForListPipelineTemplates();
     static HttpRequestDef genRequestDefForListPipelines();
     static HttpRequestDef genRequestDefForListPipleineBuildResult();
@@ -54,6 +62,7 @@ public:
     static HttpRequestDef genRequestDefForListStagePlugins();
     static HttpRequestDef genRequestDefForListStrategy();
     static HttpRequestDef genRequestDefForListTemplates();
+    static HttpRequestDef genRequestDefForListVariableGroups();
     static HttpRequestDef genRequestDefForPublishPlugin();
     static HttpRequestDef genRequestDefForPublishPluginBind();
     static HttpRequestDef genRequestDefForPublishPluginDraft();
@@ -61,6 +70,7 @@ public:
     static HttpRequestDef genRequestDefForRemovePipeline();
     static HttpRequestDef genRequestDefForRetryPipelineRun();
     static HttpRequestDef genRequestDefForRunPipeline();
+    static HttpRequestDef genRequestDefForShowAlertPolicy();
     static HttpRequestDef genRequestDefForShowBasicPlugin();
     static HttpRequestDef genRequestDefForShowInstanceStatus();
     static HttpRequestDef genRequestDefForShowPipelineArtifacts();
@@ -80,6 +90,7 @@ public:
     static HttpRequestDef genRequestDefForShowStepOutputs();
     static HttpRequestDef genRequestDefForShowStrategy();
     static HttpRequestDef genRequestDefForShowTemplateDetail();
+    static HttpRequestDef genRequestDefForShowVariableGroupDetail();
     static HttpRequestDef genRequestDefForStartNewPipeline();
     static HttpRequestDef genRequestDefForStopPipelineNew();
     static HttpRequestDef genRequestDefForStopPipelineRun();

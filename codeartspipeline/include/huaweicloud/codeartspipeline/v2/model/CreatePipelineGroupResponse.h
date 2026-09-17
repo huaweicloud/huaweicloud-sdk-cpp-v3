@@ -140,6 +140,24 @@ public:
     void setUpdateTime(int64_t value);
 
     /// <summary>
+    /// **参数解释**： 分组下的流水线总数。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    int32_t getPipelineCount() const;
+    bool pipelineCountIsSet() const;
+    void unsetpipelineCount();
+    void setPipelineCount(int32_t value);
+
+    /// <summary>
+    /// **参数解释**： 未分组的流水线数量。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    int32_t getNoGroupCount() const;
+    bool noGroupCountIsSet() const;
+    void unsetnoGroupCount();
+    void setNoGroupCount(int32_t value);
+
+    /// <summary>
     /// **参数解释**： 流水线分组详情。 **取值范围**： 不涉及。 
     /// </summary>
 
@@ -172,6 +190,10 @@ protected:
     bool createTimeIsSet_;
     int64_t updateTime_;
     bool updateTimeIsSet_;
+    int32_t pipelineCount_;
+    bool pipelineCountIsSet_;
+    int32_t noGroupCount_;
+    bool noGroupCountIsSet_;
     std::vector<PipelineGroupVo> children_;
     bool childrenIsSet_;
 

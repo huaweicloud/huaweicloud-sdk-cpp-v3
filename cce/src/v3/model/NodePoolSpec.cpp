@@ -18,6 +18,7 @@ NodePoolSpec::NodePoolSpec()
     initialNodeCount_ = 0;
     initialNodeCountIsSet_ = false;
     autoscalingIsSet_ = false;
+    repairPolicyIsSet_ = false;
     nodeManagementIsSet_ = false;
     podSecurityGroupsIsSet_ = false;
     extensionScaleGroupsIsSet_ = false;
@@ -51,6 +52,9 @@ web::json::value NodePoolSpec::toJson() const
     }
     if(autoscalingIsSet_) {
         val[utility::conversions::to_string_t("autoscaling")] = ModelBase::toJson(autoscaling_);
+    }
+    if(repairPolicyIsSet_) {
+        val[utility::conversions::to_string_t("repairPolicy")] = ModelBase::toJson(repairPolicy_);
     }
     if(nodeManagementIsSet_) {
         val[utility::conversions::to_string_t("nodeManagement")] = ModelBase::toJson(nodeManagement_);
@@ -114,6 +118,15 @@ bool NodePoolSpec::fromJson(const web::json::value& val)
             NodePoolNodeAutoscaling refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAutoscaling(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repairPolicy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repairPolicy"));
+        if(!fieldValue.is_null())
+        {
+            NodePoolRepairPolicy refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairPolicy(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("nodeManagement"))) {
@@ -265,6 +278,27 @@ bool NodePoolSpec::autoscalingIsSet() const
 void NodePoolSpec::unsetautoscaling()
 {
     autoscalingIsSet_ = false;
+}
+
+NodePoolRepairPolicy NodePoolSpec::getRepairPolicy() const
+{
+    return repairPolicy_;
+}
+
+void NodePoolSpec::setRepairPolicy(const NodePoolRepairPolicy& value)
+{
+    repairPolicy_ = value;
+    repairPolicyIsSet_ = true;
+}
+
+bool NodePoolSpec::repairPolicyIsSet() const
+{
+    return repairPolicyIsSet_;
+}
+
+void NodePoolSpec::unsetrepairPolicy()
+{
+    repairPolicyIsSet_ = false;
 }
 
 NodeManagement NodePoolSpec::getNodeManagement() const

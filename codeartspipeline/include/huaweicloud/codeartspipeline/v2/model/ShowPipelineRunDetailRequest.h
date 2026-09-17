@@ -65,6 +65,15 @@ public:
     void unsetpipelineRunId();
     void setPipelineRunId(const std::string& value);
 
+    /// <summary>
+    /// 流水线运行编号
+    /// </summary>
+
+    std::string getPipelineRunNumber() const;
+    bool pipelineRunNumberIsSet() const;
+    void unsetpipelineRunNumber();
+    void setPipelineRunNumber(const std::string& value);
+
 
 protected:
     std::string projectId_;
@@ -73,6 +82,8 @@ protected:
     bool pipelineIdIsSet_;
     std::string pipelineRunId_;
     bool pipelineRunIdIsSet_;
+    std::string pipelineRunNumber_;
+    bool pipelineRunNumberIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

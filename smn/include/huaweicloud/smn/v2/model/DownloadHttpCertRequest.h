@@ -39,7 +39,7 @@ public:
     /// DownloadHttpCertRequest members
 
     /// <summary>
-    /// 证书文件ID名称，格式为SMN-{RegionID}-{UUID}.pem
+    /// 证书文件ID名称，格式为SMN_{RegionID}_{UUID}.pem
     /// </summary>
 
     std::string getCertificateId() const;

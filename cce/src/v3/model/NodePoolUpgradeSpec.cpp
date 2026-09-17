@@ -126,7 +126,7 @@ bool NodePoolUpgradeSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeTemplate"));
         if(!fieldValue.is_null())
         {
-            NodeTemplate refVal;
+            UpgradeNodePoolSpecNodeTemplate refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeTemplate(refVal);
         }
@@ -270,12 +270,12 @@ void NodePoolUpgradeSpec::unsetnodePoolID()
     nodePoolIDIsSet_ = false;
 }
 
-NodeTemplate NodePoolUpgradeSpec::getNodeTemplate() const
+UpgradeNodePoolSpecNodeTemplate NodePoolUpgradeSpec::getNodeTemplate() const
 {
     return nodeTemplate_;
 }
 
-void NodePoolUpgradeSpec::setNodeTemplate(const NodeTemplate& value)
+void NodePoolUpgradeSpec::setNodeTemplate(const UpgradeNodePoolSpecNodeTemplate& value)
 {
     nodeTemplate_ = value;
     nodeTemplateIsSet_ = true;

@@ -23,7 +23,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 超节点
+/// **参数解释**： 超节点 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  HyperNode
     : public ModelBase
@@ -42,7 +42,7 @@ public:
     /// HyperNode members
 
     /// <summary>
-    /// v3
+    /// **参数解释**： API版本，固定值v3。 **约束限制**： 该值不可修改 **取值范围**： - v3  **默认取值**： v3
     /// </summary>
 
     std::string getApiVersion() const;
@@ -51,7 +51,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// HyperNode
+    /// **参数解释**： API类型，固定值HyperNode。 **约束限制**： 该值不可修改 **取值范围**： - HyperNode  **默认取值**： HyperNode
     /// </summary>
 
     std::string getKind() const;

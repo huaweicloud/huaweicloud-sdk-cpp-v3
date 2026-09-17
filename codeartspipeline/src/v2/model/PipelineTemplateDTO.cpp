@@ -27,6 +27,8 @@ PipelineTemplateDTO::PipelineTemplateDTO()
     domainIdIsSet_ = false;
     isShowSource_ = false;
     isShowSourceIsSet_ = false;
+    manifestVersion_ = "";
+    manifestVersionIsSet_ = false;
 }
 
 PipelineTemplateDTO::~PipelineTemplateDTO() = default;
@@ -62,6 +64,9 @@ web::json::value PipelineTemplateDTO::toJson() const
     }
     if(isShowSourceIsSet_) {
         val[utility::conversions::to_string_t("is_show_source")] = ModelBase::toJson(isShowSource_);
+    }
+    if(manifestVersionIsSet_) {
+        val[utility::conversions::to_string_t("manifest_version")] = ModelBase::toJson(manifestVersion_);
     }
 
     return val;
@@ -140,6 +145,15 @@ bool PipelineTemplateDTO::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsShowSource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("manifest_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("manifest_version"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setManifestVersion(refVal);
         }
     }
     return ok;
@@ -312,6 +326,27 @@ bool PipelineTemplateDTO::isShowSourceIsSet() const
 void PipelineTemplateDTO::unsetisShowSource()
 {
     isShowSourceIsSet_ = false;
+}
+
+std::string PipelineTemplateDTO::getManifestVersion() const
+{
+    return manifestVersion_;
+}
+
+void PipelineTemplateDTO::setManifestVersion(const std::string& value)
+{
+    manifestVersion_ = value;
+    manifestVersionIsSet_ = true;
+}
+
+bool PipelineTemplateDTO::manifestVersionIsSet() const
+{
+    return manifestVersionIsSet_;
+}
+
+void PipelineTemplateDTO::unsetmanifestVersion()
+{
+    manifestVersionIsSet_ = false;
 }
 
 }

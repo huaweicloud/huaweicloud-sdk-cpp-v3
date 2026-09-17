@@ -20,6 +20,10 @@ LogQuery::LogQuery()
     limitIsSet_ = false;
     sort_ = "";
     sortIsSet_ = false;
+    offset_ = 0L;
+    offsetIsSet_ = false;
+    level_ = "";
+    levelIsSet_ = false;
 }
 
 LogQuery::~LogQuery() = default;
@@ -43,6 +47,12 @@ web::json::value LogQuery::toJson() const
     }
     if(sortIsSet_) {
         val[utility::conversions::to_string_t("sort")] = ModelBase::toJson(sort_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
+    }
+    if(levelIsSet_) {
+        val[utility::conversions::to_string_t("level")] = ModelBase::toJson(level_);
     }
 
     return val;
@@ -85,6 +95,24 @@ bool LogQuery::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLevel(refVal);
         }
     }
     return ok;
@@ -173,6 +201,48 @@ bool LogQuery::sortIsSet() const
 void LogQuery::unsetsort()
 {
     sortIsSet_ = false;
+}
+
+int64_t LogQuery::getOffset() const
+{
+    return offset_;
+}
+
+void LogQuery::setOffset(int64_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool LogQuery::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void LogQuery::unsetoffset()
+{
+    offsetIsSet_ = false;
+}
+
+std::string LogQuery::getLevel() const
+{
+    return level_;
+}
+
+void LogQuery::setLevel(const std::string& value)
+{
+    level_ = value;
+    levelIsSet_ = true;
+}
+
+bool LogQuery::levelIsSet() const
+{
+    return levelIsSet_;
+}
+
+void LogQuery::unsetlevel()
+{
+    levelIsSet_ = false;
 }
 
 }

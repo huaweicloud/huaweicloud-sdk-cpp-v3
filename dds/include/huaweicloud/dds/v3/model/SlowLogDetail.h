@@ -146,6 +146,15 @@ public:
     void unsetlineNum();
     void setLineNum(const std::string& value);
 
+    /// <summary>
+    /// 推荐的创建索引命令。使用此命令创建索引可优化该慢查询语句。如果结果为空，说明不需要推荐索引，或AI未识别出可优化的索引。
+    /// </summary>
+
+    std::string getIndexRecommendation() const;
+    bool indexRecommendationIsSet() const;
+    void unsetindexRecommendation();
+    void setIndexRecommendation(const std::string& value);
+
 
 protected:
     std::string nodeName_;
@@ -172,6 +181,8 @@ protected:
     bool logTimeIsSet_;
     std::string lineNum_;
     bool lineNumIsSet_;
+    std::string indexRecommendation_;
+    bool indexRecommendationIsSet_;
 
 };
 

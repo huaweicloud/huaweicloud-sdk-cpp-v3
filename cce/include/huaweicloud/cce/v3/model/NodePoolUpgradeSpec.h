@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cce/v3/model/NodeTemplate.h>
 #include <string>
+#include <huaweicloud/cce/v3/model/UpgradeNodePoolSpecNodeTemplate.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 同步点池请求详细参数
+/// 同步节点池请求详细参数
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  NodePoolUpgradeSpec
     : public ModelBase
@@ -98,10 +98,10 @@ public:
     /// 
     /// </summary>
 
-    NodeTemplate getNodeTemplate() const;
+    UpgradeNodePoolSpecNodeTemplate getNodeTemplate() const;
     bool nodeTemplateIsSet() const;
     void unsetnodeTemplate();
-    void setNodeTemplate(const NodeTemplate& value);
+    void setNodeTemplate(const UpgradeNodePoolSpecNodeTemplate& value);
 
     /// <summary>
     /// **参数解释**： 是否在同步节点池任务下发前校验节点storage参数。如果开启校验，当存在节点storage参数异常时接口将直接返回错误；如果不开启校验，接口将先下发同步节点池任务，当存在节点storage参数异常时，同步节点池任务将失败。 **约束限制**： 当开启节点storage参数校验时，每次同步的节点池节点个数不能大于200个。 **取值范围**： - false：不校验节点storage参数 - true：校验节点storage参数  **默认取值**： false
@@ -126,7 +126,7 @@ protected:
     bool nodeIDsIsSet_;
     std::string nodePoolID_;
     bool nodePoolIDIsSet_;
-    NodeTemplate nodeTemplate_;
+    UpgradeNodePoolSpecNodeTemplate nodeTemplate_;
     bool nodeTemplateIsSet_;
     bool validateStorage_;
     bool validateStorageIsSet_;

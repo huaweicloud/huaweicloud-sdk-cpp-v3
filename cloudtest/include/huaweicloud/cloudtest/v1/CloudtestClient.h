@@ -459,9 +459,67 @@
 #include <huaweicloud/cloudtest/v1/model/UpdateMindmapNameResponse.h>
 #include <string>
 
+#include <huaweicloud/cloudtest/v1/model/AddResourceInfo.h>
+#include <huaweicloud/cloudtest/v1/model/AddResourceToIteratorRequest.h>
+#include <huaweicloud/cloudtest/v1/model/AddResourceToIteratorResponse.h>
+#include <string>
+
+#include <huaweicloud/cloudtest/v1/model/ListVisibleServicesRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ListVisibleServicesResponse.h>
+#include <string>
+
+#include <huaweicloud/cloudtest/v1/model/BatchDeleteTasksRequest.h>
+#include <huaweicloud/cloudtest/v1/model/BatchDeleteTasksResponse.h>
+#include <huaweicloud/cloudtest/v1/model/CreateTaskRequest.h>
+#include <huaweicloud/cloudtest/v1/model/CreateTaskResponse.h>
+#include <huaweicloud/cloudtest/v1/model/DeleteTaskInfo.h>
+#include <huaweicloud/cloudtest/v1/model/ShowTaskRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ShowTaskResponse.h>
+#include <huaweicloud/cloudtest/v1/model/TaskInfo.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateTaskRequest.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateTaskResponse.h>
+#include <string>
+
+#include <huaweicloud/cloudtest/v1/model/CreateTestVersionCaseRequest.h>
+#include <huaweicloud/cloudtest/v1/model/CreateTestVersionCaseResponse.h>
+#include <huaweicloud/cloudtest/v1/model/ListTestCasesByConditionRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ListTestCasesByConditionResponse.h>
+#include <huaweicloud/cloudtest/v1/model/ShowTestVersionCaseRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ShowTestVersionCaseResponse.h>
+#include <huaweicloud/cloudtest/v1/model/TestCaseInfo.h>
+#include <huaweicloud/cloudtest/v1/model/TestCasesListQueryInfo.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateTestVersionCaseRequest.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateTestVersionCaseResponse.h>
+#include <string>
+
 #include <huaweicloud/cloudtest/v1/model/AddFeatureRequest.h>
 #include <huaweicloud/cloudtest/v1/model/AddFeatureResponse.h>
 #include <huaweicloud/cloudtest/v1/model/AddTestItemInfo.h>
+
+#include <huaweicloud/cloudtest/v1/model/AddIssuesToIteratorRequest.h>
+#include <huaweicloud/cloudtest/v1/model/AddIssuesToIteratorResponse.h>
+#include <huaweicloud/cloudtest/v1/model/BranchVersionInfo.h>
+#include <huaweicloud/cloudtest/v1/model/CreateBranchRequest.h>
+#include <huaweicloud/cloudtest/v1/model/CreateBranchResponse.h>
+#include <huaweicloud/cloudtest/v1/model/CreateTestIteratorRequest.h>
+#include <huaweicloud/cloudtest/v1/model/CreateTestIteratorResponse.h>
+#include <huaweicloud/cloudtest/v1/model/DeleteBranchRequest.h>
+#include <huaweicloud/cloudtest/v1/model/DeleteBranchResponse.h>
+#include <huaweicloud/cloudtest/v1/model/DeleteIteratorRequest.h>
+#include <huaweicloud/cloudtest/v1/model/DeleteIteratorResponse.h>
+#include <huaweicloud/cloudtest/v1/model/IssuesInfo.h>
+#include <huaweicloud/cloudtest/v1/model/IteratorVersionInfo.h>
+#include <huaweicloud/cloudtest/v1/model/ListTestBranchesRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ListTestBranchesResponse.h>
+#include <huaweicloud/cloudtest/v1/model/ShowIteratorRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ShowIteratorResponse.h>
+#include <huaweicloud/cloudtest/v1/model/ShowTestBranchRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ShowTestBranchResponse.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateBranchRequest.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateBranchResponse.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateTestIteratorRequest.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateTestIteratorResponse.h>
+#include <string>
 
 #include <huaweicloud/cloudtest/v1/model/ListTestcasePlansRequest.h>
 #include <huaweicloud/cloudtest/v1/model/ListTestcasePlansResponse.h>
@@ -1907,6 +1965,90 @@ public:
         UpdateMindmapNameRequest &request
     );
 
+    // 向迭代中添加资源
+    //
+    // 向迭代中添加资源
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddResourceToIteratorResponse> addResourceToIterator(
+        AddResourceToIteratorRequest &request
+    );
+
+    // 查询当前租户可见的第三方服务列表
+    //
+    // 查询当前租户可见的第三方服务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListVisibleServicesResponse> listVisibleServices(
+        ListVisibleServicesRequest &request
+    );
+
+    // 批量删除测试套件
+    //
+    // 批量删除测试套件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteTasksResponse> batchDeleteTasks(
+        BatchDeleteTasksRequest &request
+    );
+    // 新建测试套件
+    //
+    // 新建测试套件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTaskResponse> createTask(
+        CreateTaskRequest &request
+    );
+    // 查询测试套件详情
+    //
+    // 查询测试套件详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTaskResponse> showTask(
+        ShowTaskRequest &request
+    );
+    // 修改测试套件
+    //
+    // 修改测试套件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTaskResponse> updateTask(
+        UpdateTaskRequest &request
+    );
+
+    // 在分支或者迭代下创建用例
+    //
+    // 在分支或者迭代下创建用例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTestVersionCaseResponse> createTestVersionCase(
+        CreateTestVersionCaseRequest &request
+    );
+    // 查询用例列表
+    //
+    // 查询用例列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTestCasesByConditionResponse> listTestCasesByCondition(
+        ListTestCasesByConditionRequest &request
+    );
+    // 查询用例详情
+    //
+    // 查询用例详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTestVersionCaseResponse> showTestVersionCase(
+        ShowTestVersionCaseRequest &request
+    );
+    // 在分支或者迭代下修改用例
+    //
+    // 在分支或者迭代下修改用例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTestVersionCaseResponse> updateTestVersionCase(
+        UpdateTestVersionCaseRequest &request
+    );
+
     // 添加目录信息
     //
     // 添加目录信息
@@ -1914,6 +2056,87 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AddFeatureResponse> addFeature(
         AddFeatureRequest &request
+    );
+
+    // 向迭代中添加需求
+    //
+    // 向迭代中添加需求
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddIssuesToIteratorResponse> addIssuesToIterator(
+        AddIssuesToIteratorRequest &request
+    );
+    // 新增分支
+    //
+    // 新增分支
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateBranchResponse> createBranch(
+        CreateBranchRequest &request
+    );
+    // 新增迭代
+    //
+    // 新增迭代
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTestIteratorResponse> createTestIterator(
+        CreateTestIteratorRequest &request
+    );
+    // 删除分支
+    //
+    // 删除分支
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteBranchResponse> deleteBranch(
+        DeleteBranchRequest &request
+    );
+    // 删除迭代
+    //
+    // 删除迭代
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteIteratorResponse> deleteIterator(
+        DeleteIteratorRequest &request
+    );
+    // 获取分支列表
+    //
+    // 获取分支列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTestBranchesResponse> listTestBranches(
+        ListTestBranchesRequest &request
+    );
+    // 查询迭代计划详情，包含统计信息
+    //
+    // 查询迭代计划详情，包含统计信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIteratorResponse> showIterator(
+        ShowIteratorRequest &request
+    );
+    // 获取分支详情
+    //
+    // 获取分支详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTestBranchResponse> showTestBranch(
+        ShowTestBranchRequest &request
+    );
+    // 修改分支
+    //
+    // 修改分支
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateBranchResponse> updateBranch(
+        UpdateBranchRequest &request
+    );
+    // 修改迭代
+    //
+    // 修改迭代
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTestIteratorResponse> updateTestIterator(
+        UpdateTestIteratorRequest &request
     );
 
     // 根据测试用例URI或用例编号查询测试用例对应的测试计划

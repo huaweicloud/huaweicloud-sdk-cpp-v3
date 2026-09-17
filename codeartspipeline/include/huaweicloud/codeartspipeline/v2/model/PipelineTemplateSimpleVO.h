@@ -161,10 +161,10 @@ public:
     /// **参数解释**： 是否展示流水线源。 **取值范围**： - true：展示流水线源。 - false：不展示流水线源。 
     /// </summary>
 
-    std::string getIsShowSource() const;
+    bool isIsShowSource() const;
     bool isShowSourceIsSet() const;
     void unsetisShowSource();
-    void setIsShowSource(const std::string& value);
+    void setIsShowSource(bool value);
 
     /// <summary>
     /// **参数解释**： 模板编排的阶段列表。 **约束限制**： 不涉及。 
@@ -203,7 +203,7 @@ protected:
     bool updaterIdIsSet_;
     bool isCollect_;
     bool isCollectIsSet_;
-    std::string isShowSource_;
+    bool isShowSource_;
     bool isShowSourceIsSet_;
     std::vector<PipelineTemplateSimpleVO_stages> stages_;
     bool stagesIsSet_;

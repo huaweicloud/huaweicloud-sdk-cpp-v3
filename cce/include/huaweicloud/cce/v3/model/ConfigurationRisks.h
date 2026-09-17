@@ -39,7 +39,7 @@ public:
     /// ConfigurationRisks members
 
     /// <summary>
-    /// 组件名称
+    /// **参数解释：** 组件名称。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getPackage() const;
@@ -48,7 +48,7 @@ public:
     void setPackage(const std::string& value);
 
     /// <summary>
-    /// 涉及文件路径
+    /// **参数解释：** 涉及文件路径。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getSourceFile() const;
@@ -57,7 +57,7 @@ public:
     void setSourceFile(const std::string& value);
 
     /// <summary>
-    /// 节点信息
+    /// **参数解释：** 节点信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getNodeMsg() const;
@@ -66,7 +66,7 @@ public:
     void setNodeMsg(const std::string& value);
 
     /// <summary>
-    /// 参数值
+    /// **参数解释：** 参数值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getField() const;
@@ -75,7 +75,7 @@ public:
     void setField(const std::string& value);
 
     /// <summary>
-    /// 修改操作类型
+    /// **参数解释：** 修改操作类型。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getOperation() const;
@@ -84,7 +84,7 @@ public:
     void setOperation(const std::string& value);
 
     /// <summary>
-    /// 原始值
+    /// **参数解释：** 原始值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getOriginalValue() const;
@@ -93,7 +93,7 @@ public:
     void setOriginalValue(const std::string& value);
 
     /// <summary>
-    /// 当前值
+    /// **参数解释：** 当前值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getValue() const;

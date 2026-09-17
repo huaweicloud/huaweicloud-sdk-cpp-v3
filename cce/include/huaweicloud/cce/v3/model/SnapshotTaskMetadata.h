@@ -39,7 +39,7 @@ public:
     /// SnapshotTaskMetadata members
 
     /// <summary>
-    /// 任务的ID。
+    /// **参数解释：** 任务的ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getUid() const;
@@ -48,7 +48,7 @@ public:
     void setUid(const std::string& value);
 
     /// <summary>
-    /// 任务的创建时间。
+    /// **参数解释：** 任务的创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getCreationTimestamp() const;
@@ -57,7 +57,7 @@ public:
     void setCreationTimestamp(const std::string& value);
 
     /// <summary>
-    /// 任务的更新时间。
+    /// **参数解释：** 任务的更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getUpdateTimestamp() const;

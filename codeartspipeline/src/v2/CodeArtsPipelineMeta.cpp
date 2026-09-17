@@ -8,8 +8,16 @@ namespace V2 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForAcceptCheckpoint() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForAcceptManualReview() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ApprovalDescription")
+                  .withJsonTag("approval_description")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -34,6 +42,15 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForBatchShowPipelinesLatestSta
     reqDefBuilder.withResponseField(FieldDef().
             withName("Body").
             withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForCreateAlertPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -81,6 +98,15 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForCreatePipelineNew() {
     reqDefBuilder.withRequestField(FieldDef().withName("ComponentId")
                   .withJsonTag("component_id")
                   .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForCreatePipelineTag() {
+    HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -142,6 +168,20 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForCreateStrategy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForCreateVariableGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForDeleteAlertPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForDeleteBasicPlugin() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("PluginName")
@@ -165,6 +205,14 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForDeletePipelineGroup() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Id")
                   .withJsonTag("id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForDeletePipelineTag() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TagId")
+                  .withJsonTag("tagId")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -200,6 +248,14 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForDeleteRule() {
 
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForDeleteStrategy() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForDeleteVariableGroup() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -318,6 +374,17 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForListPipelineSimpleInfo() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForListPipelineTag() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjId")
+                  .withJsonTag("proj_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -506,6 +573,15 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForListTemplates() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForListVariableGroups() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForPublishPlugin() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -535,6 +611,9 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForPublishPluginDraft() {
 
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForRejectManualReview() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ApprovalDescription")
+                  .withJsonTag("approval_description")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -545,6 +624,10 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForRemovePipeline() {
 
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForRetryPipelineRun() {
     HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -554,6 +637,11 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForRunPipeline() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForShowAlertPolicy() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -604,6 +692,9 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForShowPipelineRunDetail() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("PipelineRunId")
                   .withJsonTag("pipeline_run_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PipelineRunNumber")
+                  .withJsonTag("pipeline_run_number")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -717,6 +808,11 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForShowTemplateDetail() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsPipelineMeta::genRequestDefForShowVariableGroupDetail() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForStartNewPipeline() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -769,7 +865,7 @@ HttpRequestDef CodeArtsPipelineMeta::genRequestDefForUpdatePipelineGroup() {
 HttpRequestDef CodeArtsPipelineMeta::genRequestDefForUpdatePipelineInfo() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ComponentId")
-                  .withJsonTag("componentId")
+                  .withJsonTag("component_id")
                   .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

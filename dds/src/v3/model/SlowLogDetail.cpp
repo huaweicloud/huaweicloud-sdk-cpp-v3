@@ -36,6 +36,8 @@ SlowLogDetail::SlowLogDetail()
     logTimeIsSet_ = false;
     lineNum_ = "";
     lineNumIsSet_ = false;
+    indexRecommendation_ = "";
+    indexRecommendationIsSet_ = false;
 }
 
 SlowLogDetail::~SlowLogDetail() = default;
@@ -83,6 +85,9 @@ web::json::value SlowLogDetail::toJson() const
     }
     if(lineNumIsSet_) {
         val[utility::conversions::to_string_t("line_num")] = ModelBase::toJson(lineNum_);
+    }
+    if(indexRecommendationIsSet_) {
+        val[utility::conversions::to_string_t("index_recommendation")] = ModelBase::toJson(indexRecommendation_);
     }
 
     return val;
@@ -197,6 +202,15 @@ bool SlowLogDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLineNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("index_recommendation"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("index_recommendation"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIndexRecommendation(refVal);
         }
     }
     return ok;
@@ -453,6 +467,27 @@ bool SlowLogDetail::lineNumIsSet() const
 void SlowLogDetail::unsetlineNum()
 {
     lineNumIsSet_ = false;
+}
+
+std::string SlowLogDetail::getIndexRecommendation() const
+{
+    return indexRecommendation_;
+}
+
+void SlowLogDetail::setIndexRecommendation(const std::string& value)
+{
+    indexRecommendation_ = value;
+    indexRecommendationIsSet_ = true;
+}
+
+bool SlowLogDetail::indexRecommendationIsSet() const
+{
+    return indexRecommendationIsSet_;
+}
+
+void SlowLogDetail::unsetindexRecommendation()
+{
+    indexRecommendationIsSet_ = false;
 }
 
 }

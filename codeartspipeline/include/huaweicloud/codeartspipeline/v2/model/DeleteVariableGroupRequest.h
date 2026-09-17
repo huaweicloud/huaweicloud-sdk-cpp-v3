@@ -1,0 +1,82 @@
+
+#ifndef HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_DeleteVariableGroupRequest_H_
+#define HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_DeleteVariableGroupRequest_H_
+
+
+#include <huaweicloud/codeartspipeline/v2/CodeArtsPipelineExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Codeartspipeline {
+namespace V2 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Request Object
+/// </summary>
+class HUAWEICLOUD_CODEARTSPIPELINE_V2_EXPORT  DeleteVariableGroupRequest
+    : public ModelBase
+{
+public:
+    DeleteVariableGroupRequest();
+    virtual ~DeleteVariableGroupRequest();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// DeleteVariableGroupRequest members
+
+    /// <summary>
+    /// 项目ID
+    /// </summary>
+
+    std::string getProjectId() const;
+    bool projectIdIsSet() const;
+    void unsetprojectId();
+    void setProjectId(const std::string& value);
+
+    /// <summary>
+    /// 参数组ID
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
+
+protected:
+    std::string projectId_;
+    bool projectIdIsSet_;
+    std::string id_;
+    bool idIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+public:
+    DeleteVariableGroupRequest& dereference_from_shared_ptr(std::shared_ptr<DeleteVariableGroupRequest> ptr) {
+        return *ptr;
+    }
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_CODEARTSPIPELINE_V2_MODEL_DeleteVariableGroupRequest_H_

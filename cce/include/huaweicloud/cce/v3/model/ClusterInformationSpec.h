@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cce/v3/model/SecretConfigUpdate.h>
 #include <huaweicloud/cce/v3/model/ClusterInformationSpec_hostNetwork.h>
 #include <huaweicloud/cce/v3/model/EniNetworkUpdate.h>
 #include <string>
@@ -114,6 +115,15 @@ public:
     void unsetenableAutoResizing();
     void setEnableAutoResizing(bool value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    SecretConfigUpdate getSecretConfig() const;
+    bool secretConfigIsSet() const;
+    void unsetsecretConfig();
+    void setSecretConfig(const SecretConfigUpdate& value);
+
 
 protected:
     std::string agencyName_;
@@ -132,6 +142,8 @@ protected:
     bool deletionProtectionIsSet_;
     bool enableAutoResizing_;
     bool enableAutoResizingIsSet_;
+    SecretConfigUpdate secretConfig_;
+    bool secretConfigIsSet_;
 
 };
 

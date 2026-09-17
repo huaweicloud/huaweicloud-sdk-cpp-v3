@@ -114,6 +114,9 @@
 #include <huaweicloud/cce/v3/model/HibernateClusterRequest.h>
 #include <huaweicloud/cce/v3/model/HibernateClusterResponse.h>
 #include <huaweicloud/cce/v3/model/HyperNode.h>
+#include <huaweicloud/cce/v3/model/InPlaceMigrate.h>
+#include <huaweicloud/cce/v3/model/InplaceMigrateNodeRequest.h>
+#include <huaweicloud/cce/v3/model/InplaceMigrateNodeResponse.h>
 #include <huaweicloud/cce/v3/model/InstanceRequest.h>
 #include <huaweicloud/cce/v3/model/ListAccessPolicyRequest.h>
 #include <huaweicloud/cce/v3/model/ListAccessPolicyResponse.h>
@@ -584,9 +587,9 @@ public:
     std::shared_ptr<CreateClusterMasterSnapshotResponse> createClusterMasterSnapshot(
         CreateClusterMasterSnapshotRequest &request
     );
-    // 获取集群证书
+    // 获取集群访问证书
     //
-    // 该API用于获取指定集群的证书信息。
+    // 该API用于获取指定集群的访问证书信息。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateKubernetesClusterCertResponse> createKubernetesClusterCert(
@@ -831,6 +834,16 @@ public:
     std::shared_ptr<HibernateClusterResponse> hibernateCluster(
         HibernateClusterRequest &request
     );
+    // 节点腾挪
+    //
+    // 该API用于在指定集群下腾挪节点到另一集群。
+    // 
+    // &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<InplaceMigrateNodeResponse> inplaceMigrateNode(
+        InplaceMigrateNodeRequest &request
+    );
     // 获取访问策略列表
     //
     // 该API用于获取访问策略列表。
@@ -1055,9 +1068,9 @@ public:
     std::shared_ptr<RetryUpgradeClusterTaskResponse> retryUpgradeClusterTask(
         RetryUpgradeClusterTaskRequest &request
     );
-    // 吊销用户的集群证书
+    // 吊销集群访问证书
     //
-    // 该API用于吊销指定集群的用户证书
+    // 该API用于吊销指定集群的访问证书
     // 
     // &gt; 吊销操作完成后，此证书申请人之前下载的证书和 kubectl 配置文件无法再用于连接集群。此证书申请人可以重新下载证书或 kubectl 配置文件，并使用新下载的文件连接集群
     // 
@@ -1073,11 +1086,11 @@ public:
     std::shared_ptr<RollbackAddonInstanceResponse> rollbackAddonInstance(
         RollbackAddonInstanceRequest &request
     );
-    // 轮转用户的集群证书
+    // 轮转集群证书
     //
     // 该API用于轮转指定集群的证书
     // 
-    // &gt; 只支持1.19及以上集群版本
+    // &gt; 只支持1.15.11及以上集群版本
     // &gt; 操作完成后，用户集群组件的证书有效期会续期5年。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.

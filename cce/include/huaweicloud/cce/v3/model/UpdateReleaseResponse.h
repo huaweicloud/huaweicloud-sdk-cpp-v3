@@ -39,7 +39,7 @@ public:
     /// UpdateReleaseResponse members
 
     /// <summary>
-    /// 模板名称
+    /// **参数解释：** 模板名称 **约束限制：** 最长64个字符 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getChartName() const;
@@ -48,7 +48,7 @@ public:
     void setChartName(const std::string& value);
 
     /// <summary>
-    /// 是否公开模板
+    /// **参数解释：** 是否公开模板 **约束限制：** 不涉及 **取值范围：** - true：公开模板 - false：不公开模板  **默认取值：** false
     /// </summary>
 
     bool isChartPublic() const;
@@ -57,7 +57,7 @@ public:
     void setChartPublic(bool value);
 
     /// <summary>
-    /// 模板版本
+    /// **参数解释：** 模板版本 **约束限制：** 最长64个字符 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getChartVersion() const;
@@ -66,7 +66,7 @@ public:
     void setChartVersion(const std::string& value);
 
     /// <summary>
-    /// 集群ID
+    /// **参数解释：** 集群ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getClusterId() const;
@@ -75,7 +75,7 @@ public:
     void setClusterId(const std::string& value);
 
     /// <summary>
-    /// 集群名称
+    /// **参数解释：** 集群名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getClusterName() const;
@@ -84,7 +84,7 @@ public:
     void setClusterName(const std::string& value);
 
     /// <summary>
-    /// 创建时间
+    /// **参数解释：** 创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getCreateAt() const;
@@ -93,7 +93,7 @@ public:
     void setCreateAt(const std::string& value);
 
     /// <summary>
-    /// 模板实例描述
+    /// **参数解释：** 模板实例描述 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -102,7 +102,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 模板实例名称
+    /// **参数解释：** 模板实例名称 **约束限制：** 由小写字母开头，中间由小写字母、数字和中划线(-)组成，以小写字母或数字结尾 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -111,7 +111,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 模板实例所在的命名空间
+    /// **参数解释：** 模板实例所在的命名空间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getNamespace() const;
@@ -120,7 +120,7 @@ public:
     void setNamespace(const std::string& value);
 
     /// <summary>
-    /// 模板实例参数
+    /// **参数解释：** 模板实例参数 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getParameters() const;
@@ -129,7 +129,7 @@ public:
     void setParameters(const std::string& value);
 
     /// <summary>
-    /// 模板实例需要的资源
+    /// **参数解释：** 模板实例需要的资源 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getResources() const;
@@ -138,7 +138,7 @@ public:
     void setResources(const std::string& value);
 
     /// <summary>
-    /// 模板实例状态 - DEPLOYED：已部署，表示模板实例处于正常状态。 - DELETED：已删除，表示模板实例已经被删除。 - FAILED：失败，表示模板实例部署失败。 - DELETING：删除中，表示模板实例正处于删除过程中。 - PENDING_INSTALL：待安装，表示模板正在等待安装。 - PENDING_UPGRADE：待升级，表示模板正在等待升级。 - PENDING_ROLLBACK：待回滚，表示模板正在等待回滚。 - UNKNOWN：未知，表示模板状态异常，可尝试手动删除后重新安装。
+    /// **参数解释：** 模板实例状态 **约束限制：** 不涉及 **取值范围：** - DEPLOYED：已部署，表示模板实例处于正常状态 - DELETED：已删除，表示模板实例已经被删除 - FAILED：失败，表示模板实例部署失败 - DELETING：删除中，表示模板实例正处于删除过程中 - PENDING_INSTALL：待安装，表示模板正在等待安装 - PENDING_UPGRADE：待升级，表示模板正在等待升级 - PENDING_ROLLBACK：待回滚，表示模板正在等待回滚 - UNKNOWN：未知，表示模板状态异常，可尝试手动删除后重新安装  **默认取值：** 不涉及
     /// </summary>
 
     std::string getStatus() const;
@@ -147,7 +147,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 模板实例状态描述
+    /// **参数解释：** 模板实例状态描述 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getStatusDescription() const;
@@ -156,7 +156,7 @@ public:
     void setStatusDescription(const std::string& value);
 
     /// <summary>
-    /// 更新时间
+    /// **参数解释：** 更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getUpdateAt() const;
@@ -165,7 +165,7 @@ public:
     void setUpdateAt(const std::string& value);
 
     /// <summary>
-    /// 模板实例的值
+    /// **参数解释：** 模板实例的值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getValues() const;
@@ -174,7 +174,7 @@ public:
     void setValues(const std::string& value);
 
     /// <summary>
-    /// 模板实例版本
+    /// **参数解释：** 模板实例版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     int32_t getVersion() const;

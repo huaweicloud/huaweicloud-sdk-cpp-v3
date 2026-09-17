@@ -16,6 +16,7 @@ DualActiveRequestBody::DualActiveRequestBody()
     destinationRegionIsSet_ = false;
     destinationInstanceId_ = "";
     destinationInstanceIdIsSet_ = false;
+    tablesIsSet_ = false;
 }
 
 DualActiveRequestBody::~DualActiveRequestBody() = default;
@@ -33,6 +34,9 @@ web::json::value DualActiveRequestBody::toJson() const
     }
     if(destinationInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("destination_instance_id")] = ModelBase::toJson(destinationInstanceId_);
+    }
+    if(tablesIsSet_) {
+        val[utility::conversions::to_string_t("tables")] = ModelBase::toJson(tables_);
     }
 
     return val;
@@ -57,6 +61,15 @@ bool DualActiveRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDestinationInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tables"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tables"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTables(refVal);
         }
     }
     return ok;
@@ -103,6 +116,27 @@ bool DualActiveRequestBody::destinationInstanceIdIsSet() const
 void DualActiveRequestBody::unsetdestinationInstanceId()
 {
     destinationInstanceIdIsSet_ = false;
+}
+
+std::vector<std::string>& DualActiveRequestBody::getTables()
+{
+    return tables_;
+}
+
+void DualActiveRequestBody::setTables(const std::vector<std::string>& value)
+{
+    tables_ = value;
+    tablesIsSet_ = true;
+}
+
+bool DualActiveRequestBody::tablesIsSet() const
+{
+    return tablesIsSet_;
+}
+
+void DualActiveRequestBody::unsettables()
+{
+    tablesIsSet_ = false;
 }
 
 }

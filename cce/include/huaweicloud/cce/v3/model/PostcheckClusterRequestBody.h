@@ -40,7 +40,7 @@ public:
     /// PostcheckClusterRequestBody members
 
     /// <summary>
-    /// API版本，默认为v3
+    /// **参数解释：** API版本，固定值\&quot;v3\&quot;，该值不可修改。 **约束限制：** 该值不可修改 **取值范围：** - v3  **默认取值：** v3
     /// </summary>
 
     std::string getApiVersion() const;
@@ -49,7 +49,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 资源类型
+    /// **参数解释：** API类型，固定值\&quot;PostCheckTask\&quot;，该值不可修改。 **约束限制：** 该值不可修改 **取值范围：** - PostCheckTask  **默认取值：** PostCheckTask
     /// </summary>
 
     std::string getKind() const;

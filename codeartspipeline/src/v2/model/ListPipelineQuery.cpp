@@ -30,6 +30,14 @@ ListPipelineQuery::ListPipelineQuery()
     startTimeIsSet_ = false;
     endTime_ = "";
     endTimeIsSet_ = false;
+    pipelineRunUpdateTime_ = "";
+    pipelineRunUpdateTimeIsSet_ = false;
+    excludePipelineId_ = "";
+    excludePipelineIdIsSet_ = false;
+    includePipelineId_ = "";
+    includePipelineIdIsSet_ = false;
+    tagListIsSet_ = false;
+    manifestVersionListIsSet_ = false;
     offset_ = 0L;
     offsetIsSet_ = false;
     limit_ = 0L;
@@ -47,6 +55,7 @@ ListPipelineQuery::ListPipelineQuery()
     queryNew_ = false;
     queryNewIsSet_ = false;
     securityLevelListIsSet_ = false;
+    devUcSecurityLevelListIsSet_ = false;
 }
 
 ListPipelineQuery::~ListPipelineQuery() = default;
@@ -92,6 +101,21 @@ web::json::value ListPipelineQuery::toJson() const
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
     }
+    if(pipelineRunUpdateTimeIsSet_) {
+        val[utility::conversions::to_string_t("pipeline_run_update_time")] = ModelBase::toJson(pipelineRunUpdateTime_);
+    }
+    if(excludePipelineIdIsSet_) {
+        val[utility::conversions::to_string_t("exclude_pipeline_id")] = ModelBase::toJson(excludePipelineId_);
+    }
+    if(includePipelineIdIsSet_) {
+        val[utility::conversions::to_string_t("include_pipeline_id")] = ModelBase::toJson(includePipelineId_);
+    }
+    if(tagListIsSet_) {
+        val[utility::conversions::to_string_t("tag_list")] = ModelBase::toJson(tagList_);
+    }
+    if(manifestVersionListIsSet_) {
+        val[utility::conversions::to_string_t("manifest_version_list")] = ModelBase::toJson(manifestVersionList_);
+    }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
@@ -118,6 +142,9 @@ web::json::value ListPipelineQuery::toJson() const
     }
     if(securityLevelListIsSet_) {
         val[utility::conversions::to_string_t("security_level_list")] = ModelBase::toJson(securityLevelList_);
+    }
+    if(devUcSecurityLevelListIsSet_) {
+        val[utility::conversions::to_string_t("dev_uc_security_level_list")] = ModelBase::toJson(devUcSecurityLevelList_);
     }
 
     return val;
@@ -225,6 +252,51 @@ bool ListPipelineQuery::fromJson(const web::json::value& val)
             setEndTime(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("pipeline_run_update_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pipeline_run_update_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPipelineRunUpdateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("exclude_pipeline_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("exclude_pipeline_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExcludePipelineId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("include_pipeline_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("include_pipeline_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncludePipelineId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tag_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tag_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTagList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("manifest_version_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("manifest_version_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setManifestVersionList(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
@@ -304,6 +376,15 @@ bool ListPipelineQuery::fromJson(const web::json::value& val)
             std::vector<int32_t> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityLevelList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dev_uc_security_level_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dev_uc_security_level_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<int32_t> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDevUcSecurityLevelList(refVal);
         }
     }
     return ok;
@@ -541,6 +622,111 @@ void ListPipelineQuery::unsetendTime()
     endTimeIsSet_ = false;
 }
 
+std::string ListPipelineQuery::getPipelineRunUpdateTime() const
+{
+    return pipelineRunUpdateTime_;
+}
+
+void ListPipelineQuery::setPipelineRunUpdateTime(const std::string& value)
+{
+    pipelineRunUpdateTime_ = value;
+    pipelineRunUpdateTimeIsSet_ = true;
+}
+
+bool ListPipelineQuery::pipelineRunUpdateTimeIsSet() const
+{
+    return pipelineRunUpdateTimeIsSet_;
+}
+
+void ListPipelineQuery::unsetpipelineRunUpdateTime()
+{
+    pipelineRunUpdateTimeIsSet_ = false;
+}
+
+std::string ListPipelineQuery::getExcludePipelineId() const
+{
+    return excludePipelineId_;
+}
+
+void ListPipelineQuery::setExcludePipelineId(const std::string& value)
+{
+    excludePipelineId_ = value;
+    excludePipelineIdIsSet_ = true;
+}
+
+bool ListPipelineQuery::excludePipelineIdIsSet() const
+{
+    return excludePipelineIdIsSet_;
+}
+
+void ListPipelineQuery::unsetexcludePipelineId()
+{
+    excludePipelineIdIsSet_ = false;
+}
+
+std::string ListPipelineQuery::getIncludePipelineId() const
+{
+    return includePipelineId_;
+}
+
+void ListPipelineQuery::setIncludePipelineId(const std::string& value)
+{
+    includePipelineId_ = value;
+    includePipelineIdIsSet_ = true;
+}
+
+bool ListPipelineQuery::includePipelineIdIsSet() const
+{
+    return includePipelineIdIsSet_;
+}
+
+void ListPipelineQuery::unsetincludePipelineId()
+{
+    includePipelineIdIsSet_ = false;
+}
+
+std::vector<std::string>& ListPipelineQuery::getTagList()
+{
+    return tagList_;
+}
+
+void ListPipelineQuery::setTagList(const std::vector<std::string>& value)
+{
+    tagList_ = value;
+    tagListIsSet_ = true;
+}
+
+bool ListPipelineQuery::tagListIsSet() const
+{
+    return tagListIsSet_;
+}
+
+void ListPipelineQuery::unsettagList()
+{
+    tagListIsSet_ = false;
+}
+
+std::vector<std::string>& ListPipelineQuery::getManifestVersionList()
+{
+    return manifestVersionList_;
+}
+
+void ListPipelineQuery::setManifestVersionList(const std::vector<std::string>& value)
+{
+    manifestVersionList_ = value;
+    manifestVersionListIsSet_ = true;
+}
+
+bool ListPipelineQuery::manifestVersionListIsSet() const
+{
+    return manifestVersionListIsSet_;
+}
+
+void ListPipelineQuery::unsetmanifestVersionList()
+{
+    manifestVersionListIsSet_ = false;
+}
+
 int64_t ListPipelineQuery::getOffset() const
 {
     return offset_;
@@ -728,6 +914,27 @@ bool ListPipelineQuery::securityLevelListIsSet() const
 void ListPipelineQuery::unsetsecurityLevelList()
 {
     securityLevelListIsSet_ = false;
+}
+
+std::vector<int32_t>& ListPipelineQuery::getDevUcSecurityLevelList()
+{
+    return devUcSecurityLevelList_;
+}
+
+void ListPipelineQuery::setDevUcSecurityLevelList(std::vector<int32_t> value)
+{
+    devUcSecurityLevelList_ = value;
+    devUcSecurityLevelListIsSet_ = true;
+}
+
+bool ListPipelineQuery::devUcSecurityLevelListIsSet() const
+{
+    return devUcSecurityLevelListIsSet_;
+}
+
+void ListPipelineQuery::unsetdevUcSecurityLevelList()
+{
+    devUcSecurityLevelListIsSet_ = false;
 }
 
 }

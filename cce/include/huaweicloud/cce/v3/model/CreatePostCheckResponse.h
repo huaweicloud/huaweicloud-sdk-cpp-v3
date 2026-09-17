@@ -42,7 +42,7 @@ public:
     /// CreatePostCheckResponse members
 
     /// <summary>
-    /// API版本
+    /// **参数解释：** API版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -51,7 +51,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 资源类型
+    /// **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getKind() const;

@@ -35,6 +35,17 @@ PipelineDTO::PipelineDTO()
     concurrencyControlIsSet_ = false;
     securityLevel_ = 0;
     securityLevelIsSet_ = false;
+    disableReleaseBranchManagement_ = false;
+    disableReleaseBranchManagementIsSet_ = false;
+    executionPlansIsSet_ = false;
+    projectId_ = "";
+    projectIdIsSet_ = false;
+    cancelStrategyIsSet_ = false;
+    confidentialityCode_ = "";
+    confidentialityCodeIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
+    variableGroupIdsIsSet_ = false;
 }
 
 PipelineDTO::~PipelineDTO() = default;
@@ -88,6 +99,27 @@ web::json::value PipelineDTO::toJson() const
     }
     if(securityLevelIsSet_) {
         val[utility::conversions::to_string_t("security_level")] = ModelBase::toJson(securityLevel_);
+    }
+    if(disableReleaseBranchManagementIsSet_) {
+        val[utility::conversions::to_string_t("disable_release_branch_management")] = ModelBase::toJson(disableReleaseBranchManagement_);
+    }
+    if(executionPlansIsSet_) {
+        val[utility::conversions::to_string_t("execution_plans")] = ModelBase::toJson(executionPlans_);
+    }
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
+    if(cancelStrategyIsSet_) {
+        val[utility::conversions::to_string_t("cancel_strategy")] = ModelBase::toJson(cancelStrategy_);
+    }
+    if(confidentialityCodeIsSet_) {
+        val[utility::conversions::to_string_t("confidentiality_code")] = ModelBase::toJson(confidentialityCode_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
+    }
+    if(variableGroupIdsIsSet_) {
+        val[utility::conversions::to_string_t("variable_group_ids")] = ModelBase::toJson(variableGroupIds_);
     }
 
     return val;
@@ -220,6 +252,69 @@ bool PipelineDTO::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityLevel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("disable_release_branch_management"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("disable_release_branch_management"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDisableReleaseBranchManagement(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("execution_plans"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("execution_plans"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<Object> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExecutionPlans(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cancel_strategy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cancel_strategy"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCancelStrategy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("confidentiality_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("confidentiality_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfidentialityCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("variable_group_ids"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("variable_group_ids"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVariableGroupIds(refVal);
         }
     }
     return ok;
@@ -518,6 +613,153 @@ bool PipelineDTO::securityLevelIsSet() const
 void PipelineDTO::unsetsecurityLevel()
 {
     securityLevelIsSet_ = false;
+}
+
+bool PipelineDTO::isDisableReleaseBranchManagement() const
+{
+    return disableReleaseBranchManagement_;
+}
+
+void PipelineDTO::setDisableReleaseBranchManagement(bool value)
+{
+    disableReleaseBranchManagement_ = value;
+    disableReleaseBranchManagementIsSet_ = true;
+}
+
+bool PipelineDTO::disableReleaseBranchManagementIsSet() const
+{
+    return disableReleaseBranchManagementIsSet_;
+}
+
+void PipelineDTO::unsetdisableReleaseBranchManagement()
+{
+    disableReleaseBranchManagementIsSet_ = false;
+}
+
+std::vector<Object>& PipelineDTO::getExecutionPlans()
+{
+    return executionPlans_;
+}
+
+void PipelineDTO::setExecutionPlans(const std::vector<Object>& value)
+{
+    executionPlans_ = value;
+    executionPlansIsSet_ = true;
+}
+
+bool PipelineDTO::executionPlansIsSet() const
+{
+    return executionPlansIsSet_;
+}
+
+void PipelineDTO::unsetexecutionPlans()
+{
+    executionPlansIsSet_ = false;
+}
+
+std::string PipelineDTO::getProjectId() const
+{
+    return projectId_;
+}
+
+void PipelineDTO::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool PipelineDTO::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void PipelineDTO::unsetprojectId()
+{
+    projectIdIsSet_ = false;
+}
+
+Object PipelineDTO::getCancelStrategy() const
+{
+    return cancelStrategy_;
+}
+
+void PipelineDTO::setCancelStrategy(const Object& value)
+{
+    cancelStrategy_ = value;
+    cancelStrategyIsSet_ = true;
+}
+
+bool PipelineDTO::cancelStrategyIsSet() const
+{
+    return cancelStrategyIsSet_;
+}
+
+void PipelineDTO::unsetcancelStrategy()
+{
+    cancelStrategyIsSet_ = false;
+}
+
+std::string PipelineDTO::getConfidentialityCode() const
+{
+    return confidentialityCode_;
+}
+
+void PipelineDTO::setConfidentialityCode(const std::string& value)
+{
+    confidentialityCode_ = value;
+    confidentialityCodeIsSet_ = true;
+}
+
+bool PipelineDTO::confidentialityCodeIsSet() const
+{
+    return confidentialityCodeIsSet_;
+}
+
+void PipelineDTO::unsetconfidentialityCode()
+{
+    confidentialityCodeIsSet_ = false;
+}
+
+std::string PipelineDTO::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void PipelineDTO::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool PipelineDTO::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void PipelineDTO::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
+}
+
+std::vector<std::string>& PipelineDTO::getVariableGroupIds()
+{
+    return variableGroupIds_;
+}
+
+void PipelineDTO::setVariableGroupIds(const std::vector<std::string>& value)
+{
+    variableGroupIds_ = value;
+    variableGroupIdsIsSet_ = true;
+}
+
+bool PipelineDTO::variableGroupIdsIsSet() const
+{
+    return variableGroupIdsIsSet_;
+}
+
+void PipelineDTO::unsetvariableGroupIds()
+{
+    variableGroupIdsIsSet_ = false;
 }
 
 }

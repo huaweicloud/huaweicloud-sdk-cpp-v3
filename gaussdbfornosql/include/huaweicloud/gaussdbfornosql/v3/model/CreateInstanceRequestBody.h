@@ -15,6 +15,7 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ChargeInfoOption.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DatastoreOption.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/AvailabilityZoneDetail.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DRInfo.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/LbAccessControlSettings.h>
 #include <vector>
 #include <huaweicloud/gaussdbfornosql/v3/model/BackupStrategyOption.h>
@@ -218,6 +219,15 @@ public:
     void setRestoreInfo(const RestoreInfo& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    DRInfo getDrInfo() const;
+    bool drInfoIsSet() const;
+    void unsetdrInfo();
+    void setDrInfo(const DRInfo& value);
+
+    /// <summary>
     /// **参数解释：** 数据库访问端口号。 **约束限制：** 目前仅支持GeminiDB Redis实例支持自定义端口，取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。  不指定端口时，创建GeminiDB Redis实例的访问端口默认为6379。  如果该实例计划用于搭建双活容灾场景，请配置为8635端口。 **取值范围：** 取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。 **默认取值：** 6379。
     /// </summary>
 
@@ -284,6 +294,8 @@ protected:
     bool chargeInfoIsSet_;
     RestoreInfo restoreInfo_;
     bool restoreInfoIsSet_;
+    DRInfo drInfo_;
+    bool drInfoIsSet_;
     std::string port_;
     bool portIsSet_;
     AvailabilityZoneDetail availabilityZoneDetail_;

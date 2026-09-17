@@ -74,6 +74,24 @@ public:
     void unsetsort();
     void setSort(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 日志偏移量。仅查询Jenkins日志时使用，其余场景请使用start_offset和end_offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    int64_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int64_t value);
+
+    /// <summary>
+    /// **参数解释**： 日志级别。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getLevel() const;
+    bool levelIsSet() const;
+    void unsetlevel();
+    void setLevel(const std::string& value);
+
 
 protected:
     int64_t startOffset_;
@@ -84,6 +102,10 @@ protected:
     bool limitIsSet_;
     std::string sort_;
     bool sortIsSet_;
+    int64_t offset_;
+    bool offsetIsSet_;
+    std::string level_;
+    bool levelIsSet_;
 
 };
 

@@ -41,7 +41,7 @@ public:
     /// ListAutopilotUpgradeWorkFlowsResponse members
 
     /// <summary>
-    /// API类型，固定值“List”，该值不可修改。 
+    /// **参数解释：** API类型，固定值\&quot;List\&quot;，该值不可修改 **约束限制：** 固定值 **取值范围：** - List  **默认取值：** List 
     /// </summary>
 
     std::string getKind() const;
@@ -50,7 +50,7 @@ public:
     void setKind(const std::string& value);
 
     /// <summary>
-    /// API版本，固定值“v3”，该值不可修改。 
+    /// **参数解释：** API版本，固定值\&quot;v3\&quot;，该值不可修改 **约束限制：** 固定值 **取值范围：** - v3  **默认取值：** v3 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -59,7 +59,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 
+    /// **参数解释：** 升级工作流列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<UpgradeWorkFlow>& getItems();

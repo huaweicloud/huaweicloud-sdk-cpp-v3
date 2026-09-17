@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 节点标签选择器，匹配Kubernetes中nodeSelector相关约束
+/// **参数解释：** 节点标签选择器，匹配Kubernetes中nodeSelector相关约束。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  NodeSelector
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// NodeSelector members
 
     /// <summary>
-    /// 标签键
+    /// **参数解释：** 标签键 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getKey() const;
@@ -49,7 +49,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 标签值列表
+    /// **参数解释：** 标签值列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::vector<std::string>& getValue();
@@ -58,7 +58,7 @@ public:
     void setValue(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 标签逻辑运算符
+    /// **参数解释：** 标签逻辑运算符 **约束限制：** 不涉及 **取值范围：** - in：值在列表中 - notin：值不在列表中 - exists：标签存在 - !：标签不存在 - gt：大于 - lt：小于  **默认取值：** 不涉及
     /// </summary>
 
     std::string getOperator() const;

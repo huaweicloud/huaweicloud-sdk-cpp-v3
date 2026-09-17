@@ -49,7 +49,7 @@ public:
     void setClusterId(const std::string& value);
 
     /// <summary>
-    /// 集群自动升级计划ID
+    /// **参数解释：** 集群自动升级计划ID。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getUpgradePlanId() const;

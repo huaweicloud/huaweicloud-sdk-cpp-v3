@@ -6,14 +6,19 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/codeartspipeline/v2/model/AcceptCheckpointRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/AcceptCheckpointResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/AcceptManualReviewRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/AcceptManualReviewResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/AgentPluginInfoQueryDTO.h>
+#include <huaweicloud/codeartspipeline/v2/model/AlertPolicyDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/BatchMovePipelineToGroupRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/BatchMovePipelineToGroupResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/BatchShowPipelinesLatestStatusRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/BatchShowPipelinesLatestStatusResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/BusinessTypePluginsQueryDTO.h>
+#include <huaweicloud/codeartspipeline/v2/model/CreateAlertPolicyRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/CreateAlertPolicyResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreateBasicPluginRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreateBasicPluginResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreatePipelineByTemplateIdRequest.h>
@@ -24,6 +29,8 @@
 #include <huaweicloud/codeartspipeline/v2/model/CreatePipelineGroupResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreatePipelineNewRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreatePipelineNewResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/CreatePipelineTagRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/CreatePipelineTagResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreatePipelineTemplateRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreatePipelineTemplateResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreatePluginDraftRequest.h>
@@ -38,12 +45,20 @@
 #include <huaweicloud/codeartspipeline/v2/model/CreateRuleSetReq.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreateStrategyRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/CreateStrategyResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/CreateTagReq.h>
+#include <huaweicloud/codeartspipeline/v2/model/CreateVariableGroupReq.h>
+#include <huaweicloud/codeartspipeline/v2/model/CreateVariableGroupRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/CreateVariableGroupResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/DeleteAlertPolicyRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/DeleteAlertPolicyResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeleteBasicPluginRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeleteBasicPluginResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeletePipelineGroupRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeletePipelineGroupResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeletePipelineRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeletePipelineResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/DeletePipelineTagRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/DeletePipelineTagResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeletePipelineTemplateRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeletePipelineTemplateResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeletePluginDraftRequest.h>
@@ -54,6 +69,8 @@
 #include <huaweicloud/codeartspipeline/v2/model/DeleteRuleResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeleteStrategyRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/DeleteStrategyResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/DeleteVariableGroupRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/DeleteVariableGroupResponse.h>
 #include <huaweicloud/core/utils/HttpContent.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListAvailablePublisherRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListAvailablePublisherResponse.h>
@@ -74,6 +91,8 @@
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelineSimpleInfoRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelineSimpleInfoRequestBody.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelineSimpleInfoResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListPipelineTagRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListPipelineTagResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelineTemplatesQuery.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelineTemplatesRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelineTemplatesResponse.h>
@@ -97,6 +116,9 @@
 #include <huaweicloud/codeartspipeline/v2/model/ListStrategyResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListTemplatesRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/ListTemplatesResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListVariableGroupsReq.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListVariableGroupsRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/ListVariableGroupsResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/LogQuery.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineByTemplateDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineDTO.h>
@@ -106,6 +128,7 @@
 #include <huaweicloud/codeartspipeline/v2/model/PipelineGroupVo.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineLatestRun.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineMoveToGroupResponseVo.h>
+#include <huaweicloud/codeartspipeline/v2/model/PipelineTagResp.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineTemplateDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/PluginBasicDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/PluginDTO.h>
@@ -125,11 +148,14 @@
 #include <huaweicloud/codeartspipeline/v2/model/RejectManualReviewResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/RemovePipelineRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/RemovePipelineResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/RetryPipelineRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/RetryPipelineRunRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/RetryPipelineRunResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/RunPipelineDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/RunPipelineRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/RunPipelineResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/ShowAlertPolicyRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/ShowAlertPolicyResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/ShowBasicPluginRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/ShowBasicPluginResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/ShowInstanceStatusRequest.h>
@@ -168,6 +194,8 @@
 #include <huaweicloud/codeartspipeline/v2/model/ShowStrategyResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/ShowTemplateDetailRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/ShowTemplateDetailResponse.h>
+#include <huaweicloud/codeartspipeline/v2/model/ShowVariableGroupDetailRequest.h>
+#include <huaweicloud/codeartspipeline/v2/model/ShowVariableGroupDetailResponse.h>
 #include <huaweicloud/codeartspipeline/v2/model/StagePluginsQueryDTO.h>
 #include <huaweicloud/codeartspipeline/v2/model/StartNewPipelineRequest.h>
 #include <huaweicloud/codeartspipeline/v2/model/StartNewPipelineResponse.h>
@@ -256,6 +284,14 @@ public:
 
     static ClientBuilder<CodeArtsPipelineClient> newBuilder();
 
+    // 手动卡点通过
+    //
+    // 手动卡点通过
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AcceptCheckpointResponse> acceptCheckpoint(
+        AcceptCheckpointRequest &request
+    );
     // 通过人工审核
     //
     // 通过人工审核
@@ -279,6 +315,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatus(
         BatchShowPipelinesLatestStatusRequest &request
+    );
+    // 创建告警策略
+    //
+    // 创建流水线告警策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAlertPolicyResponse> createAlertPolicy(
+        CreateAlertPolicyRequest &request
     );
     // 创建基础插件
     //
@@ -319,6 +363,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreatePipelineNewResponse> createPipelineNew(
         CreatePipelineNewRequest &request
+    );
+    // 新建流水线标签
+    //
+    // 新建流水线标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreatePipelineTagResponse> createPipelineTag(
+        CreatePipelineTagRequest &request
     );
     // 创建流水线模板
     //
@@ -368,6 +420,22 @@ public:
     std::shared_ptr<CreateStrategyResponse> createStrategy(
         CreateStrategyRequest &request
     );
+    // 创建参数组
+    //
+    // 创建参数组
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateVariableGroupResponse> createVariableGroup(
+        CreateVariableGroupRequest &request
+    );
+    // 删除告警策略
+    //
+    // 删除流水线告警策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAlertPolicyResponse> deleteAlertPolicy(
+        DeleteAlertPolicyRequest &request
+    );
     // 删除基础插件
     //
     // 删除基础插件
@@ -391,6 +459,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeletePipelineGroupResponse> deletePipelineGroup(
         DeletePipelineGroupRequest &request
+    );
+    // 删除流水线标签
+    //
+    // 删除流水线标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeletePipelineTagResponse> deletePipelineTag(
+        DeletePipelineTagRequest &request
     );
     // 删除流水线模板
     //
@@ -431,6 +507,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteStrategyResponse> deleteStrategy(
         DeleteStrategyRequest &request
+    );
+    // 删除参数组
+    //
+    // 删除参数组
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteVariableGroupResponse> deleteVariableGroup(
+        DeleteVariableGroupRequest &request
     );
     // 查询可用发布商
     //
@@ -495,6 +579,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListPipelineSimpleInfoResponse> listPipelineSimpleInfo(
         ListPipelineSimpleInfoRequest &request
+    );
+    // 查询流水线标签列表
+    //
+    // 查询流水线标签列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPipelineTagResponse> listPipelineTag(
+        ListPipelineTagRequest &request
     );
     // 查询模板列表
     //
@@ -584,6 +676,14 @@ public:
     std::shared_ptr<ListTemplatesResponse> listTemplates(
         ListTemplatesRequest &request
     );
+    // 查询参数组列表
+    //
+    // 查询参数组列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListVariableGroupsResponse> listVariableGroups(
+        ListVariableGroupsRequest &request
+    );
     // 发布插件
     //
     // 发布插件
@@ -639,6 +739,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RunPipelineResponse> runPipeline(
         RunPipelineRequest &request
+    );
+    // 查询告警策略详情
+    //
+    // 查询流水线告警策略详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAlertPolicyResponse> showAlertPolicy(
+        ShowAlertPolicyRequest &request
     );
     // 查询基础插件详情
     //
@@ -744,7 +852,7 @@ public:
     std::shared_ptr<ShowPluginVersionResponse> showPluginVersion(
         ShowPluginVersionRequest &request
     );
-    // 
+    // 查询项目级策略详情
     //
     // 查询项目级策略详情
     // 
@@ -791,6 +899,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTemplateDetailResponse> showTemplateDetail(
         ShowTemplateDetailRequest &request
+    );
+    // 查询参数组详情
+    //
+    // 查询参数组详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowVariableGroupDetailResponse> showVariableGroupDetail(
+        ShowVariableGroupDetailRequest &request
     );
     // 启动流水线
     //

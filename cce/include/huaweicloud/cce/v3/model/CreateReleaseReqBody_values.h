@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 模板实例的值
+/// **参数解释：** 模板实例的值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  CreateReleaseReqBody_values
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// CreateReleaseReqBody_values members
 
     /// <summary>
-    /// 镜像拉取策略
+    /// **参数解释：** 镜像拉取策略 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getImagePullPolicy() const;
@@ -48,7 +48,7 @@ public:
     void setImagePullPolicy(const std::string& value);
 
     /// <summary>
-    /// 镜像标签
+    /// **参数解释：** 镜像标签 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getImageTag() const;

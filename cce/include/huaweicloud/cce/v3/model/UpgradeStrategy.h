@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 升级配置
+/// **参数解释：** 升级配置 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  UpgradeStrategy
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// UpgradeStrategy members
 
     /// <summary>
-    /// 升级策略类型，当前仅支持原地升级类型\&quot;inPlaceRollingUpdate\&quot;
+    /// **参数解释：** 升级策略类型 **约束限制：** 当前仅支持inPlaceRollingUpdate类型 **取值范围：** - \&quot;inPlaceRollingUpdate\&quot;：原地升级类型  **默认取值：** 不涉及
     /// </summary>
 
     std::string getType() const;

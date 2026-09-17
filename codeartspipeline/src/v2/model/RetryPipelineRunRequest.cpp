@@ -18,6 +18,7 @@ RetryPipelineRunRequest::RetryPipelineRunRequest()
     pipelineIdIsSet_ = false;
     pipelineRunId_ = "";
     pipelineRunIdIsSet_ = false;
+    bodyIsSet_ = false;
 }
 
 RetryPipelineRunRequest::~RetryPipelineRunRequest() = default;
@@ -38,6 +39,9 @@ web::json::value RetryPipelineRunRequest::toJson() const
     }
     if(pipelineRunIdIsSet_) {
         val[utility::conversions::to_string_t("pipeline_run_id")] = ModelBase::toJson(pipelineRunId_);
+    }
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
 
     return val;
@@ -71,6 +75,15 @@ bool RetryPipelineRunRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPipelineRunId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+        if(!fieldValue.is_null())
+        {
+            RetryPipelineRequest refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBody(refVal);
         }
     }
     return ok;
@@ -138,6 +151,27 @@ bool RetryPipelineRunRequest::pipelineRunIdIsSet() const
 void RetryPipelineRunRequest::unsetpipelineRunId()
 {
     pipelineRunIdIsSet_ = false;
+}
+
+RetryPipelineRequest RetryPipelineRunRequest::getBody() const
+{
+    return body_;
+}
+
+void RetryPipelineRunRequest::setBody(const RetryPipelineRequest& value)
+{
+    body_ = value;
+    bodyIsSet_ = true;
+}
+
+bool RetryPipelineRunRequest::bodyIsSet() const
+{
+    return bodyIsSet_;
+}
+
+void RetryPipelineRunRequest::unsetbody()
+{
+    bodyIsSet_ = false;
 }
 
 }

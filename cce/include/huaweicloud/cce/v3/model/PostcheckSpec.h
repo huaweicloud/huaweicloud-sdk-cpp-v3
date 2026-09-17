@@ -39,7 +39,7 @@ public:
     /// PostcheckSpec members
 
     /// <summary>
-    /// 集群ID
+    /// **参数解释：** 集群ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getClusterID() const;
@@ -48,7 +48,7 @@ public:
     void setClusterID(const std::string& value);
 
     /// <summary>
-    /// 集群升级源版本
+    /// **参数解释：** 升级前的集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getClusterVersion() const;
@@ -57,7 +57,7 @@ public:
     void setClusterVersion(const std::string& value);
 
     /// <summary>
-    /// 集群升级目标版本
+    /// **参数解释：** 当前集群版本 **约束限制：** 不涉及 **取值范围：** CCE支持的集群版本 **默认取值：** 不涉及
     /// </summary>
 
     std::string getTargetVersion() const;

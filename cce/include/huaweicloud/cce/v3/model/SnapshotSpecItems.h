@@ -39,7 +39,7 @@ public:
     /// SnapshotSpecItems members
 
     /// <summary>
-    /// 子任务ID
+    /// **参数解释：** 子任务ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getId() const;
@@ -66,7 +66,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 任务创建时间
+    /// **参数解释：** 任务创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getCreationTimestamp() const;
@@ -75,7 +75,7 @@ public:
     void setCreationTimestamp(const std::string& value);
 
     /// <summary>
-    /// 任务更新时间
+    /// **参数解释：** 任务更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getUpdateTimestamp() const;
@@ -84,7 +84,7 @@ public:
     void setUpdateTimestamp(const std::string& value);
 
     /// <summary>
-    /// 信息
+    /// **参数解释：** 信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getMessage() const;

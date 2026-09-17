@@ -41,7 +41,7 @@ public:
     /// AddonInstanceStatus members
 
     /// <summary>
-    /// 插件实例状态, 取值如下 - running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - abnormal：不可用，表示插件状态异常，插件不可使用。可单击插件名称查看实例异常事件。 - installing：安装中，表示插件正在安装中。 - installFailed：安装失败，表示插件安装失败，需要卸载后重新安装。 - upgrading：升级中，表示插件正在更新中。 - upgradeFailed：升级失败，表示插件升级失败，可重试升级或卸载后重新安装。 - deleting：删除中，表示插件正在删除中。 - deleteFailed：删除失败，表示插件删除失败，可重试卸载。 - deleteSuccess：删除成功，表示插件删除成功。 - available：部分就绪，表示插件下只有部分实例状态为运行中，插件部分功能可用。 - rollbacking：回滚中，表示插件正在回滚中。 - rollbackFailed：回滚失败，表示插件回滚失败，可重试回滚或卸载后重新安装。 - unknown：未知状态，表示插件模板实例不存在。
+    /// **参数解释**： 插件实例状态。 **约束限制**： 不涉及 **取值范围**： - running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - abnormal：不可用，表示插件状态异常，插件不可使用。可单击插件名称查看实例异常事件。 - installing：安装中，表示插件正在安装中。 - installFailed：安装失败，表示插件安装失败，需要卸载后重新安装。 - upgrading：升级中，表示插件正在更新中。 - upgradeFailed：升级失败，表示插件升级失败，可重试升级或卸载后重新安装。 - deleting：删除中，表示插件正在删除中。 - deleteFailed：删除失败，表示插件删除失败，可重试卸载。 - deleteSuccess：删除成功，表示插件删除成功。 - available：部分就绪，表示插件下只有部分实例状态为运行中，插件部分功能可用。 - rollbacking：回滚中，表示插件正在回滚中。 - rollbackFailed：回滚失败，表示插件回滚失败，可重试回滚或卸载后重新安装。 - unknown：未知状态，表示插件模板实例不存在。  **默认取值**： 不涉及
     /// </summary>
 
     std::string getStatus() const;
@@ -50,7 +50,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 插件安装失败原因
+    /// **参数解释**： 插件安装失败原因。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getReason() const;
@@ -59,7 +59,7 @@ public:
     void setReason(const std::string& value);
 
     /// <summary>
-    /// 安装错误详情
+    /// **参数解释**： 安装错误详情。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getMessage() const;
@@ -68,7 +68,7 @@ public:
     void setMessage(const std::string& value);
 
     /// <summary>
-    /// 此插件版本，支持升级的集群版本
+    /// **参数解释**： 此插件版本，支持升级的集群版本。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getTargetVersions();
@@ -86,7 +86,7 @@ public:
     void setCurrentVersion(const Versions& value);
 
     /// <summary>
-    /// 是否支持回滚到插件升级前的插件版本
+    /// **参数解释**： 是否支持回滚到插件升级前的插件版本。 **约束限制**： 不涉及 **取值范围**： - true：支持回滚 - false：不支持回滚  **默认取值**： 不涉及
     /// </summary>
 
     bool isIsRollbackable() const;
@@ -95,7 +95,7 @@ public:
     void setIsRollbackable(bool value);
 
     /// <summary>
-    /// 插件升级或回滚前的版本
+    /// **参数解释**： 插件升级或回滚前的版本。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getPreviousVersion() const;

@@ -33,6 +33,39 @@ ClientBuilder<CodeArtsPipelineClient> CodeArtsPipelineClient::newBuilder()
     ClientBuilder<CodeArtsPipelineClient> client = ClientBuilder<CodeArtsPipelineClient>("");
     return client;
 }
+std::shared_ptr<AcceptCheckpointResponse> CodeArtsPipelineClient::acceptCheckpoint(AcceptCheckpointRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/steps/{step_run_id}/manual/pass";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["step_run_id"] = parameterToString(request.getStepRunId());
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["pipeline_id"] = parameterToString(request.getPipelineId());
+    localVarPathParams["pipeline_run_id"] = parameterToString(request.getPipelineRunId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForAcceptCheckpoint());
+
+    std::shared_ptr<AcceptCheckpointResponse> localVarResult = std::make_shared<AcceptCheckpointResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<AcceptManualReviewResponse> CodeArtsPipelineClient::acceptManualReview(AcceptManualReviewRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/jobs/{job_run_id}/steps/{step_run_id}/pass";
@@ -54,6 +87,9 @@ std::shared_ptr<AcceptManualReviewResponse> CodeArtsPipelineClient::acceptManual
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.approvalDescriptionIsSet()) {
+        localVarQueryParams["approval_description"] = parameterToString(request.getApprovalDescription());
+    }
 
     std::string localVarHttpBody;
 
@@ -139,6 +175,48 @@ std::shared_ptr<BatchShowPipelinesLatestStatusResponse> CodeArtsPipelineClient::
         localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForBatchShowPipelinesLatestStatus());
 
     std::shared_ptr<BatchShowPipelinesLatestStatusResponse> localVarResult = std::make_shared<BatchShowPipelinesLatestStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateAlertPolicyResponse> CodeArtsPipelineClient::createAlertPolicy(CreateAlertPolicyRequest &request)
+{
+    std::string localVarPath = "/v5/{tenant_id}/api/alert/policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForCreateAlertPolicy());
+
+    std::shared_ptr<CreateAlertPolicyResponse> localVarResult = std::make_shared<CreateAlertPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -355,6 +433,48 @@ std::shared_ptr<CreatePipelineNewResponse> CodeArtsPipelineClient::createPipelin
         localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForCreatePipelineNew());
 
     std::shared_ptr<CreatePipelineNewResponse> localVarResult = std::make_shared<CreatePipelineNewResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreatePipelineTagResponse> CodeArtsPipelineClient::createPipelineTag(CreatePipelineTagRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/api/pipeline-tag/create";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForCreatePipelineTag());
+
+    std::shared_ptr<CreatePipelineTagResponse> localVarResult = std::make_shared<CreatePipelineTagResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -619,6 +739,79 @@ std::shared_ptr<CreateStrategyResponse> CodeArtsPipelineClient::createStrategy(C
 
     return localVarResult;
 }
+std::shared_ptr<CreateVariableGroupResponse> CodeArtsPipelineClient::createVariableGroup(CreateVariableGroupRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/api/pipeline/variable/group/create";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForCreateVariableGroup());
+
+    std::shared_ptr<CreateVariableGroupResponse> localVarResult = std::make_shared<CreateVariableGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteAlertPolicyResponse> CodeArtsPipelineClient::deleteAlertPolicy(DeleteAlertPolicyRequest &request)
+{
+    std::string localVarPath = "/v5/{tenant_id}/api/alert/policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForDeleteAlertPolicy());
+
+    std::shared_ptr<DeleteAlertPolicyResponse> localVarResult = std::make_shared<DeleteAlertPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteBasicPluginResponse> CodeArtsPipelineClient::deleteBasicPlugin(DeleteBasicPluginRequest &request)
 {
     std::string localVarPath = "/v3/{domain_id}/extension/info/delete";
@@ -716,6 +909,39 @@ std::shared_ptr<DeletePipelineGroupResponse> CodeArtsPipelineClient::deletePipel
         localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForDeletePipelineGroup());
 
     std::shared_ptr<DeletePipelineGroupResponse> localVarResult = std::make_shared<DeletePipelineGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeletePipelineTagResponse> CodeArtsPipelineClient::deletePipelineTag(DeletePipelineTagRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/api/pipeline-tag/delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.tagIdIsSet()) {
+        localVarQueryParams["tagId"] = parameterToString(request.getTagId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForDeletePipelineTag());
+
+    std::shared_ptr<DeletePipelineTagResponse> localVarResult = std::make_shared<DeletePipelineTagResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -878,6 +1104,39 @@ std::shared_ptr<DeleteStrategyResponse> CodeArtsPipelineClient::deleteStrategy(D
         localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForDeleteStrategy());
 
     std::shared_ptr<DeleteStrategyResponse> localVarResult = std::make_shared<DeleteStrategyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteVariableGroupResponse> CodeArtsPipelineClient::deleteVariableGroup(DeleteVariableGroupRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/api/pipeline/variable/group/delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForDeleteVariableGroup());
+
+    std::shared_ptr<DeleteVariableGroupResponse> localVarResult = std::make_shared<DeleteVariableGroupResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1218,6 +1477,39 @@ std::shared_ptr<ListPipelineSimpleInfoResponse> CodeArtsPipelineClient::listPipe
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ListPipelineTagResponse> CodeArtsPipelineClient::listPipelineTag(ListPipelineTagRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/api/pipeline-tag/list";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.projIdIsSet()) {
+        localVarQueryParams["proj_id"] = parameterToString(request.getProjId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForListPipelineTag());
+
+    std::shared_ptr<ListPipelineTagResponse> localVarResult = std::make_shared<ListPipelineTagResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1711,6 +2003,48 @@ std::shared_ptr<ListTemplatesResponse> CodeArtsPipelineClient::listTemplates(Lis
 
     return localVarResult;
 }
+std::shared_ptr<ListVariableGroupsResponse> CodeArtsPipelineClient::listVariableGroups(ListVariableGroupsRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/api/pipeline/variable/group/list";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForListVariableGroups());
+
+    std::shared_ptr<ListVariableGroupsResponse> localVarResult = std::make_shared<ListVariableGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<PublishPluginResponse> CodeArtsPipelineClient::publishPlugin(PublishPluginRequest &request)
 {
     std::string localVarPath = "/v1/{domain_id}/agent-plugin/publish-plugin";
@@ -1858,6 +2192,9 @@ std::shared_ptr<RejectManualReviewResponse> CodeArtsPipelineClient::rejectManual
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.approvalDescriptionIsSet()) {
+        localVarQueryParams["approval_description"] = parameterToString(request.getApprovalDescription());
+    }
 
     std::string localVarHttpBody;
 
@@ -1917,11 +2254,17 @@ std::shared_ptr<RetryPipelineRunResponse> CodeArtsPipelineClient::retryPipelineR
     bool isJson = false;
     bool isMultiPart = false;
     bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
 
     std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
         localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForRetryPipelineRun());
@@ -1930,6 +2273,12 @@ std::shared_ptr<RetryPipelineRunResponse> CodeArtsPipelineClient::retryPipelineR
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -1973,6 +2322,37 @@ std::shared_ptr<RunPipelineResponse> CodeArtsPipelineClient::runPipeline(RunPipe
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAlertPolicyResponse> CodeArtsPipelineClient::showAlertPolicy(ShowAlertPolicyRequest &request)
+{
+    std::string localVarPath = "/v5/{tenant_id}/api/alert/policies/{policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tenant_id"] = parameterToString(request.getTenantId());
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForShowAlertPolicy());
+
+    std::shared_ptr<ShowAlertPolicyResponse> localVarResult = std::make_shared<ShowAlertPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -2201,6 +2581,9 @@ std::shared_ptr<ShowPipelineRunDetailResponse> CodeArtsPipelineClient::showPipel
 
     if (request.pipelineRunIdIsSet()) {
         localVarQueryParams["pipeline_run_id"] = parameterToString(request.getPipelineRunId());
+    }
+    if (request.pipelineRunNumberIsSet()) {
+        localVarQueryParams["pipeline_run_number"] = parameterToString(request.getPipelineRunNumber());
     }
 
     std::string localVarHttpBody;
@@ -2653,6 +3036,37 @@ std::shared_ptr<ShowTemplateDetailResponse> CodeArtsPipelineClient::showTemplate
 
     return localVarResult;
 }
+std::shared_ptr<ShowVariableGroupDetailResponse> CodeArtsPipelineClient::showVariableGroupDetail(ShowVariableGroupDetailRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/api/pipeline/variable/group/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsPipelineMeta::genRequestDefForShowVariableGroupDetail());
+
+    std::shared_ptr<ShowVariableGroupDetailResponse> localVarResult = std::make_shared<ShowVariableGroupDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<StartNewPipelineResponse> CodeArtsPipelineClient::startNewPipeline(StartNewPipelineRequest &request)
 {
     std::string localVarPath = "/v3/pipelines/{pipeline_id}/start";
@@ -2906,7 +3320,7 @@ std::shared_ptr<UpdatePipelineInfoResponse> CodeArtsPipelineClient::updatePipeli
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.componentIdIsSet()) {
-        localVarQueryParams["componentId"] = parameterToString(request.getComponentId());
+        localVarQueryParams["component_id"] = parameterToString(request.getComponentId());
     }
 
     std::string localVarHttpBody;

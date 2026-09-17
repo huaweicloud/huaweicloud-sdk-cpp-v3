@@ -20,6 +20,8 @@ ClusterUpgradeAction::ClusterUpgradeAction()
     targetVersionIsSet_ = false;
     isOnlyUpgrade_ = false;
     isOnlyUpgradeIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
 }
 
 ClusterUpgradeAction::~ClusterUpgradeAction() = default;
@@ -49,6 +51,9 @@ web::json::value ClusterUpgradeAction::toJson() const
     }
     if(isOnlyUpgradeIsSet_) {
         val[utility::conversions::to_string_t("isOnlyUpgrade")] = ModelBase::toJson(isOnlyUpgrade_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agencyName")] = ModelBase::toJson(agencyName_);
     }
 
     return val;
@@ -109,6 +114,15 @@ bool ClusterUpgradeAction::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOnlyUpgrade(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agencyName"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agencyName"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     return ok;
@@ -239,6 +253,27 @@ bool ClusterUpgradeAction::isOnlyUpgradeIsSet() const
 void ClusterUpgradeAction::unsetisOnlyUpgrade()
 {
     isOnlyUpgradeIsSet_ = false;
+}
+
+std::string ClusterUpgradeAction::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void ClusterUpgradeAction::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool ClusterUpgradeAction::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void ClusterUpgradeAction::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 }

@@ -12,7 +12,7 @@ namespace Model {
 
 ShowRedisDisabledCommandsResponse::ShowRedisDisabledCommandsResponse()
 {
-    totalCount_ = "";
+    totalCount_ = 0;
     totalCountIsSet_ = false;
     disabledType_ = "";
     disabledTypeIsSet_ = false;
@@ -53,7 +53,7 @@ bool ShowRedisDisabledCommandsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
         }
@@ -89,12 +89,12 @@ bool ShowRedisDisabledCommandsResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string ShowRedisDisabledCommandsResponse::getTotalCount() const
+int32_t ShowRedisDisabledCommandsResponse::getTotalCount() const
 {
     return totalCount_;
 }
 
-void ShowRedisDisabledCommandsResponse::setTotalCount(const std::string& value)
+void ShowRedisDisabledCommandsResponse::setTotalCount(int32_t value)
 {
     totalCount_ = value;
     totalCountIsSet_ = true;

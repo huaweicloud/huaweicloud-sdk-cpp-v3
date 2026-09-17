@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 升级路径
+/// **参数解释：** 升级路径 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  UpgradePath
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// UpgradePath members
 
     /// <summary>
-    /// 集群版本，v1.19及以下集群形如v1.19.16-r20，v1.21及以上形如v1.21,v1.23，详细请参考CCE集群版本号说明。
+    /// **参数解释：** 集群版本，v1.19及以下集群形如v1.19.16-r20，v1.21及以上形如v1.21,v1.23，详细请参考CCE集群版本号说明。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getVersion() const;
@@ -49,7 +49,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// CCE集群平台版本号，表示集群版本(version)下的内部版本。用于跟踪某一集群版本内的迭代，集群版本内唯一，跨集群版本重新计数。   platformVersion格式为：cce.X.Y   - X: 表示内部特性版本。集群版本中特性或者补丁修复，或者OS支持等变更场景。其值从1开始单调递增。  - Y: 表示内部特性版本的补丁版本。仅用于特性版本上线后的软件包更新，不涉及其他修改。其值从0开始单调递增。
+    /// **参数解释：** CCE集群平台版本号，表示集群版本(version)下的内部版本。用于跟踪某一集群版本内的迭代，集群版本内唯一，跨集群版本重新计数。 platformVersion格式为：cce.X.Y - X: 表示内部特性版本。集群版本中特性或者补丁修复，或者OS支持等变更场景。其值从1开始单调递增。 - Y: 表示内部特性版本的补丁版本。仅用于特性版本上线后的软件包更新，不涉及其他修改。其值从0开始单调递增。  **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getPlatformVersion() const;
@@ -58,7 +58,7 @@ public:
     void setPlatformVersion(const std::string& value);
 
     /// <summary>
-    /// 可升级的目标版本集合
+    /// **参数解释：** 可升级的目标版本集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<std::string>& getTargetVersions();

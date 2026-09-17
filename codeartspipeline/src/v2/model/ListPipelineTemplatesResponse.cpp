@@ -12,11 +12,11 @@ namespace Model {
 
 ListPipelineTemplatesResponse::ListPipelineTemplatesResponse()
 {
-    offset_ = 0;
+    offset_ = 0L;
     offsetIsSet_ = false;
-    limit_ = 0;
+    limit_ = 0L;
     limitIsSet_ = false;
-    total_ = 0;
+    total_ = 0L;
     totalIsSet_ = false;
     templatesIsSet_ = false;
 }
@@ -54,7 +54,7 @@ bool ListPipelineTemplatesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOffset(refVal);
         }
@@ -63,7 +63,7 @@ bool ListPipelineTemplatesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
         }
@@ -72,7 +72,7 @@ bool ListPipelineTemplatesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotal(refVal);
         }
@@ -90,12 +90,12 @@ bool ListPipelineTemplatesResponse::fromJson(const web::json::value& val)
 }
 
 
-int32_t ListPipelineTemplatesResponse::getOffset() const
+int64_t ListPipelineTemplatesResponse::getOffset() const
 {
     return offset_;
 }
 
-void ListPipelineTemplatesResponse::setOffset(int32_t value)
+void ListPipelineTemplatesResponse::setOffset(int64_t value)
 {
     offset_ = value;
     offsetIsSet_ = true;
@@ -111,12 +111,12 @@ void ListPipelineTemplatesResponse::unsetoffset()
     offsetIsSet_ = false;
 }
 
-int32_t ListPipelineTemplatesResponse::getLimit() const
+int64_t ListPipelineTemplatesResponse::getLimit() const
 {
     return limit_;
 }
 
-void ListPipelineTemplatesResponse::setLimit(int32_t value)
+void ListPipelineTemplatesResponse::setLimit(int64_t value)
 {
     limit_ = value;
     limitIsSet_ = true;
@@ -132,12 +132,12 @@ void ListPipelineTemplatesResponse::unsetlimit()
     limitIsSet_ = false;
 }
 
-int32_t ListPipelineTemplatesResponse::getTotal() const
+int64_t ListPipelineTemplatesResponse::getTotal() const
 {
     return total_;
 }
 
-void ListPipelineTemplatesResponse::setTotal(int32_t value)
+void ListPipelineTemplatesResponse::setTotal(int64_t value)
 {
     total_ = value;
     totalIsSet_ = true;

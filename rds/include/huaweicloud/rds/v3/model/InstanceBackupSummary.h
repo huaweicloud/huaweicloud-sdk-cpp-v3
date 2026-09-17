@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/rds/v3/model/Spaces.h>
+#include <huaweicloud/rds/v3/model/Space.h>
 #include <huaweicloud/rds/v3/model/InstanceBackupDatastore.h>
 
 namespace HuaweiCloud {
@@ -44,10 +44,10 @@ public:
     /// **参数解释**：  实例ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
     /// </summary>
 
-    std::string getId() const;
-    bool idIsSet() const;
-    void unsetid();
-    void setId(const std::string& value);
+    std::string getInstanceId() const;
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::string& value);
 
     /// <summary>
     /// **参数解释**：  实例名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
@@ -62,10 +62,10 @@ public:
     /// **参数解释**：  备份用量，单位MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
     /// </summary>
 
-    double getBackupUseSpace() const;
-    bool backupUseSpaceIsSet() const;
-    void unsetbackupUseSpace();
-    void setBackupUseSpace(double value);
+    double getBackupUsedSpace() const;
+    bool backupUsedSpaceIsSet() const;
+    void unsetbackupUsedSpace();
+    void setBackupUsedSpace(double value);
 
     /// <summary>
     /// 
@@ -80,23 +80,23 @@ public:
     /// 
     /// </summary>
 
-    Spaces getSpaces() const;
-    bool spacesIsSet() const;
-    void unsetspaces();
-    void setSpaces(const Spaces& value);
+    Space getSpace() const;
+    bool spaceIsSet() const;
+    void unsetspace();
+    void setSpace(const Space& value);
 
 
 protected:
-    std::string id_;
-    bool idIsSet_;
+    std::string instanceId_;
+    bool instanceIdIsSet_;
     std::string name_;
     bool nameIsSet_;
-    double backupUseSpace_;
-    bool backupUseSpaceIsSet_;
+    double backupUsedSpace_;
+    bool backupUsedSpaceIsSet_;
     InstanceBackupDatastore datastore_;
     bool datastoreIsSet_;
-    Spaces spaces_;
-    bool spacesIsSet_;
+    Space space_;
+    bool spaceIsSet_;
 
 };
 

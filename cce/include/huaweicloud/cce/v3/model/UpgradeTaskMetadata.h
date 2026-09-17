@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 升级任务元数据
+/// **参数解释：** 升级任务元数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  UpgradeTaskMetadata
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// UpgradeTaskMetadata members
 
     /// <summary>
-    /// 升级任务ID
+    /// **参数解释：** 升级任务ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getUid() const;
@@ -48,7 +48,7 @@ public:
     void setUid(const std::string& value);
 
     /// <summary>
-    /// 任务创建时间
+    /// **参数解释：** 任务创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getCreationTimestamp() const;
@@ -57,7 +57,7 @@ public:
     void setCreationTimestamp(const std::string& value);
 
     /// <summary>
-    /// 任务更新时间
+    /// **参数解释：** 任务更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getUpdateTimestamp() const;

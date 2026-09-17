@@ -18,6 +18,7 @@ NodePoolSpecUpdate::NodePoolSpecUpdate()
     ignoreInitialNodeCount_ = false;
     ignoreInitialNodeCountIsSet_ = false;
     autoscalingIsSet_ = false;
+    repairPolicyIsSet_ = false;
     nodeManagementUpdateIsSet_ = false;
     customSecurityGroupsIsSet_ = false;
     taintPolicyOnExistingNodes_ = "";
@@ -50,6 +51,9 @@ web::json::value NodePoolSpecUpdate::toJson() const
     }
     if(autoscalingIsSet_) {
         val[utility::conversions::to_string_t("autoscaling")] = ModelBase::toJson(autoscaling_);
+    }
+    if(repairPolicyIsSet_) {
+        val[utility::conversions::to_string_t("repairPolicy")] = ModelBase::toJson(repairPolicy_);
     }
     if(nodeManagementUpdateIsSet_) {
         val[utility::conversions::to_string_t("nodeManagementUpdate")] = ModelBase::toJson(nodeManagementUpdate_);
@@ -110,6 +114,15 @@ bool NodePoolSpecUpdate::fromJson(const web::json::value& val)
             NodePoolNodeAutoscaling refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAutoscaling(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repairPolicy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repairPolicy"));
+        if(!fieldValue.is_null())
+        {
+            NodePoolRepairPolicy refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairPolicy(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("nodeManagementUpdate"))) {
@@ -252,6 +265,27 @@ bool NodePoolSpecUpdate::autoscalingIsSet() const
 void NodePoolSpecUpdate::unsetautoscaling()
 {
     autoscalingIsSet_ = false;
+}
+
+NodePoolRepairPolicy NodePoolSpecUpdate::getRepairPolicy() const
+{
+    return repairPolicy_;
+}
+
+void NodePoolSpecUpdate::setRepairPolicy(const NodePoolRepairPolicy& value)
+{
+    repairPolicy_ = value;
+    repairPolicyIsSet_ = true;
+}
+
+bool NodePoolSpecUpdate::repairPolicyIsSet() const
+{
+    return repairPolicyIsSet_;
+}
+
+void NodePoolSpecUpdate::unsetrepairPolicy()
+{
+    repairPolicyIsSet_ = false;
 }
 
 NodeManagement NodePoolSpecUpdate::getNodeManagementUpdate() const

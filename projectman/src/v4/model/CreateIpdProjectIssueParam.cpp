@@ -20,6 +20,8 @@ CreateIpdProjectIssueParam::CreateIpdProjectIssueParam()
     statusIsSet_ = false;
     srcDomain_ = "";
     srcDomainIsSet_ = false;
+    featureSet_ = "";
+    featureSetIsSet_ = false;
     submittedBy_ = "";
     submittedByIsSet_ = false;
     domainId_ = "";
@@ -48,6 +50,18 @@ CreateIpdProjectIssueParam::CreateIpdProjectIssueParam()
     businessDomainIsSet_ = false;
     needBreak_ = "";
     needBreakIsSet_ = false;
+    categoryLayerId_ = "";
+    categoryLayerIdIsSet_ = false;
+    parentId_ = "";
+    parentIdIsSet_ = false;
+    ir2rr_ = "";
+    ir2rrIsSet_ = false;
+    us2rr_ = "";
+    us2rrIsSet_ = false;
+    link_ = "";
+    linkIsSet_ = false;
+    ir2feature_ = "";
+    ir2featureIsSet_ = false;
 }
 
 CreateIpdProjectIssueParam::~CreateIpdProjectIssueParam() = default;
@@ -71,6 +85,9 @@ web::json::value CreateIpdProjectIssueParam::toJson() const
     }
     if(srcDomainIsSet_) {
         val[utility::conversions::to_string_t("src_domain")] = ModelBase::toJson(srcDomain_);
+    }
+    if(featureSetIsSet_) {
+        val[utility::conversions::to_string_t("feature_set")] = ModelBase::toJson(featureSet_);
     }
     if(submittedByIsSet_) {
         val[utility::conversions::to_string_t("submitted_by")] = ModelBase::toJson(submittedBy_);
@@ -117,6 +134,24 @@ web::json::value CreateIpdProjectIssueParam::toJson() const
     if(needBreakIsSet_) {
         val[utility::conversions::to_string_t("need_break")] = ModelBase::toJson(needBreak_);
     }
+    if(categoryLayerIdIsSet_) {
+        val[utility::conversions::to_string_t("category_layer_id")] = ModelBase::toJson(categoryLayerId_);
+    }
+    if(parentIdIsSet_) {
+        val[utility::conversions::to_string_t("parent_id")] = ModelBase::toJson(parentId_);
+    }
+    if(ir2rrIsSet_) {
+        val[utility::conversions::to_string_t("ir2rr")] = ModelBase::toJson(ir2rr_);
+    }
+    if(us2rrIsSet_) {
+        val[utility::conversions::to_string_t("us2rr")] = ModelBase::toJson(us2rr_);
+    }
+    if(linkIsSet_) {
+        val[utility::conversions::to_string_t("link")] = ModelBase::toJson(link_);
+    }
+    if(ir2featureIsSet_) {
+        val[utility::conversions::to_string_t("ir2feature")] = ModelBase::toJson(ir2feature_);
+    }
 
     return val;
 }
@@ -158,6 +193,15 @@ bool CreateIpdProjectIssueParam::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSrcDomain(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("feature_set"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("feature_set"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFeatureSet(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("submitted_by"))) {
@@ -295,6 +339,60 @@ bool CreateIpdProjectIssueParam::fromJson(const web::json::value& val)
             setNeedBreak(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("category_layer_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("category_layer_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCategoryLayerId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("parent_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("parent_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setParentId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ir2rr"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ir2rr"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIr2rr(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("us2rr"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("us2rr"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUs2rr(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("link"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("link"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLink(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ir2feature"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ir2feature"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIr2feature(refVal);
+        }
+    }
     return ok;
 }
 
@@ -381,6 +479,27 @@ bool CreateIpdProjectIssueParam::srcDomainIsSet() const
 void CreateIpdProjectIssueParam::unsetsrcDomain()
 {
     srcDomainIsSet_ = false;
+}
+
+std::string CreateIpdProjectIssueParam::getFeatureSet() const
+{
+    return featureSet_;
+}
+
+void CreateIpdProjectIssueParam::setFeatureSet(const std::string& value)
+{
+    featureSet_ = value;
+    featureSetIsSet_ = true;
+}
+
+bool CreateIpdProjectIssueParam::featureSetIsSet() const
+{
+    return featureSetIsSet_;
+}
+
+void CreateIpdProjectIssueParam::unsetfeatureSet()
+{
+    featureSetIsSet_ = false;
 }
 
 std::string CreateIpdProjectIssueParam::getSubmittedBy() const
@@ -696,6 +815,132 @@ bool CreateIpdProjectIssueParam::needBreakIsSet() const
 void CreateIpdProjectIssueParam::unsetneedBreak()
 {
     needBreakIsSet_ = false;
+}
+
+std::string CreateIpdProjectIssueParam::getCategoryLayerId() const
+{
+    return categoryLayerId_;
+}
+
+void CreateIpdProjectIssueParam::setCategoryLayerId(const std::string& value)
+{
+    categoryLayerId_ = value;
+    categoryLayerIdIsSet_ = true;
+}
+
+bool CreateIpdProjectIssueParam::categoryLayerIdIsSet() const
+{
+    return categoryLayerIdIsSet_;
+}
+
+void CreateIpdProjectIssueParam::unsetcategoryLayerId()
+{
+    categoryLayerIdIsSet_ = false;
+}
+
+std::string CreateIpdProjectIssueParam::getParentId() const
+{
+    return parentId_;
+}
+
+void CreateIpdProjectIssueParam::setParentId(const std::string& value)
+{
+    parentId_ = value;
+    parentIdIsSet_ = true;
+}
+
+bool CreateIpdProjectIssueParam::parentIdIsSet() const
+{
+    return parentIdIsSet_;
+}
+
+void CreateIpdProjectIssueParam::unsetparentId()
+{
+    parentIdIsSet_ = false;
+}
+
+std::string CreateIpdProjectIssueParam::getIr2rr() const
+{
+    return ir2rr_;
+}
+
+void CreateIpdProjectIssueParam::setIr2rr(const std::string& value)
+{
+    ir2rr_ = value;
+    ir2rrIsSet_ = true;
+}
+
+bool CreateIpdProjectIssueParam::ir2rrIsSet() const
+{
+    return ir2rrIsSet_;
+}
+
+void CreateIpdProjectIssueParam::unsetir2rr()
+{
+    ir2rrIsSet_ = false;
+}
+
+std::string CreateIpdProjectIssueParam::getUs2rr() const
+{
+    return us2rr_;
+}
+
+void CreateIpdProjectIssueParam::setUs2rr(const std::string& value)
+{
+    us2rr_ = value;
+    us2rrIsSet_ = true;
+}
+
+bool CreateIpdProjectIssueParam::us2rrIsSet() const
+{
+    return us2rrIsSet_;
+}
+
+void CreateIpdProjectIssueParam::unsetus2rr()
+{
+    us2rrIsSet_ = false;
+}
+
+std::string CreateIpdProjectIssueParam::getLink() const
+{
+    return link_;
+}
+
+void CreateIpdProjectIssueParam::setLink(const std::string& value)
+{
+    link_ = value;
+    linkIsSet_ = true;
+}
+
+bool CreateIpdProjectIssueParam::linkIsSet() const
+{
+    return linkIsSet_;
+}
+
+void CreateIpdProjectIssueParam::unsetlink()
+{
+    linkIsSet_ = false;
+}
+
+std::string CreateIpdProjectIssueParam::getIr2feature() const
+{
+    return ir2feature_;
+}
+
+void CreateIpdProjectIssueParam::setIr2feature(const std::string& value)
+{
+    ir2feature_ = value;
+    ir2featureIsSet_ = true;
+}
+
+bool CreateIpdProjectIssueParam::ir2featureIsSet() const
+{
+    return ir2featureIsSet_;
+}
+
+void CreateIpdProjectIssueParam::unsetir2feature()
+{
+    ir2featureIsSet_ = false;
 }
 
 }

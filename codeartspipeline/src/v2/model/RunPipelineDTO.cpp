@@ -18,6 +18,10 @@ RunPipelineDTO::RunPipelineDTO()
     variablesIsSet_ = false;
     chooseJobsIsSet_ = false;
     chooseStagesIsSet_ = false;
+    subHook_ = false;
+    subHookIsSet_ = false;
+    executionPlanId_ = "";
+    executionPlanIdIsSet_ = false;
 }
 
 RunPipelineDTO::~RunPipelineDTO() = default;
@@ -44,6 +48,12 @@ web::json::value RunPipelineDTO::toJson() const
     }
     if(chooseStagesIsSet_) {
         val[utility::conversions::to_string_t("choose_stages")] = ModelBase::toJson(chooseStages_);
+    }
+    if(subHookIsSet_) {
+        val[utility::conversions::to_string_t("sub_hook")] = ModelBase::toJson(subHook_);
+    }
+    if(executionPlanIdIsSet_) {
+        val[utility::conversions::to_string_t("execution_plan_id")] = ModelBase::toJson(executionPlanId_);
     }
 
     return val;
@@ -95,6 +105,24 @@ bool RunPipelineDTO::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setChooseStages(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sub_hook"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sub_hook"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubHook(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("execution_plan_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("execution_plan_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExecutionPlanId(refVal);
         }
     }
     return ok;
@@ -204,6 +232,48 @@ bool RunPipelineDTO::chooseStagesIsSet() const
 void RunPipelineDTO::unsetchooseStages()
 {
     chooseStagesIsSet_ = false;
+}
+
+bool RunPipelineDTO::isSubHook() const
+{
+    return subHook_;
+}
+
+void RunPipelineDTO::setSubHook(bool value)
+{
+    subHook_ = value;
+    subHookIsSet_ = true;
+}
+
+bool RunPipelineDTO::subHookIsSet() const
+{
+    return subHookIsSet_;
+}
+
+void RunPipelineDTO::unsetsubHook()
+{
+    subHookIsSet_ = false;
+}
+
+std::string RunPipelineDTO::getExecutionPlanId() const
+{
+    return executionPlanId_;
+}
+
+void RunPipelineDTO::setExecutionPlanId(const std::string& value)
+{
+    executionPlanId_ = value;
+    executionPlanIdIsSet_ = true;
+}
+
+bool RunPipelineDTO::executionPlanIdIsSet() const
+{
+    return executionPlanIdIsSet_;
+}
+
+void RunPipelineDTO::unsetexecutionPlanId()
+{
+    executionPlanIdIsSet_ = false;
 }
 
 }

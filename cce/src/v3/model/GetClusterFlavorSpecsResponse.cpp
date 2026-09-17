@@ -39,7 +39,7 @@ bool GetClusterFlavorSpecsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("clusterFlavorSpecs"));
         if(!fieldValue.is_null())
         {
-            ClusterFlavorSpecification refVal;
+            std::vector<ClusterFlavorSpecification> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setClusterFlavorSpecs(refVal);
         }
@@ -48,12 +48,12 @@ bool GetClusterFlavorSpecsResponse::fromJson(const web::json::value& val)
 }
 
 
-ClusterFlavorSpecification GetClusterFlavorSpecsResponse::getClusterFlavorSpecs() const
+std::vector<ClusterFlavorSpecification>& GetClusterFlavorSpecsResponse::getClusterFlavorSpecs()
 {
     return clusterFlavorSpecs_;
 }
 
-void GetClusterFlavorSpecsResponse::setClusterFlavorSpecs(const ClusterFlavorSpecification& value)
+void GetClusterFlavorSpecsResponse::setClusterFlavorSpecs(const std::vector<ClusterFlavorSpecification>& value)
 {
     clusterFlavorSpecs_ = value;
     clusterFlavorSpecsIsSet_ = true;

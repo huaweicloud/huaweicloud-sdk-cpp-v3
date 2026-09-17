@@ -48,7 +48,7 @@ public:
     void setClusterId(const std::string& value);
 
     /// <summary>
-    /// 模板ID
+    /// **参数解释：** 模板ID。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getChartId() const;
@@ -57,7 +57,7 @@ public:
     void setChartId(const std::string& value);
 
     /// <summary>
-    /// 模板对应的命名空间
+    /// **参数解释：** 模板对应的命名空间。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getNamespace() const;

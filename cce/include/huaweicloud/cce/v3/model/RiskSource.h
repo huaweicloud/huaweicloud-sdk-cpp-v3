@@ -24,7 +24,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 风险项来源
+/// **参数解释：** 风险项来源。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  RiskSource
     : public ModelBase
@@ -43,7 +43,7 @@ public:
     /// RiskSource members
 
     /// <summary>
-    /// 配置风险项
+    /// **参数解释：** 配置风险项。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::vector<ConfigurationRisks>& getConfigurationRisks();
@@ -52,7 +52,7 @@ public:
     void setConfigurationRisks(const std::vector<ConfigurationRisks>& value);
 
     /// <summary>
-    /// 废弃API风险
+    /// **参数解释：** 废弃API风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::vector<DeprecatedAPIRisks>& getDeprecatedAPIRisks();
@@ -61,7 +61,7 @@ public:
     void setDeprecatedAPIRisks(const std::vector<DeprecatedAPIRisks>& value);
 
     /// <summary>
-    /// 节点风险
+    /// **参数解释：** 节点风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::vector<NodeRisks>& getNodeRisks();
@@ -70,7 +70,7 @@ public:
     void setNodeRisks(const std::vector<NodeRisks>& value);
 
     /// <summary>
-    /// 插件风险
+    /// **参数解释：** 插件风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::vector<AddonRisks>& getAddonRisks();

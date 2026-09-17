@@ -22,6 +22,8 @@ AcceptManualReviewRequest::AcceptManualReviewRequest()
     pipelineRunIdIsSet_ = false;
     stepRunId_ = "";
     stepRunIdIsSet_ = false;
+    approvalDescription_ = "";
+    approvalDescriptionIsSet_ = false;
 }
 
 AcceptManualReviewRequest::~AcceptManualReviewRequest() = default;
@@ -48,6 +50,9 @@ web::json::value AcceptManualReviewRequest::toJson() const
     }
     if(stepRunIdIsSet_) {
         val[utility::conversions::to_string_t("step_run_id")] = ModelBase::toJson(stepRunId_);
+    }
+    if(approvalDescriptionIsSet_) {
+        val[utility::conversions::to_string_t("approval_description")] = ModelBase::toJson(approvalDescription_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool AcceptManualReviewRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStepRunId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("approval_description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("approval_description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApprovalDescription(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool AcceptManualReviewRequest::stepRunIdIsSet() const
 void AcceptManualReviewRequest::unsetstepRunId()
 {
     stepRunIdIsSet_ = false;
+}
+
+std::string AcceptManualReviewRequest::getApprovalDescription() const
+{
+    return approvalDescription_;
+}
+
+void AcceptManualReviewRequest::setApprovalDescription(const std::string& value)
+{
+    approvalDescription_ = value;
+    approvalDescriptionIsSet_ = true;
+}
+
+bool AcceptManualReviewRequest::approvalDescriptionIsSet() const
+{
+    return approvalDescriptionIsSet_;
+}
+
+void AcceptManualReviewRequest::unsetapprovalDescription()
+{
+    approvalDescriptionIsSet_ = false;
 }
 
 }

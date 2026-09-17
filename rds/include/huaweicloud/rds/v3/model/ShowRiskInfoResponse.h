@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/rds/v3/model/EngineRiskDesc.h>
+#include <huaweicloud/rds/v3/model/ShowRiskInfoEngineRiskDesc.h>
 #include <string>
 #include <vector>
 
@@ -44,10 +44,10 @@ public:
     /// 风险版本信息
     /// </summary>
 
-    std::vector<EngineRiskDesc>& getRisks();
+    std::vector<ShowRiskInfoEngineRiskDesc>& getRisks();
     bool risksIsSet() const;
     void unsetrisks();
-    void setRisks(const std::vector<EngineRiskDesc>& value);
+    void setRisks(const std::vector<ShowRiskInfoEngineRiskDesc>& value);
 
     /// <summary>
     /// 
@@ -60,7 +60,7 @@ public:
 
 
 protected:
-    std::vector<EngineRiskDesc> risks_;
+    std::vector<ShowRiskInfoEngineRiskDesc> risks_;
     bool risksIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;

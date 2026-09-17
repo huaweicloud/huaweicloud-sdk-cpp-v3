@@ -19,6 +19,7 @@ NodeTemplate::NodeTemplate()
     os_ = "";
     osIsSet_ = false;
     loginIsSet_ = false;
+    volumeConfigIsSet_ = false;
     rootVolumeIsSet_ = false;
     dataVolumesIsSet_ = false;
     storageIsSet_ = false;
@@ -76,6 +77,9 @@ web::json::value NodeTemplate::toJson() const
     }
     if(loginIsSet_) {
         val[utility::conversions::to_string_t("login")] = ModelBase::toJson(login_);
+    }
+    if(volumeConfigIsSet_) {
+        val[utility::conversions::to_string_t("volumeConfig")] = ModelBase::toJson(volumeConfig_);
     }
     if(rootVolumeIsSet_) {
         val[utility::conversions::to_string_t("rootVolume")] = ModelBase::toJson(rootVolume_);
@@ -190,6 +194,15 @@ bool NodeTemplate::fromJson(const web::json::value& val)
             Login refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("volumeConfig"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volumeConfig"));
+        if(!fieldValue.is_null())
+        {
+            VolumeConfig refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVolumeConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("rootVolume"))) {
@@ -494,6 +507,27 @@ bool NodeTemplate::loginIsSet() const
 void NodeTemplate::unsetlogin()
 {
     loginIsSet_ = false;
+}
+
+VolumeConfig NodeTemplate::getVolumeConfig() const
+{
+    return volumeConfig_;
+}
+
+void NodeTemplate::setVolumeConfig(const VolumeConfig& value)
+{
+    volumeConfig_ = value;
+    volumeConfigIsSet_ = true;
+}
+
+bool NodeTemplate::volumeConfigIsSet() const
+{
+    return volumeConfigIsSet_;
+}
+
+void NodeTemplate::unsetvolumeConfig()
+{
+    volumeConfigIsSet_ = false;
 }
 
 Volume NodeTemplate::getRootVolume() const

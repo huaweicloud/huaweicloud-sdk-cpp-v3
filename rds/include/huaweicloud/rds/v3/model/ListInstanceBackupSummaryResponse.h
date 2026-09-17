@@ -52,17 +52,17 @@ public:
     /// **参数解释**：  总记录数。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
     /// </summary>
 
-    int32_t getTotalCount() const;
-    bool totalCountIsSet() const;
-    void unsettotalCount();
-    void setTotalCount(int32_t value);
+    int32_t getTotal() const;
+    bool totalIsSet() const;
+    void unsettotal();
+    void setTotal(int32_t value);
 
 
 protected:
     std::vector<InstanceBackupSummary> infos_;
     bool infosIsSet_;
-    int32_t totalCount_;
-    bool totalCountIsSet_;
+    int32_t total_;
+    bool totalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

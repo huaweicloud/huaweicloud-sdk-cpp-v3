@@ -39,7 +39,7 @@ public:
     /// ShowChartResponse members
 
     /// <summary>
-    /// 模板ID
+    /// **参数解释：** 模板ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 模板名称
+    /// **参数解释：** 模板名称 **约束限制：** 最长64个字符 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 模板值
+    /// **参数解释：** 模板值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getValues() const;
@@ -66,7 +66,7 @@ public:
     void setValues(const std::string& value);
 
     /// <summary>
-    /// 模板翻译资源
+    /// **参数解释：** 模板翻译资源 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getTranslate() const;
@@ -75,7 +75,7 @@ public:
     void setTranslate(const std::string& value);
 
     /// <summary>
-    /// 模板介绍
+    /// **参数解释：** 模板介绍 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getInstruction() const;
@@ -84,7 +84,7 @@ public:
     void setInstruction(const std::string& value);
 
     /// <summary>
-    /// 模板版本
+    /// **参数解释：** 模板版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getVersion() const;
@@ -93,7 +93,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 模板描述
+    /// **参数解释：** 模板描述 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -102,7 +102,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 模板的来源
+    /// **参数解释：** 模板的来源 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getSource() const;
@@ -111,7 +111,7 @@ public:
     void setSource(const std::string& value);
 
     /// <summary>
-    /// 模板的图标链接
+    /// **参数解释：** 模板的图标链接 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getIconUrl() const;
@@ -120,7 +120,7 @@ public:
     void setIconUrl(const std::string& value);
 
     /// <summary>
-    /// 是否公开模板
+    /// **参数解释：** 是否公开模板 **约束限制：** 不涉及 **取值范围：** - true：公开模板 - false：不公开模板  **默认取值：** false
     /// </summary>
 
     bool isPublic() const;
@@ -129,7 +129,7 @@ public:
     void setPublic(bool value);
 
     /// <summary>
-    /// 模板的链接
+    /// **参数解释：** 模板的链接 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getChartUrl() const;
@@ -138,7 +138,7 @@ public:
     void setChartUrl(const std::string& value);
 
     /// <summary>
-    /// 创建时间
+    /// **参数解释：** 创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getCreateAt() const;
@@ -147,7 +147,7 @@ public:
     void setCreateAt(const std::string& value);
 
     /// <summary>
-    /// 更新时间
+    /// **参数解释：** 更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getUpdateAt() const;

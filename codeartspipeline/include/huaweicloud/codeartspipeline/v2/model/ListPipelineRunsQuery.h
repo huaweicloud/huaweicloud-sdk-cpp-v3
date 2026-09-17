@@ -76,6 +76,24 @@ public:
     void setUpdateTime(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 触发类型列表。 **约束限制**： 不涉及。 **取值范围**： - Manual：手动触发。 - Scheduler：定时触发。 - RollBack：回退触发。 - CreateTag：Tag事件触发。 - Note：评论触发。 - Issue：Issue触发。 - MR：MR触发。 - CR：CR触发。 - Generic：流水线触发器触发。 - Push：Push事件触发。 - SubPipeline：子流水线触发。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::vector<std::string>& getTriggerType();
+    bool triggerTypeIsSet() const;
+    void unsettriggerType();
+    void setTriggerType(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// **参数解释**： 执行人ID列表。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::vector<std::string>& getExecutorIds();
+    bool executorIdsIsSet() const;
+    void unsetexecutorIds();
+    void setExecutorIds(const std::vector<std::string>& value);
+
+    /// <summary>
     /// **参数解释**： 起始偏移。 **约束限制**： 不涉及。 **取值范围**： 大于等于零。 **默认取值**： 不涉及。 
     /// </summary>
 
@@ -111,6 +129,33 @@ public:
     void unsetsortDir();
     void setSortDir(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 是否返回Job状态详情。 **约束限制**： 不涉及。 **取值范围**： - true：返回Job状态列表。 - false：不返回。 **默认取值**： false。 
+    /// </summary>
+
+    bool isShowJobDetails() const;
+    bool showJobDetailsIsSet() const;
+    void unsetshowJobDetails();
+    void setShowJobDetails(bool value);
+
+    /// <summary>
+    /// **参数解释**： 阶段ID，用于指定返回Job状态详情的阶段。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及，为空时默认取流水线最后一个阶段。 
+    /// </summary>
+
+    std::string getStageId() const;
+    bool stageIdIsSet() const;
+    void unsetstageId();
+    void setStageId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： Job ID，仅在show_job_details为true时生效，用于过滤包含指定Job的执行记录。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
+
 
 protected:
     std::vector<std::string> status_;
@@ -121,6 +166,10 @@ protected:
     bool endTimeIsSet_;
     std::string updateTime_;
     bool updateTimeIsSet_;
+    std::vector<std::string> triggerType_;
+    bool triggerTypeIsSet_;
+    std::vector<std::string> executorIds_;
+    bool executorIdsIsSet_;
     int64_t offset_;
     bool offsetIsSet_;
     int64_t limit_;
@@ -129,6 +178,12 @@ protected:
     bool sortKeyIsSet_;
     std::string sortDir_;
     bool sortDirIsSet_;
+    bool showJobDetails_;
+    bool showJobDetailsIsSet_;
+    std::string stageId_;
+    bool stageIdIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
 
 };
 

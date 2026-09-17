@@ -9,8 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartspipeline/v2/model/ListPipelinesPage_tag_list.h>
 #include <string>
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelinesPage_latest_run.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -147,6 +149,33 @@ public:
     void unsetsecurityLevel();
     void setSecurityLevel(int32_t value);
 
+    /// <summary>
+    /// **参数解释**： 是否禁用流水线。 **取值范围**： - true：流水线已禁用。 - false：流水线未禁用。 
+    /// </summary>
+
+    bool isBanned() const;
+    bool bannedIsSet() const;
+    void unsetbanned();
+    void setBanned(bool value);
+
+    /// <summary>
+    /// **参数解释**： 流水线描述。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 流水线标签列表。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    std::vector<ListPipelinesPage_tag_list>& getTagList();
+    bool tagListIsSet() const;
+    void unsettagList();
+    void setTagList(const std::vector<ListPipelinesPage_tag_list>& value);
+
 
 protected:
     std::string pipelineId_;
@@ -173,6 +202,12 @@ protected:
     bool convertSignIsSet_;
     int32_t securityLevel_;
     bool securityLevelIsSet_;
+    bool banned_;
+    bool bannedIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
+    std::vector<ListPipelinesPage_tag_list> tagList_;
+    bool tagListIsSet_;
 
 };
 

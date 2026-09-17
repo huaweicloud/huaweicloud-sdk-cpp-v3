@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/codeartspipeline/v2/model/CodeSource.h>
 #include <huaweicloud/codeartspipeline/v2/model/PipelineSchedule.h>
@@ -144,7 +145,7 @@ public:
     void setGroupId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 复制场景使用，为流水线组ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+    /// **参数解释**： 复制场景使用，为原流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
     /// </summary>
 
     std::string getId() const;
@@ -169,6 +170,69 @@ public:
     bool securityLevelIsSet() const;
     void unsetsecurityLevel();
     void setSecurityLevel(int32_t value);
+
+    /// <summary>
+    /// **参数解释**： 是否禁用自动生成阶段，仅变更流水线适用。默认值为false，即默认启用自动生成阶段。 **约束限制**： 不涉及。 **取值范围**： - true：禁用自动生成阶段。 - false：启用自动生成阶段。 **默认取值**： false。 
+    /// </summary>
+
+    bool isDisableReleaseBranchManagement() const;
+    bool disableReleaseBranchManagementIsSet() const;
+    void unsetdisableReleaseBranchManagement();
+    void setDisableReleaseBranchManagement(bool value);
+
+    /// <summary>
+    /// **参数解释**： 流水线执行计划列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::vector<Object>& getExecutionPlans();
+    bool executionPlansIsSet() const;
+    void unsetexecutionPlans();
+    void setExecutionPlans(const std::vector<Object>& value);
+
+    /// <summary>
+    /// **参数解释**： 项目ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getProjectId() const;
+    bool projectIdIsSet() const;
+    void unsetprojectId();
+    void setProjectId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 流水线取消运行策略。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    Object getCancelStrategy() const;
+    bool cancelStrategyIsSet() const;
+    void unsetcancelStrategy();
+    void setCancelStrategy(const Object& value);
+
+    /// <summary>
+    /// **参数解释**： 流水线密级code。 **约束限制**： 非涉密场景不涉及，涉密场景必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getConfidentialityCode() const;
+    bool confidentialityCodeIsSet() const;
+    void unsetconfidentialityCode();
+    void setConfidentialityCode(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 委托名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::string getAgencyName() const;
+    bool agencyNameIsSet() const;
+    void unsetagencyName();
+    void setAgencyName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 关联的通用参数组ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+    /// </summary>
+
+    std::vector<std::string>& getVariableGroupIds();
+    bool variableGroupIdsIsSet() const;
+    void unsetvariableGroupIds();
+    void setVariableGroupIds(const std::vector<std::string>& value);
 
 
 protected:
@@ -200,6 +264,20 @@ protected:
     bool concurrencyControlIsSet_;
     int32_t securityLevel_;
     bool securityLevelIsSet_;
+    bool disableReleaseBranchManagement_;
+    bool disableReleaseBranchManagementIsSet_;
+    std::vector<Object> executionPlans_;
+    bool executionPlansIsSet_;
+    std::string projectId_;
+    bool projectIdIsSet_;
+    Object cancelStrategy_;
+    bool cancelStrategyIsSet_;
+    std::string confidentialityCode_;
+    bool confidentialityCodeIsSet_;
+    std::string agencyName_;
+    bool agencyNameIsSet_;
+    std::vector<std::string> variableGroupIds_;
+    bool variableGroupIdsIsSet_;
 
 };
 

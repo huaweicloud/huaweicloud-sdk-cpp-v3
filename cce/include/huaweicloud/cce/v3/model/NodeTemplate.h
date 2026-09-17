@@ -18,6 +18,7 @@
 #include <vector>
 #include <huaweicloud/cce/v3/model/UserTag.h>
 #include <huaweicloud/cce/v3/model/Volume.h>
+#include <huaweicloud/cce/v3/model/VolumeConfig.h>
 #include <huaweicloud/cce/v3/model/Storage.h>
 #include <huaweicloud/cce/v3/model/NodeExtendParam.h>
 #include <huaweicloud/cce/v3/model/HostnameConfig.h>
@@ -87,6 +88,15 @@ public:
     bool loginIsSet() const;
     void unsetlogin();
     void setLogin(const Login& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VolumeConfig getVolumeConfig() const;
+    bool volumeConfigIsSet() const;
+    void unsetvolumeConfig();
+    void setVolumeConfig(const VolumeConfig& value);
 
     /// <summary>
     /// 
@@ -314,6 +324,8 @@ protected:
     bool osIsSet_;
     Login login_;
     bool loginIsSet_;
+    VolumeConfig volumeConfig_;
+    bool volumeConfigIsSet_;
     Volume rootVolume_;
     bool rootVolumeIsSet_;
     std::vector<Volume> dataVolumes_;

@@ -57,6 +57,7 @@ public:
     static HttpRequestDef genRequestDefForGetLongAkskConfig();
     static HttpRequestDef genRequestDefForGetResourceTags();
     static HttpRequestDef genRequestDefForHibernateCluster();
+    static HttpRequestDef genRequestDefForInplaceMigrateNode();
     static HttpRequestDef genRequestDefForListAccessPolicy();
     static HttpRequestDef genRequestDefForListAddonInstances();
     static HttpRequestDef genRequestDefForListAddonPrecheckTasks();

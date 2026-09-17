@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// **参数解释：** 集群升级流程配置信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  WorkFlowSpec
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// WorkFlowSpec members
 
     /// <summary>
-    /// 集群ID，资源唯一标识，创建成功后自动生成，填写无效
+    /// **参数解释：** 集群ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getClusterID() const;
@@ -48,7 +48,7 @@ public:
     void setClusterID(const std::string& value);
 
     /// <summary>
-    /// 本次集群升级的当前版本 
+    /// **参数解释：** 当前集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getClusterVersion() const;
@@ -57,7 +57,7 @@ public:
     void setClusterVersion(const std::string& value);
 
     /// <summary>
-    /// 本次集群升级的目标版本 
+    /// **参数解释：** 本次集群升级的目标版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getTargetVersion() const;

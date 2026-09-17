@@ -1,3 +1,462 @@
+# 3.1.205 2026-09-17
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `InplaceMigrateNode`
+- _Bug Fix_
+  - None
+- _Change_
+  - **GetClusterFlavorSpecs**
+    - changes of response param
+      - `* clusterFlavorSpecs: object<ClusterFlavorSpecification> -> list<ClusterFlavorSpecification>`
+  - **GetAvaliableZone**
+    - changes of response param
+      - `+ publicBorderGroup`
+      - `- PublicBorderGroup`
+  - **DeleteRelease**
+    - changes of response param
+      - `- chart_name`
+      - `- cluster_name`
+      - `- status_description`
+      - `- values`
+      - `- description`
+      - `- resources`
+      - `- version`
+      - `- chart_version`
+      - `- cluster_id`
+      - `- chart_public`
+      - `- name`
+      - `- namespace`
+      - `- update_at`
+      - `- create_at`
+      - `- parameters`
+      - `- status`
+  - **ListHyperNodes**
+    - changes of response param
+      - `* spec.nodeTemplate: list<NodeTemplateInHyperNode> -> object<NodeTemplateInHyperNode>`
+      - `+ status.isStatic`
+  - **DeleteAddonInstance**
+    - changes of response param
+      - `- metadata`
+      - `- apiVersion`
+      - `- kind`
+      - `- spec`
+      - `- status`
+  - **ShowCluster**
+    - changes of response param
+      - `+ spec.secretConfig`
+  - **UpdateCluster**
+    - changes of request param
+      - `+ spec.secretConfig`
+    - changes of response param
+      - `+ spec.secretConfig`
+  - **DeleteCluster**
+    - changes of response param
+      - `+ spec.secretConfig`
+  - **RemoveNode**
+    - changes of request param
+      - `+ removeNodeSystemSecurityGroup`
+  - **CreateCluster**
+    - changes of request param
+      - `+ spec.secretConfig`
+    - changes of response param
+      - `+ spec.secretConfig`
+  - **ListClusters**
+    - changes of response param
+      - `+ items.spec.secretConfig`
+  - **UpgradeNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.lifeCycle`
+      - `+ spec.nodeTemplate.volumeConfig`
+      - `- spec.nodeTemplate.flavor`
+      - `- spec.nodeTemplate.az`
+      - `- spec.nodeTemplate.os`
+      - `- spec.nodeTemplate.rootVolume`
+      - `- spec.nodeTemplate.dataVolumes`
+      - `- spec.nodeTemplate.storage`
+      - `- spec.nodeTemplate.publicIP`
+      - `- spec.nodeTemplate.nodeNicSpec`
+      - `- spec.nodeTemplate.count`
+      - `- spec.nodeTemplate.billingMode`
+      - `- spec.nodeTemplate.taints`
+      - `- spec.nodeTemplate.waitPostInstallFinish`
+      - `- spec.nodeTemplate.k8sTags`
+      - `- spec.nodeTemplate.ecsGroupId`
+      - `- spec.nodeTemplate.faultDomain`
+      - `- spec.nodeTemplate.dedicatedHostId`
+      - `- spec.nodeTemplate.offloadNode`
+      - `- spec.nodeTemplate.isStatic`
+      - `- spec.nodeTemplate.userTags`
+      - `- spec.nodeTemplate.runtime`
+      - `- spec.nodeTemplate.initializedConditions`
+      - `- spec.nodeTemplate.extendParam`
+      - `- spec.nodeTemplate.hostnameConfig`
+      - `- spec.nodeTemplate.serverEnterpriseProjectID`
+      - `- spec.nodeTemplate.partition`
+      - `- spec.nodeTemplate.configurationsOverride`
+      - `- spec.nodeTemplate.nodeNameTemplate`
+      - `* spec.nodeTemplate: object<NodeTemplate> -> object<UpgradeNodePoolSpecNodeTemplate>`
+  - **UpgradeCluster**
+    - changes of request param
+      - `+ spec.clusterUpgradeAction.agencyName`
+  - **UpgradeAutopilotCluster**
+    - changes of request param
+      - `+ spec.clusterUpgradeAction.agencyName`
+  - **ShowNode**
+    - changes of response param
+      - `+ status.phase: enum value [Repairing,RepairFailed]`
+  - **UpdateNode**
+    - changes of response param
+      - `+ status.phase: enum value [Repairing,RepairFailed]`
+  - **DeleteNode**
+    - changes of response param
+      - `+ status.phase: enum value [Repairing,RepairFailed]`
+  - **CreateNode**
+    - changes of response param
+      - `+ status.phase: enum value [Repairing,RepairFailed]`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.status.phase: enum value [Repairing,RepairFailed]`
+  - **ShowNodePool**
+    - changes of request param
+      - `+ advanceStatus`
+    - changes of response param
+      - `+ status.repairingNode`
+      - `+ status.repairFailedNode`
+      - `+ status.conditions.type: enum value [UnexpectedPeriodNodesIncluded]`
+      - `+ spec.repairPolicy`
+      - `+ spec.nodeTemplate.volumeConfig`
+  - **UpdateNodePool**
+    - changes of request param
+      - `+ spec.repairPolicy`
+    - changes of response param
+      - `+ status.conditions.type: enum value [UnexpectedPeriodNodesIncluded]`
+      - `+ spec.repairPolicy`
+      - `+ spec.nodeTemplate.volumeConfig`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ status.conditions.type: enum value [UnexpectedPeriodNodesIncluded]`
+      - `+ spec.repairPolicy`
+      - `+ spec.nodeTemplate.volumeConfig`
+  - **AddNode**
+    - changes of request param
+      - `+ nodeList.spec.volumeConfig.volumeResetPolicy`
+  - **ResetNode**
+    - changes of request param
+      - `+ nodeList.spec.volumeConfig.volumeResetPolicy`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ status.repairingNode`
+      - `+ status.repairFailedNode`
+      - `+ status.conditions.type: enum value [UnexpectedPeriodNodesIncluded]`
+      - `+ spec.repairPolicy`
+      - `+ spec.nodeTemplate.volumeConfig`
+    - changes of response param
+      - `+ status.conditions.type: enum value [UnexpectedPeriodNodesIncluded]`
+      - `+ spec.repairPolicy`
+      - `+ spec.nodeTemplate.volumeConfig`
+  - **ListNodePools**
+    - changes of request param
+      - `+ advanceStatus`
+    - changes of response param
+      - `+ items.status.repairingNode`
+      - `+ items.status.repairFailedNode`
+      - `+ items.status.conditions.type: enum value [UnexpectedPeriodNodesIncluded]`
+      - `+ items.spec.repairPolicy`
+      - `+ items.spec.nodeTemplate.volumeConfig`
+
+### HuaweiCloud SDK Cloudtest
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListTestBranches`
+    - `CreateBranch`
+    - `ShowTestBranch`
+    - `UpdateBranch`
+    - `DeleteBranch`
+    - `CreateTestIterator`
+    - `ShowIterator`
+    - `UpdateTestIterator`
+    - `DeleteIterator`
+    - `AddIssuesToIterator`
+    - `AddResourceToIterator`
+    - `ListTestCasesByCondition`
+    - `ListVisibleServices`
+    - `CreateTestVersionCase`
+    - `ShowTestVersionCase`
+    - `UpdateTestVersionCase`
+    - `CreateTask`
+    - `ShowTask`
+    - `UpdateTask`
+    - `BatchDeleteTasks`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `AcceptCheckpoint`
+    - `CreateAlertPolicy`
+    - `ShowAlertPolicy`
+    - `DeleteAlertPolicy`
+    - `CreatePipelineTag`
+    - `ListPipelineTag`
+    - `DeletePipelineTag`
+    - `CreateVariableGroup`
+    - `ListVariableGroups`
+    - `ShowVariableGroupDetail`
+    - `DeleteVariableGroup`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RunPipeline**
+    - changes of request param
+      - `+ sub_hook`
+      - `+ execution_plan_id`
+  - **AcceptManualReview**
+    - changes of request param
+      - `+ approval_description`
+  - **RejectManualReview**
+    - changes of request param
+      - `+ approval_description`
+  - **ListPipelines**
+    - changes of request param
+      - `+ pipeline_run_update_time`
+      - `+ exclude_pipeline_id`
+      - `+ include_pipeline_id`
+      - `+ tag_list`
+      - `+ manifest_version_list`
+      - `+ dev_uc_security_level_list`
+    - changes of response param
+      - `+ current_system_time`
+      - `+ highest_confidentiality`
+      - `+ number_of_hidden_data`
+      - `+ pipelines.banned`
+      - `+ pipelines.description`
+      - `+ pipelines.tag_list`
+  - **ListPipelineRuns**
+    - changes of request param
+      - `+ trigger_type`
+      - `+ executor_ids`
+      - `+ show_job_details`
+      - `+ stage_id`
+      - `+ job_id`
+  - **CreatePipelineGroup**
+    - changes of response param
+      - `+ no_group_count`
+      - `+ pipeline_count`
+  - **ShowPipelineGroupTree**
+    - changes of response param
+      - `+ no_group_count`
+      - `+ pipeline_count`
+  - **ShowPipelineLog**
+    - changes of request param
+      - `+ offset`
+      - `+ level`
+  - **ListPipelineTemplates**
+    - changes of response param
+      - `* offset: int32 -> int64`
+      - `* limit: int32 -> int64`
+      - `* total: int32 -> int64`
+      - `* templates.is_show_source: string -> boolean`
+  - **CreatePipelineTemplate**
+    - changes of request param
+      - `+ manifest_version`
+  - **UpdatePipelineTemplate**
+    - changes of request param
+      - `+ manifest_version`
+  - **CreatePipelineNew**
+    - changes of request param
+      - `+ disable_release_branch_management`
+      - `+ execution_plans`
+      - `+ project_id`
+      - `+ cancel_strategy`
+      - `+ confidentiality_code`
+      - `+ agency_name`
+      - `+ variable_group_ids`
+  - **ShowPipelineRunDetail**
+    - changes of request param
+      - `+ pipeline_run_number`
+  - **ShowPipelineDetail**
+    - changes of response param
+      - `+ security_level_code`
+      - `+ from_git_code_repo`
+      - `+ yaml_definition`
+      - `+ project_name`
+      - `+ cancel_strategy`
+      - `+ permissions`
+      - `+ tag_ids`
+      - `+ git_code_repo_id`
+      - `+ group_name`
+      - `+ from_git_code`
+      - `+ pac_source_repo_https_endpoint`
+      - `+ disable_release_branch_management`
+      - `+ tags`
+      - `+ from_source`
+      - `+ yaml_repo_properties`
+      - `+ variable_group_ids`
+      - `+ subject_id`
+      - `+ detail_url`
+      - `+ archive_source`
+      - `+ origin_id`
+      - `+ pac_repo_relation`
+      - `+ execution_plans`
+      - `+ pac_source_alias`
+      - `+ modify_url`
+      - `+ is_cr_model`
+      - `+ banned`
+      - `+ concurrency_control`
+      - `+ agency_name`
+      - `+ yaml_content`
+      - `+ deleted`
+      - `+ variable_groups`
+  - **UpdatePipelineInfo**
+    - changes of request param
+      - `+ component_id`
+      - `- componentId`
+      - `+ disable_release_branch_management`
+      - `+ execution_plans`
+      - `+ project_id`
+      - `+ cancel_strategy`
+      - `+ confidentiality_code`
+      - `+ agency_name`
+      - `+ variable_group_ids`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `ListSlowLogs`, `ListErrorLogs`, `ListFlavors`
+  - **ListLtsSlowLogs**
+    - changes of response param
+      - `+ slow_logs.index_recommendation`
+  - **ResizeInstance**
+    - changes of request param
+      - `+ is_force_resize`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `ApplyConfiguration`
+    - `ListFlavors`
+    - `ShowBackupPolicy`
+    - `ListConfigurations`
+    - `UpdateInstanceConfiguration`
+    - `ShowErrorLog`
+    - `ListSlowLogs`
+    - `ListInstancesByTags`
+  - **CreateGeminiDbDualActive**
+    - changes of request param
+      - `+ tables`
+  - **ListInfluxdbSlowLogs**
+    - changes of response param
+      - `* slow_logs.cost_time: string -> int32`
+  - **ShowRedisDisabledCommands**
+    - changes of response param
+      - `* total_count: string -> int32`
+  - **CreateInstance**
+    - changes of request param
+      - `+ dr_info`
+  - **ListInstances**
+    - changes of response param
+      - `* instances.dual_active_info.destination_instance_node_num: string -> int32`
+
+### HuaweiCloud SDK ProjectMan
+
+- _API Version_
+  - V4
+- _Features_
+  - Support the following APIs:
+    - `UpdateScrumMyIssueNotes`
+    - `DeleteScrumMyIssueNotes`
+    - `UpdateScrumIssueNotes`
+    - `AssociateScrumIssue`
+    - `CancelScrumAssociate`
+    - `BatchUpdateIpdIssues`
+    - `BatchDeleteIpdIssues`
+    - `GetModelConfig`
+    - `ShowIpdIssueRelationsConfigByProject`
+    - `ListIpdProjectFields`
+    - `ListWorkitemConfigs`
+    - `ListScrumJobCache`
+    - `ShowCategoryStatus`
+    - `BatchTransferIpdWorkItemFlow`
+    - `ShowIpdWorkItemFlow`
+    - `UpdateScrumIssueWorkflow`
+    - `CreatePlans`
+    - `BatchDeletePlans`
+    - `ListPlan`
+    - `ListPlanDetail`
+    - `UpdatePlanInfo`
+    - `BatchUpdateBaseline`
+    - `ChangePlanStatus`
+    - `BatchCreateIssuesV2`
+    - `ShowTenantIssueList`
+    - `BatchCreateIpdIssues`
+    - `BatchDeleteIpdIssue`
+    - `BatchUpdateScrumIssues`
+    - `BatchDeleteScrumWorkitem`
+    - `ListIpdIssueComments`
+    - `CreateIpdIssueComments`
+    - `UpdateIpdIssueComment`
+    - `DeleteIpdIssueComment`
+    - `ShowIpdProjectList`
+    - `ShowBaselineSnapshots`
+    - `ListProjectUsers`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateIpdProjectIssue**
+    - changes of request param
+      - `+ feature_set`
+      - `+ category_layer_id`
+      - `+ parent_id`
+      - `+ ir2rr`
+      - `+ us2rr`
+      - `+ link`
+      - `+ ir2feature`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowRiskInfo**
+    - changes of response param
+      - `* risks.level: int32 -> int64`
+      - `* risks: list<EngineRiskDesc> -> list<ShowRiskInfoEngineRiskDesc>`
+  - **GetInstancesOpsResourceUsage**
+    - changes of response param
+      - `* cpu.value: float -> double`
+      - `* cpu.total: float -> double`
+      - `* cpu.contrast: float -> double`
+
 # 3.1.204 2026-09-10
 
 ### HuaweiCloud SDK GaussDB

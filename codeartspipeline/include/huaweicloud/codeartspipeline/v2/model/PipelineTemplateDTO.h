@@ -112,6 +112,15 @@ public:
     void unsetisShowSource();
     void setIsShowSource(bool value);
 
+    /// <summary>
+    /// **参数解释**： 模板manifest版本。 **约束限制**： 不涉及。 **取值范围**： - 3.0：CLASSIC版本。 - 2.0.0：YAML版本。 - 4.0：PAC版本。 - 5.0：DATAOPS版本。 - 6.0：GITCODE_ACTIONS_NEW版本。 **默认取值**： 3.0。 
+    /// </summary>
+
+    std::string getManifestVersion() const;
+    bool manifestVersionIsSet() const;
+    void unsetmanifestVersion();
+    void setManifestVersion(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -130,6 +139,8 @@ protected:
     bool domainIdIsSet_;
     bool isShowSource_;
     bool isShowSourceIsSet_;
+    std::string manifestVersion_;
+    bool manifestVersionIsSet_;
 
 };
 

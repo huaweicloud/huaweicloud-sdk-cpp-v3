@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// Configuration的规格信息
+/// **参数解释：** Configuration的规格信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  ClusterConfigurationsSpec
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// ClusterConfigurationsSpec members
 
     /// <summary>
-    /// 组件配置项列表
+    /// **参数解释：** 组件配置项列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<ClusterConfigurationsSpec_packages>& getPackages();

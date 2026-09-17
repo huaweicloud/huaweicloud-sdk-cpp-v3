@@ -12,14 +12,14 @@ namespace Model {
 
 InstanceBackupSummary::InstanceBackupSummary()
 {
-    id_ = "";
-    idIsSet_ = false;
+    instanceId_ = "";
+    instanceIdIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    backupUseSpace_ = 0.0;
-    backupUseSpaceIsSet_ = false;
+    backupUsedSpace_ = 0.0;
+    backupUsedSpaceIsSet_ = false;
     datastoreIsSet_ = false;
-    spacesIsSet_ = false;
+    spaceIsSet_ = false;
 }
 
 InstanceBackupSummary::~InstanceBackupSummary() = default;
@@ -32,20 +32,20 @@ web::json::value InstanceBackupSummary::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(idIsSet_) {
-        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    if(instanceIdIsSet_) {
+        val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(backupUseSpaceIsSet_) {
-        val[utility::conversions::to_string_t("backup_use_space")] = ModelBase::toJson(backupUseSpace_);
+    if(backupUsedSpaceIsSet_) {
+        val[utility::conversions::to_string_t("backup_used_space")] = ModelBase::toJson(backupUsedSpace_);
     }
     if(datastoreIsSet_) {
         val[utility::conversions::to_string_t("datastore")] = ModelBase::toJson(datastore_);
     }
-    if(spacesIsSet_) {
-        val[utility::conversions::to_string_t("spaces")] = ModelBase::toJson(spaces_);
+    if(spaceIsSet_) {
+        val[utility::conversions::to_string_t("space")] = ModelBase::toJson(space_);
     }
 
     return val;
@@ -54,13 +54,13 @@ bool InstanceBackupSummary::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+    if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setId(refVal);
+            setInstanceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("name"))) {
@@ -72,13 +72,13 @@ bool InstanceBackupSummary::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("backup_use_space"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_use_space"));
+    if(val.has_field(utility::conversions::to_string_t("backup_used_space"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_used_space"));
         if(!fieldValue.is_null())
         {
             double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBackupUseSpace(refVal);
+            setBackupUsedSpace(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("datastore"))) {
@@ -90,38 +90,38 @@ bool InstanceBackupSummary::fromJson(const web::json::value& val)
             setDatastore(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("spaces"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spaces"));
+    if(val.has_field(utility::conversions::to_string_t("space"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("space"));
         if(!fieldValue.is_null())
         {
-            Spaces refVal;
+            Space refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSpaces(refVal);
+            setSpace(refVal);
         }
     }
     return ok;
 }
 
 
-std::string InstanceBackupSummary::getId() const
+std::string InstanceBackupSummary::getInstanceId() const
 {
-    return id_;
+    return instanceId_;
 }
 
-void InstanceBackupSummary::setId(const std::string& value)
+void InstanceBackupSummary::setInstanceId(const std::string& value)
 {
-    id_ = value;
-    idIsSet_ = true;
+    instanceId_ = value;
+    instanceIdIsSet_ = true;
 }
 
-bool InstanceBackupSummary::idIsSet() const
+bool InstanceBackupSummary::instanceIdIsSet() const
 {
-    return idIsSet_;
+    return instanceIdIsSet_;
 }
 
-void InstanceBackupSummary::unsetid()
+void InstanceBackupSummary::unsetinstanceId()
 {
-    idIsSet_ = false;
+    instanceIdIsSet_ = false;
 }
 
 std::string InstanceBackupSummary::getName() const
@@ -145,25 +145,25 @@ void InstanceBackupSummary::unsetname()
     nameIsSet_ = false;
 }
 
-double InstanceBackupSummary::getBackupUseSpace() const
+double InstanceBackupSummary::getBackupUsedSpace() const
 {
-    return backupUseSpace_;
+    return backupUsedSpace_;
 }
 
-void InstanceBackupSummary::setBackupUseSpace(double value)
+void InstanceBackupSummary::setBackupUsedSpace(double value)
 {
-    backupUseSpace_ = value;
-    backupUseSpaceIsSet_ = true;
+    backupUsedSpace_ = value;
+    backupUsedSpaceIsSet_ = true;
 }
 
-bool InstanceBackupSummary::backupUseSpaceIsSet() const
+bool InstanceBackupSummary::backupUsedSpaceIsSet() const
 {
-    return backupUseSpaceIsSet_;
+    return backupUsedSpaceIsSet_;
 }
 
-void InstanceBackupSummary::unsetbackupUseSpace()
+void InstanceBackupSummary::unsetbackupUsedSpace()
 {
-    backupUseSpaceIsSet_ = false;
+    backupUsedSpaceIsSet_ = false;
 }
 
 InstanceBackupDatastore InstanceBackupSummary::getDatastore() const
@@ -187,25 +187,25 @@ void InstanceBackupSummary::unsetdatastore()
     datastoreIsSet_ = false;
 }
 
-Spaces InstanceBackupSummary::getSpaces() const
+Space InstanceBackupSummary::getSpace() const
 {
-    return spaces_;
+    return space_;
 }
 
-void InstanceBackupSummary::setSpaces(const Spaces& value)
+void InstanceBackupSummary::setSpace(const Space& value)
 {
-    spaces_ = value;
-    spacesIsSet_ = true;
+    space_ = value;
+    spaceIsSet_ = true;
 }
 
-bool InstanceBackupSummary::spacesIsSet() const
+bool InstanceBackupSummary::spaceIsSet() const
 {
-    return spacesIsSet_;
+    return spaceIsSet_;
 }
 
-void InstanceBackupSummary::unsetspaces()
+void InstanceBackupSummary::unsetspace()
 {
-    spacesIsSet_ = false;
+    spaceIsSet_ = false;
 }
 
 }

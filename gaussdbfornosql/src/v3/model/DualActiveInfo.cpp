@@ -22,7 +22,7 @@ DualActiveInfo::DualActiveInfo()
     destinationRegionIsSet_ = false;
     destinationInstanceName_ = "";
     destinationInstanceNameIsSet_ = false;
-    destinationInstanceNodeNum_ = "";
+    destinationInstanceNodeNum_ = 0;
     destinationInstanceNodeNumIsSet_ = false;
     destinationInstanceSpecCode_ = "";
     destinationInstanceSpecCodeIsSet_ = false;
@@ -115,7 +115,7 @@ bool DualActiveInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination_instance_node_num"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDestinationInstanceNodeNum(refVal);
         }
@@ -238,12 +238,12 @@ void DualActiveInfo::unsetdestinationInstanceName()
     destinationInstanceNameIsSet_ = false;
 }
 
-std::string DualActiveInfo::getDestinationInstanceNodeNum() const
+int32_t DualActiveInfo::getDestinationInstanceNodeNum() const
 {
     return destinationInstanceNodeNum_;
 }
 
-void DualActiveInfo::setDestinationInstanceNodeNum(const std::string& value)
+void DualActiveInfo::setDestinationInstanceNodeNum(int32_t value)
 {
     destinationInstanceNodeNum_ = value;
     destinationInstanceNodeNumIsSet_ = true;

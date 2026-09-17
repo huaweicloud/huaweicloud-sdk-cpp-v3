@@ -18,6 +18,8 @@ ShowPipelineRunDetailRequest::ShowPipelineRunDetailRequest()
     pipelineIdIsSet_ = false;
     pipelineRunId_ = "";
     pipelineRunIdIsSet_ = false;
+    pipelineRunNumber_ = "";
+    pipelineRunNumberIsSet_ = false;
 }
 
 ShowPipelineRunDetailRequest::~ShowPipelineRunDetailRequest() = default;
@@ -38,6 +40,9 @@ web::json::value ShowPipelineRunDetailRequest::toJson() const
     }
     if(pipelineRunIdIsSet_) {
         val[utility::conversions::to_string_t("pipeline_run_id")] = ModelBase::toJson(pipelineRunId_);
+    }
+    if(pipelineRunNumberIsSet_) {
+        val[utility::conversions::to_string_t("pipeline_run_number")] = ModelBase::toJson(pipelineRunNumber_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ShowPipelineRunDetailRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPipelineRunId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pipeline_run_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pipeline_run_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPipelineRunNumber(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ShowPipelineRunDetailRequest::pipelineRunIdIsSet() const
 void ShowPipelineRunDetailRequest::unsetpipelineRunId()
 {
     pipelineRunIdIsSet_ = false;
+}
+
+std::string ShowPipelineRunDetailRequest::getPipelineRunNumber() const
+{
+    return pipelineRunNumber_;
+}
+
+void ShowPipelineRunDetailRequest::setPipelineRunNumber(const std::string& value)
+{
+    pipelineRunNumber_ = value;
+    pipelineRunNumberIsSet_ = true;
+}
+
+bool ShowPipelineRunDetailRequest::pipelineRunNumberIsSet() const
+{
+    return pipelineRunNumberIsSet_;
+}
+
+void ShowPipelineRunDetailRequest::unsetpipelineRunNumber()
+{
+    pipelineRunNumberIsSet_ = false;
 }
 
 }

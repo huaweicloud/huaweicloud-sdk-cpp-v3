@@ -41,7 +41,7 @@ public:
     /// ClusterUpgradeResponseAction members
 
     /// <summary>
-    /// 当前集群版本
+    /// **参数解释：** 当前集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getVersion() const;
@@ -50,7 +50,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 目标集群版本，例如\&quot;v1.23\&quot;
+    /// **参数解释：** 目标集群版本，例如\&quot;v1.23\&quot; **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getTargetVersion() const;
@@ -59,7 +59,7 @@ public:
     void setTargetVersion(const std::string& value);
 
     /// <summary>
-    /// 目标集群的平台版本号，表示集群版本(version)下的内部版本，不支持用户指定。
+    /// **参数解释：** 目标集群的平台版本号，表示集群版本(version)下的内部版本，不支持用户指定。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getTargetPlatformVersion() const;
@@ -77,7 +77,7 @@ public:
     void setStrategy(const UpgradeStrategy& value);
 
     /// <summary>
-    /// 升级过程中指定的集群配置
+    /// **参数解释：** 升级过程中指定的集群配置 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     Object getConfig() const;

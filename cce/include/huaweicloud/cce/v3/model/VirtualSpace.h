@@ -50,7 +50,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// virtualSpace的大小，仅支持整数百分比。例如：90%。 &gt;一个group中所有virtualSpace的百分比之和不得超过100% 
+    /// **参数解释**： virtualSpace的大小，仅支持整数百分比。例如：90%。 **约束限制**： - 同一StorageGroup内所有VirtualSpace的size之和≤100% - 单个VirtualSpace的size必须≥1%且≤100% **取值范围**： 1% ~ 100% **默认取值**： 不涉及
     /// </summary>
 
     std::string getSize() const;

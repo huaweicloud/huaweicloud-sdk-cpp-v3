@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 属主对象
+/// **参数解释**： 属主对象 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  HyperNodeMetadata_ownerReference
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// HyperNodeMetadata_ownerReference members
 
     /// <summary>
-    /// **参数解释**： 节点池名称
+    /// **参数解释**： 节点池名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getNodepoolName() const;
@@ -48,7 +48,7 @@ public:
     void setNodepoolName(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 节点池UID
+    /// **参数解释**： 节点池ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::string getNodepoolID() const;

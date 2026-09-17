@@ -42,7 +42,7 @@ public:
     /// ListAutopilotClusterUpgradeFeatureGatesResponse members
 
     /// <summary>
-    /// API版本
+    /// **参数解释：** API版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -51,7 +51,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 资源类型
+    /// **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getKind() const;
@@ -69,7 +69,7 @@ public:
     void setMetadata(const Metadata& value);
 
     /// <summary>
-    /// 特性开关信息,格式为key/value键值对。 - Key: 目前有下列值：DisplayPreCheckDetail(展示所有集群升级前检查项详情),EvsSnapshot(使用EVS快照备份集群), LabelForSkippedNode(支持为集群升级过程中跳过的节点打标签), UpgradeStrategy(集群升级策略) - Value: Support 支持,Disable 关闭,Default 使用CCE服务默认规则判断
+    /// **参数解释：** 特性开关信息,格式为key/value键值对。 - Key: 目前有下列值：DisplayPreCheckDetail(展示所有集群升级前检查项详情),EvsSnapshot(使用EVS快照备份集群), LabelForSkippedNode(支持为集群升级过程中跳过的节点打标签), UpgradeStrategy(集群升级策略) - Value: Support 支持,Disable 关闭,Default 使用CCE服务默认规则判断  **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::map<std::string, std::string>& getUpgradeFeatureGates();

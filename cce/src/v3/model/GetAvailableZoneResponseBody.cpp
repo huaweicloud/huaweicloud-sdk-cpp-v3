@@ -50,7 +50,7 @@ web::json::value GetAvailableZoneResponseBody::toJson() const
         val[utility::conversions::to_string_t("azGroupIds")] = ModelBase::toJson(azGroupIds_);
     }
     if(publicBorderGroupIsSet_) {
-        val[utility::conversions::to_string_t("PublicBorderGroup")] = ModelBase::toJson(publicBorderGroup_);
+        val[utility::conversions::to_string_t("publicBorderGroup")] = ModelBase::toJson(publicBorderGroup_);
     }
     if(categoryIsSet_) {
         val[utility::conversions::to_string_t("category")] = ModelBase::toJson(category_);
@@ -101,8 +101,8 @@ bool GetAvailableZoneResponseBody::fromJson(const web::json::value& val)
             setAzGroupIds(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("PublicBorderGroup"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("PublicBorderGroup"));
+    if(val.has_field(utility::conversions::to_string_t("publicBorderGroup"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("publicBorderGroup"));
         if(!fieldValue.is_null())
         {
             std::string refVal;

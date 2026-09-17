@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// API版本的URL链接信息。
+/// **参数解释：** API版本的URL链接信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  APIVersionLink
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// APIVersionLink members
 
     /// <summary>
-    /// API版本信息的链接。
+    /// **参数解释：** API版本信息的链接。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getHref() const;
@@ -48,7 +48,7 @@ public:
     void setHref(const std::string& value);
 
     /// <summary>
-    /// 链接属性。self：自助链接包含版本链接的资源。立即链接后使用这些链接。
+    /// **参数解释：** 链接属性。 **约束限制：** 不涉及 **取值范围：** - self：自助链接包含版本链接的资源。立即链接后使用这些链接。  **默认取值：** 不涉及
     /// </summary>
 
     std::string getRel() const;

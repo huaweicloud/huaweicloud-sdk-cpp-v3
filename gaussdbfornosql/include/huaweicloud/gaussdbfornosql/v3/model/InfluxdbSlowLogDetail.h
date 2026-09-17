@@ -78,10 +78,10 @@ public:
     /// 执行时间。单位：ms
     /// </summary>
 
-    std::string getCostTime() const;
+    int32_t getCostTime() const;
     bool costTimeIsSet() const;
     void unsetcostTime();
-    void setCostTime(const std::string& value);
+    void setCostTime(int32_t value);
 
     /// <summary>
     /// 日志产生时间，UTC时间。 格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -129,7 +129,7 @@ protected:
     bool wholeMessageIsSet_;
     std::string operateType_;
     bool operateTypeIsSet_;
-    std::string costTime_;
+    int32_t costTime_;
     bool costTimeIsSet_;
     std::string logTime_;
     bool logTimeIsSet_;

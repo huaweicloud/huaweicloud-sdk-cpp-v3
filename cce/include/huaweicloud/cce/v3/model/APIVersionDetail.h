@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// API版本的详细信息
+/// **参数解释：** API版本的详细信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  APIVersionDetail
     : public ModelBase
@@ -41,7 +41,7 @@ public:
     /// APIVersionDetail members
 
     /// <summary>
-    /// API版本ID。例如v3。
+    /// **参数解释：** API版本ID，例如v3。 **约束限制：** 由服务端配置指定，用户不可修改 **取值范围：** - v3 - v3.1  **默认取值：** 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -50,7 +50,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// API版本的URL链接信息。
+    /// **参数解释：** API版本的URL链接信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::vector<APIVersionLink>& getLinks();
@@ -59,7 +59,7 @@ public:
     void setLinks(const std::vector<APIVersionLink>& value);
 
     /// <summary>
-    /// 如果API的这个版本支持微版本，则支持最小的微版本。如果不支持微版本，这将是空字符串。
+    /// **参数解释：** 如果API的这个版本支持微版本，则支持最小的微版本。如果不支持微版本，这将是空字符串。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getMinVersion() const;
@@ -68,7 +68,7 @@ public:
     void setMinVersion(const std::string& value);
 
     /// <summary>
-    /// API版本的状态。 可以是： - CURRENT这是使用的API的首选版本； - SUPPORTED：这是一个较老的，但仍然支持的API版本； - DEPRECATED：一个被废弃的API版本，该版本将被删除
+    /// **参数解释：** API版本的状态。 **约束限制：** 不涉及 **取值范围：** - CURRENT：这是使用的API的首选版本 - SUPPORTED：这是一个较老的，但仍然支持的API版本 - DEPRECATED：一个被废弃的API版本，该版本将被删除  **默认取值：** 不涉及
     /// </summary>
 
     std::string getStatus() const;
@@ -77,7 +77,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// API发布时间（UTC格式）。例如API版本为v3时，值为&#39;2018-09-15 00:00:00Z&#39;。
+    /// **参数解释：** API发布时间（UTC格式）。例如API版本为v3时，值为&#39;2018-09-15 00:00:00Z&#39;。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getUpdated() const;
@@ -86,7 +86,7 @@ public:
     void setUpdated(const std::string& value);
 
     /// <summary>
-    /// 如果API的这个版本支持微版本，则支持最大的微版本。如果不支持微版本，这将是空字符串。
+    /// **参数解释：** 如果API的这个版本支持微版本，则支持最大的微版本。如果不支持微版本，这将是空字符串。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getVersion() const;

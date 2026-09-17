@@ -38,7 +38,7 @@ web::json::value UpdatePipelineInfoRequest::toJson() const
         val[utility::conversions::to_string_t("pipeline_id")] = ModelBase::toJson(pipelineId_);
     }
     if(componentIdIsSet_) {
-        val[utility::conversions::to_string_t("componentId")] = ModelBase::toJson(componentId_);
+        val[utility::conversions::to_string_t("component_id")] = ModelBase::toJson(componentId_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -68,8 +68,8 @@ bool UpdatePipelineInfoRequest::fromJson(const web::json::value& val)
             setPipelineId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("componentId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("componentId"));
+    if(val.has_field(utility::conversions::to_string_t("component_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("component_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;

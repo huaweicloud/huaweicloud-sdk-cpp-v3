@@ -20,6 +20,10 @@ NodePoolStatus::NodePoolStatus()
     deletingNodeIsSet_ = false;
     activeNode_ = 0;
     activeNodeIsSet_ = false;
+    repairingNode_ = 0;
+    repairingNodeIsSet_ = false;
+    repairFailedNode_ = 0;
+    repairFailedNodeIsSet_ = false;
     configurationSyncedNodeCount_ = 0;
     configurationSyncedNodeCountIsSet_ = false;
     phase_ = "";
@@ -51,6 +55,12 @@ web::json::value NodePoolStatus::toJson() const
     }
     if(activeNodeIsSet_) {
         val[utility::conversions::to_string_t("activeNode")] = ModelBase::toJson(activeNode_);
+    }
+    if(repairingNodeIsSet_) {
+        val[utility::conversions::to_string_t("repairingNode")] = ModelBase::toJson(repairingNode_);
+    }
+    if(repairFailedNodeIsSet_) {
+        val[utility::conversions::to_string_t("repairFailedNode")] = ModelBase::toJson(repairFailedNode_);
     }
     if(configurationSyncedNodeCountIsSet_) {
         val[utility::conversions::to_string_t("configurationSyncedNodeCount")] = ModelBase::toJson(configurationSyncedNodeCount_);
@@ -108,6 +118,24 @@ bool NodePoolStatus::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setActiveNode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repairingNode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repairingNode"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairingNode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repairFailedNode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repairFailedNode"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairFailedNode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("configurationSyncedNodeCount"))) {
@@ -241,6 +269,48 @@ bool NodePoolStatus::activeNodeIsSet() const
 void NodePoolStatus::unsetactiveNode()
 {
     activeNodeIsSet_ = false;
+}
+
+int32_t NodePoolStatus::getRepairingNode() const
+{
+    return repairingNode_;
+}
+
+void NodePoolStatus::setRepairingNode(int32_t value)
+{
+    repairingNode_ = value;
+    repairingNodeIsSet_ = true;
+}
+
+bool NodePoolStatus::repairingNodeIsSet() const
+{
+    return repairingNodeIsSet_;
+}
+
+void NodePoolStatus::unsetrepairingNode()
+{
+    repairingNodeIsSet_ = false;
+}
+
+int32_t NodePoolStatus::getRepairFailedNode() const
+{
+    return repairFailedNode_;
+}
+
+void NodePoolStatus::setRepairFailedNode(int32_t value)
+{
+    repairFailedNode_ = value;
+    repairFailedNodeIsSet_ = true;
+}
+
+bool NodePoolStatus::repairFailedNodeIsSet() const
+{
+    return repairFailedNodeIsSet_;
+}
+
+void NodePoolStatus::unsetrepairFailedNode()
+{
+    repairFailedNodeIsSet_ = false;
 }
 
 int32_t NodePoolStatus::getConfigurationSyncedNodeCount() const

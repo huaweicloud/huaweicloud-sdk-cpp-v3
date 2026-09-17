@@ -35,6 +35,11 @@ ListPipelinesPage_pipelines::ListPipelinesPage_pipelines()
     convertSignIsSet_ = false;
     securityLevel_ = 0;
     securityLevelIsSet_ = false;
+    banned_ = false;
+    bannedIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
+    tagListIsSet_ = false;
 }
 
 ListPipelinesPage_pipelines::~ListPipelinesPage_pipelines() = default;
@@ -82,6 +87,15 @@ web::json::value ListPipelinesPage_pipelines::toJson() const
     }
     if(securityLevelIsSet_) {
         val[utility::conversions::to_string_t("security_level")] = ModelBase::toJson(securityLevel_);
+    }
+    if(bannedIsSet_) {
+        val[utility::conversions::to_string_t("banned")] = ModelBase::toJson(banned_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(tagListIsSet_) {
+        val[utility::conversions::to_string_t("tag_list")] = ModelBase::toJson(tagList_);
     }
 
     return val;
@@ -196,6 +210,33 @@ bool ListPipelinesPage_pipelines::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityLevel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("banned"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("banned"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBanned(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tag_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tag_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ListPipelinesPage_tag_list> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTagList(refVal);
         }
     }
     return ok;
@@ -452,6 +493,69 @@ bool ListPipelinesPage_pipelines::securityLevelIsSet() const
 void ListPipelinesPage_pipelines::unsetsecurityLevel()
 {
     securityLevelIsSet_ = false;
+}
+
+bool ListPipelinesPage_pipelines::isBanned() const
+{
+    return banned_;
+}
+
+void ListPipelinesPage_pipelines::setBanned(bool value)
+{
+    banned_ = value;
+    bannedIsSet_ = true;
+}
+
+bool ListPipelinesPage_pipelines::bannedIsSet() const
+{
+    return bannedIsSet_;
+}
+
+void ListPipelinesPage_pipelines::unsetbanned()
+{
+    bannedIsSet_ = false;
+}
+
+std::string ListPipelinesPage_pipelines::getDescription() const
+{
+    return description_;
+}
+
+void ListPipelinesPage_pipelines::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool ListPipelinesPage_pipelines::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void ListPipelinesPage_pipelines::unsetdescription()
+{
+    descriptionIsSet_ = false;
+}
+
+std::vector<ListPipelinesPage_tag_list>& ListPipelinesPage_pipelines::getTagList()
+{
+    return tagList_;
+}
+
+void ListPipelinesPage_pipelines::setTagList(const std::vector<ListPipelinesPage_tag_list>& value)
+{
+    tagList_ = value;
+    tagListIsSet_ = true;
+}
+
+bool ListPipelinesPage_pipelines::tagListIsSet() const
+{
+    return tagListIsSet_;
+}
+
+void ListPipelinesPage_pipelines::unsettagList()
+{
+    tagListIsSet_ = false;
 }
 
 }

@@ -43,7 +43,7 @@ public:
     /// ListAutopilotClusterMasterSnapshotTasksResponse members
 
     /// <summary>
-    /// api版本，默认为v3.1
+    /// **参数解释：** API版本，默认为v3.1 **约束限制：** 不涉及 **取值范围：** - v3.1  **默认取值：** v3.1 
     /// </summary>
 
     std::string getApiVersion() const;
@@ -52,7 +52,7 @@ public:
     void setApiVersion(const std::string& value);
 
     /// <summary>
-    /// 任务类型
+    /// **参数解释：** 任务类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getKind() const;
@@ -70,7 +70,7 @@ public:
     void setMetadata(const SnapshotTaskMetadata& value);
 
     /// <summary>
-    /// 备份任务列表
+    /// **参数解释：** 备份任务列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<SnapshotTask>& getItems();

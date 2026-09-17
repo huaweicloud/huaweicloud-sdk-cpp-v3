@@ -24,6 +24,7 @@ ClusterInformationSpec::ClusterInformationSpec()
     deletionProtectionIsSet_ = false;
     enableAutoResizing_ = false;
     enableAutoResizingIsSet_ = false;
+    secretConfigIsSet_ = false;
 }
 
 ClusterInformationSpec::~ClusterInformationSpec() = default;
@@ -59,6 +60,9 @@ web::json::value ClusterInformationSpec::toJson() const
     }
     if(enableAutoResizingIsSet_) {
         val[utility::conversions::to_string_t("enableAutoResizing")] = ModelBase::toJson(enableAutoResizing_);
+    }
+    if(secretConfigIsSet_) {
+        val[utility::conversions::to_string_t("secretConfig")] = ModelBase::toJson(secretConfig_);
     }
 
     return val;
@@ -137,6 +141,15 @@ bool ClusterInformationSpec::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnableAutoResizing(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("secretConfig"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secretConfig"));
+        if(!fieldValue.is_null())
+        {
+            SecretConfigUpdate refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecretConfig(refVal);
         }
     }
     return ok;
@@ -309,6 +322,27 @@ bool ClusterInformationSpec::enableAutoResizingIsSet() const
 void ClusterInformationSpec::unsetenableAutoResizing()
 {
     enableAutoResizingIsSet_ = false;
+}
+
+SecretConfigUpdate ClusterInformationSpec::getSecretConfig() const
+{
+    return secretConfig_;
+}
+
+void ClusterInformationSpec::setSecretConfig(const SecretConfigUpdate& value)
+{
+    secretConfig_ = value;
+    secretConfigIsSet_ = true;
+}
+
+bool ClusterInformationSpec::secretConfigIsSet() const
+{
+    return secretConfigIsSet_;
+}
+
+void ClusterInformationSpec::unsetsecretConfig()
+{
+    secretConfigIsSet_ = false;
 }
 
 }

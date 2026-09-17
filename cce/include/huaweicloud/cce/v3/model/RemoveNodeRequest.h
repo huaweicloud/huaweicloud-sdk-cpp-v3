@@ -49,6 +49,15 @@ public:
     void setClusterId(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 移除节点时是否解绑节点默认安全组。 **约束限制**： 不涉及 **取值范围**： - false：移除节点时保留节点默认安全组 - true：移除节点时解绑节点默认安全组  **默认取值**： false
+    /// </summary>
+
+    bool isRemoveNodeSystemSecurityGroup() const;
+    bool removeNodeSystemSecurityGroupIsSet() const;
+    void unsetremoveNodeSystemSecurityGroup();
+    void setRemoveNodeSystemSecurityGroup(bool value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -61,6 +70,8 @@ public:
 protected:
     std::string clusterId_;
     bool clusterIdIsSet_;
+    bool removeNodeSystemSecurityGroup_;
+    bool removeNodeSystemSecurityGroupIsSet_;
     RemoveNodesTask body_;
     bool bodyIsSet_;
 

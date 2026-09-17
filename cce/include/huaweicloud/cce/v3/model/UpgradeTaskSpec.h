@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 升级任务属性
+/// **参数解释：** 升级任务属性 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  UpgradeTaskSpec
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// UpgradeTaskSpec members
 
     /// <summary>
-    /// 升级前集群版本
+    /// **参数解释：** 升级前集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getVersion() const;
@@ -49,7 +49,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 升级的目标集群版本
+    /// **参数解释：** 升级的目标集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getTargetVersion() const;
@@ -58,7 +58,7 @@ public:
     void setTargetVersion(const std::string& value);
 
     /// <summary>
-    /// 升级任务附属信息
+    /// **参数解释：** 升级任务附属信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     Object getItems() const;

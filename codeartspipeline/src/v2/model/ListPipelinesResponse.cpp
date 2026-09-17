@@ -18,6 +18,11 @@ ListPipelinesResponse::ListPipelinesResponse()
     limitIsSet_ = false;
     total_ = 0;
     totalIsSet_ = false;
+    currentSystemTime_ = 0L;
+    currentSystemTimeIsSet_ = false;
+    highestConfidentialityIsSet_ = false;
+    numberOfHiddenData_ = 0L;
+    numberOfHiddenDataIsSet_ = false;
     pipelinesIsSet_ = false;
 }
 
@@ -39,6 +44,15 @@ web::json::value ListPipelinesResponse::toJson() const
     }
     if(totalIsSet_) {
         val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
+    }
+    if(currentSystemTimeIsSet_) {
+        val[utility::conversions::to_string_t("current_system_time")] = ModelBase::toJson(currentSystemTime_);
+    }
+    if(highestConfidentialityIsSet_) {
+        val[utility::conversions::to_string_t("highest_confidentiality")] = ModelBase::toJson(highestConfidentiality_);
+    }
+    if(numberOfHiddenDataIsSet_) {
+        val[utility::conversions::to_string_t("number_of_hidden_data")] = ModelBase::toJson(numberOfHiddenData_);
     }
     if(pipelinesIsSet_) {
         val[utility::conversions::to_string_t("pipelines")] = ModelBase::toJson(pipelines_);
@@ -75,6 +89,33 @@ bool ListPipelinesResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotal(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("current_system_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("current_system_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCurrentSystemTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("highest_confidentiality"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("highest_confidentiality"));
+        if(!fieldValue.is_null())
+        {
+            ListPipelinesPage_highest_confidentiality refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHighestConfidentiality(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("number_of_hidden_data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("number_of_hidden_data"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNumberOfHiddenData(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pipelines"))) {
@@ -151,6 +192,69 @@ bool ListPipelinesResponse::totalIsSet() const
 void ListPipelinesResponse::unsettotal()
 {
     totalIsSet_ = false;
+}
+
+int64_t ListPipelinesResponse::getCurrentSystemTime() const
+{
+    return currentSystemTime_;
+}
+
+void ListPipelinesResponse::setCurrentSystemTime(int64_t value)
+{
+    currentSystemTime_ = value;
+    currentSystemTimeIsSet_ = true;
+}
+
+bool ListPipelinesResponse::currentSystemTimeIsSet() const
+{
+    return currentSystemTimeIsSet_;
+}
+
+void ListPipelinesResponse::unsetcurrentSystemTime()
+{
+    currentSystemTimeIsSet_ = false;
+}
+
+ListPipelinesPage_highest_confidentiality ListPipelinesResponse::getHighestConfidentiality() const
+{
+    return highestConfidentiality_;
+}
+
+void ListPipelinesResponse::setHighestConfidentiality(const ListPipelinesPage_highest_confidentiality& value)
+{
+    highestConfidentiality_ = value;
+    highestConfidentialityIsSet_ = true;
+}
+
+bool ListPipelinesResponse::highestConfidentialityIsSet() const
+{
+    return highestConfidentialityIsSet_;
+}
+
+void ListPipelinesResponse::unsethighestConfidentiality()
+{
+    highestConfidentialityIsSet_ = false;
+}
+
+int64_t ListPipelinesResponse::getNumberOfHiddenData() const
+{
+    return numberOfHiddenData_;
+}
+
+void ListPipelinesResponse::setNumberOfHiddenData(int64_t value)
+{
+    numberOfHiddenData_ = value;
+    numberOfHiddenDataIsSet_ = true;
+}
+
+bool ListPipelinesResponse::numberOfHiddenDataIsSet() const
+{
+    return numberOfHiddenDataIsSet_;
+}
+
+void ListPipelinesResponse::unsetnumberOfHiddenData()
+{
+    numberOfHiddenDataIsSet_ = false;
 }
 
 std::vector<ListPipelinesPage_pipelines>& ListPipelinesResponse::getPipelines()

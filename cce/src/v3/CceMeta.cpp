@@ -392,6 +392,15 @@ HttpRequestDef CceMeta::genRequestDefForHibernateCluster() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CceMeta::genRequestDefForInplaceMigrateNode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CceMeta::genRequestDefForListAccessPolicy() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ClusterId")
@@ -510,6 +519,9 @@ HttpRequestDef CceMeta::genRequestDefForListNodePools() {
     reqDefBuilder.withRequestField(FieldDef().withName("ShowDefaultNodePool")
                   .withJsonTag("showDefaultNodePool")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AdvanceStatus")
+                  .withJsonTag("advanceStatus")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -603,6 +615,9 @@ HttpRequestDef CceMeta::genRequestDefForPauseUpgradeClusterTask() {
 
 HttpRequestDef CceMeta::genRequestDefForRemoveNode() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("RemoveNodeSystemSecurityGroup")
+                  .withJsonTag("removeNodeSystemSecurityGroup")
+                  .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -773,6 +788,9 @@ HttpRequestDef CceMeta::genRequestDefForShowNodePool() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ErrorStatus")
                   .withJsonTag("errorStatus")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AdvanceStatus")
+                  .withJsonTag("advanceStatus")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

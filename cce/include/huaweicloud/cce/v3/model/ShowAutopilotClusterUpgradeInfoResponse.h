@@ -42,7 +42,7 @@ public:
     /// ShowAutopilotClusterUpgradeInfoResponse members
 
     /// <summary>
-    /// 类型
+    /// **参数解释：** 类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getKind() const;
@@ -51,7 +51,7 @@ public:
     void setKind(const std::string& value);
 
     /// <summary>
-    /// API版本
+    /// **参数解释：** API版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getApiVersion() const;

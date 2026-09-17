@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// values.yaml中的数据，数据结构以具体的模板为准
+/// **参数解释：** values.yaml中的数据，数据结构以具体的模板为准。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CCE_V3_EXPORT  ChartValue_values
     : public ModelBase

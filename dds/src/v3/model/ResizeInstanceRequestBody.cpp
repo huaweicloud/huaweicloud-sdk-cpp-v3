@@ -15,6 +15,8 @@ ResizeInstanceRequestBody::ResizeInstanceRequestBody()
     resizeIsSet_ = false;
     isAutoPay_ = false;
     isAutoPayIsSet_ = false;
+    isForceResize_ = false;
+    isForceResizeIsSet_ = false;
 }
 
 ResizeInstanceRequestBody::~ResizeInstanceRequestBody() = default;
@@ -32,6 +34,9 @@ web::json::value ResizeInstanceRequestBody::toJson() const
     }
     if(isAutoPayIsSet_) {
         val[utility::conversions::to_string_t("is_auto_pay")] = ModelBase::toJson(isAutoPay_);
+    }
+    if(isForceResizeIsSet_) {
+        val[utility::conversions::to_string_t("is_force_resize")] = ModelBase::toJson(isForceResize_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool ResizeInstanceRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAutoPay(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_force_resize"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_force_resize"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsForceResize(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool ResizeInstanceRequestBody::isAutoPayIsSet() const
 void ResizeInstanceRequestBody::unsetisAutoPay()
 {
     isAutoPayIsSet_ = false;
+}
+
+bool ResizeInstanceRequestBody::isIsForceResize() const
+{
+    return isForceResize_;
+}
+
+void ResizeInstanceRequestBody::setIsForceResize(bool value)
+{
+    isForceResize_ = value;
+    isForceResizeIsSet_ = true;
+}
+
+bool ResizeInstanceRequestBody::isForceResizeIsSet() const
+{
+    return isForceResizeIsSet_;
+}
+
+void ResizeInstanceRequestBody::unsetisForceResize()
+{
+    isForceResizeIsSet_ = false;
 }
 
 }

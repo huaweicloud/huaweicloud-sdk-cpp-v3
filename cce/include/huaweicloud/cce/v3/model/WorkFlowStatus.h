@@ -51,7 +51,7 @@ public:
     void setPhase(const WorkFlowPhase& value);
 
     /// <summary>
-    /// 升级流程中的各个任务项的执行状态
+    /// **参数解释：** 升级流程中的各个任务项的执行状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<PointStatus>& getPointStatuses();
@@ -60,7 +60,7 @@ public:
     void setPointStatuses(const std::vector<PointStatus>& value);
 
     /// <summary>
-    /// 表示该升级流程的任务执行线路
+    /// **参数解释：** 表示该升级流程的任务执行线路 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<LineStatus>& getLineStatuses();

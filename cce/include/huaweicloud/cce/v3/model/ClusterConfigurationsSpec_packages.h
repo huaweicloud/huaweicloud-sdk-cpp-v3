@@ -41,7 +41,7 @@ public:
     /// ClusterConfigurationsSpec_packages members
 
     /// <summary>
-    /// 组件名称
+    /// **参数解释：** 组件名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::string getName() const;
@@ -50,7 +50,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 组件配置项详情
+    /// **参数解释：** 组件配置项详情 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
 
     std::vector<ConfigurationItem>& getConfigurations();

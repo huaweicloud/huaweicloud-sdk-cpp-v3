@@ -42,28 +42,28 @@ public:
     /// 当前使用量。
     /// </summary>
 
-    float getValue() const;
+    double getValue() const;
     bool valueIsSet() const;
     void unsetvalue();
-    void setValue(float value);
+    void setValue(double value);
 
     /// <summary>
     /// 总量。
     /// </summary>
 
-    float getTotal() const;
+    double getTotal() const;
     bool totalIsSet() const;
     void unsettotal();
-    void setTotal(float value);
+    void setTotal(double value);
 
     /// <summary>
     /// 对比值。
     /// </summary>
 
-    float getContrast() const;
+    double getContrast() const;
     bool contrastIsSet() const;
     void unsetcontrast();
-    void setContrast(float value);
+    void setContrast(double value);
 
     /// <summary>
     /// 单位。
@@ -76,11 +76,11 @@ public:
 
 
 protected:
-    float value_;
+    double value_;
     bool valueIsSet_;
-    float total_;
+    double total_;
     bool totalIsSet_;
-    float contrast_;
+    double contrast_;
     bool contrastIsSet_;
     std::string unit_;
     bool unitIsSet_;

@@ -19,6 +19,8 @@ ListPipelineRunsQuery::ListPipelineRunsQuery()
     endTimeIsSet_ = false;
     updateTime_ = "";
     updateTimeIsSet_ = false;
+    triggerTypeIsSet_ = false;
+    executorIdsIsSet_ = false;
     offset_ = 0L;
     offsetIsSet_ = false;
     limit_ = 0L;
@@ -27,6 +29,12 @@ ListPipelineRunsQuery::ListPipelineRunsQuery()
     sortKeyIsSet_ = false;
     sortDir_ = "";
     sortDirIsSet_ = false;
+    showJobDetails_ = false;
+    showJobDetailsIsSet_ = false;
+    stageId_ = "";
+    stageIdIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
 }
 
 ListPipelineRunsQuery::~ListPipelineRunsQuery() = default;
@@ -51,6 +59,12 @@ web::json::value ListPipelineRunsQuery::toJson() const
     if(updateTimeIsSet_) {
         val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
     }
+    if(triggerTypeIsSet_) {
+        val[utility::conversions::to_string_t("trigger_type")] = ModelBase::toJson(triggerType_);
+    }
+    if(executorIdsIsSet_) {
+        val[utility::conversions::to_string_t("executor_ids")] = ModelBase::toJson(executorIds_);
+    }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
@@ -62,6 +76,15 @@ web::json::value ListPipelineRunsQuery::toJson() const
     }
     if(sortDirIsSet_) {
         val[utility::conversions::to_string_t("sort_dir")] = ModelBase::toJson(sortDir_);
+    }
+    if(showJobDetailsIsSet_) {
+        val[utility::conversions::to_string_t("show_job_details")] = ModelBase::toJson(showJobDetails_);
+    }
+    if(stageIdIsSet_) {
+        val[utility::conversions::to_string_t("stage_id")] = ModelBase::toJson(stageId_);
+    }
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -106,6 +129,24 @@ bool ListPipelineRunsQuery::fromJson(const web::json::value& val)
             setUpdateTime(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("trigger_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trigger_type"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTriggerType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("executor_ids"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("executor_ids"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExecutorIds(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
@@ -140,6 +181,33 @@ bool ListPipelineRunsQuery::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSortDir(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("show_job_details"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("show_job_details"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setShowJobDetails(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("stage_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("stage_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStageId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobId(refVal);
         }
     }
     return ok;
@@ -230,6 +298,48 @@ void ListPipelineRunsQuery::unsetupdateTime()
     updateTimeIsSet_ = false;
 }
 
+std::vector<std::string>& ListPipelineRunsQuery::getTriggerType()
+{
+    return triggerType_;
+}
+
+void ListPipelineRunsQuery::setTriggerType(const std::vector<std::string>& value)
+{
+    triggerType_ = value;
+    triggerTypeIsSet_ = true;
+}
+
+bool ListPipelineRunsQuery::triggerTypeIsSet() const
+{
+    return triggerTypeIsSet_;
+}
+
+void ListPipelineRunsQuery::unsettriggerType()
+{
+    triggerTypeIsSet_ = false;
+}
+
+std::vector<std::string>& ListPipelineRunsQuery::getExecutorIds()
+{
+    return executorIds_;
+}
+
+void ListPipelineRunsQuery::setExecutorIds(const std::vector<std::string>& value)
+{
+    executorIds_ = value;
+    executorIdsIsSet_ = true;
+}
+
+bool ListPipelineRunsQuery::executorIdsIsSet() const
+{
+    return executorIdsIsSet_;
+}
+
+void ListPipelineRunsQuery::unsetexecutorIds()
+{
+    executorIdsIsSet_ = false;
+}
+
 int64_t ListPipelineRunsQuery::getOffset() const
 {
     return offset_;
@@ -312,6 +422,69 @@ bool ListPipelineRunsQuery::sortDirIsSet() const
 void ListPipelineRunsQuery::unsetsortDir()
 {
     sortDirIsSet_ = false;
+}
+
+bool ListPipelineRunsQuery::isShowJobDetails() const
+{
+    return showJobDetails_;
+}
+
+void ListPipelineRunsQuery::setShowJobDetails(bool value)
+{
+    showJobDetails_ = value;
+    showJobDetailsIsSet_ = true;
+}
+
+bool ListPipelineRunsQuery::showJobDetailsIsSet() const
+{
+    return showJobDetailsIsSet_;
+}
+
+void ListPipelineRunsQuery::unsetshowJobDetails()
+{
+    showJobDetailsIsSet_ = false;
+}
+
+std::string ListPipelineRunsQuery::getStageId() const
+{
+    return stageId_;
+}
+
+void ListPipelineRunsQuery::setStageId(const std::string& value)
+{
+    stageId_ = value;
+    stageIdIsSet_ = true;
+}
+
+bool ListPipelineRunsQuery::stageIdIsSet() const
+{
+    return stageIdIsSet_;
+}
+
+void ListPipelineRunsQuery::unsetstageId()
+{
+    stageIdIsSet_ = false;
+}
+
+std::string ListPipelineRunsQuery::getJobId() const
+{
+    return jobId_;
+}
+
+void ListPipelineRunsQuery::setJobId(const std::string& value)
+{
+    jobId_ = value;
+    jobIdIsSet_ = true;
+}
+
+bool ListPipelineRunsQuery::jobIdIsSet() const
+{
+    return jobIdIsSet_;
+}
+
+void ListPipelineRunsQuery::unsetjobId()
+{
+    jobIdIsSet_ = false;
 }
 
 }

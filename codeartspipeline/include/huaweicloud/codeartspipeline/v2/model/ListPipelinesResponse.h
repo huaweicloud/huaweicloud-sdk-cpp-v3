@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartspipeline/v2/model/ListPipelinesPage_highest_confidentiality.h>
 #include <vector>
 #include <huaweicloud/codeartspipeline/v2/model/ListPipelinesPage_pipelines.h>
 
@@ -67,6 +68,33 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
+    /// **参数解释**： 当前系统时间。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    int64_t getCurrentSystemTime() const;
+    bool currentSystemTimeIsSet() const;
+    void unsetcurrentSystemTime();
+    void setCurrentSystemTime(int64_t value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ListPipelinesPage_highest_confidentiality getHighestConfidentiality() const;
+    bool highestConfidentialityIsSet() const;
+    void unsethighestConfidentiality();
+    void setHighestConfidentiality(const ListPipelinesPage_highest_confidentiality& value);
+
+    /// <summary>
+    /// **参数解释**： 隐藏数据数量。 **约束限制**： 非涉密场景无该字段。 **取值范围**： 不涉及。 
+    /// </summary>
+
+    int64_t getNumberOfHiddenData() const;
+    bool numberOfHiddenDataIsSet() const;
+    void unsetnumberOfHiddenData();
+    void setNumberOfHiddenData(int64_t value);
+
+    /// <summary>
     /// **参数解释**： 流水线。 **取值范围**： 不涉及。 
     /// </summary>
 
@@ -83,6 +111,12 @@ protected:
     bool limitIsSet_;
     int32_t total_;
     bool totalIsSet_;
+    int64_t currentSystemTime_;
+    bool currentSystemTimeIsSet_;
+    ListPipelinesPage_highest_confidentiality highestConfidentiality_;
+    bool highestConfidentialityIsSet_;
+    int64_t numberOfHiddenData_;
+    bool numberOfHiddenDataIsSet_;
     std::vector<ListPipelinesPage_pipelines> pipelines_;
     bool pipelinesIsSet_;
 

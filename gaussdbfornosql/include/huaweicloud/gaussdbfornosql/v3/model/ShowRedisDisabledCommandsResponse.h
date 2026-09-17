@@ -44,10 +44,10 @@ public:
     /// 总数。
     /// </summary>
 
-    std::string getTotalCount() const;
+    int32_t getTotalCount() const;
     bool totalCountIsSet() const;
     void unsettotalCount();
-    void setTotalCount(const std::string& value);
+    void setTotalCount(int32_t value);
 
     /// <summary>
     /// 禁用类型。
@@ -78,7 +78,7 @@ public:
 
 
 protected:
-    std::string totalCount_;
+    int32_t totalCount_;
     bool totalCountIsSet_;
     std::string disabledType_;
     bool disabledTypeIsSet_;

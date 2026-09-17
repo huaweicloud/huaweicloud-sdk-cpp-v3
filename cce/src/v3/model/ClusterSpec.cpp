@@ -66,6 +66,7 @@ ClusterSpec::ClusterSpec()
     enableAutoResizingIsSet_ = false;
     encryptionConfigIsSet_ = false;
     certificateAuthorityIsSet_ = false;
+    secretConfigIsSet_ = false;
 }
 
 ClusterSpec::~ClusterSpec() = default;
@@ -179,6 +180,9 @@ web::json::value ClusterSpec::toJson() const
     }
     if(certificateAuthorityIsSet_) {
         val[utility::conversions::to_string_t("certificateAuthority")] = ModelBase::toJson(certificateAuthority_);
+    }
+    if(secretConfigIsSet_) {
+        val[utility::conversions::to_string_t("secretConfig")] = ModelBase::toJson(secretConfig_);
     }
 
     return val;
@@ -491,6 +495,15 @@ bool ClusterSpec::fromJson(const web::json::value& val)
             CertificateAuthority refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCertificateAuthority(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("secretConfig"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secretConfig"));
+        if(!fieldValue.is_null())
+        {
+            SecretConfig refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecretConfig(refVal);
         }
     }
     return ok;
@@ -1209,6 +1222,27 @@ bool ClusterSpec::certificateAuthorityIsSet() const
 void ClusterSpec::unsetcertificateAuthority()
 {
     certificateAuthorityIsSet_ = false;
+}
+
+SecretConfig ClusterSpec::getSecretConfig() const
+{
+    return secretConfig_;
+}
+
+void ClusterSpec::setSecretConfig(const SecretConfig& value)
+{
+    secretConfig_ = value;
+    secretConfigIsSet_ = true;
+}
+
+bool ClusterSpec::secretConfigIsSet() const
+{
+    return secretConfigIsSet_;
+}
+
+void ClusterSpec::unsetsecretConfig()
+{
+    secretConfigIsSet_ = false;
 }
 
 }

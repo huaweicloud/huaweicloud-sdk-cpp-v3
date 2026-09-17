@@ -24,6 +24,8 @@ HyperNodeStatus::HyperNodeStatus()
     creatingNodeIsSet_ = false;
     activeNode_ = 0;
     activeNodeIsSet_ = false;
+    isStatic_ = false;
+    isStaticIsSet_ = false;
 }
 
 HyperNodeStatus::~HyperNodeStatus() = default;
@@ -53,6 +55,9 @@ web::json::value HyperNodeStatus::toJson() const
     }
     if(activeNodeIsSet_) {
         val[utility::conversions::to_string_t("activeNode")] = ModelBase::toJson(activeNode_);
+    }
+    if(isStaticIsSet_) {
+        val[utility::conversions::to_string_t("isStatic")] = ModelBase::toJson(isStatic_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool HyperNodeStatus::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setActiveNode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("isStatic"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("isStatic"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsStatic(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool HyperNodeStatus::activeNodeIsSet() const
 void HyperNodeStatus::unsetactiveNode()
 {
     activeNodeIsSet_ = false;
+}
+
+bool HyperNodeStatus::isIsStatic() const
+{
+    return isStatic_;
+}
+
+void HyperNodeStatus::setIsStatic(bool value)
+{
+    isStatic_ = value;
+    isStaticIsSet_ = true;
+}
+
+bool HyperNodeStatus::isStaticIsSet() const
+{
+    return isStaticIsSet_;
+}
+
+void HyperNodeStatus::unsetisStatic()
+{
+    isStaticIsSet_ = false;
 }
 
 }

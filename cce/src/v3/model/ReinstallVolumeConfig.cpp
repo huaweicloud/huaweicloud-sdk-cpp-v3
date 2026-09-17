@@ -15,6 +15,8 @@ ReinstallVolumeConfig::ReinstallVolumeConfig()
     lvmConfig_ = "";
     lvmConfigIsSet_ = false;
     storageIsSet_ = false;
+    volumeResetPolicy_ = "";
+    volumeResetPolicyIsSet_ = false;
 }
 
 ReinstallVolumeConfig::~ReinstallVolumeConfig() = default;
@@ -32,6 +34,9 @@ web::json::value ReinstallVolumeConfig::toJson() const
     }
     if(storageIsSet_) {
         val[utility::conversions::to_string_t("storage")] = ModelBase::toJson(storage_);
+    }
+    if(volumeResetPolicyIsSet_) {
+        val[utility::conversions::to_string_t("volumeResetPolicy")] = ModelBase::toJson(volumeResetPolicy_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool ReinstallVolumeConfig::fromJson(const web::json::value& val)
             Storage refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStorage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("volumeResetPolicy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volumeResetPolicy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVolumeResetPolicy(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool ReinstallVolumeConfig::storageIsSet() const
 void ReinstallVolumeConfig::unsetstorage()
 {
     storageIsSet_ = false;
+}
+
+std::string ReinstallVolumeConfig::getVolumeResetPolicy() const
+{
+    return volumeResetPolicy_;
+}
+
+void ReinstallVolumeConfig::setVolumeResetPolicy(const std::string& value)
+{
+    volumeResetPolicy_ = value;
+    volumeResetPolicyIsSet_ = true;
+}
+
+bool ReinstallVolumeConfig::volumeResetPolicyIsSet() const
+{
+    return volumeResetPolicyIsSet_;
+}
+
+void ReinstallVolumeConfig::unsetvolumeResetPolicy()
+{
+    volumeResetPolicyIsSet_ = false;
 }
 
 }

@@ -34,6 +34,10 @@ PipelineGroupVo::PipelineGroupVo()
     createTimeIsSet_ = false;
     updateTime_ = 0L;
     updateTimeIsSet_ = false;
+    pipelineCount_ = 0;
+    pipelineCountIsSet_ = false;
+    noGroupCount_ = 0;
+    noGroupCountIsSet_ = false;
     childrenIsSet_ = false;
 }
 
@@ -79,6 +83,12 @@ web::json::value PipelineGroupVo::toJson() const
     }
     if(updateTimeIsSet_) {
         val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
+    }
+    if(pipelineCountIsSet_) {
+        val[utility::conversions::to_string_t("pipeline_count")] = ModelBase::toJson(pipelineCount_);
+    }
+    if(noGroupCountIsSet_) {
+        val[utility::conversions::to_string_t("no_group_count")] = ModelBase::toJson(noGroupCount_);
     }
     if(childrenIsSet_) {
         val[utility::conversions::to_string_t("children")] = ModelBase::toJson(*children_);
@@ -187,6 +197,24 @@ bool PipelineGroupVo::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pipeline_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pipeline_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPipelineCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("no_group_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("no_group_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNoGroupCount(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("children"))) {
@@ -431,6 +459,48 @@ bool PipelineGroupVo::updateTimeIsSet() const
 void PipelineGroupVo::unsetupdateTime()
 {
     updateTimeIsSet_ = false;
+}
+
+int32_t PipelineGroupVo::getPipelineCount() const
+{
+    return pipelineCount_;
+}
+
+void PipelineGroupVo::setPipelineCount(int32_t value)
+{
+    pipelineCount_ = value;
+    pipelineCountIsSet_ = true;
+}
+
+bool PipelineGroupVo::pipelineCountIsSet() const
+{
+    return pipelineCountIsSet_;
+}
+
+void PipelineGroupVo::unsetpipelineCount()
+{
+    pipelineCountIsSet_ = false;
+}
+
+int32_t PipelineGroupVo::getNoGroupCount() const
+{
+    return noGroupCount_;
+}
+
+void PipelineGroupVo::setNoGroupCount(int32_t value)
+{
+    noGroupCount_ = value;
+    noGroupCountIsSet_ = true;
+}
+
+bool PipelineGroupVo::noGroupCountIsSet() const
+{
+    return noGroupCountIsSet_;
+}
+
+void PipelineGroupVo::unsetnoGroupCount()
+{
+    noGroupCountIsSet_ = false;
 }
 
 std::vector<PipelineGroupVo>& PipelineGroupVo::getChildren()

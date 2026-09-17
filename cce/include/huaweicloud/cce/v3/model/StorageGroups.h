@@ -59,7 +59,7 @@ public:
     void setCceManaged(bool value);
 
     /// <summary>
-    /// 对应storageSelectors中的name，一个group可选择多个selector；但一个selector只能被一个group选择。
+    /// **参数解释**： 对应storageSelectors中的name，一个group可选择多个selector；但一个selector只能被一个group选择。 **约束限制**： 系统组件无法分别存储于系统盘与数据盘中，因此选择selector的type为system时，group只能选择一个selector。 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getSelectorNames();
@@ -68,7 +68,7 @@ public:
     void setSelectorNames(const std::vector<std::string>& value);
 
     /// <summary>
-    /// group中空间配置的详细管理。
+    /// **参数解释**： group中空间配置的详细管理。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
 
     std::vector<VirtualSpace>& getVirtualSpaces();

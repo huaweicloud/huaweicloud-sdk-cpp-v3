@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cce/v3/model/ClusterOps.h>
+#include <huaweicloud/cce/v3/model/SecretConfig.h>
 #include <huaweicloud/cce/v3/model/HostNetwork.h>
 #include <huaweicloud/cce/v3/model/Authentication.h>
 #include <huaweicloud/cce/v3/model/CertificateAuthority.h>
@@ -358,6 +359,15 @@ public:
     void unsetcertificateAuthority();
     void setCertificateAuthority(const CertificateAuthority& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    SecretConfig getSecretConfig() const;
+    bool secretConfigIsSet() const;
+    void unsetsecretConfig();
+    void setSecretConfig(const SecretConfig& value);
+
 
 protected:
     std::string category_;
@@ -428,6 +438,8 @@ protected:
     bool encryptionConfigIsSet_;
     CertificateAuthority certificateAuthority_;
     bool certificateAuthorityIsSet_;
+    SecretConfig secretConfig_;
+    bool secretConfigIsSet_;
 
 };
 

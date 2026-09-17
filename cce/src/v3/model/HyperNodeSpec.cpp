@@ -72,7 +72,7 @@ bool HyperNodeSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeTemplate"));
         if(!fieldValue.is_null())
         {
-            std::vector<NodeTemplateInHyperNode> refVal;
+            NodeTemplateInHyperNode refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeTemplate(refVal);
         }
@@ -132,12 +132,12 @@ void HyperNodeSpec::unsetnodepoolID()
     nodepoolIDIsSet_ = false;
 }
 
-std::vector<NodeTemplateInHyperNode>& HyperNodeSpec::getNodeTemplate()
+NodeTemplateInHyperNode HyperNodeSpec::getNodeTemplate() const
 {
     return nodeTemplate_;
 }
 
-void HyperNodeSpec::setNodeTemplate(const std::vector<NodeTemplateInHyperNode>& value)
+void HyperNodeSpec::setNodeTemplate(const NodeTemplateInHyperNode& value)
 {
     nodeTemplate_ = value;
     nodeTemplateIsSet_ = true;

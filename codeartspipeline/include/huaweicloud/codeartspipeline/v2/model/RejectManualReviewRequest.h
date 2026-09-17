@@ -83,6 +83,15 @@ public:
     void unsetpipelineRunId();
     void setPipelineRunId(const std::string& value);
 
+    /// <summary>
+    /// 审核意见
+    /// </summary>
+
+    std::string getApprovalDescription() const;
+    bool approvalDescriptionIsSet() const;
+    void unsetapprovalDescription();
+    void setApprovalDescription(const std::string& value);
+
 
 protected:
     std::string jobRunId_;
@@ -95,6 +104,8 @@ protected:
     bool pipelineIdIsSet_;
     std::string pipelineRunId_;
     bool pipelineRunIdIsSet_;
+    std::string approvalDescription_;
+    bool approvalDescriptionIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

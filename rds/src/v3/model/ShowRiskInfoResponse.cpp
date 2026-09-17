@@ -44,7 +44,7 @@ bool ShowRiskInfoResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("risks"));
         if(!fieldValue.is_null())
         {
-            std::vector<EngineRiskDesc> refVal;
+            std::vector<ShowRiskInfoEngineRiskDesc> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRisks(refVal);
         }
@@ -62,12 +62,12 @@ bool ShowRiskInfoResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<EngineRiskDesc>& ShowRiskInfoResponse::getRisks()
+std::vector<ShowRiskInfoEngineRiskDesc>& ShowRiskInfoResponse::getRisks()
 {
     return risks_;
 }
 
-void ShowRiskInfoResponse::setRisks(const std::vector<EngineRiskDesc>& value)
+void ShowRiskInfoResponse::setRisks(const std::vector<ShowRiskInfoEngineRiskDesc>& value)
 {
     risks_ = value;
     risksIsSet_ = true;

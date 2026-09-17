@@ -39,7 +39,7 @@ public:
     /// ShowAutopilotReleaseRequest members
 
     /// <summary>
-    /// 模板实例名称
+    /// **参数解释：** 模板实例名称。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -48,7 +48,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 模板实例所在的命名空间
+    /// **参数解释：** 模板实例所在的命名空间。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getNamespace() const;

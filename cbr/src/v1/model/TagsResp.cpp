@@ -14,7 +14,6 @@ TagsResp::TagsResp()
 {
     key_ = "";
     keyIsSet_ = false;
-    values_ = "";
     valuesIsSet_ = false;
 }
 
@@ -54,7 +53,7 @@ bool TagsResp::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("values"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValues(refVal);
         }
@@ -84,12 +83,12 @@ void TagsResp::unsetkey()
     keyIsSet_ = false;
 }
 
-std::string TagsResp::getValues() const
+std::vector<std::string>& TagsResp::getValues()
 {
     return values_;
 }
 
-void TagsResp::setValues(const std::string& value)
+void TagsResp::setValues(const std::vector<std::string>& value)
 {
     values_ = value;
     valuesIsSet_ = true;

@@ -55,12 +55,23 @@ public:
     void unsetwithDefaultReviewCategories();
     void setWithDefaultReviewCategories(bool value);
 
+    /// <summary>
+    /// **参数解释：** 设置是否继承上层配置。 **取值范围：** - true, 返回从上层继承配置。 - false, 只返回自身配置。
+    /// </summary>
+
+    bool isTakeEffect() const;
+    bool takeEffectIsSet() const;
+    void unsettakeEffect();
+    void setTakeEffect(bool value);
+
 
 protected:
     int32_t repositoryId_;
     bool repositoryIdIsSet_;
     bool withDefaultReviewCategories_;
     bool withDefaultReviewCategoriesIsSet_;
+    bool takeEffect_;
+    bool takeEffectIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -141,6 +141,9 @@
 #include <huaweicloud/rds/v3/model/ErrorResponse.h>
 #include <huaweicloud/rds/v3/model/ErrorRsp.h>
 #include <huaweicloud/rds/v3/model/ErrorlogForLtsRequest.h>
+#include <huaweicloud/rds/v3/model/ExecuteOptimizeTableSpaceRequest.h>
+#include <huaweicloud/rds/v3/model/ExecuteOptimizeTableSpaceRequestBody.h>
+#include <huaweicloud/rds/v3/model/ExecuteOptimizeTableSpaceResponse.h>
 #include <huaweicloud/rds/v3/model/FailoverModeRequest.h>
 #include <huaweicloud/rds/v3/model/FailoverRequest.h>
 #include <huaweicloud/rds/v3/model/FailoverStrategyRequest.h>
@@ -152,6 +155,8 @@
 #include <huaweicloud/rds/v3/model/InstanceRestartRequsetBody.h>
 #include <huaweicloud/rds/v3/model/ListAuditlogsRequest.h>
 #include <huaweicloud/rds/v3/model/ListAuditlogsResponse.h>
+#include <huaweicloud/rds/v3/model/ListAutoScalingHistoryRequest.h>
+#include <huaweicloud/rds/v3/model/ListAutoScalingHistoryResponse.h>
 #include <huaweicloud/rds/v3/model/ListAutoScalingPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ListAutoScalingPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ListBackupTransfersRequest.h>
@@ -325,6 +330,7 @@
 #include <huaweicloud/rds/v3/model/QueryDRInfoRequest.h>
 #include <huaweicloud/rds/v3/model/QueryNewBackupEncryptionRequest.h>
 #include <huaweicloud/rds/v3/model/QueryNewBackupEncryptionResponse.h>
+#include <huaweicloud/rds/v3/model/RdsDBFaultPolicyReq.h>
 #include <huaweicloud/rds/v3/model/RdsUpgradePrecheckV3Req.h>
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ReduceVolumeRequestBody.h>
@@ -353,6 +359,9 @@
 #include <huaweicloud/rds/v3/model/SetAuditlogPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetAutoEnlargePolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetAutoEnlargePolicyResponse.h>
+#include <huaweicloud/rds/v3/model/SetAutoScalingPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/SetAutoScalingPolicyRequestBody.h>
+#include <huaweicloud/rds/v3/model/SetAutoScalingPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetAutoUpgradePolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetAutoUpgradePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetBackupPolicyRequest.h>
@@ -371,6 +380,8 @@
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/SetRdsDBFaultPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/SetRdsDBFaultPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetSecondLevelMonitorRequest.h>
 #include <huaweicloud/rds/v3/model/SetSecondLevelMonitorResponse.h>
 #include <huaweicloud/rds/v3/model/SetSecurityGroupRequest.h>
@@ -390,6 +401,8 @@
 #include <huaweicloud/rds/v3/model/ShowAutoUpgradePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableBuildDrInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableBuildDrInstanceResponse.h>
+#include <huaweicloud/rds/v3/model/ShowAvailableCorsVpcsRequest.h>
+#include <huaweicloud/rds/v3/model/ShowAvailableCorsVpcsResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableVersionRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableVersionResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupConfigRequest.h>
@@ -612,6 +625,9 @@
 #include <huaweicloud/rds/v3/model/SetReadOnlySwitchResponse.h>
 #include <huaweicloud/rds/v3/model/ShowMySqlProxySlowLogListRequest.h>
 #include <huaweicloud/rds/v3/model/ShowMySqlProxySlowLogListResponse.h>
+#include <huaweicloud/rds/v3/model/SwitchMySqlProxyEipRequest.h>
+#include <huaweicloud/rds/v3/model/SwitchMySqlProxyEipRequestBody.h>
+#include <huaweicloud/rds/v3/model/SwitchMySqlProxyEipResponse.h>
 #include <huaweicloud/rds/v3/model/SwitchMySqlProxySlowLogRequest.h>
 #include <huaweicloud/rds/v3/model/SwitchMySqlProxySlowLogRequestBody.h>
 #include <huaweicloud/rds/v3/model/SwitchMySqlProxySlowLogResponse.h>
@@ -623,6 +639,9 @@
 #include <huaweicloud/rds/v3/model/UpdateDbUserReq.h>
 #include <huaweicloud/rds/v3/model/UpdateHostPrivilegeRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateHostPrivilegeResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateInstancesProxyPortRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateInstancesProxyPortRequestBody.h>
+#include <huaweicloud/rds/v3/model/UpdateInstancesProxyPortResponse.h>
 #include <huaweicloud/rds/v3/model/UserForCreation.h>
 #include <string>
 
@@ -1300,6 +1319,14 @@ public:
     std::shared_ptr<EnableConfigurationResponse> enableConfiguration(
         EnableConfigurationRequest &request
     );
+    // 清理表碎片空间
+    //
+    // 清理表碎片空间
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteOptimizeTableSpaceResponse> executeOptimizeTableSpace(
+        ExecuteOptimizeTableSpaceRequest &request
+    );
     // 查询实例CES监控指标名称列表
     //
     // 查询实例CES监控指标名称列表
@@ -1315,6 +1342,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAuditlogsResponse> listAuditlogs(
         ListAuditlogsRequest &request
+    );
+    // 查询自动变配历史
+    //
+    // 查询自动变配历史。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAutoScalingHistoryResponse> listAutoScalingHistory(
+        ListAutoScalingHistoryRequest &request
     );
     // 查询自动变配策略
     //
@@ -2004,6 +2039,14 @@ public:
     std::shared_ptr<SetAutoEnlargePolicyResponse> setAutoEnlargePolicy(
         SetAutoEnlargePolicyRequest &request
     );
+    // 修改自动变配策略
+    //
+    // 修改自动变配的策略，包括自动升配和降配。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetAutoScalingPolicyResponse> setAutoScalingPolicy(
+        SetAutoScalingPolicyRequest &request
+    );
     // 设置实例内核小版本自动升级策略
     //
     // 设置实例内核小版本自动升级策略
@@ -2059,6 +2102,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetOffSiteBackupPolicyResponse> setOffSiteBackupPolicy(
         SetOffSiteBackupPolicyRequest &request
+    );
+    // 设置内核故障的处理策略
+    //
+    // 设置内核故障的处理策略：优先切换或优先修复。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetRdsDBFaultPolicyResponse> setRdsDBFaultPolicy(
+        SetRdsDBFaultPolicyRequest &request
     );
     // 设置秒级监控策略
     //
@@ -2133,6 +2184,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAvailableBuildDrInstanceResponse> showAvailableBuildDrInstance(
         ShowAvailableBuildDrInstanceRequest &request
+    );
+    // 查询云耀实例的VPC服务信息
+    //
+    // 查询云耀实例的VPC服务信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAvailableCorsVpcsResponse> showAvailableCorsVpcs(
+        ShowAvailableCorsVpcsRequest &request
     );
     // 查询实例可升级的目标版本
     //
@@ -2857,6 +2916,14 @@ public:
     std::shared_ptr<ShowMySqlProxySlowLogListResponse> showMySqlProxySlowLogList(
         ShowMySqlProxySlowLogListRequest &request
     );
+    // 数据库代理绑定解绑弹性公网IP
+    //
+    // 数据库代理绑定解绑弹性公网IP。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchMySqlProxyEipResponse> switchMySqlProxyEip(
+        SwitchMySqlProxyEipRequest &request
+    );
     // 更改数据库代理慢日志上报开关
     //
     // 更改数据库代理慢日志上报开关。
@@ -2888,6 +2955,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateHostPrivilegeResponse> updateHostPrivilege(
         UpdateHostPrivilegeRequest &request
+    );
+    // 修改数据库代理端口号
+    //
+    // 修改数据库代理端口号。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstancesProxyPortResponse> updateInstancesProxyPort(
+        UpdateInstancesProxyPortRequest &request
     );
 
     // 授权数据库帐号

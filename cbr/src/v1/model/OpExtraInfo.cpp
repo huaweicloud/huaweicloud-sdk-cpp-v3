@@ -21,6 +21,7 @@ OpExtraInfo::OpExtraInfo()
     resourceIsSet_ = false;
     restoreIsSet_ = false;
     vaultDeleteIsSet_ = false;
+    updateExpirationTimeIsSet_ = false;
 }
 
 OpExtraInfo::~OpExtraInfo() = default;
@@ -59,6 +60,9 @@ web::json::value OpExtraInfo::toJson() const
     }
     if(vaultDeleteIsSet_) {
         val[utility::conversions::to_string_t("vault_delete")] = ModelBase::toJson(vaultDelete_);
+    }
+    if(updateExpirationTimeIsSet_) {
+        val[utility::conversions::to_string_t("update_expiration_time")] = ModelBase::toJson(updateExpirationTime_);
     }
 
     return val;
@@ -146,6 +150,15 @@ bool OpExtraInfo::fromJson(const web::json::value& val)
             OpExtendInfoVaultDelete refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVaultDelete(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("update_expiration_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_expiration_time"));
+        if(!fieldValue.is_null())
+        {
+            OpExtendInfoUpdateExpirationTime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdateExpirationTime(refVal);
         }
     }
     return ok;
@@ -339,6 +352,27 @@ bool OpExtraInfo::vaultDeleteIsSet() const
 void OpExtraInfo::unsetvaultDelete()
 {
     vaultDeleteIsSet_ = false;
+}
+
+OpExtendInfoUpdateExpirationTime OpExtraInfo::getUpdateExpirationTime() const
+{
+    return updateExpirationTime_;
+}
+
+void OpExtraInfo::setUpdateExpirationTime(const OpExtendInfoUpdateExpirationTime& value)
+{
+    updateExpirationTime_ = value;
+    updateExpirationTimeIsSet_ = true;
+}
+
+bool OpExtraInfo::updateExpirationTimeIsSet() const
+{
+    return updateExpirationTimeIsSet_;
+}
+
+void OpExtraInfo::unsetupdateExpirationTime()
+{
+    updateExpirationTimeIsSet_ = false;
 }
 
 }

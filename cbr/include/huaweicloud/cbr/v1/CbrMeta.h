@@ -81,6 +81,7 @@ public:
     static HttpRequestDef genRequestDefForUnregisterAgent();
     static HttpRequestDef genRequestDefForUpdateAgent();
     static HttpRequestDef genRequestDefForUpdateBackup();
+    static HttpRequestDef genRequestDefForUpdateExpirationTime();
     static HttpRequestDef genRequestDefForUpdateMemberStatus();
     static HttpRequestDef genRequestDefForUpdateOrder();
     static HttpRequestDef genRequestDefForUpdateOrganizationPolicy();

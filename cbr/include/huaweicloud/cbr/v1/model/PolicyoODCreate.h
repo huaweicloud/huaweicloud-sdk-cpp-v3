@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cbr/v1/model/PolicyAdvancedRetentionRules.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -146,6 +147,15 @@ public:
     void unsetcrossAccountUrn();
     void setCrossAccountUrn(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    PolicyAdvancedRetentionRules getAdvancedRetentionRules() const;
+    bool advancedRetentionRulesIsSet() const;
+    void unsetadvancedRetentionRules();
+    void setAdvancedRetentionRules(const PolicyAdvancedRetentionRules& value);
+
 
 protected:
     int32_t dayBackups_;
@@ -172,6 +182,8 @@ protected:
     bool fullBackupIntervalIsSet_;
     std::string crossAccountUrn_;
     bool crossAccountUrnIsSet_;
+    PolicyAdvancedRetentionRules advancedRetentionRules_;
+    bool advancedRetentionRulesIsSet_;
 
 };
 

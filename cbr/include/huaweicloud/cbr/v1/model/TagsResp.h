@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -51,16 +52,16 @@ public:
     /// 值列表。  value最大长度43个字符。  value可以为空字符串。  key只能由中文，字母，数字，“-”，“_”组成。
     /// </summary>
 
-    std::string getValues() const;
+    std::vector<std::string>& getValues();
     bool valuesIsSet() const;
     void unsetvalues();
-    void setValues(const std::string& value);
+    void setValues(const std::vector<std::string>& value);
 
 
 protected:
     std::string key_;
     bool keyIsSet_;
-    std::string values_;
+    std::vector<std::string> values_;
     bool valuesIsSet_;
 
 };

@@ -13,6 +13,7 @@
 #include <huaweicloud/cbr/v1/model/OpExtendInfoCommon.h>
 #include <huaweicloud/cbr/v1/model/OpExtendInfoRestore.h>
 #include <huaweicloud/cbr/v1/model/OpExtendInfoReplication.h>
+#include <huaweicloud/cbr/v1/model/OpExtendInfoUpdateExpirationTime.h>
 #include <huaweicloud/cbr/v1/model/Resource.h>
 #include <huaweicloud/cbr/v1/model/OpExtendInfoBckup.h>
 #include <huaweicloud/cbr/v1/model/OpExtendInfoDelete.h>
@@ -127,6 +128,15 @@ public:
     void unsetvaultDelete();
     void setVaultDelete(const OpExtendInfoVaultDelete& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    OpExtendInfoUpdateExpirationTime getUpdateExpirationTime() const;
+    bool updateExpirationTimeIsSet() const;
+    void unsetupdateExpirationTime();
+    void setUpdateExpirationTime(const OpExtendInfoUpdateExpirationTime& value);
+
 
 protected:
     OpExtendInfoBckup backup_;
@@ -147,6 +157,8 @@ protected:
     bool restoreIsSet_;
     OpExtendInfoVaultDelete vaultDelete_;
     bool vaultDeleteIsSet_;
+    OpExtendInfoUpdateExpirationTime updateExpirationTime_;
+    bool updateExpirationTimeIsSet_;
 
 };
 

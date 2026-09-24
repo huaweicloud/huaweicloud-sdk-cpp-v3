@@ -1016,6 +1016,9 @@ std::shared_ptr<ShowReviewSettingResponse> CodeArtsRepoClient::showReviewSetting
     if (request.withDefaultReviewCategoriesIsSet()) {
         localVarQueryParams["with_default_review_categories"] = parameterToString(request.isWithDefaultReviewCategories());
     }
+    if (request.takeEffectIsSet()) {
+        localVarQueryParams["take_effect"] = parameterToString(request.isTakeEffect());
+    }
 
     std::string localVarHttpBody;
 

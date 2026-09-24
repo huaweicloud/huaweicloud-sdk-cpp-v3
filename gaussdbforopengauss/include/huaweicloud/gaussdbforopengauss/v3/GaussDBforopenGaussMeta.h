@@ -260,6 +260,7 @@ public:
     static HttpRequestDef genRequestDefForListSqlExcuteNodes();
     static HttpRequestDef genRequestDefForListSqlLimitTask();
     static HttpRequestDef genRequestDefForListSqlPlanAction();
+    static HttpRequestDef genRequestDefForListSqlRecommendRules();
     static HttpRequestDef genRequestDefForListSqlTrace();
     static HttpRequestDef genRequestDefForShowFullSql();
     static HttpRequestDef genRequestDefForShowGlobalSlowSqlDetail();

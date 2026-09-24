@@ -138,22 +138,22 @@ public:
     void setQueryPlan(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 开始时间UTC时间。 **取值范围**: 格式为yyyy-mm-ddThh:mm:ss+0000。
+    /// **参数解释**: 开始时间UTC时间，格式为yyyy-mm-ddThh:mm:ss+0000。 **取值范围**: 不涉及。
     /// </summary>
 
-    int32_t getStartTime() const;
+    std::string getStartTime() const;
     bool startTimeIsSet() const;
     void unsetstartTime();
-    void setStartTime(int32_t value);
+    void setStartTime(const std::string& value);
 
     /// <summary>
-    /// **参数解释**: 结束时间UTC时间。 **取值范围**: 格式为yyyy-mm-ddThh:mm:ss+0000。
+    /// **参数解释**: 结束时间UTC时间，格式为yyyy-mm-ddThh:mm:ss+0000。 **取值范围**: 不涉及。
     /// </summary>
 
-    int32_t getFinishTime() const;
+    std::string getFinishTime() const;
     bool finishTimeIsSet() const;
     void unsetfinishTime();
-    void setFinishTime(int32_t value);
+    void setFinishTime(const std::string& value);
 
     /// <summary>
     /// **参数解释**: 返回行。 **取值范围**: 不涉及。
@@ -195,37 +195,37 @@ public:
     /// **参数解释**: 总耗时（单位：微秒）。 **取值范围**: 不涉及。
     /// </summary>
 
-    int32_t getTotalTime() const;
+    std::string getTotalTime() const;
     bool totalTimeIsSet() const;
     void unsettotalTime();
-    void setTotalTime(int32_t value);
+    void setTotalTime(const std::string& value);
 
     /// <summary>
     /// **参数解释**: CPU耗时（单位：微秒）。 **取值范围**: 不涉及。
     /// </summary>
 
-    int32_t getCpuTime() const;
+    std::string getCpuTime() const;
     bool cpuTimeIsSet() const;
     void unsetcpuTime();
-    void setCpuTime(int32_t value);
+    void setCpuTime(const std::string& value);
 
     /// <summary>
     /// **参数解释**: 计划耗时（单位：微秒）。 **取值范围**: 不涉及。
     /// </summary>
 
-    int32_t getPlanTime() const;
+    std::string getPlanTime() const;
     bool planTimeIsSet() const;
     void unsetplanTime();
-    void setPlanTime(int32_t value);
+    void setPlanTime(const std::string& value);
 
     /// <summary>
     /// **参数解释**: IO耗时（单位：微秒）。 **取值范围**: 不涉及。
     /// </summary>
 
-    int32_t getIoTime() const;
+    std::string getIoTime() const;
     bool ioTimeIsSet() const;
     void unsetioTime();
-    void setIoTime(int32_t value);
+    void setIoTime(const std::string& value);
 
     /// <summary>
     /// **参数解释**: 加锁次数。 **取值范围**: 不涉及。
@@ -240,10 +240,10 @@ public:
     /// **参数解释**: 加锁耗时(单位：微秒)。 **取值范围**: 不涉及。
     /// </summary>
 
-    int32_t getLockTime() const;
+    std::string getLockTime() const;
     bool lockTimeIsSet() const;
     void unsetlockTime();
-    void setLockTime(int32_t value);
+    void setLockTime(const std::string& value);
 
 
 protected:
@@ -269,9 +269,9 @@ protected:
     bool sqlTextIsSet_;
     std::string queryPlan_;
     bool queryPlanIsSet_;
-    int32_t startTime_;
+    std::string startTime_;
     bool startTimeIsSet_;
-    int32_t finishTime_;
+    std::string finishTime_;
     bool finishTimeIsSet_;
     int32_t returnedRows_;
     bool returnedRowsIsSet_;
@@ -281,17 +281,17 @@ protected:
     bool fetchedPagesIsSet_;
     int32_t hitPages_;
     bool hitPagesIsSet_;
-    int32_t totalTime_;
+    std::string totalTime_;
     bool totalTimeIsSet_;
-    int32_t cpuTime_;
+    std::string cpuTime_;
     bool cpuTimeIsSet_;
-    int32_t planTime_;
+    std::string planTime_;
     bool planTimeIsSet_;
-    int32_t ioTime_;
+    std::string ioTime_;
     bool ioTimeIsSet_;
     int32_t lockCount_;
     bool lockCountIsSet_;
-    int32_t lockTime_;
+    std::string lockTime_;
     bool lockTimeIsSet_;
 
 };

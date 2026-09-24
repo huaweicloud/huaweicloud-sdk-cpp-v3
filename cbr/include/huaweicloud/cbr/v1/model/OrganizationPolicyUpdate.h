@@ -9,9 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cbr/v1/model/PolicyTriggerUpdateReq.h>
 #include <string>
 #include <huaweicloud/cbr/v1/model/PolicyoODCreate.h>
-#include <huaweicloud/cbr/v1/model/PolicyTriggerReq.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -89,10 +89,10 @@ public:
     /// 
     /// </summary>
 
-    PolicyTriggerReq getPolicyTrigger() const;
+    PolicyTriggerUpdateReq getPolicyTrigger() const;
     bool policyTriggerIsSet() const;
     void unsetpolicyTrigger();
-    void setPolicyTrigger(const PolicyTriggerReq& value);
+    void setPolicyTrigger(const PolicyTriggerUpdateReq& value);
 
     /// <summary>
     /// 组织策略生效范围
@@ -115,7 +115,7 @@ protected:
     bool policyEnabledIsSet_;
     PolicyoODCreate policyOperationDefinition_;
     bool policyOperationDefinitionIsSet_;
-    PolicyTriggerReq policyTrigger_;
+    PolicyTriggerUpdateReq policyTrigger_;
     bool policyTriggerIsSet_;
     std::string effectiveScope_;
     bool effectiveScopeIsSet_;

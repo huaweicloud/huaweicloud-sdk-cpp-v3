@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cbr/v1/model/VaultOrder.h>
+#include <huaweicloud/cbr/v1/model/PrePaidVaultOrder.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    VaultOrder getVault() const;
+    PrePaidVaultOrder getVault() const;
     bool vaultIsSet() const;
     void unsetvault();
-    void setVault(const VaultOrder& value);
+    void setVault(const PrePaidVaultOrder& value);
 
 
 protected:
-    VaultOrder vault_;
+    PrePaidVaultOrder vault_;
     bool vaultIsSet_;
 
 };

@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/cbr/v1/model/VaultOrder.h"
+#include "huaweicloud/cbr/v1/model/PrePaidVaultOrder.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-VaultOrder::VaultOrder()
+PrePaidVaultOrder::PrePaidVaultOrder()
 {
     name_ = "";
     nameIsSet_ = false;
@@ -35,15 +35,18 @@ VaultOrder::VaultOrder()
     autoExpandIsSet_ = false;
     locked_ = false;
     lockedIsSet_ = false;
+    crossAccount_ = false;
+    crossAccountIsSet_ = false;
+    dataEncryptionIsSet_ = false;
 }
 
-VaultOrder::~VaultOrder() = default;
+PrePaidVaultOrder::~PrePaidVaultOrder() = default;
 
-void VaultOrder::validate()
+void PrePaidVaultOrder::validate()
 {
 }
 
-web::json::value VaultOrder::toJson() const
+web::json::value PrePaidVaultOrder::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -89,10 +92,16 @@ web::json::value VaultOrder::toJson() const
     if(lockedIsSet_) {
         val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
     }
+    if(crossAccountIsSet_) {
+        val[utility::conversions::to_string_t("cross_account")] = ModelBase::toJson(crossAccount_);
+    }
+    if(dataEncryptionIsSet_) {
+        val[utility::conversions::to_string_t("data_encryption")] = ModelBase::toJson(dataEncryption_);
+    }
 
     return val;
 }
-bool VaultOrder::fromJson(const web::json::value& val)
+bool PrePaidVaultOrder::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -109,7 +118,7 @@ bool VaultOrder::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("billing"));
         if(!fieldValue.is_null())
         {
-            BillingCreate refVal;
+            PrePaidBillingCreate refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBilling(refVal);
         }
@@ -222,302 +231,362 @@ bool VaultOrder::fromJson(const web::json::value& val)
             setLocked(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("cross_account"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cross_account"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCrossAccount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("data_encryption"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data_encryption"));
+        if(!fieldValue.is_null())
+        {
+            DataEncryption refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDataEncryption(refVal);
+        }
+    }
     return ok;
 }
 
 
-std::string VaultOrder::getName() const
+std::string PrePaidVaultOrder::getName() const
 {
     return name_;
 }
 
-void VaultOrder::setName(const std::string& value)
+void PrePaidVaultOrder::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool VaultOrder::nameIsSet() const
+bool PrePaidVaultOrder::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void VaultOrder::unsetname()
+void PrePaidVaultOrder::unsetname()
 {
     nameIsSet_ = false;
 }
 
-BillingCreate VaultOrder::getBilling() const
+PrePaidBillingCreate PrePaidVaultOrder::getBilling() const
 {
     return billing_;
 }
 
-void VaultOrder::setBilling(const BillingCreate& value)
+void PrePaidVaultOrder::setBilling(const PrePaidBillingCreate& value)
 {
     billing_ = value;
     billingIsSet_ = true;
 }
 
-bool VaultOrder::billingIsSet() const
+bool PrePaidVaultOrder::billingIsSet() const
 {
     return billingIsSet_;
 }
 
-void VaultOrder::unsetbilling()
+void PrePaidVaultOrder::unsetbilling()
 {
     billingIsSet_ = false;
 }
 
-std::vector<ResourceCreate>& VaultOrder::getResources()
+std::vector<ResourceCreate>& PrePaidVaultOrder::getResources()
 {
     return resources_;
 }
 
-void VaultOrder::setResources(const std::vector<ResourceCreate>& value)
+void PrePaidVaultOrder::setResources(const std::vector<ResourceCreate>& value)
 {
     resources_ = value;
     resourcesIsSet_ = true;
 }
 
-bool VaultOrder::resourcesIsSet() const
+bool PrePaidVaultOrder::resourcesIsSet() const
 {
     return resourcesIsSet_;
 }
 
-void VaultOrder::unsetresources()
+void PrePaidVaultOrder::unsetresources()
 {
     resourcesIsSet_ = false;
 }
 
-std::string VaultOrder::getDescription() const
+std::string PrePaidVaultOrder::getDescription() const
 {
     return description_;
 }
 
-void VaultOrder::setDescription(const std::string& value)
+void PrePaidVaultOrder::setDescription(const std::string& value)
 {
     description_ = value;
     descriptionIsSet_ = true;
 }
 
-bool VaultOrder::descriptionIsSet() const
+bool PrePaidVaultOrder::descriptionIsSet() const
 {
     return descriptionIsSet_;
 }
 
-void VaultOrder::unsetdescription()
+void PrePaidVaultOrder::unsetdescription()
 {
     descriptionIsSet_ = false;
 }
 
-std::string VaultOrder::getBackupPolicyId() const
+std::string PrePaidVaultOrder::getBackupPolicyId() const
 {
     return backupPolicyId_;
 }
 
-void VaultOrder::setBackupPolicyId(const std::string& value)
+void PrePaidVaultOrder::setBackupPolicyId(const std::string& value)
 {
     backupPolicyId_ = value;
     backupPolicyIdIsSet_ = true;
 }
 
-bool VaultOrder::backupPolicyIdIsSet() const
+bool PrePaidVaultOrder::backupPolicyIdIsSet() const
 {
     return backupPolicyIdIsSet_;
 }
 
-void VaultOrder::unsetbackupPolicyId()
+void PrePaidVaultOrder::unsetbackupPolicyId()
 {
     backupPolicyIdIsSet_ = false;
 }
 
-std::vector<Tag>& VaultOrder::getTags()
+std::vector<Tag>& PrePaidVaultOrder::getTags()
 {
     return tags_;
 }
 
-void VaultOrder::setTags(const std::vector<Tag>& value)
+void PrePaidVaultOrder::setTags(const std::vector<Tag>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;
 }
 
-bool VaultOrder::tagsIsSet() const
+bool PrePaidVaultOrder::tagsIsSet() const
 {
     return tagsIsSet_;
 }
 
-void VaultOrder::unsettags()
+void PrePaidVaultOrder::unsettags()
 {
     tagsIsSet_ = false;
 }
 
-std::string VaultOrder::getEnterpriseProjectId() const
+std::string PrePaidVaultOrder::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;
 }
 
-void VaultOrder::setEnterpriseProjectId(const std::string& value)
+void PrePaidVaultOrder::setEnterpriseProjectId(const std::string& value)
 {
     enterpriseProjectId_ = value;
     enterpriseProjectIdIsSet_ = true;
 }
 
-bool VaultOrder::enterpriseProjectIdIsSet() const
+bool PrePaidVaultOrder::enterpriseProjectIdIsSet() const
 {
     return enterpriseProjectIdIsSet_;
 }
 
-void VaultOrder::unsetenterpriseProjectId()
+void PrePaidVaultOrder::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
 }
 
-bool VaultOrder::isAutoBind() const
+bool PrePaidVaultOrder::isAutoBind() const
 {
     return autoBind_;
 }
 
-void VaultOrder::setAutoBind(bool value)
+void PrePaidVaultOrder::setAutoBind(bool value)
 {
     autoBind_ = value;
     autoBindIsSet_ = true;
 }
 
-bool VaultOrder::autoBindIsSet() const
+bool PrePaidVaultOrder::autoBindIsSet() const
 {
     return autoBindIsSet_;
 }
 
-void VaultOrder::unsetautoBind()
+void PrePaidVaultOrder::unsetautoBind()
 {
     autoBindIsSet_ = false;
 }
 
-VaultBindRules VaultOrder::getBindRules() const
+VaultBindRules PrePaidVaultOrder::getBindRules() const
 {
     return bindRules_;
 }
 
-void VaultOrder::setBindRules(const VaultBindRules& value)
+void PrePaidVaultOrder::setBindRules(const VaultBindRules& value)
 {
     bindRules_ = value;
     bindRulesIsSet_ = true;
 }
 
-bool VaultOrder::bindRulesIsSet() const
+bool PrePaidVaultOrder::bindRulesIsSet() const
 {
     return bindRulesIsSet_;
 }
 
-void VaultOrder::unsetbindRules()
+void PrePaidVaultOrder::unsetbindRules()
 {
     bindRulesIsSet_ = false;
 }
 
-int32_t VaultOrder::getThreshold() const
+int32_t PrePaidVaultOrder::getThreshold() const
 {
     return threshold_;
 }
 
-void VaultOrder::setThreshold(int32_t value)
+void PrePaidVaultOrder::setThreshold(int32_t value)
 {
     threshold_ = value;
     thresholdIsSet_ = true;
 }
 
-bool VaultOrder::thresholdIsSet() const
+bool PrePaidVaultOrder::thresholdIsSet() const
 {
     return thresholdIsSet_;
 }
 
-void VaultOrder::unsetthreshold()
+void PrePaidVaultOrder::unsetthreshold()
 {
     thresholdIsSet_ = false;
 }
 
-bool VaultOrder::isSmnNotify() const
+bool PrePaidVaultOrder::isSmnNotify() const
 {
     return smnNotify_;
 }
 
-void VaultOrder::setSmnNotify(bool value)
+void PrePaidVaultOrder::setSmnNotify(bool value)
 {
     smnNotify_ = value;
     smnNotifyIsSet_ = true;
 }
 
-bool VaultOrder::smnNotifyIsSet() const
+bool PrePaidVaultOrder::smnNotifyIsSet() const
 {
     return smnNotifyIsSet_;
 }
 
-void VaultOrder::unsetsmnNotify()
+void PrePaidVaultOrder::unsetsmnNotify()
 {
     smnNotifyIsSet_ = false;
 }
 
-VaultCreateParameters VaultOrder::getParameters() const
+VaultCreateParameters PrePaidVaultOrder::getParameters() const
 {
     return parameters_;
 }
 
-void VaultOrder::setParameters(const VaultCreateParameters& value)
+void PrePaidVaultOrder::setParameters(const VaultCreateParameters& value)
 {
     parameters_ = value;
     parametersIsSet_ = true;
 }
 
-bool VaultOrder::parametersIsSet() const
+bool PrePaidVaultOrder::parametersIsSet() const
 {
     return parametersIsSet_;
 }
 
-void VaultOrder::unsetparameters()
+void PrePaidVaultOrder::unsetparameters()
 {
     parametersIsSet_ = false;
 }
 
-bool VaultOrder::isAutoExpand() const
+bool PrePaidVaultOrder::isAutoExpand() const
 {
     return autoExpand_;
 }
 
-void VaultOrder::setAutoExpand(bool value)
+void PrePaidVaultOrder::setAutoExpand(bool value)
 {
     autoExpand_ = value;
     autoExpandIsSet_ = true;
 }
 
-bool VaultOrder::autoExpandIsSet() const
+bool PrePaidVaultOrder::autoExpandIsSet() const
 {
     return autoExpandIsSet_;
 }
 
-void VaultOrder::unsetautoExpand()
+void PrePaidVaultOrder::unsetautoExpand()
 {
     autoExpandIsSet_ = false;
 }
 
-bool VaultOrder::isLocked() const
+bool PrePaidVaultOrder::isLocked() const
 {
     return locked_;
 }
 
-void VaultOrder::setLocked(bool value)
+void PrePaidVaultOrder::setLocked(bool value)
 {
     locked_ = value;
     lockedIsSet_ = true;
 }
 
-bool VaultOrder::lockedIsSet() const
+bool PrePaidVaultOrder::lockedIsSet() const
 {
     return lockedIsSet_;
 }
 
-void VaultOrder::unsetlocked()
+void PrePaidVaultOrder::unsetlocked()
 {
     lockedIsSet_ = false;
+}
+
+bool PrePaidVaultOrder::isCrossAccount() const
+{
+    return crossAccount_;
+}
+
+void PrePaidVaultOrder::setCrossAccount(bool value)
+{
+    crossAccount_ = value;
+    crossAccountIsSet_ = true;
+}
+
+bool PrePaidVaultOrder::crossAccountIsSet() const
+{
+    return crossAccountIsSet_;
+}
+
+void PrePaidVaultOrder::unsetcrossAccount()
+{
+    crossAccountIsSet_ = false;
+}
+
+DataEncryption PrePaidVaultOrder::getDataEncryption() const
+{
+    return dataEncryption_;
+}
+
+void PrePaidVaultOrder::setDataEncryption(const DataEncryption& value)
+{
+    dataEncryption_ = value;
+    dataEncryptionIsSet_ = true;
+}
+
+bool PrePaidVaultOrder::dataEncryptionIsSet() const
+{
+    return dataEncryptionIsSet_;
+}
+
+void PrePaidVaultOrder::unsetdataEncryption()
+{
+    dataEncryptionIsSet_ = false;
 }
 
 }

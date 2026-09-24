@@ -165,6 +165,9 @@
 #include <huaweicloud/cbr/v1/model/UpdateAgentResponse.h>
 #include <huaweicloud/cbr/v1/model/UpdateBackupRequest.h>
 #include <huaweicloud/cbr/v1/model/UpdateBackupResponse.h>
+#include <huaweicloud/cbr/v1/model/UpdateExpirationTimeReq.h>
+#include <huaweicloud/cbr/v1/model/UpdateExpirationTimeRequest.h>
+#include <huaweicloud/cbr/v1/model/UpdateExpirationTimeResponse.h>
 #include <huaweicloud/cbr/v1/model/UpdateMember.h>
 #include <huaweicloud/cbr/v1/model/UpdateMemberStatusRequest.h>
 #include <huaweicloud/cbr/v1/model/UpdateMemberStatusResponse.h>
@@ -232,7 +235,7 @@ public:
     );
     // 添加资源
     //
-    // 存储库添加资源
+    // 向存储库添加资源
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AddVaultResourceResponse> addVaultResource(
@@ -240,22 +243,16 @@ public:
     );
     // 设置存储库策略
     //
-    // 存储库设置策略
+    // 为存储库设置策略。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AssociateVaultPolicyResponse> associateVaultPolicy(
         AssociateVaultPolicyRequest &request
     );
-    // 批量添加删除存储库资源标签
+    // 批量添加或删除存储库资源标签
     //
     // 为指定实例批量添加或删除标签
-    // 标签管理服务需要使用该接口批量管理实例的标签。
     // 一个资源上最多有10个标签。
-    // 此接口为幂等接口：
-    //     创建时如果请求体中存在重复key则报错。
-    //     创建时，不允许重复key，如果数据库存在就覆盖。
-    //     删除时，允许重复key。
-    //     删除时，如果删除的标签不存在，默认处理成功,删除时不对标签字符集范围做校验。key长度127个字符，value为255个字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateAndDeleteVaultTagsResponse> batchCreateAndDeleteVaultTags(
@@ -271,7 +268,7 @@ public:
     );
     // 变更
     //
-    // 订单更新，调用该接口更新包周期产品订单信息,返回待支付订单信息。
+    // 订单更新，调用该接口更新包周期产品订单信息，返回待支付订单信息。
     // &gt; 该接口目前属于公测阶段，部分region暂时无法使用
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
@@ -287,7 +284,7 @@ public:
     std::shared_ptr<ChangeVaultChargeModeResponse> changeVaultChargeMode(
         ChangeVaultChargeModeRequest &request
     );
-    // 查询agent状态
+    // 查询Agent状态
     //
     // 检查应用一致性Agent状态
     // 
@@ -305,7 +302,7 @@ public:
     );
     // 复制备份还原点
     //
-    // 执行复制
+    // 将备份还原点复制到其他存储库。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CopyCheckpointResponse> copyCheckpoint(
@@ -353,8 +350,7 @@ public:
     );
     // 添加存储库资源标签
     //
-    // 一个资源上最多有10个标签。
-    // 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+    // 为指定存储库资源添加标签。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateVaultTagsResponse> createVaultTags(
@@ -394,7 +390,7 @@ public:
     );
     // 删除存储库
     //
-    // 删除存储库。若删除储存库，将一并删除存储库中的所有备份。
+    // 删除存储库。若删除存储库，将一并删除存储库中的所有备份。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteVaultResponse> deleteVault(
@@ -402,7 +398,7 @@ public:
     );
     // 删除存储库资源标签
     //
-    // 幂等接口：删除时，如果删除的标签不存在，返回404。Key不能为空或者空字符串。
+    // 删除存储库资源标签。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteVaultTagResponse> deleteVaultTag(
@@ -410,7 +406,7 @@ public:
     );
     // 解除存储库策略
     //
-    // 存储库解除策略
+    // 解除存储库绑定的策略。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociateVaultPolicyResponse> disassociateVaultPolicy(
@@ -426,7 +422,7 @@ public:
     );
     // 同步备份还原点
     //
-    // 针对vault同步备份副本
+    // 针对存储库同步备份副本
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ImportCheckpointResponse> importCheckpoint(
@@ -442,7 +438,7 @@ public:
     );
     // 查询所有备份
     //
-    // 查询所有副本
+    // 查询所有备份
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListBackupsResponse> listBackups(
@@ -491,7 +487,7 @@ public:
     );
     // 查询组织策略部署状态列表
     //
-    // 查询组织策略每个账号下策略部署状态列表
+    // 查询组织策略在每个账号下的策略部署状态列表
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListOrganizationPolicyDetailResponse> listOrganizationPolicyDetail(
@@ -539,7 +535,7 @@ public:
     );
     // 迁移资源
     //
-    // 支持资源迁移到另一个存储库，不删除备份。
+    // 将资源迁移到另一个存储库，迁移过程中不删除备份。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<MigrateVaultResourceResponse> migrateVaultResource(
@@ -563,7 +559,7 @@ public:
     );
     // 移除资源
     //
-    // 移除存储库中的资源，若移除资源，将一并删除该资源在保管库中的备份
+    // 移除存储库中的资源，若移除资源，将一并删除该资源在存储库中的备份。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RemoveVaultResourceResponse> removeVaultResource(
@@ -595,7 +591,7 @@ public:
     );
     // 查询指定备份
     //
-    // 根据指定id查询单个副本。
+    // 根据指定ID查询单个副本。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowBackupResponse> showBackup(
@@ -611,7 +607,7 @@ public:
     );
     // 查询租户信息
     //
-    // 由控制台调用的内部接口，用于仅在查询共享备份时获取源project_id的域名信息。
+    // 由控制台调用的内部接口，用于仅在查询共享备份时获取源项目ID的域名信息。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDomainResponse> showDomain(
@@ -619,7 +615,7 @@ public:
     );
     // 查询指定特性
     //
-    // 查询服务指定特性
+    // 查询服务的指定特性
     // &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
@@ -724,8 +720,7 @@ public:
     );
     // 查询存储库项目标签
     //
-    // 查询租户在指定Region和实例类型的所有标签集合
-    // 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能
+    // 查询租户在指定区域和实例类型的所有标签集合
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVaultProjectTagResponse> showVaultProjectTag(
@@ -734,7 +729,6 @@ public:
     // 查询存储库资源实例
     //
     // 使用标签过滤实例
-    // 标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVaultResourceInstancesResponse> showVaultResourceInstances(
@@ -743,7 +737,6 @@ public:
     // 查询存储库资源标签
     //
     // 查询指定实例的标签信息
-    // 标签管理服务需要使用该接口查询指定实例的全部标签数据
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVaultTagResponse> showVaultTag(
@@ -767,11 +760,19 @@ public:
     );
     // 更新备份
     //
-    // 根据备份id更改备份
+    // 根据备份ID更改备份。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateBackupResponse> updateBackup(
         UpdateBackupRequest &request
+    );
+    // 变更指定存储库备份过期时间
+    //
+    // 变更指定存储库备份过期时间
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateExpirationTimeResponse> updateExpirationTime(
+        UpdateExpirationTimeRequest &request
     );
     // 更新备份成员状态
     //

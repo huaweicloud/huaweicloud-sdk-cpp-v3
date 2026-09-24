@@ -197,7 +197,7 @@ public:
     void setOSDCFDiskConfig(const std::string& value);
 
     /// <summary>
-    /// 扩展属性，表示弹性云服务器描述信息，默认为空字符串。  - 长度最多允许85个字符。 - 不能包含“&lt;” 和 “&gt;”等特殊符号。  &gt; 说明： &gt;  &gt; - V2接口不支持该字段。 &gt; - V2.1接口支持该字段，此时，需在请求Header中增加一组Key-Value值。其中，Key固定为“X-OpenStack-Nova-API-Version” ，Value为微版本号，当Value的值为2.19时，支持使用该字段。
+    /// 扩展属性，表示弹性云服务器描述信息，默认为空字符串。  - 长度最多允许85个字符。 - 不能包含“&lt;” 和 “&gt;”等特殊符号。  &gt; 说明： &gt;  &gt;  &gt; - V2.1接口支持该字段，此时，需在请求Header中增加一组Key-Value值。其中，Key固定为“X-OpenStack-Nova-API-Version” ，Value为微版本号，当Value的值为2.19时，支持使用该字段。
     /// </summary>
 
     std::string getDescription() const;

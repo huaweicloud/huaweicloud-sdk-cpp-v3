@@ -111,6 +111,15 @@ public:
     void unsetvolumes();
     void setVolumes(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 云桌面信息，取值范围不涉及。
+    /// </summary>
+
+    std::string getWorkspace() const;
+    bool workspaceIsSet() const;
+    void unsetworkspace();
+    void setWorkspace(const std::string& value);
+
 
 protected:
     std::string backupId_;
@@ -129,6 +138,8 @@ protected:
     bool serverIsSet_;
     std::vector<std::string> volumes_;
     bool volumesIsSet_;
+    std::string workspace_;
+    bool workspaceIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

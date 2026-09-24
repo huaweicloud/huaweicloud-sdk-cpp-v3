@@ -41,7 +41,7 @@ public:
     /// CheckpointParam members
 
     /// <summary>
-    /// 是否自动触发,true:自动触发，false：非自动触发。
+    /// 是否自动触发,true：自动触发，false：非自动触发。
     /// </summary>
 
     bool isAutoTrigger() const;
@@ -59,7 +59,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 是否增量备份，true:增量备份，false：非增量备份。
+    /// 是否增量备份，true：增量备份，false：非增量备份。
     /// </summary>
 
     bool isIncremental() const;
@@ -103,6 +103,15 @@ public:
     void unsetpolicyId();
     void setPolicyId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 手动备份的保留时长，单位为天。设置该参数后，备份副本将在保留时长到期后自动删除。用于为手动备份设置自动过期时间，避免手动备份堆积导致存储容量浪费。不设置此参数时，备份将永久保留。 **约束限制**： 当auto_trigger为true时不支持传此参数，自动备份的保留时间由关联的备份策略指定。auto_trigger不传或为false时支持指定此参数。 **取值范围**： -  1~36500：指定保留天数，备份将在创建时间 + 该天数后到期并自动删除。 - -1：永久保留，备份不会自动过期。  **默认取值**： -1 &gt; 该特性目前处于公测阶段，部分Region可能无法使用
+    /// </summary>
+
+    int32_t getRetentionDurationDays() const;
+    bool retentionDurationDaysIsSet() const;
+    void unsetretentionDurationDays();
+    void setRetentionDurationDays(int32_t value);
+
 
 protected:
     bool autoTrigger_;
@@ -119,6 +128,8 @@ protected:
     bool resourceDetailsIsSet_;
     std::string policyId_;
     bool policyIdIsSet_;
+    int32_t retentionDurationDays_;
+    bool retentionDurationDaysIsSet_;
 
 };
 

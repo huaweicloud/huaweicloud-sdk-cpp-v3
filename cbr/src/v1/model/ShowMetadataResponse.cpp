@@ -25,6 +25,8 @@ ShowMetadataResponse::ShowMetadataResponse()
     server_ = "";
     serverIsSet_ = false;
     volumesIsSet_ = false;
+    workspace_ = "";
+    workspaceIsSet_ = false;
 }
 
 ShowMetadataResponse::~ShowMetadataResponse() = default;
@@ -60,6 +62,9 @@ web::json::value ShowMetadataResponse::toJson() const
     }
     if(volumesIsSet_) {
         val[utility::conversions::to_string_t("volumes")] = ModelBase::toJson(volumes_);
+    }
+    if(workspaceIsSet_) {
+        val[utility::conversions::to_string_t("workspace")] = ModelBase::toJson(workspace_);
     }
 
     return val;
@@ -138,6 +143,15 @@ bool ShowMetadataResponse::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVolumes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("workspace"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("workspace"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWorkspace(refVal);
         }
     }
     return ok;
@@ -310,6 +324,27 @@ bool ShowMetadataResponse::volumesIsSet() const
 void ShowMetadataResponse::unsetvolumes()
 {
     volumesIsSet_ = false;
+}
+
+std::string ShowMetadataResponse::getWorkspace() const
+{
+    return workspace_;
+}
+
+void ShowMetadataResponse::setWorkspace(const std::string& value)
+{
+    workspace_ = value;
+    workspaceIsSet_ = true;
+}
+
+bool ShowMetadataResponse::workspaceIsSet() const
+{
+    return workspaceIsSet_;
+}
+
+void ShowMetadataResponse::unsetworkspace()
+{
+    workspaceIsSet_ = false;
 }
 
 }

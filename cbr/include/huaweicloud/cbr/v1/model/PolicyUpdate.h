@@ -9,9 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cbr/v1/model/PolicyTriggerUpdateReq.h>
 #include <string>
 #include <huaweicloud/cbr/v1/model/PolicyoODCreate.h>
-#include <huaweicloud/cbr/v1/model/PolicyTriggerReq.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -71,10 +71,10 @@ public:
     /// 
     /// </summary>
 
-    PolicyTriggerReq getTrigger() const;
+    PolicyTriggerUpdateReq getTrigger() const;
     bool triggerIsSet() const;
     void unsettrigger();
-    void setTrigger(const PolicyTriggerReq& value);
+    void setTrigger(const PolicyTriggerUpdateReq& value);
 
 
 protected:
@@ -84,7 +84,7 @@ protected:
     bool nameIsSet_;
     PolicyoODCreate operationDefinition_;
     bool operationDefinitionIsSet_;
-    PolicyTriggerReq trigger_;
+    PolicyTriggerUpdateReq trigger_;
     bool triggerIsSet_;
 
 };

@@ -38,7 +38,7 @@ public:
     /// SetRedisPitrPolicyRequestBody members
 
     /// <summary>
-    /// 标识Redis实例是否开启指定时间点恢复。 “true”，表示实例开启Redis指定时间点恢复功能。 “false”，表示实例不启用Redis指定时间点恢复功能。
+    /// **参数解释：** 标识Redis实例是否开启指定时间点恢复。 **取值范围：** - “true”，表示实例开启Redis指定时间点恢复功能。 - “false”，表示实例不启用Redis指定时间点恢复功能。
     /// </summary>
 
     bool isEnabled() const;
@@ -47,7 +47,7 @@ public:
     void setEnabled(bool value);
 
     /// <summary>
-    /// 数据备份的时间间隔，该数据备份控制redis实例可恢复时间点的间隔，默认值为 20分钟。 取值范围：5～120  单位：分钟  例如，当interval 为20min时，可恢复时间点的间隔为20min，其interval约小，对性能影响越大，存储空间膨胀约明显。
+    /// **参数解释：** 数据备份的时间间隔，该数据备份控制redis实例可恢复时间点的间隔，默认值为 20分钟。 例如，当interval 为20min时，可恢复时间点的间隔为20min，其interval约小，对性能影响越大，存储空间膨胀约明显。 **取值范围：** 5～120  单位：分钟
     /// </summary>
 
     int32_t getInterval() const;
@@ -56,7 +56,7 @@ public:
     void setInterval(int32_t value);
 
     /// <summary>
-    /// 指定已生成的备份文件可以保存的天数，默认值为 1 天。 取值范围：1～7  单位：天
+    /// **参数解释：** 指定已生成的备份文件可以保存的天数，默认值为 1 天。 **取值范围：** 1～7  单位：天
     /// </summary>
 
     int32_t getKeepDays() const;

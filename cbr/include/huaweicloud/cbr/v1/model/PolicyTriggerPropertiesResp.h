@@ -57,12 +57,23 @@ public:
     void unsetstartTime();
     void setStartTime(const std::string& value);
 
+    /// <summary>
+    /// 启动时间窗口大小
+    /// </summary>
+
+    int32_t getStartWindowMinutes() const;
+    bool startWindowMinutesIsSet() const;
+    void unsetstartWindowMinutes();
+    void setStartWindowMinutes(int32_t value);
+
 
 protected:
     std::vector<std::string> pattern_;
     bool patternIsSet_;
     std::string startTime_;
     bool startTimeIsSet_;
+    int32_t startWindowMinutes_;
+    bool startWindowMinutesIsSet_;
 
 };
 

@@ -40,7 +40,7 @@ public:
     /// ListRedisPitrRestoreTimeResponse members
 
     /// <summary>
-    /// Redis可恢复时间点列表。 yyyy-mm-ddThh:mm:ssZ字符串格式，T指某个时间的开始，Z指时区偏移量。
+    /// **参数解释：** Redis可恢复时间点列表。yyyy-mm-ddThh:mm:ssZ字符串格式，T指某个时间的开始，Z指时区偏移量。 **取值范围：** 不涉及。
     /// </summary>
 
     std::vector<std::string>& getRestoreTime();
@@ -49,7 +49,7 @@ public:
     void setRestoreTime(const std::vector<std::string>& value);
 
     /// <summary>
-    /// Redis实例可恢复时间点总数。
+    /// **参数解释：** Redis实例可恢复时间点总数。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getTotalCount() const;

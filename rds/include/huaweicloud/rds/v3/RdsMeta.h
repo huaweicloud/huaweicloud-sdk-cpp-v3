@@ -61,8 +61,10 @@ public:
     static HttpRequestDef genRequestDefForDownloadErrorlog();
     static HttpRequestDef genRequestDefForDownloadSlowlog();
     static HttpRequestDef genRequestDefForEnableConfiguration();
+    static HttpRequestDef genRequestDefForExecuteOptimizeTableSpace();
     static HttpRequestDef genRequestDefForGetInstancesOpsMetricNames();
     static HttpRequestDef genRequestDefForListAuditlogs();
+    static HttpRequestDef genRequestDefForListAutoScalingHistory();
     static HttpRequestDef genRequestDefForListAutoScalingPolicy();
     static HttpRequestDef genRequestDefForListBackupTransfers();
     static HttpRequestDef genRequestDefForListBackups();
@@ -148,6 +150,7 @@ public:
     static HttpRequestDef genRequestDefForRestoreToExistingInstance();
     static HttpRequestDef genRequestDefForSetAuditlogPolicy();
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
+    static HttpRequestDef genRequestDefForSetAutoScalingPolicy();
     static HttpRequestDef genRequestDefForSetAutoUpgradePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetBackupRetainPolicy();
@@ -155,6 +158,7 @@ public:
     static HttpRequestDef genRequestDefForSetInstancesProxyRestart();
     static HttpRequestDef genRequestDefForSetLogLtsConfigs();
     static HttpRequestDef genRequestDefForSetOffSiteBackupPolicy();
+    static HttpRequestDef genRequestDefForSetRdsDBFaultPolicy();
     static HttpRequestDef genRequestDefForSetSecondLevelMonitor();
     static HttpRequestDef genRequestDefForSetSecurityGroup();
     static HttpRequestDef genRequestDefForSetSensitiveSlowLog();
@@ -164,6 +168,7 @@ public:
     static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForShowAutoUpgradePolicy();
     static HttpRequestDef genRequestDefForShowAvailableBuildDrInstance();
+    static HttpRequestDef genRequestDefForShowAvailableCorsVpcs();
     static HttpRequestDef genRequestDefForShowAvailableVersion();
     static HttpRequestDef genRequestDefForShowBackupConfig();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
@@ -254,10 +259,12 @@ public:
     static HttpRequestDef genRequestDefForSetDbUserPwd();
     static HttpRequestDef genRequestDefForSetReadOnlySwitch();
     static HttpRequestDef genRequestDefForShowMySqlProxySlowLogList();
+    static HttpRequestDef genRequestDefForSwitchMySqlProxyEip();
     static HttpRequestDef genRequestDefForSwitchMySqlProxySlowLog();
     static HttpRequestDef genRequestDefForUpdateDatabase();
     static HttpRequestDef genRequestDefForUpdateDbUserComment();
     static HttpRequestDef genRequestDefForUpdateHostPrivilege();
+    static HttpRequestDef genRequestDefForUpdateInstancesProxyPort();
     static HttpRequestDef genRequestDefForAllowDbPrivilege();
     static HttpRequestDef genRequestDefForChangeProxyScale();
     static HttpRequestDef genRequestDefForChangeTheDelayThreshold();

@@ -2669,6 +2669,48 @@ std::shared_ptr<UpdateBackupResponse> CbrClient::updateBackup(UpdateBackupReques
 
     return localVarResult;
 }
+std::shared_ptr<UpdateExpirationTimeResponse> CbrClient::updateExpirationTime(UpdateExpirationTimeRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/vaults/{vault_id}/update-backup-expiration-time";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["vault_id"] = parameterToString(request.getVaultId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForUpdateExpirationTime());
+
+    std::shared_ptr<UpdateExpirationTimeResponse> localVarResult = std::make_shared<UpdateExpirationTimeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateMemberStatusResponse> CbrClient::updateMemberStatus(UpdateMemberStatusRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/backups/{backup_id}/members/{member_id}";

@@ -80,7 +80,7 @@ bool PolicyUpdate::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trigger"));
         if(!fieldValue.is_null())
         {
-            PolicyTriggerReq refVal;
+            PolicyTriggerUpdateReq refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTrigger(refVal);
         }
@@ -152,12 +152,12 @@ void PolicyUpdate::unsetoperationDefinition()
     operationDefinitionIsSet_ = false;
 }
 
-PolicyTriggerReq PolicyUpdate::getTrigger() const
+PolicyTriggerUpdateReq PolicyUpdate::getTrigger() const
 {
     return trigger_;
 }
 
-void PolicyUpdate::setTrigger(const PolicyTriggerReq& value)
+void PolicyUpdate::setTrigger(const PolicyTriggerUpdateReq& value)
 {
     trigger_ = value;
     triggerIsSet_ = true;

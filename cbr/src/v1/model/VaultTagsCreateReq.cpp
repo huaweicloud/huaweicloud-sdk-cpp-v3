@@ -39,7 +39,7 @@ bool VaultTagsCreateReq::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tag"));
         if(!fieldValue.is_null())
         {
-            Tag refVal;
+            TagCreate refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTag(refVal);
         }
@@ -48,12 +48,12 @@ bool VaultTagsCreateReq::fromJson(const web::json::value& val)
 }
 
 
-Tag VaultTagsCreateReq::getTag() const
+TagCreate VaultTagsCreateReq::getTag() const
 {
     return tag_;
 }
 
-void VaultTagsCreateReq::setTag(const Tag& value)
+void VaultTagsCreateReq::setTag(const TagCreate& value)
 {
     tag_ = value;
     tagIsSet_ = true;

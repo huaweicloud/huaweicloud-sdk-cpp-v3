@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CBR_V1_MODEL_VaultOrder_H_
-#define HUAWEICLOUD_SDK_CBR_V1_MODEL_VaultOrder_H_
+#ifndef HUAWEICLOUD_SDK_CBR_V1_MODEL_PrePaidVaultOrder_H_
+#define HUAWEICLOUD_SDK_CBR_V1_MODEL_PrePaidVaultOrder_H_
 
 
 #include <huaweicloud/cbr/v1/CbrExport.h>
@@ -11,11 +11,12 @@
 
 #include <huaweicloud/cbr/v1/model/VaultCreateParameters.h>
 #include <string>
+#include <huaweicloud/cbr/v1/model/DataEncryption.h>
 #include <huaweicloud/cbr/v1/model/ResourceCreate.h>
-#include <huaweicloud/cbr/v1/model/BillingCreate.h>
 #include <huaweicloud/cbr/v1/model/VaultBindRules.h>
 #include <vector>
 #include <huaweicloud/cbr/v1/model/Tag.h>
+#include <huaweicloud/cbr/v1/model/PrePaidBillingCreate.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -26,14 +27,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 存储库订单
+/// 包周期存储库订单
 /// </summary>
-class HUAWEICLOUD_CBR_V1_EXPORT  VaultOrder
+class HUAWEICLOUD_CBR_V1_EXPORT  PrePaidVaultOrder
     : public ModelBase
 {
 public:
-    VaultOrder();
-    virtual ~VaultOrder();
+    PrePaidVaultOrder();
+    virtual ~PrePaidVaultOrder();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -42,10 +43,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// VaultOrder members
+    /// PrePaidVaultOrder members
 
     /// <summary>
-    /// 存储库名称  最小长度：1  最大长度：64
+    /// 存储库名称，最大支持64字符，只能由中文、字母、数字、\&quot;_\&quot;、\&quot;-\&quot;组成。默认取值不涉及。
     /// </summary>
 
     std::string getName() const;
@@ -57,10 +58,10 @@ public:
     /// 
     /// </summary>
 
-    BillingCreate getBilling() const;
+    PrePaidBillingCreate getBilling() const;
     bool billingIsSet() const;
     void unsetbilling();
-    void setBilling(const BillingCreate& value);
+    void setBilling(const PrePaidBillingCreate& value);
 
     /// <summary>
     /// 绑定的备份资源，未在创建时绑定资源填[]
@@ -72,7 +73,7 @@ public:
     void setResources(const std::vector<ResourceCreate>& value);
 
     /// <summary>
-    /// 描述  最小长度：0  最大长度：255
+    /// 存储库描述，取值范围：最小长度：0，最大长度：255。默认取值不涉及。
     /// </summary>
 
     std::string getDescription() const;
@@ -81,7 +82,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 备份策略ID，不设置时为null，不自动备份。
+    /// 备份策略ID，默认值为null，不自动备份。 [获取方法请参见\&quot;[获取备份策略ID](https://support.huaweicloud.com/api-cbr/ListPolicies.html)\&quot;。](tag:hws) [获取方法请参见\&quot;[获取备份策略ID](https://support.huaweicloud.com/intl/zh-cn/api-cbr/ListPolicies.html)\&quot;。](tag:hws_hk)
     /// </summary>
 
     std::string getBackupPolicyId() const;
@@ -99,7 +100,7 @@ public:
     void setTags(const std::vector<Tag>& value);
 
     /// <summary>
-    /// 企业项目ID，默认为‘0’。
+    /// 企业项目ID，默认为&#39;0&#39;。 [获取方法请参见\&quot;[获取企业项目ID](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)\&quot;。](tag:hws) [获取方法请参见\&quot;[获取企业项目ID](https://support.huaweicloud.com/intl/zh-cn/usermanual-em/zh-cn_topic_0126101490.html)\&quot;。](tag:hws_hk)
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -108,7 +109,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 是否支持自动挂载。
+    /// 功能说明：是否支持自动挂载。默认为false。 取值范围： - true：支持自动挂载 - false：不支持自动挂载
     /// </summary>
 
     bool isAutoBind() const;
@@ -126,7 +127,7 @@ public:
     void setBindRules(const VaultBindRules& value);
 
     /// <summary>
-    /// 存储库阈值，百分比。  最小值：1  最大值：100
+    /// 功能说明：存储库容量阈值，存储库已用容量和总容量的百分比超过该值，如果smn_notify为开，将发送相关通知。 取值范围：[1, 100]，默认值为80。
     /// </summary>
 
     int32_t getThreshold() const;
@@ -135,7 +136,7 @@ public:
     void setThreshold(int32_t value);
 
     /// <summary>
-    /// 当容量到达阈值，是否启用通知
+    /// 功能说明：是否发送smn通知开关，默认为true 取值范围： - true：发送smn通知 - false：不发送smn通知
     /// </summary>
 
     bool isSmnNotify() const;
@@ -153,7 +154,7 @@ public:
     void setParameters(const VaultCreateParameters& value);
 
     /// <summary>
-    /// 是否开启存储库自动扩容能力（只支持按需存储库）。
+    /// 功能说明：是否开启存储库自动扩容能力（只支持按需存储库），默认为false。 取值范围： - true：支持自动扩容； - false：不支持自动扩容。
     /// </summary>
 
     bool isAutoExpand() const;
@@ -162,7 +163,7 @@ public:
     void setAutoExpand(bool value);
 
     /// <summary>
-    /// 用于标识当前存储库是否已锁定
+    /// 功能说明：用于标识当前存储库是否已锁定，锁定的存储库不支持解锁。默认值为false。 [关于备份锁定的详细信息，请参考\&quot;[开启备份锁定](https://support.huaweicloud.com/usermanual-cbr/cbr_01_0035.html)\&quot;。](tag:hws) [关于备份锁定的详细信息，请参考\&quot;[开启备份锁定](https://support.huaweicloud.com/intl/zh-cn/usermanual-cbr/cbr_01_0035.html)\&quot;。](tag:hws_hk) 取值范围： - true：锁定存储库 - false：不锁定存储库
     /// </summary>
 
     bool isLocked() const;
@@ -170,11 +171,29 @@ public:
     void unsetlocked();
     void setLocked(bool value);
 
+    /// <summary>
+    /// 功能说明：是否为跨账号复制存储库，默认值为false，只有创建跨账号复制存储库时才允许该值为true。 取值范围： - false: 非跨账号复制存储库 - true: 跨账号复制存储库
+    /// </summary>
+
+    bool isCrossAccount() const;
+    bool crossAccountIsSet() const;
+    void unsetcrossAccount();
+    void setCrossAccount(bool value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    DataEncryption getDataEncryption() const;
+    bool dataEncryptionIsSet() const;
+    void unsetdataEncryption();
+    void setDataEncryption(const DataEncryption& value);
+
 
 protected:
     std::string name_;
     bool nameIsSet_;
-    BillingCreate billing_;
+    PrePaidBillingCreate billing_;
     bool billingIsSet_;
     std::vector<ResourceCreate> resources_;
     bool resourcesIsSet_;
@@ -200,6 +219,10 @@ protected:
     bool autoExpandIsSet_;
     bool locked_;
     bool lockedIsSet_;
+    bool crossAccount_;
+    bool crossAccountIsSet_;
+    DataEncryption dataEncryption_;
+    bool dataEncryptionIsSet_;
 
 };
 
@@ -210,4 +233,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CBR_V1_MODEL_VaultOrder_H_
+#endif // HUAWEICLOUD_SDK_CBR_V1_MODEL_PrePaidVaultOrder_H_

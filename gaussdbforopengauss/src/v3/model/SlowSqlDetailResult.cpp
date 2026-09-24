@@ -34,9 +34,9 @@ SlowSqlDetailResult::SlowSqlDetailResult()
     sqlTextIsSet_ = false;
     queryPlan_ = "";
     queryPlanIsSet_ = false;
-    startTime_ = 0;
+    startTime_ = "";
     startTimeIsSet_ = false;
-    finishTime_ = 0;
+    finishTime_ = "";
     finishTimeIsSet_ = false;
     returnedRows_ = 0;
     returnedRowsIsSet_ = false;
@@ -46,17 +46,17 @@ SlowSqlDetailResult::SlowSqlDetailResult()
     fetchedPagesIsSet_ = false;
     hitPages_ = 0;
     hitPagesIsSet_ = false;
-    totalTime_ = 0;
+    totalTime_ = "";
     totalTimeIsSet_ = false;
-    cpuTime_ = 0;
+    cpuTime_ = "";
     cpuTimeIsSet_ = false;
-    planTime_ = 0;
+    planTime_ = "";
     planTimeIsSet_ = false;
-    ioTime_ = 0;
+    ioTime_ = "";
     ioTimeIsSet_ = false;
     lockCount_ = 0;
     lockCountIsSet_ = false;
-    lockTime_ = 0;
+    lockTime_ = "";
     lockTimeIsSet_ = false;
 }
 
@@ -249,7 +249,7 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStartTime(refVal);
         }
@@ -258,7 +258,7 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("finish_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFinishTime(refVal);
         }
@@ -303,7 +303,7 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalTime(refVal);
         }
@@ -312,7 +312,7 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cpu_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCpuTime(refVal);
         }
@@ -321,7 +321,7 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("plan_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPlanTime(refVal);
         }
@@ -330,7 +330,7 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("io_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIoTime(refVal);
         }
@@ -348,7 +348,7 @@ bool SlowSqlDetailResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lock_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLockTime(refVal);
         }
@@ -588,12 +588,12 @@ void SlowSqlDetailResult::unsetqueryPlan()
     queryPlanIsSet_ = false;
 }
 
-int32_t SlowSqlDetailResult::getStartTime() const
+std::string SlowSqlDetailResult::getStartTime() const
 {
     return startTime_;
 }
 
-void SlowSqlDetailResult::setStartTime(int32_t value)
+void SlowSqlDetailResult::setStartTime(const std::string& value)
 {
     startTime_ = value;
     startTimeIsSet_ = true;
@@ -609,12 +609,12 @@ void SlowSqlDetailResult::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-int32_t SlowSqlDetailResult::getFinishTime() const
+std::string SlowSqlDetailResult::getFinishTime() const
 {
     return finishTime_;
 }
 
-void SlowSqlDetailResult::setFinishTime(int32_t value)
+void SlowSqlDetailResult::setFinishTime(const std::string& value)
 {
     finishTime_ = value;
     finishTimeIsSet_ = true;
@@ -714,12 +714,12 @@ void SlowSqlDetailResult::unsethitPages()
     hitPagesIsSet_ = false;
 }
 
-int32_t SlowSqlDetailResult::getTotalTime() const
+std::string SlowSqlDetailResult::getTotalTime() const
 {
     return totalTime_;
 }
 
-void SlowSqlDetailResult::setTotalTime(int32_t value)
+void SlowSqlDetailResult::setTotalTime(const std::string& value)
 {
     totalTime_ = value;
     totalTimeIsSet_ = true;
@@ -735,12 +735,12 @@ void SlowSqlDetailResult::unsettotalTime()
     totalTimeIsSet_ = false;
 }
 
-int32_t SlowSqlDetailResult::getCpuTime() const
+std::string SlowSqlDetailResult::getCpuTime() const
 {
     return cpuTime_;
 }
 
-void SlowSqlDetailResult::setCpuTime(int32_t value)
+void SlowSqlDetailResult::setCpuTime(const std::string& value)
 {
     cpuTime_ = value;
     cpuTimeIsSet_ = true;
@@ -756,12 +756,12 @@ void SlowSqlDetailResult::unsetcpuTime()
     cpuTimeIsSet_ = false;
 }
 
-int32_t SlowSqlDetailResult::getPlanTime() const
+std::string SlowSqlDetailResult::getPlanTime() const
 {
     return planTime_;
 }
 
-void SlowSqlDetailResult::setPlanTime(int32_t value)
+void SlowSqlDetailResult::setPlanTime(const std::string& value)
 {
     planTime_ = value;
     planTimeIsSet_ = true;
@@ -777,12 +777,12 @@ void SlowSqlDetailResult::unsetplanTime()
     planTimeIsSet_ = false;
 }
 
-int32_t SlowSqlDetailResult::getIoTime() const
+std::string SlowSqlDetailResult::getIoTime() const
 {
     return ioTime_;
 }
 
-void SlowSqlDetailResult::setIoTime(int32_t value)
+void SlowSqlDetailResult::setIoTime(const std::string& value)
 {
     ioTime_ = value;
     ioTimeIsSet_ = true;
@@ -819,12 +819,12 @@ void SlowSqlDetailResult::unsetlockCount()
     lockCountIsSet_ = false;
 }
 
-int32_t SlowSqlDetailResult::getLockTime() const
+std::string SlowSqlDetailResult::getLockTime() const
 {
     return lockTime_;
 }
 
-void SlowSqlDetailResult::setLockTime(int32_t value)
+void SlowSqlDetailResult::setLockTime(const std::string& value)
 {
     lockTime_ = value;
     lockTimeIsSet_ = true;

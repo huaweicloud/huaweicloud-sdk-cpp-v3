@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ims/v2/model/PageInfo.h>
 #include <huaweicloud/ims/v2/model/ImageInfo.h>
 #include <vector>
 
@@ -48,10 +49,21 @@ public:
     void unsetimages();
     void setImages(const std::vector<ImageInfo>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    PageInfo getPageInfo() const;
+    bool pageInfoIsSet() const;
+    void unsetpageInfo();
+    void setPageInfo(const PageInfo& value);
+
 
 protected:
     std::vector<ImageInfo> images_;
     bool imagesIsSet_;
+    PageInfo pageInfo_;
+    bool pageInfoIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

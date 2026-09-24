@@ -24,6 +24,8 @@ CheckpointParam::CheckpointParam()
     resourceDetailsIsSet_ = false;
     policyId_ = "";
     policyIdIsSet_ = false;
+    retentionDurationDays_ = 0;
+    retentionDurationDaysIsSet_ = false;
 }
 
 CheckpointParam::~CheckpointParam() = default;
@@ -56,6 +58,9 @@ web::json::value CheckpointParam::toJson() const
     }
     if(policyIdIsSet_) {
         val[utility::conversions::to_string_t("policy_id")] = ModelBase::toJson(policyId_);
+    }
+    if(retentionDurationDaysIsSet_) {
+        val[utility::conversions::to_string_t("retention_duration_days")] = ModelBase::toJson(retentionDurationDays_);
     }
 
     return val;
@@ -125,6 +130,15 @@ bool CheckpointParam::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPolicyId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("retention_duration_days"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("retention_duration_days"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRetentionDurationDays(refVal);
         }
     }
     return ok;
@@ -276,6 +290,27 @@ bool CheckpointParam::policyIdIsSet() const
 void CheckpointParam::unsetpolicyId()
 {
     policyIdIsSet_ = false;
+}
+
+int32_t CheckpointParam::getRetentionDurationDays() const
+{
+    return retentionDurationDays_;
+}
+
+void CheckpointParam::setRetentionDurationDays(int32_t value)
+{
+    retentionDurationDays_ = value;
+    retentionDurationDaysIsSet_ = true;
+}
+
+bool CheckpointParam::retentionDurationDaysIsSet() const
+{
+    return retentionDurationDaysIsSet_;
+}
+
+void CheckpointParam::unsetretentionDurationDays()
+{
+    retentionDurationDaysIsSet_ = false;
 }
 
 }

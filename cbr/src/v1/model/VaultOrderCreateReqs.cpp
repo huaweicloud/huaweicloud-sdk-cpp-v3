@@ -39,7 +39,7 @@ bool VaultOrderCreateReqs::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vault"));
         if(!fieldValue.is_null())
         {
-            VaultOrder refVal;
+            PrePaidVaultOrder refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVault(refVal);
         }
@@ -48,12 +48,12 @@ bool VaultOrderCreateReqs::fromJson(const web::json::value& val)
 }
 
 
-VaultOrder VaultOrderCreateReqs::getVault() const
+PrePaidVaultOrder VaultOrderCreateReqs::getVault() const
 {
     return vault_;
 }
 
-void VaultOrderCreateReqs::setVault(const VaultOrder& value)
+void VaultOrderCreateReqs::setVault(const PrePaidVaultOrder& value)
 {
     vault_ = value;
     vaultIsSet_ = true;

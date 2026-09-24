@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cbr/v1/model/Tag.h>
+#include <huaweicloud/cbr/v1/model/TagCreate.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    Tag getTag() const;
+    TagCreate getTag() const;
     bool tagIsSet() const;
     void unsettag();
-    void setTag(const Tag& value);
+    void setTag(const TagCreate& value);
 
 
 protected:
-    Tag tag_;
+    TagCreate tag_;
     bool tagIsSet_;
 
 };

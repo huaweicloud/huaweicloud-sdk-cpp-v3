@@ -397,7 +397,7 @@ public:
     std::shared_ptr<BatchDeleteServerTagsResponse> batchDeleteServerTags(
         BatchDeleteServerTagsRequest &request
     );
-    // 批量卸载卷
+    // 批量卸载指定共享盘
     //
     // 
     // Please refer to HUAWEI cloud API Explorer for details.

@@ -36,6 +36,7 @@ PolicyoODCreate::PolicyoODCreate()
     fullBackupIntervalIsSet_ = false;
     crossAccountUrn_ = "";
     crossAccountUrnIsSet_ = false;
+    advancedRetentionRulesIsSet_ = false;
 }
 
 PolicyoODCreate::~PolicyoODCreate() = default;
@@ -83,6 +84,9 @@ web::json::value PolicyoODCreate::toJson() const
     }
     if(crossAccountUrnIsSet_) {
         val[utility::conversions::to_string_t("cross_account_urn")] = ModelBase::toJson(crossAccountUrn_);
+    }
+    if(advancedRetentionRulesIsSet_) {
+        val[utility::conversions::to_string_t("advanced_retention_rules")] = ModelBase::toJson(advancedRetentionRules_);
     }
 
     return val;
@@ -197,6 +201,15 @@ bool PolicyoODCreate::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCrossAccountUrn(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("advanced_retention_rules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("advanced_retention_rules"));
+        if(!fieldValue.is_null())
+        {
+            PolicyAdvancedRetentionRules refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdvancedRetentionRules(refVal);
         }
     }
     return ok;
@@ -453,6 +466,27 @@ bool PolicyoODCreate::crossAccountUrnIsSet() const
 void PolicyoODCreate::unsetcrossAccountUrn()
 {
     crossAccountUrnIsSet_ = false;
+}
+
+PolicyAdvancedRetentionRules PolicyoODCreate::getAdvancedRetentionRules() const
+{
+    return advancedRetentionRules_;
+}
+
+void PolicyoODCreate::setAdvancedRetentionRules(const PolicyAdvancedRetentionRules& value)
+{
+    advancedRetentionRules_ = value;
+    advancedRetentionRulesIsSet_ = true;
+}
+
+bool PolicyoODCreate::advancedRetentionRulesIsSet() const
+{
+    return advancedRetentionRulesIsSet_;
+}
+
+void PolicyoODCreate::unsetadvancedRetentionRules()
+{
+    advancedRetentionRulesIsSet_ = false;
 }
 
 }

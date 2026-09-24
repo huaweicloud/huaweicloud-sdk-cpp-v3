@@ -188,6 +188,15 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
+    /// 策略ID，取值范围不涉及。
+    /// </summary>
+
+    std::string getScheduledOperationId() const;
+    bool scheduledOperationIdIsSet() const;
+    void unsetscheduledOperationId();
+    void setScheduledOperationId(const std::string& value);
+
+    /// <summary>
     /// 备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复
     /// </summary>
 
@@ -302,6 +311,8 @@ protected:
     bool resourceSizeIsSet_;
     std::string resourceType_;
     bool resourceTypeIsSet_;
+    std::string scheduledOperationId_;
+    bool scheduledOperationIdIsSet_;
     std::string status_;
     bool statusIsSet_;
     utility::datetime updatedAt_;

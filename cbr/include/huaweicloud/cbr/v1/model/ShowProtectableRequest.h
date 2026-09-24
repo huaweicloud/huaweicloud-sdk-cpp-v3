@@ -48,7 +48,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 可保护性类型
+    /// **参数解释：** 可保护性类型 **约束限制：** 不涉及 **取值范围：** 可选参数为server,disk,turbo,workspace和workspace_v2 server： 云服务器类型 disk：云硬盘类型 turbo：turbo类型 workspace：workspace类型 workspace_v2：workspace_v2类型 **默认取值：** 不涉及
     /// </summary>
 
     std::string getProtectableType() const;

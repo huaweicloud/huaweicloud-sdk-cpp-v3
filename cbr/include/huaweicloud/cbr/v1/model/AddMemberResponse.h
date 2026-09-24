@@ -48,21 +48,10 @@ public:
     void unsetmembers();
     void setMembers(const std::vector<Member>& value);
 
-    /// <summary>
-    /// 备份共享成员数量
-    /// </summary>
-
-    int32_t getCount() const;
-    bool countIsSet() const;
-    void unsetcount();
-    void setCount(int32_t value);
-
 
 protected:
     std::vector<Member> members_;
     bool membersIsSet_;
-    int32_t count_;
-    bool countIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

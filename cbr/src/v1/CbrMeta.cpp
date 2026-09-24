@@ -738,6 +738,15 @@ HttpRequestDef CbrMeta::genRequestDefForUpdateBackup() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CbrMeta::genRequestDefForUpdateExpirationTime() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CbrMeta::genRequestDefForUpdateMemberStatus() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

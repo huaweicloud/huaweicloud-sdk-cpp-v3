@@ -15,6 +15,8 @@ PolicyTriggerPropertiesResp::PolicyTriggerPropertiesResp()
     patternIsSet_ = false;
     startTime_ = "";
     startTimeIsSet_ = false;
+    startWindowMinutes_ = 0;
+    startWindowMinutesIsSet_ = false;
 }
 
 PolicyTriggerPropertiesResp::~PolicyTriggerPropertiesResp() = default;
@@ -32,6 +34,9 @@ web::json::value PolicyTriggerPropertiesResp::toJson() const
     }
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
+    }
+    if(startWindowMinutesIsSet_) {
+        val[utility::conversions::to_string_t("start_window_minutes")] = ModelBase::toJson(startWindowMinutes_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool PolicyTriggerPropertiesResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStartTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("start_window_minutes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_window_minutes"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStartWindowMinutes(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool PolicyTriggerPropertiesResp::startTimeIsSet() const
 void PolicyTriggerPropertiesResp::unsetstartTime()
 {
     startTimeIsSet_ = false;
+}
+
+int32_t PolicyTriggerPropertiesResp::getStartWindowMinutes() const
+{
+    return startWindowMinutes_;
+}
+
+void PolicyTriggerPropertiesResp::setStartWindowMinutes(int32_t value)
+{
+    startWindowMinutes_ = value;
+    startWindowMinutesIsSet_ = true;
+}
+
+bool PolicyTriggerPropertiesResp::startWindowMinutesIsSet() const
+{
+    return startWindowMinutesIsSet_;
+}
+
+void PolicyTriggerPropertiesResp::unsetstartWindowMinutes()
+{
+    startWindowMinutesIsSet_ = false;
 }
 
 }

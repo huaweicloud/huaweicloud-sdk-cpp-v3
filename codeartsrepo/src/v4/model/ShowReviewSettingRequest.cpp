@@ -16,6 +16,8 @@ ShowReviewSettingRequest::ShowReviewSettingRequest()
     repositoryIdIsSet_ = false;
     withDefaultReviewCategories_ = false;
     withDefaultReviewCategoriesIsSet_ = false;
+    takeEffect_ = false;
+    takeEffectIsSet_ = false;
 }
 
 ShowReviewSettingRequest::~ShowReviewSettingRequest() = default;
@@ -33,6 +35,9 @@ web::json::value ShowReviewSettingRequest::toJson() const
     }
     if(withDefaultReviewCategoriesIsSet_) {
         val[utility::conversions::to_string_t("with_default_review_categories")] = ModelBase::toJson(withDefaultReviewCategories_);
+    }
+    if(takeEffectIsSet_) {
+        val[utility::conversions::to_string_t("take_effect")] = ModelBase::toJson(takeEffect_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ShowReviewSettingRequest::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWithDefaultReviewCategories(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("take_effect"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("take_effect"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTakeEffect(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ShowReviewSettingRequest::withDefaultReviewCategoriesIsSet() const
 void ShowReviewSettingRequest::unsetwithDefaultReviewCategories()
 {
     withDefaultReviewCategoriesIsSet_ = false;
+}
+
+bool ShowReviewSettingRequest::isTakeEffect() const
+{
+    return takeEffect_;
+}
+
+void ShowReviewSettingRequest::setTakeEffect(bool value)
+{
+    takeEffect_ = value;
+    takeEffectIsSet_ = true;
+}
+
+bool ShowReviewSettingRequest::takeEffectIsSet() const
+{
+    return takeEffectIsSet_;
+}
+
+void ShowReviewSettingRequest::unsettakeEffect()
+{
+    takeEffectIsSet_ = false;
 }
 
 }

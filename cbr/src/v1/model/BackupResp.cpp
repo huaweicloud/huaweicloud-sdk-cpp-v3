@@ -42,6 +42,8 @@ BackupResp::BackupResp()
     resourceSizeIsSet_ = false;
     resourceType_ = "";
     resourceTypeIsSet_ = false;
+    scheduledOperationId_ = "";
+    scheduledOperationIdIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     updatedAt_ = utility::datetime();
@@ -117,6 +119,9 @@ web::json::value BackupResp::toJson() const
     }
     if(resourceTypeIsSet_) {
         val[utility::conversions::to_string_t("resource_type")] = ModelBase::toJson(resourceType_);
+    }
+    if(scheduledOperationIdIsSet_) {
+        val[utility::conversions::to_string_t("scheduled_operation_id")] = ModelBase::toJson(scheduledOperationId_);
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
@@ -294,6 +299,15 @@ bool BackupResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResourceType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scheduled_operation_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scheduled_operation_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScheduledOperationId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
@@ -715,6 +729,27 @@ bool BackupResp::resourceTypeIsSet() const
 void BackupResp::unsetresourceType()
 {
     resourceTypeIsSet_ = false;
+}
+
+std::string BackupResp::getScheduledOperationId() const
+{
+    return scheduledOperationId_;
+}
+
+void BackupResp::setScheduledOperationId(const std::string& value)
+{
+    scheduledOperationId_ = value;
+    scheduledOperationIdIsSet_ = true;
+}
+
+bool BackupResp::scheduledOperationIdIsSet() const
+{
+    return scheduledOperationIdIsSet_;
+}
+
+void BackupResp::unsetscheduledOperationId()
+{
+    scheduledOperationIdIsSet_ = false;
 }
 
 std::string BackupResp::getStatus() const

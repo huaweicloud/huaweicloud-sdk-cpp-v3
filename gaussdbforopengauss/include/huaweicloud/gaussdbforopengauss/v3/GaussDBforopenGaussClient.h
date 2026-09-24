@@ -639,9 +639,13 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlLimitTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlPlanActionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlPlanActionResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlRecommendRulesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlRecommendRulesRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlRecommendRulesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlTraceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSqlTraceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/NodeExecutionInfoResult.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/OpenGaussErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ParaErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/QuerySqlPlanStateRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowFullSqlRequest.h>
@@ -2747,6 +2751,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSqlPlanActionResponse> listSqlPlanAction(
         ListSqlPlanActionRequest &request
+    );
+    // 获取SQL限流推荐规则
+    //
+    // 获取SQL限流推荐规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSqlRecommendRulesResponse> listSqlRecommendRules(
+        ListSqlRecommendRulesRequest &request
     );
     // 查询SQL链路信息
     //

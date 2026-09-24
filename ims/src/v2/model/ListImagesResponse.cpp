@@ -13,6 +13,7 @@ namespace Model {
 ListImagesResponse::ListImagesResponse()
 {
     imagesIsSet_ = false;
+    pageInfoIsSet_ = false;
 }
 
 ListImagesResponse::~ListImagesResponse() = default;
@@ -28,6 +29,9 @@ web::json::value ListImagesResponse::toJson() const
     if(imagesIsSet_) {
         val[utility::conversions::to_string_t("images")] = ModelBase::toJson(images_);
     }
+    if(pageInfoIsSet_) {
+        val[utility::conversions::to_string_t("page_info")] = ModelBase::toJson(pageInfo_);
+    }
 
     return val;
 }
@@ -42,6 +46,15 @@ bool ListImagesResponse::fromJson(const web::json::value& val)
             std::vector<ImageInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setImages(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("page_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_info"));
+        if(!fieldValue.is_null())
+        {
+            PageInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPageInfo(refVal);
         }
     }
     return ok;
@@ -67,6 +80,27 @@ bool ListImagesResponse::imagesIsSet() const
 void ListImagesResponse::unsetimages()
 {
     imagesIsSet_ = false;
+}
+
+PageInfo ListImagesResponse::getPageInfo() const
+{
+    return pageInfo_;
+}
+
+void ListImagesResponse::setPageInfo(const PageInfo& value)
+{
+    pageInfo_ = value;
+    pageInfoIsSet_ = true;
+}
+
+bool ListImagesResponse::pageInfoIsSet() const
+{
+    return pageInfoIsSet_;
+}
+
+void ListImagesResponse::unsetpageInfo()
+{
+    pageInfoIsSet_ = false;
 }
 
 }

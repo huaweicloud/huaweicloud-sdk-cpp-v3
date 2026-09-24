@@ -48,7 +48,7 @@ bool BulkCreateAndDeleteVaultTagsReq::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<Tag> refVal;
+            std::vector<BulkCreateAndDeleteTags> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -75,12 +75,12 @@ bool BulkCreateAndDeleteVaultTagsReq::fromJson(const web::json::value& val)
 }
 
 
-std::vector<Tag>& BulkCreateAndDeleteVaultTagsReq::getTags()
+std::vector<BulkCreateAndDeleteTags>& BulkCreateAndDeleteVaultTagsReq::getTags()
 {
     return tags_;
 }
 
-void BulkCreateAndDeleteVaultTagsReq::setTags(const std::vector<Tag>& value)
+void BulkCreateAndDeleteVaultTagsReq::setTags(const std::vector<BulkCreateAndDeleteTags>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;

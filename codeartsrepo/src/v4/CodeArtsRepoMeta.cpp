@@ -351,6 +351,9 @@ HttpRequestDef CodeArtsRepoMeta::genRequestDefForShowReviewSetting() {
     reqDefBuilder.withRequestField(FieldDef().withName("WithDefaultReviewCategories")
                   .withJsonTag("with_default_review_categories")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TakeEffect")
+                  .withJsonTag("take_effect")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

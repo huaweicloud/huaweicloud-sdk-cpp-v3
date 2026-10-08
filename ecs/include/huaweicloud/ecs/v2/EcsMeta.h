@@ -100,6 +100,7 @@ public:
     static HttpRequestDef genRequestDefForShowServer();
     static HttpRequestDef genRequestDefForShowServerAttachableNicNum();
     static HttpRequestDef genRequestDefForShowServerBlockDevice();
+    static HttpRequestDef genRequestDefForShowServerConsoleOutput();
     static HttpRequestDef genRequestDefForShowServerGroup();
     static HttpRequestDef genRequestDefForShowServerLimits();
     static HttpRequestDef genRequestDefForShowServerPassword();

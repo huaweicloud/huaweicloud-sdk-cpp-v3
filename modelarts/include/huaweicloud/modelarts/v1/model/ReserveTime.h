@@ -39,7 +39,7 @@ public:
     /// ReserveTime members
 
     /// <summary>
-    /// **参数解释**：时间单位。  **约束限制**：不涉及。  **取值范围**：  - HOURS：小时   **默认取值**：不涉及。
+    /// **参数解释**：时间单位。 **约束限制**：不涉及。 **取值范围**： - HOURS：小时  **默认取值**：不涉及。
     /// </summary>
 
     std::string getTimeUnit() const;
@@ -48,7 +48,7 @@ public:
     void setTimeUnit(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：保留时长。  **约束限制**：不涉及。  **取值范围**：最小值为1。  **默认取值**：不涉及。
+    /// **参数解释**：保留时长。 **约束限制**：不涉及。 **取值范围**：最小值为1。 **默认取值**：不涉及。
     /// </summary>
 
     int32_t getDuration() const;

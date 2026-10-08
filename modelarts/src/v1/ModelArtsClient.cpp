@@ -7206,40 +7206,6 @@ std::shared_ptr<ShowNodePoolResponse> ModelArtsClient::showNodePool(ShowNodePool
 
     return localVarResult;
 }
-std::shared_ptr<ShowObsUrlOfTrainingJobLogsResponse> ModelArtsClient::showObsUrlOfTrainingJobLogs(ShowObsUrlOfTrainingJobLogsRequest &request)
-{
-    std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/tasks/{task_id}/logs/url";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["training_job_id"] = parameterToString(request.getTrainingJobId());
-    localVarPathParams["task_id"] = parameterToString(request.getTaskId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.contentTypeIsSet()) {
-        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowObsUrlOfTrainingJobLogs());
-
-    std::shared_ptr<ShowObsUrlOfTrainingJobLogsResponse> localVarResult = std::make_shared<ShowObsUrlOfTrainingJobLogsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ShowOrderResponse> ModelArtsClient::showOrder(ShowOrderRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/orders/{order_name}";

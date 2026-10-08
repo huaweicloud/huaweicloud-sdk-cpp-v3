@@ -1030,6 +1030,14 @@ HttpRequestDef EcsMeta::genRequestDefForShowServerBlockDevice() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForShowServerConsoleOutput() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Length")
+                  .withJsonTag("length")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForShowServerGroup() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;

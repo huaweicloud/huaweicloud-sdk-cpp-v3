@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// **参数解释：**  服务调用时的相关配置。
+/// **参数解释：** 服务调用时的相关配置。
 /// </summary>
 class HUAWEICLOUD_MODELARTS_V1_EXPORT  ServiceInvokeResponse
     : public ModelBase

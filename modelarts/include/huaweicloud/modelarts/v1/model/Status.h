@@ -115,7 +115,7 @@ public:
     void setRunningRecords(const std::vector<RunningRecord>& value);
 
     /// <summary>
-    /// **参数解释**：作业已经保留时长。  **约束限制**：仅当创建训练作业时，设置了&#x60;reserved_time&#x60;时返回。  **取值范围**：不涉及。    **默认取值**：不涉及。
+    /// **参数解释**：作业已经保留时长。 **约束限制**：仅当创建训练作业时，设置了&#x60;reserved_time&#x60;时返回。 **取值范围**：不涉及。    **默认取值**：不涉及。
     /// </summary>
 
     int32_t getRetentionTime() const;

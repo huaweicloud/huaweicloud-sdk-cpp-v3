@@ -3504,6 +3504,39 @@ std::shared_ptr<ShowServerBlockDeviceResponse> EcsClient::showServerBlockDevice(
 
     return localVarResult;
 }
+std::shared_ptr<ShowServerConsoleOutputResponse> EcsClient::showServerConsoleOutput(ShowServerConsoleOutputRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/console-output";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.lengthIsSet()) {
+        localVarQueryParams["length"] = parameterToString(request.getLength());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowServerConsoleOutput());
+
+    std::shared_ptr<ShowServerConsoleOutputResponse> localVarResult = std::make_shared<ShowServerConsoleOutputResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowServerGroupResponse> EcsClient::showServerGroup(ShowServerGroupRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}";

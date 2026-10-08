@@ -195,7 +195,6 @@ public:
     static HttpRequestDef genRequestDefForShowNetworkAvailableIp();
     static HttpRequestDef genRequestDefForShowNodeConfigTemplate();
     static HttpRequestDef genRequestDefForShowNodePool();
-    static HttpRequestDef genRequestDefForShowObsUrlOfTrainingJobLogs();
     static HttpRequestDef genRequestDefForShowOrder();
     static HttpRequestDef genRequestDefForShowOsConfig();
     static HttpRequestDef genRequestDefForShowOsQuota();

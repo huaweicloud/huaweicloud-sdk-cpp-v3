@@ -2211,16 +2211,6 @@ HttpRequestDef ModelArtsMeta::genRequestDefForShowNodePool() {
     return reqDefBuilder;
 }
 
-HttpRequestDef ModelArtsMeta::genRequestDefForShowObsUrlOfTrainingJobLogs() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamContentType;
-    reqDefBuilder.withRequestField(headerParamContentType
-                  .withName("ContentType")
-                  .withJsonTag("Content-Type")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef ModelArtsMeta::genRequestDefForShowOrder() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;

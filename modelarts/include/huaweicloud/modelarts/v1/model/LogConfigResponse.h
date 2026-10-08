@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// **参数解释：**  服务日志配置信息。
+/// **参数解释：** 服务日志配置信息。
 /// </summary>
 class HUAWEICLOUD_MODELARTS_V1_EXPORT  LogConfigResponse
     : public ModelBase

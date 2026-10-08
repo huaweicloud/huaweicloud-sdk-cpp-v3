@@ -84,7 +84,7 @@ public:
     void setSkippedSteps(int32_t value);
 
     /// <summary>
-    /// 是否续训任务。  0: 非续训, 1:续训。
+    /// 是否续训任务。 0: 非续训, 1:续训。
     /// </summary>
 
     int32_t getRestoreTraining() const;

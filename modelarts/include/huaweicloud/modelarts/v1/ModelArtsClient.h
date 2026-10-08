@@ -445,8 +445,6 @@
 #include <huaweicloud/modelarts/v1/model/ShowNodeConfigTemplateResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowNodePoolRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowNodePoolResponse.h>
-#include <huaweicloud/modelarts/v1/model/ShowObsUrlOfTrainingJobLogsRequest.h>
-#include <huaweicloud/modelarts/v1/model/ShowObsUrlOfTrainingJobLogsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowOrderRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowOrderResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowOsConfigRequest.h>
@@ -2226,14 +2224,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowNodePoolResponse> showNodePool(
         ShowNodePoolRequest &request
-    );
-    // 查询训练作业指定任务的日志（OBS链接）
-    //
-    // 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogs(
-        ShowObsUrlOfTrainingJobLogsRequest &request
     );
     // 查询订单详情
     //

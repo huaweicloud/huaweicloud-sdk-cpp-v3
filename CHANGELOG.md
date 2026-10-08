@@ -1,3 +1,16 @@
+# 3.1.207 2026-10-08
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ShowServerConsoleOutput`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.206 2026-09-24
 
 ### HuaweiCloud SDK CBR

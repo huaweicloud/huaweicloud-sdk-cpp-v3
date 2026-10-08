@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// **参数解释：**  容器日志文件配置。 **约束限制：**  数量上限为10个。
+/// **参数解释：** 容器日志文件配置。 **约束限制：** 数量上限为10个。
 /// </summary>
 class HUAWEICLOUD_MODELARTS_V1_EXPORT  LtsFiles
     : public ModelBase

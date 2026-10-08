@@ -221,6 +221,8 @@
 #include <huaweicloud/ecs/v2/model/ShowServerAttachableNicNumResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowServerConsoleOutputRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowServerConsoleOutputResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerGroupRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerGroupResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerLimitsRequest.h>
@@ -1086,6 +1088,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowServerBlockDeviceResponse> showServerBlockDevice(
         ShowServerBlockDeviceRequest &request
+    );
+    // 获取弹性云服务器的控制台日志
+    //
+    // 获取弹性云服务器云主机的控制台日志。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowServerConsoleOutputResponse> showServerConsoleOutput(
+        ShowServerConsoleOutputRequest &request
     );
     // 查询云服务器组详情
     //

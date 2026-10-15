@@ -66,7 +66,7 @@ public:
     void setDstCount(const std::string& value);
 
     /// <summary>
-    /// 状态. NOT_START：未启动，TRANSFERING：迁移中，COMPLETED：已完成，FAILED：失败，TRANSFER_WHEN_END：结束后迁移
+    /// 状态。 - NOT_START：未启动。 - TRANSFERING：迁移中。 - COMPLETED：已完成。 - FAILED：失败。 - TRANSFER_WHEN_END：结束后迁移。
     /// </summary>
 
     std::string getStatus() const;

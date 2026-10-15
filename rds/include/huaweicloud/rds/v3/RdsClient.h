@@ -475,6 +475,8 @@
 #include <huaweicloud/rds/v3/model/ShowTransferPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowUpgradeDbMajorVersionStatusRequest.h>
 #include <huaweicloud/rds/v3/model/ShowUpgradeDbMajorVersionStatusResponse.h>
+#include <huaweicloud/rds/v3/model/ShowVectorStorageConfigRequest.h>
+#include <huaweicloud/rds/v3/model/ShowVectorStorageConfigResponse.h>
 #include <huaweicloud/rds/v3/model/SimplifiedInstancesRequest.h>
 #include <huaweicloud/rds/v3/model/Single2Ha.h>
 #include <huaweicloud/rds/v3/model/SlowLogStatisticsForLtsRequest.h>
@@ -556,6 +558,9 @@
 #include <huaweicloud/rds/v3/model/UpdateTimeZoneResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateToPeriodRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateToPeriodResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateVectorStorageConfigReq.h>
+#include <huaweicloud/rds/v3/model/UpdateVectorStorageConfigRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateVectorStorageConfigResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionPreCheckRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionPreCheckResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionRequest.h>
@@ -2473,6 +2478,14 @@ public:
     std::shared_ptr<ShowUpgradeDbMajorVersionStatusResponse> showUpgradeDbMajorVersionStatus(
         ShowUpgradeDbMajorVersionStatusRequest &request
     );
+    // 查询实例的向量存储配置
+    //
+    // 查询实例的向量存储配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowVectorStorageConfigResponse> showVectorStorageConfig(
+        ShowVectorStorageConfigRequest &request
+    );
     // 手动倒换主备
     //
     // 手动倒换主备.
@@ -2712,6 +2725,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateToPeriodResponse> updateToPeriod(
         UpdateToPeriodRequest &request
+    );
+    // 修改实例的向量存储配置
+    //
+    // 修改实例的向量存储配置，开启或关闭向量存储功能。该接口为异步接口，返回工作流ID。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateVectorStorageConfigResponse> updateVectorStorageConfig(
+        UpdateVectorStorageConfigRequest &request
     );
     // PostgreSQL数据库升级大版本
     //

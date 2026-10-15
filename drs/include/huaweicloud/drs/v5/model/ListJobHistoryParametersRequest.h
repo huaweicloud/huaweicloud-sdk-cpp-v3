@@ -75,7 +75,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 开始时间，UTC时间，例如：2020-09-01T18:50:20Z
+    /// 开始时间，格式为毫秒级时间戳。
     /// </summary>
 
     std::string getBeginTime() const;
@@ -84,7 +84,7 @@ public:
     void setBeginTime(const std::string& value);
 
     /// <summary>
-    /// 结束时间，UTC时间，例如：2020-09-01T19:50:20Z
+    /// 结束时间，格式为毫秒级时间戳。
     /// </summary>
 
     std::string getEndTime() const;

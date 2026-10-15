@@ -36,6 +36,7 @@ public:
     static HttpRequestDef genRequestDefForShowControlsForOrganizationalUnit();
     static HttpRequestDef genRequestDefForCheckLaunch();
     static HttpRequestDef genRequestDefForDeleteLandingZone();
+    static HttpRequestDef genRequestDefForListLandingZoneVersion();
     static HttpRequestDef genRequestDefForSetupLandingZone();
     static HttpRequestDef genRequestDefForShowAvailableUpdates();
     static HttpRequestDef genRequestDefForShowHomeRegion();

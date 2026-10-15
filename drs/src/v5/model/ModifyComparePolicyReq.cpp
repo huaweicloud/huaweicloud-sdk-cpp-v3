@@ -25,6 +25,8 @@ ModifyComparePolicyReq::ModifyComparePolicyReq()
     comparePolicyIsSet_ = false;
     intervalHour_ = 0;
     intervalHourIsSet_ = false;
+    conflictStrategy_ = "";
+    conflictStrategyIsSet_ = false;
 }
 
 ModifyComparePolicyReq::~ModifyComparePolicyReq() = default;
@@ -57,6 +59,9 @@ web::json::value ModifyComparePolicyReq::toJson() const
     }
     if(intervalHourIsSet_) {
         val[utility::conversions::to_string_t("interval_hour")] = ModelBase::toJson(intervalHour_);
+    }
+    if(conflictStrategyIsSet_) {
+        val[utility::conversions::to_string_t("conflict_strategy")] = ModelBase::toJson(conflictStrategy_);
     }
 
     return val;
@@ -126,6 +131,15 @@ bool ModifyComparePolicyReq::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIntervalHour(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("conflict_strategy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("conflict_strategy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConflictStrategy(refVal);
         }
     }
     return ok;
@@ -277,6 +291,27 @@ bool ModifyComparePolicyReq::intervalHourIsSet() const
 void ModifyComparePolicyReq::unsetintervalHour()
 {
     intervalHourIsSet_ = false;
+}
+
+std::string ModifyComparePolicyReq::getConflictStrategy() const
+{
+    return conflictStrategy_;
+}
+
+void ModifyComparePolicyReq::setConflictStrategy(const std::string& value)
+{
+    conflictStrategy_ = value;
+    conflictStrategyIsSet_ = true;
+}
+
+bool ModifyComparePolicyReq::conflictStrategyIsSet() const
+{
+    return conflictStrategyIsSet_;
+}
+
+void ModifyComparePolicyReq::unsetconflictStrategy()
+{
+    conflictStrategyIsSet_ = false;
 }
 
 }

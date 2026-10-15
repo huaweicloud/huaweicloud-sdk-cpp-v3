@@ -45,7 +45,7 @@ public:
     /// JobEndpointInfo members
 
     /// <summary>
-    /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。 - mysql：MySQL。
+    /// **参数解释**：  数据库类型，标识源库或目标库的数据库引擎种类。  **约束限制**：  不涉及。  **取值范围**：  - oracle：Oracle - gaussdbv5：GaussDB分布式版 - redis：Redis - rediscluster：Redis集群版 - gaussredis：GeminiDB Redis - mysql：MySQL  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbType() const;
@@ -54,7 +54,7 @@ public:
     void setDbType(const std::string& value);
 
     /// <summary>
-    /// 数据库实例类型。取值：  - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
+    /// **参数解释**：  数据库实例类型，标识数据库的部署方式。  **约束限制**：  不涉及。  **取值范围**：  - offline：自建数据库 - ecs：华为云ECS自建数据库 - cloud：华为云数据库  **默认取值**：  不涉及
     /// </summary>
 
     std::string getEndpointType() const;
@@ -63,7 +63,7 @@ public:
     void setEndpointType(const std::string& value);
 
     /// <summary>
-    /// 数据库实例角色。取值： - so：源库。 - ta：目标库。
+    /// **参数解释**：  数据库实例角色，标识该数据库在数据复制任务中是源端还是目标端。  **约束限制**：  不涉及。  **取值范围**：  - so：源库 - ta：目标库  **默认取值**：  不涉及
     /// </summary>
 
     std::string getEndpointRole() const;

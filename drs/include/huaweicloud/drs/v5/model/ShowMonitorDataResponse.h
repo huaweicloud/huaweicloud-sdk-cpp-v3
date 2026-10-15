@@ -39,7 +39,7 @@ public:
     /// ShowMonitorDataResponse members
 
     /// <summary>
-    /// EIP带宽，单位：MB/S
+    /// **参数解释**：  EIP带宽，用于评估公网传输速率是否满足迁移需求。单位：MB/s。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getBandwidth() const;
@@ -48,7 +48,7 @@ public:
     void setBandwidth(const std::string& value);
 
     /// <summary>
-    /// 源库连接状态是否正常。
+    /// **参数解释**：  源库连接状态是否正常。  **约束限制**：  不涉及。  **取值范围**：  - true：源库连接正常 - false：源库连接异常  **默认取值**：  不涉及
     /// </summary>
 
     bool isIsSrcNormal() const;
@@ -57,7 +57,7 @@ public:
     void setIsSrcNormal(bool value);
 
     /// <summary>
-    /// 目标库连接状态是否正常。
+    /// **参数解释**：  目标库连接状态是否正常。  **约束限制**：  不涉及。  **取值范围**：  - true：目标库连接正常 - false：目标库连接异常  **默认取值**：  不涉及
     /// </summary>
 
     bool isIsDstNormal() const;
@@ -66,7 +66,7 @@ public:
     void setIsDstNormal(bool value);
 
     /// <summary>
-    /// 源库offSet位点。
+    /// **参数解释**：  源库offset位点，用于判断源库数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSrcOffset() const;
@@ -75,7 +75,7 @@ public:
     void setSrcOffset(const std::string& value);
 
     /// <summary>
-    /// 迁移实例offSet位点。
+    /// **参数解释**：  迁移实例offset位点，用于判断迁移实例数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getNodeOffset() const;
@@ -84,7 +84,7 @@ public:
     void setNodeOffset(const std::string& value);
 
     /// <summary>
-    /// 目标库offSet位点。
+    /// **参数解释**：  目标库offset位点，用于判断目标库数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDstOffset() const;
@@ -93,7 +93,7 @@ public:
     void setDstOffset(const std::string& value);
 
     /// <summary>
-    /// 源库时延。
+    /// **参数解释**：  源库时延，用于判断数据同步的实时性。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getSrcDelay() const;
@@ -102,7 +102,7 @@ public:
     void setSrcDelay(int32_t value);
 
     /// <summary>
-    /// 目标库时延。
+    /// **参数解释**：  目标库时延，用于判断数据同步的实时性。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getDstDelay() const;
@@ -111,7 +111,7 @@ public:
     void setDstDelay(int32_t value);
 
     /// <summary>
-    /// 源库RPS。
+    /// **参数解释**：  源库RPS（Requests Per Second，每秒请求数），用于评估源库的数据变更速率。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSrcRps() const;
@@ -120,7 +120,7 @@ public:
     void setSrcRps(const std::string& value);
 
     /// <summary>
-    /// 源库IO。
+    /// **参数解释**：  源库IO（Input/Output，每秒输入输出操作量），用于评估源库的磁盘读写负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSrcIo() const;
@@ -129,7 +129,7 @@ public:
     void setSrcIo(const std::string& value);
 
     /// <summary>
-    /// 目标库RPS。
+    /// **参数解释**：  目标库RPS（Requests Per Second，每秒请求数），用于评估目标库的数据写入速率。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDstRps() const;
@@ -138,7 +138,7 @@ public:
     void setDstRps(const std::string& value);
 
     /// <summary>
-    /// 目标库IO。
+    /// **参数解释**：  目标库IO（Input/Output，每秒输入输出操作量），用于评估目标库的磁盘读写负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDstIo() const;
@@ -147,7 +147,7 @@ public:
     void setDstIo(const std::string& value);
 
     /// <summary>
-    /// 迁移数据量。单位：MB
+    /// **参数解释**：  已迁移的数据量，用于评估迁移进度。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getTransData() const;
@@ -156,7 +156,7 @@ public:
     void setTransData(const std::string& value);
 
     /// <summary>
-    /// 迁移数据行数。
+    /// **参数解释**：  已迁移的数据行数，用于评估迁移进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getTransLines() const;
@@ -165,7 +165,7 @@ public:
     void setTransLines(const std::string& value);
 
     /// <summary>
-    /// 磁盘使用量。单位：GB
+    /// **参数解释**：  迁移实例磁盘使用量，用于监控迁移实例存储容量。单位：GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getUsedVolumes() const;
@@ -174,7 +174,7 @@ public:
     void setUsedVolumes(const std::string& value);
 
     /// <summary>
-    /// 内存使用量。单位：MB
+    /// **参数解释**：  迁移实例内存使用量，用于监控迁移实例内存消耗。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getUsedMemory() const;
@@ -183,7 +183,7 @@ public:
     void setUsedMemory(const std::string& value);
 
     /// <summary>
-    /// CPU使用百分比。
+    /// **参数解释**：  迁移实例CPU使用百分比，用于监控迁移实例计算负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getUsedCpuPercent() const;
@@ -192,7 +192,7 @@ public:
     void setUsedCpuPercent(const std::string& value);
 
     /// <summary>
-    /// node磁盘总大小。单位：GB
+    /// **参数解释**：  迁移实例磁盘总大小，与used_volumes配合评估磁盘使用率。单位：GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getNodeVolumeSize() const;
@@ -201,7 +201,7 @@ public:
     void setNodeVolumeSize(int32_t value);
 
     /// <summary>
-    /// node内存总大小。单位：MB
+    /// **参数解释**：  迁移实例内存总大小，与used_memory配合评估内存使用率。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getNodeMemorySize() const;
@@ -210,7 +210,7 @@ public:
     void setNodeMemorySize(int32_t value);
 
     /// <summary>
-    /// 更新时间。
+    /// **参数解释**：  监控数据的更新时间，UTC格式，如2023-07-19T03:09:25Z。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getUpdateTime() const;
@@ -219,7 +219,7 @@ public:
     void setUpdateTime(const std::string& value);
 
     /// <summary>
-    /// 同步速度。单位：byte/s
+    /// **参数解释**：  同步速度，用于评估数据回放速率。单位：byte/s。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getApplyRate() const;

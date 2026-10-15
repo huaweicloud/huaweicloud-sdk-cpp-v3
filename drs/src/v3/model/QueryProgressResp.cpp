@@ -33,6 +33,10 @@ QueryProgressResp::QueryProgressResp()
     errorCodeIsSet_ = false;
     errorMsg_ = "";
     errorMsgIsSet_ = false;
+    applyRowsRate_ = 0L;
+    applyRowsRateIsSet_ = false;
+    applyBytesRate_ = 0L;
+    applyBytesRateIsSet_ = false;
 }
 
 QueryProgressResp::~QueryProgressResp() = default;
@@ -77,6 +81,12 @@ web::json::value QueryProgressResp::toJson() const
     }
     if(errorMsgIsSet_) {
         val[utility::conversions::to_string_t("error_msg")] = ModelBase::toJson(errorMsg_);
+    }
+    if(applyRowsRateIsSet_) {
+        val[utility::conversions::to_string_t("apply_rows_rate")] = ModelBase::toJson(applyRowsRate_);
+    }
+    if(applyBytesRateIsSet_) {
+        val[utility::conversions::to_string_t("apply_bytes_rate")] = ModelBase::toJson(applyBytesRate_);
     }
 
     return val;
@@ -182,6 +192,24 @@ bool QueryProgressResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorMsg(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("apply_rows_rate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("apply_rows_rate"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplyRowsRate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("apply_bytes_rate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("apply_bytes_rate"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplyBytesRate(refVal);
         }
     }
     return ok;
@@ -417,6 +445,48 @@ bool QueryProgressResp::errorMsgIsSet() const
 void QueryProgressResp::unseterrorMsg()
 {
     errorMsgIsSet_ = false;
+}
+
+int64_t QueryProgressResp::getApplyRowsRate() const
+{
+    return applyRowsRate_;
+}
+
+void QueryProgressResp::setApplyRowsRate(int64_t value)
+{
+    applyRowsRate_ = value;
+    applyRowsRateIsSet_ = true;
+}
+
+bool QueryProgressResp::applyRowsRateIsSet() const
+{
+    return applyRowsRateIsSet_;
+}
+
+void QueryProgressResp::unsetapplyRowsRate()
+{
+    applyRowsRateIsSet_ = false;
+}
+
+int64_t QueryProgressResp::getApplyBytesRate() const
+{
+    return applyBytesRate_;
+}
+
+void QueryProgressResp::setApplyBytesRate(int64_t value)
+{
+    applyBytesRate_ = value;
+    applyBytesRateIsSet_ = true;
+}
+
+bool QueryProgressResp::applyBytesRateIsSet() const
+{
+    return applyBytesRateIsSet_;
+}
+
+void QueryProgressResp::unsetapplyBytesRate()
+{
+    applyBytesRateIsSet_ = false;
 }
 
 }

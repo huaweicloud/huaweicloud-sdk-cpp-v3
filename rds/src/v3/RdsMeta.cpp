@@ -2753,6 +2753,16 @@ HttpRequestDef RdsMeta::genRequestDefForShowUpgradeDbMajorVersionStatus() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForShowVectorStorageConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForStartFailover() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -3128,6 +3138,20 @@ HttpRequestDef RdsMeta::genRequestDefForUpdateTimeZone() {
 }
 
 HttpRequestDef RdsMeta::genRequestDefForUpdateToPeriod() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForUpdateVectorStorageConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

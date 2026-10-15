@@ -41,7 +41,7 @@ public:
     /// PrecheckResult members
 
     /// <summary>
-    /// 检查项。
+    /// **参数解释**：  预检查的具体检查项名称，用于标识预检查中执行的具体检查项目。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getItem() const;
@@ -50,7 +50,7 @@ public:
     void setItem(const std::string& value);
 
     /// <summary>
-    /// 检查结果
+    /// **参数解释**：  预检查项的检查结果，表示该检查项是否通过。  **约束限制**：  不涉及。  **取值范围**：  - PASSED：通过 - ALARM：告警 - FAILED：失败  **默认取值**：  不涉及
     /// </summary>
 
     std::string getResult() const;
@@ -59,7 +59,7 @@ public:
     void setResult(const std::string& value);
 
     /// <summary>
-    /// 失败原因。
+    /// **参数解释**：  预检查项的失败原因，当检查结果为FAILED或ALARM时返回的具体失败描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getFailedReason() const;
@@ -68,7 +68,7 @@ public:
     void setFailedReason(const std::string& value);
 
     /// <summary>
-    /// 加密的数据。
+    /// **参数解释**：  预检查项的加密数据，包含检查项的详细检测数据，以JSON格式加密返回。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getData() const;
@@ -77,7 +77,7 @@ public:
     void setData(const std::string& value);
 
     /// <summary>
-    /// 行错误信息。
+    /// **参数解释**：  原始错误信息，预检查过程中产生的原始错误描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getRawErrorMsg() const;
@@ -86,7 +86,7 @@ public:
     void setRawErrorMsg(const std::string& value);
 
     /// <summary>
-    /// 检查项分组
+    /// **参数解释**：  检查项分组，用于将预检查项按类别归类展示。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getGroup() const;
@@ -95,7 +95,7 @@ public:
     void setGroup(const std::string& value);
 
     /// <summary>
-    /// 失败的子任务信息。
+    /// **参数解释**：  失败的子任务信息集合，包含预检查中失败的子任务详情，详情请参见PrecheckFailSubJobVO对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<PrecheckFailSubJobVO>& getFailedSubJobs();

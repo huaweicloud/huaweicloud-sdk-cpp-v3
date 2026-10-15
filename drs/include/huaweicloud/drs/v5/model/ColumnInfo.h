@@ -92,6 +92,15 @@ public:
     void unsetpartition();
     void setPartition(bool value);
 
+    /// <summary>
+    /// 列的脱敏算法类型（主键和唯一键不支持）。取值： - NAME ：姓名中间遮盖。 - PHONE ：电话中间遮盖。 - IDENTITY_CARD ：证件号码中间遮盖。  - BANK_CARD ：银行卡号中间遮盖。 - EMAIL ：邮箱前缀首字母后遮盖。 - ADDRESS ：地址后缀遮盖。  - DATE ：仅保留年代日期替换为1月1日。  - NUMERIC ：数字变0。 - SECRET_CONTENT ：大段文本全替换。
+    /// </summary>
+
+    std::string getDesensitizationAlgorithm() const;
+    bool desensitizationAlgorithmIsSet() const;
+    void unsetdesensitizationAlgorithm();
+    void setDesensitizationAlgorithm(const std::string& value);
+
 
 protected:
     std::string columnName_;
@@ -106,6 +115,8 @@ protected:
     bool statusIsSet_;
     bool partition_;
     bool partitionIsSet_;
+    std::string desensitizationAlgorithm_;
+    bool desensitizationAlgorithmIsSet_;
 
 };
 

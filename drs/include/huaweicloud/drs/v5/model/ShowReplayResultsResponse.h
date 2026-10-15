@@ -12,6 +12,7 @@
 #include <huaweicloud/drs/v5/model/ReplayingSqlResp.h>
 #include <huaweicloud/drs/v5/model/ReplayErrorSqlTemplateResp.h>
 #include <huaweicloud/drs/v5/model/ReplayShardStaticsResp.h>
+#include <huaweicloud/drs/v5/model/ReplayCompareResultResp.h>
 #include <huaweicloud/drs/v5/model/ReplaySlowSqlTemplateResp.h>
 #include <huaweicloud/drs/v5/model/ReplayErrorClassification.h>
 #include <vector>
@@ -117,6 +118,15 @@ public:
     void unseterrorClassifications();
     void setErrorClassifications(const std::vector<ReplayErrorClassification>& value);
 
+    /// <summary>
+    /// SQL执行结果不一致数据，在type为sql_result_inconsistent时返回
+    /// </summary>
+
+    std::vector<ReplayCompareResultResp>& getCompareResults();
+    bool compareResultsIsSet() const;
+    void unsetcompareResults();
+    void setCompareResults(const std::vector<ReplayCompareResultResp>& value);
+
 
 protected:
     int64_t totalCount_;
@@ -135,6 +145,8 @@ protected:
     bool replayingSqlsIsSet_;
     std::vector<ReplayErrorClassification> errorClassifications_;
     bool errorClassificationsIsSet_;
+    std::vector<ReplayCompareResultResp> compareResults_;
+    bool compareResultsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

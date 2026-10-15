@@ -21,6 +21,7 @@ ShowReplayResultsResponse::ShowReplayResultsResponse()
     errorSqlTemplatesIsSet_ = false;
     replayingSqlsIsSet_ = false;
     errorClassificationsIsSet_ = false;
+    compareResultsIsSet_ = false;
 }
 
 ShowReplayResultsResponse::~ShowReplayResultsResponse() = default;
@@ -56,6 +57,9 @@ web::json::value ShowReplayResultsResponse::toJson() const
     }
     if(errorClassificationsIsSet_) {
         val[utility::conversions::to_string_t("error_classifications")] = ModelBase::toJson(errorClassifications_);
+    }
+    if(compareResultsIsSet_) {
+        val[utility::conversions::to_string_t("compare_results")] = ModelBase::toJson(compareResults_);
     }
 
     return val;
@@ -134,6 +138,15 @@ bool ShowReplayResultsResponse::fromJson(const web::json::value& val)
             std::vector<ReplayErrorClassification> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorClassifications(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("compare_results"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("compare_results"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ReplayCompareResultResp> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCompareResults(refVal);
         }
     }
     return ok;
@@ -306,6 +319,27 @@ bool ShowReplayResultsResponse::errorClassificationsIsSet() const
 void ShowReplayResultsResponse::unseterrorClassifications()
 {
     errorClassificationsIsSet_ = false;
+}
+
+std::vector<ReplayCompareResultResp>& ShowReplayResultsResponse::getCompareResults()
+{
+    return compareResults_;
+}
+
+void ShowReplayResultsResponse::setCompareResults(const std::vector<ReplayCompareResultResp>& value)
+{
+    compareResults_ = value;
+    compareResultsIsSet_ = true;
+}
+
+bool ShowReplayResultsResponse::compareResultsIsSet() const
+{
+    return compareResultsIsSet_;
+}
+
+void ShowReplayResultsResponse::unsetcompareResults()
+{
+    compareResultsIsSet_ = false;
 }
 
 }

@@ -22,6 +22,8 @@ ListExtraColumnsRequest::ListExtraColumnsRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    fetchAll_ = false;
+    fetchAllIsSet_ = false;
 }
 
 ListExtraColumnsRequest::~ListExtraColumnsRequest() = default;
@@ -48,6 +50,9 @@ web::json::value ListExtraColumnsRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(fetchAllIsSet_) {
+        val[utility::conversions::to_string_t("fetch_all")] = ModelBase::toJson(fetchAll_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool ListExtraColumnsRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fetch_all"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fetch_all"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFetchAll(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool ListExtraColumnsRequest::limitIsSet() const
 void ListExtraColumnsRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+bool ListExtraColumnsRequest::isFetchAll() const
+{
+    return fetchAll_;
+}
+
+void ListExtraColumnsRequest::setFetchAll(bool value)
+{
+    fetchAll_ = value;
+    fetchAllIsSet_ = true;
+}
+
+bool ListExtraColumnsRequest::fetchAllIsSet() const
+{
+    return fetchAllIsSet_;
+}
+
+void ListExtraColumnsRequest::unsetfetchAll()
+{
+    fetchAllIsSet_ = false;
 }
 
 }

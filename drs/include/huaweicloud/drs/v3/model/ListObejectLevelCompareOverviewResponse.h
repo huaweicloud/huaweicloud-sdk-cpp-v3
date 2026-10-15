@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/drs/v3/model/ObjectsCompareOverviewInfo.h>
 #include <string>
 #include <vector>
@@ -112,6 +113,15 @@ public:
     void unsetcompareResult();
     void setCompareResult(const std::vector<ObjectsCompareOverviewInfo>& value);
 
+    /// <summary>
+    /// 灾备数据库信息。
+    /// </summary>
+
+    Object getDatabaseInfo() const;
+    bool databaseInfoIsSet() const;
+    void unsetdatabaseInfo();
+    void setDatabaseInfo(const Object& value);
+
 
 protected:
     std::string createTime_;
@@ -130,6 +140,8 @@ protected:
     bool errorMsgIsSet_;
     std::vector<ObjectsCompareOverviewInfo> compareResult_;
     bool compareResultIsSet_;
+    Object databaseInfo_;
+    bool databaseInfoIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

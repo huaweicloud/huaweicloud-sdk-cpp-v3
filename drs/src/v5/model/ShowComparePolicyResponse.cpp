@@ -27,6 +27,8 @@ ShowComparePolicyResponse::ShowComparePolicyResponse()
     comparePolicyIsSet_ = false;
     intervalHour_ = 0;
     intervalHourIsSet_ = false;
+    conflictStrategy_ = "";
+    conflictStrategyIsSet_ = false;
 }
 
 ShowComparePolicyResponse::~ShowComparePolicyResponse() = default;
@@ -62,6 +64,9 @@ web::json::value ShowComparePolicyResponse::toJson() const
     }
     if(intervalHourIsSet_) {
         val[utility::conversions::to_string_t("interval_hour")] = ModelBase::toJson(intervalHour_);
+    }
+    if(conflictStrategyIsSet_) {
+        val[utility::conversions::to_string_t("conflict_strategy")] = ModelBase::toJson(conflictStrategy_);
     }
 
     return val;
@@ -140,6 +145,15 @@ bool ShowComparePolicyResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIntervalHour(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("conflict_strategy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("conflict_strategy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConflictStrategy(refVal);
         }
     }
     return ok;
@@ -312,6 +326,27 @@ bool ShowComparePolicyResponse::intervalHourIsSet() const
 void ShowComparePolicyResponse::unsetintervalHour()
 {
     intervalHourIsSet_ = false;
+}
+
+std::string ShowComparePolicyResponse::getConflictStrategy() const
+{
+    return conflictStrategy_;
+}
+
+void ShowComparePolicyResponse::setConflictStrategy(const std::string& value)
+{
+    conflictStrategy_ = value;
+    conflictStrategyIsSet_ = true;
+}
+
+bool ShowComparePolicyResponse::conflictStrategyIsSet() const
+{
+    return conflictStrategyIsSet_;
+}
+
+void ShowComparePolicyResponse::unsetconflictStrategy()
+{
+    conflictStrategyIsSet_ = false;
 }
 
 }

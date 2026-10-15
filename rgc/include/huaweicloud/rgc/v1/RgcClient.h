@@ -58,6 +58,9 @@
 #include <huaweicloud/rgc/v1/model/CheckLaunchResponse.h>
 #include <huaweicloud/rgc/v1/model/DeleteLandingZoneRequest.h>
 #include <huaweicloud/rgc/v1/model/DeleteLandingZoneResponse.h>
+#include <huaweicloud/rgc/v1/model/LandingZoneVersionDetail.h>
+#include <huaweicloud/rgc/v1/model/ListLandingZoneVersionRequest.h>
+#include <huaweicloud/rgc/v1/model/ListLandingZoneVersionResponse.h>
 #include <huaweicloud/rgc/v1/model/SetupLandingZoneReqBody.h>
 #include <huaweicloud/rgc/v1/model/SetupLandingZoneRequest.h>
 #include <huaweicloud/rgc/v1/model/SetupLandingZoneResponse.h>
@@ -334,6 +337,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteLandingZoneResponse> deleteLandingZone(
         DeleteLandingZoneRequest &request
+    );
+    // 列出Landing Zone版本列表
+    //
+    // 列出Landing Zone版本列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLandingZoneVersionResponse> listLandingZoneVersion(
+        ListLandingZoneVersionRequest &request
     );
     // 设置Landing Zone
     //

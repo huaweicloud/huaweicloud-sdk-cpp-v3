@@ -40,7 +40,7 @@ public:
     /// ListLinksResponse members
 
     /// <summary>
-    /// 可用链路信息。
+    /// **参数解释**：  可用链路信息列表，包含每条可用链路的详细配置信息，详情请参见JobLinkResp对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<JobLinkResp>& getJobLinks();
@@ -49,7 +49,7 @@ public:
     void setJobLinks(const std::vector<JobLinkResp>& value);
 
     /// <summary>
-    /// 可用链路总条数。
+    /// **参数解释**：  可用链路总条数，表示满足查询条件的链路记录总数量。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getTotalCount() const;

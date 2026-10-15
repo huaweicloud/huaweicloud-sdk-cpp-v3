@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 租户公网IP信息
+/// 租户公网IP信息。
 /// </summary>
 class HUAWEICLOUD_DRS_V5_EXPORT  PublicIpConfig
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// PublicIpConfig members
 
     /// <summary>
-    /// 指定公网IP的ID
+    /// 指定公网IP的ID。
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 指定公网IP
+    /// 指定公网IP。
     /// </summary>
 
     std::string getPublicIp() const;
@@ -57,7 +57,7 @@ public:
     void setPublicIp(const std::string& value);
 
     /// <summary>
-    /// 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定为master
+    /// 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave。 - 其他固定为master。
     /// </summary>
 
     std::string getType() const;

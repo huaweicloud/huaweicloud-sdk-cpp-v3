@@ -40,7 +40,7 @@ public:
     /// QueryRpoAndRtoResp members
 
     /// <summary>
-    /// 任务ID
+    /// **参数解释**：  数据复制任务ID，用于唯一标识一个任务。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getJobId() const;
@@ -67,7 +67,7 @@ public:
     void setRtoInfo(const RpoAndRtoInfo& value);
 
     /// <summary>
-    /// 错误码
+    /// **参数解释**：  错误码，当查询任务RPO和RTO失败时返回的错误代码。  **约束限制**：  不涉及。  **取值范围**：  格式为DRS.XXXXXX。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getErrorCode() const;
@@ -76,7 +76,7 @@ public:
     void setErrorCode(const std::string& value);
 
     /// <summary>
-    /// 错误信息
+    /// **参数解释**：  错误详细信息，当查询任务RPO和RTO失败时返回的具体错误描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getErrorMsg() const;

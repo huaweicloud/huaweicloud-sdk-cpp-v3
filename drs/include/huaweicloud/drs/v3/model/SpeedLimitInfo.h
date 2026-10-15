@@ -48,7 +48,7 @@ public:
     void setBegin(const std::string& value);
 
     /// <summary>
-    /// 结束时间,此时间为UTC时间,输入必须为59分结尾，格式为hh:mm，小时数为两位，例如：05:59。
+    /// 结束时间，此时间为UTC时间，输入必须为59分结尾，格式为hh:mm，例如：15:59。
     /// </summary>
 
     std::string getEnd() const;
@@ -57,7 +57,7 @@ public:
     void setEnd(const std::string& value);
 
     /// <summary>
-    /// 限速，取值范围为1~9999 ,单位为MB/s
+    /// 限速，取值范围为1~9999，单位为MB/s。
     /// </summary>
 
     std::string getSpeed() const;

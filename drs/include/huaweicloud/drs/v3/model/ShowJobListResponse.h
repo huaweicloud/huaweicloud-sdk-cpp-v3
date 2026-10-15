@@ -40,7 +40,7 @@ public:
     /// ShowJobListResponse members
 
     /// <summary>
-    /// 任务总数
+    /// **参数解释**：  任务总数，表示满足查询条件的任务记录总数量。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getTotalRecord() const;
@@ -49,7 +49,7 @@ public:
     void setTotalRecord(int32_t value);
 
     /// <summary>
-    /// 任务信息列表
+    /// **参数解释**：  任务信息列表，包含满足查询条件的所有任务详情。详情请参见JobInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<JobInfo>& getJobs();

@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 绑定EIP失败的子任务信息
+/// 绑定EIP失败的子任务信息。
 /// </summary>
 class HUAWEICLOUD_DRS_V5_EXPORT  FailedToBindEipChildInfo
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// FailedToBindEipChildInfo members
 
     /// <summary>
-    /// 子任务ID
+    /// 子任务ID。
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 子任务名称
+    /// 子任务名称。
     /// </summary>
 
     std::string getName() const;

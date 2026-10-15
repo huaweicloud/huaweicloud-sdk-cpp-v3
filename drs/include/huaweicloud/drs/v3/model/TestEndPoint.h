@@ -41,7 +41,7 @@ public:
     /// TestEndPoint members
 
     /// <summary>
-    /// 任务ID
+    /// **参数解释**：  DRS任务ID，用于唯一标识一个数据复制任务，可从任务列表或任务详情页面获取。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getId() const;
@@ -50,7 +50,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 网络类型
+    /// **参数解释**：  任务使用的网络类型。  **约束限制**：  不涉及。  **取值范围**：  - vpn：虚拟专用网络 - vpc：虚拟私有云 - eip：弹性公网IP  **默认取值**：  不涉及
     /// </summary>
 
     std::string getNetType() const;
@@ -59,7 +59,7 @@ public:
     void setNetType(const std::string& value);
 
     /// <summary>
-    /// 数据库类型
+    /// **参数解释**：  数据库类型，标识源库或目标库的数据库引擎种类。  **约束限制**：  不涉及。  **取值范围**：  - mysql：MySQL - mongodb：MongoDB - gaussdbv5：GaussDB分布式版 - postgresql：PostgreSQL - kafka：Kafka - gaussdbv5ha：GaussDB集中式版 - taurus：TaurusDB  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbType() const;
@@ -68,7 +68,7 @@ public:
     void setDbType(const std::string& value);
 
     /// <summary>
-    /// 数据库IP
+    /// **参数解释**：  数据库IP地址，用于指定连接数据库的服务器地址。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getIp() const;
@@ -77,7 +77,7 @@ public:
     void setIp(const std::string& value);
 
     /// <summary>
-    /// 数据库端口，Mongo、DDS必填为0。
+    /// **参数解释**：  数据库端口号，用于指定连接数据库的服务端口。  **约束限制**：  - db_type为MongoDB、DDS时端口必填取值为0。 - db_type为Oracle时为必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getDbPort() const;
@@ -86,7 +86,7 @@ public:
     void setDbPort(int32_t value);
 
     /// <summary>
-    /// RDS实例id，RDS实例必填。
+    /// **参数解释**：  RDS实例ID，用于标识华为云RDS数据库实例。  **约束限制**：  - 数据库为RDS实例时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getInstId() const;
@@ -95,7 +95,7 @@ public:
     void setInstId(const std::string& value);
 
     /// <summary>
-    /// 数据库帐号。
+    /// **参数解释**：  数据库帐号，用于连接数据库的用户名。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbUser() const;
@@ -104,7 +104,7 @@ public:
     void setDbUser(const std::string& value);
 
     /// <summary>
-    /// 数据库密码。
+    /// **参数解释**：  数据库密码，用于连接数据库的认证密码。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbPassword() const;
@@ -113,7 +113,7 @@ public:
     void setDbPassword(const std::string& value);
 
     /// <summary>
-    /// 是否SSL安全连接。
+    /// **参数解释**：  是否使用SSL安全连接，指定数据库连接是否启用SSL加密传输。  **约束限制**：  - 该参数为true时，需填写SSL证书相关信息参数。  **取值范围**：  - true：使用SSL安全连接 - false：不使用SSL安全连接  **默认取值**：  不涉及
     /// </summary>
 
     bool isSslLink() const;
@@ -122,7 +122,7 @@ public:
     void setSslLink(bool value);
 
     /// <summary>
-    /// SSL证书内容，base64加密后的值，源库安全连接必选。
+    /// **参数解释**：  SSL证书内容，获取SSL证书后将内容通过BASE64加密后所得的字符串。  **约束限制**：  - ssl_link为true时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSslCertKey() const;
@@ -131,7 +131,7 @@ public:
     void setSslCertKey(const std::string& value);
 
     /// <summary>
-    /// SSL证书名字，源库安全连接必选。
+    /// **参数解释**：  SSL证书名字。  **约束限制**：  - ssl_link为true时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSslCertName() const;
@@ -140,7 +140,7 @@ public:
     void setSslCertName(const std::string& value);
 
     /// <summary>
-    /// SSL证书内容checksum值，证书经过sha256加密后的值，后端校验，源库安全连接必选。
+    /// **参数解释**：  SSL证书内容checksum值，获取SSL证书后将内容经过SHA256加密后的值，后端校验用。  **约束限制**：  - ssl_link为true时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSslCertCheckSum() const;
@@ -149,7 +149,7 @@ public:
     void setSslCertCheckSum(const std::string& value);
 
     /// <summary>
-    /// SSL证书密码，证书文件后缀为.p12，需要密码。
+    /// **参数解释**：  SSL证书密码。  **约束限制**：  - 证书文件后缀为.p12时需要填写密码。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSslCertPassword() const;
@@ -158,7 +158,7 @@ public:
     void setSslCertPassword(const std::string& value);
 
     /// <summary>
-    /// vpcid，数据库为RDS时必选。
+    /// **参数解释**：  虚拟私有云ID，用于标识数据库所在的VPC。  **约束限制**：  - 网络类型为VPC时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getVpcId() const;
@@ -167,7 +167,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// subnetid，数据库为RDS必选。
+    /// **参数解释**：  子网ID，用于标识数据库所在的子网。  **约束限制**：  - 网络类型为VPC时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSubnetId() const;
@@ -176,7 +176,7 @@ public:
     void setSubnetId(const std::string& value);
 
     /// <summary>
-    /// 源库：so,目标库：ta
+    /// **参数解释**：  数据库端点类型，标识该数据库在数据复制任务中是源端还是目标端。  **约束限制**：  不涉及。  **取值范围**：  - so：源库 - ta：目标库  **默认取值**：  so
     /// </summary>
 
     std::string getEndPointType() const;
@@ -185,7 +185,7 @@ public:
     void setEndPointType(const std::string& value);
 
     /// <summary>
-    /// rds实例region，数据库为RDS时必填。
+    /// **参数解释**：  RDS实例所在区域，用于标识数据库实例的地理区域。  **约束限制**：  - 数据库为RDS实例时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getRegion() const;
@@ -194,7 +194,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// 用户所处region的projectId。
+    /// **参数解释**：  数据库实例所在Region的项目ID，数据库为云上实例时填写数据库实例所在Region下的项目ID，否则填写当前任务所在Region下的项目ID。获取方法请参见获取项目ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getProjectId() const;
@@ -203,7 +203,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 数据库用户名，DDS的账号认证数据库，Oracle的serviceName。
+    /// **参数解释**：  数据库名称，Oracle场景下为serviceName。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbName() const;

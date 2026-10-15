@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -92,6 +93,15 @@ public:
     void unsetcomputeType();
     void setComputeType(const std::string& value);
 
+    /// <summary>
+    /// 灾备数据库信息。
+    /// </summary>
+
+    Object getDatabaseInfo() const;
+    bool databaseInfoIsSet() const;
+    void unsetdatabaseInfo();
+    void setDatabaseInfo(const Object& value);
+
 
 protected:
     std::string id_;
@@ -106,6 +116,8 @@ protected:
     bool endTimeIsSet_;
     std::string computeType_;
     bool computeTypeIsSet_;
+    Object databaseInfo_;
+    bool databaseInfoIsSet_;
 
 };
 

@@ -24,6 +24,8 @@ ColumnInfo::ColumnInfo()
     statusIsSet_ = false;
     partition_ = false;
     partitionIsSet_ = false;
+    desensitizationAlgorithm_ = "";
+    desensitizationAlgorithmIsSet_ = false;
 }
 
 ColumnInfo::~ColumnInfo() = default;
@@ -53,6 +55,9 @@ web::json::value ColumnInfo::toJson() const
     }
     if(partitionIsSet_) {
         val[utility::conversions::to_string_t("partition")] = ModelBase::toJson(partition_);
+    }
+    if(desensitizationAlgorithmIsSet_) {
+        val[utility::conversions::to_string_t("desensitization_algorithm")] = ModelBase::toJson(desensitizationAlgorithm_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool ColumnInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPartition(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("desensitization_algorithm"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("desensitization_algorithm"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDesensitizationAlgorithm(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool ColumnInfo::partitionIsSet() const
 void ColumnInfo::unsetpartition()
 {
     partitionIsSet_ = false;
+}
+
+std::string ColumnInfo::getDesensitizationAlgorithm() const
+{
+    return desensitizationAlgorithm_;
+}
+
+void ColumnInfo::setDesensitizationAlgorithm(const std::string& value)
+{
+    desensitizationAlgorithm_ = value;
+    desensitizationAlgorithmIsSet_ = true;
+}
+
+bool ColumnInfo::desensitizationAlgorithmIsSet() const
+{
+    return desensitizationAlgorithmIsSet_;
+}
+
+void ColumnInfo::unsetdesensitizationAlgorithm()
+{
+    desensitizationAlgorithmIsSet_ = false;
 }
 
 }

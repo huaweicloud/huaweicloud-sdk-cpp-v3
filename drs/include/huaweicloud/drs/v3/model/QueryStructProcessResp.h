@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/drs/v3/model/StructProcessResp.h>
 
@@ -75,6 +76,15 @@ public:
     void unsetstructProcess();
     void setStructProcess(const StructProcessResp& value);
 
+    /// <summary>
+    /// 灾备数据库信息。
+    /// </summary>
+
+    Object getDatabaseInfo() const;
+    bool databaseInfoIsSet() const;
+    void unsetdatabaseInfo();
+    void setDatabaseInfo(const Object& value);
+
 
 protected:
     std::string jobId_;
@@ -85,6 +95,8 @@ protected:
     bool errorMessageIsSet_;
     StructProcessResp structProcess_;
     bool structProcessIsSet_;
+    Object databaseInfo_;
+    bool databaseInfoIsSet_;
 
 };
 

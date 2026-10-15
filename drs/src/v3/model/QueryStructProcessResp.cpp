@@ -19,6 +19,7 @@ QueryStructProcessResp::QueryStructProcessResp()
     errorMessage_ = "";
     errorMessageIsSet_ = false;
     structProcessIsSet_ = false;
+    databaseInfoIsSet_ = false;
 }
 
 QueryStructProcessResp::~QueryStructProcessResp() = default;
@@ -42,6 +43,9 @@ web::json::value QueryStructProcessResp::toJson() const
     }
     if(structProcessIsSet_) {
         val[utility::conversions::to_string_t("struct_process")] = ModelBase::toJson(structProcess_);
+    }
+    if(databaseInfoIsSet_) {
+        val[utility::conversions::to_string_t("database_info")] = ModelBase::toJson(databaseInfo_);
     }
 
     return val;
@@ -84,6 +88,15 @@ bool QueryStructProcessResp::fromJson(const web::json::value& val)
             StructProcessResp refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStructProcess(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("database_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("database_info"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDatabaseInfo(refVal);
         }
     }
     return ok;
@@ -172,6 +185,27 @@ bool QueryStructProcessResp::structProcessIsSet() const
 void QueryStructProcessResp::unsetstructProcess()
 {
     structProcessIsSet_ = false;
+}
+
+Object QueryStructProcessResp::getDatabaseInfo() const
+{
+    return databaseInfo_;
+}
+
+void QueryStructProcessResp::setDatabaseInfo(const Object& value)
+{
+    databaseInfo_ = value;
+    databaseInfoIsSet_ = true;
+}
+
+bool QueryStructProcessResp::databaseInfoIsSet() const
+{
+    return databaseInfoIsSet_;
+}
+
+void QueryStructProcessResp::unsetdatabaseInfo()
+{
+    databaseInfoIsSet_ = false;
 }
 
 }

@@ -30,6 +30,7 @@ CompareJobInfo::CompareJobInfo()
     compareJobTagIsSet_ = false;
     proportionValue_ = "";
     proportionValueIsSet_ = false;
+    databaseInfoIsSet_ = false;
 }
 
 CompareJobInfo::~CompareJobInfo() = default;
@@ -71,6 +72,9 @@ web::json::value CompareJobInfo::toJson() const
     }
     if(proportionValueIsSet_) {
         val[utility::conversions::to_string_t("proportion_value")] = ModelBase::toJson(proportionValue_);
+    }
+    if(databaseInfoIsSet_) {
+        val[utility::conversions::to_string_t("database_info")] = ModelBase::toJson(databaseInfo_);
     }
 
     return val;
@@ -167,6 +171,15 @@ bool CompareJobInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProportionValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("database_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("database_info"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDatabaseInfo(refVal);
         }
     }
     return ok;
@@ -381,6 +394,27 @@ bool CompareJobInfo::proportionValueIsSet() const
 void CompareJobInfo::unsetproportionValue()
 {
     proportionValueIsSet_ = false;
+}
+
+Object CompareJobInfo::getDatabaseInfo() const
+{
+    return databaseInfo_;
+}
+
+void CompareJobInfo::setDatabaseInfo(const Object& value)
+{
+    databaseInfo_ = value;
+    databaseInfoIsSet_ = true;
+}
+
+bool CompareJobInfo::databaseInfoIsSet() const
+{
+    return databaseInfoIsSet_;
+}
+
+void CompareJobInfo::unsetdatabaseInfo()
+{
+    databaseInfoIsSet_ = false;
 }
 
 }

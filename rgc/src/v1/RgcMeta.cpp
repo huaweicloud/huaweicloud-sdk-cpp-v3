@@ -170,6 +170,14 @@ HttpRequestDef RgcMeta::genRequestDefForDeleteLandingZone() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RgcMeta::genRequestDefForListLandingZoneVersion() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RgcMeta::genRequestDefForSetupLandingZone() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

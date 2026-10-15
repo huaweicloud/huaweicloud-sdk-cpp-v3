@@ -772,6 +772,35 @@ std::shared_ptr<DeleteLandingZoneResponse> RgcClient::deleteLandingZone(DeleteLa
 
     return localVarResult;
 }
+std::shared_ptr<ListLandingZoneVersionResponse> RgcClient::listLandingZoneVersion(ListLandingZoneVersionRequest &request)
+{
+    std::string localVarPath = "/v1/landing-zone/version";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RgcMeta::genRequestDefForListLandingZoneVersion());
+
+    std::shared_ptr<ListLandingZoneVersionResponse> localVarResult = std::make_shared<ListLandingZoneVersionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<SetupLandingZoneResponse> RgcClient::setupLandingZone(SetupLandingZoneRequest &request)
 {
     std::string localVarPath = "/v1/landing-zone/setup";

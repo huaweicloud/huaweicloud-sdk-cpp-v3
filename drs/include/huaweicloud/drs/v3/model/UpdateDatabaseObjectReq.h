@@ -41,7 +41,7 @@ public:
     /// UpdateDatabaseObjectReq members
 
     /// <summary>
-    /// 任务ID
+    /// **参数解释**：  迁移任务ID，用于唯一标识一个数据复制任务，在查询、修改、删除等操作中作为任务的识别凭证。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getJobId() const;
@@ -50,7 +50,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 是否进行对象选择，是：自定义迁移对象，否：全部迁移，不填默认为否。
+    /// **参数解释**：  是否进行对象选择，决定是自定义选择迁移对象还是迁移全部对象。  **约束限制**：  不涉及。  **取值范围**：  - true：自定义迁移对象，需要通过job字段指定具体迁移对象 - false：全部迁移，迁移源库所有对象  **默认取值**：  false
     /// </summary>
 
     bool isSelected() const;
@@ -59,7 +59,7 @@ public:
     void setSelected(bool value);
 
     /// <summary>
-    /// 是否库级同步
+    /// **参数解释**：  是否库级同步，指定同步任务是否以库为粒度进行对象选择。  **约束限制**：  不涉及。  **取值范围**：  - true：库级同步 - false：非库级同步  **默认取值**：  不涉及
     /// </summary>
 
     bool isSyncDatabase() const;
@@ -68,7 +68,7 @@ public:
     void setSyncDatabase(bool value);
 
     /// <summary>
-    /// 数据对象选择信息，selected为true时必填。
+    /// **参数解释**：  数据对象选择信息列表，包含需要迁移的数据库、表、视图等对象的详细配置。  **约束限制**：  - selected为true时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<DatabaseInfo>& getJob();

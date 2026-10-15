@@ -24,6 +24,7 @@ HealthCompareJob::HealthCompareJob()
     endTimeIsSet_ = false;
     computeType_ = "";
     computeTypeIsSet_ = false;
+    databaseInfoIsSet_ = false;
 }
 
 HealthCompareJob::~HealthCompareJob() = default;
@@ -53,6 +54,9 @@ web::json::value HealthCompareJob::toJson() const
     }
     if(computeTypeIsSet_) {
         val[utility::conversions::to_string_t("compute_type")] = ModelBase::toJson(computeType_);
+    }
+    if(databaseInfoIsSet_) {
+        val[utility::conversions::to_string_t("database_info")] = ModelBase::toJson(databaseInfo_);
     }
 
     return val;
@@ -113,6 +117,15 @@ bool HealthCompareJob::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setComputeType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("database_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("database_info"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDatabaseInfo(refVal);
         }
     }
     return ok;
@@ -243,6 +256,27 @@ bool HealthCompareJob::computeTypeIsSet() const
 void HealthCompareJob::unsetcomputeType()
 {
     computeTypeIsSet_ = false;
+}
+
+Object HealthCompareJob::getDatabaseInfo() const
+{
+    return databaseInfo_;
+}
+
+void HealthCompareJob::setDatabaseInfo(const Object& value)
+{
+    databaseInfo_ = value;
+    databaseInfoIsSet_ = true;
+}
+
+bool HealthCompareJob::databaseInfoIsSet() const
+{
+    return databaseInfoIsSet_;
+}
+
+void HealthCompareJob::unsetdatabaseInfo()
+{
+    databaseInfoIsSet_ = false;
 }
 
 }

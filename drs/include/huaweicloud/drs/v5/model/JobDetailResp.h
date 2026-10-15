@@ -65,7 +65,7 @@ public:
     /// JobDetailResp members
 
     /// <summary>
-    /// 任务ID。
+    /// **参数解释**：  任务ID，用于唯一标识一个数据复制任务。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getId() const;
@@ -74,7 +74,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 任务状态。 - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败
+    /// **参数解释**：  任务当前运行状态。  **约束限制**：  不涉及。  **取值范围**：  - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败  **默认取值**：  不涉及
     /// </summary>
 
     std::string getStatus() const;
@@ -83,7 +83,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 任务创建时间。
+    /// **参数解释**：  任务的创建时间，表示任务首次被创建的时间戳。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getCreateTime() const;
@@ -92,7 +92,7 @@ public:
     void setCreateTime(const std::string& value);
 
     /// <summary>
-    /// 列表中的项目总数，与分页无关。
+    /// **参数解释**：  列表中的项目总数，与分页无关。表示满足查询条件的记录总数量，用于分页计算。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getTotalCount() const;
@@ -101,7 +101,7 @@ public:
     void setTotalCount(int32_t value);
 
     /// <summary>
-    /// 多任务主节点的任务ID。
+    /// **参数解释**：  多任务主节点的任务ID，在多对一同步场景中标识主任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getMasterJobId() const;
@@ -119,7 +119,7 @@ public:
     void setBaseInfo(const JobBaseInfo& value);
 
     /// <summary>
-    /// 任务源数据库信息体。
+    /// **参数解释**：  任务源数据库信息体，详情请参见JobEndpointInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<JobEndpointInfo>& getSourceEndpoint();
@@ -128,7 +128,7 @@ public:
     void setSourceEndpoint(const std::vector<JobEndpointInfo>& value);
 
     /// <summary>
-    /// 任务目标数据库信息体。
+    /// **参数解释**：  任务目标数据库信息体，详情请参见JobEndpointInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<JobEndpointInfo>& getTargetEndpoint();
@@ -209,7 +209,7 @@ public:
     void setNodeInfo(const JobNodeInfo& value);
 
     /// <summary>
-    /// 日志查询结果信息体。
+    /// **参数解释**：  日志查询结果信息体，详情请参见TaskLogInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<TaskLogInfo>& getLogs();
@@ -218,7 +218,7 @@ public:
     void setLogs(const std::vector<TaskLogInfo>& value);
 
     /// <summary>
-    /// 网络打通测试结果信息体。
+    /// **参数解释**：  网络打通测试结果信息体，详情请参见QueryNetworkResult对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<QueryNetworkResult>& getNetworkResults();
@@ -281,7 +281,7 @@ public:
     void setSupportImportFileResp(const SupportImportFileResult& value);
 
     /// <summary>
-    /// 由开关和版本共同控制的任务级别的功能列表。
+    /// **参数解释**：  由开关和版本共同控制的任务级别的功能列表，格式为key/value键值对。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
 
     std::map<std::string, std::string>& getInstanceFeatures();
@@ -290,7 +290,7 @@ public:
     void setInstanceFeatures(const std::map<std::string, std::string>& value);
 
     /// <summary>
-    /// 任务版本。
+    /// **参数解释**：  任务版本，标识当前数据复制任务所使用的版本号。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getTaskVersion() const;
@@ -308,7 +308,7 @@ public:
     void setConnectionManagement(const ConnectionManagement& value);
 
     /// <summary>
-    /// 指定公网IP的信息
+    /// **参数解释**：  指定公网IP的信息列表，详情请参见PublicIpConfig对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<PublicIpConfig>& getPublicIpList();
@@ -317,7 +317,7 @@ public:
     void setPublicIpList(const std::vector<PublicIpConfig>& value);
 
     /// <summary>
-    /// 是否成功绑定公网IP 取值：SUCCESS，FAILED
+    /// **参数解释**：  是否成功绑定公网IP，标识为任务绑定公网IP操作的执行结果。  **约束限制**：  不涉及。  **取值范围**：  - SUCCESS：成功 - FAILED：失败  **默认取值**：  不涉及
     /// </summary>
 
     std::string getBindPublicIpState() const;
@@ -326,7 +326,7 @@ public:
     void setBindPublicIpState(const std::string& value);
 
     /// <summary>
-    /// 多任务时，存在子任务绑定失败时，返回子任务的信息
+    /// **参数解释**：  多任务时存在子任务绑定失败时返回的子任务信息列表，详情请参见FailedToBindEipChildInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<FailedToBindEipChildInfo>& getChildren();
@@ -335,7 +335,7 @@ public:
     void setChildren(const std::vector<FailedToBindEipChildInfo>& value);
 
     /// <summary>
-    /// 解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。
+    /// **参数解释**：  解除目标库只读操作后，目标库解除只读是否成功。  **约束限制**：  不涉及。  **取值范围**：  - pending：目标库解除操作进行中 - success：目标库解除只读操作成功  **默认取值**：  不涉及
     /// </summary>
 
     std::string getIsWritable() const;
@@ -344,7 +344,7 @@ public:
     void setIsWritable(const std::string& value);
 
     /// <summary>
-    /// 一键诊断结果。
+    /// **参数解释**：  一键诊断结果列表，详情请参见QueryDiagnosisResult对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<QueryDiagnosisResult>& getDiagnoses();
@@ -371,7 +371,7 @@ public:
     void setRepairDetailInfo(const QueryRepairDetailResp& value);
 
     /// <summary>
-    /// 修复SQL导出状态。 INIT：初始状态，EXPORTING：比对结果导出中，EXPORT_COMPLETE：比对结果导出完成，EXPORT_COMMON_FAILED：比对结果导出失败
+    /// **参数解释**：  修复SQL导出状态，标识数据修复SQL文件的导出进度。  **约束限制**：  不涉及。  **取值范围**：  - INIT：初始状态 - EXPORTING：比对结果导出中 - EXPORT_COMPLETE：比对结果导出完成 - EXPORT_COMMON_FAILED：比对结果导出失败  **默认取值**：  不涉及
     /// </summary>
 
     std::string getRepairExportStatus() const;
@@ -380,13 +380,22 @@ public:
     void setRepairExportStatus(const std::string& value);
 
     /// <summary>
-    /// 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+    /// **参数解释**：  灾备内核方向，非倒换中与job_direction取值相同，倒换中与job_direction取值相反。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主  **默认取值**：  不涉及
     /// </summary>
 
     std::string getJobKernelDirection() const;
     bool jobKernelDirectionIsSet() const;
     void unsetjobKernelDirection();
     void setJobKernelDirection(const std::string& value);
+
+    /// <summary>
+    /// 同步模式 DB_LEVEL：库级 SCHEMA_LEVEL：schema级 TABLE_LEVEL：表级 FILE_IMPORT：文件导入 INSTANCE_LEVEL：实例级
+    /// </summary>
+
+    std::string getSyncMode() const;
+    bool syncModeIsSet() const;
+    void unsetsyncMode();
+    void setSyncMode(const std::string& value);
 
 
 protected:
@@ -462,6 +471,8 @@ protected:
     bool repairExportStatusIsSet_;
     std::string jobKernelDirection_;
     bool jobKernelDirectionIsSet_;
+    std::string syncMode_;
+    bool syncModeIsSet_;
 
 };
 

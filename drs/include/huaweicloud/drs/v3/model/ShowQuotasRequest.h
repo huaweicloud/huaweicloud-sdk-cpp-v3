@@ -39,7 +39,7 @@ public:
     /// ShowQuotasRequest members
 
     /// <summary>
-    /// 请求语言类型。
+    /// **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
     /// </summary>
 
     std::string getXLanguage() const;

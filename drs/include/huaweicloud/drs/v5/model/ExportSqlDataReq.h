@@ -40,7 +40,7 @@ public:
     /// ExportSqlDataReq members
 
     /// <summary>
-    /// 导出的sql文件类型。取值范围： - abnormal_sql ：异常sql列表 - abnormal_sql_detail ：异常sql详情 - slow_sql ：慢sql列表 - slow_sql_detail ： 慢sql详情
+    /// 导出的sql文件类型。取值范围： - abnormal_sql ：异常sql列表 - abnormal_sql_detail ：异常sql详情 - slow_sql ：慢sql列表 - slow_sql_detail ： 慢sql详情 - sql_result_inconsistent：目标库和镜像库执行结果不一致的sql详情
     /// </summary>
 
     std::string getFileType() const;

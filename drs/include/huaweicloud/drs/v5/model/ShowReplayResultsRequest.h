@@ -57,7 +57,7 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
+    /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。 - sql_result_inconsistent：回放库和镜像库里面SQL执行结果不一致详情。 - replayed_sql：流量回放已回放SQL统计信息。 - ugo_error_sql：ugo转换失败信息。 - sql_object_statistic：SQL对象统计信息。 - archive_capture_data：录制产生文件的SQL data数据。
     /// </summary>
 
     std::string getType() const;

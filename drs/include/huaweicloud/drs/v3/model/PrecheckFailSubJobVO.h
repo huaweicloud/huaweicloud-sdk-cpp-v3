@@ -39,7 +39,7 @@ public:
     /// PrecheckFailSubJobVO members
 
     /// <summary>
-    /// 预检查失败子任务id。
+    /// **参数解释**：  预检查失败子任务ID，用于唯一标识一个预检查失败的子任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 预检查失败子任务名称。
+    /// **参数解释**：  预检查失败子任务的名称，用于标识失败的子任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getName() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 检查结果。
+    /// **参数解释**：  预检查失败子任务的检查结果，表示该子任务的检查是否通过。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getCheckResult() const;

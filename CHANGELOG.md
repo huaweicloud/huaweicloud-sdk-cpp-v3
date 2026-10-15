@@ -1,3 +1,206 @@
+# 3.1.208 2026-10-15
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `DeleteCompareJob`
+    - `StartPromptlyDataLevelTableCompareJob`
+    - `DownloadCompareResultFile`
+    - `CreateCompareResultFile`
+    - `SelectGroupAndStream`
+    - `ModifyGroupAndStream`
+    - `BatchValidateClustersConnections`
+    - `BatchCheckJobs`
+    - `UpdateParams`
+    - `BatchStartJobs`
+    - `BatchRestoreTask`
+    - `BatchStopJobs`
+    - `BatchDeleteJobs`
+    - `BatchSetDefiner`
+    - `BatchListJobStatus`
+    - `ListUsers`
+    - `BatchSetPolicy`
+    - `UpdateTuningParams`
+    - `ListAvailableNodeTypes`
+    - `ListDataCompareOverview`
+    - `ListDataCompareDetail`
+    - `ListContentCompareOverview`
+    - `ListContentCompareDetail`
+    - `CreateObjectLevelCompareJob`
+    - `ListObejectLevelCompareOverview`
+    - `ListObejectLevelCompareDetail`
+    - `ListContentCompareDifference`
+    - `QueryTuningParams`
+    - `BatchValidateConnections`
+    - `BatchSetObjects`
+    - `BatchSetSpeed`
+    - `BatchShowParams`
+    - `BatchResetPassword`
+    - `ShowJobList`
+    - `BatchChangeData`
+    - `ShowMonitoringData`
+    - `BatchUpdateUser`
+    - `BatchSetSmn`
+    - `ListDataLevelTableCompareJobs`
+    - `CreateDataLevelTableCompareJob`
+    - `BatchCreateJobs`
+    - `BatchCheckResults`
+    - `BatchUpdateJob`
+    - `CreateCompareTask`
+    - `ListCompareResult`
+    - `BatchSwitchover`
+    - `BatchListStructProcess`
+    - `BatchListJobDetails`
+  - **ListObejectLevelCompareOverview**
+    - changes of response param
+      - `+ database_info`
+  - **BatchListProgresses**
+    - changes of response param
+      - `+ results.apply_rows_rate`
+      - `+ results.apply_bytes_rate`
+  - **ListDataLevelTableCompareJobs**
+    - changes of response param
+      - `+ compare_jobs.database_info`
+  - **BatchSwitchover**
+    - changes of request param
+      - `+ is_pause_job`
+  - **BatchListStructProcess**
+    - changes of response param
+      - `+ results.database_info`
+  - **BatchListJobDetails**
+    - changes of response param
+      - `+ results.sync_mode`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ListReplaySupportSourceConfig`
+    - `ShowSwitchoverInfo`
+    - `AssociateSmnTopic`
+    - `SaveDataFilterRules`
+    - `CollectDataFilterRules`
+    - `DeleteDataFilterRules`
+    - `ChangeJobFlavor`
+    - `ExportJobList`
+    - `ShowTaskExecuteProgress`
+    - `CheckDataFilterRules`
+    - `ShowDataFilterRulesResult`
+    - `DownloadFile`
+    - `ShowFiles`
+    - `ShowReportFileObsUris`
+    - `ShowSmnSubscriptionDetail`
+    - `ShowLinkFlavors`
+    - `StartSubscription`
+    - `RetrySubscription`
+    - `ResetSubscription`
+    - `ShowReplayExecuteRecord`
+    - `ShowReplayRecord`
+    - `ShowObjectColumnInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `UploadJdbcDriver`
+    - `SyncJdbcDriver`
+    - `ListsAgencyPermissions`
+    - `UpdateAgencyPolicy`
+    - `ListLinks`
+    - `ShowDataFilteringResult`
+    - `DeleteJdbcDriver`
+    - `ListJdbcDrivers`
+    - `ShowAgencyInfo`
+    - `CheckDataFilter`
+  - **ShowDbObjectTemplateResult**
+    - changes of request param
+      - `+ type: enum value [compare,compare_key_detail]`
+  - **DownloadDbObjectTemplate**
+    - changes of request param
+      - `+ file_import_db_level: enum value [compare_key]`
+  - **UploadDbObjectTemplate**
+    - changes of request param
+      - `+ file_import_db_level: enum value [compare_key]`
+  - **ShowComparePolicy**
+    - changes of response param
+      - `+ conflict_strategy`
+  - **UpdateComparePolicy**
+    - changes of request param
+      - `+ conflict_strategy`
+  - **ListLinks**
+    - changes of request param
+      - `+ job_type: enum value [replay]`
+  - **ShowHealthCompareJobList**
+    - changes of response param
+      - `+ compare_jobs.database_info`
+  - **ListInstanceTags**
+    - changes of request param
+      - `+ resource_type: enum value [verify]`
+  - **ShowReplayResults**
+    - changes of request param
+      - `+ type: enum value [sql_result_inconsistent,replayed_sql,ugo_error_sql,sql_object_statistic,archive_capture_data]`
+    - changes of response param
+      - `+ compare_results`
+  - **CreateReplicationJob**
+    - changes of request param
+      - `+ options.consistency_check_mode`
+  - **ShowReplicationJob**
+    - changes of response param
+      - `+ options.consistency_check_mode`
+  - **ShowColumnInfos**
+    - changes of response param
+      - `+ column_map_infos.column_info_lists.desensitization_algorithm`
+  - **ModifyColumnInfos**
+    - changes of request param
+      - `+ column_map_infos.column_info_lists.desensitization_algorithm`
+  - **ListExtraColumns**
+    - changes of request param
+      - `+ fetch_all`
+  - **ListJobs**
+    - changes of request param
+      - `+ job_type: enum value [replay]`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.sync_mode`
+  - **ShowJobDetail**
+    - changes of request param
+      - `+ type: enum value [db_table_details]`
+      - `+ query_type: enum value [upgradeJob]`
+      - `+ compare_detail_type: enum value [unCompare]`
+      - `+ compare_detail_type: enum value [uncompare]`
+    - changes of response param
+      - `+ job.sync_mode`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowVectorStorageConfig`, `UpdateVectorStorageConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RGC
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ListLandingZoneVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.207 2026-10-08
 
 ### HuaweiCloud SDK ECS

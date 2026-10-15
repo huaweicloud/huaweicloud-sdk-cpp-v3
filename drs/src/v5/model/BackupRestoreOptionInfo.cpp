@@ -26,6 +26,8 @@ BackupRestoreOptionInfo::BackupRestoreOptionInfo()
     resetDbNameMapIsSet_ = false;
     isDeleteBackupFile_ = false;
     isDeleteBackupFileIsSet_ = false;
+    consistencyCheckMode_ = "";
+    consistencyCheckModeIsSet_ = false;
 }
 
 BackupRestoreOptionInfo::~BackupRestoreOptionInfo() = default;
@@ -61,6 +63,9 @@ web::json::value BackupRestoreOptionInfo::toJson() const
     }
     if(isDeleteBackupFileIsSet_) {
         val[utility::conversions::to_string_t("is_delete_backup_file")] = ModelBase::toJson(isDeleteBackupFile_);
+    }
+    if(consistencyCheckModeIsSet_) {
+        val[utility::conversions::to_string_t("consistency_check_mode")] = ModelBase::toJson(consistencyCheckMode_);
     }
 
     return val;
@@ -139,6 +144,15 @@ bool BackupRestoreOptionInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsDeleteBackupFile(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("consistency_check_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("consistency_check_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConsistencyCheckMode(refVal);
         }
     }
     return ok;
@@ -311,6 +325,27 @@ bool BackupRestoreOptionInfo::isDeleteBackupFileIsSet() const
 void BackupRestoreOptionInfo::unsetisDeleteBackupFile()
 {
     isDeleteBackupFileIsSet_ = false;
+}
+
+std::string BackupRestoreOptionInfo::getConsistencyCheckMode() const
+{
+    return consistencyCheckMode_;
+}
+
+void BackupRestoreOptionInfo::setConsistencyCheckMode(const std::string& value)
+{
+    consistencyCheckMode_ = value;
+    consistencyCheckModeIsSet_ = true;
+}
+
+bool BackupRestoreOptionInfo::consistencyCheckModeIsSet() const
+{
+    return consistencyCheckModeIsSet_;
+}
+
+void BackupRestoreOptionInfo::unsetconsistencyCheckMode()
+{
+    consistencyCheckModeIsSet_ = false;
 }
 
 }

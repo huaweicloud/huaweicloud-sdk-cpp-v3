@@ -40,7 +40,7 @@ public:
     /// ShowColumnInfoReq members
 
     /// <summary>
-    /// 是否重新从node获取列信息
+    /// 是否重新从node获取列信息，默认为否。
     /// </summary>
 
     bool isRefresh() const;

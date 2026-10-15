@@ -122,6 +122,8 @@ QueryJobResp::QueryJobResp()
     isOpenFastCleanIsSet_ = false;
     jobKernelDirection_ = "";
     jobKernelDirectionIsSet_ = false;
+    syncMode_ = "";
+    syncModeIsSet_ = false;
 }
 
 QueryJobResp::~QueryJobResp() = default;
@@ -319,6 +321,9 @@ web::json::value QueryJobResp::toJson() const
     }
     if(jobKernelDirectionIsSet_) {
         val[utility::conversions::to_string_t("job_kernel_direction")] = ModelBase::toJson(jobKernelDirection_);
+    }
+    if(syncModeIsSet_) {
+        val[utility::conversions::to_string_t("sync_mode")] = ModelBase::toJson(syncMode_);
     }
 
     return val;
@@ -883,6 +888,15 @@ bool QueryJobResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setJobKernelDirection(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sync_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sync_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSyncMode(refVal);
         }
     }
     return ok;
@@ -2189,6 +2203,27 @@ bool QueryJobResp::jobKernelDirectionIsSet() const
 void QueryJobResp::unsetjobKernelDirection()
 {
     jobKernelDirectionIsSet_ = false;
+}
+
+std::string QueryJobResp::getSyncMode() const
+{
+    return syncMode_;
+}
+
+void QueryJobResp::setSyncMode(const std::string& value)
+{
+    syncMode_ = value;
+    syncModeIsSet_ = true;
+}
+
+bool QueryJobResp::syncModeIsSet() const
+{
+    return syncModeIsSet_;
+}
+
+void QueryJobResp::unsetsyncMode()
+{
+    syncModeIsSet_ = false;
 }
 
 }

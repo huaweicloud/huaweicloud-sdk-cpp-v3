@@ -204,6 +204,7 @@ public:
     static HttpRequestDef genRequestDefForShowTopObjects();
     static HttpRequestDef genRequestDefForShowTransferPolicy();
     static HttpRequestDef genRequestDefForShowUpgradeDbMajorVersionStatus();
+    static HttpRequestDef genRequestDefForShowVectorStorageConfig();
     static HttpRequestDef genRequestDefForStartFailover();
     static HttpRequestDef genRequestDefForStartInstanceEnlargeVolumeAction();
     static HttpRequestDef genRequestDefForStartInstanceReduceVolumeAction();
@@ -234,6 +235,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateTdeStatus();
     static HttpRequestDef genRequestDefForUpdateTimeZone();
     static HttpRequestDef genRequestDefForUpdateToPeriod();
+    static HttpRequestDef genRequestDefForUpdateVectorStorageConfig();
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersion();
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersionPreCheck();
     static HttpRequestDef genRequestDefForUpgradeDbVersion();

@@ -40,7 +40,7 @@ public:
     /// BatchDeleteJobsResponse members
 
     /// <summary>
-    /// 批量结束任务或删除任务的响应体集合。
+    /// **参数解释**：  批量结束任务或删除任务的响应体集合，包含每个任务的操作结果。详情请参见DeleteJobResp对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<DeleteJobResp>& getResults();
@@ -49,7 +49,7 @@ public:
     void setResults(const std::vector<DeleteJobResp>& value);
 
     /// <summary>
-    /// 总数
+    /// **参数解释**：  批量结束或删除任务的结果总数，与results数组的长度一致。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getCount() const;

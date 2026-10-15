@@ -111,6 +111,15 @@ public:
     void unsetintervalHour();
     void setIntervalHour(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 冲突策略。 **约束限制：** 不涉及 **取值范围：** 不涉及 默认取值： 不涉及
+    /// </summary>
+
+    std::string getConflictStrategy() const;
+    bool conflictStrategyIsSet() const;
+    void unsetconflictStrategy();
+    void setConflictStrategy(const std::string& value);
+
 
 protected:
     std::string period_;
@@ -129,6 +138,8 @@ protected:
     bool comparePolicyIsSet_;
     int32_t intervalHour_;
     bool intervalHourIsSet_;
+    std::string conflictStrategy_;
+    bool conflictStrategyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

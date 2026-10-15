@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// RpoAndRTO信息体
+/// RPO和RTO信息体
 /// </summary>
 class HUAWEICLOUD_DRS_V3_EXPORT  RpoAndRtoInfo
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// RpoAndRtoInfo members
 
     /// <summary>
-    /// 检查点
+    /// **参数解释**：  数据复制的检查点位置，标识已同步数据的Binlog位置。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getCheckPoint() const;
@@ -48,7 +48,7 @@ public:
     void setCheckPoint(const std::string& value);
 
     /// <summary>
-    /// 延迟
+    /// **参数解释**：  数据同步延迟时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDelay() const;
@@ -57,7 +57,7 @@ public:
     void setDelay(const std::string& value);
 
     /// <summary>
-    /// gtid集合
+    /// **参数解释**：  全局事务ID集合（Global Transaction Identifier），用于标识已执行的事务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getGtidSet() const;
@@ -66,7 +66,7 @@ public:
     void setGtidSet(const std::string& value);
 
     /// <summary>
-    /// 当前时间 ，格式为“yyyy-MM-dd HH:mm:ss”
+    /// **参数解释**：  RPO或RTO的统计时间点，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getTime() const;

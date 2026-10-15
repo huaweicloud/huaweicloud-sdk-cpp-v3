@@ -112,6 +112,15 @@ public:
     void unsetisDeleteBackupFile();
     void setIsDeleteBackupFile(bool value);
 
+    /// <summary>
+    /// DBCC一致性校验模式。 - sync 同步 - async 异步
+    /// </summary>
+
+    std::string getConsistencyCheckMode() const;
+    bool consistencyCheckModeIsSet() const;
+    void unsetconsistencyCheckMode();
+    void setConsistencyCheckMode(const std::string& value);
+
 
 protected:
     bool isCover_;
@@ -130,6 +139,8 @@ protected:
     bool resetDbNameMapIsSet_;
     bool isDeleteBackupFile_;
     bool isDeleteBackupFileIsSet_;
+    std::string consistencyCheckMode_;
+    bool consistencyCheckModeIsSet_;
 
 };
 

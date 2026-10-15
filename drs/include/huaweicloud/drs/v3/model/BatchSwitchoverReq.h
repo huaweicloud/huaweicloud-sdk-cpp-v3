@@ -48,10 +48,21 @@ public:
     void unsetjobs();
     void setJobs(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 灾备倒换后是否暂停任务。默认值为false，不暂停灾备任务。
+    /// </summary>
+
+    bool isIsPauseJob() const;
+    bool isPauseJobIsSet() const;
+    void unsetisPauseJob();
+    void setIsPauseJob(bool value);
+
 
 protected:
     std::vector<std::string> jobs_;
     bool jobsIsSet_;
+    bool isPauseJob_;
+    bool isPauseJobIsSet_;
 
 };
 

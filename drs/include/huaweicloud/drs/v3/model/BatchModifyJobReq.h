@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 批量修改任务请求体
+/// 批量修改任务请求体。
 /// </summary>
 class HUAWEICLOUD_DRS_V3_EXPORT  BatchModifyJobReq
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// BatchModifyJobReq members
 
     /// <summary>
-    /// 修改任务请求体
+    /// **参数解释**：  修改任务请求体列表，包含需要修改的一个或多个任务信息，详情请参见ModifyJobReq对象定义。  **约束限制**：  - 建议批量调用数量不超过10个。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<ModifyJobReq>& getJobs();

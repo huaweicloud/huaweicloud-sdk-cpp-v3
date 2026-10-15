@@ -27,6 +27,7 @@ ListObejectLevelCompareOverviewResponse::ListObejectLevelCompareOverviewResponse
     errorMsg_ = "";
     errorMsgIsSet_ = false;
     compareResultIsSet_ = false;
+    databaseInfoIsSet_ = false;
 }
 
 ListObejectLevelCompareOverviewResponse::~ListObejectLevelCompareOverviewResponse() = default;
@@ -62,6 +63,9 @@ web::json::value ListObejectLevelCompareOverviewResponse::toJson() const
     }
     if(compareResultIsSet_) {
         val[utility::conversions::to_string_t("compare_result")] = ModelBase::toJson(compareResult_);
+    }
+    if(databaseInfoIsSet_) {
+        val[utility::conversions::to_string_t("database_info")] = ModelBase::toJson(databaseInfo_);
     }
 
     return val;
@@ -140,6 +144,15 @@ bool ListObejectLevelCompareOverviewResponse::fromJson(const web::json::value& v
             std::vector<ObjectsCompareOverviewInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCompareResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("database_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("database_info"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDatabaseInfo(refVal);
         }
     }
     return ok;
@@ -312,6 +325,27 @@ bool ListObejectLevelCompareOverviewResponse::compareResultIsSet() const
 void ListObejectLevelCompareOverviewResponse::unsetcompareResult()
 {
     compareResultIsSet_ = false;
+}
+
+Object ListObejectLevelCompareOverviewResponse::getDatabaseInfo() const
+{
+    return databaseInfo_;
+}
+
+void ListObejectLevelCompareOverviewResponse::setDatabaseInfo(const Object& value)
+{
+    databaseInfo_ = value;
+    databaseInfoIsSet_ = true;
+}
+
+bool ListObejectLevelCompareOverviewResponse::databaseInfoIsSet() const
+{
+    return databaseInfoIsSet_;
+}
+
+void ListObejectLevelCompareOverviewResponse::unsetdatabaseInfo()
+{
+    databaseInfoIsSet_ = false;
 }
 
 }

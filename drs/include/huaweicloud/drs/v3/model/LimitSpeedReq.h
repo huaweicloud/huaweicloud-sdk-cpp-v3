@@ -41,7 +41,7 @@ public:
     /// LimitSpeedReq members
 
     /// <summary>
-    /// 任务id
+    /// 任务ID。
     /// </summary>
 
     std::string getJobId() const;

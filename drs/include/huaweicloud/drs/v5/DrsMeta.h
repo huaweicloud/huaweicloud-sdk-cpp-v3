@@ -13,6 +13,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_DRS_V5_EXPORT  DrsMeta {
 public:
+    static HttpRequestDef genRequestDefForAssociateSmnTopic();
     static HttpRequestDef genRequestDefForBatchCreateJobsAsync();
     static HttpRequestDef genRequestDefForBatchCreateTags();
     static HttpRequestDef genRequestDefForBatchDeleteJobsById();
@@ -20,10 +21,13 @@ public:
     static HttpRequestDef genRequestDefForBatchExecuteJobActions();
     static HttpRequestDef genRequestDefForBatchStopJobsAction();
     static HttpRequestDef genRequestDefForBatchTagAction();
+    static HttpRequestDef genRequestDefForChangeJobFlavor();
     static HttpRequestDef genRequestDefForChangeToPeriod();
     static HttpRequestDef genRequestDefForCheckDataFilter();
+    static HttpRequestDef genRequestDefForCheckDataFilterRules();
     static HttpRequestDef genRequestDefForCleanAlarms();
     static HttpRequestDef genRequestDefForCollectColumns();
+    static HttpRequestDef genRequestDefForCollectDataFilterRules();
     static HttpRequestDef genRequestDefForCollectDbObjectsAsync();
     static HttpRequestDef genRequestDefForCollectDbObjectsInfo();
     static HttpRequestDef genRequestDefForCollectPositionAsync();
@@ -36,6 +40,7 @@ public:
     static HttpRequestDef genRequestDefForCreateSubscription();
     static HttpRequestDef genRequestDefForDeleteColumnInfos();
     static HttpRequestDef genRequestDefForDeleteConnection();
+    static HttpRequestDef genRequestDefForDeleteDataFilterRules();
     static HttpRequestDef genRequestDefForDeleteJdbcDriver();
     static HttpRequestDef genRequestDefForDeleteJob();
     static HttpRequestDef genRequestDefForDeleteReplicationJob();
@@ -44,8 +49,10 @@ public:
     static HttpRequestDef genRequestDefForDownloadBatchCreateTemplate();
     static HttpRequestDef genRequestDefForDownloadCreateTemplate();
     static HttpRequestDef genRequestDefForDownloadDbObjectTemplate();
+    static HttpRequestDef genRequestDefForDownloadFile();
     static HttpRequestDef genRequestDefForExecuteJobAction();
     static HttpRequestDef genRequestDefForExportCreationTemplate();
+    static HttpRequestDef genRequestDefForExportJobList();
     static HttpRequestDef genRequestDefForExportOperationInfo();
     static HttpRequestDef genRequestDefForExportReplayReport();
     static HttpRequestDef genRequestDefForListAsyncJobDetail();
@@ -62,6 +69,7 @@ public:
     static HttpRequestDef genRequestDefForListJobs();
     static HttpRequestDef genRequestDefForListLinks();
     static HttpRequestDef genRequestDefForListProjectTags();
+    static HttpRequestDef genRequestDefForListReplaySupportSourceConfig();
     static HttpRequestDef genRequestDefForListReplicationJobs();
     static HttpRequestDef genRequestDefForListSupportLinks();
     static HttpRequestDef genRequestDefForListTags();
@@ -71,7 +79,10 @@ public:
     static HttpRequestDef genRequestDefForModifyColumnInfos();
     static HttpRequestDef genRequestDefForModifyConnection();
     static HttpRequestDef genRequestDefForPauseCompareJobs();
+    static HttpRequestDef genRequestDefForResetSubscription();
     static HttpRequestDef genRequestDefForRestartCompareJobs();
+    static HttpRequestDef genRequestDefForRetrySubscription();
+    static HttpRequestDef genRequestDefForSaveDataFilterRules();
     static HttpRequestDef genRequestDefForShowActions();
     static HttpRequestDef genRequestDefForShowAgencyInfo();
     static HttpRequestDef genRequestDefForShowChildNum();
@@ -80,6 +91,7 @@ public:
     static HttpRequestDef genRequestDefForShowComparePolicy();
     static HttpRequestDef genRequestDefForShowCompareProgress();
     static HttpRequestDef genRequestDefForShowCompareUsersDetail();
+    static HttpRequestDef genRequestDefForShowDataFilterRulesResult();
     static HttpRequestDef genRequestDefForShowDataFilteringResult();
     static HttpRequestDef genRequestDefForShowDataProcessingRulesResult();
     static HttpRequestDef genRequestDefForShowDataProgress();
@@ -90,27 +102,37 @@ public:
     static HttpRequestDef genRequestDefForShowDirtyData();
     static HttpRequestDef genRequestDefForShowEnterpriseProject();
     static HttpRequestDef genRequestDefForShowExportProgress();
+    static HttpRequestDef genRequestDefForShowFiles();
     static HttpRequestDef genRequestDefForShowHealthCompareJobDetail();
     static HttpRequestDef genRequestDefForShowHealthCompareJobList();
     static HttpRequestDef genRequestDefForShowHealthObjectCompareJobOverview();
     static HttpRequestDef genRequestDefForShowIncrementComponentsDetail();
     static HttpRequestDef genRequestDefForShowInstanceTags();
     static HttpRequestDef genRequestDefForShowJobDetail();
+    static HttpRequestDef genRequestDefForShowLinkFlavors();
     static HttpRequestDef genRequestDefForShowMetering();
     static HttpRequestDef genRequestDefForShowMonitorData();
+    static HttpRequestDef genRequestDefForShowObjectColumnInfo();
     static HttpRequestDef genRequestDefForShowObjectMapping();
     static HttpRequestDef genRequestDefForShowPositionResult();
     static HttpRequestDef genRequestDefForShowProgressData();
+    static HttpRequestDef genRequestDefForShowReplayExecuteRecord();
     static HttpRequestDef genRequestDefForShowReplayProgress();
+    static HttpRequestDef genRequestDefForShowReplayRecord();
     static HttpRequestDef genRequestDefForShowReplayReportExportStatus();
     static HttpRequestDef genRequestDefForShowReplayResults();
     static HttpRequestDef genRequestDefForShowReplicationJob();
+    static HttpRequestDef genRequestDefForShowReportFileObsUris();
+    static HttpRequestDef genRequestDefForShowSmnSubscriptionDetail();
     static HttpRequestDef genRequestDefForShowSmnTopicInfo();
     static HttpRequestDef genRequestDefForShowSubscriptionDetail();
     static HttpRequestDef genRequestDefForShowSubscriptionLists();
     static HttpRequestDef genRequestDefForShowSupportObjectType();
+    static HttpRequestDef genRequestDefForShowSwitchoverInfo();
+    static HttpRequestDef genRequestDefForShowTaskExecuteProgress();
     static HttpRequestDef genRequestDefForShowTimeline();
     static HttpRequestDef genRequestDefForShowUpdateObjectSavingStatus();
+    static HttpRequestDef genRequestDefForStartSubscription();
     static HttpRequestDef genRequestDefForStopJobAction();
     static HttpRequestDef genRequestDefForSyncJdbcDriver();
     static HttpRequestDef genRequestDefForSyncUserJdbcDriver();

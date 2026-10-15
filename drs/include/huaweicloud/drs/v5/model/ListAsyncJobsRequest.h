@@ -39,7 +39,7 @@ public:
     /// ListAsyncJobsRequest members
 
     /// <summary>
-    /// 请求语言类型。
+    /// **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
     /// </summary>
 
     std::string getXLanguage() const;
@@ -48,7 +48,7 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 批量异步创建的任务ID。
+    /// **参数解释**：  批量异步创建的任务ID，用于按任务ID筛选查询结果。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getAsyncJobId() const;
@@ -57,7 +57,7 @@ public:
     void setAsyncJobId(const std::string& value);
 
     /// <summary>
-    /// 批量异步创建的任务状态。
+    /// **参数解释**：  批量异步创建的任务状态，用于按任务状态筛选查询结果。  **约束限制**：  不涉及。  **取值范围**：  - ASYNC_JOB_VALIDATING：批量异步任务参数校验中 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功 - COMMIT_SUCCESS：批量异步任务提交成功  **默认取值**：  不涉及
     /// </summary>
 
     std::string getStatus() const;
@@ -66,7 +66,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 批量异步创建的任务的租户名。
+    /// **参数解释**：  批量异步创建任务的租户名，用于按租户名筛选查询结果。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -75,7 +75,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 批量异步创建的任务的用户名。
+    /// **参数解释**：  批量异步创建任务的用户名，用于按用户名筛选查询结果。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getUserName() const;
@@ -84,7 +84,7 @@ public:
     void setUserName(const std::string& value);
 
     /// <summary>
-    /// 偏移量，表示查询该偏移量后面的记录。
+    /// **参数解释**：  偏移量，表示查询该偏移量后面的记录，用于分页查询。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  0
     /// </summary>
 
     int32_t getOffset() const;
@@ -93,7 +93,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 查询返回记录的数量限制。
+    /// **参数解释**：  查询返回记录的数量限制，用于分页查询时控制每页返回的数据条数。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getLimit() const;
@@ -102,7 +102,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 返回结果按该关键字排序，默认为“create_time”。
+    /// **参数解释**：  返回结果按该关键字排序，指定批量异步任务列表的排序依据。  **约束限制**：  不涉及。  **取值范围**：  - create_time：按创建时间排序  **默认取值**：  create_time
     /// </summary>
 
     std::string getSortKey() const;
@@ -111,7 +111,7 @@ public:
     void setSortKey(const std::string& value);
 
     /// <summary>
-    /// 降序或升序（分别对应desc和asc，默认为“desc”）。
+    /// **参数解释**：  排序方向，指定返回结果按升序或降序排列。  **约束限制**：  不涉及。  **取值范围**：  - desc：降序 - asc：升序  **默认取值**：  desc
     /// </summary>
 
     std::string getSortDir() const;

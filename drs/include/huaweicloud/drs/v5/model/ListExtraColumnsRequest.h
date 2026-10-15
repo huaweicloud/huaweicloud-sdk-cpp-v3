@@ -83,6 +83,15 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// 是否查询所有数据，值为\&quot;true\&quot;时会使得offset和limit参数失效并返回所有记录，默认值为\&quot;false\&quot;。
+    /// </summary>
+
+    bool isFetchAll() const;
+    bool fetchAllIsSet() const;
+    void unsetfetchAll();
+    void setFetchAll(bool value);
+
 
 protected:
     std::string jobId_;
@@ -95,6 +104,8 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    bool fetchAll_;
+    bool fetchAllIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

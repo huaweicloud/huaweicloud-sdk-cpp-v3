@@ -51,7 +51,7 @@ public:
     /// QueryJobResp members
 
     /// <summary>
-    /// 任务id
+    /// **参数解释**：  任务ID，用于唯一标识一个数据复制任务。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getId() const;
@@ -60,7 +60,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 父任务id。
+    /// **参数解释**：  父任务ID，多任务场景下子任务所归属的父任务标识。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getParentId() const;
@@ -69,7 +69,7 @@ public:
     void setParentId(const std::string& value);
 
     /// <summary>
-    /// 任务名称
+    /// **参数解释**：  任务名称，用户创建任务时自定义的名称，用于区分和识别不同的数据复制任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getName() const;
@@ -78,7 +78,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 任务状态。 - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败
+    /// **参数解释**：  任务当前运行状态。  **约束限制**：  不涉及。  **取值范围**：  - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败  **默认取值**：  不涉及
     /// </summary>
 
     std::string getStatus() const;
@@ -87,7 +87,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 描述信息
+    /// **参数解释**：  任务描述信息，用户创建任务时自定义的备注说明。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDescription() const;
@@ -96,7 +96,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 创建时间，时间戳格式。
+    /// **参数解释**：  任务的创建时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getCreateTime() const;
@@ -105,7 +105,7 @@ public:
     void setCreateTime(const std::string& value);
 
     /// <summary>
-    /// 迁移模式
+    /// **参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  不涉及。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及
     /// </summary>
 
     std::string getTaskType() const;
@@ -132,7 +132,7 @@ public:
     void setDmqEndpoint(const Endpoint& value);
 
     /// <summary>
-    /// 物理源库信息。
+    /// **参数解释**：  物理分片源库信息列表，多对一场景下存在多个源库时返回，每个元素为Endpoint结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<Endpoint>& getSourceSharding();
@@ -150,7 +150,7 @@ public:
     void setTargetEndpoint(const Endpoint& value);
 
     /// <summary>
-    /// 网络类型
+    /// **参数解释**：  任务使用的网络类型。  **约束限制**：  不涉及。  **取值范围**：  - vpn：虚拟专用网络 - vpc：虚拟私有云 - eip：弹性公网IP  **默认取值**：  不涉及
     /// </summary>
 
     std::string getNetType() const;
@@ -159,7 +159,7 @@ public:
     void setNetType(const std::string& value);
 
     /// <summary>
-    /// 失败原因。
+    /// **参数解释**：  任务失败原因，任务状态为失败时返回该字段。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getFailedReason() const;
@@ -177,7 +177,7 @@ public:
     void setInstInfo(const InstInfo& value);
 
     /// <summary>
-    /// 实际启动时间，时间戳格式。
+    /// **参数解释**：  任务实际启动时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getActualStartTime() const;
@@ -186,7 +186,7 @@ public:
     void setActualStartTime(const std::string& value);
 
     /// <summary>
-    /// 全量完成时间，时间戳格式。
+    /// **参数解释**：  全量迁移完成时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getFullTransferCompleteTime() const;
@@ -195,7 +195,7 @@ public:
     void setFullTransferCompleteTime(const std::string& value);
 
     /// <summary>
-    /// 更新时间，时间戳格式
+    /// **参数解释**：  任务最近一次更新时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getUpdateTime() const;
@@ -204,7 +204,7 @@ public:
     void setUpdateTime(const std::string& value);
 
     /// <summary>
-    /// 任务方向
+    /// **参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
     /// </summary>
 
     std::string getJobDirection() const;
@@ -213,7 +213,7 @@ public:
     void setJobDirection(const std::string& value);
 
     /// <summary>
-    /// 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备
+    /// **参数解释**：  迁移任务的业务场景类型。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbUseType() const;
@@ -222,7 +222,7 @@ public:
     void setDbUseType(const std::string& value);
 
     /// <summary>
-    /// 是否需要重启
+    /// **参数解释**：  任务配置变更后是否需要重启迁移实例才能生效。  **约束限制**：  不涉及。  **取值范围**：  - true：需要重启 - false：不需要重启  **默认取值**：  不涉及
     /// </summary>
 
     bool isNeedRestart() const;
@@ -231,7 +231,7 @@ public:
     void setNeedRestart(bool value);
 
     /// <summary>
-    /// 指定目标实例是否限制为只读
+    /// **参数解释**：  指定目标数据库实例在迁移过程中是否限制为只读状态。  **约束限制**：  不涉及。  **取值范围**：  - true：目标实例限制为只读 - false：目标实例不限制为只读  **默认取值**：  不涉及
     /// </summary>
 
     bool isIsTargetReadonly() const;
@@ -240,7 +240,7 @@ public:
     void setIsTargetReadonly(bool value);
 
     /// <summary>
-    /// 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略
+    /// **参数解释**：  数据迁移过程中的冲突忽略策略，指定当目标库已存在相同数据时的处理方式。  **约束限制**：  不涉及。  **取值范围**：  - stop：冲突失败，遇到冲突时停止任务 - overwrite：冲突覆盖，用源库数据覆盖目标库已有数据 - ignore：冲突忽略，跳过冲突数据继续迁移  **默认取值**：  不涉及
     /// </summary>
 
     std::string getConflictPolicy() const;
@@ -249,7 +249,7 @@ public:
     void setConflictPolicy(const std::string& value);
 
     /// <summary>
-    /// 过滤DDL策略 - drop_database：过滤drop_database - drop_databasefilter_all：过滤所有ddl - \&quot;\&quot;：不过滤
+    /// **参数解释**：  过滤DDL策略，指定迁移过程中需要过滤的DDL操作类型。  **约束限制**：  不涉及。  **取值范围**：  - drop_database：过滤drop_database操作 - drop_databasefilter_all：过滤所有DDL操作 - \&quot;\&quot;：不过滤  **默认取值**：  不涉及
     /// </summary>
 
     std::string getFilterDdlPolicy() const;
@@ -258,7 +258,7 @@ public:
     void setFilterDdlPolicy(const std::string& value);
 
     /// <summary>
-    /// 迁移速度限制。
+    /// **参数解释**：  迁移速度限制信息，详情请参见SpeedLimitInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<SpeedLimitInfo>& getSpeedLimit();
@@ -267,7 +267,7 @@ public:
     void setSpeedLimit(const std::vector<SpeedLimitInfo>& value);
 
     /// <summary>
-    /// 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
+    /// **参数解释**：  DRS任务的迁移方案，指定数据复制的底层实现方式。  **约束限制**：  不涉及。  **取值范围**：  - Replication：主从复制 - Tungsten：日志解析 - PGBaseBackup：PG备份  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSchemaType() const;
@@ -276,7 +276,7 @@ public:
     void setSchemaType(const std::string& value);
 
     /// <summary>
-    /// 节点个数。
+    /// **参数解释**：  迁移实例节点个数。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getNodeNum() const;
@@ -285,7 +285,7 @@ public:
     void setNodeNum(int32_t value);
 
     /// <summary>
-    /// 对象选择开关
+    /// **参数解释**：  对象选择开关，标识是否已开启对象选择功能。  **约束限制**：  不涉及。  **取值范围**：  - true：开启对象选择 - false：关闭对象选择  **默认取值**：  不涉及
     /// </summary>
 
     bool isObjectSwitch() const;
@@ -294,7 +294,7 @@ public:
     void setObjectSwitch(bool value);
 
     /// <summary>
-    /// 主任务Id。
+    /// **参数解释**：  主任务ID，多任务场景下子任务所归属的主任务标识。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getMasterJobId() const;
@@ -303,7 +303,7 @@ public:
     void setMasterJobId(const std::string& value);
 
     /// <summary>
-    /// 全量快照模式。
+    /// **参数解释**：  全量快照模式。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getFullMode() const;
@@ -312,7 +312,7 @@ public:
     void setFullMode(const std::string& value);
 
     /// <summary>
-    /// 是否迁移结构。
+    /// **参数解释**：  是否迁移结构。  **约束限制**：  不涉及。  **取值范围**：  - true：迁移结构 - false：不迁移结构  **默认取值**：  不涉及
     /// </summary>
 
     bool isStructTrans() const;
@@ -321,7 +321,7 @@ public:
     void setStructTrans(bool value);
 
     /// <summary>
-    /// 否迁移索引。
+    /// **参数解释**：  是否迁移索引。  **约束限制**：  不涉及。  **取值范围**：  - true：迁移索引 - false：不迁移索引  **默认取值**：  不涉及
     /// </summary>
 
     bool isIndexTrans() const;
@@ -330,7 +330,7 @@ public:
     void setIndexTrans(bool value);
 
     /// <summary>
-    /// 是否使用目标库的用户替换掉definer。
+    /// **参数解释**：  是否使用目标库的用户替换掉definer。  **约束限制**：  不涉及。  **取值范围**：  - true：使用目标库用户替换definer - false：不替换definer  **默认取值**：  不涉及
     /// </summary>
 
     bool isReplaceDefiner() const;
@@ -339,7 +339,7 @@ public:
     void setReplaceDefiner(bool value);
 
     /// <summary>
-    /// 是否迁移用户。
+    /// **参数解释**：  是否迁移用户。  **约束限制**：  不涉及。  **取值范围**：  - true：迁移用户 - false：不迁移用户  **默认取值**：  不涉及
     /// </summary>
 
     bool isMigrateUser() const;
@@ -348,7 +348,7 @@ public:
     void setMigrateUser(bool value);
 
     /// <summary>
-    /// 是否库级同步。
+    /// **参数解释**：  是否库级同步。  **约束限制**：  不涉及。  **取值范围**：  - true：库级同步 - false：非库级同步  **默认取值**：  不涉及
     /// </summary>
 
     bool isSyncDatabase() const;
@@ -357,7 +357,7 @@ public:
     void setSyncDatabase(bool value);
 
     /// <summary>
-    /// 错误码
+    /// **参数解释**：  错误码，当任务报错时返回的错误代码。  **约束限制**：  不涉及。  **取值范围**：  格式为DRS.XXXXXX。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getErrorCode() const;
@@ -366,7 +366,7 @@ public:
     void setErrorCode(const std::string& value);
 
     /// <summary>
-    /// 错误信息。
+    /// **参数解释**：  错误详细信息，当任务执行失败时返回的具体错误描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getErrorMessage() const;
@@ -384,7 +384,7 @@ public:
     void setTargetRootDb(const DefaultRootDb& value);
 
     /// <summary>
-    /// node所在AZ
+    /// **参数解释**：  迁移实例节点所在的可用区（AZ，Availability Zone）编码。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getAzCode() const;
@@ -393,7 +393,7 @@ public:
     void setAzCode(const std::string& value);
 
     /// <summary>
-    /// node所在VPC
+    /// **参数解释**：  迁移实例节点所在的虚拟私有云（VPC，Virtual Private Cloud）ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getVpcId() const;
@@ -402,7 +402,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// node所在子网
+    /// **参数解释**：  迁移实例节点所在的子网ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSubnetId() const;
@@ -411,7 +411,7 @@ public:
     void setSubnetId(const std::string& value);
 
     /// <summary>
-    /// node所在安全组
+    /// **参数解释**：  迁移实例节点所在的安全组ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSecurityGroupId() const;
@@ -420,7 +420,7 @@ public:
     void setSecurityGroupId(const std::string& value);
 
     /// <summary>
-    /// 是否多主灾备任务,双主灾备时有值为true
+    /// **参数解释**：  是否多主灾备任务，双主灾备场景下该值为true。  **约束限制**：  不涉及。  **取值范围**：  - true：多主灾备任务 - false：非多主灾备任务  **默认取值**：  不涉及
     /// </summary>
 
     bool isMultiWrite() const;
@@ -429,7 +429,7 @@ public:
     void setMultiWrite(bool value);
 
     /// <summary>
-    /// 是否支持IPV6
+    /// **参数解释**：  是否支持IPv6。  **约束限制**：  不涉及。  **取值范围**：  - true：支持IPv6 - false：不支持IPv6  **默认取值**：  不涉及
     /// </summary>
 
     bool isSupportIpV6() const;
@@ -438,7 +438,7 @@ public:
     void setSupportIpV6(bool value);
 
     /// <summary>
-    /// 继承的任务ID，Oracle_Mrskafka链路时使用。
+    /// **参数解释**：  继承的任务ID，Oracle到Kafka链路时使用。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getInheritId() const;
@@ -447,7 +447,7 @@ public:
     void setInheritId(const std::string& value);
 
     /// <summary>
-    /// 断点的GTID集合
+    /// **参数解释**：  断点的GTID（Global Transaction Identifier）集合，用于记录增量同步的断点位置。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getGtid() const;
@@ -465,7 +465,7 @@ public:
     void setAlarmNotify(const QuerySmnInfoResp& value);
 
     /// <summary>
-    /// 增量任务启动位点
+    /// **参数解释**：  增量任务启动位点，标识增量同步起始的数据位置。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getIncreStartPosition() const;
@@ -474,7 +474,7 @@ public:
     void setIncreStartPosition(const std::string& value);
 
     /// <summary>
-    /// 是否是主备任务。
+    /// **参数解释**：  标识任务是否为跨可用区（AZ）部署的主备任务。  **约束限制**：  不涉及。  **取值范围**：  - true：跨AZ主备任务 - false：非跨AZ任务  **默认取值**：  不涉及
     /// </summary>
 
     bool isIsMultiAz() const;
@@ -483,7 +483,7 @@ public:
     void setIsMultiAz(bool value);
 
     /// <summary>
-    /// node所在节点AZ名称。
+    /// **参数解释**：  迁移实例节点所在的可用区（AZ）名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getAzName() const;
@@ -492,7 +492,7 @@ public:
     void setAzName(const std::string& value);
 
     /// <summary>
-    /// 主备任务主AZ。
+    /// **参数解释**：  主备任务中主实例所在的可用区（AZ）。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getMasterAz() const;
@@ -501,7 +501,7 @@ public:
     void setMasterAz(const std::string& value);
 
     /// <summary>
-    /// 主备任务备AZ。
+    /// **参数解释**：  主备任务中备实例所在的可用区（AZ）。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSlaveAz() const;
@@ -510,7 +510,7 @@ public:
     void setSlaveAz(const std::string& value);
 
     /// <summary>
-    /// 任务主备角色。
+    /// **参数解释**：  任务主备角色，标识当前节点在主备任务中的角色。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getNodeRole() const;
@@ -528,7 +528,7 @@ public:
     void setPeriodOrder(const PeriodOrderResp& value);
 
     /// <summary>
-    /// 已同步对象信息。
+    /// **参数解释**：  已同步对象信息列表，每个元素为DatabaseObjectInfo结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<DatabaseObjectInfo>& getObjectInfos();
@@ -537,7 +537,7 @@ public:
     void setObjectInfos(const std::vector<DatabaseObjectInfo>& value);
 
     /// <summary>
-    /// 初始任务方向。 取值： - up：入云，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+    /// **参数解释**：  任务创建时的初始方向，表示任务首次创建时配置的迁移方向，不会随灾备倒换而改变。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
     /// </summary>
 
     std::string getOriginalJobDirection() const;
@@ -555,7 +555,7 @@ public:
     void setDataTransformation(const GetDataTransformationResp& value);
 
     /// <summary>
-    /// DRS任务标签。
+    /// **参数解释**：  DRS任务标签列表，每个元素为Tag结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<Tag>& getTags();
@@ -564,7 +564,7 @@ public:
     void setTags(const std::vector<Tag>& value);
 
     /// <summary>
-    /// 指定公网Ip的信息。
+    /// **参数解释**：  指定公网IP的信息列表，每个元素为PublicIpConfig结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<PublicIpConfig>& getPublicIpList();
@@ -573,7 +573,7 @@ public:
     void setPublicIpList(const std::vector<PublicIpConfig>& value);
 
     /// <summary>
-    /// 是否成功绑定公网IP。
+    /// **参数解释**：  公网IP绑定状态，标识是否成功绑定公网IP。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getBindPublicIpState() const;
@@ -582,7 +582,7 @@ public:
     void setBindPublicIpState(const std::string& value);
 
     /// <summary>
-    /// 多任务时，存在子任务绑定失败时，返回子任务的信息。
+    /// **参数解释**：  子任务绑定失败信息列表，多任务场景下存在子任务绑定公网IP失败时返回，每个元素为FailedToBindEipChildInfo结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<FailedToBindEipChildInfo>& getChildren();
@@ -591,7 +591,7 @@ public:
     void setChildren(const std::vector<FailedToBindEipChildInfo>& value);
 
     /// <summary>
-    /// 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+    /// **参数解释**：  是否开启云数据库RDS for MySQL或MariaDB的Binlog快速清理。  **约束限制**：  不涉及。  **取值范围**：  - true：开启Binlog快速清理 - false：不开启Binlog快速清理  **默认取值**：  不涉及
     /// </summary>
 
     bool isIsOpenFastClean() const;
@@ -600,13 +600,22 @@ public:
     void setIsOpenFastClean(bool value);
 
     /// <summary>
-    /// 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+    /// **参数解释**：  灾备任务内核方向。非倒换中与job_direction取值相同，倒换中与job_direction取值相反。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主  **默认取值**：  不涉及
     /// </summary>
 
     std::string getJobKernelDirection() const;
     bool jobKernelDirectionIsSet() const;
     void unsetjobKernelDirection();
     void setJobKernelDirection(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：  同步任务的同步模式，指定数据同步的粒度级别。  **约束限制**：  不涉及。  **取值范围**：  - DB_LEVEL：库级同步 - SCHEMA_LEVEL：schema级同步 - TABLE_LEVEL：表级同步 - FILE_IMPORT：文件导入 - INSTANCE_LEVEL：实例级同步  **默认取值**：  不涉及
+    /// </summary>
+
+    std::string getSyncMode() const;
+    bool syncModeIsSet() const;
+    void unsetsyncMode();
+    void setSyncMode(const std::string& value);
 
 
 protected:
@@ -734,6 +743,8 @@ protected:
     bool isOpenFastCleanIsSet_;
     std::string jobKernelDirection_;
     bool jobKernelDirectionIsSet_;
+    std::string syncMode_;
+    bool syncModeIsSet_;
 
 };
 

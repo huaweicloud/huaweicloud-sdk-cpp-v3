@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 删除或者结束任务返回体
+/// 删除或者结束任务返回体。
 /// </summary>
 class HUAWEICLOUD_DRS_V3_EXPORT  DeleteJobResp
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// DeleteJobResp members
 
     /// <summary>
-    /// 任务ID
+    /// **参数解释**：  结束或删除操作的任务ID，用于标识该操作结果对应的任务。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 状态
+    /// **参数解释**：  批量结束或删除操作的任务执行结果状态，表示该任务的操作是否成功。  **约束限制**：  不涉及。  **取值范围**：  - success：操作成功 - failed：操作失败  **默认取值**：  不涉及
     /// </summary>
 
     std::string getStatus() const;
@@ -57,7 +57,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 错误码
+    /// **参数解释**：  错误码，当任务操作失败时返回的错误代码。  **约束限制**：  不涉及。  **取值范围**：  格式为DRS.XXXXXX。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getErrorCode() const;
@@ -66,7 +66,7 @@ public:
     void setErrorCode(const std::string& value);
 
     /// <summary>
-    /// 错误信息
+    /// **参数解释**：  错误详细信息，当任务操作失败时返回的具体错误描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getErrorMsg() const;

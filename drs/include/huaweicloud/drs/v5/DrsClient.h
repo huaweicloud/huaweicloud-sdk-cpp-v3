@@ -7,6 +7,9 @@
 
 
 #include <huaweicloud/drs/v5/model/ApiHttpResp.h>
+#include <huaweicloud/drs/v5/model/AssociateSmnTopicReqV5.h>
+#include <huaweicloud/drs/v5/model/AssociateSmnTopicRequest.h>
+#include <huaweicloud/drs/v5/model/AssociateSmnTopicResponse.h>
 #include <huaweicloud/drs/v5/model/BatchAddTagReq.h>
 #include <huaweicloud/drs/v5/model/BatchAsyncCreateJobReq.h>
 #include <huaweicloud/drs/v5/model/BatchAsyncUpdateJobReq.h>
@@ -29,16 +32,23 @@
 #include <huaweicloud/drs/v5/model/BatchStopJobsActionResponse.h>
 #include <huaweicloud/drs/v5/model/BatchTagActionRequest.h>
 #include <huaweicloud/drs/v5/model/BatchTagActionResponse.h>
+#include <huaweicloud/drs/v5/model/ChangeFlavorReq.h>
+#include <huaweicloud/drs/v5/model/ChangeJobFlavorRequest.h>
+#include <huaweicloud/drs/v5/model/ChangeJobFlavorResponse.h>
 #include <huaweicloud/drs/v5/model/ChangeToPeriodRequest.h>
 #include <huaweicloud/drs/v5/model/ChangeToPeriodResponse.h>
 #include <huaweicloud/drs/v5/model/CheckDataFilterRequest.h>
 #include <huaweicloud/drs/v5/model/CheckDataFilterResponse.h>
+#include <huaweicloud/drs/v5/model/CheckDataFilterRulesRequest.h>
+#include <huaweicloud/drs/v5/model/CheckDataFilterRulesResponse.h>
 #include <huaweicloud/drs/v5/model/CheckJobNameReq.h>
 #include <huaweicloud/drs/v5/model/CleanAlarmsRequest.h>
 #include <huaweicloud/drs/v5/model/CleanAlarmsResponse.h>
 #include <huaweicloud/drs/v5/model/CloneJobReq.h>
 #include <huaweicloud/drs/v5/model/CollectColumnsRequest.h>
 #include <huaweicloud/drs/v5/model/CollectColumnsResponse.h>
+#include <huaweicloud/drs/v5/model/CollectDataFilterRulesRequest.h>
+#include <huaweicloud/drs/v5/model/CollectDataFilterRulesResponse.h>
 #include <huaweicloud/drs/v5/model/CollectDbObjectsAsyncRequest.h>
 #include <huaweicloud/drs/v5/model/CollectDbObjectsAsyncResponse.h>
 #include <huaweicloud/drs/v5/model/CollectDbObjectsInfoRequest.h>
@@ -61,12 +71,16 @@
 #include <huaweicloud/drs/v5/model/CreateReplicationJobResponse.h>
 #include <huaweicloud/drs/v5/model/CreateSubscriptionRequest.h>
 #include <huaweicloud/drs/v5/model/CreateSubscriptionResponse.h>
+#include <huaweicloud/drs/v5/model/DataFilterRuleReq.h>
 #include <huaweicloud/drs/v5/model/DataProcessReq.h>
 #include <huaweicloud/drs/v5/model/DeleteColumnInfoReq.h>
 #include <huaweicloud/drs/v5/model/DeleteColumnInfosRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteColumnInfosResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteConnectionRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteConnectionResponse.h>
+#include <huaweicloud/drs/v5/model/DeleteDataFilterRuleReq.h>
+#include <huaweicloud/drs/v5/model/DeleteDataFilterRulesRequest.h>
+#include <huaweicloud/drs/v5/model/DeleteDataFilterRulesResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteDriverReq.h>
 #include <huaweicloud/drs/v5/model/DeleteJdbcDriverRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteJdbcDriverResponse.h>
@@ -85,11 +99,16 @@
 #include <huaweicloud/drs/v5/model/DownloadCreateTemplateResponse.h>
 #include <huaweicloud/drs/v5/model/DownloadDbObjectTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/DownloadDbObjectTemplateResponse.h>
+#include <huaweicloud/drs/v5/model/DownloadFileRequest.h>
+#include <huaweicloud/drs/v5/model/DownloadFileResponse.h>
 #include <huaweicloud/drs/v5/model/ExecuteJobActionRequest.h>
 #include <huaweicloud/drs/v5/model/ExecuteJobActionResponse.h>
 #include <huaweicloud/drs/v5/model/ExportCreationTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/ExportCreationTemplateResponse.h>
 #include <huaweicloud/drs/v5/model/ExportFilesReq.h>
+#include <huaweicloud/drs/v5/model/ExportJobListRequest.h>
+#include <huaweicloud/drs/v5/model/ExportJobListResponse.h>
+#include <huaweicloud/drs/v5/model/ExportJobsReq.h>
 #include <huaweicloud/drs/v5/model/ExportJobsTemplateReq.h>
 #include <huaweicloud/drs/v5/model/ExportOperationInfoRequest.h>
 #include <huaweicloud/drs/v5/model/ExportOperationInfoResponse.h>
@@ -126,6 +145,8 @@
 #include <huaweicloud/drs/v5/model/ListLinksResponse.h>
 #include <huaweicloud/drs/v5/model/ListProjectTagsRequest.h>
 #include <huaweicloud/drs/v5/model/ListProjectTagsResponse.h>
+#include <huaweicloud/drs/v5/model/ListReplaySupportSourceConfigRequest.h>
+#include <huaweicloud/drs/v5/model/ListReplaySupportSourceConfigResponse.h>
 #include <huaweicloud/drs/v5/model/ListReplicationJobsRequest.h>
 #include <huaweicloud/drs/v5/model/ListReplicationJobsResponse.h>
 #include <huaweicloud/drs/v5/model/ListSupportLinksRequest.h>
@@ -151,13 +172,20 @@
 #include <huaweicloud/drs/v5/model/PauseCompareJobsRequest.h>
 #include <huaweicloud/drs/v5/model/PauseCompareJobsResponse.h>
 #include <huaweicloud/drs/v5/model/QueryColumnReq.h>
+#include <huaweicloud/drs/v5/model/QueryDataFilterRuleReq.h>
 #include <huaweicloud/drs/v5/model/QueryDbPositionReq.h>
 #include <huaweicloud/drs/v5/model/QueryInstanceByTagReq.h>
 #include <huaweicloud/drs/v5/model/QuerySelectObjectInfoReq.h>
 #include <huaweicloud/drs/v5/model/QuerySubscriptionsReq.h>
 #include <huaweicloud/drs/v5/model/QueryUserSelectedObjectInfoReq.h>
+#include <huaweicloud/drs/v5/model/ResetSubscriptionRequest.h>
+#include <huaweicloud/drs/v5/model/ResetSubscriptionResponse.h>
 #include <huaweicloud/drs/v5/model/RestartCompareJobsRequest.h>
 #include <huaweicloud/drs/v5/model/RestartCompareJobsResponse.h>
+#include <huaweicloud/drs/v5/model/RetrySubscriptionRequest.h>
+#include <huaweicloud/drs/v5/model/RetrySubscriptionResponse.h>
+#include <huaweicloud/drs/v5/model/SaveDataFilterRulesRequest.h>
+#include <huaweicloud/drs/v5/model/SaveDataFilterRulesResponse.h>
 #include <huaweicloud/drs/v5/model/ShowActionsRequest.h>
 #include <huaweicloud/drs/v5/model/ShowActionsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowAgencyInfoRequest.h>
@@ -175,6 +203,8 @@
 #include <huaweicloud/drs/v5/model/ShowCompareProgressResponse.h>
 #include <huaweicloud/drs/v5/model/ShowCompareUsersDetailRequest.h>
 #include <huaweicloud/drs/v5/model/ShowCompareUsersDetailResponse.h>
+#include <huaweicloud/drs/v5/model/ShowDataFilterRulesResultRequest.h>
+#include <huaweicloud/drs/v5/model/ShowDataFilterRulesResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowDataFilteringResultRequest.h>
 #include <huaweicloud/drs/v5/model/ShowDataFilteringResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowDataProcessingRulesResultRequest.h>
@@ -195,6 +225,8 @@
 #include <huaweicloud/drs/v5/model/ShowEnterpriseProjectResponse.h>
 #include <huaweicloud/drs/v5/model/ShowExportProgressRequest.h>
 #include <huaweicloud/drs/v5/model/ShowExportProgressResponse.h>
+#include <huaweicloud/drs/v5/model/ShowFilesRequest.h>
+#include <huaweicloud/drs/v5/model/ShowFilesResponse.h>
 #include <huaweicloud/drs/v5/model/ShowHealthCompareJobDetailRequest.h>
 #include <huaweicloud/drs/v5/model/ShowHealthCompareJobDetailResponse.h>
 #include <huaweicloud/drs/v5/model/ShowHealthCompareJobListRequest.h>
@@ -207,24 +239,36 @@
 #include <huaweicloud/drs/v5/model/ShowInstanceTagsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowJobDetailRequest.h>
 #include <huaweicloud/drs/v5/model/ShowJobDetailResponse.h>
+#include <huaweicloud/drs/v5/model/ShowLinkFlavorsRequest.h>
+#include <huaweicloud/drs/v5/model/ShowLinkFlavorsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowMeteringRequest.h>
 #include <huaweicloud/drs/v5/model/ShowMeteringResponse.h>
 #include <huaweicloud/drs/v5/model/ShowMonitorDataRequest.h>
 #include <huaweicloud/drs/v5/model/ShowMonitorDataResponse.h>
+#include <huaweicloud/drs/v5/model/ShowObjectColumnInfoRequest.h>
+#include <huaweicloud/drs/v5/model/ShowObjectColumnInfoResponse.h>
 #include <huaweicloud/drs/v5/model/ShowObjectMappingRequest.h>
 #include <huaweicloud/drs/v5/model/ShowObjectMappingResponse.h>
 #include <huaweicloud/drs/v5/model/ShowPositionResultRequest.h>
 #include <huaweicloud/drs/v5/model/ShowPositionResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowProgressDataRequest.h>
 #include <huaweicloud/drs/v5/model/ShowProgressDataResponse.h>
+#include <huaweicloud/drs/v5/model/ShowReplayExecuteRecordRequest.h>
+#include <huaweicloud/drs/v5/model/ShowReplayExecuteRecordResponse.h>
 #include <huaweicloud/drs/v5/model/ShowReplayProgressRequest.h>
 #include <huaweicloud/drs/v5/model/ShowReplayProgressResponse.h>
+#include <huaweicloud/drs/v5/model/ShowReplayRecordRequest.h>
+#include <huaweicloud/drs/v5/model/ShowReplayRecordResponse.h>
 #include <huaweicloud/drs/v5/model/ShowReplayReportExportStatusRequest.h>
 #include <huaweicloud/drs/v5/model/ShowReplayReportExportStatusResponse.h>
 #include <huaweicloud/drs/v5/model/ShowReplayResultsRequest.h>
 #include <huaweicloud/drs/v5/model/ShowReplayResultsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowReplicationJobRequest.h>
 #include <huaweicloud/drs/v5/model/ShowReplicationJobResponse.h>
+#include <huaweicloud/drs/v5/model/ShowReportFileObsUrisRequest.h>
+#include <huaweicloud/drs/v5/model/ShowReportFileObsUrisResponse.h>
+#include <huaweicloud/drs/v5/model/ShowSmnSubscriptionDetailRequest.h>
+#include <huaweicloud/drs/v5/model/ShowSmnSubscriptionDetailResponse.h>
 #include <huaweicloud/drs/v5/model/ShowSmnTopicInfoRequest.h>
 #include <huaweicloud/drs/v5/model/ShowSmnTopicInfoResponse.h>
 #include <huaweicloud/drs/v5/model/ShowSubscriptionDetailRequest.h>
@@ -233,6 +277,10 @@
 #include <huaweicloud/drs/v5/model/ShowSubscriptionListsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeRequest.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeResponse.h>
+#include <huaweicloud/drs/v5/model/ShowSwitchoverInfoRequest.h>
+#include <huaweicloud/drs/v5/model/ShowSwitchoverInfoResponse.h>
+#include <huaweicloud/drs/v5/model/ShowTaskExecuteProgressRequest.h>
+#include <huaweicloud/drs/v5/model/ShowTaskExecuteProgressResponse.h>
 #include <huaweicloud/drs/v5/model/ShowTimelineRequest.h>
 #include <huaweicloud/drs/v5/model/ShowTimelineResponse.h>
 #include <huaweicloud/drs/v5/model/ShowUpdateObjectSavingStatusRequest.h>
@@ -240,6 +288,8 @@
 #include <huaweicloud/drs/v5/model/SingleCreateJobReq.h>
 #include <huaweicloud/drs/v5/model/SingleCreateSubscriptionReq.h>
 #include <huaweicloud/drs/v5/model/SingleUpdateJobReq.h>
+#include <huaweicloud/drs/v5/model/StartSubscriptionRequest.h>
+#include <huaweicloud/drs/v5/model/StartSubscriptionResponse.h>
 #include <huaweicloud/drs/v5/model/StopJobActionReq.h>
 #include <huaweicloud/drs/v5/model/StopJobActionRequest.h>
 #include <huaweicloud/drs/v5/model/StopJobActionResponse.h>
@@ -309,6 +359,14 @@ public:
 
     static ClientBuilder<DrsClient> newBuilder();
 
+    // 关联SMN主题信息
+    //
+    // 关联SMN主题信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AssociateSmnTopicResponse> associateSmnTopic(
+        AssociateSmnTopicRequest &request
+    );
     // 批量异步创建任务
     //
     // 批量异步创建任务，根据请求参数不同，可以批量异步创建实时迁移、实时同步、实时灾备等任务。
@@ -365,6 +423,14 @@ public:
     std::shared_ptr<BatchTagActionResponse> batchTagAction(
         BatchTagActionRequest &request
     );
+    // 规格变更
+    //
+    // 规格变更
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeJobFlavorResponse> changeJobFlavor(
+        ChangeJobFlavorRequest &request
+    );
     // 按需转包周期
     //
     // DRS同步和灾备任务按需计费转包周期计费。
@@ -381,6 +447,14 @@ public:
     std::shared_ptr<CheckDataFilterResponse> checkDataFilter(
         CheckDataFilterRequest &request
     );
+    // 校验数据过滤规则
+    //
+    // 校验数据过滤规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckDataFilterRulesResponse> checkDataFilterRules(
+        CheckDataFilterRulesRequest &request
+    );
     // 清除DDL告警
     //
     // 清除DDL告警
@@ -396,6 +470,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CollectColumnsResponse> collectColumns(
         CollectColumnsRequest &request
+    );
+    // 采集数据过滤规则信息
+    //
+    // 采集数据过滤规则信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CollectDataFilterRulesResponse> collectDataFilterRules(
+        CollectDataFilterRulesRequest &request
     );
     // 提交查询数据库对象信息
     //
@@ -461,7 +543,7 @@ public:
     );
     // 创建任务
     //
-    // 创建单个任务，根据请求参数不同，可以创建单个实时迁移、实时同步、实时灾备等任务。
+    // 创建单个任务，根据请求参数不同，可以创建单个实时迁移、实时同步任务。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateJobResponse> createJob(
@@ -502,6 +584,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteConnectionResponse> deleteConnection(
         DeleteConnectionRequest &request
+    );
+    // 删除数据过滤规则信息
+    //
+    // 删除数据过滤规则信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDataFilterRulesResponse> deleteDataFilterRules(
+        DeleteDataFilterRulesRequest &request
     );
     // 删除驱动文件（不再推广）
     //
@@ -567,6 +657,14 @@ public:
     std::shared_ptr<DownloadDbObjectTemplateResponse> downloadDbObjectTemplate(
         DownloadDbObjectTemplateRequest &request
     );
+    // 下载文件
+    //
+    // 下载文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadFileResponse> downloadFile(
+        DownloadFileRequest &request
+    );
     // 操作指定ID任务
     //
     // 操作租户指定ID任务。
@@ -582,6 +680,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ExportCreationTemplateResponse> exportCreationTemplate(
         ExportCreationTemplateRequest &request
+    );
+    // 导出任务列表
+    //
+    // 导出任务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExportJobListResponse> exportJobList(
+        ExportJobListRequest &request
     );
     // 导出任务操作统计信息
     //
@@ -713,6 +819,14 @@ public:
     std::shared_ptr<ListProjectTagsResponse> listProjectTags(
         ListProjectTagsRequest &request
     );
+    // 查询流量回放支持的源数据库设置
+    //
+    // 根据参数不同，可查询当前环境的流量回放支持的源数据库相关配置，包括源数据库来源、流量文件来源和流量文件类型。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListReplaySupportSourceConfigResponse> listReplaySupportSourceConfig(
+        ListReplaySupportSourceConfigRequest &request
+    );
     // 查询备份迁移任务列表
     //
     // 获取当前备份迁移任务列表，不包含已删除的任务。
@@ -785,6 +899,14 @@ public:
     std::shared_ptr<PauseCompareJobsResponse> pauseCompareJobs(
         PauseCompareJobsRequest &request
     );
+    // 重置订阅任务
+    //
+    // 重置订阅任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResetSubscriptionResponse> resetSubscription(
+        ResetSubscriptionRequest &request
+    );
     // 继续对比任务
     //
     // 继续对比任务
@@ -792,6 +914,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RestartCompareJobsResponse> restartCompareJobs(
         RestartCompareJobsRequest &request
+    );
+    // 重试订阅任务
+    //
+    // 重试订阅任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RetrySubscriptionResponse> retrySubscription(
+        RetrySubscriptionRequest &request
+    );
+    // 保存数据过滤规则
+    //
+    // 保存数据过滤规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SaveDataFilterRulesResponse> saveDataFilterRules(
+        SaveDataFilterRulesRequest &request
     );
     // 获取指定任务操作信息
     //
@@ -859,6 +997,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowCompareUsersDetailResponse> showCompareUsersDetail(
         ShowCompareUsersDetailRequest &request
+    );
+    // 获取数据过滤规则信息结果
+    //
+    // 获取数据过滤规则信息结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDataFilterRulesResultResponse> showDataFilterRulesResult(
+        ShowDataFilterRulesResultRequest &request
     );
     // 获取数据过滤校验结果
     //
@@ -940,6 +1086,14 @@ public:
     std::shared_ptr<ShowExportProgressResponse> showExportProgress(
         ShowExportProgressRequest &request
     );
+    // 查询下载文件列表
+    //
+    // 查询下载文件列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFilesResponse> showFiles(
+        ShowFilesRequest &request
+    );
     // 查询健康对比任务详情
     //
     // 查询健康对比任务详情。
@@ -989,6 +1143,14 @@ public:
     std::shared_ptr<ShowJobDetailResponse> showJobDetail(
         ShowJobDetailRequest &request
     );
+    // 查询链路的任务规格信息
+    //
+    // 根据参数不同，可查询实时迁移、实时同步、实时灾备等场景的不同链路的任务规格信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLinkFlavorsResponse> showLinkFlavors(
+        ShowLinkFlavorsRequest &request
+    );
     // 获取任务价格信息
     //
     // 获取询价接口的参数。
@@ -1005,6 +1167,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowMonitorDataResponse> showMonitorData(
         ShowMonitorDataRequest &request
+    );
+    // 查询对象的列加工（列映射、列过滤）情况
+    //
+    // 查询对象的列加工（列映射、列过滤）情况
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowObjectColumnInfoResponse> showObjectColumnInfo(
+        ShowObjectColumnInfoRequest &request
     );
     // 查询同步映射列表
     //
@@ -1034,6 +1204,14 @@ public:
     std::shared_ptr<ShowProgressDataResponse> showProgressData(
         ShowProgressDataRequest &request
     );
+    // 查询录制回放的目标库SQL执行情况
+    //
+    // 查询基于目标库执行时间的回放SQL统计
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowReplayExecuteRecordResponse> showReplayExecuteRecord(
+        ShowReplayExecuteRecordRequest &request
+    );
     // 查询录制回放任务进度
     //
     // 查询录制回放任务进度
@@ -1041,6 +1219,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowReplayProgressResponse> showReplayProgress(
         ShowReplayProgressRequest &request
+    );
+    // 查询录制回放的源库SQL执行情况
+    //
+    // 查询基于源库执行时间的回放SQL统计
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowReplayRecordResponse> showReplayRecord(
+        ShowReplayRecordRequest &request
     );
     // 查询流量回放任务的报告文件导出状态
     //
@@ -1065,6 +1251,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowReplicationJobResponse> showReplicationJob(
         ShowReplicationJobRequest &request
+    );
+    // 查询录制回放报表下载链接
+    //
+    // 获取可下载文件的obs临时链接
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowReportFileObsUrisResponse> showReportFileObsUris(
+        ShowReportFileObsUrisRequest &request
+    );
+    // 任务SMN订阅信息查询
+    //
+    // 任务SMN订阅信息查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSmnSubscriptionDetailResponse> showSmnSubscriptionDetail(
+        ShowSmnSubscriptionDetailRequest &request
     );
     // SMN主题查询
     //
@@ -1098,6 +1300,22 @@ public:
     std::shared_ptr<ShowSupportObjectTypeResponse> showSupportObjectType(
         ShowSupportObjectTypeRequest &request
     );
+    // 查询灾备任务上一次倒换信息
+    //
+    // 查询灾备任务上一次倒换信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSwitchoverInfoResponse> showSwitchoverInfo(
+        ShowSwitchoverInfoRequest &request
+    );
+    // 查询异步任务执行进度
+    //
+    // 查询异步任务执行进度。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTaskExecuteProgressResponse> showTaskExecuteProgress(
+        ShowTaskExecuteProgressRequest &request
+    );
     // 展示时间轴
     //
     // 指定不同的任务ID可以展示当前任务创建时间、启动时间、重试、重置等操作的时间轴信息。
@@ -1113,6 +1331,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowUpdateObjectSavingStatusResponse> showUpdateObjectSavingStatus(
         ShowUpdateObjectSavingStatusRequest &request
+    );
+    // 启动订阅任务
+    //
+    // 启动订阅任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StartSubscriptionResponse> startSubscription(
+        StartSubscriptionRequest &request
     );
     // 结束任务
     //
@@ -1156,7 +1382,7 @@ public:
     );
     // 修改对比策略
     //
-    // 修改周期性对比的对比策略，目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MySQL-&gt;GaussDB(DWS)、GaussDB(for MySQL)-&gt;MySQL同步任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)迁移任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、GaussDB(for MySQL)-&gt;GaussDB(for MySQL)、DDM-&gt;DDM、DDS-DDS灾备任务支持对比策略设置。
+    // 修改周期性对比的对比策略，目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(DWS)、TaurusDB-&gt;MySQL、MySQL-GaussDB集中式，GaussDB分布式-GaussDB集中式，GaussDB集中式-MySQL，GaussDBV1-GaussDB集中式，GaussDB集中式-GaussDBV1，GaussDB集中式-GaussDB集中式，OpenGauss-GaussDB分布式，OpenGauss-GaussDB集中式，GaussDB集中式-Oracle，Oracle-GaussDB集中式，GaussDB分布式-GaussDB分布式，GaussDB分布式-Oracle，Oracle-GaussDB分布式，MySQL-TaurusDB，TaurusDB-TaurusDB，GaussDB集中式-GaussDB透明多写，GaussDB分布式-GaussDB透明多写，GaussDB透明多写-GaussDB透明多写，GaussDB透明多写-GaussDB分布式，GaussDB透明多写-GaussDB集中式，Oracle-GaussDB透明多写，GaussDB透明多写-Oracle，DB2-GaussDB分布式，DB2-GaussDB集中式，GaussDB分布式-DB2，GaussDB集中式-DB2同步任务，MySQL-&gt;MySQL、MySQL-&gt;TaurusDB迁移任务，MySQL-&gt;MySQL、MySQL-TaurusDB、TaurusDB-&gt;TaurusDB、DDM-&gt;DDM、DDS-DDS灾备任务支持对比策略设置。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateComparePolicyResponse> updateComparePolicy(

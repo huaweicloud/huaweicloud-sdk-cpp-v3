@@ -76,7 +76,7 @@ public:
     void setEndTime(const std::string& value);
 
     /// <summary>
-    /// 对比类型列表： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。
+    /// 对比类型列表： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。 - contents: 内容对比。
     /// </summary>
 
     std::vector<std::string>& getCompareType();
@@ -102,6 +102,15 @@ public:
     void unsetintervalHour();
     void setIntervalHour(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 冲突策略。 **约束限制：** 对存在正在执行中的对比任务时的周期性对比策略 支持链路范围：MySQL-MySQL、MySQL-TaurusDB迁移、MySQL-MySQL同步，MySQL-GaussDB集中式，GaussDB分布式-GaussDB集中式，GaussDB集中式-MySQL，GaussDBV1-GaussDB集中式，GaussDB集中式-GaussDBV1，MySQL-MySQL灾备，GaussDB集中式-GaussDB集中式，OpenGauss-GaussDB分布式，OpenGauss-GaussDB集中式，GaussDB集中式-Oracle，Oracle-GaussDB集中式，GaussDB分布式-GaussDB分布式，GaussDB分布式-Oracle，Oracle-GaussDB分布式，MySQL-TaurusDB，TaurusDB-TaurusDB，TaurusDB-MySQL，GaussDB集中式-GaussDB透明多写，GaussDB分布式-GaussDB透明多写，GaussDB透明多写-GaussDB透明多写，GaussDB透明多写-GaussDB分布式，GaussDB透明多写-GaussDB集中式，Oracle-GaussDB透明多写，GaussDB透明多写-Oracle，DB2-GaussDB分布式，DB2-GaussDB集中式，GaussDB分布式-DB2，GaussDB集中式-DB2 **取值范围：** cover: 覆盖表示取消正在执行的任务，开始新对比 ignore：忽略表示忽略本次周期性对比 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getConflictStrategy() const;
+    bool conflictStrategyIsSet() const;
+    void unsetconflictStrategy();
+    void setConflictStrategy(const std::string& value);
+
 
 protected:
     std::string action_;
@@ -118,6 +127,8 @@ protected:
     bool comparePolicyIsSet_;
     int32_t intervalHour_;
     bool intervalHourIsSet_;
+    std::string conflictStrategy_;
+    bool conflictStrategyIsSet_;
 
 };
 

@@ -40,7 +40,7 @@ public:
     /// JobLinkResp members
 
     /// <summary>
-    /// 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+    /// **参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备  **默认取值**：  不涉及
     /// </summary>
 
     std::string getJobType() const;
@@ -49,7 +49,7 @@ public:
     void setJobType(const std::string& value);
 
     /// <summary>
-    /// 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。
+    /// **参数解释**：  DRS任务引擎类型，标识数据复制任务所使用的数据库引擎组合。  **约束限制**：  不涉及。  **取值范围**：  - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用 - redis-to-gaussredis：Redis迁移到GeminiDB Redis，实时迁移场景使用 - rediscluster-to-gaussredis：Redis集群迁移到GeminiDB Redis，实时迁移场景使用  **默认取值**：  不涉及
     /// </summary>
 
     std::string getEngineType() const;
@@ -58,7 +58,7 @@ public:
     void setEngineType(const std::string& value);
 
     /// <summary>
-    /// 源数据库实例类型。取值： - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
+    /// **参数解释**：  源数据库实例类型，标识源数据库的部署方式。  **约束限制**：  不涉及。  **取值范围**：  - offline：自建数据库 - ecs：华为云ECS自建数据库 - cloud：华为云数据库  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSourceEndpointType() const;
@@ -67,7 +67,7 @@ public:
     void setSourceEndpointType(const std::string& value);
 
     /// <summary>
-    /// 目标数据库实例类型。取值： - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
+    /// **参数解释**：  目标数据库实例类型，标识目标数据库的部署方式。  **约束限制**：  不涉及。  **取值范围**：  - offline：自建数据库 - ecs：华为云ECS自建数据库 - cloud：华为云数据库  **默认取值**：  不涉及
     /// </summary>
 
     std::string getTargetEndpointType() const;
@@ -76,7 +76,7 @@ public:
     void setTargetEndpointType(const std::string& value);
 
     /// <summary>
-    /// 迁移方向。取值： - up：入云 ，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+    /// **参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
     /// </summary>
 
     std::string getJobDirection() const;
@@ -85,7 +85,7 @@ public:
     void setJobDirection(const std::string& value);
 
     /// <summary>
-    /// 网络类型。取值： - eip：公网网络。 - vpc：VPC网络，灾备场景不支持选择VPC网络。 - vpn：VPN、专线网络。
+    /// **参数解释**：  任务使用的网络类型。  **约束限制**：  不涉及。  **取值范围**：  - eip：公网网络 - vpc：VPC网络，灾备场景不支持选择VPC网络 - vpn：VPN、专线网络  **默认取值**：  不涉及
     /// </summary>
 
     std::string getNetType() const;
@@ -94,7 +94,7 @@ public:
     void setNetType(const std::string& value);
 
     /// <summary>
-    /// 迁移模式。取值： - FULL_TRANS ：全量。 - FULL_INCR_TRANS：全量+增量。 - INCR_TRANS：增量。
+    /// **参数解释**：  可用链路支持的迁移模式列表，表示该链路支持的数据迁移执行方式。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<std::string>& getTaskTypes();
@@ -103,7 +103,7 @@ public:
     void setTaskTypes(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 引擎实例模式。取值： - Single：单机模式。 - Ha：主备模式。 - Cluster：集群模式。 - Sharding：分片模式。 - Independent：GaussDB独立部署模式。
+    /// **参数解释**：  可用链路支持的引擎实例模式列表，表示该链路支持的数据库部署架构类型。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::vector<std::string>& getClusterModes();
@@ -112,7 +112,7 @@ public:
     void setClusterModes(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 链路描述。
+    /// **参数解释**：  链路的描述信息，用于说明该链路的适用场景或功能特点。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDescription() const;

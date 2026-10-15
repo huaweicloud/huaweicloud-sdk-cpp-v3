@@ -40,7 +40,7 @@ public:
     /// Endpoint members
 
     /// <summary>
-    /// 数据库类型，测试连接之后修改调用时必填。
+    /// **参数解释**：  数据库类型，标识源库或目标库的数据库引擎种类。  **约束限制**：  测试连接之后修改调用时必填。  **取值范围**：  - mysql：MySQL - mongodb：MongoDB - gaussdbv5：GaussDB分布式版 - postgresql：PostgreSQL - kafka：Kafka - gaussdbv5ha：GaussDB集中式版 - taurus：TaurusDB  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbType() const;
@@ -49,7 +49,7 @@ public:
     void setDbType(const std::string& value);
 
     /// <summary>
-    /// 数据库所在可用区azCode
+    /// **参数解释**：  数据库所在的可用区（AZ，Availability Zone）编码。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getAzCode() const;
@@ -58,7 +58,7 @@ public:
     void setAzCode(const std::string& value);
 
     /// <summary>
-    /// RDS实例所在Region，数据库为RDS实例时必填（灾备场景下job_direction为down时source_endpoint中该值为必填，job_direction为up时target_endpoint中该值为必填）。
+    /// **参数解释**：  数据库实例所在区域。数据库为云上实例时，比如RDS实例时必填。  **约束限制**：  - 灾备场景下job_direction为down时source_endpoint中该值为必填。 - 灾备场景下job_direction为up时target_endpoint中该值为必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getRegion() const;
@@ -67,7 +67,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// RDS实例ID，数据库为RDS实例必填（灾备场景下job_direction为down时source_endpoint中该值为必填，job_direction为up时target_endpoint中该值为必填）。
+    /// **参数解释**：  数据库实例ID，用于标识华为云RDS数据库实例。数据库为云上实例时，比如RDS实例时必填。  **约束限制**：  - 灾备场景下job_direction为down时source_endpoint中该值为必填。 - 灾备场景下job_direction为up时target_endpoint中该值为必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getInstId() const;
@@ -76,7 +76,7 @@ public:
     void setInstId(const std::string& value);
 
     /// <summary>
-    /// 数据库所在的虚拟私有云id
+    /// **参数解释**：  数据库所在的虚拟私有云（VPC，Virtual Private Cloud）ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getVpcId() const;
@@ -85,7 +85,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 数据库所在的子网id
+    /// **参数解释**：  数据库所在的子网ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSubnetId() const;
@@ -94,7 +94,7 @@ public:
     void setSubnetId(const std::string& value);
 
     /// <summary>
-    /// 数据库所在的安全组id。
+    /// **参数解释**：  数据库所在的安全组ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSecurityGroupId() const;
@@ -103,7 +103,7 @@ public:
     void setSecurityGroupId(const std::string& value);
 
     /// <summary>
-    /// RDS实例projectId
+    /// **参数解释**：  数据库实例所在Region下的项目ID。如果数据库为云上实例时，填写数据库实例所在Region下的Project ID；否则，填写当前任务所在Region下的Project ID。获取方法请参见获取项目ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getProjectId() const;
@@ -112,7 +112,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 服务名serviceName，源库为oracle场景时必填。约束：不能超过128位，不能包含!&lt;&gt;&amp;&#39;\&quot;\\特殊字符。待还原数据库名称是指备份文件中包含的数据库名称，当您选择部分数据库恢复时，需要选择恢复一个或者多个数据库。
+    /// **参数解释**：  数据库名称，Oracle场景下为serviceName。  **约束限制**：  - 不能超过128位。 - 不能包含!&lt;&gt;&amp;&#39;\&quot;特殊字符。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbName() const;
@@ -121,7 +121,7 @@ public:
     void setDbName(const std::string& value);
 
     /// <summary>
-    /// 数据库密码。
+    /// **参数解释**：  数据库密码，用于连接数据库的认证密码。  **约束限制**：  除不需要密码的引擎，其他引擎测试连接之后修改调用时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbPassword() const;
@@ -130,7 +130,7 @@ public:
     void setDbPassword(const std::string& value);
 
     /// <summary>
-    /// 数据库端口。约束：输入范围为1-65535之间的整数。
+    /// **参数解释**：  数据库端口号，用于指定连接数据库的服务端口。  **约束限制**：  输入范围为1-65535之间的整数。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getDbPort() const;
@@ -139,7 +139,7 @@ public:
     void setDbPort(int32_t value);
 
     /// <summary>
-    /// 数据库用户。
+    /// **参数解释**：  数据库帐号，用于连接数据库的用户名。  **约束限制**：  除不需要用户名的引擎，其他引擎测试连接之后修改调用时必填。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getDbUser() const;
@@ -148,7 +148,7 @@ public:
     void setDbUser(const std::string& value);
 
     /// <summary>
-    /// RDS实例名称。
+    /// **参数解释**：  RDS实例名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getInstName() const;
@@ -157,7 +157,7 @@ public:
     void setInstName(const std::string& value);
 
     /// <summary>
-    /// 数据库ip
+    /// **参数解释**：  数据库IP地址。测试连接之后修改调用时必填。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getIp() const;
@@ -166,7 +166,7 @@ public:
     void setIp(const std::string& value);
 
     /// <summary>
-    /// mongo ha模式。
+    /// **参数解释**：  MongoDB高可用模式。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getMongoHaMode() const;
@@ -175,7 +175,7 @@ public:
     void setMongoHaMode(const std::string& value);
 
     /// <summary>
-    /// MRS集群运行模式，取值： - 0普通集群 - 1安全集群
+    /// **参数解释**：  MRS集群运行模式。  **约束限制**：  不涉及。  **取值范围**：  - 0：普通集群 - 1：安全集群  **默认取值**：  不涉及
     /// </summary>
 
     int32_t getSafeMode() const;
@@ -184,7 +184,7 @@ public:
     void setSafeMode(int32_t value);
 
     /// <summary>
-    /// SSL证书密码，证书文件后缀为.p12
+    /// **参数解释**：  SSL证书密码，证书文件后缀为.p12。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSslCertPassword() const;
@@ -193,7 +193,7 @@ public:
     void setSslCertPassword(const std::string& value);
 
     /// <summary>
-    /// SSL证书内容checksum值，后端校验，源库安全连接必选。
+    /// **参数解释**：  SSL证书内容checksum值，后端校验，源库安全连接必选。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSslCertCheckSum() const;
@@ -202,7 +202,7 @@ public:
     void setSslCertCheckSum(const std::string& value);
 
     /// <summary>
-    /// SSL证书内容，用base64加密
+    /// **参数解释**：  SSL证书内容，用base64加密。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSslCertKey() const;
@@ -211,7 +211,7 @@ public:
     void setSslCertKey(const std::string& value);
 
     /// <summary>
-    /// SSL证书名字
+    /// **参数解释**：  SSL证书名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getSslCertName() const;
@@ -220,7 +220,7 @@ public:
     void setSslCertName(const std::string& value);
 
     /// <summary>
-    /// 是否SSL安全连接。
+    /// **参数解释**：  是否使用SSL安全连接，指定数据库连接是否启用SSL加密传输。  **约束限制**：  不涉及。  **取值范围**：  - true：使用SSL安全连接 - false：不使用SSL安全连接  **默认取值**：  不涉及
     /// </summary>
 
     bool isSslLink() const;
@@ -229,7 +229,7 @@ public:
     void setSslLink(bool value);
 
     /// <summary>
-    /// kafka topic名称
+    /// **参数解释**：  Kafka Topic名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
 
     std::string getTopic() const;
@@ -238,7 +238,7 @@ public:
     void setTopic(const std::string& value);
 
     /// <summary>
-    /// MongDB集群4.0及以上版本，当集群实例无法获取到分片节点的IP时，source_endpoint中需要填写，值为：Sharding4.0+。
+    /// **参数解释**：  MongoDB集群模式。当集群实例无法获取到分片节点的IP时，source_endpoint中需要填写。  **约束限制**：  不涉及。  **取值范围**：  - Sharding4.0+：MongoDB集群4.0及以上版本  **默认取值**：  Sharding4.0+
     /// </summary>
 
     std::string getClusterMode() const;

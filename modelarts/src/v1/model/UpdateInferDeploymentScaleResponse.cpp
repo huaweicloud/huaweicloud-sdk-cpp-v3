@@ -16,43 +16,63 @@ UpdateInferDeploymentScaleResponse::UpdateInferDeploymentScaleResponse()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    deploymentName_ = "";
+    deploymentNameIsSet_ = false;
     inferName_ = "";
     inferNameIsSet_ = false;
-    createAt_ = utility::datetime();
-    createAtIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     poolId_ = "";
     poolIdIsSet_ = false;
     framework_ = "";
     frameworkIsSet_ = false;
-    priority_ = "";
+    version_ = "";
+    versionIsSet_ = false;
+    versionId_ = "";
+    versionIdIsSet_ = false;
+    versionCount_ = 0;
+    versionCountIsSet_ = false;
+    count_ = 0;
+    countIsSet_ = false;
+    weight_ = 0;
+    weightIsSet_ = false;
+    priority_ = 0;
     priorityIsSet_ = false;
     secretType_ = "";
     secretTypeIsSet_ = false;
+    secretName_ = "";
+    secretNameIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
-    count_ = 0;
-    countIsSet_ = false;
-    highAvailSwitch_ = "";
+    deployType_ = "";
+    deployTypeIsSet_ = false;
+    workloadType_ = "";
+    workloadTypeIsSet_ = false;
+    highAvailSwitch_ = false;
     highAvailSwitchIsSet_ = false;
-    systemLogDumpEnable_ = "";
+    systemLogDumpEnable_ = false;
     systemLogDumpEnableIsSet_ = false;
+    scheduleStrategy_ = "";
+    scheduleStrategyIsSet_ = false;
     unitConfigsIsSet_ = false;
+    modelIsSet_ = false;
+    advancedConfigIsSet_ = false;
+    mirrorTrafficEnable_ = false;
+    mirrorTrafficEnableIsSet_ = false;
+    mirrorTrafficWeight_ = 0;
+    mirrorTrafficWeightIsSet_ = false;
+    userName_ = "";
+    userNameIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
+    lastUsedTime_ = utility::datetime();
+    lastUsedTimeIsSet_ = false;
+    deploymentTaskLimitIsSet_ = false;
+    frozenInfosIsSet_ = false;
+    createAt_ = utility::datetime();
+    createAtIsSet_ = false;
     updateAt_ = utility::datetime();
     updateAtIsSet_ = false;
-    version_ = "";
-    versionIsSet_ = false;
-    versionCount_ = 0;
-    versionCountIsSet_ = false;
-    weight_ = 0;
-    weightIsSet_ = false;
-    advancedConfigIsSet_ = false;
-    jobId_ = "";
-    jobIdIsSet_ = false;
-    deploymentName_ = "";
-    deploymentNameIsSet_ = false;
-    frozenInfosIsSet_ = false;
 }
 
 UpdateInferDeploymentScaleResponse::~UpdateInferDeploymentScaleResponse() = default;
@@ -71,11 +91,11 @@ web::json::value UpdateInferDeploymentScaleResponse::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
+    if(deploymentNameIsSet_) {
+        val[utility::conversions::to_string_t("deployment_name")] = ModelBase::toJson(deploymentName_);
+    }
     if(inferNameIsSet_) {
         val[utility::conversions::to_string_t("infer_name")] = ModelBase::toJson(inferName_);
-    }
-    if(createAtIsSet_) {
-        val[utility::conversions::to_string_t("create_at")] = ModelBase::toJson(createAt_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -86,17 +106,38 @@ web::json::value UpdateInferDeploymentScaleResponse::toJson() const
     if(frameworkIsSet_) {
         val[utility::conversions::to_string_t("framework")] = ModelBase::toJson(framework_);
     }
+    if(versionIsSet_) {
+        val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
+    }
+    if(versionIdIsSet_) {
+        val[utility::conversions::to_string_t("version_id")] = ModelBase::toJson(versionId_);
+    }
+    if(versionCountIsSet_) {
+        val[utility::conversions::to_string_t("version_count")] = ModelBase::toJson(versionCount_);
+    }
+    if(countIsSet_) {
+        val[utility::conversions::to_string_t("count")] = ModelBase::toJson(count_);
+    }
+    if(weightIsSet_) {
+        val[utility::conversions::to_string_t("weight")] = ModelBase::toJson(weight_);
+    }
     if(priorityIsSet_) {
         val[utility::conversions::to_string_t("priority")] = ModelBase::toJson(priority_);
     }
     if(secretTypeIsSet_) {
         val[utility::conversions::to_string_t("secret_type")] = ModelBase::toJson(secretType_);
     }
+    if(secretNameIsSet_) {
+        val[utility::conversions::to_string_t("secret_name")] = ModelBase::toJson(secretName_);
+    }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
-    if(countIsSet_) {
-        val[utility::conversions::to_string_t("count")] = ModelBase::toJson(count_);
+    if(deployTypeIsSet_) {
+        val[utility::conversions::to_string_t("deploy_type")] = ModelBase::toJson(deployType_);
+    }
+    if(workloadTypeIsSet_) {
+        val[utility::conversions::to_string_t("workload_type")] = ModelBase::toJson(workloadType_);
     }
     if(highAvailSwitchIsSet_) {
         val[utility::conversions::to_string_t("high_avail_switch")] = ModelBase::toJson(highAvailSwitch_);
@@ -104,32 +145,44 @@ web::json::value UpdateInferDeploymentScaleResponse::toJson() const
     if(systemLogDumpEnableIsSet_) {
         val[utility::conversions::to_string_t("system_log_dump_enable")] = ModelBase::toJson(systemLogDumpEnable_);
     }
+    if(scheduleStrategyIsSet_) {
+        val[utility::conversions::to_string_t("schedule_strategy")] = ModelBase::toJson(scheduleStrategy_);
+    }
     if(unitConfigsIsSet_) {
         val[utility::conversions::to_string_t("unit_configs")] = ModelBase::toJson(unitConfigs_);
     }
-    if(updateAtIsSet_) {
-        val[utility::conversions::to_string_t("update_at")] = ModelBase::toJson(updateAt_);
-    }
-    if(versionIsSet_) {
-        val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
-    }
-    if(versionCountIsSet_) {
-        val[utility::conversions::to_string_t("version_count")] = ModelBase::toJson(versionCount_);
-    }
-    if(weightIsSet_) {
-        val[utility::conversions::to_string_t("weight")] = ModelBase::toJson(weight_);
+    if(modelIsSet_) {
+        val[utility::conversions::to_string_t("model")] = ModelBase::toJson(model_);
     }
     if(advancedConfigIsSet_) {
         val[utility::conversions::to_string_t("advanced_config")] = ModelBase::toJson(advancedConfig_);
     }
-    if(jobIdIsSet_) {
-        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    if(mirrorTrafficEnableIsSet_) {
+        val[utility::conversions::to_string_t("mirror_traffic_enable")] = ModelBase::toJson(mirrorTrafficEnable_);
     }
-    if(deploymentNameIsSet_) {
-        val[utility::conversions::to_string_t("deployment_name")] = ModelBase::toJson(deploymentName_);
+    if(mirrorTrafficWeightIsSet_) {
+        val[utility::conversions::to_string_t("mirror_traffic_weight")] = ModelBase::toJson(mirrorTrafficWeight_);
+    }
+    if(userNameIsSet_) {
+        val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
+    }
+    if(lastUsedTimeIsSet_) {
+        val[utility::conversions::to_string_t("last_used_time")] = ModelBase::toJson(lastUsedTime_);
+    }
+    if(deploymentTaskLimitIsSet_) {
+        val[utility::conversions::to_string_t("deployment_task_limit")] = ModelBase::toJson(deploymentTaskLimit_);
     }
     if(frozenInfosIsSet_) {
         val[utility::conversions::to_string_t("frozen_infos")] = ModelBase::toJson(frozenInfos_);
+    }
+    if(createAtIsSet_) {
+        val[utility::conversions::to_string_t("create_at")] = ModelBase::toJson(createAt_);
+    }
+    if(updateAtIsSet_) {
+        val[utility::conversions::to_string_t("update_at")] = ModelBase::toJson(updateAt_);
     }
 
     return val;
@@ -156,6 +209,15 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("deployment_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deployment_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeploymentName(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("infer_name"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("infer_name"));
         if(!fieldValue.is_null())
@@ -163,15 +225,6 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInferName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("create_at"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_at"));
-        if(!fieldValue.is_null())
-        {
-            utility::datetime refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCreateAt(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -201,11 +254,56 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
             setFramework(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("version_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVersionId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("version_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVersionCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("weight"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("weight"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWeight(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("priority"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("priority"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPriority(refVal);
         }
@@ -219,6 +317,15 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
             setSecretType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("secret_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secret_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecretName(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
@@ -228,20 +335,29 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
             setStatus(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("count"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("count"));
+    if(val.has_field(utility::conversions::to_string_t("deploy_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deploy_type"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCount(refVal);
+            setDeployType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("workload_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("workload_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWorkloadType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("high_avail_switch"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("high_avail_switch"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHighAvailSwitch(refVal);
         }
@@ -250,9 +366,18 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("system_log_dump_enable"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSystemLogDumpEnable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("schedule_strategy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("schedule_strategy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScheduleStrategy(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("unit_configs"))) {
@@ -264,40 +389,13 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
             setUnitConfigs(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("update_at"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_at"));
+    if(val.has_field(utility::conversions::to_string_t("model"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("model"));
         if(!fieldValue.is_null())
         {
-            utility::datetime refVal;
+            GroupModel refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUpdateAt(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("version"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setVersion(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("version_count"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version_count"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setVersionCount(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("weight"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("weight"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setWeight(refVal);
+            setModel(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("advanced_config"))) {
@@ -309,22 +407,58 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
             setAdvancedConfig(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+    if(val.has_field(utility::conversions::to_string_t("mirror_traffic_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mirror_traffic_enable"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setJobId(refVal);
+            setMirrorTrafficEnable(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("deployment_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deployment_name"));
+    if(val.has_field(utility::conversions::to_string_t("mirror_traffic_weight"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mirror_traffic_weight"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMirrorTrafficWeight(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("user_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_name"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDeploymentName(refVal);
+            setUserName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("last_used_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_used_time"));
+        if(!fieldValue.is_null())
+        {
+            utility::datetime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLastUsedTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("deployment_task_limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deployment_task_limit"));
+        if(!fieldValue.is_null())
+        {
+            DeploymentTaskLimit refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeploymentTaskLimit(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("frozen_infos"))) {
@@ -334,6 +468,24 @@ bool UpdateInferDeploymentScaleResponse::fromJson(const web::json::value& val)
             std::vector<FrozenInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrozenInfos(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("create_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_at"));
+        if(!fieldValue.is_null())
+        {
+            utility::datetime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreateAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("update_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_at"));
+        if(!fieldValue.is_null())
+        {
+            utility::datetime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdateAt(refVal);
         }
     }
     return ok;
@@ -382,6 +534,27 @@ void UpdateInferDeploymentScaleResponse::unsetname()
     nameIsSet_ = false;
 }
 
+std::string UpdateInferDeploymentScaleResponse::getDeploymentName() const
+{
+    return deploymentName_;
+}
+
+void UpdateInferDeploymentScaleResponse::setDeploymentName(const std::string& value)
+{
+    deploymentName_ = value;
+    deploymentNameIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::deploymentNameIsSet() const
+{
+    return deploymentNameIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetdeploymentName()
+{
+    deploymentNameIsSet_ = false;
+}
+
 std::string UpdateInferDeploymentScaleResponse::getInferName() const
 {
     return inferName_;
@@ -401,27 +574,6 @@ bool UpdateInferDeploymentScaleResponse::inferNameIsSet() const
 void UpdateInferDeploymentScaleResponse::unsetinferName()
 {
     inferNameIsSet_ = false;
-}
-
-utility::datetime UpdateInferDeploymentScaleResponse::getCreateAt() const
-{
-    return createAt_;
-}
-
-void UpdateInferDeploymentScaleResponse::setCreateAt(const utility::datetime& value)
-{
-    createAt_ = value;
-    createAtIsSet_ = true;
-}
-
-bool UpdateInferDeploymentScaleResponse::createAtIsSet() const
-{
-    return createAtIsSet_;
-}
-
-void UpdateInferDeploymentScaleResponse::unsetcreateAt()
-{
-    createAtIsSet_ = false;
 }
 
 std::string UpdateInferDeploymentScaleResponse::getDescription() const
@@ -487,12 +639,117 @@ void UpdateInferDeploymentScaleResponse::unsetframework()
     frameworkIsSet_ = false;
 }
 
-std::string UpdateInferDeploymentScaleResponse::getPriority() const
+std::string UpdateInferDeploymentScaleResponse::getVersion() const
+{
+    return version_;
+}
+
+void UpdateInferDeploymentScaleResponse::setVersion(const std::string& value)
+{
+    version_ = value;
+    versionIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::versionIsSet() const
+{
+    return versionIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetversion()
+{
+    versionIsSet_ = false;
+}
+
+std::string UpdateInferDeploymentScaleResponse::getVersionId() const
+{
+    return versionId_;
+}
+
+void UpdateInferDeploymentScaleResponse::setVersionId(const std::string& value)
+{
+    versionId_ = value;
+    versionIdIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::versionIdIsSet() const
+{
+    return versionIdIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetversionId()
+{
+    versionIdIsSet_ = false;
+}
+
+int32_t UpdateInferDeploymentScaleResponse::getVersionCount() const
+{
+    return versionCount_;
+}
+
+void UpdateInferDeploymentScaleResponse::setVersionCount(int32_t value)
+{
+    versionCount_ = value;
+    versionCountIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::versionCountIsSet() const
+{
+    return versionCountIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetversionCount()
+{
+    versionCountIsSet_ = false;
+}
+
+int32_t UpdateInferDeploymentScaleResponse::getCount() const
+{
+    return count_;
+}
+
+void UpdateInferDeploymentScaleResponse::setCount(int32_t value)
+{
+    count_ = value;
+    countIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::countIsSet() const
+{
+    return countIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetcount()
+{
+    countIsSet_ = false;
+}
+
+int32_t UpdateInferDeploymentScaleResponse::getWeight() const
+{
+    return weight_;
+}
+
+void UpdateInferDeploymentScaleResponse::setWeight(int32_t value)
+{
+    weight_ = value;
+    weightIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::weightIsSet() const
+{
+    return weightIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetweight()
+{
+    weightIsSet_ = false;
+}
+
+int32_t UpdateInferDeploymentScaleResponse::getPriority() const
 {
     return priority_;
 }
 
-void UpdateInferDeploymentScaleResponse::setPriority(const std::string& value)
+void UpdateInferDeploymentScaleResponse::setPriority(int32_t value)
 {
     priority_ = value;
     priorityIsSet_ = true;
@@ -529,6 +786,27 @@ void UpdateInferDeploymentScaleResponse::unsetsecretType()
     secretTypeIsSet_ = false;
 }
 
+std::string UpdateInferDeploymentScaleResponse::getSecretName() const
+{
+    return secretName_;
+}
+
+void UpdateInferDeploymentScaleResponse::setSecretName(const std::string& value)
+{
+    secretName_ = value;
+    secretNameIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::secretNameIsSet() const
+{
+    return secretNameIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetsecretName()
+{
+    secretNameIsSet_ = false;
+}
+
 std::string UpdateInferDeploymentScaleResponse::getStatus() const
 {
     return status_;
@@ -550,33 +828,54 @@ void UpdateInferDeploymentScaleResponse::unsetstatus()
     statusIsSet_ = false;
 }
 
-int32_t UpdateInferDeploymentScaleResponse::getCount() const
+std::string UpdateInferDeploymentScaleResponse::getDeployType() const
 {
-    return count_;
+    return deployType_;
 }
 
-void UpdateInferDeploymentScaleResponse::setCount(int32_t value)
+void UpdateInferDeploymentScaleResponse::setDeployType(const std::string& value)
 {
-    count_ = value;
-    countIsSet_ = true;
+    deployType_ = value;
+    deployTypeIsSet_ = true;
 }
 
-bool UpdateInferDeploymentScaleResponse::countIsSet() const
+bool UpdateInferDeploymentScaleResponse::deployTypeIsSet() const
 {
-    return countIsSet_;
+    return deployTypeIsSet_;
 }
 
-void UpdateInferDeploymentScaleResponse::unsetcount()
+void UpdateInferDeploymentScaleResponse::unsetdeployType()
 {
-    countIsSet_ = false;
+    deployTypeIsSet_ = false;
 }
 
-std::string UpdateInferDeploymentScaleResponse::getHighAvailSwitch() const
+std::string UpdateInferDeploymentScaleResponse::getWorkloadType() const
+{
+    return workloadType_;
+}
+
+void UpdateInferDeploymentScaleResponse::setWorkloadType(const std::string& value)
+{
+    workloadType_ = value;
+    workloadTypeIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::workloadTypeIsSet() const
+{
+    return workloadTypeIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetworkloadType()
+{
+    workloadTypeIsSet_ = false;
+}
+
+bool UpdateInferDeploymentScaleResponse::isHighAvailSwitch() const
 {
     return highAvailSwitch_;
 }
 
-void UpdateInferDeploymentScaleResponse::setHighAvailSwitch(const std::string& value)
+void UpdateInferDeploymentScaleResponse::setHighAvailSwitch(bool value)
 {
     highAvailSwitch_ = value;
     highAvailSwitchIsSet_ = true;
@@ -592,12 +891,12 @@ void UpdateInferDeploymentScaleResponse::unsethighAvailSwitch()
     highAvailSwitchIsSet_ = false;
 }
 
-std::string UpdateInferDeploymentScaleResponse::getSystemLogDumpEnable() const
+bool UpdateInferDeploymentScaleResponse::isSystemLogDumpEnable() const
 {
     return systemLogDumpEnable_;
 }
 
-void UpdateInferDeploymentScaleResponse::setSystemLogDumpEnable(const std::string& value)
+void UpdateInferDeploymentScaleResponse::setSystemLogDumpEnable(bool value)
 {
     systemLogDumpEnable_ = value;
     systemLogDumpEnableIsSet_ = true;
@@ -611,6 +910,27 @@ bool UpdateInferDeploymentScaleResponse::systemLogDumpEnableIsSet() const
 void UpdateInferDeploymentScaleResponse::unsetsystemLogDumpEnable()
 {
     systemLogDumpEnableIsSet_ = false;
+}
+
+std::string UpdateInferDeploymentScaleResponse::getScheduleStrategy() const
+{
+    return scheduleStrategy_;
+}
+
+void UpdateInferDeploymentScaleResponse::setScheduleStrategy(const std::string& value)
+{
+    scheduleStrategy_ = value;
+    scheduleStrategyIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::scheduleStrategyIsSet() const
+{
+    return scheduleStrategyIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetscheduleStrategy()
+{
+    scheduleStrategyIsSet_ = false;
 }
 
 std::vector<UnitConfig>& UpdateInferDeploymentScaleResponse::getUnitConfigs()
@@ -634,88 +954,25 @@ void UpdateInferDeploymentScaleResponse::unsetunitConfigs()
     unitConfigsIsSet_ = false;
 }
 
-utility::datetime UpdateInferDeploymentScaleResponse::getUpdateAt() const
+GroupModel UpdateInferDeploymentScaleResponse::getModel() const
 {
-    return updateAt_;
+    return model_;
 }
 
-void UpdateInferDeploymentScaleResponse::setUpdateAt(const utility::datetime& value)
+void UpdateInferDeploymentScaleResponse::setModel(const GroupModel& value)
 {
-    updateAt_ = value;
-    updateAtIsSet_ = true;
+    model_ = value;
+    modelIsSet_ = true;
 }
 
-bool UpdateInferDeploymentScaleResponse::updateAtIsSet() const
+bool UpdateInferDeploymentScaleResponse::modelIsSet() const
 {
-    return updateAtIsSet_;
+    return modelIsSet_;
 }
 
-void UpdateInferDeploymentScaleResponse::unsetupdateAt()
+void UpdateInferDeploymentScaleResponse::unsetmodel()
 {
-    updateAtIsSet_ = false;
-}
-
-std::string UpdateInferDeploymentScaleResponse::getVersion() const
-{
-    return version_;
-}
-
-void UpdateInferDeploymentScaleResponse::setVersion(const std::string& value)
-{
-    version_ = value;
-    versionIsSet_ = true;
-}
-
-bool UpdateInferDeploymentScaleResponse::versionIsSet() const
-{
-    return versionIsSet_;
-}
-
-void UpdateInferDeploymentScaleResponse::unsetversion()
-{
-    versionIsSet_ = false;
-}
-
-int32_t UpdateInferDeploymentScaleResponse::getVersionCount() const
-{
-    return versionCount_;
-}
-
-void UpdateInferDeploymentScaleResponse::setVersionCount(int32_t value)
-{
-    versionCount_ = value;
-    versionCountIsSet_ = true;
-}
-
-bool UpdateInferDeploymentScaleResponse::versionCountIsSet() const
-{
-    return versionCountIsSet_;
-}
-
-void UpdateInferDeploymentScaleResponse::unsetversionCount()
-{
-    versionCountIsSet_ = false;
-}
-
-int32_t UpdateInferDeploymentScaleResponse::getWeight() const
-{
-    return weight_;
-}
-
-void UpdateInferDeploymentScaleResponse::setWeight(int32_t value)
-{
-    weight_ = value;
-    weightIsSet_ = true;
-}
-
-bool UpdateInferDeploymentScaleResponse::weightIsSet() const
-{
-    return weightIsSet_;
-}
-
-void UpdateInferDeploymentScaleResponse::unsetweight()
-{
-    weightIsSet_ = false;
+    modelIsSet_ = false;
 }
 
 AdvancedConfig UpdateInferDeploymentScaleResponse::getAdvancedConfig() const
@@ -739,46 +996,130 @@ void UpdateInferDeploymentScaleResponse::unsetadvancedConfig()
     advancedConfigIsSet_ = false;
 }
 
-std::string UpdateInferDeploymentScaleResponse::getJobId() const
+bool UpdateInferDeploymentScaleResponse::isMirrorTrafficEnable() const
 {
-    return jobId_;
+    return mirrorTrafficEnable_;
 }
 
-void UpdateInferDeploymentScaleResponse::setJobId(const std::string& value)
+void UpdateInferDeploymentScaleResponse::setMirrorTrafficEnable(bool value)
 {
-    jobId_ = value;
-    jobIdIsSet_ = true;
+    mirrorTrafficEnable_ = value;
+    mirrorTrafficEnableIsSet_ = true;
 }
 
-bool UpdateInferDeploymentScaleResponse::jobIdIsSet() const
+bool UpdateInferDeploymentScaleResponse::mirrorTrafficEnableIsSet() const
 {
-    return jobIdIsSet_;
+    return mirrorTrafficEnableIsSet_;
 }
 
-void UpdateInferDeploymentScaleResponse::unsetjobId()
+void UpdateInferDeploymentScaleResponse::unsetmirrorTrafficEnable()
 {
-    jobIdIsSet_ = false;
+    mirrorTrafficEnableIsSet_ = false;
 }
 
-std::string UpdateInferDeploymentScaleResponse::getDeploymentName() const
+int32_t UpdateInferDeploymentScaleResponse::getMirrorTrafficWeight() const
 {
-    return deploymentName_;
+    return mirrorTrafficWeight_;
 }
 
-void UpdateInferDeploymentScaleResponse::setDeploymentName(const std::string& value)
+void UpdateInferDeploymentScaleResponse::setMirrorTrafficWeight(int32_t value)
 {
-    deploymentName_ = value;
-    deploymentNameIsSet_ = true;
+    mirrorTrafficWeight_ = value;
+    mirrorTrafficWeightIsSet_ = true;
 }
 
-bool UpdateInferDeploymentScaleResponse::deploymentNameIsSet() const
+bool UpdateInferDeploymentScaleResponse::mirrorTrafficWeightIsSet() const
 {
-    return deploymentNameIsSet_;
+    return mirrorTrafficWeightIsSet_;
 }
 
-void UpdateInferDeploymentScaleResponse::unsetdeploymentName()
+void UpdateInferDeploymentScaleResponse::unsetmirrorTrafficWeight()
 {
-    deploymentNameIsSet_ = false;
+    mirrorTrafficWeightIsSet_ = false;
+}
+
+std::string UpdateInferDeploymentScaleResponse::getUserName() const
+{
+    return userName_;
+}
+
+void UpdateInferDeploymentScaleResponse::setUserName(const std::string& value)
+{
+    userName_ = value;
+    userNameIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::userNameIsSet() const
+{
+    return userNameIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetuserName()
+{
+    userNameIsSet_ = false;
+}
+
+std::string UpdateInferDeploymentScaleResponse::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void UpdateInferDeploymentScaleResponse::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
+}
+
+utility::datetime UpdateInferDeploymentScaleResponse::getLastUsedTime() const
+{
+    return lastUsedTime_;
+}
+
+void UpdateInferDeploymentScaleResponse::setLastUsedTime(const utility::datetime& value)
+{
+    lastUsedTime_ = value;
+    lastUsedTimeIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::lastUsedTimeIsSet() const
+{
+    return lastUsedTimeIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetlastUsedTime()
+{
+    lastUsedTimeIsSet_ = false;
+}
+
+DeploymentTaskLimit UpdateInferDeploymentScaleResponse::getDeploymentTaskLimit() const
+{
+    return deploymentTaskLimit_;
+}
+
+void UpdateInferDeploymentScaleResponse::setDeploymentTaskLimit(const DeploymentTaskLimit& value)
+{
+    deploymentTaskLimit_ = value;
+    deploymentTaskLimitIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::deploymentTaskLimitIsSet() const
+{
+    return deploymentTaskLimitIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetdeploymentTaskLimit()
+{
+    deploymentTaskLimitIsSet_ = false;
 }
 
 std::vector<FrozenInfo>& UpdateInferDeploymentScaleResponse::getFrozenInfos()
@@ -800,6 +1141,48 @@ bool UpdateInferDeploymentScaleResponse::frozenInfosIsSet() const
 void UpdateInferDeploymentScaleResponse::unsetfrozenInfos()
 {
     frozenInfosIsSet_ = false;
+}
+
+utility::datetime UpdateInferDeploymentScaleResponse::getCreateAt() const
+{
+    return createAt_;
+}
+
+void UpdateInferDeploymentScaleResponse::setCreateAt(const utility::datetime& value)
+{
+    createAt_ = value;
+    createAtIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::createAtIsSet() const
+{
+    return createAtIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetcreateAt()
+{
+    createAtIsSet_ = false;
+}
+
+utility::datetime UpdateInferDeploymentScaleResponse::getUpdateAt() const
+{
+    return updateAt_;
+}
+
+void UpdateInferDeploymentScaleResponse::setUpdateAt(const utility::datetime& value)
+{
+    updateAt_ = value;
+    updateAtIsSet_ = true;
+}
+
+bool UpdateInferDeploymentScaleResponse::updateAtIsSet() const
+{
+    return updateAtIsSet_;
+}
+
+void UpdateInferDeploymentScaleResponse::unsetupdateAt()
+{
+    updateAtIsSet_ = false;
 }
 
 }

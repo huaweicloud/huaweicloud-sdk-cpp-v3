@@ -75,6 +75,24 @@ public:
     void setSlaveClusterId(const std::string& value);
 
     /// <summary>
+    /// 资源池类型，self-hosted 自托管资源池，exclusive 独享资源池
+    /// </summary>
+
+    std::string getSlaveResourceType() const;
+    bool slaveResourceTypeIsSet() const;
+    void unsetslaveResourceType();
+    void setSlaveResourceType(const std::string& value);
+
+    /// <summary>
+    /// 是否切换新系统支持，1：是 0：否
+    /// </summary>
+
+    int32_t getAnsibleType() const;
+    bool ansibleTypeIsSet() const;
+    void unsetansibleType();
+    void setAnsibleType(int32_t value);
+
+    /// <summary>
     /// 描述
     /// </summary>
 
@@ -102,6 +120,10 @@ protected:
     bool osIsSet_;
     std::string slaveClusterId_;
     bool slaveClusterIdIsSet_;
+    std::string slaveResourceType_;
+    bool slaveResourceTypeIsSet_;
+    int32_t ansibleType_;
+    bool ansibleTypeIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     int32_t isProxyMode_;

@@ -21,8 +21,8 @@ ListInferDeploymentInstancesRequest::ListInferDeploymentInstancesRequest()
     limitIsSet_ = false;
     offset_ = "";
     offsetIsSet_ = false;
-    podName_ = "";
-    podNameIsSet_ = false;
+    instanceName_ = "";
+    instanceNameIsSet_ = false;
 }
 
 ListInferDeploymentInstancesRequest::~ListInferDeploymentInstancesRequest() = default;
@@ -50,8 +50,8 @@ web::json::value ListInferDeploymentInstancesRequest::toJson() const
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
-    if(podNameIsSet_) {
-        val[utility::conversions::to_string_t("pod_name")] = ModelBase::toJson(podName_);
+    if(instanceNameIsSet_) {
+        val[utility::conversions::to_string_t("instance_name")] = ModelBase::toJson(instanceName_);
     }
 
     return val;
@@ -105,13 +105,13 @@ bool ListInferDeploymentInstancesRequest::fromJson(const web::json::value& val)
             setOffset(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("pod_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pod_name"));
+    if(val.has_field(utility::conversions::to_string_t("instance_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_name"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPodName(refVal);
+            setInstanceName(refVal);
         }
     }
     return ok;
@@ -223,25 +223,25 @@ void ListInferDeploymentInstancesRequest::unsetoffset()
     offsetIsSet_ = false;
 }
 
-std::string ListInferDeploymentInstancesRequest::getPodName() const
+std::string ListInferDeploymentInstancesRequest::getInstanceName() const
 {
-    return podName_;
+    return instanceName_;
 }
 
-void ListInferDeploymentInstancesRequest::setPodName(const std::string& value)
+void ListInferDeploymentInstancesRequest::setInstanceName(const std::string& value)
 {
-    podName_ = value;
-    podNameIsSet_ = true;
+    instanceName_ = value;
+    instanceNameIsSet_ = true;
 }
 
-bool ListInferDeploymentInstancesRequest::podNameIsSet() const
+bool ListInferDeploymentInstancesRequest::instanceNameIsSet() const
 {
-    return podNameIsSet_;
+    return instanceNameIsSet_;
 }
 
-void ListInferDeploymentInstancesRequest::unsetpodName()
+void ListInferDeploymentInstancesRequest::unsetinstanceName()
 {
-    podNameIsSet_ = false;
+    instanceNameIsSet_ = false;
 }
 
 }

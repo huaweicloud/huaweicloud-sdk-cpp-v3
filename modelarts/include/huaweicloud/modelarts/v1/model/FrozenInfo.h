@@ -39,7 +39,7 @@ public:
     /// FrozenInfo members
 
     /// <summary>
-    /// 冻结场景。可选值如下： - ARREAR：欠费冻结 - POLICE：公安冻结 - ILLEGAL：违规冻结
+    /// **参数解释：**冻结场景。可选值如下： - ARREAR：欠费冻结 - POLICE：公安冻结 - ILLEGAL：违规冻结
     /// </summary>
 
     std::string getScene() const;
@@ -48,7 +48,7 @@ public:
     void setScene(const std::string& value);
 
     /// <summary>
-    /// 冻结后的影响。可选值如下： - 1：冻结后可释放 - 2：冻结后不可释放
+    /// **参数解释：**冻结后的影响。可选值如下： - 1：冻结后可释放 - 2：冻结后不可释放
     /// </summary>
 
     int32_t getEffect() const;

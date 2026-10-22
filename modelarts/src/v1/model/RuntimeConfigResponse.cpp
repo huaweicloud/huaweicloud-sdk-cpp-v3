@@ -16,6 +16,8 @@ RuntimeConfigResponse::RuntimeConfigResponse()
     serviceLimitIsSet_ = false;
     serviceSecretIsSet_ = false;
     serverTaskLimitIsSet_ = false;
+    smartRoutingEnable_ = false;
+    smartRoutingEnableIsSet_ = false;
 }
 
 RuntimeConfigResponse::~RuntimeConfigResponse() = default;
@@ -39,6 +41,9 @@ web::json::value RuntimeConfigResponse::toJson() const
     }
     if(serverTaskLimitIsSet_) {
         val[utility::conversions::to_string_t("server_task_limit")] = ModelBase::toJson(serverTaskLimit_);
+    }
+    if(smartRoutingEnableIsSet_) {
+        val[utility::conversions::to_string_t("smart_routing_enable")] = ModelBase::toJson(smartRoutingEnable_);
     }
 
     return val;
@@ -81,6 +86,15 @@ bool RuntimeConfigResponse::fromJson(const web::json::value& val)
             ServerTaskLimit refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerTaskLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("smart_routing_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("smart_routing_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSmartRoutingEnable(refVal);
         }
     }
     return ok;
@@ -169,6 +183,27 @@ bool RuntimeConfigResponse::serverTaskLimitIsSet() const
 void RuntimeConfigResponse::unsetserverTaskLimit()
 {
     serverTaskLimitIsSet_ = false;
+}
+
+bool RuntimeConfigResponse::isSmartRoutingEnable() const
+{
+    return smartRoutingEnable_;
+}
+
+void RuntimeConfigResponse::setSmartRoutingEnable(bool value)
+{
+    smartRoutingEnable_ = value;
+    smartRoutingEnableIsSet_ = true;
+}
+
+bool RuntimeConfigResponse::smartRoutingEnableIsSet() const
+{
+    return smartRoutingEnableIsSet_;
+}
+
+void RuntimeConfigResponse::unsetsmartRoutingEnable()
+{
+    smartRoutingEnableIsSet_ = false;
 }
 
 }

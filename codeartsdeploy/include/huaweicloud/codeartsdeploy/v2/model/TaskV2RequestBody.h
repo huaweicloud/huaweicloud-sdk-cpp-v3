@@ -41,6 +41,15 @@ public:
     /// TaskV2RequestBody members
 
     /// <summary>
+    /// 部署系统，deployTemplate：部署模板
+    /// </summary>
+
+    std::string getDeploySystem() const;
+    bool deploySystemIsSet() const;
+    void unsetdeploySystem();
+    void setDeploySystem(const std::string& value);
+
+    /// <summary>
     /// 模板id
     /// </summary>
 
@@ -48,6 +57,15 @@ public:
     bool templateIdIsSet() const;
     void unsettemplateId();
     void setTemplateId(const std::string& value);
+
+    /// <summary>
+    /// 是否切换新系统支持，1：是 0：否
+    /// </summary>
+
+    int32_t getAnsibleType() const;
+    bool ansibleTypeIsSet() const;
+    void unsetansibleType();
+    void setAnsibleType(int32_t value);
 
     /// <summary>
     /// 部署编排列表信息
@@ -60,8 +78,12 @@ public:
 
 
 protected:
+    std::string deploySystem_;
+    bool deploySystemIsSet_;
     std::string templateId_;
     bool templateIdIsSet_;
+    int32_t ansibleType_;
+    bool ansibleTypeIsSet_;
     std::vector<DeployV2OperationsDO> operationList_;
     bool operationListIsSet_;
 

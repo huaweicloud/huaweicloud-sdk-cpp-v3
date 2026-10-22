@@ -12,7 +12,7 @@ namespace Model {
 
 AdvancedConfig::AdvancedConfig()
 {
-    deployTimeoutMinutes_ = "";
+    deployTimeoutMinutes_ = 0;
     deployTimeoutMinutesIsSet_ = false;
     upgradeConfigIsSet_ = false;
     serviceSecretIsSet_ = false;
@@ -30,6 +30,8 @@ AdvancedConfig::AdvancedConfig()
     metricApiPathIsSet_ = false;
     customMetricsPath_ = "";
     customMetricsPathIsSet_ = false;
+    mooncakeEnable_ = false;
+    mooncakeEnableIsSet_ = false;
     port_ = 0;
     portIsSet_ = false;
     protocol_ = "";
@@ -76,6 +78,9 @@ web::json::value AdvancedConfig::toJson() const
     if(customMetricsPathIsSet_) {
         val[utility::conversions::to_string_t("custom_metrics_path")] = ModelBase::toJson(customMetricsPath_);
     }
+    if(mooncakeEnableIsSet_) {
+        val[utility::conversions::to_string_t("mooncake_enable")] = ModelBase::toJson(mooncakeEnable_);
+    }
     if(portIsSet_) {
         val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
     }
@@ -93,7 +98,7 @@ bool AdvancedConfig::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deploy_timeout_minutes"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDeployTimeoutMinutes(refVal);
         }
@@ -179,6 +184,15 @@ bool AdvancedConfig::fromJson(const web::json::value& val)
             setCustomMetricsPath(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("mooncake_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mooncake_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMooncakeEnable(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("port"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("port"));
         if(!fieldValue.is_null())
@@ -201,12 +215,12 @@ bool AdvancedConfig::fromJson(const web::json::value& val)
 }
 
 
-std::string AdvancedConfig::getDeployTimeoutMinutes() const
+int32_t AdvancedConfig::getDeployTimeoutMinutes() const
 {
     return deployTimeoutMinutes_;
 }
 
-void AdvancedConfig::setDeployTimeoutMinutes(const std::string& value)
+void AdvancedConfig::setDeployTimeoutMinutes(int32_t value)
 {
     deployTimeoutMinutes_ = value;
     deployTimeoutMinutesIsSet_ = true;
@@ -409,6 +423,27 @@ bool AdvancedConfig::customMetricsPathIsSet() const
 void AdvancedConfig::unsetcustomMetricsPath()
 {
     customMetricsPathIsSet_ = false;
+}
+
+bool AdvancedConfig::isMooncakeEnable() const
+{
+    return mooncakeEnable_;
+}
+
+void AdvancedConfig::setMooncakeEnable(bool value)
+{
+    mooncakeEnable_ = value;
+    mooncakeEnableIsSet_ = true;
+}
+
+bool AdvancedConfig::mooncakeEnableIsSet() const
+{
+    return mooncakeEnableIsSet_;
+}
+
+void AdvancedConfig::unsetmooncakeEnable()
+{
+    mooncakeEnableIsSet_ = false;
 }
 
 int32_t AdvancedConfig::getPort() const

@@ -49,6 +49,15 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
+    /// 检索关键字，应用名称模糊匹配
+    /// </summary>
+
+    std::string getSearch() const;
+    bool searchIsSet() const;
+    void unsetsearch();
+    void setSearch(const std::string& value);
+
+    /// <summary>
     /// 分页页码， 表示从此页开始查询， page大于等于1
     /// </summary>
 
@@ -106,6 +115,8 @@ public:
 protected:
     std::string projectId_;
     bool projectIdIsSet_;
+    std::string search_;
+    bool searchIsSet_;
     int32_t page_;
     bool pageIsSet_;
     int32_t size_;

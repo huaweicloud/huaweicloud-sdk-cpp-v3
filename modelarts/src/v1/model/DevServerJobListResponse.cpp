@@ -26,9 +26,9 @@ DevServerJobListResponse::DevServerJobListResponse()
     statusIsSet_ = false;
     abnormalCount_ = 0;
     abnormalCountIsSet_ = false;
-    createAt_ = "";
+    createAt_ = 0L;
     createAtIsSet_ = false;
-    updateAt_ = "";
+    updateAt_ = 0L;
     updateAtIsSet_ = false;
 }
 
@@ -143,7 +143,7 @@ bool DevServerJobListResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_at"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateAt(refVal);
         }
@@ -152,7 +152,7 @@ bool DevServerJobListResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_at"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdateAt(refVal);
         }
@@ -308,12 +308,12 @@ void DevServerJobListResponse::unsetabnormalCount()
     abnormalCountIsSet_ = false;
 }
 
-std::string DevServerJobListResponse::getCreateAt() const
+int64_t DevServerJobListResponse::getCreateAt() const
 {
     return createAt_;
 }
 
-void DevServerJobListResponse::setCreateAt(const std::string& value)
+void DevServerJobListResponse::setCreateAt(int64_t value)
 {
     createAt_ = value;
     createAtIsSet_ = true;
@@ -329,12 +329,12 @@ void DevServerJobListResponse::unsetcreateAt()
     createAtIsSet_ = false;
 }
 
-std::string DevServerJobListResponse::getUpdateAt() const
+int64_t DevServerJobListResponse::getUpdateAt() const
 {
     return updateAt_;
 }
 
-void DevServerJobListResponse::setUpdateAt(const std::string& value)
+void DevServerJobListResponse::setUpdateAt(int64_t value)
 {
     updateAt_ = value;
     updateAtIsSet_ = true;

@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/modelarts/v1/model/JobDescription.h>
+#include <huaweicloud/modelarts/v1/model/JobUpdateRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -52,16 +52,16 @@ public:
     /// 
     /// </summary>
 
-    JobDescription getBody() const;
+    JobUpdateRequestBody getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const JobDescription& value);
+    void setBody(const JobUpdateRequestBody& value);
 
 
 protected:
     std::string trainingJobId_;
     bool trainingJobIdIsSet_;
-    JobDescription body_;
+    JobUpdateRequestBody body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

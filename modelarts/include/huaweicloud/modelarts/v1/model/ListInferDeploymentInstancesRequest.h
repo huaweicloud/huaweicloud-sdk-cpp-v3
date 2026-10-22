@@ -85,13 +85,13 @@ public:
     void setOffset(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** pod名字。 **取值范围：** 不涉及。
+    /// **参数解释：** 服务实例名字。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
-    std::string getPodName() const;
-    bool podNameIsSet() const;
-    void unsetpodName();
-    void setPodName(const std::string& value);
+    std::string getInstanceName() const;
+    bool instanceNameIsSet() const;
+    void unsetinstanceName();
+    void setInstanceName(const std::string& value);
 
 
 protected:
@@ -105,8 +105,8 @@ protected:
     bool limitIsSet_;
     std::string offset_;
     bool offsetIsSet_;
-    std::string podName_;
-    bool podNameIsSet_;
+    std::string instanceName_;
+    bool instanceNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

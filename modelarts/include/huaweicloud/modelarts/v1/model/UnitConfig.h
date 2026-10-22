@@ -16,6 +16,7 @@
 #include <string>
 #include <huaweicloud/modelarts/v1/model/ModelResource.h>
 #include <huaweicloud/modelarts/v1/model/Code.h>
+#include <huaweicloud/modelarts/v1/model/UnitGroupPolicy.h>
 #include <huaweicloud/modelarts/v1/model/Dump.h>
 #include <vector>
 #include <huaweicloud/modelarts/v1/model/ImageInfo.h>
@@ -159,6 +160,15 @@ public:
     void setCount(int32_t value);
 
     /// <summary>
+    /// **参数解释：** 表示是否启用绑核加速。 **取值范围：** - true：启用绑核加速。 - false：不启用绑核加速。
+    /// </summary>
+
+    bool isCpuAffinity() const;
+    bool cpuAffinityIsSet() const;
+    void unsetcpuAffinity();
+    void setCpuAffinity(bool value);
+
+    /// <summary>
     /// **参数解释：** 启动命令。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
@@ -275,6 +285,15 @@ public:
     void unsetpoolResourceFlavor();
     void setPoolResourceFlavor(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    UnitGroupPolicy getGroupPolicy() const;
+    bool groupPolicyIsSet() const;
+    void unsetgroupPolicy();
+    void setGroupPolicy(const UnitGroupPolicy& value);
+
 
 protected:
     std::string id_;
@@ -301,6 +320,8 @@ protected:
     bool dumpsIsSet_;
     int32_t count_;
     bool countIsSet_;
+    bool cpuAffinity_;
+    bool cpuAffinityIsSet_;
     std::string cmd_;
     bool cmdIsSet_;
     TerminationGrace terminationGrace_;
@@ -327,6 +348,8 @@ protected:
     bool securityConfigIsSet_;
     std::string poolResourceFlavor_;
     bool poolResourceFlavorIsSet_;
+    UnitGroupPolicy groupPolicy_;
+    bool groupPolicyIsSet_;
 
 };
 

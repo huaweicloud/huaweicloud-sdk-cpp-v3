@@ -96,6 +96,15 @@ public:
     void setCreateType(const std::string& value);
 
     /// <summary>
+    /// 分组id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
     /// 自定义slave资源池id
     /// </summary>
 
@@ -122,6 +131,33 @@ public:
     void unsetarrangeInfos();
     void setArrangeInfos(const std::vector<UpdateTaskV2RequestBody>& value);
 
+    /// <summary>
+    /// 委托URN
+    /// </summary>
+
+    std::string getAgencyUrn() const;
+    bool agencyUrnIsSet() const;
+    void unsetagencyUrn();
+    void setAgencyUrn(const std::string& value);
+
+    /// <summary>
+    /// 资源池类型
+    /// </summary>
+
+    std::string getSlaveResourceType() const;
+    bool slaveResourceTypeIsSet() const;
+    void unsetslaveResourceType();
+    void setSlaveResourceType(const std::string& value);
+
+    /// <summary>
+    /// 任务执行超时时间
+    /// </summary>
+
+    int32_t getTimeout() const;
+    bool timeoutIsSet() const;
+    void unsettimeout();
+    void setTimeout(int32_t value);
+
 
 protected:
     std::string id_;
@@ -136,12 +172,20 @@ protected:
     bool isDraftIsSet_;
     std::string createType_;
     bool createTypeIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
     std::string slaveClusterId_;
     bool slaveClusterIdIsSet_;
     TaskTriggerVO trigger_;
     bool triggerIsSet_;
     std::vector<UpdateTaskV2RequestBody> arrangeInfos_;
     bool arrangeInfosIsSet_;
+    std::string agencyUrn_;
+    bool agencyUrnIsSet_;
+    std::string slaveResourceType_;
+    bool slaveResourceTypeIsSet_;
+    int32_t timeout_;
+    bool timeoutIsSet_;
 
 };
 

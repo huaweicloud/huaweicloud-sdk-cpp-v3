@@ -20,6 +20,10 @@ CreateHostClusterRequestBody::CreateHostClusterRequestBody()
     osIsSet_ = false;
     slaveClusterId_ = "";
     slaveClusterIdIsSet_ = false;
+    slaveResourceType_ = "";
+    slaveResourceTypeIsSet_ = false;
+    ansibleType_ = 0;
+    ansibleTypeIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     isProxyMode_ = 0;
@@ -47,6 +51,12 @@ web::json::value CreateHostClusterRequestBody::toJson() const
     }
     if(slaveClusterIdIsSet_) {
         val[utility::conversions::to_string_t("slave_cluster_id")] = ModelBase::toJson(slaveClusterId_);
+    }
+    if(slaveResourceTypeIsSet_) {
+        val[utility::conversions::to_string_t("slave_resource_type")] = ModelBase::toJson(slaveResourceType_);
+    }
+    if(ansibleTypeIsSet_) {
+        val[utility::conversions::to_string_t("ansible_type")] = ModelBase::toJson(ansibleType_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -95,6 +105,24 @@ bool CreateHostClusterRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSlaveClusterId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("slave_resource_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("slave_resource_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSlaveResourceType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ansible_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ansible_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAnsibleType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -201,6 +229,48 @@ bool CreateHostClusterRequestBody::slaveClusterIdIsSet() const
 void CreateHostClusterRequestBody::unsetslaveClusterId()
 {
     slaveClusterIdIsSet_ = false;
+}
+
+std::string CreateHostClusterRequestBody::getSlaveResourceType() const
+{
+    return slaveResourceType_;
+}
+
+void CreateHostClusterRequestBody::setSlaveResourceType(const std::string& value)
+{
+    slaveResourceType_ = value;
+    slaveResourceTypeIsSet_ = true;
+}
+
+bool CreateHostClusterRequestBody::slaveResourceTypeIsSet() const
+{
+    return slaveResourceTypeIsSet_;
+}
+
+void CreateHostClusterRequestBody::unsetslaveResourceType()
+{
+    slaveResourceTypeIsSet_ = false;
+}
+
+int32_t CreateHostClusterRequestBody::getAnsibleType() const
+{
+    return ansibleType_;
+}
+
+void CreateHostClusterRequestBody::setAnsibleType(int32_t value)
+{
+    ansibleType_ = value;
+    ansibleTypeIsSet_ = true;
+}
+
+bool CreateHostClusterRequestBody::ansibleTypeIsSet() const
+{
+    return ansibleTypeIsSet_;
+}
+
+void CreateHostClusterRequestBody::unsetansibleType()
+{
+    ansibleTypeIsSet_ = false;
 }
 
 std::string CreateHostClusterRequestBody::getDescription() const

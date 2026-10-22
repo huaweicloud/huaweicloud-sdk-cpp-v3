@@ -101,6 +101,15 @@ public:
     void unsetupdateTime();
     void setUpdateTime(int64_t value);
 
+    /// <summary>
+    /// **参数解释：** pod所属单元名称。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getPodRoleName() const;
+    bool podRoleNameIsSet() const;
+    void unsetpodRoleName();
+    void setPodRoleName(const std::string& value);
+
 
 protected:
     std::string podId_;
@@ -117,6 +126,8 @@ protected:
     bool statusIsSet_;
     int64_t updateTime_;
     bool updateTimeIsSet_;
+    std::string podRoleName_;
+    bool podRoleNameIsSet_;
 
 };
 

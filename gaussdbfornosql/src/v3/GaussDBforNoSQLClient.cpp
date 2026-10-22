@@ -1425,6 +1425,51 @@ std::shared_ptr<ListBackupsResponse> GaussDBforNoSQLClient::listBackups(ListBack
 
     return localVarResult;
 }
+std::shared_ptr<ListBiactiveInstanceCandidatesResponse> GaussDBforNoSQLClient::listBiactiveInstanceCandidates(ListBiactiveInstanceCandidatesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/disaster-recovery/biactive-instance-candidates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.targetRegionCodeIsSet()) {
+        localVarQueryParams["target_region_code"] = parameterToString(request.getTargetRegionCode());
+    }
+    if (request.targetInstanceNameIsSet()) {
+        localVarQueryParams["target_instance_name"] = parameterToString(request.getTargetInstanceName());
+    }
+    if (request.dataSyncModeIsSet()) {
+        localVarQueryParams["data_sync_mode"] = parameterToString(request.getDataSyncMode());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforNoSQLMeta::genRequestDefForListBiactiveInstanceCandidates());
+
+    std::shared_ptr<ListBiactiveInstanceCandidatesResponse> localVarResult = std::make_shared<ListBiactiveInstanceCandidatesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListCassandraSlowLogsResponse> GaussDBforNoSQLClient::listCassandraSlowLogs(ListCassandraSlowLogsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/cassandra/instances/{instance_id}/slow-logs";

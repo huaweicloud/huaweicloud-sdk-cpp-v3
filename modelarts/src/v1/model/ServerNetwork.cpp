@@ -24,6 +24,7 @@ ServerNetwork::ServerNetwork()
     vpcIdIsSet_ = false;
     hyperClusterIsSet_ = false;
     allowedAddressPairsIsSet_ = false;
+    hyperGroupIsSet_ = false;
 }
 
 ServerNetwork::~ServerNetwork() = default;
@@ -56,6 +57,9 @@ web::json::value ServerNetwork::toJson() const
     }
     if(allowedAddressPairsIsSet_) {
         val[utility::conversions::to_string_t("allowed_address_pairs")] = ModelBase::toJson(allowedAddressPairs_);
+    }
+    if(hyperGroupIsSet_) {
+        val[utility::conversions::to_string_t("hyper_group")] = ModelBase::toJson(hyperGroup_);
     }
 
     return val;
@@ -125,6 +129,15 @@ bool ServerNetwork::fromJson(const web::json::value& val)
             std::vector<AllowedAddressPairs> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllowedAddressPairs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hyper_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hyper_group"));
+        if(!fieldValue.is_null())
+        {
+            HyperGroup refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHyperGroup(refVal);
         }
     }
     return ok;
@@ -276,6 +289,27 @@ bool ServerNetwork::allowedAddressPairsIsSet() const
 void ServerNetwork::unsetallowedAddressPairs()
 {
     allowedAddressPairsIsSet_ = false;
+}
+
+HyperGroup ServerNetwork::getHyperGroup() const
+{
+    return hyperGroup_;
+}
+
+void ServerNetwork::setHyperGroup(const HyperGroup& value)
+{
+    hyperGroup_ = value;
+    hyperGroupIsSet_ = true;
+}
+
+bool ServerNetwork::hyperGroupIsSet() const
+{
+    return hyperGroupIsSet_;
+}
+
+void ServerNetwork::unsethyperGroup()
+{
+    hyperGroupIsSet_ = false;
 }
 
 }

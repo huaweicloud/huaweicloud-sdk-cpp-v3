@@ -186,7 +186,7 @@ bool ServiceUpdateRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_configs"));
         if(!fieldValue.is_null())
         {
-            std::vector<LtsConfiguration> refVal;
+            std::vector<LtsConfigurationV2> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogConfigs(refVal);
         }
@@ -429,12 +429,12 @@ void ServiceUpdateRequest::unsetltsStrategy()
     ltsStrategyIsSet_ = false;
 }
 
-std::vector<LtsConfiguration>& ServiceUpdateRequest::getLogConfigs()
+std::vector<LtsConfigurationV2>& ServiceUpdateRequest::getLogConfigs()
 {
     return logConfigs_;
 }
 
-void ServiceUpdateRequest::setLogConfigs(const std::vector<LtsConfiguration>& value)
+void ServiceUpdateRequest::setLogConfigs(const std::vector<LtsConfigurationV2>& value)
 {
     logConfigs_ = value;
     logConfigsIsSet_ = true;

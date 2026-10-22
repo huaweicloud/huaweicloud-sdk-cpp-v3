@@ -87,6 +87,15 @@ public:
     void setPoolId(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：训练作业选择的资源池名称。 **取值范围**：不涉及。
+    /// </summary>
+
+    std::string getPoolName() const;
+    bool poolNameIsSet() const;
+    void unsetpoolName();
+    void setPoolName(const std::string& value);
+
+    /// <summary>
     /// **参数解释**：训练作业选择的资源池联邦ID。 **取值范围**：不涉及。
     /// </summary>
 
@@ -134,6 +143,8 @@ protected:
     bool nodeCountIsSet_;
     std::string poolId_;
     bool poolIdIsSet_;
+    std::string poolName_;
+    bool poolNameIsSet_;
     std::string poolGroupId_;
     bool poolGroupIdIsSet_;
     FlavorDetail flavorDetail_;

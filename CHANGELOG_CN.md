@@ -1,3 +1,442 @@
+# 3.1.209 2026-10-22
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateHostCluster**
+    - 请求参数变更
+      - `+ slave_resource_type`
+      - `+ ansible_type`
+  - **UpdateHostCluster**
+    - 请求参数变更
+      - `+ slave_resource_type`
+      - `+ ansible_type`
+  - **ListAllApp**
+    - 请求参数变更
+      - `+ search`
+  - **UpdateAppInfo**
+    - 请求参数变更
+      - `+ group_id`
+      - `+ agency_urn`
+      - `+ slave_resource_type`
+      - `+ timeout`
+  - **CreateApp**
+    - 请求参数变更
+      - `+ agency_urn`
+      - `+ slave_resource_type`
+      - `+ timeout`
+      - `+ arrange_infos.deploy_system`
+      - `+ arrange_infos.ansible_type`
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `BatchCreateSnapshotTags`
+    - `BatchDeleteSnapshotTags`
+    - `ListSnapshotTags`
+    - `BatchCreateSnapshotGroupTag`
+    - `BatchDeleteSnapshotGroupTag`
+    - `ListSnapshotGroupTags`
+    - `CreateStandardSnapshot`
+    - `ShowStandardSnapshot`
+    - `UpdateStandardSnapshot`
+    - `DeleteStandardSnapshot`
+    - `ListSnapshotsDetails`
+    - `ListSnapshotChains`
+    - `CountSnapshots`
+    - `CountSnapshotChains`
+    - `RollbackStandardSnapshot`
+    - `CreateSnapshotGroup`
+    - `ListSnapshotGroup`
+    - `CountSnapshotsGroup`
+    - `ShowSnapshotGroup`
+    - `UpdateSnapshotGroup`
+    - `DeleteSnapshotGroup`
+    - `ListAutoSnapshotPolicy`
+    - `CreateAutoSnapshotPolicy`
+    - `CountAutoSnapshotPolicies`
+    - `ShowAutoSnapshotPolicy`
+    - `UpdateAutoSnapshotPolicy`
+    - `DeleteAutoSnapshotPolicy`
+    - `AssociateAutoSnapshotPolicy`
+    - `DisassociateAutoSnapshotPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListBiactiveInstanceCandidates`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ModelArts
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListHyperinstanceServers`
+    - `GetHyperinstanceGroup`
+    - `DeleteHyperinstanceGroup`
+    - `ListHyperinstanceGroup`
+    - `CreateHyperinstanceGroup`
+    - `ListHyperinstanceGroupsCapacity`
+    - `UnbindDevServerPublicIP`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **GetDevServerJob**
+    - 响应参数变更
+      - `* create_at: string -> int64`
+      - `* update_at: string -> int64`
+  - **ListDevServerJobs**
+    - 响应参数变更
+      - `* data.create_at: string -> int64`
+      - `* data.update_at: string -> int64`
+  - **CreateDevServerJob**
+    - 响应参数变更
+      - `* create_at: string -> int64`
+      - `* update_at: string -> int64`
+  - **DeleteDevServerJobs**
+    - 响应参数变更
+      - `* data.create_at: string -> int64`
+      - `* data.update_at: string -> int64`
+  - **ListInferDeploymentInstances**
+    - 请求参数变更
+      - `+ instance_name`
+      - `- pod_name`
+  - **ListInferDeploymentPods**
+    - 请求参数变更
+      - `+ pod_role_name`
+    - 响应参数变更
+      - `+ data.pod_role_name`
+  - **CreateDevServer**
+    - 请求参数变更
+      - `+ network.hyper_group`
+  - **StartInferDeployment**
+    - 响应参数变更
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+  - **StopInferDeployment**
+    - 响应参数变更
+      - `+ user_name`
+      - `+ deployment_task_limit`
+      - `+ frozen_infos`
+      - `+ last_used_time`
+      - `+ agency_name`
+      - `+ deployment_name`
+      - `- lts_state`
+      - `- traffic_ratio`
+      - `- running_count`
+      - `* mirror_traffic_weight: string -> int32`
+      - `* update_at: int64 -> date-time`
+      - `* create_at: string -> date-time`
+      - `- model.source_id`
+      - `* model: object<InferModelResponse> -> object<GroupModel>`
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `* unit_configs.models: list<InferModelResponse> -> list<ModelResource>`
+      - `* unit_configs.image: object<ImageInfoResponse> -> object<ImageInfo>`
+      - `* unit_configs.files: list<FileResponse> -> list<FileInfo>`
+      - `* unit_configs.codes: list<CodeResponse> -> list<Code>`
+      - `- unit_configs.dumps.type`
+      - `- unit_configs.dumps.source: enum value [OBS,OBSFS]`
+      - `* unit_configs.dumps: list<DumpResponse> -> list<Dump>`
+      - `* unit_configs.readiness_health: object<HealthResponse> -> object<Health>`
+      - `* unit_configs.affinity: object<AffinityResponse> -> object<Affinity>`
+      - `* unit_configs: list<UnitConfigResponse> -> list<UnitConfig>`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+  - **CancelInferDeployment**
+    - 响应参数变更
+      - `+ user_name`
+      - `+ deployment_task_limit`
+      - `+ frozen_infos`
+      - `+ last_used_time`
+      - `+ agency_name`
+      - `+ deployment_name`
+      - `- lts_state`
+      - `- traffic_ratio`
+      - `- running_count`
+      - `* mirror_traffic_weight: string -> int32`
+      - `* update_at: int64 -> date-time`
+      - `* create_at: string -> date-time`
+      - `- model.source_id`
+      - `* model: object<InferModelResponse> -> object<GroupModel>`
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `* unit_configs.models: list<InferModelResponse> -> list<ModelResource>`
+      - `* unit_configs.image: object<ImageInfoResponse> -> object<ImageInfo>`
+      - `* unit_configs.files: list<FileResponse> -> list<FileInfo>`
+      - `* unit_configs.codes: list<CodeResponse> -> list<Code>`
+      - `- unit_configs.dumps.type`
+      - `- unit_configs.dumps.source: enum value [OBS,OBSFS]`
+      - `* unit_configs.dumps: list<DumpResponse> -> list<Dump>`
+      - `* unit_configs.readiness_health: object<HealthResponse> -> object<Health>`
+      - `* unit_configs.affinity: object<AffinityResponse> -> object<Affinity>`
+      - `* unit_configs: list<UnitConfigResponse> -> list<UnitConfig>`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+  - **CreateInferDeployment**
+    - 请求参数变更
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+    - 响应参数变更
+      - `+ user_name`
+      - `+ deployment_task_limit`
+      - `+ frozen_infos`
+      - `+ last_used_time`
+      - `+ agency_name`
+      - `+ deployment_name`
+      - `- lts_state`
+      - `- traffic_ratio`
+      - `- running_count`
+      - `* mirror_traffic_weight: string -> int32`
+      - `* update_at: int64 -> date-time`
+      - `* create_at: string -> date-time`
+      - `- model.source_id`
+      - `* model: object<InferModelResponse> -> object<GroupModel>`
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `* unit_configs.models: list<InferModelResponse> -> list<ModelResource>`
+      - `* unit_configs.image: object<ImageInfoResponse> -> object<ImageInfo>`
+      - `* unit_configs.files: list<FileResponse> -> list<FileInfo>`
+      - `* unit_configs.codes: list<CodeResponse> -> list<Code>`
+      - `- unit_configs.dumps.type`
+      - `- unit_configs.dumps.source: enum value [OBS,OBSFS]`
+      - `* unit_configs.dumps: list<DumpResponse> -> list<Dump>`
+      - `* unit_configs.readiness_health: object<HealthResponse> -> object<Health>`
+      - `* unit_configs.affinity: object<AffinityResponse> -> object<Affinity>`
+      - `* unit_configs: list<UnitConfigResponse> -> list<UnitConfig>`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+  - **ShowInferDeployment**
+    - 响应参数变更
+      - `+ user_name`
+      - `+ deployment_task_limit`
+      - `+ frozen_infos`
+      - `+ last_used_time`
+      - `+ agency_name`
+      - `+ deployment_name`
+      - `- lts_state`
+      - `- traffic_ratio`
+      - `- running_count`
+      - `* mirror_traffic_weight: string -> int32`
+      - `* update_at: int64 -> date-time`
+      - `* create_at: string -> date-time`
+      - `- model.source_id`
+      - `* model: object<InferModelResponse> -> object<GroupModel>`
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `* unit_configs.models: list<InferModelResponse> -> list<ModelResource>`
+      - `* unit_configs.image: object<ImageInfoResponse> -> object<ImageInfo>`
+      - `* unit_configs.files: list<FileResponse> -> list<FileInfo>`
+      - `* unit_configs.codes: list<CodeResponse> -> list<Code>`
+      - `- unit_configs.dumps.type`
+      - `- unit_configs.dumps.source: enum value [OBS,OBSFS]`
+      - `* unit_configs.dumps: list<DumpResponse> -> list<Dump>`
+      - `* unit_configs.readiness_health: object<HealthResponse> -> object<Health>`
+      - `* unit_configs.affinity: object<AffinityResponse> -> object<Affinity>`
+      - `* unit_configs: list<UnitConfigResponse> -> list<UnitConfig>`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+  - **UpdateInferDeployment**
+    - 请求参数变更
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+    - 响应参数变更
+      - `+ secret_type`
+      - `+ user_name`
+      - `+ description`
+      - `+ deployment_task_limit`
+      - `+ workload_type`
+      - `+ mirror_traffic_enable`
+      - `+ secret_name`
+      - `+ infer_name`
+      - `+ system_log_dump_enable`
+      - `+ last_used_time`
+      - `+ model`
+      - `+ version_count`
+      - `+ high_avail_switch`
+      - `+ unit_configs`
+      - `+ agency_name`
+      - `+ deployment_name`
+      - `+ count`
+      - `+ weight`
+      - `+ version_id`
+      - `+ mirror_traffic_weight`
+      - `+ pool_id`
+      - `+ priority`
+      - `+ framework`
+      - `+ advanced_config`
+      - `+ schedule_strategy`
+      - `- failure_reason`
+      - `- type`
+      - `- predict_url`
+      - `- dispatcher_group_id`
+      - `- tags`
+      - `- workspace_id`
+      - `- schedule`
+      - `- deploy_timeout_minutes`
+      - `- provider`
+      - `- task_type`
+      - `* version: object<ServiceVersionResponse> -> string`
+      - `* create_at: string -> date-time`
+      - `* update_at: string -> date-time`
+  - **DeleteInferDeployment**
+    - 响应参数变更
+      - `+ user_name`
+      - `+ deployment_task_limit`
+      - `+ frozen_infos`
+      - `+ last_used_time`
+      - `+ agency_name`
+      - `+ deployment_name`
+      - `- lts_state`
+      - `- traffic_ratio`
+      - `- running_count`
+      - `* mirror_traffic_weight: string -> int32`
+      - `* update_at: int64 -> date-time`
+      - `* create_at: string -> date-time`
+      - `- model.source_id`
+      - `* model: object<InferModelResponse> -> object<GroupModel>`
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `* unit_configs.models: list<InferModelResponse> -> list<ModelResource>`
+      - `* unit_configs.image: object<ImageInfoResponse> -> object<ImageInfo>`
+      - `* unit_configs.files: list<FileResponse> -> list<FileInfo>`
+      - `* unit_configs.codes: list<CodeResponse> -> list<Code>`
+      - `- unit_configs.dumps.type`
+      - `- unit_configs.dumps.source: enum value [OBS,OBSFS]`
+      - `* unit_configs.dumps: list<DumpResponse> -> list<Dump>`
+      - `* unit_configs.readiness_health: object<HealthResponse> -> object<Health>`
+      - `* unit_configs.affinity: object<AffinityResponse> -> object<Affinity>`
+      - `* unit_configs: list<UnitConfigResponse> -> list<UnitConfig>`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+  - **ShowInferDeploymentVersion**
+    - 响应参数变更
+      - `+ user_name`
+      - `+ deployment_task_limit`
+      - `+ workload_type`
+      - `+ mirror_traffic_enable`
+      - `+ secret_name`
+      - `+ last_used_time`
+      - `+ model`
+      - `+ agency_name`
+      - `+ version_id`
+      - `+ mirror_traffic_weight`
+      - `+ deploy_type`
+      - `+ schedule_strategy`
+      - `- job_id`
+      - `* priority: string -> int32`
+      - `* high_avail_switch: string -> boolean`
+      - `* system_log_dump_enable: string -> boolean`
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+  - **UpdateInferDeploymentScale**
+    - 响应参数变更
+      - `+ user_name`
+      - `+ deployment_task_limit`
+      - `+ workload_type`
+      - `+ mirror_traffic_enable`
+      - `+ secret_name`
+      - `+ last_used_time`
+      - `+ model`
+      - `+ agency_name`
+      - `+ version_id`
+      - `+ mirror_traffic_weight`
+      - `+ deploy_type`
+      - `+ schedule_strategy`
+      - `- job_id`
+      - `* priority: string -> int32`
+      - `* high_avail_switch: string -> boolean`
+      - `* system_log_dump_enable: string -> boolean`
+      - `+ unit_configs.cpu_affinity`
+      - `+ unit_configs.group_policy`
+      - `+ advanced_config.mooncake_enable`
+      - `* advanced_config.deploy_timeout_minutes: string -> int32`
+  - **ChangeTrainingJobDescription**
+    - 请求参数变更
+      - `* body: object<JobDescription> -> object<JobUpdateRequestBody>`
+  - **StopInferService**
+    - 响应参数变更
+      - `+ version.runtime_config.smart_routing_enable`
+      - `+ version.instance_groups.unit_configs.cpu_affinity`
+      - `+ version.instance_groups.unit_configs.group_policy`
+      - `+ version.instance_groups.advanced_config.mooncake_enable`
+      - `* version.instance_groups.advanced_config.deploy_timeout_minutes: string -> int32`
+  - **StartInferService**
+    - 响应参数变更
+      - `+ version.runtime_config.smart_routing_enable`
+      - `+ version.instance_groups.unit_configs.cpu_affinity`
+      - `+ version.instance_groups.unit_configs.group_policy`
+      - `+ version.instance_groups.advanced_config.mooncake_enable`
+      - `* version.instance_groups.advanced_config.deploy_timeout_minutes: string -> int32`
+  - **CreateInferService**
+    - 请求参数变更
+      - `+ group_configs.advanced_config.mooncake_enable`
+      - `* group_configs.advanced_config.deploy_timeout_minutes: string -> int32`
+      - `+ group_configs.unit_configs.cpu_affinity`
+      - `+ group_configs.unit_configs.group_policy`
+      - `+ runtime_config.smart_routing_enable`
+    - 响应参数变更
+      - `+ version.runtime_config.smart_routing_enable`
+      - `+ version.instance_groups.unit_configs.cpu_affinity`
+      - `+ version.instance_groups.unit_configs.group_policy`
+      - `+ version.instance_groups.advanced_config.mooncake_enable`
+      - `* version.instance_groups.advanced_config.deploy_timeout_minutes: string -> int32`
+  - **ShowInferService**
+    - 响应参数变更
+      - `+ version.runtime_config.smart_routing_enable`
+      - `+ version.instance_groups.unit_configs.cpu_affinity`
+      - `+ version.instance_groups.unit_configs.group_policy`
+      - `+ version.instance_groups.advanced_config.mooncake_enable`
+      - `* version.instance_groups.advanced_config.deploy_timeout_minutes: string -> int32`
+  - **UpdateInferService**
+    - 请求参数变更
+      - `+ group_configs.advanced_config.mooncake_enable`
+      - `* group_configs.advanced_config.deploy_timeout_minutes: string -> int32`
+      - `+ group_configs.unit_configs.cpu_affinity`
+      - `+ group_configs.unit_configs.group_policy`
+      - `+ runtime_config.smart_routing_enable`
+    - 响应参数变更
+      - `+ version.runtime_config.smart_routing_enable`
+      - `+ version.instance_groups.unit_configs.cpu_affinity`
+      - `+ version.instance_groups.unit_configs.group_policy`
+      - `+ version.instance_groups.advanced_config.mooncake_enable`
+      - `* version.instance_groups.advanced_config.deploy_timeout_minutes: string -> int32`
+  - **BatchDeleteInferServices**
+    - 响应参数变更
+      - `+ service_responses.version.runtime_config.smart_routing_enable`
+      - `+ service_responses.version.instance_groups.unit_configs.cpu_affinity`
+      - `+ service_responses.version.instance_groups.unit_configs.group_policy`
+      - `+ service_responses.version.instance_groups.advanced_config.mooncake_enable`
+      - `* service_responses.version.instance_groups.advanced_config.deploy_timeout_minutes: string -> int32`
+
 # 3.1.208 2026-10-15
 
 ### HuaweiCloud SDK DRS

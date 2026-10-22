@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/modelarts/v1/model/LtsConfiguration.h"
+#include "huaweicloud/modelarts/v1/model/LtsConfigurationV2.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Modelarts {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-LtsConfiguration::LtsConfiguration()
+LtsConfigurationV2::LtsConfigurationV2()
 {
     status_ = "";
     statusIsSet_ = false;
@@ -23,13 +23,13 @@ LtsConfiguration::LtsConfiguration()
     filesIsSet_ = false;
 }
 
-LtsConfiguration::~LtsConfiguration() = default;
+LtsConfigurationV2::~LtsConfigurationV2() = default;
 
-void LtsConfiguration::validate()
+void LtsConfigurationV2::validate()
 {
 }
 
-web::json::value LtsConfiguration::toJson() const
+web::json::value LtsConfigurationV2::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -51,7 +51,7 @@ web::json::value LtsConfiguration::toJson() const
 
     return val;
 }
-bool LtsConfiguration::fromJson(const web::json::value& val)
+bool LtsConfigurationV2::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -104,107 +104,107 @@ bool LtsConfiguration::fromJson(const web::json::value& val)
 }
 
 
-std::string LtsConfiguration::getStatus() const
+std::string LtsConfigurationV2::getStatus() const
 {
     return status_;
 }
 
-void LtsConfiguration::setStatus(const std::string& value)
+void LtsConfigurationV2::setStatus(const std::string& value)
 {
     status_ = value;
     statusIsSet_ = true;
 }
 
-bool LtsConfiguration::statusIsSet() const
+bool LtsConfigurationV2::statusIsSet() const
 {
     return statusIsSet_;
 }
 
-void LtsConfiguration::unsetstatus()
+void LtsConfigurationV2::unsetstatus()
 {
     statusIsSet_ = false;
 }
 
-std::string LtsConfiguration::getType() const
+std::string LtsConfigurationV2::getType() const
 {
     return type_;
 }
 
-void LtsConfiguration::setType(const std::string& value)
+void LtsConfigurationV2::setType(const std::string& value)
 {
     type_ = value;
     typeIsSet_ = true;
 }
 
-bool LtsConfiguration::typeIsSet() const
+bool LtsConfigurationV2::typeIsSet() const
 {
     return typeIsSet_;
 }
 
-void LtsConfiguration::unsettype()
+void LtsConfigurationV2::unsettype()
 {
     typeIsSet_ = false;
 }
 
-std::string LtsConfiguration::getLogGroupId() const
+std::string LtsConfigurationV2::getLogGroupId() const
 {
     return logGroupId_;
 }
 
-void LtsConfiguration::setLogGroupId(const std::string& value)
+void LtsConfigurationV2::setLogGroupId(const std::string& value)
 {
     logGroupId_ = value;
     logGroupIdIsSet_ = true;
 }
 
-bool LtsConfiguration::logGroupIdIsSet() const
+bool LtsConfigurationV2::logGroupIdIsSet() const
 {
     return logGroupIdIsSet_;
 }
 
-void LtsConfiguration::unsetlogGroupId()
+void LtsConfigurationV2::unsetlogGroupId()
 {
     logGroupIdIsSet_ = false;
 }
 
-std::string LtsConfiguration::getLogStreamId() const
+std::string LtsConfigurationV2::getLogStreamId() const
 {
     return logStreamId_;
 }
 
-void LtsConfiguration::setLogStreamId(const std::string& value)
+void LtsConfigurationV2::setLogStreamId(const std::string& value)
 {
     logStreamId_ = value;
     logStreamIdIsSet_ = true;
 }
 
-bool LtsConfiguration::logStreamIdIsSet() const
+bool LtsConfigurationV2::logStreamIdIsSet() const
 {
     return logStreamIdIsSet_;
 }
 
-void LtsConfiguration::unsetlogStreamId()
+void LtsConfigurationV2::unsetlogStreamId()
 {
     logStreamIdIsSet_ = false;
 }
 
-std::vector<LtsFiles>& LtsConfiguration::getFiles()
+std::vector<LtsFiles>& LtsConfigurationV2::getFiles()
 {
     return files_;
 }
 
-void LtsConfiguration::setFiles(const std::vector<LtsFiles>& value)
+void LtsConfigurationV2::setFiles(const std::vector<LtsFiles>& value)
 {
     files_ = value;
     filesIsSet_ = true;
 }
 
-bool LtsConfiguration::filesIsSet() const
+bool LtsConfigurationV2::filesIsSet() const
 {
     return filesIsSet_;
 }
 
-void LtsConfiguration::unsetfiles()
+void LtsConfigurationV2::unsetfiles()
 {
     filesIsSet_ = false;
 }

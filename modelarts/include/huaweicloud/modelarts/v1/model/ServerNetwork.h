@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/modelarts/v1/model/ServerNetwork_hyper_cluster.h>
+#include <huaweicloud/modelarts/v1/model/HyperGroup.h>
 #include <string>
 #include <huaweicloud/modelarts/v1/model/AllowedAddressPairs.h>
 #include <vector>
@@ -104,6 +105,15 @@ public:
     void unsetallowedAddressPairs();
     void setAllowedAddressPairs(const std::vector<AllowedAddressPairs>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    HyperGroup getHyperGroup() const;
+    bool hyperGroupIsSet() const;
+    void unsethyperGroup();
+    void setHyperGroup(const HyperGroup& value);
+
 
 protected:
     bool ipv6Enable_;
@@ -120,6 +130,8 @@ protected:
     bool hyperClusterIsSet_;
     std::vector<AllowedAddressPairs> allowedAddressPairs_;
     bool allowedAddressPairsIsSet_;
+    HyperGroup hyperGroup_;
+    bool hyperGroupIsSet_;
 
 };
 

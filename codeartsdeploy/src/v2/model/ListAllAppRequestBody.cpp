@@ -14,6 +14,8 @@ ListAllAppRequestBody::ListAllAppRequestBody()
 {
     projectId_ = "";
     projectIdIsSet_ = false;
+    search_ = "";
+    searchIsSet_ = false;
     page_ = 0;
     pageIsSet_ = false;
     size_ = 0;
@@ -39,6 +41,9 @@ web::json::value ListAllAppRequestBody::toJson() const
 
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
+    if(searchIsSet_) {
+        val[utility::conversions::to_string_t("search")] = ModelBase::toJson(search_);
     }
     if(pageIsSet_) {
         val[utility::conversions::to_string_t("page")] = ModelBase::toJson(page_);
@@ -72,6 +77,15 @@ bool ListAllAppRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("search"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("search"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSearch(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("page"))) {
@@ -151,6 +165,27 @@ bool ListAllAppRequestBody::projectIdIsSet() const
 void ListAllAppRequestBody::unsetprojectId()
 {
     projectIdIsSet_ = false;
+}
+
+std::string ListAllAppRequestBody::getSearch() const
+{
+    return search_;
+}
+
+void ListAllAppRequestBody::setSearch(const std::string& value)
+{
+    search_ = value;
+    searchIsSet_ = true;
+}
+
+bool ListAllAppRequestBody::searchIsSet() const
+{
+    return searchIsSet_;
+}
+
+void ListAllAppRequestBody::unsetsearch()
+{
+    searchIsSet_ = false;
 }
 
 int32_t ListAllAppRequestBody::getPage() const

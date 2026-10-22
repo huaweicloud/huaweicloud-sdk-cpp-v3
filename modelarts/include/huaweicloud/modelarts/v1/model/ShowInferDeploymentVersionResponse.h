@@ -9,10 +9,12 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/modelarts/v1/model/DeploymentTaskLimit.h>
 #include <huaweicloud/modelarts/v1/model/UnitConfig.h>
 #include <string>
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/modelarts/v1/model/AdvancedConfig.h>
+#include <huaweicloud/modelarts/v1/model/GroupModel.h>
 #include <huaweicloud/modelarts/v1/model/FrozenInfo.h>
 #include <vector>
 
@@ -62,6 +64,15 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
+    /// 参数解释： 服务部署名字。
+    /// </summary>
+
+    std::string getDeploymentName() const;
+    bool deploymentNameIsSet() const;
+    void unsetdeploymentName();
+    void setDeploymentName(const std::string& value);
+
+    /// <summary>
     /// 参数解释： 部署id（废弃字段）。 取值范围： 不涉及。
     /// </summary>
 
@@ -69,15 +80,6 @@ public:
     bool inferNameIsSet() const;
     void unsetinferName();
     void setInferName(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 创建时间，根据创建时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字
-    /// </summary>
-
-    utility::datetime getCreateAt() const;
-    bool createAtIsSet() const;
-    void unsetcreateAt();
-    void setCreateAt(const utility::datetime& value);
 
     /// <summary>
     /// 参数解释： 描述 取值范围： 不涉及。
@@ -107,85 +109,22 @@ public:
     void setFramework(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 服务优先级。 **约束限制：** 不涉及。 **取值范围：** [1, 3]。 **默认取值：** 不涉及。
-    /// </summary>
-
-    std::string getPriority() const;
-    bool priorityIsSet() const;
-    void unsetpriority();
-    void setPriority(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 凭证类型相关配置，用户可以在此处选择使用的凭证类型（dew，agency） **约束限制：** 不涉及。 **取值范围：** - [dew：DEW密钥。](tag:hws,hws_hk,fcs) - agency：临时委托凭证。 **默认取值：** 不涉及。
-    /// </summary>
-
-    std::string getSecretType() const;
-    bool secretTypeIsSet() const;
-    void unsetsecretType();
-    void setSecretType(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 服务部署状态
-    /// </summary>
-
-    std::string getStatus() const;
-    bool statusIsSet() const;
-    void unsetstatus();
-    void setStatus(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 服务实例数
-    /// </summary>
-
-    int32_t getCount() const;
-    bool countIsSet() const;
-    void unsetcount();
-    void setCount(int32_t value);
-
-    /// <summary>
-    /// **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** true
-    /// </summary>
-
-    std::string getHighAvailSwitch() const;
-    bool highAvailSwitchIsSet() const;
-    void unsethighAvailSwitch();
-    void setHighAvailSwitch(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 系统日志转储开关。 **约束限制：** 只有NPU资源池有，且逻辑池是没有的 **取值范围：** 不涉及 **默认取值：** false
-    /// </summary>
-
-    std::string getSystemLogDumpEnable() const;
-    bool systemLogDumpEnableIsSet() const;
-    void unsetsystemLogDumpEnable();
-    void setSystemLogDumpEnable(const std::string& value);
-
-    /// <summary>
-    /// **参数解释：** 实例单元配置。 **约束限制：** 单机推理时，个数只会为1；如果是分布式推理时，根据不同框架，实例单元配置可灵活配置。
-    /// </summary>
-
-    std::vector<UnitConfig>& getUnitConfigs();
-    bool unitConfigsIsSet() const;
-    void unsetunitConfigs();
-    void setUnitConfigs(const std::vector<UnitConfig>& value);
-
-    /// <summary>
-    /// **参数解释：** 更新时间，根据更新时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字。
-    /// </summary>
-
-    utility::datetime getUpdateAt() const;
-    bool updateAtIsSet() const;
-    void unsetupdateAt();
-    void setUpdateAt(const utility::datetime& value);
-
-    /// <summary>
-    /// **参数解释：** 当前服务版本信息。
+    /// **参数解释：** 当前部署版本信息。
     /// </summary>
 
     std::string getVersion() const;
     bool versionIsSet() const;
     void unsetversion();
     void setVersion(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 版本id，可通过查询version列表查询。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getVersionId() const;
+    bool versionIdIsSet() const;
+    void unsetversionId();
+    void setVersionId(const std::string& value);
 
     /// <summary>
     /// **参数解释：** 服务版本数量。 **取值范围：** 不涉及。
@@ -197,6 +136,15 @@ public:
     void setVersionCount(int32_t value);
 
     /// <summary>
+    /// **参数解释：** 服务部署实例数。
+    /// </summary>
+
+    int32_t getCount() const;
+    bool countIsSet() const;
+    void unsetcount();
+    void setCount(int32_t value);
+
+    /// <summary>
     /// **参数解释：** 权重百分比，分配到此模型的流量权重，仅当模型部署为在线服务时需要配置。 **约束限制：** 不涉及。 **取值范围：** [0, 100]。 **默认取值：** 不涉及。
     /// </summary>
 
@@ -204,6 +152,105 @@ public:
     bool weightIsSet() const;
     void unsetweight();
     void setWeight(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 服务优先级。 **约束限制：** 不涉及。 **取值范围：** [1, 3]。 **默认取值：** 不涉及。
+    /// </summary>
+
+    int32_t getPriority() const;
+    bool priorityIsSet() const;
+    void unsetpriority();
+    void setPriority(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 凭证类型相关配置，用户可以在此处选择使用的凭证类型（dew，agency） **约束限制：** 不涉及。 **取值范围：** - [dew：DEW密钥。](tag:hws,hws_hk,fcs) - agency：临时委托凭证。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getSecretType() const;
+    bool secretTypeIsSet() const;
+    void unsetsecretType();
+    void setSecretType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 凭证名称，用户使用dew类型凭证时可以在此处选择使用的凭证。 **取值范围：** 1-64个字符，只能包含字母、数字、连字符和下划线。
+    /// </summary>
+
+    std::string getSecretName() const;
+    bool secretNameIsSet() const;
+    void unsetsecretName();
+    void setSecretName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 服务部署状态
+    /// </summary>
+
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 部署类型。 **取值范围：** - SINGLE：单机单卡。 - MULTI：多机多卡。
+    /// </summary>
+
+    std::string getDeployType() const;
+    bool deployTypeIsSet() const;
+    void unsetdeployType();
+    void setDeployType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 工作负载类型。 **取值范围：** - LWS - DEPLOYMENT **默认取值：** DEPLOYMENT
+    /// </summary>
+
+    std::string getWorkloadType() const;
+    bool workloadTypeIsSet() const;
+    void unsetworkloadType();
+    void setWorkloadType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不涉及 **取值范围：** - true: 高可用开启。 - false: 高可用关闭。
+    /// </summary>
+
+    bool isHighAvailSwitch() const;
+    bool highAvailSwitchIsSet() const;
+    void unsethighAvailSwitch();
+    void setHighAvailSwitch(bool value);
+
+    /// <summary>
+    /// **参数解释：** 系统日志转储开关。 **约束限制：** 只有NPU资源池有，且逻辑池是没有的 **取值范围：** 不涉及 **默认取值：** false
+    /// </summary>
+
+    bool isSystemLogDumpEnable() const;
+    bool systemLogDumpEnableIsSet() const;
+    void unsetsystemLogDumpEnable();
+    void setSystemLogDumpEnable(bool value);
+
+    /// <summary>
+    /// **参数解释：** 调度策略。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getScheduleStrategy() const;
+    bool scheduleStrategyIsSet() const;
+    void unsetscheduleStrategy();
+    void setScheduleStrategy(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 实例单元配置。 **约束限制：** 单机推理时，个数只会为1；如果是分布式推理时，根据不同框架，实例单元配置可灵活配置。
+    /// </summary>
+
+    std::vector<UnitConfig>& getUnitConfigs();
+    bool unitConfigsIsSet() const;
+    void unsetunitConfigs();
+    void setUnitConfigs(const std::vector<UnitConfig>& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    GroupModel getModel() const;
+    bool modelIsSet() const;
+    void unsetmodel();
+    void setModel(const GroupModel& value);
 
     /// <summary>
     /// 
@@ -215,22 +262,58 @@ public:
     void setAdvancedConfig(const AdvancedConfig& value);
 
     /// <summary>
-    /// **参数解释：** 巫山工作流ID。 **取值范围：** 不涉及。
+    /// **参数解释：** 是否开启镜像流量。 **取值范围：** 不涉及。
     /// </summary>
 
-    std::string getJobId() const;
-    bool jobIdIsSet() const;
-    void unsetjobId();
-    void setJobId(const std::string& value);
+    bool isMirrorTrafficEnable() const;
+    bool mirrorTrafficEnableIsSet() const;
+    void unsetmirrorTrafficEnable();
+    void setMirrorTrafficEnable(bool value);
 
     /// <summary>
-    /// 参数解释： 服务部署名字。
+    /// **参数解释：** 镜像流量权重。 **取值范围：** 不涉及。
     /// </summary>
 
-    std::string getDeploymentName() const;
-    bool deploymentNameIsSet() const;
-    void unsetdeploymentName();
-    void setDeploymentName(const std::string& value);
+    int32_t getMirrorTrafficWeight() const;
+    bool mirrorTrafficWeightIsSet() const;
+    void unsetmirrorTrafficWeight();
+    void setMirrorTrafficWeight(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 用户名。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getUserName() const;
+    bool userNameIsSet() const;
+    void unsetuserName();
+    void setUserName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 委托名称。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getAgencyName() const;
+    bool agencyNameIsSet() const;
+    void unsetagencyName();
+    void setAgencyName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 最后使用时间。 **取值范围：** 不涉及。
+    /// </summary>
+
+    utility::datetime getLastUsedTime() const;
+    bool lastUsedTimeIsSet() const;
+    void unsetlastUsedTime();
+    void setLastUsedTime(const utility::datetime& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    DeploymentTaskLimit getDeploymentTaskLimit() const;
+    bool deploymentTaskLimitIsSet() const;
+    void unsetdeploymentTaskLimit();
+    void setDeploymentTaskLimit(const DeploymentTaskLimit& value);
 
     /// <summary>
     /// **参数解释：** 当服务或者部署被冻结时返回的冻结类型信息。
@@ -241,52 +324,92 @@ public:
     void unsetfrozenInfos();
     void setFrozenInfos(const std::vector<FrozenInfo>& value);
 
+    /// <summary>
+    /// **参数解释：** 创建时间，根据创建时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字
+    /// </summary>
+
+    utility::datetime getCreateAt() const;
+    bool createAtIsSet() const;
+    void unsetcreateAt();
+    void setCreateAt(const utility::datetime& value);
+
+    /// <summary>
+    /// **参数解释：** 更新时间，根据更新时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字。
+    /// </summary>
+
+    utility::datetime getUpdateAt() const;
+    bool updateAtIsSet() const;
+    void unsetupdateAt();
+    void setUpdateAt(const utility::datetime& value);
+
 
 protected:
     std::string id_;
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string deploymentName_;
+    bool deploymentNameIsSet_;
     std::string inferName_;
     bool inferNameIsSet_;
-    utility::datetime createAt_;
-    bool createAtIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     std::string poolId_;
     bool poolIdIsSet_;
     std::string framework_;
     bool frameworkIsSet_;
-    std::string priority_;
+    std::string version_;
+    bool versionIsSet_;
+    std::string versionId_;
+    bool versionIdIsSet_;
+    int32_t versionCount_;
+    bool versionCountIsSet_;
+    int32_t count_;
+    bool countIsSet_;
+    int32_t weight_;
+    bool weightIsSet_;
+    int32_t priority_;
     bool priorityIsSet_;
     std::string secretType_;
     bool secretTypeIsSet_;
+    std::string secretName_;
+    bool secretNameIsSet_;
     std::string status_;
     bool statusIsSet_;
-    int32_t count_;
-    bool countIsSet_;
-    std::string highAvailSwitch_;
+    std::string deployType_;
+    bool deployTypeIsSet_;
+    std::string workloadType_;
+    bool workloadTypeIsSet_;
+    bool highAvailSwitch_;
     bool highAvailSwitchIsSet_;
-    std::string systemLogDumpEnable_;
+    bool systemLogDumpEnable_;
     bool systemLogDumpEnableIsSet_;
+    std::string scheduleStrategy_;
+    bool scheduleStrategyIsSet_;
     std::vector<UnitConfig> unitConfigs_;
     bool unitConfigsIsSet_;
-    utility::datetime updateAt_;
-    bool updateAtIsSet_;
-    std::string version_;
-    bool versionIsSet_;
-    int32_t versionCount_;
-    bool versionCountIsSet_;
-    int32_t weight_;
-    bool weightIsSet_;
+    GroupModel model_;
+    bool modelIsSet_;
     AdvancedConfig advancedConfig_;
     bool advancedConfigIsSet_;
-    std::string jobId_;
-    bool jobIdIsSet_;
-    std::string deploymentName_;
-    bool deploymentNameIsSet_;
+    bool mirrorTrafficEnable_;
+    bool mirrorTrafficEnableIsSet_;
+    int32_t mirrorTrafficWeight_;
+    bool mirrorTrafficWeightIsSet_;
+    std::string userName_;
+    bool userNameIsSet_;
+    std::string agencyName_;
+    bool agencyNameIsSet_;
+    utility::datetime lastUsedTime_;
+    bool lastUsedTimeIsSet_;
+    DeploymentTaskLimit deploymentTaskLimit_;
+    bool deploymentTaskLimitIsSet_;
     std::vector<FrozenInfo> frozenInfos_;
     bool frozenInfosIsSet_;
+    utility::datetime createAt_;
+    bool createAtIsSet_;
+    utility::datetime updateAt_;
+    bool updateAtIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

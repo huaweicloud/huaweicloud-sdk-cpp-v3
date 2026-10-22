@@ -45,19 +45,19 @@ public:
     /// **参数解释**：创建时间。 **取值范围**：不涉及。
     /// </summary>
 
-    std::string getCreateAt() const;
+    int64_t getCreateAt() const;
     bool createAtIsSet() const;
     void unsetcreateAt();
-    void setCreateAt(const std::string& value);
+    void setCreateAt(int64_t value);
 
     /// <summary>
     /// **参数解释**：更新时间。 **取值范围**：不涉及。
     /// </summary>
 
-    std::string getUpdateAt() const;
+    int64_t getUpdateAt() const;
     bool updateAtIsSet() const;
     void unsetupdateAt();
-    void setUpdateAt(const std::string& value);
+    void setUpdateAt(int64_t value);
 
     /// <summary>
     /// **参数解释**：任务ID。 **取值范围**：不涉及。
@@ -151,9 +151,9 @@ public:
 
 
 protected:
-    std::string createAt_;
+    int64_t createAt_;
     bool createAtIsSet_;
-    std::string updateAt_;
+    int64_t updateAt_;
     bool updateAtIsSet_;
     std::string id_;
     bool idIsSet_;

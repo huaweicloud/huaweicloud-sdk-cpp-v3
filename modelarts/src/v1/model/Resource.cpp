@@ -22,6 +22,8 @@ Resource::Resource()
     nodeCountIsSet_ = false;
     poolId_ = "";
     poolIdIsSet_ = false;
+    poolName_ = "";
+    poolNameIsSet_ = false;
     poolGroupId_ = "";
     poolGroupIdIsSet_ = false;
     flavorDetailIsSet_ = false;
@@ -53,6 +55,9 @@ web::json::value Resource::toJson() const
     }
     if(poolIdIsSet_) {
         val[utility::conversions::to_string_t("pool_id")] = ModelBase::toJson(poolId_);
+    }
+    if(poolNameIsSet_) {
+        val[utility::conversions::to_string_t("pool_name")] = ModelBase::toJson(poolName_);
     }
     if(poolGroupIdIsSet_) {
         val[utility::conversions::to_string_t("pool_group_id")] = ModelBase::toJson(poolGroupId_);
@@ -116,6 +121,15 @@ bool Resource::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPoolId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pool_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pool_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPoolName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pool_group_id"))) {
@@ -261,6 +275,27 @@ bool Resource::poolIdIsSet() const
 void Resource::unsetpoolId()
 {
     poolIdIsSet_ = false;
+}
+
+std::string Resource::getPoolName() const
+{
+    return poolName_;
+}
+
+void Resource::setPoolName(const std::string& value)
+{
+    poolName_ = value;
+    poolNameIsSet_ = true;
+}
+
+bool Resource::poolNameIsSet() const
+{
+    return poolNameIsSet_;
+}
+
+void Resource::unsetpoolName()
+{
+    poolNameIsSet_ = false;
 }
 
 std::string Resource::getPoolGroupId() const

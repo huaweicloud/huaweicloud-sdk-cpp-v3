@@ -77,6 +77,15 @@ public:
     void unsetserverTaskLimit();
     void setServerTaskLimit(const ServerTaskLimit& value);
 
+    /// <summary>
+    /// **参数解释：** 智能分流开启字段。 **取值范围：** [true, false]。
+    /// </summary>
+
+    bool isSmartRoutingEnable() const;
+    bool smartRoutingEnableIsSet() const;
+    void unsetsmartRoutingEnable();
+    void setSmartRoutingEnable(bool value);
+
 
 protected:
     ServiceInvokeUpdateRequest serviceInvoke_;
@@ -87,6 +96,8 @@ protected:
     bool serviceSecretIsSet_;
     ServerTaskLimit serverTaskLimit_;
     bool serverTaskLimitIsSet_;
+    bool smartRoutingEnable_;
+    bool smartRoutingEnableIsSet_;
 
 };
 

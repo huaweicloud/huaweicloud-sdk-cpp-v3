@@ -24,10 +24,18 @@ UpdateAppInfoRequestBody::UpdateAppInfoRequestBody()
     isDraftIsSet_ = false;
     createType_ = "";
     createTypeIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
     slaveClusterId_ = "";
     slaveClusterIdIsSet_ = false;
     triggerIsSet_ = false;
     arrangeInfosIsSet_ = false;
+    agencyUrn_ = "";
+    agencyUrnIsSet_ = false;
+    slaveResourceType_ = "";
+    slaveResourceTypeIsSet_ = false;
+    timeout_ = 0;
+    timeoutIsSet_ = false;
 }
 
 UpdateAppInfoRequestBody::~UpdateAppInfoRequestBody() = default;
@@ -58,6 +66,9 @@ web::json::value UpdateAppInfoRequestBody::toJson() const
     if(createTypeIsSet_) {
         val[utility::conversions::to_string_t("create_type")] = ModelBase::toJson(createType_);
     }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
+    }
     if(slaveClusterIdIsSet_) {
         val[utility::conversions::to_string_t("slave_cluster_id")] = ModelBase::toJson(slaveClusterId_);
     }
@@ -66,6 +77,15 @@ web::json::value UpdateAppInfoRequestBody::toJson() const
     }
     if(arrangeInfosIsSet_) {
         val[utility::conversions::to_string_t("arrange_infos")] = ModelBase::toJson(arrangeInfos_);
+    }
+    if(agencyUrnIsSet_) {
+        val[utility::conversions::to_string_t("agency_urn")] = ModelBase::toJson(agencyUrn_);
+    }
+    if(slaveResourceTypeIsSet_) {
+        val[utility::conversions::to_string_t("slave_resource_type")] = ModelBase::toJson(slaveResourceType_);
+    }
+    if(timeoutIsSet_) {
+        val[utility::conversions::to_string_t("timeout")] = ModelBase::toJson(timeout_);
     }
 
     return val;
@@ -128,6 +148,15 @@ bool UpdateAppInfoRequestBody::fromJson(const web::json::value& val)
             setCreateType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("slave_cluster_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("slave_cluster_id"));
         if(!fieldValue.is_null())
@@ -153,6 +182,33 @@ bool UpdateAppInfoRequestBody::fromJson(const web::json::value& val)
             std::vector<UpdateTaskV2RequestBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setArrangeInfos(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyUrn(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("slave_resource_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("slave_resource_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSlaveResourceType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("timeout"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("timeout"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTimeout(refVal);
         }
     }
     return ok;
@@ -285,6 +341,27 @@ void UpdateAppInfoRequestBody::unsetcreateType()
     createTypeIsSet_ = false;
 }
 
+std::string UpdateAppInfoRequestBody::getGroupId() const
+{
+    return groupId_;
+}
+
+void UpdateAppInfoRequestBody::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool UpdateAppInfoRequestBody::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void UpdateAppInfoRequestBody::unsetgroupId()
+{
+    groupIdIsSet_ = false;
+}
+
 std::string UpdateAppInfoRequestBody::getSlaveClusterId() const
 {
     return slaveClusterId_;
@@ -346,6 +423,69 @@ bool UpdateAppInfoRequestBody::arrangeInfosIsSet() const
 void UpdateAppInfoRequestBody::unsetarrangeInfos()
 {
     arrangeInfosIsSet_ = false;
+}
+
+std::string UpdateAppInfoRequestBody::getAgencyUrn() const
+{
+    return agencyUrn_;
+}
+
+void UpdateAppInfoRequestBody::setAgencyUrn(const std::string& value)
+{
+    agencyUrn_ = value;
+    agencyUrnIsSet_ = true;
+}
+
+bool UpdateAppInfoRequestBody::agencyUrnIsSet() const
+{
+    return agencyUrnIsSet_;
+}
+
+void UpdateAppInfoRequestBody::unsetagencyUrn()
+{
+    agencyUrnIsSet_ = false;
+}
+
+std::string UpdateAppInfoRequestBody::getSlaveResourceType() const
+{
+    return slaveResourceType_;
+}
+
+void UpdateAppInfoRequestBody::setSlaveResourceType(const std::string& value)
+{
+    slaveResourceType_ = value;
+    slaveResourceTypeIsSet_ = true;
+}
+
+bool UpdateAppInfoRequestBody::slaveResourceTypeIsSet() const
+{
+    return slaveResourceTypeIsSet_;
+}
+
+void UpdateAppInfoRequestBody::unsetslaveResourceType()
+{
+    slaveResourceTypeIsSet_ = false;
+}
+
+int32_t UpdateAppInfoRequestBody::getTimeout() const
+{
+    return timeout_;
+}
+
+void UpdateAppInfoRequestBody::setTimeout(int32_t value)
+{
+    timeout_ = value;
+    timeoutIsSet_ = true;
+}
+
+bool UpdateAppInfoRequestBody::timeoutIsSet() const
+{
+    return timeoutIsSet_;
+}
+
+void UpdateAppInfoRequestBody::unsettimeout()
+{
+    timeoutIsSet_ = false;
 }
 
 }

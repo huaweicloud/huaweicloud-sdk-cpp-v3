@@ -6,9 +6,21 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/evs/v2/model/AssociateAutoSnapshotPolicyRequest.h>
+#include <huaweicloud/evs/v2/model/AssociateAutoSnapshotPolicyResponse.h>
+#include <huaweicloud/evs/v2/model/BatchCreateResourceTagsRequestBody.h>
+#include <huaweicloud/evs/v2/model/BatchCreateSnapshotGroupTagRequest.h>
+#include <huaweicloud/evs/v2/model/BatchCreateSnapshotGroupTagResponse.h>
+#include <huaweicloud/evs/v2/model/BatchCreateSnapshotTagsRequest.h>
+#include <huaweicloud/evs/v2/model/BatchCreateSnapshotTagsResponse.h>
 #include <huaweicloud/evs/v2/model/BatchCreateVolumeTagsRequest.h>
 #include <huaweicloud/evs/v2/model/BatchCreateVolumeTagsRequestBody.h>
 #include <huaweicloud/evs/v2/model/BatchCreateVolumeTagsResponse.h>
+#include <huaweicloud/evs/v2/model/BatchDeleteResourceTagsRequestBody.h>
+#include <huaweicloud/evs/v2/model/BatchDeleteSnapshotGroupTagRequest.h>
+#include <huaweicloud/evs/v2/model/BatchDeleteSnapshotGroupTagResponse.h>
+#include <huaweicloud/evs/v2/model/BatchDeleteSnapshotTagsRequest.h>
+#include <huaweicloud/evs/v2/model/BatchDeleteSnapshotTagsResponse.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequest.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequestBody.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsResponse.h>
@@ -36,18 +48,55 @@
 #include <huaweicloud/evs/v2/model/CinderListVolumeTypesResponse.h>
 #include <huaweicloud/evs/v2/model/CinderShowVolumeTransferRequest.h>
 #include <huaweicloud/evs/v2/model/CinderShowVolumeTransferResponse.h>
+#include <huaweicloud/evs/v2/model/CountAutoSnapshotPoliciesRequest.h>
+#include <huaweicloud/evs/v2/model/CountAutoSnapshotPoliciesResponse.h>
+#include <huaweicloud/evs/v2/model/CountSnapshotChainsRequest.h>
+#include <huaweicloud/evs/v2/model/CountSnapshotChainsResponse.h>
+#include <huaweicloud/evs/v2/model/CountSnapshotsGroupRequest.h>
+#include <huaweicloud/evs/v2/model/CountSnapshotsGroupResponse.h>
+#include <huaweicloud/evs/v2/model/CountSnapshotsRequest.h>
+#include <huaweicloud/evs/v2/model/CountSnapshotsResponse.h>
+#include <huaweicloud/evs/v2/model/CreateAutoSnapshotPolicyRequest.h>
+#include <huaweicloud/evs/v2/model/CreateAutoSnapshotPolicyResponse.h>
+#include <huaweicloud/evs/v2/model/CreateSnapshotGroupRequest.h>
+#include <huaweicloud/evs/v2/model/CreateSnapshotGroupRequestBody.h>
+#include <huaweicloud/evs/v2/model/CreateSnapshotGroupResponse.h>
+#include <huaweicloud/evs/v2/model/CreateSnapshotPolicyRequestBody.h>
 #include <huaweicloud/evs/v2/model/CreateSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/CreateSnapshotRequestBody.h>
 #include <huaweicloud/evs/v2/model/CreateSnapshotResponse.h>
+#include <huaweicloud/evs/v2/model/CreateStandardSnapshotRequest.h>
+#include <huaweicloud/evs/v2/model/CreateStandardSnapshotRequestBody.h>
+#include <huaweicloud/evs/v2/model/CreateStandardSnapshotResponse.h>
 #include <huaweicloud/evs/v2/model/CreateVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/CreateVolumeRequestBody.h>
 #include <huaweicloud/evs/v2/model/CreateVolumeResponse.h>
+#include <huaweicloud/evs/v2/model/DeleteAutoSnapshotPolicyRequest.h>
+#include <huaweicloud/evs/v2/model/DeleteAutoSnapshotPolicyResponse.h>
+#include <huaweicloud/evs/v2/model/DeleteSnapshotGroupRequest.h>
+#include <huaweicloud/evs/v2/model/DeleteSnapshotGroupResponse.h>
 #include <huaweicloud/evs/v2/model/DeleteSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/DeleteSnapshotResponse.h>
+#include <huaweicloud/evs/v2/model/DeleteStandardSnapshotRequest.h>
+#include <huaweicloud/evs/v2/model/DeleteStandardSnapshotResponse.h>
 #include <huaweicloud/evs/v2/model/DeleteVolumeInRecycleRequest.h>
 #include <huaweicloud/evs/v2/model/DeleteVolumeInRecycleResponse.h>
 #include <huaweicloud/evs/v2/model/DeleteVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/DeleteVolumeResponse.h>
+#include <huaweicloud/evs/v2/model/DisassociateAutoSnapshotPolicyRequest.h>
+#include <huaweicloud/evs/v2/model/DisassociateAutoSnapshotPolicyResponse.h>
+#include <huaweicloud/evs/v2/model/ListAutoSnapshotPolicyRequest.h>
+#include <huaweicloud/evs/v2/model/ListAutoSnapshotPolicyResponse.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotChainsRequest.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotChainsResponse.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotGroupRequest.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotGroupResponse.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotGroupTagsRequest.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotGroupTagsResponse.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotTagsRequest.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotTagsResponse.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotsDetailsRequest.h>
+#include <huaweicloud/evs/v2/model/ListSnapshotsDetailsResponse.h>
 #include <huaweicloud/evs/v2/model/ListSnapshotsRequest.h>
 #include <huaweicloud/evs/v2/model/ListSnapshotsResponse.h>
 #include <huaweicloud/evs/v2/model/ListVolumeTagsRequest.h>
@@ -74,13 +123,22 @@
 #include <huaweicloud/evs/v2/model/RevertVolumeInRecycleResponse.h>
 #include <huaweicloud/evs/v2/model/RollbackSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/RollbackSnapshotRequestBody.h>
+#include <huaweicloud/evs/v2/model/RollbackSnapshotRequestBodyV5.h>
 #include <huaweicloud/evs/v2/model/RollbackSnapshotResponse.h>
+#include <huaweicloud/evs/v2/model/RollbackStandardSnapshotRequest.h>
+#include <huaweicloud/evs/v2/model/RollbackStandardSnapshotResponse.h>
+#include <huaweicloud/evs/v2/model/ShowAutoSnapshotPolicyRequest.h>
+#include <huaweicloud/evs/v2/model/ShowAutoSnapshotPolicyResponse.h>
 #include <huaweicloud/evs/v2/model/ShowJobRequest.h>
 #include <huaweicloud/evs/v2/model/ShowJobResponse.h>
 #include <huaweicloud/evs/v2/model/ShowRecyclePolicyRequest.h>
 #include <huaweicloud/evs/v2/model/ShowRecyclePolicyResponse.h>
+#include <huaweicloud/evs/v2/model/ShowSnapshotGroupRequest.h>
+#include <huaweicloud/evs/v2/model/ShowSnapshotGroupResponse.h>
 #include <huaweicloud/evs/v2/model/ShowSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/ShowSnapshotResponse.h>
+#include <huaweicloud/evs/v2/model/ShowStandardSnapshotRequest.h>
+#include <huaweicloud/evs/v2/model/ShowStandardSnapshotResponse.h>
 #include <huaweicloud/evs/v2/model/ShowVolumeInRecycleRequest.h>
 #include <huaweicloud/evs/v2/model/ShowVolumeInRecycleResponse.h>
 #include <huaweicloud/evs/v2/model/ShowVolumeRequest.h>
@@ -90,15 +148,25 @@
 #include <huaweicloud/evs/v2/model/UnsubscribePostpaidVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/UnsubscribePostpaidVolumeResponse.h>
 #include <huaweicloud/evs/v2/model/UnsubscribeVolumeRequestBody.h>
+#include <huaweicloud/evs/v2/model/UpdateAutoSnapshotPolicyRequest.h>
+#include <huaweicloud/evs/v2/model/UpdateAutoSnapshotPolicyResponse.h>
 #include <huaweicloud/evs/v2/model/UpdateRecyclePolicyRequest.h>
 #include <huaweicloud/evs/v2/model/UpdateRecyclePolicyResponse.h>
+#include <huaweicloud/evs/v2/model/UpdateSnapshotGroupRequest.h>
+#include <huaweicloud/evs/v2/model/UpdateSnapshotGroupRequestBody.h>
+#include <huaweicloud/evs/v2/model/UpdateSnapshotGroupResponse.h>
+#include <huaweicloud/evs/v2/model/UpdateSnapshotPolicyRequestBody.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotRequestBody.h>
+#include <huaweicloud/evs/v2/model/UpdateSnapshotRequestBodyV5.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotResponse.h>
+#include <huaweicloud/evs/v2/model/UpdateStandardSnapshotRequest.h>
+#include <huaweicloud/evs/v2/model/UpdateStandardSnapshotResponse.h>
 #include <huaweicloud/evs/v2/model/UpdateVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/UpdateVolumeRequestBody.h>
 #include <huaweicloud/evs/v2/model/UpdateVolumeResponse.h>
 #include <string>
+#include <vector>
 
 #include <huaweicloud/evs/v2/model/ListVersionsRequest.h>
 #include <huaweicloud/evs/v2/model/ListVersionsResponse.h>
@@ -130,6 +198,30 @@ public:
 
     static ClientBuilder<EvsClient> newBuilder();
 
+    // 绑定自动快照策略
+    //
+    // 绑定自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AssociateAutoSnapshotPolicyResponse> associateAutoSnapshotPolicy(
+        AssociateAutoSnapshotPolicyRequest &request
+    );
+    // 为指定快照组添加标签
+    //
+    // 为指定快照组添加标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreateSnapshotGroupTagResponse> batchCreateSnapshotGroupTag(
+        BatchCreateSnapshotGroupTagRequest &request
+    );
+    // 为指定快照添加标签
+    //
+    // 为指定快照添加标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreateSnapshotTagsResponse> batchCreateSnapshotTags(
+        BatchCreateSnapshotTagsRequest &request
+    );
     // 为指定云硬盘批量添加标签
     //
     // 为指定云硬盘批量添加标签。
@@ -140,6 +232,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateVolumeTagsResponse> batchCreateVolumeTags(
         BatchCreateVolumeTagsRequest &request
+    );
+    // 为指定快照组删除标签
+    //
+    // 为指定快照组删除标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteSnapshotGroupTagResponse> batchDeleteSnapshotGroupTag(
+        BatchDeleteSnapshotGroupTagRequest &request
+    );
+    // 为指定快照删除标签
+    //
+    // 为指定快照删除标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteSnapshotTagsResponse> batchDeleteSnapshotTags(
+        BatchDeleteSnapshotTagsRequest &request
     );
     // 为指定云硬盘批量删除标签
     //
@@ -234,6 +342,46 @@ public:
     std::shared_ptr<CinderShowVolumeTransferResponse> cinderShowVolumeTransfer(
         CinderShowVolumeTransferRequest &request
     );
+    // 查询自动快照策略总数
+    //
+    // 查询自动快照策略总数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountAutoSnapshotPoliciesResponse> countAutoSnapshotPolicies(
+        CountAutoSnapshotPoliciesRequest &request
+    );
+    // 查询快照链个数
+    //
+    // 查询快照链个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountSnapshotChainsResponse> countSnapshotChains(
+        CountSnapshotChainsRequest &request
+    );
+    // 查询快照个数
+    //
+    // 查询快照个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountSnapshotsResponse> countSnapshots(
+        CountSnapshotsRequest &request
+    );
+    // 查询快照一致性组个数
+    //
+    // 查询快照一致性组个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountSnapshotsGroupResponse> countSnapshotsGroup(
+        CountSnapshotsGroupRequest &request
+    );
+    // 创建自动快照策略
+    //
+    // 创建自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAutoSnapshotPolicyResponse> createAutoSnapshotPolicy(
+        CreateAutoSnapshotPolicyRequest &request
+    );
     // 创建云硬盘快照
     //
     // 创建云硬盘快照。
@@ -241,6 +389,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateSnapshotResponse> createSnapshot(
         CreateSnapshotRequest &request
+    );
+    // 创建快照一致性组
+    //
+    // 创建快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSnapshotGroupResponse> createSnapshotGroup(
+        CreateSnapshotGroupRequest &request
+    );
+    // 创建快照
+    //
+    // 创建标准快照。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateStandardSnapshotResponse> createStandardSnapshot(
+        CreateStandardSnapshotRequest &request
     );
     // 创建云硬盘
     //
@@ -255,6 +419,14 @@ public:
     std::shared_ptr<CreateVolumeResponse> createVolume(
         CreateVolumeRequest &request
     );
+    // 删除单个自动快照策略
+    //
+    // 删除单个自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAutoSnapshotPolicyResponse> deleteAutoSnapshotPolicy(
+        DeleteAutoSnapshotPolicyRequest &request
+    );
     // 删除云硬盘快照
     //
     // 删除云硬盘快照。
@@ -262,6 +434,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteSnapshotResponse> deleteSnapshot(
         DeleteSnapshotRequest &request
+    );
+    // 删除快照一致性组
+    //
+    // 删除快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSnapshotGroupResponse> deleteSnapshotGroup(
+        DeleteSnapshotGroupRequest &request
+    );
+    // 删除快照
+    //
+    // 删除快照。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteStandardSnapshotResponse> deleteStandardSnapshot(
+        DeleteStandardSnapshotRequest &request
     );
     // 删除云硬盘
     //
@@ -279,6 +467,54 @@ public:
     std::shared_ptr<DeleteVolumeInRecycleResponse> deleteVolumeInRecycle(
         DeleteVolumeInRecycleRequest &request
     );
+    // 解绑自动快照策略
+    //
+    // 解绑自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DisassociateAutoSnapshotPolicyResponse> disassociateAutoSnapshotPolicy(
+        DisassociateAutoSnapshotPolicyRequest &request
+    );
+    // 查询自动快照策略
+    //
+    // 查询自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAutoSnapshotPolicyResponse> listAutoSnapshotPolicy(
+        ListAutoSnapshotPolicyRequest &request
+    );
+    // 查询快照链列表
+    //
+    // 查询快照链的列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSnapshotChainsResponse> listSnapshotChains(
+        ListSnapshotChainsRequest &request
+    );
+    // 查询快照一致性组列表
+    //
+    // 查询快照一致性组列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSnapshotGroupResponse> listSnapshotGroup(
+        ListSnapshotGroupRequest &request
+    );
+    // 查询快照组的所有标签
+    //
+    // 查询快照组的所有标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSnapshotGroupTagsResponse> listSnapshotGroupTags(
+        ListSnapshotGroupTagsRequest &request
+    );
+    // 查询快照资源的所有标签
+    //
+    // 查询快照资源的所有标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSnapshotTagsResponse> listSnapshotTags(
+        ListSnapshotTagsRequest &request
+    );
     // 查询云硬盘快照详情列表
     //
     // 查询云硬盘快照详细列表信息。
@@ -286,6 +522,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSnapshotsResponse> listSnapshots(
         ListSnapshotsRequest &request
+    );
+    // 查询快照详情列表
+    //
+    // 查询快照详情列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSnapshotsDetailsResponse> listSnapshotsDetails(
+        ListSnapshotsDetailsRequest &request
     );
     // 获取云硬盘资源的所有标签
     //
@@ -369,6 +613,22 @@ public:
     std::shared_ptr<RollbackSnapshotResponse> rollbackSnapshot(
         RollbackSnapshotRequest &request
     );
+    // 快照回滚
+    //
+    // 将快照数据回滚到云硬盘。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RollbackStandardSnapshotResponse> rollbackStandardSnapshot(
+        RollbackStandardSnapshotRequest &request
+    );
+    // 查询单个自动快照策略
+    //
+    // 查询单个自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoSnapshotPolicyResponse> showAutoSnapshotPolicy(
+        ShowAutoSnapshotPolicyRequest &request
+    );
     // 查询job的状态
     //
     // 查询Job的执行状态。
@@ -393,6 +653,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSnapshotResponse> showSnapshot(
         ShowSnapshotRequest &request
+    );
+    // 查询单个快照一致性组
+    //
+    // 查询单个快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSnapshotGroupResponse> showSnapshotGroup(
+        ShowSnapshotGroupRequest &request
+    );
+    // 查询单个快照信息
+    //
+    // 查询单个快照信息。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStandardSnapshotResponse> showStandardSnapshot(
+        ShowStandardSnapshotRequest &request
     );
     // 查询单个云硬盘详情
     //
@@ -428,6 +704,14 @@ public:
     std::shared_ptr<UnsubscribePostpaidVolumeResponse> unsubscribePostpaidVolume(
         UnsubscribePostpaidVolumeRequest &request
     );
+    // 更新自动快照策略
+    //
+    // 更新自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAutoSnapshotPolicyResponse> updateAutoSnapshotPolicy(
+        UpdateAutoSnapshotPolicyRequest &request
+    );
     // 更新回收站策略
     //
     // 更新回收站策略。
@@ -443,6 +727,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSnapshotResponse> updateSnapshot(
         UpdateSnapshotRequest &request
+    );
+    // 更新快照一致性组
+    //
+    // 更新快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSnapshotGroupResponse> updateSnapshotGroup(
+        UpdateSnapshotGroupRequest &request
+    );
+    // 更新快照信息
+    //
+    // 更新快照信息。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateStandardSnapshotResponse> updateStandardSnapshot(
+        UpdateStandardSnapshotRequest &request
     );
     // 更新云硬盘
     //

@@ -428,6 +428,15 @@ HttpRequestDef ModelArtsMeta::genRequestDefForCreateHyperCluster() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateHyperinstanceGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForCreateHyperinstanceTags() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -689,6 +698,11 @@ HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperinstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperinstanceGroup() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperinstanceTags() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -893,6 +907,11 @@ HttpRequestDef ModelArtsMeta::genRequestDefForGetHyperinstance() {
         withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetHyperinstanceGroup() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -1124,6 +1143,25 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstanceClustersCapacity(
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstanceGroup() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstanceGroupsCapacity() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstanceServers() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstances() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
@@ -1283,8 +1321,8 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListInferDeploymentInstances() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("PodName")
-                  .withJsonTag("pod_name")
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceName")
+                  .withJsonTag("instance_name")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -1325,6 +1363,9 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListInferDeploymentPods() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("PodNodeName")
                   .withJsonTag("pod_node_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PodRoleName")
+                  .withJsonTag("pod_role_name")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -2510,6 +2551,11 @@ HttpRequestDef ModelArtsMeta::genRequestDefForSyncDevServers() {
 }
 
 HttpRequestDef ModelArtsMeta::genRequestDefForSyncImage() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForUnbindDevServerPublicIP() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }

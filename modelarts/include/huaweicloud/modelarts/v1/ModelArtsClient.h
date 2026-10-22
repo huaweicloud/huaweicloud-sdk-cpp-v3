@@ -101,6 +101,8 @@
 #include <huaweicloud/modelarts/v1/model/CreateDevServerResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateHyperClusterRequest.h>
 #include <huaweicloud/modelarts/v1/model/CreateHyperClusterResponse.h>
+#include <huaweicloud/modelarts/v1/model/CreateHyperinstanceGroupRequest.h>
+#include <huaweicloud/modelarts/v1/model/CreateHyperinstanceGroupResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateHyperinstanceTagsRequest.h>
 #include <huaweicloud/modelarts/v1/model/CreateHyperinstanceTagsResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateInferApiKeyRequest.h>
@@ -159,6 +161,8 @@
 #include <huaweicloud/modelarts/v1/model/DeleteDevServerResponse.h>
 #include <huaweicloud/modelarts/v1/model/DeleteHyperClusterRequest.h>
 #include <huaweicloud/modelarts/v1/model/DeleteHyperClusterResponse.h>
+#include <huaweicloud/modelarts/v1/model/DeleteHyperinstanceGroupRequest.h>
+#include <huaweicloud/modelarts/v1/model/DeleteHyperinstanceGroupResponse.h>
 #include <huaweicloud/modelarts/v1/model/DeleteHyperinstanceRequest.h>
 #include <huaweicloud/modelarts/v1/model/DeleteHyperinstanceResponse.h>
 #include <huaweicloud/modelarts/v1/model/DeleteHyperinstanceTagsRequest.h>
@@ -222,6 +226,8 @@
 #include <huaweicloud/modelarts/v1/model/GetDevServerOperationResponse.h>
 #include <huaweicloud/modelarts/v1/model/GetHyperClusterRequest.h>
 #include <huaweicloud/modelarts/v1/model/GetHyperClusterResponse.h>
+#include <huaweicloud/modelarts/v1/model/GetHyperinstanceGroupRequest.h>
+#include <huaweicloud/modelarts/v1/model/GetHyperinstanceGroupResponse.h>
 #include <huaweicloud/modelarts/v1/model/GetHyperinstanceOperationRequest.h>
 #include <huaweicloud/modelarts/v1/model/GetHyperinstanceOperationResponse.h>
 #include <huaweicloud/modelarts/v1/model/GetHyperinstanceRequest.h>
@@ -234,6 +240,8 @@
 #include <huaweicloud/modelarts/v1/model/GroupConfigUpdateRequest.h>
 #include <huaweicloud/modelarts/v1/model/HyperClusterCreateRequest.h>
 #include <huaweicloud/modelarts/v1/model/HyperinstanceClustersCapacityRequest.h>
+#include <huaweicloud/modelarts/v1/model/HyperinstanceGroupCreateRequest.h>
+#include <huaweicloud/modelarts/v1/model/HyperinstanceGroupsCapacityRequest.h>
 #include <huaweicloud/modelarts/v1/model/ImageRegRequest.h>
 #include <huaweicloud/modelarts/v1/model/ImageSaveJob.h>
 #include <huaweicloud/modelarts/v1/model/IntranetConnectionDeleteRequest.h>
@@ -241,8 +249,8 @@
 #include <huaweicloud/modelarts/v1/model/IntranetConnectionRequest.h>
 #include <huaweicloud/modelarts/v1/model/Job.h>
 #include <huaweicloud/modelarts/v1/model/JobActionType.h>
-#include <huaweicloud/modelarts/v1/model/JobDescription.h>
 #include <huaweicloud/modelarts/v1/model/JobSearches.h>
+#include <huaweicloud/modelarts/v1/model/JobUpdateRequestBody.h>
 #include <huaweicloud/modelarts/v1/model/ListAlgorithmsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListAlgorithmsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListAllDevServersRequest.h>
@@ -273,6 +281,12 @@
 #include <huaweicloud/modelarts/v1/model/ListHyperClusterResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListHyperinstanceClustersCapacityRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListHyperinstanceClustersCapacityResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListHyperinstanceGroupRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListHyperinstanceGroupResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListHyperinstanceGroupsCapacityRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListHyperinstanceGroupsCapacityResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListHyperinstanceServersRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListHyperinstanceServersResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListHyperinstancesRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListHyperinstancesResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListImageGroupRequest.h>
@@ -529,6 +543,8 @@
 #include <huaweicloud/modelarts/v1/model/SyncImageResponse.h>
 #include <huaweicloud/modelarts/v1/model/TagRequest.h>
 #include <huaweicloud/modelarts/v1/model/TaskHistory.h>
+#include <huaweicloud/modelarts/v1/model/UnbindDevServerPublicIPRequest.h>
+#include <huaweicloud/modelarts/v1/model/UnbindDevServerPublicIPResponse.h>
 #include <huaweicloud/modelarts/v1/model/UnbindInferApiKeyRequest.h>
 #include <huaweicloud/modelarts/v1/model/UnbindInferApiKeyResponse.h>
 #include <huaweicloud/modelarts/v1/model/UpdateAuthModeRequest.h>
@@ -974,7 +990,8 @@ public:
     );
     // 更新训练作业描述
     //
-    // 更新训练作业描述。
+    // 更新训练作业接口用于修改已存在的训练作业的描述、事件通知、作业优先级、允许被抢占等信息。
+    // 该接口适用于以下场景：当用户需要更新训练作业的描述、事件通知、作业优先级、允许被抢占等信息时，可以通过此接口进行修改。使用该接口的前提条件是训练作业已存在且用户具有相应的权限。更新操作完成后，训练作业的描述、事件通知、作业优先级、允许被抢占等信息将被更新。若训练作业不存在或用户无权限操作，接口将返回相应的错误信息。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeTrainingJobDescriptionResponse> changeTrainingJobDescription(
@@ -1054,6 +1071,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateHyperClusterResponse> createHyperCluster(
         CreateHyperClusterRequest &request
+    );
+    // 创建hyperinstance-group
+    //
+    // 创建Hyper Group接口用于在系统中创建一个新的Hyper Group。该接口适用于以下场景：当用户需要使用超平面网络时，可以通过此接口创建Hyper Group。使用该接口的前提条件是用户已登录并具有创建Hyper Group的权限，且系统中已配置了必要的资源。创建操作完成后，将生成一个新的超平面网络，并返回超平面网络的详细信息，包括ID、名称、参数面网络ID。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateHyperinstanceGroupResponse> createHyperinstanceGroup(
+        CreateHyperinstanceGroupRequest &request
     );
     // 创建Lite Server超节点标签
     //
@@ -1264,6 +1289,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteHyperinstanceResponse> deleteHyperinstance(
         DeleteHyperinstanceRequest &request
+    );
+    // 删除hyperinstance-group
+    //
+    // 删除hyperinstance-group
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteHyperinstanceGroupResponse> deleteHyperinstanceGroup(
+        DeleteHyperinstanceGroupRequest &request
     );
     // 删除Lite Server超节点标签
     //
@@ -1487,6 +1520,14 @@ public:
     std::shared_ptr<GetHyperinstanceResponse> getHyperinstance(
         GetHyperinstanceRequest &request
     );
+    // 查询hyperinstance-group详情
+    //
+    // 查询HyperGroup详情接口用于在系统中查询Hyper Group详情。该接口适用于以下场景：当用户需要查询Hyper Group详情，可以通过此接口完成。使用该接口的前提条件是用户已登录并具有查询Hyper Group的权限，且系统中已配置了必要的资源。查询会返回超平面网络的详细信息，包括ID、名称、参数面网络ID等。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetHyperinstanceGroupResponse> getHyperinstanceGroup(
+        GetHyperinstanceGroupRequest &request
+    );
     // 查询超节点Operation详情
     //
     // 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
@@ -1632,6 +1673,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListHyperinstanceClustersCapacityResponse> listHyperinstanceClustersCapacity(
         ListHyperinstanceClustersCapacityRequest &request
+    );
+    // 查询hyperinstance-group详情列表
+    //
+    // 查询hyperinstance-group详情列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHyperinstanceGroupResponse> listHyperinstanceGroup(
+        ListHyperinstanceGroupRequest &request
+    );
+    // 查询超节点hyperinstance-groups容量测算结果
+    //
+    // 查询超节点hyperinstance-groups容量测算结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHyperinstanceGroupsCapacityResponse> listHyperinstanceGroupsCapacity(
+        ListHyperinstanceGroupsCapacityRequest &request
+    );
+    // 查询超节点的所有子节点
+    //
+    // 查询指定超节点下的所有节点实例列表接口用于获取用户名下指定超节点所有Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看其指定超节点下的所有Lite Server实例的状态、配置等信息，以便进行资源管理。使用该接口的前提条件是用户已登录且具有查询指定超节点下的所有节点实例列表接口的权限。调用此接口后，系统将返回指定超节点下所有Lite Server实例的列表，包括实例ID、名称、状态、创建时间等信息。若用户无权限或未登录，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHyperinstanceServersResponse> listHyperinstanceServers(
+        ListHyperinstanceServersRequest &request
     );
     // 查询用户所有超节点实例详情
     //
@@ -2549,6 +2614,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SyncImageResponse> syncImage(
         SyncImageRequest &request
+    );
+    // Lite Server解绑EIP
+    //
+    // Lite Server解绑EIP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UnbindDevServerPublicIPResponse> unbindDevServerPublicIP(
+        UnbindDevServerPublicIPRequest &request
     );
     // 解绑应用密钥
     //

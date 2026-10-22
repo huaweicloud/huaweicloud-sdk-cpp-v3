@@ -100,6 +100,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ListAvailableFlavorInfosResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListBackupsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListBackupsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListBiactiveInstanceCandidatesRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListBiactiveInstanceCandidatesResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsResponse.h>
@@ -696,6 +698,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListBackupsResponse> listBackups(
         ListBackupsRequest &request
+    );
+    // 查询实例可搭建双活关系的候选实例
+    //
+    // 查询实例在目标Region可搭建双活关系的候选实例列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBiactiveInstanceCandidatesResponse> listBiactiveInstanceCandidates(
+        ListBiactiveInstanceCandidatesRequest &request
     );
     // 查询GeminiDB(for Cassandra)数据库慢日志
     //

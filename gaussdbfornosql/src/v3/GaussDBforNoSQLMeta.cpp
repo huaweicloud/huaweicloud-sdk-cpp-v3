@@ -333,6 +333,26 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListBackups() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListBiactiveInstanceCandidates() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetRegionCode")
+                  .withJsonTag("target_region_code")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetInstanceName")
+                  .withJsonTag("target_instance_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DataSyncMode")
+                  .withJsonTag("data_sync_mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListCassandraSlowLogs() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

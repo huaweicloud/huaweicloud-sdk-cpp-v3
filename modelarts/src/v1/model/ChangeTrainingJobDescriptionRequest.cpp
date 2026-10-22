@@ -53,7 +53,7 @@ bool ChangeTrainingJobDescriptionRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            JobDescription refVal;
+            JobUpdateRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -83,12 +83,12 @@ void ChangeTrainingJobDescriptionRequest::unsettrainingJobId()
     trainingJobIdIsSet_ = false;
 }
 
-JobDescription ChangeTrainingJobDescriptionRequest::getBody() const
+JobUpdateRequestBody ChangeTrainingJobDescriptionRequest::getBody() const
 {
     return body_;
 }
 
-void ChangeTrainingJobDescriptionRequest::setBody(const JobDescription& value)
+void ChangeTrainingJobDescriptionRequest::setBody(const JobUpdateRequestBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;

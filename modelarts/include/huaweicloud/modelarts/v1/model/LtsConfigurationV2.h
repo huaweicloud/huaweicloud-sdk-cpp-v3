@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_LtsConfiguration_H_
-#define HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_LtsConfiguration_H_
+#ifndef HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_LtsConfigurationV2_H_
+#define HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_LtsConfigurationV2_H_
 
 
 #include <huaweicloud/modelarts/v1/ModelArtsExport.h>
@@ -24,12 +24,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// **参数解释：** 日志配置。 **约束限制：** 不涉及。
 /// </summary>
-class HUAWEICLOUD_MODELARTS_V1_EXPORT  LtsConfiguration
+class HUAWEICLOUD_MODELARTS_V1_EXPORT  LtsConfigurationV2
     : public ModelBase
 {
 public:
-    LtsConfiguration();
-    virtual ~LtsConfiguration();
+    LtsConfigurationV2();
+    virtual ~LtsConfigurationV2();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,7 +38,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// LtsConfiguration members
+    /// LtsConfigurationV2 members
 
     /// <summary>
     /// **参数解释：** 日志服务状态。 **取值范围：** - ON：开启。 - OFF：关闭。 **默认取值：** ON。
@@ -107,4 +107,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_LtsConfiguration_H_
+#endif // HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_LtsConfigurationV2_H_

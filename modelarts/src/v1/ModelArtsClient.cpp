@@ -1663,6 +1663,47 @@ std::shared_ptr<CreateHyperClusterResponse> ModelArtsClient::createHyperCluster(
 
     return localVarResult;
 }
+std::shared_ptr<CreateHyperinstanceGroupResponse> ModelArtsClient::createHyperinstanceGroup(CreateHyperinstanceGroupRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForCreateHyperinstanceGroup());
+
+    std::shared_ptr<CreateHyperinstanceGroupResponse> localVarResult = std::make_shared<CreateHyperinstanceGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateHyperinstanceTagsResponse> ModelArtsClient::createHyperinstanceTags(CreateHyperinstanceTagsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/{id}/tags/create";
@@ -2665,6 +2706,36 @@ std::shared_ptr<DeleteHyperinstanceResponse> ModelArtsClient::deleteHyperinstanc
 
     return localVarResult;
 }
+std::shared_ptr<DeleteHyperinstanceGroupResponse> ModelArtsClient::deleteHyperinstanceGroup(DeleteHyperinstanceGroupRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/groups/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForDeleteHyperinstanceGroup());
+
+    std::shared_ptr<DeleteHyperinstanceGroupResponse> localVarResult = std::make_shared<DeleteHyperinstanceGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteHyperinstanceTagsResponse> ModelArtsClient::deleteHyperinstanceTags(DeleteHyperinstanceTagsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/{id}/tags/delete";
@@ -3583,6 +3654,36 @@ std::shared_ptr<GetHyperinstanceResponse> ModelArtsClient::getHyperinstance(GetH
 
     return localVarResult;
 }
+std::shared_ptr<GetHyperinstanceGroupResponse> ModelArtsClient::getHyperinstanceGroup(GetHyperinstanceGroupRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/groups/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForGetHyperinstanceGroup());
+
+    std::shared_ptr<GetHyperinstanceGroupResponse> localVarResult = std::make_shared<GetHyperinstanceGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<GetHyperinstanceOperationResponse> ModelArtsClient::getHyperinstanceOperation(GetHyperinstanceOperationRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/{id}/operation/{operation_id}";
@@ -4252,6 +4353,106 @@ std::shared_ptr<ListHyperinstanceClustersCapacityResponse> ModelArtsClient::list
 
     return localVarResult;
 }
+std::shared_ptr<ListHyperinstanceGroupResponse> ModelArtsClient::listHyperinstanceGroup(ListHyperinstanceGroupRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListHyperinstanceGroup());
+
+    std::shared_ptr<ListHyperinstanceGroupResponse> localVarResult = std::make_shared<ListHyperinstanceGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListHyperinstanceGroupsCapacityResponse> ModelArtsClient::listHyperinstanceGroupsCapacity(ListHyperinstanceGroupsCapacityRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/group-capacity-evaluations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListHyperinstanceGroupsCapacity());
+
+    std::shared_ptr<ListHyperinstanceGroupsCapacityResponse> localVarResult = std::make_shared<ListHyperinstanceGroupsCapacityResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListHyperinstanceServersResponse> ModelArtsClient::listHyperinstanceServers(ListHyperinstanceServersRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance/{id}/servers";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListHyperinstanceServers());
+
+    std::shared_ptr<ListHyperinstanceServersResponse> localVarResult = std::make_shared<ListHyperinstanceServersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListHyperinstancesResponse> ModelArtsClient::listHyperinstances(ListHyperinstancesRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dev-servers/hyperinstance";
@@ -4538,8 +4739,8 @@ std::shared_ptr<ListInferDeploymentInstancesResponse> ModelArtsClient::listInfer
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
-    if (request.podNameIsSet()) {
-        localVarQueryParams["pod_name"] = parameterToString(request.getPodName());
+    if (request.instanceNameIsSet()) {
+        localVarQueryParams["instance_name"] = parameterToString(request.getInstanceName());
     }
 
     std::string localVarHttpBody;
@@ -4632,6 +4833,9 @@ std::shared_ptr<ListInferDeploymentPodsResponse> ModelArtsClient::listInferDeplo
     }
     if (request.podNodeNameIsSet()) {
         localVarQueryParams["pod_node_name"] = parameterToString(request.getPodNodeName());
+    }
+    if (request.podRoleNameIsSet()) {
+        localVarQueryParams["pod_role_name"] = parameterToString(request.getPodRoleName());
     }
 
     std::string localVarHttpBody;
@@ -8498,6 +8702,37 @@ std::shared_ptr<SyncImageResponse> ModelArtsClient::syncImage(SyncImageRequest &
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForSyncImage());
 
     std::shared_ptr<SyncImageResponse> localVarResult = std::make_shared<SyncImageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UnbindDevServerPublicIPResponse> ModelArtsClient::unbindDevServerPublicIP(UnbindDevServerPublicIPRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/dev-servers/{id}/publicips/{publicip_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["id"] = parameterToString(request.getId());
+    localVarPathParams["publicip_id"] = parameterToString(request.getPublicipId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForUnbindDevServerPublicIP());
+
+    std::shared_ptr<UnbindDevServerPublicIPResponse> localVarResult = std::make_shared<UnbindDevServerPublicIPResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

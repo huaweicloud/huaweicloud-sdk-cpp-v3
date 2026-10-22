@@ -12,9 +12,9 @@ namespace Model {
 
 CreateDevServerJobResponse::CreateDevServerJobResponse()
 {
-    createAt_ = "";
+    createAt_ = 0L;
     createAtIsSet_ = false;
-    updateAt_ = "";
+    updateAt_ = 0L;
     updateAtIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
@@ -93,7 +93,7 @@ bool CreateDevServerJobResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_at"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateAt(refVal);
         }
@@ -102,7 +102,7 @@ bool CreateDevServerJobResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_at"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdateAt(refVal);
         }
@@ -201,12 +201,12 @@ bool CreateDevServerJobResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string CreateDevServerJobResponse::getCreateAt() const
+int64_t CreateDevServerJobResponse::getCreateAt() const
 {
     return createAt_;
 }
 
-void CreateDevServerJobResponse::setCreateAt(const std::string& value)
+void CreateDevServerJobResponse::setCreateAt(int64_t value)
 {
     createAt_ = value;
     createAtIsSet_ = true;
@@ -222,12 +222,12 @@ void CreateDevServerJobResponse::unsetcreateAt()
     createAtIsSet_ = false;
 }
 
-std::string CreateDevServerJobResponse::getUpdateAt() const
+int64_t CreateDevServerJobResponse::getUpdateAt() const
 {
     return updateAt_;
 }
 
-void CreateDevServerJobResponse::setUpdateAt(const std::string& value)
+void CreateDevServerJobResponse::setUpdateAt(int64_t value)
 {
     updateAt_ = value;
     updateAtIsSet_ = true;

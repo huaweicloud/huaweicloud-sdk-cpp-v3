@@ -122,6 +122,33 @@ public:
     void unsetarrangeInfos();
     void setArrangeInfos(const std::vector<TaskV2RequestBody>& value);
 
+    /// <summary>
+    /// 委托URN
+    /// </summary>
+
+    std::string getAgencyUrn() const;
+    bool agencyUrnIsSet() const;
+    void unsetagencyUrn();
+    void setAgencyUrn(const std::string& value);
+
+    /// <summary>
+    /// 资源池类型
+    /// </summary>
+
+    std::string getSlaveResourceType() const;
+    bool slaveResourceTypeIsSet() const;
+    void unsetslaveResourceType();
+    void setSlaveResourceType(const std::string& value);
+
+    /// <summary>
+    /// 任务执行超时时间
+    /// </summary>
+
+    int32_t getTimeout() const;
+    bool timeoutIsSet() const;
+    void unsettimeout();
+    void setTimeout(int32_t value);
+
 
 protected:
     std::string projectId_;
@@ -142,6 +169,12 @@ protected:
     bool triggerIsSet_;
     std::vector<TaskV2RequestBody> arrangeInfos_;
     bool arrangeInfosIsSet_;
+    std::string agencyUrn_;
+    bool agencyUrnIsSet_;
+    std::string slaveResourceType_;
+    bool slaveResourceTypeIsSet_;
+    int32_t timeout_;
+    bool timeoutIsSet_;
 
 };
 

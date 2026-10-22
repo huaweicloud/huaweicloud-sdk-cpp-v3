@@ -31,6 +31,8 @@ ListInferDeploymentPodsRequest::ListInferDeploymentPodsRequest()
     podNodeIpIsSet_ = false;
     podNodeName_ = "";
     podNodeNameIsSet_ = false;
+    podRoleName_ = "";
+    podRoleNameIsSet_ = false;
 }
 
 ListInferDeploymentPodsRequest::~ListInferDeploymentPodsRequest() = default;
@@ -72,6 +74,9 @@ web::json::value ListInferDeploymentPodsRequest::toJson() const
     }
     if(podNodeNameIsSet_) {
         val[utility::conversions::to_string_t("pod_node_name")] = ModelBase::toJson(podNodeName_);
+    }
+    if(podRoleNameIsSet_) {
+        val[utility::conversions::to_string_t("pod_role_name")] = ModelBase::toJson(podRoleName_);
     }
 
     return val;
@@ -168,6 +173,15 @@ bool ListInferDeploymentPodsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPodNodeName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pod_role_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pod_role_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPodRoleName(refVal);
         }
     }
     return ok;
@@ -382,6 +396,27 @@ bool ListInferDeploymentPodsRequest::podNodeNameIsSet() const
 void ListInferDeploymentPodsRequest::unsetpodNodeName()
 {
     podNodeNameIsSet_ = false;
+}
+
+std::string ListInferDeploymentPodsRequest::getPodRoleName() const
+{
+    return podRoleName_;
+}
+
+void ListInferDeploymentPodsRequest::setPodRoleName(const std::string& value)
+{
+    podRoleName_ = value;
+    podRoleNameIsSet_ = true;
+}
+
+bool ListInferDeploymentPodsRequest::podRoleNameIsSet() const
+{
+    return podRoleNameIsSet_;
+}
+
+void ListInferDeploymentPodsRequest::unsetpodRoleName()
+{
+    podRoleNameIsSet_ = false;
 }
 
 }

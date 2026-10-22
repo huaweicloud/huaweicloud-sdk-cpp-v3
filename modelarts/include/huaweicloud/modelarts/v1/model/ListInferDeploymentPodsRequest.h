@@ -129,6 +129,15 @@ public:
     void unsetpodNodeName();
     void setPodNodeName(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** pod所属单元名称。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getPodRoleName() const;
+    bool podRoleNameIsSet() const;
+    void unsetpodRoleName();
+    void setPodRoleName(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -151,6 +160,8 @@ protected:
     bool podNodeIpIsSet_;
     std::string podNodeName_;
     bool podNodeNameIsSet_;
+    std::string podRoleName_;
+    bool podRoleNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

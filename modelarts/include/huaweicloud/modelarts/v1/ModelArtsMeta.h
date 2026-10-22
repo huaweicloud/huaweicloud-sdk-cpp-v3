@@ -52,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForCreateDevServer();
     static HttpRequestDef genRequestDefForCreateDevServerJob();
     static HttpRequestDef genRequestDefForCreateHyperCluster();
+    static HttpRequestDef genRequestDefForCreateHyperinstanceGroup();
     static HttpRequestDef genRequestDefForCreateHyperinstanceTags();
     static HttpRequestDef genRequestDefForCreateInferApiKey();
     static HttpRequestDef genRequestDefForCreateInferDeployment();
@@ -77,6 +78,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteDevServerJobs();
     static HttpRequestDef genRequestDefForDeleteHyperCluster();
     static HttpRequestDef genRequestDefForDeleteHyperinstance();
+    static HttpRequestDef genRequestDefForDeleteHyperinstanceGroup();
     static HttpRequestDef genRequestDefForDeleteHyperinstanceTags();
     static HttpRequestDef genRequestDefForDeleteImage();
     static HttpRequestDef genRequestDefForDeleteImageGroup();
@@ -104,6 +106,7 @@ public:
     static HttpRequestDef genRequestDefForGetDevServerOperation();
     static HttpRequestDef genRequestDefForGetHyperCluster();
     static HttpRequestDef genRequestDefForGetHyperinstance();
+    static HttpRequestDef genRequestDefForGetHyperinstanceGroup();
     static HttpRequestDef genRequestDefForGetHyperinstanceOperation();
     static HttpRequestDef genRequestDefForGetScaleEvaluationsDevServer();
     static HttpRequestDef genRequestDefForGetTopologies();
@@ -122,6 +125,9 @@ public:
     static HttpRequestDef genRequestDefForListFtArtifacts();
     static HttpRequestDef genRequestDefForListHyperCluster();
     static HttpRequestDef genRequestDefForListHyperinstanceClustersCapacity();
+    static HttpRequestDef genRequestDefForListHyperinstanceGroup();
+    static HttpRequestDef genRequestDefForListHyperinstanceGroupsCapacity();
+    static HttpRequestDef genRequestDefForListHyperinstanceServers();
     static HttpRequestDef genRequestDefForListHyperinstances();
     static HttpRequestDef genRequestDefForListImage();
     static HttpRequestDef genRequestDefForListImageGroup();
@@ -235,6 +241,7 @@ public:
     static HttpRequestDef genRequestDefForSwitchInferDeploymentVersion();
     static HttpRequestDef genRequestDefForSyncDevServers();
     static HttpRequestDef genRequestDefForSyncImage();
+    static HttpRequestDef genRequestDefForUnbindDevServerPublicIP();
     static HttpRequestDef genRequestDefForUnbindInferApiKey();
     static HttpRequestDef genRequestDefForUpdateAuthMode();
     static HttpRequestDef genRequestDefForUpdateDevServer();

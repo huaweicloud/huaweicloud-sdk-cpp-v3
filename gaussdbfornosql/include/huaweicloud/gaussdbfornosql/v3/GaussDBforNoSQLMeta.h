@@ -48,6 +48,7 @@ public:
     static HttpRequestDef genRequestDefForExpandInstanceNode();
     static HttpRequestDef genRequestDefForListAvailableFlavorInfos();
     static HttpRequestDef genRequestDefForListBackups();
+    static HttpRequestDef genRequestDefForListBiactiveInstanceCandidates();
     static HttpRequestDef genRequestDefForListCassandraSlowLogs();
     static HttpRequestDef genRequestDefForListConfigurationDatastores();
     static HttpRequestDef genRequestDefForListConfigurationTemplates();

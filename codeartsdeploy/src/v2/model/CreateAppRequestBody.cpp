@@ -28,6 +28,12 @@ CreateAppRequestBody::CreateAppRequestBody()
     slaveClusterIdIsSet_ = false;
     triggerIsSet_ = false;
     arrangeInfosIsSet_ = false;
+    agencyUrn_ = "";
+    agencyUrnIsSet_ = false;
+    slaveResourceType_ = "";
+    slaveResourceTypeIsSet_ = false;
+    timeout_ = 0;
+    timeoutIsSet_ = false;
 }
 
 CreateAppRequestBody::~CreateAppRequestBody() = default;
@@ -66,6 +72,15 @@ web::json::value CreateAppRequestBody::toJson() const
     }
     if(arrangeInfosIsSet_) {
         val[utility::conversions::to_string_t("arrange_infos")] = ModelBase::toJson(arrangeInfos_);
+    }
+    if(agencyUrnIsSet_) {
+        val[utility::conversions::to_string_t("agency_urn")] = ModelBase::toJson(agencyUrn_);
+    }
+    if(slaveResourceTypeIsSet_) {
+        val[utility::conversions::to_string_t("slave_resource_type")] = ModelBase::toJson(slaveResourceType_);
+    }
+    if(timeoutIsSet_) {
+        val[utility::conversions::to_string_t("timeout")] = ModelBase::toJson(timeout_);
     }
 
     return val;
@@ -153,6 +168,33 @@ bool CreateAppRequestBody::fromJson(const web::json::value& val)
             std::vector<TaskV2RequestBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setArrangeInfos(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyUrn(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("slave_resource_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("slave_resource_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSlaveResourceType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("timeout"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("timeout"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTimeout(refVal);
         }
     }
     return ok;
@@ -346,6 +388,69 @@ bool CreateAppRequestBody::arrangeInfosIsSet() const
 void CreateAppRequestBody::unsetarrangeInfos()
 {
     arrangeInfosIsSet_ = false;
+}
+
+std::string CreateAppRequestBody::getAgencyUrn() const
+{
+    return agencyUrn_;
+}
+
+void CreateAppRequestBody::setAgencyUrn(const std::string& value)
+{
+    agencyUrn_ = value;
+    agencyUrnIsSet_ = true;
+}
+
+bool CreateAppRequestBody::agencyUrnIsSet() const
+{
+    return agencyUrnIsSet_;
+}
+
+void CreateAppRequestBody::unsetagencyUrn()
+{
+    agencyUrnIsSet_ = false;
+}
+
+std::string CreateAppRequestBody::getSlaveResourceType() const
+{
+    return slaveResourceType_;
+}
+
+void CreateAppRequestBody::setSlaveResourceType(const std::string& value)
+{
+    slaveResourceType_ = value;
+    slaveResourceTypeIsSet_ = true;
+}
+
+bool CreateAppRequestBody::slaveResourceTypeIsSet() const
+{
+    return slaveResourceTypeIsSet_;
+}
+
+void CreateAppRequestBody::unsetslaveResourceType()
+{
+    slaveResourceTypeIsSet_ = false;
+}
+
+int32_t CreateAppRequestBody::getTimeout() const
+{
+    return timeout_;
+}
+
+void CreateAppRequestBody::setTimeout(int32_t value)
+{
+    timeout_ = value;
+    timeoutIsSet_ = true;
+}
+
+bool CreateAppRequestBody::timeoutIsSet() const
+{
+    return timeoutIsSet_;
+}
+
+void CreateAppRequestBody::unsettimeout()
+{
+    timeoutIsSet_ = false;
 }
 
 }

@@ -11,7 +11,7 @@
 
 #include <huaweicloud/modelarts/v1/model/GroupConfig.h>
 #include <huaweicloud/modelarts/v1/model/ServiceCreateRequest_tags.h>
-#include <huaweicloud/modelarts/v1/model/LtsConfiguration.h>
+#include <huaweicloud/modelarts/v1/model/LtsConfigurationV2.h>
 #include <huaweicloud/modelarts/v1/model/UpgradeConfig.h>
 #include <string>
 #include <huaweicloud/modelarts/v1/model/RuntimeConfigCreateRequest.h>
@@ -130,10 +130,10 @@ public:
     /// **参数解释：** 服务日志配置。 **约束限制：** 数量上限为[3](tag:hws,hws_hk,fcs,fcs_super)[2](tag:hcs,hcs_sm)个，且每种类型只可配置一个。
     /// </summary>
 
-    std::vector<LtsConfiguration>& getLogConfigs();
+    std::vector<LtsConfigurationV2>& getLogConfigs();
     bool logConfigsIsSet() const;
     void unsetlogConfigs();
-    void setLogConfigs(const std::vector<LtsConfiguration>& value);
+    void setLogConfigs(const std::vector<LtsConfigurationV2>& value);
 
     /// <summary>
     /// **参数解释：** 服务标签。 **约束限制：** 上限20个。
@@ -218,7 +218,7 @@ protected:
     bool upgradeConfigIsSet_;
     std::string ltsStrategy_;
     bool ltsStrategyIsSet_;
-    std::vector<LtsConfiguration> logConfigs_;
+    std::vector<LtsConfigurationV2> logConfigs_;
     bool logConfigsIsSet_;
     std::vector<ServiceCreateRequest_tags> tags_;
     bool tagsIsSet_;

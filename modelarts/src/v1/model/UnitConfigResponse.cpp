@@ -28,6 +28,8 @@ UnitConfigResponse::UnitConfigResponse()
     dumpsIsSet_ = false;
     count_ = 0;
     countIsSet_ = false;
+    cpuAffinity_ = false;
+    cpuAffinityIsSet_ = false;
     groupCount_ = 0;
     groupCountIsSet_ = false;
     cmd_ = "";
@@ -49,6 +51,7 @@ UnitConfigResponse::UnitConfigResponse()
     securityConfigIsSet_ = false;
     poolResourceFlavor_ = "";
     poolResourceFlavorIsSet_ = false;
+    groupPolicyIsSet_ = false;
 }
 
 UnitConfigResponse::~UnitConfigResponse() = default;
@@ -94,6 +97,9 @@ web::json::value UnitConfigResponse::toJson() const
     if(countIsSet_) {
         val[utility::conversions::to_string_t("count")] = ModelBase::toJson(count_);
     }
+    if(cpuAffinityIsSet_) {
+        val[utility::conversions::to_string_t("cpu_affinity")] = ModelBase::toJson(cpuAffinity_);
+    }
     if(groupCountIsSet_) {
         val[utility::conversions::to_string_t("group_count")] = ModelBase::toJson(groupCount_);
     }
@@ -135,6 +141,9 @@ web::json::value UnitConfigResponse::toJson() const
     }
     if(poolResourceFlavorIsSet_) {
         val[utility::conversions::to_string_t("pool_resource_flavor")] = ModelBase::toJson(poolResourceFlavor_);
+    }
+    if(groupPolicyIsSet_) {
+        val[utility::conversions::to_string_t("group_policy")] = ModelBase::toJson(groupPolicy_);
     }
 
     return val;
@@ -240,6 +249,15 @@ bool UnitConfigResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cpu_affinity"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cpu_affinity"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCpuAffinity(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("group_count"))) {
@@ -366,6 +384,15 @@ bool UnitConfigResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPoolResourceFlavor(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_policy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_policy"));
+        if(!fieldValue.is_null())
+        {
+            UnitGroupPolicyResponse refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupPolicy(refVal);
         }
     }
     return ok;
@@ -601,6 +628,27 @@ bool UnitConfigResponse::countIsSet() const
 void UnitConfigResponse::unsetcount()
 {
     countIsSet_ = false;
+}
+
+bool UnitConfigResponse::isCpuAffinity() const
+{
+    return cpuAffinity_;
+}
+
+void UnitConfigResponse::setCpuAffinity(bool value)
+{
+    cpuAffinity_ = value;
+    cpuAffinityIsSet_ = true;
+}
+
+bool UnitConfigResponse::cpuAffinityIsSet() const
+{
+    return cpuAffinityIsSet_;
+}
+
+void UnitConfigResponse::unsetcpuAffinity()
+{
+    cpuAffinityIsSet_ = false;
 }
 
 int32_t UnitConfigResponse::getGroupCount() const
@@ -895,6 +943,27 @@ bool UnitConfigResponse::poolResourceFlavorIsSet() const
 void UnitConfigResponse::unsetpoolResourceFlavor()
 {
     poolResourceFlavorIsSet_ = false;
+}
+
+UnitGroupPolicyResponse UnitConfigResponse::getGroupPolicy() const
+{
+    return groupPolicy_;
+}
+
+void UnitConfigResponse::setGroupPolicy(const UnitGroupPolicyResponse& value)
+{
+    groupPolicy_ = value;
+    groupPolicyIsSet_ = true;
+}
+
+bool UnitConfigResponse::groupPolicyIsSet() const
+{
+    return groupPolicyIsSet_;
+}
+
+void UnitConfigResponse::unsetgroupPolicy()
+{
+    groupPolicyIsSet_ = false;
 }
 
 }

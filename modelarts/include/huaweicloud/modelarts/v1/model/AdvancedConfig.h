@@ -44,10 +44,10 @@ public:
     /// **参数解释：** 部署超时时间
     /// </summary>
 
-    std::string getDeployTimeoutMinutes() const;
+    int32_t getDeployTimeoutMinutes() const;
     bool deployTimeoutMinutesIsSet() const;
     void unsetdeployTimeoutMinutes();
-    void setDeployTimeoutMinutes(const std::string& value);
+    void setDeployTimeoutMinutes(int32_t value);
 
     /// <summary>
     /// 
@@ -131,6 +131,15 @@ public:
     void setCustomMetricsPath(const std::string& value);
 
     /// <summary>
+    /// **参数解释：** Mooncake缓存开关。 **约束限制：** 不涉及。 **取值范围：** - true：开启Mooncake缓存开关。 - false：关闭Mooncake缓存开关。 **默认取值：** false
+    /// </summary>
+
+    bool isMooncakeEnable() const;
+    bool mooncakeEnableIsSet() const;
+    void unsetmooncakeEnable();
+    void setMooncakeEnable(bool value);
+
+    /// <summary>
     /// **参数解释：** 容器端口
     /// </summary>
 
@@ -150,7 +159,7 @@ public:
 
 
 protected:
-    std::string deployTimeoutMinutes_;
+    int32_t deployTimeoutMinutes_;
     bool deployTimeoutMinutesIsSet_;
     UpgradeConfig upgradeConfig_;
     bool upgradeConfigIsSet_;
@@ -170,6 +179,8 @@ protected:
     bool metricApiPathIsSet_;
     std::string customMetricsPath_;
     bool customMetricsPathIsSet_;
+    bool mooncakeEnable_;
+    bool mooncakeEnableIsSet_;
     int32_t port_;
     bool portIsSet_;
     std::string protocol_;

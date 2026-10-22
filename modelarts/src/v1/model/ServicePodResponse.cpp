@@ -26,6 +26,8 @@ ServicePodResponse::ServicePodResponse()
     statusIsSet_ = false;
     updateTime_ = 0L;
     updateTimeIsSet_ = false;
+    podRoleName_ = "";
+    podRoleNameIsSet_ = false;
 }
 
 ServicePodResponse::~ServicePodResponse() = default;
@@ -58,6 +60,9 @@ web::json::value ServicePodResponse::toJson() const
     }
     if(updateTimeIsSet_) {
         val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
+    }
+    if(podRoleNameIsSet_) {
+        val[utility::conversions::to_string_t("pod_role_name")] = ModelBase::toJson(podRoleName_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool ServicePodResponse::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pod_role_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pod_role_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPodRoleName(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool ServicePodResponse::updateTimeIsSet() const
 void ServicePodResponse::unsetupdateTime()
 {
     updateTimeIsSet_ = false;
+}
+
+std::string ServicePodResponse::getPodRoleName() const
+{
+    return podRoleName_;
+}
+
+void ServicePodResponse::setPodRoleName(const std::string& value)
+{
+    podRoleName_ = value;
+    podRoleNameIsSet_ = true;
+}
+
+bool ServicePodResponse::podRoleNameIsSet() const
+{
+    return podRoleNameIsSet_;
+}
+
+void ServicePodResponse::unsetpodRoleName()
+{
+    podRoleNameIsSet_ = false;
 }
 
 }

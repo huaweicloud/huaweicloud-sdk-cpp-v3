@@ -1169,6 +1169,9 @@ std::shared_ptr<ListBackupsResponse> CbrClient::listBackups(ListBackupsRequest &
     if (request.incrementalIsSet()) {
         localVarQueryParams["incremental"] = parameterToString(request.isIncremental());
     }
+    if (request.existedQuantityBasedRetentionBackupsIsSet()) {
+        localVarQueryParams["existed_quantity_based_retention_backups"] = parameterToString(request.isExistedQuantityBasedRetentionBackups());
+    }
 
     std::string localVarHttpBody;
 
@@ -1243,8 +1246,8 @@ std::shared_ptr<ListExternalVaultResponse> CbrClient::listExternalVault(ListExte
     if (request.regionIdIsSet()) {
         localVarQueryParams["region_id"] = parameterToString(request.getRegionId());
     }
-    if (request.objcetTypeIsSet()) {
-        localVarQueryParams["objcet_type"] = parameterToString(request.getObjcetType());
+    if (request.objectTypeIsSet()) {
+        localVarQueryParams["object_type"] = parameterToString(request.getObjectType());
     }
     if (request.cloudTypeIsSet()) {
         localVarQueryParams["cloud_type"] = parameterToString(request.getCloudType());
@@ -1351,6 +1354,12 @@ std::shared_ptr<ListOpLogsResponse> CbrClient::listOpLogs(ListOpLogsRequest &req
     }
     if (request.enterpriseProjectIdIsSet()) {
         localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+    if (request.destinationRegionIsSet()) {
+        localVarQueryParams["destination_region"] = parameterToString(request.getDestinationRegion());
+    }
+    if (request.destinationProjectIdIsSet()) {
+        localVarQueryParams["destination_project_id"] = parameterToString(request.getDestinationProjectId());
     }
 
     std::string localVarHttpBody;
@@ -1535,6 +1544,9 @@ std::shared_ptr<ListProtectableResponse> CbrClient::listProtectable(ListProtecta
     if (request.serverIdIsSet()) {
         localVarQueryParams["server_id"] = parameterToString(request.getServerId());
     }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
 
@@ -1596,6 +1608,9 @@ std::shared_ptr<ListVaultResponse> CbrClient::listVault(ListVaultRequest &reques
     }
     if (request.resourceIdsIsSet()) {
         localVarQueryParams["resource_ids"] = parameterToString(request.getResourceIds());
+    }
+    if (request.availabilityZoneIsSet()) {
+        localVarQueryParams["availability_zone"] = parameterToString(request.getAvailabilityZone());
     }
 
     std::string localVarHttpBody;
@@ -2500,6 +2515,9 @@ std::shared_ptr<ShowVaultResourceInstancesResponse> CbrClient::showVaultResource
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

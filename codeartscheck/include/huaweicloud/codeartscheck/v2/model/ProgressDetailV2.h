@@ -39,7 +39,7 @@ public:
     /// ProgressDetailV2 members
 
     /// <summary>
-    /// 进度百分比
+    /// **参数解释:** 检查进度百分比。 **取值范围:** 检查中、检查成功时，为0%-100%； 检查失败、任务中止、未检查时，为null。
     /// </summary>
 
     std::string getRatio() const;
@@ -48,7 +48,7 @@ public:
     void setRatio(const std::string& value);
 
     /// <summary>
-    /// 中文信息
+    /// **参数解释:** 检查执行状态。 **取值范围:** - running：检查中。 - success：检查成功。 - null：检查失败、任务中止、未检查。
     /// </summary>
 
     std::string getInfo() const;

@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// start_offset和end_offset均为-1，表示该行不是缺陷片段或者整行都是，需要结合DefectInfoV2中的line_number属性一起判断哪一行是具体的缺陷片段。
+/// 
 /// </summary>
 class HUAWEICLOUD_CODEARTSCHECK_V2_EXPORT  DefectFragmentV2
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// DefectFragmentV2 members
 
     /// <summary>
-    /// 行号
+    /// **参数解释：** 行号。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getLineNum() const;
@@ -48,7 +48,7 @@ public:
     void setLineNum(const std::string& value);
 
     /// <summary>
-    /// 该行代码内容
+    /// **参数解释：** 行代码内容。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getLineContent() const;
@@ -57,7 +57,7 @@ public:
     void setLineContent(const std::string& value);
 
     /// <summary>
-    /// 缺陷开始列号
+    /// **参数解释：** 废弃字段。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getStartOffset() const;
@@ -66,7 +66,7 @@ public:
     void setStartOffset(int32_t value);
 
     /// <summary>
-    /// 缺陷结束列号
+    /// **参数解释：** 废弃字段。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getEndOffset() const;

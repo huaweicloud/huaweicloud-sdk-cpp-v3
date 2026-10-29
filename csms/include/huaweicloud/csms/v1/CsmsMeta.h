@@ -14,6 +14,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_CSMS_V1_EXPORT  CsmsMeta {
 public:
     static HttpRequestDef genRequestDefForBatchCreateOrDeleteTags();
+    static HttpRequestDef genRequestDefForBatchGetSecretValue();
     static HttpRequestDef genRequestDefForBatchImportSecrets();
     static HttpRequestDef genRequestDefForCheckSecrets();
     static HttpRequestDef genRequestDefForCreateAgency();

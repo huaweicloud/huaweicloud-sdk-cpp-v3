@@ -245,6 +245,15 @@ public:
     void unsetincremental();
     void setIncremental(bool value);
 
+    /// <summary>
+    /// **参数解释：** 是否查询按数量保留或永久保留自动备份 **约束限制：** 不涉及 **取值范围：** - true：返回按数量保留或永久保留自动备份  - false：返回按时间保留自动备份 **默认取值：** 不涉及
+    /// </summary>
+
+    bool isExistedQuantityBasedRetentionBackups() const;
+    bool existedQuantityBasedRetentionBackupsIsSet() const;
+    void unsetexistedQuantityBasedRetentionBackups();
+    void setExistedQuantityBasedRetentionBackups(bool value);
+
 
 protected:
     std::string checkpointId_;
@@ -293,6 +302,8 @@ protected:
     bool showReplicationIsSet_;
     bool incremental_;
     bool incrementalIsSet_;
+    bool existedQuantityBasedRetentionBackups_;
+    bool existedQuantityBasedRetentionBackupsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -146,6 +146,24 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 复制的目标区域 [获取方法请参见\&quot;[地区和终端节点查询](https://console.huaweicloud.com/apiexplorer/#/endpoint/CBR)\&quot;。 ](tag:hws) [获取方法请参见\&quot;[地区和终端节点查询](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CBR)\&quot;。](tag:hws_hk) **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getDestinationRegion() const;
+    bool destinationRegionIsSet() const;
+    void unsetdestinationRegion();
+    void setDestinationRegion(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 复制的目标区域项目ID，获取方法请参见[获取项目ID](cbr_04_0022.xml) **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getDestinationProjectId() const;
+    bool destinationProjectIdIsSet() const;
+    void unsetdestinationProjectId();
+    void setDestinationProjectId(const std::string& value);
+
 
 protected:
     std::string endTime_;
@@ -172,6 +190,10 @@ protected:
     bool vaultNameIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string destinationRegion_;
+    bool destinationRegionIsSet_;
+    std::string destinationProjectId_;
+    bool destinationProjectIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

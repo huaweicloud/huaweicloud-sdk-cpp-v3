@@ -9,8 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/lts/v2/model/KeywordsAlarmConditions.h>
 #include <huaweicloud/lts/v2/model/CustomDate.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -138,6 +140,15 @@ public:
     void unsetisTimeRangeRelative();
     void setIsTimeRangeRelative(bool value);
 
+    /// <summary>
+    /// **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视keywords_alarm_level参数以及keywords_requests中的condition、number参数。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::vector<KeywordsAlarmConditions>& getConditions();
+    bool conditionsIsSet() const;
+    void unsetconditions();
+    void setConditions(const std::vector<KeywordsAlarmConditions>& value);
+
 
 protected:
     std::string logStreamId_;
@@ -162,6 +173,8 @@ protected:
     bool customDateIsSet_;
     bool isTimeRangeRelative_;
     bool isTimeRangeRelativeIsSet_;
+    std::vector<KeywordsAlarmConditions> conditions_;
+    bool conditionsIsSet_;
 
 };
 

@@ -48,6 +48,15 @@ public:
     void setAgencyAccessType(const std::string& value);
 
     /// <summary>
+    /// 跨账号日志接入配置id
+    /// </summary>
+
+    std::string getAgencyAccessConfigId() const;
+    bool agencyAccessConfigIdIsSet() const;
+    void unsetagencyAccessConfigId();
+    void setAgencyAccessConfigId(const std::string& value);
+
+    /// <summary>
     /// 跨账号日志接入配置名称
     /// </summary>
 
@@ -168,6 +177,8 @@ public:
 protected:
     std::string agencyAccessType_;
     bool agencyAccessTypeIsSet_;
+    std::string agencyAccessConfigId_;
+    bool agencyAccessConfigIdIsSet_;
     std::string agencyLogAccess_;
     bool agencyLogAccessIsSet_;
     std::string logAgencyStreamName_;

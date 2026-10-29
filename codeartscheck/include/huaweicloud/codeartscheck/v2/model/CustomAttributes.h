@@ -41,7 +41,7 @@ public:
     /// CustomAttributes members
 
     /// <summary>
-    /// 配置项属性，severity：为问题级别
+    /// **参数解释:** 配置项属性，severity：为规则告警等级。 **约束限制:** 不涉及。 **取值范围:** severity。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getAttribute() const;
@@ -50,7 +50,7 @@ public:
     void setAttribute(const std::string& value);
 
     /// <summary>
-    /// 规则详细
+    /// **参数解释:** 规则详细。
     /// </summary>
 
     std::vector<CustomAttributesRule>& getRules();

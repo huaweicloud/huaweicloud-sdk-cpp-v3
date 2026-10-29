@@ -9,8 +9,11 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/lts/v2/model/TimeRange.h>
+#include <huaweicloud/lts/v2/model/KeywordsAlarmConditions.h>
 #include <huaweicloud/lts/v2/model/CustomDate.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -138,6 +141,51 @@ public:
     void unsetisTimeRangeRelative();
     void setIsTimeRangeRelative(bool value);
 
+    /// <summary>
+    /// **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视keywords_alarm_level参数以及keywords_requests中的condition、number参数。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::vector<KeywordsAlarmConditions>& getConditions();
+    bool conditionsIsSet() const;
+    void unsetconditions();
+    void setConditions(const std::vector<KeywordsAlarmConditions>& value);
+
+    /// <summary>
+    /// **参数解释：** 日志组别名。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getLogGroupNameAlias() const;
+    bool logGroupNameAliasIsSet() const;
+    void unsetlogGroupNameAlias();
+    void setLogGroupNameAlias(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 日志流别名。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getLogStreamNameAlias() const;
+    bool logStreamNameAliasIsSet() const;
+    void unsetlogStreamNameAlias();
+    void setLogStreamNameAlias(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 企业项目ID。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getEpsId() const;
+    bool epsIdIsSet() const;
+    void unsetepsId();
+    void setEpsId(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    TimeRange getTimeRange() const;
+    bool timeRangeIsSet() const;
+    void unsettimeRange();
+    void setTimeRange(const TimeRange& value);
+
 
 protected:
     std::string logStreamId_;
@@ -162,6 +210,16 @@ protected:
     bool customDateIsSet_;
     bool isTimeRangeRelative_;
     bool isTimeRangeRelativeIsSet_;
+    std::vector<KeywordsAlarmConditions> conditions_;
+    bool conditionsIsSet_;
+    std::string logGroupNameAlias_;
+    bool logGroupNameAliasIsSet_;
+    std::string logStreamNameAlias_;
+    bool logStreamNameAliasIsSet_;
+    std::string epsId_;
+    bool epsIdIsSet_;
+    TimeRange timeRange_;
+    bool timeRangeIsSet_;
 
 };
 

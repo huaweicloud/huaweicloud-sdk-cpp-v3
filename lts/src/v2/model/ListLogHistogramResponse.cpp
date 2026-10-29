@@ -12,7 +12,6 @@ namespace Model {
 
 ListLogHistogramResponse::ListLogHistogramResponse()
 {
-    histogram_ = "";
     histogramIsSet_ = false;
     count_ = 0L;
     countIsSet_ = false;
@@ -50,7 +49,7 @@ bool ListLogHistogramResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("histogram"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<LogCounts> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHistogram(refVal);
         }
@@ -77,12 +76,12 @@ bool ListLogHistogramResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string ListLogHistogramResponse::getHistogram() const
+std::vector<LogCounts>& ListLogHistogramResponse::getHistogram()
 {
     return histogram_;
 }
 
-void ListLogHistogramResponse::setHistogram(const std::string& value)
+void ListLogHistogramResponse::setHistogram(const std::vector<LogCounts>& value)
 {
     histogram_ = value;
     histogramIsSet_ = true;

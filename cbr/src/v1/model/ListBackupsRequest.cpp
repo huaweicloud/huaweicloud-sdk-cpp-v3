@@ -58,6 +58,8 @@ ListBackupsRequest::ListBackupsRequest()
     showReplicationIsSet_ = false;
     incremental_ = false;
     incrementalIsSet_ = false;
+    existedQuantityBasedRetentionBackups_ = false;
+    existedQuantityBasedRetentionBackupsIsSet_ = false;
 }
 
 ListBackupsRequest::~ListBackupsRequest() = default;
@@ -138,6 +140,9 @@ web::json::value ListBackupsRequest::toJson() const
     }
     if(incrementalIsSet_) {
         val[utility::conversions::to_string_t("incremental")] = ModelBase::toJson(incremental_);
+    }
+    if(existedQuantityBasedRetentionBackupsIsSet_) {
+        val[utility::conversions::to_string_t("existed_quantity_based_retention_backups")] = ModelBase::toJson(existedQuantityBasedRetentionBackups_);
     }
 
     return val;
@@ -351,6 +356,15 @@ bool ListBackupsRequest::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIncremental(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("existed_quantity_based_retention_backups"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("existed_quantity_based_retention_backups"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExistedQuantityBasedRetentionBackups(refVal);
         }
     }
     return ok;
@@ -838,6 +852,27 @@ bool ListBackupsRequest::incrementalIsSet() const
 void ListBackupsRequest::unsetincremental()
 {
     incrementalIsSet_ = false;
+}
+
+bool ListBackupsRequest::isExistedQuantityBasedRetentionBackups() const
+{
+    return existedQuantityBasedRetentionBackups_;
+}
+
+void ListBackupsRequest::setExistedQuantityBasedRetentionBackups(bool value)
+{
+    existedQuantityBasedRetentionBackups_ = value;
+    existedQuantityBasedRetentionBackupsIsSet_ = true;
+}
+
+bool ListBackupsRequest::existedQuantityBasedRetentionBackupsIsSet() const
+{
+    return existedQuantityBasedRetentionBackupsIsSet_;
+}
+
+void ListBackupsRequest::unsetexistedQuantityBasedRetentionBackups()
+{
+    existedQuantityBasedRetentionBackupsIsSet_ = false;
 }
 
 }

@@ -129,6 +129,24 @@ public:
     void unsetisTimeRangeRelative();
     void setIsTimeRangeRelative(bool value);
 
+    /// <summary>
+    /// **参数解释：** 日志组别名。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::string getLogGroupNameAlias() const;
+    bool logGroupNameAliasIsSet() const;
+    void unsetlogGroupNameAlias();
+    void setLogGroupNameAlias(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 日志流别名。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::string getLogStreamNameAlias() const;
+    bool logStreamNameAliasIsSet() const;
+    void unsetlogStreamNameAlias();
+    void setLogStreamNameAlias(const std::string& value);
+
 
 protected:
     std::string logStreamId_;
@@ -151,6 +169,10 @@ protected:
     bool customDateIsSet_;
     bool isTimeRangeRelative_;
     bool isTimeRangeRelativeIsSet_;
+    std::string logGroupNameAlias_;
+    bool logGroupNameAliasIsSet_;
+    std::string logStreamNameAlias_;
+    bool logStreamNameAliasIsSet_;
 
 };
 

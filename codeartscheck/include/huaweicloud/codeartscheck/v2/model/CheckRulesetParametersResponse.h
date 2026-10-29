@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartscheck/v2/model/TaskCheckParamters.h>
+#include <huaweicloud/codeartscheck/v2/model/TaskCheckParameters.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -40,16 +40,16 @@ public:
     /// CheckRulesetParametersResponse members
 
     /// <summary>
-    /// 历史记录数据
+    /// **参数解释：** 历史记录数据。
     /// </summary>
 
-    std::vector<TaskCheckParamters>& getData();
+    std::vector<TaskCheckParameters>& getData();
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const std::vector<TaskCheckParamters>& value);
+    void setData(const std::vector<TaskCheckParameters>& value);
 
     /// <summary>
-    /// 总数
+    /// **参数解释：** 总数。 **取值范围:** ≥0
     /// </summary>
 
     int32_t getTotal() const;
@@ -59,7 +59,7 @@ public:
 
 
 protected:
-    std::vector<TaskCheckParamters> data_;
+    std::vector<TaskCheckParameters> data_;
     bool dataIsSet_;
     int32_t total_;
     bool totalIsSet_;

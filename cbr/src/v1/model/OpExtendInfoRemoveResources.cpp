@@ -67,7 +67,7 @@ bool OpExtendInfoRemoveResources::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resources"));
         if(!fieldValue.is_null())
         {
-            std::vector<Resource> refVal;
+            std::vector<OpResourceResp> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResources(refVal);
         }
@@ -118,12 +118,12 @@ void OpExtendInfoRemoveResources::unsettotalCount()
     totalCountIsSet_ = false;
 }
 
-std::vector<Resource>& OpExtendInfoRemoveResources::getResources()
+std::vector<OpResourceResp>& OpExtendInfoRemoveResources::getResources()
 {
     return resources_;
 }
 
-void OpExtendInfoRemoveResources::setResources(const std::vector<Resource>& value)
+void OpExtendInfoRemoveResources::setResources(const std::vector<OpResourceResp>& value)
 {
     resources_ = value;
     resourcesIsSet_ = true;

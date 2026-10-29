@@ -87,10 +87,10 @@ public:
     /// 资源类型
     /// </summary>
 
-    std::string getObjcetType() const;
-    bool objcetTypeIsSet() const;
-    void unsetobjcetType();
-    void setObjcetType(const std::string& value);
+    std::string getObjectType() const;
+    bool objectTypeIsSet() const;
+    void unsetobjectType();
+    void setObjectType(const std::string& value);
 
     /// <summary>
     /// [云类型。取值为public和hybrid。](tag:hws,hws_hk) [云类型。取值为public。](tag:g42,hk-g42,sbc,dt,fcs_vm,ctc,ocb,tm,tlf,cmcc,hcso_dt)
@@ -122,8 +122,8 @@ protected:
     bool protectTypeIsSet_;
     std::string regionId_;
     bool regionIdIsSet_;
-    std::string objcetType_;
-    bool objcetTypeIsSet_;
+    std::string objectType_;
+    bool objectTypeIsSet_;
     std::string cloudType_;
     bool cloudTypeIsSet_;
     std::string vaultId_;

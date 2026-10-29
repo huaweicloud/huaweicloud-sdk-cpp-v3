@@ -39,7 +39,7 @@ public:
     /// CreateRulesetResponse members
 
     /// <summary>
-    /// 规则集ID
+    /// **参数解释:** 规则集ID。 **取值范围:** 32位UUID。
     /// </summary>
 
     std::string getTemplateId() const;

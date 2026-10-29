@@ -18,8 +18,12 @@ DefectInfoV2::DefectInfoV2()
     defectCheckerNameIsSet_ = false;
     defectStatus_ = "";
     defectStatusIsSet_ = false;
+    defectOwner_ = "";
+    defectOwnerIsSet_ = false;
     ruleSystemTags_ = "";
     ruleSystemTagsIsSet_ = false;
+    ruleId_ = "";
+    ruleIdIsSet_ = false;
     ruleName_ = "";
     ruleNameIsSet_ = false;
     lineNumber_ = "";
@@ -57,8 +61,14 @@ web::json::value DefectInfoV2::toJson() const
     if(defectStatusIsSet_) {
         val[utility::conversions::to_string_t("defect_status")] = ModelBase::toJson(defectStatus_);
     }
+    if(defectOwnerIsSet_) {
+        val[utility::conversions::to_string_t("defect_owner")] = ModelBase::toJson(defectOwner_);
+    }
     if(ruleSystemTagsIsSet_) {
         val[utility::conversions::to_string_t("rule_system_tags")] = ModelBase::toJson(ruleSystemTags_);
+    }
+    if(ruleIdIsSet_) {
+        val[utility::conversions::to_string_t("rule_id")] = ModelBase::toJson(ruleId_);
     }
     if(ruleNameIsSet_) {
         val[utility::conversions::to_string_t("rule_name")] = ModelBase::toJson(ruleName_);
@@ -121,6 +131,15 @@ bool DefectInfoV2::fromJson(const web::json::value& val)
             setDefectStatus(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("defect_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("defect_owner"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDefectOwner(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("rule_system_tags"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rule_system_tags"));
         if(!fieldValue.is_null())
@@ -128,6 +147,15 @@ bool DefectInfoV2::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRuleSystemTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rule_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rule_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRuleId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("rule_name"))) {
@@ -278,6 +306,27 @@ void DefectInfoV2::unsetdefectStatus()
     defectStatusIsSet_ = false;
 }
 
+std::string DefectInfoV2::getDefectOwner() const
+{
+    return defectOwner_;
+}
+
+void DefectInfoV2::setDefectOwner(const std::string& value)
+{
+    defectOwner_ = value;
+    defectOwnerIsSet_ = true;
+}
+
+bool DefectInfoV2::defectOwnerIsSet() const
+{
+    return defectOwnerIsSet_;
+}
+
+void DefectInfoV2::unsetdefectOwner()
+{
+    defectOwnerIsSet_ = false;
+}
+
 std::string DefectInfoV2::getRuleSystemTags() const
 {
     return ruleSystemTags_;
@@ -297,6 +346,27 @@ bool DefectInfoV2::ruleSystemTagsIsSet() const
 void DefectInfoV2::unsetruleSystemTags()
 {
     ruleSystemTagsIsSet_ = false;
+}
+
+std::string DefectInfoV2::getRuleId() const
+{
+    return ruleId_;
+}
+
+void DefectInfoV2::setRuleId(const std::string& value)
+{
+    ruleId_ = value;
+    ruleIdIsSet_ = true;
+}
+
+bool DefectInfoV2::ruleIdIsSet() const
+{
+    return ruleIdIsSet_;
+}
+
+void DefectInfoV2::unsetruleId()
+{
+    ruleIdIsSet_ = false;
 }
 
 std::string DefectInfoV2::getRuleName() const

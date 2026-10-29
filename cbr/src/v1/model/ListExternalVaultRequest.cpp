@@ -22,8 +22,8 @@ ListExternalVaultRequest::ListExternalVaultRequest()
     protectTypeIsSet_ = false;
     regionId_ = "";
     regionIdIsSet_ = false;
-    objcetType_ = "";
-    objcetTypeIsSet_ = false;
+    objectType_ = "";
+    objectTypeIsSet_ = false;
     cloudType_ = "";
     cloudTypeIsSet_ = false;
     vaultId_ = "";
@@ -55,8 +55,8 @@ web::json::value ListExternalVaultRequest::toJson() const
     if(regionIdIsSet_) {
         val[utility::conversions::to_string_t("region_id")] = ModelBase::toJson(regionId_);
     }
-    if(objcetTypeIsSet_) {
-        val[utility::conversions::to_string_t("objcet_type")] = ModelBase::toJson(objcetType_);
+    if(objectTypeIsSet_) {
+        val[utility::conversions::to_string_t("object_type")] = ModelBase::toJson(objectType_);
     }
     if(cloudTypeIsSet_) {
         val[utility::conversions::to_string_t("cloud_type")] = ModelBase::toJson(cloudType_);
@@ -116,13 +116,13 @@ bool ListExternalVaultRequest::fromJson(const web::json::value& val)
             setRegionId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("objcet_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("objcet_type"));
+    if(val.has_field(utility::conversions::to_string_t("object_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_type"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObjcetType(refVal);
+            setObjectType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cloud_type"))) {
@@ -252,25 +252,25 @@ void ListExternalVaultRequest::unsetregionId()
     regionIdIsSet_ = false;
 }
 
-std::string ListExternalVaultRequest::getObjcetType() const
+std::string ListExternalVaultRequest::getObjectType() const
 {
-    return objcetType_;
+    return objectType_;
 }
 
-void ListExternalVaultRequest::setObjcetType(const std::string& value)
+void ListExternalVaultRequest::setObjectType(const std::string& value)
 {
-    objcetType_ = value;
-    objcetTypeIsSet_ = true;
+    objectType_ = value;
+    objectTypeIsSet_ = true;
 }
 
-bool ListExternalVaultRequest::objcetTypeIsSet() const
+bool ListExternalVaultRequest::objectTypeIsSet() const
 {
-    return objcetTypeIsSet_;
+    return objectTypeIsSet_;
 }
 
-void ListExternalVaultRequest::unsetobjcetType()
+void ListExternalVaultRequest::unsetobjectType()
 {
-    objcetTypeIsSet_ = false;
+    objectTypeIsSet_ = false;
 }
 
 std::string ListExternalVaultRequest::getCloudType() const

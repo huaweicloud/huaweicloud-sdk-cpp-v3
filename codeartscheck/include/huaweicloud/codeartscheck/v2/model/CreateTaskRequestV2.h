@@ -42,16 +42,7 @@ public:
     /// CreateTaskRequestV2 members
 
     /// <summary>
-    /// 检查类型，数组格式，默认为source
-    /// </summary>
-
-    std::vector<std::string>& getCheckType();
-    bool checkTypeIsSet() const;
-    void unsetcheckType();
-    void setCheckType(const std::vector<std::string>& value);
-
-    /// <summary>
-    /// 仓库地址
+    /// **参数解释：** 代码仓地址。 **约束限制：** 不涉及。 **取值范围：** repo仓传以git开头的地址；非repo仓传以http开头的地址。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getGitUrl() const;
@@ -60,7 +51,7 @@ public:
     void setGitUrl(const std::string& value);
 
     /// <summary>
-    /// 仓库分支
+    /// **参数解释：** 计划创建任务的对应代码仓的分支。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getGitBranch() const;
@@ -69,7 +60,7 @@ public:
     void setGitBranch(const std::string& value);
 
     /// <summary>
-    /// 检查语言，数组格式，支持cpp,java,js,python,php,css,html,go,typescript,csharp
+    /// **参数解释：** 启用的检查语言，数组格式，支持的语言请关注服务更新特性文档。 **约束限制：** 与rule_sets 2选1使用。
     /// </summary>
 
     std::vector<std::string>& getLanguage();
@@ -78,7 +69,7 @@ public:
     void setLanguage(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 指定规则集
+    /// **参数解释：** 启用的规则集，数组格式，当只传语言，不传规则集ID时，与language参数等效，启用这些语言在项目下的默认规则集，支持的语言请关注服务更新特性文档。 **约束限制：** 与language 2选1使用。
     /// </summary>
 
     std::vector<RuleSetV2>& getRuleSets();
@@ -87,7 +78,7 @@ public:
     void setRuleSets(const std::vector<RuleSetV2>& value);
 
     /// <summary>
-    /// 检查类型，支持full/inc两种类型，full表示全量检查，inc表示mr检查
+    /// **参数解释：** 任务类型。 **约束限制：** 不涉及。 **取值范围：** - full：代码仓分支对应的全量任务。 - inc：MR增量任务。 **默认取值：** full
     /// </summary>
 
     std::string getTaskType() const;
@@ -96,7 +87,7 @@ public:
     void setTaskType(const std::string& value);
 
     /// <summary>
-    /// 仓库有权限的用户名
+    /// **参数解释：** 用户名，与access_token联合使用，用于在创建三方仓时，由Check服务创建1个通用git扩展点，从而保存代码仓信息。 **约束限制：** username、access_token组合与endpoint_id 2选1使用。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getUsername() const;
@@ -105,7 +96,7 @@ public:
     void setUsername(const std::string& value);
 
     /// <summary>
-    /// 仓库有权限的用户token
+    /// **参数解释：** 密码或访问密钥/令牌，username，用于在创建三方仓时，由Check服务创建1个通用git扩展点，从而保存代码仓信息。 **约束限制：** username、access_token组合与endpoint_id 2选1使用。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getAccessToken() const;
@@ -114,7 +105,7 @@ public:
     void setAccessToken(const std::string& value);
 
     /// <summary>
-    /// 仓库有权限的用户endpointId
+    /// **参数解释：** 用户预先创建的项目下的代码源扩展点ID，保存了代码仓信息。创建第三方代码源任务，若未填写endpoint，会自动创建扩展点，需要账号有创建扩展点权限，且项目下扩展点未达到上限。 **约束限制：** username、access_token组合与endpoint_id 2选1使用。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getEndpointId() const;
@@ -132,16 +123,7 @@ public:
     void setIncConfig(const IncConfigV2& value);
 
     /// <summary>
-    /// 是否打开fossbot检查,默认不开
-    /// </summary>
-
-    bool isEnableFossbot() const;
-    bool enableFossbotIsSet() const;
-    void unsetenableFossbot();
-    void setEnableFossbot(bool value);
-
-    /// <summary>
-    /// 资源池id，可以从资源池管理页面获取
+    /// **参数解释：** 用户购买的资源池ID，创建任务时如传此参数，任务将使用对应资源池进行检查。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getResourcePoolId() const;
@@ -149,10 +131,35 @@ public:
     void unsetresourcePoolId();
     void setResourcePoolId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** [密级ID,可见信息密级的ID，从页面接口GET https://{endpoint}/projects/v1/options的响应参数中获取，其中的code值即为密级ID。](tag:hcs_sm,hcs_sitesm)[该参数暂无业务意义，传0即可。](tag:fcs) **约束限制：** [租户开启密级功能后必传。](tag:hcs_sm,hcs_sitesm)[不涉及。](tag:fcs) **取值范围：** 不涉及。 **默认取值：** 不涉及。
+    /// </summary>
+
+    std::string getSmLevel() const;
+    bool smLevelIsSet() const;
+    void unsetsmLevel();
+    void setSmLevel(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 废弃参数
+    /// </summary>
+
+    std::vector<std::string>& getCheckType();
+    bool checkTypeIsSet() const;
+    void unsetcheckType();
+    void setCheckType(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// **参数解释：** 废弃参数
+    /// </summary>
+
+    bool isEnableFossbot() const;
+    bool enableFossbotIsSet() const;
+    void unsetenableFossbot();
+    void setEnableFossbot(bool value);
+
 
 protected:
-    std::vector<std::string> checkType_;
-    bool checkTypeIsSet_;
     std::string gitUrl_;
     bool gitUrlIsSet_;
     std::string gitBranch_;
@@ -171,10 +178,14 @@ protected:
     bool endpointIdIsSet_;
     IncConfigV2 incConfig_;
     bool incConfigIsSet_;
-    bool enableFossbot_;
-    bool enableFossbotIsSet_;
     std::string resourcePoolId_;
     bool resourcePoolIdIsSet_;
+    std::string smLevel_;
+    bool smLevelIsSet_;
+    std::vector<std::string> checkType_;
+    bool checkTypeIsSet_;
+    bool enableFossbot_;
+    bool enableFossbotIsSet_;
 
 };
 

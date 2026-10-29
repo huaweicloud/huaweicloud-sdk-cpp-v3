@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 任务详情
+/// **参数解释：** 任务基本信息。
 /// </summary>
 class HUAWEICLOUD_CODEARTSCHECK_V2_EXPORT  ParamInfo
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// ParamInfo members
 
     /// <summary>
-    /// 仓库地址
+    /// **参数解释：** 代码仓地址。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getUrl() const;
@@ -48,7 +48,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// 仓库分支
+    /// **参数解释：** 任务本次扫描的代码仓分支。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getBranch() const;
@@ -57,7 +57,7 @@ public:
     void setBranch(const std::string& value);
 
     /// <summary>
-    /// 仓库语言
+    /// **参数解释：** 任务本次扫描的规则语言。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getLanguage() const;
@@ -66,7 +66,7 @@ public:
     void setLanguage(const std::string& value);
 
     /// <summary>
-    /// 排除的目录
+    /// **参数解释：** 任务配置的排除目录信息。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getExcludeDir() const;
@@ -75,7 +75,7 @@ public:
     void setExcludeDir(const std::string& value);
 
     /// <summary>
-    /// 编码格式
+    /// **参数解释：** 废弃字段。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getEncode() const;
@@ -84,7 +84,7 @@ public:
     void setEncode(const std::string& value);
 
     /// <summary>
-    /// 编译配置信息
+    /// **参数解释：** 任务的部分检查参数json格式信息。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getCompileConfig() const;
@@ -93,7 +93,7 @@ public:
     void setCompileConfig(const std::string& value);
 
     /// <summary>
-    /// g规则集名称
+    /// **参数解释：** 废弃字段。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getRuleTemplate() const;

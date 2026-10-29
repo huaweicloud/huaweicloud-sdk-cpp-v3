@@ -40,7 +40,7 @@ public:
     /// UpdateIgnorePathRequestBody members
 
     /// <summary>
-    /// 屏蔽目录的节点信息列表
+    /// **参数解释：** 屏蔽目录的节点信息列表。 **约束限制：** 不涉及。
     /// </summary>
 
     std::vector<IgnorePathSettingItem>& getIgnorePathSettings();

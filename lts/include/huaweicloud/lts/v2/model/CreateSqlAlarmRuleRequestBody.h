@@ -13,6 +13,7 @@
 #include <huaweicloud/lts/v2/model/TagsRequestBody.h>
 #include <huaweicloud/lts/v2/model/SqlRequest.h>
 #include <string>
+#include <huaweicloud/lts/v2/model/AlarmCondition.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -186,6 +187,15 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视condition_expression、sql_alarm_level参数。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::vector<AlarmCondition>& getConditionExpressions();
+    bool conditionExpressionsIsSet() const;
+    void unsetconditionExpressions();
+    void setConditionExpressions(const std::vector<AlarmCondition>& value);
+
 
 protected:
     std::string sqlAlarmRuleName_;
@@ -220,6 +230,8 @@ protected:
     bool tagsIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::vector<AlarmCondition> conditionExpressions_;
+    bool conditionExpressionsIsSet_;
 
 };
 

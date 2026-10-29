@@ -41,6 +41,7 @@ CreateSqlAlarmRuleRequestBody::CreateSqlAlarmRuleRequestBody()
     tagsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    conditionExpressionsIsSet_ = false;
 }
 
 CreateSqlAlarmRuleRequestBody::~CreateSqlAlarmRuleRequestBody() = default;
@@ -100,6 +101,9 @@ web::json::value CreateSqlAlarmRuleRequestBody::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(conditionExpressionsIsSet_) {
+        val[utility::conversions::to_string_t("condition_expressions")] = ModelBase::toJson(conditionExpressions_);
     }
 
     return val;
@@ -250,6 +254,15 @@ bool CreateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("condition_expressions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("condition_expressions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AlarmCondition> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConditionExpressions(refVal);
         }
     }
     return ok;
@@ -590,6 +603,27 @@ bool CreateSqlAlarmRuleRequestBody::enterpriseProjectIdIsSet() const
 void CreateSqlAlarmRuleRequestBody::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::vector<AlarmCondition>& CreateSqlAlarmRuleRequestBody::getConditionExpressions()
+{
+    return conditionExpressions_;
+}
+
+void CreateSqlAlarmRuleRequestBody::setConditionExpressions(const std::vector<AlarmCondition>& value)
+{
+    conditionExpressions_ = value;
+    conditionExpressionsIsSet_ = true;
+}
+
+bool CreateSqlAlarmRuleRequestBody::conditionExpressionsIsSet() const
+{
+    return conditionExpressionsIsSet_;
+}
+
+void CreateSqlAlarmRuleRequestBody::unsetconditionExpressions()
+{
+    conditionExpressionsIsSet_ = false;
 }
 
 }

@@ -23,7 +23,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 缺陷信息
+/// 
 /// </summary>
 class HUAWEICLOUD_CODEARTSCHECK_V2_EXPORT  DefectInfoV2
     : public ModelBase
@@ -42,7 +42,7 @@ public:
     /// DefectInfoV2 members
 
     /// <summary>
-    /// 缺陷的id
+    /// **参数解释：** MergeKey，问题ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDefectId() const;
@@ -51,7 +51,7 @@ public:
     void setDefectId(const std::string& value);
 
     /// <summary>
-    /// 缺陷对应检查项的名称
+    /// **参数解释：** 废弃字段。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDefectCheckerName() const;
@@ -60,7 +60,7 @@ public:
     void setDefectCheckerName(const std::string& value);
 
     /// <summary>
-    /// 缺陷的状态0为解决 1已解决 2已忽略
+    /// **参数解释：** 问题状态。 **取值范围：** - 0：待处理。 - 1：已解决。 - 2：已忽略。 [- 3：重新打开（需打开忽略审核开关）。](tag:fcs,hcs,hcs_sm,hcs_site,hcs_sitesm) [- 4：待审核（需打开忽略审核开关）。](tag:fcs,hcs,hcs_sm,hcs_site,hcs_sitesm)
     /// </summary>
 
     std::string getDefectStatus() const;
@@ -69,7 +69,16 @@ public:
     void setDefectStatus(const std::string& value);
 
     /// <summary>
-    /// 规则标签,多个标签用逗号隔开
+    /// **参数解释：** 问题责任人。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getDefectOwner() const;
+    bool defectOwnerIsSet() const;
+    void unsetdefectOwner();
+    void setDefectOwner(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 标签，多个标签用逗号隔开。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getRuleSystemTags() const;
@@ -78,7 +87,16 @@ public:
     void setRuleSystemTags(const std::string& value);
 
     /// <summary>
-    /// 规则名
+    /// **参数解释：** 规则ID。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getRuleId() const;
+    bool ruleIdIsSet() const;
+    void unsetruleId();
+    void setRuleId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 规则名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getRuleName() const;
@@ -87,7 +105,7 @@ public:
     void setRuleName(const std::string& value);
 
     /// <summary>
-    /// 缺陷所在文件行号
+    /// **参数解释：** 问题所在文件行号。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getLineNumber() const;
@@ -96,7 +114,7 @@ public:
     void setLineNumber(const std::string& value);
 
     /// <summary>
-    /// 缺陷描述
+    /// **参数解释：** 问题详细描述。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDefectContent() const;
@@ -105,7 +123,7 @@ public:
     void setDefectContent(const std::string& value);
 
     /// <summary>
-    /// 缺陷等级，0致命，1严重，2一般，3提示
+    /// **参数解释：** 问题级别。 **取值范围：** - 0：致命。 - 1：严重。 - 2：一般。 - 3：提示。
     /// </summary>
 
     std::string getDefectLevel() const;
@@ -114,7 +132,7 @@ public:
     void setDefectLevel(const std::string& value);
 
     /// <summary>
-    /// 缺陷文件路径
+    /// **参数解释：** 问题文件路径。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getFilePath() const;
@@ -123,7 +141,7 @@ public:
     void setFilePath(const std::string& value);
 
     /// <summary>
-    /// 创建时间
+    /// **参数解释：** 问题发现时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCreatedAt() const;
@@ -132,7 +150,7 @@ public:
     void setCreatedAt(const std::string& value);
 
     /// <summary>
-    /// 问题唯一标识
+    /// **参数解释：** 废弃字段。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getIssueKey() const;
@@ -141,7 +159,7 @@ public:
     void setIssueKey(const std::string& value);
 
     /// <summary>
-    /// 缺陷代码片段详情
+    /// **参数解释：** 代码片段内容。
     /// </summary>
 
     std::vector<DefectFragmentV2>& getFragment();
@@ -150,7 +168,7 @@ public:
     void setFragment(const std::vector<DefectFragmentV2>& value);
 
     /// <summary>
-    /// 调用链信息
+    /// **参数解释：** 调用链信息。
     /// </summary>
 
     std::vector<DefectEvents>& getEvents();
@@ -166,8 +184,12 @@ protected:
     bool defectCheckerNameIsSet_;
     std::string defectStatus_;
     bool defectStatusIsSet_;
+    std::string defectOwner_;
+    bool defectOwnerIsSet_;
     std::string ruleSystemTags_;
     bool ruleSystemTagsIsSet_;
+    std::string ruleId_;
+    bool ruleIdIsSet_;
     std::string ruleName_;
     bool ruleNameIsSet_;
     std::string lineNumber_;

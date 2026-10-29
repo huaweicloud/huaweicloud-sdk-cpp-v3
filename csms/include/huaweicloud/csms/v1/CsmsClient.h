@@ -9,6 +9,9 @@
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequest.h>
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequestBody.h>
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsResponse.h>
+#include <huaweicloud/csms/v1/model/BatchGetSecretValueRequest.h>
+#include <huaweicloud/csms/v1/model/BatchGetSecretValueRequestBody.h>
+#include <huaweicloud/csms/v1/model/BatchGetSecretValueResponse.h>
 #include <huaweicloud/csms/v1/model/BatchImportSecretsRequest.h>
 #include <huaweicloud/csms/v1/model/BatchImportSecretsResponse.h>
 #include <huaweicloud/csms/v1/model/ChangeUsersPassword.h>
@@ -148,6 +151,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTags(
         BatchCreateOrDeleteTagsRequest &request
+    );
+    // 批量查询明文凭据值
+    //
+    // 批量查询明文凭据值，仅获取latest凭据值，即仅获取凭据版本状态为\&quot;SYSCURRENT\&quot;的凭据版本值。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchGetSecretValueResponse> batchGetSecretValue(
+        BatchGetSecretValueRequest &request
     );
     // 批量导入凭据
     //

@@ -33,6 +33,8 @@ ListVaultRequest::ListVaultRequest()
     statusIsSet_ = false;
     resourceIds_ = "";
     resourceIdsIsSet_ = false;
+    availabilityZone_ = "";
+    availabilityZoneIsSet_ = false;
 }
 
 ListVaultRequest::~ListVaultRequest() = default;
@@ -77,6 +79,9 @@ web::json::value ListVaultRequest::toJson() const
     }
     if(resourceIdsIsSet_) {
         val[utility::conversions::to_string_t("resource_ids")] = ModelBase::toJson(resourceIds_);
+    }
+    if(availabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
 
     return val;
@@ -182,6 +187,15 @@ bool ListVaultRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResourceIds(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZone(refVal);
         }
     }
     return ok;
@@ -417,6 +431,27 @@ bool ListVaultRequest::resourceIdsIsSet() const
 void ListVaultRequest::unsetresourceIds()
 {
     resourceIdsIsSet_ = false;
+}
+
+std::string ListVaultRequest::getAvailabilityZone() const
+{
+    return availabilityZone_;
+}
+
+void ListVaultRequest::setAvailabilityZone(const std::string& value)
+{
+    availabilityZone_ = value;
+    availabilityZoneIsSet_ = true;
+}
+
+bool ListVaultRequest::availabilityZoneIsSet() const
+{
+    return availabilityZoneIsSet_;
+}
+
+void ListVaultRequest::unsetavailabilityZone()
+{
+    availabilityZoneIsSet_ = false;
 }
 
 }

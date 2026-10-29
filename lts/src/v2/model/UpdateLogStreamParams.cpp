@@ -17,6 +17,10 @@ UpdateLogStreamParams::UpdateLogStreamParams()
     tagsIsSet_ = false;
     whetherLogStorage_ = false;
     whetherLogStorageIsSet_ = false;
+    hotColdSeparation_ = false;
+    hotColdSeparationIsSet_ = false;
+    hotStorageDays_ = 0;
+    hotStorageDaysIsSet_ = false;
 }
 
 UpdateLogStreamParams::~UpdateLogStreamParams() = default;
@@ -37,6 +41,12 @@ web::json::value UpdateLogStreamParams::toJson() const
     }
     if(whetherLogStorageIsSet_) {
         val[utility::conversions::to_string_t("whether_log_storage")] = ModelBase::toJson(whetherLogStorage_);
+    }
+    if(hotColdSeparationIsSet_) {
+        val[utility::conversions::to_string_t("hot_cold_separation")] = ModelBase::toJson(hotColdSeparation_);
+    }
+    if(hotStorageDaysIsSet_) {
+        val[utility::conversions::to_string_t("hot_storage_days")] = ModelBase::toJson(hotStorageDays_);
     }
 
     return val;
@@ -70,6 +80,24 @@ bool UpdateLogStreamParams::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWhetherLogStorage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hot_cold_separation"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hot_cold_separation"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotColdSeparation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hot_storage_days"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hot_storage_days"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotStorageDays(refVal);
         }
     }
     return ok;
@@ -137,6 +165,48 @@ bool UpdateLogStreamParams::whetherLogStorageIsSet() const
 void UpdateLogStreamParams::unsetwhetherLogStorage()
 {
     whetherLogStorageIsSet_ = false;
+}
+
+bool UpdateLogStreamParams::isHotColdSeparation() const
+{
+    return hotColdSeparation_;
+}
+
+void UpdateLogStreamParams::setHotColdSeparation(bool value)
+{
+    hotColdSeparation_ = value;
+    hotColdSeparationIsSet_ = true;
+}
+
+bool UpdateLogStreamParams::hotColdSeparationIsSet() const
+{
+    return hotColdSeparationIsSet_;
+}
+
+void UpdateLogStreamParams::unsethotColdSeparation()
+{
+    hotColdSeparationIsSet_ = false;
+}
+
+int32_t UpdateLogStreamParams::getHotStorageDays() const
+{
+    return hotStorageDays_;
+}
+
+void UpdateLogStreamParams::setHotStorageDays(int32_t value)
+{
+    hotStorageDays_ = value;
+    hotStorageDaysIsSet_ = true;
+}
+
+bool UpdateLogStreamParams::hotStorageDaysIsSet() const
+{
+    return hotStorageDaysIsSet_;
+}
+
+void UpdateLogStreamParams::unsethotStorageDays()
+{
+    hotStorageDaysIsSet_ = false;
 }
 
 }

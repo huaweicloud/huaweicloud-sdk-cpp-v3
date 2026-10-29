@@ -9,7 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
+#include <huaweicloud/lts/v2/model/LogCounts.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,13 +40,13 @@ public:
     /// ListLogHistogramResponse members
 
     /// <summary>
-    /// 直方图结果
+    /// **参数解释：** 直方图结果。 **取值范围：** 不涉及。
     /// </summary>
 
-    std::string getHistogram() const;
+    std::vector<LogCounts>& getHistogram();
     bool histogramIsSet() const;
     void unsethistogram();
-    void setHistogram(const std::string& value);
+    void setHistogram(const std::vector<LogCounts>& value);
 
     /// <summary>
     /// 日志条数
@@ -67,7 +68,7 @@ public:
 
 
 protected:
-    std::string histogram_;
+    std::vector<LogCounts> histogram_;
     bool histogramIsSet_;
     int64_t count_;
     bool countIsSet_;

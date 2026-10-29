@@ -175,6 +175,15 @@ public:
     void unsetisAnalysisQuery();
     void setIsAnalysisQuery(bool value);
 
+    /// <summary>
+    /// **参数解释：** 查询时区。 当开启管道符语句查询功能时，将会按照sql_timezone中的时区信息对时间算子进行处理。 **约束限制：** 不涉及。 **取值范围：** 标准时区值 **默认取值：** UTC
+    /// </summary>
+
+    std::string getSqlTimezone() const;
+    bool sqlTimezoneIsSet() const;
+    void unsetsqlTimezone();
+    void setSqlTimezone(const std::string& value);
+
 
 protected:
     std::string startTime_;
@@ -207,6 +216,8 @@ protected:
     bool queryIsSet_;
     bool isAnalysisQuery_;
     bool isAnalysisQueryIsSet_;
+    std::string sqlTimezone_;
+    bool sqlTimezoneIsSet_;
 
 };
 

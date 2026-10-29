@@ -13,6 +13,7 @@
 #include <string>
 #include <huaweicloud/lts/v2/model/FrequencyRespBody.h>
 #include <huaweicloud/lts/v2/model/SqlRequestResponse.h>
+#include <huaweicloud/lts/v2/model/AlarmCondition.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -213,6 +214,33 @@ public:
     void unsettags();
     void setTags(const std::vector<TagsResBody>& value);
 
+    /// <summary>
+    /// **参数解释：** 告警规则创建的时间，毫秒级的时间戳。 **取值范围** 不涉及。
+    /// </summary>
+
+    int64_t getCreateTime() const;
+    bool createTimeIsSet() const;
+    void unsetcreateTime();
+    void setCreateTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释：** 告警规则最后一次修改的时间，毫秒级的时间戳。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int64_t getUpdateTime() const;
+    bool updateTimeIsSet() const;
+    void unsetupdateTime();
+    void setUpdateTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视condition_expression、sql_alarm_level参数。 **约束限制：** 不涉及。
+    /// </summary>
+
+    std::vector<AlarmCondition>& getConditionExpressions();
+    bool conditionExpressionsIsSet() const;
+    void unsetconditionExpressions();
+    void setConditionExpressions(const std::vector<AlarmCondition>& value);
+
 
 protected:
     std::string sqlAlarmRuleName_;
@@ -253,6 +281,12 @@ protected:
     bool recoveryPolicyIsSet_;
     std::vector<TagsResBody> tags_;
     bool tagsIsSet_;
+    int64_t createTime_;
+    bool createTimeIsSet_;
+    int64_t updateTime_;
+    bool updateTimeIsSet_;
+    std::vector<AlarmCondition> conditionExpressions_;
+    bool conditionExpressionsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

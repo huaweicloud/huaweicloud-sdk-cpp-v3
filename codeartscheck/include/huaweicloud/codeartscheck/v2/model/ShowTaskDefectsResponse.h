@@ -40,7 +40,7 @@ public:
     /// ShowTaskDefectsResponse members
 
     /// <summary>
-    /// 缺陷详情信息
+    /// **参数解释：** 缺陷详情列表，注意这里和入参中的limit数据不一定一致，服务会重新对响应数据拆分。
     /// </summary>
 
     std::vector<DefectInfoV2>& getDefects();
@@ -49,7 +49,7 @@ public:
     void setDefects(const std::vector<DefectInfoV2>& value);
 
     /// <summary>
-    /// 总数
+    /// **参数解释：** 缺陷详情总数。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getTotal() const;

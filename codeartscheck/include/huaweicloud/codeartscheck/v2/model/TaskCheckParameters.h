@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CODEARTSCHECK_V2_MODEL_TaskCheckParamters_H_
-#define HUAWEICLOUD_SDK_CODEARTSCHECK_V2_MODEL_TaskCheckParamters_H_
+#ifndef HUAWEICLOUD_SDK_CODEARTSCHECK_V2_MODEL_TaskCheckParameters_H_
+#define HUAWEICLOUD_SDK_CODEARTSCHECK_V2_MODEL_TaskCheckParameters_H_
 
 
 #include <huaweicloud/codeartscheck/v2/CodeArtsCheckExport.h>
@@ -22,14 +22,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// **参数解释：** 任务规则集的检查参数。
 /// </summary>
-class HUAWEICLOUD_CODEARTSCHECK_V2_EXPORT  TaskCheckParamters
+class HUAWEICLOUD_CODEARTSCHECK_V2_EXPORT  TaskCheckParameters
     : public ModelBase
 {
 public:
-    TaskCheckParamters();
-    virtual ~TaskCheckParamters();
+    TaskCheckParameters();
+    virtual ~TaskCheckParameters();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,10 +38,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// TaskCheckParamters members
+    /// TaskCheckParameters members
 
     /// <summary>
-    /// 检查工具ID
+    /// **参数解释：** 检查工具ID。 **取值范围:** ≥0
     /// </summary>
 
     int32_t getCheckId() const;
@@ -50,7 +50,7 @@ public:
     void setCheckId(int32_t value);
 
     /// <summary>
-    /// 编译参数名称
+    /// **参数解释：** 编译参数名称。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getName() const;
@@ -59,7 +59,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 检查参数配置信息
+    /// **参数解释：** 检查参数配置信息。
     /// </summary>
 
     std::vector<CheckConfigInfo>& getCheckerConfigs();
@@ -85,4 +85,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CODEARTSCHECK_V2_MODEL_TaskCheckParamters_H_
+#endif // HUAWEICLOUD_SDK_CODEARTSCHECK_V2_MODEL_TaskCheckParameters_H_

@@ -40,7 +40,7 @@ public:
     /// ListRulesResponse members
 
     /// <summary>
-    /// 规则信息
+    /// **参数解释：** 规则信息。
     /// </summary>
 
     std::vector<RuleListItem>& getInfo();
@@ -49,7 +49,7 @@ public:
     void setInfo(const std::vector<RuleListItem>& value);
 
     /// <summary>
-    /// 总数
+    /// **参数解释：** 总数。 **取值范围：** ≥0
     /// </summary>
 
     int32_t getTotal() const;

@@ -1,3 +1,190 @@
+# 3.1.210 2026-10-29
+
+### HuaweiCloud SDK CBR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`UpdateOrder`
+  - **ListBackups**
+    - 请求参数变更
+      - `+ existed_quantity_based_retention_backups`
+  - **ListVault**
+    - 请求参数变更
+      - `+ availability_zone`
+  - **ListExternalVault**
+    - 请求参数变更
+      - `+ object_type`
+      - `- objcet_type`
+  - **ListOpLogs**
+    - 请求参数变更
+      - `+ destination_region`
+      - `+ destination_project_id`
+  - **ListProtectable**
+    - 请求参数变更
+      - `+ enterprise_project_id`
+  - **ShowVaultResourceInstances**
+    - 请求参数变更
+      - `+ enterprise_project_id`
+
+### HuaweiCloud SDK CodeArtsCheck
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListCriterionSetsByLanguage`、`ShowTaskInfoById`、`UpdateCodeGate`、`ShowTasksList`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RunTask**
+    - 请求参数变更
+      - `+ ref`
+  - **ShowTaskDetail**
+    - 响应参数变更
+      - `+ review_result`
+      - `+ dismissed_count`
+      - `+ new_suggestion_count`
+      - `+ new_minor_count`
+      - `+ duplicated_files`
+      - `+ solve_count`
+      - `+ new_count`
+      - `+ new_critical_count`
+      - `+ new_major_count`
+  - **UpdateDefectStatus**
+    - 请求参数变更
+      - `+ approver`
+      - `+ comment`
+      - `+ ignoreType`
+  - **ShowTasksRulesets**
+    - 响应参数变更
+      - `+ data`
+      - `- info`
+  - **CreateTask**
+    - 请求参数变更
+      - `+ sm_level`
+  - **ShowTaskListByProjectId**
+    - 响应参数变更
+      - `+ tasks.sm_level`
+      - `+ tasks.sm_level_name_en`
+      - `+ tasks.sm_level_name`
+  - **ShowTaskCmetrics**
+    - 响应参数变更
+      - `+ last_check_finish_time`
+  - **ShowTaskDefectsStatistic**
+    - 响应参数变更
+      - `+ last_check_time`
+      - `+ last_check_finish_time`
+      - `+ status.fixed`
+      - `+ status.solved`
+  - **CheckParameters**
+    - 响应参数变更
+      - `* : list<TaskCheckParamters> -> list<TaskCheckParameters>`
+  - **ShowTaskDefects**
+    - 响应参数变更
+      - `+ defects.defect_owner`
+      - `+ defects.rule_id`
+  - **ListTemplateRules**
+    - 响应参数变更
+      - `* info.rule_config_list.rule_id: int32 -> string`
+      - `* info.rule_config_list: list<RuleConfig> -> list<RuleConfigParam>`
+  - **CheckRulesetParameters**
+    - 响应参数变更
+      - `* data: list<TaskCheckParamters> -> list<TaskCheckParameters>`
+  - **CreateRuleset**
+    - 请求参数变更
+      - `* custom_attributes.rules.rule_config_list.rule_id: int32 -> string`
+
+### HuaweiCloud SDK CSMS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`BatchGetSecretValue`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK LTS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`ListQueryStructuredLogs`、`ListStructuredLogsWithTimeRange`、`UpdateStructTemplate`、`CreateStructTemplate`
+  - **ListLogHistogram**
+    - 响应参数变更
+      - `* histogram: string -> list<LogCounts>`
+  - **CreateLogStream**
+    - 请求参数变更
+      - `+ hot_cold_separation`
+      - `+ hot_storage_days`
+  - **ListLogs**
+    - 请求参数变更
+      - `+ sql_timezone`
+  - **UpdateLogStream**
+    - 请求参数变更
+      - `+ hot_cold_separation`
+      - `+ hot_storage_days`
+  - **CreateAgencyAccess**
+    - 请求参数变更
+      - `+ preview_agency_list.agency_accessConfig_id`
+    - 响应参数变更
+      - `* access_config_type: object -> string`
+      - `+ agency_log_access.agency_accessConfig_id`
+  - **ShowLogConvergeConfig**
+    - 响应参数变更
+      - `- version`
+  - **UpdateSqlAlarmRule**
+    - 请求参数变更
+      - `+ condition_expressions`
+    - 响应参数变更
+      - `+ create_time`
+      - `+ update_time`
+      - `+ condition_expressions`
+      - `+ sql_requests.log_group_name_alias`
+      - `+ sql_requests.log_stream_name_alias`
+  - **CreateSqlAlarmRule**
+    - 请求参数变更
+      - `+ condition_expressions`
+  - **ListSqlAlarmRules**
+    - 响应参数变更
+      - `+ sql_alarm_rules.condition_expressions`
+      - `+ sql_alarm_rules.sql_requests.log_group_name_alias`
+      - `+ sql_alarm_rules.sql_requests.log_stream_name_alias`
+  - **UpdateKeywordsAlarmRule**
+    - 请求参数变更
+      - `+ keywords_requests.conditions`
+    - 响应参数变更
+      - `+ keywords_requests.conditions`
+      - `+ keywords_requests.log_group_name_alias`
+      - `+ keywords_requests.log_stream_name_alias`
+      - `+ keywords_requests.eps_id`
+      - `+ keywords_requests.time_range`
+  - **CreateKeywordsAlarmRule**
+    - 请求参数变更
+      - `+ keywords_requests.conditions`
+  - **ListKeywordsAlarmRules**
+    - 响应参数变更
+      - `+ keywords_alarm_rules.keywords_requests.conditions`
+      - `+ keywords_alarm_rules.keywords_requests.log_group_name_alias`
+      - `+ keywords_alarm_rules.keywords_requests.log_stream_name_alias`
+      - `+ keywords_alarm_rules.keywords_requests.eps_id`
+      - `+ keywords_alarm_rules.keywords_requests.time_range`
+  - **UpdateAccessConfig**
+    - 请求参数变更
+      - `+ disable_labels_prefix`
+  - **CreateAccessConfig**
+    - 请求参数变更
+      - `+ disable_labels_prefix`
+
 # 3.1.209 2026-10-22
 
 ### HuaweiCloud SDK CodeArtsDeploy

@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/codeartscheck/v2/model/TaskCheckParamters.h"
+#include "huaweicloud/codeartscheck/v2/model/TaskCheckParameters.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartscheck {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-TaskCheckParamters::TaskCheckParamters()
+TaskCheckParameters::TaskCheckParameters()
 {
     checkId_ = 0;
     checkIdIsSet_ = false;
@@ -19,13 +19,13 @@ TaskCheckParamters::TaskCheckParamters()
     checkerConfigsIsSet_ = false;
 }
 
-TaskCheckParamters::~TaskCheckParamters() = default;
+TaskCheckParameters::~TaskCheckParameters() = default;
 
-void TaskCheckParamters::validate()
+void TaskCheckParameters::validate()
 {
 }
 
-web::json::value TaskCheckParamters::toJson() const
+web::json::value TaskCheckParameters::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -41,7 +41,7 @@ web::json::value TaskCheckParamters::toJson() const
 
     return val;
 }
-bool TaskCheckParamters::fromJson(const web::json::value& val)
+bool TaskCheckParameters::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -76,65 +76,65 @@ bool TaskCheckParamters::fromJson(const web::json::value& val)
 }
 
 
-int32_t TaskCheckParamters::getCheckId() const
+int32_t TaskCheckParameters::getCheckId() const
 {
     return checkId_;
 }
 
-void TaskCheckParamters::setCheckId(int32_t value)
+void TaskCheckParameters::setCheckId(int32_t value)
 {
     checkId_ = value;
     checkIdIsSet_ = true;
 }
 
-bool TaskCheckParamters::checkIdIsSet() const
+bool TaskCheckParameters::checkIdIsSet() const
 {
     return checkIdIsSet_;
 }
 
-void TaskCheckParamters::unsetcheckId()
+void TaskCheckParameters::unsetcheckId()
 {
     checkIdIsSet_ = false;
 }
 
-std::string TaskCheckParamters::getName() const
+std::string TaskCheckParameters::getName() const
 {
     return name_;
 }
 
-void TaskCheckParamters::setName(const std::string& value)
+void TaskCheckParameters::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool TaskCheckParamters::nameIsSet() const
+bool TaskCheckParameters::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void TaskCheckParamters::unsetname()
+void TaskCheckParameters::unsetname()
 {
     nameIsSet_ = false;
 }
 
-std::vector<CheckConfigInfo>& TaskCheckParamters::getCheckerConfigs()
+std::vector<CheckConfigInfo>& TaskCheckParameters::getCheckerConfigs()
 {
     return checkerConfigs_;
 }
 
-void TaskCheckParamters::setCheckerConfigs(const std::vector<CheckConfigInfo>& value)
+void TaskCheckParameters::setCheckerConfigs(const std::vector<CheckConfigInfo>& value)
 {
     checkerConfigs_ = value;
     checkerConfigsIsSet_ = true;
 }
 
-bool TaskCheckParamters::checkerConfigsIsSet() const
+bool TaskCheckParameters::checkerConfigsIsSet() const
 {
     return checkerConfigsIsSet_;
 }
 
-void TaskCheckParamters::unsetcheckerConfigs()
+void TaskCheckParameters::unsetcheckerConfigs()
 {
     checkerConfigsIsSet_ = false;
 }

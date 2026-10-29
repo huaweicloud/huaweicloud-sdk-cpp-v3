@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/PreviewAgencyLogAccessReqBody.h>
 
@@ -68,13 +67,13 @@ public:
     void setAccessConfigName(const std::string& value);
 
     /// <summary>
-    /// 跨账号日志接入类型
+    /// **参数解释：** 委托接入类型。 **约束限制：** 不涉及。 **取值范围：** - AGENCYACCESS：委托接入。
     /// </summary>
 
-    Object getAccessConfigType() const;
+    std::string getAccessConfigType() const;
     bool accessConfigTypeIsSet() const;
     void unsetaccessConfigType();
-    void setAccessConfigType(const Object& value);
+    void setAccessConfigType(const std::string& value);
 
     /// <summary>
     /// 日志组ID
@@ -138,7 +137,7 @@ protected:
     bool projectIdIsSet_;
     std::string accessConfigName_;
     bool accessConfigNameIsSet_;
-    Object accessConfigType_;
+    std::string accessConfigType_;
     bool accessConfigTypeIsSet_;
     std::string groupId_;
     bool groupIdIsSet_;

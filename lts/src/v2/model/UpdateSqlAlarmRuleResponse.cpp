@@ -47,6 +47,11 @@ UpdateSqlAlarmRuleResponse::UpdateSqlAlarmRuleResponse()
     recoveryPolicy_ = 0;
     recoveryPolicyIsSet_ = false;
     tagsIsSet_ = false;
+    createTime_ = 0L;
+    createTimeIsSet_ = false;
+    updateTime_ = 0L;
+    updateTimeIsSet_ = false;
+    conditionExpressionsIsSet_ = false;
 }
 
 UpdateSqlAlarmRuleResponse::~UpdateSqlAlarmRuleResponse() = default;
@@ -115,6 +120,15 @@ web::json::value UpdateSqlAlarmRuleResponse::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(createTimeIsSet_) {
+        val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
+    }
+    if(updateTimeIsSet_) {
+        val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
+    }
+    if(conditionExpressionsIsSet_) {
+        val[utility::conversions::to_string_t("condition_expressions")] = ModelBase::toJson(conditionExpressions_);
     }
 
     return val;
@@ -292,6 +306,33 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
             std::vector<TagsResBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("create_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("update_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("condition_expressions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("condition_expressions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AlarmCondition> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConditionExpressions(refVal);
         }
     }
     return ok;
@@ -695,6 +736,69 @@ bool UpdateSqlAlarmRuleResponse::tagsIsSet() const
 void UpdateSqlAlarmRuleResponse::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+int64_t UpdateSqlAlarmRuleResponse::getCreateTime() const
+{
+    return createTime_;
+}
+
+void UpdateSqlAlarmRuleResponse::setCreateTime(int64_t value)
+{
+    createTime_ = value;
+    createTimeIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::createTimeIsSet() const
+{
+    return createTimeIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetcreateTime()
+{
+    createTimeIsSet_ = false;
+}
+
+int64_t UpdateSqlAlarmRuleResponse::getUpdateTime() const
+{
+    return updateTime_;
+}
+
+void UpdateSqlAlarmRuleResponse::setUpdateTime(int64_t value)
+{
+    updateTime_ = value;
+    updateTimeIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::updateTimeIsSet() const
+{
+    return updateTimeIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetupdateTime()
+{
+    updateTimeIsSet_ = false;
+}
+
+std::vector<AlarmCondition>& UpdateSqlAlarmRuleResponse::getConditionExpressions()
+{
+    return conditionExpressions_;
+}
+
+void UpdateSqlAlarmRuleResponse::setConditionExpressions(const std::vector<AlarmCondition>& value)
+{
+    conditionExpressions_ = value;
+    conditionExpressionsIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::conditionExpressionsIsSet() const
+{
+    return conditionExpressionsIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetconditionExpressions()
+{
+    conditionExpressionsIsSet_ = false;
 }
 
 }

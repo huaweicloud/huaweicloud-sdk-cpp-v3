@@ -122,15 +122,6 @@ public:
     void setManagementProjectId(const std::string& value);
 
     /// <summary>
-    /// 版本
-    /// </summary>
-
-    std::string getVersion() const;
-    bool versionIsSet() const;
-    void unsetversion();
-    void setVersion(const std::string& value);
-
-    /// <summary>
     /// 日志汇聚配置
     /// </summary>
 
@@ -159,8 +150,6 @@ protected:
     bool managementAccountIdIsSet_;
     std::string managementProjectId_;
     bool managementProjectIdIsSet_;
-    std::string version_;
-    bool versionIsSet_;
     std::vector<LogMappingConfig> logMappingConfig_;
     bool logMappingConfigIsSet_;
 

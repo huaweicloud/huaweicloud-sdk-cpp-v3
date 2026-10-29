@@ -39,7 +39,7 @@ public:
     /// TaskAdvancedSettings members
 
     /// <summary>
-    /// 高级选项对应的名称
+    /// **参数解释：** 高级配置对应的名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getKey() const;
@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 高级选项对应的取值
+    /// **参数解释：** 高级配置对应的取值。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getValue() const;
@@ -57,7 +57,7 @@ public:
     void setValue(const std::string& value);
 
     /// <summary>
-    /// 高级选项对应的可选项
+    /// **参数解释：** 高级配置对应的可选项。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getOptionValue() const;
@@ -66,7 +66,7 @@ public:
     void setOptionValue(const std::string& value);
 
     /// <summary>
-    /// 高级选项对应的中文描述
+    /// **参数解释：** 高级配置对应的中文描述。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDescription() const;

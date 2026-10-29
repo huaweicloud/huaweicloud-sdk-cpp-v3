@@ -20,6 +20,8 @@ RunRequestV2::RunRequestV2()
     gitUrlIsSet_ = false;
     gitBranch_ = "";
     gitBranchIsSet_ = false;
+    ref_ = "";
+    refIsSet_ = false;
 }
 
 RunRequestV2::~RunRequestV2() = default;
@@ -43,6 +45,9 @@ web::json::value RunRequestV2::toJson() const
     }
     if(gitBranchIsSet_) {
         val[utility::conversions::to_string_t("git_branch")] = ModelBase::toJson(gitBranch_);
+    }
+    if(refIsSet_) {
+        val[utility::conversions::to_string_t("ref")] = ModelBase::toJson(ref_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool RunRequestV2::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setGitBranch(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ref"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ref"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRef(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool RunRequestV2::gitBranchIsSet() const
 void RunRequestV2::unsetgitBranch()
 {
     gitBranchIsSet_ = false;
+}
+
+std::string RunRequestV2::getRef() const
+{
+    return ref_;
+}
+
+void RunRequestV2::setRef(const std::string& value)
+{
+    ref_ = value;
+    refIsSet_ = true;
+}
+
+bool RunRequestV2::refIsSet() const
+{
+    return refIsSet_;
+}
+
+void RunRequestV2::unsetref()
+{
+    refIsSet_ = false;
 }
 
 }

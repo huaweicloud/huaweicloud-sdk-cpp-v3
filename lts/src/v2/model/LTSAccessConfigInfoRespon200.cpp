@@ -18,6 +18,7 @@ LTSAccessConfigInfoRespon200::LTSAccessConfigInfoRespon200()
     projectIdIsSet_ = false;
     accessConfigName_ = "";
     accessConfigNameIsSet_ = false;
+    accessConfigType_ = "";
     accessConfigTypeIsSet_ = false;
     groupId_ = "";
     groupIdIsSet_ = false;
@@ -110,7 +111,7 @@ bool LTSAccessConfigInfoRespon200::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("access_config_type"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccessConfigType(refVal);
         }
@@ -236,12 +237,12 @@ void LTSAccessConfigInfoRespon200::unsetaccessConfigName()
     accessConfigNameIsSet_ = false;
 }
 
-Object LTSAccessConfigInfoRespon200::getAccessConfigType() const
+std::string LTSAccessConfigInfoRespon200::getAccessConfigType() const
 {
     return accessConfigType_;
 }
 
-void LTSAccessConfigInfoRespon200::setAccessConfigType(const Object& value)
+void LTSAccessConfigInfoRespon200::setAccessConfigType(const std::string& value)
 {
     accessConfigType_ = value;
     accessConfigTypeIsSet_ = true;

@@ -36,6 +36,10 @@ ListOpLogsRequest::ListOpLogsRequest()
     vaultNameIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    destinationRegion_ = "";
+    destinationRegionIsSet_ = false;
+    destinationProjectId_ = "";
+    destinationProjectIdIsSet_ = false;
 }
 
 ListOpLogsRequest::~ListOpLogsRequest() = default;
@@ -83,6 +87,12 @@ web::json::value ListOpLogsRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(destinationRegionIsSet_) {
+        val[utility::conversions::to_string_t("destination_region")] = ModelBase::toJson(destinationRegion_);
+    }
+    if(destinationProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("destination_project_id")] = ModelBase::toJson(destinationProjectId_);
     }
 
     return val;
@@ -197,6 +207,24 @@ bool ListOpLogsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("destination_region"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination_region"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDestinationRegion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("destination_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDestinationProjectId(refVal);
         }
     }
     return ok;
@@ -453,6 +481,48 @@ bool ListOpLogsRequest::enterpriseProjectIdIsSet() const
 void ListOpLogsRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string ListOpLogsRequest::getDestinationRegion() const
+{
+    return destinationRegion_;
+}
+
+void ListOpLogsRequest::setDestinationRegion(const std::string& value)
+{
+    destinationRegion_ = value;
+    destinationRegionIsSet_ = true;
+}
+
+bool ListOpLogsRequest::destinationRegionIsSet() const
+{
+    return destinationRegionIsSet_;
+}
+
+void ListOpLogsRequest::unsetdestinationRegion()
+{
+    destinationRegionIsSet_ = false;
+}
+
+std::string ListOpLogsRequest::getDestinationProjectId() const
+{
+    return destinationProjectId_;
+}
+
+void ListOpLogsRequest::setDestinationProjectId(const std::string& value)
+{
+    destinationProjectId_ = value;
+    destinationProjectIdIsSet_ = true;
+}
+
+bool ListOpLogsRequest::destinationProjectIdIsSet() const
+{
+    return destinationProjectIdIsSet_;
+}
+
+void ListOpLogsRequest::unsetdestinationProjectId()
+{
+    destinationProjectIdIsSet_ = false;
 }
 
 }

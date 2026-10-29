@@ -225,6 +225,15 @@ public:
     void unsetrecursiveDepth();
     void setRecursiveDepth(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 是否对结构化上报方式中labels字段中非内置字段添加__labels__.前缀的行为进行禁用。 **约束限制：** 不涉及。 **取值范围：** - true：禁用，不添加__labels__.前缀。 - false：不禁用，即添加__labels__.前缀。 **默认取值：** 不涉及。
+    /// </summary>
+
+    bool isDisableLabelsPrefix() const;
+    bool disableLabelsPrefixIsSet() const;
+    void unsetdisableLabelsPrefix();
+    void setDisableLabelsPrefix(bool value);
+
 
 protected:
     std::string accessConfigName_;
@@ -267,6 +276,8 @@ protected:
     bool accessConfigTypeSourceIsSet_;
     int32_t recursiveDepth_;
     bool recursiveDepthIsSet_;
+    bool disableLabelsPrefix_;
+    bool disableLabelsPrefixIsSet_;
 
 };
 

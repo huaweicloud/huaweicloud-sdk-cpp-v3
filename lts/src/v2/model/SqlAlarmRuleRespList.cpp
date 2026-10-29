@@ -50,6 +50,7 @@ SqlAlarmRuleRespList::SqlAlarmRuleRespList()
     alarmActionRuleName_ = "";
     alarmActionRuleNameIsSet_ = false;
     tagsIsSet_ = false;
+    conditionExpressionsIsSet_ = false;
 }
 
 SqlAlarmRuleRespList::~SqlAlarmRuleRespList() = default;
@@ -124,6 +125,9 @@ web::json::value SqlAlarmRuleRespList::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(conditionExpressionsIsSet_) {
+        val[utility::conversions::to_string_t("condition_expressions")] = ModelBase::toJson(conditionExpressions_);
     }
 
     return val;
@@ -319,6 +323,15 @@ bool SqlAlarmRuleRespList::fromJson(const web::json::value& val)
             std::vector<TagsResBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("condition_expressions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("condition_expressions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AlarmCondition> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConditionExpressions(refVal);
         }
     }
     return ok;
@@ -764,6 +777,27 @@ bool SqlAlarmRuleRespList::tagsIsSet() const
 void SqlAlarmRuleRespList::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::vector<AlarmCondition>& SqlAlarmRuleRespList::getConditionExpressions()
+{
+    return conditionExpressions_;
+}
+
+void SqlAlarmRuleRespList::setConditionExpressions(const std::vector<AlarmCondition>& value)
+{
+    conditionExpressions_ = value;
+    conditionExpressionsIsSet_ = true;
+}
+
+bool SqlAlarmRuleRespList::conditionExpressionsIsSet() const
+{
+    return conditionExpressionsIsSet_;
+}
+
+void SqlAlarmRuleRespList::unsetconditionExpressions()
+{
+    conditionExpressionsIsSet_ = false;
 }
 
 }

@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cbr/v1/model/Resource.h>
+#include <huaweicloud/cbr/v1/model/OpResourceResp.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -61,10 +61,10 @@ public:
     /// 
     /// </summary>
 
-    std::vector<Resource>& getResources();
+    std::vector<OpResourceResp>& getResources();
     bool resourcesIsSet() const;
     void unsetresources();
-    void setResources(const std::vector<Resource>& value);
+    void setResources(const std::vector<OpResourceResp>& value);
 
 
 protected:
@@ -72,7 +72,7 @@ protected:
     bool failCountIsSet_;
     int32_t totalCount_;
     bool totalCountIsSet_;
-    std::vector<Resource> resources_;
+    std::vector<OpResourceResp> resources_;
     bool resourcesIsSet_;
 
 };

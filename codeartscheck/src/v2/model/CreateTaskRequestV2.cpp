@@ -12,7 +12,6 @@ namespace Model {
 
 CreateTaskRequestV2::CreateTaskRequestV2()
 {
-    checkTypeIsSet_ = false;
     gitUrl_ = "";
     gitUrlIsSet_ = false;
     gitBranch_ = "";
@@ -28,10 +27,13 @@ CreateTaskRequestV2::CreateTaskRequestV2()
     endpointId_ = "";
     endpointIdIsSet_ = false;
     incConfigIsSet_ = false;
-    enableFossbot_ = false;
-    enableFossbotIsSet_ = false;
     resourcePoolId_ = "";
     resourcePoolIdIsSet_ = false;
+    smLevel_ = "";
+    smLevelIsSet_ = false;
+    checkTypeIsSet_ = false;
+    enableFossbot_ = false;
+    enableFossbotIsSet_ = false;
 }
 
 CreateTaskRequestV2::~CreateTaskRequestV2() = default;
@@ -44,9 +46,6 @@ web::json::value CreateTaskRequestV2::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(checkTypeIsSet_) {
-        val[utility::conversions::to_string_t("check_type")] = ModelBase::toJson(checkType_);
-    }
     if(gitUrlIsSet_) {
         val[utility::conversions::to_string_t("git_url")] = ModelBase::toJson(gitUrl_);
     }
@@ -74,11 +73,17 @@ web::json::value CreateTaskRequestV2::toJson() const
     if(incConfigIsSet_) {
         val[utility::conversions::to_string_t("inc_config")] = ModelBase::toJson(incConfig_);
     }
-    if(enableFossbotIsSet_) {
-        val[utility::conversions::to_string_t("enable_fossbot")] = ModelBase::toJson(enableFossbot_);
-    }
     if(resourcePoolIdIsSet_) {
         val[utility::conversions::to_string_t("resource_pool_id")] = ModelBase::toJson(resourcePoolId_);
+    }
+    if(smLevelIsSet_) {
+        val[utility::conversions::to_string_t("sm_level")] = ModelBase::toJson(smLevel_);
+    }
+    if(checkTypeIsSet_) {
+        val[utility::conversions::to_string_t("check_type")] = ModelBase::toJson(checkType_);
+    }
+    if(enableFossbotIsSet_) {
+        val[utility::conversions::to_string_t("enable_fossbot")] = ModelBase::toJson(enableFossbot_);
     }
 
     return val;
@@ -87,15 +92,6 @@ bool CreateTaskRequestV2::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("check_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("check_type"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCheckType(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("git_url"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("git_url"));
         if(!fieldValue.is_null())
@@ -177,15 +173,6 @@ bool CreateTaskRequestV2::fromJson(const web::json::value& val)
             setIncConfig(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("enable_fossbot"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_fossbot"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEnableFossbot(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("resource_pool_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_pool_id"));
         if(!fieldValue.is_null())
@@ -195,30 +182,36 @@ bool CreateTaskRequestV2::fromJson(const web::json::value& val)
             setResourcePoolId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("sm_level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sm_level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSmLevel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("check_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("check_type"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCheckType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_fossbot"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_fossbot"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableFossbot(refVal);
+        }
+    }
     return ok;
 }
 
-
-std::vector<std::string>& CreateTaskRequestV2::getCheckType()
-{
-    return checkType_;
-}
-
-void CreateTaskRequestV2::setCheckType(const std::vector<std::string>& value)
-{
-    checkType_ = value;
-    checkTypeIsSet_ = true;
-}
-
-bool CreateTaskRequestV2::checkTypeIsSet() const
-{
-    return checkTypeIsSet_;
-}
-
-void CreateTaskRequestV2::unsetcheckType()
-{
-    checkTypeIsSet_ = false;
-}
 
 std::string CreateTaskRequestV2::getGitUrl() const
 {
@@ -409,27 +402,6 @@ void CreateTaskRequestV2::unsetincConfig()
     incConfigIsSet_ = false;
 }
 
-bool CreateTaskRequestV2::isEnableFossbot() const
-{
-    return enableFossbot_;
-}
-
-void CreateTaskRequestV2::setEnableFossbot(bool value)
-{
-    enableFossbot_ = value;
-    enableFossbotIsSet_ = true;
-}
-
-bool CreateTaskRequestV2::enableFossbotIsSet() const
-{
-    return enableFossbotIsSet_;
-}
-
-void CreateTaskRequestV2::unsetenableFossbot()
-{
-    enableFossbotIsSet_ = false;
-}
-
 std::string CreateTaskRequestV2::getResourcePoolId() const
 {
     return resourcePoolId_;
@@ -449,6 +421,69 @@ bool CreateTaskRequestV2::resourcePoolIdIsSet() const
 void CreateTaskRequestV2::unsetresourcePoolId()
 {
     resourcePoolIdIsSet_ = false;
+}
+
+std::string CreateTaskRequestV2::getSmLevel() const
+{
+    return smLevel_;
+}
+
+void CreateTaskRequestV2::setSmLevel(const std::string& value)
+{
+    smLevel_ = value;
+    smLevelIsSet_ = true;
+}
+
+bool CreateTaskRequestV2::smLevelIsSet() const
+{
+    return smLevelIsSet_;
+}
+
+void CreateTaskRequestV2::unsetsmLevel()
+{
+    smLevelIsSet_ = false;
+}
+
+std::vector<std::string>& CreateTaskRequestV2::getCheckType()
+{
+    return checkType_;
+}
+
+void CreateTaskRequestV2::setCheckType(const std::vector<std::string>& value)
+{
+    checkType_ = value;
+    checkTypeIsSet_ = true;
+}
+
+bool CreateTaskRequestV2::checkTypeIsSet() const
+{
+    return checkTypeIsSet_;
+}
+
+void CreateTaskRequestV2::unsetcheckType()
+{
+    checkTypeIsSet_ = false;
+}
+
+bool CreateTaskRequestV2::isEnableFossbot() const
+{
+    return enableFossbot_;
+}
+
+void CreateTaskRequestV2::setEnableFossbot(bool value)
+{
+    enableFossbot_ = value;
+    enableFossbotIsSet_ = true;
+}
+
+bool CreateTaskRequestV2::enableFossbotIsSet() const
+{
+    return enableFossbotIsSet_;
+}
+
+void CreateTaskRequestV2::unsetenableFossbot()
+{
+    enableFossbotIsSet_ = false;
 }
 
 }

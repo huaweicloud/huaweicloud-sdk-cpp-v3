@@ -39,7 +39,7 @@ public:
     /// LogInfo members
 
     /// <summary>
-    /// 日志标题
+    /// **参数解释：** 检查日志页面所显示的子任务阶段名称。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getDisplayName() const;
@@ -48,7 +48,7 @@ public:
     void setDisplayName(const std::string& value);
 
     /// <summary>
-    /// 日志内容
+    /// **参数解释：** 扫描日志内容。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getLog() const;
@@ -57,7 +57,7 @@ public:
     void setLog(const std::string& value);
 
     /// <summary>
-    /// 日志级别
+    /// **参数解释：** 废弃字段。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getLevel() const;
@@ -66,7 +66,7 @@ public:
     void setLevel(const std::string& value);
 
     /// <summary>
-    /// 日志分析
+    /// **参数解释：** 任务失败的简要原因。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getAnalysis() const;
@@ -75,7 +75,7 @@ public:
     void setAnalysis(const std::string& value);
 
     /// <summary>
-    /// 常见问题解答
+    /// **参数解释：** 废弃字段。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getFaq() const;

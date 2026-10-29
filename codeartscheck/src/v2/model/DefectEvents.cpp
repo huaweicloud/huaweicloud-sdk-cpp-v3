@@ -20,8 +20,6 @@ DefectEvents::DefectEvents()
     lineIsSet_ = false;
     endLine_ = 0;
     endLineIsSet_ = false;
-    codeContextStartLine_ = 0;
-    codeContextStartLineIsSet_ = false;
     main_ = false;
     mainIsSet_ = false;
     path_ = "";
@@ -32,6 +30,8 @@ DefectEvents::DefectEvents()
     mainBuggyCodeIsSet_ = false;
     codeContext_ = "";
     codeContextIsSet_ = false;
+    codeContextStartLine_ = 0;
+    codeContextStartLineIsSet_ = false;
 }
 
 DefectEvents::~DefectEvents() = default;
@@ -59,9 +59,6 @@ web::json::value DefectEvents::toJson() const
     if(endLineIsSet_) {
         val[utility::conversions::to_string_t("end_line")] = ModelBase::toJson(endLine_);
     }
-    if(codeContextStartLineIsSet_) {
-        val[utility::conversions::to_string_t("code_context_start_line")] = ModelBase::toJson(codeContextStartLine_);
-    }
     if(mainIsSet_) {
         val[utility::conversions::to_string_t("main")] = ModelBase::toJson(main_);
     }
@@ -76,6 +73,9 @@ web::json::value DefectEvents::toJson() const
     }
     if(codeContextIsSet_) {
         val[utility::conversions::to_string_t("code_context")] = ModelBase::toJson(codeContext_);
+    }
+    if(codeContextStartLineIsSet_) {
+        val[utility::conversions::to_string_t("code_context_start_line")] = ModelBase::toJson(codeContextStartLine_);
     }
 
     return val;
@@ -129,15 +129,6 @@ bool DefectEvents::fromJson(const web::json::value& val)
             setEndLine(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("code_context_start_line"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("code_context_start_line"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCodeContextStartLine(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("main"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("main"));
         if(!fieldValue.is_null())
@@ -181,6 +172,15 @@ bool DefectEvents::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCodeContext(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("code_context_start_line"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("code_context_start_line"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCodeContextStartLine(refVal);
         }
     }
     return ok;
@@ -292,27 +292,6 @@ void DefectEvents::unsetendLine()
     endLineIsSet_ = false;
 }
 
-int32_t DefectEvents::getCodeContextStartLine() const
-{
-    return codeContextStartLine_;
-}
-
-void DefectEvents::setCodeContextStartLine(int32_t value)
-{
-    codeContextStartLine_ = value;
-    codeContextStartLineIsSet_ = true;
-}
-
-bool DefectEvents::codeContextStartLineIsSet() const
-{
-    return codeContextStartLineIsSet_;
-}
-
-void DefectEvents::unsetcodeContextStartLine()
-{
-    codeContextStartLineIsSet_ = false;
-}
-
 bool DefectEvents::isMain() const
 {
     return main_;
@@ -416,6 +395,27 @@ bool DefectEvents::codeContextIsSet() const
 void DefectEvents::unsetcodeContext()
 {
     codeContextIsSet_ = false;
+}
+
+int32_t DefectEvents::getCodeContextStartLine() const
+{
+    return codeContextStartLine_;
+}
+
+void DefectEvents::setCodeContextStartLine(int32_t value)
+{
+    codeContextStartLine_ = value;
+    codeContextStartLineIsSet_ = true;
+}
+
+bool DefectEvents::codeContextStartLineIsSet() const
+{
+    return codeContextStartLineIsSet_;
+}
+
+void DefectEvents::unsetcodeContextStartLine()
+{
+    codeContextStartLineIsSet_ = false;
 }
 
 }

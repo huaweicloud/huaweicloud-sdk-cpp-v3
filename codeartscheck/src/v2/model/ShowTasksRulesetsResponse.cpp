@@ -12,7 +12,7 @@ namespace Model {
 
 ShowTasksRulesetsResponse::ShowTasksRulesetsResponse()
 {
-    infoIsSet_ = false;
+    dataIsSet_ = false;
     total_ = 0;
     totalIsSet_ = false;
 }
@@ -27,8 +27,8 @@ web::json::value ShowTasksRulesetsResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(infoIsSet_) {
-        val[utility::conversions::to_string_t("info")] = ModelBase::toJson(info_);
+    if(dataIsSet_) {
+        val[utility::conversions::to_string_t("data")] = ModelBase::toJson(data_);
     }
     if(totalIsSet_) {
         val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
@@ -40,13 +40,13 @@ bool ShowTasksRulesetsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("info"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("info"));
+    if(val.has_field(utility::conversions::to_string_t("data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
             std::vector<TaskRulesetInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInfo(refVal);
+            setData(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("total"))) {
@@ -62,25 +62,25 @@ bool ShowTasksRulesetsResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<TaskRulesetInfo>& ShowTasksRulesetsResponse::getInfo()
+std::vector<TaskRulesetInfo>& ShowTasksRulesetsResponse::getData()
 {
-    return info_;
+    return data_;
 }
 
-void ShowTasksRulesetsResponse::setInfo(const std::vector<TaskRulesetInfo>& value)
+void ShowTasksRulesetsResponse::setData(const std::vector<TaskRulesetInfo>& value)
 {
-    info_ = value;
-    infoIsSet_ = true;
+    data_ = value;
+    dataIsSet_ = true;
 }
 
-bool ShowTasksRulesetsResponse::infoIsSet() const
+bool ShowTasksRulesetsResponse::dataIsSet() const
 {
-    return infoIsSet_;
+    return dataIsSet_;
 }
 
-void ShowTasksRulesetsResponse::unsetinfo()
+void ShowTasksRulesetsResponse::unsetdata()
 {
-    infoIsSet_ = false;
+    dataIsSet_ = false;
 }
 
 int32_t ShowTasksRulesetsResponse::getTotal() const

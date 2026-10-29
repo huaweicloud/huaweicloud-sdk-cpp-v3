@@ -31,6 +31,10 @@ SqlRequestResponse::SqlRequestResponse()
     customDateIsSet_ = false;
     isTimeRangeRelative_ = false;
     isTimeRangeRelativeIsSet_ = false;
+    logGroupNameAlias_ = "";
+    logGroupNameAliasIsSet_ = false;
+    logStreamNameAlias_ = "";
+    logStreamNameAliasIsSet_ = false;
 }
 
 SqlRequestResponse::~SqlRequestResponse() = default;
@@ -72,6 +76,12 @@ web::json::value SqlRequestResponse::toJson() const
     }
     if(isTimeRangeRelativeIsSet_) {
         val[utility::conversions::to_string_t("is_time_range_relative")] = ModelBase::toJson(isTimeRangeRelative_);
+    }
+    if(logGroupNameAliasIsSet_) {
+        val[utility::conversions::to_string_t("log_group_name_alias")] = ModelBase::toJson(logGroupNameAlias_);
+    }
+    if(logStreamNameAliasIsSet_) {
+        val[utility::conversions::to_string_t("log_stream_name_alias")] = ModelBase::toJson(logStreamNameAlias_);
     }
 
     return val;
@@ -168,6 +178,24 @@ bool SqlRequestResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsTimeRangeRelative(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_group_name_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_group_name_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogGroupNameAlias(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_stream_name_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_stream_name_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogStreamNameAlias(refVal);
         }
     }
     return ok;
@@ -382,6 +410,48 @@ bool SqlRequestResponse::isTimeRangeRelativeIsSet() const
 void SqlRequestResponse::unsetisTimeRangeRelative()
 {
     isTimeRangeRelativeIsSet_ = false;
+}
+
+std::string SqlRequestResponse::getLogGroupNameAlias() const
+{
+    return logGroupNameAlias_;
+}
+
+void SqlRequestResponse::setLogGroupNameAlias(const std::string& value)
+{
+    logGroupNameAlias_ = value;
+    logGroupNameAliasIsSet_ = true;
+}
+
+bool SqlRequestResponse::logGroupNameAliasIsSet() const
+{
+    return logGroupNameAliasIsSet_;
+}
+
+void SqlRequestResponse::unsetlogGroupNameAlias()
+{
+    logGroupNameAliasIsSet_ = false;
+}
+
+std::string SqlRequestResponse::getLogStreamNameAlias() const
+{
+    return logStreamNameAlias_;
+}
+
+void SqlRequestResponse::setLogStreamNameAlias(const std::string& value)
+{
+    logStreamNameAlias_ = value;
+    logStreamNameAliasIsSet_ = true;
+}
+
+bool SqlRequestResponse::logStreamNameAliasIsSet() const
+{
+    return logStreamNameAliasIsSet_;
+}
+
+void SqlRequestResponse::unsetlogStreamNameAlias()
+{
+    logStreamNameAliasIsSet_ = false;
 }
 
 }

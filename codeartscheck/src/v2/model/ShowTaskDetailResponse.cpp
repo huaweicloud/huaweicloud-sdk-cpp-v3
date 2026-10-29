@@ -66,10 +66,28 @@ ShowTaskDetailResponse::ShowTaskDetailResponse()
     suggestionCountIsSet_ = false;
     isAccess_ = "";
     isAccessIsSet_ = false;
+    reviewResult_ = "";
+    reviewResultIsSet_ = false;
     triggerType_ = "";
     triggerTypeIsSet_ = false;
     fileDuplicationRatio_ = "";
     fileDuplicationRatioIsSet_ = false;
+    newCount_ = 0;
+    newCountIsSet_ = false;
+    solveCount_ = 0;
+    solveCountIsSet_ = false;
+    dismissedCount_ = 0;
+    dismissedCountIsSet_ = false;
+    duplicatedFiles_ = 0;
+    duplicatedFilesIsSet_ = false;
+    newCriticalCount_ = "";
+    newCriticalCountIsSet_ = false;
+    newMajorCount_ = "";
+    newMajorCountIsSet_ = false;
+    newMinorCount_ = "";
+    newMinorCountIsSet_ = false;
+    newSuggestionCount_ = "";
+    newSuggestionCountIsSet_ = false;
 }
 
 ShowTaskDetailResponse::~ShowTaskDetailResponse() = default;
@@ -163,11 +181,38 @@ web::json::value ShowTaskDetailResponse::toJson() const
     if(isAccessIsSet_) {
         val[utility::conversions::to_string_t("is_access")] = ModelBase::toJson(isAccess_);
     }
+    if(reviewResultIsSet_) {
+        val[utility::conversions::to_string_t("review_result")] = ModelBase::toJson(reviewResult_);
+    }
     if(triggerTypeIsSet_) {
         val[utility::conversions::to_string_t("trigger_type")] = ModelBase::toJson(triggerType_);
     }
     if(fileDuplicationRatioIsSet_) {
         val[utility::conversions::to_string_t("file_duplication_ratio")] = ModelBase::toJson(fileDuplicationRatio_);
+    }
+    if(newCountIsSet_) {
+        val[utility::conversions::to_string_t("new_count")] = ModelBase::toJson(newCount_);
+    }
+    if(solveCountIsSet_) {
+        val[utility::conversions::to_string_t("solve_count")] = ModelBase::toJson(solveCount_);
+    }
+    if(dismissedCountIsSet_) {
+        val[utility::conversions::to_string_t("dismissed_count")] = ModelBase::toJson(dismissedCount_);
+    }
+    if(duplicatedFilesIsSet_) {
+        val[utility::conversions::to_string_t("duplicated_files")] = ModelBase::toJson(duplicatedFiles_);
+    }
+    if(newCriticalCountIsSet_) {
+        val[utility::conversions::to_string_t("new_critical_count")] = ModelBase::toJson(newCriticalCount_);
+    }
+    if(newMajorCountIsSet_) {
+        val[utility::conversions::to_string_t("new_major_count")] = ModelBase::toJson(newMajorCount_);
+    }
+    if(newMinorCountIsSet_) {
+        val[utility::conversions::to_string_t("new_minor_count")] = ModelBase::toJson(newMinorCount_);
+    }
+    if(newSuggestionCountIsSet_) {
+        val[utility::conversions::to_string_t("new_suggestion_count")] = ModelBase::toJson(newSuggestionCount_);
     }
 
     return val;
@@ -419,6 +464,15 @@ bool ShowTaskDetailResponse::fromJson(const web::json::value& val)
             setIsAccess(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("review_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("review_result"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReviewResult(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("trigger_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trigger_type"));
         if(!fieldValue.is_null())
@@ -435,6 +489,78 @@ bool ShowTaskDetailResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFileDuplicationRatio(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("solve_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("solve_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSolveCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dismissed_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dismissed_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDismissedCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("duplicated_files"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duplicated_files"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDuplicatedFiles(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_critical_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_critical_count"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewCriticalCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_major_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_major_count"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewMajorCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_minor_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_minor_count"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewMinorCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_suggestion_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_suggestion_count"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewSuggestionCount(refVal);
         }
     }
     return ok;
@@ -1008,6 +1134,27 @@ void ShowTaskDetailResponse::unsetisAccess()
     isAccessIsSet_ = false;
 }
 
+std::string ShowTaskDetailResponse::getReviewResult() const
+{
+    return reviewResult_;
+}
+
+void ShowTaskDetailResponse::setReviewResult(const std::string& value)
+{
+    reviewResult_ = value;
+    reviewResultIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::reviewResultIsSet() const
+{
+    return reviewResultIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetreviewResult()
+{
+    reviewResultIsSet_ = false;
+}
+
 std::string ShowTaskDetailResponse::getTriggerType() const
 {
     return triggerType_;
@@ -1048,6 +1195,174 @@ bool ShowTaskDetailResponse::fileDuplicationRatioIsSet() const
 void ShowTaskDetailResponse::unsetfileDuplicationRatio()
 {
     fileDuplicationRatioIsSet_ = false;
+}
+
+int32_t ShowTaskDetailResponse::getNewCount() const
+{
+    return newCount_;
+}
+
+void ShowTaskDetailResponse::setNewCount(int32_t value)
+{
+    newCount_ = value;
+    newCountIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::newCountIsSet() const
+{
+    return newCountIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetnewCount()
+{
+    newCountIsSet_ = false;
+}
+
+int32_t ShowTaskDetailResponse::getSolveCount() const
+{
+    return solveCount_;
+}
+
+void ShowTaskDetailResponse::setSolveCount(int32_t value)
+{
+    solveCount_ = value;
+    solveCountIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::solveCountIsSet() const
+{
+    return solveCountIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetsolveCount()
+{
+    solveCountIsSet_ = false;
+}
+
+int32_t ShowTaskDetailResponse::getDismissedCount() const
+{
+    return dismissedCount_;
+}
+
+void ShowTaskDetailResponse::setDismissedCount(int32_t value)
+{
+    dismissedCount_ = value;
+    dismissedCountIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::dismissedCountIsSet() const
+{
+    return dismissedCountIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetdismissedCount()
+{
+    dismissedCountIsSet_ = false;
+}
+
+int32_t ShowTaskDetailResponse::getDuplicatedFiles() const
+{
+    return duplicatedFiles_;
+}
+
+void ShowTaskDetailResponse::setDuplicatedFiles(int32_t value)
+{
+    duplicatedFiles_ = value;
+    duplicatedFilesIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::duplicatedFilesIsSet() const
+{
+    return duplicatedFilesIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetduplicatedFiles()
+{
+    duplicatedFilesIsSet_ = false;
+}
+
+std::string ShowTaskDetailResponse::getNewCriticalCount() const
+{
+    return newCriticalCount_;
+}
+
+void ShowTaskDetailResponse::setNewCriticalCount(const std::string& value)
+{
+    newCriticalCount_ = value;
+    newCriticalCountIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::newCriticalCountIsSet() const
+{
+    return newCriticalCountIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetnewCriticalCount()
+{
+    newCriticalCountIsSet_ = false;
+}
+
+std::string ShowTaskDetailResponse::getNewMajorCount() const
+{
+    return newMajorCount_;
+}
+
+void ShowTaskDetailResponse::setNewMajorCount(const std::string& value)
+{
+    newMajorCount_ = value;
+    newMajorCountIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::newMajorCountIsSet() const
+{
+    return newMajorCountIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetnewMajorCount()
+{
+    newMajorCountIsSet_ = false;
+}
+
+std::string ShowTaskDetailResponse::getNewMinorCount() const
+{
+    return newMinorCount_;
+}
+
+void ShowTaskDetailResponse::setNewMinorCount(const std::string& value)
+{
+    newMinorCount_ = value;
+    newMinorCountIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::newMinorCountIsSet() const
+{
+    return newMinorCountIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetnewMinorCount()
+{
+    newMinorCountIsSet_ = false;
+}
+
+std::string ShowTaskDetailResponse::getNewSuggestionCount() const
+{
+    return newSuggestionCount_;
+}
+
+void ShowTaskDetailResponse::setNewSuggestionCount(const std::string& value)
+{
+    newSuggestionCount_ = value;
+    newSuggestionCountIsSet_ = true;
+}
+
+bool ShowTaskDetailResponse::newSuggestionCountIsSet() const
+{
+    return newSuggestionCountIsSet_;
+}
+
+void ShowTaskDetailResponse::unsetnewSuggestionCount()
+{
+    newSuggestionCountIsSet_ = false;
 }
 
 }

@@ -41,7 +41,7 @@ public:
     /// DefectEvents members
 
     /// <summary>
-    /// 调用链信息
+    /// **参数解释：** 调用链信息。
     /// </summary>
 
     std::vector<DefectEvents>& getEvents();
@@ -50,7 +50,7 @@ public:
     void setEvents(const std::vector<DefectEvents>& value);
 
     /// <summary>
-    /// 描述
+    /// **参数解释：** 问题详细描述。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getDescription() const;
@@ -59,7 +59,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// fix suggestions
+    /// **参数解释：** 修复建议。
     /// </summary>
 
     std::vector<std::string>& getFixSuggestions();
@@ -68,7 +68,7 @@ public:
     void setFixSuggestions(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 缺陷所在行
+    /// **参数解释：** 问题所在文件行号。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getLine() const;
@@ -77,7 +77,7 @@ public:
     void setLine(int32_t value);
 
     /// <summary>
-    /// 缺陷结束行
+    /// **参数解释：** 废弃字段。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getEndLine() const;
@@ -86,16 +86,7 @@ public:
     void setEndLine(int32_t value);
 
     /// <summary>
-    /// 缺陷开始行
-    /// </summary>
-
-    int32_t getCodeContextStartLine() const;
-    bool codeContextStartLineIsSet() const;
-    void unsetcodeContextStartLine();
-    void setCodeContextStartLine(int32_t value);
-
-    /// <summary>
-    /// 代码片段
+    /// **参数解释：** 废弃字段。 **取值范围：** 不涉及。
     /// </summary>
 
     bool isMain() const;
@@ -104,7 +95,7 @@ public:
     void setMain(bool value);
 
     /// <summary>
-    /// file path
+    /// **参数解释：** 文件路径。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getPath() const;
@@ -113,7 +104,7 @@ public:
     void setPath(const std::string& value);
 
     /// <summary>
-    /// 标签
+    /// **参数解释：** 废弃字段。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getTag() const;
@@ -122,7 +113,7 @@ public:
     void setTag(const std::string& value);
 
     /// <summary>
-    /// main buggy code
+    /// **参数解释：** 问题主事件对应的代码片段内容。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getMainBuggyCode() const;
@@ -131,13 +122,22 @@ public:
     void setMainBuggyCode(const std::string& value);
 
     /// <summary>
-    /// code context
+    /// **参数解释：** 代码上下文。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCodeContext() const;
     bool codeContextIsSet() const;
     void unsetcodeContext();
     void setCodeContext(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 代码上下文起始行号。 **取值范围：** 不涉及。
+    /// </summary>
+
+    int32_t getCodeContextStartLine() const;
+    bool codeContextStartLineIsSet() const;
+    void unsetcodeContextStartLine();
+    void setCodeContextStartLine(int32_t value);
 
 
 protected:
@@ -151,8 +151,6 @@ protected:
     bool lineIsSet_;
     int32_t endLine_;
     bool endLineIsSet_;
-    int32_t codeContextStartLine_;
-    bool codeContextStartLineIsSet_;
     bool main_;
     bool mainIsSet_;
     std::string path_;
@@ -163,6 +161,8 @@ protected:
     bool mainBuggyCodeIsSet_;
     std::string codeContext_;
     bool codeContextIsSet_;
+    int32_t codeContextStartLine_;
+    bool codeContextStartLineIsSet_;
 
 };
 

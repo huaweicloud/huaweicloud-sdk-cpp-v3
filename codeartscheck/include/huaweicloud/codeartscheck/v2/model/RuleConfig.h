@@ -39,7 +39,7 @@ public:
     /// RuleConfig members
 
     /// <summary>
-    /// 规则配置ID
+    /// **参数解释:** 规则配置ID。可调用[[获取规则列表接口](https://support.huaweicloud.com/api-codecheck/ListRules.html)](tag:hws)[[获取规则列表接口](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRules.html)](tag:hws_hk)[获取规则列表接口](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取规则配置ID。 **约束限制:** 不涉及。 **取值范围:** 32位UUID。 **默认取值:** 不涉及。
     /// </summary>
 
     int32_t getId() const;
@@ -48,16 +48,16 @@ public:
     void setId(int32_t value);
 
     /// <summary>
-    /// 规则ID
+    /// **参数解释:** 工具规则ID，即可配置阈值规则的各种阈值对应的ID，当前无便利手段获取，请联系客服咨询。 **约束限制:** 不涉及。 **取值范围:** 32位UUID。 **默认取值:** 不涉及。
     /// </summary>
 
-    int32_t getRuleId() const;
+    std::string getRuleId() const;
     bool ruleIdIsSet() const;
     void unsetruleId();
-    void setRuleId(int32_t value);
+    void setRuleId(const std::string& value);
 
     /// <summary>
-    /// 默认值
+    /// **参数解释:** 配置参数默认阈值。 **约束限制:** 不涉及。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getDefaultValue() const;
@@ -66,7 +66,7 @@ public:
     void setDefaultValue(const std::string& value);
 
     /// <summary>
-    /// 当前
+    /// **参数解释:** 配置参数新阈值。 **约束限制:** 不涉及。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getOptionValue() const;
@@ -75,7 +75,7 @@ public:
     void setOptionValue(const std::string& value);
 
     /// <summary>
-    /// 当前规则配置项key
+    /// **参数解释:** 当前规则配置项key。可调用[[获取规则列表接口](https://support.huaweicloud.com/api-codecheck/ListRules.html)](tag:hws)[[获取规则列表接口](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRules.html)](tag:hws_hk)[获取规则列表接口](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取规则配置ID。 **约束限制:** 需要和规则ID相匹配。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getOptionKey() const;
@@ -84,7 +84,7 @@ public:
     void setOptionKey(const std::string& value);
 
     /// <summary>
-    /// 当前规则配置项名称
+    /// **参数解释:** 当前规则配置项key。可调用[[获取规则列表接口](https://support.huaweicloud.com/api-codecheck/ListRules.html)](tag:hws)[[获取规则列表接口](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRules.html)](tag:hws_hk)[获取规则列表接口](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取规则配置ID。 **约束限制:** 需要和规则ID相匹配。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getOptionName() const;
@@ -93,7 +93,7 @@ public:
     void setOptionName(const std::string& value);
 
     /// <summary>
-    /// 规则集id
+    /// **参数解释:** 规则集ID。可调用[[查询规则集列表](https://support.huaweicloud.com/api-codecheck/ListRulesets.html)](tag:hws)[[查询规则集列表](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRulesets.html)](tag:hws_hk)[查询规则集列表](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取规则集ID。 **约束限制:** 不涉及。 **取值范围:** 32位UUID。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getTemplateId() const;
@@ -102,7 +102,7 @@ public:
     void setTemplateId(const std::string& value);
 
     /// <summary>
-    /// 描述
+    /// **参数解释:** 配置参数的描述。可不填。 **约束限制:** 不涉及。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getDescription() const;
@@ -114,7 +114,7 @@ public:
 protected:
     int32_t id_;
     bool idIsSet_;
-    int32_t ruleId_;
+    std::string ruleId_;
     bool ruleIdIsSet_;
     std::string defaultValue_;
     bool defaultValueIsSet_;

@@ -14,6 +14,7 @@
 #include <string>
 #include <huaweicloud/lts/v2/model/FrequencyRespBody.h>
 #include <huaweicloud/lts/v2/model/SqlRequestResponse.h>
+#include <huaweicloud/lts/v2/model/AlarmCondition.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -232,6 +233,15 @@ public:
     void unsettags();
     void setTags(const std::vector<TagsResBody>& value);
 
+    /// <summary>
+    /// **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视condition_expression、sql_alarm_level参数。
+    /// </summary>
+
+    std::vector<AlarmCondition>& getConditionExpressions();
+    bool conditionExpressionsIsSet() const;
+    void unsetconditionExpressions();
+    void setConditionExpressions(const std::vector<AlarmCondition>& value);
+
 
 protected:
     std::string sqlAlarmRuleName_;
@@ -276,6 +286,8 @@ protected:
     bool alarmActionRuleNameIsSet_;
     std::vector<TagsResBody> tags_;
     bool tagsIsSet_;
+    std::vector<AlarmCondition> conditionExpressions_;
+    bool conditionExpressionsIsSet_;
 
 };
 

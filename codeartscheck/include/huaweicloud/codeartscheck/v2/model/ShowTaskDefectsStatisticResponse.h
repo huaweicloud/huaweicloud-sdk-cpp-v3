@@ -11,6 +11,7 @@
 
 #include <huaweicloud/codeartscheck/v2/model/StatisticSeverityV2.h>
 #include <huaweicloud/codeartscheck/v2/model/StatisticStatusV2.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -57,12 +58,34 @@ public:
     void unsetstatus();
     void setStatus(const StatisticStatusV2& value);
 
+    /// <summary>
+    /// **参数解释：** 检查开始时间，使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getLastCheckTime() const;
+    bool lastCheckTimeIsSet() const;
+    void unsetlastCheckTime();
+    void setLastCheckTime(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 检查结束时间，使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getLastCheckFinishTime() const;
+    bool lastCheckFinishTimeIsSet() const;
+    void unsetlastCheckFinishTime();
+    void setLastCheckFinishTime(const std::string& value);
+
 
 protected:
     StatisticSeverityV2 severity_;
     bool severityIsSet_;
     StatisticStatusV2 status_;
     bool statusIsSet_;
+    std::string lastCheckTime_;
+    bool lastCheckTimeIsSet_;
+    std::string lastCheckFinishTime_;
+    bool lastCheckFinishTimeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

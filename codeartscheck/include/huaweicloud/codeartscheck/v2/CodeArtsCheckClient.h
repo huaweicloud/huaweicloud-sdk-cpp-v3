@@ -22,6 +22,8 @@
 #include <huaweicloud/codeartscheck/v2/model/DeleteRulesetResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/DeleteTaskRequest.h>
 #include <huaweicloud/codeartscheck/v2/model/DeleteTaskResponse.h>
+#include <huaweicloud/codeartscheck/v2/model/ListCriterionSetsByLanguageRequest.h>
+#include <huaweicloud/codeartscheck/v2/model/ListCriterionSetsByLanguageResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/ListRulesRequest.h>
 #include <huaweicloud/codeartscheck/v2/model/ListRulesResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/ListRulesetsRequest.h>
@@ -48,6 +50,8 @@
 #include <huaweicloud/codeartscheck/v2/model/ShowTaskDefectsStatisticResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTaskDetailRequest.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTaskDetailResponse.h>
+#include <huaweicloud/codeartscheck/v2/model/ShowTaskInfoByIdRequest.h>
+#include <huaweicloud/codeartscheck/v2/model/ShowTaskInfoByIdResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTaskListByProjectIdRequest.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTaskListByProjectIdResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTaskPathTreeRequest.h>
@@ -56,12 +60,17 @@
 #include <huaweicloud/codeartscheck/v2/model/ShowTaskSettingsResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTasklogRequest.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTasklogResponse.h>
+#include <huaweicloud/codeartscheck/v2/model/ShowTasksListRequest.h>
+#include <huaweicloud/codeartscheck/v2/model/ShowTasksListResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTasksRulesetsRequest.h>
 #include <huaweicloud/codeartscheck/v2/model/ShowTasksRulesetsResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/StopTaskByIdRequest.h>
 #include <huaweicloud/codeartscheck/v2/model/StopTaskByIdResponse.h>
-#include <huaweicloud/codeartscheck/v2/model/TaskCheckParamters.h>
+#include <huaweicloud/codeartscheck/v2/model/TaskCheckParameters.h>
 #include <huaweicloud/codeartscheck/v2/model/TaskRulesetInfo.h>
+#include <huaweicloud/codeartscheck/v2/model/UpdateCodeGateRequest.h>
+#include <huaweicloud/codeartscheck/v2/model/UpdateCodeGateRequestBody.h>
+#include <huaweicloud/codeartscheck/v2/model/UpdateCodeGateResponse.h>
 #include <huaweicloud/codeartscheck/v2/model/UpdateDefectRequestBody.h>
 #include <huaweicloud/codeartscheck/v2/model/UpdateDefectStatusRequest.h>
 #include <huaweicloud/codeartscheck/v2/model/UpdateDefectStatusResponse.h>
@@ -156,6 +165,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTaskResponse> deleteTask(
         DeleteTaskRequest &request
+    );
+    // 根据语言查询规则集
+    //
+    // 该API用于查询项目下某一语言的规则集列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCriterionSetsByLanguageResponse> listCriterionSetsByLanguage(
+        ListCriterionSetsByLanguageRequest &request
     );
     // 获取规则列表接口
     //
@@ -253,6 +270,14 @@ public:
     std::shared_ptr<ShowTaskDetailResponse> showTaskDetail(
         ShowTaskDetailRequest &request
     );
+    // 根据任务ID查询检查任务
+    //
+    // 根据任务ID查询代码检查任务的基本信息，返回任务ID、任务名、项目ID、项目名、代码仓地址、分支和配置模板ID等信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTaskInfoByIdResponse> showTaskInfoById(
+        ShowTaskInfoByIdRequest &request
+    );
     // 查询任务列表
     //
     // 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
@@ -285,6 +310,14 @@ public:
     std::shared_ptr<ShowTasklogResponse> showTasklog(
         ShowTasklogRequest &request
     );
+    // 查询任务列表
+    //
+    // 根据项目ID、需要搜索的任务名、任务分组ID和任务执行状态分页查询项目下的代码检查任务，返回任务名称、代码仓地址、分支、配置模板ID和规则集等信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTasksListResponse> showTasksList(
+        ShowTasksListRequest &request
+    );
     // 查询任务的已选规则集列表
     //
     // 查询任务的已选规则集列表。
@@ -300,6 +333,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<StopTaskByIdResponse> stopTaskById(
         StopTaskByIdRequest &request
+    );
+    // 更新门禁配置
+    //
+    // 根据任务ID设置任务的致命问题数、严重问题数、一般问题数和提示问题数的质量门禁，在检查完成后，超过门禁阈值将提示门禁结果为Failed。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateCodeGateResponse> updateCodeGate(
+        UpdateCodeGateRequest &request
     );
     // 修改缺陷状态
     //

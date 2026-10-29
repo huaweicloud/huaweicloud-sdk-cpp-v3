@@ -40,7 +40,7 @@ public:
     /// ShowTaskListByProjectIdResponse members
 
     /// <summary>
-    /// 任务信息
+    /// **参数解释：** 任务信息。
     /// </summary>
 
     std::vector<SimpleTaskInfoV2>& getTasks();
@@ -49,7 +49,7 @@ public:
     void setTasks(const std::vector<SimpleTaskInfoV2>& value);
 
     /// <summary>
-    /// 总数
+    /// **参数解释：** 项目下的任务总数。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getTotal() const;

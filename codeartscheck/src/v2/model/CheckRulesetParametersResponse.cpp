@@ -44,7 +44,7 @@ bool CheckRulesetParametersResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            std::vector<TaskCheckParamters> refVal;
+            std::vector<TaskCheckParameters> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -62,12 +62,12 @@ bool CheckRulesetParametersResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<TaskCheckParamters>& CheckRulesetParametersResponse::getData()
+std::vector<TaskCheckParameters>& CheckRulesetParametersResponse::getData()
 {
     return data_;
 }
 
-void CheckRulesetParametersResponse::setData(const std::vector<TaskCheckParamters>& value)
+void CheckRulesetParametersResponse::setData(const std::vector<TaskCheckParameters>& value)
 {
     data_ = value;
     dataIsSet_ = true;

@@ -20,6 +20,7 @@ public:
     static HttpRequestDef genRequestDefForCreateTask();
     static HttpRequestDef genRequestDefForDeleteRuleset();
     static HttpRequestDef genRequestDefForDeleteTask();
+    static HttpRequestDef genRequestDefForListCriterionSetsByLanguage();
     static HttpRequestDef genRequestDefForListRules();
     static HttpRequestDef genRequestDefForListRulesets();
     static HttpRequestDef genRequestDefForListTaskParameter();
@@ -32,12 +33,15 @@ public:
     static HttpRequestDef genRequestDefForShowTaskDefects();
     static HttpRequestDef genRequestDefForShowTaskDefectsStatistic();
     static HttpRequestDef genRequestDefForShowTaskDetail();
+    static HttpRequestDef genRequestDefForShowTaskInfoById();
     static HttpRequestDef genRequestDefForShowTaskListByProjectId();
     static HttpRequestDef genRequestDefForShowTaskPathTree();
     static HttpRequestDef genRequestDefForShowTaskSettings();
     static HttpRequestDef genRequestDefForShowTasklog();
+    static HttpRequestDef genRequestDefForShowTasksList();
     static HttpRequestDef genRequestDefForShowTasksRulesets();
     static HttpRequestDef genRequestDefForStopTaskById();
+    static HttpRequestDef genRequestDefForUpdateCodeGate();
     static HttpRequestDef genRequestDefForUpdateDefectStatus();
     static HttpRequestDef genRequestDefForUpdateIgnorePath();
     static HttpRequestDef genRequestDefForUpdateTaskRuleset();

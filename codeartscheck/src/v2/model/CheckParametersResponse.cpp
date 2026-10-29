@@ -39,7 +39,7 @@ bool CheckParametersResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            std::vector<TaskCheckParamters> refVal;
+            std::vector<TaskCheckParameters> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -48,12 +48,12 @@ bool CheckParametersResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<TaskCheckParamters>& CheckParametersResponse::getBody()
+std::vector<TaskCheckParameters>& CheckParametersResponse::getBody()
 {
     return body_;
 }
 
-void CheckParametersResponse::setBody(const std::vector<TaskCheckParamters>& value)
+void CheckParametersResponse::setBody(const std::vector<TaskCheckParameters>& value)
 {
     body_ = value;
     bodyIsSet_ = true;

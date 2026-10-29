@@ -40,16 +40,16 @@ public:
     /// ShowTasksRulesetsResponse members
 
     /// <summary>
-    /// 规则集信息
+    /// **参数解释：** 规则集信息。
     /// </summary>
 
-    std::vector<TaskRulesetInfo>& getInfo();
-    bool infoIsSet() const;
-    void unsetinfo();
-    void setInfo(const std::vector<TaskRulesetInfo>& value);
+    std::vector<TaskRulesetInfo>& getData();
+    bool dataIsSet() const;
+    void unsetdata();
+    void setData(const std::vector<TaskRulesetInfo>& value);
 
     /// <summary>
-    /// 总数
+    /// **参数解释：** 总数。 **取值范围:** 不涉及。
     /// </summary>
 
     int32_t getTotal() const;
@@ -59,8 +59,8 @@ public:
 
 
 protected:
-    std::vector<TaskRulesetInfo> info_;
-    bool infoIsSet_;
+    std::vector<TaskRulesetInfo> data_;
+    bool dataIsSet_;
     int32_t total_;
     bool totalIsSet_;
 

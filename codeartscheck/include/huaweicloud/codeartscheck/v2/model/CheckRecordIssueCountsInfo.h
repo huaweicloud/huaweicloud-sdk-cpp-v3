@@ -38,7 +38,7 @@ public:
     /// CheckRecordIssueCountsInfo members
 
     /// <summary>
-    /// 致命问题
+    /// **参数解释：** 致命问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getCritical() const;
@@ -47,7 +47,7 @@ public:
     void setCritical(int32_t value);
 
     /// <summary>
-    /// 严重问题
+    /// **参数解释：** 严重问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getSerious() const;
@@ -56,7 +56,7 @@ public:
     void setSerious(int32_t value);
 
     /// <summary>
-    /// 常规问题
+    /// **参数解释：** 一般问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getNormal() const;
@@ -65,7 +65,7 @@ public:
     void setNormal(int32_t value);
 
     /// <summary>
-    /// 提示问题
+    /// **参数解释：** 提示问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getPrompt() const;

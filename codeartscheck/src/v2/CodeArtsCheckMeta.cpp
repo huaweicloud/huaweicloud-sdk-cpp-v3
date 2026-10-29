@@ -78,6 +78,29 @@ HttpRequestDef CodeArtsCheckMeta::genRequestDefForDeleteTask() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsCheckMeta::genRequestDefForListCriterionSetsByLanguage() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Language")
+                  .withJsonTag("language")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Search")
+                  .withJsonTag("search")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
+                  .withJsonTag("page_size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Page")
+                  .withJsonTag("page")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
+                  .withJsonTag("project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsReliable")
+                  .withJsonTag("is_reliable")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsCheckMeta::genRequestDefForListRules() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("RuleLanguages")
@@ -197,6 +220,22 @@ HttpRequestDef CodeArtsCheckMeta::genRequestDefForShowTaskDetail() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsCheckMeta::genRequestDefForShowTaskInfoById() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("MergeId")
+                  .withJsonTag("merge_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobId")
+                  .withJsonTag("job_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamOperator;
+    reqDefBuilder.withRequestField(headerParamOperator
+                  .withName("Operator")
+                  .withJsonTag("operator")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsCheckMeta::genRequestDefForShowTaskListByProjectId() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -241,6 +280,61 @@ HttpRequestDef CodeArtsCheckMeta::genRequestDefForShowTasklog() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsCheckMeta::genRequestDefForShowTasksList() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Page")
+                  .withJsonTag("page")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
+                  .withJsonTag("page_size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Search")
+                  .withJsonTag("search")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
+                  .withJsonTag("project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ReviewResultTypes")
+                  .withJsonTag("review_result_types")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobStatusTypes")
+                  .withJsonTag("job_status_types")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OrderByExecuteTime")
+                  .withJsonTag("order_by_execute_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskClassificationId")
+                  .withJsonTag("task_classification_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortField")
+                  .withJsonTag("sort_field")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortOrder")
+                  .withJsonTag("sort_order")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RepoUrl")
+                  .withJsonTag("repo_url")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Branch")
+                  .withJsonTag("branch")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RepoUrlFullMatch")
+                  .withJsonTag("repo_url_full_match")
+                  .withLocationType(Query_));
+    FieldDef headerParamOperator;
+    reqDefBuilder.withRequestField(headerParamOperator
+                  .withName("Operator")
+                  .withJsonTag("operator")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsCheckMeta::genRequestDefForShowTasksRulesets() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -254,6 +348,20 @@ HttpRequestDef CodeArtsCheckMeta::genRequestDefForShowTasksRulesets() {
 
 HttpRequestDef CodeArtsCheckMeta::genRequestDefForStopTaskById() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsCheckMeta::genRequestDefForUpdateCodeGate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamOperator;
+    reqDefBuilder.withRequestField(headerParamOperator
+                  .withName("Operator")
+                  .withJsonTag("operator")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

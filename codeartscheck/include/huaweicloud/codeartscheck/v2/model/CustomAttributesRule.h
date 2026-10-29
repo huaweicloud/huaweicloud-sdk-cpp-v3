@@ -41,7 +41,7 @@ public:
     /// CustomAttributesRule members
 
     /// <summary>
-    /// 规则ID
+    /// **参数解释:** 规则ID。可调用[[获取规则列表接口](https://support.huaweicloud.com/api-codecheck/ListRules.html)](tag:hws)[[获取规则列表接口](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRules.html)](tag:hws_hk)[获取规则列表接口](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取。 **约束限制:** 不涉及。 **取值范围:** 32位项目ID。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getRuleId() const;
@@ -50,7 +50,7 @@ public:
     void setRuleId(const std::string& value);
 
     /// <summary>
-    /// attribute的问题级别，0致命，1严重，2一般，3提示
+    /// **参数解释:** attribute的告警等级。 **约束限制:** 不涉及。 **取值范围:** - 0：致命。 - 1：严重。 - 2：一般。 - 3：提示。 **默认取值:** 不涉及。
     /// </summary>
 
     std::string getValue() const;
@@ -59,7 +59,7 @@ public:
     void setValue(const std::string& value);
 
     /// <summary>
-    /// 规则阈值详细
+    /// **参数解释:** 规则阈值详细。
     /// </summary>
 
     std::vector<RuleConfig>& getRuleConfigList();

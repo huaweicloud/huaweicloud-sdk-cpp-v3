@@ -45,6 +45,8 @@ CreateAccessConfigRequestBody::CreateAccessConfigRequestBody()
     accessConfigTypeSourceIsSet_ = false;
     recursiveDepth_ = 0;
     recursiveDepthIsSet_ = false;
+    disableLabelsPrefix_ = false;
+    disableLabelsPrefixIsSet_ = false;
 }
 
 CreateAccessConfigRequestBody::~CreateAccessConfigRequestBody() = default;
@@ -116,6 +118,9 @@ web::json::value CreateAccessConfigRequestBody::toJson() const
     }
     if(recursiveDepthIsSet_) {
         val[utility::conversions::to_string_t("recursive_depth")] = ModelBase::toJson(recursiveDepth_);
+    }
+    if(disableLabelsPrefixIsSet_) {
+        val[utility::conversions::to_string_t("disable_labels_prefix")] = ModelBase::toJson(disableLabelsPrefix_);
     }
 
     return val;
@@ -302,6 +307,15 @@ bool CreateAccessConfigRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRecursiveDepth(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("disable_labels_prefix"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("disable_labels_prefix"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDisableLabelsPrefix(refVal);
         }
     }
     return ok;
@@ -726,6 +740,27 @@ bool CreateAccessConfigRequestBody::recursiveDepthIsSet() const
 void CreateAccessConfigRequestBody::unsetrecursiveDepth()
 {
     recursiveDepthIsSet_ = false;
+}
+
+bool CreateAccessConfigRequestBody::isDisableLabelsPrefix() const
+{
+    return disableLabelsPrefix_;
+}
+
+void CreateAccessConfigRequestBody::setDisableLabelsPrefix(bool value)
+{
+    disableLabelsPrefix_ = value;
+    disableLabelsPrefixIsSet_ = true;
+}
+
+bool CreateAccessConfigRequestBody::disableLabelsPrefixIsSet() const
+{
+    return disableLabelsPrefixIsSet_;
+}
+
+void CreateAccessConfigRequestBody::unsetdisableLabelsPrefix()
+{
+    disableLabelsPrefixIsSet_ = false;
 }
 
 }

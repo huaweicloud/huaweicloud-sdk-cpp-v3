@@ -40,6 +40,8 @@ UpdateAccessConfigRequestBody::UpdateAccessConfigRequestBody()
     environmentId_ = "";
     environmentIdIsSet_ = false;
     componentIdIsSet_ = false;
+    disableLabelsPrefix_ = false;
+    disableLabelsPrefixIsSet_ = false;
 }
 
 UpdateAccessConfigRequestBody::~UpdateAccessConfigRequestBody() = default;
@@ -102,6 +104,9 @@ web::json::value UpdateAccessConfigRequestBody::toJson() const
     }
     if(componentIdIsSet_) {
         val[utility::conversions::to_string_t("component_id")] = ModelBase::toJson(componentId_);
+    }
+    if(disableLabelsPrefixIsSet_) {
+        val[utility::conversions::to_string_t("disable_labels_prefix")] = ModelBase::toJson(disableLabelsPrefix_);
     }
 
     return val;
@@ -261,6 +266,15 @@ bool UpdateAccessConfigRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setComponentId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("disable_labels_prefix"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("disable_labels_prefix"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDisableLabelsPrefix(refVal);
         }
     }
     return ok;
@@ -622,6 +636,27 @@ bool UpdateAccessConfigRequestBody::componentIdIsSet() const
 void UpdateAccessConfigRequestBody::unsetcomponentId()
 {
     componentIdIsSet_ = false;
+}
+
+bool UpdateAccessConfigRequestBody::isDisableLabelsPrefix() const
+{
+    return disableLabelsPrefix_;
+}
+
+void UpdateAccessConfigRequestBody::setDisableLabelsPrefix(bool value)
+{
+    disableLabelsPrefix_ = value;
+    disableLabelsPrefixIsSet_ = true;
+}
+
+bool UpdateAccessConfigRequestBody::disableLabelsPrefixIsSet() const
+{
+    return disableLabelsPrefixIsSet_;
+}
+
+void UpdateAccessConfigRequestBody::unsetdisableLabelsPrefix()
+{
+    disableLabelsPrefixIsSet_ = false;
 }
 
 }

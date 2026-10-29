@@ -14,6 +14,8 @@ PreviewAgencyLogAccessReqBody::PreviewAgencyLogAccessReqBody()
 {
     agencyAccessType_ = "";
     agencyAccessTypeIsSet_ = false;
+    agencyAccessConfigId_ = "";
+    agencyAccessConfigIdIsSet_ = false;
     agencyLogAccess_ = "";
     agencyLogAccessIsSet_ = false;
     logAgencyStreamName_ = "";
@@ -54,6 +56,9 @@ web::json::value PreviewAgencyLogAccessReqBody::toJson() const
 
     if(agencyAccessTypeIsSet_) {
         val[utility::conversions::to_string_t("agency_access_type")] = ModelBase::toJson(agencyAccessType_);
+    }
+    if(agencyAccessConfigIdIsSet_) {
+        val[utility::conversions::to_string_t("agency_accessConfig_id")] = ModelBase::toJson(agencyAccessConfigId_);
     }
     if(agencyLogAccessIsSet_) {
         val[utility::conversions::to_string_t("agency_log_access")] = ModelBase::toJson(agencyLogAccess_);
@@ -108,6 +113,15 @@ bool PreviewAgencyLogAccessReqBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAgencyAccessType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_accessConfig_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_accessConfig_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyAccessConfigId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("agency_log_access"))) {
@@ -250,6 +264,27 @@ bool PreviewAgencyLogAccessReqBody::agencyAccessTypeIsSet() const
 void PreviewAgencyLogAccessReqBody::unsetagencyAccessType()
 {
     agencyAccessTypeIsSet_ = false;
+}
+
+std::string PreviewAgencyLogAccessReqBody::getAgencyAccessConfigId() const
+{
+    return agencyAccessConfigId_;
+}
+
+void PreviewAgencyLogAccessReqBody::setAgencyAccessConfigId(const std::string& value)
+{
+    agencyAccessConfigId_ = value;
+    agencyAccessConfigIdIsSet_ = true;
+}
+
+bool PreviewAgencyLogAccessReqBody::agencyAccessConfigIdIsSet() const
+{
+    return agencyAccessConfigIdIsSet_;
+}
+
+void PreviewAgencyLogAccessReqBody::unsetagencyAccessConfigId()
+{
+    agencyAccessConfigIdIsSet_ = false;
 }
 
 std::string PreviewAgencyLogAccessReqBody::getAgencyLogAccess() const

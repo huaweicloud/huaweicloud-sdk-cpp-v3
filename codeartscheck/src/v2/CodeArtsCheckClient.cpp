@@ -296,6 +296,53 @@ std::shared_ptr<DeleteTaskResponse> CodeArtsCheckClient::deleteTask(DeleteTaskRe
 
     return localVarResult;
 }
+std::shared_ptr<ListCriterionSetsByLanguageResponse> CodeArtsCheckClient::listCriterionSetsByLanguage(ListCriterionSetsByLanguageRequest &request)
+{
+    std::string localVarPath = "/v1/criterionsets/language";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.languageIsSet()) {
+        localVarQueryParams["language"] = parameterToString(request.getLanguage());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.pageIsSet()) {
+        localVarQueryParams["page"] = parameterToString(request.getPage());
+    }
+    if (request.projectIdIsSet()) {
+        localVarQueryParams["project_id"] = parameterToString(request.getProjectId());
+    }
+    if (request.isReliableIsSet()) {
+        localVarQueryParams["is_reliable"] = parameterToString(request.getIsReliable());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsCheckMeta::genRequestDefForListCriterionSetsByLanguage());
+
+    std::shared_ptr<ListCriterionSetsByLanguageResponse> localVarResult = std::make_shared<ListCriterionSetsByLanguageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListRulesResponse> CodeArtsCheckClient::listRules(ListRulesRequest &request)
 {
     std::string localVarPath = "/v2/rules";
@@ -733,6 +780,45 @@ std::shared_ptr<ShowTaskDetailResponse> CodeArtsCheckClient::showTaskDetail(Show
 
     return localVarResult;
 }
+std::shared_ptr<ShowTaskInfoByIdResponse> CodeArtsCheckClient::showTaskInfoById(ShowTaskInfoByIdRequest &request)
+{
+    std::string localVarPath = "/v3/task/{task_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["task_id"] = parameterToString(request.getTaskId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.mergeIdIsSet()) {
+        localVarQueryParams["merge_id"] = parameterToString(request.getMergeId());
+    }
+    if (request.jobIdIsSet()) {
+        localVarQueryParams["job_id"] = parameterToString(request.getJobId());
+    }
+    if (request.operatorIsSet()) {
+        localVarHeaderParams["operator"] = parameterToString(request.getOperator());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsCheckMeta::genRequestDefForShowTaskInfoById());
+
+    std::shared_ptr<ShowTaskInfoByIdResponse> localVarResult = std::make_shared<ShowTaskInfoByIdResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowTaskListByProjectIdResponse> CodeArtsCheckClient::showTaskListByProjectId(ShowTaskListByProjectIdRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/tasks";
@@ -880,6 +966,83 @@ std::shared_ptr<ShowTasklogResponse> CodeArtsCheckClient::showTasklog(ShowTasklo
 
     return localVarResult;
 }
+std::shared_ptr<ShowTasksListResponse> CodeArtsCheckClient::showTasksList(ShowTasksListRequest &request)
+{
+    std::string localVarPath = "/v1/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.pageIsSet()) {
+        localVarQueryParams["page"] = parameterToString(request.getPage());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.searchIsSet()) {
+        localVarQueryParams["search"] = parameterToString(request.getSearch());
+    }
+    if (request.projectIdIsSet()) {
+        localVarQueryParams["project_id"] = parameterToString(request.getProjectId());
+    }
+    if (request.reviewResultTypesIsSet()) {
+        localVarQueryParams["review_result_types"] = parameterToString(request.getReviewResultTypes());
+    }
+    if (request.jobStatusTypesIsSet()) {
+        localVarQueryParams["job_status_types"] = parameterToString(request.getJobStatusTypes());
+    }
+    if (request.orderByExecuteTimeIsSet()) {
+        localVarQueryParams["order_by_execute_time"] = parameterToString(request.getOrderByExecuteTime());
+    }
+    if (request.taskClassificationIdIsSet()) {
+        localVarQueryParams["task_classification_id"] = parameterToString(request.getTaskClassificationId());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.sortFieldIsSet()) {
+        localVarQueryParams["sort_field"] = parameterToString(request.getSortField());
+    }
+    if (request.sortOrderIsSet()) {
+        localVarQueryParams["sort_order"] = parameterToString(request.getSortOrder());
+    }
+    if (request.repoUrlIsSet()) {
+        localVarQueryParams["repo_url"] = parameterToString(request.getRepoUrl());
+    }
+    if (request.branchIsSet()) {
+        localVarQueryParams["branch"] = parameterToString(request.getBranch());
+    }
+    if (request.repoUrlFullMatchIsSet()) {
+        localVarQueryParams["repo_url_full_match"] = parameterToString(request.getRepoUrlFullMatch());
+    }
+    if (request.operatorIsSet()) {
+        localVarHeaderParams["operator"] = parameterToString(request.getOperator());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsCheckMeta::genRequestDefForShowTasksList());
+
+    std::shared_ptr<ShowTasksListResponse> localVarResult = std::make_shared<ShowTasksListResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowTasksRulesetsResponse> CodeArtsCheckClient::showTasksRulesets(ShowTasksRulesetsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/tasks/{task_id}/rulesets";
@@ -944,6 +1107,50 @@ std::shared_ptr<StopTaskByIdResponse> CodeArtsCheckClient::stopTaskById(StopTask
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateCodeGateResponse> CodeArtsCheckClient::updateCodeGate(UpdateCodeGateRequest &request)
+{
+    std::string localVarPath = "/v1/task/code-gate";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.operatorIsSet()) {
+        localVarHeaderParams["operator"] = parameterToString(request.getOperator());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsCheckMeta::genRequestDefForUpdateCodeGate());
+
+    std::shared_ptr<UpdateCodeGateResponse> localVarResult = std::make_shared<UpdateCodeGateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

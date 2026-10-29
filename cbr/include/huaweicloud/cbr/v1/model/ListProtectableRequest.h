@@ -110,6 +110,15 @@ public:
     void unsetserverId();
     void setServerId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 企业项目ID，获取企业项目ID请参考[查询企业项目列表](https://support.huaweicloud.com/api-em/zh-cn_topic_0121230880.html)(tag:hws)[查询企业项目列表](https://support.huaweicloud.com/intl/zh-cn/api-em/zh-cn_topic_0121230880.html)(tag:hws_hk)[《企业管理API参考》“查询企业项目列表”章节](tag:ctc,dt,tm,sbc,hws_eu,fcs_vm,hcso_dt,srg) **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getEnterpriseProjectId() const;
+    bool enterpriseProjectIdIsSet() const;
+    void unsetenterpriseProjectId();
+    void setEnterpriseProjectId(const std::string& value);
+
 
 protected:
     int32_t limit_;
@@ -128,6 +137,8 @@ protected:
     bool idIsSet_;
     std::string serverId_;
     bool serverIdIsSet_;
+    std::string enterpriseProjectId_;
+    bool enterpriseProjectIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

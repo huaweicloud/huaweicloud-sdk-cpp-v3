@@ -50,7 +50,7 @@ public:
     void setParamInfo(const ParamInfo& value);
 
     /// <summary>
-    /// 日志信息
+    /// **参数解释：** 失败日志详情。
     /// </summary>
 
     std::vector<LogInfo>& getLogInfo();

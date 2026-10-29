@@ -39,7 +39,7 @@ public:
     /// RuleListItem members
 
     /// <summary>
-    /// 规则集规范分类
+    /// **参数解释：** 业务类型分类。 **取值范围:** - common：通用。 - common_standard_recommend：通用建议。 - common_standard_rule：通用规则。 - security：安全。 - security_standard_recommend：安全建议。 - security_standard_rule：安全规则。
     /// </summary>
 
     std::string getRuleSet() const;
@@ -48,7 +48,7 @@ public:
     void setRuleSet(const std::string& value);
 
     /// <summary>
-    /// 规则id
+    /// **参数解释:** 规则ID。 **取值范围:** 32位UUID。
     /// </summary>
 
     std::string getRuleId() const;
@@ -57,7 +57,7 @@ public:
     void setRuleId(const std::string& value);
 
     /// <summary>
-    /// 规则所属语言
+    /// **参数解释:** 规则所属语言。 **取值范围:** 当前支持的语言有： - ARKTS - C# - CANGJIE - C++ - CSS - GO - HTML - JAVA - JAVASCRIPT - KOTLIN - LUA - PHP - PYTHON - RUST - SCALA - SHELL - SQL - TERRAFORM - TYPESCRIPT - AZURERESOURCEMANAGER - DOCKER - KUBERNETES
     /// </summary>
 
     std::string getRuleLanguage() const;
@@ -66,7 +66,7 @@ public:
     void setRuleLanguage(const std::string& value);
 
     /// <summary>
-    /// 规则名称
+    /// **参数解释:** 规则名称。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getRuleName() const;
@@ -75,7 +75,7 @@ public:
     void setRuleName(const std::string& value);
 
     /// <summary>
-    /// 规则问题级别
+    /// **参数解释:** 规则问题级别。 **取值范围:** - 0：致命。 - 1：严重。 - 2：一般。 - 3：提示。
     /// </summary>
 
     std::string getRuleSeverity() const;
@@ -84,7 +84,7 @@ public:
     void setRuleSeverity(const std::string& value);
 
     /// <summary>
-    /// 规则标签
+    /// **参数解释:** 规则标签。 **取值范围:** - huawei - iso5055 - cert - cwe - top10 - top25 - misra - GJB - autosar - PCI DSS
     /// </summary>
 
     std::string getRuleTages() const;
@@ -93,7 +93,7 @@ public:
     void setRuleTages(const std::string& value);
 
     /// <summary>
-    /// 正确示例
+    /// **参数解释:** 正确示例。 **取值范围:** 代码块或者文字示例等。
     /// </summary>
 
     std::string getRightExample() const;
@@ -102,7 +102,7 @@ public:
     void setRightExample(const std::string& value);
 
     /// <summary>
-    /// 错误示例
+    /// **参数解释:** 错误示例。 **取值范围:** 代码块或者文字示例等。
     /// </summary>
 
     std::string getErrorExample() const;
@@ -111,7 +111,7 @@ public:
     void setErrorExample(const std::string& value);
 
     /// <summary>
-    /// 修改建议
+    /// **参数解释:** 修改建议。 **取值范围:** 代码块或者文字示例等。
     /// </summary>
 
     std::string getReviseOpinion() const;
@@ -120,7 +120,7 @@ public:
     void setReviseOpinion(const std::string& value);
 
     /// <summary>
-    /// 规则描述
+    /// **参数解释:** 规则描述。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getRuleDesc() const;

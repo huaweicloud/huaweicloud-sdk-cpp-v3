@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 度量项
+/// 
 /// </summary>
 class HUAWEICLOUD_CODEARTSCHECK_V2_EXPORT  MetricInfo
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// MetricInfo members
 
     /// <summary>
-    /// 代码规模
+    /// **参数解释：** 有效代码行数，不包含空行和注释行。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCodeSize() const;
@@ -48,7 +48,7 @@ public:
     void setCodeSize(const std::string& value);
 
     /// <summary>
-    /// 原始代码行数
+    /// **参数解释：** 原始代码行数，包含空行和注释行。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getRawLines() const;
@@ -57,7 +57,7 @@ public:
     void setRawLines(const std::string& value);
 
     /// <summary>
-    /// 函数总数
+    /// **参数解释：** 函数总数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getMethodsTotal() const;
@@ -66,7 +66,7 @@ public:
     void setMethodsTotal(const std::string& value);
 
     /// <summary>
-    /// 圈复杂度总数
+    /// **参数解释：** 圈复杂度总数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCyclomaticComplexityTotal() const;
@@ -75,7 +75,7 @@ public:
     void setCyclomaticComplexityTotal(const std::string& value);
 
     /// <summary>
-    /// 平均圈复杂度
+    /// **参数解释：** 平均圈复杂度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCyclomaticComplexityPerMethod() const;
@@ -84,7 +84,7 @@ public:
     void setCyclomaticComplexityPerMethod(const std::string& value);
 
     /// <summary>
-    /// 最大圈复杂度
+    /// **参数解释：** 最大圈复杂度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getMaximumCyclomaticComplexity() const;
@@ -93,7 +93,7 @@ public:
     void setMaximumCyclomaticComplexity(const std::string& value);
 
     /// <summary>
-    /// 超大圈复杂度数
+    /// **参数解释：** 超大圈复杂度函数总数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeCyclomaticComplexityTotal() const;
@@ -102,7 +102,7 @@ public:
     void setHugeCyclomaticComplexityTotal(const std::string& value);
 
     /// <summary>
-    /// 超大圈复杂度比例
+    /// **参数解释：** 超大圈复杂度函数占比。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeCyclomaticComplexityRatio() const;
@@ -111,7 +111,7 @@ public:
     void setHugeCyclomaticComplexityRatio(const std::string& value);
 
     /// <summary>
-    /// cca圈复杂度总数
+    /// **参数解释：** CCA圈复杂度总数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCcaCyclomaticComplexityTotal() const;
@@ -120,7 +120,7 @@ public:
     void setCcaCyclomaticComplexityTotal(const std::string& value);
 
     /// <summary>
-    /// cca平均圈复杂度
+    /// **参数解释：** CCA平均圈复杂度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCcaCyclomaticComplexityPerMethod() const;
@@ -129,7 +129,7 @@ public:
     void setCcaCyclomaticComplexityPerMethod(const std::string& value);
 
     /// <summary>
-    /// cca最大圈复杂度
+    /// **参数解释：** CCA最大圈复杂度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getMaximumCcaCyclomaticComplexity() const;
@@ -138,7 +138,7 @@ public:
     void setMaximumCcaCyclomaticComplexity(const std::string& value);
 
     /// <summary>
-    /// 超大圈复杂度函数总数
+    /// **参数解释：** 超大CCA圈复杂度函数总数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeCcaCyclomaticComplexityTotal() const;
@@ -147,7 +147,7 @@ public:
     void setHugeCcaCyclomaticComplexityTotal(const std::string& value);
 
     /// <summary>
-    /// 圈复杂度满足度
+    /// **参数解释：** 圈复杂度阈值遵从度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCyclomaticComplexityAdequacy() const;
@@ -156,7 +156,7 @@ public:
     void setCyclomaticComplexityAdequacy(const std::string& value);
 
     /// <summary>
-    /// 最大深度
+    /// **参数解释：** 最大深度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getMaximumDepth() const;
@@ -165,7 +165,7 @@ public:
     void setMaximumDepth(const std::string& value);
 
     /// <summary>
-    /// 超大深度数
+    /// **参数解释：** 超大深度个数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeDepthTotal() const;
@@ -174,7 +174,7 @@ public:
     void setHugeDepthTotal(const std::string& value);
 
     /// <summary>
-    /// 超大深度占比
+    /// **参数解释：** 超大深度占比。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeDepthRatio() const;
@@ -183,7 +183,7 @@ public:
     void setHugeDepthRatio(const std::string& value);
 
     /// <summary>
-    /// 函数总行数
+    /// **参数解释：** 函数总行数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getMethodLines() const;
@@ -192,7 +192,7 @@ public:
     void setMethodLines(const std::string& value);
 
     /// <summary>
-    /// 函数平均代码行
+    /// **参数解释：** 平均函数代码行。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getLinesPerMethod() const;
@@ -201,7 +201,7 @@ public:
     void setLinesPerMethod(const std::string& value);
 
     /// <summary>
-    /// 超大函数数
+    /// **参数解释：** 超大代码行函数数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeMethodTotal() const;
@@ -210,7 +210,7 @@ public:
     void setHugeMethodTotal(const std::string& value);
 
     /// <summary>
-    /// 超大函数占比
+    /// **参数解释：** 超大代码行函数占比。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeMethodRatio() const;
@@ -219,7 +219,7 @@ public:
     void setHugeMethodRatio(const std::string& value);
 
     /// <summary>
-    /// 文件总数
+    /// **参数解释：** 文件总数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getFilesTotal() const;
@@ -228,7 +228,7 @@ public:
     void setFilesTotal(const std::string& value);
 
     /// <summary>
-    /// 目录总数
+    /// **参数解释：** 目录总数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getFoldersTotal() const;
@@ -237,7 +237,7 @@ public:
     void setFoldersTotal(const std::string& value);
 
     /// <summary>
-    /// 文件平均代码行
+    /// **参数解释：** 平均文件代码行。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getLinesPerFile() const;
@@ -246,7 +246,7 @@ public:
     void setLinesPerFile(const std::string& value);
 
     /// <summary>
-    /// 超大头文件数
+    /// **参数解释：** 超大头文件数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeHeaderfileTotal() const;
@@ -255,7 +255,7 @@ public:
     void setHugeHeaderfileTotal(const std::string& value);
 
     /// <summary>
-    /// 超大头文件占比
+    /// **参数解释：** 超大头文件占比。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeHeaderfileRatio() const;
@@ -264,7 +264,7 @@ public:
     void setHugeHeaderfileRatio(const std::string& value);
 
     /// <summary>
-    /// 超大源文件数
+    /// **参数解释：** 超大源文件数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeNonHeaderfileTotal() const;
@@ -273,7 +273,7 @@ public:
     void setHugeNonHeaderfileTotal(const std::string& value);
 
     /// <summary>
-    /// 超大源文件占比
+    /// **参数解释：** 超大源文件占比。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeNonHeaderfileRatio() const;
@@ -282,7 +282,7 @@ public:
     void setHugeNonHeaderfileRatio(const std::string& value);
 
     /// <summary>
-    /// 超大目录数
+    /// **参数解释：** 超大目录数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeFolderTotal() const;
@@ -291,7 +291,7 @@ public:
     void setHugeFolderTotal(const std::string& value);
 
     /// <summary>
-    /// 超大目录占比
+    /// **参数解释：** 超大目录占比。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getHugeFolderRatio() const;
@@ -300,7 +300,7 @@ public:
     void setHugeFolderRatio(const std::string& value);
 
     /// <summary>
-    /// 重复文件数
+    /// **参数解释：** 重复文件数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getFileDuplicationTotal() const;
@@ -309,7 +309,7 @@ public:
     void setFileDuplicationTotal(const std::string& value);
 
     /// <summary>
-    /// 文件重复率
+    /// **参数解释：** 文件重复率。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getFileDuplicationRatio() const;
@@ -318,7 +318,7 @@ public:
     void setFileDuplicationRatio(const std::string& value);
 
     /// <summary>
-    /// 重复源文件数
+    /// **参数解释：** 重复源文件数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getNonHfileDuplicationTotal() const;
@@ -327,7 +327,7 @@ public:
     void setNonHfileDuplicationTotal(const std::string& value);
 
     /// <summary>
-    /// 源文件重复率
+    /// **参数解释：** 源文件重复率。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getNonHfileDuplicationRatio() const;
@@ -336,7 +336,7 @@ public:
     void setNonHfileDuplicationRatio(const std::string& value);
 
     /// <summary>
-    /// 代码重复数
+    /// **参数解释：** 代码重复数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCodeDuplicationTotal() const;
@@ -345,7 +345,7 @@ public:
     void setCodeDuplicationTotal(const std::string& value);
 
     /// <summary>
-    /// 代码重复率
+    /// **参数解释：** 代码重复率。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCodeDuplicationRatio() const;
@@ -354,7 +354,7 @@ public:
     void setCodeDuplicationRatio(const std::string& value);
 
     /// <summary>
-    /// 源文件代码重复数
+    /// **参数解释：** 源文件代码重复数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getNonHfileCodeDuplicationTotal() const;
@@ -363,7 +363,7 @@ public:
     void setNonHfileCodeDuplicationTotal(const std::string& value);
 
     /// <summary>
-    /// 源文件代码重复率
+    /// **参数解释：** 源文件代码重复率。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getNonHfileCodeDuplicationRatio() const;
@@ -372,7 +372,7 @@ public:
     void setNonHfileCodeDuplicationRatio(const std::string& value);
 
     /// <summary>
-    /// 危险函数总数
+    /// **参数解释：** 危险函数总数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getUnsafeFunctionsTotal() const;
@@ -381,7 +381,7 @@ public:
     void setUnsafeFunctionsTotal(const std::string& value);
 
     /// <summary>
-    /// 危险函数密度
+    /// **参数解释：** 危险函数密度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getUnsafeFunctionsKloc() const;
@@ -390,7 +390,7 @@ public:
     void setUnsafeFunctionsKloc(const std::string& value);
 
     /// <summary>
-    /// 冗余代码数
+    /// **参数解释：** 冗余代码数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getRedundantCodeTotal() const;
@@ -399,7 +399,7 @@ public:
     void setRedundantCodeTotal(const std::string& value);
 
     /// <summary>
-    /// 冗余代码块密度
+    /// **参数解释：** 冗余代码密度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getRedundantCodeKloc() const;
@@ -408,7 +408,7 @@ public:
     void setRedundantCodeKloc(const std::string& value);
 
     /// <summary>
-    /// 抑制告警数
+    /// **参数解释：** 抑制告警数。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getWarningSuppressionTotal() const;
@@ -417,7 +417,7 @@ public:
     void setWarningSuppressionTotal(const std::string& value);
 
     /// <summary>
-    /// 抑制告警密度
+    /// **参数解释：** 抑制告警密度。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getWarningSuppressionKloc() const;

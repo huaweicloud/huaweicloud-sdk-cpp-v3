@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 代码仓相关的信息非必填，主要是用于CodeFever临时仓库使用，不填时直接使用创建任务时已经提供的信息
+/// 代码仓信息
 /// </summary>
 class HUAWEICLOUD_CODEARTSCHECK_V2_EXPORT  RunRequestV2
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// RunRequestV2 members
 
     /// <summary>
-    /// 该任务对应临时仓库有权限的用户名
+    /// **参数解释：** 废弃参数。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getUsername() const;
@@ -48,7 +48,7 @@ public:
     void setUsername(const std::string& value);
 
     /// <summary>
-    /// 该任务对应临时仓库有权限的用户token
+    /// **参数解释：** 废弃参数。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getAccessToken() const;
@@ -57,7 +57,7 @@ public:
     void setAccessToken(const std::string& value);
 
     /// <summary>
-    /// 该任务对应的临时仓库地址
+    /// **参数解释：** 废弃参数。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getGitUrl() const;
@@ -66,13 +66,22 @@ public:
     void setGitUrl(const std::string& value);
 
     /// <summary>
-    /// 该任务对应的临时仓库分支
+    /// **参数解释：** 废弃参数。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
 
     std::string getGitBranch() const;
     bool gitBranchIsSet() const;
     void unsetgitBranch();
     void setGitBranch(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 代码仓拉取MR代码的方式，推荐在检查阶段拉取MR代码失败时使用此参数进行拉取方式的指定。 **约束限制：** 不涉及。 **取值范围：** - pull：以pull/xx/xx方式进行拉取。 - merge_request：以merge_request/xx/xx方式进行拉取。 **默认取值：** 后台自动识别代码仓类型以进行MR代码的拉取。 gitee仓：以pull/xx/xx方式进行拉取。 非gitee仓：以merge_request/xx/xx方式进行拉取。
+    /// </summary>
+
+    std::string getRef() const;
+    bool refIsSet() const;
+    void unsetref();
+    void setRef(const std::string& value);
 
 
 protected:
@@ -84,6 +93,8 @@ protected:
     bool gitUrlIsSet_;
     std::string gitBranch_;
     bool gitBranchIsSet_;
+    std::string ref_;
+    bool refIsSet_;
 
 };
 

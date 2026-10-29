@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 任务配置高级选项的请求信息
+/// **参数解释：** 高级配置参数的相关信息，数组不能为空。 **约束限制：** 不涉及。
 /// </summary>
 class HUAWEICLOUD_CODEARTSCHECK_V2_EXPORT  UpdateTaskSettingsRequestBody
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// UpdateTaskSettingsRequestBody members
 
     /// <summary>
-    /// 高级选项参数的相关信息
+    /// **参数解释：** 高级配置参数的相关信息，数组不能为空。 **约束限制：** 不涉及。
     /// </summary>
 
     std::vector<TaskAdvancedSettingsItem>& getTaskAdvancedSettings();

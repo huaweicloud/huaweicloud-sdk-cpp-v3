@@ -41,6 +41,8 @@ QueryLtsLogParams::QueryLtsLogParams()
     queryIsSet_ = false;
     isAnalysisQuery_ = false;
     isAnalysisQueryIsSet_ = false;
+    sqlTimezone_ = "";
+    sqlTimezoneIsSet_ = false;
 }
 
 QueryLtsLogParams::~QueryLtsLogParams() = default;
@@ -97,6 +99,9 @@ web::json::value QueryLtsLogParams::toJson() const
     }
     if(isAnalysisQueryIsSet_) {
         val[utility::conversions::to_string_t("is_analysis_query")] = ModelBase::toJson(isAnalysisQuery_);
+    }
+    if(sqlTimezoneIsSet_) {
+        val[utility::conversions::to_string_t("sql_timezone")] = ModelBase::toJson(sqlTimezone_);
     }
 
     return val;
@@ -238,6 +243,15 @@ bool QueryLtsLogParams::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAnalysisQuery(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sql_timezone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_timezone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSqlTimezone(refVal);
         }
     }
     return ok;
@@ -557,6 +571,27 @@ bool QueryLtsLogParams::isAnalysisQueryIsSet() const
 void QueryLtsLogParams::unsetisAnalysisQuery()
 {
     isAnalysisQueryIsSet_ = false;
+}
+
+std::string QueryLtsLogParams::getSqlTimezone() const
+{
+    return sqlTimezone_;
+}
+
+void QueryLtsLogParams::setSqlTimezone(const std::string& value)
+{
+    sqlTimezone_ = value;
+    sqlTimezoneIsSet_ = true;
+}
+
+bool QueryLtsLogParams::sqlTimezoneIsSet() const
+{
+    return sqlTimezoneIsSet_;
+}
+
+void QueryLtsLogParams::unsetsqlTimezone()
+{
+    sqlTimezoneIsSet_ = false;
 }
 
 }

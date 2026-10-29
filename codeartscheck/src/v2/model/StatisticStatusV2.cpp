@@ -18,6 +18,10 @@ StatisticStatusV2::StatisticStatusV2()
     resolvedIsSet_ = false;
     dismissed_ = 0;
     dismissedIsSet_ = false;
+    fixed_ = 0;
+    fixedIsSet_ = false;
+    solved_ = 0;
+    solvedIsSet_ = false;
 }
 
 StatisticStatusV2::~StatisticStatusV2() = default;
@@ -38,6 +42,12 @@ web::json::value StatisticStatusV2::toJson() const
     }
     if(dismissedIsSet_) {
         val[utility::conversions::to_string_t("dismissed")] = ModelBase::toJson(dismissed_);
+    }
+    if(fixedIsSet_) {
+        val[utility::conversions::to_string_t("fixed")] = ModelBase::toJson(fixed_);
+    }
+    if(solvedIsSet_) {
+        val[utility::conversions::to_string_t("solved")] = ModelBase::toJson(solved_);
     }
 
     return val;
@@ -71,6 +81,24 @@ bool StatisticStatusV2::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDismissed(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fixed"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fixed"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFixed(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("solved"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("solved"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSolved(refVal);
         }
     }
     return ok;
@@ -138,6 +166,48 @@ bool StatisticStatusV2::dismissedIsSet() const
 void StatisticStatusV2::unsetdismissed()
 {
     dismissedIsSet_ = false;
+}
+
+int32_t StatisticStatusV2::getFixed() const
+{
+    return fixed_;
+}
+
+void StatisticStatusV2::setFixed(int32_t value)
+{
+    fixed_ = value;
+    fixedIsSet_ = true;
+}
+
+bool StatisticStatusV2::fixedIsSet() const
+{
+    return fixedIsSet_;
+}
+
+void StatisticStatusV2::unsetfixed()
+{
+    fixedIsSet_ = false;
+}
+
+int32_t StatisticStatusV2::getSolved() const
+{
+    return solved_;
+}
+
+void StatisticStatusV2::setSolved(int32_t value)
+{
+    solved_ = value;
+    solvedIsSet_ = true;
+}
+
+bool StatisticStatusV2::solvedIsSet() const
+{
+    return solvedIsSet_;
+}
+
+void StatisticStatusV2::unsetsolved()
+{
+    solvedIsSet_ = false;
 }
 
 }

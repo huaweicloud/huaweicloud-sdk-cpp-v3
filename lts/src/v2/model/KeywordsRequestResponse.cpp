@@ -33,6 +33,14 @@ KeywordsRequestResponse::KeywordsRequestResponse()
     customDateIsSet_ = false;
     isTimeRangeRelative_ = false;
     isTimeRangeRelativeIsSet_ = false;
+    conditionsIsSet_ = false;
+    logGroupNameAlias_ = "";
+    logGroupNameAliasIsSet_ = false;
+    logStreamNameAlias_ = "";
+    logStreamNameAliasIsSet_ = false;
+    epsId_ = "";
+    epsIdIsSet_ = false;
+    timeRangeIsSet_ = false;
 }
 
 KeywordsRequestResponse::~KeywordsRequestResponse() = default;
@@ -77,6 +85,21 @@ web::json::value KeywordsRequestResponse::toJson() const
     }
     if(isTimeRangeRelativeIsSet_) {
         val[utility::conversions::to_string_t("is_time_range_relative")] = ModelBase::toJson(isTimeRangeRelative_);
+    }
+    if(conditionsIsSet_) {
+        val[utility::conversions::to_string_t("conditions")] = ModelBase::toJson(conditions_);
+    }
+    if(logGroupNameAliasIsSet_) {
+        val[utility::conversions::to_string_t("log_group_name_alias")] = ModelBase::toJson(logGroupNameAlias_);
+    }
+    if(logStreamNameAliasIsSet_) {
+        val[utility::conversions::to_string_t("log_stream_name_alias")] = ModelBase::toJson(logStreamNameAlias_);
+    }
+    if(epsIdIsSet_) {
+        val[utility::conversions::to_string_t("eps_id")] = ModelBase::toJson(epsId_);
+    }
+    if(timeRangeIsSet_) {
+        val[utility::conversions::to_string_t("time_range")] = ModelBase::toJson(timeRange_);
     }
 
     return val;
@@ -182,6 +205,51 @@ bool KeywordsRequestResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsTimeRangeRelative(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("conditions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("conditions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<KeywordsAlarmConditions> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConditions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_group_name_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_group_name_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogGroupNameAlias(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_stream_name_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_stream_name_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogStreamNameAlias(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("eps_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("eps_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEpsId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("time_range"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("time_range"));
+        if(!fieldValue.is_null())
+        {
+            TimeRange refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTimeRange(refVal);
         }
     }
     return ok;
@@ -417,6 +485,111 @@ bool KeywordsRequestResponse::isTimeRangeRelativeIsSet() const
 void KeywordsRequestResponse::unsetisTimeRangeRelative()
 {
     isTimeRangeRelativeIsSet_ = false;
+}
+
+std::vector<KeywordsAlarmConditions>& KeywordsRequestResponse::getConditions()
+{
+    return conditions_;
+}
+
+void KeywordsRequestResponse::setConditions(const std::vector<KeywordsAlarmConditions>& value)
+{
+    conditions_ = value;
+    conditionsIsSet_ = true;
+}
+
+bool KeywordsRequestResponse::conditionsIsSet() const
+{
+    return conditionsIsSet_;
+}
+
+void KeywordsRequestResponse::unsetconditions()
+{
+    conditionsIsSet_ = false;
+}
+
+std::string KeywordsRequestResponse::getLogGroupNameAlias() const
+{
+    return logGroupNameAlias_;
+}
+
+void KeywordsRequestResponse::setLogGroupNameAlias(const std::string& value)
+{
+    logGroupNameAlias_ = value;
+    logGroupNameAliasIsSet_ = true;
+}
+
+bool KeywordsRequestResponse::logGroupNameAliasIsSet() const
+{
+    return logGroupNameAliasIsSet_;
+}
+
+void KeywordsRequestResponse::unsetlogGroupNameAlias()
+{
+    logGroupNameAliasIsSet_ = false;
+}
+
+std::string KeywordsRequestResponse::getLogStreamNameAlias() const
+{
+    return logStreamNameAlias_;
+}
+
+void KeywordsRequestResponse::setLogStreamNameAlias(const std::string& value)
+{
+    logStreamNameAlias_ = value;
+    logStreamNameAliasIsSet_ = true;
+}
+
+bool KeywordsRequestResponse::logStreamNameAliasIsSet() const
+{
+    return logStreamNameAliasIsSet_;
+}
+
+void KeywordsRequestResponse::unsetlogStreamNameAlias()
+{
+    logStreamNameAliasIsSet_ = false;
+}
+
+std::string KeywordsRequestResponse::getEpsId() const
+{
+    return epsId_;
+}
+
+void KeywordsRequestResponse::setEpsId(const std::string& value)
+{
+    epsId_ = value;
+    epsIdIsSet_ = true;
+}
+
+bool KeywordsRequestResponse::epsIdIsSet() const
+{
+    return epsIdIsSet_;
+}
+
+void KeywordsRequestResponse::unsetepsId()
+{
+    epsIdIsSet_ = false;
+}
+
+TimeRange KeywordsRequestResponse::getTimeRange() const
+{
+    return timeRange_;
+}
+
+void KeywordsRequestResponse::setTimeRange(const TimeRange& value)
+{
+    timeRange_ = value;
+    timeRangeIsSet_ = true;
+}
+
+bool KeywordsRequestResponse::timeRangeIsSet() const
+{
+    return timeRangeIsSet_;
+}
+
+void KeywordsRequestResponse::unsettimeRange()
+{
+    timeRangeIsSet_ = false;
 }
 
 }

@@ -30,8 +30,6 @@ ShowLogConvergeConfigResponse::ShowLogConvergeConfigResponse()
     managementAccountIdIsSet_ = false;
     managementProjectId_ = "";
     managementProjectIdIsSet_ = false;
-    version_ = "";
-    versionIsSet_ = false;
     logMappingConfigIsSet_ = false;
 }
 
@@ -71,9 +69,6 @@ web::json::value ShowLogConvergeConfigResponse::toJson() const
     }
     if(managementProjectIdIsSet_) {
         val[utility::conversions::to_string_t("management_project_id")] = ModelBase::toJson(managementProjectId_);
-    }
-    if(versionIsSet_) {
-        val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
     }
     if(logMappingConfigIsSet_) {
         val[utility::conversions::to_string_t("log_mapping_config")] = ModelBase::toJson(logMappingConfig_);
@@ -164,15 +159,6 @@ bool ShowLogConvergeConfigResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setManagementProjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("version"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setVersion(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("log_mapping_config"))) {
@@ -375,27 +361,6 @@ bool ShowLogConvergeConfigResponse::managementProjectIdIsSet() const
 void ShowLogConvergeConfigResponse::unsetmanagementProjectId()
 {
     managementProjectIdIsSet_ = false;
-}
-
-std::string ShowLogConvergeConfigResponse::getVersion() const
-{
-    return version_;
-}
-
-void ShowLogConvergeConfigResponse::setVersion(const std::string& value)
-{
-    version_ = value;
-    versionIsSet_ = true;
-}
-
-bool ShowLogConvergeConfigResponse::versionIsSet() const
-{
-    return versionIsSet_;
-}
-
-void ShowLogConvergeConfigResponse::unsetversion()
-{
-    versionIsSet_ = false;
 }
 
 std::vector<LogMappingConfig>& ShowLogConvergeConfigResponse::getLogMappingConfig()

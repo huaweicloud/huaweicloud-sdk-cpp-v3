@@ -306,6 +306,9 @@ HttpRequestDef CbrMeta::genRequestDefForListBackups() {
     reqDefBuilder.withRequestField(FieldDef().withName("Incremental")
                   .withJsonTag("incremental")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ExistedQuantityBasedRetentionBackups")
+                  .withJsonTag("existed_quantity_based_retention_backups")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -331,8 +334,8 @@ HttpRequestDef CbrMeta::genRequestDefForListExternalVault() {
     reqDefBuilder.withRequestField(FieldDef().withName("RegionId")
                   .withJsonTag("region_id")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ObjcetType")
-                  .withJsonTag("objcet_type")
+    reqDefBuilder.withRequestField(FieldDef().withName("ObjectType")
+                  .withJsonTag("object_type")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("CloudType")
                   .withJsonTag("cloud_type")
@@ -395,6 +398,12 @@ HttpRequestDef CbrMeta::genRequestDefForListOpLogs() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DestinationRegion")
+                  .withJsonTag("destination_region")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DestinationProjectId")
+                  .withJsonTag("destination_project_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -456,6 +465,9 @@ HttpRequestDef CbrMeta::genRequestDefForListProtectable() {
     reqDefBuilder.withRequestField(FieldDef().withName("ServerId")
                   .withJsonTag("server_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -493,6 +505,9 @@ HttpRequestDef CbrMeta::genRequestDefForListVault() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("ResourceIds")
                   .withJsonTag("resource_ids")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AvailabilityZone")
+                  .withJsonTag("availability_zone")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -703,6 +718,9 @@ HttpRequestDef CbrMeta::genRequestDefForShowVaultProjectTag() {
 
 HttpRequestDef CbrMeta::genRequestDefForShowVaultResourceInstances() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

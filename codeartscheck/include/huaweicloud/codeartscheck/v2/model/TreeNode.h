@@ -39,7 +39,7 @@ public:
     /// TreeNode members
 
     /// <summary>
-    /// 目录或文件名
+    /// **参数解释:** 目录或文件名。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getFileName() const;
@@ -48,7 +48,7 @@ public:
     void setFileName(const std::string& value);
 
     /// <summary>
-    /// 目录或文件路径
+    /// **参数解释:** 目录或文件路径。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getFilePath() const;
@@ -57,7 +57,7 @@ public:
     void setFilePath(const std::string& value);
 
     /// <summary>
-    /// 是否为叶子节点，true是，false不是
+    /// **参数解释:** 是否为叶子节点。 **取值范围:** - true：叶子节点。 - false：非叶子节点。
     /// </summary>
 
     bool isIsLeaf() const;
@@ -66,7 +66,7 @@ public:
     void setIsLeaf(bool value);
 
     /// <summary>
-    /// 屏蔽状态，包括unchecked(不屏蔽)、all(全屏蔽)、half(半屏蔽)
+    /// **参数解释:** 屏蔽状态。 **取值范围:** - unchecked：不屏蔽。 - all：全屏蔽。 - half: 半屏蔽。
     /// </summary>
 
     std::string getCheckboxStatus() const;

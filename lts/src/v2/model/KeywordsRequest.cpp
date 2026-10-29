@@ -33,6 +33,7 @@ KeywordsRequest::KeywordsRequest()
     customDateIsSet_ = false;
     isTimeRangeRelative_ = false;
     isTimeRangeRelativeIsSet_ = false;
+    conditionsIsSet_ = false;
 }
 
 KeywordsRequest::~KeywordsRequest() = default;
@@ -77,6 +78,9 @@ web::json::value KeywordsRequest::toJson() const
     }
     if(isTimeRangeRelativeIsSet_) {
         val[utility::conversions::to_string_t("is_time_range_relative")] = ModelBase::toJson(isTimeRangeRelative_);
+    }
+    if(conditionsIsSet_) {
+        val[utility::conversions::to_string_t("conditions")] = ModelBase::toJson(conditions_);
     }
 
     return val;
@@ -182,6 +186,15 @@ bool KeywordsRequest::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsTimeRangeRelative(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("conditions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("conditions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<KeywordsAlarmConditions> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConditions(refVal);
         }
     }
     return ok;
@@ -417,6 +430,27 @@ bool KeywordsRequest::isTimeRangeRelativeIsSet() const
 void KeywordsRequest::unsetisTimeRangeRelative()
 {
     isTimeRangeRelativeIsSet_ = false;
+}
+
+std::vector<KeywordsAlarmConditions>& KeywordsRequest::getConditions()
+{
+    return conditions_;
+}
+
+void KeywordsRequest::setConditions(const std::vector<KeywordsAlarmConditions>& value)
+{
+    conditions_ = value;
+    conditionsIsSet_ = true;
+}
+
+bool KeywordsRequest::conditionsIsSet() const
+{
+    return conditionsIsSet_;
+}
+
+void KeywordsRequest::unsetconditions()
+{
+    conditionsIsSet_ = false;
 }
 
 }

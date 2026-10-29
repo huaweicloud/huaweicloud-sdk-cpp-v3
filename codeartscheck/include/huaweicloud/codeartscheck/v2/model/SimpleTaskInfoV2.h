@@ -39,7 +39,7 @@ public:
     /// SimpleTaskInfoV2 members
 
     /// <summary>
-    /// 任务id
+    /// **参数解释：** 任务下的默认分支任务的ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getTaskId() const;
@@ -48,7 +48,7 @@ public:
     void setTaskId(const std::string& value);
 
     /// <summary>
-    /// 任务名字
+    /// **参数解释：** 任务名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getTaskName() const;
@@ -57,7 +57,7 @@ public:
     void setTaskName(const std::string& value);
 
     /// <summary>
-    /// 创建者id
+    /// **参数解释：** 任务创建者的用户ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCreatorId() const;
@@ -66,7 +66,7 @@ public:
     void setCreatorId(const std::string& value);
 
     /// <summary>
-    /// 代码仓地址
+    /// **参数解释：** 代码仓地址。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getGitUrl() const;
@@ -75,7 +75,7 @@ public:
     void setGitUrl(const std::string& value);
 
     /// <summary>
-    /// 代码仓分支,如果是MR模式，为源分支
+    /// **参数解释：** 任务的默认分支，非代码仓默认分支。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getGitBranch() const;
@@ -84,7 +84,7 @@ public:
     void setGitBranch(const std::string& value);
 
     /// <summary>
-    /// 创建时间
+    /// **参数解释：** 任务创建时间。 **取值范围：** UTC格式，格式为yyyy-MM-ddTHH:mm:ssZ，例如\&quot;2025-11-28T06:55:41Z\&quot;。
     /// </summary>
 
     std::string getCreatedAt() const;
@@ -93,13 +93,40 @@ public:
     void setCreatedAt(const std::string& value);
 
     /// <summary>
-    /// 上一次检查时间
+    /// **参数解释：** 任务下所有分支任务、增量任务的最近检查时间。 **取值范围：** UTC格式，格式为yyyy-MM-ddTHH:mm:ssZ，例如\&quot;2025-11-28T06:55:41Z\&quot;。
     /// </summary>
 
     std::string getLastCheckTime() const;
     bool lastCheckTimeIsSet() const;
     void unsetlastCheckTime();
     void setLastCheckTime(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** [密级ID,可见信息密级的ID，从页面接口GET https://{endpoint}/projects/v1/options的响应参数中获取，其中的code值即为密级ID。](tag:hcs_sm,hcs_sitesm)[该参数暂无业务意义，忽略。](tag:fcs) **取值范围：** [不涉及,取值根据用户配置的密级情况变化。](tag:hcs_sm,hcs_sitesm)[不涉及。](tag:fcs)
+    /// </summary>
+
+    std::string getSmLevel() const;
+    bool smLevelIsSet() const;
+    void unsetsmLevel();
+    void setSmLevel(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** [密级英文名称，取值根据用户配置的密级情况变化。](tag:hcs_sm,hcs_sitesm)[该参数暂无业务意义，忽略。](tag:fcs) **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getSmLevelNameEn() const;
+    bool smLevelNameEnIsSet() const;
+    void unsetsmLevelNameEn();
+    void setSmLevelNameEn(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** [密级中文名称，取值根据用户配置的密级情况变化。](tag:hcs_sm,hcs_sitesm)[该参数暂无业务意义，忽略。](tag:fcs) **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getSmLevelName() const;
+    bool smLevelNameIsSet() const;
+    void unsetsmLevelName();
+    void setSmLevelName(const std::string& value);
 
 
 protected:
@@ -117,6 +144,12 @@ protected:
     bool createdAtIsSet_;
     std::string lastCheckTime_;
     bool lastCheckTimeIsSet_;
+    std::string smLevel_;
+    bool smLevelIsSet_;
+    std::string smLevelNameEn_;
+    bool smLevelNameEnIsSet_;
+    std::string smLevelName_;
+    bool smLevelNameIsSet_;
 
 };
 

@@ -123,7 +123,7 @@ bool RuleItem::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rule_config_list"));
         if(!fieldValue.is_null())
         {
-            std::vector<RuleConfig> refVal;
+            std::vector<RuleConfigParam> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRuleConfigList(refVal);
         }
@@ -258,12 +258,12 @@ void RuleItem::unsetchecked()
     checkedIsSet_ = false;
 }
 
-std::vector<RuleConfig>& RuleItem::getRuleConfigList()
+std::vector<RuleConfigParam>& RuleItem::getRuleConfigList()
 {
     return ruleConfigList_;
 }
 
-void RuleItem::setRuleConfigList(const std::vector<RuleConfig>& value)
+void RuleItem::setRuleConfigList(const std::vector<RuleConfigParam>& value)
 {
     ruleConfigList_ = value;
     ruleConfigListIsSet_ = true;

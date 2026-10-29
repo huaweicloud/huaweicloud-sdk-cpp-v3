@@ -40,7 +40,7 @@ public:
     /// ShowTaskCmetricsResponse members
 
     /// <summary>
-    /// 任务id
+    /// **参数解释：** 旧版任务ID。即新建检查任务接口的返回值，每个代码检查任务及其下的分支任务、通过API创建的增量任务都有唯一的任务ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getTaskId() const;
@@ -49,7 +49,7 @@ public:
     void setTaskId(const std::string& value);
 
     /// <summary>
-    /// 任务名字
+    /// **参数解释：** 任务名称。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getTaskName() const;
@@ -58,7 +58,7 @@ public:
     void setTaskName(const std::string& value);
 
     /// <summary>
-    /// 创建者id
+    /// **参数解释：** 任务创建者用户ID。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCreatorId() const;
@@ -67,7 +67,7 @@ public:
     void setCreatorId(const std::string& value);
 
     /// <summary>
-    /// 代码仓地址
+    /// **参数解释：** 代码仓地址。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getGitUrl() const;
@@ -76,7 +76,7 @@ public:
     void setGitUrl(const std::string& value);
 
     /// <summary>
-    /// 代码仓分支
+    /// **参数解释：** 代码仓分支。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getGitBranch() const;
@@ -85,7 +85,7 @@ public:
     void setGitBranch(const std::string& value);
 
     /// <summary>
-    /// 上一次检查时间
+    /// **参数解释：** 上一次检查时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getLastCheckTime() const;
@@ -94,7 +94,7 @@ public:
     void setLastCheckTime(const std::string& value);
 
     /// <summary>
-    /// 上次执行时间
+    /// **参数解释：** 上一次执行时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getLastExecTime() const;
@@ -103,7 +103,16 @@ public:
     void setLastExecTime(const std::string& value);
 
     /// <summary>
-    /// 检查类型
+    /// **参数解释：** 上次执行结束时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getLastCheckFinishTime() const;
+    bool lastCheckFinishTimeIsSet() const;
+    void unsetlastCheckFinishTime();
+    void setLastCheckFinishTime(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 废弃字段。 **约束限制：** 不涉及。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCheckType() const;
@@ -112,7 +121,7 @@ public:
     void setCheckType(const std::string& value);
 
     /// <summary>
-    /// 创建时间
+    /// **参数解释：** 任务创建时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCreatedAt() const;
@@ -145,6 +154,8 @@ protected:
     bool lastCheckTimeIsSet_;
     std::string lastExecTime_;
     bool lastExecTimeIsSet_;
+    std::string lastCheckFinishTime_;
+    bool lastCheckFinishTimeIsSet_;
     std::string checkType_;
     bool checkTypeIsSet_;
     std::string createdAt_;

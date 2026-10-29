@@ -14,6 +14,10 @@ ShowTaskDefectsStatisticResponse::ShowTaskDefectsStatisticResponse()
 {
     severityIsSet_ = false;
     statusIsSet_ = false;
+    lastCheckTime_ = "";
+    lastCheckTimeIsSet_ = false;
+    lastCheckFinishTime_ = "";
+    lastCheckFinishTimeIsSet_ = false;
 }
 
 ShowTaskDefectsStatisticResponse::~ShowTaskDefectsStatisticResponse() = default;
@@ -31,6 +35,12 @@ web::json::value ShowTaskDefectsStatisticResponse::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(lastCheckTimeIsSet_) {
+        val[utility::conversions::to_string_t("last_check_time")] = ModelBase::toJson(lastCheckTime_);
+    }
+    if(lastCheckFinishTimeIsSet_) {
+        val[utility::conversions::to_string_t("last_check_finish_time")] = ModelBase::toJson(lastCheckFinishTime_);
     }
 
     return val;
@@ -55,6 +65,24 @@ bool ShowTaskDefectsStatisticResponse::fromJson(const web::json::value& val)
             StatisticStatusV2 refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("last_check_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_check_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLastCheckTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("last_check_finish_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_check_finish_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLastCheckFinishTime(refVal);
         }
     }
     return ok;
@@ -101,6 +129,48 @@ bool ShowTaskDefectsStatisticResponse::statusIsSet() const
 void ShowTaskDefectsStatisticResponse::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string ShowTaskDefectsStatisticResponse::getLastCheckTime() const
+{
+    return lastCheckTime_;
+}
+
+void ShowTaskDefectsStatisticResponse::setLastCheckTime(const std::string& value)
+{
+    lastCheckTime_ = value;
+    lastCheckTimeIsSet_ = true;
+}
+
+bool ShowTaskDefectsStatisticResponse::lastCheckTimeIsSet() const
+{
+    return lastCheckTimeIsSet_;
+}
+
+void ShowTaskDefectsStatisticResponse::unsetlastCheckTime()
+{
+    lastCheckTimeIsSet_ = false;
+}
+
+std::string ShowTaskDefectsStatisticResponse::getLastCheckFinishTime() const
+{
+    return lastCheckFinishTime_;
+}
+
+void ShowTaskDefectsStatisticResponse::setLastCheckFinishTime(const std::string& value)
+{
+    lastCheckFinishTime_ = value;
+    lastCheckFinishTimeIsSet_ = true;
+}
+
+bool ShowTaskDefectsStatisticResponse::lastCheckFinishTimeIsSet() const
+{
+    return lastCheckFinishTimeIsSet_;
+}
+
+void ShowTaskDefectsStatisticResponse::unsetlastCheckFinishTime()
+{
+    lastCheckFinishTimeIsSet_ = false;
 }
 
 }

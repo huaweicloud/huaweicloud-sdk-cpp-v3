@@ -38,7 +38,7 @@ public:
     /// StatisticSeverityV2 members
 
     /// <summary>
-    /// 致命问题数
+    /// **参数解释：** 致命问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getCritical() const;
@@ -47,7 +47,7 @@ public:
     void setCritical(int32_t value);
 
     /// <summary>
-    /// 严重问题数
+    /// **参数解释：** 严重问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getMajor() const;
@@ -56,7 +56,7 @@ public:
     void setMajor(int32_t value);
 
     /// <summary>
-    /// 一般问题数
+    /// **参数解释：** 一般问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getMinor() const;
@@ -65,7 +65,7 @@ public:
     void setMinor(int32_t value);
 
     /// <summary>
-    /// 提示问题数
+    /// **参数解释：** 提示问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getSuggestion() const;

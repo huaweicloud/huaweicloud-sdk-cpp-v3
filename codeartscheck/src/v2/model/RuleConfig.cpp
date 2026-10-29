@@ -14,7 +14,7 @@ RuleConfig::RuleConfig()
 {
     id_ = 0;
     idIsSet_ = false;
-    ruleId_ = 0;
+    ruleId_ = "";
     ruleIdIsSet_ = false;
     defaultValue_ = "";
     defaultValueIsSet_ = false;
@@ -84,7 +84,7 @@ bool RuleConfig::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rule_id"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRuleId(refVal);
         }
@@ -168,12 +168,12 @@ void RuleConfig::unsetid()
     idIsSet_ = false;
 }
 
-int32_t RuleConfig::getRuleId() const
+std::string RuleConfig::getRuleId() const
 {
     return ruleId_;
 }
 
-void RuleConfig::setRuleId(int32_t value)
+void RuleConfig::setRuleId(const std::string& value)
 {
     ruleId_ = value;
     ruleIdIsSet_ = true;

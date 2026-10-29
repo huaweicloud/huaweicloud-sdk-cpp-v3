@@ -26,6 +26,8 @@ ShowTaskCmetricsResponse::ShowTaskCmetricsResponse()
     lastCheckTimeIsSet_ = false;
     lastExecTime_ = "";
     lastExecTimeIsSet_ = false;
+    lastCheckFinishTime_ = "";
+    lastCheckFinishTimeIsSet_ = false;
     checkType_ = "";
     checkTypeIsSet_ = false;
     createdAt_ = "";
@@ -63,6 +65,9 @@ web::json::value ShowTaskCmetricsResponse::toJson() const
     }
     if(lastExecTimeIsSet_) {
         val[utility::conversions::to_string_t("last_exec_time")] = ModelBase::toJson(lastExecTime_);
+    }
+    if(lastCheckFinishTimeIsSet_) {
+        val[utility::conversions::to_string_t("last_check_finish_time")] = ModelBase::toJson(lastCheckFinishTime_);
     }
     if(checkTypeIsSet_) {
         val[utility::conversions::to_string_t("check_type")] = ModelBase::toJson(checkType_);
@@ -141,6 +146,15 @@ bool ShowTaskCmetricsResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLastExecTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("last_check_finish_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_check_finish_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLastCheckFinishTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("check_type"))) {
@@ -319,6 +333,27 @@ bool ShowTaskCmetricsResponse::lastExecTimeIsSet() const
 void ShowTaskCmetricsResponse::unsetlastExecTime()
 {
     lastExecTimeIsSet_ = false;
+}
+
+std::string ShowTaskCmetricsResponse::getLastCheckFinishTime() const
+{
+    return lastCheckFinishTime_;
+}
+
+void ShowTaskCmetricsResponse::setLastCheckFinishTime(const std::string& value)
+{
+    lastCheckFinishTime_ = value;
+    lastCheckFinishTimeIsSet_ = true;
+}
+
+bool ShowTaskCmetricsResponse::lastCheckFinishTimeIsSet() const
+{
+    return lastCheckFinishTimeIsSet_;
+}
+
+void ShowTaskCmetricsResponse::unsetlastCheckFinishTime()
+{
+    lastCheckFinishTimeIsSet_ = false;
 }
 
 std::string ShowTaskCmetricsResponse::getCheckType() const

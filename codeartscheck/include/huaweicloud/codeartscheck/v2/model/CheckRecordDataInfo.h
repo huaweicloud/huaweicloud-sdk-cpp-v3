@@ -40,7 +40,7 @@ public:
     /// CheckRecordDataInfo members
 
     /// <summary>
-    /// 检查任务执行开始时间
+    /// **参数解释：** 检查任务执行开始时间，使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCheckTime() const;
@@ -49,7 +49,7 @@ public:
     void setCheckTime(const std::string& value);
 
     /// <summary>
-    /// 检查任务执行结束时间
+    /// **参数解释：** 检查任务执行结束时间，使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
     /// </summary>
 
     std::string getCheckEndTime() const;

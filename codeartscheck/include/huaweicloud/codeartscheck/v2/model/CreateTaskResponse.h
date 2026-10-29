@@ -39,7 +39,7 @@ public:
     /// CreateTaskResponse members
 
     /// <summary>
-    /// 检查任务id
+    /// **参数解释：** 任务ID。 **取值范围：** 全量任务为32位UUID，MR增量任务为\&quot;MR_\&quot;+32位UUID。
     /// </summary>
 
     std::string getTaskId() const;

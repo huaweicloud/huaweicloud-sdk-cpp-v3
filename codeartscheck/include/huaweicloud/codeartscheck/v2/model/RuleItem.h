@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartscheck/v2/model/RuleConfig.h>
+#include <huaweicloud/codeartscheck/v2/model/RuleConfigParam.h>
 #include <string>
 #include <vector>
 
@@ -41,7 +41,7 @@ public:
     /// RuleItem members
 
     /// <summary>
-    /// 规则id
+    /// **参数解释:** 规则ID。 **取值范围:** 32位ID。
     /// </summary>
 
     std::string getRuleId() const;
@@ -50,7 +50,7 @@ public:
     void setRuleId(const std::string& value);
 
     /// <summary>
-    /// 规则所属语言
+    /// **参数解释:** 规则所属语言。 **取值范围:** 当前支持的语言有： - ARKTS - C# - CANGJIE - C++ - CSS - GO - HTML - JAVA - JAVASCRIPT - KOTLIN - LUA - PHP - PYTHON - RUST - SCALA - SHELL - SQL - TERRAFORM - TYPESCRIPT - AZURERESOURCEMANAGER - DOCKER - KUBERNETES
     /// </summary>
 
     std::string getRuleLanguage() const;
@@ -59,7 +59,7 @@ public:
     void setRuleLanguage(const std::string& value);
 
     /// <summary>
-    /// 规则名称
+    /// **参数解释:** 规则名称。 **取值范围:** 不涉及。
     /// </summary>
 
     std::string getRuleName() const;
@@ -68,7 +68,7 @@ public:
     void setRuleName(const std::string& value);
 
     /// <summary>
-    /// 规则问题级别
+    /// **参数解释:** 规则问题级别。 **取值范围：** - 0：致命。 - 1：严重。 - 2：一般。 - 3：提示。
     /// </summary>
 
     std::string getRuleSeverity() const;
@@ -77,7 +77,7 @@ public:
     void setRuleSeverity(const std::string& value);
 
     /// <summary>
-    /// 规则标签
+    /// **参数解释:** 规则标签。 **取值范围:** - huawei - iso5055 - cert - cwe - top10 - top25 - misra - GJB - autosar - PCI DSS
     /// </summary>
 
     std::string getRuleTages() const;
@@ -86,7 +86,7 @@ public:
     void setRuleTages(const std::string& value);
 
     /// <summary>
-    /// 规则状态0：未启用，1：已启用
+    /// **参数解释:** 规则状态。 **取值范围:** - 0：未启用。 - 1：已启用。
     /// </summary>
 
     std::string getChecked() const;
@@ -95,13 +95,13 @@ public:
     void setChecked(const std::string& value);
 
     /// <summary>
-    /// 规则配置参数阈值相关信息
+    /// **参数解释:** 规则配置参数阈值相关信息。
     /// </summary>
 
-    std::vector<RuleConfig>& getRuleConfigList();
+    std::vector<RuleConfigParam>& getRuleConfigList();
     bool ruleConfigListIsSet() const;
     void unsetruleConfigList();
-    void setRuleConfigList(const std::vector<RuleConfig>& value);
+    void setRuleConfigList(const std::vector<RuleConfigParam>& value);
 
 
 protected:
@@ -117,7 +117,7 @@ protected:
     bool ruleTagesIsSet_;
     std::string checked_;
     bool checkedIsSet_;
-    std::vector<RuleConfig> ruleConfigList_;
+    std::vector<RuleConfigParam> ruleConfigList_;
     bool ruleConfigListIsSet_;
 
 };

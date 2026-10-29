@@ -28,6 +28,8 @@ ListProtectableRequest::ListProtectableRequest()
     idIsSet_ = false;
     serverId_ = "";
     serverIdIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
 }
 
 ListProtectableRequest::~ListProtectableRequest() = default;
@@ -63,6 +65,9 @@ web::json::value ListProtectableRequest::toJson() const
     }
     if(serverIdIsSet_) {
         val[utility::conversions::to_string_t("server_id")] = ModelBase::toJson(serverId_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
     }
 
     return val;
@@ -141,6 +146,15 @@ bool ListProtectableRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
         }
     }
     return ok;
@@ -313,6 +327,27 @@ bool ListProtectableRequest::serverIdIsSet() const
 void ListProtectableRequest::unsetserverId()
 {
     serverIdIsSet_ = false;
+}
+
+std::string ListProtectableRequest::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void ListProtectableRequest::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool ListProtectableRequest::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void ListProtectableRequest::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
 }
 
 }

@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartscheck/v2/model/TaskCheckParamters.h>
+#include <huaweicloud/codeartscheck/v2/model/TaskCheckParameters.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -43,14 +43,14 @@ public:
     /// 
     /// </summary>
 
-    std::vector<TaskCheckParamters>& getBody();
+    std::vector<TaskCheckParameters>& getBody();
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const std::vector<TaskCheckParamters>& value);
+    void setBody(const std::vector<TaskCheckParameters>& value);
 
 
 protected:
-    std::vector<TaskCheckParamters> body_;
+    std::vector<TaskCheckParameters> body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

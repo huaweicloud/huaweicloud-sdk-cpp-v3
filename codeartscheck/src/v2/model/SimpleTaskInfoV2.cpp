@@ -26,6 +26,12 @@ SimpleTaskInfoV2::SimpleTaskInfoV2()
     createdAtIsSet_ = false;
     lastCheckTime_ = "";
     lastCheckTimeIsSet_ = false;
+    smLevel_ = "";
+    smLevelIsSet_ = false;
+    smLevelNameEn_ = "";
+    smLevelNameEnIsSet_ = false;
+    smLevelName_ = "";
+    smLevelNameIsSet_ = false;
 }
 
 SimpleTaskInfoV2::~SimpleTaskInfoV2() = default;
@@ -58,6 +64,15 @@ web::json::value SimpleTaskInfoV2::toJson() const
     }
     if(lastCheckTimeIsSet_) {
         val[utility::conversions::to_string_t("last_check_time")] = ModelBase::toJson(lastCheckTime_);
+    }
+    if(smLevelIsSet_) {
+        val[utility::conversions::to_string_t("sm_level")] = ModelBase::toJson(smLevel_);
+    }
+    if(smLevelNameEnIsSet_) {
+        val[utility::conversions::to_string_t("sm_level_name_en")] = ModelBase::toJson(smLevelNameEn_);
+    }
+    if(smLevelNameIsSet_) {
+        val[utility::conversions::to_string_t("sm_level_name")] = ModelBase::toJson(smLevelName_);
     }
 
     return val;
@@ -127,6 +142,33 @@ bool SimpleTaskInfoV2::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLastCheckTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sm_level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sm_level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSmLevel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sm_level_name_en"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sm_level_name_en"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSmLevelNameEn(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sm_level_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sm_level_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSmLevelName(refVal);
         }
     }
     return ok;
@@ -278,6 +320,69 @@ bool SimpleTaskInfoV2::lastCheckTimeIsSet() const
 void SimpleTaskInfoV2::unsetlastCheckTime()
 {
     lastCheckTimeIsSet_ = false;
+}
+
+std::string SimpleTaskInfoV2::getSmLevel() const
+{
+    return smLevel_;
+}
+
+void SimpleTaskInfoV2::setSmLevel(const std::string& value)
+{
+    smLevel_ = value;
+    smLevelIsSet_ = true;
+}
+
+bool SimpleTaskInfoV2::smLevelIsSet() const
+{
+    return smLevelIsSet_;
+}
+
+void SimpleTaskInfoV2::unsetsmLevel()
+{
+    smLevelIsSet_ = false;
+}
+
+std::string SimpleTaskInfoV2::getSmLevelNameEn() const
+{
+    return smLevelNameEn_;
+}
+
+void SimpleTaskInfoV2::setSmLevelNameEn(const std::string& value)
+{
+    smLevelNameEn_ = value;
+    smLevelNameEnIsSet_ = true;
+}
+
+bool SimpleTaskInfoV2::smLevelNameEnIsSet() const
+{
+    return smLevelNameEnIsSet_;
+}
+
+void SimpleTaskInfoV2::unsetsmLevelNameEn()
+{
+    smLevelNameEnIsSet_ = false;
+}
+
+std::string SimpleTaskInfoV2::getSmLevelName() const
+{
+    return smLevelName_;
+}
+
+void SimpleTaskInfoV2::setSmLevelName(const std::string& value)
+{
+    smLevelName_ = value;
+    smLevelNameIsSet_ = true;
+}
+
+bool SimpleTaskInfoV2::smLevelNameIsSet() const
+{
+    return smLevelNameIsSet_;
+}
+
+void SimpleTaskInfoV2::unsetsmLevelName()
+{
+    smLevelNameIsSet_ = false;
 }
 
 }

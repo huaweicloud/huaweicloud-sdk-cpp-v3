@@ -1,3 +1,190 @@
+# 3.1.210 2026-10-29
+
+### HuaweiCloud SDK CBR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the API `UpdateOrder`
+  - **ListBackups**
+    - changes of request param
+      - `+ existed_quantity_based_retention_backups`
+  - **ListVault**
+    - changes of request param
+      - `+ availability_zone`
+  - **ListExternalVault**
+    - changes of request param
+      - `+ object_type`
+      - `- objcet_type`
+  - **ListOpLogs**
+    - changes of request param
+      - `+ destination_region`
+      - `+ destination_project_id`
+  - **ListProtectable**
+    - changes of request param
+      - `+ enterprise_project_id`
+  - **ShowVaultResourceInstances**
+    - changes of request param
+      - `+ enterprise_project_id`
+
+### HuaweiCloud SDK CodeArtsCheck
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ListCriterionSetsByLanguage`, `ShowTaskInfoById`, `UpdateCodeGate`, `ShowTasksList`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RunTask**
+    - changes of request param
+      - `+ ref`
+  - **ShowTaskDetail**
+    - changes of response param
+      - `+ review_result`
+      - `+ dismissed_count`
+      - `+ new_suggestion_count`
+      - `+ new_minor_count`
+      - `+ duplicated_files`
+      - `+ solve_count`
+      - `+ new_count`
+      - `+ new_critical_count`
+      - `+ new_major_count`
+  - **UpdateDefectStatus**
+    - changes of request param
+      - `+ approver`
+      - `+ comment`
+      - `+ ignoreType`
+  - **ShowTasksRulesets**
+    - changes of response param
+      - `+ data`
+      - `- info`
+  - **CreateTask**
+    - changes of request param
+      - `+ sm_level`
+  - **ShowTaskListByProjectId**
+    - changes of response param
+      - `+ tasks.sm_level`
+      - `+ tasks.sm_level_name_en`
+      - `+ tasks.sm_level_name`
+  - **ShowTaskCmetrics**
+    - changes of response param
+      - `+ last_check_finish_time`
+  - **ShowTaskDefectsStatistic**
+    - changes of response param
+      - `+ last_check_time`
+      - `+ last_check_finish_time`
+      - `+ status.fixed`
+      - `+ status.solved`
+  - **CheckParameters**
+    - changes of response param
+      - `* : list<TaskCheckParamters> -> list<TaskCheckParameters>`
+  - **ShowTaskDefects**
+    - changes of response param
+      - `+ defects.defect_owner`
+      - `+ defects.rule_id`
+  - **ListTemplateRules**
+    - changes of response param
+      - `* info.rule_config_list.rule_id: int32 -> string`
+      - `* info.rule_config_list: list<RuleConfig> -> list<RuleConfigParam>`
+  - **CheckRulesetParameters**
+    - changes of response param
+      - `* data: list<TaskCheckParamters> -> list<TaskCheckParameters>`
+  - **CreateRuleset**
+    - changes of request param
+      - `* custom_attributes.rules.rule_config_list.rule_id: int32 -> string`
+
+### HuaweiCloud SDK CSMS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `BatchGetSecretValue`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `ListQueryStructuredLogs`, `ListStructuredLogsWithTimeRange`, `UpdateStructTemplate`, `CreateStructTemplate`
+  - **ListLogHistogram**
+    - changes of response param
+      - `* histogram: string -> list<LogCounts>`
+  - **CreateLogStream**
+    - changes of request param
+      - `+ hot_cold_separation`
+      - `+ hot_storage_days`
+  - **ListLogs**
+    - changes of request param
+      - `+ sql_timezone`
+  - **UpdateLogStream**
+    - changes of request param
+      - `+ hot_cold_separation`
+      - `+ hot_storage_days`
+  - **CreateAgencyAccess**
+    - changes of request param
+      - `+ preview_agency_list.agency_accessConfig_id`
+    - changes of response param
+      - `* access_config_type: object -> string`
+      - `+ agency_log_access.agency_accessConfig_id`
+  - **ShowLogConvergeConfig**
+    - changes of response param
+      - `- version`
+  - **UpdateSqlAlarmRule**
+    - changes of request param
+      - `+ condition_expressions`
+    - changes of response param
+      - `+ create_time`
+      - `+ update_time`
+      - `+ condition_expressions`
+      - `+ sql_requests.log_group_name_alias`
+      - `+ sql_requests.log_stream_name_alias`
+  - **CreateSqlAlarmRule**
+    - changes of request param
+      - `+ condition_expressions`
+  - **ListSqlAlarmRules**
+    - changes of response param
+      - `+ sql_alarm_rules.condition_expressions`
+      - `+ sql_alarm_rules.sql_requests.log_group_name_alias`
+      - `+ sql_alarm_rules.sql_requests.log_stream_name_alias`
+  - **UpdateKeywordsAlarmRule**
+    - changes of request param
+      - `+ keywords_requests.conditions`
+    - changes of response param
+      - `+ keywords_requests.conditions`
+      - `+ keywords_requests.log_group_name_alias`
+      - `+ keywords_requests.log_stream_name_alias`
+      - `+ keywords_requests.eps_id`
+      - `+ keywords_requests.time_range`
+  - **CreateKeywordsAlarmRule**
+    - changes of request param
+      - `+ keywords_requests.conditions`
+  - **ListKeywordsAlarmRules**
+    - changes of response param
+      - `+ keywords_alarm_rules.keywords_requests.conditions`
+      - `+ keywords_alarm_rules.keywords_requests.log_group_name_alias`
+      - `+ keywords_alarm_rules.keywords_requests.log_stream_name_alias`
+      - `+ keywords_alarm_rules.keywords_requests.eps_id`
+      - `+ keywords_alarm_rules.keywords_requests.time_range`
+  - **UpdateAccessConfig**
+    - changes of request param
+      - `+ disable_labels_prefix`
+  - **CreateAccessConfig**
+    - changes of request param
+      - `+ disable_labels_prefix`
+
 # 3.1.209 2026-10-22
 
 ### HuaweiCloud SDK CodeArtsDeploy

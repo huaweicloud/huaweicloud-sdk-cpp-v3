@@ -138,6 +138,15 @@ public:
     void unsetresourceIds();
     void setResourceIds(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 存储库可用区信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getAvailabilityZone() const;
+    bool availabilityZoneIsSet() const;
+    void unsetavailabilityZone();
+    void setAvailabilityZone(const std::string& value);
+
 
 protected:
     int32_t limit_;
@@ -162,6 +171,8 @@ protected:
     bool statusIsSet_;
     std::string resourceIds_;
     bool resourceIdsIsSet_;
+    std::string availabilityZone_;
+    bool availabilityZoneIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

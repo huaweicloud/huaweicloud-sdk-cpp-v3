@@ -17,6 +17,15 @@ HttpRequestDef CsmsMeta::genRequestDefForBatchCreateOrDeleteTags() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CsmsMeta::genRequestDefForBatchGetSecretValue() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CsmsMeta::genRequestDefForBatchImportSecrets() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

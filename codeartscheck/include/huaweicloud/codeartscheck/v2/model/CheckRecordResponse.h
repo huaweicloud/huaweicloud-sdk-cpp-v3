@@ -40,7 +40,7 @@ public:
     /// CheckRecordResponse members
 
     /// <summary>
-    /// 历史记录数据
+    /// **参数解释：** 每次扫描的各个问题级别的问题数量。
     /// </summary>
 
     std::vector<CheckRecordDataInfo>& getData();
@@ -49,7 +49,7 @@ public:
     void setData(const std::vector<CheckRecordDataInfo>& value);
 
     /// <summary>
-    /// 总数
+    /// **参数解释：** 扫描次数总数。 **取值范围：** 不涉及。
     /// </summary>
 
     int32_t getTotal() const;

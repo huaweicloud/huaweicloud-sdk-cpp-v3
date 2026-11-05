@@ -20,6 +20,7 @@ public:
     static HttpRequestDef genRequestDefForBatchBindInferApiKeys();
     static HttpRequestDef genRequestDefForBatchBindPoolNodes();
     static HttpRequestDef genRequestDefForBatchCreatePoolTags();
+    static HttpRequestDef genRequestDefForBatchCreateServiceOpens();
     static HttpRequestDef genRequestDefForBatchDeleteInferIntranetConnections();
     static HttpRequestDef genRequestDefForBatchDeleteInferServices();
     static HttpRequestDef genRequestDefForBatchDeletePoolNodes();
@@ -48,6 +49,7 @@ public:
     static HttpRequestDef genRequestDefForCountTrainingJobsByTags();
     static HttpRequestDef genRequestDefForCreateAlgorithm();
     static HttpRequestDef genRequestDefForCreateAlgorithmVersionToGallery();
+    static HttpRequestDef genRequestDefForCreateAuthGrant();
     static HttpRequestDef genRequestDefForCreateAuthorization();
     static HttpRequestDef genRequestDefForCreateDevServer();
     static HttpRequestDef genRequestDefForCreateDevServerJob();
@@ -155,6 +157,7 @@ public:
     static HttpRequestDef genRequestDefForListPools();
     static HttpRequestDef genRequestDefForListResourceFlavors();
     static HttpRequestDef genRequestDefForListScheduledEvents();
+    static HttpRequestDef genRequestDefForListServiceStatuses();
     static HttpRequestDef genRequestDefForListTrainingExperiments();
     static HttpRequestDef genRequestDefForListTrainingJobEvents();
     static HttpRequestDef genRequestDefForListTrainingJobStages();
@@ -169,6 +172,7 @@ public:
     static HttpRequestDef genRequestDefForModifyTrainingQuotas();
     static HttpRequestDef genRequestDefForNotifyTrainingJobInformation();
     static HttpRequestDef genRequestDefForPatchNetwork();
+    static HttpRequestDef genRequestDefForPatchNodeConfig();
     static HttpRequestDef genRequestDefForPatchNodePool();
     static HttpRequestDef genRequestDefForPatchPool();
     static HttpRequestDef genRequestDefForPublishFtArtifacts();
@@ -179,6 +183,7 @@ public:
     static HttpRequestDef genRequestDefForScaleDownHyperinstance();
     static HttpRequestDef genRequestDefForScaleUpHyperinstance();
     static HttpRequestDef genRequestDefForShowAlgorithmByUuid();
+    static HttpRequestDef genRequestDefForShowAuthGrant();
     static HttpRequestDef genRequestDefForShowAuthmodeDetail();
     static HttpRequestDef genRequestDefForShowAutoSearchParamAnalysisResultPath();
     static HttpRequestDef genRequestDefForShowAutoSearchParamsAnalysis();
@@ -254,6 +259,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateWorkspaceQuotas();
     static HttpRequestDef genRequestDefForValidateAuthorization();
     static HttpRequestDef genRequestDefForValidateTrainingJobName();
+    static HttpRequestDef genRequestDefForVerifyAgency();
     static HttpRequestDef genRequestDefForCreateInferDeploymentHpa();
     static HttpRequestDef genRequestDefForDeleteInferDeploymentHpa();
     static HttpRequestDef genRequestDefForListInferDeploymentHpaEvents();

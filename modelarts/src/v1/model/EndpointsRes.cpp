@@ -19,6 +19,7 @@ EndpointsRes::EndpointsRes()
     uri_ = "";
     uriIsSet_ = false;
     keyPairNamesIsSet_ = false;
+    extensionsIsSet_ = false;
 }
 
 EndpointsRes::~EndpointsRes() = default;
@@ -42,6 +43,9 @@ web::json::value EndpointsRes::toJson() const
     }
     if(keyPairNamesIsSet_) {
         val[utility::conversions::to_string_t("key_pair_names")] = ModelBase::toJson(keyPairNames_);
+    }
+    if(extensionsIsSet_) {
+        val[utility::conversions::to_string_t("extensions")] = ModelBase::toJson(extensions_);
     }
 
     return val;
@@ -84,6 +88,15 @@ bool EndpointsRes::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeyPairNames(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("extensions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extensions"));
+        if(!fieldValue.is_null())
+        {
+            std::map<std::string, std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExtensions(refVal);
         }
     }
     return ok;
@@ -172,6 +185,27 @@ bool EndpointsRes::keyPairNamesIsSet() const
 void EndpointsRes::unsetkeyPairNames()
 {
     keyPairNamesIsSet_ = false;
+}
+
+std::map<std::string, std::string>& EndpointsRes::getExtensions()
+{
+    return extensions_;
+}
+
+void EndpointsRes::setExtensions(const std::map<std::string, std::string>& value)
+{
+    extensions_ = value;
+    extensionsIsSet_ = true;
+}
+
+bool EndpointsRes::extensionsIsSet() const
+{
+    return extensionsIsSet_;
+}
+
+void EndpointsRes::unsetextensions()
+{
+    extensionsIsSet_ = false;
 }
 
 }

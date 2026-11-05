@@ -14,6 +14,7 @@ ModelArtsAgencyRequest::ModelArtsAgencyRequest()
 {
     agencyNameSuffix_ = "";
     agencyNameSuffixIsSet_ = false;
+    agencyServicesIsSet_ = false;
 }
 
 ModelArtsAgencyRequest::~ModelArtsAgencyRequest() = default;
@@ -29,6 +30,9 @@ web::json::value ModelArtsAgencyRequest::toJson() const
     if(agencyNameSuffixIsSet_) {
         val[utility::conversions::to_string_t("agency_name_suffix")] = ModelBase::toJson(agencyNameSuffix_);
     }
+    if(agencyServicesIsSet_) {
+        val[utility::conversions::to_string_t("agency_services")] = ModelBase::toJson(agencyServices_);
+    }
 
     return val;
 }
@@ -43,6 +47,15 @@ bool ModelArtsAgencyRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAgencyNameSuffix(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_services"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_services"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AgencyServices> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyServices(refVal);
         }
     }
     return ok;
@@ -68,6 +81,27 @@ bool ModelArtsAgencyRequest::agencyNameSuffixIsSet() const
 void ModelArtsAgencyRequest::unsetagencyNameSuffix()
 {
     agencyNameSuffixIsSet_ = false;
+}
+
+std::vector<AgencyServices>& ModelArtsAgencyRequest::getAgencyServices()
+{
+    return agencyServices_;
+}
+
+void ModelArtsAgencyRequest::setAgencyServices(const std::vector<AgencyServices>& value)
+{
+    agencyServices_ = value;
+    agencyServicesIsSet_ = true;
+}
+
+bool ModelArtsAgencyRequest::agencyServicesIsSet() const
+{
+    return agencyServicesIsSet_;
+}
+
+void ModelArtsAgencyRequest::unsetagencyServices()
+{
+    agencyServicesIsSet_ = false;
 }
 
 }

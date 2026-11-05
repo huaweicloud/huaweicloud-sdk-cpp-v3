@@ -23,9 +23,9 @@ DevServerTaskResponse::DevServerTaskResponse()
     cloudServerIsSet_ = false;
     message_ = "";
     messageIsSet_ = false;
-    createAt_ = "";
+    createAt_ = 0L;
     createAtIsSet_ = false;
-    updateAt_ = "";
+    updateAt_ = 0L;
     updateAtIsSet_ = false;
 }
 
@@ -128,7 +128,7 @@ bool DevServerTaskResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_at"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateAt(refVal);
         }
@@ -137,7 +137,7 @@ bool DevServerTaskResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_at"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdateAt(refVal);
         }
@@ -272,12 +272,12 @@ void DevServerTaskResponse::unsetmessage()
     messageIsSet_ = false;
 }
 
-std::string DevServerTaskResponse::getCreateAt() const
+int64_t DevServerTaskResponse::getCreateAt() const
 {
     return createAt_;
 }
 
-void DevServerTaskResponse::setCreateAt(const std::string& value)
+void DevServerTaskResponse::setCreateAt(int64_t value)
 {
     createAt_ = value;
     createAtIsSet_ = true;
@@ -293,12 +293,12 @@ void DevServerTaskResponse::unsetcreateAt()
     createAtIsSet_ = false;
 }
 
-std::string DevServerTaskResponse::getUpdateAt() const
+int64_t DevServerTaskResponse::getUpdateAt() const
 {
     return updateAt_;
 }
 
-void DevServerTaskResponse::setUpdateAt(const std::string& value)
+void DevServerTaskResponse::setUpdateAt(int64_t value)
 {
     updateAt_ = value;
     updateAtIsSet_ = true;

@@ -39,7 +39,7 @@ bool NodeconfigSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configs"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            NodeconfigSpec_configs refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfigs(refVal);
         }
@@ -48,12 +48,12 @@ bool NodeconfigSpec::fromJson(const web::json::value& val)
 }
 
 
-Object NodeconfigSpec::getConfigs() const
+NodeconfigSpec_configs NodeconfigSpec::getConfigs() const
 {
     return configs_;
 }
 
-void NodeconfigSpec::setConfigs(const Object& value)
+void NodeconfigSpec::setConfigs(const NodeconfigSpec_configs& value)
 {
     configs_ = value;
     configsIsSet_ = true;

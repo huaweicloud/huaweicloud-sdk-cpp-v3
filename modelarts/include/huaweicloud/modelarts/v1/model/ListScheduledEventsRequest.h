@@ -49,7 +49,7 @@ public:
     void setWorkspaceId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：事件状态。 **约束限制**：不涉及。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 **默认取值**：不涉及。
+    /// **参数解释**：事件状态。 **约束限制**：不涉及。 **取值范围**：可选择值如下： - inquiring: 待授权 - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 **默认取值**：不涉及。
     /// </summary>
 
     std::vector<std::string>& getState();
@@ -67,13 +67,13 @@ public:
     void setType(const std::vector<std::string>& value);
 
     /// <summary>
-    /// **参数解释**：计划事件ID，取值查询计划事件列表接口的event_id字段。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，长度小于63。 **取值范围**：不涉及。 **默认取值**：不涉及。
+    /// **参数解释**：计划事件ID，取值查询计划事件列表接口的event_id字段。 支持批量筛选，批量筛选时传递多个参数，且最多支持100个。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，长度小于63。 **取值范围**：不涉及。 **默认取值**：不涉及。
     /// </summary>
 
-    std::string getId() const;
+    std::vector<std::string>& getId();
     bool idIsSet() const;
     void unsetid();
-    void setId(const std::string& value);
+    void setId(const std::vector<std::string>& value);
 
     /// <summary>
     /// **参数解释**：节点名称，取值自节点详情的metadata.name字段。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。 **默认取值**：不涉及。
@@ -137,7 +137,7 @@ protected:
     bool stateIsSet_;
     std::vector<std::string> type_;
     bool typeIsSet_;
-    std::string id_;
+    std::vector<std::string> id_;
     bool idIsSet_;
     std::string nodeName_;
     bool nodeNameIsSet_;

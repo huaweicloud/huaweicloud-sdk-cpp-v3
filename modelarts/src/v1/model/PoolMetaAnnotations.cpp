@@ -34,6 +34,8 @@ PoolMetaAnnotations::PoolMetaAnnotations()
     osModelartsTmsTagsIsSet_ = false;
     osModelartsPoolSchedulerQueueStrategy_ = "";
     osModelartsPoolSchedulerQueueStrategyIsSet_ = false;
+    osModelartsPoolSchedulerQueueStrategyConfig_ = "";
+    osModelartsPoolSchedulerQueueStrategyConfigIsSet_ = false;
     osModelartsPoolSubpoolsCount_ = "";
     osModelartsPoolSubpoolsCountIsSet_ = false;
     osModelartsTenantDomainName_ = "";
@@ -84,6 +86,9 @@ web::json::value PoolMetaAnnotations::toJson() const
     }
     if(osModelartsPoolSchedulerQueueStrategyIsSet_) {
         val[utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy")] = ModelBase::toJson(osModelartsPoolSchedulerQueueStrategy_);
+    }
+    if(osModelartsPoolSchedulerQueueStrategyConfigIsSet_) {
+        val[utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy.config")] = ModelBase::toJson(osModelartsPoolSchedulerQueueStrategyConfig_);
     }
     if(osModelartsPoolSubpoolsCountIsSet_) {
         val[utility::conversions::to_string_t("os.modelarts.pool/subpools.count")] = ModelBase::toJson(osModelartsPoolSubpoolsCount_);
@@ -198,6 +203,15 @@ bool PoolMetaAnnotations::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOsModelartsPoolSchedulerQueueStrategy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy.config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy.config"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOsModelartsPoolSchedulerQueueStrategyConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os.modelarts.pool/subpools.count"))) {
@@ -460,6 +474,27 @@ bool PoolMetaAnnotations::osModelartsPoolSchedulerQueueStrategyIsSet() const
 void PoolMetaAnnotations::unsetosModelartsPoolSchedulerQueueStrategy()
 {
     osModelartsPoolSchedulerQueueStrategyIsSet_ = false;
+}
+
+std::string PoolMetaAnnotations::getOsModelartsPoolSchedulerQueueStrategyConfig() const
+{
+    return osModelartsPoolSchedulerQueueStrategyConfig_;
+}
+
+void PoolMetaAnnotations::setOsModelartsPoolSchedulerQueueStrategyConfig(const std::string& value)
+{
+    osModelartsPoolSchedulerQueueStrategyConfig_ = value;
+    osModelartsPoolSchedulerQueueStrategyConfigIsSet_ = true;
+}
+
+bool PoolMetaAnnotations::osModelartsPoolSchedulerQueueStrategyConfigIsSet() const
+{
+    return osModelartsPoolSchedulerQueueStrategyConfigIsSet_;
+}
+
+void PoolMetaAnnotations::unsetosModelartsPoolSchedulerQueueStrategyConfig()
+{
+    osModelartsPoolSchedulerQueueStrategyConfigIsSet_ = false;
 }
 
 std::string PoolMetaAnnotations::getOsModelartsPoolSubpoolsCount() const

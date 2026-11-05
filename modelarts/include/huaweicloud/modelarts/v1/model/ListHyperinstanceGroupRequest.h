@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -37,8 +38,52 @@ public:
     /////////////////////////////////////////////
     /// ListHyperinstanceGroupRequest members
 
+    /// <summary>
+    /// **参数解释**：每一页显示实例的数量。 **约束限制**：不涉及。 **取值范围**：[10,20,50]。 **默认取值**：10。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// **参数解释**：分页记录的起始位置偏移量。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：0。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// **参数解释**：排序的字段，多个字段使用(“,”)逗号分隔。 **约束限制**：不涉及。 **取值范围**：长度限制为128个字符，支持大小写字母、数字、中划线、下划线和逗号。 **默认取值**：不涉及。
+    /// </summary>
+
+    std::string getSortKey() const;
+    bool sortKeyIsSet() const;
+    void unsetsortKey();
+    void setSortKey(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：实例排序方式。 **约束限制**：不涉及。 **取值范围**： - ASC：升序 - DESC：降序  **默认取值**：DESC。
+    /// </summary>
+
+    std::string getSortDir() const;
+    bool sortDirIsSet() const;
+    void unsetsortDir();
+    void setSortDir(const std::string& value);
+
 
 protected:
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
+    std::string sortKey_;
+    bool sortKeyIsSet_;
+    std::string sortDir_;
+    bool sortDirIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

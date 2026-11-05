@@ -370,6 +370,23 @@ public:
     static HttpRequestDef genRequestDefForValidateInstanceConnection();
     static HttpRequestDef genRequestDefForListSqlStatistics();
     static HttpRequestDef genRequestDefForResetViewSqlStatistics();
+    static HttpRequestDef genRequestDefForCreateSupabaseApplication();
+    static HttpRequestDef genRequestDefForDeleteSupabaseApplication();
+    static HttpRequestDef genRequestDefForListAiApplications();
+    static HttpRequestDef genRequestDefForListSupabaseApplicationApiKeys();
+    static HttpRequestDef genRequestDefForListSupabaseApplicationFlavors();
+    static HttpRequestDef genRequestDefForModifySupabaseApplicationAuthConfig();
+    static HttpRequestDef genRequestDefForModifySupabaseApplicationPassword();
+    static HttpRequestDef genRequestDefForModifySupabaseApplicationStorage();
+    static HttpRequestDef genRequestDefForResetSupabaseApplicationApiKey();
+    static HttpRequestDef genRequestDefForRestartSupabaseApplication();
+    static HttpRequestDef genRequestDefForShowSupabaseApplication();
+    static HttpRequestDef genRequestDefForShowSupabaseApplicationApiKeyValue();
+    static HttpRequestDef genRequestDefForShowSupabaseApplicationAuthConfig();
+    static HttpRequestDef genRequestDefForStartSupabaseApplication();
+    static HttpRequestDef genRequestDefForStopSupabaseApplication();
+    static HttpRequestDef genRequestDefForSwitchSupabaseApplicationEipBind();
+    static HttpRequestDef genRequestDefForSwitchSupabaseApplicationSsl();
     static HttpRequestDef genRequestDefForGetAvailableVpcs();
 };
 

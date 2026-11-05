@@ -16,6 +16,8 @@ NetworkMetadata::NetworkMetadata()
     nameIsSet_ = false;
     creationTimestamp_ = "";
     creationTimestampIsSet_ = false;
+    deletionTimestamp_ = "";
+    deletionTimestampIsSet_ = false;
     labelsIsSet_ = false;
     annotationsIsSet_ = false;
 }
@@ -35,6 +37,9 @@ web::json::value NetworkMetadata::toJson() const
     }
     if(creationTimestampIsSet_) {
         val[utility::conversions::to_string_t("creationTimestamp")] = ModelBase::toJson(creationTimestamp_);
+    }
+    if(deletionTimestampIsSet_) {
+        val[utility::conversions::to_string_t("deletionTimestamp")] = ModelBase::toJson(deletionTimestamp_);
     }
     if(labelsIsSet_) {
         val[utility::conversions::to_string_t("labels")] = ModelBase::toJson(labels_);
@@ -65,6 +70,15 @@ bool NetworkMetadata::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreationTimestamp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("deletionTimestamp"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deletionTimestamp"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeletionTimestamp(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("labels"))) {
@@ -129,6 +143,27 @@ bool NetworkMetadata::creationTimestampIsSet() const
 void NetworkMetadata::unsetcreationTimestamp()
 {
     creationTimestampIsSet_ = false;
+}
+
+std::string NetworkMetadata::getDeletionTimestamp() const
+{
+    return deletionTimestamp_;
+}
+
+void NetworkMetadata::setDeletionTimestamp(const std::string& value)
+{
+    deletionTimestamp_ = value;
+    deletionTimestampIsSet_ = true;
+}
+
+bool NetworkMetadata::deletionTimestampIsSet() const
+{
+    return deletionTimestampIsSet_;
+}
+
+void NetworkMetadata::unsetdeletionTimestamp()
+{
+    deletionTimestampIsSet_ = false;
 }
 
 NetworkMetadataLabels NetworkMetadata::getLabels() const

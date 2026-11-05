@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/modelarts/v1/model/Endpoints.h>
 #include <huaweicloud/modelarts/v1/model/EndpointsRes.h>
 #include <huaweicloud/modelarts/v1/model/CloudServer.h>
 #include <huaweicloud/modelarts/v1/model/ServerImageResponse.h>
@@ -80,15 +79,6 @@ public:
     bool cloudServerIsSet() const;
     void unsetcloudServer();
     void setCloudServer(const CloudServer& value);
-
-    /// <summary>
-    /// **参数解释**：实例私有IP信息。
-    /// </summary>
-
-    std::vector<Endpoints>& getEndpointsResponse();
-    bool endpointsResponseIsSet() const;
-    void unsetendpointsResponse();
-    void setEndpointsResponse(const std::vector<Endpoints>& value);
 
     /// <summary>
     /// **参数解释**：实例规格名称。 **取值范围**：^.{1,128}$。
@@ -217,8 +207,6 @@ protected:
     bool chargingModeIsSet_;
     CloudServer cloudServer_;
     bool cloudServerIsSet_;
-    std::vector<Endpoints> endpointsResponse_;
-    bool endpointsResponseIsSet_;
     std::string flavor_;
     bool flavorIsSet_;
     std::string id_;

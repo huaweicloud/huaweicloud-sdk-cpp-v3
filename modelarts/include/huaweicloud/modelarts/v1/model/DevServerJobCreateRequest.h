@@ -50,7 +50,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：任务描述。 **约束限制**：^[-_.a-zA-Z0-9]{1,64}$。 **取值范围**：不涉及。 **默认取值**：不涉及。
+    /// **参数解释**：任务描述。 **约束限制**：长度限制为512字符，不可包含特殊字符&amp;&lt;&gt;\&quot;&#39;/。 **取值范围**：不涉及。 **默认取值**：不涉及。
     /// </summary>
 
     std::string getDescription() const;

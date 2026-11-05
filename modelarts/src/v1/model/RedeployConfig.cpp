@@ -14,7 +14,7 @@ RedeployConfig::RedeployConfig()
 {
     type_ = "";
     typeIsSet_ = false;
-    autoFlow_ = "";
+    autoFlow_ = false;
     autoFlowIsSet_ = false;
 }
 
@@ -54,7 +54,7 @@ bool RedeployConfig::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("autoFlow"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAutoFlow(refVal);
         }
@@ -84,12 +84,12 @@ void RedeployConfig::unsettype()
     typeIsSet_ = false;
 }
 
-std::string RedeployConfig::getAutoFlow() const
+bool RedeployConfig::isAutoFlow() const
 {
     return autoFlow_;
 }
 
-void RedeployConfig::setAutoFlow(const std::string& value)
+void RedeployConfig::setAutoFlow(bool value)
 {
     autoFlow_ = value;
     autoFlowIsSet_ = true;

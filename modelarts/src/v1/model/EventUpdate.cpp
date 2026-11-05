@@ -15,6 +15,7 @@ EventUpdate::EventUpdate()
     notBefore_ = "";
     notBeforeIsSet_ = false;
     redeployConfigIsSet_ = false;
+    instanceIdIsSet_ = false;
 }
 
 EventUpdate::~EventUpdate() = default;
@@ -32,6 +33,9 @@ web::json::value EventUpdate::toJson() const
     }
     if(redeployConfigIsSet_) {
         val[utility::conversions::to_string_t("redeployConfig")] = ModelBase::toJson(redeployConfig_);
+    }
+    if(instanceIdIsSet_) {
+        val[utility::conversions::to_string_t("instanceId")] = ModelBase::toJson(instanceId_);
     }
 
     return val;
@@ -56,6 +60,15 @@ bool EventUpdate::fromJson(const web::json::value& val)
             RedeployConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRedeployConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instanceId"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instanceId"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceId(refVal);
         }
     }
     return ok;
@@ -102,6 +115,27 @@ bool EventUpdate::redeployConfigIsSet() const
 void EventUpdate::unsetredeployConfig()
 {
     redeployConfigIsSet_ = false;
+}
+
+std::vector<std::string>& EventUpdate::getInstanceId()
+{
+    return instanceId_;
+}
+
+void EventUpdate::setInstanceId(const std::vector<std::string>& value)
+{
+    instanceId_ = value;
+    instanceIdIsSet_ = true;
+}
+
+bool EventUpdate::instanceIdIsSet() const
+{
+    return instanceIdIsSet_;
+}
+
+void EventUpdate::unsetinstanceId()
+{
+    instanceIdIsSet_ = false;
 }
 
 }

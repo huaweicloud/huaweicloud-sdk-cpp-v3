@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/modelarts/v1/model/NodeconfigSpec_configs.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,17 +39,17 @@ public:
     /// NodeconfigSpec members
 
     /// <summary>
-    /// **参数解释**： 节点自定义配置；当前支持节点绑核、是否启用缓存清理、是否启用透明大页。 \&quot;configs\&quot;: {    \&quot;cpu_manager\&quot;: {     \&quot;mode\&quot;: \&quot;static/none\&quot; //static为启用绑核, none为不启用绑核    },    \&quot;drop_cache\&quot;: {     \&quot;mode\&quot;: \&quot;enable/disable\&quot; // enable启用缓存清理    },    \&quot;transparent_hugepage\&quot;: {     \&quot;mode\&quot;: \&quot;always/madvise/never\&quot; // always为启用透明大页，never为关闭透明大页，madvice交给系统选择。    } }
+    /// 
     /// </summary>
 
-    Object getConfigs() const;
+    NodeconfigSpec_configs getConfigs() const;
     bool configsIsSet() const;
     void unsetconfigs();
-    void setConfigs(const Object& value);
+    void setConfigs(const NodeconfigSpec_configs& value);
 
 
 protected:
-    Object configs_;
+    NodeconfigSpec_configs configs_;
     bool configsIsSet_;
 
 };

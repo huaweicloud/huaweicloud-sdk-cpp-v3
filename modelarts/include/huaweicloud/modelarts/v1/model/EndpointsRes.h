@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <map>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -75,6 +76,15 @@ public:
     void unsetkeyPairNames();
     void setKeyPairNames(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// **参数解释**：通过应用专属URL直接打开应用进入远程开发模式。包含应用的各种扩展配置。key表示扩展配置名称，value表示扩展配置值。
+    /// </summary>
+
+    std::map<std::string, std::string>& getExtensions();
+    bool extensionsIsSet() const;
+    void unsetextensions();
+    void setExtensions(const std::map<std::string, std::string>& value);
+
 
 protected:
     std::string devService_;
@@ -85,6 +95,8 @@ protected:
     bool uriIsSet_;
     std::vector<std::string> keyPairNames_;
     bool keyPairNamesIsSet_;
+    std::map<std::string, std::string> extensions_;
+    bool extensionsIsSet_;
 
 };
 

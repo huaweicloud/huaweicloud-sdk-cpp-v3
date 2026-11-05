@@ -16,7 +16,6 @@ ListScheduledEventsRequest::ListScheduledEventsRequest()
     workspaceIdIsSet_ = false;
     stateIsSet_ = false;
     typeIsSet_ = false;
-    id_ = "";
     idIsSet_ = false;
     nodeName_ = "";
     nodeNameIsSet_ = false;
@@ -110,7 +109,7 @@ bool ListScheduledEventsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
         }
@@ -236,12 +235,12 @@ void ListScheduledEventsRequest::unsettype()
     typeIsSet_ = false;
 }
 
-std::string ListScheduledEventsRequest::getId() const
+std::vector<std::string>& ListScheduledEventsRequest::getId()
 {
     return id_;
 }
 
-void ListScheduledEventsRequest::setId(const std::string& value)
+void ListScheduledEventsRequest::setId(const std::vector<std::string>& value)
 {
     id_ = value;
     idIsSet_ = true;

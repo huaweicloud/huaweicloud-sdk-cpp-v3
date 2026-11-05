@@ -129,13 +129,22 @@ public:
     void setOsModelartsTmsTags(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：资源池调度队列的策略，用于定义任务调度的规则。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+    /// **参数解释**：资源池调度队列的策略，用于定义任务调度的规则。 **取值范围**：枚举：FIFO、Range、Step、Rank。
     /// </summary>
 
     std::string getOsModelartsPoolSchedulerQueueStrategy() const;
     bool osModelartsPoolSchedulerQueueStrategyIsSet() const;
     void unsetosModelartsPoolSchedulerQueueStrategy();
     void setOsModelartsPoolSchedulerQueueStrategy(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：资源池的调度策略配置。 **约束限制**：仅当调度策略为Step或Rank时生效。 **取值范围**：Json字符串，自行配置，示例如下： - Step: {\&quot;step_config\&quot;:{\&quot;timeout\&quot;:300}} - Rank: {\&quot;rank_config\&quot;:[{\&quot;max_priority\&quot;:3,\&quot;min_priority\&quot;:3,\&quot;rank_strategy\&quot;:\&quot;Step\&quot;,\&quot;step_config\&quot;:{\&quot;timeout\&quot;:300}},{\&quot;max_priority\&quot;:2,\&quot;min_priority\&quot;:1,\&quot;rank_strategy\&quot;:\&quot;Range\&quot;}]} **默认取值**：不涉及。
+    /// </summary>
+
+    std::string getOsModelartsPoolSchedulerQueueStrategyConfig() const;
+    bool osModelartsPoolSchedulerQueueStrategyConfigIsSet() const;
+    void unsetosModelartsPoolSchedulerQueueStrategyConfig();
+    void setOsModelartsPoolSchedulerQueueStrategyConfig(const std::string& value);
 
     /// <summary>
     /// **参数解释**：资源池包含的逻辑子池的数量。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
@@ -188,6 +197,8 @@ protected:
     bool osModelartsTmsTagsIsSet_;
     std::string osModelartsPoolSchedulerQueueStrategy_;
     bool osModelartsPoolSchedulerQueueStrategyIsSet_;
+    std::string osModelartsPoolSchedulerQueueStrategyConfig_;
+    bool osModelartsPoolSchedulerQueueStrategyConfigIsSet_;
     std::string osModelartsPoolSubpoolsCount_;
     bool osModelartsPoolSubpoolsCountIsSet_;
     std::string osModelartsTenantDomainName_;

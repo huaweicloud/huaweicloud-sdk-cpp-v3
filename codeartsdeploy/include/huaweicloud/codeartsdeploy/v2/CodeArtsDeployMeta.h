@@ -78,6 +78,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateHostGroupPermissions();
     static HttpRequestDef genRequestDefForListTaskSuccessRate();
     static HttpRequestDef genRequestDefForShowProjectSuccessRate();
+    static HttpRequestDef genRequestDefForShowTaskLogs();
 };
 
 }

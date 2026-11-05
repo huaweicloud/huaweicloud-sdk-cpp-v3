@@ -2521,6 +2521,46 @@ std::shared_ptr<ShowProjectSuccessRateResponse> CodeArtsDeployClient::showProjec
 
     return localVarResult;
 }
+std::shared_ptr<ShowTaskLogsResponse> CodeArtsDeployClient::showTaskLogs(ShowTaskLogsRequest &request)
+{
+    std::string localVarPath = "/v1/applications/{app_id}/records/{record_id}/logs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["app_id"] = parameterToString(request.getAppId());
+    localVarPathParams["record_id"] = parameterToString(request.getRecordId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.endOffsetIsSet()) {
+        localVarQueryParams["end_offset"] = parameterToString(request.getEndOffset());
+    }
+    if (request.stepIdIsSet()) {
+        localVarQueryParams["step_id"] = parameterToString(request.getStepId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsDeployMeta::genRequestDefForShowTaskLogs());
+
+    std::shared_ptr<ShowTaskLogsResponse> localVarResult = std::make_shared<ShowTaskLogsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
 std::string CodeArtsDeployClient::parameterToString(utility::string_t value)
 {

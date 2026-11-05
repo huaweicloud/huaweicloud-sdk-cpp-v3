@@ -16,22 +16,14 @@ ScheduledEvent::ScheduledEvent()
     idIsSet_ = false;
     catalog_ = "";
     catalogIsSet_ = false;
+    isHyperNode_ = "";
+    isHyperNodeIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     state_ = "";
     stateIsSet_ = false;
-    instanceType_ = "";
-    instanceTypeIsSet_ = false;
-    instanceId_ = "";
-    instanceIdIsSet_ = false;
-    nodeName_ = "";
-    nodeNameIsSet_ = false;
-    poolName_ = "";
-    poolNameIsSet_ = false;
-    poolDisplayName_ = "";
-    poolDisplayNameIsSet_ = false;
     publishTime_ = "";
     publishTimeIsSet_ = false;
     startTime_ = "";
@@ -42,11 +34,27 @@ ScheduledEvent::ScheduledEvent()
     notBeforeIsSet_ = false;
     probeMsg_ = "";
     probeMsgIsSet_ = false;
-    jobProgress_ = "";
-    jobProgressIsSet_ = false;
+    executeOptionsIsSet_ = false;
     redeployTypeIsSet_ = false;
+    autoRecoveryCheckTime_ = "";
+    autoRecoveryCheckTimeIsSet_ = false;
+    nodesIsSet_ = false;
+    instanceId_ = "";
+    instanceIdIsSet_ = false;
+    nodeName_ = "";
+    nodeNameIsSet_ = false;
+    instanceType_ = "";
+    instanceTypeIsSet_ = false;
     underLyingInstanceId_ = "";
     underLyingInstanceIdIsSet_ = false;
+    flavorSupportRedeploy_ = false;
+    flavorSupportRedeployIsSet_ = false;
+    poolName_ = "";
+    poolNameIsSet_ = false;
+    poolDisplayName_ = "";
+    poolDisplayNameIsSet_ = false;
+    jobProgress_ = "";
+    jobProgressIsSet_ = false;
 }
 
 ScheduledEvent::~ScheduledEvent() = default;
@@ -65,6 +73,9 @@ web::json::value ScheduledEvent::toJson() const
     if(catalogIsSet_) {
         val[utility::conversions::to_string_t("catalog")] = ModelBase::toJson(catalog_);
     }
+    if(isHyperNodeIsSet_) {
+        val[utility::conversions::to_string_t("isHyperNode")] = ModelBase::toJson(isHyperNode_);
+    }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
@@ -73,21 +84,6 @@ web::json::value ScheduledEvent::toJson() const
     }
     if(stateIsSet_) {
         val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
-    }
-    if(instanceTypeIsSet_) {
-        val[utility::conversions::to_string_t("instanceType")] = ModelBase::toJson(instanceType_);
-    }
-    if(instanceIdIsSet_) {
-        val[utility::conversions::to_string_t("instanceId")] = ModelBase::toJson(instanceId_);
-    }
-    if(nodeNameIsSet_) {
-        val[utility::conversions::to_string_t("nodeName")] = ModelBase::toJson(nodeName_);
-    }
-    if(poolNameIsSet_) {
-        val[utility::conversions::to_string_t("poolName")] = ModelBase::toJson(poolName_);
-    }
-    if(poolDisplayNameIsSet_) {
-        val[utility::conversions::to_string_t("poolDisplayName")] = ModelBase::toJson(poolDisplayName_);
     }
     if(publishTimeIsSet_) {
         val[utility::conversions::to_string_t("publishTime")] = ModelBase::toJson(publishTime_);
@@ -104,14 +100,41 @@ web::json::value ScheduledEvent::toJson() const
     if(probeMsgIsSet_) {
         val[utility::conversions::to_string_t("probeMsg")] = ModelBase::toJson(probeMsg_);
     }
-    if(jobProgressIsSet_) {
-        val[utility::conversions::to_string_t("jobProgress")] = ModelBase::toJson(jobProgress_);
+    if(executeOptionsIsSet_) {
+        val[utility::conversions::to_string_t("executeOptions")] = ModelBase::toJson(executeOptions_);
     }
     if(redeployTypeIsSet_) {
         val[utility::conversions::to_string_t("redeployType")] = ModelBase::toJson(redeployType_);
     }
+    if(autoRecoveryCheckTimeIsSet_) {
+        val[utility::conversions::to_string_t("autoRecoveryCheckTime")] = ModelBase::toJson(autoRecoveryCheckTime_);
+    }
+    if(nodesIsSet_) {
+        val[utility::conversions::to_string_t("nodes")] = ModelBase::toJson(nodes_);
+    }
+    if(instanceIdIsSet_) {
+        val[utility::conversions::to_string_t("instanceId")] = ModelBase::toJson(instanceId_);
+    }
+    if(nodeNameIsSet_) {
+        val[utility::conversions::to_string_t("nodeName")] = ModelBase::toJson(nodeName_);
+    }
+    if(instanceTypeIsSet_) {
+        val[utility::conversions::to_string_t("instanceType")] = ModelBase::toJson(instanceType_);
+    }
     if(underLyingInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("underLyingInstanceId")] = ModelBase::toJson(underLyingInstanceId_);
+    }
+    if(flavorSupportRedeployIsSet_) {
+        val[utility::conversions::to_string_t("flavorSupportRedeploy")] = ModelBase::toJson(flavorSupportRedeploy_);
+    }
+    if(poolNameIsSet_) {
+        val[utility::conversions::to_string_t("poolName")] = ModelBase::toJson(poolName_);
+    }
+    if(poolDisplayNameIsSet_) {
+        val[utility::conversions::to_string_t("poolDisplayName")] = ModelBase::toJson(poolDisplayName_);
+    }
+    if(jobProgressIsSet_) {
+        val[utility::conversions::to_string_t("jobProgress")] = ModelBase::toJson(jobProgress_);
     }
 
     return val;
@@ -136,6 +159,15 @@ bool ScheduledEvent::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCatalog(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("isHyperNode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("isHyperNode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsHyperNode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("type"))) {
@@ -163,51 +195,6 @@ bool ScheduledEvent::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setState(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("instanceType"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instanceType"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstanceType(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("instanceId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instanceId"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstanceId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("nodeName"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeName"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setNodeName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("poolName"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("poolName"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPoolName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("poolDisplayName"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("poolDisplayName"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPoolDisplayName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("publishTime"))) {
@@ -255,13 +242,13 @@ bool ScheduledEvent::fromJson(const web::json::value& val)
             setProbeMsg(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("jobProgress"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("jobProgress"));
+    if(val.has_field(utility::conversions::to_string_t("executeOptions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("executeOptions"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            ExecuteOptions refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setJobProgress(refVal);
+            setExecuteOptions(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("redeployType"))) {
@@ -273,6 +260,51 @@ bool ScheduledEvent::fromJson(const web::json::value& val)
             setRedeployType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("autoRecoveryCheckTime"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("autoRecoveryCheckTime"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoRecoveryCheckTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nodes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodes"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<NodeEvent> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instanceId"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instanceId"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nodeName"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nodeName"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodeName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instanceType"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instanceType"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceType(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("underLyingInstanceId"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("underLyingInstanceId"));
         if(!fieldValue.is_null())
@@ -280,6 +312,42 @@ bool ScheduledEvent::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUnderLyingInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("flavorSupportRedeploy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flavorSupportRedeploy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFlavorSupportRedeploy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("poolName"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("poolName"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPoolName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("poolDisplayName"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("poolDisplayName"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPoolDisplayName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("jobProgress"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("jobProgress"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobProgress(refVal);
         }
     }
     return ok;
@@ -326,6 +394,27 @@ bool ScheduledEvent::catalogIsSet() const
 void ScheduledEvent::unsetcatalog()
 {
     catalogIsSet_ = false;
+}
+
+std::string ScheduledEvent::getIsHyperNode() const
+{
+    return isHyperNode_;
+}
+
+void ScheduledEvent::setIsHyperNode(const std::string& value)
+{
+    isHyperNode_ = value;
+    isHyperNodeIsSet_ = true;
+}
+
+bool ScheduledEvent::isHyperNodeIsSet() const
+{
+    return isHyperNodeIsSet_;
+}
+
+void ScheduledEvent::unsetisHyperNode()
+{
+    isHyperNodeIsSet_ = false;
 }
 
 std::string ScheduledEvent::getType() const
@@ -389,111 +478,6 @@ bool ScheduledEvent::stateIsSet() const
 void ScheduledEvent::unsetstate()
 {
     stateIsSet_ = false;
-}
-
-std::string ScheduledEvent::getInstanceType() const
-{
-    return instanceType_;
-}
-
-void ScheduledEvent::setInstanceType(const std::string& value)
-{
-    instanceType_ = value;
-    instanceTypeIsSet_ = true;
-}
-
-bool ScheduledEvent::instanceTypeIsSet() const
-{
-    return instanceTypeIsSet_;
-}
-
-void ScheduledEvent::unsetinstanceType()
-{
-    instanceTypeIsSet_ = false;
-}
-
-std::string ScheduledEvent::getInstanceId() const
-{
-    return instanceId_;
-}
-
-void ScheduledEvent::setInstanceId(const std::string& value)
-{
-    instanceId_ = value;
-    instanceIdIsSet_ = true;
-}
-
-bool ScheduledEvent::instanceIdIsSet() const
-{
-    return instanceIdIsSet_;
-}
-
-void ScheduledEvent::unsetinstanceId()
-{
-    instanceIdIsSet_ = false;
-}
-
-std::string ScheduledEvent::getNodeName() const
-{
-    return nodeName_;
-}
-
-void ScheduledEvent::setNodeName(const std::string& value)
-{
-    nodeName_ = value;
-    nodeNameIsSet_ = true;
-}
-
-bool ScheduledEvent::nodeNameIsSet() const
-{
-    return nodeNameIsSet_;
-}
-
-void ScheduledEvent::unsetnodeName()
-{
-    nodeNameIsSet_ = false;
-}
-
-std::string ScheduledEvent::getPoolName() const
-{
-    return poolName_;
-}
-
-void ScheduledEvent::setPoolName(const std::string& value)
-{
-    poolName_ = value;
-    poolNameIsSet_ = true;
-}
-
-bool ScheduledEvent::poolNameIsSet() const
-{
-    return poolNameIsSet_;
-}
-
-void ScheduledEvent::unsetpoolName()
-{
-    poolNameIsSet_ = false;
-}
-
-std::string ScheduledEvent::getPoolDisplayName() const
-{
-    return poolDisplayName_;
-}
-
-void ScheduledEvent::setPoolDisplayName(const std::string& value)
-{
-    poolDisplayName_ = value;
-    poolDisplayNameIsSet_ = true;
-}
-
-bool ScheduledEvent::poolDisplayNameIsSet() const
-{
-    return poolDisplayNameIsSet_;
-}
-
-void ScheduledEvent::unsetpoolDisplayName()
-{
-    poolDisplayNameIsSet_ = false;
 }
 
 std::string ScheduledEvent::getPublishTime() const
@@ -601,25 +585,25 @@ void ScheduledEvent::unsetprobeMsg()
     probeMsgIsSet_ = false;
 }
 
-std::string ScheduledEvent::getJobProgress() const
+ExecuteOptions ScheduledEvent::getExecuteOptions() const
 {
-    return jobProgress_;
+    return executeOptions_;
 }
 
-void ScheduledEvent::setJobProgress(const std::string& value)
+void ScheduledEvent::setExecuteOptions(const ExecuteOptions& value)
 {
-    jobProgress_ = value;
-    jobProgressIsSet_ = true;
+    executeOptions_ = value;
+    executeOptionsIsSet_ = true;
 }
 
-bool ScheduledEvent::jobProgressIsSet() const
+bool ScheduledEvent::executeOptionsIsSet() const
 {
-    return jobProgressIsSet_;
+    return executeOptionsIsSet_;
 }
 
-void ScheduledEvent::unsetjobProgress()
+void ScheduledEvent::unsetexecuteOptions()
 {
-    jobProgressIsSet_ = false;
+    executeOptionsIsSet_ = false;
 }
 
 std::vector<std::string>& ScheduledEvent::getRedeployType()
@@ -643,6 +627,111 @@ void ScheduledEvent::unsetredeployType()
     redeployTypeIsSet_ = false;
 }
 
+std::string ScheduledEvent::getAutoRecoveryCheckTime() const
+{
+    return autoRecoveryCheckTime_;
+}
+
+void ScheduledEvent::setAutoRecoveryCheckTime(const std::string& value)
+{
+    autoRecoveryCheckTime_ = value;
+    autoRecoveryCheckTimeIsSet_ = true;
+}
+
+bool ScheduledEvent::autoRecoveryCheckTimeIsSet() const
+{
+    return autoRecoveryCheckTimeIsSet_;
+}
+
+void ScheduledEvent::unsetautoRecoveryCheckTime()
+{
+    autoRecoveryCheckTimeIsSet_ = false;
+}
+
+std::vector<NodeEvent>& ScheduledEvent::getNodes()
+{
+    return nodes_;
+}
+
+void ScheduledEvent::setNodes(const std::vector<NodeEvent>& value)
+{
+    nodes_ = value;
+    nodesIsSet_ = true;
+}
+
+bool ScheduledEvent::nodesIsSet() const
+{
+    return nodesIsSet_;
+}
+
+void ScheduledEvent::unsetnodes()
+{
+    nodesIsSet_ = false;
+}
+
+std::string ScheduledEvent::getInstanceId() const
+{
+    return instanceId_;
+}
+
+void ScheduledEvent::setInstanceId(const std::string& value)
+{
+    instanceId_ = value;
+    instanceIdIsSet_ = true;
+}
+
+bool ScheduledEvent::instanceIdIsSet() const
+{
+    return instanceIdIsSet_;
+}
+
+void ScheduledEvent::unsetinstanceId()
+{
+    instanceIdIsSet_ = false;
+}
+
+std::string ScheduledEvent::getNodeName() const
+{
+    return nodeName_;
+}
+
+void ScheduledEvent::setNodeName(const std::string& value)
+{
+    nodeName_ = value;
+    nodeNameIsSet_ = true;
+}
+
+bool ScheduledEvent::nodeNameIsSet() const
+{
+    return nodeNameIsSet_;
+}
+
+void ScheduledEvent::unsetnodeName()
+{
+    nodeNameIsSet_ = false;
+}
+
+std::string ScheduledEvent::getInstanceType() const
+{
+    return instanceType_;
+}
+
+void ScheduledEvent::setInstanceType(const std::string& value)
+{
+    instanceType_ = value;
+    instanceTypeIsSet_ = true;
+}
+
+bool ScheduledEvent::instanceTypeIsSet() const
+{
+    return instanceTypeIsSet_;
+}
+
+void ScheduledEvent::unsetinstanceType()
+{
+    instanceTypeIsSet_ = false;
+}
+
 std::string ScheduledEvent::getUnderLyingInstanceId() const
 {
     return underLyingInstanceId_;
@@ -662,6 +751,90 @@ bool ScheduledEvent::underLyingInstanceIdIsSet() const
 void ScheduledEvent::unsetunderLyingInstanceId()
 {
     underLyingInstanceIdIsSet_ = false;
+}
+
+bool ScheduledEvent::isFlavorSupportRedeploy() const
+{
+    return flavorSupportRedeploy_;
+}
+
+void ScheduledEvent::setFlavorSupportRedeploy(bool value)
+{
+    flavorSupportRedeploy_ = value;
+    flavorSupportRedeployIsSet_ = true;
+}
+
+bool ScheduledEvent::flavorSupportRedeployIsSet() const
+{
+    return flavorSupportRedeployIsSet_;
+}
+
+void ScheduledEvent::unsetflavorSupportRedeploy()
+{
+    flavorSupportRedeployIsSet_ = false;
+}
+
+std::string ScheduledEvent::getPoolName() const
+{
+    return poolName_;
+}
+
+void ScheduledEvent::setPoolName(const std::string& value)
+{
+    poolName_ = value;
+    poolNameIsSet_ = true;
+}
+
+bool ScheduledEvent::poolNameIsSet() const
+{
+    return poolNameIsSet_;
+}
+
+void ScheduledEvent::unsetpoolName()
+{
+    poolNameIsSet_ = false;
+}
+
+std::string ScheduledEvent::getPoolDisplayName() const
+{
+    return poolDisplayName_;
+}
+
+void ScheduledEvent::setPoolDisplayName(const std::string& value)
+{
+    poolDisplayName_ = value;
+    poolDisplayNameIsSet_ = true;
+}
+
+bool ScheduledEvent::poolDisplayNameIsSet() const
+{
+    return poolDisplayNameIsSet_;
+}
+
+void ScheduledEvent::unsetpoolDisplayName()
+{
+    poolDisplayNameIsSet_ = false;
+}
+
+std::string ScheduledEvent::getJobProgress() const
+{
+    return jobProgress_;
+}
+
+void ScheduledEvent::setJobProgress(const std::string& value)
+{
+    jobProgress_ = value;
+    jobProgressIsSet_ = true;
+}
+
+bool ScheduledEvent::jobProgressIsSet() const
+{
+    return jobProgressIsSet_;
+}
+
+void ScheduledEvent::unsetjobProgress()
+{
+    jobProgressIsSet_ = false;
 }
 
 }

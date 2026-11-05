@@ -53,9 +53,6 @@ std::shared_ptr<AcceptScheduledEventResponse> ModelArtsClient::acceptScheduledEv
     if (request.workspaceIdIsSet()) {
         localVarQueryParams["workspaceId"] = parameterToString(request.getWorkspaceId());
     }
-    if (request.workspaceIdIsSet()) {
-        localVarQueryParams["workspaceId"] = parameterToString(request.getWorkspaceId());
-    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -324,6 +321,47 @@ std::shared_ptr<BatchCreatePoolTagsResponse> ModelArtsClient::batchCreatePoolTag
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForBatchCreatePoolTags());
 
     std::shared_ptr<BatchCreatePoolTagsResponse> localVarResult = std::make_shared<BatchCreatePoolTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchCreateServiceOpensResponse> ModelArtsClient::batchCreateServiceOpens(BatchCreateServiceOpensRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/services/batch-open";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForBatchCreateServiceOpens());
+
+    std::shared_ptr<BatchCreateServiceOpensResponse> localVarResult = std::make_shared<BatchCreateServiceOpensResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1487,6 +1525,47 @@ std::shared_ptr<CreateAlgorithmVersionToGalleryResponse> ModelArtsClient::create
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForCreateAlgorithmVersionToGallery());
 
     std::shared_ptr<CreateAlgorithmVersionToGalleryResponse> localVarResult = std::make_shared<CreateAlgorithmVersionToGalleryResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateAuthGrantResponse> ModelArtsClient::createAuthGrant(CreateAuthGrantRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/auth/grant";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForCreateAuthGrant());
+
+    std::shared_ptr<CreateAuthGrantResponse> localVarResult = std::make_shared<CreateAuthGrantResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -4369,6 +4448,18 @@ std::shared_ptr<ListHyperinstanceGroupResponse> ModelArtsClient::listHyperinstan
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
 
     std::string localVarHttpBody;
 
@@ -4440,6 +4531,18 @@ std::shared_ptr<ListHyperinstanceServersResponse> ModelArtsClient::listHyperinst
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
 
     std::string localVarHttpBody;
 
@@ -5734,6 +5837,38 @@ std::shared_ptr<ListScheduledEventsResponse> ModelArtsClient::listScheduledEvent
 
     return localVarResult;
 }
+std::shared_ptr<ListServiceStatusesResponse> ModelArtsClient::listServiceStatuses(ListServiceStatusesRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/services/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.serviceCodesIsSet()) {
+        localVarQueryParams["service_codes"] = parameterToString(request.getServiceCodes());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListServiceStatuses());
+
+    std::shared_ptr<ListServiceStatusesResponse> localVarResult = std::make_shared<ListServiceStatusesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListTrainingExperimentsResponse> ModelArtsClient::listTrainingExperiments(ListTrainingExperimentsRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/training-experiments";
@@ -6320,6 +6455,48 @@ std::shared_ptr<PatchNetworkResponse> ModelArtsClient::patchNetwork(PatchNetwork
 
     return localVarResult;
 }
+std::shared_ptr<PatchNodeConfigResponse> ModelArtsClient::patchNodeConfig(PatchNodeConfigRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/pools/{pool_name}/node-config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["pool_name"] = parameterToString(request.getPoolName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PATCH", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForPatchNodeConfig());
+
+    std::shared_ptr<PatchNodeConfigResponse> localVarResult = std::make_shared<PatchNodeConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<PatchNodePoolResponse> ModelArtsClient::patchNodePool(PatchNodePoolRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/pools/{pool_name}/nodepools/{nodepool_name}";
@@ -6707,6 +6884,35 @@ std::shared_ptr<ShowAlgorithmByUuidResponse> ModelArtsClient::showAlgorithmByUui
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowAlgorithmByUuid());
 
     std::shared_ptr<ShowAlgorithmByUuidResponse> localVarResult = std::make_shared<ShowAlgorithmByUuidResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAuthGrantResponse> ModelArtsClient::showAuthGrant(ShowAuthGrantRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/auth/grant";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowAuthGrant());
+
+    std::shared_ptr<ShowAuthGrantResponse> localVarResult = std::make_shared<ShowAuthGrantResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -9232,6 +9438,47 @@ std::shared_ptr<ValidateTrainingJobNameResponse> ModelArtsClient::validateTraini
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<VerifyAgencyResponse> ModelArtsClient::verifyAgency(VerifyAgencyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/atelier/agency/verify";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForVerifyAgency());
+
+    std::shared_ptr<VerifyAgencyResponse> localVarResult = std::make_shared<VerifyAgencyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

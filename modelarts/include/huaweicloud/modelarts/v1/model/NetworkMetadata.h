@@ -59,6 +59,15 @@ public:
     void setCreationTimestamp(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：网络的删除时间。例如\&quot;2025-12-01T03:49:41Z\&quot;。 **取值范围**：不涉及。
+    /// </summary>
+
+    std::string getDeletionTimestamp() const;
+    bool deletionTimestampIsSet() const;
+    void unsetdeletionTimestamp();
+    void setDeletionTimestamp(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -82,6 +91,8 @@ protected:
     bool nameIsSet_;
     std::string creationTimestamp_;
     bool creationTimestampIsSet_;
+    std::string deletionTimestamp_;
+    bool deletionTimestampIsSet_;
     NetworkMetadataLabels labels_;
     bool labelsIsSet_;
     NetworkMetadataAnnotations annotations_;

@@ -14,6 +14,7 @@ NodeconfigStatus::NodeconfigStatus()
 {
     phase_ = "";
     phaseIsSet_ = false;
+    configsStatusIsSet_ = false;
 }
 
 NodeconfigStatus::~NodeconfigStatus() = default;
@@ -29,6 +30,9 @@ web::json::value NodeconfigStatus::toJson() const
     if(phaseIsSet_) {
         val[utility::conversions::to_string_t("phase")] = ModelBase::toJson(phase_);
     }
+    if(configsStatusIsSet_) {
+        val[utility::conversions::to_string_t("configsStatus")] = ModelBase::toJson(configsStatus_);
+    }
 
     return val;
 }
@@ -43,6 +47,15 @@ bool NodeconfigStatus::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPhase(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("configsStatus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configsStatus"));
+        if(!fieldValue.is_null())
+        {
+            NodeconfigStatus_configsStatus refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfigsStatus(refVal);
         }
     }
     return ok;
@@ -68,6 +81,27 @@ bool NodeconfigStatus::phaseIsSet() const
 void NodeconfigStatus::unsetphase()
 {
     phaseIsSet_ = false;
+}
+
+NodeconfigStatus_configsStatus NodeconfigStatus::getConfigsStatus() const
+{
+    return configsStatus_;
+}
+
+void NodeconfigStatus::setConfigsStatus(const NodeconfigStatus_configsStatus& value)
+{
+    configsStatus_ = value;
+    configsStatusIsSet_ = true;
+}
+
+bool NodeconfigStatus::configsStatusIsSet() const
+{
+    return configsStatusIsSet_;
+}
+
+void NodeconfigStatus::unsetconfigsStatus()
+{
+    configsStatusIsSet_ = false;
 }
 
 }

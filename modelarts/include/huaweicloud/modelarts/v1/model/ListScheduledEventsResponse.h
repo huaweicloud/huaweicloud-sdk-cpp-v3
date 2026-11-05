@@ -41,7 +41,7 @@ public:
     /// ListScheduledEventsResponse members
 
     /// <summary>
-    /// **参数解释**：计划事件列表
+    /// &#39;**参数解释**：计划事件列表&#39;。
     /// </summary>
 
     std::vector<ScheduledEvent>& getEvents();

@@ -19,7 +19,6 @@ CreateDevServerResponse::CreateDevServerResponse()
     chargingMode_ = "";
     chargingModeIsSet_ = false;
     cloudServerIsSet_ = false;
-    endpointsResponseIsSet_ = false;
     flavor_ = "";
     flavorIsSet_ = false;
     id_ = "";
@@ -65,9 +64,6 @@ web::json::value CreateDevServerResponse::toJson() const
     }
     if(cloudServerIsSet_) {
         val[utility::conversions::to_string_t("cloud_server")] = ModelBase::toJson(cloudServer_);
-    }
-    if(endpointsResponseIsSet_) {
-        val[utility::conversions::to_string_t("endpoints_response")] = ModelBase::toJson(endpointsResponse_);
     }
     if(flavorIsSet_) {
         val[utility::conversions::to_string_t("flavor")] = ModelBase::toJson(flavor_);
@@ -149,15 +145,6 @@ bool CreateDevServerResponse::fromJson(const web::json::value& val)
             CloudServer refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCloudServer(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("endpoints_response"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("endpoints_response"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<Endpoints> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEndpointsResponse(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("flavor"))) {
@@ -363,27 +350,6 @@ bool CreateDevServerResponse::cloudServerIsSet() const
 void CreateDevServerResponse::unsetcloudServer()
 {
     cloudServerIsSet_ = false;
-}
-
-std::vector<Endpoints>& CreateDevServerResponse::getEndpointsResponse()
-{
-    return endpointsResponse_;
-}
-
-void CreateDevServerResponse::setEndpointsResponse(const std::vector<Endpoints>& value)
-{
-    endpointsResponse_ = value;
-    endpointsResponseIsSet_ = true;
-}
-
-bool CreateDevServerResponse::endpointsResponseIsSet() const
-{
-    return endpointsResponseIsSet_;
-}
-
-void CreateDevServerResponse::unsetendpointsResponse()
-{
-    endpointsResponseIsSet_ = false;
 }
 
 std::string CreateDevServerResponse::getFlavor() const

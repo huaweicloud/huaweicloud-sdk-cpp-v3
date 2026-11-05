@@ -60,19 +60,19 @@ public:
     /// **参数解释**：npu数量限制。 **默认取值**：不涉及。
     /// </summary>
 
-    std::string getNpuCountLimit() const;
+    int32_t getNpuCountLimit() const;
     bool npuCountLimitIsSet() const;
     void unsetnpuCountLimit();
-    void setNpuCountLimit(const std::string& value);
+    void setNpuCountLimit(int32_t value);
 
     /// <summary>
     /// **参数解释**：npu数量。 **默认取值**：不涉及。
     /// </summary>
 
-    std::string getNpuCount() const;
+    int32_t getNpuCount() const;
     bool npuCountIsSet() const;
     void unsetnpuCount();
-    void setNpuCount(const std::string& value);
+    void setNpuCount(int32_t value);
 
     /// <summary>
     /// **参数解释**：超节点集群ID。 **默认取值**：不涉及。
@@ -107,9 +107,9 @@ protected:
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
-    std::string npuCountLimit_;
+    int32_t npuCountLimit_;
     bool npuCountLimitIsSet_;
-    std::string npuCount_;
+    int32_t npuCount_;
     bool npuCountIsSet_;
     std::string hyperinstanceClusterId_;
     bool hyperinstanceClusterIdIsSet_;

@@ -9,7 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/modelarts/v1/model/AgencyServices.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,10 +49,21 @@ public:
     void unsetagencyNameSuffix();
     void setAgencyNameSuffix(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：细粒度权限列表。
+    /// </summary>
+
+    std::vector<AgencyServices>& getAgencyServices();
+    bool agencyServicesIsSet() const;
+    void unsetagencyServices();
+    void setAgencyServices(const std::vector<AgencyServices>& value);
+
 
 protected:
     std::string agencyNameSuffix_;
     bool agencyNameSuffixIsSet_;
+    std::vector<AgencyServices> agencyServices_;
+    bool agencyServicesIsSet_;
 
 };
 

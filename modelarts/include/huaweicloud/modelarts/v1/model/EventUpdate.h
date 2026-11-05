@@ -11,6 +11,7 @@
 
 #include <huaweicloud/modelarts/v1/model/RedeployConfig.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -57,12 +58,23 @@ public:
     void unsetredeployConfig();
     void setRedeployConfig(const RedeployConfig& value);
 
+    /// <summary>
+    /// **参数解释**：授权节点ID列表。授权重部处理时可选填,支持填入单个故障节点ID。 **约束限制**：不涉及。 **取值范围**：计划事件故障节点列表。 **默认取值**：不填表示授权所有节点。
+    /// </summary>
+
+    std::vector<std::string>& getInstanceId();
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::vector<std::string>& value);
+
 
 protected:
     std::string notBefore_;
     bool notBeforeIsSet_;
     RedeployConfig redeployConfig_;
     bool redeployConfigIsSet_;
+    std::vector<std::string> instanceId_;
+    bool instanceIdIsSet_;
 
 };
 

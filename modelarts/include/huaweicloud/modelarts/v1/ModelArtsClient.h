@@ -8,6 +8,7 @@
 
 #include <huaweicloud/modelarts/v1/model/AcceptScheduledEventRequest.h>
 #include <huaweicloud/modelarts/v1/model/AcceptScheduledEventResponse.h>
+#include <huaweicloud/modelarts/v1/model/AgencyRequest.h>
 #include <huaweicloud/modelarts/v1/model/Algorithm.h>
 #include <huaweicloud/modelarts/v1/model/AttachDevServerPortRequest.h>
 #include <huaweicloud/modelarts/v1/model/AttachDevServerPortResponse.h>
@@ -17,6 +18,7 @@
 #include <huaweicloud/modelarts/v1/model/AttachDynamicStorageRequest.h>
 #include <huaweicloud/modelarts/v1/model/AttachDynamicStorageResponse.h>
 #include <huaweicloud/modelarts/v1/model/AttachServerVolumeRequest.h>
+#include <huaweicloud/modelarts/v1/model/AuthGrantRequest.h>
 #include <huaweicloud/modelarts/v1/model/AuthorizationRequest.h>
 #include <huaweicloud/modelarts/v1/model/BatchBindApiKeyRequest.h>
 #include <huaweicloud/modelarts/v1/model/BatchBindInferApiKeysRequest.h>
@@ -26,6 +28,8 @@
 #include <huaweicloud/modelarts/v1/model/BatchBindPoolNodesResponse.h>
 #include <huaweicloud/modelarts/v1/model/BatchCreatePoolTagsRequest.h>
 #include <huaweicloud/modelarts/v1/model/BatchCreatePoolTagsResponse.h>
+#include <huaweicloud/modelarts/v1/model/BatchCreateServiceOpensRequest.h>
+#include <huaweicloud/modelarts/v1/model/BatchCreateServiceOpensResponse.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeleteInferIntranetConnectionsRequest.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeleteInferIntranetConnectionsResponse.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeleteInferServicesRequest.h>
@@ -93,6 +97,8 @@
 #include <huaweicloud/modelarts/v1/model/CreateAlgorithmVersionToGalleryRequest.h>
 #include <huaweicloud/modelarts/v1/model/CreateAlgorithmVersionToGalleryResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateApiKeyReq.h>
+#include <huaweicloud/modelarts/v1/model/CreateAuthGrantRequest.h>
+#include <huaweicloud/modelarts/v1/model/CreateAuthGrantResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateAuthorizationRequest.h>
 #include <huaweicloud/modelarts/v1/model/CreateAuthorizationResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateDevServerJobRequest.h>
@@ -341,6 +347,8 @@
 #include <huaweicloud/modelarts/v1/model/ListResourceFlavorsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListScheduledEventsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListScheduledEventsResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListServiceStatusesRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListServiceStatusesResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingExperimentsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingExperimentsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobEventsRequest.h>
@@ -370,12 +378,15 @@
 #include <huaweicloud/modelarts/v1/model/NetworkCreationRequest.h>
 #include <huaweicloud/modelarts/v1/model/NetworkUpdateRequest.h>
 #include <huaweicloud/modelarts/v1/model/NodeBatchMigrationRequest.h>
+#include <huaweicloud/modelarts/v1/model/NodeconfigUpdate.h>
 #include <huaweicloud/modelarts/v1/model/NodesDeletionRequest.h>
 #include <huaweicloud/modelarts/v1/model/NotifyTrainingJobInformationRequest.h>
 #include <huaweicloud/modelarts/v1/model/NotifyTrainingJobInformationResponse.h>
 #include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/modelarts/v1/model/PatchNetworkRequest.h>
 #include <huaweicloud/modelarts/v1/model/PatchNetworkResponse.h>
+#include <huaweicloud/modelarts/v1/model/PatchNodeConfigRequest.h>
+#include <huaweicloud/modelarts/v1/model/PatchNodeConfigResponse.h>
 #include <huaweicloud/modelarts/v1/model/PatchNodePoolRequest.h>
 #include <huaweicloud/modelarts/v1/model/PatchNodePoolRequestBody.h>
 #include <huaweicloud/modelarts/v1/model/PatchNodePoolResponse.h>
@@ -410,11 +421,14 @@
 #include <huaweicloud/modelarts/v1/model/ServerRoceNetworkRequest.h>
 #include <huaweicloud/modelarts/v1/model/ServerScaleDownRequest.h>
 #include <huaweicloud/modelarts/v1/model/ServerStartRequest.h>
+#include <huaweicloud/modelarts/v1/model/ServiceBatchOpenRequest.h>
 #include <huaweicloud/modelarts/v1/model/ServiceCreateRequest.h>
 #include <huaweicloud/modelarts/v1/model/ServicePodEventResponse.h>
 #include <huaweicloud/modelarts/v1/model/ServiceUpdateRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowAlgorithmByUuidRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowAlgorithmByUuidResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowAuthGrantRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowAuthGrantResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowAuthmodeDetailRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowAuthmodeDetailResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowAutoSearchParamAnalysisResultPathRequest.h>
@@ -577,6 +591,8 @@
 #include <huaweicloud/modelarts/v1/model/ValidateAuthorizationResponse.h>
 #include <huaweicloud/modelarts/v1/model/ValidateTrainingJobNameRequest.h>
 #include <huaweicloud/modelarts/v1/model/ValidateTrainingJobNameResponse.h>
+#include <huaweicloud/modelarts/v1/model/VerifyAgencyRequest.h>
+#include <huaweicloud/modelarts/v1/model/VerifyAgencyResponse.h>
 #include <string>
 
 #include <huaweicloud/modelarts/v1/model/CreateHpaRequestBody.h>
@@ -811,6 +827,14 @@ public:
     std::shared_ptr<BatchCreatePoolTagsResponse> batchCreatePoolTags(
         BatchCreatePoolTagsRequest &request
     );
+    // 一键开通依赖服务
+    //
+    // 一键开通依赖服务接口用于一键开通AOM、CCE、CES、SWR-EE等依赖服务。该接口适用于以下场景：当用户首次使用ModelArts服务或需要批量开通相关依赖服务时，可通过此接口一键完成多个依赖服务的开通操作。使用该接口的前提条件是用户已登录系统、具有相应操作权限且账号余额充足。执行一键开通后，系统将自动为用户开通指定的依赖服务，服务开通后即可正常使用。若用户无权限操作、账号余额不足或服务开通失败，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreateServiceOpensResponse> batchCreateServiceOpens(
+        BatchCreateServiceOpensRequest &request
+    );
     // 批量删除内网接入
     //
     // 本接口用于批量删除指定的内网接入点，适用于需要清理多个不再使用的内网接入点的场景。调用此接口前，确保已具备相应的删除权限，并提供一个有效的内网接入点ID列表。删除成功后，所指定的内网接入点将被彻底移除，不再对任何服务生效。如果提供的内网接入点ID列表中包含无效或已删除的ID，将返回相应的异常信息，提示用户检查ID的有效性。此外，如果调用时出现权限不足或其他系统异常，也将返回相应的异常信息，提示用户检查权限或联系技术支持。
@@ -1039,6 +1063,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateAlgorithmVersionToGalleryResponse> createAlgorithmVersionToGallery(
         CreateAlgorithmVersionToGalleryRequest &request
+    );
+    // 一键授权或重置授权
+    //
+    // 一键授权或重置授权接口用于一键创建ModelArts委托授权或重置已有委托。该接口适用于以下场景：当用户首次使用ModelArts服务需要开通委托授权时，或当现有委托授权出现异常、过期需要重新配置时，可通过此接口一键完成授权操作。使用该接口的前提条件是用户已登录系统且具有相应的操作权限。执行一键授权后，系统将自动创建委托授权关系；执行重置操作后，原有委托将被替换为新的授权。若用户无权限操作或服务异常，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAuthGrantResponse> createAuthGrant(
+        CreateAuthGrantRequest &request
     );
     // 配置授权
     //
@@ -1914,6 +1946,14 @@ public:
     std::shared_ptr<ListScheduledEventsResponse> listScheduledEvents(
         ListScheduledEventsRequest &request
     );
+    // 查询依赖服务开通状态
+    //
+    // 查询依赖服务开通状态接口用于查询AOM、CCE、CES、SWR-EE等依赖服务的开通状态。该接口适用于以下场景：当用户需要确认ModelArts相关依赖服务是否已开通时，可通过此接口批量查询各依赖服务的当前状态。使用该接口的前提条件是用户已登录系统且具有相应的查询权限。查询结果将返回各依赖服务的开通状态（已开通或未开通），若用户无权限查询或服务异常，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListServiceStatusesResponse> listServiceStatuses(
+        ListServiceStatusesRequest &request
+    );
     // 查询训练实验列表
     //
     // 查询训练实验列表接口用于获取ModelArts平台上用户已创建的训练实验的列表。
@@ -2031,6 +2071,14 @@ public:
     std::shared_ptr<PatchNetworkResponse> patchNetwork(
         PatchNetworkRequest &request
     );
+    // 更新资源池节点自定义配置
+    //
+    // 更新资源池节点自定义配置接口用于修改资源池节点的个性化设置。该接口适用于以下场景：当资源池节点需要调整资源分配策略、更新性能参数、创建/删除镜像预热任务或变更其他自定义配置时，用户可通过此接口更新指定资源池节点的自定义配置信息。使用该接口的前提条件是资源池节点已存在且用户具有管理员权限。更新操作完成后，资源池节点的自定义配置将被更新并生效，相关变更将被记录以便后续查询。若资源池节点不存在、用户无权限操作或配置参数格式不正确，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<PatchNodeConfigResponse> patchNodeConfig(
+        PatchNodeConfigRequest &request
+    );
     // 更新节点池
     //
     // 更新节点池接口用于修改指定节点池的配置信息。该接口适用于以下场景：当需要扩展节点池容量、调整节点规格、优化资源分配或修复节点池配置时，用户可通过此接口更新节点池的相关信息。使用该接口的前提条件是节点池已存在且用户具有管理员权限。更新操作完成后，节点池的配置将被更新，包括节点数量、规格、网络配置等参数。若节点池不存在、用户无权限操作或配置参数错误，接口将返回相应的错误信息。
@@ -2110,6 +2158,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAlgorithmByUuidResponse> showAlgorithmByUuid(
         ShowAlgorithmByUuidRequest &request
+    );
+    // 查询委托授权状态
+    //
+    // 查询委托授权状态接口用于查询ModelArts服务的委托授权是否已开通。该接口适用于以下场景：当用户需要确认是否已开通ModelArts委托授权以进行后续操作（如模型训练、部署等）时，可通过此接口查询当前授权状态。使用该接口的前提条件是用户已登录系统且具有相应的查询权限。查询结果将返回委托授权的当前状态（已开通或未开通），若用户无权限查询或服务异常，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAuthGrantResponse> showAuthGrant(
+        ShowAuthGrantRequest &request
     );
     // 查询授权模式
     //
@@ -2719,6 +2775,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ValidateTrainingJobNameResponse> validateTrainingJobName(
         ValidateTrainingJobNameRequest &request
+    );
+    // 校验委托使用权限
+    //
+    // 校验当前用户是否有权使用指定委托，仅支持委托给ModelArts服务的委托，通过PDP5的iam:agencies:pass鉴权判定
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<VerifyAgencyResponse> verifyAgency(
+        VerifyAgencyRequest &request
     );
 
     // 创建自动扩缩容策略

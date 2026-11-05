@@ -183,6 +183,8 @@
 #include <huaweicloud/codeartsdeploy/v2/model/ListTaskSuccessRateResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowProjectSuccessRateRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowProjectSuccessRateResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowTaskLogsRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowTaskLogsResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/TasksSuccessRateQuery.h>
 #include <string>
 
@@ -737,6 +739,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowProjectSuccessRateResponse> showProjectSuccessRate(
         ShowProjectSuccessRateRequest &request
+    );
+    // 查询部署记录的执行日志
+    //
+    // 查询部署记录的执行日志。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTaskLogsResponse> showTaskLogs(
+        ShowTaskLogsRequest &request
     );
 
 

@@ -19,7 +19,6 @@ ReinstallDevServerOSResponse::ReinstallDevServerOSResponse()
     chargingMode_ = "";
     chargingModeIsSet_ = false;
     cloudServerIsSet_ = false;
-    endpointsResponseIsSet_ = false;
     flavor_ = "";
     flavorIsSet_ = false;
     id_ = "";
@@ -67,9 +66,6 @@ web::json::value ReinstallDevServerOSResponse::toJson() const
     }
     if(cloudServerIsSet_) {
         val[utility::conversions::to_string_t("cloud_server")] = ModelBase::toJson(cloudServer_);
-    }
-    if(endpointsResponseIsSet_) {
-        val[utility::conversions::to_string_t("endpoints_response")] = ModelBase::toJson(endpointsResponse_);
     }
     if(flavorIsSet_) {
         val[utility::conversions::to_string_t("flavor")] = ModelBase::toJson(flavor_);
@@ -154,15 +150,6 @@ bool ReinstallDevServerOSResponse::fromJson(const web::json::value& val)
             CloudServer refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCloudServer(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("endpoints_response"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("endpoints_response"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<Endpoints> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEndpointsResponse(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("flavor"))) {
@@ -377,27 +364,6 @@ bool ReinstallDevServerOSResponse::cloudServerIsSet() const
 void ReinstallDevServerOSResponse::unsetcloudServer()
 {
     cloudServerIsSet_ = false;
-}
-
-std::vector<Endpoints>& ReinstallDevServerOSResponse::getEndpointsResponse()
-{
-    return endpointsResponse_;
-}
-
-void ReinstallDevServerOSResponse::setEndpointsResponse(const std::vector<Endpoints>& value)
-{
-    endpointsResponse_ = value;
-    endpointsResponseIsSet_ = true;
-}
-
-bool ReinstallDevServerOSResponse::endpointsResponseIsSet() const
-{
-    return endpointsResponseIsSet_;
-}
-
-void ReinstallDevServerOSResponse::unsetendpointsResponse()
-{
-    endpointsResponseIsSet_ = false;
 }
 
 std::string ReinstallDevServerOSResponse::getFlavor() const

@@ -16,9 +16,9 @@ CreateHyperinstanceGroupResponse::CreateHyperinstanceGroupResponse()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    npuCountLimit_ = "";
+    npuCountLimit_ = 0;
     npuCountLimitIsSet_ = false;
-    npuCount_ = "";
+    npuCount_ = 0;
     npuCountIsSet_ = false;
     hyperinstanceClusterId_ = "";
     hyperinstanceClusterIdIsSet_ = false;
@@ -88,7 +88,7 @@ bool CreateHyperinstanceGroupResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("npu_count_limit"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNpuCountLimit(refVal);
         }
@@ -97,7 +97,7 @@ bool CreateHyperinstanceGroupResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("npu_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNpuCount(refVal);
         }
@@ -175,12 +175,12 @@ void CreateHyperinstanceGroupResponse::unsetname()
     nameIsSet_ = false;
 }
 
-std::string CreateHyperinstanceGroupResponse::getNpuCountLimit() const
+int32_t CreateHyperinstanceGroupResponse::getNpuCountLimit() const
 {
     return npuCountLimit_;
 }
 
-void CreateHyperinstanceGroupResponse::setNpuCountLimit(const std::string& value)
+void CreateHyperinstanceGroupResponse::setNpuCountLimit(int32_t value)
 {
     npuCountLimit_ = value;
     npuCountLimitIsSet_ = true;
@@ -196,12 +196,12 @@ void CreateHyperinstanceGroupResponse::unsetnpuCountLimit()
     npuCountLimitIsSet_ = false;
 }
 
-std::string CreateHyperinstanceGroupResponse::getNpuCount() const
+int32_t CreateHyperinstanceGroupResponse::getNpuCount() const
 {
     return npuCount_;
 }
 
-void CreateHyperinstanceGroupResponse::setNpuCount(const std::string& value)
+void CreateHyperinstanceGroupResponse::setNpuCount(int32_t value)
 {
     npuCount_ = value;
     npuCountIsSet_ = true;

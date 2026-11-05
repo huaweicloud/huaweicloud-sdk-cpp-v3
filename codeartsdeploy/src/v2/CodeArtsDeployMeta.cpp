@@ -644,6 +644,20 @@ HttpRequestDef CodeArtsDeployMeta::genRequestDefForShowProjectSuccessRate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsDeployMeta::genRequestDefForShowTaskLogs() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndOffset")
+                  .withJsonTag("end_offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StepId")
+                  .withJsonTag("step_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 
 }
 }

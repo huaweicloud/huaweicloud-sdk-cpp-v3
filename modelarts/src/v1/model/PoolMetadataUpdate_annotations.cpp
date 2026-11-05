@@ -16,6 +16,10 @@ PoolMetadataUpdate_annotations::PoolMetadataUpdate_annotations()
     osModelartsDescriptionIsSet_ = false;
     osModelartsOrderId_ = "";
     osModelartsOrderIdIsSet_ = false;
+    osModelartsPoolSchedulerQueueStrategy_ = "";
+    osModelartsPoolSchedulerQueueStrategyIsSet_ = false;
+    osModelartsPoolSchedulerQueueStrategyConfig_ = "";
+    osModelartsPoolSchedulerQueueStrategyConfigIsSet_ = false;
 }
 
 PoolMetadataUpdate_annotations::~PoolMetadataUpdate_annotations() = default;
@@ -33,6 +37,12 @@ web::json::value PoolMetadataUpdate_annotations::toJson() const
     }
     if(osModelartsOrderIdIsSet_) {
         val[utility::conversions::to_string_t("os.modelarts/order.id")] = ModelBase::toJson(osModelartsOrderId_);
+    }
+    if(osModelartsPoolSchedulerQueueStrategyIsSet_) {
+        val[utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy")] = ModelBase::toJson(osModelartsPoolSchedulerQueueStrategy_);
+    }
+    if(osModelartsPoolSchedulerQueueStrategyConfigIsSet_) {
+        val[utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy.config")] = ModelBase::toJson(osModelartsPoolSchedulerQueueStrategyConfig_);
     }
 
     return val;
@@ -57,6 +67,24 @@ bool PoolMetadataUpdate_annotations::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOsModelartsOrderId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOsModelartsPoolSchedulerQueueStrategy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy.config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("os.modelarts.pool/scheduler.queue.strategy.config"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOsModelartsPoolSchedulerQueueStrategyConfig(refVal);
         }
     }
     return ok;
@@ -103,6 +131,48 @@ bool PoolMetadataUpdate_annotations::osModelartsOrderIdIsSet() const
 void PoolMetadataUpdate_annotations::unsetosModelartsOrderId()
 {
     osModelartsOrderIdIsSet_ = false;
+}
+
+std::string PoolMetadataUpdate_annotations::getOsModelartsPoolSchedulerQueueStrategy() const
+{
+    return osModelartsPoolSchedulerQueueStrategy_;
+}
+
+void PoolMetadataUpdate_annotations::setOsModelartsPoolSchedulerQueueStrategy(const std::string& value)
+{
+    osModelartsPoolSchedulerQueueStrategy_ = value;
+    osModelartsPoolSchedulerQueueStrategyIsSet_ = true;
+}
+
+bool PoolMetadataUpdate_annotations::osModelartsPoolSchedulerQueueStrategyIsSet() const
+{
+    return osModelartsPoolSchedulerQueueStrategyIsSet_;
+}
+
+void PoolMetadataUpdate_annotations::unsetosModelartsPoolSchedulerQueueStrategy()
+{
+    osModelartsPoolSchedulerQueueStrategyIsSet_ = false;
+}
+
+std::string PoolMetadataUpdate_annotations::getOsModelartsPoolSchedulerQueueStrategyConfig() const
+{
+    return osModelartsPoolSchedulerQueueStrategyConfig_;
+}
+
+void PoolMetadataUpdate_annotations::setOsModelartsPoolSchedulerQueueStrategyConfig(const std::string& value)
+{
+    osModelartsPoolSchedulerQueueStrategyConfig_ = value;
+    osModelartsPoolSchedulerQueueStrategyConfigIsSet_ = true;
+}
+
+bool PoolMetadataUpdate_annotations::osModelartsPoolSchedulerQueueStrategyConfigIsSet() const
+{
+    return osModelartsPoolSchedulerQueueStrategyConfigIsSet_;
+}
+
+void PoolMetadataUpdate_annotations::unsetosModelartsPoolSchedulerQueueStrategyConfig()
+{
+    osModelartsPoolSchedulerQueueStrategyConfigIsSet_ = false;
 }
 
 }

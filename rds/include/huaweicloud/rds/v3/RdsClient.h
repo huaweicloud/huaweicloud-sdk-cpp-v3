@@ -913,6 +913,48 @@
 #include <huaweicloud/rds/v3/model/ResetViewSqlStatisticsResponse.h>
 #include <string>
 
+#include <huaweicloud/rds/v3/model/CreateSupabaseApplicationRequest.h>
+#include <huaweicloud/rds/v3/model/CreateSupabaseApplicationRequestBody.h>
+#include <huaweicloud/rds/v3/model/CreateSupabaseApplicationResponse.h>
+#include <huaweicloud/rds/v3/model/DeleteSupabaseApplicationRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteSupabaseApplicationResponse.h>
+#include <huaweicloud/rds/v3/model/ListAiApplicationsRequest.h>
+#include <huaweicloud/rds/v3/model/ListAiApplicationsResponse.h>
+#include <huaweicloud/rds/v3/model/ListSupabaseApplicationApiKeysRequest.h>
+#include <huaweicloud/rds/v3/model/ListSupabaseApplicationApiKeysResponse.h>
+#include <huaweicloud/rds/v3/model/ListSupabaseApplicationFlavorsRequest.h>
+#include <huaweicloud/rds/v3/model/ListSupabaseApplicationFlavorsResponse.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationAuthConfigRequest.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationAuthConfigRequestBody.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationAuthConfigResponse.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationPasswordRequest.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationPasswordRequestBody.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationPasswordResponse.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationStorageRequest.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationStorageRequestBody.h>
+#include <huaweicloud/rds/v3/model/ModifySupabaseApplicationStorageResponse.h>
+#include <huaweicloud/rds/v3/model/ResetSupabaseApplicationApiKeyRequest.h>
+#include <huaweicloud/rds/v3/model/ResetSupabaseApplicationApiKeyResponse.h>
+#include <huaweicloud/rds/v3/model/RestartSupabaseApplicationRequest.h>
+#include <huaweicloud/rds/v3/model/RestartSupabaseApplicationResponse.h>
+#include <huaweicloud/rds/v3/model/ShowSupabaseApplicationApiKeyValueRequest.h>
+#include <huaweicloud/rds/v3/model/ShowSupabaseApplicationApiKeyValueResponse.h>
+#include <huaweicloud/rds/v3/model/ShowSupabaseApplicationAuthConfigRequest.h>
+#include <huaweicloud/rds/v3/model/ShowSupabaseApplicationAuthConfigResponse.h>
+#include <huaweicloud/rds/v3/model/ShowSupabaseApplicationRequest.h>
+#include <huaweicloud/rds/v3/model/ShowSupabaseApplicationResponse.h>
+#include <huaweicloud/rds/v3/model/StartSupabaseApplicationRequest.h>
+#include <huaweicloud/rds/v3/model/StartSupabaseApplicationResponse.h>
+#include <huaweicloud/rds/v3/model/StopSupabaseApplicationRequest.h>
+#include <huaweicloud/rds/v3/model/StopSupabaseApplicationResponse.h>
+#include <huaweicloud/rds/v3/model/SwitchSupabaseApplicationEipBindRequest.h>
+#include <huaweicloud/rds/v3/model/SwitchSupabaseApplicationEipBindRequestBody.h>
+#include <huaweicloud/rds/v3/model/SwitchSupabaseApplicationEipBindResponse.h>
+#include <huaweicloud/rds/v3/model/SwitchSupabaseApplicationSslRequest.h>
+#include <huaweicloud/rds/v3/model/SwitchSupabaseApplicationSslRequestBody.h>
+#include <huaweicloud/rds/v3/model/SwitchSupabaseApplicationSslResponse.h>
+#include <string>
+
 #include <huaweicloud/rds/v3/model/GetAvailableVpcsRequest.h>
 #include <huaweicloud/rds/v3/model/GetAvailableVpcsResponse.h>
 #include <string>
@@ -3818,6 +3860,153 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ResetViewSqlStatisticsResponse> resetViewSqlStatistics(
         ResetViewSqlStatisticsRequest &request
+    );
+
+    // 创建Supabase应用
+    //
+    // 创建Supabase应用。支持两类路径：
+    // 1) 同时创建托管的PostgreSQL实例（manage_type&#x3D;newly_instance）；
+    // 2) 关联已有PostgreSQL实例（manage_type&#x3D;existed_instance）。
+    // 异步接口，返回job_id（按需）或order_id（包周期）。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSupabaseApplicationResponse> createSupabaseApplication(
+        CreateSupabaseApplicationRequest &request
+    );
+    // 删除Supabase应用
+    //
+    // 删除Supabase应用。仅删除应用本身，保留底层PG实例及关联关系。
+    // 注：HTTP无请求体，delete_instance字段不对外暴露，恒为仅删应用。
+    // PG级联删除为反向触发（PG删→自动删关联Supabase）。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSupabaseApplicationResponse> deleteSupabaseApplication(
+        DeleteSupabaseApplicationRequest &request
+    );
+    // 查询AI应用列表
+    //
+    // 查询AI应用列表，含应用状态和关联PG实例信息。删除应用前通常先调此接口定位目标。支持按type过滤Supabase应用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAiApplicationsResponse> listAiApplications(
+        ListAiApplicationsRequest &request
+    );
+    // 查询Supabase应用ApiKey列表
+    //
+    // 分页查询ApiKey元数据。列表不含明文。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSupabaseApplicationApiKeysResponse> listSupabaseApplicationApiKeys(
+        ListSupabaseApplicationApiKeysRequest &request
+    );
+    // 查询Supabase应用规格列表
+    //
+    // 查询可用规格，含每个AZ的可售状态和支持版本。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSupabaseApplicationFlavorsResponse> listSupabaseApplicationFlavors(
+        ListSupabaseApplicationFlavorsRequest &request
+    );
+    // 修改Supabase应用Auth配置
+    //
+    // 部分更新：仅更新传入的非空字段，省略字段保留原值（@JsonInclude NON_EMPTY）。
+    // enable_github&#x3D;false时清空github子字段；enable_email_sign_up&#x3D;false时清空smtp_config子字段。
+    // 秘密字段（smtp_pwd、oauth_client_secret）需通过受控方式输入，show不返回故不会回显覆盖。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifySupabaseApplicationAuthConfigResponse> modifySupabaseApplicationAuthConfig(
+        ModifySupabaseApplicationAuthConfigRequest &request
+    );
+    // 修改Supabase应用密码
+    //
+    // 可单独修改应用密码或实例密码，但不能同时为空。不修改底层PG其他账号。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifySupabaseApplicationPasswordResponse> modifySupabaseApplicationPassword(
+        ModifySupabaseApplicationPasswordRequest &request
+    );
+    // 修改Supabase应用Storage配置
+    //
+    // enabled&#x3D;false时bucket_name/ak/sk必须全空；enabled&#x3D;true时全必填。
+    // show不返回sk，故部分更新省略sk即保留。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifySupabaseApplicationStorageResponse> modifySupabaseApplicationStorage(
+        ModifySupabaseApplicationStorageRequest &request
+    );
+    // 重置Supabase应用ApiKey
+    //
+    // 异步重置ApiKey。agent异步动作成功后，旧Key置deleted、新Key置normal，同事务原子切换。
+    // 新Key不沿用旧Key ID。返回job_id，需轮询list_job_info。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResetSupabaseApplicationApiKeyResponse> resetSupabaseApplicationApiKey(
+        ResetSupabaseApplicationApiKeyRequest &request
+    );
+    // 重启Supabase应用
+    //
+    // 异步重启Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestartSupabaseApplicationResponse> restartSupabaseApplication(
+        RestartSupabaseApplicationRequest &request
+    );
+    // 查询Supabase应用详情
+    //
+    // 查询Supabase应用详情，含运行状态、关联PG、SSL/EIP/Storage配置等。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSupabaseApplicationResponse> showSupabaseApplication(
+        ShowSupabaseApplicationRequest &request
+    );
+    // 查询Supabase应用ApiKey明文值
+    //
+    // 受控查看指定ApiKey的明文值。敏感操作，需明确授权。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSupabaseApplicationApiKeyValueResponse> showSupabaseApplicationApiKeyValue(
+        ShowSupabaseApplicationApiKeyValueRequest &request
+    );
+    // 查询Supabase应用Auth配置
+    //
+    // 查询Auth配置。敏感秘密（smtp_pwd、oauth_client_secret）在响应中省略，非脱敏占位。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSupabaseApplicationAuthConfigResponse> showSupabaseApplicationAuthConfig(
+        ShowSupabaseApplicationAuthConfigRequest &request
+    );
+    // 启动Supabase应用
+    //
+    // 异步启动Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StartSupabaseApplicationResponse> startSupabaseApplication(
+        StartSupabaseApplicationRequest &request
+    );
+    // 停止Supabase应用
+    //
+    // 异步停止Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StopSupabaseApplicationResponse> stopSupabaseApplication(
+        StopSupabaseApplicationRequest &request
+    );
+    // 绑定或解绑Supabase应用EIP
+    //
+    // 异步绑定/解绑EIP。is_bind&#x3D;true时public_ip_id和public_ip_address必填。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchSupabaseApplicationEipBindResponse> switchSupabaseApplicationEipBind(
+        SwitchSupabaseApplicationEipBindRequest &request
+    );
+    // 开启或关闭Supabase应用SSL
+    //
+    // 异步开关SSL。enable_ssl&#x3D;false时cert_id必须为空；enable_ssl&#x3D;true时cert_id必填。
+    // SSL切换后需手动同步Auth相关URL协议（http&lt;-&gt;https），否则认证可能故障。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchSupabaseApplicationSslResponse> switchSupabaseApplicationSsl(
+        SwitchSupabaseApplicationSslRequest &request
     );
 
     // 根据实例ID和管理网子网信息，返回可用的数据子网

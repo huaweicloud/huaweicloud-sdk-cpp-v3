@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/rds/v3/model/SupabaseDatastore.h>
-#include <huaweicloud/rds/v3/model/SupabaseHaConfig.h>
 #include <huaweicloud/rds/v3/model/SupabaseVolumeConfig.h>
 #include <huaweicloud/rds/v3/model/TagWithKeyValue.h>
 #include <string>
@@ -81,22 +80,13 @@ public:
     void setVolume(const SupabaseVolumeConfig& value);
 
     /// <summary>
-    /// 可用区，≤2个逗号分隔，首个&#x3D;顶层主AZ。
+    /// 可用区，Single模式下为1个，需与顶层主AZ一致。
     /// </summary>
 
     std::string getAvailabilityZone() const;
     bool availabilityZoneIsSet() const;
     void unsetavailabilityZone();
     void setAvailabilityZone(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    SupabaseHaConfig getHa() const;
-    bool haIsSet() const;
-    void unsetha();
-    void setHa(const SupabaseHaConfig& value);
 
     /// <summary>
     /// 参数模板ID（可选）。
@@ -173,8 +163,6 @@ protected:
     bool volumeIsSet_;
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
-    SupabaseHaConfig ha_;
-    bool haIsSet_;
     std::string configurationId_;
     bool configurationIdIsSet_;
     int32_t port_;

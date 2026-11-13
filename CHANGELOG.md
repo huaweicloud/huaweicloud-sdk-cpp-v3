@@ -1,3 +1,41 @@
+# 3.1.212 2026-11-12
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateSupabaseApplication**
+    - changes of request param
+      - `- mode: enum value [Ha]`
+      - `- managed_instance.ha`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListVpcPeeringInfos`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListResourceAssociations`, `BatchCreateTrafficMirrorFilterRules`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.211 2026-11-05
 
 ### HuaweiCloud SDK CodeArtsDeploy

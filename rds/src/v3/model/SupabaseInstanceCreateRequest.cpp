@@ -19,7 +19,6 @@ SupabaseInstanceCreateRequest::SupabaseInstanceCreateRequest()
     volumeIsSet_ = false;
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
-    haIsSet_ = false;
     configurationId_ = "";
     configurationIdIsSet_ = false;
     port_ = 0;
@@ -59,9 +58,6 @@ web::json::value SupabaseInstanceCreateRequest::toJson() const
     }
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
-    }
-    if(haIsSet_) {
-        val[utility::conversions::to_string_t("ha")] = ModelBase::toJson(ha_);
     }
     if(configurationIdIsSet_) {
         val[utility::conversions::to_string_t("configuration_id")] = ModelBase::toJson(configurationId_);
@@ -134,15 +130,6 @@ bool SupabaseInstanceCreateRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailabilityZone(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("ha"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ha"));
-        if(!fieldValue.is_null())
-        {
-            SupabaseHaConfig refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHa(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("configuration_id"))) {
@@ -315,27 +302,6 @@ bool SupabaseInstanceCreateRequest::availabilityZoneIsSet() const
 void SupabaseInstanceCreateRequest::unsetavailabilityZone()
 {
     availabilityZoneIsSet_ = false;
-}
-
-SupabaseHaConfig SupabaseInstanceCreateRequest::getHa() const
-{
-    return ha_;
-}
-
-void SupabaseInstanceCreateRequest::setHa(const SupabaseHaConfig& value)
-{
-    ha_ = value;
-    haIsSet_ = true;
-}
-
-bool SupabaseInstanceCreateRequest::haIsSet() const
-{
-    return haIsSet_;
-}
-
-void SupabaseInstanceCreateRequest::unsetha()
-{
-    haIsSet_ = false;
 }
 
 std::string SupabaseInstanceCreateRequest::getConfigurationId() const

@@ -1,3 +1,41 @@
+# 3.1.212 2026-11-12
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateSupabaseApplication**
+    - 请求参数变更
+      - `- mode: enum value [Ha]`
+      - `- managed_instance.ha`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListVpcPeeringInfos`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListResourceAssociations`、`BatchCreateTrafficMirrorFilterRules`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.211 2026-11-05
 
 ### HuaweiCloud SDK CodeArtsDeploy

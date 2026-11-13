@@ -70,7 +70,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 部署模式。
+    /// 部署模式。当前仅支持Single。
     /// </summary>
 
     std::string getMode() const;
@@ -79,7 +79,7 @@ public:
     void setMode(const std::string& value);
 
     /// <summary>
-    /// 规格码，格式 rds.supabase.{...}。Ha模式必须以.ha结尾，Single不得以.ha结尾。
+    /// 规格码，格式 rds.supabase.{...}。
     /// </summary>
 
     std::string getFlavorRef() const;
@@ -88,7 +88,7 @@ public:
     void setFlavorRef(const std::string& value);
 
     /// <summary>
-    /// 可用区ID。Single&#x3D;1个，Ha&#x3D;2个逗号分隔。
+    /// 可用区ID。Single模式下为1个可用区。
     /// </summary>
 
     std::string getAvailabilityZone() const;

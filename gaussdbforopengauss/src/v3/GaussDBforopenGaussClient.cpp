@@ -7496,7 +7496,7 @@ std::shared_ptr<SwitchLoggerReplicaResponse> GaussDBforopenGaussClient::switchLo
 }
 std::shared_ptr<SwitchLoggerReplicaAvailabilityZonesResponse> GaussDBforopenGaussClient::switchLoggerReplicaAvailabilityZones(SwitchLoggerReplicaAvailabilityZonesRequest &request)
 {
-    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability_zones";
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability-zones";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;

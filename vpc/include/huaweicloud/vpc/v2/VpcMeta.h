@@ -48,6 +48,7 @@ public:
     static HttpRequestDef genRequestDefForListSubnetTags();
     static HttpRequestDef genRequestDefForListSubnets();
     static HttpRequestDef genRequestDefForListSubnetsByTags();
+    static HttpRequestDef genRequestDefForListVpcPeeringInfos();
     static HttpRequestDef genRequestDefForListVpcPeerings();
     static HttpRequestDef genRequestDefForRejectVpcPeering();
     static HttpRequestDef genRequestDefForShowFlowLog();

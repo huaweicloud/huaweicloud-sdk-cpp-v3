@@ -91,6 +91,8 @@
 #include <huaweicloud/vpc/v2/model/ListSubnetsByTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/ListSubnetsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListSubnetsResponse.h>
+#include <huaweicloud/vpc/v2/model/ListVpcPeeringInfosRequest.h>
+#include <huaweicloud/vpc/v2/model/ListVpcPeeringInfosResponse.h>
 #include <huaweicloud/vpc/v2/model/ListVpcPeeringsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListVpcPeeringsResponse.h>
 #include <huaweicloud/vpc/v2/model/RejectVpcPeeringRequest.h>
@@ -624,6 +626,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSubnetsByTagsResponse> listSubnetsByTags(
         ListSubnetsByTagsRequest &request
+    );
+    // 查询对等连接信息列表
+    //
+    // 当您的对等连接创建成功后，您可以通过该接口查询所有对等连接信息，包括对等连接的名称、两端vpc的信息等
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListVpcPeeringInfosResponse> listVpcPeeringInfos(
+        ListVpcPeeringInfosRequest &request
     );
     // 查询对等连接列表
     //

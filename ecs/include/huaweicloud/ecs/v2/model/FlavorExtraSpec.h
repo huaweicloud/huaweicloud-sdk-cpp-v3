@@ -407,6 +407,24 @@ public:
     void unsetinfoFeatures();
     void setInfoFeatures(const std::string& value);
 
+    /// <summary>
+    /// 规格的CPU资源绑定策略。（该字段是否返回根据云服务器规格而定）  - dedicated，CPU资源独占绑定。
+    /// </summary>
+
+    std::string getHwCpuPolicy() const;
+    bool hwCpuPolicyIsSet() const;
+    void unsethwCpuPolicy();
+    void setHwCpuPolicy(const std::string& value);
+
+    /// <summary>
+    /// 规格的CPU超线程数（每核线程数）。（该字段是否返回根据云服务器规格而定）  - 1，每核1线程，未开启超线程。 - 2，每核2线程，开启超线程。
+    /// </summary>
+
+    std::string getHwCpuThreads() const;
+    bool hwCpuThreadsIsSet() const;
+    void unsethwCpuThreads();
+    void setHwCpuThreads(const std::string& value);
+
 
 protected:
     std::string ecsPerformancetype_;
@@ -491,6 +509,10 @@ protected:
     bool infoAsicAcceleratorsIsSet_;
     std::string infoFeatures_;
     bool infoFeaturesIsSet_;
+    std::string hwCpuPolicy_;
+    bool hwCpuPolicyIsSet_;
+    std::string hwCpuThreads_;
+    bool hwCpuThreadsIsSet_;
 
 };
 

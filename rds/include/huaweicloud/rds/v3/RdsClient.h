@@ -565,6 +565,9 @@
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionPreCheckResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionResponse.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbVersionFinalConfirmRequest.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbVersionFinalConfirmRequestBody.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbVersionFinalConfirmResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionNewRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionNewResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionRequest.h>
@@ -2799,6 +2802,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeDbVersionResponse> upgradeDbVersion(
         UpgradeDbVersionRequest &request
+    );
+    // 数据库小版本升级后最后确认操作
+    //
+    // 数据库小版本升级后最后确认操作
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpgradeDbVersionFinalConfirmResponse> upgradeDbVersionFinalConfirm(
+        UpgradeDbVersionFinalConfirmRequest &request
     );
     // 升级内核小版本
     //

@@ -94,6 +94,10 @@ FlavorExtraSpec::FlavorExtraSpec()
     infoAsicAcceleratorsIsSet_ = false;
     infoFeatures_ = "";
     infoFeaturesIsSet_ = false;
+    hwCpuPolicy_ = "";
+    hwCpuPolicyIsSet_ = false;
+    hwCpuThreads_ = "";
+    hwCpuThreadsIsSet_ = false;
 }
 
 FlavorExtraSpec::~FlavorExtraSpec() = default;
@@ -228,6 +232,12 @@ web::json::value FlavorExtraSpec::toJson() const
     }
     if(infoFeaturesIsSet_) {
         val[utility::conversions::to_string_t("info:features")] = ModelBase::toJson(infoFeatures_);
+    }
+    if(hwCpuPolicyIsSet_) {
+        val[utility::conversions::to_string_t("hw:cpu_policy")] = ModelBase::toJson(hwCpuPolicy_);
+    }
+    if(hwCpuThreadsIsSet_) {
+        val[utility::conversions::to_string_t("hw:cpu_threads")] = ModelBase::toJson(hwCpuThreads_);
     }
 
     return val;
@@ -603,6 +613,24 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInfoFeatures(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hw:cpu_policy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hw:cpu_policy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHwCpuPolicy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hw:cpu_threads"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hw:cpu_threads"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHwCpuThreads(refVal);
         }
     }
     return ok;
@@ -1468,6 +1496,48 @@ bool FlavorExtraSpec::infoFeaturesIsSet() const
 void FlavorExtraSpec::unsetinfoFeatures()
 {
     infoFeaturesIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getHwCpuPolicy() const
+{
+    return hwCpuPolicy_;
+}
+
+void FlavorExtraSpec::setHwCpuPolicy(const std::string& value)
+{
+    hwCpuPolicy_ = value;
+    hwCpuPolicyIsSet_ = true;
+}
+
+bool FlavorExtraSpec::hwCpuPolicyIsSet() const
+{
+    return hwCpuPolicyIsSet_;
+}
+
+void FlavorExtraSpec::unsethwCpuPolicy()
+{
+    hwCpuPolicyIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getHwCpuThreads() const
+{
+    return hwCpuThreads_;
+}
+
+void FlavorExtraSpec::setHwCpuThreads(const std::string& value)
+{
+    hwCpuThreads_ = value;
+    hwCpuThreadsIsSet_ = true;
+}
+
+bool FlavorExtraSpec::hwCpuThreadsIsSet() const
+{
+    return hwCpuThreadsIsSet_;
+}
+
+void FlavorExtraSpec::unsethwCpuThreads()
+{
+    hwCpuThreadsIsSet_ = false;
 }
 
 }

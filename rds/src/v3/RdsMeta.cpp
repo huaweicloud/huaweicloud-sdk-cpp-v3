@@ -3202,6 +3202,20 @@ HttpRequestDef RdsMeta::genRequestDefForUpgradeDbVersion() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForUpgradeDbVersionFinalConfirm() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForUpgradeDbVersionNew() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

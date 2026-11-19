@@ -228,6 +228,15 @@ public:
     void setClientPort(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 服务端用于通讯的TCP端口号，如果使用Unix套接字，则为-1。 **取值范围**： 不涉及。
+    /// </summary>
+
+    std::string getServerPort() const;
+    bool serverPortIsSet() const;
+    void unsetserverPort();
+    void setServerPort(const std::string& value);
+
+    /// <summary>
     /// **参数解释**： 会话执行的sql数。 **取值范围**： 不涉及。
     /// </summary>
 
@@ -406,6 +415,8 @@ protected:
     bool sqlNumIsSet_;
     std::string clientPort_;
     bool clientPortIsSet_;
+    std::string serverPort_;
+    bool serverPortIsSet_;
     std::string queryId_;
     bool queryIdIsSet_;
     std::string transactionTimeCost_;

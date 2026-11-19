@@ -188,6 +188,15 @@ HttpRequestDef KmsMeta::genRequestDefForCreateRsaDatakeyPair() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForCreateTrustedKeySpace() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForDecryptData() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -258,6 +267,11 @@ HttpRequestDef KmsMeta::genRequestDefForDeleteKeyStore() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForDeleteTag() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForDeleteTrustedKeySpace() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -485,6 +499,23 @@ HttpRequestDef KmsMeta::genRequestDefForListSupportRegions() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForListTrustedKeySpace() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("KeyspaceId")
+                  .withJsonTag("keyspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForReEncrypt() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -531,6 +562,17 @@ HttpRequestDef KmsMeta::genRequestDefForShowKeyStore() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForShowKeyUsageFlow() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("KeyspaceId")
+                  .withJsonTag("keyspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("KeyId")
+                  .withJsonTag("key_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForShowKmsTags() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -556,6 +598,15 @@ HttpRequestDef KmsMeta::genRequestDefForShowUserQuotas() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForSign() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForTransferKey() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -592,6 +643,15 @@ HttpRequestDef KmsMeta::genRequestDefForUpdateKeyPolicy() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForUpdateKeyRotationInterval() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForUpdateKeyStore() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

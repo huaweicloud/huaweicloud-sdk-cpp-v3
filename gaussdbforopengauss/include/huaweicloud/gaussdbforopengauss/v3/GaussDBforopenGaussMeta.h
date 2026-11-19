@@ -17,6 +17,7 @@ public:
     static HttpRequestDef genRequestDefForAddInstanceTags();
     static HttpRequestDef genRequestDefForAllowDbPrivileges();
     static HttpRequestDef genRequestDefForAllowDbRolePrivileges();
+    static HttpRequestDef genRequestDefForApplyConfigurationWithEntities();
     static HttpRequestDef genRequestDefForAttachEip();
     static HttpRequestDef genRequestDefForAuthorizeBackupDownload();
     static HttpRequestDef genRequestDefForBatchDeleteInstanceTag();
@@ -24,6 +25,7 @@ public:
     static HttpRequestDef genRequestDefForBatchSetBackupPolicy();
     static HttpRequestDef genRequestDefForBatchShowUpgradeCandidateVersions();
     static HttpRequestDef genRequestDefForBindDNat();
+    static HttpRequestDef genRequestDefForBindServerRoute();
     static HttpRequestDef genRequestDefForCancelScheduleTask();
     static HttpRequestDef genRequestDefForChangeDemand2Period();
     static HttpRequestDef genRequestDefForChangeDeploymentSolution();
@@ -66,10 +68,14 @@ public:
     static HttpRequestDef genRequestDefForExportInstanceInfos();
     static HttpRequestDef genRequestDefForExportSlowSql();
     static HttpRequestDef genRequestDefForInstallKernelPlugin();
+    static HttpRequestDef genRequestDefForInstallPlugin();
     static HttpRequestDef genRequestDefForListAgencyInfos();
     static HttpRequestDef genRequestDefForListApplicableInstances();
+    static HttpRequestDef genRequestDefForListApplicableInstancesWithEntities();
     static HttpRequestDef genRequestDefForListAppliedHistories();
+    static HttpRequestDef genRequestDefForListAppliedHistoriesWithEntities();
     static HttpRequestDef genRequestDefForListAvailableFlavors();
+    static HttpRequestDef genRequestDefForListAvailableFlavorsDetail();
     static HttpRequestDef genRequestDefForListBackupsDetails();
     static HttpRequestDef genRequestDefForListBindedEips();
     static HttpRequestDef genRequestDefForListCnInfosBeforeReduce();
@@ -109,6 +115,7 @@ public:
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListReadonlyNodes();
     static HttpRequestDef genRequestDefForListRealTimeSessions();
+    static HttpRequestDef genRequestDefForListRealTimeSessionsUseOpsTunnel();
     static HttpRequestDef genRequestDefForListRecycleInstancesDetails();
     static HttpRequestDef genRequestDefForListRestorableInstancesDetails();
     static HttpRequestDef genRequestDefForListRestoreTimes();
@@ -133,6 +140,7 @@ public:
     static HttpRequestDef genRequestDefForModifyEpsQuota();
     static HttpRequestDef genRequestDefForModifyHbaConf();
     static HttpRequestDef genRequestDefForModifyInstancePort();
+    static HttpRequestDef genRequestDefForModifyOpsWindow();
     static HttpRequestDef genRequestDefForModifyParameterConfigTemplate();
     static HttpRequestDef genRequestDefForModifySecurityGroup();
     static HttpRequestDef genRequestDefForResetConfiguration();
@@ -176,6 +184,7 @@ public:
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowRedistributionParameters();
     static HttpRequestDef genRequestDefForShowSessionOverview();
+    static HttpRequestDef genRequestDefForShowSessionSummaryUseOpsTunnel();
     static HttpRequestDef genRequestDefForShowShardDiskMessages();
     static HttpRequestDef genRequestDefForShowSlowLogDownload();
     static HttpRequestDef genRequestDefForShowSlowSqlPlan();
@@ -190,6 +199,7 @@ public:
     static HttpRequestDef genRequestDefForStopFreeSession();
     static HttpRequestDef genRequestDefForStopInstance();
     static HttpRequestDef genRequestDefForStopSession();
+    static HttpRequestDef genRequestDefForStopSessionUseOpsTunnel();
     static HttpRequestDef genRequestDefForStopTransaction();
     static HttpRequestDef genRequestDefForSwitchConfiguration();
     static HttpRequestDef genRequestDefForSwitchKmsTde();
@@ -198,6 +208,7 @@ public:
     static HttpRequestDef genRequestDefForSwitchLoggerReplicaAvailabilityZones();
     static HttpRequestDef genRequestDefForSwitchReplica();
     static HttpRequestDef genRequestDefForSwitchShard();
+    static HttpRequestDef genRequestDefForUninstallPlugin();
     static HttpRequestDef genRequestDefForUpdateAgencyPolicy();
     static HttpRequestDef genRequestDefForUpdateExpansionParameters();
     static HttpRequestDef genRequestDefForUpdateFeatures();
@@ -269,6 +280,7 @@ public:
     static HttpRequestDef genRequestDefForStopFullSql();
     static HttpRequestDef genRequestDefForSyncLimitData();
     static HttpRequestDef genRequestDefForUpdateSqlLimitTask();
+    static HttpRequestDef genRequestDefForListSqlPatch();
     static HttpRequestDef genRequestDefForShowSqlPatch();
     static HttpRequestDef genRequestDefForExportTopSqlList();
     static HttpRequestDef genRequestDefForListTopSqls();

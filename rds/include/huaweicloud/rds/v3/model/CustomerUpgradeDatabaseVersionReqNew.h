@@ -55,12 +55,23 @@ public:
     void unsetsecondSwitch();
     void setSecondSwitch(bool value);
 
+    /// <summary>
+    /// **参数解释**： 是否支持升级成功后能够回滚。  **约束限制**： 该配置仅对RDS for MySQL 8.0 和5.7实例生效。  **取值范围**： - true：支持小版本升级成功后回滚，小版本升级时长会增加。升级完成后实例会进入观察状态，期间数据库可以正常读写。如果确认无误，需要确认完成。如果出现问题，可以回滚，恢复到原始小版本。 - false：小版本升级后不支持回滚。  **默认取值**： false
+    /// </summary>
+
+    bool isSupportRollback() const;
+    bool supportRollbackIsSet() const;
+    void unsetsupportRollback();
+    void setSupportRollback(bool value);
+
 
 protected:
     bool isDelayed_;
     bool isDelayedIsSet_;
     bool secondSwitch_;
     bool secondSwitchIsSet_;
+    bool supportRollback_;
+    bool supportRollbackIsSet_;
 
 };
 

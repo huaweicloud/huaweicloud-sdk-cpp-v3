@@ -14,16 +14,10 @@ ScheduledTaskV3::ScheduledTaskV3()
 {
     createTime_ = 0L;
     createTimeIsSet_ = false;
-    datastoreType_ = "";
-    datastoreTypeIsSet_ = false;
     endTime_ = 0L;
     endTimeIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
-    instanceName_ = "";
-    instanceNameIsSet_ = false;
-    instanceStatus_ = "";
-    instanceStatusIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
     proxyId_ = "";
@@ -32,13 +26,10 @@ ScheduledTaskV3::ScheduledTaskV3()
     proxyNameIsSet_ = false;
     startTime_ = 0L;
     startTimeIsSet_ = false;
-    targetConfigIsSet_ = false;
     taskId_ = "";
     taskIdIsSet_ = false;
     taskName_ = "";
     taskNameIsSet_ = false;
-    taskOrder_ = 0;
-    taskOrderIsSet_ = false;
     taskStatus_ = "";
     taskStatusIsSet_ = false;
 }
@@ -56,20 +47,11 @@ web::json::value ScheduledTaskV3::toJson() const
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
     }
-    if(datastoreTypeIsSet_) {
-        val[utility::conversions::to_string_t("datastore_type")] = ModelBase::toJson(datastoreType_);
-    }
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
     }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
-    }
-    if(instanceNameIsSet_) {
-        val[utility::conversions::to_string_t("instance_name")] = ModelBase::toJson(instanceName_);
-    }
-    if(instanceStatusIsSet_) {
-        val[utility::conversions::to_string_t("instance_status")] = ModelBase::toJson(instanceStatus_);
     }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
@@ -83,17 +65,11 @@ web::json::value ScheduledTaskV3::toJson() const
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
     }
-    if(targetConfigIsSet_) {
-        val[utility::conversions::to_string_t("target_config")] = ModelBase::toJson(targetConfig_);
-    }
     if(taskIdIsSet_) {
         val[utility::conversions::to_string_t("task_id")] = ModelBase::toJson(taskId_);
     }
     if(taskNameIsSet_) {
         val[utility::conversions::to_string_t("task_name")] = ModelBase::toJson(taskName_);
-    }
-    if(taskOrderIsSet_) {
-        val[utility::conversions::to_string_t("task_order")] = ModelBase::toJson(taskOrder_);
     }
     if(taskStatusIsSet_) {
         val[utility::conversions::to_string_t("task_status")] = ModelBase::toJson(taskStatus_);
@@ -114,15 +90,6 @@ bool ScheduledTaskV3::fromJson(const web::json::value& val)
             setCreateTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("datastore_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("datastore_type"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDatastoreType(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("end_time"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
         if(!fieldValue.is_null())
@@ -139,24 +106,6 @@ bool ScheduledTaskV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("instance_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_name"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstanceName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("instance_status"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_status"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstanceStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("project_id"))) {
@@ -195,15 +144,6 @@ bool ScheduledTaskV3::fromJson(const web::json::value& val)
             setStartTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("target_config"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_config"));
-        if(!fieldValue.is_null())
-        {
-            std::map<std::string, std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTargetConfig(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("task_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("task_id"));
         if(!fieldValue.is_null())
@@ -220,15 +160,6 @@ bool ScheduledTaskV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaskName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("task_order"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("task_order"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTaskOrder(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("task_status"))) {
@@ -263,27 +194,6 @@ bool ScheduledTaskV3::createTimeIsSet() const
 void ScheduledTaskV3::unsetcreateTime()
 {
     createTimeIsSet_ = false;
-}
-
-std::string ScheduledTaskV3::getDatastoreType() const
-{
-    return datastoreType_;
-}
-
-void ScheduledTaskV3::setDatastoreType(const std::string& value)
-{
-    datastoreType_ = value;
-    datastoreTypeIsSet_ = true;
-}
-
-bool ScheduledTaskV3::datastoreTypeIsSet() const
-{
-    return datastoreTypeIsSet_;
-}
-
-void ScheduledTaskV3::unsetdatastoreType()
-{
-    datastoreTypeIsSet_ = false;
 }
 
 int64_t ScheduledTaskV3::getEndTime() const
@@ -326,48 +236,6 @@ bool ScheduledTaskV3::instanceIdIsSet() const
 void ScheduledTaskV3::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
-}
-
-std::string ScheduledTaskV3::getInstanceName() const
-{
-    return instanceName_;
-}
-
-void ScheduledTaskV3::setInstanceName(const std::string& value)
-{
-    instanceName_ = value;
-    instanceNameIsSet_ = true;
-}
-
-bool ScheduledTaskV3::instanceNameIsSet() const
-{
-    return instanceNameIsSet_;
-}
-
-void ScheduledTaskV3::unsetinstanceName()
-{
-    instanceNameIsSet_ = false;
-}
-
-std::string ScheduledTaskV3::getInstanceStatus() const
-{
-    return instanceStatus_;
-}
-
-void ScheduledTaskV3::setInstanceStatus(const std::string& value)
-{
-    instanceStatus_ = value;
-    instanceStatusIsSet_ = true;
-}
-
-bool ScheduledTaskV3::instanceStatusIsSet() const
-{
-    return instanceStatusIsSet_;
-}
-
-void ScheduledTaskV3::unsetinstanceStatus()
-{
-    instanceStatusIsSet_ = false;
 }
 
 std::string ScheduledTaskV3::getProjectId() const
@@ -454,27 +322,6 @@ void ScheduledTaskV3::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-std::map<std::string, std::string>& ScheduledTaskV3::getTargetConfig()
-{
-    return targetConfig_;
-}
-
-void ScheduledTaskV3::setTargetConfig(const std::map<std::string, std::string>& value)
-{
-    targetConfig_ = value;
-    targetConfigIsSet_ = true;
-}
-
-bool ScheduledTaskV3::targetConfigIsSet() const
-{
-    return targetConfigIsSet_;
-}
-
-void ScheduledTaskV3::unsettargetConfig()
-{
-    targetConfigIsSet_ = false;
-}
-
 std::string ScheduledTaskV3::getTaskId() const
 {
     return taskId_;
@@ -515,27 +362,6 @@ bool ScheduledTaskV3::taskNameIsSet() const
 void ScheduledTaskV3::unsettaskName()
 {
     taskNameIsSet_ = false;
-}
-
-int32_t ScheduledTaskV3::getTaskOrder() const
-{
-    return taskOrder_;
-}
-
-void ScheduledTaskV3::setTaskOrder(int32_t value)
-{
-    taskOrder_ = value;
-    taskOrderIsSet_ = true;
-}
-
-bool ScheduledTaskV3::taskOrderIsSet() const
-{
-    return taskOrderIsSet_;
-}
-
-void ScheduledTaskV3::unsettaskOrder()
-{
-    taskOrderIsSet_ = false;
 }
 
 std::string ScheduledTaskV3::getTaskStatus() const

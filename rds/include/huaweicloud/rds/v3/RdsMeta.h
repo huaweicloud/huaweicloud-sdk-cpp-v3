@@ -239,6 +239,7 @@ public:
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersion();
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersionPreCheck();
     static HttpRequestDef genRequestDefForUpgradeDbVersion();
+    static HttpRequestDef genRequestDefForUpgradeDbVersionFinalConfirm();
     static HttpRequestDef genRequestDefForUpgradeDbVersionNew();
     static HttpRequestDef genRequestDefForUpgradeLargeVersion();
     static HttpRequestDef genRequestDefForUploadHistorySessionAnalyase();

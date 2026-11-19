@@ -16,6 +16,8 @@ CustomerUpgradeDatabaseVersionReqNew::CustomerUpgradeDatabaseVersionReqNew()
     isDelayedIsSet_ = false;
     secondSwitch_ = false;
     secondSwitchIsSet_ = false;
+    supportRollback_ = false;
+    supportRollbackIsSet_ = false;
 }
 
 CustomerUpgradeDatabaseVersionReqNew::~CustomerUpgradeDatabaseVersionReqNew() = default;
@@ -33,6 +35,9 @@ web::json::value CustomerUpgradeDatabaseVersionReqNew::toJson() const
     }
     if(secondSwitchIsSet_) {
         val[utility::conversions::to_string_t("second_switch")] = ModelBase::toJson(secondSwitch_);
+    }
+    if(supportRollbackIsSet_) {
+        val[utility::conversions::to_string_t("support_rollback")] = ModelBase::toJson(supportRollback_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool CustomerUpgradeDatabaseVersionReqNew::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecondSwitch(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("support_rollback"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("support_rollback"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportRollback(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool CustomerUpgradeDatabaseVersionReqNew::secondSwitchIsSet() const
 void CustomerUpgradeDatabaseVersionReqNew::unsetsecondSwitch()
 {
     secondSwitchIsSet_ = false;
+}
+
+bool CustomerUpgradeDatabaseVersionReqNew::isSupportRollback() const
+{
+    return supportRollback_;
+}
+
+void CustomerUpgradeDatabaseVersionReqNew::setSupportRollback(bool value)
+{
+    supportRollback_ = value;
+    supportRollbackIsSet_ = true;
+}
+
+bool CustomerUpgradeDatabaseVersionReqNew::supportRollbackIsSet() const
+{
+    return supportRollbackIsSet_;
+}
+
+void CustomerUpgradeDatabaseVersionReqNew::unsetsupportRollback()
+{
+    supportRollbackIsSet_ = false;
 }
 
 }

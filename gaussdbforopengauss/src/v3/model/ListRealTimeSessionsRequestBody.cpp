@@ -16,6 +16,8 @@ ListRealTimeSessionsRequestBody::ListRealTimeSessionsRequestBody()
     nodeIdIsSet_ = false;
     componentId_ = "";
     componentIdIsSet_ = false;
+    supportLocal_ = false;
+    supportLocalIsSet_ = false;
     queryInfoIsSet_ = false;
 }
 
@@ -34,6 +36,9 @@ web::json::value ListRealTimeSessionsRequestBody::toJson() const
     }
     if(componentIdIsSet_) {
         val[utility::conversions::to_string_t("component_id")] = ModelBase::toJson(componentId_);
+    }
+    if(supportLocalIsSet_) {
+        val[utility::conversions::to_string_t("support_local")] = ModelBase::toJson(supportLocal_);
     }
     if(queryInfoIsSet_) {
         val[utility::conversions::to_string_t("query_info")] = ModelBase::toJson(queryInfo_);
@@ -61,6 +66,15 @@ bool ListRealTimeSessionsRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setComponentId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("support_local"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("support_local"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportLocal(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("query_info"))) {
@@ -116,6 +130,27 @@ bool ListRealTimeSessionsRequestBody::componentIdIsSet() const
 void ListRealTimeSessionsRequestBody::unsetcomponentId()
 {
     componentIdIsSet_ = false;
+}
+
+bool ListRealTimeSessionsRequestBody::isSupportLocal() const
+{
+    return supportLocal_;
+}
+
+void ListRealTimeSessionsRequestBody::setSupportLocal(bool value)
+{
+    supportLocal_ = value;
+    supportLocalIsSet_ = true;
+}
+
+bool ListRealTimeSessionsRequestBody::supportLocalIsSet() const
+{
+    return supportLocalIsSet_;
+}
+
+void ListRealTimeSessionsRequestBody::unsetsupportLocal()
+{
+    supportLocalIsSet_ = false;
 }
 
 SessionQueryInfoOption ListRealTimeSessionsRequestBody::getQueryInfo() const

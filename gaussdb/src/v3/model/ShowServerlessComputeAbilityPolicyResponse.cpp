@@ -24,6 +24,12 @@ ShowServerlessComputeAbilityPolicyResponse::ShowServerlessComputeAbilityPolicyRe
     maxReadonlyNodeCountIsSet_ = false;
     minReadonlyNodeCount_ = 0;
     minReadonlyNodeCountIsSet_ = false;
+    scaleToZero_ = false;
+    scaleToZeroIsSet_ = false;
+    idleDurationSeconds_ = 0;
+    idleDurationSecondsIsSet_ = false;
+    scaleToZeroStatus_ = "";
+    scaleToZeroStatusIsSet_ = false;
 }
 
 ShowServerlessComputeAbilityPolicyResponse::~ShowServerlessComputeAbilityPolicyResponse() = default;
@@ -53,6 +59,15 @@ web::json::value ShowServerlessComputeAbilityPolicyResponse::toJson() const
     }
     if(minReadonlyNodeCountIsSet_) {
         val[utility::conversions::to_string_t("min_readonly_node_count")] = ModelBase::toJson(minReadonlyNodeCount_);
+    }
+    if(scaleToZeroIsSet_) {
+        val[utility::conversions::to_string_t("scale_to_zero")] = ModelBase::toJson(scaleToZero_);
+    }
+    if(idleDurationSecondsIsSet_) {
+        val[utility::conversions::to_string_t("idle_duration_seconds")] = ModelBase::toJson(idleDurationSeconds_);
+    }
+    if(scaleToZeroStatusIsSet_) {
+        val[utility::conversions::to_string_t("scale_to_zero_status")] = ModelBase::toJson(scaleToZeroStatus_);
     }
 
     return val;
@@ -113,6 +128,33 @@ bool ShowServerlessComputeAbilityPolicyResponse::fromJson(const web::json::value
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMinReadonlyNodeCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scale_to_zero"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scale_to_zero"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScaleToZero(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("idle_duration_seconds"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("idle_duration_seconds"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIdleDurationSeconds(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scale_to_zero_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scale_to_zero_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScaleToZeroStatus(refVal);
         }
     }
     return ok;
@@ -243,6 +285,69 @@ bool ShowServerlessComputeAbilityPolicyResponse::minReadonlyNodeCountIsSet() con
 void ShowServerlessComputeAbilityPolicyResponse::unsetminReadonlyNodeCount()
 {
     minReadonlyNodeCountIsSet_ = false;
+}
+
+bool ShowServerlessComputeAbilityPolicyResponse::isScaleToZero() const
+{
+    return scaleToZero_;
+}
+
+void ShowServerlessComputeAbilityPolicyResponse::setScaleToZero(bool value)
+{
+    scaleToZero_ = value;
+    scaleToZeroIsSet_ = true;
+}
+
+bool ShowServerlessComputeAbilityPolicyResponse::scaleToZeroIsSet() const
+{
+    return scaleToZeroIsSet_;
+}
+
+void ShowServerlessComputeAbilityPolicyResponse::unsetscaleToZero()
+{
+    scaleToZeroIsSet_ = false;
+}
+
+int32_t ShowServerlessComputeAbilityPolicyResponse::getIdleDurationSeconds() const
+{
+    return idleDurationSeconds_;
+}
+
+void ShowServerlessComputeAbilityPolicyResponse::setIdleDurationSeconds(int32_t value)
+{
+    idleDurationSeconds_ = value;
+    idleDurationSecondsIsSet_ = true;
+}
+
+bool ShowServerlessComputeAbilityPolicyResponse::idleDurationSecondsIsSet() const
+{
+    return idleDurationSecondsIsSet_;
+}
+
+void ShowServerlessComputeAbilityPolicyResponse::unsetidleDurationSeconds()
+{
+    idleDurationSecondsIsSet_ = false;
+}
+
+std::string ShowServerlessComputeAbilityPolicyResponse::getScaleToZeroStatus() const
+{
+    return scaleToZeroStatus_;
+}
+
+void ShowServerlessComputeAbilityPolicyResponse::setScaleToZeroStatus(const std::string& value)
+{
+    scaleToZeroStatus_ = value;
+    scaleToZeroStatusIsSet_ = true;
+}
+
+bool ShowServerlessComputeAbilityPolicyResponse::scaleToZeroStatusIsSet() const
+{
+    return scaleToZeroStatusIsSet_;
+}
+
+void ShowServerlessComputeAbilityPolicyResponse::unsetscaleToZeroStatus()
+{
+    scaleToZeroStatusIsSet_ = false;
 }
 
 }

@@ -60,6 +60,9 @@
 #include <huaweicloud/kms/v2/model/CreateRsaDatakeyPairRequest.h>
 #include <huaweicloud/kms/v2/model/CreateRsaDatakeyPairRequestBody.h>
 #include <huaweicloud/kms/v2/model/CreateRsaDatakeyPairResponse.h>
+#include <huaweicloud/kms/v2/model/CreateTrustedKeySpaceRequest.h>
+#include <huaweicloud/kms/v2/model/CreateTrustedKeySpaceRequestBody.h>
+#include <huaweicloud/kms/v2/model/CreateTrustedKeySpaceResponse.h>
 #include <huaweicloud/kms/v2/model/DecryptDataRequest.h>
 #include <huaweicloud/kms/v2/model/DecryptDataRequestBody.h>
 #include <huaweicloud/kms/v2/model/DecryptDataResponse.h>
@@ -84,6 +87,8 @@
 #include <huaweicloud/kms/v2/model/DeleteKeyStoreResponse.h>
 #include <huaweicloud/kms/v2/model/DeleteTagRequest.h>
 #include <huaweicloud/kms/v2/model/DeleteTagResponse.h>
+#include <huaweicloud/kms/v2/model/DeleteTrustedKeySpaceRequest.h>
+#include <huaweicloud/kms/v2/model/DeleteTrustedKeySpaceResponse.h>
 #include <huaweicloud/kms/v2/model/DeriveSharedSecretRequest.h>
 #include <huaweicloud/kms/v2/model/DeriveSharedSecretRequestBody.h>
 #include <huaweicloud/kms/v2/model/DeriveSharedSecretResponse.h>
@@ -146,6 +151,8 @@
 #include <huaweicloud/kms/v2/model/ListRetirableGrantsResponse.h>
 #include <huaweicloud/kms/v2/model/ListSupportRegionsRequest.h>
 #include <huaweicloud/kms/v2/model/ListSupportRegionsResponse.h>
+#include <huaweicloud/kms/v2/model/ListTrustedKeySpaceRequest.h>
+#include <huaweicloud/kms/v2/model/ListTrustedKeySpaceResponse.h>
 #include <huaweicloud/kms/v2/model/OperateKeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/ReEncryptRequest.h>
 #include <huaweicloud/kms/v2/model/ReEncryptRequestBody.h>
@@ -164,6 +171,8 @@
 #include <huaweicloud/kms/v2/model/ShowKeyRotationStatusResponse.h>
 #include <huaweicloud/kms/v2/model/ShowKeyStoreRequest.h>
 #include <huaweicloud/kms/v2/model/ShowKeyStoreResponse.h>
+#include <huaweicloud/kms/v2/model/ShowKeyUsageFlowRequest.h>
+#include <huaweicloud/kms/v2/model/ShowKeyUsageFlowResponse.h>
 #include <huaweicloud/kms/v2/model/ShowKmsTagsRequest.h>
 #include <huaweicloud/kms/v2/model/ShowKmsTagsResponse.h>
 #include <huaweicloud/kms/v2/model/ShowPublicKeyRequest.h>
@@ -175,6 +184,9 @@
 #include <huaweicloud/kms/v2/model/SignRequest.h>
 #include <huaweicloud/kms/v2/model/SignRequestBody.h>
 #include <huaweicloud/kms/v2/model/SignResponse.h>
+#include <huaweicloud/kms/v2/model/TransferKeyRequest.h>
+#include <huaweicloud/kms/v2/model/TransferKeyRequestBody.h>
+#include <huaweicloud/kms/v2/model/TransferKeyResponse.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyAliasRequest.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyAliasRequestBody.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyAliasResponse.h>
@@ -187,6 +199,9 @@
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalRequest.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalRequestBody.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalResponse.h>
+#include <huaweicloud/kms/v2/model/UpdateKeyStoreRequest.h>
+#include <huaweicloud/kms/v2/model/UpdateKeyStoreRequestBody.h>
+#include <huaweicloud/kms/v2/model/UpdateKeyStoreResponse.h>
 #include <huaweicloud/kms/v2/model/UpdatePrimaryRegionRequest.h>
 #include <huaweicloud/kms/v2/model/UpdatePrimaryRegionRequestBody.h>
 #include <huaweicloud/kms/v2/model/UpdatePrimaryRegionResponse.h>
@@ -404,6 +419,14 @@ public:
     std::shared_ptr<CreateRsaDatakeyPairResponse> createRsaDatakeyPair(
         CreateRsaDatakeyPairRequest &request
     );
+    // 创建密钥空间
+    //
+    // 用于创建密钥空间
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTrustedKeySpaceResponse> createTrustedKeySpace(
+        CreateTrustedKeySpaceRequest &request
+    );
     // 解密数据
     //
     // - 功能介绍：解密数据。
@@ -483,6 +506,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTagResponse> deleteTag(
         DeleteTagRequest &request
+    );
+    // 删除密钥空间
+    //
+    // 用于删除密钥空间
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTrustedKeySpaceResponse> deleteTrustedKeySpace(
+        DeleteTrustedKeySpaceRequest &request
     );
     // 派生共享密钥
     //
@@ -689,6 +720,14 @@ public:
     std::shared_ptr<ListSupportRegionsResponse> listSupportRegions(
         ListSupportRegionsRequest &request
     );
+    // 查询密钥空间列表
+    //
+    // 用于查询密钥空间列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTrustedKeySpaceResponse> listTrustedKeySpace(
+        ListTrustedKeySpaceRequest &request
+    );
     // 重加密
     //
     // 将密文使用源密钥解密后，再使用指定的新密钥加密。
@@ -739,6 +778,17 @@ public:
     std::shared_ptr<ShowKeyStoreResponse> showKeyStore(
         ShowKeyStoreRequest &request
     );
+    // 查询密钥使用流
+    //
+    // 查询指定密钥空间下指定密钥的使用流关系图，返回节点和边的图结构。
+    // - 节点按类型分组：vpc（VPC节点，含ECS、CCE子节点）、custom（接入点节点）、modelarts（ModelArts节点）、policy（策略节点）、unknown_node（未知起点节点）、key（密钥节点）。
+    // - 边表示使用流关系：起点节点到策略节点、策略节点到密钥节点。
+    // - 该接口仅支持查询已记录使用流关系的密钥，若密钥不存在使用流记录，则返回空的节点和边。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowKeyUsageFlowResponse> showKeyUsageFlow(
+        ShowKeyUsageFlowRequest &request
+    );
     // 查询密钥标签
     //
     // - 功能介绍：查询密钥标签。
@@ -779,6 +829,15 @@ public:
     std::shared_ptr<SignResponse> sign(
         SignRequest &request
     );
+    // 转移密钥
+    //
+    // 用于将密钥从一个密钥空间转移到另一个密钥空间
+    // - ASSIGN：将密钥分配给目标密钥空间，仅支持对称密钥，且密钥必须未属于任何密钥空间。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<TransferKeyResponse> transferKey(
+        TransferKeyRequest &request
+    );
     // 修改密钥别名
     //
     // - 功能介绍：修改用户主密钥别名。
@@ -816,6 +875,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateKeyRotationIntervalResponse> updateKeyRotationInterval(
         UpdateKeyRotationIntervalRequest &request
+    );
+    // 更新专属密钥库
+    //
+    // 仅XKS类型的密钥库支持更新访问凭证信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateKeyStoreResponse> updateKeyStore(
+        UpdateKeyStoreRequest &request
     );
     // 修改密钥所属的主区域
     //

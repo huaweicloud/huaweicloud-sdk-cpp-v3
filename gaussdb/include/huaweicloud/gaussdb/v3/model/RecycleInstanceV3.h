@@ -113,24 +113,6 @@ public:
     void setDeletedAt(int64_t value);
 
     /// <summary>
-    /// 磁盘类型。
-    /// </summary>
-
-    std::string getVolumeType() const;
-    bool volumeTypeIsSet() const;
-    void unsetvolumeType();
-    void setVolumeType(const std::string& value);
-
-    /// <summary>
-    /// 磁盘大小。
-    /// </summary>
-
-    std::string getVolumeSize() const;
-    bool volumeSizeIsSet() const;
-    void unsetvolumeSize();
-    void setVolumeSize(const std::string& value);
-
-    /// <summary>
     /// 数据面VIP。
     /// </summary>
 
@@ -194,6 +176,15 @@ public:
     void setRecycleStatus(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：  回收站备份剩余保留天数。由总保留天数减去实例删除后已过天数得出，为0表示即将清理。  **取值范围**：  - 0：回收站备份即将被清理。 - -1：永久保留（retain_all 策略，不主动清理）。 - 其他值：剩余保留天数。  **默认取值**： 不涉及。
+    /// </summary>
+
+    int32_t getRetentionDays() const;
+    bool retentionDaysIsSet() const;
+    void unsetretentionDays();
+    void setRetentionDays(int32_t value);
+
+    /// <summary>
     /// **参数解释**：  实例所有的回收站备份列表。
     /// </summary>
 
@@ -220,10 +211,6 @@ protected:
     bool createAtIsSet_;
     int64_t deletedAt_;
     bool deletedAtIsSet_;
-    std::string volumeType_;
-    bool volumeTypeIsSet_;
-    std::string volumeSize_;
-    bool volumeSizeIsSet_;
     std::string dataVip_;
     bool dataVipIsSet_;
     std::string dataVipIpv6_;
@@ -238,6 +225,8 @@ protected:
     bool recycleBackupIdIsSet_;
     std::string recycleStatus_;
     bool recycleStatusIsSet_;
+    int32_t retentionDays_;
+    bool retentionDaysIsSet_;
     std::vector<RecycleBackupV3> recycleBackups_;
     bool recycleBackupsIsSet_;
 

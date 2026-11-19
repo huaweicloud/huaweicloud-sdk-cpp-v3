@@ -10,8 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <map>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -50,15 +48,6 @@ public:
     void setCreateTime(int64_t value);
 
     /// <summary>
-    /// **参数解释**：  数据库类型。  **取值范围**： 目前只支持gaussdb-mysql。
-    /// </summary>
-
-    std::string getDatastoreType() const;
-    bool datastoreTypeIsSet() const;
-    void unsetdatastoreType();
-    void setDatastoreType(const std::string& value);
-
-    /// <summary>
     /// **参数解释**：  任务结束时间。  **取值范围**： 不涉及。
     /// </summary>
 
@@ -75,24 +64,6 @@ public:
     bool instanceIdIsSet() const;
     void unsetinstanceId();
     void setInstanceId(const std::string& value);
-
-    /// <summary>
-    /// **参数解释**：  任务绑定的实例名称。  **取值范围**： 不涉及。
-    /// </summary>
-
-    std::string getInstanceName() const;
-    bool instanceNameIsSet() const;
-    void unsetinstanceName();
-    void setInstanceName(const std::string& value);
-
-    /// <summary>
-    /// **参数解释**：  任务绑定的实例状态。  **取值范围**： - NORMAL：实例正常状态。 - BACKING_UP：实例备份中状态。 - MODIFYING：实例修改中状态。 - REBUILDING：实例重建中状态。 - RESTORING：实例恢复中状态。 - FROZEN：实例已冻结状态。 - FAILED：实例状态异常。 - DELETING：实例删除中状态。 - CREATE_FAILED：实例创建失败状态。
-    /// </summary>
-
-    std::string getInstanceStatus() const;
-    bool instanceStatusIsSet() const;
-    void unsetinstanceStatus();
-    void setInstanceStatus(const std::string& value);
 
     /// <summary>
     /// **参数解释**：  租户项目ID。  **取值范围**： 不涉及。
@@ -131,15 +102,6 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// **参数解释**：  任务的目标端配置信息，以键值对形式存储。  **取值范围**： 不涉及。
-    /// </summary>
-
-    std::map<std::string, std::string>& getTargetConfig();
-    bool targetConfigIsSet() const;
-    void unsettargetConfig();
-    void setTargetConfig(const std::map<std::string, std::string>& value);
-
-    /// <summary>
     /// **参数解释**：  任务ID，此参数是任务的唯一标识。  **取值范围**： 不涉及。
     /// </summary>
 
@@ -158,15 +120,6 @@ public:
     void setTaskName(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：  任务执行顺序。  **取值范围**： 不涉及。
-    /// </summary>
-
-    int32_t getTaskOrder() const;
-    bool taskOrderIsSet() const;
-    void unsettaskOrder();
-    void setTaskOrder(int32_t value);
-
-    /// <summary>
     /// **参数解释**：  任务状态。  **取值范围**： - RUNNING：任务正在执行。 - SUCCESS：任务执行成功。 - FAIL：任务执行失败。 - CANCELED：任务被取消。 - WAITING：任务等待执行。
     /// </summary>
 
@@ -179,16 +132,10 @@ public:
 protected:
     int64_t createTime_;
     bool createTimeIsSet_;
-    std::string datastoreType_;
-    bool datastoreTypeIsSet_;
     int64_t endTime_;
     bool endTimeIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
-    std::string instanceName_;
-    bool instanceNameIsSet_;
-    std::string instanceStatus_;
-    bool instanceStatusIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
     std::string proxyId_;
@@ -197,14 +144,10 @@ protected:
     bool proxyNameIsSet_;
     int64_t startTime_;
     bool startTimeIsSet_;
-    std::map<std::string, std::string> targetConfig_;
-    bool targetConfigIsSet_;
     std::string taskId_;
     bool taskIdIsSet_;
     std::string taskName_;
     bool taskNameIsSet_;
-    int32_t taskOrder_;
-    bool taskOrderIsSet_;
     std::string taskStatus_;
     bool taskStatusIsSet_;
 

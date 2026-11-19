@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// **约束限制**  不涉及  **取值范围**  不涉及。  **默认取值**  不涉及。
 /// </summary>
 class HUAWEICLOUD_RDS_V3_EXPORT  SupabaseSpecFlavorInfo_availability_zones
     : public ModelBase

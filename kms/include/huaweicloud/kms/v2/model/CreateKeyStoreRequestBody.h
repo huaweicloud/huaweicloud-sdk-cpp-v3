@@ -83,6 +83,60 @@ public:
     void unsetkeystoreType();
     void setKeystoreType(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 仅XKS类型的密钥库支持；可选，表示Xks-Proxy的域名信息 **约束限制：** ^https://[^\\s]+ **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getProxyUriEndpoint() const;
+    bool proxyUriEndpointIsSet() const;
+    void unsetproxyUriEndpoint();
+    void setProxyUriEndpoint(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 仅XKS类型的密钥库支持；必选，Xks-Proxy的路径前缀 **约束限制：** ^/(?:[a-zA-Z0-9/_-]{0,127})$ **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getProxyUriPath() const;
+    bool proxyUriPathIsSet() const;
+    void unsetproxyUriPath();
+    void setProxyUriPath(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 仅XKS类型的密钥库支持；必选，访问XKS-Proxy的凭据ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getProxyAccessKeyId() const;
+    bool proxyAccessKeyIdIsSet() const;
+    void unsetproxyAccessKeyId();
+    void setProxyAccessKeyId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 仅XKS类型的密钥库支持；必选，访问XKS-Proxy的凭据Key **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getProxySecretAccessKey() const;
+    bool proxySecretAccessKeyIsSet() const;
+    void unsetproxySecretAccessKey();
+    void setProxySecretAccessKey(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 仅XKS类型的密钥库支持；必选，Xks-Proxy的终端节点服务名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getProxyVpcEndpointServiceName() const;
+    bool proxyVpcEndpointServiceNameIsSet() const;
+    void unsetproxyVpcEndpointServiceName();
+    void setProxyVpcEndpointServiceName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 仅XKS类型的密钥库支持；必选，终端节点服务所属账号 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getProxyVpcEndpointServiceOwner() const;
+    bool proxyVpcEndpointServiceOwnerIsSet() const;
+    void unsetproxyVpcEndpointServiceOwner();
+    void setProxyVpcEndpointServiceOwner(const std::string& value);
+
 
 protected:
     std::string keystoreAlias_;
@@ -95,6 +149,18 @@ protected:
     bool clusterIdIsSet_;
     std::string keystoreType_;
     bool keystoreTypeIsSet_;
+    std::string proxyUriEndpoint_;
+    bool proxyUriEndpointIsSet_;
+    std::string proxyUriPath_;
+    bool proxyUriPathIsSet_;
+    std::string proxyAccessKeyId_;
+    bool proxyAccessKeyIdIsSet_;
+    std::string proxySecretAccessKey_;
+    bool proxySecretAccessKeyIsSet_;
+    std::string proxyVpcEndpointServiceName_;
+    bool proxyVpcEndpointServiceNameIsSet_;
+    std::string proxyVpcEndpointServiceOwner_;
+    bool proxyVpcEndpointServiceOwnerIsSet_;
 
 };
 

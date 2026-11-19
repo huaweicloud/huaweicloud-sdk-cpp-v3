@@ -1,3 +1,176 @@
+# 3.1.213 2026-11-19
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavors**
+    - changes of response param
+      - `+ flavors.os_extra_specs.hw:cpu_policy`
+      - `+ flavors.os_extra_specs.hw:cpu_threads`
+  - **ListResizeFlavors**
+    - changes of response param
+      - `+ flavors.extra_specs.hw:cpu_policy`
+      - `+ flavors.extra_specs.hw:cpu_threads`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListRetainedBackups`
+    - `DeleteRetainedBackup`
+    - `ListColdTableWaitingTasks`
+    - `CancelColdTableWaitingTasks`
+    - `ShowColdTableSwitch`
+    - `SwitchOnColdTable`
+    - `ListColdTableTasks`
+    - `CollectColdTableMetas`
+    - `ListArchivableTables`
+    - `DeleteColdTableData`
+    - `SwitchColdTableStorage`
+    - `ShowReplicaBinlogReadConfig`
+    - `BatchUpdateTaurusSlowProcessThreshold`
+    - `ShowTaurusDbSlowProcessThreshold`
+    - `ShowInstanceStorageInfo`
+    - `SwitchGaussMySqlProxyBinlogPull`
+    - `ExchangeInstanceVipProxyIp`
+    - `ListBinlogDownloadLink`
+    - `ShowBinlogSwitch`
+    - `UpdateBinlogSwitch`
+    - `ListBinlogs`
+    - `ShowKillProcessTask`
+    - `StopKillProcessTask`
+    - `AddKillProcessTask`
+    - `ExecuteKillAllProcess`
+    - `ShowExceptionSnapshotStatus`
+    - `SwitchExceptionSnapshotStatus`
+    - `ShowKillProcessHistory`
+    - `ShowKillProcessStatus`
+    - `UpdateAutoKillProcessStatus`
+    - `ShowKillProcessTaskPreview`
+    - `ShowMigrateInfo`
+    - `UpdateServerlessScaleToZeroPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowServerlessComputeAbilityPolicy**
+    - changes of response param
+      - `+ scale_to_zero`
+      - `+ scale_to_zero_status`
+      - `+ idle_duration_seconds`
+  - **RestartGaussMySqlInstance**
+    - changes of request param
+      - `+ max_connections`
+  - **InvokeGaussMySqlInstanceSwitchOver**
+    - changes of request param
+      - `+ force`
+  - **CheckScheduleTaskExist**
+    - changes of response param
+      - `- scheduled_tasks.datastore_type`
+      - `- scheduled_tasks.instance_name`
+      - `- scheduled_tasks.instance_status`
+      - `- scheduled_tasks.target_config`
+      - `- scheduled_tasks.task_order`
+  - **ShowHistoricalSqlFilterRule**
+    - changes of request param
+      - `+ offset`
+      - `+ limit`
+    - changes of response param
+      - `+ total_count`
+  - **ListRecycleInstances**
+    - changes of response param
+      - `+ instances.retention_days`
+      - `- instances.volume_type`
+      - `- instances.volume_size`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListApplicableInstancesWithEntities`, `ListAppliedHistoriesWithEntities`, `ApplyConfigurationWithEntities`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ListTrustedKeySpace`
+    - `CreateTrustedKeySpace`
+    - `TransferKey`
+    - `DeleteTrustedKeySpace`
+    - `ShowKeyUsageFlow`
+    - `UpdateKeyStore`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateKeyStore**
+    - changes of request param
+      - `+ proxy_uri_endpoint`
+      - `+ proxy_uri_path`
+      - `+ proxy_access_key_id`
+      - `+ proxy_secret_access_key`
+      - `+ proxy_vpc_endpoint_service_name`
+      - `+ proxy_vpc_endpoint_service_owner`
+      - `+ keystore_type: enum value [XKS]`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `UpgradeDbVersionFinalConfirm`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpgradeDbVersionNew**
+    - changes of request param
+      - `+ support_rollback`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchCreateTrafficMirrorFilterRules**
+    - changes of response param
+      - `- page_info`
+  - **ListResourceAssociations**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+  - **ListSubNetworkInterfaces**
+    - changes of request param
+      - `+ enable_eip`
+      - `+ scope`
+      - `+ security_groups`
+      - `+ enterprise_project_id`
+      - `+ parent_device_id`
+      - `+ vlan_id`
+      - `+ state`
+      - `+ ipv6_ip_address`
+      - `+ instance_id`
+      - `+ instance_type`
+  - **CreateSubNetworkInterface**
+    - changes of request param
+      - `+ sub_network_interface.tags`
+
 # 3.1.212 2026-11-12
 
 ### HuaweiCloud SDK RDS

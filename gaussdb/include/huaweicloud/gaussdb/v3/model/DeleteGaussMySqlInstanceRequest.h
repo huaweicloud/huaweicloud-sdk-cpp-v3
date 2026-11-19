@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/gaussdb/v3/model/DeleteGaussMySqlInstanceRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -56,12 +57,23 @@ public:
     void unsetinstanceId();
     void setInstanceId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    DeleteGaussMySqlInstanceRequestBody getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const DeleteGaussMySqlInstanceRequestBody& value);
+
 
 protected:
     std::string xLanguage_;
     bool xLanguageIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
+    DeleteGaussMySqlInstanceRequestBody body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

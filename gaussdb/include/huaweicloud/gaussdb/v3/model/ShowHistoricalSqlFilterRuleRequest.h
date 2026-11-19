@@ -74,6 +74,24 @@ public:
     void unsetsqlType();
     void setSqlType(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  索引位置，偏移量。从第一条数据偏移offset条数据后开始查询。  **约束限制**：  必须为整数，不能为负数。  **取值范围**：  ≥0。  **默认取值**：  0。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// **参数解释**：  查询记录数。  **约束限制**：  必须为整数，不能为负数。  **取值范围**：  1-100。  **默认取值**：  100。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
 
 protected:
     std::string xLanguage_;
@@ -84,6 +102,10 @@ protected:
     bool nodeIdIsSet_;
     std::string sqlType_;
     bool sqlTypeIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

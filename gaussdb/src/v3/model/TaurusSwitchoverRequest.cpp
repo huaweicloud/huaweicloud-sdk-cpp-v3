@@ -14,6 +14,8 @@ TaurusSwitchoverRequest::TaurusSwitchoverRequest()
 {
     nodeId_ = "";
     nodeIdIsSet_ = false;
+    force_ = false;
+    forceIsSet_ = false;
 }
 
 TaurusSwitchoverRequest::~TaurusSwitchoverRequest() = default;
@@ -29,6 +31,9 @@ web::json::value TaurusSwitchoverRequest::toJson() const
     if(nodeIdIsSet_) {
         val[utility::conversions::to_string_t("node_id")] = ModelBase::toJson(nodeId_);
     }
+    if(forceIsSet_) {
+        val[utility::conversions::to_string_t("force")] = ModelBase::toJson(force_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool TaurusSwitchoverRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("force"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("force"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setForce(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool TaurusSwitchoverRequest::nodeIdIsSet() const
 void TaurusSwitchoverRequest::unsetnodeId()
 {
     nodeIdIsSet_ = false;
+}
+
+bool TaurusSwitchoverRequest::isForce() const
+{
+    return force_;
+}
+
+void TaurusSwitchoverRequest::setForce(bool value)
+{
+    force_ = value;
+    forceIsSet_ = true;
+}
+
+bool TaurusSwitchoverRequest::forceIsSet() const
+{
+    return forceIsSet_;
+}
+
+void TaurusSwitchoverRequest::unsetforce()
+{
+    forceIsSet_ = false;
 }
 
 }

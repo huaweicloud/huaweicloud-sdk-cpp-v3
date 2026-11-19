@@ -40,6 +40,15 @@ public:
     /// ShowHistoricalSqlFilterRuleResponse members
 
     /// <summary>
+    /// **参数解释**：  总记录数。  **取值范围**：  大于等于0。
+    /// </summary>
+
+    int32_t getTotalCount() const;
+    bool totalCountIsSet() const;
+    void unsettotalCount();
+    void setTotalCount(int32_t value);
+
+    /// <summary>
     /// **参数解释**：  历史SQL限流规则。
     /// </summary>
 
@@ -50,6 +59,8 @@ public:
 
 
 protected:
+    int32_t totalCount_;
+    bool totalCountIsSet_;
     std::vector<HistoricalSqlFilterRule> sqlFilterRules_;
     bool sqlFilterRulesIsSet_;
 

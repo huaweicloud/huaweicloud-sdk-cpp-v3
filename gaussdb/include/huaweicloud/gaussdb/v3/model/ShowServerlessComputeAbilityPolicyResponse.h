@@ -84,13 +84,40 @@ public:
     void setMaxReadonlyNodeCount(int32_t value);
 
     /// <summary>
-    /// **参数解释**：  最小只读节点个数。  **取值范围**：  ≥1。    
+    /// **参数解释**：  最小只读节点个数。  **取值范围**：  ≥1。
     /// </summary>
 
     int32_t getMinReadonlyNodeCount() const;
     bool minReadonlyNodeCountIsSet() const;
     void unsetminReadonlyNodeCount();
     void setMinReadonlyNodeCount(int32_t value);
+
+    /// <summary>
+    /// **参数解释**：  Scale to Zero开关。  **取值范围**： - true: 开启Scale to Zero。 - false: 关闭Scale to Zero。
+    /// </summary>
+
+    bool isScaleToZero() const;
+    bool scaleToZeroIsSet() const;
+    void unsetscaleToZero();
+    void setScaleToZero(bool value);
+
+    /// <summary>
+    /// **参数解释**：  空闲持续时长阈值，单位是秒。  所有节点活跃连接数为0且持续达到该阈值时触发Scale to Zero（停止计算计费）。  **取值范围**：  300-3600。
+    /// </summary>
+
+    int32_t getIdleDurationSeconds() const;
+    bool idleDurationSecondsIsSet() const;
+    void unsetidleDurationSeconds();
+    void setIdleDurationSeconds(int32_t value);
+
+    /// <summary>
+    /// **参数解释**：  Scale to Zero开启后实例的运行状态。  **取值范围**： - ACTIVE：实例已唤醒，正常计费。 - SCALED_TO_ZERO：计算资源停止计费。
+    /// </summary>
+
+    std::string getScaleToZeroStatus() const;
+    bool scaleToZeroStatusIsSet() const;
+    void unsetscaleToZeroStatus();
+    void setScaleToZeroStatus(const std::string& value);
 
 
 protected:
@@ -106,6 +133,12 @@ protected:
     bool maxReadonlyNodeCountIsSet_;
     int32_t minReadonlyNodeCount_;
     bool minReadonlyNodeCountIsSet_;
+    bool scaleToZero_;
+    bool scaleToZeroIsSet_;
+    int32_t idleDurationSeconds_;
+    bool idleDurationSecondsIsSet_;
+    std::string scaleToZeroStatus_;
+    bool scaleToZeroStatusIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

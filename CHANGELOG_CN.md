@@ -1,3 +1,176 @@
+# 3.1.213 2026-11-19
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlavors**
+    - 响应参数变更
+      - `+ flavors.os_extra_specs.hw:cpu_policy`
+      - `+ flavors.os_extra_specs.hw:cpu_threads`
+  - **ListResizeFlavors**
+    - 响应参数变更
+      - `+ flavors.extra_specs.hw:cpu_policy`
+      - `+ flavors.extra_specs.hw:cpu_threads`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListRetainedBackups`
+    - `DeleteRetainedBackup`
+    - `ListColdTableWaitingTasks`
+    - `CancelColdTableWaitingTasks`
+    - `ShowColdTableSwitch`
+    - `SwitchOnColdTable`
+    - `ListColdTableTasks`
+    - `CollectColdTableMetas`
+    - `ListArchivableTables`
+    - `DeleteColdTableData`
+    - `SwitchColdTableStorage`
+    - `ShowReplicaBinlogReadConfig`
+    - `BatchUpdateTaurusSlowProcessThreshold`
+    - `ShowTaurusDbSlowProcessThreshold`
+    - `ShowInstanceStorageInfo`
+    - `SwitchGaussMySqlProxyBinlogPull`
+    - `ExchangeInstanceVipProxyIp`
+    - `ListBinlogDownloadLink`
+    - `ShowBinlogSwitch`
+    - `UpdateBinlogSwitch`
+    - `ListBinlogs`
+    - `ShowKillProcessTask`
+    - `StopKillProcessTask`
+    - `AddKillProcessTask`
+    - `ExecuteKillAllProcess`
+    - `ShowExceptionSnapshotStatus`
+    - `SwitchExceptionSnapshotStatus`
+    - `ShowKillProcessHistory`
+    - `ShowKillProcessStatus`
+    - `UpdateAutoKillProcessStatus`
+    - `ShowKillProcessTaskPreview`
+    - `ShowMigrateInfo`
+    - `UpdateServerlessScaleToZeroPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowServerlessComputeAbilityPolicy**
+    - 响应参数变更
+      - `+ scale_to_zero`
+      - `+ scale_to_zero_status`
+      - `+ idle_duration_seconds`
+  - **RestartGaussMySqlInstance**
+    - 请求参数变更
+      - `+ max_connections`
+  - **InvokeGaussMySqlInstanceSwitchOver**
+    - 请求参数变更
+      - `+ force`
+  - **CheckScheduleTaskExist**
+    - 响应参数变更
+      - `- scheduled_tasks.datastore_type`
+      - `- scheduled_tasks.instance_name`
+      - `- scheduled_tasks.instance_status`
+      - `- scheduled_tasks.target_config`
+      - `- scheduled_tasks.task_order`
+  - **ShowHistoricalSqlFilterRule**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+    - 响应参数变更
+      - `+ total_count`
+  - **ListRecycleInstances**
+    - 响应参数变更
+      - `+ instances.retention_days`
+      - `- instances.volume_type`
+      - `- instances.volume_size`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListApplicableInstancesWithEntities`、`ListAppliedHistoriesWithEntities`、`ApplyConfigurationWithEntities`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK KMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ListTrustedKeySpace`
+    - `CreateTrustedKeySpace`
+    - `TransferKey`
+    - `DeleteTrustedKeySpace`
+    - `ShowKeyUsageFlow`
+    - `UpdateKeyStore`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateKeyStore**
+    - 请求参数变更
+      - `+ proxy_uri_endpoint`
+      - `+ proxy_uri_path`
+      - `+ proxy_access_key_id`
+      - `+ proxy_secret_access_key`
+      - `+ proxy_vpc_endpoint_service_name`
+      - `+ proxy_vpc_endpoint_service_owner`
+      - `+ keystore_type: enum value [XKS]`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`UpgradeDbVersionFinalConfirm`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeDbVersionNew**
+    - 请求参数变更
+      - `+ support_rollback`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchCreateTrafficMirrorFilterRules**
+    - 响应参数变更
+      - `- page_info`
+  - **ListResourceAssociations**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+  - **ListSubNetworkInterfaces**
+    - 请求参数变更
+      - `+ enable_eip`
+      - `+ scope`
+      - `+ security_groups`
+      - `+ enterprise_project_id`
+      - `+ parent_device_id`
+      - `+ vlan_id`
+      - `+ state`
+      - `+ ipv6_ip_address`
+      - `+ instance_id`
+      - `+ instance_type`
+  - **CreateSubNetworkInterface**
+    - 请求参数变更
+      - `+ sub_network_interface.tags`
+
 # 3.1.212 2026-11-12
 
 ### HuaweiCloud SDK RDS

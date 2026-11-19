@@ -54,6 +54,8 @@ RealTimeSessionResult::RealTimeSessionResult()
     sqlNumIsSet_ = false;
     clientPort_ = "";
     clientPortIsSet_ = false;
+    serverPort_ = "";
+    serverPortIsSet_ = false;
     queryId_ = "";
     queryIdIsSet_ = false;
     transactionTimeCost_ = "";
@@ -158,6 +160,9 @@ web::json::value RealTimeSessionResult::toJson() const
     }
     if(clientPortIsSet_) {
         val[utility::conversions::to_string_t("client_port")] = ModelBase::toJson(clientPort_);
+    }
+    if(serverPortIsSet_) {
+        val[utility::conversions::to_string_t("server_port")] = ModelBase::toJson(serverPort_);
     }
     if(queryIdIsSet_) {
         val[utility::conversions::to_string_t("query_id")] = ModelBase::toJson(queryId_);
@@ -398,6 +403,15 @@ bool RealTimeSessionResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setClientPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("server_port"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("server_port"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerPort(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("query_id"))) {
@@ -978,6 +992,27 @@ bool RealTimeSessionResult::clientPortIsSet() const
 void RealTimeSessionResult::unsetclientPort()
 {
     clientPortIsSet_ = false;
+}
+
+std::string RealTimeSessionResult::getServerPort() const
+{
+    return serverPort_;
+}
+
+void RealTimeSessionResult::setServerPort(const std::string& value)
+{
+    serverPort_ = value;
+    serverPortIsSet_ = true;
+}
+
+bool RealTimeSessionResult::serverPortIsSet() const
+{
+    return serverPortIsSet_;
+}
+
+void RealTimeSessionResult::unsetserverPort()
+{
+    serverPortIsSet_ = false;
 }
 
 std::string RealTimeSessionResult::getQueryId() const

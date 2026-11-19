@@ -46,10 +46,21 @@ public:
     void unsetdelay();
     void setDelay(bool value);
 
+    /// <summary>
+    /// **参数解释**：  实例重启后生效的max_connections内核参数配置值。max_connections用于设置允许同时连接到数据库实例的最大客户端连接数。  **约束限制**：  不涉及。  **取值范围**： 30-100000。  **默认取值**： 不涉及。
+    /// </summary>
+
+    int32_t getMaxConnections() const;
+    bool maxConnectionsIsSet() const;
+    void unsetmaxConnections();
+    void setMaxConnections(int32_t value);
+
 
 protected:
     bool delay_;
     bool delayIsSet_;
+    int32_t maxConnections_;
+    bool maxConnectionsIsSet_;
 
 };
 

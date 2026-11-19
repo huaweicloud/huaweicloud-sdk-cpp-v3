@@ -28,10 +28,6 @@ RecycleInstanceV3::RecycleInstanceV3()
     createAtIsSet_ = false;
     deletedAt_ = 0L;
     deletedAtIsSet_ = false;
-    volumeType_ = "";
-    volumeTypeIsSet_ = false;
-    volumeSize_ = "";
-    volumeSizeIsSet_ = false;
     dataVip_ = "";
     dataVipIsSet_ = false;
     dataVipIpv6_ = "";
@@ -46,6 +42,8 @@ RecycleInstanceV3::RecycleInstanceV3()
     recycleBackupIdIsSet_ = false;
     recycleStatus_ = "";
     recycleStatusIsSet_ = false;
+    retentionDays_ = 0;
+    retentionDaysIsSet_ = false;
     recycleBackupsIsSet_ = false;
 }
 
@@ -83,12 +81,6 @@ web::json::value RecycleInstanceV3::toJson() const
     if(deletedAtIsSet_) {
         val[utility::conversions::to_string_t("deleted_at")] = ModelBase::toJson(deletedAt_);
     }
-    if(volumeTypeIsSet_) {
-        val[utility::conversions::to_string_t("volume_type")] = ModelBase::toJson(volumeType_);
-    }
-    if(volumeSizeIsSet_) {
-        val[utility::conversions::to_string_t("volume_size")] = ModelBase::toJson(volumeSize_);
-    }
     if(dataVipIsSet_) {
         val[utility::conversions::to_string_t("data_vip")] = ModelBase::toJson(dataVip_);
     }
@@ -109,6 +101,9 @@ web::json::value RecycleInstanceV3::toJson() const
     }
     if(recycleStatusIsSet_) {
         val[utility::conversions::to_string_t("recycle_status")] = ModelBase::toJson(recycleStatus_);
+    }
+    if(retentionDaysIsSet_) {
+        val[utility::conversions::to_string_t("retention_days")] = ModelBase::toJson(retentionDays_);
     }
     if(recycleBackupsIsSet_) {
         val[utility::conversions::to_string_t("recycle_backups")] = ModelBase::toJson(recycleBackups_);
@@ -192,24 +187,6 @@ bool RecycleInstanceV3::fromJson(const web::json::value& val)
             setDeletedAt(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("volume_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volume_type"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setVolumeType(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("volume_size"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volume_size"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setVolumeSize(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("data_vip"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data_vip"));
         if(!fieldValue.is_null())
@@ -271,6 +248,15 @@ bool RecycleInstanceV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRecycleStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("retention_days"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("retention_days"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRetentionDays(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("recycle_backups"))) {
@@ -454,48 +440,6 @@ void RecycleInstanceV3::unsetdeletedAt()
     deletedAtIsSet_ = false;
 }
 
-std::string RecycleInstanceV3::getVolumeType() const
-{
-    return volumeType_;
-}
-
-void RecycleInstanceV3::setVolumeType(const std::string& value)
-{
-    volumeType_ = value;
-    volumeTypeIsSet_ = true;
-}
-
-bool RecycleInstanceV3::volumeTypeIsSet() const
-{
-    return volumeTypeIsSet_;
-}
-
-void RecycleInstanceV3::unsetvolumeType()
-{
-    volumeTypeIsSet_ = false;
-}
-
-std::string RecycleInstanceV3::getVolumeSize() const
-{
-    return volumeSize_;
-}
-
-void RecycleInstanceV3::setVolumeSize(const std::string& value)
-{
-    volumeSize_ = value;
-    volumeSizeIsSet_ = true;
-}
-
-bool RecycleInstanceV3::volumeSizeIsSet() const
-{
-    return volumeSizeIsSet_;
-}
-
-void RecycleInstanceV3::unsetvolumeSize()
-{
-    volumeSizeIsSet_ = false;
-}
-
 std::string RecycleInstanceV3::getDataVip() const
 {
     return dataVip_;
@@ -641,6 +585,27 @@ bool RecycleInstanceV3::recycleStatusIsSet() const
 void RecycleInstanceV3::unsetrecycleStatus()
 {
     recycleStatusIsSet_ = false;
+}
+
+int32_t RecycleInstanceV3::getRetentionDays() const
+{
+    return retentionDays_;
+}
+
+void RecycleInstanceV3::setRetentionDays(int32_t value)
+{
+    retentionDays_ = value;
+    retentionDaysIsSet_ = true;
+}
+
+bool RecycleInstanceV3::retentionDaysIsSet() const
+{
+    return retentionDaysIsSet_;
+}
+
+void RecycleInstanceV3::unsetretentionDays()
+{
+    retentionDaysIsSet_ = false;
 }
 
 std::vector<RecycleBackupV3>& RecycleInstanceV3::getRecycleBackups()

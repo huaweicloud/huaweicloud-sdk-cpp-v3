@@ -58,6 +58,15 @@ public:
     void setComponentId(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 是否展示本地会话。 **约束限制**： 不涉及。 **取值范围**： - true：展示本地会话 - false：不展示本地会话  **默认取值**: false。
+    /// </summary>
+
+    bool isSupportLocal() const;
+    bool supportLocalIsSet() const;
+    void unsetsupportLocal();
+    void setSupportLocal(bool value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -72,6 +81,8 @@ protected:
     bool nodeIdIsSet_;
     std::string componentId_;
     bool componentIdIsSet_;
+    bool supportLocal_;
+    bool supportLocalIsSet_;
     SessionQueryInfoOption queryInfo_;
     bool queryInfoIsSet_;
 

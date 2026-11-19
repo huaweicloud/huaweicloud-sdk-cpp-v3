@@ -22,6 +22,18 @@ CreateKeyStoreRequestBody::CreateKeyStoreRequestBody()
     clusterIdIsSet_ = false;
     keystoreType_ = "";
     keystoreTypeIsSet_ = false;
+    proxyUriEndpoint_ = "";
+    proxyUriEndpointIsSet_ = false;
+    proxyUriPath_ = "";
+    proxyUriPathIsSet_ = false;
+    proxyAccessKeyId_ = "";
+    proxyAccessKeyIdIsSet_ = false;
+    proxySecretAccessKey_ = "";
+    proxySecretAccessKeyIsSet_ = false;
+    proxyVpcEndpointServiceName_ = "";
+    proxyVpcEndpointServiceNameIsSet_ = false;
+    proxyVpcEndpointServiceOwner_ = "";
+    proxyVpcEndpointServiceOwnerIsSet_ = false;
 }
 
 CreateKeyStoreRequestBody::~CreateKeyStoreRequestBody() = default;
@@ -48,6 +60,24 @@ web::json::value CreateKeyStoreRequestBody::toJson() const
     }
     if(keystoreTypeIsSet_) {
         val[utility::conversions::to_string_t("keystore_type")] = ModelBase::toJson(keystoreType_);
+    }
+    if(proxyUriEndpointIsSet_) {
+        val[utility::conversions::to_string_t("proxy_uri_endpoint")] = ModelBase::toJson(proxyUriEndpoint_);
+    }
+    if(proxyUriPathIsSet_) {
+        val[utility::conversions::to_string_t("proxy_uri_path")] = ModelBase::toJson(proxyUriPath_);
+    }
+    if(proxyAccessKeyIdIsSet_) {
+        val[utility::conversions::to_string_t("proxy_access_key_id")] = ModelBase::toJson(proxyAccessKeyId_);
+    }
+    if(proxySecretAccessKeyIsSet_) {
+        val[utility::conversions::to_string_t("proxy_secret_access_key")] = ModelBase::toJson(proxySecretAccessKey_);
+    }
+    if(proxyVpcEndpointServiceNameIsSet_) {
+        val[utility::conversions::to_string_t("proxy_vpc_endpoint_service_name")] = ModelBase::toJson(proxyVpcEndpointServiceName_);
+    }
+    if(proxyVpcEndpointServiceOwnerIsSet_) {
+        val[utility::conversions::to_string_t("proxy_vpc_endpoint_service_owner")] = ModelBase::toJson(proxyVpcEndpointServiceOwner_);
     }
 
     return val;
@@ -99,6 +129,60 @@ bool CreateKeyStoreRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeystoreType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_uri_endpoint"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_uri_endpoint"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyUriEndpoint(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_uri_path"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_uri_path"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyUriPath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_access_key_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_access_key_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyAccessKeyId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_secret_access_key"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_secret_access_key"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxySecretAccessKey(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_vpc_endpoint_service_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_vpc_endpoint_service_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyVpcEndpointServiceName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_vpc_endpoint_service_owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_vpc_endpoint_service_owner"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyVpcEndpointServiceOwner(refVal);
         }
     }
     return ok;
@@ -208,6 +292,132 @@ bool CreateKeyStoreRequestBody::keystoreTypeIsSet() const
 void CreateKeyStoreRequestBody::unsetkeystoreType()
 {
     keystoreTypeIsSet_ = false;
+}
+
+std::string CreateKeyStoreRequestBody::getProxyUriEndpoint() const
+{
+    return proxyUriEndpoint_;
+}
+
+void CreateKeyStoreRequestBody::setProxyUriEndpoint(const std::string& value)
+{
+    proxyUriEndpoint_ = value;
+    proxyUriEndpointIsSet_ = true;
+}
+
+bool CreateKeyStoreRequestBody::proxyUriEndpointIsSet() const
+{
+    return proxyUriEndpointIsSet_;
+}
+
+void CreateKeyStoreRequestBody::unsetproxyUriEndpoint()
+{
+    proxyUriEndpointIsSet_ = false;
+}
+
+std::string CreateKeyStoreRequestBody::getProxyUriPath() const
+{
+    return proxyUriPath_;
+}
+
+void CreateKeyStoreRequestBody::setProxyUriPath(const std::string& value)
+{
+    proxyUriPath_ = value;
+    proxyUriPathIsSet_ = true;
+}
+
+bool CreateKeyStoreRequestBody::proxyUriPathIsSet() const
+{
+    return proxyUriPathIsSet_;
+}
+
+void CreateKeyStoreRequestBody::unsetproxyUriPath()
+{
+    proxyUriPathIsSet_ = false;
+}
+
+std::string CreateKeyStoreRequestBody::getProxyAccessKeyId() const
+{
+    return proxyAccessKeyId_;
+}
+
+void CreateKeyStoreRequestBody::setProxyAccessKeyId(const std::string& value)
+{
+    proxyAccessKeyId_ = value;
+    proxyAccessKeyIdIsSet_ = true;
+}
+
+bool CreateKeyStoreRequestBody::proxyAccessKeyIdIsSet() const
+{
+    return proxyAccessKeyIdIsSet_;
+}
+
+void CreateKeyStoreRequestBody::unsetproxyAccessKeyId()
+{
+    proxyAccessKeyIdIsSet_ = false;
+}
+
+std::string CreateKeyStoreRequestBody::getProxySecretAccessKey() const
+{
+    return proxySecretAccessKey_;
+}
+
+void CreateKeyStoreRequestBody::setProxySecretAccessKey(const std::string& value)
+{
+    proxySecretAccessKey_ = value;
+    proxySecretAccessKeyIsSet_ = true;
+}
+
+bool CreateKeyStoreRequestBody::proxySecretAccessKeyIsSet() const
+{
+    return proxySecretAccessKeyIsSet_;
+}
+
+void CreateKeyStoreRequestBody::unsetproxySecretAccessKey()
+{
+    proxySecretAccessKeyIsSet_ = false;
+}
+
+std::string CreateKeyStoreRequestBody::getProxyVpcEndpointServiceName() const
+{
+    return proxyVpcEndpointServiceName_;
+}
+
+void CreateKeyStoreRequestBody::setProxyVpcEndpointServiceName(const std::string& value)
+{
+    proxyVpcEndpointServiceName_ = value;
+    proxyVpcEndpointServiceNameIsSet_ = true;
+}
+
+bool CreateKeyStoreRequestBody::proxyVpcEndpointServiceNameIsSet() const
+{
+    return proxyVpcEndpointServiceNameIsSet_;
+}
+
+void CreateKeyStoreRequestBody::unsetproxyVpcEndpointServiceName()
+{
+    proxyVpcEndpointServiceNameIsSet_ = false;
+}
+
+std::string CreateKeyStoreRequestBody::getProxyVpcEndpointServiceOwner() const
+{
+    return proxyVpcEndpointServiceOwner_;
+}
+
+void CreateKeyStoreRequestBody::setProxyVpcEndpointServiceOwner(const std::string& value)
+{
+    proxyVpcEndpointServiceOwner_ = value;
+    proxyVpcEndpointServiceOwnerIsSet_ = true;
+}
+
+bool CreateKeyStoreRequestBody::proxyVpcEndpointServiceOwnerIsSet() const
+{
+    return proxyVpcEndpointServiceOwnerIsSet_;
+}
+
+void CreateKeyStoreRequestBody::unsetproxyVpcEndpointServiceOwner()
+{
+    proxyVpcEndpointServiceOwnerIsSet_ = false;
 }
 
 }

@@ -12,6 +12,8 @@ namespace Model {
 
 ListAccessControlTaskRequest::ListAccessControlTaskRequest()
 {
+    taskId_ = "";
+    taskIdIsSet_ = false;
     startTime_ = 0L;
     startTimeIsSet_ = false;
     endTime_ = 0L;
@@ -34,6 +36,9 @@ web::json::value ListAccessControlTaskRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(taskIdIsSet_) {
+        val[utility::conversions::to_string_t("task_id")] = ModelBase::toJson(taskId_);
+    }
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
     }
@@ -56,6 +61,15 @@ bool ListAccessControlTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("task_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("task_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaskId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("start_time"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
@@ -104,6 +118,27 @@ bool ListAccessControlTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListAccessControlTaskRequest::getTaskId() const
+{
+    return taskId_;
+}
+
+void ListAccessControlTaskRequest::setTaskId(const std::string& value)
+{
+    taskId_ = value;
+    taskIdIsSet_ = true;
+}
+
+bool ListAccessControlTaskRequest::taskIdIsSet() const
+{
+    return taskIdIsSet_;
+}
+
+void ListAccessControlTaskRequest::unsettaskId()
+{
+    taskIdIsSet_ = false;
+}
 
 int64_t ListAccessControlTaskRequest::getStartTime() const
 {

@@ -33,6 +33,7 @@ UpdateDomainMultiCertificatesRequestBodyContent::UpdateDomainMultiCertificatesRe
     certificateTypeIsSet_ = false;
     scmCertificateId_ = "";
     scmCertificateIdIsSet_ = false;
+    certificatesIsSet_ = false;
 }
 
 UpdateDomainMultiCertificatesRequestBodyContent::~UpdateDomainMultiCertificatesRequestBodyContent() = default;
@@ -77,6 +78,9 @@ web::json::value UpdateDomainMultiCertificatesRequestBodyContent::toJson() const
     }
     if(scmCertificateIdIsSet_) {
         val[utility::conversions::to_string_t("scm_certificate_id")] = ModelBase::toJson(scmCertificateId_);
+    }
+    if(certificatesIsSet_) {
+        val[utility::conversions::to_string_t("certificates")] = ModelBase::toJson(certificates_);
     }
 
     return val;
@@ -182,6 +186,15 @@ bool UpdateDomainMultiCertificatesRequestBodyContent::fromJson(const web::json::
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setScmCertificateId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificates"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificates"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<MultiCertificateBatchVo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificates(refVal);
         }
     }
     return ok;
@@ -417,6 +430,27 @@ bool UpdateDomainMultiCertificatesRequestBodyContent::scmCertificateIdIsSet() co
 void UpdateDomainMultiCertificatesRequestBodyContent::unsetscmCertificateId()
 {
     scmCertificateIdIsSet_ = false;
+}
+
+std::vector<MultiCertificateBatchVo>& UpdateDomainMultiCertificatesRequestBodyContent::getCertificates()
+{
+    return certificates_;
+}
+
+void UpdateDomainMultiCertificatesRequestBodyContent::setCertificates(const std::vector<MultiCertificateBatchVo>& value)
+{
+    certificates_ = value;
+    certificatesIsSet_ = true;
+}
+
+bool UpdateDomainMultiCertificatesRequestBodyContent::certificatesIsSet() const
+{
+    return certificatesIsSet_;
+}
+
+void UpdateDomainMultiCertificatesRequestBodyContent::unsetcertificates()
+{
+    certificatesIsSet_ = false;
 }
 
 }

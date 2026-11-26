@@ -316,6 +316,9 @@ HttpRequestDef CdnMeta::genRequestDefForExportStatsOpen() {
 
 HttpRequestDef CdnMeta::genRequestDefForListAccessControlTask() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
+                  .withJsonTag("task_id")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
                   .withJsonTag("start_time")
                   .withLocationType(Query_));

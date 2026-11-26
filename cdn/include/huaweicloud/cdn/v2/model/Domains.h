@@ -43,7 +43,7 @@ public:
     /// Domains members
 
     /// <summary>
-    /// 加速域名ID。
+    /// **参数解释：** 加速域名ID。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -52,7 +52,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 加速域名。
+    /// **参数解释：** 加速域名。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -79,7 +79,7 @@ public:
     void setDomainStatus(const std::string& value);
 
     /// <summary>
-    /// 加速域名对应的CNAME。
+    /// **参数解释：** 加速域名对应的CNAME。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getCname() const;
@@ -115,7 +115,7 @@ public:
     void setHttpsStatus(int32_t value);
 
     /// <summary>
-    /// 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+    /// **参数解释：** 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getCreateTime() const;
@@ -124,7 +124,7 @@ public:
     void setCreateTime(int64_t value);
 
     /// <summary>
-    /// 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+    /// **参数解释：** 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getModifyTime() const;
@@ -196,7 +196,7 @@ public:
     void setOriginStatus(const std::string& value);
 
     /// <summary>
-    /// 域名禁用原因。
+    /// **参数解释：** 域名禁用原因。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getBannedReason() const;
@@ -205,7 +205,7 @@ public:
     void setBannedReason(const std::string& value);
 
     /// <summary>
-    /// 域名锁定原因。
+    /// **参数解释：** 域名锁定原因。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getLockedReason() const;
@@ -214,7 +214,7 @@ public:
     void setLockedReason(const std::string& value);
 
     /// <summary>
-    /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
+    /// **参数解释：** 企业项目ID。 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -230,6 +230,15 @@ public:
     bool tagsIsSet() const;
     void unsettags();
     void setTags(const std::vector<EpResourceTag>& value);
+
+    /// <summary>
+    /// **参数解释：** 指定CDN回源时的请求协议 **约束限制：** 不涉及 **取值范围：** - follow: 协议跟随 - http: http协议 - https: https协议  **默认取值：** http: http协议
+    /// </summary>
+
+    std::string getOriginProtocol() const;
+    bool originProtocolIsSet() const;
+    void unsetoriginProtocol();
+    void setOriginProtocol(const std::string& value);
 
 
 protected:
@@ -275,6 +284,8 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::vector<EpResourceTag> tags_;
     bool tagsIsSet_;
+    std::string originProtocol_;
+    bool originProtocolIsSet_;
 
 };
 

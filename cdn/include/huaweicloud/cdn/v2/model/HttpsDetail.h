@@ -9,8 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v2/model/HttpsDetail_certificates.h>
 #include <string>
 #include <huaweicloud/cdn/v2/model/ForceRedirect.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,7 +42,7 @@ public:
     /// HttpsDetail members
 
     /// <summary>
-    /// 域名id。
+    /// **参数解释：** 域名id。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getDomainId() const;
@@ -49,7 +51,7 @@ public:
     void setDomainId(const std::string& value);
 
     /// <summary>
-    /// 绑定该证书的域名。
+    /// **参数解释：** 绑定该证书的域名。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -58,7 +60,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 证书名字。
+    /// **参数解释：** 证书名字。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getCertName() const;
@@ -67,7 +69,7 @@ public:
     void setCertName(const std::string& value);
 
     /// <summary>
-    /// 证书内容。
+    /// **参数解释：** 证书内容。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getCertificate() const;
@@ -76,7 +78,7 @@ public:
     void setCertificate(const std::string& value);
 
     /// <summary>
-    /// 私钥内容。
+    /// **参数解释：** 私钥内容。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getPrivateKey() const;
@@ -94,7 +96,7 @@ public:
     void setCertificateType(int32_t value);
 
     /// <summary>
-    /// 证书过期时间。
+    /// **参数解释：** 证书过期时间，Unix时间戳格式，单位为毫秒。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getExpirationTime() const;
@@ -138,6 +140,15 @@ public:
     void unsethttp2();
     void setHttp2(int32_t value);
 
+    /// <summary>
+    /// **参数解释：** 证书列表，配置双证书场景下包含国际证书和国密证书两项 **约束限制：** 不涉及
+    /// </summary>
+
+    std::vector<HttpsDetail_certificates>& getCertificates();
+    bool certificatesIsSet() const;
+    void unsetcertificates();
+    void setCertificates(const std::vector<HttpsDetail_certificates>& value);
+
 
 protected:
     std::string domainId_;
@@ -162,6 +173,8 @@ protected:
     bool forceRedirectConfigIsSet_;
     int32_t http2_;
     bool http2IsSet_;
+    std::vector<HttpsDetail_certificates> certificates_;
+    bool certificatesIsSet_;
 
 };
 

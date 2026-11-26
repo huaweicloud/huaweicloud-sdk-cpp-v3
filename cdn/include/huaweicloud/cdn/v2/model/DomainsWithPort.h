@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cdn/v2/model/DomainOriginHost.h>
+#include <huaweicloud/cdn/v2/model/EpResourceTag.h>
 #include <huaweicloud/cdn/v2/model/SourceWithPort.h>
 #include <string>
 #include <vector>
@@ -42,7 +43,7 @@ public:
     /// DomainsWithPort members
 
     /// <summary>
-    /// 加速域名ID。
+    /// **参数解释：** 加速域名ID。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getId() const;
@@ -51,7 +52,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 加速域名。
+    /// **参数解释：** 加速域名。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -69,7 +70,7 @@ public:
     void setBusinessType(const std::string& value);
 
     /// <summary>
-    /// 域名所属用户的domain_id。
+    /// **参数解释：** 域名所属用户的domain_id。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getUserDomainId() const;
@@ -87,7 +88,7 @@ public:
     void setDomainStatus(const std::string& value);
 
     /// <summary>
-    /// 加速域名对应的CNAME。
+    /// **参数解释：** 加速域名对应的CNAME。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getCname() const;
@@ -96,7 +97,7 @@ public:
     void setCname(const std::string& value);
 
     /// <summary>
-    /// 源站配置。
+    /// **参数解释：** 域名的源站，包含源站类型、端口等信息。 **约束限制：** 不涉及
     /// </summary>
 
     std::vector<SourceWithPort>& getSources();
@@ -123,7 +124,7 @@ public:
     void setHttpsStatus(int32_t value);
 
     /// <summary>
-    /// 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+    /// **参数解释：** 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getCreateTime() const;
@@ -132,7 +133,7 @@ public:
     void setCreateTime(int64_t value);
 
     /// <summary>
-    /// 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+    /// **参数解释：** 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getModifyTime() const;
@@ -213,7 +214,7 @@ public:
     void setBannedReason(const std::string& value);
 
     /// <summary>
-    /// 域名锁定原因（Changing the config, please wait）。
+    /// **参数解释：** 域名锁定原因（Changing the config, please wait）。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getLockedReason() const;
@@ -222,13 +223,31 @@ public:
     void setLockedReason(const std::string& value);
 
     /// <summary>
-    /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
+    /// **参数解释：** 企业项目ID。 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
     bool enterpriseProjectIdIsSet() const;
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 加速域名对应的CNAME，多个CNAME以英文逗号分隔 **约束限制：** 不涉及 **取值范围：** 不涉及
+    /// </summary>
+
+    std::string getCnames() const;
+    bool cnamesIsSet() const;
+    void unsetcnames();
+    void setCnames(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 标签信息 **约束限制：** 不涉及
+    /// </summary>
+
+    std::vector<EpResourceTag>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<EpResourceTag>& value);
 
 
 protected:
@@ -274,6 +293,10 @@ protected:
     bool lockedReasonIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string cnames_;
+    bool cnamesIsSet_;
+    std::vector<EpResourceTag> tags_;
+    bool tagsIsSet_;
 
 };
 

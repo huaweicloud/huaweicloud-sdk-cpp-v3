@@ -22,6 +22,10 @@ BackSources::BackSources()
     httpPortIsSet_ = false;
     httpsPort_ = 0;
     httpsPortIsSet_ = false;
+    originProtocol_ = "";
+    originProtocolIsSet_ = false;
+    hostName_ = "";
+    hostNameIsSet_ = false;
 }
 
 BackSources::~BackSources() = default;
@@ -48,6 +52,12 @@ web::json::value BackSources::toJson() const
     }
     if(httpsPortIsSet_) {
         val[utility::conversions::to_string_t("https_port")] = ModelBase::toJson(httpsPort_);
+    }
+    if(originProtocolIsSet_) {
+        val[utility::conversions::to_string_t("origin_protocol")] = ModelBase::toJson(originProtocol_);
+    }
+    if(hostNameIsSet_) {
+        val[utility::conversions::to_string_t("host_name")] = ModelBase::toJson(hostName_);
     }
 
     return val;
@@ -99,6 +109,24 @@ bool BackSources::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHttpsPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("origin_protocol"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_protocol"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginProtocol(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("host_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("host_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHostName(refVal);
         }
     }
     return ok;
@@ -208,6 +236,48 @@ bool BackSources::httpsPortIsSet() const
 void BackSources::unsethttpsPort()
 {
     httpsPortIsSet_ = false;
+}
+
+std::string BackSources::getOriginProtocol() const
+{
+    return originProtocol_;
+}
+
+void BackSources::setOriginProtocol(const std::string& value)
+{
+    originProtocol_ = value;
+    originProtocolIsSet_ = true;
+}
+
+bool BackSources::originProtocolIsSet() const
+{
+    return originProtocolIsSet_;
+}
+
+void BackSources::unsetoriginProtocol()
+{
+    originProtocolIsSet_ = false;
+}
+
+std::string BackSources::getHostName() const
+{
+    return hostName_;
+}
+
+void BackSources::setHostName(const std::string& value)
+{
+    hostName_ = value;
+    hostNameIsSet_ = true;
+}
+
+bool BackSources::hostNameIsSet() const
+{
+    return hostNameIsSet_;
+}
+
+void BackSources::unsethostName()
+{
+    hostNameIsSet_ = false;
 }
 
 }

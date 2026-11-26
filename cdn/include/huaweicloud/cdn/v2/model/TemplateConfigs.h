@@ -9,15 +9,23 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v2/model/ForceRedirectConfig.h>
 #include <huaweicloud/cdn/v2/model/HttpResponseHeader.h>
-#include <huaweicloud/cdn/v2/model/UserAgentFilter.h>
 #include <huaweicloud/cdn/v2/model/Compress.h>
-#include <huaweicloud/cdn/v2/model/RefererConfig.h>
 #include <string>
-#include <huaweicloud/cdn/v2/model/IpFilter.h>
+#include <huaweicloud/cdn/v2/model/AccessAreaFilter.h>
+#include <huaweicloud/cdn/v2/model/OriginRequestHeader.h>
+#include <huaweicloud/cdn/v2/model/HttpsTlsVersion.h>
 #include <vector>
-#include <huaweicloud/cdn/v2/model/CacheRules.h>
 #include <huaweicloud/cdn/v2/model/FlowLimitStrategy.h>
+#include <huaweicloud/cdn/v2/model/UrlAuth.h>
+#include <huaweicloud/cdn/v2/model/UserAgentFilter.h>
+#include <huaweicloud/cdn/v2/model/RefererConfig.h>
+#include <huaweicloud/cdn/v2/model/Quic.h>
+#include <huaweicloud/cdn/v2/model/RuleResponse.h>
+#include <huaweicloud/cdn/v2/model/IpFilter.h>
+#include <huaweicloud/cdn/v2/model/HttpTemplateBody.h>
+#include <huaweicloud/cdn/v2/model/CacheRules.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,7 +55,7 @@ public:
     /// TemplateConfigs members
 
     /// <summary>
-    /// 
+    /// **参数解释：** HTTP响应头，CDN节点响应客户端时，根据HTTP响应头配置操作响应的HTTP头部信息 **约束限制：** - 调用接口修改响应头时，将覆盖原先已配置的响应头，因此，在使用此接口时，请上传全量头部信息
     /// </summary>
 
     std::vector<HttpResponseHeader>& getHttpResponseHeader();
@@ -56,7 +64,7 @@ public:
     void setHttpResponseHeader(const std::vector<HttpResponseHeader>& value);
 
     /// <summary>
-    /// 
+    /// **参数解释：** 设置源站资源在CDN节点的缓存时长 **约束限制：** 必须存在一条所有文件类型的规则
     /// </summary>
 
     std::vector<CacheRules>& getCacheRules();
@@ -127,6 +135,78 @@ public:
     void unsetflowLimitStrategy();
     void setFlowLimitStrategy(const std::vector<FlowLimitStrategy>& value);
 
+    /// <summary>
+    /// **参数解释：** 回源请求头，CDN节点回源时，在请求源站时添加指定的HTTP请求头信息 **约束限制：** - 调用接口修改回源请求头时，将覆盖原先已配置的回源请求头
+    /// </summary>
+
+    std::vector<OriginRequestHeader>& getOriginRequestHeader();
+    bool originRequestHeaderIsSet() const;
+    void unsetoriginRequestHeader();
+    void setOriginRequestHeader(const std::vector<OriginRequestHeader>& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    HttpTemplateBody getHttps() const;
+    bool httpsIsSet() const;
+    void unsethttps();
+    void setHttps(const HttpTemplateBody& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Quic getQuic() const;
+    bool quicIsSet() const;
+    void unsetquic();
+    void setQuic(const Quic& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ForceRedirectConfig getForceRedirect() const;
+    bool forceRedirectIsSet() const;
+    void unsetforceRedirect();
+    void setForceRedirect(const ForceRedirectConfig& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    HttpsTlsVersion getHttpsTlsVersion() const;
+    bool httpsTlsVersionIsSet() const;
+    void unsethttpsTlsVersion();
+    void setHttpsTlsVersion(const HttpsTlsVersion& value);
+
+    /// <summary>
+    /// **参数解释：** 区域访问控制，通过配置访问控制规则限制客户端所在地区，实现只允许或只禁止特定地区的用户访问资源 **约束限制：** - 不涉及
+    /// </summary>
+
+    std::vector<AccessAreaFilter>& getAccessAreaFilter();
+    bool accessAreaFilterIsSet() const;
+    void unsetaccessAreaFilter();
+    void setAccessAreaFilter(const std::vector<AccessAreaFilter>& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    UrlAuth getUrlAuth() const;
+    bool urlAuthIsSet() const;
+    void unseturlAuth();
+    void setUrlAuth(const UrlAuth& value);
+
+    /// <summary>
+    /// **参数解释：** 规则引擎，通过配置规则来对请求和响应进行自定义控制 **约束限制：** 不涉及
+    /// </summary>
+
+    std::vector<RuleResponse>& getRules();
+    bool rulesIsSet() const;
+    void unsetrules();
+    void setRules(const std::vector<RuleResponse>& value);
+
 
 protected:
     std::vector<HttpResponseHeader> httpResponseHeader_;
@@ -147,6 +227,22 @@ protected:
     bool userAgentFilterIsSet_;
     std::vector<FlowLimitStrategy> flowLimitStrategy_;
     bool flowLimitStrategyIsSet_;
+    std::vector<OriginRequestHeader> originRequestHeader_;
+    bool originRequestHeaderIsSet_;
+    HttpTemplateBody https_;
+    bool httpsIsSet_;
+    Quic quic_;
+    bool quicIsSet_;
+    ForceRedirectConfig forceRedirect_;
+    bool forceRedirectIsSet_;
+    HttpsTlsVersion httpsTlsVersion_;
+    bool httpsTlsVersionIsSet_;
+    std::vector<AccessAreaFilter> accessAreaFilter_;
+    bool accessAreaFilterIsSet_;
+    UrlAuth urlAuth_;
+    bool urlAuthIsSet_;
+    std::vector<RuleResponse> rules_;
+    bool rulesIsSet_;
 
 };
 

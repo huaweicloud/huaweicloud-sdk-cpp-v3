@@ -52,6 +52,9 @@ DomainsWithPort::DomainsWithPort()
     lockedReasonIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    cnames_ = "";
+    cnamesIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 DomainsWithPort::~DomainsWithPort() = default;
@@ -126,6 +129,12 @@ web::json::value DomainsWithPort::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(cnamesIsSet_) {
+        val[utility::conversions::to_string_t("cnames")] = ModelBase::toJson(cnames_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -321,6 +330,24 @@ bool DomainsWithPort::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cnames"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cnames"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCnames(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<EpResourceTag> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -766,6 +793,48 @@ bool DomainsWithPort::enterpriseProjectIdIsSet() const
 void DomainsWithPort::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string DomainsWithPort::getCnames() const
+{
+    return cnames_;
+}
+
+void DomainsWithPort::setCnames(const std::string& value)
+{
+    cnames_ = value;
+    cnamesIsSet_ = true;
+}
+
+bool DomainsWithPort::cnamesIsSet() const
+{
+    return cnamesIsSet_;
+}
+
+void DomainsWithPort::unsetcnames()
+{
+    cnamesIsSet_ = false;
+}
+
+std::vector<EpResourceTag>& DomainsWithPort::getTags()
+{
+    return tags_;
+}
+
+void DomainsWithPort::setTags(const std::vector<EpResourceTag>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool DomainsWithPort::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void DomainsWithPort::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

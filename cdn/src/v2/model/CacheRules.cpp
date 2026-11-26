@@ -30,6 +30,8 @@ CacheRules::CacheRules()
     urlParameterTypeIsSet_ = false;
     urlParameterValue_ = "";
     urlParameterValueIsSet_ = false;
+    staleWhileRevalidate_ = "";
+    staleWhileRevalidateIsSet_ = false;
 }
 
 CacheRules::~CacheRules() = default;
@@ -68,6 +70,9 @@ web::json::value CacheRules::toJson() const
     }
     if(urlParameterValueIsSet_) {
         val[utility::conversions::to_string_t("url_parameter_value")] = ModelBase::toJson(urlParameterValue_);
+    }
+    if(staleWhileRevalidateIsSet_) {
+        val[utility::conversions::to_string_t("stale_while_revalidate")] = ModelBase::toJson(staleWhileRevalidate_);
     }
 
     return val;
@@ -155,6 +160,15 @@ bool CacheRules::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUrlParameterValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("stale_while_revalidate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("stale_while_revalidate"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStaleWhileRevalidate(refVal);
         }
     }
     return ok;
@@ -348,6 +362,27 @@ bool CacheRules::urlParameterValueIsSet() const
 void CacheRules::unseturlParameterValue()
 {
     urlParameterValueIsSet_ = false;
+}
+
+std::string CacheRules::getStaleWhileRevalidate() const
+{
+    return staleWhileRevalidate_;
+}
+
+void CacheRules::setStaleWhileRevalidate(const std::string& value)
+{
+    staleWhileRevalidate_ = value;
+    staleWhileRevalidateIsSet_ = true;
+}
+
+bool CacheRules::staleWhileRevalidateIsSet() const
+{
+    return staleWhileRevalidateIsSet_;
+}
+
+void CacheRules::unsetstaleWhileRevalidate()
+{
+    staleWhileRevalidateIsSet_ = false;
 }
 
 }

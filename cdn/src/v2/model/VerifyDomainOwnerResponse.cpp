@@ -14,6 +14,8 @@ VerifyDomainOwnerResponse::VerifyDomainOwnerResponse()
 {
     result_ = false;
     resultIsSet_ = false;
+    status_ = "";
+    statusIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -30,6 +32,9 @@ web::json::value VerifyDomainOwnerResponse::toJson() const
 
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -48,6 +53,15 @@ bool VerifyDomainOwnerResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -82,6 +96,27 @@ bool VerifyDomainOwnerResponse::resultIsSet() const
 void VerifyDomainOwnerResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string VerifyDomainOwnerResponse::getStatus() const
+{
+    return status_;
+}
+
+void VerifyDomainOwnerResponse::setStatus(const std::string& value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool VerifyDomainOwnerResponse::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void VerifyDomainOwnerResponse::unsetstatus()
+{
+    statusIsSet_ = false;
 }
 
 std::string VerifyDomainOwnerResponse::getXRequestId() const

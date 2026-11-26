@@ -21,6 +21,9 @@ DomainBody::DomainBody()
     serviceAreaIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    originProtocol_ = "";
+    originProtocolIsSet_ = false;
+    configsIsSet_ = false;
 }
 
 DomainBody::~DomainBody() = default;
@@ -47,6 +50,12 @@ web::json::value DomainBody::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(originProtocolIsSet_) {
+        val[utility::conversions::to_string_t("origin_protocol")] = ModelBase::toJson(originProtocol_);
+    }
+    if(configsIsSet_) {
+        val[utility::conversions::to_string_t("configs")] = ModelBase::toJson(configs_);
     }
 
     return val;
@@ -98,6 +107,24 @@ bool DomainBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("origin_protocol"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_protocol"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginProtocol(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("configs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("configs"));
+        if(!fieldValue.is_null())
+        {
+            CreateDomainConfigs refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfigs(refVal);
         }
     }
     return ok;
@@ -207,6 +234,48 @@ bool DomainBody::enterpriseProjectIdIsSet() const
 void DomainBody::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string DomainBody::getOriginProtocol() const
+{
+    return originProtocol_;
+}
+
+void DomainBody::setOriginProtocol(const std::string& value)
+{
+    originProtocol_ = value;
+    originProtocolIsSet_ = true;
+}
+
+bool DomainBody::originProtocolIsSet() const
+{
+    return originProtocolIsSet_;
+}
+
+void DomainBody::unsetoriginProtocol()
+{
+    originProtocolIsSet_ = false;
+}
+
+CreateDomainConfigs DomainBody::getConfigs() const
+{
+    return configs_;
+}
+
+void DomainBody::setConfigs(const CreateDomainConfigs& value)
+{
+    configs_ = value;
+    configsIsSet_ = true;
+}
+
+bool DomainBody::configsIsSet() const
+{
+    return configsIsSet_;
+}
+
+void DomainBody::unsetconfigs()
+{
+    configsIsSet_ = false;
 }
 
 }

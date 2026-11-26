@@ -180,7 +180,6 @@ public:
     static HttpRequestDef genRequestDefForShowKillProcessTaskPreview();
     static HttpRequestDef genRequestDefForShowLockWaitSession();
     static HttpRequestDef genRequestDefForShowLtsConfigs();
-    static HttpRequestDef genRequestDefForShowMigrateInfo();
     static HttpRequestDef genRequestDefForShowMultiTenant();
     static HttpRequestDef genRequestDefForShowProxyConfigurations();
     static HttpRequestDef genRequestDefForShowProxyFlavorsByAzCode();

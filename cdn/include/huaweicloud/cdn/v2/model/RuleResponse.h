@@ -42,7 +42,7 @@ public:
     /// RuleResponse members
 
     /// <summary>
-    /// 规则id
+    /// **参数解释：** 规则id **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getRuleId() const;
@@ -51,7 +51,7 @@ public:
     void setRuleId(const std::string& value);
 
     /// <summary>
-    /// 规则名称
+    /// **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getName() const;
@@ -69,7 +69,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 此条规则的优先级，数值越大，优先级越高。
+    /// **参数解释：** 此条规则的优先级，数值越大，优先级越高。 **约束限制：** 不涉及 **取值范围：** 1-1000
     /// </summary>
 
     int32_t getPriority() const;

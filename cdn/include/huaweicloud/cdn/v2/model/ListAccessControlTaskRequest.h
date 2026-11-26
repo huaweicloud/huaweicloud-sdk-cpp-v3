@@ -39,6 +39,15 @@ public:
     /// ListAccessControlTaskRequest members
 
     /// <summary>
+    /// **参数解释：** 封禁/解禁任务ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getTaskId() const;
+    bool taskIdIsSet() const;
+    void unsettaskId();
+    void setTaskId(const std::string& value);
+
+    /// <summary>
     /// 查询起始时间戳（毫秒），不传默认为当前时间，需与结束时间戳同时指定，时间跨度不能超过7天。
     /// </summary>
 
@@ -85,6 +94,8 @@ public:
 
 
 protected:
+    std::string taskId_;
+    bool taskIdIsSet_;
     int64_t startTime_;
     bool startTimeIsSet_;
     int64_t endTime_;

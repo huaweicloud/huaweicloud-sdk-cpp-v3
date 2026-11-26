@@ -78,7 +78,7 @@ public:
     void setStatType(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 按指定的分组方式组织的数据 **取值范围：** - domain：按域名分组 - country：按国际&amp;地区分组 - province：按省份分组 - isp：按运营商分组 **默认取值：** 默认不分组
+    /// **参数解释：** 按指定的分组方式组织的数据 **取值范围：** - domain：按域名分组 - country：按国际&amp;地区分组 - province：按省份分组 - isp：按运营商分组  **默认取值：** 默认不分组
     /// </summary>
 
     std::map<std::string, Object>& getResult();

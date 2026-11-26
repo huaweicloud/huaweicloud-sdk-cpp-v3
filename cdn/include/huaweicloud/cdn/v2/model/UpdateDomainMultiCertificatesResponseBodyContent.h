@@ -9,8 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v2/model/MultiCertificateBatchVo.h>
 #include <string>
 #include <huaweicloud/cdn/v2/model/ForceRedirect.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,7 +42,7 @@ public:
     /// UpdateDomainMultiCertificatesResponseBodyContent members
 
     /// <summary>
-    /// 域名列表。
+    /// **参数解释：** 域名列表 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -94,7 +96,7 @@ public:
     void setHttp2(int32_t value);
 
     /// <summary>
-    /// 证书名称。
+    /// **参数解释：** 证书名称 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getCertName() const;
@@ -103,7 +105,7 @@ public:
     void setCertName(const std::string& value);
 
     /// <summary>
-    /// 证书内容。
+    /// **参数解释：** 证书内容 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getCertificate() const;
@@ -121,13 +123,31 @@ public:
     void setCertificateType(int32_t value);
 
     /// <summary>
-    /// 证书过期时间。
+    /// **参数解释：** 证书最近过期时间，Unix时间戳格式，单位为毫秒 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     int64_t getExpirationTime() const;
     bool expirationTimeIsSet() const;
     void unsetexpirationTime();
     void setExpirationTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释：** 证书类型 **约束限制：** 不涉及 **取值范围：** - 0: 国际证书 - 1: 国密证书  **默认取值：** 不涉及
+    /// </summary>
+
+    int32_t getCertificateCategory() const;
+    bool certificateCategoryIsSet() const;
+    void unsetcertificateCategory();
+    void setCertificateCategory(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 双证书场景下的证书列表 **约束限制：** 不涉及
+    /// </summary>
+
+    std::vector<MultiCertificateBatchVo>& getCertificates();
+    bool certificatesIsSet() const;
+    void unsetcertificates();
+    void setCertificates(const std::vector<MultiCertificateBatchVo>& value);
 
 
 protected:
@@ -151,6 +171,10 @@ protected:
     bool certificateTypeIsSet_;
     int64_t expirationTime_;
     bool expirationTimeIsSet_;
+    int32_t certificateCategory_;
+    bool certificateCategoryIsSet_;
+    std::vector<MultiCertificateBatchVo> certificates_;
+    bool certificatesIsSet_;
 
 };
 

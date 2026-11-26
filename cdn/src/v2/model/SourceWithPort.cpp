@@ -28,6 +28,8 @@ SourceWithPort::SourceWithPort()
     httpPortIsSet_ = false;
     httpsPort_ = 0;
     httpsPortIsSet_ = false;
+    weight_ = 0;
+    weightIsSet_ = false;
 }
 
 SourceWithPort::~SourceWithPort() = default;
@@ -63,6 +65,9 @@ web::json::value SourceWithPort::toJson() const
     }
     if(httpsPortIsSet_) {
         val[utility::conversions::to_string_t("https_port")] = ModelBase::toJson(httpsPort_);
+    }
+    if(weightIsSet_) {
+        val[utility::conversions::to_string_t("weight")] = ModelBase::toJson(weight_);
     }
 
     return val;
@@ -141,6 +146,15 @@ bool SourceWithPort::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHttpsPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("weight"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("weight"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWeight(refVal);
         }
     }
     return ok;
@@ -313,6 +327,27 @@ bool SourceWithPort::httpsPortIsSet() const
 void SourceWithPort::unsethttpsPort()
 {
     httpsPortIsSet_ = false;
+}
+
+int32_t SourceWithPort::getWeight() const
+{
+    return weight_;
+}
+
+void SourceWithPort::setWeight(int32_t value)
+{
+    weight_ = value;
+    weightIsSet_ = true;
+}
+
+bool SourceWithPort::weightIsSet() const
+{
+    return weightIsSet_;
+}
+
+void SourceWithPort::unsetweight()
+{
+    weightIsSet_ = false;
 }
 
 }

@@ -13,6 +13,7 @@
 #include <huaweicloud/cdn/v2/model/HttpResponseHeader.h>
 #include <huaweicloud/cdn/v2/model/ClientCert.h>
 #include <huaweicloud/cdn/v2/model/Compress.h>
+#include <huaweicloud/cdn/v2/model/BandwidthAlarmStrategy.h>
 #include <huaweicloud/cdn/v2/model/HstsQuery.h>
 #include <huaweicloud/cdn/v2/model/WebSocketSeek.h>
 #include <huaweicloud/cdn/v2/model/FlowLimitStrategy.h>
@@ -51,7 +52,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 配置项。
+/// **参数解释：** 域名配置项，包含业务类型、服务范围、源站配置、缓存规则、HTTPS证书等配置信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CDN_V2_EXPORT  ConfigsGetBody
     : public ModelBase
@@ -88,7 +89,7 @@ public:
     void setServiceArea(const std::string& value);
 
     /// <summary>
-    /// 域名备注。
+    /// **参数解释：** 域名备注。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getRemark() const;
@@ -97,7 +98,7 @@ public:
     void setRemark(const std::string& value);
 
     /// <summary>
-    /// 回源请求头配置
+    /// 回源请求头配置。
     /// </summary>
 
     std::vector<OriginRequestHeader>& getOriginRequestHeader();
@@ -106,7 +107,7 @@ public:
     void setOriginRequestHeader(const std::vector<OriginRequestHeader>& value);
 
     /// <summary>
-    /// http header配置
+    /// http header配置。
     /// </summary>
 
     std::vector<HttpResponseHeader>& getHttpResponseHeader();
@@ -277,7 +278,7 @@ public:
     void setSliceEtagStatus(const std::string& value);
 
     /// <summary>
-    /// 回源超时时间，单位：秒。
+    /// **参数解释：** 回源超时时间，单位：秒。 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     int32_t getOriginReceiveTimeout() const;
@@ -313,7 +314,7 @@ public:
     void setVideoSeek(const VideoSeek& value);
 
     /// <summary>
-    /// 请求限速。
+    /// 
     /// </summary>
 
     std::vector<RequestLimitRules>& getRequestLimitRules();
@@ -420,6 +421,15 @@ public:
     void unsetflowLimitStrategy();
     void setFlowLimitStrategy(const std::vector<FlowLimitStrategy>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    BandwidthAlarmStrategy getBandwidthAlarmStrategy() const;
+    bool bandwidthAlarmStrategyIsSet() const;
+    void unsetbandwidthAlarmStrategy();
+    void setBandwidthAlarmStrategy(const BandwidthAlarmStrategy& value);
+
 
 protected:
     std::string businessType_;
@@ -500,6 +510,8 @@ protected:
     bool httpsTlsVersionIsSet_;
     std::vector<FlowLimitStrategy> flowLimitStrategy_;
     bool flowLimitStrategyIsSet_;
+    BandwidthAlarmStrategy bandwidthAlarmStrategy_;
+    bool bandwidthAlarmStrategyIsSet_;
 
 };
 

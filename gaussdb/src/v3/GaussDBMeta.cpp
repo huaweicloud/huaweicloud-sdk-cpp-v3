@@ -1932,9 +1932,6 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowBackupRestoreTime() {
     reqDefBuilder.withRequestField(FieldDef().withName("Date")
                   .withJsonTag("date")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Date")
-                  .withJsonTag("date")
-                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
                   .withJsonTag("start_time")
                   .withLocationType(Query_));
@@ -2510,16 +2507,6 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowLtsConfigs() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBMeta::genRequestDefForShowMigrateInfo() {
-    HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

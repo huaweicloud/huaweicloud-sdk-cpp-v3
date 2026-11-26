@@ -1537,6 +1537,98 @@ std::shared_ptr<CreateAlgorithmVersionToGalleryResponse> ModelArtsClient::create
 
     return localVarResult;
 }
+std::shared_ptr<CreateAssetResponse> ModelArtsClient::createAsset(CreateAssetRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+    if (request.xStorageTokenIsSet()) {
+        localVarHeaderParams["X-Storage-Token"] = parameterToString(request.getXStorageToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForCreateAsset());
+
+    std::shared_ptr<CreateAssetResponse> localVarResult = std::make_shared<CreateAssetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateAssetFileDownLoadPathResponse> ModelArtsClient::createAssetFileDownLoadPath(CreateAssetFileDownLoadPathRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/{asset_id}/resources/file-path/sign";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["asset_id"] = parameterToString(request.getAssetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForCreateAssetFileDownLoadPath());
+
+    std::shared_ptr<CreateAssetFileDownLoadPathResponse> localVarResult = std::make_shared<CreateAssetFileDownLoadPathResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateAuthGrantResponse> ModelArtsClient::createAuthGrant(CreateAuthGrantRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/auth/grant";
@@ -2613,6 +2705,42 @@ std::shared_ptr<DeleteAlgorithmResponse> ModelArtsClient::deleteAlgorithm(Delete
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForDeleteAlgorithm());
 
     std::shared_ptr<DeleteAlgorithmResponse> localVarResult = std::make_shared<DeleteAlgorithmResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteAssetResponse> ModelArtsClient::deleteAsset(DeleteAssetRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/{asset_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["asset_id"] = parameterToString(request.getAssetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+    if (request.forceDeleteIsSet()) {
+        localVarQueryParams["force_delete"] = parameterToString(request.isForceDelete());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForDeleteAsset());
+
+    std::shared_ptr<DeleteAssetResponse> localVarResult = std::make_shared<DeleteAssetResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3961,6 +4089,247 @@ std::shared_ptr<ListAllHyperinstancesResponse> ModelArtsClient::listAllHyperinst
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListAllHyperinstances());
 
     std::shared_ptr<ListAllHyperinstancesResponse> localVarResult = std::make_shared<ListAllHyperinstancesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListAssetResponse> ModelArtsClient::listAsset(ListAssetRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+    if (request.assetNameIsSet()) {
+        localVarQueryParams["asset_name"] = parameterToString(request.getAssetName());
+    }
+    if (request.assetTypeIsSet()) {
+        localVarQueryParams["asset_type"] = parameterToString(request.getAssetType());
+    }
+    if (request.assetSourceIsSet()) {
+        localVarQueryParams["asset_source"] = parameterToString(request.getAssetSource());
+    }
+    if (request.assetSourceTypeIsSet()) {
+        localVarQueryParams["asset_source_type"] = parameterToString(request.getAssetSourceType());
+    }
+    if (request.assetCodeIsSet()) {
+        localVarQueryParams["asset_code"] = parameterToString(request.getAssetCode());
+    }
+    if (request.assetVersionIsSet()) {
+        localVarQueryParams["asset_version"] = parameterToString(request.getAssetVersion());
+    }
+    if (request.assetGroupIdIsSet()) {
+        localVarQueryParams["asset_group_id"] = parameterToString(request.getAssetGroupId());
+    }
+    if (request.filterAllVersionIsSet()) {
+        localVarQueryParams["filter_all_version"] = parameterToString(request.isFilterAllVersion());
+    }
+    if (request.supportActionsIsSet()) {
+        localVarQueryParams["support_actions"] = parameterToString(request.getSupportActions());
+    }
+    if (request.tagIsSet()) {
+        localVarQueryParams["tag"] = parameterToString(request.getTag());
+    }
+    if (request.isMineIsSet()) {
+        localVarQueryParams["is_mine"] = parameterToString(request.isIsMine());
+    }
+    if (request.withActionsIsSet()) {
+        localVarQueryParams["with_actions"] = parameterToString(request.isWithActions());
+    }
+    if (request.assetSeriesIsSet()) {
+        localVarQueryParams["asset_series"] = parameterToString(request.getAssetSeries());
+    }
+    if (request.assetCapabilitiesIsSet()) {
+        localVarQueryParams["asset_capabilities"] = parameterToString(request.getAssetCapabilities());
+    }
+    if (request.assetScenesIsSet()) {
+        localVarQueryParams["asset_scenes"] = parameterToString(request.getAssetScenes());
+    }
+    if (request.rootAssetIdIsSet()) {
+        localVarQueryParams["root_asset_id"] = parameterToString(request.getRootAssetId());
+    }
+    if (request.parentAssetIdIsSet()) {
+        localVarQueryParams["parent_asset_id"] = parameterToString(request.getParentAssetId());
+    }
+    if (request.isDeletedIsSet()) {
+        localVarQueryParams["is_deleted"] = parameterToString(request.isIsDeleted());
+    }
+    if (request.assetIdsIsSet()) {
+        localVarQueryParams["asset_ids"] = parameterToString(request.getAssetIds());
+    }
+    if (request.tagModeIsSet()) {
+        localVarQueryParams["tag_mode"] = parameterToString(request.getTagMode());
+    }
+    if (request.datasetUsageIsSet()) {
+        localVarQueryParams["dataset_usage"] = parameterToString(request.getDatasetUsage());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.datasetFileFormatsIsSet()) {
+        localVarQueryParams["dataset_file_formats"] = parameterToString(request.getDatasetFileFormats());
+    }
+    if (request.datasetTypeIsSet()) {
+        localVarQueryParams["dataset_type"] = parameterToString(request.getDatasetType());
+    }
+    if (request.datasetSubTypeIsSet()) {
+        localVarQueryParams["dataset_sub_type"] = parameterToString(request.getDatasetSubType());
+    }
+    if (request.datasetSchemaFormatIsSet()) {
+        localVarQueryParams["dataset_schema_format"] = parameterToString(request.getDatasetSchemaFormat());
+    }
+    if (request.creatorIsSet()) {
+        localVarQueryParams["creator"] = parameterToString(request.getCreator());
+    }
+    if (request.dataSourceIdIsSet()) {
+        localVarQueryParams["data_source_id"] = parameterToString(request.getDataSourceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListAsset());
+
+    std::shared_ptr<ListAssetResponse> localVarResult = std::make_shared<ListAssetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListAssetFileResponse> ModelArtsClient::listAssetFile(ListAssetFileRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/{asset_id}/resources/file-path";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["asset_id"] = parameterToString(request.getAssetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+    if (request.prefixIsSet()) {
+        localVarQueryParams["prefix"] = parameterToString(request.getPrefix());
+    }
+    if (request.maxKeysIsSet()) {
+        localVarQueryParams["max_keys"] = parameterToString(request.getMaxKeys());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListAssetFile());
+
+    std::shared_ptr<ListAssetFileResponse> localVarResult = std::make_shared<ListAssetFileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListAssetOperationRecordsResponse> ModelArtsClient::listAssetOperationRecords(ListAssetOperationRecordsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/operation-records";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.recordIdIsSet()) {
+        localVarQueryParams["record_id"] = parameterToString(request.getRecordId());
+    }
+    if (request.jobTypeIsSet()) {
+        localVarQueryParams["job_type"] = parameterToString(request.getJobType());
+    }
+    if (request.jobIdIsSet()) {
+        localVarQueryParams["job_id"] = parameterToString(request.getJobId());
+    }
+    if (request.jobNameIsSet()) {
+        localVarQueryParams["job_name"] = parameterToString(request.getJobName());
+    }
+    if (request.jobStatusIsSet()) {
+        localVarQueryParams["job_status"] = parameterToString(request.getJobStatus());
+    }
+    if (request.userIdIsSet()) {
+        localVarQueryParams["user_id"] = parameterToString(request.getUserId());
+    }
+    if (request.userNameIsSet()) {
+        localVarQueryParams["user_name"] = parameterToString(request.getUserName());
+    }
+    if (request.assetIdIsSet()) {
+        localVarQueryParams["asset_id"] = parameterToString(request.getAssetId());
+    }
+    if (request.assetCodeIsSet()) {
+        localVarQueryParams["asset_code"] = parameterToString(request.getAssetCode());
+    }
+    if (request.isDeletedIsSet()) {
+        localVarQueryParams["is_deleted"] = parameterToString(request.isIsDeleted());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListAssetOperationRecords());
+
+    std::shared_ptr<ListAssetOperationRecordsResponse> localVarResult = std::make_shared<ListAssetOperationRecordsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -6890,6 +7259,184 @@ std::shared_ptr<ShowAlgorithmByUuidResponse> ModelArtsClient::showAlgorithmByUui
 
     return localVarResult;
 }
+std::shared_ptr<ShowAssetResponse> ModelArtsClient::showAsset(ShowAssetRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/{asset_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["asset_id"] = parameterToString(request.getAssetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowAsset());
+
+    std::shared_ptr<ShowAssetResponse> localVarResult = std::make_shared<ShowAssetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAssetByCodeAndVersionResponse> ModelArtsClient::showAssetByCodeAndVersion(ShowAssetByCodeAndVersionRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/{asset_code}/{asset_version}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["asset_code"] = parameterToString(request.getAssetCode());
+    localVarPathParams["asset_version"] = parameterToString(request.getAssetVersion());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+    if (request.assetTypeIsSet()) {
+        localVarQueryParams["asset_type"] = parameterToString(request.getAssetType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowAssetByCodeAndVersion());
+
+    std::shared_ptr<ShowAssetByCodeAndVersionResponse> localVarResult = std::make_shared<ShowAssetByCodeAndVersionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAssetExtendMessageResponse> ModelArtsClient::showAssetExtendMessage(ShowAssetExtendMessageRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/{asset_id}/extend-message";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["asset_id"] = parameterToString(request.getAssetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowAssetExtendMessage());
+
+    std::shared_ptr<ShowAssetExtendMessageResponse> localVarResult = std::make_shared<ShowAssetExtendMessageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAssetResourceResponse> ModelArtsClient::showAssetResource(ShowAssetResourceRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/{asset_id}/resources";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["asset_id"] = parameterToString(request.getAssetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+    if (request.resourceNameIsSet()) {
+        localVarQueryParams["resource_name"] = parameterToString(request.getResourceName());
+    }
+    if (request.checkLocaleIsSet()) {
+        localVarQueryParams["check_locale"] = parameterToString(request.isCheckLocale());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowAssetResource());
+
+    std::shared_ptr<ShowAssetResourceResponse> localVarResult = std::make_shared<ShowAssetResourceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAssetTagsInfoResponse> ModelArtsClient::showAssetTagsInfo(ShowAssetTagsInfoRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/tags/{tag_category}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tag_category"] = parameterToString(request.getTagCategory());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowAssetTagsInfo());
+
+    std::shared_ptr<ShowAssetTagsInfoResponse> localVarResult = std::make_shared<ShowAssetTagsInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowAuthGrantResponse> ModelArtsClient::showAuthGrant(ShowAuthGrantRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/auth/grant";
@@ -8973,6 +9520,51 @@ std::shared_ptr<UnbindInferApiKeyResponse> ModelArtsClient::unbindInferApiKey(Un
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateAssetResponse> ModelArtsClient::updateAsset(UpdateAssetRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/assets/{asset_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["asset_id"] = parameterToString(request.getAssetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForUpdateAsset());
+
+    std::shared_ptr<UpdateAssetResponse> localVarResult = std::make_shared<UpdateAssetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

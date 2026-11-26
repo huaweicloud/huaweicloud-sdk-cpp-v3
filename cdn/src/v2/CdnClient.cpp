@@ -1050,6 +1050,9 @@ std::shared_ptr<ListAccessControlTaskResponse> CdnClient::listAccessControlTask(
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.taskIdIsSet()) {
+        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    }
     if (request.startTimeIsSet()) {
         localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
     }

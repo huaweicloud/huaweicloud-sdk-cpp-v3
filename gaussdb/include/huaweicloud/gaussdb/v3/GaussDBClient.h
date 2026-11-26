@@ -428,8 +428,6 @@
 #include <huaweicloud/gaussdb/v3/model/ShowLockWaitSessionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowLtsConfigsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowLtsConfigsResponse.h>
-#include <huaweicloud/gaussdb/v3/model/ShowMigrateInfoRequest.h>
-#include <huaweicloud/gaussdb/v3/model/ShowMigrateInfoResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowMultiTenantRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowMultiTenantResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyConfigurationsRequest.h>
@@ -2184,14 +2182,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowLtsConfigsResponse> showLtsConfigs(
         ShowLtsConfigsRequest &request
-    );
-    // 查询一键迁移信息
-    //
-    // 查询一键迁移到TaurusDB企业版的迁移信息。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowMigrateInfoResponse> showMigrateInfo(
-        ShowMigrateInfoRequest &request
     );
     // 查询多租特性开关状态
     //

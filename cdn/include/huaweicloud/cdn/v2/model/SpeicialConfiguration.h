@@ -39,7 +39,7 @@ public:
     /// SpeicialConfiguration members
 
     /// <summary>
-    /// 创建时间
+    /// **参数解释：** 创建时间，Unix时间戳格式，单位为毫秒 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     int64_t getCreateTime() const;
@@ -48,7 +48,7 @@ public:
     void setCreateTime(int64_t value);
 
     /// <summary>
-    /// 备忘录
+    /// **参数解释：** 备忘录 **约束限制：** 不涉及 **取值范围：** 不涉及
     /// </summary>
 
     std::string getNote() const;

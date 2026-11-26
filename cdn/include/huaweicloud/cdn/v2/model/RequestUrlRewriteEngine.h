@@ -39,7 +39,25 @@ public:
     /// RequestUrlRewriteEngine members
 
     /// <summary>
-    /// **参数解释：** 重定向状态码 **约束限制：** 不涉及 **取值范围：** - 301 - 302 - 303 - 307  **默认取值：** 不涉及
+    /// **参数解释：** 改写方式 **约束限制：** - regex为白名单controlled功能，非白名单用户不开放  **取值范围：** - simple: 精确改写 - regex: 正则改写  **默认取值：** simple: 精确改写
+    /// </summary>
+
+    std::string getRewriteType() const;
+    bool rewriteTypeIsSet() const;
+    void unsetrewriteType();
+    void setRewriteType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 需要替换的URI **约束限制：** - 当rewrite_type为wildcard或regex时必填 - 当rewrite_type为regex时必须以“^/”开始，如：^/test  **取值范围：** - 1-512个字符 - 支持通配符\\*匹配，如：/test/\\*_/\\*.mp4 - 以正斜线（/）开头的URI，不含http(s)://头及域名  **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getSourceUrl() const;
+    bool sourceUrlIsSet() const;
+    void unsetsourceUrl();
+    void setSourceUrl(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 重定向状态码 **约束限制：** 不涉及 **取值范围：** - 301: 资源被永久转移。 - 302: 由于不可预见的原因该页面暂不可用。 - 303: 用于PUT或POST请求完成之后进行页面跳转，防止由于页面刷新导致的操作的重复触发。 - 307: 由于不可预见的原因该页面暂不可用。  **默认取值：** 不涉及
     /// </summary>
 
     int32_t getRedirectStatusCode() const;
@@ -48,7 +66,7 @@ public:
     void setRedirectStatusCode(int32_t value);
 
     /// <summary>
-    /// **参数解释：** 重定向URL **约束限制：** - 重定向后的URL，以正斜线（/）开头，不含http://头及域名，如：/test/index.html - 当匹配类型为全路径时，\&quot;\\*\&quot;可以用“$1”捕获，例如：匹配内容为/test/\\*.jpg，重定向URL配置为/newtest/$1.jpg，则用户请求/test/11.jpg时，$1捕获11，重定向后请求的URL为/newtest/11.jpg **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// **参数解释：** 重定向URL **约束限制：** - 重定向后的URL，以正斜线（/）开头，不含http://头及域名，如：/test/index.html - 当匹配类型为全路径时，\&quot;\\*\&quot;可以用“$1”捕获，例如：匹配内容为/test/\\*.jpg，重定向URL配置为/newtest/$1.jpg，则用户请求/test/11.jpg时，$1捕获11，重定向后请求的URL为/newtest/11.jpg  **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getRedirectUrl() const;
@@ -74,8 +92,21 @@ public:
     void unsetexecutionMode();
     void setExecutionMode(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 重定向URL是否携带请求参数 **约束限制：** 不涉及 **取值范围：** - on: 携带 - off: 不携带  **默认取值：** on: 携带
+    /// </summary>
+
+    std::string getInheritParam() const;
+    bool inheritParamIsSet() const;
+    void unsetinheritParam();
+    void setInheritParam(const std::string& value);
+
 
 protected:
+    std::string rewriteType_;
+    bool rewriteTypeIsSet_;
+    std::string sourceUrl_;
+    bool sourceUrlIsSet_;
     int32_t redirectStatusCode_;
     bool redirectStatusCodeIsSet_;
     std::string redirectUrl_;
@@ -84,6 +115,8 @@ protected:
     bool redirectHostIsSet_;
     std::string executionMode_;
     bool executionModeIsSet_;
+    std::string inheritParam_;
+    bool inheritParamIsSet_;
 
 };
 

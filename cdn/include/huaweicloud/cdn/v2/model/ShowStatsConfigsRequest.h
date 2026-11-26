@@ -38,7 +38,7 @@ public:
     /// ShowStatsConfigsRequest members
 
     /// <summary>
-    /// **参数解释：** 配置类型 **约束限制：** 不涉及 **取值范围：** - 0：热点统计 - 1：ces上报 **默认取值：** 不涉及
+    /// **参数解释：** 配置类型 **约束限制：** 不涉及 **取值范围：** - 0：热点统计 - 1：ces上报  **默认取值：** 不涉及
     /// </summary>
 
     int32_t getConfigType() const;

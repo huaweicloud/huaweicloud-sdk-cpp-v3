@@ -39,7 +39,7 @@ public:
     /// SetChargeModesBody members
 
     /// <summary>
-    /// **参数解释：** 计费模式 **约束限制：** v2及以上客户支持bw（带宽）计费模式 **取值范围：** - flux：流量 - bw：带宽 **默认取值：** 不涉及
+    /// **参数解释：** 计费模式 **约束限制：** v2及以上客户支持bw（带宽）计费模式 **取值范围：** - flux：流量 - bw：带宽  **默认取值：** 不涉及
     /// </summary>
 
     std::string getChargeMode() const;

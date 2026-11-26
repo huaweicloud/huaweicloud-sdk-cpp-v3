@@ -87,7 +87,7 @@ public:
     void setTmlId(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 域名模板应用时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+    /// **参数解释：** 域名模板应用时间，Unix时间戳格式，单位为毫秒 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     int64_t getApplyTime() const;

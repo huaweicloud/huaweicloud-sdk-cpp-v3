@@ -49,6 +49,8 @@ public:
     static HttpRequestDef genRequestDefForCountTrainingJobsByTags();
     static HttpRequestDef genRequestDefForCreateAlgorithm();
     static HttpRequestDef genRequestDefForCreateAlgorithmVersionToGallery();
+    static HttpRequestDef genRequestDefForCreateAsset();
+    static HttpRequestDef genRequestDefForCreateAssetFileDownLoadPath();
     static HttpRequestDef genRequestDefForCreateAuthGrant();
     static HttpRequestDef genRequestDefForCreateAuthorization();
     static HttpRequestDef genRequestDefForCreateDevServer();
@@ -75,6 +77,7 @@ public:
     static HttpRequestDef genRequestDefForCreateTrainingJob();
     static HttpRequestDef genRequestDefForCreateWorkspace();
     static HttpRequestDef genRequestDefForDeleteAlgorithm();
+    static HttpRequestDef genRequestDefForDeleteAsset();
     static HttpRequestDef genRequestDefForDeleteAuthorizations();
     static HttpRequestDef genRequestDefForDeleteDevServer();
     static HttpRequestDef genRequestDefForDeleteDevServerJobs();
@@ -115,6 +118,9 @@ public:
     static HttpRequestDef genRequestDefForListAlgorithms();
     static HttpRequestDef genRequestDefForListAllDevServers();
     static HttpRequestDef genRequestDefForListAllHyperinstances();
+    static HttpRequestDef genRequestDefForListAsset();
+    static HttpRequestDef genRequestDefForListAssetFile();
+    static HttpRequestDef genRequestDefForListAssetOperationRecords();
     static HttpRequestDef genRequestDefForListDevServerFlavors();
     static HttpRequestDef genRequestDefForListDevServerImages();
     static HttpRequestDef genRequestDefForListDevServerJobTemplates();
@@ -183,6 +189,11 @@ public:
     static HttpRequestDef genRequestDefForScaleDownHyperinstance();
     static HttpRequestDef genRequestDefForScaleUpHyperinstance();
     static HttpRequestDef genRequestDefForShowAlgorithmByUuid();
+    static HttpRequestDef genRequestDefForShowAsset();
+    static HttpRequestDef genRequestDefForShowAssetByCodeAndVersion();
+    static HttpRequestDef genRequestDefForShowAssetExtendMessage();
+    static HttpRequestDef genRequestDefForShowAssetResource();
+    static HttpRequestDef genRequestDefForShowAssetTagsInfo();
     static HttpRequestDef genRequestDefForShowAuthGrant();
     static HttpRequestDef genRequestDefForShowAuthmodeDetail();
     static HttpRequestDef genRequestDefForShowAutoSearchParamAnalysisResultPath();
@@ -248,6 +259,7 @@ public:
     static HttpRequestDef genRequestDefForSyncImage();
     static HttpRequestDef genRequestDefForUnbindDevServerPublicIP();
     static HttpRequestDef genRequestDefForUnbindInferApiKey();
+    static HttpRequestDef genRequestDefForUpdateAsset();
     static HttpRequestDef genRequestDefForUpdateAuthMode();
     static HttpRequestDef genRequestDefForUpdateDevServer();
     static HttpRequestDef genRequestDefForUpdateImageGroup();

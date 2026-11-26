@@ -195,7 +195,7 @@ public:
     void setNodeName(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
+    /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
     /// </summary>
 
     std::string getInstanceType() const;
@@ -204,7 +204,7 @@ public:
     void setInstanceType(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：超节点场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。  **取值范围**：超节点涉及, snt9b 不涉及。 **约束限制**：待废弃: 请使用 nodes[0].underLyingInstanceId。
+    /// **参数解释**：超节点场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。 **取值范围**：超节点涉及, snt9b 不涉及。 **约束限制**：待废弃: 请使用 nodes[0].underLyingInstanceId。
     /// </summary>
 
     std::string getUnderLyingInstanceId() const;

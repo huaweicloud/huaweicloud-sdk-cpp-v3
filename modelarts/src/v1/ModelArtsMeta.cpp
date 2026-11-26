@@ -398,6 +398,35 @@ HttpRequestDef ModelArtsMeta::genRequestDefForCreateAlgorithmVersionToGallery() 
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateAsset() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXStorageToken;
+    reqDefBuilder.withRequestField(headerParamXStorageToken
+                  .withName("XStorageToken")
+                  .withJsonTag("X-Storage-Token")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateAssetFileDownLoadPath() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForCreateAuthGrant() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -670,6 +699,17 @@ HttpRequestDef ModelArtsMeta::genRequestDefForCreateWorkspace() {
 
 HttpRequestDef ModelArtsMeta::genRequestDefForDeleteAlgorithm() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForDeleteAsset() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ForceDelete")
+                  .withJsonTag("force_delete")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -984,6 +1024,174 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListAllDevServers() {
 
 HttpRequestDef ModelArtsMeta::genRequestDefForListAllHyperinstances() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListAsset() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
+                  .withJsonTag("sort_dir")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetName")
+                  .withJsonTag("asset_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetType")
+                  .withJsonTag("asset_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetSource")
+                  .withJsonTag("asset_source")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetSourceType")
+                  .withJsonTag("asset_source_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetCode")
+                  .withJsonTag("asset_code")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetVersion")
+                  .withJsonTag("asset_version")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetGroupId")
+                  .withJsonTag("asset_group_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FilterAllVersion")
+                  .withJsonTag("filter_all_version")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SupportActions")
+                  .withJsonTag("support_actions")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tag")
+                  .withJsonTag("tag")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsMine")
+                  .withJsonTag("is_mine")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("WithActions")
+                  .withJsonTag("with_actions")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetSeries")
+                  .withJsonTag("asset_series")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetCapabilities")
+                  .withJsonTag("asset_capabilities")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetScenes")
+                  .withJsonTag("asset_scenes")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RootAssetId")
+                  .withJsonTag("root_asset_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ParentAssetId")
+                  .withJsonTag("parent_asset_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsDeleted")
+                  .withJsonTag("is_deleted")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetIds")
+                  .withJsonTag("asset_ids")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TagMode")
+                  .withJsonTag("tag_mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatasetUsage")
+                  .withJsonTag("dataset_usage")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatasetFileFormats")
+                  .withJsonTag("dataset_file_formats")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatasetType")
+                  .withJsonTag("dataset_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatasetSubType")
+                  .withJsonTag("dataset_sub_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatasetSchemaFormat")
+                  .withJsonTag("dataset_schema_format")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Creator")
+                  .withJsonTag("creator")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DataSourceId")
+                  .withJsonTag("data_source_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListAssetFile() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Prefix")
+                  .withJsonTag("prefix")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("MaxKeys")
+                  .withJsonTag("max_keys")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListAssetOperationRecords() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
+                  .withJsonTag("sort_dir")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RecordId")
+                  .withJsonTag("record_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobType")
+                  .withJsonTag("job_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobId")
+                  .withJsonTag("job_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobName")
+                  .withJsonTag("job_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobStatus")
+                  .withJsonTag("job_status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("UserId")
+                  .withJsonTag("user_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("UserName")
+                  .withJsonTag("user_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetId")
+                  .withJsonTag("asset_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetCode")
+                  .withJsonTag("asset_code")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsDeleted")
+                  .withJsonTag("is_deleted")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -2165,6 +2373,63 @@ HttpRequestDef ModelArtsMeta::genRequestDefForShowAlgorithmByUuid() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForShowAsset() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForShowAssetByCodeAndVersion() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetType")
+                  .withJsonTag("asset_type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForShowAssetExtendMessage() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+                withName("Body").
+                withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForShowAssetResource() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ResourceName")
+                  .withJsonTag("resource_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("CheckLocale")
+                  .withJsonTag("check_locale")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForShowAssetTagsInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForShowAuthGrant() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -2628,6 +2893,18 @@ HttpRequestDef ModelArtsMeta::genRequestDefForUnbindDevServerPublicIP() {
 
 HttpRequestDef ModelArtsMeta::genRequestDefForUnbindInferApiKey() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForUpdateAsset() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
+                  .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

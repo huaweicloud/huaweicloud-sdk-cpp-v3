@@ -23,6 +23,14 @@ TemplateConfigs::TemplateConfigs()
     refererIsSet_ = false;
     userAgentFilterIsSet_ = false;
     flowLimitStrategyIsSet_ = false;
+    originRequestHeaderIsSet_ = false;
+    httpsIsSet_ = false;
+    quicIsSet_ = false;
+    forceRedirectIsSet_ = false;
+    httpsTlsVersionIsSet_ = false;
+    accessAreaFilterIsSet_ = false;
+    urlAuthIsSet_ = false;
+    rulesIsSet_ = false;
 }
 
 TemplateConfigs::~TemplateConfigs() = default;
@@ -61,6 +69,30 @@ web::json::value TemplateConfigs::toJson() const
     }
     if(flowLimitStrategyIsSet_) {
         val[utility::conversions::to_string_t("flow_limit_strategy")] = ModelBase::toJson(flowLimitStrategy_);
+    }
+    if(originRequestHeaderIsSet_) {
+        val[utility::conversions::to_string_t("origin_request_header")] = ModelBase::toJson(originRequestHeader_);
+    }
+    if(httpsIsSet_) {
+        val[utility::conversions::to_string_t("https")] = ModelBase::toJson(https_);
+    }
+    if(quicIsSet_) {
+        val[utility::conversions::to_string_t("quic")] = ModelBase::toJson(quic_);
+    }
+    if(forceRedirectIsSet_) {
+        val[utility::conversions::to_string_t("force_redirect")] = ModelBase::toJson(forceRedirect_);
+    }
+    if(httpsTlsVersionIsSet_) {
+        val[utility::conversions::to_string_t("https_tls_version")] = ModelBase::toJson(httpsTlsVersion_);
+    }
+    if(accessAreaFilterIsSet_) {
+        val[utility::conversions::to_string_t("access_area_filter")] = ModelBase::toJson(accessAreaFilter_);
+    }
+    if(urlAuthIsSet_) {
+        val[utility::conversions::to_string_t("url_auth")] = ModelBase::toJson(urlAuth_);
+    }
+    if(rulesIsSet_) {
+        val[utility::conversions::to_string_t("rules")] = ModelBase::toJson(rules_);
     }
 
     return val;
@@ -148,6 +180,78 @@ bool TemplateConfigs::fromJson(const web::json::value& val)
             std::vector<FlowLimitStrategy> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFlowLimitStrategy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("origin_request_header"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_request_header"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<OriginRequestHeader> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginRequestHeader(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("https"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("https"));
+        if(!fieldValue.is_null())
+        {
+            HttpTemplateBody refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHttps(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("quic"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quic"));
+        if(!fieldValue.is_null())
+        {
+            Quic refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuic(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("force_redirect"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("force_redirect"));
+        if(!fieldValue.is_null())
+        {
+            ForceRedirectConfig refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setForceRedirect(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("https_tls_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("https_tls_version"));
+        if(!fieldValue.is_null())
+        {
+            HttpsTlsVersion refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHttpsTlsVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("access_area_filter"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("access_area_filter"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AccessAreaFilter> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAccessAreaFilter(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("url_auth"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("url_auth"));
+        if(!fieldValue.is_null())
+        {
+            UrlAuth refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUrlAuth(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rules"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<RuleResponse> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRules(refVal);
         }
     }
     return ok;
@@ -341,6 +445,174 @@ bool TemplateConfigs::flowLimitStrategyIsSet() const
 void TemplateConfigs::unsetflowLimitStrategy()
 {
     flowLimitStrategyIsSet_ = false;
+}
+
+std::vector<OriginRequestHeader>& TemplateConfigs::getOriginRequestHeader()
+{
+    return originRequestHeader_;
+}
+
+void TemplateConfigs::setOriginRequestHeader(const std::vector<OriginRequestHeader>& value)
+{
+    originRequestHeader_ = value;
+    originRequestHeaderIsSet_ = true;
+}
+
+bool TemplateConfigs::originRequestHeaderIsSet() const
+{
+    return originRequestHeaderIsSet_;
+}
+
+void TemplateConfigs::unsetoriginRequestHeader()
+{
+    originRequestHeaderIsSet_ = false;
+}
+
+HttpTemplateBody TemplateConfigs::getHttps() const
+{
+    return https_;
+}
+
+void TemplateConfigs::setHttps(const HttpTemplateBody& value)
+{
+    https_ = value;
+    httpsIsSet_ = true;
+}
+
+bool TemplateConfigs::httpsIsSet() const
+{
+    return httpsIsSet_;
+}
+
+void TemplateConfigs::unsethttps()
+{
+    httpsIsSet_ = false;
+}
+
+Quic TemplateConfigs::getQuic() const
+{
+    return quic_;
+}
+
+void TemplateConfigs::setQuic(const Quic& value)
+{
+    quic_ = value;
+    quicIsSet_ = true;
+}
+
+bool TemplateConfigs::quicIsSet() const
+{
+    return quicIsSet_;
+}
+
+void TemplateConfigs::unsetquic()
+{
+    quicIsSet_ = false;
+}
+
+ForceRedirectConfig TemplateConfigs::getForceRedirect() const
+{
+    return forceRedirect_;
+}
+
+void TemplateConfigs::setForceRedirect(const ForceRedirectConfig& value)
+{
+    forceRedirect_ = value;
+    forceRedirectIsSet_ = true;
+}
+
+bool TemplateConfigs::forceRedirectIsSet() const
+{
+    return forceRedirectIsSet_;
+}
+
+void TemplateConfigs::unsetforceRedirect()
+{
+    forceRedirectIsSet_ = false;
+}
+
+HttpsTlsVersion TemplateConfigs::getHttpsTlsVersion() const
+{
+    return httpsTlsVersion_;
+}
+
+void TemplateConfigs::setHttpsTlsVersion(const HttpsTlsVersion& value)
+{
+    httpsTlsVersion_ = value;
+    httpsTlsVersionIsSet_ = true;
+}
+
+bool TemplateConfigs::httpsTlsVersionIsSet() const
+{
+    return httpsTlsVersionIsSet_;
+}
+
+void TemplateConfigs::unsethttpsTlsVersion()
+{
+    httpsTlsVersionIsSet_ = false;
+}
+
+std::vector<AccessAreaFilter>& TemplateConfigs::getAccessAreaFilter()
+{
+    return accessAreaFilter_;
+}
+
+void TemplateConfigs::setAccessAreaFilter(const std::vector<AccessAreaFilter>& value)
+{
+    accessAreaFilter_ = value;
+    accessAreaFilterIsSet_ = true;
+}
+
+bool TemplateConfigs::accessAreaFilterIsSet() const
+{
+    return accessAreaFilterIsSet_;
+}
+
+void TemplateConfigs::unsetaccessAreaFilter()
+{
+    accessAreaFilterIsSet_ = false;
+}
+
+UrlAuth TemplateConfigs::getUrlAuth() const
+{
+    return urlAuth_;
+}
+
+void TemplateConfigs::setUrlAuth(const UrlAuth& value)
+{
+    urlAuth_ = value;
+    urlAuthIsSet_ = true;
+}
+
+bool TemplateConfigs::urlAuthIsSet() const
+{
+    return urlAuthIsSet_;
+}
+
+void TemplateConfigs::unseturlAuth()
+{
+    urlAuthIsSet_ = false;
+}
+
+std::vector<RuleResponse>& TemplateConfigs::getRules()
+{
+    return rules_;
+}
+
+void TemplateConfigs::setRules(const std::vector<RuleResponse>& value)
+{
+    rules_ = value;
+    rulesIsSet_ = true;
+}
+
+bool TemplateConfigs::rulesIsSet() const
+{
+    return rulesIsSet_;
+}
+
+void TemplateConfigs::unsetrules()
+{
+    rulesIsSet_ = false;
 }
 
 }

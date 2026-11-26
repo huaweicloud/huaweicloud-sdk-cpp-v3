@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 高级回源信息源站配置。
+/// **参数解释：** 高级回源信息源站配置 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 /// </summary>
 class HUAWEICLOUD_CDN_V2_EXPORT  BackSources
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// BackSources members
 
     /// <summary>
-    /// 源站类型, ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
+    /// **参数解释：** 源站类型 **约束限制：** 不涉及 **取值范围：** - ipaddr: 源站IP - domain: 源站域名 - obs_bucket: OBS桶域名  **默认取值：** 不涉及
     /// </summary>
 
     std::string getSourcesType() const;
@@ -48,7 +48,7 @@ public:
     void setSourcesType(const std::string& value);
 
     /// <summary>
-    /// 源站IP或者域名。
+    /// **参数解释：** 源站IP或者域名 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
 
     std::string getIpOrDomain() const;
@@ -57,7 +57,7 @@ public:
     void setIpOrDomain(const std::string& value);
 
     /// <summary>
-    /// OBS桶类型： - “private”， 私有桶： - “public”，公有桶。
+    /// **参数解释：** OBS桶类型 **约束限制：** 不涉及 **取值范围：** - private: 私有桶 - public: 公有桶  **默认取值：** public: 公有桶
     /// </summary>
 
     std::string getObsBucketType() const;
@@ -66,7 +66,7 @@ public:
     void setObsBucketType(const std::string& value);
 
     /// <summary>
-    /// HTTP端口，取值范围：1-65535。
+    /// **参数解释：** HTTP端口 **约束限制：** 不涉及 **取值范围：** 1-65535 **默认取值：** 80
     /// </summary>
 
     int32_t getHttpPort() const;
@@ -75,13 +75,31 @@ public:
     void setHttpPort(int32_t value);
 
     /// <summary>
-    /// HTTPS端口，取值范围：1-65535。
+    /// **参数解释：** HTTPS端口 **约束限制：** 不涉及 **取值范围：** 1-65535 **默认取值：** 443
     /// </summary>
 
     int32_t getHttpsPort() const;
     bool httpsPortIsSet() const;
     void unsethttpsPort();
     void setHttpsPort(int32_t value);
+
+    /// <summary>
+    /// **参数解释：** 指定CDN回源时的请求协议 **约束限制：** 不涉及 **取值范围：** - follow: 协议跟随 - http: http协议 - https: https协议  **默认取值：** http: http协议
+    /// </summary>
+
+    std::string getOriginProtocol() const;
+    bool originProtocolIsSet() const;
+    void unsetoriginProtocol();
+    void setOriginProtocol(const std::string& value);
+
+    /// <summary>
+    /// **参数解释：** 回源HOST **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 加速域名
+    /// </summary>
+
+    std::string getHostName() const;
+    bool hostNameIsSet() const;
+    void unsethostName();
+    void setHostName(const std::string& value);
 
 
 protected:
@@ -95,6 +113,10 @@ protected:
     bool httpPortIsSet_;
     int32_t httpsPort_;
     bool httpsPortIsSet_;
+    std::string originProtocol_;
+    bool originProtocolIsSet_;
+    std::string hostName_;
+    bool hostNameIsSet_;
 
 };
 

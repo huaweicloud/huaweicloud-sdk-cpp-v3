@@ -33,6 +33,7 @@ HttpsDetail::HttpsDetail()
     forceRedirectConfigIsSet_ = false;
     http2_ = 0;
     http2IsSet_ = false;
+    certificatesIsSet_ = false;
 }
 
 HttpsDetail::~HttpsDetail() = default;
@@ -77,6 +78,9 @@ web::json::value HttpsDetail::toJson() const
     }
     if(http2IsSet_) {
         val[utility::conversions::to_string_t("http2")] = ModelBase::toJson(http2_);
+    }
+    if(certificatesIsSet_) {
+        val[utility::conversions::to_string_t("certificates")] = ModelBase::toJson(certificates_);
     }
 
     return val;
@@ -182,6 +186,15 @@ bool HttpsDetail::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHttp2(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificates"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificates"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<HttpsDetail_certificates> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificates(refVal);
         }
     }
     return ok;
@@ -417,6 +430,27 @@ bool HttpsDetail::http2IsSet() const
 void HttpsDetail::unsethttp2()
 {
     http2IsSet_ = false;
+}
+
+std::vector<HttpsDetail_certificates>& HttpsDetail::getCertificates()
+{
+    return certificates_;
+}
+
+void HttpsDetail::setCertificates(const std::vector<HttpsDetail_certificates>& value)
+{
+    certificates_ = value;
+    certificatesIsSet_ = true;
+}
+
+bool HttpsDetail::certificatesIsSet() const
+{
+    return certificatesIsSet_;
+}
+
+void HttpsDetail::unsetcertificates()
+{
+    certificatesIsSet_ = false;
 }
 
 }

@@ -97,6 +97,11 @@
 #include <huaweicloud/modelarts/v1/model/CreateAlgorithmVersionToGalleryRequest.h>
 #include <huaweicloud/modelarts/v1/model/CreateAlgorithmVersionToGalleryResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateApiKeyReq.h>
+#include <huaweicloud/modelarts/v1/model/CreateAssetFileDownLoadPathRequest.h>
+#include <huaweicloud/modelarts/v1/model/CreateAssetFileDownLoadPathResponse.h>
+#include <huaweicloud/modelarts/v1/model/CreateAssetReq.h>
+#include <huaweicloud/modelarts/v1/model/CreateAssetRequest.h>
+#include <huaweicloud/modelarts/v1/model/CreateAssetResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateAuthGrantRequest.h>
 #include <huaweicloud/modelarts/v1/model/CreateAuthGrantResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateAuthorizationRequest.h>
@@ -159,6 +164,8 @@
 #include <huaweicloud/modelarts/v1/model/DataVolumesReq.h>
 #include <huaweicloud/modelarts/v1/model/DeleteAlgorithmRequest.h>
 #include <huaweicloud/modelarts/v1/model/DeleteAlgorithmResponse.h>
+#include <huaweicloud/modelarts/v1/model/DeleteAssetRequest.h>
+#include <huaweicloud/modelarts/v1/model/DeleteAssetResponse.h>
 #include <huaweicloud/modelarts/v1/model/DeleteAuthorizationsRequest.h>
 #include <huaweicloud/modelarts/v1/model/DeleteAuthorizationsResponse.h>
 #include <huaweicloud/modelarts/v1/model/DeleteDevServerJobsRequest.h>
@@ -217,6 +224,7 @@
 #include <huaweicloud/modelarts/v1/model/DetachDynamicStorageResponse.h>
 #include <huaweicloud/modelarts/v1/model/DevServerBatchRequest.h>
 #include <huaweicloud/modelarts/v1/model/DevServerJobCreateRequest.h>
+#include <huaweicloud/modelarts/v1/model/DownLoadPathReq.h>
 #include <huaweicloud/modelarts/v1/model/EventUpdate.h>
 #include <huaweicloud/modelarts/v1/model/GetAuthorizationsRequest.h>
 #include <huaweicloud/modelarts/v1/model/GetAuthorizationsResponse.h>
@@ -263,6 +271,12 @@
 #include <huaweicloud/modelarts/v1/model/ListAllDevServersResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListAllHyperinstancesRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListAllHyperinstancesResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListAssetFileRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListAssetFileResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListAssetOperationRecordsRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListAssetOperationRecordsResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListAssetRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListAssetResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListDevServerFlavorsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListDevServerFlavorsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListDevServerImagesRequest.h>
@@ -427,6 +441,16 @@
 #include <huaweicloud/modelarts/v1/model/ServiceUpdateRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowAlgorithmByUuidRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowAlgorithmByUuidResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetByCodeAndVersionRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetByCodeAndVersionResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetExtendMessageRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetExtendMessageResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetResourceRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetResourceResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetTagsInfoRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowAssetTagsInfoResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowAuthGrantRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowAuthGrantResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowAuthmodeDetailRequest.h>
@@ -561,6 +585,9 @@
 #include <huaweicloud/modelarts/v1/model/UnbindDevServerPublicIPResponse.h>
 #include <huaweicloud/modelarts/v1/model/UnbindInferApiKeyRequest.h>
 #include <huaweicloud/modelarts/v1/model/UnbindInferApiKeyResponse.h>
+#include <huaweicloud/modelarts/v1/model/UpdateAssetReq.h>
+#include <huaweicloud/modelarts/v1/model/UpdateAssetRequest.h>
+#include <huaweicloud/modelarts/v1/model/UpdateAssetResponse.h>
 #include <huaweicloud/modelarts/v1/model/UpdateAuthModeRequest.h>
 #include <huaweicloud/modelarts/v1/model/UpdateAuthModeRequestBody.h>
 #include <huaweicloud/modelarts/v1/model/UpdateAuthModeResponse.h>
@@ -1064,6 +1091,24 @@ public:
     std::shared_ptr<CreateAlgorithmVersionToGalleryResponse> createAlgorithmVersionToGallery(
         CreateAlgorithmVersionToGalleryRequest &request
     );
+    // 创建资产
+    //
+    // 创建资产接口用于在ModelArts平台上创建一个新的资产，支持创建独立资产或基于父资产派生新版本，并支持加入已有资产组进行版本管理。
+    // 该接口适用于以下场景：当用户需要将自定义模型、数据集、算子等资产上传至平台并进行统一管理时，可以通过此接口创建资产。使用该接口的前提条件是用户已具备项目访问权限，并已准备好资产的元数据信息及存储路径。平台将在校验资产类型、版本唯一性及数据合法性后，将资产添加到资产列表中并返回资产ID。若资产信息不完整、版本冲突或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAssetResponse> createAsset(
+        CreateAssetRequest &request
+    );
+    // 获取资产文件临时下载路径
+    //
+    // 获取资产文件临时下载路径接口用于在ModelArts平台上为指定资产生成临时签名的文件下载路径。
+    // 该接口适用于以下场景：当用户需要下载资产关联的文件资源时，可以通过此接口获取临时有效的下载链接。使用该接口的前提条件是用户已具备项目访问权限，并已知目标资产的ID。若资产不存在或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAssetFileDownLoadPathResponse> createAssetFileDownLoadPath(
+        CreateAssetFileDownLoadPathRequest &request
+    );
     // 一键授权或重置授权
     //
     // 一键授权或重置授权接口用于一键创建ModelArts委托授权或重置已有委托。该接口适用于以下场景：当用户首次使用ModelArts服务需要开通委托授权时，或当现有委托授权出现异常、过期需要重新配置时，可通过此接口一键完成授权操作。使用该接口的前提条件是用户已登录系统且具有相应的操作权限。执行一键授权后，系统将自动创建委托授权关系；执行重置操作后，原有委托将被替换为新的授权。若用户无权限操作或服务异常，接口将返回相应的错误信息。
@@ -1281,6 +1326,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteAlgorithmResponse> deleteAlgorithm(
         DeleteAlgorithmRequest &request
+    );
+    // 删除资产
+    //
+    // 删除资产接口用于在ModelArts平台上删除指定的资产，支持通过forceDelete参数对数据集类型资产进行强制删除。
+    // 该接口适用于以下场景：当用户需要清理不再使用的资产或释放存储资源时，可以通过此接口进行删除。使用该接口的前提条件是用户已具备项目访问权限，并已知目标资产的ID。平台将在校验资产存在性、归属权限及使用状态后执行禁用删除操作并返回资产ID。若资产不存在、为预置资产不可删除、模型资产仍在使用中或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAssetResponse> deleteAsset(
+        DeleteAssetRequest &request
     );
     // 删除授权
     //
@@ -1607,6 +1661,33 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAllHyperinstancesResponse> listAllHyperinstances(
         ListAllHyperinstancesRequest &request
+    );
+    // 查询资产列表
+    //
+    // 查询资产列表接口用于在ModelArts平台上查询指定项目下的资产列表。
+    // 该接口适用于以下场景：当用户需要在资产管理浏览、检索和管理资产时，可以通过此接口按需筛选所需资产。使用该接口的前提条件是用户已具备项目访问权限。平台将根据传入的查询条件返回符合条件的资产详情列表及总数。若请求参数格式错误或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAssetResponse> listAsset(
+        ListAssetRequest &request
+    );
+    // 查询数据集文件列表
+    //
+    // 查询数据集文件列表接口用于在ModelArts平台上获取指定资产关联的文件列表信息。
+    // 该接口适用于以下场景：当用户需要浏览或检索某一资产下的文件资源时，可以通过此接口分页查询文件列表。使用该接口的前提条件是用户已具备项目访问权限，并已知目标资产的ID。若资产不存在或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAssetFileResponse> listAssetFile(
+        ListAssetFileRequest &request
+    );
+    // 查询资产操作记录列表
+    //
+    // 查询资产操作记录列表接口用于在ModelArts平台上分页查询资产的操作记录信息。
+    // 该接口适用于以下场景：当用户需要检索和审计资产的操作执行历史时，可以通过此接口按多种条件筛选并分页查询操作记录。使用该接口的前提条件是用户已具备项目访问权限。若用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAssetOperationRecordsResponse> listAssetOperationRecords(
+        ListAssetOperationRecordsRequest &request
     );
     // 查询规格列表
     //
@@ -2159,6 +2240,51 @@ public:
     std::shared_ptr<ShowAlgorithmByUuidResponse> showAlgorithmByUuid(
         ShowAlgorithmByUuidRequest &request
     );
+    // 查询资产详情
+    //
+    // 查询资产详情接口用于在ModelArts平台上获取指定资产的详细信息。
+    // 该接口适用于以下场景：当用户需要查看某个资产的完整元数据、存储位置、支持的操作及扩展信息时，可以通过此接口获取。使用该接口的前提条件是用户已具备项目访问权限，并已知目标资产的ID。平台将根据资产ID查询并返回资产的详情信息。若资产不存在或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAssetResponse> showAsset(
+        ShowAssetRequest &request
+    );
+    // 通过asset code 和asset version查询资产详情
+    //
+    // 通过资产编码和版本查询资产详情接口用于在ModelArts平台上根据asset_code和版本asset_version查询指定资产的详细信息。
+    // 该接口适用于以下场景：当用户已知资产编码和版本但无资产ID时，可以通过此接口获取资产的完整详情及可执行操作。使用该接口的前提条件是用户已具备项目访问权限，并已知目标资产的编码和版本号。平台将根据资产编码和版本查询并返回资产的详情信息。若资产不存在或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAssetByCodeAndVersionResponse> showAssetByCodeAndVersion(
+        ShowAssetByCodeAndVersionRequest &request
+    );
+    // 查询README中的yaml内容
+    //
+    // 查询资产扩展信息接口用于在ModelArts平台上获取指定资产README文件中的YAML内容。
+    // 该接口适用于以下场景：当用户需要查看预置资产的扩展元数据信息时，可以通过此接口解析README中的YAML片段并返回。使用该接口的前提条件是用户已具备项目访问权限，并已知目标资产ID。平台将根据资产ID读取对应README文件，解析其中的YAML内容后以JSON格式返回。若资产不存在、资产非预置资产、README文件未找到或用户无权限操作，接口将返回相应的错误信息或空数据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAssetExtendMessageResponse> showAssetExtendMessage(
+        ShowAssetExtendMessageRequest &request
+    );
+    // 查询资产管理resource、doc目录下的内容
+    //
+    // 查询资产资源接口用于在ModelArts平台上获取指定资产中resource、doc等目录下的资源文件内容，如说明文档、芯片配置等。
+    // 该接口适用于以下场景：当用户需要查看资产的附加文档、配置文件或其他静态资源时，可以通过此接口按资源名称获取对应内容。使用该接口的前提条件是用户已具备项目访问权限，并已知目标资产ID及资源文件名称。平台将根据资产ID和资源名称读取对应文件，并按文件类型自动返回相应的内容格式。若资产不存在或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAssetResourceResponse> showAssetResource(
+        ShowAssetResourceRequest &request
+    );
+    // 查询tag列表信息
+    //
+    // 查询tag列表信息接口用于在ModelArts平台上查询tag列表信息。
+    // 该接口适用于以下场景：当用户需要获取某一标签分类下所有标签的层级结构及详细信息时，可以通过此接口查询完整的标签树数据。使用该接口的前提条件是用户已具备项目访问权限，并已知目标标签的类型名称。平台将根据标签类型从对象存储中查询并返回对应的标签树形结构信息，支持多语言展示。若标签资源不存在或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAssetTagsInfoResponse> showAssetTagsInfo(
+        ShowAssetTagsInfoRequest &request
+    );
     // 查询委托授权状态
     //
     // 查询委托授权状态接口用于查询ModelArts服务的委托授权是否已开通。该接口适用于以下场景：当用户需要确认是否已开通ModelArts委托授权以进行后续操作（如模型训练、部署等）时，可通过此接口查询当前授权状态。使用该接口的前提条件是用户已登录系统且具有相应的查询权限。查询结果将返回委托授权的当前状态（已开通或未开通），若用户无权限查询或服务异常，接口将返回相应的错误信息。
@@ -2686,6 +2812,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UnbindInferApiKeyResponse> unbindInferApiKey(
         UnbindInferApiKeyRequest &request
+    );
+    // 更新资产
+    //
+    // 更新资产接口用于在ModelArts平台上修改指定资产的属性信息，包括资产名称、描述、系列、能力、启用状态、标签及自定义属性等。
+    // 该接口适用于以下场景：当用户需要修改已有资产的元数据信息或调整资产状态时，可以通过此接口进行更新。使用该接口的前提条件是用户已具备项目访问权限，并已知目标资产的ID。平台将在校验资产存在性及归属权限后将更新应用到目标资产及其同组资产上。若资产不存在、为预置资产不可修改或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAssetResponse> updateAsset(
+        UpdateAssetRequest &request
     );
     // 更新授权模式
     //

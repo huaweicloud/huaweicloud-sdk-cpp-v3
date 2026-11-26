@@ -51,6 +51,8 @@ Domains::Domains()
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
     tagsIsSet_ = false;
+    originProtocol_ = "";
+    originProtocolIsSet_ = false;
 }
 
 Domains::~Domains() = default;
@@ -125,6 +127,9 @@ web::json::value Domains::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(originProtocolIsSet_) {
+        val[utility::conversions::to_string_t("origin_protocol")] = ModelBase::toJson(originProtocol_);
     }
 
     return val;
@@ -320,6 +325,15 @@ bool Domains::fromJson(const web::json::value& val)
             std::vector<EpResourceTag> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("origin_protocol"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_protocol"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginProtocol(refVal);
         }
     }
     return ok;
@@ -765,6 +779,27 @@ bool Domains::tagsIsSet() const
 void Domains::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string Domains::getOriginProtocol() const
+{
+    return originProtocol_;
+}
+
+void Domains::setOriginProtocol(const std::string& value)
+{
+    originProtocol_ = value;
+    originProtocolIsSet_ = true;
+}
+
+bool Domains::originProtocolIsSet() const
+{
+    return originProtocolIsSet_;
+}
+
+void Domains::unsetoriginProtocol()
+{
+    originProtocolIsSet_ = false;
 }
 
 }

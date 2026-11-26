@@ -60,6 +60,7 @@ Configs::Configs()
     clientCertIsSet_ = false;
     httpsTlsVersionIsSet_ = false;
     flowLimitStrategyIsSet_ = false;
+    bandwidthAlarmStrategyIsSet_ = false;
 }
 
 Configs::~Configs() = default;
@@ -188,6 +189,9 @@ web::json::value Configs::toJson() const
     }
     if(flowLimitStrategyIsSet_) {
         val[utility::conversions::to_string_t("flow_limit_strategy")] = ModelBase::toJson(flowLimitStrategy_);
+    }
+    if(bandwidthAlarmStrategyIsSet_) {
+        val[utility::conversions::to_string_t("bandwidth_alarm_strategy")] = ModelBase::toJson(bandwidthAlarmStrategy_);
     }
 
     return val;
@@ -545,6 +549,15 @@ bool Configs::fromJson(const web::json::value& val)
             std::vector<FlowLimitStrategy> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFlowLimitStrategy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bandwidth_alarm_strategy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bandwidth_alarm_strategy"));
+        if(!fieldValue.is_null())
+        {
+            BandwidthAlarmStrategy refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBandwidthAlarmStrategy(refVal);
         }
     }
     return ok;
@@ -1368,6 +1381,27 @@ bool Configs::flowLimitStrategyIsSet() const
 void Configs::unsetflowLimitStrategy()
 {
     flowLimitStrategyIsSet_ = false;
+}
+
+BandwidthAlarmStrategy Configs::getBandwidthAlarmStrategy() const
+{
+    return bandwidthAlarmStrategy_;
+}
+
+void Configs::setBandwidthAlarmStrategy(const BandwidthAlarmStrategy& value)
+{
+    bandwidthAlarmStrategy_ = value;
+    bandwidthAlarmStrategyIsSet_ = true;
+}
+
+bool Configs::bandwidthAlarmStrategyIsSet() const
+{
+    return bandwidthAlarmStrategyIsSet_;
+}
+
+void Configs::unsetbandwidthAlarmStrategy()
+{
+    bandwidthAlarmStrategyIsSet_ = false;
 }
 
 }

@@ -57,7 +57,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// **参数解释：** 域名列表 &gt; 如果域名在查询时间段内无数据，结果将不返回该域名的信息  **约束限制：** 仅支持查询已经在CDN创建成功的域名 **取值范围：** - all表示查询名下全部域名 - 多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com **默认取值：** 不涉及
+    /// **参数解释：** 域名列表 &gt; 如果域名在查询时间段内无数据，结果将不返回该域名的信息  **约束限制：** 仅支持查询已经在CDN创建成功的域名 **取值范围：** - all表示查询名下全部域名 - 多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com  **默认取值：** 不涉及
     /// </summary>
 
     std::string getDomainName() const;
@@ -66,7 +66,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 统计指标类型 **约束限制：** 不涉及 **取值范围：** - flux：流量 - req_num：请求数 **默认取值：** 不涉及
+    /// **参数解释：** 统计指标类型 **约束限制：** 不涉及 **取值范围：** - flux：流量 - req_num：请求数  **默认取值：** 不涉及
     /// </summary>
 
     std::string getStatType() const;
@@ -75,7 +75,7 @@ public:
     void setStatType(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 服务范围 **约束限制：** 不涉及 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外 - global：全球 **默认取值：** global：全球
+    /// **参数解释：** 服务范围 **约束限制：** 不涉及 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外 - global：全球  **默认取值：** global：全球
     /// </summary>
 
     std::string getServiceArea() const;
@@ -84,7 +84,7 @@ public:
     void setServiceArea(const std::string& value);
 
     /// <summary>
-    /// **参数解释：** 企业项目id &gt; 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id  **约束限制：** - 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目 - 当使用子账号调用接口时，该参数必传 **取值范围：** all表示所有项目 **默认取值：** 不涉及
+    /// **参数解释：** 企业项目id &gt; 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id  **约束限制：** - 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目 - 当使用子账号调用接口时，该参数必传  **取值范围：** all表示所有项目 **默认取值：** 不涉及
     /// </summary>
 
     std::string getEnterpriseProjectId() const;

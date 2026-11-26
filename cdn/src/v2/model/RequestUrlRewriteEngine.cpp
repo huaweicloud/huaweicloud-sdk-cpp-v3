@@ -12,6 +12,10 @@ namespace Model {
 
 RequestUrlRewriteEngine::RequestUrlRewriteEngine()
 {
+    rewriteType_ = "";
+    rewriteTypeIsSet_ = false;
+    sourceUrl_ = "";
+    sourceUrlIsSet_ = false;
     redirectStatusCode_ = 0;
     redirectStatusCodeIsSet_ = false;
     redirectUrl_ = "";
@@ -20,6 +24,8 @@ RequestUrlRewriteEngine::RequestUrlRewriteEngine()
     redirectHostIsSet_ = false;
     executionMode_ = "";
     executionModeIsSet_ = false;
+    inheritParam_ = "";
+    inheritParamIsSet_ = false;
 }
 
 RequestUrlRewriteEngine::~RequestUrlRewriteEngine() = default;
@@ -32,6 +38,12 @@ web::json::value RequestUrlRewriteEngine::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(rewriteTypeIsSet_) {
+        val[utility::conversions::to_string_t("rewrite_type")] = ModelBase::toJson(rewriteType_);
+    }
+    if(sourceUrlIsSet_) {
+        val[utility::conversions::to_string_t("source_url")] = ModelBase::toJson(sourceUrl_);
+    }
     if(redirectStatusCodeIsSet_) {
         val[utility::conversions::to_string_t("redirect_status_code")] = ModelBase::toJson(redirectStatusCode_);
     }
@@ -44,6 +56,9 @@ web::json::value RequestUrlRewriteEngine::toJson() const
     if(executionModeIsSet_) {
         val[utility::conversions::to_string_t("execution_mode")] = ModelBase::toJson(executionMode_);
     }
+    if(inheritParamIsSet_) {
+        val[utility::conversions::to_string_t("inherit_param")] = ModelBase::toJson(inheritParam_);
+    }
 
     return val;
 }
@@ -51,6 +66,24 @@ bool RequestUrlRewriteEngine::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("rewrite_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rewrite_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRewriteType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("source_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSourceUrl(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("redirect_status_code"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("redirect_status_code"));
         if(!fieldValue.is_null())
@@ -87,9 +120,60 @@ bool RequestUrlRewriteEngine::fromJson(const web::json::value& val)
             setExecutionMode(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("inherit_param"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("inherit_param"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInheritParam(refVal);
+        }
+    }
     return ok;
 }
 
+
+std::string RequestUrlRewriteEngine::getRewriteType() const
+{
+    return rewriteType_;
+}
+
+void RequestUrlRewriteEngine::setRewriteType(const std::string& value)
+{
+    rewriteType_ = value;
+    rewriteTypeIsSet_ = true;
+}
+
+bool RequestUrlRewriteEngine::rewriteTypeIsSet() const
+{
+    return rewriteTypeIsSet_;
+}
+
+void RequestUrlRewriteEngine::unsetrewriteType()
+{
+    rewriteTypeIsSet_ = false;
+}
+
+std::string RequestUrlRewriteEngine::getSourceUrl() const
+{
+    return sourceUrl_;
+}
+
+void RequestUrlRewriteEngine::setSourceUrl(const std::string& value)
+{
+    sourceUrl_ = value;
+    sourceUrlIsSet_ = true;
+}
+
+bool RequestUrlRewriteEngine::sourceUrlIsSet() const
+{
+    return sourceUrlIsSet_;
+}
+
+void RequestUrlRewriteEngine::unsetsourceUrl()
+{
+    sourceUrlIsSet_ = false;
+}
 
 int32_t RequestUrlRewriteEngine::getRedirectStatusCode() const
 {
@@ -173,6 +257,27 @@ bool RequestUrlRewriteEngine::executionModeIsSet() const
 void RequestUrlRewriteEngine::unsetexecutionMode()
 {
     executionModeIsSet_ = false;
+}
+
+std::string RequestUrlRewriteEngine::getInheritParam() const
+{
+    return inheritParam_;
+}
+
+void RequestUrlRewriteEngine::setInheritParam(const std::string& value)
+{
+    inheritParam_ = value;
+    inheritParamIsSet_ = true;
+}
+
+bool RequestUrlRewriteEngine::inheritParamIsSet() const
+{
+    return inheritParamIsSet_;
+}
+
+void RequestUrlRewriteEngine::unsetinheritParam()
+{
+    inheritParamIsSet_ = false;
 }
 
 }

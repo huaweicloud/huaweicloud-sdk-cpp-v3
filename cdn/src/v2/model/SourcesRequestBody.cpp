@@ -22,6 +22,12 @@ SourcesRequestBody::SourcesRequestBody()
     obsBucketTypeIsSet_ = false;
     activeStandby_ = 0;
     activeStandbyIsSet_ = false;
+    priority_ = 0;
+    priorityIsSet_ = false;
+    weight_ = 0;
+    weightIsSet_ = false;
+    hostName_ = "";
+    hostNameIsSet_ = false;
     enableObsWebHosting_ = 0;
     enableObsWebHostingIsSet_ = false;
     httpPort_ = 0;
@@ -54,6 +60,15 @@ web::json::value SourcesRequestBody::toJson() const
     }
     if(activeStandbyIsSet_) {
         val[utility::conversions::to_string_t("active_standby")] = ModelBase::toJson(activeStandby_);
+    }
+    if(priorityIsSet_) {
+        val[utility::conversions::to_string_t("priority")] = ModelBase::toJson(priority_);
+    }
+    if(weightIsSet_) {
+        val[utility::conversions::to_string_t("weight")] = ModelBase::toJson(weight_);
+    }
+    if(hostNameIsSet_) {
+        val[utility::conversions::to_string_t("host_name")] = ModelBase::toJson(hostName_);
     }
     if(enableObsWebHostingIsSet_) {
         val[utility::conversions::to_string_t("enable_obs_web_hosting")] = ModelBase::toJson(enableObsWebHosting_);
@@ -114,6 +129,33 @@ bool SourcesRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setActiveStandby(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("priority"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("priority"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPriority(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("weight"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("weight"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWeight(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("host_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("host_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHostName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("enable_obs_web_hosting"))) {
@@ -250,6 +292,69 @@ bool SourcesRequestBody::activeStandbyIsSet() const
 void SourcesRequestBody::unsetactiveStandby()
 {
     activeStandbyIsSet_ = false;
+}
+
+int32_t SourcesRequestBody::getPriority() const
+{
+    return priority_;
+}
+
+void SourcesRequestBody::setPriority(int32_t value)
+{
+    priority_ = value;
+    priorityIsSet_ = true;
+}
+
+bool SourcesRequestBody::priorityIsSet() const
+{
+    return priorityIsSet_;
+}
+
+void SourcesRequestBody::unsetpriority()
+{
+    priorityIsSet_ = false;
+}
+
+int32_t SourcesRequestBody::getWeight() const
+{
+    return weight_;
+}
+
+void SourcesRequestBody::setWeight(int32_t value)
+{
+    weight_ = value;
+    weightIsSet_ = true;
+}
+
+bool SourcesRequestBody::weightIsSet() const
+{
+    return weightIsSet_;
+}
+
+void SourcesRequestBody::unsetweight()
+{
+    weightIsSet_ = false;
+}
+
+std::string SourcesRequestBody::getHostName() const
+{
+    return hostName_;
+}
+
+void SourcesRequestBody::setHostName(const std::string& value)
+{
+    hostName_ = value;
+    hostNameIsSet_ = true;
+}
+
+bool SourcesRequestBody::hostNameIsSet() const
+{
+    return hostNameIsSet_;
+}
+
+void SourcesRequestBody::unsethostName()
+{
+    hostNameIsSet_ = false;
 }
 
 int32_t SourcesRequestBody::getEnableObsWebHosting() const

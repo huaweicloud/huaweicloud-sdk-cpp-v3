@@ -48,6 +48,15 @@ public:
     void setResult(bool value);
 
     /// <summary>
+    /// **参数解释：** 域名校验状态，表示当前账号下是否存在该域名 **约束限制：** 不涉及 **取值范围：** - DomainExist: 该域名已存在 - DomainNotExist: 该域名不存在  **默认取值：** 不涉及
+    /// </summary>
+
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -60,6 +69,8 @@ public:
 protected:
     bool result_;
     bool resultIsSet_;
+    std::string status_;
+    bool statusIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

@@ -31,6 +31,9 @@ UpdateDomainMultiCertificatesResponseBodyContent::UpdateDomainMultiCertificatesR
     certificateTypeIsSet_ = false;
     expirationTime_ = 0L;
     expirationTimeIsSet_ = false;
+    certificateCategory_ = 0;
+    certificateCategoryIsSet_ = false;
+    certificatesIsSet_ = false;
 }
 
 UpdateDomainMultiCertificatesResponseBodyContent::~UpdateDomainMultiCertificatesResponseBodyContent() = default;
@@ -72,6 +75,12 @@ web::json::value UpdateDomainMultiCertificatesResponseBodyContent::toJson() cons
     }
     if(expirationTimeIsSet_) {
         val[utility::conversions::to_string_t("expiration_time")] = ModelBase::toJson(expirationTime_);
+    }
+    if(certificateCategoryIsSet_) {
+        val[utility::conversions::to_string_t("certificate_category")] = ModelBase::toJson(certificateCategory_);
+    }
+    if(certificatesIsSet_) {
+        val[utility::conversions::to_string_t("certificates")] = ModelBase::toJson(certificates_);
     }
 
     return val;
@@ -168,6 +177,24 @@ bool UpdateDomainMultiCertificatesResponseBodyContent::fromJson(const web::json:
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExpirationTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificate_category"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_category"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificateCategory(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificates"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificates"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<MultiCertificateBatchVo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificates(refVal);
         }
     }
     return ok;
@@ -382,6 +409,48 @@ bool UpdateDomainMultiCertificatesResponseBodyContent::expirationTimeIsSet() con
 void UpdateDomainMultiCertificatesResponseBodyContent::unsetexpirationTime()
 {
     expirationTimeIsSet_ = false;
+}
+
+int32_t UpdateDomainMultiCertificatesResponseBodyContent::getCertificateCategory() const
+{
+    return certificateCategory_;
+}
+
+void UpdateDomainMultiCertificatesResponseBodyContent::setCertificateCategory(int32_t value)
+{
+    certificateCategory_ = value;
+    certificateCategoryIsSet_ = true;
+}
+
+bool UpdateDomainMultiCertificatesResponseBodyContent::certificateCategoryIsSet() const
+{
+    return certificateCategoryIsSet_;
+}
+
+void UpdateDomainMultiCertificatesResponseBodyContent::unsetcertificateCategory()
+{
+    certificateCategoryIsSet_ = false;
+}
+
+std::vector<MultiCertificateBatchVo>& UpdateDomainMultiCertificatesResponseBodyContent::getCertificates()
+{
+    return certificates_;
+}
+
+void UpdateDomainMultiCertificatesResponseBodyContent::setCertificates(const std::vector<MultiCertificateBatchVo>& value)
+{
+    certificates_ = value;
+    certificatesIsSet_ = true;
+}
+
+bool UpdateDomainMultiCertificatesResponseBodyContent::certificatesIsSet() const
+{
+    return certificatesIsSet_;
+}
+
+void UpdateDomainMultiCertificatesResponseBodyContent::unsetcertificates()
+{
+    certificatesIsSet_ = false;
 }
 
 }
